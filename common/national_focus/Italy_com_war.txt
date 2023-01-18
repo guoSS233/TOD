@@ -1,0 +1,231 @@
+﻿
+focus_tree = {
+	id = Italian_focus
+	
+	country = {
+		factor = 0
+		if = {
+			limit = {
+				tag = ITA
+				has_civil_war = yes	
+				communism > 0.5	
+			}
+			modifier = {
+				add = 100
+			}
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+
+#	focus = {
+#		id = ITA_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+	#起来，受压迫的人民
+	focus = {
+		id = ITA_qilai
+		icon = GFX_FIN_wunianjihua
+		x = 14
+		y = 1
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#意大利红军
+	focus = {
+		id = ITA_yidalihongjun
+		icon = GFX_FIN_wunianjihua
+		x = 12
+		y = 2
+
+		cost = 5
+		prerequisite = { focus = ITA_qilai}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#目标罗马
+	focus = {
+		id = ITA_mubiaoluoma
+		icon = GFX_FIN_wunianjihua
+		x = 11
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_yidalihongjun}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#勇敢的红军
+	focus = {
+		id = ITA_yonggandehongjun
+		icon = GFX_FIN_wunianjihua
+		x = 13
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_yidalihongjun}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#请求援助
+	focus = {
+		id = ITA_qingqiuyuanzhu
+		icon = GFX_FIN_wunianjihua
+		x = 14
+		y = 2
+
+		cost = 5
+		prerequisite = { focus = ITA_qilai}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#意大利宣言
+	focus = {
+		id = ITA_yidalixuanyan
+		icon = GFX_FIN_wunianjihua
+		x = 16
+		y = 2
+
+		cost = 5
+		prerequisite = { focus = ITA_qilai}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#鼓舞群众
+	focus = {
+		id = ITA_guwuqunzhong
+		icon = GFX_FIN_wunianjihua
+		x = 15
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_yidalixuanyan}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#团结在党的领导下
+	focus = {
+		id = ITA_tuanjiezaidangdelingdaoxia
+		icon = GFX_FIN_wunianjihua
+		x = 17
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_yidalixuanyan}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#胜利就在眼前
+	focus = {
+		id = ITA_shenglijiuzaiyanqian
+		icon = GFX_FIN_wunianjihua
+		x = 14
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_mubiaoluoma}
+		prerequisite = { focus = ITA_yonggandehongjun}
+		prerequisite = { focus = ITA_guwuqunzhong}
+		prerequisite = { focus = ITA_tuanjiezaidangdelingdaoxia}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+}

@@ -1,0 +1,379 @@
+###########################
+# 关于在内战中的各种一定会发生的事件的统合
+#单独小事件应添加到各势力文件内
+###########################
+
+add_namespace = mingcivwar
+
+country_event = { # 是否筹建关东司
+	id = mingcivwar.1
+	title = mingcivwar.1.t
+	desc = mingcivwar.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	fire_only_once = yes
+	trigger = {
+		tag = MNG
+		date > 1937.3.02
+	}
+	mean_time_to_happen = {days = 0}
+    option = {
+		name = mingcivwar.1.a#想都别想
+		ai_chance = {
+			factor = 50
+		}
+	    hidden_effect = {
+	        country_event = {
+				id = mingcivwar.2#红军力量增长分支
+				days = 28
+			}
+	    }
+	}
+	
+	option = {
+		name = mingcivwar.1.b#不能再犹豫了，必须重拳出击
+		ai_chance = {factor = 50}
+		hidden_effect = {
+	        country_event = {
+				id = mingcivwar.3#跳到选择扮演关东司
+				days = 3
+			} 
+	    }
+		
+		
+	}
+}
+
+country_event = { # 红军力量增加，在内战开始时有额外的部队和更多控制区以及人力
+	id = mingcivwar.2
+	title = mingcivwar.2.t
+	desc = mingcivwar.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+    is_triggered_only = yes
+    option = {
+		name = mingcivwar.2.a#他妈的赤匪
+		trigger = {tag = MNG}
+		ai_chance = {factor = 100}
+	    hidden_effect = {
+			add_manpower = -5000
+			add_political_power = -10
+		    add_stability = -0.05
+	    }
+	}
+}
+
+country_event = { # 好样的关东司
+	id = mingcivwar.3
+	title = mingcivwar.3.t
+	desc = mingcivwar.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+    is_triggered_only = yes
+	trigger = {tag = MNG}
+    option = {
+		name = mingcivwar.3.a#报效朝廷就在今天
+		ai_chance = {factor = 100}
+	    hidden_effect = {add_stability = 0.01 }
+	}
+	option = {
+		name = mingcivwar.3.b#亲 自 执 行
+		ai_chance = {factor = 0}
+	    hidden_effect = { add_stability = 0.01 }
+		GPS = {change_tag_from = MNG}
+		
+	}
+}
+
+country_event = { # 筹备工作第二步，向关东司派遣后备部队和运输物资
+	id = mingcivwar.4
+	title = mingcivwar.4.t
+	desc = mingcivwar.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+    is_triggered_only = yes
+    option = {
+		name = mingcivwar.4.a
+		ai_chance = {factor = 100}
+		trigger = {tag = MNG}
+	    hidden_effect = {
+			add_country_flag = MNG_wuzi
+	    }
+	}
+}
+
+country_event = { # 筹备工作第三步，封锁道路
+	id = mingcivwar.5
+	title = mingcivwar.5.t
+	desc = mingcivwar.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+    is_triggered_only = yes
+	trigger = {tag = MNG}
+    option = {
+		name = mingcivwar.5.a
+		ai_chance = {factor = 100}
+	    hidden_effect = {
+	        set_country_flag = jinzhou_line_ready
+			#锦州防线地带添加堡垒
+	    }
+	}
+}
+
+country_event = { # 太子开始南巡，1936.11.26
+	id = mingcivwar.6
+	title = mingcivwar.6.t
+	desc = mingcivwar.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	fire_only_once = yes
+	trigger = {
+		tag = MNG
+		date > 1936.11.25
+	}
+	mean_time_to_happen = {days = 1}
+    option = {
+		name = mingcivwar.6.a#
+		ai_chance = {factor = 100}
+	    hidden_effect = {
+	        country_event = {
+				id = mingcivwar.7
+				days = 10
+			}
+	    }
+	}
+}
+
+country_event = { # 太子到达应天府开始巡视，1936.12.06
+	id = mingcivwar.7
+	title = mingcivwar.7.t
+	desc = mingcivwar.7.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+    is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		tag = MNG
+		date > 1936.12.05
+	}
+    option = {
+		name = mingcivwar.7.a
+		ai_chance = {
+			factor = 100
+		}
+	    hidden_effect = {
+	        country_event = {
+				id = mingcivwar.8
+				days = 0
+				
+			} 
+			
+	    }
+	}
+}
+
+country_event = { # 太子遇刺 1936.12.20
+	id = mingcivwar.8
+	title = mingcivwar.8.t
+	desc = mingcivwar.8.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+    is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {tag = MNG}
+    option = {
+		name = mingcivwar.8.a
+		ai_chance = {factor = 100}
+	    hidden_effect = {news_event = { id = mingcivwar.666 days = 1 } }
+	}
+}
+#昌德皇帝病重
+country_event = {
+	id = mingcivwar.9
+	title = mingcivwar.9.t
+	desc = mingcivwar.9.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {
+		tag = MNG 
+		date > 1936.1.1 
+	}
+	
+	option = { 
+		name = mingcivwar.9.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.10 days = 0}}
+	}
+}
+#庆王返回西安
+country_event = {
+	id = mingcivwar.10
+	title = mingcivwar.10.t
+	desc = mingcivwar.10.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.10.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.11 days = 0}}
+	}
+}
+#顺天朝堂上的斗争
+country_event = {
+	id = mingcivwar.11
+	title = mingcivwar.11.t
+	desc = mingcivwar.11.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.11.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.12 days = 0}}
+	}
+}
+#施荣系要求更多席位
+country_event = {
+	id = mingcivwar.12
+	title = mingcivwar.12.t
+	desc = mingcivwar.12.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.12.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.13 days = 0}}
+	}
+}
+#昌德皇帝驾崩，太孙继位
+country_event = {
+	id = mingcivwar.13
+	title = mingcivwar.13.t
+	desc = mingcivwar.13.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.13.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.14 days = 0}}
+	}
+}
+#锦王不满
+country_event = {
+	id = mingcivwar.14
+	title = mingcivwar.14.t
+	desc = mingcivwar.14.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.14.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.15 days = 0}}
+	}
+}
+#武备系不满
+country_event = {
+	id = mingcivwar.15
+	title = mingcivwar.15.t
+	desc = mingcivwar.15.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.15.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.16 days = 0}}
+	}
+}
+#锦王与武备系串联
+country_event = {
+	id = mingcivwar.16
+	title = mingcivwar.16.t
+	desc = mingcivwar.16.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.16.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.17 days = 0}}
+	}
+}
+#顺天兵变
+country_event = {
+	id = mingcivwar.17
+	title = mingcivwar.17.t
+	desc = mingcivwar.17.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.17.a
+		ai_chance = { factor = 100 }
+		MNG = {country_event = { id = mingcivwar.18 days = 0}}
+	}
+}
+#锦王与武备系串联
+country_event = {
+	id = mingcivwar.18
+	title = mingcivwar.18.t
+	desc = mingcivwar.18.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+    is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {tag = MNG}
+	option = { 
+		name = mingcivwar.18.a
+		ai_chance = { factor = 100 }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###新闻事件 news 
+
+news_event = {
+	id = mingcivwar.666
+	title = mingcivwar.666.t
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	desc = {text = mingcivwar.666.d}
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {
+		tag = MNG
+		date > 1936.12.05
+	}
+	option = {name = mingcivwar.666.a}
+}
+

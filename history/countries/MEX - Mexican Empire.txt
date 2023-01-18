@@ -1,0 +1,215 @@
+capital = 277
+
+oob = "MEX"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "MEX_naval_mtg"
+	else = {
+		set_naval_oob = "MEX_naval_legacy"
+	}
+}
+
+# 起始科技
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	basic_heavy_tank = 1
+	early_fighter = 1
+	early_bomber = 1
+	marines = 1
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		improved_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+	}
+}
+
+declare_war_on = {
+		target = MSR
+		type = civil_war
+	}
+
+declare_war_on = {
+		target = MES
+		type = civil_war
+	}
+
+declare_war_on = {
+		target = CRI
+		type = civil_war
+	}
+
+declare_war_on = {
+		target = USM
+		type = civil_war
+	}
+
+
+set_politics = {
+	ruling_party = authoritarianism
+	last_election = "1888.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	authoritarianism = 40
+	conservatism = 25
+	liberalism = 25
+	reformism = 10
+}
+
+add_ideas = {
+	MEX_for_the_empire
+	MEX_military_spending_cuts
+	MEX_recovery_from_economic_crisis
+	AthDem_type
+	
+	limited_conscription
+	
+	MEX_Bernardo_Reyes_hog_aut
+	MEX_Leopoldo_Ortiz_for_aut
+	MEX_Luis_Montes_de_Oca_eco_aut
+	MEX_Francisco_Cardenas_sec_aut
+	
+	
+}
+
+create_country_leader = {
+	name = "玛丽亚·德·伊图比尔德"
+	desc = "POLITICS_MARIA_ITURBIDE_DESC"
+	picture = "Portrait_MEX_María_Iturbide.tga"
+	expire = "1965.1.1"
+	ideology = authoritarianism_subtype
+}
+create_country_leader = {
+	name = "玛丽亚·德·伊图比尔德"
+	desc = "POLITICS_MARIA_ITURBIDE_DESC"
+	picture = "Portrait_MEX_María_Iturbide.tga"
+	expire = "1965.1.1"
+	ideology = conservatism_subtype
+}
+create_country_leader = {
+	name = "玛丽亚·德·伊图比尔德"
+	desc = "POLITICS_MARIA_ITURBIDE_DESC"
+	picture = "Portrait_MEX_María_Iturbide.tga"
+	expire = "1965.1.1"
+	ideology = liberalism_subtype
+}
+create_country_leader = {
+	name = "玛丽亚·德·伊图比尔德"
+	desc = "POLITICS_MARIA_ITURBIDE_DESC"
+	picture = "Portrait_MEX_María_Iturbide.tga"
+	expire = "1965.1.1"
+	ideology = reformism_subtype
+}
+create_field_marshal = {
+	name = "贝尔纳多·雷耶斯"
+	picture = "Portrait_MEX_Bernardo_Reyes.tga"
+	traits = { politically_connected old_guard defensive_doctrine inflexible_strategist}
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	planning_skill = 4
+	logistics_skill = 4
+}
+create_corps_commander = {
+	name = "潘乔·维亚"
+	picture = "Portrait_MEX_Pancho_Villa.tga"
+	traits = { infantry_officer organizer }
+	skill = 4
+	attack_skill = 5
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "费利佩·安格莱斯·拉米雷斯"
+	picture = "Portrait_MEX_Felipe_Ángeles_Ramírez.tga"
+	traits = { artillery_officer trait_engineer trickster}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+}
+create_corps_commander = {
+	name = "曼努埃尔·蒙德拉贡"
+	picture = "Portrait_MEX_Manuel_Mondragón.tga"
+	traits = { career_officer Commando }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 4
+}
+
+create_corps_commander = {
+	name = "麦地那·巴伦"
+	picture = "Portrait_MEX_Medina_Barron.tga"
+	traits = { trait_reckless }
+	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+create_corps_commander = {
+	name = "弗朗西斯科·杰尔曼·斯洛克姆"
+	picture = "Portrait_MEX_Francisco_Jermain_Slocum.tga"
+	traits = { cavalry_officer }
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+}
+
+create_navy_leader = {
+	name = "曼努埃尔·阿祖泰"
+	picture = "Portrait_MEX_Manuel_Azueta.tga"
+	traits = { blockade_runner old_guard_navy }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+}
+
+
+country_event = { id = mex.1 hours = 2 } #introduction
+

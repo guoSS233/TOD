@@ -1,0 +1,625 @@
+########################################
+#目录
+##############
+#明释放GPS-关东司
+#GPS释放SRC
+#明释放SRC
+#明释放NAC-西北军
+#明释放XIN-西南
+#明释放USC-共和军
+#明释放ROC-应天大同党
+#
+#
+#
+#
+
+
+MNG_release_GPS = {#明释放GPS
+    hidden_effect = {
+		GPS = {
+			add_state_core = 148
+			add_state_core = 328
+			add_state_core = 408
+			add_state_core = 409
+			add_state_core = 560
+			add_state_core = 561
+			add_state_core = 657
+			add_state_core = 714
+			add_state_core = 715
+			add_state_core = 716
+			add_state_core = 717
+			add_state_core = 745
+			add_state_core = 761
+			add_state_core = 845
+			add_state_core = 846
+			add_state_core = 847
+			add_state_core = 848
+			add_state_core = 849
+			add_state_core = 850
+			
+			#set_cosmetic_tag = CSA_ACW
+			
+		    add_ideas = {
+				#
+			}
+		}
+		
+		
+		MNG = {
+		    GPS = { transfer_technology = yes }
+			
+	        set_country_flag = forget_north_east
+			
+		#if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+		#		limit = { has_template = "Loyalist Militia" }
+		#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+		#	}
+	    #if = {#增加oob用
+		#		limit = {
+		#			OR = {
+		#				has_country_flag = 
+		#			}
+		#		}
+		#		load_oob = "  #"
+		#	}
+		
+	    }
+		
+###   ####从下开始为不需要tag即可运行的部分#########
+    
+       #set_global_flag = MNG_civil_war_begun_flag
+
+		
+	   every_owned_state = {#转移州控制权
+			limit = { is_core_of = GPS }
+			GPS = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = MNG }
+				to_state_array = owned_controlled_states
+			 }
+		}
+		
+#		every_state = {#加宣称用，在GPS中用不到
+#			limit = {
+#				is_core_of = MNG
+#				NOT = {
+#					is_core_of = CSA
+#					is_claimed_by = CSA
+#					#state = 630 #Johnston Atoll
+#					
+#				}
+#			}
+#			
+#			#add_claim_by = 
+#		}
+		
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+	  
+	}
+}
+
+
+GPS_release_SRC = {#GPS释放SRC
+    hidden_effect = {
+		SRC = {
+			add_state_core = 845
+			add_state_core = 846
+			
+			
+			#set_cosmetic_tag = CSA_ACW
+			
+		    add_ideas = {
+				#
+			}
+			
+		}
+		
+		GPS = {
+		    SRC = { transfer_technology = yes }
+	    #if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+		#		limit = { has_template = "Loyalist Militia" }
+		#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+		#	}
+	    #if = {#增加oob用
+		#		limit = {
+		#			OR = {
+		#				has_country_flag = 
+		#			}
+		#		}
+		#		load_oob = "  #"
+		#	}
+		
+	    }
+		
+#########从下开始为不需要tag即可运行的部分#########		
+	   every_owned_state = {#转移州控制权
+			limit = { is_core_of = SRC }
+			SRC = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = GPS }
+				to_state_array = owned_controlled_states
+			 }
+		}
+		
+		every_state = {#加宣称用
+			limit = {
+				is_core_of = GPS
+				NOT = {
+					#is_core_of = SRC
+					is_claimed_by = SRC
+					#state = 630 #在此单独加
+					
+				}
+			}
+			
+			add_claim_by = SRC 
+		}
+		
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+	   
+	
+	
+	
+
+	}
+}
+
+#########################################################################
+
+MNG_release_SRC = {#MNG释放SRC
+    hidden_effect = {
+		SRC = {
+			add_state_core = 328
+			add_state_core = 716
+			add_state_core = 745
+			add_state_core = 845
+			add_state_core = 846
+			add_state_core = 847
+			
+			
+			#set_cosmetic_tag = CSA_ACW
+			
+		    add_ideas = {
+				#
+			}
+			
+		}
+		
+		MNG = {
+		    SRC = { transfer_technology = yes }
+	    #if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+		#		limit = { has_template = "Loyalist Militia" }
+		#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+		#	}
+	    #if = {#增加oob用
+		#		limit = {
+		#			OR = {
+		#				has_country_flag = 
+		#			}
+		#		}
+		#		load_oob = "  #"
+		#	}
+		
+	    }
+		
+#########从下开始为不需要tag即可运行的部分#########		
+	   every_owned_state = {#转移州控制权
+			limit = { is_core_of = SRC }
+			SRC = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = MNG }
+				to_state_array = owned_controlled_states
+			 }
+		}
+		
+		#every_state = {#加宣称用，在此用不到
+		#	limit = {
+		#		is_core_of = GPS
+		#		NOT = {
+		#			#is_core_of = SRC
+		#			is_claimed_by = SRC
+		#			#state = 630 #在此单独加			
+		#		}
+		#	}
+		#	
+		#	add_claim_by = SRC 
+		#  }
+		
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+	   
+	
+	
+	
+
+	}
+}
+
+
+#####################################
+
+
+MNG_release_NAC = {#MNG释放NAC西北军
+    hidden_effect = {
+		NAC = {
+			add_state_core = 842
+			add_state_core = 744
+			add_state_core = 622
+			add_state_core = 746
+			add_state_core = 843
+			add_state_core = 283
+			add_state_core = 753
+			add_state_core = 754
+			add_state_core = 756
+			add_state_core = 616
+			add_state_core = 755
+			add_state_core = 604
+			add_state_core = 759
+			add_state_core = 287
+			add_state_core = 760
+			add_state_core = 434
+			add_state_core = 617
+			add_state_core = 844
+			add_state_core = 589
+			add_state_core = 324
+			add_state_core = 732
+			add_state_core = 619
+			add_state_core = 618
+			
+			
+			
+			#set_cosmetic_tag = CSA_ACW
+			
+		    add_ideas = {
+				#
+			}
+			
+		}
+		
+		MNG = {
+		    NAC = { transfer_technology = yes }
+	    #if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+		#		limit = { has_template = "Loyalist Militia" }
+		#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+		#	}
+	    #if = {#增加oob用
+		#		limit = {
+		#			OR = {
+		#				has_country_flag = 
+		#			}
+		#		}
+		#		load_oob = "  #"
+		#	}
+		
+	    }
+		
+#########从下开始为不需要tag即可运行的部分#########		
+	   every_owned_state = {#转移州控制权
+			limit = { is_core_of = NAC }
+			SRC = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = MNG }
+				to_state_array = owned_controlled_states
+			 }
+		}
+		
+		every_state = {#加宣称用
+			limit = {
+				is_core_of = NAC
+				NOT = {
+					#is_core_of = SRC
+					is_claimed_by = MNG
+					#state = 630 #在此单独加			
+				}
+			}
+			
+			add_claim_by = MNG 
+		  }
+		
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+	   
+	
+	
+	
+
+	}
+}
+
+###########################################
+
+MNG_release_XIN = {#MNG释放XIN西南军
+    hidden_effect = {
+		XIN = {
+			add_state_core = 818
+			add_state_core = 594
+			add_state_core = 821
+			add_state_core = 603
+			add_state_core = 748
+			add_state_core = 830
+			add_state_core = 832
+			add_state_core = 831
+			add_state_core = 752
+			add_state_core = 325
+			add_state_core = 751
+			add_state_core = 747
+			add_state_core = 828
+			add_state_core = 851
+			add_state_core = 866
+			add_state_core = 603
+			
+			
+			
+			
+			#set_cosmetic_tag = CSA_ACW
+			
+		    add_ideas = {
+				#
+			}
+			
+		}
+		
+		MNG = {
+		    NAC = { transfer_technology = yes }
+	    #if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+		#		limit = { has_template = "Loyalist Militia" }
+		#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+		#	}
+	    #if = {#增加oob用
+		#		limit = {
+		#			OR = {
+		#				has_country_flag = 
+		#			}
+		#		}
+		#		load_oob = "  #"
+		#	}
+		
+	    }
+		
+#########从下开始为不需要tag即可运行的部分#########		
+	   every_owned_state = {#转移州控制权
+			limit = { is_core_of = XIN }
+			SRC = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = MNG }
+				to_state_array = owned_controlled_states
+			 }
+		}
+		
+		every_state = {#加宣称用
+			limit = {
+				is_core_of = XIN
+				NOT = {
+					#is_core_of = SRC
+					is_claimed_by = MNG
+					#state = 630 #在此单独加			
+				}
+			}
+			
+			add_claim_by = MNG 
+		  }
+		
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+	   
+	
+	
+	
+
+	}
+}
+
+
+
+
+MNG_release_USC = {#MNG释放USC共和军
+    hidden_effect = {
+		USC = {
+			add_state_core = 591
+			add_state_core = 728
+			add_state_core = 592
+			add_state_core = 593
+			add_state_core = 817
+			add_state_core = 599
+			add_state_core = 750
+			add_state_core = 602
+			add_state_core = 822
+			
+			
+			
+			
+			
+			#set_cosmetic_tag = CSA_ACW
+			
+		    add_ideas = {
+				#
+			}
+			
+		}
+		
+		MNG = {
+		    NAC = { transfer_technology = yes }
+	    #if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+		#		limit = { has_template = "Loyalist Militia" }
+		#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+		#	}
+	    #if = {#增加oob用
+		#		limit = {
+		#			OR = {
+		#				has_country_flag = 
+		#			}
+		#		}
+		#		load_oob = "  #"
+		#	}
+		
+	    }
+		
+#########从下开始为不需要tag即可运行的部分#########		
+	   every_owned_state = {#转移州控制权
+			limit = { is_core_of = USC }
+			SRC = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = MNG }
+				to_state_array = owned_controlled_states
+			 }
+		}
+		
+		every_state = {#加宣称用
+			limit = {
+				is_core_of = USC
+				NOT = {
+					#is_core_of = SRC
+					is_claimed_by = MNG
+					#state = 630 #在此单独加			
+				}
+			}
+			
+			add_claim_by = MNG 
+		  }
+		
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+	   
+	
+	
+	
+
+	}
+}
+
+
+
+
+MNG_release_ROC = {#MNG释放ROC大同党
+    hidden_effect = {
+		ROC = {
+			add_state_core = 814
+			add_state_core = 595
+			add_state_core = 815
+			add_state_core = 600
+			add_state_core = 620
+			add_state_core = 833
+			add_state_core = 810
+			add_state_core = 809
+			add_state_core = 598
+			add_state_core = 606
+			add_state_core = 806
+			add_state_core = 613
+			add_state_core = 808
+			add_state_core = 811
+			add_state_core = 749
+			add_state_core = 816
+			add_state_core = 596
+			add_state_core = 812
+			add_state_core = 807
+			add_state_core = 813
+			add_state_core = 524
+			
+			#set_cosmetic_tag = CSA_ACW
+			
+		    add_ideas = {
+				#
+			}
+			
+		}
+		
+		MNG = {
+		    NAC = { transfer_technology = yes }
+	    #if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+		#		limit = { has_template = "Loyalist Militia" }
+		#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+		#	}
+	    #if = {#增加oob用
+		#		limit = {
+		#			OR = {
+		#				has_country_flag = 
+		#			}
+		#		}
+		#		load_oob = "  #"
+		#	}
+		
+	    }
+		
+#########从下开始为不需要tag即可运行的部分#########		
+	   every_owned_state = {#转移州控制权
+			limit = { is_core_of = ROC }
+			SRC = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = MNG }
+				to_state_array = owned_controlled_states
+			 }
+		}
+		
+		every_state = {#加宣称用
+			limit = {
+				is_core_of = ROC
+				NOT = {
+					#is_core_of = SRC
+					is_claimed_by = MNG
+					#state = 630 #在此单独加			
+				}
+			}
+			
+			add_claim_by = MNG 
+		  }
+		
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+	   
+	
+	
+	
+
+	}
+}

@@ -1,0 +1,768 @@
+focus_tree = {
+id = Britain_Focus
+country = {
+	factor = 0
+	modifier = {
+		add = 10
+		tag = ENG
+	}
+}
+continuous_focus_position = { x = 100 y = 2000 }
+###############
+#罗莎线#
+
+focus = {
+	#党大会之终，事件完成
+	id = ENG_the_end_of_party_congress
+	icon = ENG_the_end_of_party_congress
+	x = 12
+	y = 0
+	#offset = {x=位置变更 y=... trigger = {触发条件}}
+	#prerequisite = {focus = } 前提国策
+	#mutually_exclusive = {focus = } 互斥国策
+	#relative_position_id = 位置基于xx国策的位置
+	cost = 1 国策用时 （数字*7）
+	#ai_will_do = {factor = 10} ai点国策的倾向，数字越高几率越大，上限为100
+	available = {hidden_trigger = { always = no }}
+	#bypass = {} 国策跳过条件
+	#cancel_if_invalid = yes 如果前提条件不满足取消 （yes是是，no为否）
+	#continue_if_invalid = no 如果前提条件不满足继续 （同上）
+	#available_if_capitulated = no 国家投降是否继续 （同上）
+	#select_effect = {} 点击开始之后的效果
+	#completion_reward = {} 走完国策之后的效果
+}
+
+focus = {
+	#继续前进
+	id = ENG_move_on
+	icon = ENG_move_on
+	prerequisite = {focus = ENG_the_end_of_party_congress} 
+	#mutually_exclusive = {focus = } 
+	relative_position_id = ENG_the_end_of_party_congress
+	x = 0
+	y = 1
+	cost = 1 
+	completion_reward = {} 
+}
+
+focus = {
+	#赋权统一警察
+	id = ENG_empowering_the_unified_police
+	icon = ENG_empowering_the_unified_police
+	prerequisite = {focus = ENG_move_on} 
+	relative_position_id = ENG_move_on
+	x = -2
+	y = 1
+	cost = 2 
+	completion_reward = {} 
+}
+
+focus = {
+	#枢密院改制
+	id = ENG_reform_of_privy_council
+	icon = ENG_reform_of_privy_council
+	prerequisite = {focus = ENG_move_on} 
+	relative_position_id = ENG_move_on
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#整肃国民卫队
+	id = ENG_purge_the_national_guard
+	icon = ENG_purge_the_national_guard
+	prerequisite = {focus = ENG_move_on} 
+	relative_position_id = ENG_move_on
+	x = 2
+	y = 1
+	cost = 2
+	completion_reward = {} 
+}
+
+focus = {
+	#首相的权威
+	id = ENG_the_authority_of_the_prime_minister
+	icon = ENG_the_authority_of_the_prime_minister
+	prerequisite = {focus = ENG_purge_the_national_guard}
+	prerequisite = {focus = ENG_reform_of_privy_council}
+	prerequisite = {focus = ENG_empowering_the_unified_police}
+	relative_position_id = ENG_reform_of_privy_council
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#建立大议会
+	id = ENG_establishment_of_the_grand_council
+	icon = ENG_establishment_of_the_grand_council
+	prerequisite = {focus = ENG_the_authority_of_the_prime_minister} 
+	relative_position_id = ENG_the_authority_of_the_prime_minister
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#贝克特的建议
+	id = ENG_becketts_advice
+	icon = ENG_becketts_advice
+	prerequisite = {focus = ENG_establishment_of_the_grand_council}
+	mutually_exclusive = {focus = ENG_forgans_advice}
+	mutually_exclusive = {focus = ENG_her_own_opinion}
+	relative_position_id = ENG_establishment_of_the_grand_council
+	x = -4
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#拆解垄断企业
+	id = ENG_Dismantling_monopoly_enterprises
+	icon = ENG_Dismantling_monopoly_enterprises
+	prerequisite = {focus = ENG_becketts_advice} 
+	relative_position_id = ENG_becketts_advice
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#全面集体化
+	id = ENG_Comprehensive_collectivization
+	icon = ENG_Comprehensive_collectivization
+	prerequisite = {focus = ENG_becketts_advice} 
+	relative_position_id = ENG_becketts_advice
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#最高经济委员会
+	id = ENG_supreme_economic_committee
+	icon = ENG_supreme_economic_committee
+	prerequisite = {focus = ENG_Comprehensive_collectivization} 
+	prerequisite = {focus = ENG_Dismantling_monopoly_enterprises}
+	relative_position_id = ENG_becketts_advice
+	x = 0
+	y = 2
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#自己的意见
+	id = ENG_her_own_opinion
+	icon = ENG_her_own_opinion
+	prerequisite = {focus = ENG_establishment_of_the_grand_council}
+	mutually_exclusive = {focus = ENG_becketts_advice}
+	mutually_exclusive = {focus = ENG_forgans_advice}
+	relative_position_id = ENG_becketts_advice
+	x = 4
+	y = 0
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#限制垄断
+	id = ENG_restrict_monopoly
+	icon = ENG_restrict_monopoly
+	prerequisite = {focus = ENG_her_own_opinion} 
+	relative_position_id = ENG_her_own_opinion
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#继续国有化
+	id = ENG_continue_nationalization
+	icon = ENG_continue_nationalization
+	prerequisite = {focus = ENG_her_own_opinion} 
+	relative_position_id = ENG_her_own_opinion
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#看得见的手
+	id = ENG_the_visible_hand
+	icon = ENG_the_visible_hand
+	prerequisite = {focus = ENG_restrict_monopoly} 
+	prerequisite = {focus = ENG_continue_nationalization} 
+	relative_position_id = ENG_her_own_opinion
+	x = 0
+	y = 2
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#福尔根的建议
+	id = ENG_forgans_advice
+	icon = ENG_forgans_advice
+	prerequisite = {focus = ENG_establishment_of_the_grand_council}
+	mutually_exclusive = {focus = ENG_becketts_advice}
+	mutually_exclusive = {focus = ENG_her_own_opinion}
+	relative_position_id = ENG_becketts_advice
+	x = 8
+	y = 0
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#宽待忠臣
+	id = ENG_lenience_to_loyalists
+	icon = ENG_lenience_to_loyalists
+	prerequisite = {focus = ENG_forgans_advice} 
+	relative_position_id = ENG_forgans_advice
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#投资的回报
+	id = ENG_return_on_investment
+	icon = ENG_return_on_investment
+	prerequisite = {focus = ENG_forgans_advice} 
+	relative_position_id = ENG_forgans_advice
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#阶级互助
+	id = ENG_class_cooperation
+	icon = ENG_class_cooperation
+	prerequisite = {focus = ENG_lenience_to_loyalists} 
+	prerequisite = {focus = ENG_return_on_investment} 
+	relative_position_id = ENG_forgans_advice
+	x = 0
+	y = 2
+	cost = 4
+	completion_reward = {} 
+}
+
+################
+#贝克特线#
+
+focus = {
+	#首相：贝克特
+	id = ENG_pm_beckett
+	icon = ENG_pm_beckett
+	x = 0
+	y = 0
+	offset = {
+			x = ???
+			y = 0
+			trigger = {
+				has_country_flag = ENG_PMB
+			}
+		}
+	available = {hidden_trigger = { always = no }}
+	cost = 1
+	completion_reward = {} 
+}
+
+focus = {
+	#工团主义革命
+	id = ENG_syndicalism_revolution
+	icon = ENG_syndicalism_revolution
+	prerequisite = {focus = ENG_pm_beckett} 
+	relative_position_id = ENG_pm_beckett
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#亲善国民卫队
+	id = ENG_woo_the_national_guard
+	icon = ENG_woo_the_national_guard
+	prerequisite = {focus = ENG_syndicalism_revolution} 
+	relative_position_id = ENG_syndicalism_revolution
+	mutually_exclusive = {focus = ENG_alienate_the_national_guard}
+	x = -1
+	y = 1
+	cost = 3
+	completion_reward = {} 
+}
+
+focus = {
+	#疏远国民卫队
+	id = ENG_alienate_the_national_guard
+	icon = ENG_alienate_the_national_guard
+	prerequisite = {focus = ENG_syndicalism_revolution} 
+	relative_position_id = ENG_syndicalism_revolution
+	mutually_exclusive = {focus = ENG_woo_the_national_guard}
+	x = 1
+	y = 1
+	cost = 2
+	completion_reward = {} 
+}
+
+focus = {
+	#团结真正的工人
+	id = ENG_unite_true_workers
+	icon = ENG_unite_true_workers
+	prerequisite = {focus = ENG_alienate_the_national_guard} 
+	relative_position_id = ENG_alienate_the_national_guard
+	x = 0
+	y = 1
+	cost = 2
+	completion_reward = {} 
+}
+
+focus = {
+	#摧毁陈腐反对者
+	id = ENG_destroy_corrupt_opponents
+	icon = ENG_destroy_corrupt_opponents
+	prerequisite = {focus = ENG_woo_the_national_guard 
+					focus= ENG_unite_true_workers} 
+	relative_position_id = ENG_unite_true_workers
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#摧毁激进党反对者
+	id = ENG_destroy_radical_opponents
+	icon = ENG_destroy_radical_opponents
+	prerequisite = {focus = ENG_woo_the_national_guard 
+					focus= ENG_unite_true_workers} 
+	relative_position_id = ENG_woo_the_national_guard
+	x = 0
+	y = 2
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#体制革命
+	id = ENG_institutional_revolution
+	icon = ENG_institutional_revolution
+	prerequisite = {focus = ENG_destroy_corrupt_opponents } 
+	prerequisite = {focus = ENG_destroy_radical_opponents } 
+	relative_position_id = ENG_destroy_corrupt_opponents
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#国家工团主义经济
+	id = ENG_national_syndicalism_economy
+	icon = ENG_national_syndicalism_economy
+	prerequisite = {focus = ENG_institutional_revolution }	
+	relative_position_id = ENG_institutional_revolution
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#全面集体化
+	id = ENG_comprehensive_collectivization_b
+	icon = ENG_comprehensive_collectivization_b
+	prerequisite = {focus = ENG_national_syndicalism_economy }	
+	relative_position_id = ENG_national_syndicalism_economy
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#最高经济委员会
+	id = ENG_supreme_economic_committee_b
+	icon = ENG_supreme_economic_committee_b
+	prerequisite = {focus = ENG_national_syndicalism_economy}
+	relative_position_id = ENG_national_syndicalism_economy
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#企业的灭亡
+	id = ENG_the_end_of_enterprises
+	icon = ENG_the_end_of_enterprises
+	prerequisite = {focus = ENG_comprehensive_collectivization_b }
+	prerequisite = {focus = ENG_supreme_economic_committee_b }		
+	mutually_exclusive = {focus = ENG_the_rebirth_of_enterprises}
+	relative_position_id = ENG_comprehensive_collectivization_b
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#企业的重生
+	id = ENG_the_rebirth_of_enterprises
+	icon = ENG_the_rebirth_of_enterprises
+	prerequisite = {focus = ENG_comprehensive_collectivization_b }
+	prerequisite = {focus = ENG_supreme_economic_committee_b }	
+	mutually_exclusive = {focus = ENG_the_end_of_enterprises}	
+	relative_position_id = ENG_supreme_economic_committee_b
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+################
+#乔伊斯线#
+
+focus = {
+	#首相：乔伊斯
+	id = ENG_pm_joyce
+	icon = ENG_pm_joyce
+	x = 24
+	y = 0
+	offset = {
+			x = ???
+			y = 0
+			trigger = {
+				has_country_flag = ENG_PMJ
+			}
+		}
+	available = {hidden_trigger = { always = no }}
+	cost = 1
+	completion_reward = {} 
+}
+
+focus = {
+	#疤痕的故事
+	id = ENG_the_story_of_scar
+	icon = ENG_the_story_of_scar
+	prerequisite = {focus = ENG_pm_joyce }
+	relative_position_id = ENG_pm_joyce
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#犹太
+	id = ENG_jewish
+	icon = ENG_jewish
+	prerequisite = {focus = ENG_the_story_of_scar }
+	relative_position_id = ENG_the_story_of_scar
+	x = -2
+	y = 1
+	cost = 2
+	completion_reward = {} 
+}
+
+focus = {
+	#共产主义
+	id = ENG_communist
+	icon = ENG_communist
+	prerequisite = {focus = ENG_the_story_of_scar }
+	relative_position_id = ENG_the_story_of_scar
+	x = 0
+	y = 1
+	cost = 2
+	completion_reward = {} 
+}
+
+focus = {
+	#恐怖分子
+	id = ENG_terrorists
+	icon = ENG_terrorists
+	prerequisite = {focus = ENG_the_story_of_scar }
+	relative_position_id = ENG_the_story_of_scar
+	x = 2
+	y = 1
+	cost = 2
+	completion_reward = {} 
+}
+
+focus = {
+	#民族企业家
+	id = ENG_national_entrepreneurs
+	icon = ENG_national_entrepreneurs
+	prerequisite = {focus = ENG_jewish }
+	prerequisite = {focus = ENG_communist }
+	prerequisite = {focus = ENG_terrorists }
+	mutually_exclusive = {focus = ENG_just_the_same}
+	relative_position_id = ENG_communist
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#一丘之貉
+	id = ENG_just_the_same
+	icon = ENG_just_the_same
+	prerequisite = {focus = ENG_jewish }
+	prerequisite = {focus = ENG_communist }
+	prerequisite = {focus = ENG_terrorists }
+	mutually_exclusive = {focus = ENG_national_entrepreneurs}
+	relative_position_id = ENG_communist
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#继续清扫
+	id = ENG_continue_cleaning
+	icon = ENG_continue_cleaning
+	prerequisite = {focus = ENG_national_entrepreneurs
+					focus = ENG_just_the_same}
+	relative_position_id = ENG_communist
+	x = 0
+	y = 2
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#乔伊斯的主意
+	id = ENG_joyces_idea
+	icon = ENG_joyces_idea
+	prerequisite = {focus = ENG_continue_cleaning}
+	relative_position_id = ENG_continue_cleaning
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#抢救果实
+	id = ENG_rescue_fruit
+	icon = ENG_rescue_fruit
+	prerequisite = {focus = ENG_joyces_idea}
+	relative_position_id = ENG_joyces_idea
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#继续国有化
+	id = ENG_continue_nationalization_j
+	icon = ENG_continue_nationalization_j
+	prerequisite = {focus = ENG_rescue_fruit}
+	mutually_exclusive = {focus = ENG_enterprise_partner}
+	relative_position_id = ENG_rescue_fruit
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#企业合作者
+	id = ENG_enterprise_partner
+	icon = ENG_enterprise_partner
+	prerequisite = {focus = ENG_rescue_fruit}
+	mutually_exclusive = {focus = ENG_continue_nationalization_j}
+	relative_position_id = ENG_rescue_fruit
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#看得见的手，以及扫帚
+	id = ENG_the_visible_hand_and_broom
+	icon = ENG_the_visible_hand_and_broom
+	prerequisite = {focus = ENG_continue_nationalization_j
+					focus = ENG_enterprise_partner}
+	relative_position_id = ENG_rescue_fruit
+	x = 0
+	y = 2
+	cost = 4
+	completion_reward = {} 
+}
+
+################
+#福尔根线#
+focus = {
+	#首相：福尔根
+	id = ENG_pm_forgan
+	icon = ENG_pm_forgan
+	x = 30
+	y = 0
+	offset = {
+			x = ???
+			y = 0
+			trigger = {
+				has_country_flag = ENG_PMF
+			}
+		}
+	available = {hidden_trigger = { always = no }}
+	cost = 1
+	completion_reward = {} 
+}
+
+focus = {
+	#取缔国民卫队
+	id = ENG_outlaw_the_national_guard
+	icon = ENG_outlaw_the_national_guard
+	prerequisite = {focus = ENG_pm_forgan}
+	relative_position_id = ENG_pm_forgan
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#扩充一月俱乐部
+	id = ENG_expand_january_club
+	icon = ENG_expand_january_club
+	prerequisite = {focus = ENG_pm_forgan}
+	relative_position_id = ENG_pm_forgan
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#打倒魔怔人
+	id = ENG_knock_down_freaks
+	icon = ENG_knock_down_freaks
+	prerequisite = {focus = ENG_outlaw_the_national_guard}
+	relative_position_id = ENG_outlaw_the_national_guard
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#限制公共建设委员会
+	id = ENG_restrict_public_construction_committee
+	icon = ENG_restrict_public_construction_committee
+	prerequisite = {focus = ENG_expand_january_club}
+	relative_position_id = ENG_expand_january_club
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#“精英”院
+	id = ENG_the_house_of_elites
+	icon = ENG_the_house_of_elites
+	prerequisite = {focus = ENG_knock_down_freaks}
+	prerequisite = {focus = ENG_restrict_public_construction_committee}
+	relative_position_id = ENG_restrict_public_construction_committee
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#经济松绑
+	id = ENG_deregulate_the_economy
+	icon = ENG_deregulate_the_economy
+	prerequisite = {focus = ENG_the_house_of_elites}
+	relative_position_id = ENG_the_house_of_elites
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#逆国有化
+	id = ENG_denationalization
+	icon = ENG_denationalization
+	prerequisite = {focus = ENG_deregulate_the_economy}
+	relative_position_id = ENG_deregulate_the_economy
+	x = -1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#海外贸易
+	id = ENG_overseas_trade
+	icon = ENG_overseas_trade
+	prerequisite = {focus = ENG_deregulate_the_economy}
+	relative_position_id = ENG_deregulate_the_economy
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#默许垄断
+	id = ENG_tacit_monopoly
+	icon = ENG_tacit_monopoly
+	prerequisite = {focus = ENG_denationalization}
+	prerequisite = {focus = ENG_overseas_trade}
+	relative_position_id = ENG_denationalization
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#包厢会晤
+	id = ENG_box_meeting
+	icon = ENG_box_meeting
+	prerequisite = {focus = ENG_denationalization}
+	prerequisite = {focus = ENG_overseas_trade}
+	relative_position_id = ENG_overseas_trade
+	x = 0
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+focus = {
+	#若隐若现的手
+	id = ENG_the_remaining_hand
+	icon = ENG_the_remaining_hand
+	prerequisite = {focus = ENG_tacit_monopoly}
+	prerequisite = {focus = ENG_box_meeting}
+	relative_position_id = ENG_tacit_monopoly
+	x = 1
+	y = 1
+	cost = 4
+	completion_reward = {} 
+}
+
+}

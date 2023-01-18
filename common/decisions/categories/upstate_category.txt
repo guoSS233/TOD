@@ -1,0 +1,14 @@
+upstate_category = {
+	priority = 2
+	icon = generic_economy
+	allowed = {
+		always = yes
+	}
+	visible = {
+		has_tech = construction1
+		OR = {
+			has_tech = concentrated_industry
+			has_tech = dispersed_industry 
+		}
+	}
+}

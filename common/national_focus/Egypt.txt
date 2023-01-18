@@ -1,0 +1,272 @@
+###Egypt National Focuses###
+focus_tree = {
+	id = egypt_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = EGY
+		}
+	}
+	
+	continuous_focus_position = { x = 50 y = 2500 }
+	
+	focus = {
+		id = EGY_eventually_able_to_relax
+		x = 5
+		y = 0
+	}
+	
+	focus = {
+		id = EGY_look_for_what
+		prerequisite = { focus = EGY_eventually_able_to_relax }
+		x = 5
+		y = 1	
+	}
+	
+	focus = {
+		id = EGY_why_no_money
+		prerequisite = { focus = EGY_look_for_what }
+		x = 5
+		y = 2	
+	}
+	
+	focus = {
+		id = EGY_why_give_them_money
+		prerequisite = { focus = EGY_why_no_money }
+		x = 4
+		y = 3
+	}
+	
+	focus = {
+		id = EGY_fund_royal_enterprise
+		prerequisite ={ focus = EGY_why_give_them_money }
+		x = 3
+		y = 4
+	}
+	
+	focus = {
+		id = EGY_lower_nile_smuggle
+		prerequisite = { focus = EGY_fund_royal_enterprise }
+		x = 3
+		y = 6
+	}
+	
+	focus = {
+		id = EGY_peculate_land
+		prerequisite = { focus = EGY_lower_nile_smuggle }
+		x = 3
+		y = 8
+	}
+	
+	focus = {
+		id = EGY_republicians_not_wrong
+		prerequisite = { focus = EGY_why_give_them_money }
+		x = 5
+		y = 4
+	}
+	
+	focus = {
+		id = EGY_royal_media
+		prerequisite = { focus = EGY_republicians_not_wrong }
+		prerequisite = { focus = EGY_open_social_thoughts }
+		x = 5
+		y = 6
+	}
+	
+	focus = {
+		id = EGY_dawn_of_constitutionalism
+		prerequisite = { focus = EGY_royal_media }
+		x = 4
+		y = 7
+	}
+	
+	focus = {
+		id = EGY_eat_something_first
+		prerequisite = { focus = EGY_why_no_money }
+		x = 6
+		y = 3
+	}
+	
+	focus = {
+		id = EGY_cant_i_drink
+		prerequisite = { focus = EGY_eat_something_first }
+		x = 7
+		y = 4
+	}
+	
+	focus = {
+		id = EGY_open_social_thoughts
+		prerequisite = { focus = EGY_cant_i_drink }
+		x = 6
+		y = 5
+	}
+	
+	focus = {
+		id = EGY_basic_compulsory_education
+		prerequisite = { focus = EGY_cant_i_drink }
+		x = 7
+		y = 6
+	}
+	
+	focus = {
+		id = EGY_crack_down_traditional_church
+		prerequisite = { focus = EGY_royal_media }
+		prerequisite = { focus = EGY_basic_compulsory_education }
+		x = 6
+		y = 7
+	}
+		
+	focus = {
+		id = EGY_at_least_a_feast
+		prerequisite = { focus = EGY_cant_i_drink }
+		x = 8
+		y = 5
+	}
+	
+	focus = { 
+		id = EGY_wtf_french_wine
+		prerequisite = { focus = EGY_at_least_a_feast }
+		x = 9
+		y = 6
+	}
+	
+	focus = {
+		id = EGY_get_some_wine
+		prerequisite = { focus = EGY_wtf_french_wine }
+		x = 8 
+		y = 7
+	}
+	
+	focus = {
+		id = EGY_spend_little_money
+		prerequisite = { focus= EGY_get_some_wine }
+		x = 8
+		y = 8
+	}
+	
+	focus = {
+		id = EGY_brilliant_maotai
+		prerequisite = { focus = EGY_wtf_french_wine }
+		x = 10
+		y = 7
+	}
+	
+	focus = {
+		id = EGY_nile_shipping_stock
+		prerequisite = { focus = EGY_brilliant_maotai }
+		x = 10
+		y = 8
+	}
+	
+	focus = {
+		id = EGY_let_frogs_crawl
+		prerequisite = { focus = EGY_spend_little_money }
+		prerequisite = { focus = EGY_nile_shipping_stock }
+		x = 9
+		y = 9
+	}
+	
+	focus = {
+		id = EGY_buy_french_property
+		prerequisite = { focus = EGY_peculate_land }
+		prerequisite = { focus = EGY_let_frogs_crawl }
+		x = 7
+		y = 10
+	}
+	
+	focus = {
+		id = EGY_take_the_chance
+		prerequisite = { focus = EGY_buy_french_property }
+		x = 7
+		y = 11
+	}
+	
+	focus = {
+		id = EGY_retake_army
+		prerequisite = { focus = EGY_take_the_chance }
+		x = 5
+		y = 12
+	}
+	
+	focus = {
+		id = EGY_houjianjun_back
+		prerequisite = { focus = EGY_take_the_chance }
+		x = 9 
+		y = 12
+	}
+	
+	focus = {
+		id = EGY_egyptian_egypt
+		prerequisite = { focus = EGY_retake_army }
+		prerequisite = { focus = EGY_houjianjun_back }
+		x = 7
+		y = 13
+	}
+	
+	focus = {
+		id = EGY_guarantee_labor_rights
+		prerequisite = { focus = EGY_egyptian_egypt }
+		x = 5
+		y = 14
+	}
+	
+	focus = {
+		id = EGY_tear_of_cotton
+		prerequisite = { focus = EGY_guarantee_labor_rights }
+		x = 5
+		y = 15
+	}
+	
+	focus = {
+		id = EGY_all_is_mine
+		prerequisite = { focus = EGY_egyptian_egypt }
+		x = 9
+		y = 14
+	}
+	
+	focus = {
+		id = EGY_better_fennel_wine
+		prerequisite = { focus = EGY_let_frogs_crawl }
+		x = 11
+		y = 10
+	}
+	
+	focus = {
+		id = EGY_alliance_with_greece
+		prerequisite = { focus = EGY_better_fennel_wine }
+		x = 11
+		y = 11
+	}
+	
+	focus = {
+		id = EGY_just_mango_picker
+		prerequisite = { focus = EGY_nile_shipping_stock }
+		x = 14
+		y = 9
+	}
+	
+	focus = {
+		id = EGY_bribe_sudanese_clique
+		prerequisite = { focus = EGY_just_mango_picker }
+		x = 13
+		y = 10
+	}
+	
+	focus = {
+		id = EGY_bribe_sudanese_ship
+		prerequisite = { focus = EGY_just_mango_picker }
+		x = 15
+		y = 10
+	}
+	
+	focus = {
+		id = EGY_pick_mangoes
+		prerequisite = { focus = EGY_bribe_sudanese_clique }
+		prerequisite = { focus = EGY_bribe_sudanese_ship }
+		x = 14
+		y = 11
+	}
+	
+}

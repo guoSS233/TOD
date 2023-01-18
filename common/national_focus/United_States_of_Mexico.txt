@@ -1,0 +1,160 @@
+### United States of Mexico National Focuses ###
+focus_tree = {
+	id = mexican_empire_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			tag = USM
+			add = 10
+		}
+	}
+	
+	focus = {
+		id = USM_for_the_republic
+		icon = GFX_focus_USM_for_the_republic
+		x = 2
+		y = 0
+	}
+	focus = {
+		id = USM_temporary_allies
+		prerequisite = { focus = USM_for_the_republic }
+		relative_position_id = USM_for_the_republic
+		x = -3
+		y = 1
+	}
+	focus = {
+		id = USM_interim_military_hq
+		prerequisite = { focus = USM_for_the_republic }
+		relative_position_id = USM_for_the_republic
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = USM_support_outside_republicians
+		prerequisite = { focus = USM_temporary_allies }
+		prerequisite = { focus = USM_interim_military_hq }
+		relative_position_id = USM_temporary_allies
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = USM_navajo_rights
+		prerequisite = { focus = USM_temporary_allies }
+		prerequisite = { focus = USM_interim_military_hq }
+		relative_position_id = USM_interim_military_hq
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = USM_fight_on_the_beaches
+		prerequisite = { focus = USM_support_outside_republicians }
+		prerequisite = { focus = USM_navajo_rights }
+		relative_position_id = USM_support_outside_republicians
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = USM_compromise_with_socialists
+		prerequisite = { focus = USM_support_outside_republicians }
+		prerequisite = { focus = USM_navajo_rights }
+		relative_position_id = USM_support_outside_republicians
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = USM_fight_on_the_mountains
+		prerequisite = { focus = USM_support_outside_republicians }
+		prerequisite = { focus = USM_navajo_rights }
+		relative_position_id = USM_navajo_rights
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = USM_compromise_with_religion
+		prerequisite = { focus = USM_fight_on_the_beaches }
+		relative_position_id = USM_fight_on_the_beaches
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = USM_desert_march
+		prerequisite = { focus = USM_fight_on_the_beaches }
+		relative_position_id = USM_fight_on_the_beaches
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = USM_mountain_brigade
+		prerequisite = { focus = USM_fight_on_the_mountains }
+		relative_position_id = USM_fight_on_the_mountains
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = USM_destroy_the_crown
+		prerequisite = { focus = USM_fight_on_the_mountains }
+		relative_position_id = USM_fight_on_the_mountains
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = USM_win_civil_war
+		prerequisite = { focus = USM_destroy_the_crown }
+		prerequisite = { focus = USM_compromise_with_socialists }
+		prerequisite = { focus = USM_compromise_with_religion }
+		relative_position_id = USM_compromise_with_socialists
+		x = 0
+		y = 2
+	}
+	focus = {
+		id = USM_equipment_from_louisiana
+		prerequisite = { focus = USM_for_the_republic }
+		relative_position_id = USM_for_the_republic
+		x = 3
+		y = 1
+	}
+	focus = {
+		id = USM_manpower_from_louisiana
+		prerequisite = { focus = USM_equipment_from_louisiana }
+		relative_position_id = USM_equipment_from_louisiana
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = USM_foreign_arms_factory
+		prerequisite = { focus = USM_manpower_from_louisiana }
+		relative_position_id = USM_manpower_from_louisiana
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = USM_officers_from_louisiana
+		prerequisite = { focus = USM_manpower_from_louisiana }
+		relative_position_id = USM_manpower_from_louisiana
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = USM_ask_direct_intervention
+		prerequisite = { focus = USM_foreign_arms_factory }
+		prerequisite = { focus = USM_officers_from_louisiana }
+		relative_position_id = USM_foreign_arms_factory
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = USM_win_civil_war_2
+		prerequisite = { focus = USM_ask_direct_intervention }
+		prerequisite = {
+			focus = USM_destroy_the_crown
+			focus = USM_compromise_with_religion
+		}
+		relative_position_id = USM_ask_direct_intervention
+		x = -1
+		y = 1
+	}
+	
+	
+	
+}

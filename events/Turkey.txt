@@ -1,0 +1,735 @@
+﻿###########################
+# 土耳其事件
+###########################
+# 文本：逸仙
+###########################
+
+add_namespace = TOD_Turkey
+
+###########################
+# 导入事件
+###########################
+
+country_event = { # 国家介绍
+	id = TOD_Turkey.1
+	title = TOD_Turkey.1.t
+	desc = TOD_Turkey.1.d
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = TOD_Turkey.1.a
+		add_ideas = TUR_shouquanganglingpai
+		add_political_power = 50 
+	}
+	option = {
+		name = TOD_Turkey.1.b
+		add_ideas = TUR_shouquanqizhipai
+		add_stability = 0.05
+	}
+}
+
+country_event = { #凯末尔昏厥
+	id = TOD_Turkey.2
+	title = TOD_Turkey.2.t
+	desc = TOD_Turkey.2.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.2.a
+		hidden_effect = {
+			country_event = {
+				id = TOD_Turkey.3
+				days = 1
+				hours = 7
+			}
+		}
+	}
+}
+
+country_event = { #凯末尔康复
+	id = TOD_Turkey.3
+	title = TOD_Turkey.3.t
+	desc = TOD_Turkey.3.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.3.a
+		hidden_effect = {
+			country_event = {
+				id = TOD_Turkey.4
+				days = 28
+			}
+		}
+	}
+}
+
+country_event = { #凯末尔辞职
+	id = TOD_Turkey.4
+	title = TOD_Turkey.4.t
+	desc = TOD_Turkey.4.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.4.a
+		country_event = { id = TOD_Turkey.5 }
+	}
+}
+
+country_event = { #继承人问题
+	id = TOD_Turkey.5
+	title = TOD_Turkey.5.t
+	desc = TOD_Turkey.5.d
+
+	is_triggered_only = yes
+
+	#党内会议
+	option = {
+		name = TOD_Turkey.5.a
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "POLITICS_INNER_PARTY_NAME"
+			desc = "POLITICS_INNER_PARTY_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Inner_Party.tga"
+			expire = "1965.1.1"
+			ideology = radicalism_subtype
+		}
+		country_event = { id = TOD_Turkey.6 }
+	}
+	
+	#全国大选
+	option = {
+		name = TOD_Turkey.5.b
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "POLITICS_PEOPLES_CONGRESS_NAME"
+			desc = "POLITICS_PEOPLES_CONGRESS_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Peoples_Congress.tga"
+			expire = "1965.1.1"
+			ideology = radicalism_subtype
+		}
+		country_event = { id = TOD_Turkey.12 }
+	}
+}
+
+###########################
+# 党内会议
+###########################
+
+country_event = { #决定召开党内会议
+	id = TOD_Turkey.6
+	title = TOD_Turkey.6.t
+	desc = TOD_Turkey.6.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = TOD_Turkey.6.a
+		country_event = { 
+			id = TOD_Turkey.7 
+			days = 1
+		}
+	}
+}
+
+country_event = { #临时扩大会议
+	id = TOD_Turkey.7
+	title = TOD_Turkey.7.t
+	desc = TOD_Turkey.7.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = TOD_Turkey.7.a	
+		country_event = { id = TOD_Turkey.8 }
+		hidden_effect = {
+			set_variable = { var_name = Cakmak }	
+			set_variable = { var_name = Subhi }
+		}
+	}
+	
+}
+
+country_event = { #会议内容一
+	id = TOD_Turkey.8
+	title = TOD_Turkey.8.t
+	desc = TOD_Turkey.8.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = TOD_Turkey.8.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Cakmak
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.9 }
+	}
+	
+	option = {
+		name = TOD_Turkey.8.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Subhi
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.9 }
+	}
+}
+
+country_event = { #会议内容二
+	id = TOD_Turkey.9
+	title = TOD_Turkey.9.t
+	desc = TOD_Turkey.9.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = TOD_Turkey.9.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Cakmak
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.10 }
+	}
+	
+	option = {
+		name = TOD_Turkey.9.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Subhi
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.10 }
+	}
+}
+
+country_event = { #会议内容二
+	id = TOD_Turkey.9
+	title = TOD_Turkey.9.t
+	desc = TOD_Turkey.9.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = TOD_Turkey.9.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Cakmak
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.10 }
+	}
+	
+	option = {
+		name = TOD_Turkey.9.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Subhi
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.10 }
+	}
+}
+
+country_event = { #会议内容三
+	id = TOD_Turkey.10
+	title = TOD_Turkey.10.t
+	desc = TOD_Turkey.10.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = TOD_Turkey.10.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Cakmak
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.11 }
+	}
+	
+	option = {
+		name = TOD_Turkey.10.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Subhi
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.11 }
+	}
+}
+
+country_event = { #会议结束
+	id = TOD_Turkey.11
+	title = TOD_Turkey.11.t
+	desc = TOD_Turkey.11.d
+
+	is_triggered_only = yes
+	
+	option = {
+		name = TOD_Turkey.11.a
+		trigger = {
+			check_variable = { Cakmak > Subhi }
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "POLITICS_FEVZI_CEAKMAK_NAME"
+			desc = "POLITICS_FEVZI_CEAKMAK_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Fevzi_Ceakmak.tga"
+			expire = "1965.1.1"
+			ideology = radicalism_subtype
+		}
+		hidden_effect = {
+			clear_variable = Cakmak
+			clear_variable = Subhi
+		}
+	}
+	
+	option = {
+		name = TOD_Turkey.11.b
+		trigger = {
+			check_variable = { Cakmak < Subhi }
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "POLITICS_MUSTAFA_SUBHI_NAME"
+			desc = "POLITICS_MUSTAFA_SUBHI_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Mustafa_Subhi.tga"
+			expire = "1965.1.1"
+			ideology = radicalism_subtype
+		}
+		hidden_effect = {
+			clear_variable = Cakmak
+			clear_variable = Subhi
+		}
+	}
+}
+
+###########################
+# 全国大选
+###########################
+
+country_event = { #召开全国大选
+	id = TOD_Turkey.12
+	title = TOD_Turkey.12.t
+	desc = TOD_Turkey.12.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.12.a
+		hidden_effect = {
+			add_to_array = { TUR_Election = Left_Soc }
+			add_to_array = { TUR_Election = Repp_party }
+			add_to_array = { TUR_Election = Workers }
+			add_to_array = { TUR_Election = New_Lib }
+		}
+		country_event = { 
+			id = TOD_Turkey.13
+			days = 7
+		}
+	}
+}
+
+country_event = { #经济方向
+	id = TOD_Turkey.13
+	title = TOD_Turkey.13.t
+	desc = TOD_Turkey.13.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.13.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Left_Soc
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.14 }
+	}
+	
+	option = {
+		name = TOD_Turkey.13.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Repp_party
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.14 }
+	}
+	
+	option = {
+		name = TOD_Turkey.13.c
+		hidden_effect = {
+			add_to_variable = {
+				var = Workers
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.14 }
+	}
+	
+	option = {
+		name = TOD_Turkey.13.d
+		hidden_effect = {
+			add_to_variable = {
+				var = New_Lib
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.14 }
+	}
+}
+
+country_event = { #政治权利
+	id = TOD_Turkey.14
+	title = TOD_Turkey.14.t
+	desc = TOD_Turkey.14.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.14.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Left_Soc
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.15 }
+	}
+	
+	option = {
+		name = TOD_Turkey.14.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Repp_party
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.15 }
+	}
+	
+	option = {
+		name = TOD_Turkey.14.c
+		hidden_effect = {
+			add_to_variable = {
+				var = Workers
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.15 }
+	}
+	
+	option = {
+		name = TOD_Turkey.14.d
+		hidden_effect = {
+			add_to_variable = {
+				var = New_Lib
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.15 }
+	}
+}
+
+country_event = { #民族宗教问题
+	id = TOD_Turkey.15
+	title = TOD_Turkey.15.t
+	desc = TOD_Turkey.15.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.15.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Left_Soc
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.16 }
+	}
+	
+	option = {
+		name = TOD_Turkey.15.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Repp_party
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.16 }
+	}
+	
+	option = {
+		name = TOD_Turkey.15.c
+		hidden_effect = {
+			add_to_variable = {
+				var = Workers
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.16 }
+	}
+	
+	option = {
+		name = TOD_Turkey.15.d
+		hidden_effect = {
+			add_to_variable = {
+				var = New_Lib
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.16 }
+	}
+}
+
+country_event = { #外交政策
+	id = TOD_Turkey.16
+	title = TOD_Turkey.16.t
+	desc = TOD_Turkey.16.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.16.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Left_Soc
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.17 }
+	}
+	
+	option = {
+		name = TOD_Turkey.16.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Repp_party
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.17 }
+	}
+	
+	option = {
+		name = TOD_Turkey.16.c
+		hidden_effect = {
+			add_to_variable = {
+				var = Workers
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.17 }
+	}
+	
+	option = {
+		name = TOD_Turkey.16.d
+		hidden_effect = {
+			add_to_variable = {
+				var = New_Lib
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.17 }
+	}
+}
+
+country_event = { #教育问题
+	id = TOD_Turkey.17
+	title = TOD_Turkey.17.t
+	desc = TOD_Turkey.17.d
+
+	is_triggered_only = yes
+
+	option = {
+		name = TOD_Turkey.17.a
+		hidden_effect = {
+			add_to_variable = {
+				var = Left_Soc
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.18 }
+	}
+	
+	option = {
+		name = TOD_Turkey.17.b
+		hidden_effect = {
+			add_to_variable = {
+				var = Repp_party
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.18 }
+	}
+	
+	option = {
+		name = TOD_Turkey.17.c
+		hidden_effect = {
+			add_to_variable = {
+				var = Workers
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.18 }
+	}
+	
+	option = {
+		name = TOD_Turkey.17.d
+		hidden_effect = {
+			add_to_variable = {
+				var = New_Lib
+				value = 1
+			}
+		}
+		country_event = { id = TOD_Turkey.18 }
+	}
+}
+
+country_event = { #选举结果
+	id = TOD_Turkey.18
+	title = TOD_Turkey.18.t
+	desc = TOD_Turkey.18.d
+
+	is_triggered_only = yes
+	
+	immediate = { 
+		find_highest_in_array = {
+			array = TUR_Election
+			value = Election_winner
+		}
+	}
+
+	option = {
+		name = TOD_Turkey.18.a
+		trigger = {
+			check_variable = { Election_winner = Left_Soc }
+		}
+		set_party_name = {
+			ideology = socialism
+			name = TUR_Socialism_Left_Soc_party
+			long_name = TUR_Socialism_Left_Soc_party
+		}
+		set_politics = {
+			ruling_party = socialism
+		}
+		create_country_leader = {
+			name = "POLITICS_ETHEM_NEJAT_NAME"
+			desc = "POLITICS_ETHEM_NEJAT_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Ethem_Nejat.tga"
+			expire = "1965.1.1"
+			ideology = socialism_subtype
+		}
+		hidden_effect = {
+			clear_array = TUR_Election
+			clear_variable = Left_Soc
+			clear_variable = Repp_party
+			clear_variable = Workers
+			clear_variable = New_Lib
+			clear_variable = Election_winner
+		}
+	}
+	
+	option = {
+		name = TOD_Turkey.18.b
+		trigger = {
+			check_variable = { Election_winner = Repp_party }
+		}
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "POLITICS_MUSTAFA_SUBHI_NAME"
+			desc = "POLITICS_MUSTAFA_SUBHI_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Mustafa_Subhi.tga"
+			expire = "1965.1.1"
+			ideology = radicalism_subtype
+		}
+		hidden_effect = {
+			clear_array = TUR_Election
+			clear_variable = Left_Soc
+			clear_variable = Repp_party
+			clear_variable = Workers
+			clear_variable = New_Lib
+			clear_variable = Election_winner
+		}
+	}
+	
+	option = {
+		name = TOD_Turkey.18.c
+		trigger = {
+			check_variable = { Election_winner = Workers }
+		}
+		set_party_name = {
+			ideology = socialism
+			name = TUR_Socialism_Workers_party
+			long_name = TUR_Socialism_Workers_party
+		}
+		set_politics = {
+			ruling_party = socialism
+		}
+		create_country_leader = {
+			name = "POLITICS_NAZIM_HIKMET_NAME"
+			desc = "POLITICS_NAZIM_HIKMET_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Nazim_Hikmet.tga"
+			expire = "1965.1.1"
+			ideology = socialism_subtype
+		}
+		hidden_effect = {
+			clear_array = TUR_Election
+			clear_variable = Left_Soc
+			clear_variable = Repp_party
+			clear_variable = Workers
+			clear_variable = New_Lib
+			clear_variable = Election_winner
+		}
+	}
+	
+	option = {
+		name = TOD_Turkey.18.d
+		trigger = {
+			check_variable = { Election_winner = New_Lib }
+		}
+		set_party_name = {
+			ideology = socialism
+			name = TUR_Socialism_New_Lib_party
+			long_name = TUR_Socialism_New_Lib_party
+		}
+		set_politics = {
+			ruling_party = socialism
+		}
+		create_country_leader = {
+			name = "POLITICS_FETHI_OKYAR_NAME"
+			desc = "POLITICS_FETHI_OKYAR_DESC"
+			picture = "gfx//leaders//TUR//Portrait_TUR_Fethi_Okyar.tga"
+			expire = "1965.1.1"
+			ideology = socialism_subtype
+		}
+		hidden_effect = {
+			clear_array = TUR_Election
+			clear_variable = Left_Soc
+			clear_variable = Repp_party
+			clear_variable = Workers
+			clear_variable = New_Lib
+			clear_variable = Election_winner
+		}
+	}
+}

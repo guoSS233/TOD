@@ -1,0 +1,2023 @@
+﻿
+focus_tree = {
+	id = bulgarian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BUL
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 30 y = 30 }
+
+#	focus = {
+#		id = BUL_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+	#准备大选
+	focus = {
+		id = BUL_zhunbeidaxuan
+		icon = GFX_HUN_zhengzhigaige
+		x = 12
+		y = 1
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		mutually_exclusive = { focus =  BUL_zongshenzongli}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {add_political_power = 150 }
+	}
+	#迎回王室
+	focus = {
+		id = BUL_yinghuiwangshi
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 9
+		y = 2
+		
+		prerequisite = { focus = BUL_zhunbeidaxuan }
+		mutually_exclusive = { focus = BUL_gongchandanghefahua }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#王权至上
+	focus = {
+		id = BUL_wangquanzhishang
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 8
+		y = 3
+		
+		prerequisite = { focus = BUL_yinghuiwangshi }
+		mutually_exclusive = { focus = BUL_guohuizhishang }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#利用五月十协定
+	focus = {
+		id = BUL_liyongwuyueshixieding
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 8
+		y = 4
+		
+		prerequisite = { focus = BUL_wangquanzhishang }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#众民族一心
+	focus = {
+		id = BUL_zhongminzuyixin
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 8
+		y = 5
+		
+		prerequisite = { focus = BUL_liyongwuyueshixieding }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#国会至上
+	focus = {
+		id = BUL_guohuizhishang
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 10
+		y = 3
+		
+		prerequisite = { focus = BUL_yinghuiwangshi }
+		mutually_exclusive = { focus = BUL_wangquanzhishang }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#废除五月十协定
+	focus = {
+		id = BUL_feichuwuyueshixieding
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 12
+		y = 4
+		
+		prerequisite = { focus = BUL_yinghuiwangshi focus = BUL_yuguohuihezuo}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#改革工作制
+	focus = {
+		id = BUL_gaigegonzuozhi
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 10
+		y = 4
+		
+		prerequisite = { focus = BUL_yinghuiwangshi focus = BUL_yuguohuihezuo}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#联合宪法
+	focus = {
+		id = BUL_lianhexianfa
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 10
+		y = 5
+		
+		prerequisite = { focus = BUL_gaigegonzuozhi}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#保加利亚国立大学
+	focus = {
+		id = BUL_baojialiyaguolidaxue
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 8
+		y = 6
+		
+		prerequisite = { focus = BUL_zhongminzuyixin focus = BUL_lianhexianfa}
+
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#反抗侵略
+	focus = {
+		id = BUL_fankangqinlue
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 10
+		y = 6
+		
+		prerequisite = { focus = BUL_zhongminzuyixin focus = BUL_lianhexianfa}
+
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#保加利亚王国
+	focus = {
+		id = BUL_baojialiyawangguo
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 7
+		y = 7
+		
+		prerequisite = { focus = BUL_baojialiyaguolidaxue}
+		prerequisite = { focus = BUL_fankangqinlue}
+		mutually_exclusive = { focus = BUL_baojialiyateseshehuizhuyi }
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#新五月十协定
+	focus = {
+		id = BUL_xinwuyueshixieding
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 5
+		y = 8
+		
+		prerequisite = { focus = BUL_baojialiyawangguo}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#重组国会
+	focus = {
+		id = BUL_chongzuguohui
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 7
+		y = 8
+		
+		prerequisite = { focus = BUL_baojialiyawangguo}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#反共堡垒
+	focus = {
+		id = BUL_fangongbaolei
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 5
+		y = 9
+		
+		prerequisite = { focus = BUL_chongzuguohui}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#巴尔干之王
+	focus = {
+		id = BUL_baerganzhiwang
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 7
+		y = 9
+		
+		prerequisite = { focus = BUL_chongzuguohui}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#中央科学院
+	focus = {
+		id = BUL_zhongyangkexueyuan
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 9
+		y = 9
+		
+		prerequisite = { focus = BUL_chongzuguohui}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#西蒙大帝荣光
+	focus = {
+		id = BUL_ximengdadirongguang
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 6
+		y = 10
+		
+		prerequisite = { focus = BUL_fangongbaolei}
+		prerequisite = { focus = BUL_baerganzhiwang}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#王权扩大
+	focus = {
+		id = BUL_wangquankuoda
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 8
+		y = 10
+		
+		prerequisite = { focus = BUL_baerganzhiwang}
+		prerequisite = { focus = BUL_zhongyangkexueyuan}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#保加利亚特色社会主义
+	focus = {
+		id = BUL_baojialiyateseshehuizhuyi
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 11
+		y = 7
+		
+		prerequisite = { focus = BUL_baojialiyaguolidaxue}
+		prerequisite = { focus = BUL_fankangqinlue}
+		mutually_exclusive = { focus = BUL_baojialiyawangguo }
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#索菲亚经济大会
+	focus = {
+		id = BUL_suofeiyajingjidahui
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 9
+		y = 8
+		
+		prerequisite = { focus = BUL_baojialiyateseshehuizhuyi}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#消灭左派
+	focus = {
+		id = BUL_xiaomiezuopai
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 11
+		y = 8
+		
+		prerequisite = { focus = BUL_baojialiyateseshehuizhuyi}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#控制国会
+	focus = {
+		id = BUL_kongzhiguohui
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 14
+		y = 8
+		
+		prerequisite = { focus = BUL_baojialiyateseshehuizhuyi}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#稳定政治局面
+	focus = {
+		id = BUL_wendingzhengzhijumian
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 11
+		y = 9
+		
+		prerequisite = { focus = BUL_xiaomiezuopai}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#文学艺术发展
+	focus = {
+		id = BUL_wenxueyishufazhan
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 13
+		y = 9
+		
+		prerequisite = { focus = BUL_xiaomiezuopai}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#中央科学院
+	focus = {
+		id = BUL_zhongyangkexueyuan_2
+		icon = GFX_HUN_jinxinziyouhuagaige
+		x = 11
+		y = 10
+		
+		prerequisite = { focus = BUL_wendingzhengzhijumian}
+		prerequisite = { focus = BUL_wenxueyishufazhan}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#共产党合法化
+	focus = {
+		id = BUL_gongchandanghefahua
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 14
+		y = 2
+		
+		prerequisite = { focus = BUL_zhunbeidaxuan }
+		mutually_exclusive = { focus = BUL_baerganzhiwang }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#与国会合作
+	focus = {
+		id = BUL_yuguohuihezuo
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 13
+		y = 3
+		
+		prerequisite = { focus = BUL_gongchandanghefahua }
+		mutually_exclusive = { focus = BUL_zuoyizhizhenglianmeng }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+			
+		}
+	}
+	#左翼执政联盟
+	focus = {
+		id = BUL_zuoyizhizhenglianmeng
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 16
+		y = 3
+		
+		prerequisite = { focus = BUL_gongchandanghefahua }
+		mutually_exclusive = { focus = BUL_yuguohuihezuo }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#公私合营
+	focus = {
+		id = BUL_gongsiheying
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 15
+		y = 4
+		
+		prerequisite = { focus = BUL_zuoyizhizhenglianmeng }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#驱逐白匪
+	focus = {
+		id = BUL_quzhubaifei
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 17
+		y = 4
+		
+		prerequisite = { focus = BUL_zuoyizhizhenglianmeng }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#普罗夫迪夫条约之耻
+	focus = {
+		id = BUL_puluofudifutiaoyuezhihci
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 16
+		y = 5
+		
+		prerequisite = { focus = BUL_gongsiheying }
+		prerequisite = { focus = BUL_quzhubaifei }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#组织民兵
+	focus = {
+		id = BUL_zuzhiminbing
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 19
+		y = 5
+		
+		prerequisite = { focus = BUL_gongsiheying }
+		prerequisite = { focus = BUL_quzhubaifei }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#标准化军队
+	focus = {
+		id = BUL_zuzhiminbing
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 19
+		y = 6
+		
+		prerequisite = { focus = BUL_gongsiheying }
+		prerequisite = { focus = BUL_quzhubaifei }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#马克思党校
+	focus = {
+		id = BUL_makesidangxiao
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 15
+		y = 6
+		
+		prerequisite = { focus = BUL_puluofudifutiaoyuezhihci }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#党指挥枪
+	focus = {
+		id = BUL_dangzhihuiqiang
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 17
+		y = 6
+		
+		prerequisite = { focus = BUL_puluofudifutiaoyuezhihci }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#只有一个党
+	focus = {
+		id = BUL_zhiyouyigedang
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 16
+		y = 7
+		
+		prerequisite = { focus = BUL_makesidangxiao }
+		prerequisite = { focus = BUL_dangzhihuiqiang }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#保加利亚人民共和国
+	focus = {
+		id = BUL_renmingongheguo
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 16
+		y = 8
+		
+		prerequisite = { focus = BUL_zhiyouyigedang }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#巴尔干社会主义同盟
+	focus = {
+		id = BUL_shehuizhuyitongmeng
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 17
+		y = 9
+		
+		prerequisite = { focus = BUL_renmingongheguo }
+		prerequisite = { focus = BUL_dangzhihuiqiang }
+
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#消除腐败
+	focus = {
+		id = BUL_xiaochufubai
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 18
+		y = 10
+		
+		prerequisite = { focus = BUL_shehuizhuyitongmeng }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#五年计划
+	focus = {
+		id = BUL_wunianjihua
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 20
+		y = 10
+		
+		prerequisite = { focus = BUL_shehuizhuyitongmeng }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#中央科学院
+	focus = {
+		id = BUL_zhongyangkexueyuan_3
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 20
+		y = 11
+		
+		prerequisite = { focus = BUL_wunianjihua }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#巴尔干解放者
+	focus = {
+		id = BUL_baerganjiefangzhe
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 14
+		y = 10
+		
+		prerequisite = { focus = BUL_kongzhiguohui focus = BUL_renmingongheguo }
+		mutually_exclusive = { focus = BUL_daoxiangtuerqi }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#解放西巴尔干
+	focus = {
+		id = BUL_jiefangxibaergan
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 13
+		y = 11
+		
+		prerequisite = { focus = BUL_baerganjiefangzhe}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#开除土耳其左籍
+	focus = {
+		id = BUL_kaichutuerqizuoji
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 14
+		y = 12
+		
+		prerequisite = { focus = BUL_baerganjiefangzhe}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#解放东巴尔干
+	focus = {
+		id = BUL_jiefangdongbaergan
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 15
+		y = 11
+		
+		prerequisite = { focus = BUL_baerganjiefangzhe}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#倒向土耳其
+	focus = {
+		id = BUL_daoxiangtuerqi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 16
+		y = 10
+		
+		prerequisite = { focus = BUL_kongzhiguohui focus = BUL_renmingongheguo }
+		mutually_exclusive = { focus = BUL_baerganjiefangzhe }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#辐射影响
+	focus = {
+		id = BUL_fusheyinxiang
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 16
+		y = 12
+		
+		prerequisite = { focus = BUL_daoxiangtuerqi}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#凯末尔主义
+	focus = {
+		id = BUL_kaimoerzhuyi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 18
+		y = 12
+		
+		prerequisite = { focus = BUL_daoxiangtuerqi}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#巴尔干灯塔
+	focus = {
+		id = BUL_baergandengta
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 16
+		y = 13
+		
+		prerequisite = { focus = BUL_fusheyinxiang}
+		prerequisite = { focus = BUL_kaimoerzhuyi}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#终生总理
+	focus = {
+		id = BUL_zongshenzongli
+		icon = GFX_HUN_zhengzhigaige
+		x = 24
+		y = 1
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		mutually_exclusive = { focus =  BUL_zhunbeidaxuan}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#准备后事
+	focus = {
+		id = BUL_zhunbeihoushi
+		icon = GFX_HUN_zhengzhigaige
+		x = 24
+		y = 2
+
+		prerequisite = { focus = BUL_zongshenzongli }
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#摧毁国会
+	focus = {
+		id = BUL_cuihuiguohui
+		icon = GFX_HUN_zhengzhigaige
+		x = 22
+		y = 3
+
+		prerequisite = { focus = BUL_zhunbeihoushi }
+		mutually_exclusive = { focus =  BUL_zuzhixinguohui}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#欢迎总统
+	focus = {
+		id = BUL_huanyingzongtong
+		icon = GFX_HUN_zhengzhigaige
+		x = 21
+		y = 4
+
+		prerequisite = { focus = BUL_cuihuiguohui }
+		mutually_exclusive = { focus =  BUL_junduilingxiu}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#1936宪法
+	focus = {
+		id = BUL_1936xianfa
+		icon = GFX_HUN_zhengzhigaige
+		x = 21
+		y = 5
+
+		prerequisite = { focus = BUL_huanyingzongtong }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#军队领袖
+	focus = {
+		id = BUL_junduilingxiu
+		icon = GFX_HUN_zhengzhigaige
+		x = 23
+		y = 4
+
+		prerequisite = { focus = BUL_cuihuiguohui }
+		mutually_exclusive = { focus =  BUL_huanyingzongtong}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#经济会权力
+	focus = {
+		id = BUL_jingjihuiquanli
+		icon = GFX_HUN_zhengzhigaige
+		x = 23
+		y = 5
+
+		prerequisite = { focus = BUL_junduilingxiu }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#组织新国会
+	focus = {
+		id = BUL_zuzhixinguohui
+		icon = GFX_HUN_zhengzhigaige
+		x = 26
+		y = 3
+
+		prerequisite = { focus = BUL_zhunbeihoushi }
+		mutually_exclusive = { focus =  BUL_cuihuiguohui}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#保护旧秩序
+	focus = {
+		id = BUL_baohujiuzhixu
+		icon = GFX_HUN_zhengzhigaige
+		x = 26
+		y = 4
+
+		prerequisite = { focus = BUL_zuzhixinguohui }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#前总理罪大滔天
+	focus = {
+		id = BUL_zuidataotian
+		icon = GFX_HUN_zhengzhigaige
+		x = 25
+		y = 5
+
+		prerequisite = { focus = BUL_baohujiuzhixu }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#成功的夺权
+	focus = {
+		id = BUL_chenggongdeduoquan
+		icon = GFX_HUN_zhengzhigaige
+		x = 27
+		y = 5
+
+		prerequisite = { focus = BUL_baohujiuzhixu }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#利用五月十协定
+	focus = {
+		id = BUL_liyongwuyueshixieding_2
+		icon = GFX_HUN_zhengzhigaige
+		x = 23
+		y = 6
+
+		prerequisite = { focus = BUL_1936xianfa focus = BUL_jingjihuiquanli focus = BUL_zuidataotian }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#新式军校
+	focus = {
+		id = BUL_xinshijunxiao
+		icon = GFX_HUN_zhengzhigaige
+		x = 22
+		y = 7
+
+		prerequisite = { focus = BUL_liyongwuyueshixieding_2 }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#战争准备
+	focus = {
+		id = BUL_zhanzhengzhunbei
+		icon = GFX_HUN_zhengzhigaige
+		x = 24
+		y = 7
+
+		prerequisite = { focus = BUL_liyongwuyueshixieding_2 }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#巴尔干雄鹰
+	focus = {
+		id = BUL_baerganxiongying
+		icon = GFX_HUN_zhengzhigaige
+		x = 23
+		y = 8
+
+		prerequisite = { focus = BUL_xinshijunxiao }
+		prerequisite = { focus = BUL_zhanzhengzhunbei }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#新共和国
+	focus = {
+		id = BUL_xingongheguo
+		icon = GFX_HUN_zhengzhigaige
+		x = 22
+		y = 9
+
+		prerequisite = { focus = BUL_baerganxiongying }
+		mutually_exclusive = { focus = BUL_junrenguojia }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#贯彻民主
+	focus = {
+		id = BUL_guancheminzhu
+		icon = GFX_HUN_zhengzhigaige
+		x = 22
+		y = 10
+
+		prerequisite = { focus = BUL_xingongheguo }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#军人国家
+	focus = {
+		id = BUL_junrenguojia
+		icon = GFX_HUN_zhengzhigaige
+		x = 24
+		y = 9
+
+		prerequisite = { focus = BUL_baerganxiongying }
+		mutually_exclusive = { focus =  BUL_xingongheguo}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#索菲亚会议
+	focus = {
+		id = BUL_suofeiyahuiyi
+		icon = GFX_HUN_zhengzhigaige
+		x = 23
+		y = 11
+
+		prerequisite = { focus = BUL_guancheminzhu focus = BUL_junrenguojia }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#废除五月十协定
+	focus = {
+		id = BUL_feichuwuyueshixieding_2
+		icon = GFX_HUN_zhengzhigaige
+		x = 21
+		y = 12
+
+		prerequisite = { focus = BUL_suofeiyahuiyi}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#经济自主
+	focus = {
+		id = BUL_jingjizizhu
+		icon = GFX_HUN_zhengzhigaige
+		x = 21
+		y = 13
+
+		prerequisite = { focus = BUL_feichuwuyueshixieding_2}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#经济研究会
+	focus = {
+		id = BUL_jingjiyanjiuhui
+		icon = GFX_HUN_zhengzhigaige
+		x = 21
+		y = 14
+
+		prerequisite = { focus = BUL_jingjizizhu}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#新生霸主
+	focus = {
+		id = BUL_xinshengbazhu
+		icon = GFX_HUN_zhengzhigaige
+		x = 23
+		y = 12
+
+		prerequisite = { focus = BUL_suofeiyahuiyi }
+		mutually_exclusive = { focus = BUL_baerganhaolinju }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#合并计划
+	focus = {
+		id = BUL_hebingjihua
+		icon = GFX_HUN_zhengzhigaige
+		x = 23
+		y = 13
+
+		prerequisite = { focus = BUL_xinshengbazhu }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#裁军条文
+	focus = {
+		id = BUL_caijuntiaowen
+		icon = GFX_HUN_zhengzhigaige
+		x = 25
+		y = 11
+
+		prerequisite = { focus = BUL_junrenguojia}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#巴尔干好邻居
+	focus = {
+		id = BUL_baerganhaolinju
+		icon = GFX_HUN_zhengzhigaige
+		x = 25
+		y = 12
+
+		prerequisite = { focus = BUL_junrenguojia}
+		mutually_exclusive = { focus = BUL_xinshengbazhu }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#中央法案
+	focus = {
+		id = BUL_zhongyangfaan
+		icon = GFX_HUN_zhengzhigaige
+		x = 25
+		y = 13
+
+		prerequisite = { focus = BUL_baerganhaolinju }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#向周围施压
+	focus = {
+		id = BUL_xiangzhouweishiya
+		icon = GFX_HUN_zhengzhigaige
+		x = 24
+		y = 14
+
+		prerequisite = { focus = BUL_zhongyangfaan focus = BUL_hebingjihua }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#半岛警察
+	focus = {
+		id = BUL_bandaojingcha
+		icon = GFX_HUN_zhengzhigaige
+		x = 24
+		y = 15
+
+		prerequisite = { focus = BUL_xiangzhouweishiya }
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = { }
+	}
+	#工业
+	#中央工业区
+	focus = {
+		id = BUL_zhongyanggongyequ
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 32
+		y = 1
+		
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#夺取军工经济会
+	focus = {
+		id = BUL_duoqujungongjingjihui
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 28
+		y = 2
+		
+		prerequisite = { focus = BUL_zhongyanggongyequ }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#军事产业网
+	focus = {
+		id = BUL_junshichanyewang
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 28
+		y = 3
+		
+		prerequisite = { focus = BUL_duoqujungongjingjihui }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#防线法案
+	focus = {
+		id = BUL_fangxianfaan
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 30
+		y = 2
+		
+		prerequisite = { focus = BUL_zhongyanggongyequ }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#南方防线
+	focus = {
+		id = BUL_nanfangfangxian
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 30
+		y = 3
+		
+		prerequisite = { focus = BUL_fangxianfaan }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#西部防线
+	focus = {
+		id = BUL_xibufangxian
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 30
+		y = 4
+		
+		prerequisite = { focus = BUL_nanfangfangxian }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#全国电气化
+	focus = {
+		id = BUL_quanguodianqihua
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 32
+		y = 2
+		
+		prerequisite = { focus = BUL_zhongyanggongyequ }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#高质量铝制品
+	focus = {
+		id = BUL_gaozhilianglvzhipin
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 32
+		y = 3
+		
+		prerequisite = { focus = BUL_quanguodianqihua }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#控制销售渠道
+	focus = {
+		id = BUL_kongzhixiaoshouqudao
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 32
+		y = 4
+		
+		prerequisite = { focus = BUL_gaozhilianglvzhipin }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#黑海明珠
+	focus = {
+		id = BUL_heihaimingzhu
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 34
+		y = 2
+		
+		prerequisite = { focus = BUL_zhongyanggongyequ }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#玫瑰花种植
+	focus = {
+		id = BUL_meiguihuazhongzhi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 34
+		y = 3
+		
+		prerequisite = { focus = BUL_heihaimingzhu }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#葡萄酒产业
+	focus = {
+		id = BUL_putaojiuchanye
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 34
+		y = 4
+		
+		prerequisite = { focus = BUL_meiguihuazhongzhi }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#现代化保加利亚
+	focus = {
+		id = BUL_xiandaihuabaojialiya
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 32
+		y = 5
+		
+		prerequisite = { focus = BUL_xibufangxian }
+		prerequisite = { focus = BUL_kongzhixiaoshouqudao }
+		prerequisite = { focus = BUL_putaojiuchanye }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#新研究体系
+	focus = {
+		id = BUL_xinyanjiutixi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 32
+		y = 6
+		
+		prerequisite = { focus = BUL_xiandaihuabaojialiya }
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#陆军
+	#军事会议
+	focus = {
+		id = BUL_junshihuiyi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 48
+		y = 1
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#陆军男儿
+	focus = {
+		id = BUL_lujunnaner
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 42
+		y = 2
+		
+		cost = 5
+		
+		prerequisite = { focus = BUL_junshihuiyi }
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#生命的力量
+	focus = {
+		id = BUL_shengmingdeliliang
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 39
+		y = 3
+		
+		prerequisite = { focus = BUL_lujunnaner }
+		mutually_exclusive = { focus = BUL_jixieshiweilai }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#特殊精英
+	focus = {
+		id = BUL_teshujingying
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 37
+		y = 4
+		
+		prerequisite = { focus = BUL_shengmingdeliliang }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#研究地形
+	focus = {
+		id = BUL_yanjiudixing
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 37
+		y = 5
+		
+		prerequisite = { focus = BUL_teshujingying }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#入伍条件放松
+	focus = {
+		id = BUL_ruwutiaojianfangsong
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 39
+		y = 4
+		
+		prerequisite = { focus = BUL_shengmingdeliliang }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#生命也需要武器
+	focus = {
+		id = BUL_shengmingyexuyaowuqi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 41
+		y = 4
+		
+		prerequisite = { focus = BUL_shengmingdeliliang }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#机械是未来
+	focus = {
+		id = BUL_jixieshiweilai
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 44
+		y = 3
+		
+		prerequisite = { focus = BUL_lujunnaner }
+		mutually_exclusive = { focus = BUL_shengmingdeliliang }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#装甲部队
+	focus = {
+		id = BUL_zhunagjiabudui
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 43
+		y = 4
+		
+		prerequisite = { focus = BUL_jixieshiweilai }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#机械化部队
+	focus = {
+		id = BUL_jixiehuabudui
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 45
+		y = 4
+		
+		prerequisite = { focus = BUL_jixieshiweilai }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#与时代接轨
+	focus = {
+		id = BUL_yushidaijiegui
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 44
+		y = 5
+		
+		prerequisite = { focus = BUL_zhunagjiabudui }
+		prerequisite = { focus = BUL_jixiehuabudui }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#军工厂大会
+	focus = {
+		id = BUL_jungongchangdahui
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 42
+		y = 6
+		
+		prerequisite = { focus = BUL_shengmingyexuyaowuqi focus = BUL_yushidaijiegui }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#空军
+	#巴尔干的天空
+	focus = {
+		id = BUL_baergandetiankong
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 52
+		y = 2
+		
+		cost = 5
+		prerequisite = { focus = BUL_junshihuiyi }
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#飞机研究所
+	focus = {
+		id = BUL_feijiyanjiusuo
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 52
+		y = 3
+		
+		prerequisite = { focus = BUL_baergandetiankong}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#以破坏为主
+	focus = {
+		id = BUL_yipohuaiweizhu
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 51
+		y = 4
+		
+		prerequisite = { focus = BUL_feijiyanjiusuo}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#以战场为重
+	focus = {
+		id = BUL_yizhanchangweizhong
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 53
+		y = 4
+		
+		prerequisite = { focus = BUL_feijiyanjiusuo}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#飞行学院
+	focus = {
+		id = BUL_feixingxueyuan
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 51
+		y = 5
+		
+		prerequisite = { focus = BUL_yipohuaiweizhu}
+		prerequisite = { focus = BUL_yizhanchangweizhong}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#重建空军
+	focus = {
+		id = BUL_chongjiankongjun
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 53
+		y = 5
+		
+		prerequisite = { focus = BUL_yipohuaiweizhu}
+		prerequisite = { focus = BUL_yizhanchangweizhong}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#空降战士
+	focus = {
+		id = BUL_kongjiangzhanshi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 50
+		y = 6
+		
+		prerequisite = { focus = BUL_feixingxueyuan}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#第一优势
+	focus = {
+		id = BUL_diyiyoushi
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 52
+		y = 6
+		
+		prerequisite = { focus = BUL_feixingxueyuan}
+		prerequisite = { focus = BUL_chongjiankongjun}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#海军
+	#黑海鱼群
+	focus = {
+		id = BUL_heihaiyuqun
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 48
+		y = 2
+		
+		cost = 5
+		prerequisite = { focus = BUL_junshihuiyi }
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#多布罗加军港
+	focus = {
+		id = BUL_duobuluojiajungang
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 48
+		y = 3
+		
+		prerequisite = { focus = BUL_heihaiyuqun}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#海军学院
+	focus = {
+		id = BUL_haijunxueyuan
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 47
+		y = 4
+		
+		prerequisite = { focus = BUL_duobuluojiajungang}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#海上陆军
+	focus = {
+		id = BUL_haishanglujun
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 46
+		y = 5
+		
+		prerequisite = { focus = BUL_haijunxueyuan}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#海上空军
+	focus = {
+		id = BUL_haishangkongjun
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 48
+		y = 5
+		
+		prerequisite = { focus = BUL_haijunxueyuan}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#海军生产国有化
+	focus = {
+		id = BUL_haijunshengchanguoyouhua
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 49
+		y = 4
+		
+		prerequisite = { focus = BUL_duobuluojiajungang}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#创建黑海舰队
+	focus = {
+		id = BUL_chuangjianheihaijiandui
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 48
+		y = 6
+		
+		prerequisite = { focus = BUL_haijunxueyuan}
+		prerequisite = { focus = BUL_haijunshengchanguoyouhua }
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#海下威胁
+	focus = {
+		id = BUL_haixiaweixie
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 47
+		y = 7
+		
+		prerequisite = { focus = BUL_chuangjianheihaijiandui}
+		mutually_exclusive = { focus = BUL_haishangbaolei}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#从海底出击
+	focus = {
+		id = BUL_conghaidichuji
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 47
+		y = 8
+		
+		prerequisite = { focus = BUL_haixiaweixie}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#海上堡垒
+	focus = {
+		id = BUL_haishangbaolei
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 49
+		y = 7
+		
+		prerequisite = { focus = BUL_chuangjianheihaijiandui}
+		mutually_exclusive = { focus = BUL_haixiaweixie}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+	#洋面上的霸主
+	focus = {
+		id = BUL_yangmianshangdebazhu
+		icon = GFX_HUN_baochiducaitongzhi
+		x = 49
+		y = 8
+		
+		prerequisite = { focus = BUL_haishangbaolei}
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		
+		completion_reward = {
+		}
+	}
+}

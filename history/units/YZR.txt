@@ -1,0 +1,266 @@
+##### 炎州编制 #####
+division_template = {
+	name = "炎州穿山师"  	
+
+	division_names_group = YZR_MNT_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 0 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }    
+	}
+}
+division_template = {
+	name = "炎州国防正规师"  	
+
+	division_names_group = YZR_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		artillery_brigade = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }   
+		engineer = { x = 0 y = 1 }   
+	}
+}
+
+division_template = {
+	name = "炎州火炮支援师"  	
+
+	division_names_group = YZR_ART_01
+
+	regiments = {
+		artillery_brigade = { x = 0 y = 0 }
+		artillery_brigade = { x = 0 y = 1 }
+		artillery_brigade = { x = 0 y = 2 }
+		artillery_brigade = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }   
+		engineer = { x = 0 y = 1 }   
+	}
+}
+
+division_template = {
+	name = "炎州骑兵师" 	
+	division_names_group = YZR_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 0 y = 3 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+		cavalry = { x = 1 y = 3 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }  
+		artillery = { x = 0 y = 1 } 
+		engineer = { x = 0 y = 2 } 		
+	}
+}
+
+###### OOB ######
+units = {
+	####### CONUS Theater #######
+	### 正规师 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 9671
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 9671
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.7
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 9713
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 9814
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 1562
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 4799
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 4799
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		location = 13644
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.4
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = 505
+		division_template = "炎州国防正规师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1651
+		division_template = "炎州穿山师"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 505
+		division_template = "炎州火炮支援师"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 9814
+		division_template = "炎州火炮支援师"
+		start_experience_factor = 0.8
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 4799
+		division_template = "炎州骑兵师"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 3677
+		division_template = "炎州骑兵师"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.8
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 10159
+		division_template = "炎州骑兵师"
+		start_experience_factor = 0.8
+		start_equipment_factor = 0.8
+
+	}
+	}
+	
+air_wings = {
+	378 = { 
+		fighter_equipment_0 =  {
+			owner = "YZR"
+			amount = 58
+		}
+		tac_bomber_equipment_0 =  {
+			owner = "YZR"
+			amount = 35
+		}
+		tac_bomber_equipment_1 = {
+			owner = "YZR"
+			amount = 15
+		}
+		nav_bomber_equipment_1 =  {
+			owner = "YZR"
+			amount = 18
+		}
+	}

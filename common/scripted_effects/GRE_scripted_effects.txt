@@ -1,0 +1,40 @@
+#Important to put LOWEST first
+GRE_crisis_level_down = {
+	if = {
+		limit = { has_idea = GRE_aftermath_of_crisis_4 }
+		custom_effect_tooltip = GRE_crisis_level_down_tt
+		remove_ideas = { GRE_aftermath_of_crisis_4 }
+	}
+	if = {
+		limit = { has_idea = GRE_aftermath_of_crisis_3 }
+		custom_effect_tooltip = GRE_crisis_level_down_tt
+		swap_ideas = {
+			add_idea = GRE_aftermath_of_crisis_4
+			remove_idea = GRE_aftermath_of_crisis_3
+		}
+	}
+	if = {
+		limit = { has_idea = GRE_aftermath_of_crisis_2 }
+		custom_effect_tooltip = GRE_crisis_level_down_tt
+		swap_ideas = {
+			add_idea = GRE_aftermath_of_crisis_3
+			remove_idea = GRE_aftermath_of_crisis_2
+		}
+	}
+	if = {
+		limit = { has_idea = GRE_aftermath_of_crisis_1 }
+		custom_effect_tooltip = GRE_crisis_level_down_tt
+		swap_ideas = {
+			add_idea = GRE_aftermath_of_crisis_2
+			remove_idea = GRE_aftermath_of_crisis_1
+		}
+	}
+	if = {
+		limit = { has_idea = GRE_aftermath_of_crisis_0 }
+		custom_effect_tooltip = GRE_crisis_level_down_tt
+		swap_ideas = {
+			add_idea = GRE_aftermath_of_crisis_1
+			remove_idea = GRE_aftermath_of_crisis_0
+		}
+	}
+}

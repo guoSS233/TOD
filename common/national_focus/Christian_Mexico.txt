@@ -1,0 +1,148 @@
+
+focus_tree = {
+	id = christian_mexico_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = CRI
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 100 y = 1000 }
+	
+	focus = {
+		id = CRI_in_the_name_of_father
+		x = 4
+		y = 0 
+	}
+	
+	focus = {
+		id = CRI_foreign_support
+		prerequisite = { focus = CRI_in_the_name_of_father }
+		relative_position_id = CRI_in_the_name_of_father
+		x = -3
+		y = 1
+	}
+	focus = {
+		id = CRI_n_america_volunteers
+		prerequisite = { focus = CRI_foreign_support }
+		relative_position_id = CRI_foreign_support
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = CRI_latin_volunteers
+		prerequisite = { focus = CRI_n_america_volunteers }
+		relative_position_id = CRI_n_america_volunteers
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_s_europe_volunteers
+		prerequisite = { focus = CRI_foreign_support }
+		relative_position_id = CRI_foreign_support
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = CRI_french_volunteers
+		prerequisite = { focus = CRI_s_europe_volunteers }
+		relative_position_id = CRI_s_europe_volunteers
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_support_from_pope
+		prerequisite = { focus = CRI_latin_volunteers }
+		prerequisite = { focus = CRI_french_volunteers }
+		relative_position_id = CRI_latin_volunteers
+		icon = GFX_focus_CRI_support_from_pope
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = CRI_industrial_mobilisation
+		prerequisite = { focus = CRI_in_the_name_of_father }
+		relative_position_id = CRI_in_the_name_of_father
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_call_for_followers
+		prerequisite = { focus = CRI_industrial_mobilisation }
+		relative_position_id = CRI_industrial_mobilisation
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_spiritual_mobilisation
+		prerequisite = { focus = CRI_call_for_followers }
+		relative_position_id = CRI_call_for_followers
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_total_religionisation
+		prerequisite = { focus = CRI_spiritual_mobilisation }
+		relative_position_id = CRI_spiritual_mobilisation
+		icon = GFX_focus_CRI_total_religionisation
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_handle_internal_issues
+		prerequisite = { focus = CRI_in_the_name_of_father }
+		relative_position_id = CRI_in_the_name_of_father
+		x = 3
+		y = 1
+	}
+	focus = {
+		id = CRI_dismiss
+		prerequisite = { focus = CRI_handle_internal_issues }
+		relative_position_id = CRI_handle_internal_issues
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = CRI_control_city_church
+		prerequisite = { focus = CRI_dismiss }
+		relative_position_id = CRI_dismiss
+		icon = GFX_focus_CRI_control_city_church
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_vacillating_jesus_soc
+		icon = GFX_focus_CRI_vacillating_jesus_soc
+		prerequisite = { focus = CRI_handle_internal_issues }
+		relative_position_id = CRI_handle_internal_issues
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = CRI_rural_church
+		prerequisite = { focus = CRI_vacillating_jesus_soc }
+		relative_position_id = CRI_vacillating_jesus_soc
+		icon = GFX_focus_CRI_rural_church
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = CRI_control_root
+		prerequisite = { focus = CRI_control_city_church }
+		prerequisite = { focus = CRI_rural_church }
+		relative_position_id = CRI_control_city_church
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = CRI_win_civil_war
+		prerequisite = { focus = CRI_support_from_pope }
+		prerequisite = { focus = CRI_total_religionisation }
+		prerequisite = { focus = CRI_control_root }
+		relative_position_id = CRI_total_religionisation
+		x = 0
+		y = 1
+	}
+}	

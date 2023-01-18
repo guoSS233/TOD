@@ -1,0 +1,43 @@
+capital = 315
+
+oob = "empty"
+
+set_fuel_ratio = 0.2
+set_research_slots = 2
+set_convoys = 100
+set_stability = 0.5
+set_war_support = 0.5
+
+country_lock_all_division_template = yes
+
+set_politics = {
+	ruling_party = liberalism
+	last_election = "1934.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	totalism = 0
+	despotism = 22
+	authoritarianism = 25
+	conservatism = 15
+	liberalism = 25
+	reformism = 10
+	socialism = 0
+	radicalism = 3
+}
+
+create_country_leader = {
+	name = "Claude Swanson"
+	desc = "POLITICS_Claude_Swanson_DESC"
+	picture = "Portrait_CRF_Claude_Swanson.png"
+	expire = "1965.1.1"
+	ideology = liberalism_subtype
+}
+
+add_ideas = {
+	CRF_pratt_amendment
+	CRF_other_cold_war
+	CRF_Sugar_Export
+}

@@ -1,0 +1,311 @@
+
+focus_tree = {
+	id = MES_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = MES
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 100 y = 1000 }
+	
+	focus = {
+		id = MES_never_give_in
+		icon = GFX_focus_MES_never_give_in
+		cost = 1
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.1
+		}
+		x = 8
+		y = 0
+	}
+	focus = {
+		id = MES_proud_soldiers
+		prerequisite = { focus = MES_never_give_in }
+		relative_position_id = MES_never_give_in
+		cost = 2
+		completion_reward = {
+			add_ideas = MES_patriotic_army
+		}
+		x = -4
+		y = 1
+	}
+	focus = {
+		id = MES_strong_mexican
+		prerequisite = { focus = MES_never_give_in }
+		relative_position_id = MES_never_give_in
+		cost = 2
+		completion_reward = {
+		}
+		x = 4
+		y = 1
+	}
+	focus = {
+		id = MES_experienced_officers
+		prerequisite = { focus = MES_proud_soldiers }
+		relative_position_id = MES_proud_soldiers
+		cost = 5
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MES_temporary_requetes_1
+				remove_idea = MES_temporary_requetes
+			}
+		}
+		x = -4
+		y = 1
+	}
+	focus = {
+		id = MES_new_requetes
+		prerequisite = { focus = MES_proud_soldiers }
+		relative_position_id = MES_proud_soldiers
+		cost = 5
+		completion_reward = {
+			add_political_power = 25
+			unlock_decision_category_tooltip = MES_raise_requetes
+		}
+		x = -2
+		y = 1
+	}
+	focus = {
+		id = MES_old_guards
+		prerequisite = { focus = MES_proud_soldiers }
+		relative_position_id = MES_proud_soldiers
+		cost = 5
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MES_patriotic_army_1
+				remove_idea = MES_patriotic_army
+			}
+		}
+		x = 2
+		y = 1
+	}
+	focus = {
+		id = MES_reconstruct_command
+		prerequisite = { focus = MES_proud_soldiers }
+		relative_position_id = MES_proud_soldiers
+		cost = 5
+		completion_reward = {
+			add_command_power = 25
+			unlock_decision_category_tooltip = MES_push_fronts
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MES_need_for_equipment
+		prerequisite = { focus = MES_proud_soldiers }
+		relative_position_id = MES_proud_soldiers
+		cost = 5
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = MSR
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = MSR
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = MSR
+			}
+		}
+		x = 4
+		y = 1
+	}
+	focus = {
+		id = MES_improve_requetes_conscription
+		prerequisite = { focus = MES_experienced_officers }
+		prerequisite = { focus = MES_new_requetes }
+		relative_position_id = MES_experienced_officers
+		cost = 5
+		completion_reward = {
+			add_manpower = 10000
+			if = {
+				limit = { 
+					OR = {
+						has_idea = MES_temporary_requetes
+						has_idea = MES_temporary_requetes_1
+					}
+				}
+				swap_ideas = {
+					add_idea = MES_temporary_requetes_2a
+					remove_idea = MES_temporary_requetes_1
+				}
+			}
+			if = {
+				limit = { has_idea = MES_temporary_requetes_2b }
+				swap_ideas = {
+					add_idea = MES_temporary_requetes_3
+					remove_idea = MES_temporary_requetes_2b
+				}
+			}
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MES_requetes_tactic
+		prerequisite = { focus = MES_experienced_officers }
+		prerequisite = { focus = MES_new_requetes }
+		prerequisite = { focus = MES_reconstruct_command }
+		relative_position_id = MES_experienced_officers
+		cost = 5
+		completion_reward = {
+			army_experience = 10
+			if = {
+				limit = { 
+					OR = {
+						has_idea = MES_temporary_requetes
+						has_idea = MES_temporary_requetes_1
+					}
+				}
+				swap_ideas = {
+					add_idea = MES_temporary_requetes_2b
+					remove_idea = MES_temporary_requetes_1
+				}
+			}
+			if = {
+				limit = { has_idea = MES_temporary_requetes_2a }
+				swap_ideas = {
+					add_idea = MES_temporary_requetes_3
+					remove_idea = MES_temporary_requetes_2a
+				}
+			}
+		}
+		x = 3
+		y = 1
+	}
+	focus = {
+		id = MES_orthodox_doctrine
+		prerequisite = { focus = MES_reconstruct_command }
+		prerequisite = { focus = MES_old_guards }
+		relative_position_id = MES_old_guards
+		cost = 5
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MES_patriotic_army_2
+				remove_idea = MES_patriotic_army_1
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				usues = 1
+				category = land_doctrine
+			}
+		}
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MES_mountaineer_troop
+		prerequisite = { focus = MES_old_guards }
+		relative_position_id = MES_old_guards
+		cost = 5
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MES_speed_industry
+		prerequisite = { focus = MES_need_for_equipment }
+		prerequisite = { focus = MES_forced_arms_factory }
+		relative_position_id = MES_need_for_equipment
+		x = 2
+		y = 1
+	}
+	focus = {
+		id = MES_organized_requetes
+		prerequisite = { focus = MES_improve_requetes_conscription }
+		prerequisite = { focus = MES_requetes_tactic }
+		mutually_exclusive = { focus = MES_professional_army }
+		relative_position_id = MES_improve_requetes_conscription
+		cost = 6
+		completion_reward = {
+			add_manpower = 10000
+			swap_ideas = {
+				add_idea = MES_idea_organized_requetes
+				remove_idea = MES_temporary_requetes_3
+			}
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MES_professional_army
+		prerequisite = { focus = MES_mountaineer_troop }
+		prerequisite = { focus = MES_orthodox_doctrine }
+		mutually_exclusive = { focus = MES_organized_requetes }
+		relative_position_id = MES_orthodox_doctrine
+		cost = 6
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MES_idea_professional_army
+				remove_idea = MES_patriotic_army_2
+			}
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MES_forced_arms_factory
+		prerequisite = { focus = MES_strong_mexican }
+		relative_position_id = MES_strong_mexican
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MES_seize_foreign_property
+		prerequisite = { focus = MES_strong_mexican }
+		relative_position_id = MES_strong_mexican
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MES_rebuild_authority
+		prerequisite = { focus = MES_forced_arms_factory }
+		prerequisite = { focus = MES_seize_foreign_property }
+		relative_position_id = MES_forced_arms_factory
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MES_compromise_with_religion
+		prerequisite = { focus = MES_seize_foreign_property }
+		relative_position_id = MES_seize_foreign_property
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MES_back_of_our_pride
+		prerequisite = { focus = MES_speed_industry }
+		prerequisite = { focus = MES_rebuild_authority }
+		prerequisite = { focus = MES_compromise_with_religion }
+		relative_position_id = MES_rebuild_authority
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MES_win_civil_war
+		prerequisite = { focus = MES_back_of_our_pride }
+		prerequisite = {
+			focus = MES_organized_requetes
+			focus = MES_professional_army
+		}
+		relative_position_id = MES_back_of_our_pride
+		x = -4
+		y = 1
+	}
+	
+}
+	
+	
+	
+	
+	
+	

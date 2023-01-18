@@ -1,0 +1,45 @@
+focus_tree = {
+	id = test_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = RUS
+		}
+	}
+	
+	focus = {
+		id = TES_1
+		x = 3
+	}
+	focus = {
+		id = TES_2
+		x = 5
+	}
+	focus = {
+		id = TES_3
+		x = 7
+	}
+	focus = {
+		id = TES_4
+		x = 9
+	}
+	focus = {
+		id = TES_5
+		x = 6
+		y = 2
+		#AND = {
+			prerequisite = {
+				OR = {
+					focus = TES_1
+					focus = TES_3
+				}
+			}
+			prerequisite = {
+				focus = TES_2
+			}
+		#}
+	}
+}
+

@@ -1,0 +1,321 @@
+HUN_gyorjihua = {
+	#投资基建
+	HUN_touzijijian = {
+		icon = ger_military_buildup
+		
+		visible = {any_owned_state = { infrastructure < 5 }}
+        cost = 100
+		modifier = {civilian_factory_use = 5}
+		days_remove =  60
+		days_re_enable = 0
+		complete_effect = {
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#投资多瑙河
+	HUN_touziduonaohe = {
+		icon = ger_military_buildup
+		
+		visible = {
+			any_owned_state = {
+				has_state_flag = HUN_duonaoheliuyu
+				num_of_factories < 10		
+			}
+			has_completed_focus = HUN_touziduonaohejingjidai
+		}
+        cost = 100
+		modifier = {civilian_factory_use = 5}
+		days_remove =  60
+		days_re_enable = 0
+		complete_effect = {
+			random_owned_controlled_state = {
+			limit = {has_state_flag = HUN_duonaoheliuyu}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#投资其他地区
+	HUN_touziduonaohe = {
+		icon = ger_military_buildup
+		
+		visible = {
+			any_owned_state = {
+				NOT = { has_state_flag = HUN_duonaoheliuyu }
+				is_core_of = HUN
+				NOT = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
+				num_of_factories < 10	
+				infrastructure > 2			
+			}
+			has_completed_focus = HUN_daidongqitadiqu
+		}
+        cost = 100
+		modifier = {civilian_factory_use = 5}
+		days_remove =  60
+		days_re_enable = 0
+		complete_effect = {
+			random_owned_controlled_state = {
+			limit = {has_state_flag = HUN_duonaoheliuyu}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+#国家工作计划
+HUN_guojiagongzuojihua = {
+	#投资教育
+	HUN_touzijiaoyu = {
+		icon = ger_military_buildup
+		
+		modifier = {research_speed_factor = 0.1}
+		visible = {}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#投资轻工业
+	HUN_touziqinggongye = {
+		icon = ger_military_buildup
+		
+		modifier = {consumer_goods_factor = -0.05}
+		visible = {}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#投资重工业
+	HUN_touzizhonggongye = {
+		icon = ger_military_buildup
+		
+		modifier = {industrial_capacity_factory = 0.1}
+		visible = {}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#投资建筑
+	HUN_touzijianzhu = {
+		icon = ger_military_buildup
+		
+		modifier = {production_speed_buildings_factor = 0.1}
+		visible = {}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#投资物流
+	HUN_touziwuliu = {
+		icon = ger_military_buildup
+		
+		visible = {}
+		modifier = { 
+			production_speed_rail_way_factor = 0.25 
+			production_speed_supply_node_factor = 0.1
+		}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#保持货币稳定
+	HUN_huobizhengce = {
+		icon = ger_military_buildup
+		
+		visible = {}
+		modifier = {stability_weekly = 0.01}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#对外交往
+	HUN_duiwaijiaowange = {
+		icon = ger_military_buildup
+		
+		visible = {}
+		modifier = {
+			trade_opinion_factor = 0.15
+			opinion_gain_monthly_factor = 0.1
+		}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#矿产开采
+	HUN_kuangchankaicai = {
+		icon = ger_military_buildup
+		
+		modifier = {local_resources_factor = 0.01}
+		visible = {}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#燃料供应
+	HUN_ranliaogongying = {
+		icon = ger_military_buildup
+		
+		modifier = {
+			production_speed_synthetic_refinery_factor = 0.1
+			fuel_gain_factor = 0.05
+			production_speed_fuel_silo_factor = 0.1
+		}
+		visible = {}
+        cost = 50
+		days_remove =  60
+		days_re_enable = 30
+	}
+}
+#解决少民问题
+HUN_jiejueshaominwenti = {
+	#扶植亲匈势力
+	HUN_peizhiqinxiongshili = {
+		icon = ger_military_buildup
+		
+		modifier = {
+			consumer_goods_factor = 0.02
+			political_power_factor = -0.1
+		}
+		visible = {
+			any_owned_state = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
+			has_completed_focus = HUN_peizhiqinxiongshili
+		}
+		remove_effect = { add_to_variable = { HUN_shaominfankang = 0.1 }}
+        cost = 100
+		days_remove =  60
+		days_re_enable = 30
+	}
+	#增加马扎儿移民
+	HUN_zengjiamazhaeryimin = {
+		icon = ger_military_buildup
+		
+		modifier = {
+			production_speed_synthetic_refinery_factor = 0.1
+			fuel_gain_factor = 0.05
+			production_speed_fuel_silo_factor = 0.1
+		} 
+		available = { has_equipment = { motorized_equipment > 49 }  }
+		visible = {
+			any_owned_state = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
+			has_completed_focus = HUN_peizhiqinxiongshili
+		}
+		complete_effect = {
+			random_owned_state = {
+				limit = { is_core_of = HUN }
+				add_manpower = -3000
+				add_equipment_to_stockpile = { type = motorized_equipment amount = -50 producer = HUN }
+            }
+        }
+		remove_effect = {
+			random_owned_controlled_state = {
+				limit = { 
+					is_core_of = ROM
+					NOT = { has_state_flag = HUN_3jiyimin }
+				}
+				if = {
+					limit = { NOT = { has_state_flag = HUN_1jiyimin }}
+					add_state_flag = HUN_1jiyimin
+				}
+				if = {
+					limit = { NOT = { has_state_flag = HUN_2jiyimin }}
+					add_state_flag = HUN_2jiyimin
+				}
+				if = {
+					limit = { NOT = { has_state_flag = HUN_3jiyimin }}
+					add_state_flag = HUN_3jiyimin
+					add_core_of = HUN
+				}
+				add_manpower = 3000
+				add_equipment_to_stockpile = { type = motorized_equipment amount = 50 producer = HUN }
+			}
+        }
+        cost = 50
+		days_remove =  30
+		days_re_enable = 0
+	}
+	#建立少民军队
+	#建立斯洛伐克军队
+	HUN_jianlisiluofakejundui= {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		modifier = {
+			consumer_goods_factor = 0.5
+			political_power_factor = -0.1
+		}
+		visible = {
+			has_completed_focus = HUN_wengusilfake
+			has_completed_focus = HUN_jianlishaominjundui
+		}
+		available = { has_equipment = { infantry_equipment > 1499 }  }
+		remove_effect = { load_oob = "HUN_siluofakejundui"}
+        cost = 50
+		days_remove =  60
+	}
+	#建立罗马尼亚军队
+	HUN_jianliluomaniyajundui= {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		modifier = {
+			consumer_goods_factor = 0.5
+			political_power_factor = -0.1
+		}
+		visible = {
+			has_completed_focus = HUN_wengusilfake
+			has_completed_focus = HUN_jianlishaominjundui
+		}
+		available = { has_equipment = { infantry_equipment > 1499 }  }
+		remove_effect = { load_oob = "HUN_luomaniya"}
+        cost = 50
+		days_remove =  60
+	}
+	#建立摩尔多瓦军队
+	HUN_jianlimoerduowajundui= {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		modifier = {
+			consumer_goods_factor = 0.5
+			political_power_factor = -0.1
+		}
+		visible = {
+			has_completed_focus = HUN_wengusilfake
+			has_completed_focus = HUN_jianlishaominjundui
+		}
+		available = { has_equipment = { infantry_equipment > 1499 }  }
+		remove_effect = { load_oob = "HUN_moerduowa"}
+        cost = 50
+		days_remove =  60
+	}
+	#发展当地产业
+	HUN_jianlimoerduowajundui= {
+		icon = ger_military_buildup
+		visible = {
+			any_owned_state = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
+			has_completed_focus = HUN_fazhandangdichanye
+		}
+        cost = 100
+		modifier = {civilian_factory_use = 5}
+		days_remove =  60
+		days_re_enable = 0
+		complete_effect = {
+			random_owned_controlled_state = {
+			limit = {has_state_flag = HUN_duonaoheliuyu}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}

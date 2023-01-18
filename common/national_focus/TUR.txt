@@ -1,0 +1,277 @@
+###TUR National Focuses###
+focus_tree = {
+	id = TUR_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = TUR
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 2000 y = 2000 }
+	
+	
+	#凯末尔主义的未来
+	focus = {
+		id = TUR_the_future_of_kemmerism
+		icon = GFX_TUR_kaimoerzhuyideweilai
+		x = 10
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			TUR = { country_event = { id = TOD_Turkey.1} }
+		}
+	}
+	#授权纲领派
+	focus = {
+		id = TUR_authorized_creed
+		icon = GFX_TUR_shouquanganglingpai
+		x = 8
+		y = 2
+		cost = 5
+		prerequisite = { 
+			focus = TUR_the_future_of_kemmerism
+		}
+		mutually_exclusive = {
+			focus = TUR_authorized_flag_faction
+		}
+		available = { has_idea = TUR_shouquanganglingpai}
+		ai_will_do = {factor = 1}
+		completion_reward = {
+		}
+	}
+	#授权旗帜派
+	focus = { 
+		id = TUR_authorized_flag_faction
+		icon = GFX_TUR_shouquanqizhipai
+		x = 12
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = TUR_the_future_of_kemmerism
+		}
+		mutually_exclusive = {
+			focus = TUR_authorized_creed
+		}
+		available = { has_idea = TUR_shouquanqizhipai}
+		ai_will_do = {factor = 1}
+		completion_reward = {
+		}
+	}
+	#维持党内团结
+	focus = { 
+		id = TUR_maintain_inner_party_unity
+		icon = GFX_TUR_weichidangneituanjie
+		x = 10
+		y = 3
+		cost = 5
+		prerequisite = { 
+			focus = TUR_authorized_creed
+			focus = TUR_authorized_flag_faction
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 15
+			stability_factor = 0.05
+		}
+	}
+
+	focus = { #三五计划的收尾工作
+		id = TUR_closing_work_of_the_third_fire_year_plan
+		icon = GFX_TUR_sanwujihuadeshouweigongzuo
+		x = 15
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			unlock_decision_tooltip = { decision = TUR_sanwujihua show_effect_tooltip = yes }
+		}
+	}
+	
+	#维护公务员体系
+	focus = { 
+		id = TUR_maintain_the_civil_service_system
+		icon = GFX_TUR_weihugongwuyuanxitong
+		x = 14
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = TUR_closing_work_of_the_third_fire_year_plan
+		}
+		mutually_exclusive = {
+			focus = TUR_feelings_of_workers
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+		}
+	}
+	
+	#工人之情
+	focus  = { 
+		id = TUR_feelings_of_workers
+		icon = GFX_TUR_gongrenzhiqing
+		x = 16
+		y = 2
+		cost = 5
+		prerequisite = {
+			focus = TUR_closing_work_of_the_third_fire_year_plan
+		}
+		mutually_exclusive = {
+			focus = TUR_maintain_the_civil_service_system
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#减少个人宣传
+	focus = { 
+		id = TUR_reduce_personal_publicity
+		icon = GFX_TUR_jianshaogerenxuanchuan
+		x = 9
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = TUR_opening_up_government_posts
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = -25 
+		}
+	}
+	#强化个人崇拜
+	focus = { 
+		id = TUR_strengthen_personal_worship
+		icon = GFX_TUR_qianghuagerencongbai
+		x = 13
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = TUR_relax_the_criteria_for_joining_the_party
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+		}
+	}
+	#开放政府职位
+	focus = { 
+		id = TUR_opening_up_government_posts
+		icon = GFX_TUR_kaifangzhengfuzhiwei
+		x = 8
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = TUR_authorized_creed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#放宽入党标准
+	focus = { 
+		id = TUR_relax_the_criteria_for_joining_the_party
+		icon = GFX_TUR_fangkuanrudangbiaozhun
+		x = 12
+		y = 3
+		cost = 5
+		prerequisite = {
+			focus = TUR_authorized_flag_faction
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#放松社会管制
+	focus = { 
+		id = TUR_deregulation_of_society
+		icon = GFX_TUR_fangsongshehuiguanzhi
+		x = 7
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = TUR_opening_up_government_posts
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	#稳定高于一切
+	focus = { 
+		id = TUR_stability_is_above_all_else
+		icon = GFX_TUR_wendinggaoyuyiqie
+		x = 11
+		y = 4
+		cost = 5
+		prerequisite = {
+			focus = TUR_relax_the_criteria_for_joining_the_party
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+	
+	focus = { #安卡拉之春
+		id = TUR_ankara_spring
+		icon = GFX_TUR_ankalazhichun
+		x = 8
+		y = 5
+		cost = 5
+		prerequisite = { focus = TUR_deregulation_of_society }
+		prerequisite = { focus = TUR_reduce_personal_publicity }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_country_leader = {
+				name = "POLITICS_MUSTAFA_SUBHI_NAME"
+				desc = "POLITICS_MUSTAFA_SUBHI_DESC"
+				picture = "gfx//leaders//TUR//Portrait_TUR_Mustafa_Subhi.tga"
+				expire = "1965.1.1"
+				ideology = radicalism_subtype
+			}
+		}
+	}
+	
+	focus = { #凯末尔主义的延续
+		id = TUR_continuation_of_kemmerism
+		icon = GFX_TUR_kaimoerzhuyideyanxu
+		x = 12
+		y = 5
+		cost = 5
+		prerequisite = { focus = TUR_stability_is_above_all_else }
+		prerequisite = { focus = TUR_strengthen_personal_worship }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		}
+	}
+
+
+}

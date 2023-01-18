@@ -1,0 +1,59 @@
+ideas = {
+	country = {
+		### Edo Shogunate ideas ###
+		EDO_torn_society = {
+			picture = chi_war_of_resistance
+			modifier = {
+				stability_factor = -0.30
+			}
+		}
+		EDO_poor_industry = {
+			picture = FRA_factory_strikes
+			modifier = {
+				production_factory_max_efficiency_factor = -0.15
+				production_speed_buildings_factor = -0.15
+			}
+		}
+		EDO_communist_in_our_army = {
+			picture = jap_the_unthinkable_option
+			modifier = {
+				political_power_gain = -0.5
+				army_org_factor = -0.05
+			}
+		}
+		### West Japan ideas ###
+		WJP_slave_of_dragon = {
+			modifier = {
+				consumer_goods_factor = 0.15
+				political_power_gain = -0.5
+			}
+		}
+		WJP_depression_strike = {
+			picture = great_depression
+			modifier = {
+				production_factory_max_efficiency_factor = -0.30
+				production_speed_buildings_factor = -0.10
+				stability_factor = -0.10
+			}
+		}
+		WJP_rice_unrest = {
+		}
+				
+		### Japanese ideas ###
+		JAP_overseas_japanese_in_sanchen = {
+			modifier = {
+				research_speed_factor = -0.10
+				consumer_goods_factor = -0.02
+			}
+		}
+		JAP_sino_japanese_defense_treaty = {
+			picture = HUN_treaty_of_triannon
+			modifier = {
+				political_power_gain = -0.5
+				conscription_factor = -0.05
+				stability_factor = -0.05
+				custom_modifier_tooltip = JAP_sino_japanese_defense_treaty_tt
+			}	
+		}
+	}
+}

@@ -1,0 +1,1744 @@
+﻿
+focus_tree = {
+	id = Italian_focus
+	
+	country = {
+		factor = 0
+		if = {
+			modifier = {
+				add = 100
+				tag = ITA
+				neutrality > 0.5	
+			}
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+
+#	focus = {
+#		id = ITA_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+	#三年计划
+	focus = {
+		id = ITA_sannianjihua
+		icon = GFX_ITA_sannianjihua
+
+		x = 7
+		y = 1
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#战后重建
+	focus = {
+		id = ITA_zhanhouchongjian
+		icon = GFX_ITA_zhanhouchongjian
+		prerequisite = { focus = ITA_sannianjihua }
+		x = 7
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#发展IRI
+	focus = {
+		id = ITA_fazhanIRI
+		icon = GFX_ITA_fazhanIRI
+		prerequisite = { focus = ITA_zhanhouchongjian }
+		x = 7
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#北意大利工业复兴
+	focus = {
+		id = ITA_beiyidaligongyefuxing
+		icon = GFX_ITA_beiyidaligongyefuxing
+		prerequisite = { focus = ITA_fazhanIRI }
+		x = 5
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#国家投资
+	focus = {
+		id = ITA_guojiatouzi
+		icon = GFX_ITA_guojiatouzi
+		prerequisite = { focus = ITA_beiyidaligongyefuxing }
+		x = 4
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#合并小微企业
+	focus = {
+		id = ITA_hebingxiaoweiqiye
+		icon = GFX_ITA_hebingxiaoweiqiye
+		prerequisite = { focus = ITA_beiyidaligongyefuxing }
+		prerequisite = { focus = ITA_guojiatouzi }
+		x = 5
+		y = 6
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#改良生产
+	focus = {
+		id = ITA_gailiangshengchan
+		icon = GFX_ITA_gailiangshengchan
+		prerequisite = { focus = ITA_hebingxiaoweiqiye }
+		x = 5
+		y = 7
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#意大利基础设施建设
+	focus = {
+		id = ITA_yidalijichusheshijianshe
+		icon = GFX_ITA_yidalijichusheshijianshe
+		prerequisite = { focus = ITA_fazhanIRI}
+		x = 7
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#北意大利高速公路
+	focus = {
+		id = ITA_beiyidaligaosugonglu
+		icon = GFX_ITA_beiyidaligaosugonglu
+		prerequisite = { focus = ITA_yidalijichusheshijianshe }
+		x = 6
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#南意大利高速公路
+	focus = {
+		id = ITA_nanyidaligaosugonglu
+		icon = GFX_ITA_nanyidaligaosugonglu
+		prerequisite = { focus = ITA_yidalijichusheshijianshe }
+		x = 8
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#全意大利高速公路
+	focus = {
+		id = ITA_quanyidaligaosugonglu
+		icon = GFX_ITA_quanyidaligaosugonglu
+		prerequisite = { focus = ITA_beiyidaligaosugonglu }
+		prerequisite = { focus = ITA_nanyidaligaosugonglu }
+		x = 7
+		y = 6
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#皇家研究院
+	focus = {
+		id = ITA_huangjiayanjiuyuan
+		icon = GFX_ITA_quanyidaligaosugonglu
+		prerequisite = { focus = ITA_beiyidaligaosugonglu }
+		prerequisite = { focus = ITA_nanyidaligaosugonglu }
+		x = 7
+		y = 7
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#南意大利发展计划
+	focus = {
+		id = ITA_nanyidalifazhanjihua
+		icon = GFX_ITA_nanyidalifazhanjihua
+		prerequisite = { focus = ITA_fazhanIRI }
+		x = 9
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#鼓励农民
+	focus = {
+		id = ITA_gulinongmin
+		icon = GFX_ITA_gulinongmin
+		prerequisite = { focus = ITA_nanyidalifazhanjihua }
+		x = 10
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#吸引投资
+	focus = {
+		id = ITA_xiyintouzi
+		icon = GFX_ITA_xiyintouzi
+		prerequisite = { focus = ITA_nanyidalifazhanjihua }
+		prerequisite = { focus = ITA_gulinongmin }
+		x = 9
+		y = 6
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#机械化农业
+	focus = {
+		id = ITA_jixiehuanongye
+		icon = GFX_ITA_jixiehuanongye
+		prerequisite = { focus = ITA_xiyintouzi }
+		x = 9
+		y = 7
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#流水线秩序井然
+	focus = {
+		id = ITA_liushuixianzhixujingran
+		icon = GFX_ITA_liushuixianzhixujingran
+		prerequisite = { focus = ITA_gailiangshengchan }
+		prerequisite = { focus = ITA_huangjiayanjiuyuan }
+		prerequisite = { focus = ITA_jixiehuanongye }
+		x = 6
+		y = 8
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#农业独立
+	focus = {
+		id = ITA_nongyeduli
+		icon = GFX_ITA_nongyeduli
+		prerequisite = { focus = ITA_gailiangshengchan }
+		prerequisite = { focus = ITA_huangjiayanjiuyuan }
+		prerequisite = { focus = ITA_jixiehuanongye }
+		x = 8
+		y = 8
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#国王外交
+	focus = {
+		id = ITA_guowangwaijiao
+		icon = GFX_ITA_guowangwaijiao
+		x = 7
+		y = 11
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#新的威胁
+	focus = {
+		id = ITA_xindeweixie
+		icon = GFX_ITA_xindeweixie
+		prerequisite = { focus = ITA_guowangwaijiao }
+		x = 5
+		y = 12
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#旧盟友
+	focus = {
+		id = ITA_jiumengyou
+		icon = GFX_ITA_jiumengyou
+		prerequisite = { focus = ITA_xindeweixie }
+		mutually_exclusive = { focus = ITA_suoyaofaguowangwei }
+		x = 5
+		y = 13
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#避免第二个卡波雷托
+	focus = {
+		id = ITA_bimiandiergekaboleituo
+		icon = GFX_ITA_bimiandiergekaboleituo
+		prerequisite = { focus = ITA_jiumengyou }
+		x = 3
+		y = 14
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#法意联合军演
+	focus = {
+		id = ITA_fayilianhejunyan
+		icon = GFX_ITA_fayilianhejunyan
+		prerequisite = { focus = ITA_jiumengyou }
+		x = 5
+		y = 14
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#制裁德国
+	focus = {
+		id = ITA_zhicaideguo
+		icon = GFX_ITA_zhicaideguo
+		prerequisite = { focus = ITA_jiumengyou }
+		x = 7
+		y = 14
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#宣称萨伏依
+	focus = {
+		id = ITA_xuanchengsafuyi
+		icon = GFX_ITA_xuanchengsafuyi
+		prerequisite = { focus = ITA_guowangwaijiao }
+		x = 9
+		y = 12
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#索要法国王位
+	focus = {
+		id = ITA_suoyaofaguowangwei
+		icon = GFX_ITA_suoyaofaguowangwei
+		prerequisite = { focus = ITA_xuanchengsafuyi }
+		mutually_exclusive = { focus = ITA_jiumengyou }
+		x = 9
+		y = 13
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#宣称西班牙王位
+	focus = {
+		id = ITA_xuanchengxibanyawangwei
+		icon = GFX_ITA_xuanchengsafuyi
+		prerequisite = { focus = ITA_guowangwaijiao }
+		x = 11
+		y = 12
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#与保加利亚的关系
+	focus = {
+		id = ITA_yubaojialiydeguanxi
+		icon = GFX_ITA_yubaojialiydeguanxi
+		prerequisite = { focus = ITA_guowangwaijiao }
+		x = 13
+		y = 12
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#希腊领地
+	focus = {
+		id = ITA_xilalingdi
+		icon = GFX_ITA_xilalingdi
+		prerequisite = { focus = ITA_yubaojialiydeguanxi }
+		x = 13
+		y = 13
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#王国依存
+	focus = {
+		id = ITA_wangguoyicun
+		icon = GFX_ITA_wangguoyicun
+		x = 14
+		y = 1
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#政府内的敌人
+	focus = {
+		id = ITA_zhengfuneidediren
+		icon = GFX_ITA_zhengfuneidediren
+		prerequisite = { focus = ITA_wangguoyicun }
+		x = 14
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#王国的命运
+	focus = {
+		id = ITA_wangguodemingyun
+		icon = GFX_ITA_wangguodemingyun
+		prerequisite = { focus = ITA_zhengfuneidediren }
+		x = 14
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#重新任用法西斯官僚
+	focus = {
+		id = ITA_chongxinrenyong
+		icon = GFX_ITA_chongxinrenyong
+		prerequisite = { focus = ITA_wangguodemingyun }
+		x = 13
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#军队的支持
+	focus = {
+		id = ITA_junduidezhichi
+		icon = GFX_ITA_junduidezhichi
+		prerequisite = { focus = ITA_chongxinrenyong }
+		x = 12
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#确立宪法
+	focus = {
+		id = ITA_quelixianfa
+		icon = GFX_ITA_quelixianfa
+		prerequisite = { focus = ITA_wangguodemingyun }
+		x = 15
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#教宗问题
+	focus = {
+		id = ITA_jiaozongwenti
+		icon = GFX_ITA_jiaozongwenti
+		prerequisite = { focus = ITA_quelixianfa }
+		prerequisite = { focus = ITA_chongxinrenyong}
+		x = 14
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#天主根源
+	focus = {
+		id = ITA_tianzhugenyuan
+		icon = GFX_ITA_tianzhugenyuan
+		prerequisite = { focus = ITA_jiaozongwenti }
+		x = 14
+		y = 6
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#加强参议院
+	focus = {
+		id = ITA_jiaqiangcanyiyuan
+		icon = GFX_ITA_jiaqiangcanyiyuan
+		prerequisite = { focus = ITA_quelixianfa }
+		x = 16
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#依人而治
+	focus = {
+		id = ITA_yirenerzhi
+		icon = GFX_ITA_yirenerzhi
+		prerequisite = { focus = ITA_jiaqiangcanyiyuan }
+		x = 16
+		y = 6
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#强硬行政
+	focus = {
+		id = ITA_qiangyingxingzheng
+		icon = GFX_ITA_qiangyingxingzheng
+		prerequisite = { focus = ITA_jiaqiangcanyiyuan }
+		x = 18
+		y = 6
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#皇家陆军
+	focus = {
+		id = ITA_huangjialujun
+		icon = GFX_ITA_huangjialujun
+		x = 28
+		y = 1
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#阿尔卑斯防线
+	focus = {
+		id = ITA_aerbeisifangxian
+		icon = GFX_ITA_aerbeisifangxian
+		prerequisite = { focus = ITA_huangjialujun }
+		x = 21
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#殖民地驻防
+	focus = {
+		id = ITA_zhimindizhufang
+		icon = GFX_ITA_zhimindizhufang
+		prerequisite = { focus = ITA_aerbeisifangxian }
+		x = 20
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#两岛驻防
+	focus = {
+		id = ITA_liangdaozhufang
+		icon = GFX_ITA_liangdaozhufang
+		prerequisite = { focus = ITA_aerbeisifangxian }
+		x = 22
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#保守派
+	focus = {
+		id = ITA_baoshoupai
+		icon = GFX_ITA_baoshoupai
+		prerequisite = { focus = ITA_huangjialujun }
+		mutually_exclusive = { focus = ITA_junduixiandaihua }
+		x = 25
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#决战计划
+	focus = {
+		id = ITA_juezhanjihua
+		icon = GFX_ITA_juezhanjihua
+		prerequisite = { focus = ITA_baoshoupai }
+		mutually_exclusive = { focus = ITA_huolishashang }
+		x = 24
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#火力杀伤
+	focus = {
+		id = ITA_huolishashang
+		icon = GFX_ITA_huolishashang
+		prerequisite = { focus = ITA_baoshoupai }
+		mutually_exclusive = { focus = ITA_juezhanjihua }
+		x = 26
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#支援部队
+	focus = {
+		id = ITA_zhiyuanbudui
+		icon = GFX_ITA_zhiyuanbudui
+		prerequisite = { focus = ITA_huolishashang  focus = ITA_juezhanjihua}
+		x = 24
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#改良火炮
+	focus = {
+		id = ITA_gailianghuopao
+		icon = GFX_ITA_gailianghuopao
+		prerequisite = { focus = ITA_huolishashang  focus = ITA_juezhanjihua}
+		x = 26
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#加强军备生产
+	focus = {
+		id = ITA_jiaqiangjunbeishengchan
+		icon = GFX_ITA_jiaqiangjunbeishengchan
+		prerequisite = { focus = ITA_zhiyuanbudui }
+		prerequisite = { focus = ITA_gailianghuopao }
+		x = 25
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#阿尔卑斯军团
+	focus = {
+		id = ITA_aerbeisijuntuan
+		icon = GFX_ITA_aerbeisijuntuan
+		prerequisite = { focus = ITA_baoshoupai  focus = ITA_junduixiandaihua }
+		x = 28
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#武器现代化
+	focus = {
+		id = ITA_wuqixiandaihua
+		icon = GFX_ITA_wuqixiandaihua
+		prerequisite = { focus = ITA_aerbeisijuntuan }
+		x = 28
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#火炮现代化
+	focus = {
+		id = ITA_huopaoxiandaihua
+		icon = GFX_ITA_huopaoxiandaihua
+		prerequisite = { focus = ITA_wuqixiandaihua }
+		x = 27
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#装甲部队
+	focus = {
+		id = ITA_zhuangjiabudui
+		icon = GFX_ITA_zhuangjiabudui
+		prerequisite = { focus = ITA_wuqixiandaihua }
+		x = 29
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#军队现代化
+	focus = {
+		id = ITA_junduixiandaihua
+		icon = GFX_ITA_junduixiandaihua
+		prerequisite = { focus = ITA_huangjialujun }
+		mutually_exclusive = { focus = ITA_baoshoupai }
+		x = 31
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#解决军队腐败
+	focus = {
+		id = ITA_jiejuejunduifubai
+		icon = GFX_ITA_jiejuejunduifubai
+		prerequisite = { focus = ITA_junduixiandaihua }
+		x = 31
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#重视摩托化
+	focus = {
+		id = ITA_zhongshimotuohua
+		icon = GFX_ITA_zhongshimotuohua
+		prerequisite = { focus = ITA_jiejuejunduifubai }
+		x = 30
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#坦克机动
+	focus = {
+		id = ITA_tankejidong
+		icon = GFX_ITA_tankejidong
+		prerequisite = { focus = ITA_jiejuejunduifubai }
+		x = 32
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#机动作战
+	focus = {
+		id = ITA_jidongzuozhan
+		icon = GFX_ITA_jidongzuozhan
+		prerequisite = { focus = ITA_zhongshimotuohua }
+		prerequisite = { focus = ITA_tankejidong }
+		x = 31
+		y = 5
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#军队新面貌
+	focus = {
+		id = ITA_junduixinmianmao
+		icon = GFX_ITA_junduixinmianmao
+		prerequisite = { focus = ITA_jiaqiangjunbeishengchan  focus = ITA_jidongzuozhan }
+		x = 28
+		y = 6
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#皇家海军
+	focus = {
+		id = ITA_huangjiahaijun
+		icon = GFX_ITA_huangjiahaijun
+		x = 38
+		y = 1
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#意大利商船队
+	focus = {
+		id = ITA_yidalishangchuandui
+		icon = GFX_ITA_yidalishangchuandui
+		prerequisite = { focus = ITA_huangjiahaijun }
+		x = 34
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#地中海霸权
+	focus = {
+		id = ITA_dizhonghaibaquan
+		icon = GFX_ITA_dizhonghaibaquan
+		prerequisite = { focus = ITA_huangjiahaijun }
+		mutually_exclusive = { focus = ITA_daxiyanghaijun }
+		x = 37
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#改进驱逐舰
+	focus = {
+		id = ITA_gaijinquzhujian
+		icon = GFX_ITA_gaijinquzhujian
+		prerequisite = { focus = ITA_huangjiahaijun  focus = ITA_daxiyanghaijun}
+		x = 35
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#改进巡洋舰
+	focus = {
+		id = ITA_gaijinxunyangjian
+		icon = GFX_ITA_gaijinxunyangjian
+		prerequisite = {  focus = ITA_gaijinquzhujian}
+		prerequisite = { focus = ITA_yidalishangchuandui }
+		x = 34
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#新战列
+	focus = {
+		id = ITA_xinzhanlie
+		icon = GFX_ITA_xinzhanlie
+		prerequisite = { focus = ITA_huangjiahaijun  focus = ITA_daxiyanghaijun}
+		x = 37
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#新航母
+	focus = {
+		id = ITA_xinhangmu
+		icon = GFX_ITA_xinhangmu
+		prerequisite = { focus = ITA_huangjiahaijun  focus = ITA_daxiyanghaijun}
+		x = 39
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#训练海上航空兵
+	focus = {
+		id = ITA_haishanghangkongbing
+		icon = GFX_ITA_haishanghangkongbing
+		prerequisite = { focus = ITA_daxiyanghaijun}
+		x = 41
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#海军陆战队
+	focus = {
+		id = ITA_haijunluzhandui
+		icon = GFX_ITA_haijunluzhandui
+		prerequisite = { focus = ITA_xinhangmu focus = ITA_xinzhanlie}
+		x = 37
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#海狼
+	focus = {
+		id = ITA_hailang
+		icon = GFX_ITA_hailang
+		prerequisite = { focus = ITA_xinhangmu focus = ITA_xinzhanlie}
+		x = 39
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#大西洋海军
+	focus = {
+		id = ITA_daxiyanghaijun
+		icon = GFX_ITA_daxiyanghaijun
+		prerequisite = { focus = ITA_huangjiahaijun }
+		mutually_exclusive = { focus = ITA_dizhonghaibaquan }
+		x = 39
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#那不勒斯造船厂
+	focus = {
+		id = ITA_nabulesizaochuanchang
+		icon = GFX_ITA_nabulesizaochuanchang
+		prerequisite = { focus = ITA_huangjiahaijun }
+		x = 42
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#扩建船坞
+	focus = {
+		id = ITA_kuojianchuanwu
+		icon = GFX_ITA_kuojianchuanwu
+		prerequisite = { focus = ITA_nabulesizaochuanchang }
+		x = 42
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#非洲之角海军基地
+	focus = {
+		id = ITA_feizhouzhijiao
+		icon = GFX_ITA_feizhouzhijiao
+		prerequisite = { focus = ITA_nabulesizaochuanchang }
+		x = 44
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#皇家空军
+	focus = {
+		id = ITA_huangjiakongjun
+		icon = GFX_ITA_huangjiakongjun
+		x = 49
+		y = 1
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#新型雷达
+	focus = {
+		id = ITA_xinxingleida
+		icon = GFX_ITA_xinxingleida
+		prerequisite = { focus = ITA_huangjiakongjun focus = ITA_huangjiahaijun }
+		x = 44
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#海上支援
+	focus = {
+		id = ITA_haishangzhiyuan
+		icon = GFX_ITA_haishangzhiyuan
+		prerequisite = { focus = ITA_huangjiakongjun }
+		x = 46
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#空海合作
+	focus = {
+		id = ITA_konghaihezuo
+		icon = GFX_ITA_konghaihezuo
+		prerequisite = { focus = ITA_haishangzhiyuan }
+		x = 46
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#重视战略空军
+	focus = {
+		id = ITA_zhongshizhanluekongjun
+		icon = GFX_ITA_zhongshizhanluekongjun
+		prerequisite = { focus = ITA_huangjiakongjun }
+		mutually_exclusive = { focus = ITA_zhongshizhanshukongjun }
+		x = 48
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#重视战术空军
+	focus = {
+		id = ITA_zhongshizhanshukongjun
+		icon = GFX_ITA_zhongshizhanshukongjun
+		prerequisite = { focus = ITA_huangjiakongjun }
+		mutually_exclusive = { focus = ITA_zhongshizhanluekongjun }
+		x = 50
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#远程护航
+	focus = {
+		id = ITA_yuanchenghuhang
+		icon = GFX_ITA_yuanchenghuhang
+		prerequisite = { focus = ITA_zhongshizhanluekongjun focus = ITA_zhongshizhanshukongjun }
+		x = 49
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#陆地支援
+	focus = {
+		id = ITA_ludizhiyuan
+		icon = GFX_ITA_ludizhiyuan
+		prerequisite = { focus = ITA_huangjiakongjun }
+		x = 50
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#空地合作
+	focus = {
+		id = ITA_kongdihezuo
+		icon = GFX_ITA_kongdihezuo
+		prerequisite = { focus = ITA_ludizhiyuan }
+		x = 52
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#资助研究喷气式发动机
+	focus = {
+		id = ITA_penqishi
+		icon = GFX_ITA_penqishi
+		prerequisite = { focus = ITA_konghaihezuo focus = ITA_yuanchenghuhang focus = ITA_kongdihezuo }
+		x = 49
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#天空霸权
+	focus = {
+		id = ITA_tiankongbaquan
+		icon = GFX_ITA_tiankongbaquan
+		prerequisite = { focus = ITA_huangjiakongjun }
+		x = 54
+		y = 2
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#新一代战斗机
+	focus = {
+		id = ITA_xinyidaizhandouji
+		icon = GFX_ITA_xinyidaizhandouji
+		prerequisite = { focus = ITA_tiankongbaquan }
+		x = 54
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#扩建机场
+	focus = {
+		id = ITA_kuojianjichang
+		icon = GFX_ITA_kuojianjichang
+		prerequisite = { focus = ITA_tiankongbaquan }
+		x = 56
+		y = 3
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#加强生产
+	focus = {
+		id = ITA_jiaqiangshengchan
+		icon = GFX_ITA_jiaqiangshengchan
+		prerequisite = { focus = ITA_xinyidaizhandouji }
+		x = 54
+		y = 4
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+}

@@ -1,0 +1,144 @@
+###########################
+#关于在巴尔干内战中的各种一定会发生的事件的统合
+#单独小事件应添加到各势力文件内
+###########################
+
+add_namespace = balkancivwar
+
+#希腊发现土耳其空投
+country_event = {
+	id = balkancivwar.1
+	title = balkancivwar.1.t
+	desc =balkancivwar.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GRE}
+	
+	option = { 
+		name = balkancivwar.1.a
+		add_tech_bonus = { bonus = 0.5 uses = 1 category = infantry_weapons }
+		hidden_effect = {
+			TUR = {country_event = { id = balkancivwar.2}}
+		}
+	}
+}
+#土耳其空投错误地点
+country_event = {
+	id = balkancivwar.2
+	title = balkancivwar.2.t
+	desc =balkancivwar.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = TUR}
+	
+	option = { 
+		name = balkancivwar.2.a
+	}
+}
+#希腊掌控塞浦路斯
+country_event = {
+	id = balkancivwar.3
+	title = balkancivwar.3.t
+	desc =balkancivwar.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = TUR}
+	
+	option = { 
+		name = balkancivwar.3.a
+		set_state_owner = 183	
+		set_state_controller = 183	
+		183 = {	set_demilitarized_zone = no }
+	}
+}
+#土耳其掌控塞浦路斯
+country_event = {
+	id = balkancivwar.4
+	title = balkancivwar.4.t
+	desc =balkancivwar.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = TUR}
+	
+	option = { 
+		name = balkancivwar.4.a
+		set_state_owner = 183	
+		set_state_controller = 183	
+		183 = {	set_demilitarized_zone = no }
+	}
+}
+###新闻事件 news 
+news_event = {
+	id = balkancivwar.1001
+	title = balkancivwar.1001.t
+	picture = GFX_balkancivwar
+	desc = balkancivwar.1001.d
+	
+	major = yes
+	fire_only_once = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {
+		tag = GRE
+		date > 1936.12.05
+	}
+	option = {name = balkancivwar.1001.a}
+}
+#土耳其占领君士坦丁
+news_event = {
+	id = balkancivwar.1002
+	title = balkancivwar.1002.t
+	picture = GFX_Constantinople
+	desc = balkancivwar.1002.d
+	
+	major = yes
+	fire_only_once = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {
+		tag = TUR
+		932 = { is_controlled_by = TUR }
+	}
+	option = {name = balkancivwar.1002.a}
+}
+#希腊宣布封锁塞浦路斯
+news_event = {
+	id = balkancivwar.1003
+	title = balkancivwar.1003.t
+	picture = GFX_news_event_panay_incident
+	desc = balkancivwar.1003.d
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {days = 0}
+	option = {
+		trigger = {tag = GRE}
+		name = balkancivwar.1003.a
+	}
+	option = {
+		trigger = {tag = TUR}
+		name = balkancivwar.1003.b
+	}
+	option = {
+		trigger = {
+			NOT = {
+				tag = TUR
+				tag = GRE
+			}
+		}
+		name = balkancivwar.1003.c
+	}
+}
+

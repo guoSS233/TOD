@@ -1,0 +1,52 @@
+scripted_gui = {
+    
+	TOD_nofaction = {
+        window_name = tod_nofaction_icon
+        context_type = player_context
+		parent_window_token = politics_tab
+		position = { x = 0 y =0 }
+		Orientation = UPPER_LEFT
+		size = { width = 220 height = 128 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		visible = {
+		is_subject = no 
+		is_in_faction = no 
+		
+		}
+
+	
+	
+		triggers = {
+			
+			
+		}
+
+		
+	}
+	TOD_hasfaction = {
+        window_name = tod_hasfaction_icon
+        context_type = player_context
+		parent_window_token = politics_tab
+		position = { x = 0 y =0 }
+		Orientation = UPPER_LEFT
+		size = { width = 220 height = 128 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300	
+		visible = {
+		is_subject = no 
+		is_in_faction = yes 
+		
+		}
+
+	
+	
+		triggers = {
+		TOD_fi_ming_sphere_visible = { is_in_faction_with = SOV }	
+		}
+
+		
+	}
+}

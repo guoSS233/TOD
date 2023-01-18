@@ -1,0 +1,32 @@
+division_template = {
+	name = "pešia divízia"				# 步兵师
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "horská divízia" 					#山地师
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 0 y = 3 }
+	}
+}
+
+units = {
+	division= {	
+		location = 6682
+		division_template = "pešia divízia"
+		start_experience_factor = 0.2
+	}
+}
+	

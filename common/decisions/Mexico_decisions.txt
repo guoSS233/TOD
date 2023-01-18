@@ -1,0 +1,238 @@
+### MSR ###
+MSR_assistance_from_people = {
+	MSR_decision_supply_assistance = {
+		allowed = { tag = MSR }
+		visible = { always = yes }
+		available = {
+			has_political_power > 50
+		}
+		cost = 50
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 500
+				producer = MSR
+			}
+			MSR_public_support_down = yes
+		}
+	}
+	MSR_decision_manpower_assistance = {
+		allowed = { tag = MSR }
+		visible = { always = yes }
+		available = {
+			has_political_power > 50
+		}
+		cost = 50
+		complete_effect = {
+			add_manpower = 2000
+			MSR_public_support_down = yes
+		}
+	}
+	MSR_decision_consumer_goods = {
+		allowed = { tag = MSR }
+		visible = { always = yes }
+		available = {
+			has_political_power > 50
+		}
+		cost = 50
+		complete_effect = {
+			MSR_public_support_down = yes
+		}
+		modifier = {
+			consumer_goods_factor = -0.1
+		}
+		days_remove = 60
+	}
+	MSR_decision_add_public_support = {
+		allowed = { tag = MSR }
+		visible = { always = yes }
+		available = {
+			has_political_power > 80
+		}
+		cost = 80
+		complete_effect = {
+			MSR_public_support_up = yes
+		}
+	}
+	MSR_raise_peasant_army = {
+		allowed = { tag = MSR }
+		visible = { has_completed_focus = MSR_peasant_militia }
+		available = {
+			has_political_power > 50
+		}
+		cost = 50
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -500
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+		days_remove = 60
+		remove_effect = {
+			add_manpower = 500
+		}
+	}
+}
+MES_push_fronts = {
+	MES_push_imperial_front = {
+		allowed = { tag = MES }
+		visible = { 
+			country_exists = MEX
+			#has_war_with = MEX
+		}
+		available = {
+			NOT = {
+				has_idea = MES_imperial_front
+				has_idea = MES_socialist_front
+				has_idea = MES_christian_front
+				has_idea = MES_libertarian_front
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 25
+			has_political_power > 25
+		}
+		days_re_enable = 120
+		fire_only_once = no
+		custom_cost_text = CP_25_PP_25
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -25
+				add_command_power = -25
+			}
+		}
+		days_remove = 10
+		remove_effect = {
+			add_timed_idea = { 
+				idea = MES_imperial_front
+				days = 80
+			}
+			custom_effect_tooltip = CP_25_PP_25_tt
+		}
+	}
+	MES_push_socialist_front = {
+		allowed = { tag = MES }
+		visible = { 
+			country_exists = MSR
+			#has_war_with = MSR
+		}
+		available = {
+			NOT = {
+				has_idea = MES_imperial_front
+				has_idea = MES_socialist_front
+				has_idea = MES_christian_front
+				has_idea = MES_libertarian_front
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 25
+			has_political_power > 25
+		}
+		days_re_enable = 120
+		fire_only_once = no
+		custom_cost_text = CP_25_PP_25
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -25
+				add_command_power = -25
+			}
+		}
+		days_remove = 10
+		remove_effect = {
+			add_timed_idea = { 
+				idea = MES_socialist_front
+				days = 80
+			}
+			custom_effect_tooltip = CP_25_PP_25_tt
+		}
+	}
+	MES_push_christian_front = {
+		allowed = { tag = MES }
+		visible = { 
+			country_exists = CRI
+			#has_war_with = CRI
+		}
+		available = {
+			NOT = {
+				has_idea = MES_imperial_front
+				has_idea = MES_socialist_front
+				has_idea = MES_christian_front
+				has_idea = MES_libertarian_front
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 25
+			has_political_power > 25
+		}
+		days_re_enable = 120
+		fire_only_once = no
+		custom_cost_text = CP_25_PP_25
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -25
+				add_command_power = -25
+			}
+		}
+		days_remove = 10
+		remove_effect = {
+			add_timed_idea = { 
+				idea = MES_christian_front
+				days = 80
+			}
+			custom_effect_tooltip = CP_25_PP_25_tt
+		}
+	}
+	MES_push_libertarian_front = {
+		allowed = { tag = MES }
+		visible = { 
+			country_exists = USM
+			#has_war_with = USM
+		}
+		available = {
+			NOT = {
+				has_idea = MES_imperial_front
+				has_idea = MES_socialist_front
+				has_idea = MES_christian_front
+				has_idea = MES_libertarian_front
+			}
+		}
+		custom_cost_trigger = {
+			command_power > 25
+			has_political_power > 25
+		}
+		days_re_enable = 120
+		fire_only_once = no
+		custom_cost_text = CP_25_PP_25
+		complete_effect = {
+			hidden_effect = {
+				add_political_power = -25
+				add_command_power = -25
+			}
+			
+		}
+		days_remove = 10
+		remove_effect = {
+			add_timed_idea = { 
+				idea = MES_libertarian_front
+				days = 80
+			}
+			custom_effect_tooltip = CP_25_PP_25_tt
+		}
+	}
+}
+MES_raise_requetes = {
+	MES_decision_raise_requetes = {
+		allowed = { tag = MES }
+		visible = { has_completed_focus = MES_new_requetes }
+		available = {
+			has_political_power > 25
+		}
+		cost = 25
+		complete_effect = {
+			add_manpower = 500
+		}
+	}
+}

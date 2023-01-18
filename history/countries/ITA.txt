@@ -1,0 +1,65 @@
+﻿capital = 2
+
+oob = "empty"
+set_stability = 0.6
+set_war_support = 0.4
+
+set_politics = {
+	ruling_party = consociationalism
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	national_corporatism = 22
+	sacred_revivalism = 0
+	leader_despotism = 1
+	authoritarian_oligarchy = 0
+	conservative_democracy = 0
+	liberal_democracy = 4
+	consociationalism = 51
+	social_democrat = 6
+	agroindustrial_socialism = 0
+	moderate_socialism = 2
+	council_socialism = 3
+	vanguard_socialism = 11
+}
+
+add_ideas = {
+	ITA_baoshoumonandeguojia
+	ITA_shijiedazhandeshenglizhe
+	ITA_sandangzhizheng
+	ITA_dizhonghaibaquan
+}
+
+recruit_character = ITA_Vittorio_Emanuele_III
+
+# DIPLOMACY
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = INA
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = AOI
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = IEA
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+		puppet = INA
+		puppet = SYR
+		puppet = IEA
+	}
+}

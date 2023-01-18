@@ -1,0 +1,172 @@
+##### Division Templates #####
+division_template = {
+	name = "金衫军精锐步兵师"
+
+	division_names_group = MES_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		artillery = { x = 2 y = 1 }
+		artillery = { x = 2 y = 2 }
+	}
+	support = {
+       	artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 } 
+	}
+	priority = 2
+}
+division_template = {
+	name = "金衫军民兵师"
+
+	division_names_group = MES_INF_02
+
+	#is_locked = yes
+
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 0 y = 3 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+		militia = { x = 1 y = 3 }
+	}
+	priority = 0
+}
+division_template = {
+	name = "金衫军骑兵师"  		
+
+	division_names_group = MES_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+}
+###### OOB ######
+units = {
+	####### CONUS Theater #######
+	### 中央步兵集团 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 4956
+		division_template = "金衫军精锐步兵师"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 4956
+		division_template = "金衫军精锐步兵师"
+		start_experience_factor = 1
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 10732
+		division_template = "金衫军民兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 13608
+		division_template = "金衫军民兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 13609
+		division_template = "金衫军民兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 2083
+		division_template = "金衫军民兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 13610
+		division_template = "金衫军民兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		location = 5015
+		division_template = "金衫军民兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 13611
+		division_template = "金衫军骑兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 10769
+		division_template = "金衫军骑兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 1
+
+	}
+	

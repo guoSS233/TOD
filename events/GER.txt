@@ -1,0 +1,312 @@
+add_namespace = TODgermany
+
+#五一节大会
+country_event = {
+	id = TODgermany.1
+	title = TODgermany.1.t
+	desc =TODgermany.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = { 
+		name = TODgermany.1.a
+		add_political_power = 5
+		GER = {country_event = { id = TODgermany.2 days = 1}}
+	}
+}
+
+# 大会1--经济
+country_event = {
+	id = TODgermany.2
+	title = TODgermany.2.t
+	desc =TODgermany.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = { #委员会派
+		name = TODgermany.2.a
+		GER = {country_event = { id = TODgermany.3 days = 1 }}
+		add_popularity = { ideology = council_socialism popularity = 0.05 }
+	}
+	option = { #温和派
+		name = TODgermany.2.b
+		GER = {country_event = { id = TODgermany.3 days = 1 }}
+		add_popularity = { ideology = moderate_socialism popularity = 0.05 }
+	}
+	option = { #先锋派
+		name = TODgermany.2.c
+		GER = {country_event = { id = TODgermany.3 days = 1 }}
+		add_popularity = { ideology = vanguard_socialism popularity = 0.05 }
+	}
+}
+
+# 大会2--外交
+country_event = {
+	id = TODgermany.3
+	title = TODgermany.3.t
+	desc =TODgermany.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = { #委员会派
+		name = TODgermany.3.a
+		GER = {country_event = { id = TODgermany.4 days = 1 }}
+		add_popularity = { ideology = council_socialism popularity = 0.05 }
+	}
+	option = { #温和派
+		name = TODgermany.3.b
+		GER = {country_event = { id = TODgermany.4 days = 1 }}
+		add_popularity = { ideology = moderate_socialism popularity = 0.05 }
+	}
+	option = { #先锋派
+		name = TODgermany.3.c
+		GER = {country_event = { id = TODgermany.4 days = 1 }}
+		add_popularity = { ideology = vanguard_socialism popularity = 0.05 }
+	}
+}
+
+# 大会3--军事
+country_event = {
+	id = TODgermany.4
+	title = TODgermany.4.t
+	desc =TODgermany.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = { #委员会派
+		name = TODgermany.4.a
+		GER = {country_event = { id = TODgermany.5 days = 1 }}
+		add_popularity = { ideology = council_socialism popularity = 0.05 }
+	}
+	option = { #温和派
+		name = TODgermany.4.b
+		GER = {country_event = { id = TODgermany.5 days = 1 }}
+		add_popularity = { ideology = moderate_socialism popularity = 0.05 }
+	}
+	option = { #先锋派
+		name = TODgermany.4.c
+		GER = {country_event = { id = TODgermany.5 days = 1 }}
+		add_popularity = { ideology = vanguard_socialism popularity = 0.05 }
+	}
+}
+
+# 大会4--内政
+country_event = {
+	id = TODgermany.5
+	title = TODgermany.5.t
+	desc =TODgermany.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = { #委员会派
+		name = TODgermany.5.a
+		GER = {country_event = { id = TODgermany.6 days = 1 }}
+		add_popularity = { ideology = council_socialism popularity = 0.1 }
+		set_variable = { GER_wenhe = party_popularity@moderate_socialism }
+		set_variable = { GER_liening = party_popularity@vanguard_socialism }
+		set_variable = { GER_sibadake = party_popularity@council_socialism }
+		set_variable = { GER_xiangcha = party_popularity@council_socialism}
+		subtract_from_variable = { GER_xiangcha = party_popularity@vanguard_socialism}
+	}
+	option = { #温和派
+		name = TODgermany.5.b
+		GER = {country_event = { id = TODgermany.6 days = 1 }}
+		add_popularity = { ideology = moderate_socialism popularity = 0.1 }
+		set_variable = { GER_wenhe = party_popularity@moderate_socialism }
+		set_variable = { GER_liening = party_popularity@vanguard_socialism }
+		set_variable = { GER_sibadake = party_popularity@council_socialism }
+		set_variable = { GER_xiangcha = party_popularity@council_socialism}
+		subtract_from_variable = { GER_xiangcha = party_popularity@vanguard_socialism}
+	}
+	option = { #先锋派
+		name = TODgermany.5.c
+		GER = {country_event = { id = TODgermany.6 days = 1 }}
+		add_popularity = { ideology = vanguard_socialism popularity = 0.1 }
+		set_variable = { GER_wenhe = party_popularity@moderate_socialism }
+		set_variable = { GER_liening = party_popularity@vanguard_socialism }
+		set_variable = { GER_sibadake = party_popularity@council_socialism }
+		set_variable = { GER_xiangcha = party_popularity@council_socialism}
+		subtract_from_variable = { GER_xiangcha = party_popularity@vanguard_socialism}
+	}
+}
+
+# 大会结束
+country_event = {
+	id = TODgermany.6
+	title = TODgermany.6.t
+	desc =TODgermany.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+	    set_country_flag = GER_luoshaqushi
+		name = TODgermany.6.a
+		trigger = {
+			tag = GER
+			check_variable = { GER_liening = GER_sibadake compare = less_than }
+			check_variable = { GER_wenhe = GER_sibadake compare = less_than }
+			OR = {
+				check_variable = { GER_xiangcha = 0.05 compare = greater_than }
+				check_variable = { GER_xiangcha = -0.05 compare = less_than } 
+			}
+	    }
+		GER =  { country_event = { id = TODgermany.7 days = 3}}  
+	}
+	option = {
+	    set_country_flag = GER_luoshaqushi
+		name = TODgermany.6.a
+		trigger = {
+			tag = GER
+			check_variable = { GER_sibadake = GER_wenhe compare = less_than }
+			check_variable = { GER_liening = GER_wenhe compare = less_than }
+			OR = {
+				check_variable = { GER_xiangcha = 0.05 compare = greater_than }
+				check_variable = { GER_xiangcha = -0.05 compare = less_than } 
+			}
+	    }
+		GER =  { country_event = { id = TODgermany.8 days = 3}}  
+	}
+	option = {
+	    set_country_flag = GER_luoshaqushi
+		name = TODgermany.6.a
+		trigger = {
+			tag = GER
+			check_variable = { GER_sibadake = GER_liening compare = less_than }
+			check_variable = { GER_wenhe = GER_liening compare = less_than }
+			OR = {
+				check_variable = { GER_xiangcha = 0.05 compare = greater_than }
+				check_variable = { GER_xiangcha = -0.05 compare = less_than } 
+			}
+	    }
+		GER =  { country_event = { id = TODgermany.9 days = 3}} 
+	}
+	option = {
+	    set_country_flag = GER_luoshaqushi
+		name = TODgermany.6.a
+		trigger = {
+			tag = GER
+			check_variable = { GER_xiangcha = 0.05 compare = less_than }
+			check_variable = { GER_xiangcha = -0.05 compare = greater_than }
+	     }
+		GER =  { country_event = { id = TODgermany.10 days = 3}} 
+	}
+}
+
+
+country_event = {
+	id = TODgermany.7
+	title = TODgermany.7.t
+	desc =TODgermany.7.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = {
+		name = TODgermany.7.a
+		retire_country_leader = yes
+		set_politics = { ruling_party = council_socialism }
+		promote_character = GER_Paul_Levi
+	}
+	option = {
+		name = TODgermany.7.b
+		retire_country_leader = yes
+		set_politics = { ruling_party = council_socialism }
+		promote_character = GER_Richard_Muller
+	}
+	
+}
+
+
+country_event = {
+	id = TODgermany.8
+	title = TODgermany.8.t
+	desc =TODgermany.8.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = {
+		name = TODgermany.8.a
+		retire_country_leader = yes
+		set_politics = { ruling_party = moderate_socialism }
+		promote_character = GER_Walther_Stocker
+	}
+	option = {
+		name = TODgermany.8.b
+		retire_country_leader = yes
+		set_politics = { ruling_party = moderate_socialism }
+		promote_character = GER_Georg_Ledebour
+	}
+}
+
+country_event = {
+	id = TODgermany.9
+	title = TODgermany.9.t
+	desc =TODgermany.9.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = {
+		name = TODgermany.9.a
+		retire_country_leader = yes
+		set_politics = { ruling_party = vanguard_socialism }
+		promote_character = GER_Wilhelm_Pieck
+	}
+}
+
+country_event = {
+	id = TODgermany.10
+	title = TODgermany.10.t
+	desc =TODgermany.10.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GER}
+	
+	option = {
+		name = TODgermany.10.a
+		retire_country_leader = yes
+		set_politics = { ruling_party = council_socialism }
+		promote_character = GER_Rudolf_Rocker
+	}
+	option = {
+		name = TODgermany.10.b
+		retire_country_leader = yes
+		set_politics = { ruling_party = vanguard_socialism }
+		promote_character = GER_Wilhelm_Pieck
+		}
+	}

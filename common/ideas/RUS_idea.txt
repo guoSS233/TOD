@@ -1,0 +1,51 @@
+ideas = {    
+	country = {
+		#衰落的中央政府
+		RUS_shuailuodezhongyangzhengfu = {
+			picture = ZHR_autonomous_domination_country
+			modifier = {
+				political_advisor_cost_factor = 100
+				stability_factor = -0.3
+				political_power_gain = -0.4
+				custom_modifier_tooltip = RUS.1.tt
+			}
+		}
+		#萎靡不振的经济
+		RUS_weimibuzhendejingji = {
+			picture = ZHR_autonomous_domination_country
+			modifier = {
+				production_speed_buildings_factor = -0.3
+				industrial_capacity_factory = -0.3
+				production_factory_max_efficiency_factor = -0.1
+				production_factory_efficiency_gain_factor = -0.1
+				consumer_goods_factor = 0.2
+			}
+		}
+		#分裂的军队
+		RUS_fenliedejundui = {
+			picture = ZHR_autonomous_domination_country
+			modifier = {
+				land_doctrine_cost_factor = 0.5
+				air_doctrine_cost_factor = 0.7
+				naval_doctrine_cost_factor = 0.7
+				army_org_factor = -0.2
+			}
+		}
+		#复仇主义
+		RUS_fuchouzhuyi = {
+			picture = ZHR_autonomous_domination_country
+			targeted_modifier = {
+				tag = FRA
+				attack_bonus_against = 0.1
+			}
+			targeted_modifier = {
+				tag = POL
+				attack_bonus_against = 0.1
+			}
+			modifier = {
+				mobilization_speed = 0.2
+				surrender_limit = 0.1
+			}
+		}
+	}
+}

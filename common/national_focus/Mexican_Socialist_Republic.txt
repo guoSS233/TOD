@@ -1,0 +1,423 @@
+### Mexican Socialist Republic National Focuses ###
+focus_tree = {
+	id = socialist_mexican_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			tag = MSR
+			add = 10
+		}
+	}
+	continuous_focus_position = { x = 100 y = 1000 }
+	focus = {
+		id = MSR_for_the_people
+		icon = GFX_focus_MSR_for_the_people
+		cost = 1
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.1
+		}
+		x = 6
+		y = 0
+	}
+	focus = {
+		id = MSR_revo_military_commission
+		prerequisite = { focus = MSR_for_the_people }
+		relative_position_id = MSR_for_the_people
+		icon = GFX_focus_MSR_revo_military_commission
+		cost = 3
+		completion_reward = {
+			add_ideas = MSR_military_commission
+		}
+		x = -4
+		y = 1
+	}
+	focus = {
+		id = MSR_revo_economic_office
+		prerequisite = { focus = MSR_for_the_people }
+		relative_position_id = MSR_for_the_people
+		icon = GFX_focus_MSR_revo_economic_office
+		cost = 3
+		completion_reward = {
+			add_ideas = MSR_economic_office
+		}
+		x = 4
+		y = 1
+	}
+	focus = {
+		id = MSR_plantation_affairs
+		prerequisite = { focus = MSR_revo_economic_office }
+		relative_position_id = MSR_revo_economic_office
+		icon = GFX_focus_prc_agrarian_socialism
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		cost = 5
+		completion_reward = {
+			add_manpower = 10000
+			MSR_public_support_up = yes
+		}
+		x = -2
+		y = 1
+	}
+	focus = {
+		id = MSR_banking_affairs
+		prerequisite = { focus = MSR_revo_economic_office }
+		relative_position_id = MSR_revo_economic_office
+		icon = GFX_focus_MSR_banking_affairs
+		cost = 5
+		completion_reward = {
+			add_ideas = MSR_well_distribution
+			MSR_public_support_up = yes
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MSR_mining_affairs
+		prerequisite = { focus = MSR_revo_economic_office }
+		relative_position_id = MSR_revo_economic_office
+		icon = GFX_focus_MSR_mining_affairs
+		search_filters = { FOCUS_FILTER_RESEARCH }
+		cost = 5
+		completion_reward ={
+			add_resource = {
+				type = steel
+				amount = 8
+				state = 475
+			}
+			add_tech_bonus = {
+				name = MSR_mining_affairs
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+		x = 2
+		y = 1
+	}
+	focus = {
+		id = MSR_exchange_for_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = MSR_plantation_affairs }
+		relative_position_id = MSR_plantation_affairs
+		cost = 5
+		completion_reward = {
+			474 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MSR_exchange_for_arms_factory
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = MSR_mining_affairs }
+		relative_position_id = MSR_mining_affairs
+		cost = 5
+		completion_reward = {
+			475 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_resource = {
+				type = tungsten
+				amount = 2
+				state = 475
+			}
+		}
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MSR_great_production
+		prerequisite = { focus = MSR_exchange_for_industry }
+		prerequisite = { focus = MSR_exchange_for_arms_factory }
+		relative_position_id = MSR_exchange_for_arms_factory
+		icon = GFX_goal_generic_production
+		cost = 4
+		completion_reward = {
+			add_timed_idea = {
+				idea = MSR_idea_great_production
+				days = 120
+			}
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MSR_revolutionary_economy
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = MSR_exchange_for_industry }
+		prerequisite = { focus = MSR_banking_affairs }
+		prerequisite = { focus = MSR_exchange_for_arms_factory }
+		relative_position_id = MSR_banking_affairs
+		cost = 7
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MSR_idea_revolutionary_economy
+				remove_idea = MSR_well_distribution
+			}
+		}
+		x = 0
+		y = 2
+	}
+	focus = {
+		id = MSR_more_rifles
+		prerequisite = { focus = MSR_revo_military_commission }
+		relative_position_id = MSR_revo_military_commission
+		icon = GFX_focus_MSR_more_rifles
+		cost = 5
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = MSR
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 200
+				producer = MSR
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 200
+				producer = MSR
+			}
+		}
+		x = -2
+		y = 1
+	}
+	focus = {
+		id = MSR_basic_army_drill
+		prerequisite = { focus = MSR_revo_military_commission }
+		relative_position_id = MSR_revo_military_commission
+		icon = GFX_focus_MSR_basic_army_drill
+		cost = 5
+		completion_reward = {
+			if = {
+				limit = { has_idea = MSR_peasant_army_0 }
+				swap_ideas = {
+					add_idea = MSR_peasant_army_1a
+					remove_idea = MSR_peasant_army_0
+				}
+			}
+			if = {
+				limit = { has_idea = MSR_peasant_army_1b }
+				swap_ideas = {
+					add_idea = MSR_peasant_army_2
+					remove_idea = MSR_peasant_army_1b
+				}
+			}
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MSR_strengthen_commissar
+		prerequisite = { focus = MSR_revo_military_commission }
+		relative_position_id = MSR_revo_military_commission
+		icon = GFX_focus_MSR_strengthen_commissar
+		cost = 5
+		completion_reward = {
+			if = {
+				limit = { has_idea = MSR_peasant_army_0 }
+				swap_ideas = {
+					add_idea = MSR_peasant_army_1b
+					remove_idea = MSR_peasant_army_0
+				}
+			}
+			if = {
+				limit = { has_idea = MSR_peasant_army_1a }
+				swap_ideas = {
+					add_idea = MSR_peasant_army_2
+					remove_idea = MSR_peasant_army_1a
+				}
+			}
+		}	
+		x = 2
+		y = 1
+	}
+	focus = {
+		id = MSR_modernise_military
+		prerequisite = { focus = MSR_more_rifles }
+		prerequisite = { focus = MSR_basic_army_drill }
+		prerequisite = { focus = MSR_strengthen_commissar }
+		relative_position_id = MSR_basic_army_drill
+		icon = GFX_focus_MSR_modernise_military
+		search_filters = {FOCUS_FILTER_RESEARCH}
+		cost = 5
+		completion_reward = {
+			add_tech_bonus = {
+				name = MSR_modernise_military
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				name = MSR_modernise_military
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				name = MSR_modernise_military
+				bonus = 0.75
+				uses = 1
+				category = land_doctrine
+			}
+			army_experience = 10
+		}
+			
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MSR_more_conscription
+		prerequisite = { focus = MSR_more_rifles }
+		prerequisite = { focus = MSR_basic_army_drill }
+		prerequisite = { focus = MSR_strengthen_commissar }
+		relative_position_id = MSR_basic_army_drill
+		icon = GFX_focus_MSR_more_conscription
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		cost = 5
+		completion_reward = {
+			swap_ideas = {
+				add_idea = MSR_peasant_army_3
+				remove_idea = MSR_peasant_army_2
+			}
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MSR_mountain_brigade
+		prerequisite = { focus = MSR_modernise_military }
+		relative_position_id = MSR_modernise_military
+		icon = GFX_focus_MSR_mountain_brigade
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MSR_revolutionary_military
+		prerequisite = { focus = MSR_modernise_military }
+		prerequisite = { focus = MSR_more_conscription }
+		relative_position_id = MSR_modernise_military
+		icon = GFX_focus_MSR_revolutionary_military
+		cost = 6
+		completion_reward = {
+			army_experience = 10
+			swap_ideas = {
+				add_idea = MSR_idea_revolutionary_army
+				remove_idea = MSR_peasant_army_3
+			}
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MSR_political_mobilization
+		prerequisite = { focus = MSR_for_the_people }
+		relative_position_id = MSR_for_the_people
+		icon = GFX_focus_focus_fra_revolution_utmost
+		cost = 2
+		completion_reward = {
+			add_political_power = 75
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MSR_rally_public_support
+		prerequisite = { focus = MSR_political_mobilization }
+		relative_position_id = MSR_political_mobilization
+		icon = GFX_focus_MSR_rally_public_support
+		cost = 5
+		completion_reward = {
+			unlock_decision_category_tooltip = MSR_assistance_from_people
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MSR_native_mobilization
+		prerequisite = { focus = MSR_rally_public_support }
+		relative_position_id = MSR_rally_public_support
+		icon = GFX_focus_MSR_native_mobilization
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		cost = 4
+		completion_reward = {
+			add_ideas = MSR_native_mexican
+		}
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MSR_arm_the_peasants
+		prerequisite = { focus = MSR_rally_public_support }
+		relative_position_id = MSR_rally_public_support
+		icon = GFX_focus_mex_caudillo_private_armies
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		cost = 4
+		completion_reward = {
+			add_manpower = 10000
+			MSR_public_support_up = yes
+		}
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MSR_awaken_nationalism
+		prerequisite = { focus = MSR_native_mobilization }
+		relative_position_id = MSR_native_mobilization
+		icon = GFX_focus_MSR_awaken_nationalism
+		search_filters = {FOCUS_FILTER_MANPOWER}
+		cost = 4
+		completion_reward = {
+			add_war_support = 0.10
+			swap_ideas = {
+				add_idea = MSR_native_mexican_nationalism
+				remove_idea = MSR_native_mexican
+			}
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MSR_peasant_militia
+		prerequisite = { focus = MSR_arm_the_peasants }
+		relative_position_id = MSR_arm_the_peasants
+		icon = GFX_focus_MSR_peasant_militia
+		cost = 4
+		completion_reward = {
+			add_political_power = 50
+			unlock_decision_tooltip = MSR_raise_peasant_army
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MSR_win_civil_war
+		prerequisite = { focus = MSR_revolutionary_economy }
+		prerequisite = { focus = MSR_revolutionary_military }
+		prerequisite = { focus = MSR_awaken_nationalism	}
+		prerequisite = { focus = MSR_peasant_militia }
+		relative_position_id = MSR_for_the_people
+		icon = GFX_focus_MSR_win_civil_war
+		cost = 1
+		completion_reward = {
+			add_stability = 0.30
+		}
+		x = 0
+		y = 5
+	}	
+}

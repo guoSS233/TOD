@@ -1,0 +1,110 @@
+### Cisleithania ＆ Austria National Focuses ###
+focus_tree = {
+	id = austria_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = AUS
+		}
+	}
+	
+	focus = {
+		id = AUS_solve_food_crisis
+		x = 6
+		y = 0
+	}
+	
+	focus = {
+		id = AUS_crisis_domestic
+		prerequisite = { focus = AUS_solve_food_crisis }
+		x = 3
+		y = 1
+	}
+	
+	focus = {
+		id = AUS_agricultural_machine
+		prerequisite = { focus = AUS_crisis_domestic }
+		x = 2
+		y = 2
+	}
+	
+	focus = {
+		id = AUS_industrialized_farm
+		prerequisite = { focus = AUS_agricultural_machine }
+		x = 1
+		y = 3
+	}
+	
+	focus = {
+		id = AUS_agricultural_science
+		prerequisite = { focus = AUS_crisis_domestic }
+		x = 4
+		y = 2
+	}
+	
+	focus = {
+		id = AUS_mendel_legacy
+		prerequisite = { focus = AUS_agricultural_science }
+		x = 5
+		y = 3
+	}
+	
+	focus = {
+		id = AUS_technological_measure
+		prerequisite = { focus = AUS_agricultural_machine }
+		prerequisite = { focus = AUS_agricultural_science }
+		x = 3
+		y = 3
+	}
+	
+	focus = {
+		id = AUS_agricultural_regulation
+		prerequisite = { focus = AUS_technological_measure }
+		x = 2
+		y = 4
+		mutually_exclusive = { focus = AUS_free_food_market }
+	}
+	
+	focus = {
+		id = AUS_free_food_market
+		prerequisite = { focus = AUS_technological_measure }
+		x = 4
+		y = 4
+		mutually_exclusive = { focus = AUS_agricultural_machine }
+	}
+	
+	focus = {
+		id = AUS_food_distribution_office
+		prerequisite = { focus = AUS_agricultural_regulation }
+		x = 2
+		y = 5
+	}
+	
+	focus = {
+		id = AUS_food_money_must_flow
+		prerequisite = { focus = AUS_free_food_market }
+		x = 4
+		y = 5
+	}
+	
+	focus = {
+		id = AUS_domestic_food_production
+		prerequisite = {
+			focus = AUS_food_distribution_office
+			focus = AUS_food_money_must_flow
+		}
+		x = 3
+		y = 6
+	}
+	
+	focus = {
+		id = AUS_crisis_abroad
+		prerequisite = { focus = AUS_solve_food_crisis }
+		x = 9
+		y = 1
+	}
+		
+		
+}	

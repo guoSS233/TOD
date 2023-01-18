@@ -1,0 +1,160 @@
+### Mexican Empire National Focuses ###
+focus_tree = {
+	id = mexican_empire_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			tag = MEX
+			add = 10
+		}
+	}
+	focus = {
+		id = MEX_empire_shall_win
+		icon = GFX_focus_MEX_empire_shall_win
+		cost = 1
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.10
+		}
+		x = 3
+		y = 0
+	}
+	focus = {
+		id = MEX_reorganize_government
+		prerequisite = { focus = MEX_empire_shall_win }
+		relative_position_id = MEX_empire_shall_win
+		cost = 2
+		completion_reward = {
+			add_popularity = {
+				ideology = authoritarianism
+				popularity = +0.05
+			}
+		}
+		x = -2
+		y = 1
+	}
+	focus = {
+		id = MEX_stabalize_capital
+		prerequisite = { focus = MEX_empire_shall_win }
+		relative_position_id = MEX_empire_shall_win
+		cost = 2
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = MEX_temporary_defense
+		prerequisite = { focus = MEX_empire_shall_win }
+		relative_position_id = MEX_empire_shall_win
+		x = 2
+		y = 1
+	}
+	focus = {
+		id = MEX_emergency_treasury_bonds
+		prerequisite = { focus = MEX_reorganize_government }
+		relative_position_id = MEX_reorganize_government
+		icon = GFX_focus_MEX_emergency_bonds
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MEX_exploit_foreign_property
+		prerequisite = { focus = MEX_reorganize_government }
+		prerequisite = { focus = MEX_stabalize_capital }
+		relative_position_id = MEX_reorganize_government
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_massive_conscription
+		prerequisite = { focus = MEX_stabalize_capital }
+		prerequisite = { focus = MEX_temporary_defense }
+		relative_position_id = MEX_stabalize_capital
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_royal_army
+		prerequisite = { focus = MEX_temporary_defense }
+		relative_position_id = MEX_temporary_defense
+		icon = GFX_focus_generic_little_entente
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_national_economic_committee
+		prerequisite = { focus = MEX_emergency_treasury_bonds }
+		prerequisite = { focus = MEX_exploit_foreign_property }
+		relative_position_id = MEX_emergency_treasury_bonds
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_interim_state_stuff
+		prerequisite = { focus = MEX_massive_conscription }
+		prerequisite = { focus = MEX_royal_army }
+		relative_position_id = MEX_massive_conscription
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_yanzhou_weapon_smuggle
+		prerequisite = { focus = MEX_national_economic_committee }
+		relative_position_id = MEX_national_economic_committee
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MEX_zacatecas_reconstruction
+		prerequisite = { focus = MEX_national_economic_committee }
+		relative_position_id = MEX_national_economic_committee
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_build_costal_defense
+		prerequisite = { focus = MEX_interim_state_stuff }
+		relative_position_id = MEX_interim_state_stuff
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = MEX_ensure_air_supermacy
+		prerequisite = { focus = MEX_interim_state_stuff }
+		relative_position_id = MEX_interim_state_stuff
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_project_apache
+		prerequisite = { focus = MEX_yanzhou_weapon_smuggle }
+		prerequisite = { focus = MEX_zacatecas_reconstruction }
+		relative_position_id = MEX_yanzhou_weapon_smuggle
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_project_ehecatl
+		prerequisite = { focus = MEX_build_costal_defense }
+		prerequisite = { focus = MEX_ensure_air_supermacy }
+		relative_position_id = MEX_build_costal_defense
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = MEX_win_civil_war
+		icon = GFX_focus_MEX_win_civil_war
+		prerequisite = { focus = MEX_project_apache }
+		prerequisite = { focus = MEX_project_ehecatl }
+		relative_position_id = MEX_project_apache
+		x = 2
+		y = 1
+	}
+}
+	
+	

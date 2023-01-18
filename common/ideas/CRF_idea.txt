@@ -1,0 +1,37 @@
+### CRF ideas ###
+ideas = {
+	country = {
+	    CRF_pratt_amendment = {
+		    targeted_modifier = {
+				tag = FRL
+				trade_opinion_factor =0.2
+			}
+			targeted_modifier = {
+				tag = USA
+				trade_opinion_factor =0.3
+			}
+			modifier = {
+				consumer_goods_factor = 0.4
+				political_power_cost = 0.45
+				recruitable_population_factor = -0.45
+				custom_modifier_tooltip = CRF_pratt_amendment_tt
+			}
+		}
+		CRF_other_cold_war = {
+			modifier = {
+			    stability_weekly = -0.005
+				Reformism_drift = 0.03
+				Conservatism_drift = -0.02
+				Authoritarianism_drift = 0.05
+			}
+		}
+		
+        CRF_Sugar_Export = {
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+
+		}
+	}

@@ -1,0 +1,186 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+TUR_RG_01 = 
+{
+	name = "revolutionary guard"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+	ordered =
+	{
+		1 = { "“伊兹密尔之鹰”近卫第1师团" }
+		2 = { "“共和国之子”29军第1师团" }
+		3 = { "“吉雷松之虎”29军第17师" }
+		4 = { "“锡瓦斯战狼”29军第30师" }
+		5 = { "“苏伊士之刃”29军第7师" }
+		6 = { "“阿拉伯之刃”外编第27师" }
+		7 = { "“恰耶尔汉之狮”第14师团" }
+		8 = { "“内夫谢希尔加齐”第52师团" }
+
+	}
+}
+
+TUR_CHO_01 = 
+{
+	name = "Cumhuriyet halkının ordusu"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+	ordered = {
+		1 = { "新编第1师团" }
+		2 = { "新编第2师团" }
+		3 = { "新编第3师团" }
+		5 = { "近卫第1师团" }
+		6 = { "近卫第2师团" }
+		7 = { "第28师团" }
+		8 = { "第19师团" }
+		9 = { "第11师团" }
+		10 = { "第5师团" }
+
+	}
+}
+
+TUR_MI_01 = 
+{
+	name = "militia"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "militia" }
+	ordered =
+	{
+		1 = { "赤卫队一师" }
+		2 = { "赤卫队二师" }
+		3 = { "赤卫队二师" }
+		4 = { "库尔德自卫队" }
+		5 = { "希腊自卫队" }
+		6 = { "亚美尼亚自卫队" }
+
+	}
+}
+
+TUR_CK_01 = 
+{
+	name = "Armoured Divisions"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers"}
+	ordered =
+	{
+		1 = { "恰克马克突击旅" }
+		2 = { "突厥狼特战队" }
+		3 = { "亚美尼亚特编一师" }
+		4 = { "库尔德特编一师" }
+
+	}
+}
+
+TUR_TB_01 = 
+{
+	name = "tank bölümü"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor"  }
+	ordered =
+	{
+		1 = { "安卡拉近卫师团" }
+		2 = { "海峡近卫师团" }
+	}
+}
+
+TUR_GC_01 = 
+{
+	name = "Guard Cavalry"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "Cavalry" }
+
+	ordered =
+	{
+		1 = { "“红旗”骑兵师" }
+		2 = { "“共和国”骑兵师" }
+		3 = { "“近卫”骑兵师" }
+		4 = { "“人民”骑兵师" }
+		5 = { "特拉布宗近卫师团" }
+	}
+}
+
+TUR_DK_01 = 
+{
+	name = "Deniz Kuvvetleri"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "marine" }
+
+	ordered = {
+		1 = { "“萨姆松之鹰”海兵一师" }
+	}
+}
+
+TUR_CA_01 = 
+{
+	name = "camel"
+
+	for_countries = { TUR }
+
+	can_use = { always = yes }
+
+	division_types = { "camel" }
+
+	ordered =
+	{
+		1 = { "凡城卫队" }
+		2 = { "外编库尔德师团" }
+	}
+}

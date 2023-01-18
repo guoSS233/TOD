@@ -1,0 +1,858 @@
+###Ming National Focuses###
+focus_tree = {
+	id = SRC_GM_focus#革命用国策
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SRC
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 2000 y = 2000 }
+	
+	focus = { #中革命临时政府
+		id = SRC_revolutionary_provisional_government 
+		icon = GFX_goal_construction_engineering
+		
+		x = 9
+		y = 0
+		cost = 7
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			}
+	}
+	
+	#左侧分支，大概是军事相关#
+	focus = { #左拿起枪
+		id = SRC_get_your_gun 
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_revolutionary_provisional_government
+   		  }
+		relative_position_id = SRC_revolutionary_provisional_government
+		x = -7
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#左一，工厂相关
+	focus = { #左左一抢修辽阳兵工厂
+		id = SRC_repair_Liaoyang_Arms_Factory 
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_get_your_gun
+   		  }
+		relative_position_id = SRC_get_your_gun
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_call_from_labor_union #左左二 工会的号召
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_repair_Liaoyang_Arms_Factory
+   		  }
+		relative_position_id = SRC_repair_Liaoyang_Arms_Factory
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_confiscated_military_warehouses #左左三 没收边防军仓库
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_call_from_labor_union
+   		  }
+		relative_position_id = SRC_call_from_labor_union
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#左二，人力
+	focus = { 
+		id = SRC_the_man_in_army #左右一 军队里的同志
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_get_your_gun
+   		  }
+		relative_position_id = SRC_get_your_gun
+		x = 1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_call_they_back #左右二 农民武装队
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_the_man_in_army
+   		  }
+		relative_position_id = SRC_the_man_in_army
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_students_army #左右三 学生干部团
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_call_they_back
+   		  }
+		relative_position_id = SRC_call_they_back
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#左下
+	
+	focus = { 
+		id = SRC_people #左下 炉火正旺
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_confiscated_military_warehouses
+		}
+		prerequisite = {
+		  focus = SRC_students_army
+   		}
+		relative_position_id = SRC_get_your_gun
+		x = 0
+		y = 4
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	
+	#中 
+	focus = { 
+		id = SRC_wartimeism  #战时主义
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_revolutionary_provisional_government
+   		  }
+		relative_position_id = SRC_revolutionary_provisional_government
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	
+	#中左
+	focus = { 
+		id = SRC_awake_people #中左一 大规模宣传
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_wartimeism
+   		  }
+		relative_position_id = SRC_wartimeism
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_why_we_fight #中左二 革命教育
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_awake_people
+   		  }
+		relative_position_id = SRC_awake_people
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_artillery_academy #中左三 辽阳炮兵学院
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_why_we_fight
+   		  }
+		relative_position_id = SRC_why_we_fight
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#中右
+	focus = { 
+		id = SRC_seized_enterprise #中右一 查封企业
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_wartimeism
+   		  }
+		relative_position_id = SRC_wartimeism
+		x = 1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_central_bank #中右二 中央银行
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_seized_enterprise
+   		  }
+		relative_position_id = SRC_seized_enterprise
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_rationing #中右三 优化配给制
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_central_bank
+   		  }
+		relative_position_id = SRC_central_bank
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#中下
+	
+	focus = { 
+		id = SRC_land #中下 粮草先行
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_rationing
+   		}
+		prerequisite = {
+		  focus = SRC_artillery_academy
+   		}
+		
+		relative_position_id = SRC_wartimeism
+		x = 0
+		y = 4
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	
+	#右
+	focus = { 
+		id = SRC_unified_command #右 统一指挥
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_revolutionary_provisional_government
+   		  }
+		relative_position_id = SRC_revolutionary_provisional_government
+		x = 7
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	
+	#右左
+	focus = { 
+		id = SRC_staff #右左一 临时参谋部
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_unified_command
+   		  }
+		relative_position_id = SRC_unified_command
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_army_establishment #右左二 统一编制
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_staff
+   		  }
+		relative_position_id = SRC_staff
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_new_tactics #右左三 更新战术思想
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_army_establishment
+   		  }
+		relative_position_id = SRC_army_establishment
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#右右
+	focus = { 
+		id = SRC_red_navy #右右一 红旗海军
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_unified_command
+   		  }
+		relative_position_id = SRC_unified_command
+		x = 1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_red_air_force #右右二 红翼大鹏
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_red_navy
+   		  }
+		relative_position_id = SRC_red_navy
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	focus = { 
+		id = SRC_modern_equipment #右右三 现代化装备
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_red_air_force
+   		  }
+		relative_position_id = SRC_red_air_force
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	#右下
+	focus = { 
+		id = SRC_red_tank # 红色铁骑兵
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_new_tactics
+   		}
+		prerequisite = {
+		  focus = SRC_modern_equipment
+   		}
+		relative_position_id = SRC_unified_command
+		x = 0
+		y = 4
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#下
+	focus = { 
+		id = SRC_for_the_future # 革命万岁
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_red_tank
+   		}
+		prerequisite = {
+		  focus = SRC_people
+   		}
+		prerequisite = {
+		  focus = SRC_land
+   		}
+		relative_position_id = SRC_revolutionary_provisional_government
+		x = 0
+		y = 6
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+#从下开始为另一端东北或全国革命用国策
+
+	focus = { 
+		id = SRC_prepare_for_long_day # 准备持久战
+		icon = GFX_goal_construction_engineering
+		x = 30
+		y = 0
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#左
+	focus = { 
+		id = SRC_wartime_office # 战时工部局
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_prepare_for_long_day
+   		}
+		
+		relative_position_id = SRC_prepare_for_long_day
+		x = -5
+		y = 2
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_continue_repair_liaoyang_arsenal # 继续修复辽阳兵工厂
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_wartime_office
+   		}
+		relative_position_id = SRC_wartime_office
+		x = -3
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_repair_jinzhou_shipyard # 修复金州造船厂
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_wartime_office
+   		}
+		relative_position_id = SRC_wartime_office
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_shengyang_aircraft_factory # 沈阳飞机制造厂
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_wartime_office
+   		}
+		relative_position_id = SRC_wartime_office
+		x = 1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_changchun_arm_factory # 长春军工所
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_wartime_office
+   		}
+		relative_position_id = SRC_wartime_office
+		x = 3
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_adjust_production_plan # 调整生产方案
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_continue_repair_liaoyang_arsenal
+   		}
+		prerequisite = {
+		  focus = SRC_repair_jinzhou_shipyard
+   		}
+		prerequisite = {
+		  focus = SRC_shengyang_aircraft_factory
+   		}
+		prerequisite = {
+		  focus = SRC_changchun_arm_factory
+   		}
+		
+		relative_position_id = SRC_wartime_office
+		x = 0
+		y = 3
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+#中
+
+	focus = { 
+		id = SRC_liaoyang_SC # 辽阳前线司令部
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_prepare_for_long_day
+   		}
+		relative_position_id = SRC_prepare_for_long_day
+		x = 2
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+
+	focus = { 
+		id = SRC_finish_bzf # 剿灭北镇
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_prepare_for_long_day
+   		}
+		relative_position_id = SRC_prepare_for_long_day
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+
+
+
+
+#左支
+
+	focus = { 
+		id = SRC_send_more_man_to_liaoxi # 增兵辽西
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_liaoyang_SC
+   		}
+		
+		relative_position_id = SRC_liaoyang_SC
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_liaoxi_bunker # 辽西堡垒化
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_send_more_man_to_liaoxi
+   		}
+		
+		relative_position_id = SRC_send_more_man_to_liaoxi
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_liaoning_antiaircraft_plan # 辽东防空方案
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_liaoxi_bunker
+   		}
+		
+		relative_position_id = SRC_liaoxi_bunker
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_expansion_jinzhou_bunker # 扩大锦州防线
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_liaoning_antiaircraft_plan
+   		}
+		
+		relative_position_id = SRC_liaoning_antiaircraft_plan
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+#右支
+
+	focus = { 
+		id = SRC_changchun_fast_school # 长春速成学堂
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_liaoyang_SC
+   		}
+		
+		relative_position_id = SRC_liaoyang_SC
+		x = 1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_expand_recruitment_promotion # 扩大招兵宣传
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_changchun_fast_school
+   		}
+		
+		relative_position_id = SRC_changchun_fast_school
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_united_revolutionary_front # 团结革命阵线
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_expand_recruitment_promotion
+   		}
+		
+		relative_position_id = SRC_expand_recruitment_promotion
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_friend_from_CCCP # 布尔什维克兄弟
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_united_revolutionary_front
+   		}
+		
+		relative_position_id = SRC_united_revolutionary_front
+		x = 0
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+
+
+	focus = { 
+		id = SRC_redarmy_strong # 红军最强大
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_adjust_production_plan
+   		}
+		prerequisite = {
+		  focus = SRC_friend_from_CCCP
+   		}
+		prerequisite = {
+		  focus = SRC_expansion_jinzhou_bunker
+   		}
+		
+		relative_position_id = SRC_adjust_production_plan
+		x = 2
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+#继续革命战争
+	
+	
+	focus = { 
+		id = SRC_continue_tatakai # 继续革命
+		icon = GFX_goal_construction_engineering
+		x = 40
+		y = 0
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+	#入关
+	focus = { 
+		id = SRC_get_ready_in_jinzhou # 踹北门
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_continue_tatakai
+   		}
+		
+		relative_position_id = SRC_continue_tatakai
+		x = -2
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_call_menggu # 联系蒙古同志
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_get_ready_in_jinzhou
+   		}
+		
+		relative_position_id = SRC_get_ready_in_jinzhou
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_the_man_in_bailiu # 渗透百柳防线
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_get_ready_in_jinzhou
+   		}
+		
+		relative_position_id = SRC_get_ready_in_jinzhou
+		x = 1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_blow_up_bunker # 准备爆破
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_call_menggu
+   		}
+		prerequisite = {
+		  focus = SRC_the_man_in_bailiu
+   		}
+		relative_position_id = SRC_get_ready_in_jinzhou
+		x = 0
+		y = 2
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+#
+
+	focus = { 
+		id = SRC_worker_in_shandong # 山东工人起义 
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_continue_tatakai
+   		}
+		
+		relative_position_id = SRC_continue_tatakai
+		x = 2
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+	
+#
+
+	focus = { 
+		id = SRC_call_the_comrade_in_shandong # 联络同志
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_worker_in_shandong
+   		}
+		
+		relative_position_id = SRC_worker_in_shandong
+		x = -1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_call_the_worker_in_shandong # 工会起义
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_worker_in_shandong
+   		}
+		relative_position_id = SRC_worker_in_shandong
+		x = 1
+		y = 1
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	focus = { 
+		id = SRC_send_the_weapon # 输送人员物资
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_call_the_comrade_in_shandong
+   		}
+		prerequisite = {
+		  focus = SRC_call_the_worker_in_shandong
+   		}
+		relative_position_id = SRC_worker_in_shandong
+		x = 0
+		y = 2
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+
+
+	focus = { 
+		id = SRC_for_a_new_china # 为了光明的未来
+		icon = GFX_goal_construction_engineering
+		prerequisite = {
+		  focus = SRC_blow_up_bunker
+   		}
+		prerequisite = {
+		  focus = SRC_send_the_weapon
+   		}
+		relative_position_id = SRC_continue_tatakai
+		x = 0
+		y = 4
+		cost = 7
+		completion_reward = {
+			}
+	}
+
+	
+	
+	
+	
+	
+	
+}
+	

@@ -1,0 +1,151 @@
+ideas = {
+	country = {
+		
+		MNG_Undesirable_economic_recovery = {
+			#on_add = { log = "[GetDateText]: [Root.GetName]: add idea Undesirable_economic_recovery"}
+			#name = Ming_Undesirable_economic_recovery
+			picture = MNG_Undesirable_economic_recovery
+			#available = {  }
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = -0.1
+				war_support_factor = -0.07
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.1
+			}
+		}
+		MNG_Disharmony_within_the_Constitutional_Party = {
+			#on_add = { log = "[GetDateText]: [Root.GetName]: add idea Undesirable_economic_recovery"}
+			#name = Ming_Disharmony_within_the_Constitutional_Party
+			picture = MNG_Disharmony_within_the_Constitutional_Party
+			#available = {  }
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = -0.2
+				war_support_factor = -0.07
+				political_power_cost = 0.6
+				political_advisor_cost_factor = 0.25
+				
+			}
+		}
+		MNG_Dominant_power_of_Far_East = {
+			#on_add = { log = "[GetDateText]: [Root.GetName]: add idea Undesirable_economic_recovery"}
+			#name = Ming_Dominant_power_of_Far_East
+			picture = MNG_Dominant_power_of_Far_East
+			#available = {  }
+			modifier = {
+				political_power_gain = 1
+				stability_factor = 0.1
+				war_support_factor = 0.15
+				consumer_goods_factor = -0.1
+				army_core_attack_factor = 0.2
+				army_core_defence_factor = 0.2
+				
+			}
+		}
+		MNG_A_Suspected_Army = {
+			#on_add = { log = "[GetDateText]: [Root.GetName]: add idea Undesirable_economic_recovery"}
+			#name = Ming_A_Suspected_Army
+			picture = MNG_A_Suspected_Army
+			#available = {  }
+			modifier = {
+				training_time_factor = 0.2
+				conscription_factor = -0.25
+				non_core_manpower = -0.75
+				#recruitable_population = -0.5
+				land_doctrine = -0.25
+				naval_doctrine = -0.25
+				war_support_factor = -0.05
+				mobilization_speed = -0.25
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				command_power_gain_mult = -0.35
+				army_org_regain = -0.1
+				land_reinforce_rate = -0.01
+				attrition = 0.1
+				consumer_goods_factor = 0.2
+				
+				custom_modifier_tooltip = MNG_ban_army_tt
+			}
+		}
+		MNG_Unsettled_Republicians = {
+			#on_add = { log = "[GetDateText]: [Root.GetName]: add idea Undesirable_economic_recovery"}
+			#name = Ming_Unsettled_Republicians
+			picture = MNG_Unsettled_Republicians
+			#available = {  }
+			modifier = {
+				reformism_drift = 0.03
+				socialism_drift = 0.02
+				radicalism_drift = 0.02
+				stability_factor = -0.15
+				war_support_factor = -0.15
+				industrial_capacity_factory = -0.1
+			}
+		}
+		
+		MNG_infantry_equipment = {
+			
+				equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+				}
+			removal_cost = -1
+			picture = MNG_every_man_a_gun
+		}
+		
+		MNG_capital_ship = {
+		
+				equipment_bonus = {
+				capital_ship = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			removal_cost = -1
+			picture = MNG_kantai_ready
+		}
+		
+		MNG_consumer_goods_factor ={
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+			removal_cost = -1
+			picture = MNG_stimulate_the_economy
+		}
+		
+		MNG_compromise_with_shi_rong = {
+			modifier = {
+				liberalism_drift = 0.10
+			}
+			removal_cost = -1
+			picture = MNG_smile_to_the_money
+		}
+		
+		MNG_suppress_the_armed_forces_department = {
+			modifier = {
+				despotism_drift = -0.10
+			}
+			removal_cost = -1
+			picture = MNG_stop_the_army
+		}
+		
+		MNG_support_the_forbidden_system = {
+			modifier = {
+				authoritarianism_drift = 0.05
+			}
+			removal_cost = -1
+			picture = MNG_our_friends_inside
+		}
+		
+		MNG_suppress_the_armed_forces_department_two = {
+			modifier = {
+				despotism_drift = -0.05
+			}
+			removal_cost = -1
+			picture = MNG_shake_hands_soldier
+		}
+		
+	}	
+}

@@ -1,0 +1,230 @@
+﻿
+focus_tree = {
+	id = Italian_focus
+	
+	country = {
+		factor = 0
+		if = {
+			limit = {
+				tag = ITA
+				has_civil_war = yes	
+				neutrality > 0.5	
+			}
+			modifier = {
+				add = 100
+			}
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+
+#	focus = {
+#		id = ITA_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+	#天佑国王
+	focus = {
+		id = ITA_tianyouguowang
+		icon = GFX_FIN_wunianjihua
+		x = 14
+		y = 1
+
+		cost = 5
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#全面戒严
+	focus = {
+		id = ITA_quanmianjieyan
+		icon = GFX_FIN_wunianjihua
+		x = 12
+		y = 2
+
+		cost = 5
+		prerequisite = { focus = ITA_tianyouguowang}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#战争承诺
+	focus = {
+		id = ITA_zhanzhengchengnuo
+		icon = GFX_FIN_wunianjihua
+		x = 11
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_quanmianjieyan}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#政治宣传
+	focus = {
+		id = ITA_zhengzhixuanchuan
+		icon = GFX_FIN_wunianjihua
+		x = 13
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_quanmianjieyan}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#内安
+	focus = {
+		id = ITA_neian
+		icon = GFX_FIN_wunianjihua
+		x = 13
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_zhanzhengchengnuo}
+		prerequisite = { focus = ITA_zhengzhixuanchuan}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#组建皇家卫队
+	focus = {
+		id = ITA_zujianhuangjiaweidui
+		icon = GFX_FIN_wunianjihua
+		x = 16
+		y = 2
+
+		cost = 5
+		prerequisite = { focus = ITA_tianyouguowang}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#敢死队
+	focus = {
+		id = ITA_gansidui
+		icon = GFX_FIN_wunianjihua
+		x = 15
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_zujianhuangjiaweidui}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#督战队
+	focus = {
+		id = ITA_duzhandui
+		icon = GFX_FIN_wunianjihua
+		x = 17
+		y = 3
+
+		cost = 5
+		prerequisite = { focus = ITA_zujianhuangjiaweidui}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#为了国王，冲锋
+	focus = {
+		id = ITA_weileguowang
+		icon = GFX_FIN_wunianjihua
+		x = 16
+		y = 4
+
+		cost = 5
+		prerequisite = { focus = ITA_gansidui}
+		prerequisite = { focus = ITA_duzhandui}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+}

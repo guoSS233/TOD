@@ -1,0 +1,125 @@
+capital = 899
+
+oob = "USM"
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "USM_naval_mtg"
+	else = {
+		set_naval_oob = "USM_naval_legacy"
+	}
+}
+
+# 起始科技
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	gwtank = 1
+	basic_light_tank = 1
+	basic_heavy_tank = 1
+	early_fighter = 1
+	early_bomber = 1
+	marines = 1
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		improved_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+	}
+}
+
+declare_war_on = {
+		target = MSR
+		type = civil_war
+	}
+
+declare_war_on = {
+		target = MES
+		type = civil_war
+	}
+
+declare_war_on = {
+		target = CRI
+		type = civil_war
+	}
+
+declare_war_on = {
+		target = MEX
+		type = civil_war
+	}
+
+set_politics = {
+	ruling_party = liberalism
+	last_election = "1888.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	liberalism = 60
+	conservatism = 20
+	reformism = 20
+}
+
+add_ideas = {
+	USM_for_united_states
+	USM_Louisiana_puppet
+	USM_command_in_chaos
+	extensive_conscription
+}
+
+create_country_leader = {
+	name = "Adolfo de la Huerta"
+	desc = "POLITICS_ADOLFO_HUERTA_DESC"
+	picture = "Portrait_USM_Adolfo_Huerta.png"
+	expire = "1965.1.1"
+	ideology = liberalism_subtype
+}
+
+create_country_leader = {
+	name = "MÁlvaro Obregón"
+	desc = "POLITICS_MALVARO_OBREGON_DESC"
+	picture = "Portrait_USM_MÁlvaro_Obregón.png"
+	expire = "1965.1.1"
+	ideology = conservatism_subtype
+}
+
+create_country_leader = {
+	name = "Lázaro Cárdenas"
+	desc = "POLITICS_LAZARO_CARDENAS_DESC"
+	picture = "Portrait_USM_Lázaro_Cárdenas.png"
+	expire = "1965.1.1"
+	ideology = reformism_subtype
+}
+
+country_event = { id = usm.1 hours = 2 } #introduction

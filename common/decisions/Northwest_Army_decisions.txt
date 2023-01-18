@@ -1,0 +1,40 @@
+### Northwest Army Dicisions ###
+
+XBJ_officers_and_landlords = {
+	
+	XBJ_seek_officer_support = {
+		allowed = { tag = XBJ }
+		visible = { always = yes }
+		available = {
+			has_political_power > 50
+		}
+		cost = 50
+		complete_effect = {
+			add_manpower = 500
+		}
+	}
+	XBJ_defend_northwest = {
+		allowed = { tag = XBJ }
+		visible = { always = yes }
+		available = { 
+			NOT = {
+				controls_state = 744
+			}
+		}
+		activation = {
+			always = yes 
+		}
+		selectable_mission = no
+		is_good = yes
+		days_mission_timeout = 30
+		timeout_effect = {
+			add_political_power = 30
+			custom_effect_tooltip = XBJ_add_landlords_loyalty_1
+			add_to_variable = { XBJ.landlords_loyalty = 1 }
+		}
+		complete_effect = {
+			add_political_power = -30
+		}
+	}
+}
+			

@@ -1,0 +1,65 @@
+add_namespace = TODBUL
+#向法国推迟请求
+country_event = {
+	id = TODBUL.1
+	title = TODBUL.1.t
+	desc = TODBUL.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	trigger = {tag = BUL}
+	
+	option = { 
+		name = TODBUL.1.a
+		
+	}
+}
+#法国同意援助
+country_event = {
+	id = TODBUL.2
+	title = TODBUL.2.t
+	desc = TODBUL.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	trigger = {tag = BUL}
+	
+	option = { 
+		name = TODBUL.2.a
+		add_timed_idea = {idea = BUL_faguoyuanzhu days = 30}
+	}
+}
+#匈牙利的粮食援助
+country_event = {
+	id = TODBUL.3
+	title = TODBUL.3.t
+	desc = TODBUL.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	trigger = {tag = BUL}
+	
+	option = { 
+		name = TODBUL.3.a
+		add_timed_idea = {idea = BUL_xiongyaliliangshiyuanzhu days = 30}
+	}
+}
+#匈牙利的援助
+country_event = {
+	id = TODBUL.4
+	title = TODBUL.4.t
+	desc = TODBUL.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	trigger = {tag = BUL}
+	
+	option = { 
+		name = TODBUL.4.a
+		add_timed_idea = {idea = BUL_xiongyaliyuanzhu days = 30}
+	}
+}

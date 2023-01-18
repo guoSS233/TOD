@@ -1,0 +1,753 @@
+capital = 373
+
+oob = "FRL"
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "FRL_naval_mtg"
+	else = {
+		set_naval_oob = "FRL_Naval_Legacy"
+	}
+}
+
+set_fuel_ratio = 0.7
+set_research_slots = 4
+set_convoys = 500
+set_stability = 0.75
+set_war_support = 0.2
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+# 航空
+	early_fighter = 1
+	cv_early_fighter = 1
+	fighter1 = 1
+	cv_fighter1 = 1
+	early_bomber = 1
+	tactical_bomber1 = 1
+	strategic_bomber1 = 1
+	CAS1 = 1
+	naval_bomber1 = 1
+	cv_naval_bomber1 = 1
+	cv_CAS1 = 1
+# 杂项
+	marines = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+	marines = 1
+	mountaineers = 1
+}
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		early_carrier = 1
+		basic_carrier = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		improved_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		improved_airplane_launcher = 1
+	}
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+	    basic_heavy_tank = 1
+
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+	}
+	add_ideas = bureau_of_ordnance_spirit
+}
+
+set_politics = {
+	ruling_party = liberal_democracy
+	last_election = "1934.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	national_corporatism = 1
+	sacred_revivalism = 1
+	leader_despotism = 3
+	authoritarian_oligarchy = 5
+	conservative_democracy = 20
+	liberal_democracy = 30
+	consociationalism = 10
+	social_democrat = 20
+	agroindustrial_socialism = 3
+	moderate_socialism = 0
+	council_socialism = 7
+	vanguard_socialism = 0
+}
+
+recruit_character = FRL_Louis_Lucien_Klose
+recruit_character = FRL_John_Smith
+recruit_character = FRL_John_Smit_III
+recruit_character = FRL_Lesley_J_McNair
+recruit_character = FRL_Rose_McConnell
+recruit_character = FRL_Charles_Brien
+recruit_character = FRL_Pat_Harrison
+recruit_character = FRL_Robert_La_Follette
+recruit_character = FRL_Alfred_Wagenknecht
+recruit_character = FRL_Alexander_Berkman
+
+
+
+
+add_ideas = {
+    free_trade
+	FRL_home_of_free
+	FRL_economic_crisis
+	FRL_connect_two_ocean
+	FRL_cold_war
+	FRL_political_crisis
+}
+
+### 陆军元帅 ###
+create_field_marshal = {# 乔治·马歇尔
+	name = "George Marshall"
+	desc = "FRL_GEORGE_MARSHALL_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_george_marshall.png"
+	traits = {
+		career_officer
+		politically_connected
+		offensive_doctrine
+		organizer
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 3
+	logistics_skill = 2
+	id = 64
+}
+
+### 陆军将领 ###
+create_corps_commander = {# 亨利·阿诺德
+	name = "Henri H. Arnold"
+	desc = "FRL_HENRY_H_ARNOLD_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Henry_Arnold.png"
+	traits = {
+		career_officer
+		politically_connected
+		inspirational_leader
+		organizer
+	}
+	skill = 3
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+	id = 58
+}
+create_corps_commander = {# 杰弗里·凯伊斯
+	name = "Galfridus Keyes"
+	desc = "FRL_GEOFFREY_KEYES_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Geoffrey_Keyes_KR.png"
+	traits = {
+		cavalry_officer
+		organizer
+	}
+	skill = 1
+
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 954
+}
+create_corps_commander = {# 乔纳森·温赖特
+	name = "Jonathan M. Wainwright"
+	desc = "FRL_JONATHAN_WAINWRIGHT_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Jonathan_Wainwright_KR.png"
+	traits = {
+		cavalry_officer
+		trait_reckless
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 955
+}
+create_corps_commander = {# 莱斯利·麦克奈尔
+	name = "Lesley McNair"
+	desc = "FRL_LESLIE_MCNAIR_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Lesley_McNair_KR.png"
+	traits = {
+		career_officer
+		artillery_officer
+	}
+	skill = 2
+
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+	id = 958
+}
+create_corps_commander = {# 劳埃德·弗雷登道尔
+	name = "Lloyd Fredendall"
+	desc = "FRL_LLOYD_FREDENDALL_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Lloyd_Fredendall_KR.png"
+	traits = {
+		old_guard
+		infantry_officer
+		inflexible_strategist
+	}
+	skill = 1
+
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 959
+}
+create_corps_commander = {# 卢西安·特拉斯科特
+	name = "Lucian Truscott"
+	desc = "FRL_LUCIAN_TRUSCOTT_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Lucian_Truscott_KR.png"
+	traits = {
+		trait_engineer
+		commando
+		cavalry_officer
+	}
+	skill = 2
+
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 1
+	logistics_skill = 2
+	id = 934
+}
+create_corps_commander = {# 沃尔特`克鲁格
+	name = "Walter Krueger"
+	desc = "FRL_WALTER_KRUEGER_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Walter_Krueger_KR.png"
+	traits = {
+		armor_officer
+		career_officer
+		brilliant_strategist
+	}
+	skill = 2
+
+	attack_skill = 2
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 1
+	id = 961
+}
+create_corps_commander = {# 小阿德纳·霞飞
+	name = "Adna R. Chaffee"
+	desc = "FRL_ADNA_CHAFFEE_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Adna_Chaffee.png"
+	traits = {
+		armor_officer
+	}
+	skill = 3
+
+	attack_skill = 3
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 3
+	id = 933
+}
+create_corps_commander = {# 丹尼尔·范·沃里斯
+	name = "Daniel Van Voorhis"
+	desc = "FRL_DANIEL_VAN_VOORHIS_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Daniel_Van_Voorhis.png"
+	traits = { commando }
+	skill = 3
+	attack_skill = 3
+	defense_skill = 3
+	planning_skill = 3
+	logistics_skill = 3
+	id = 647
+}
+create_corps_commander = {# 约翰·李
+	name = "John C. H. Lee"
+	desc = "FRL_JOHN_LEE_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_john_lee.png"
+	traits = {
+		career_officer
+		politically_connected
+		trait_engineer
+	}
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	planning_skill = 2
+	logistics_skill = 2
+	id = 963
+}
+create_corps_commander = {# 詹姆斯·加雷什·奥德
+	name = "James Garesche Ord"
+	desc = "FRL_JAMES_GARESCHE_ORD_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_james_ord.png"
+	traits = {
+		trait_reckless
+		armor_officer
+		panzer_leader
+	}
+	skill = 1
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 1
+	logistics_skill = 1
+	id = 964
+}
+create_corps_commander = {# 赫伯特·霍尔德里奇
+	name = "Herbert Charles Heitke"
+	desc = "FRL_HERBERT_HOLDRIDGE_ARMY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_herbert_holdridge.png"
+	traits = { trickster }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 1
+	planning_skill = 3
+	logistics_skill = 2
+	id = 61
+}
+
+### 海军将领 ###
+create_navy_leader = {# 威廉·D·莱希
+	name = "William D. Leahy"
+	desc = "FRL_WILLIAM_LEAHY_NAVY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_william_leahy.png"
+	traits = {
+		aviation_enthusiast
+		superior_tactician
+		ironside
+		fleet_protector
+	}
+	skill = 4
+	attack_skill = 3
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 4
+	id = 990
+}
+create_navy_leader = {# 切斯特·威廉·尼米兹
+	name = "Chester W. Nimitz"
+	desc = "FRL_CHESTER_NIMITZ_NAVY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Chester_Nimitz.png"
+	traits = {
+		superior_tactician
+		seawolf
+	}
+	skill = 4
+	attack_skill = 4
+	defense_skill = 4
+	maneuvering_skill = 3
+	coordination_skill = 3
+	id = 62
+}
+create_navy_leader = {# 法兰克·杰克·弗莱彻
+	name = "Frank Jack Fletcher"
+	desc = "FRL_FRANK_JACK_FLETCHER_NAVY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_Frank_Fletcher.png"
+	traits = { 
+	    spotter 
+	    superior_tactician }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 1
+	id = 995
+}
+create_navy_leader = {# 塞缪尔·默里·罗宾逊
+	name = "Samuel Murray Robinson"
+	desc = "FRL_SAMUEL_ROBINSON_NAVY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_samuel_robinson.png"
+	traits = { old_guard_navy navy_career_officer chief_engineer }
+	skill = 3
+	attack_skill = 1
+	defense_skill = 3
+	maneuvering_skill = 3
+	coordination_skill = 3
+	id = 66
+}
+create_navy_leader = {# 詹姆斯·瑞查生
+	name = "James O. Richardson"
+	desc = "FRL_JAMES_RICHARDSON_NAVY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_james_richardson.png"
+	traits = { old_guard_navy superior_tactician blue_water_expert }
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	maneuvering_skill = 2
+	coordination_skill = 3
+	id = 992
+}
+create_navy_leader = {# 大卫·W·巴格利
+	name = "David W. Bagley"
+	desc = "FRL_DAVID_BAGLEY_NAVY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_david_bagley.png"
+	traits = { fleet_protector fly_swatter }
+	skill = 2
+	attack_skill = 1
+	defense_skill = 2
+	maneuvering_skill = 2
+	coordination_skill = 2
+	id = 993
+}
+create_navy_leader = {# 约翰·S·麦凯恩
+	name = "John S. McCain Sr."
+	desc = "FRL_JOHN_MCCAIN_NAVY_DESC"
+	portrait_path = "gfx/leaders/FRL/Portrait_FRL_john_mccain.png"
+	traits = {
+		superior_tactician
+		aviation_enthusiast
+	}
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	maneuvering_skill = 2
+	coordination_skill = 2
+	id = 994
+}
+
+country_event = { id = frl.2 days = 80 } #噔噔咚
+country_event = { id = frl.4 days = 180 } #不信任投票
+
+
+### 战舰型号 ###
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Variants ###
+	# 潜艇 #
+	create_equipment_variant = {
+		name = "珊瑚级"
+		type = submarine_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 3
+			sub_engine_upgrade = 2
+			sub_stealth_upgrade = 2
+			sub_torpedo_upgrade = 3
+		}
+	}
+	# 驱逐舰 #
+	create_equipment_variant = {
+		name = "A级"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			ship_torpedo_upgrade = 3
+			destroyer_engine_upgrade = 3
+			ship_ASW_upgrade = 3
+			ship_anti_air_upgrade = 3
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "B级"
+		type = destroyer_1
+		parent_version = 0
+		upgrades = {
+			ship_torpedo_upgrade = 1
+			destroyer_engine_upgrade = 3
+			ship_ASW_upgrade = 2
+			ship_anti_air_upgrade = 1
+		}
+		obsolete = yes
+	}
+	# 轻巡洋舰 #
+	create_equipment_variant = {
+		name = "贝尔坦级"
+		type = light_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 3
+			ship_engine_upgrade = 3
+			ship_gun_upgrade = 2
+			ship_anti_air_upgrade = 3
+		}
+		obsolete = yes
+	}
+	# 重巡洋舰 #
+	create_equipment_variant = {
+		name = "比克罗西级"
+		type = heavy_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 2
+			ship_engine_upgrade = 3
+			ship_armor_upgrade = 3
+			ship_gun_upgrade = 3
+		}
+	}
+	# 战列巡洋舰 #
+	create_equipment_variant = {
+		name = "苏级"
+		type = battle_cruiser_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 3
+			ship_engine_upgrade = 2
+			ship_armor_upgrade = 3
+			ship_gun_upgrade = 2
+		}
+	}
+	# Battleships #
+	create_equipment_variant = {
+		name = "乔克托级"
+		type = battleship_1
+		parent_version = 0
+		upgrades = {
+			ship_reliability_upgrade = 1
+			ship_engine_upgrade = 2
+			ship_armor_upgrade = 1
+		}
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	### Variants ###
+	# 潜艇 #
+	create_equipment_variant = {
+		name = "珊瑚级"
+		type = ship_hull_submarine_1
+		name_group = FRL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+	}
+	# 驱逐舰 #
+	create_equipment_variant = {
+		name = "A级"
+		type = ship_hull_light_1
+		name_group = FRL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = ship_sonar_1
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "B级"
+		type = ship_hull_light_2
+		name_group = FRL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = ship_sonar_1
+			fixed_ship_engine_slot = light_ship_engine_2
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+	# 轻型巡洋舰 #
+	create_equipment_variant = {
+		name = "贝尔坦级"
+		type = ship_hull_cruiser_1
+		name_group = FRL_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			mid_1_custom_slot = ship_torpedo_1
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	# 重型巡洋舰 #
+	create_equipment_variant = {
+		name = "比克罗西级"
+		type = ship_hull_cruiser_1
+		name_group = FRL_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_2
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_torpedo_1
+			rear_1_custom_slot = ship_medium_battery_2
+		}
+	}
+	# 战列巡洋舰 #
+		create_equipment_variant = {
+		name = "苏级"
+		type = ship_hull_heavy_1
+		name_group = FRL_BC_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_2
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bc_2
+			front_1_custom_slot = ship_anti_air_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+	}
+    # 战列舰 #
+	create_equipment_variant = {
+		name = "乔克托级"
+		type = ship_hull_heavy_1
+		name_group = FRL_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = empty
+			mid_1_custom_slot = ship_airplane_launcher_1
+			mid_2_custom_slot = ship_secondaries_1
+			rear_1_custom_slot = ship_heavy_battery_1
+		}
+		obsolete = yes
+	}
+	# 航空母舰 #
+	create_equipment_variant = {
+		name = "团结级"
+		type = ship_hull_carrier_1
+		name_group = FRL_CV_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_deck_slot_1 = ship_deck_space
+			fixed_ship_deck_slot_2 = ship_deck_space
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = empty
+			mid_1_custom_slot = ship_deck_space
+		}
+		obsolete = yes
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "M1 Combat Car"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 2
+			tank_nsb_engine_upgrade = 5
+		}
+		icon = "GFX_USA_basic_light_tank_medium"
+	}
+	create_equipment_variant = {
+		name = "M2A2"
+		type = light_tank_chassis_1
+		parent_version = 1
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_armor_upgrade = 2
+			tank_nsb_engine_upgrade = 5
+		}
+		icon = "GFX_USA_basic_light_tank_medium"
+	}
+}

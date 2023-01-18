@@ -1,0 +1,89 @@
+﻿capital = 657
+
+oob = "FET_1936"
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "FET_naval_mtg"
+	else = {
+		set_naval_oob = "FET_Naval_Legacy"
+	}
+}
+
+set_research_slots = 2
+
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_secondary_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+        coastal_defense_ships = 1
+		pre_dreadnoughts = 1
+		mtg_transport = 1
+	}
+}
+
+set_stability = 0.5
+set_war_support = 0.5
+
+set_convoys = 50
+
+set_politics = {
+	ruling_party = authoritarian_oligarchy
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	national_corporatism = 6
+	sacred_revivalism = 0
+	leader_despotism = 10
+	authoritarian_oligarchy = 70
+	conservative_democracy = 0
+	liberal_democracy = 0
+	consociationalism = 11
+	social_democrat = 0
+	agroindustrial_socialism = 0
+	moderate_socialism = 0
+	council_socialism = 0
+	vanguard_socialism = 3
+}
+
+add_ideas = {
+	limited_conscription
+	export_focus
+	civilian_economy
+}
+
+add_ideas = {
+	FET_zongdufu
+	FET_jiafengshengcun
+}
+
+recruit_character = FET_Mikhail_Konstantinovich_Ditherichs
+recruit_character = FET_Alexander_Mikheilovich_Krasnoshekov
+recruit_character = FET_Grigory_Mikheilovich_Semyonov
+recruit_character = FET_Zhang_Silin
+recruit_character = FET_Mikhail_Matkovsky

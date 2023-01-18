@@ -1,0 +1,41 @@
+add_namespace = Test
+
+country_event = {
+	id = Test.1 
+ 	title = Test.1.t
+ 	desc = Test.1.desc
+
+
+	is_triggered_only = yes
+
+ 	option = {
+ 		name = fbg1
+			hidden_effect = {
+			set_country_flag  = debug_fbg1 
+			clr_country_flag  = debug_fbg2 
+		}
+	}
+ 
+	option = {
+ 		name = fbg2
+			hidden_effect = {
+			set_country_flag = debug_fbg2 
+			clr_country_flag = debug_fbg1 
+		}
+	}
+	
+	option = {
+ 		name = fbg3
+			hidden_effect = {
+			clr_country_flag = debug_fbg2 
+			clr_country_flag = debug_fbg1 
+		}
+	}
+}
+
+
+
+
+
+
+

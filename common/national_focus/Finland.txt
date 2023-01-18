@@ -1,0 +1,338 @@
+﻿
+focus_tree = {
+	id = finish_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = FIN
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+
+#	focus = {
+#		id = FIN_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+	#五年计划的收尾
+	focus = {
+		id = FIN_wunianjihua
+		icon = GFX_FIN_wunianjihua
+		x = 14
+		y = 1
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#战斗仍将继续
+	focus = {
+		id = FIN_zhandourengjiangjixu
+		icon = GFX_FIN_zhandourengjiangjixu
+		prerequisite = { focus = FIN_wunianjihua}
+		x = 14
+		y = 2
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#伊利奇的旗帜
+	focus = {
+		id = FIN_yiliqideqizhi
+		icon = GFX_FIN_yiliqideqizhi
+		prerequisite = { focus = FIN_zhandourengjiangjixu}
+		x = 13
+		y = 3
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#捷尔任斯基之子
+	focus = {
+		id = FIN_jieerrensijizhizi
+		icon = GFX_FIN_jieerrensijizhizi
+		prerequisite = { focus = FIN_zhandourengjiangjixu}
+		x = 15
+		y = 3
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#国防工业人民委员会
+	focus = {
+		id = FIN_guofanggongyerenminweiyuanhui
+		icon = GFX_FIN_guofanggongyerenminweiyuanhui
+		prerequisite = { focus = FIN_yiliqideqizhi}
+		x = 10
+		y = 4
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#扩大坦佩雷工业基地
+	focus = {
+		id = FIN_kuodatanpeileigongyejidi
+		icon = GFX_FIN_kuodatanpeileigongyejidi
+		prerequisite = { focus = FIN_yiliqideqizhi}
+		x = 12
+		y = 4
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#“人民冲锋枪”
+	focus = {
+		id = FIN_renminchongfengqiang
+		icon = GFX_FIN_renminchongfengqiang
+		prerequisite = { focus = FIN_guofanggongyerenminweiyuanhui}
+		prerequisite = { focus = FIN_kuodatanpeileigongyejidi}
+		x = 12
+		y = 5
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#人手一支枪
+	focus = {
+		id = FIN_renshouyizhiqiang
+		icon = GFX_FIN_renshouyizhiqiang
+		prerequisite = { focus = FIN_yiliqideqizhi focus = FIN_jieerrensijizhizi}
+		prerequisite = { }
+		x = 14
+		y = 4
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#芬兰人民总动员令
+	focus = {
+		id = FIN_fenlanrenminzongdongyuanling
+		icon = GFX_FIN_fenlanrenminzongdongyuanling
+		prerequisite = { focus = FIN_renshouyizhiqiang}
+		prerequisite = { }
+		x = 14
+		y = 5
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#芬兰内务部队
+	focus = {
+		id = FIN_fenlanneiwubudui
+		icon = GFX_FIN_fenlanneiwubudui
+		prerequisite = { focus = FIN_jieerrensijizhizi}
+		prerequisite = { }
+		x = 16
+		y = 4
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#芬兰最高统帅部
+	focus = {
+		id = FIN_fenlanzuigaotongshuaibu
+		icon = GFX_FIN_fenlanzuigaotongshuaibu
+		prerequisite = { focus = FIN_jieerrensijizhizi}
+		prerequisite = { }
+		x = 18
+		y = 4
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#芬兰突击队
+	focus = {
+		id = FIN_fenlantujidui
+		icon = GFX_FIN_fenlantujidui
+		prerequisite = { focus = FIN_fenlanneiwubudui}
+		prerequisite = { focus = FIN_fenlanzuigaotongshuaibu}
+		prerequisite = { }
+		x = 16
+		y = 5
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#全北欧工人，联合起来
+	focus = {
+		id = FIN_lianheqilai
+		icon = GFX_FIN_lianheqilai
+		prerequisite = { focus = FIN_fenlanrenminzongdongyuanling}
+		prerequisite = { focus = FIN_renminchongfengqiang}
+		prerequisite = { focus = FIN_fenlantujidui}
+		prerequisite = { }
+		x = 14
+		y = 6
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#独木难支
+	focus = {
+		id = FIN_dumunanzhi
+		icon = GFX_FIN_dumunanzhi
+		prerequisite = { focus = FIN_zhandourengjiangjixu}
+		prerequisite = { }
+		x = 20
+		y = 3
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#同志加兄弟
+	focus = {
+		id = FIN_tongzhijiaxiongdi
+		icon = GFX_FIN_tongzhijiaxiongdi
+		prerequisite = { focus = FIN_dumunanzhi}
+		prerequisite = { }
+		x = 20
+		y = 4
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#扫清暴君
+	focus = {
+		id = FIN_saoqingbaojun
+		icon = GFX_FIN_saoqingbaojun
+		prerequisite = { focus = FIN_tongzhijiaxiongdi}
+		prerequisite = { }
+		x = 19
+		y = 5
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#“通往北方之路”
+	focus = {
+		id = FIN_tongwangbeifangzhilu
+		icon = GFX_FIN_tongwangbeifangzhilu
+		prerequisite = { focus = FIN_tongzhijiaxiongdi}
+		prerequisite = { }
+		x = 21
+		y = 5
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#斯堪的纳维亚联盟
+	focus = {
+		id = FIN_sikandinaweiyalianmeng
+		icon = GFX_FIN_sikandinaweiyalianmeng
+		prerequisite = { focus = FIN_saoqingbaojun}
+		prerequisite = { focus = FIN_tongwangbeifangzhilu}
+		prerequisite = { }
+		x = 20
+		y = 6
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+}

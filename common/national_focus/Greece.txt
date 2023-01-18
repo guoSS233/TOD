@@ -1,0 +1,1229 @@
+###Greece National Focuses###
+focus_tree = {
+	id = greece_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = GRE
+		}
+	}
+	default = no
+	
+	continuous_focus_position = { x = 2000 y = 2000 }
+	
+	#经济紧急行动计划
+	focus = {
+		id = GRE_jingjijinji
+		icon = GFX_GRE_jingjijinji
+		x = 18
+		y = 1
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#国民公路计划
+	focus = {
+		id = GRE_guomingonglu
+		icon = GFX_GRE_guomingonglu
+		x = 18
+		y = 2
+		prerequisite = { focus = GRE_jingjijinji }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#轻工业重建
+	focus = {
+		id = GRE_qinggongyechongjian
+		icon = GFX_GRE_qinggongyechongjian
+		x = 16
+		y = 2
+		prerequisite = { focus = GRE_jingjijinji }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#扩大军队投资
+	focus = {
+		id = GRE_kuodajunduitouzi
+		icon = GFX_GRE_kuodajunduitouzi
+		x = 20
+		y = 2
+		prerequisite = { focus = GRE_jingjijinji }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊新政
+	focus = {
+		id = GRE_xilaxinzheng
+		icon = GFX_GRE_xilaxinzheng
+		x = 10
+		y = 3
+		prerequisite = { focus = GRE_qinggongyechongjian focus = GRE_guomingonglu focus = GRE_kuodajunduitouzi}
+		mutually_exclusive = { focus = GRE_yaoyaoyuzhuidezhizhengdang }
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#第二次紧急经济行动
+	focus = {
+		id = GRE_diercijinjijinji
+		icon = GFX_GRE_diercijinjijinji
+		x = 8
+		y = 4
+		prerequisite = { focus = GRE_xilaxinzheng}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊铁路计划
+	focus = {
+		id = GRE_xilatielu
+		icon = GFX_GRE_xilatielu
+		x = 8
+		y = 5
+		prerequisite = { focus = GRE_diercijinjijinji}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#贬值德拉克马
+	focus = {
+		id = GRE_bianzhidelakema
+		icon = GFX_GRE_bianzhidelakema
+		x = 7
+		y = 6
+		prerequisite = { focus = GRE_xilatielu}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#扩大出口退税
+	focus = {
+		id = GRE_kuodachukoutuishui
+		icon = GFX_GRE_kuodachukoutuishui
+		x = 9
+		y = 6
+		prerequisite = { focus = GRE_xilatielu}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊造船集团
+	focus = {
+		id = GRE_xilazaochuanjituan
+		icon = GFX_GRE_xilazaochuanjituan
+		x = 6
+		y = 7
+		prerequisite = { focus = GRE_bianzhidelakema focus = GRE_kuodachukoutuishui}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#矿业投资
+	focus = {
+		id = GRE_kuangyetouzi
+		icon = GFX_GRE_kuangyetouzi
+		x = 8
+		y = 7
+		prerequisite = { focus = GRE_bianzhidelakema focus = GRE_kuodachukoutuishui}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊的大学
+	focus = {
+		id = GRE_xiladedaxue
+		icon = GFX_GRE_xiladedaxue
+		x = 10
+		y = 7
+		prerequisite = { focus = GRE_bianzhidelakema focus = GRE_kuodachukoutuishui}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#维护国内稳定
+	focus = {
+		id = GRE_weihuguoneiwending
+		icon = GFX_GRE_weihuguoneiwending
+		x = 13
+		y = 4
+		prerequisite = { focus = GRE_xilaxinzheng}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#清理IMRO
+	focus = {
+		id = GRE_qingliIMRO
+		icon = GFX_GRE_qingliIMRO
+		x = 11
+		y = 5
+		prerequisite = { focus = GRE_weihuguoneiwending}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#清除政坛不稳定因素
+	focus = {
+		id = GRE_qingchuzhengtanbuwendingyinsu
+		icon = GFX_GRE_qingchuzhengtanbuwendingyinsu
+		x = 13
+		y = 5
+		prerequisite = { focus = GRE_weihuguoneiwending}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#压制阿尔巴尼亚解放军
+	focus = {
+		id = GRE_yazhiaerbaniyajiefangjun
+		icon = GFX_GRE_yazhiaerbaniyajiefangjun
+		x = 15
+		y = 5
+		prerequisite = { focus = GRE_weihuguoneiwending}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#清理保王党
+	focus = {
+		id = GRE_qinglibaowangdang
+		icon = GFX_GRE_qinglibaowangdang
+		x = 11
+		y = 6
+		prerequisite = { focus = GRE_qingchuzhengtanbuwendingyinsu}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#压制社民工党
+	focus = {
+		id = GRE_yazhishemingongdang
+		icon = GFX_GRE_yazhishemingongdang
+		x = 13
+		y = 6
+		prerequisite = { focus = GRE_qingchuzhengtanbuwendingyinsu}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#驯服军队
+	focus = {
+		id = GRE_xunfujundui
+		icon = GFX_GRE_xunfujundui
+		x = 15
+		y = 6
+		prerequisite = { focus = GRE_qingchuzhengtanbuwendingyinsu}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#共和国宪法
+	focus = {
+		id = GRE_gongheguoxianfa
+		icon = GFX_GRE_gongheguoxianfa
+		x = 13
+		y = 7
+		prerequisite = { focus = GRE_qinglibaowangdang}
+		prerequisite = { focus = GRE_yazhishemingongdang}
+		prerequisite = { focus = GRE_xunfujundui}
+
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#共和国永存
+	focus = {
+		id = GRE_gongheguoyongcun
+		icon = GFX_GRE_gongheguoyongcun
+		x = 10
+		y = 8
+		prerequisite = { focus = GRE_gongheguoxianfa}
+		prerequisite = { focus = GRE_xiladedaxue}
+		prerequisite = { focus = GRE_kuangyetouzi}
+		prerequisite = { focus = GRE_xilazaochuanjituan}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#摇摇欲坠的执政党
+	focus = {
+		id = GRE_yaoyaoyuzhuidezhizhengdang
+		icon = GFX_GRE_yaoyaoyuzhuidezhizhengdang
+		x = 29
+		y = 3
+		prerequisite = { focus = GRE_qinggongyechongjian focus = GRE_guomingonglu focus = GRE_kuodajunduitouzi}
+		mutually_exclusive = { focus = GRE_xilaxinzheng }
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#应对在野党的挑战
+	focus = {
+		id = GRE_yingduizaiyedangdetiaozhan
+		icon = GFX_GRE_yingduizaiyedangdetiaozhan
+		x = 29
+		y = 4
+		prerequisite = { focus = GRE_yaoyaoyuzhuidezhizhengdang}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#下野
+	focus = {
+		id = GRE_xiaye
+		icon = GFX_GRE_xiaye
+		x = 27
+		y = 5
+		prerequisite = { focus = GRE_yingduizaiyedangdetiaozhan}
+		mutually_exclusive = { focus = GRE_weibeichangli}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#社民工党政府
+	focus = {
+		id = GRE_shemingongdangzhengfu
+		icon = GFX_GRE_shemingongdangzhengfu
+		x = 22
+		y = 6
+		prerequisite = { focus = GRE_xiaye}
+		mutually_exclusive = { focus = GRE_renmindangzhengfu }
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#社会主义化改造
+	focus = {
+		id = GRE_shehuizhuyihuagaizao
+		icon = GFX_GRE_shehuizhuyihuagaizao
+		x = 18
+		y = 7
+		prerequisite = { focus = GRE_shemingongdangzhengfu}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#工人民主管理
+	focus = {
+		id = GRE_gongrenminzhuguanli
+		icon = GFX_GRE_gongrenminzhuguanli
+		x = 16
+		y = 8
+		prerequisite = { focus = GRE_shehuizhuyihuagaizao}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#新的劳动法
+	focus = {
+		id = GRE_xindelaodongfa
+		icon = GFX_GRE_xindelaodongfa
+		x = 18
+		y = 8
+		prerequisite = { focus = GRE_shehuizhuyihuagaizao}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#农业合作社
+	focus = {
+		id = GRE_nongyehezuoshe
+		icon = GFX_GRE_nongyehezuoshe
+		x = 20
+		y = 8
+		prerequisite = { focus = GRE_shehuizhuyihuagaizao}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#增加基建投资
+	focus = {
+		id = GRE_zengjiajijiantouzi
+		icon = GFX_GRE_zengjiajijiantouzi
+		x = 16
+		y = 9
+		prerequisite = { focus = GRE_nongyehezuoshe}
+		prerequisite = { focus = GRE_xindelaodongfa}
+		prerequisite = { focus = GRE_gongrenminzhuguanli}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#教育新路线
+	focus = {
+		id = GRE_jiaoyuxinluxian
+		icon = GFX_GRE_jiaoyuxinluxian
+		x = 18
+		y = 9
+		prerequisite = { focus = GRE_nongyehezuoshe}
+		prerequisite = { focus = GRE_xindelaodongfa}
+		prerequisite = { focus = GRE_gongrenminzhuguanli}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#矿业合作社
+	focus = {
+		id = GRE_kuangyehezuoshe
+		icon = GFX_GRE_kuangyehezuoshe
+		x = 20
+		y = 9
+		prerequisite = { focus = GRE_nongyehezuoshe}
+		prerequisite = { focus = GRE_xindelaodongfa}
+		prerequisite = { focus = GRE_gongrenminzhuguanli}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#废止私有制
+	focus = {
+		id = GRE_feizhisiyouzhi
+		icon = GFX_GRE_feizhisiyouzhi
+		x = 18
+		y = 10
+		prerequisite = { focus = GRE_zengjiajijiantouzi}
+		prerequisite = { focus = GRE_jiaoyuxinluxian}
+		prerequisite = { focus = GRE_kuangyehezuoshe}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#扫干净屋子
+	focus = {
+		id = GRE_saoganjingwuzi
+		icon = GFX_GRE_saoganjingwuzi
+		x = 26
+		y = 7
+		prerequisite = { focus = GRE_shemingongdangzhengfu}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#再请客
+	focus = {
+		id = GRE_zaiqingke
+		icon = GFX_GRE_zaiqingke
+		x = 23
+		y = 8
+		prerequisite = { focus = GRE_saoganjingwuzi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#联络德国同志
+	focus = {
+		id = GRE_lianluodeguotongzhi
+		icon = GFX_GRE_lianluodeguotongzhi
+		x = 22
+		y = 9
+		prerequisite = { focus = GRE_zaiqingke}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#联络土耳其同志
+	focus = {
+		id = GRE_lianluotuerqitongzhi
+		icon = GFX_GRE_lianluotuerqitongzhi
+		x = 24
+		y = 9
+		prerequisite = { focus = GRE_zaiqingke}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#经济合作
+	focus = {
+		id = GRE_jingjihezuo
+		icon = GFX_GRE_jingjihezuo
+		x = 21
+		y = 10
+		prerequisite = { focus = GRE_lianluodeguotongzhi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#如兄弟一般
+	focus = {
+		id = GRE_ruxiongdiyiban
+		icon = GFX_GRE_ruxiongdiyiban
+		x = 23
+		y = 10
+		prerequisite = { focus = GRE_lianluodeguotongzhi}
+		prerequisite = { focus = GRE_lianluotuerqitongzhi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#与土耳其的同盟
+	focus = {
+		id = GRE_yutuerqidetongmeng
+		icon = GFX_GRE_yutuerqidetongmeng
+		x = 25
+		y = 10
+		prerequisite = { focus = GRE_lianluotuerqitongzhi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#取缔反动派
+	focus = {
+		id = GRE_qudifandongpai
+		icon = GFX_GRE_qudifandongpai
+		x = 28
+		y = 8
+		prerequisite = { focus = GRE_saoganjingwuzi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#政教分离
+	focus = {
+		id = GRE_zhengjiaofenli
+		icon = GFX_GRE_zhengjiaofenli
+		x = 26
+		y = 9
+		prerequisite = { focus = GRE_qudifandongpai}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#改造军队
+	focus = {
+		id = GRE_gaizaojundui
+		icon = GFX_GRE_gaizaojundui
+		x = 28
+		y = 9
+		prerequisite = { focus = GRE_qudifandongpai}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#清理“三股势力”
+	focus = {
+		id = GRE_qinglisangushili
+		icon = GFX_GRE_qinglisangushili
+		x = 30
+		y = 9
+		prerequisite = { focus = GRE_qudifandongpai}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#巩固社会主义
+	focus = {
+		id = GRE_gonggushehuizhuyi
+		icon = GFX_GRE_gonggushehuizhuyi
+		x = 28
+		y = 10
+		prerequisite = { focus = GRE_zhengjiaofenli}
+		prerequisite = { focus = GRE_gaizaojundui}
+		prerequisite = { focus = GRE_qinglisangushili}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊的明天
+	focus = {
+		id = GRE_xilademintian
+		icon = GFX_GRE_xilademintian
+		x = 22
+		y = 11
+		prerequisite = { focus = GRE_feizhisiyouzhi}
+		prerequisite = { focus = GRE_ruxiongdiyiban}
+		prerequisite = { focus = GRE_gonggushehuizhuyi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#人民党政府
+	focus = {
+		id = GRE_renmindangzhengfu
+		icon = GFX_GRE_renmindangzhengfu
+		x = 36
+		y = 6
+		prerequisite = { focus = GRE_xiaye}
+		mutually_exclusive = { focus = GRE_shemingongdangzhengfu }
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#国王归来
+	focus = {
+		id = GRE_guowangguilai
+		icon = GFX_GRE_guowangguilai
+		x = 36
+		y = 7
+		prerequisite = { focus = GRE_renmindangzhengfu}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊保守主义
+	focus = {
+		id = GRE_xilabaoshouzhuyi
+		icon = GFX_GRE_xilabaoshouzhuyi
+		x = 33
+		y = 8
+		prerequisite = { focus = GRE_guowangguilai}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#贸易保护主义
+	focus = {
+		id = GRE_maoyibaohuzhuyi
+		icon = GFX_GRE_maoyibaohuzhuyi
+		x = 32
+		y = 9
+		prerequisite = { focus = GRE_xilabaoshouzhuyi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#农业改革
+	focus = {
+		id = GRE_nongyegaige
+		icon = GFX_GRE_nongyegaige
+		x = 34
+		y = 9
+		prerequisite = { focus = GRE_xilabaoshouzhuyi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#公路建设
+	focus = {
+		id = GRE_gonglujianshe
+		icon = GFX_GRE_gonglujianshe
+		x = 31
+		y = 10
+		prerequisite = { focus = GRE_maoyibaohuzhuyi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#国有化大企业
+	focus = {
+		id = GRE_guoyouhuadaqiye
+		icon = GFX_GRE_guoyouhuadaqiye
+		x = 33
+		y = 10
+		prerequisite = { focus = GRE_maoyibaohuzhuyi focus = GRE_nongyegaige}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#振兴农村
+	focus = {
+		id = GRE_zhenxingnongcun
+		icon = GFX_GRE_zhenxingnongcun
+		x = 35
+		y = 10
+		prerequisite = { focus = GRE_maoyibaohuzhuyi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#矿业卡特尔
+	focus = {
+		id = GRE_kuangyekateer
+		icon = GFX_GRE_kuangyekateer
+		x = 32
+		y = 11
+		prerequisite = { focus = GRE_guoyouhuadaqiye}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#造船托拉斯
+	focus = {
+		id = GRE_zaochuantuolasi
+		icon = GFX_GRE_zaochuantuolasi
+		x = 34
+		y = 11
+		prerequisite = { focus = GRE_guoyouhuadaqiye}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#与教会携手
+	focus = {
+		id = GRE_yujiaohuixieshou
+		icon = GFX_GRE_yujiaohuixieshou
+		x = 40
+		y = 8
+		prerequisite = { focus = GRE_guowangguilai}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#议会改革
+	focus = {
+		id = GRE_yihuigaige
+		icon = GFX_GRE_yihuigaige
+		x = 38
+		y = 9
+		prerequisite = { focus = GRE_yujiaohuixieshou}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#有财者居之
+	focus = {
+		id = GRE_youcaizhejuzhi
+		icon = GFX_GRE_youcaizhejuzhi
+		x = 37
+		y = 10
+		prerequisite = { focus = GRE_yihuigaige}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#清理赤匪
+	focus = {
+		id = GRE_qinglichifei
+		icon = GFX_HUN_zhengzhigaige
+		x = 39
+		y = 10
+		prerequisite = { focus = GRE_yihuigaige}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#复兴元老院
+	focus = {
+		id = GRE_fuxingyuanlaoyuan
+		icon = GFX_GRE_fuxingyuanlaoyuan
+		x = 38
+		y = 11
+		prerequisite = { focus = GRE_qinglichifei}
+		prerequisite = { focus = GRE_youcaizhejuzhi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#正教与巴西琉斯
+	focus = {
+		id = GRE_zhengjiaoyubaxiliusi
+		icon = GFX_GRE_zhengjiaoyubaxiliusi
+		x = 36
+		y = 12
+		prerequisite = { focus = GRE_fuxingyuanlaoyuan}
+		prerequisite = { focus = GRE_zaochuantuolasi}
+		prerequisite = { focus = GRE_kuangyekateer}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#边疆烽火
+	focus = {
+		id = GRE_bianjiangfenghuo
+		icon = GFX_GRE_bianjiangfenghuo
+		x = 42
+		y = 9
+		prerequisite = { focus = GRE_yujiaohuixieshou}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#对IMRO的战争
+	focus = {
+		id = GRE_duiIMROdezhanzheng
+		icon = GFX_GRE_qingliIMRO
+		x = 41
+		y = 10
+		prerequisite = { focus = GRE_bianjiangfenghuo}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#进攻UCS
+	focus = {
+		id = GRE_jingongUCS
+		icon = GFX_GRE_jingongUCS
+		x = 43
+		y = 10
+		prerequisite = { focus = GRE_bianjiangfenghuo}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#违背常例
+	focus = {
+		id = GRE_weibeichangli
+		icon = GFX_GRE_weibeichangli
+		x = 53
+		y = 5
+		prerequisite = { focus = GRE_yingduizaiyedangdetiaozhan}
+		mutually_exclusive = { focus = GRE_xiaye }
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊新秩序
+	focus = {
+		id = GRE_xilaxinzhixu
+		icon = GFX_GRE_xilaxinzhixu
+		x = 53
+		y = 6
+		prerequisite = { focus = GRE_weibeichangli}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#“灵活”经济学
+	focus = {
+		id = GRE_linghuojingjixue
+		icon = GFX_GRE_linghuojingjixue
+		x = 50
+		y = 7
+		prerequisite = { focus = GRE_xilaxinzhixu}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#压榨少数民族
+	focus = {
+		id = GRE_yazhashaoshuminzu
+		icon = GFX_GRE_yazhashaoshuminzu
+		x = 48
+		y = 8
+		prerequisite = { focus = GRE_linghuojingjixue}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#农村重分配
+	focus = {
+		id = GRE_nongcunchongfenpei
+		icon = GFX_GRE_nongcunchongfenpei
+		x = 48
+		y = 9
+		prerequisite = { focus = GRE_yazhashaoshuminzu}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#福利政策
+	focus = {
+		id = GRE_fulizhengce
+		icon = GFX_GRE_fulizhengce
+		x = 48
+		y = 10
+		prerequisite = { focus = GRE_nongcunchongfenpei}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#与大公司的联盟
+	focus = {
+		id = GRE_yudagongsidelianmeng
+		icon = GFX_GRE_yudagongsidelianmeng
+		x = 51
+		y = 8
+		prerequisite = { focus = GRE_linghuojingjixue}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#社团主义经济
+	focus = {
+		id = GRE_shetuanzhuyijingji
+		icon = GFX_GRE_shetuanzhuyijingji
+		x = 50
+		y = 9
+		prerequisite = { focus = GRE_yudagongsidelianmeng}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#军工业扩张
+	focus = {
+		id = GRE_jungongyekuozhang
+		icon = GFX_GRE_jungongyekuozhang
+		x = 52
+		y = 9
+		prerequisite = { focus = GRE_yudagongsidelianmeng}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊军队扩张
+	focus = {
+		id = GRE_xilajunduikuozhang
+		icon = GFX_GRE_xilajunduikuozhang
+		x = 51
+		y = 10
+		prerequisite = { focus = GRE_jungongyekuozhang}
+		prerequisite = { focus = GRE_shetuanzhuyijingji}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#八月四日体制
+	focus = {
+		id = GRE_bayuesiritizhi
+		icon = GFX_GRE_bayuesiritizhi
+		x = 56
+		y = 7
+		prerequisite = { focus = GRE_xilaxinzhixu}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#军事戒严
+	focus = {
+		id = GRE_junshijieyan
+		icon = GFX_GRE_junshijieyan
+		x = 55
+		y = 8
+		prerequisite = { focus = GRE_bayuesiritizhi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#消灭政党
+	focus = {
+		id = GRE_xiaomiezhengdang
+		icon = GFX_GRE_xiaomiezhengdang
+		x = 54
+		y = 9
+		prerequisite = { focus = GRE_junshijieyan}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#清除赤匪
+	focus = {
+		id = GRE_qingchuchifei
+		icon = GFX_GRE_qingchuchifei
+		x = 56
+		y = 9
+		prerequisite = { focus = GRE_junshijieyan}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#总动员令
+	focus = {
+		id = GRE_zongdongyuanling
+		icon = GFX_GRE_zongdongyuanling
+		x = 58
+		y = 8
+		prerequisite = { focus = GRE_bayuesiritizhi}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#先军社会
+	focus = {
+		id = GRE_xianjunshehui
+		icon = GFX_GRE_xianjunshehui
+		x = 58
+		y = 9
+		prerequisite = { focus = GRE_zongdongyuanling}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#为了领袖
+	focus = {
+		id = GRE_weilelingxiu
+		icon = GFX_GRE_weilelingxiu
+		x = 56
+		y = 10
+		prerequisite = { focus = GRE_xiaomiezhengdang focus = GRE_qingchuchifei}
+		prerequisite = { focus = GRE_xianjunshehui}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+	#希腊的拿破仑
+	focus = {
+		id = GRE_xiladenapolun
+		icon = GFX_GRE_xiladenapolun
+		x = 53
+		y = 11
+		prerequisite = { focus = GRE_fulizhengce}
+		prerequisite = { focus = GRE_weilelingxiu}
+		prerequisite = { focus = GRE_xilajunduikuozhang}
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { }
+	}
+}
+	

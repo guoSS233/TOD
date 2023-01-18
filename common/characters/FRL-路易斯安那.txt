@@ -1,0 +1,201 @@
+characters={
+	FRL_Louis_Lucien_Klose={
+		name=FRL_Louis_Lucien_Klose
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_FRL_Louis_Lucien_Klose.png"
+			}
+		}
+		country_leader={
+			ideology= liberal_democracy_subtype
+			desc = "POLITICS_LOUIS_LUCIEN_KLOSE_DESC"
+			traits={ guardian_of_liberalism }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_John_Smith={
+		name=FRL_John_Smith
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_FRL_John_Smith.png"
+			}
+		}
+		country_leader={
+			ideology= national_corporatism_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_John_Smit_III={
+		name=FRL_John_Smit_III
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_FRL_John_Smit_III.png"
+			}
+		}
+		country_leader={
+			ideology= sacred_revivalism_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_Lesley_J_McNair={
+		name=FRL_Lesley_J_McNair
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_FRL_Lesley_J_McNair.png"
+			}
+		}
+		country_leader={
+			ideology= leader_despotism_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_Rose_McConnell={
+		name=FRL_Rose_McConnell
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_FRL_Rose_McConnell.png"
+			}
+		}
+		country_leader={
+			ideology= authoritarian_oligarchy_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_Charles_Brien={
+		name=FRL_Charles_Brien
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_FRL_Charles_Brien.png"
+			}
+		}
+		country_leader={
+			ideology= conservative_democracy_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_Pat_Harrison={
+		name=FRL_Pat_Harrison
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_FRL_Pat_Harrison.png"
+			}
+		}
+		country_leader={
+			ideology= consociationalism_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_Robert_La_Follette={
+		name=FRL_Robert_La_Follette
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_Robert_La_Follette.png"
+			}
+		}
+		country_leader={
+			ideology= social_democrat_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_Alfred_Wagenknecht={
+		name=FRL_Alfred_Wagenknecht
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_Alfred_Wagenknecht.png"
+			}
+		}
+		country_leader={
+			ideology= council_socialism_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_Alexander_Berkman={
+		name=FRL_Alexander_Berkman
+		portraits={
+			civilian={
+				large="gfx/leaders/FRL/Portrait_Alexander_Berkman.png"
+			}
+		}
+		country_leader={
+			ideology= agroindustrial_socialism_subtype
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRL_george_marshall={
+		name=FRL_george_marshall
+		portraits={
+			army={
+				large="gfx/leaders/FRL/Portrait_FRL_george_marshall.png"
+				small="GFX_idea_FRL_george_marshall"
+			}
+		}	
+		advisor={
+			slot = high_command
+			idea_token = george_marshall
+			ledger = army
+			allowed = {
+				original_tag = FRL
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.500
+			}
+		}
+		
+		field_marshal={
+			traits = {career_officer politically_connected offensive_doctrine organizer}
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=1
+		}
+	}
+	FRL_Henry_Arnold={
+		name=FRL_Henry_Arnold
+		portraits={
+			army={
+				large="gfx/leaders/FRL/Portrait_FRL_Henry_Arnold.png"
+				small="GFX_idea_FRL_Henry_Arnold"
+			}
+		}	
+		advisor={
+			slot = high_command
+			idea_token = Henry_Arnold
+			ledger = army
+			allowed = {
+				original_tag = FRL
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.500
+			}
+		}
+		
+		corps_commander={
+			traits = {career_officer politically_connected inspirational_leader organizer}
+			skill = 3
+	        attack_skill = 3
+	        defense_skill = 2
+	        planning_skill = 2
+	        logistics_skill = 3
+			legacy_id=2
+		}
+	}

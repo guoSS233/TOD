@@ -1,0 +1,169 @@
+add_namespace = TODUkraine
+#权力的角逐
+country_event = {
+	id = TODUkraine.1
+	title = TODUkraine.1.t
+	desc =TODUkraine.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = UKR}
+	
+	option = { 
+		name = TODUkraine.1.a
+		add_popularity = { ideology = conservative_democracy popularity = 0.05 }
+	}
+	option = { 
+		name = TODUkraine.1.a
+		add_popularity = { ideology = leader_despotism popularity = 0.05 }
+	}
+}
+#基辅的热身
+country_event = {
+	id = TODUkraine.2
+	title = TODUkraine.2.t
+	desc =TODUkraine.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = UKR}
+	
+	option = { 
+		name = TODUkraine.2.a
+		add_popularity = { ideology = conservative_democracy popularity = 0.1 }
+		add_political_power = -20
+	}
+	option = { 
+		name = TODUkraine.2.a
+		add_popularity = { ideology = leader_despotism popularity = 0.05 }
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+#西乌地区选举活动
+country_event = {
+	id = TODUkraine.3
+	title = TODUkraine.3.t
+	desc =TODUkraine.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = UKR}
+	
+	option = { 
+		name = TODUkraine.3.a
+		add_popularity = { ideology = conservative_democracy popularity = 0.05 }
+		add_political_power = -30
+	}
+	option = { 
+		name = TODUkraine.3.a
+		add_popularity = { ideology = leader_despotism popularity = 0.1 }
+		add_political_power = 10
+	}
+}
+#东乌的下乡行动
+country_event = {
+	id = TODUkraine.4
+	title = TODUkraine.4.t
+	desc =TODUkraine.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = UKR}
+	
+	option = { 
+		name = TODUkraine.4.a
+		add_popularity = { ideology = conservative_democracy popularity = 0.05 }
+		add_political_power = -50
+	}
+	option = { 
+		name = TODUkraine.4.a
+		add_popularity = { ideology = leader_despotism popularity = 0.1 }
+		add_stability = -0.05
+	}
+}
+#克里米亚问题的态度
+country_event = {
+	id = TODUkraine.5
+	title = TODUkraine.5.t
+	desc =TODUkraine.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = UKR}
+	
+	option = { 
+		name = TODUkraine.5.a
+		add_popularity = { ideology = conservative_democracy popularity = 0.05 }
+		add_war_support = -0.1
+		set_temp_variable = { UKR_baoshouzhichidu = party_popularity@conservative_democracy }
+		set_temp_variable = { UKR_lingxiuzhichidu = party_popularity@leader_despotism }
+		if = {
+			limit = {check_variable = { var = UKR_baoshouzhichidu value = UKR_lingxiuzhichidu compare = greater_than }}
+			hidden_effect = {country_event = { id = TODUkraine.6 days = 15 }}
+		}
+		else = {country_event = { id = TODUkraine.7 days = 15 }}
+	}
+	option = { 
+		name = TODUkraine.5.a
+		add_popularity = { ideology = leader_despotism popularity = 0.1 }
+		add_war_support = 0.05
+		set_temp_variable = { UKR_baoshouzhichidu = party_popularity@conservative_democracy }
+		set_temp_variable = { UKR_lingxiuzhichidu = party_popularity@leader_despotism }
+		if = {
+			limit = {check_variable = { var = UKR_baoshouzhichidu value = UKR_lingxiuzhichidu compare = greater_than }}
+			hidden_effect = {country_event = { id = TODUkraine.6 days = 15 }}
+		}
+		else = {country_event = { id = TODUkraine.7 days = 15 }}
+	}
+}
+#社会民主党赢得胜利
+country_event = {
+	id = TODUkraine.6
+	title = TODUkraine.6.t
+	desc =TODUkraine.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = UKR}
+	
+	option = { 
+		name = TODUkraine.6.a
+		set_country_flag = UKR_shemin
+		add_stability = 0.1
+	}
+}
+#民族力量党赢得胜利
+country_event = {
+	id = TODUkraine.7
+	title = TODUkraine.7.t
+	desc =TODUkraine.7.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = UKR}
+	
+	option = { 
+		name = TODUkraine.7.a
+		set_country_flag = UKR_lingxiu
+		add_stability = 0.1
+		retire_country_leader = yes
+		set_politics = {
+			ruling_party = leader_despotism
+		}
+	}
+}

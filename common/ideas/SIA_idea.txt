@@ -1,0 +1,56 @@
+ideas = {    
+	country = {
+		SIA_the_aftermath_of_the_gengwu_financial_crisis = {
+			picture = SIA_the_aftermath_of_the_gengwu_financial_crisis
+			modifier = {
+				PRODUCTION_SPEED_BUILDINGS_FACTOR = -0.1
+				LINE_CHANGE_PRODUCTION_EFFICIENCY_FACTOR = -0.1
+				industrial_capacity_factory = -0.1
+				CONSUMER_GOODS_FACTOR = +0.03
+			}
+		}
+		SIA_2475 = {
+			picture = SIA_the_aftermath_of_the_gengwu_financial_crisis
+			modifier = {
+				social_democrat_drift = 0.02
+				national_corporatism_drift = 0.02
+				liberal_democracy_drift = 0.02
+				conservative_democracy_drift = 0.02
+			}
+		}
+		SIA_bukekaodelujun = {
+			picture = SIA_the_aftermath_of_the_gengwu_financial_crisis
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea HUN_pangdadejundui"
+				country_lock_all_division_template = yes
+			}
+			on_remove = {
+				log = "[GetDateText]: [Root.GetName]: remove idea HUN_pangdadejundui"
+				country_lock_all_division_template = no
+			}
+			modifier = {	
+				stability_factor = -0.05
+				army_org_Factor = -0.1
+				custom_modifier_tooltip = cannot_train_units_tt
+			}
+		}
+		SIA_shaoshuminzupanluan = {
+			picture = SIA_the_aftermath_of_the_gengwu_financial_crisis
+			modifier = {	
+				stability_factor = -0.05
+				political_power_factor = -0.1
+				compliance_growth = -0.1
+				non_core_manpower = -0.75
+			}
+		}
+		SIA_zhongnantielu = {
+			picture = SIA_the_aftermath_of_the_gengwu_financial_crisis
+			modifier = {	
+				production_factory_max_efficiency_factor = 0.075
+				production_speed_buildings_factor = 0.075
+				planning_speed = 0.0075
+				max_planning = 0.2
+			}
+		}
+	}
+}

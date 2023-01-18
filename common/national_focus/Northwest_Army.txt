@@ -1,0 +1,206 @@
+### Northwest Army national focuses ###
+focus_tree = {
+	id = xibei_focus
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = XBJ
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1500 }
+	
+	focus = {
+		id = XBJ_xi'an_announcement
+		x = 8
+	}
+	focus = {
+		id = XBJ_fortify_tongguan
+		prerequisite = {
+			focus = XBJ_xi'an_announcement
+		}
+		mutually_exclusive = {
+			focus = XBJ_heavy_fist
+		}
+		relative_position_id = XBJ_xi'an_announcement
+		x = -7
+		y = 1
+	}
+	focus = {
+		id = XBJ_heavy_fist
+		prerequisite = {
+			focus = XBJ_xi'an_announcement
+		}
+		mutually_exclusive = {
+			focus = XBJ_fortify_tongguan
+		}
+		relative_position_id = XBJ_xi'an_announcement
+		x = -3
+		y = 1
+	}
+	focus = {
+		id = XBJ_total_martial_law
+		prerequisite = { 
+			focus = XBJ_fortify_tongguan
+			focus = XBJ_heavy_fist
+		}
+		relative_position_id = XBJ_fortify_tongguan
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_cooperate_headquarter
+		prerequisite = { focus = XBJ_total_martial_law }
+		relative_position_id = XBJ_total_martial_law
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_purge_bureaucrats
+		prerequisite = { focus = XBJ_cooperate_headquarter }
+		relative_position_id = XBJ_cooperate_headquarter
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_emergency_department
+		prerequisite = { 
+			focus = XBJ_fortify_tongguan
+			focus = XBJ_heavy_fist
+		}
+		relative_position_id = XBJ_heavy_fist
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_military_exploit
+		prerequisite = { focus = XBJ_emergency_department }
+		relative_position_id = XBJ_emergency_department
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_efficiency_first
+		prerequisite = { focus = XBJ_military_exploit }
+		relative_position_id = XBJ_military_exploit
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_promote_eagles
+		prerequisite = { focus = XBJ_purge_bureaucrats }
+		prerequisite = { focus = XBJ_efficiency_first }
+		relative_position_id = XBJ_purge_bureaucrats
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_military_reform_plan
+		prerequisite = { focus = XBJ_promote_eagles }
+		relative_position_id = XBJ_promote_eagles
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_grand_army
+		prerequisite = { focus = XBJ_military_reform_plan }
+		mutually_exclusive = { focus = XBJ_retrench_system }
+		relative_position_id = XBJ_military_reform_plan
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = XBJ_reconstuct_naval_defense
+		prerequisite = { focus = XBJ_grand_army }
+		relative_position_id = XBJ_grand_army
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_sun_and_moon_reaches
+		prerequisite = { focus = XBJ_reconstuct_naval_defense }
+		relative_position_id = XBJ_reconstuct_naval_defense
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_retrench_system
+		prerequisite = { focus = XBJ_military_reform_plan }
+		mutually_exclusive = { focus = XBJ_grand_army }
+		relative_position_id = XBJ_military_reform_plan
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = XBJ_abolish_dusi
+		prerequisite = { focus = XBJ_retrench_system }
+		relative_position_id = XBJ_retrench_system
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_new_great_wall
+		prerequisite = { focus = XBJ_abolish_dusi }
+		relative_position_id = XBJ_abolish_dusi
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_strengthen_discipline
+		prerequisite = { focus = XBJ_purge_bureaucrats }
+		prerequisite = { focus = XBJ_efficiency_first }
+		relative_position_id = XBJ_efficiency_first
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_wider_conscription
+		prerequisite = { focus = XBJ_strengthen_discipline }
+		mutually_exclusive = { focus = XBJ_elite_units }
+		relative_position_id = XBJ_strengthen_discipline
+		x = -1
+		y = 1
+	}
+	focus = {
+		id = XBJ_unite_like_fortress
+		prerequisite = { focus = XBJ_wider_conscription }
+		relative_position_id = XBJ_wider_conscription
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_elite_units
+		prerequisite = { focus = XBJ_strengthen_discipline }
+		mutually_exclusive = { focus = XBJ_wider_conscription }
+		relative_position_id = XBJ_strengthen_discipline
+		x = 1
+		y = 1
+	}
+	focus = {
+		id = XBJ_a_nation_an_army
+		prerequisite = { focus = XBJ_elite_units }
+		relative_position_id = XBJ_elite_units
+		x = 0
+		y = 1
+	}
+	focus = {
+		id = XBJ_new_
+		prerequisite = { 
+			focus = XBJ_unite_like_fortress
+			focus = XBJ_a_nation_an_army
+		}
+		relative_position_id = XBJ_unite_like_fortress
+		x = 1
+		y = 1
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

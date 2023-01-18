@@ -1,0 +1,165 @@
+﻿# Division template historical names system. Is a new method of naming the divisions based on the names-group assigned to it's template.
+# If we run out of all historical names, the names will be assigned in the old way.
+#
+# Each group has a made up tag. Use it if you want to append more, or replace existing names with the extra txt files (modding).
+#
+# for_countries - lists all countries that can use it. If empty, or entire tag is missing, all countries in the world can use it.
+#
+# can_use - is a trigger that locks/unlocks the group under specific circumstances. The trigger is in a country scope.
+#
+# division_types - is a list of tokens to corresponding unit types. A player can in fact use any group of names for a div.template
+#                  however this tag is a helper for an automated choice (for AI, or if the group must switch on it's own, because
+#                  for example the current one is no longer available due to the can_use trigger saying so).
+#                  In automated choice, the division template must have at least 1 of the following types for it to be chosen.
+#
+# fallback_name - Is going to be used if we run out of the scripted historical names. If you want to use the old division naming
+#                 mechanics to be used for fallbacks, then just skip this option.
+#
+# unordered - It's a list of historical division names that did not have a number. Regardless if such names happened in history or not
+#             this option is available here mainly for a mods.
+#
+# ordered - Is a list of all historical names. 
+#           Numbers must start from 1 and up. 
+#           Numbers can't repeat in one scope.
+#           If you script the name for this group, at the same number (for example in a mod in another file), the name will be override.
+#           All arguments between the brackets must be separated by spaces. Each argument is wrapped in "quotas".
+#           1st argument = The name. It must contain either: 
+#                          %d (for decimal number placement)
+#                          %s (for string number placement - ROMAN numbers like XIV).
+#           2nd argument is optional = A localizable text describing this historical division. The text will be visible in the tooltip
+#                                      where you choose the historical division name.
+#           3rd argument is optional = An URL preferably pointing to the WIKI. It's a future feature that is not currently working in
+#                                      the current game version.
+
+GRE_MP_01 = 
+{
+	name = "Merarchía Pezikoú"
+
+	for_countries = { GRE }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+	fallback_name = "%d.Merarchía Pezikoú"
+	ordered =
+	{
+		1 = { "%d.Merarchía Pezikoú" }
+		2 = { "%d.Merarchía Pezikoú" }
+		3 = { "%d.Merarchía Pezikoú" }
+		4 = { "%d.Merarchía Pezikoú" }
+		5 = { "%d.Merarchía Pezikoú" }
+		6 = { "%d.Merarchía Pezikoú" }
+		7 = { "%d.Merarchía Pezikoú" }
+		8 = { "%d.Merarchía Pezikoú" }
+		9 = { "%d.Merarchía Pezikoú" }
+		10 = { "%d.Merarchía Pezikoú" }
+		11 = { "%d.Merarchía Pezikoú" }
+		12 = { "%d.Merarchía Pezikoú" }
+		13 = { "%d.Merarchía Pezikoú" }
+		14 = { "%d.Merarchía Pezikoú" }
+		15 = { "%d.Merarchía Pezikoú" }
+		16 = { "%d.Merarchía Pezikoú" }
+
+	}
+}
+
+GRE_CHO_01 = 
+{
+	name = "Cumhuriyet halkının ordusu"
+
+	for_countries = { GRE }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+	ordered = {
+		1 = { "新编第1师团" }
+		2 = { "新编第2师团" }
+		3 = { "新编第3师团" }
+		5 = { "近卫第1师团" }
+		6 = { "近卫第2师团" }
+		7 = { "第28师团" }
+		8 = { "第19师团" }
+		9 = { "第11师团" }
+		10 = { "第5师团" }
+
+	}
+}
+
+GRE_EF_01 = 
+{
+	name = "Ethnikós frourós"
+
+	for_countries = { GRE }
+
+	can_use = { always = yes }
+
+	division_types = { "militia" }
+	ordered =
+	{
+		1 = { "80.Ethnikós frourós" }
+		2 = { "81.Ethnikós frourós" }
+		3 = { "82.Ethnikós frourós" }
+		4 = { "83.Ethnikós frourós" }
+		5 = { "84.Ethnikós frourós" }
+		6 = { "85.Ethnikós frourós" }
+		7 = { "86.Ethnikós frourós" }
+		8 = { "87.Ethnikós frourós" }
+		9 = { "88.Ethnikós frourós" }
+
+	}
+}
+
+GRE_OMP_01 = 
+{
+	name = "Oreiní Merarchía Pezikoú"
+
+	for_countries = { GRE }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers"}
+	ordered =
+	{
+		1 = { "3.Oreiní Merarchía Pezikoú" }
+		2 = { "4.Oreiní Merarchía Pezikoú" }
+		3 = { "1.Oreiní Merarchía Pezikoú" }
+		4 = { "2.Oreiní Merarchía Pezikoú" }
+
+	}
+}
+
+GRE_TTI_01 = 
+{
+	name = "Tethorakisméni Taxiarchía Ippikoú"
+
+	for_countries = { GRE }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor"  }
+	ordered =
+	{
+		1 = { "1.Tethorakisméni Taxiarchía Ippikoú" }
+		2 = { "2.Tethorakisméni Taxiarchía Ippikoú" }
+	}
+}
+
+
+GRE_SP_01 = 
+{
+	name = "Sýntagma Pezonaftón"
+
+	for_countries = { GRE }
+
+	can_use = { always = yes }
+
+	division_types = { "marine" }
+
+	ordered = {
+		1 = { "25.Sýntagma Pezonaftón" }
+		2 = { "26.Sýntagma Pezonaftón" }
+		3 = { "28.Sýntagma Pezonaftón" }
+		4 = { "29.Sýntagma Pezonaftón" }
+	}
+}
