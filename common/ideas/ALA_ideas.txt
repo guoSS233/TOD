@@ -9,9 +9,7 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.4
 				stability_factor = -0.1
-				training_time_army_factor = 0.1
                 conscription_factor = -0.1
-                army_morale_factor = -0.1
                 production_speed_buildings_factor = -0.4
                 production_factory_max_efficiency_factor = -0.1
                 research_speed_factor = -0.15
@@ -43,8 +41,8 @@ ideas = {
 			}
 		}
 
-        ALA_jihuang = {
-			name = ALA_jihuang
+        ALA_funv = {
+			name = ALA_funv
 
 			picture = GER_paixidouzheng
 
@@ -52,6 +50,19 @@ ideas = {
 				war_support_factor = -0.2
 				stability_factor = -0.1
                 conscription_factor = -0.05
+			}
+		}
+
+		ALA_chiweidui = {
+			name = ALA_chiweidui
+
+			picture = GER_paixidouzheng
+
+			modifier = {
+				training_time_army_factor = 0.1
+                army_morale_factor = -0.2
+                supply_consumption_factor = 0.25
+				custom_modifier_tooltip = ALA_military_disloyalty_tt
 			}
 		}
     }
