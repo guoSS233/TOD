@@ -3,29 +3,32 @@
 oob = "empty"
 
 set_politics = {
-	ruling_party = conservatism
+	ruling_party = conservative_democracy
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
-set_popularities = {
-	totalism = 0
-	despotism = 0
-	authoritarianism = 0
-	conservatism = 25
-	liberalism = 17
-	reformism = 23
-	socialism = 20
-	radicalism = 15
+add_ideas = {
+	RIN_zhanzhengpeichang
+	RIN_feifazhengquan
 }
 
-create_country_leader = {
-	name = "Ernst Ludwig"
-	desc = "POLITICS_ERNST_LUDEWIG_DESC"
-	picture = "Portrait_RIN_Ernst_Ludwig.png"
-	expire = "1965.1.1"
-	ideology = conservatism_subtype
+set_popularities = {
+	national_corporatism = 0
+	sacred_revivalism = 0
+	leader_despotism = 0
+	authoritarian_oligarchy = 0
+	conservative_democracy = 100
+	liberal_democracy = 0
+	consociationalism = 0
+	social_democrat = 0
+	agroindustrial_socialism = 0
+	moderate_socialism = 0
+	council_socialism = 0
+	vanguard_socialism = 0
 }
+
+recruit_character = RIN_guominyihui
 
 

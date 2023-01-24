@@ -1,0 +1,67 @@
+ideas = {    
+	country = {
+		#受法国控制的经济
+		BAV_faguokongzhi = {
+			picture = ZHR_autonomous_domination_country
+			available = {
+				country_exists = FRA
+				FRA = {
+					has_capitulated = no
+					NOT = { has_war_with = ROOT }
+				}
+			}
+			targeted_modifier = {
+				tag = FRA
+				cic_to_target_factor = 0.10
+			}
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+		#凡尔赛条约战争赔款
+		BAV_zhanzhengpeikuan = {
+			picture = ZHR_autonomous_domination_country
+			modifier = {
+				political_power_gain = -0.05
+				consumer_goods_factor =	0.05
+			}
+		}
+		#受限制的军队
+		BAV_xianzhijundui = {
+			picture = ZHR_autonomous_domination_country
+			
+			research_bonus = {
+				armor = -0.25
+			}
+			research_bonus = {
+				air_equipment = -0.5
+			}
+			research_bonus = {
+				naval_equipment = -0.5
+			}
+			modifier = {
+				land_doctrine_cost_factor = 0.5
+				air_doctrine_cost_factor = 0.5
+				naval_doctrine_cost_factor = 0.5
+				research_bonus = {
+					armor = -0.25
+				}
+				research_bonus = {
+					air_equipment = -0.5
+				}
+				research_bonus = {
+					naval_equipment = -0.5
+				}
+			}
+		}
+		#巴伐利亚王国参谋部
+		BAV_canmoubu = {
+			picture = ZHR_autonomous_domination_country
+			modifier = {
+				planning_speed = -0.10
+				experience_gain_army = 0.05
+				experience_gain_factor = 0.05
+			}
+		}
+	}
+}
