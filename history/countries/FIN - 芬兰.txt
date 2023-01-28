@@ -1,7 +1,5 @@
 ﻿capital = 111
-
 oob = "FIN_1936"
-
 if = {
 	limit = {
 		has_dlc = "Man the Guns"
@@ -13,26 +11,28 @@ if = {
 }
 
 set_research_slots = 3
-
-
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	tech_mountaineers = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_recon = 1
-                tech_engineers = 1
+	tech_engineers = 1
 	gw_artillery = 1
 	tech_mountaineers = 1
-                early_fighter = 1
-                fighter1 = 1
-                early_bomber = 1
+	early_fighter = 1
+	fighter1 = 1
+	early_bomber = 1
 	motorised_infantry = 1
-                 basic_train = 1
+	basic_train = 1
 }
 
 if = {
-	limit = { not = { has_dlc = "Man the Guns" } }
+	limit = {
+		not = {
+			has_dlc = "Man the Guns"
+		}
+	}
 	set_technology = {
 		early_submarine = 1
 		early_destroyer = 1
@@ -42,8 +42,11 @@ if = {
 		transport = 1
 	}
 }
+
 if = {
-	limit = { has_dlc = "Man the Guns" }
+	limit = {
+		has_dlc = "Man the Guns"
+	}
 	set_technology = {
 		basic_naval_mines = 1
 		submarine_mine_laying = 1
@@ -55,7 +58,7 @@ if = {
 		basic_secondary_battery = 1
 		basic_torpedo = 1
 		sonar = 1
-        coastal_defense_ships = 1
+		coastal_defense_ships = 1
 		pre_dreadnoughts = 1
 		mtg_transport = 1
 	}
@@ -76,7 +79,7 @@ set_popularities = {
 }
 
 add_ideas = {
-	Limited_export 
+	Limited_export
 	extensive_conscription
 	partial_economic_mobilisation
 }
@@ -89,13 +92,16 @@ add_ideas = {
 
 if = {
 	limit = {
-		NOT = { has_dlc = "No Step Back" }
+		NOT = {
+			has_dlc = "No Step Back"
+		}
 	}
 	set_technology = {
 		gwtank = 1
 		basic_light_tank = 1
 	}
 }
+
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -106,9 +112,10 @@ if = {
 	}
 }
 
-
 if = {
-	limit = { has_dlc = "Man the Guns" }
+	limit = {
+		has_dlc = "Man the Guns"
+	}
 	create_equipment_variant = {
 		name = "Gangut Class"
 		type = ship_hull_heavy_1
@@ -126,9 +133,7 @@ if = {
 			mid_1_custom_slot = empty
 			mid_2_custom_slot = empty
 		}
-
 	}
-		
 	create_equipment_variant = {
 		name = "Borodino Class"
 		type = ship_hull_pre_dreadnought
@@ -146,8 +151,7 @@ if = {
 			mid_1_custom_slot = ship_torpedo_1
 			mid_2_custom_slot = empty
 		}
-	}	
-	
+	}
 	create_equipment_variant = {
 		name = "Bogatyr Class"
 		type = ship_hull_cruiser_1
@@ -166,7 +170,6 @@ if = {
 			rear_1_custom_slot = ship_light_medium_battery_1
 		}
 	}
-	
 	create_equipment_variant = {
 		name = "Pallada/Varyag Class"
 		type = ship_hull_cruiser_1
@@ -182,10 +185,9 @@ if = {
 			fixed_ship_armor_slot = ship_armor_cruiser_1
 			mid_1_custom_slot = ship_secondaries_1
 			mid_2_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = empty 
+			rear_1_custom_slot = empty
 		}
 	}
-	
 	create_equipment_variant = {
 		name = "Izyaslav Class"
 		type = ship_hull_light_1
@@ -202,7 +204,6 @@ if = {
 			rear_1_custom_slot = ship_torpedo_1
 		}
 	}
-	
 	create_equipment_variant = {
 		name = "Novik Class"
 		type = ship_hull_light_1
@@ -216,10 +217,9 @@ if = {
 			fixed_ship_engine_slot = light_ship_engine_1
 			fixed_ship_torpedo_slot = ship_torpedo_1
 			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = empty 
+			rear_1_custom_slot = empty
 		}
 	}
-	
 	create_equipment_variant = {
 		name = "Standard Class"
 		type = ship_hull_light_1
@@ -228,15 +228,14 @@ if = {
 		modules = {
 			fixed_ship_battery_slot = ship_light_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = empty 
+			fixed_ship_fire_control_system_slot = empty
 			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = empty 
+			fixed_ship_torpedo_slot = empty
 			mid_1_custom_slot = ship_mine_layer_1
 			rear_1_custom_slot = ship_mine_layer_sub
 		}
 	}
-	
 	create_equipment_variant = {
 		name = "Veshiisi Class"
 		type = ship_hull_submarine_1
@@ -249,15 +248,19 @@ if = {
 		}
 	}
 }
-	if = {
+
+if = {
 	limit = {
-		NOT = { has_dlc = "No Step Back" }
+		NOT = {
+			has_dlc = "No Step Back"
+		}
 	}
 	set_technology = {
 		gwtank = 1
 		basic_light_tank = 1
 	}
 }
+
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -267,8 +270,9 @@ if = {
 		basic_light_tank_chassis = 1
 	}
 }
-	##坦克##
-	if = {
+
+##坦克##
+if = {
 	limit = {
 		has_dlc = "No Step Back"
 	}
@@ -289,9 +293,8 @@ if = {
 			tank_nsb_armor_upgrade = 0
 		}
 		icon = "GFX_gwtank_medium"
-   }
-   
-   create_equipment_variant = {
+	}
+	create_equipment_variant = {
 		name = "Panzer I Ausf. C1"
 		type = light_tank_chassis_1
 		parent_version = 0
@@ -306,11 +309,11 @@ if = {
 		upgrades = {
 			tank_nsb_engine_upgrade = 5
 			tank_nsb_armor_upgrade = 1
-			}
-			icon = "GFX_GER_basic_light_tank_medium"
-	  }
-	  
-	  
+		}
+		icon = "GFX_GER_basic_light_tank_medium"
+	}
+}
+
 recruit_character = FIN_jieerrensiji
 recruit_character = FIN_hapalaining
 recruit_character = FIN_manna

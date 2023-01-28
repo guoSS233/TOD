@@ -1,0 +1,242 @@
+focus_tree = {
+	id = TOD-ALA
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ALA
+		}
+	}
+	default = no
+	focus = {
+		id = 宣言
+		text = ALA_xuanyan
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 9
+		y = 0
+
+	}
+	focus = {
+		id = newfocus_2
+		text = ALA_jiefangrenmin
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = 宣言
+		}
+		x = 5
+		y = 1
+
+	}
+	focus = {
+		id = newfocus_4
+		text = ALA_minzuzijue
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_2
+		}
+		x = 3
+		y = 2
+
+	}
+	focus = {
+		id = newfocus_11
+		text = ALA_ziweidui
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_4
+		}
+		x = 3
+		y = 3
+
+	}
+	focus = {
+		id = newfocus_5
+		text = ALA_gongweihui
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_2
+		}
+		x = 5
+		y = 2
+
+	}
+	focus = {
+		id = newfocus_12
+		text = ALA_shengchanwuqi
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_5
+		}
+		x = 5
+		y = 3
+
+	}
+	focus = {
+		id = newfocus_6
+		text = ALA_tudigaige
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_2
+		}
+		x = 7
+		y = 2
+
+	}
+	focus = {
+		id = newfocus_13
+		text = ALA_nongweihui
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_6
+		}
+		x = 7
+		y = 3
+
+	}
+	focus = {
+		id = nannvpingdeng
+		text = ALA_nannvpingdeng
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = 宣言
+		}
+		x = 9
+		y = 1
+
+	}
+	focus = {
+		id = newfocus_7
+		text = ALA_funvyundong
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = nannvpingdeng
+		}
+		x = 9
+		y = 2
+
+	}
+	focus = {
+		id = newfocus_14
+		text = ALA_feichuzongjiao
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_7
+		}
+		x = 9
+		y = 3
+
+	}
+	focus = {
+		id = newfocus_3
+		text = ALA_shulijilv
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = 宣言
+		}
+		x = 13
+		y = 1
+
+	}
+	focus = {
+		id = newfocus_8
+		text = ALA_zhengweizhidu
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_3
+		}
+		x = 11
+		y = 2
+
+	}
+	focus = {
+		id = newfocus_9
+		text = ALA_junweihui
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_3
+		}
+		x = 13
+		y = 2
+
+	}
+	focus = {
+		id = newfocus_15
+		text = ALA_xinjundui
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_8
+		}
+		prerequisite = {
+			focus = newfocus_9
+		}
+		x = 12
+		y = 3
+
+	}
+	focus = {
+		id = newfocus_10
+		text = ALA_qingqiuCIzhiyuan
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_3
+		}
+		x = 15
+		y = 2
+
+	}
+	focus = {
+		id = newfocus_16
+		text = ALA_tuerqizhichi
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_10
+		}
+		x = 15
+		y = 3
+
+	}
+	focus = {
+		id = newfocus_17
+		text = ALA_xiangtaiyang
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = newfocus_14
+		}
+		prerequisite = {
+			focus = newfocus_13
+		}
+		prerequisite = {
+			focus = newfocus_12
+		}
+		prerequisite = {
+			focus = newfocus_11
+		}
+		prerequisite = {
+			focus = newfocus_15
+		}
+		prerequisite = {
+			focus = newfocus_16
+		}
+		x = 9
+		y = 4
+
+	}
+}

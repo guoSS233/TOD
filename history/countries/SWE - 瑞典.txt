@@ -1,9 +1,10 @@
 ﻿capital = 141
-
 oob = "SWE_1936"
 if = {
-	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "SWE_Naval_mtg"
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_naval_oob = "SWE_Naval_mtg"
 	else = {
 		set_naval_oob = "SWE_Naval_legacy"
 	}
@@ -25,6 +26,7 @@ set_popularities = {
 	liberal_democracy = 6
 	social_democrat = 45
 }
+
 add_ideas = {
 	free_trade
 	limited_conscription
@@ -39,11 +41,17 @@ add_ideas = {
 	SWE_Statare
 }
 
+country_lock_all_division_template = yes
+recruit_character = SWE_Carl_Gustaf_Ekman
+recruit_character = SWE_Pierre_Albin_Hansen
+recruit_character = SWE_GustavV
+recruit_character = SWE_Axel_Person_Bramstorp
+recruit_character = SWE_Olof_Tonell
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
 	tech_recon = 1
-	tech_support = 1		
+	tech_support = 1
 	tech_engineers = 1
 	gw_artillery = 1
 	interwar_antiair = 1
@@ -55,12 +63,14 @@ set_technology = {
 	base_strike = 1
 	motorised_infantry = 1
 	marines = 1
-                basic_train = 1
+	basic_train = 1
 }
 
 if = {
 	limit = {
-		not = { has_dlc = "Man the Guns" }
+		not = {
+			has_dlc = "Man the Guns"
+		}
 	}
 	set_technology = {
 		early_submarine = 1
@@ -72,22 +82,25 @@ if = {
 		early_battlecruiser = 1
 		early_carrier = 1
 		transport = 1
-        basic_cruiser_armor_scheme = 1
-		basic_heavy_armor_scheme = 1		
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
 	}
 }
 
 if = {
 	limit = {
-		NOT = { has_dlc = "No Step Back" }
+		NOT = {
+			has_dlc = "No Step Back"
+		}
 	}
 	set_technology = {
 		gwtank = 1
 		basic_light_tank = 1
 		improved_light_tank = 1
-                                basic_medium_tank = 1
+		basic_medium_tank = 1
 	}
 }
+
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -96,7 +109,7 @@ if = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
 		improved_light_tank_chassis = 1
-                                basic_medium_tank_chassis = 1
+		basic_medium_tank_chassis = 1
 		engine_tech_1 = 1
 	}
 }
@@ -131,7 +144,6 @@ if = {
 	}
 }
 
-
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -153,45 +165,42 @@ if = {
 		}
 		obsolete = yes
 		icon = "GFX_gwtank_medium"
-   }
-
-create_equipment_variant = {
-			name = "Strv m/31"
-			type = light_tank_chassis_1
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_small_cannon
-				turret_type_slot = tank_light_two_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_1
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 6
-				tank_nsb_armor_upgrade = 2
-			}
+	}
+	create_equipment_variant = {
+		name = "Strv m/31"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
 		}
-
-create_equipment_variant = {
-			name = "Strv m/36"
-			type = light_tank_chassis_2
-			parent_version = 0
-			modules = {
-				main_armament_slot = tank_small_cannon
-				turret_type_slot = tank_light_two_man_tank_turret
-				suspension_type_slot = tank_bogie_suspension
-				armor_type_slot = tank_riveted_armor
-				engine_type_slot = tank_gasoline_engine
-				special_type_slot_1 = tank_radio_1
-			}
-			upgrades = {
-				tank_nsb_engine_upgrade = 8
-				tank_nsb_armor_upgrade = 2
-			}
+		upgrades = {
+			tank_nsb_engine_upgrade = 6
+			tank_nsb_armor_upgrade = 2
 		}
-
-create_equipment_variant = {
+	}
+	create_equipment_variant = {
+		name = "Strv m/36"
+		type = light_tank_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 8
+			tank_nsb_armor_upgrade = 2
+		}
+	}
+	create_equipment_variant = {
 		name = "Strv m/33 'Lago I'"
 		type = medium_tank_chassis_1
 		parent_version = 0
@@ -208,19 +217,15 @@ create_equipment_variant = {
 			tank_nsb_engine_upgrade = 5
 		}
 	}
-country_lock_all_division_template = yes
-recruit_character = SWE_Carl_Gustaf_Ekman
-recruit_character = SWE_Pierre_Albin_Hansen
-recruit_character = SWE_GustavV
-recruit_character = SWE_Axel_Person_Bramstorp
-recruit_character = SWE_Olof_Tonell
-
+}
 
 ###海军设计
 if = {
-	limit = { has_dlc = "Man the Guns" }
-		
-	create_equipment_variant = { #瑞典级
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	create_equipment_variant = {
+		#瑞典级
 		name = "Sweden Class"
 		type = ship_hull_heavy_2
 		name_group = SWE_BC_HISTORICAL
@@ -239,8 +244,8 @@ if = {
 			rear_1_custom_slot = ship_heavy_battery_2
 		}
 	}
-			
-	create_equipment_variant = { #古斯塔夫国王
+	create_equipment_variant = {
+		#古斯塔夫国王
 		name = "King Gustav Class"
 		type = ship_hull_heavy_2
 		name_group = SWE_BB_HISTORICAL
@@ -259,8 +264,8 @@ if = {
 			rear_1_custom_slot = ship_airplane_launcher_1
 		}
 	}
-		
-	create_equipment_variant = { #瓦尔基里
+	create_equipment_variant = {
+		#瓦尔基里
 		name = "Valkiri Class"
 		type = ship_hull_heavy_1
 		name_group = SWE_BB_HISTORICAL
@@ -279,9 +284,8 @@ if = {
 			rear_1_custom_slot = empty
 		}
 	}
-
-	
-	create_equipment_variant = { #哥特兰
+	create_equipment_variant = {
+		#哥特兰
 		name = "Gotland Class"
 		type = ship_hull_cruiser_1
 		name_group = SWE_CA_HISTORICAL
@@ -300,8 +304,8 @@ if = {
 			rear_1_custom_slot = ship_medium_battery_1
 		}
 	}
-	
-	create_equipment_variant = { #斯德哥尔摩
+	create_equipment_variant = {
+		#斯德哥尔摩
 		name = "Stockholm Class"
 		type = ship_hull_cruiser_2
 		name_group = SWE_CA_HISTORICAL
@@ -320,8 +324,8 @@ if = {
 			rear_1_custom_slot = ship_medium_battery_2
 		}
 	}
-		
-		create_equipment_variant = { #约塔兰级
+	create_equipment_variant = {
+		#约塔兰级
 		name = "Yotland Class"
 		type = ship_hull_cruiser_1
 		name_group = SWE_CA_HISTORICAL
@@ -340,7 +344,8 @@ if = {
 			rear_1_custom_slot = ship_light_battery_1
 		}
 	}
-	create_equipment_variant = { #奥斯卡二世
+	create_equipment_variant = {
+		#奥斯卡二世
 		name = "Oscar II Class"
 		type = ship_hull_cruiser_coastal_defense_ship
 		name_group = SWE_CA_HISTORICAL
@@ -349,7 +354,7 @@ if = {
 			fixed_ship_battery_slot = ship_light_medium_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty 
+			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = cruiser_ship_engine_1
 			fixed_ship_secondaries_slot = ship_secondaries_1
 			fixed_ship_armor_slot = ship_armor_cruiser_1
@@ -359,8 +364,8 @@ if = {
 			rear_1_custom_slot = ship_light_medium_battery_1
 		}
 	}
-		
-		create_equipment_variant = { #延雪平级
+	create_equipment_variant = {
+		#延雪平级
 		name = "Jonkoping Class"
 		type = ship_hull_cruiser_coastal_defense_ship
 		name_group = SWE_CA_HISTORICAL
@@ -369,7 +374,7 @@ if = {
 			fixed_ship_battery_slot = ship_light_medium_battery_1
 			fixed_ship_anti_air_slot = ship_anti_air_1
 			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty 
+			fixed_ship_radar_slot = empty
 			fixed_ship_engine_slot = cruiser_ship_engine_1
 			fixed_ship_secondaries_slot = empty
 			fixed_ship_armor_slot = ship_armor_cruiser_1
@@ -379,7 +384,8 @@ if = {
 			rear_1_custom_slot = empty
 		}
 	}
-	create_equipment_variant = { #霍尔姆
+	create_equipment_variant = {
+		#霍尔姆
 		name = "Holm Class"
 		type = ship_hull_cruiser_2
 		name_group = SWE_CL_HISTORICAL
@@ -398,8 +404,8 @@ if = {
 			rear_1_custom_slot = ship_light_medium_battery_2
 		}
 	}
-		
-	create_equipment_variant = { #哥德堡级
+	create_equipment_variant = {
+		#哥德堡级
 		name = "Gothrnburg Class"
 		type = ship_hull_cruiser_1
 		name_group = SWE_CL_HISTORICAL
@@ -414,11 +420,11 @@ if = {
 			fixed_ship_armor_slot = ship_armor_cruiser_1
 			front_1_custom_slot = ship_light_battery_1
 			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot =  ship_depth_charge_1
+			mid_2_custom_slot = ship_depth_charge_1
 		}
 	}
-		
-		create_equipment_variant = { #吕勒奥
+	create_equipment_variant = {
+		#吕勒奥
 		name = "Lulea Class"
 		type = ship_hull_cruiser_1
 		name_group = SWE_CL_HISTORICAL
@@ -433,11 +439,11 @@ if = {
 			fixed_ship_armor_slot = ship_armor_cruiser_1
 			front_1_custom_slot = ship_torpedo_1
 			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot =  ship_light_medium_battery_1
+			mid_2_custom_slot = ship_light_medium_battery_1
 		}
 	}
-	
-    create_equipment_variant = { #凯布纳山
+	create_equipment_variant = {
+		#凯布纳山
 		name = "Kebnekaise Class"
 		type = ship_hull_cruiser_1
 		name_group = SWE_CL_HISTORICAL
@@ -452,10 +458,11 @@ if = {
 			fixed_ship_armor_slot = ship_armor_cruiser_1
 			front_1_custom_slot = empty
 			mid_1_custom_slot = empty
-			mid_2_custom_slot =  ship_light_battery_1
+			mid_2_custom_slot = ship_light_battery_1
 		}
-	}	
-	create_equipment_variant = { #维斯比
+	}
+	create_equipment_variant = {
+		#维斯比
 		name = "Visby Class"
 		type = ship_hull_light_1
 		name_group = SWE_DD_HISTORICAL
@@ -471,8 +478,8 @@ if = {
 			rear_1_custom_slot = ship_depth_charge_1
 		}
 	}
-		
-	create_equipment_variant = { #塞斯卡尔
+	create_equipment_variant = {
+		#塞斯卡尔
 		name = "Seskal Class"
 		type = ship_hull_light_1
 		name_group = SWE_DD_HISTORICAL
@@ -488,8 +495,8 @@ if = {
 			rear_1_custom_slot = ship_mine_sweeper_1
 		}
 	}
-	
-	create_equipment_variant = { #博登
+	create_equipment_variant = {
+		#博登
 		name = "Borden Class"
 		type = ship_hull_light_1
 		name_group = SWE_DD_HISTORICAL
@@ -505,9 +512,8 @@ if = {
 			rear_1_custom_slot = ship_mine_layer_1
 		}
 	}
-	
-	
-	create_equipment_variant = { #卡尔斯克鲁纳
+	create_equipment_variant = {
+		#卡尔斯克鲁纳
 		name = "Karlskrona Class"
 		type = ship_hull_light_2
 		name_group = SWE_DD_HISTORICAL
@@ -523,8 +529,8 @@ if = {
 			rear_1_custom_slot = ship_depth_charge_1
 		}
 	}
-	
-	create_equipment_variant = { #奥丁
+	create_equipment_variant = {
+		#奥丁
 		name = "Odin Class"
 		type = ship_hull_pre_dreadnought
 		name_group = SWE_BB_MYTHOLOGY
@@ -542,9 +548,6 @@ if = {
 			mid_2_custom_slot = empty
 		}
 	}
-	
-	
-	
 	create_equipment_variant = {
 		name = "Dragon Class"
 		type = ship_hull_submarine_2
@@ -556,7 +559,6 @@ if = {
 			rear_1_custom_slot = ship_torpedo_sub_1
 		}
 	}
-	
 	create_equipment_variant = {
 		name = "whale Class"
 		type = ship_hull_submarine_1
