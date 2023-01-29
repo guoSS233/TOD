@@ -1809,11 +1809,11 @@ focus_tree = {
 			custom_effect_tooltip = HUN.6.tt
 			hidden_effect = {
 				if = {
-					limit = { NOT = has_idea = HUN_buchangsiluofake }
-					
+					limit = { NOT = { has_idea = HUN_buchangsiluofake } }
+
 				}
 				if = {
-					limit = { NOT = has_idea = HUN_buchangluomaniya }
+					limit = { NOT = {has_idea = HUN_buchangluomaniya } }
 					ROM = {
 						set_state_owner = 84	
 						set_state_owner = 83	
@@ -1821,7 +1821,7 @@ focus_tree = {
 					}
 				}
 				if = {
-					limit = { NOT = has_idea = HUN_buchangmoerduowa }
+					limit = { NOT = { has_idea = HUN_buchangmoerduowa } }
 					MOL = {
 						set_state_owner = 79	
 						set_state_owner = 979	
@@ -1829,7 +1829,7 @@ focus_tree = {
 						set_state_owner = 80	
 					}
 					if = {
-						limit = { NOT = has_idea = HUN_buchangluomaniya }
+						limit = { NOT = { has_idea = HUN_buchangluomaniya } }
 						ROM = {
 							set_state_owner = 79	
 							set_state_owner = 979	

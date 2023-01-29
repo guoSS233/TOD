@@ -1,5 +1,5 @@
 focus_tree = {
-	id = TOD-ALA
+	id = ALA_focus
 	country = {
 		factor = 0
 		modifier = {
@@ -9,234 +9,216 @@ focus_tree = {
 	}
 	default = no
 	focus = {
-		id = 宣言
+		id = ALA_jiefangrenmin
+		text = ALA_jiefangrenmin
+		icon = GFX_ALA_jiefangrenmin
+		cost = 2
+		prerequisite = {
+			focus = ALA_xuanyan
+		}
+		x = 5
+		y = 1
+	}
+	focus = {
+		id = ALA_xuanyan
 		text = ALA_xuanyan
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_xuanyan
+		cost = 4
 		x = 9
 		y = 0
-
 	}
 	focus = {
-		id = newfocus_2
-		text = ALA_jiefangrenmin
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = 宣言
-		}
-		x = 5
-		y = 1
-
-	}
-	focus = {
-		id = newfocus_4
+		id = ALA_minzuzijue
 		text = ALA_minzuzijue
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_minzuziju
+		cost = 2
 		prerequisite = {
-			focus = newfocus_2
+			focus = ALA_jiefangrenmin
 		}
 		x = 3
 		y = 2
-
 	}
 	focus = {
-		id = newfocus_11
+		id = ALA_ziweidui
 		text = ALA_ziweidui
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_ziweidui
+		cost = 2
 		prerequisite = {
-			focus = newfocus_4
+			focus = ALA_minzuzijue
 		}
 		x = 3
 		y = 3
-
 	}
 	focus = {
-		id = newfocus_5
+		id = ALA_gongweihui
 		text = ALA_gongweihui
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_gongweihui
+		cost = 4
 		prerequisite = {
-			focus = newfocus_2
+			focus = ALA_jiefangrenmin
 		}
 		x = 5
 		y = 2
-
 	}
 	focus = {
-		id = newfocus_12
-		text = ALA_shengchanwuqi
-		icon = GFX_goal_unknown
-		cost = 10.00
+		id = ALA_wuqi
+		text = ALA_wuqi
+		icon = GFX_ALA_wuqi
+		cost = 4
 		prerequisite = {
-			focus = newfocus_5
+			focus = ALA_gongweihui
 		}
 		x = 5
 		y = 3
-
 	}
 	focus = {
-		id = newfocus_6
-		text = ALA_tudigaige
-		icon = GFX_goal_unknown
-		cost = 10.00
+		id = ALA_tugai
+		text = ALA_tugai
+		icon = GFX_ALA_tugai
+		cost = 4
 		prerequisite = {
-			focus = newfocus_2
+			focus = ALA_jiefangrenmin
 		}
 		x = 7
 		y = 2
-
 	}
 	focus = {
-		id = newfocus_13
+		id = ALA_nongweihui
 		text = ALA_nongweihui
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_nongweihui
+		cost = 4
 		prerequisite = {
-			focus = newfocus_6
+			focus = ALA_tugai
 		}
 		x = 7
 		y = 3
-
 	}
 	focus = {
-		id = nannvpingdeng
+		id = ALA_nannvpingdeng
 		text = ALA_nannvpingdeng
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_nannvpingdeng
+		cost = 2
 		prerequisite = {
-			focus = 宣言
+			focus = ALA_xuanyan
 		}
 		x = 9
 		y = 1
-
 	}
 	focus = {
-		id = newfocus_7
+		id = ALA_funvyundong
 		text = ALA_funvyundong
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_funvyundong
+		cost = 4
 		prerequisite = {
-			focus = nannvpingdeng
+			focus = ALA_nannvpingdeng
 		}
 		x = 9
 		y = 2
-
 	}
 	focus = {
-		id = newfocus_14
+		id = ALA_feichuzongjiao
 		text = ALA_feichuzongjiao
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_feichuzongjiao
+		cost = 5
 		prerequisite = {
-			focus = newfocus_7
+			focus = ALA_funvyundong
 		}
 		x = 9
 		y = 3
-
 	}
 	focus = {
-		id = newfocus_3
+		id = ALA_shulijilv
 		text = ALA_shulijilv
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_shulijilv
+		cost = 2
 		prerequisite = {
-			focus = 宣言
+			focus = ALA_xuanyan
 		}
 		x = 13
 		y = 1
-
 	}
 	focus = {
-		id = newfocus_8
+		id = ALA_zhengweizhidu
 		text = ALA_zhengweizhidu
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_zhengweizhidu
+		cost = 4
 		prerequisite = {
-			focus = newfocus_3
+			focus = ALA_shulijilv
 		}
 		x = 11
 		y = 2
-
 	}
 	focus = {
-		id = newfocus_9
+		id = ALA_junweihui
 		text = ALA_junweihui
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_junweihui
+		cost = 2
 		prerequisite = {
-			focus = newfocus_3
+			focus = ALA_shulijilv
 		}
 		x = 13
 		y = 2
-
 	}
 	focus = {
-		id = newfocus_15
+		id = ALA_xinjundui
 		text = ALA_xinjundui
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_xinjundui
+		cost = 2
 		prerequisite = {
-			focus = newfocus_8
+			focus = ALA_zhengweizhidu
 		}
 		prerequisite = {
-			focus = newfocus_9
+			focus = ALA_junweihui
 		}
 		x = 12
 		y = 3
-
 	}
 	focus = {
-		id = newfocus_10
+		id = ALA_qingqiuCIzhiyuan
 		text = ALA_qingqiuCIzhiyuan
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_qingqiuCIzhiyuan
+		cost = 2
 		prerequisite = {
-			focus = newfocus_3
+			focus = ALA_shulijilv
 		}
 		x = 15
 		y = 2
-
 	}
 	focus = {
-		id = newfocus_16
+		id = ALA_tuerqizhichi
 		text = ALA_tuerqizhichi
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_tuerqizhichi
+		cost = 4
 		prerequisite = {
-			focus = newfocus_10
+			focus = ALA_qingqiuCIzhiyuan
 		}
 		x = 15
 		y = 3
-
 	}
 	focus = {
-		id = newfocus_17
+		id = ALA_xiangtaiyang
 		text = ALA_xiangtaiyang
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ALA_xiangtaiyang
+		cost = 2
 		prerequisite = {
-			focus = newfocus_14
+			focus = ALA_feichuzongjiao
 		}
 		prerequisite = {
-			focus = newfocus_13
+			focus = ALA_nongweihui
 		}
 		prerequisite = {
-			focus = newfocus_12
+			focus = ALA_wuqi
 		}
 		prerequisite = {
-			focus = newfocus_11
+			focus = ALA_ziweidui
 		}
 		prerequisite = {
-			focus = newfocus_15
+			focus = ALA_xinjundui
 		}
 		prerequisite = {
-			focus = newfocus_16
+			focus = ALA_tuerqizhichi
 		}
 		x = 9
 		y = 4
-
 	}
 }
