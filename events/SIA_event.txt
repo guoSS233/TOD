@@ -1,0 +1,26 @@
+﻿
+# SIA暹罗事件/新闻
+
+add_namespace = SIA_event
+add_namespace = SIA_news
+
+
+country_event = {
+	id = SIA_event.1
+	title = SIA_event.1.t
+	desc = SIA_event.1.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SIA_event.1.a		
+		SIA_release_ROS = yes
+	}
+		
+	option = {
+		name = SIA_event.1.b
+		SIA_release_ROS = yes
+		ROS = { change_tag_from = ROOT }
+	}
+}
+
