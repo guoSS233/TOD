@@ -1,6 +1,10 @@
 capital = 289
 
-oob = "empty"
+oob = "SIA_1936"
+
+
+set_stability = 0.6
+set_war_support = 0.3
 
 set_politics = {
 	ruling_party = leader_despotism
@@ -24,7 +28,7 @@ set_popularities = {
 	vanguard_socialism = 0
 }
 country_lock_all_division_template = yes
-
+#民族精神
 add_ideas = {
 	limited_exports
 	limited_conscription
@@ -34,6 +38,29 @@ add_ideas = {
 	SIA_shaoshuminzupanluan
 	SIA_zhongnantielu
 }
+#设置科技
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	superior_firepower = 1
+	base_strike = 1
+	motorised_infantry = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	marines = 1
+    synth_oil_experiments = 1
+    basic_train = 1
+    tech_mountaineers = 1
+    electronic_mechanical_engineering = 1	
+	#坦克科技
+	gwtank_chassis = 1
+	basic_light_tank_chassis = 1
+}
 
 recruit_character = SIA_Rama_VII
 recruit_character = SIA_Hua_Kong
@@ -42,6 +69,38 @@ recruit_character = SIA_Chen_Jiaxiang_1
 recruit_character = SIA_Chen_Jiaxiang_2
 recruit_character = SIA_Wu_Bie_1
 recruit_character = SIA_Wu_Bie_2
+#增加库存装备
+add_equipment_to_stockpile = { 
+	type = motorized_equipment_1
+    amount = 5000
+	producer = SIA
+
+}
+
+#坦克设计
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+    create_equipment_variant = {
+	    name = "试做型一式轻战车"
+	    type = light_tank_chassis_1
+	    parent_version = 0
+		modules = {
+			main_armament_slot = tank_auto_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 3
+			tank_nsb_armor_upgrade = 2
+		}
+		icon = "GFX_GER_improved_light_tank_medium"
+    }
+}
 
 #增加地区修正
 
