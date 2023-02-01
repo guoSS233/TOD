@@ -1,0 +1,193 @@
+
+SIA_power_balance = {
+	initial_value = 0.35
+	left_side = SIA_left_side	
+	right_side = SIA_right_side	
+	decision_category = SIA_balance_of_power_category
+
+	### 中立
+	range = {
+		id = SIA_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+		}
+		on_activate = {
+
+		}
+		on_deactivate = {
+			
+		}
+	}
+
+	### 左翼
+	side = {
+		id = SIA_left_side	
+		icon = GFX_bop_ITA_communism_side  #镰锤图标
+
+		range = {
+			id = SIA_left_low_control_range
+			min = -0.3
+			max = -0.1
+			modifier = {
+				political_advisor_cost_factor = -0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SIA_left_medium_control_range
+			min = -0.6
+			max = -0.3
+			modifier = {
+				political_advisor_cost_factor = -0.15
+				offensive_war_stability_factor = -0.1
+				war_support_factor = -0.05
+			}
+			on_activate = {
+				#custom_effect_tooltip = 可以写提示
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SIA_left_high_control_range
+			min = -0.9
+			max = -0.6
+			modifier = {
+				political_advisor_cost_factor = -0.2
+				offensive_war_stability_factor = -0.15
+				war_support_factor = -0.1
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SIA_left_total_control_range
+			min = -1
+			max = -0.9
+			modifier = {
+				political_advisor_cost_factor = -0.25
+				offensive_war_stability_factor = -0.2
+				war_support_factor = -0.15
+			}
+			on_activate = {
+				set_power_balance_gfx = { #图标换成亮的
+					id = SIA_power_balance
+					side = SIA_left_side
+					gfx = GFX_bop_ITA_communism_improved_side
+				}
+			}
+			on_deactivate = {
+				set_power_balance_gfx = {  #图标换回去
+					id = ITA_power_balance
+					side = SIA_left_side
+					gfx = GFX_bop_ITA_communism_side
+				}
+			}
+		}
+	}
+
+	### 右翼
+	side = {
+		id = SIA_right_side	
+		icon = GFX_bop_ITA_democratic_side
+
+		range = {
+			id = SIA_right_low_control_range
+			min = 0.1
+			max = 0.3
+			modifier = {
+				political_power_factor = 0.05
+				war_support_factor = 0.01
+				stability_factor = 0.01
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SIA_right_medium_control_range
+			min = 0.3
+			max = 0.6
+			modifier = {
+				political_power_factor = 0.07
+				war_support_factor = 0.02
+				stability_factor = 0.02
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SIA_right_high_control_range
+			min = 0.6
+			max = 0.9
+			modifier = {
+				political_power_factor = 0.1
+				war_support_factor = 0.03
+				stability_factor = 0.03
+				experience_gain_army = -0.05
+				experience_gain_air = -0.05
+				experience_gain_navy = -0.05
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SIA_right_total_control_range
+			min = 0.9
+			max = 1
+			modifier = {
+				political_power_factor = 0.15
+				war_support_factor = 0.05
+				stability_factor = 0.05
+				experience_gain_army = -0.05
+				experience_gain_air = -0.05
+				experience_gain_navy = -0.05
+			}
+			on_activate = {
+				set_power_balance_gfx = {
+					id = SIA_power_balance
+					side = SIA_right_side
+					gfx = GFX_bop_ITA_democratic_improved_side
+				}
+			}
+			on_deactivate = {
+				set_power_balance_gfx = {
+					id = SIA_power_balance
+					side = SIA_right_side
+					gfx = GFX_bop_ITA_democratic_side
+				}
+			}
+		}
+	}
+
+	
+}
+

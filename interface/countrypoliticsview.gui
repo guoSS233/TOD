@@ -97,26 +97,25 @@ guiTypes = {
 
 		#kr正统性原来位置，现已删除
 		
-		#下面这个gui是SIA暹罗特殊机制触发按钮
+		#下面这个gui是权利平衡特殊机制触发按钮，没啥能改的
 		containerWindowType = {
-			name = "SIA_power_balance_button"			
-			position = { x = -145 y = 241 }
-            Orientation = UPPER_RIGHT
-			clipping = no   #是否裁剪
-			#size = { width = 50 height = 50}
-			buttonType = { #按钮框
+			name = "power_balance_button"
+			position = { x = 110 y = 405 }    #整个按钮的位置
+			clipping = no
+
+			buttonType = {
 				name = "show_power_balance"
 				position = { x = 0 y = 0 }
-				quadTextureSprite = "GFX_show_power_balance_button" #引用原版意大利的图
+				quadTextureSprite = "GFX_show_power_balance_button"
 			}
 			
-			iconType = {   #高亮按钮框效果
+			iconType = {
 				name = "show_power_balance_glow"
 				position = { x = 0 y = 0 }
 				quadTextureSprite = "GFX_bop_glow_effect"
-				alwaystransparent = yes   #是否永远透明
+				alwaystransparent = yes
 			}
-	
+
 			instantTextboxType = {
 				name = "power_balance_percentage"
 				format = center
@@ -146,9 +145,10 @@ guiTypes = {
 				position = { x = 12 y = 4 }
 				quadTextureSprite = "GFX_placeholder_bordered"
 				alwaystransparent = yes				
-				scale = 0.55    #规模
+				scale = 0.55
 			}
 		}			
+		#############
 
 		containerWindowType = {
 			name = "ruling_party_info"
@@ -202,6 +202,8 @@ guiTypes = {
 				#buttonText = "DIPLOMACY_DISMANTLE_FACTION_TITLE"
 			}			
 			
+		
+		
 		}
 						
 		containerWindowType = {

@@ -13,7 +13,23 @@ SIA_decision_l_1 = {
 			}
 		}
 	}	
-	
+	SIA_decision_jiesuo = {		
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			set_power_balance = {
+				id = SIA_power_balance
+				left_side = SIA_left_side
+				right_side = SIA_right_side
+				set_default = yes 
+			}
+		}
+	}	
 	
 }
 
@@ -32,3 +48,91 @@ SIA_decision_l_1_zuoyouyipingheng = {
 	}	
 }
 
+
+SIA_balance_of_power_category = {
+	
+	SIA_decision_right_yingxaingli_10 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = 0.1
+			}
+		}
+	}	
+	SIA_decision_right_yingxaingli_20 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = 0.2
+			}
+		}
+	}	
+	SIA_decision_right_yingxaingli_50 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = 0.5
+			}
+		}
+	}	
+	SIA_decision_left_yingxaingli_10 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = -0.1
+			}
+		}
+	}	
+	SIA_decision_left_yingxaingli_20 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = -0.2
+			}
+		}
+	}	
+	SIA_decision_left_yingxaingli_50 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = -0.5
+			}
+		}
+	}	
+}
