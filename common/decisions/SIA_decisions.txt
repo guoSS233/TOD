@@ -48,6 +48,63 @@ SIA_decision_l_1_zuoyouyipingheng = {
 	}	
 }
 
+SIA_decision_l_2_ljzkd = { #共和军陆军掌控度
+	
+	SIA_decision_add_ljzkd = {    #加10
+		
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no		
+			
+		available = {			
+		}
+		
+		ai_will_do = {
+			factor = 100			
+		}
+	
+		remove_effect = {
+			add_to_variable = { 
+			    VAR_SIA_lujunzhangkongdu = 10 
+		        tooltip = ljzkd_save_up_10	
+		    }	
+			VAR_SIA_lujunzhangkongdu_clamp = yes					
+		}
+	}
+	
+	SIA_decision_lose_ljzkd = {     #减10
+
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no		
+
+		ai_will_do = {
+			factor = 100			
+		}
+	
+		remove_effect = {
+			add_to_variable = { 
+				VAR_SIA_lujunzhangkongdu = -10
+		        tooltip = ljzkd_save_down_10		
+		    }
+			VAR_SIA_lujunzhangkongdu_clamp = yes
+		}
+	}
+	SIA_decision_clr_ljzkd = {    
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no		
+		ai_will_do = {
+			factor = 100			
+		}	
+		remove_effect = {
+			clear_variable = VAR_SIA_lujunzhangkongdu
+		}
+	}
+}
 
 SIA_balance_of_power_category = {
 	

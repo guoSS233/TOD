@@ -11,12 +11,13 @@ SIA_power_balance = {
 		min = -0.10
 		max = 0.10
 		modifier = {
+			custom_modifier_tooltip = SIA_tooltip_bop_mrzj_0.5
 		}
 		on_activate = {
-
+			add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.5 }	
 		}
 		on_deactivate = {
-			
+			add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.5 }	
 		}
 	}
 
@@ -30,13 +31,13 @@ SIA_power_balance = {
 			min = -0.3
 			max = -0.1
 			modifier = {
-				political_advisor_cost_factor = -0.1
+				custom_modifier_tooltip = SIA_tooltip_bop_mr_0
 			}
 			on_activate = {
-				
+			
 			}
 			on_deactivate = {
-				
+			
 			}
 		}
 
@@ -45,15 +46,13 @@ SIA_power_balance = {
 			min = -0.6
 			max = -0.3
 			modifier = {
-				political_advisor_cost_factor = -0.15
-				offensive_war_stability_factor = -0.1
-				war_support_factor = -0.05
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.3
 			}
 			on_activate = {
-				#custom_effect_tooltip = 可以写提示
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.3 }
 			}
 			on_deactivate = {
-				
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.3 }
 			}
 		}
 
@@ -62,15 +61,13 @@ SIA_power_balance = {
 			min = -0.9
 			max = -0.6
 			modifier = {
-				political_advisor_cost_factor = -0.2
-				offensive_war_stability_factor = -0.15
-				war_support_factor = -0.1
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.6
 			}
 			on_activate = {
-				
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.6 }
 			}
 			on_deactivate = {
-				
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.6 }
 			}
 		}
 
@@ -79,11 +76,10 @@ SIA_power_balance = {
 			min = -1
 			max = -0.9
 			modifier = {
-				political_advisor_cost_factor = -0.25
-				offensive_war_stability_factor = -0.2
-				war_support_factor = -0.15
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_1
 			}
 			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 1 }
 				set_power_balance_gfx = { #图标换成亮的
 					id = SIA_power_balance
 					side = SIA_left_side
@@ -91,6 +87,7 @@ SIA_power_balance = {
 				}
 			}
 			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -1 }
 				set_power_balance_gfx = {  #图标换回去
 					id = ITA_power_balance
 					side = SIA_left_side
@@ -110,9 +107,7 @@ SIA_power_balance = {
 			min = 0.1
 			max = 0.3
 			modifier = {
-				political_power_factor = 0.05
-				war_support_factor = 0.01
-				stability_factor = 0.01
+				custom_modifier_tooltip = SIA_tooltip_bop_mr_0
 			}
 			on_activate = {
 				
@@ -127,15 +122,13 @@ SIA_power_balance = {
 			min = 0.3
 			max = 0.6
 			modifier = {
-				political_power_factor = 0.07
-				war_support_factor = 0.02
-				stability_factor = 0.02
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.3
 			}
 			on_activate = {
-				
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.3 }
 			}
 			on_deactivate = {
-				
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.3 }
 			}
 		}
 
@@ -144,18 +137,13 @@ SIA_power_balance = {
 			min = 0.6
 			max = 0.9
 			modifier = {
-				political_power_factor = 0.1
-				war_support_factor = 0.03
-				stability_factor = 0.03
-				experience_gain_army = -0.05
-				experience_gain_air = -0.05
-				experience_gain_navy = -0.05
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.6
 			}
 			on_activate = {
-				
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.6 }
 			}
 			on_deactivate = {
-				
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.6 }
 			}
 		}
 
@@ -164,14 +152,10 @@ SIA_power_balance = {
 			min = 0.9
 			max = 1
 			modifier = {
-				political_power_factor = 0.15
-				war_support_factor = 0.05
-				stability_factor = 0.05
-				experience_gain_army = -0.05
-				experience_gain_air = -0.05
-				experience_gain_navy = -0.05
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_1
 			}
 			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -1 }
 				set_power_balance_gfx = {
 					id = SIA_power_balance
 					side = SIA_right_side
@@ -179,6 +163,7 @@ SIA_power_balance = {
 				}
 			}
 			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 1 }
 				set_power_balance_gfx = {
 					id = SIA_power_balance
 					side = SIA_right_side

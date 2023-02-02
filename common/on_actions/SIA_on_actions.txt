@@ -1,0 +1,15 @@
+on_actions = {
+	on_daily_SIA = {
+		effect = {  #陆军掌控度每日变化
+			if = {
+				limit = {
+					has_variable = VAR_SIA_lujunzhangkongdu
+				}			
+				add_to_variable = { 
+					VAR_SIA_lujunzhangkongdu = VAR_SIA_lujunzhangkongdu_meiribianhua 					
+				}	
+				VAR_SIA_lujunzhangkongdu_clamp = yes
+			}
+		}
+	}
+}
