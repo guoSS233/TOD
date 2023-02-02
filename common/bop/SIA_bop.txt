@@ -23,7 +23,7 @@ SIA_power_balance = {
 	### 左翼
 	side = {
 		id = SIA_left_side	
-		icon = GFX_bop_ITA_communism_side  #镰锤图标
+		icon = GFX_bop_SIA_left_side  #图标
 
 		range = {
 			id = SIA_left_low_control_range
@@ -87,14 +87,14 @@ SIA_power_balance = {
 				set_power_balance_gfx = { #图标换成亮的
 					id = SIA_power_balance
 					side = SIA_left_side
-					gfx = GFX_bop_ITA_communism_improved_side
+					gfx = GFX_bop_SIA_left_improved_side
 				}
 			}
 			on_deactivate = {
 				set_power_balance_gfx = {  #图标换回去
 					id = ITA_power_balance
 					side = SIA_left_side
-					gfx = GFX_bop_ITA_communism_side
+					gfx = GFX_bop_SIA_left_side
 				}
 			}
 		}
@@ -103,7 +103,7 @@ SIA_power_balance = {
 	### 右翼
 	side = {
 		id = SIA_right_side	
-		icon = GFX_bop_ITA_democratic_side
+		icon = GFX_bop_SIA_right_side
 
 		range = {
 			id = SIA_right_low_control_range
@@ -175,14 +175,14 @@ SIA_power_balance = {
 				set_power_balance_gfx = {
 					id = SIA_power_balance
 					side = SIA_right_side
-					gfx = GFX_bop_ITA_democratic_improved_side
+					gfx = GFX_bop_SIA_right_improved_side
 				}
 			}
 			on_deactivate = {
 				set_power_balance_gfx = {
 					id = SIA_power_balance
 					side = SIA_right_side
-					gfx = GFX_bop_ITA_democratic_side
+					gfx = GFX_bop_SIA_right_side
 				}
 			}
 		}
