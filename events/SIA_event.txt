@@ -5,7 +5,7 @@ add_namespace = SIA_event
 add_namespace = SIA_news
 
 
-country_event = {
+country_event = {   #内战事件
 	id = SIA_event.1
 	title = SIA_event.1.t
 	desc = SIA_event.1.d
@@ -24,3 +24,21 @@ country_event = {
 	}
 }
 
+country_event = {     #选边站事件
+	id = SIA_event.2
+	title = SIA_event.2.t
+	desc = SIA_event.2.d
+	picture = GFX_report_event_election_vote
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = SIA_event.2.a		
+		activate_mission = SIA_mission_1_bwdlljg
+	}
+		
+	option = {
+		name = SIA_event.2.b
+		activate_mission = SIA_mission_2_ghjjqkz
+	}
+}

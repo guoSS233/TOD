@@ -18,4 +18,8 @@ replace_path="map/strategicregions"
 replace_path="map/supplyareas"
 replace_path="localisation"
 replace_path="gfx/loadingscreen"
+
+
+replace_path="common/on_actions"
 path="mod/TOD-1.30"
+
