@@ -3,36 +3,38 @@ capital = 529
 oob = "empty"
 
 set_politics = {
-	ruling_party = authoritarianism
+	ruling_party = authoritarian_oligarchy
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	totalism = 0
-	despotism = 21
-	authoritarianism = 46
-	conservatism = 10
-	liberalism = 23
-	reformism = 0
-	socialism = 0
-	radicalism = 0
+	national_corporatism = 5
+	sacred_revivalism = 0
+	leader_despotism = 0
+	authoritarian_oligarchy = 70
+	conservative_democracy = 12
+	liberal_democracy = 0
+	consociationalism = 0
+	social_democrat = 7
+	agroindustrial_socialism = 0
+	moderate_socialism = 0
+	council_socialism = 6
+	vanguard_socialism = 0
 }
 
+add_ideas = {
+	free_trade
+}
 add_ideas = {
 	WJP_slave_of_dragon
 	WJP_depression_strike
 	WJP_rice_unrest
 	JAP_overseas_japanese_in_sanchen
 	JAP_sino_japanese_defense_treaty
-	AthOlg_type
+	WJP_tunhuojuqi
 }
 
-create_country_leader = {
-	name = "Makino Nobuaki"
-	desc = "POLITICS_MAKINO_NOBUAKI_DESC"
-	picture = "Portrait_WJP_Makino_Nobuaki.png"
-	expire = "1965.1.1"
-	ideology = authoritarianism_subtype
-}
+recruit_character = WJP_MAKINO_NOBUAKI
+
