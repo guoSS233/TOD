@@ -1,0 +1,178 @@
+
+SIA_power_balance = {
+	initial_value = 0.35
+	left_side = SIA_left_side	
+	right_side = SIA_right_side	
+	decision_category = SIA_balance_of_power_category
+
+	### 中立
+	range = {
+		id = SIA_balance_range
+		min = -0.10
+		max = 0.10
+		modifier = {
+			custom_modifier_tooltip = SIA_tooltip_bop_mrzj_0.5
+		}
+		on_activate = {
+			add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.5 }	
+		}
+		on_deactivate = {
+			add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.5 }	
+		}
+	}
+
+	### 左翼
+	side = {
+		id = SIA_left_side	
+		icon = GFX_bop_SIA_left_side  #图标
+
+		range = {
+			id = SIA_left_low_control_range
+			min = -0.3
+			max = -0.1
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mr_0
+			}
+			on_activate = {
+			
+			}
+			on_deactivate = {
+			
+			}
+		}
+
+		range = {
+			id = SIA_left_medium_control_range
+			min = -0.6
+			max = -0.3
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.3
+			}
+			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.3 }
+			}
+			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.3 }
+			}
+		}
+
+		range = {
+			id = SIA_left_high_control_range
+			min = -0.9
+			max = -0.6
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.6
+			}
+			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.6 }
+			}
+			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.6 }
+			}
+		}
+
+		range = {
+			id = SIA_left_total_control_range
+			min = -1
+			max = -0.9
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_1
+			}
+			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 1 }
+				set_power_balance_gfx = { #图标换成亮的
+					id = SIA_power_balance
+					side = SIA_left_side
+					gfx = GFX_bop_SIA_left_improved_side
+				}
+			}
+			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -1 }
+				set_power_balance_gfx = {  #图标换回去
+					id = ITA_power_balance
+					side = SIA_left_side
+					gfx = GFX_bop_SIA_left_side
+				}
+			}
+		}
+	}
+
+	### 右翼
+	side = {
+		id = SIA_right_side	
+		icon = GFX_bop_SIA_right_side
+
+		range = {
+			id = SIA_right_low_control_range
+			min = 0.1
+			max = 0.3
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mr_0
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = SIA_right_medium_control_range
+			min = 0.3
+			max = 0.6
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.3
+			}
+			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.3 }
+			}
+			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.3 }
+			}
+		}
+
+		range = {
+			id = SIA_right_high_control_range
+			min = 0.6
+			max = 0.9
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_0.6
+			}
+			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -0.6 }
+			}
+			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 0.6 }
+			}
+		}
+
+		range = {
+			id = SIA_right_total_control_range
+			min = 0.9
+			max = 1
+			modifier = {
+				custom_modifier_tooltip = SIA_tooltip_bop_mrjs_1
+			}
+			on_activate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = -1 }
+				set_power_balance_gfx = {
+					id = SIA_power_balance
+					side = SIA_right_side
+					gfx = GFX_bop_SIA_right_improved_side
+				}
+			}
+			on_deactivate = {
+				add_to_variable = { VAR_SIA_lujunzhangkongdu_meiribianhua = 1 }
+				set_power_balance_gfx = {
+					id = SIA_power_balance
+					side = SIA_right_side
+					gfx = GFX_bop_SIA_right_side
+				}
+			}
+		}
+	}
+
+	
+}
+

@@ -1,0 +1,100 @@
+#SIA暹罗预设
+
+#陆军掌控度
+VAR_SIA_lujunzhangkongdu_clamp = {
+	clamp_variable = {
+		var = VAR_SIA_lujunzhangkongdu
+		min = 0
+		max = 100
+	}
+}
+
+
+#内战事件
+SIA_release_ROS = {
+	
+	effect_tooltip = { release = ROS }
+	
+	hidden_effect = {
+		
+		ROS = {
+			864 = { 
+				add_core_of = PREV    #“PREV”指上一个tag，即ROS
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+				transfer_state_to = PREV
+				create_unit = {
+					division = "name = \"Anhui Bubing Di 1 Zhen\" division_template = \"Bubing Zhen\" start_experience_factor = 0.2"
+					prioritize_location = 1488
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Anhui Bubing Di 1 Xie\" division_template = \"Bubing Xie\" start_experience_factor = 0.1"
+					prioritize_location = 1488
+					owner = PREV
+				}
+				create_unit = {
+					division = "name = \"Anhui Bubing Di 2 Xie\" division_template = \"Bubing Xie\" start_experience_factor = 0.1"
+					prioritize_location = 1488
+					owner = PREV
+				}
+			}			
+
+			861 = { 
+				add_core_of = PREV    
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+				transfer_state_to = PREV				
+			}					
+
+			860 = { 
+				add_core_of = PREV   
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+				transfer_state_to = PREV				
+			}			
+
+			862 = { 
+				add_core_of = PREV    
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+				transfer_state_to = PREV				
+			}			
+			
+			858 = { 
+				add_core_of = PREV    
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+				transfer_state_to = PREV				
+			}			
+
+			670 = { 
+				add_core_of = PREV    
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+				transfer_state_to = PREV				
+			}			
+
+			1195 = { 
+				add_core_of = PREV    
+				remove_core_of = ROOT
+				add_claim_by = ROOT
+				transfer_state_to = PREV				
+			}			
+
+
+
+
+
+			#set_cosmetic_tag = ROS         #好像指装备外观？#						
+		}
+		every_state = {
+			limit = {
+				is_claim_or_core_of_ROOT = yes
+				NOT = { is_claimed_by = ROS }
+				NOT = { is_core_of = ROS }
+			}
+			add_claim_by = ROS
+		}
+	}
+}
