@@ -1,4 +1,86 @@
 ﻿l_english:
+#决议组
+ SIA_decision_l_1:"决议组1"
+ SIA_decision_l_1_zuoyouyipingheng:"共和军左右翼权利斗争"
+ SIA_decision_l_1_zuoyouyipingheng_desc:"人民党是暹罗于宣布预备立宪后由反对拉玛七世专制统治的文官和少数进步贵族草率组建的一个政党。它的党派组织非常松散，也没有一个统一的政治纲领，其内部左右翼存在着严重的观念和利益冲突。人民党在成立后很快陷入了内斗，而原先因在2475年政变中失败而被边缘化的立宪派武官集团得以改头换面以中立派身份入局，并迅速发展成为了人民党的重要组成部分。"
+
+ SIA_decision_l_2_ljzkd:"共和军陆军掌控度"
+ SIA_decision_l_2_ljzkd_desc:"陆军掌控度决定了内战爆发后双方控制的陆军数量。\n\n\n\n共和军的陆军掌控度现在为[GET_VAR_SIA_ljzkd]§Y([?VAR_SIA_lujunzhangkongdu|Y])§!"
+
+ SIA_decision_l_3_drdxd:"敌人的行动"
+ SIA_decision_l_3_drdxd_desc:"在我们准备内战时，敌人也不会坐以待毙。"
+
+
+#决议
+ SIA_decision_shifangros:"释放民主暹罗"
+ SIA_decision_jiapp:"测试决议01"
+ SIA_decision_jiesuo:"解锁权利平衡"
+
+ SIA_decision_right_yingxaingli_10:"权力平衡右移10"
+ SIA_decision_right_yingxaingli_20:"权力平衡右移20"
+ SIA_decision_right_yingxaingli_50:"权力平衡右移50"
+ SIA_decision_left_yingxaingli_10:"权力平衡左移10"
+ SIA_decision_left_yingxaingli_20:"权力平衡左移20"
+ SIA_decision_left_yingxaingli_50:"权力平衡左移50"
+
+ SIA_decision_add_ljzkd:"陆军掌控度加10"
+ SIA_decision_lose_ljzkd:"陆军掌控度减10"
+
+#任务
+ SIA_mission_1_bwdlljg:"保王党拉拢陆军军官"
+ SIA_mission_2_ghjjqkz:"共和军加强对军队的控制"
+
+#事件
+ SIA_event.1.t:"暹罗内战"
+ SIA_event.1.d:"暹罗共和军宣布独立"
+ SIA_event.1.a:"保持戒备"
+ SIA_event.1.b:"共和万岁"
+
+ SIA_event.2.t:"选边站事件"
+ SIA_event.2.d:"选择你的支持方"
+ SIA_event.2.a:"捍卫民主"
+ SIA_event.2.b:"国王万岁"
+
+###提示，tooltip
+ SIA_tooltip_bop_mrzj_0.5:"§Y陆军掌控度§!每日增加§G0.5§!"
+ SIA_tooltip_bop_mr_0:"§Y陆军掌控度§!暂时§G稳定§!"
+ SIA_tooltip_bop_mrjs_0.3:"§Y陆军掌控度§!每日减少§R0.3§!"
+ SIA_tooltip_bop_mrjs_0.6:"§Y陆军掌控度§!每日减少§R0.6§!"
+ SIA_tooltip_bop_mrjs_1:"§Y陆军掌控度§!每日减少§R1§!"
+
+
+ ljzkd_save_up_10:"陆军掌控度增加10"
+ ljzkd_save_down_10:"陆军掌控度减少10"
+
+#本地化预设
+ VAR_SIA_ljzkd_txt_1:"§G完全掌控§!"
+ VAR_SIA_ljzkd_txt_2:"§C调遣自如§!"
+ VAR_SIA_ljzkd_txt_3:"§Y基本控制§!"
+ VAR_SIA_ljzkd_txt_4:"§O离心离德§!"
+ VAR_SIA_ljzkd_txt_5:"§R分崩离析§!"
+
+#GUI
+ SIA_gui_gemingbaoweiju_name_text:"革命保卫局"
+ SIA_gemingbaoweiju_TOOLTIP:"£faction_bul_zveno §Y革命保卫局§!是由军官团体所创建的主义组织。\n£faction_bul_zveno §Y革命保卫局§!将会拉拢军官们加入其组织。
+ SIA_xlzyyd_name_text:"暹罗自由运动"
+ SIA_xlzyyd_TOOLTIP:"£faction_bul_bs §Y暹罗自由运动§!是信奉社会民主主义的泛阶层联盟。\n£faction_bul_bs §Y暹罗自由运动§!在产业工人阶级以及工会当中拥有着强大的影响力，若是其对政府不再忠诚，便将掀起声势浩大的罢工。"
+ SIA_tjzx_name_text:"团结阵线"
+ SIA_tjzx_TOOLTIP:"£faction_bul_bzns §Y团结阵线§!是曾在1934年被取缔的致力关注农业事务的政治组织。\n£faction_bul_bzns §Y团结阵线§!在我国的乡村地区拥有着强大的影响力，其会试图在农民群体中争取支持。"
+ SIA_trd_name_text:"泰人党"
+ SIA_trd_TOOLTIP:"£faction_bul_nsm §Y泰人党§!是由前环节集团成员亚历山大·灿科夫领导的极右翼组织。\n£faction_bul_nsm §Y泰人党§!将会试图通过煽动组织民众在全国发起游行示威的方式争取支持率。"
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### parties ###
 SIA_leader_despotism_party:0 "曼谷王朝"
@@ -10,10 +92,21 @@ SIA_social_democrat_party:0 "暹罗自由运动"
 SIA_national_corporatism_party:0 "泰人党"
 
 ### country names ###
-SIA:0 "暹罗"
-SIA_ADJ:0 "暹罗"
-SIA_DEF:0 "暹罗"
-
+ SIA:0 "暹罗"
+ SIA_ADJ:0 "暹罗"
+ SIA_DEF:0 "暹罗"
+ SIA_fascism:0 "暹罗帝国"
+ SIA_fascism_DEF:0 "暹罗帝国"
+ SIA_democratic:0 "泰共和国"
+ SIA_democratic_DEF:0 "泰共和国"
+ SIA_neutrality:0 "暹罗"
+ SIA_neutrality_DEF:0 "暹罗"
+ SIA_communism:0 "泰人民共和国"
+ SIA_communism_DEF:0 "泰人民共和国"
+ SIA_fascism_ADJ:0 "暹罗"
+ SIA_democratic_ADJ:0 "暹罗"
+ SIA_neutrality_ADJ:0 "暹罗"
+ SIA_communism_ADJ:0 "暹罗"
 ### leaders ###
 POLITICS_SIA_Rama_VII_DESC:0 "佛历2468年，拉玛六世的突然离世让其弟阿沙当·德差武登上了曼谷王朝的王位，尊号拉玛七世，在民间华族人亦将其称为郑光。在过去的一个多世纪里，暹罗通过战胜安南、缅甸等宿敌吞并了大片领土，并通过拉玛五世、六世两代贤君的改革让暹罗实现了现代化，这让拉玛七世自登基之日起就掌握了一个极为强盛的王国。                                                        然创业之难，既已往矣，守成则同样不易。内政方面，庚午财荒引发的经济衰退和君主立宪、民主化的呼声让国王和贵族们头疼不已；在边疆，佬族人和高棉人在密林中升起属于他们民族的旗帜，而国境线另一端的人们亦在暗中观察，当南国巨象自顾不暇之时，他们将会从阴影中走出，夺回过去一百多年里他们所失去的一切。                                                         拉玛七世是否能延续父辈和兄长的光荣，亦或者拉达纳哥欣时代将会在他的手中走向终结？此时的拉玛七世或许仍然不知道答案。，金将军因其资历而被推举出任首任暹罗总理。作为人民党的党魁，同时也是一个坚定的民主主义者，他在过去的几年里始终在为缓和党内文官和贵族派系的矛盾而努力，试图集中力量推动实现一个真正的民主化的立宪；然而另一方面，作为军政府的领袖、军官们所指定的共主，他又不得不以武官集团的意志执政。时间进入西历1936年，这是立宪时所指定的大选年。在任期的最后一年里，金裕庭不论是选择为民主化做出最后的努力，还是放任军方将国家权力完全吞噬，都势必将这个身处十字路口上的国家推往一条不可回头的道路。"
 

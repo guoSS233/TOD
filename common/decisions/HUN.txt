@@ -4,7 +4,7 @@ HUN_gyorjihua = {
 		icon = ger_military_buildup
 		
 		visible = {any_owned_state = { infrastructure < 5 }}
-        cost = 100
+        cost = 50
 		modifier = {civilian_factory_use = 5}
 		days_remove =  60
 		days_re_enable = 0
@@ -29,13 +29,13 @@ HUN_gyorjihua = {
 			}
 			has_completed_focus = HUN_touziduonaohejingjidai
 		}
-        cost = 100
+        cost = 50
 		modifier = {civilian_factory_use = 5}
 		days_remove =  60
 		days_re_enable = 0
 		complete_effect = {
 			random_owned_controlled_state = {
-			limit = {has_state_flag = HUN_duonaoheliuyu}
+				limit = {has_state_flag = HUN_duonaoheliuyu}
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
@@ -58,7 +58,7 @@ HUN_gyorjihua = {
 			}
 			has_completed_focus = HUN_daidongqitadiqu
 		}
-        cost = 100
+        cost = 50
 		modifier = {civilian_factory_use = 5}
 		days_remove =  60
 		days_re_enable = 0
@@ -224,15 +224,23 @@ HUN_jiejueshaominwenti = {
 					NOT = { has_state_flag = HUN_3jiyimin }
 				}
 				if = {
-					limit = { NOT = { has_state_flag = HUN_1jiyimin }}
+					limit = { 
+						NOT = { has_state_flag = HUN_2jiyimin }}
+						NOT = { has_state_flag = HUN_3jiyimin }}
+					}
 					add_state_flag = HUN_1jiyimin
 				}
 				if = {
-					limit = { NOT = { has_state_flag = HUN_2jiyimin }}
+					limit = { 
+						NOT = { has_state_flag = HUN_3jiyimin }}
+						has_state_flag = HUN_1jiyimin 
+					}
 					add_state_flag = HUN_2jiyimin
 				}
 				if = {
-					limit = { NOT = { has_state_flag = HUN_3jiyimin }}
+					limit = { 
+						has_state_flag = HUN_2jiyimin 
+					}
 					add_state_flag = HUN_3jiyimin
 					add_core_of = HUN
 				}
@@ -297,7 +305,7 @@ HUN_jiejueshaominwenti = {
 		days_remove =  60
 	}
 	#发展当地产业
-	HUN_jianlimoerduowajundui= {
+	HUN_fazhandangdichanye = {
 		icon = ger_military_buildup
 		visible = {
 			any_owned_state = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
