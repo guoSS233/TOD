@@ -21,5 +21,5 @@ replace_path="gfx/loadingscreen"
 
 
 replace_path="common/on_actions"
-path="mod/TOD-1.30"
+path="mod/TOD"
 
