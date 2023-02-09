@@ -60,7 +60,7 @@ guiTypes = {
 			gridBoxType = {
 				name = "parties_grid"
 				position = { x = 0 y = 0 }
-				size = { width = 200 height = 25 }
+				size = { width = 300 height = 25 }
 				slotsize = { width = 120 height = 15 }
 				format = "UPPER_LEFT"
 			}
@@ -76,7 +76,7 @@ guiTypes = {
 
 		
 		containerWindowType = {
-			name = "political_pie_chart"
+			name = "political_pie_chart" #饼图
 			position = { x = 451.5 y = 325 }
 			clipping = no
 
@@ -88,7 +88,7 @@ guiTypes = {
 		}
 		
 		containerWindowType = {
-			name = "ruling_party_info"
+			name = "ruling_party_info" 
 			position = { x = 88 y = 305 }
 			size = { width = 255 height = 60 }
 			clipping = no
@@ -132,7 +132,7 @@ guiTypes = {
 			}		
 
 			containerWindowType = {
-				name = "power_balance_button"
+				name = "power_balance_button" #权力平衡
 				position = { x = 138 y = -62 }
 				clipping = no
 
@@ -955,37 +955,37 @@ guiTypes = {
 		}
 	}
 	
-	containerWindowType = {
+	containerWindowType = { #那一坨意识形态
 		name = "political_party_info_entry"
-		size = { width = 200 height = 18 }
+		size = { width = 300 height = 18 }
 		position = { x = 0 y = 0 }
 		clipping = no
 		
 		iconType = {
-			name = "leading_pol_party_bg"
+			name = "leading_pol_party_bg" #黄条
 			position = { x = 60 y = 5 }
 			spriteType = "GFX_leading_pol_party_bg"
 		}		
 		
 		iconType = {
-			name = "color_block_bg"
+			name = "color_block_bg" #颜色块的边框
 			position = { x = 60 y = 2 }
 			spriteType = "GFX_pol_party_colour_bg"
 		}
 		
 		iconType = {
-			name = "color_block"
+			name = "color_block" #颜色块
 			position = { x = 64 y = 6 }
 			spriteType = "GFX_pol_party_colour"
 		}
 			
 		instantTextboxType = {
-			name = "name"
+			name = "name" #文本
 			position = { x = 82 y = 4 }
 			font = "hoi_16mbs"
 			text = "party name"
 			fixedsize = yes
-			maxWidth = 200
+			maxWidth = 300
 			maxHeight = 18
 		}
 	}
