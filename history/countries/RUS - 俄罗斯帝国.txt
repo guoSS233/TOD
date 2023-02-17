@@ -8,17 +8,7 @@ set_politics = {
 	election_frequency = 48
 	elections_allowed = no
 }
-add_ideas = {
-	RUS_shuailuodezhongyangzhengfu
-	RUS_weimibuzhendejingji
-	RUS_fenliedejundui
-	RUS_fuchouzhuyi
-	limited_conscription
-	civilian_economy
-	export_focus
-}
 
-add_dynamic_modifier = { modifier = RUS_shuailuodezhongyangzhengfu }
 set_popularities = {
 	national_corporatism = 20
 	sacred_revivalism = 0
@@ -34,20 +24,24 @@ set_popularities = {
 	vanguard_socialism = 4
 }
 
-create_country_leader = {
-	name = "Alexandria IV"
-	desc = "POLITICS_ALEXANDRIA_IV_DESC"
-	picture = "Portrait_RUS_Alexandria_IV.png"
-	expire = "1965.1.1"
-	ideology = authoritarianism_subtype
+add_ideas = {
+	RUS_shuailuodezhongyangzhengfu
+	RUS_weimibuzhendejingji
+	RUS_fenliedejundui
+	RUS_fuchouzhuyi
+	limited_conscription
+	civilian_economy
+	export_focus
 }
 
-recruit_character = RUS_Mikhail_IV
+recruit_character = RUS_Mikhail_4
 recruit_character = RUS_Pavel_Nikolayevich_Milyukov
 recruit_character = RUS_Alexander_Nikolayevich_potlesov
 recruit_character = RUS_Mikhail_Gordeevich_Drozdovsky
 recruit_character = RUS_Anastasy_Vonsiatsky
 recruit_character = RUS_Vyacheslav_Mikhailovich_Molotov
+
+add_dynamic_modifier = { modifier = RUS_shuailuodezhongyangzhengfu }
 
 # DIPLOMACY
 if = {
