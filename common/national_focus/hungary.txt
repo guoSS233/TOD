@@ -523,7 +523,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_ideas = HUN_mayihezuoshe_idea }
+		completion_reward = { add_ideas = HUN_mayihezuoshe }
 	}
 	#稳定的匈牙利
 	focus = {
@@ -585,7 +585,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {add_ideas = HUN_tudigaige_idea }
+		completion_reward = {add_ideas = HUN_tudigaige }
 	}
 	#解决贫困
 	focus = {
@@ -606,7 +606,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_political_power = -100 
-			add_ideas = HUN_jiejuepinkun_idea
+			add_ideas = HUN_jiejuepinkun
 		}
 	}
 	#繁荣的匈牙利
@@ -629,7 +629,7 @@ focus_tree = {
 		completion_reward = {
 			swap_ideas = {
 				remove_idea = HUN_jiejuepinkun
-				add_idea = HUN_fanrongdexiongyali_idea
+				add_idea = HUN_fanrongdexiongyali
 			}
 		}
 	}
@@ -773,7 +773,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_ideas = HUN_gongyejishuyanjiusuo_idea }
+		completion_reward = { add_ideas = HUN_gongyejishuyanjiusuo }
 	}
 	#农业发展研究所
 	focus = {
@@ -793,7 +793,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_ideas = HUN_nongyefazhanyanjiusuo_idea }
+		completion_reward = { add_ideas = HUN_nongyefazhanyanjiusuo }
 	}
 	#布达佩斯研究中心
 	focus = {
@@ -831,7 +831,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = { idea = HUN_xiaofeiquan_idea days = 730} }
+		completion_reward = { add_timed_idea = { idea = HUN_xiaofeiquan days = 730} }
 	}
 	#扶助农业
 	focus = {
@@ -852,7 +852,7 @@ focus_tree = {
 		
 		completion_reward = {
 			remove_ideas = HUN_nongyeguojia
-			add_timed_idea = { idea = HUN_fuzhunongye_idea days = 365 }
+			add_timed_idea = { idea = HUN_fuzhunongye days = 365 }
 		}
 	}
 	#农业现代化
@@ -872,7 +872,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { 
 			has_equipment = { motorized_equipment > 1499 } 
-			NOT = { has_idea = HUN_fuzhunongye_idea }
+			NOT = { has = HUN_fuzhunongye }
 		}
 		
 		completion_reward = {
@@ -1145,7 +1145,6 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		mutually_exclusive = { focus =  HUN_youyideshengli}
 		
 		cost = 5
 		
@@ -1656,7 +1655,7 @@ focus_tree = {
 		cost = 10
 		
 		ai_will_do = {factor = 10}
-		available = { NOT = {has_idea = HUN_tudiqingcha }}
+		available = { NOT = {has = HUN_tudiqingcha }}
 		
 		completion_reward = { add_ideas = HUN_tudigaige }
 	}
@@ -1677,7 +1676,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = { idea = HUN_bangzhupinnong days = 180 } }
+		completion_reward = { add_timed_idea = { idea = HUN_bangzhu days = 180 } }
 	}
 	#打击地主
 	focus = {
@@ -1696,7 +1695,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = { idea = HUN_dajidizhu days = 180 } }
+		completion_reward = { add_timed_idea = { idea = HUN_daji days = 180 } }
 	}
 	#新农业模式
 	focus = {
@@ -1809,11 +1808,11 @@ focus_tree = {
 			custom_effect_tooltip = HUN.6.tt
 			hidden_effect = {
 				if = {
-					limit = { NOT = { has_idea = HUN_buchangsiluofake } }
-
+					limit = { NOT = {has = HUN_buchangsiluofake }}
+					
 				}
 				if = {
-					limit = { NOT = {has_idea = HUN_buchangluomaniya } }
+					limit = { NOT = {has = HUN_buchangluomaniya }}
 					ROM = {
 						set_state_owner = 84	
 						set_state_owner = 83	
@@ -1821,7 +1820,7 @@ focus_tree = {
 					}
 				}
 				if = {
-					limit = { NOT = { has_idea = HUN_buchangmoerduowa } }
+					limit = { NOT = {has = HUN_buchangmoerduowa }}
 					MOL = {
 						set_state_owner = 79	
 						set_state_owner = 979	
@@ -1829,7 +1828,7 @@ focus_tree = {
 						set_state_owner = 80	
 					}
 					if = {
-						limit = { NOT = { has_idea = HUN_buchangluomaniya } }
+						limit = { NOT = {has = HUN_buchangluomaniya} }
 						ROM = {
 							set_state_owner = 79	
 							set_state_owner = 979	
@@ -1859,5 +1858,1235 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { add_political_power = 150 }
+	}
+	#重组航空业
+	focus = {
+		id = HUN_chongzuhangkongye
+		icon = GFX_HUN_juxingdaxuan
+		x = 44
+		y = 1
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {  air_experience = 50 }
+	}
+	#马扎儿之翼
+	focus = {
+		id = HUN_mazhaerzhiyi
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_chongzuhangkongye}
+		x = 43
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#改善国内条件
+	focus = {
+		id = HUN_gaishanguoneitiaojian
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_chongzuhangkongye}
+		x = 45
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#引进外国工程师
+	focus = {
+		id = HUN_yinjinwaiguo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_mazhaerzhiyi}
+		prerequisite = { focus = HUN_gaishanguoneitiaojian}
+		mutually_exclusive = { focus = HUN_jianchibenguo}
+		x = 43
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#坚持本国制造
+	focus = {
+		id = HUN_jianchibenguo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_mazhaerzhiyi}
+		prerequisite = { focus = HUN_gaishanguoneitiaojian}
+		mutually_exclusive = { focus = HUN_yinjinwaiguo}
+		x = 45
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#引入外国生产线
+	focus = {
+		id = HUN_waiguoshengchanxian
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_yinjinwaiguo}
+		mutually_exclusive = { focus = HUN_lianhefeiji}
+		mutually_exclusive = { focus = HUN_qiangdiaozizhusheji}
+		x = 42
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#联合飞机研发
+	focus = {
+		id = HUN_lianhefeiji
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_yinjinwaiguo focus = HUN_jianchibenguo }
+		mutually_exclusive = { focus = HUN_waiguoshengchanxian}
+		mutually_exclusive = { focus = HUN_qiangdiaozizhusheji}
+		x = 44
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#强调自主设计
+	focus = {
+		id = HUN_qiangdiaozizhusheji
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jianchibenguo }
+		mutually_exclusive = { focus = HUN_waiguoshengchanxian}
+		mutually_exclusive = { focus = HUN_lianhefeiji}
+		x = 46
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#加强飞行员培训
+	focus = {
+		id = HUN_jiaqiangpeixun
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_qiangdiaozizhusheji focus = HUN_lianhefeiji focus = HUN_waiguoshengchanxian}
+		x = 43
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#航空技术研究所
+	focus = {
+		id = HUN_hangkongyanjiusuo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_qiangdiaozizhusheji focus = HUN_lianhefeiji focus = HUN_waiguoshengchanxian}
+		x = 45
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#声敏火箭弹
+	focus = {
+		id = HUN_shengmin
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jiaqiangpeixun }
+		prerequisite = { focus = HUN_hangkongyanjiusuo }
+		x = 44
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#军事重组
+	focus = {
+		id = HUN_junshichongzu
+		icon = GFX_HUN_juxingdaxuan
+		x = 55
+		y = 1
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#精兵战术
+	focus = {
+		id = HUN_jingbingzhanshu
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_junshichongzu }
+		mutually_exclusive = { focus = HUN_baochiguimo }
+		x = 51
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#保持规模
+	focus = {
+		id = HUN_baochiguimo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_junshichongzu }
+		mutually_exclusive = { focus = HUN_jingbingzhanshu }
+		x = 58
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#特种化作战
+	focus = {
+		id = HUN_tezhonghuazuozhan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jingbingzhanshu }
+		x = 50
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#山地训练
+	focus = {
+		id = HUN_shandixunlian
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_tezhonghuazuozhan }
+		x = 48
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#气候适应
+	focus = {
+		id = HUN_qihoushiyin
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_tezhonghuazuozhan }
+		x = 50
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#伞兵组建
+	focus = {
+		id = HUN_sanbingzujian
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_tezhonghuazuozhan }
+		x = 52
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#扩大生产
+	focus = {
+		id = HUN_kuodashengchan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_baochiguimo }
+		x = 60
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#工兵支援
+	focus = {
+		id = HUN_gongbingzhiyuan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_kuodashengchan }
+		x = 58
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#装备研究
+	focus = {
+		id = HUN_zhuangbeiyanjiu
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_kuodashengchan }
+		x = 60
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#后勤保障
+	focus = {
+		id = HUN_houqinbaozhang
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_kuodashengchan }
+		x = 62
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#加强火力
+	focus = {
+		id = HUN_jiaqianghuoli
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jingbingzhanshu focus = HUN_baochiguimo }
+		x = 53
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#达努维亚冲锋枪
+	focus = {
+		id = HUN_danuweiya
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jiaqianghuoli}
+		x = 54
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#炮火加强
+	focus = {
+		id = HUN_paohuojiaqiang
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_danuweiya}
+		x = 54
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#机械骑兵
+	focus = {
+		id = HUN_jixieqibing
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jingbingzhanshu focus = HUN_baochiguimo }
+		x = 57
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#阜博通卡车
+	focus = {
+		id = HUN_fubotong
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jixieqibing }
+		x = 56
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#钢铁巨兽
+	focus = {
+		id = HUN_gangtiejushou
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_fubotong }
+		x = 56
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#通讯畅通
+	focus = {
+		id = HUN_tongxunchangtong
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_paohuojiaqiang }
+		x = 53
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#战场突破
+	focus = {
+		id = HUN_zhanchangtupo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_paohuojiaqiang focus = HUN_gangtiejushou }
+		x = 55
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#防空火力
+	focus = {
+		id = HUN_fangkonghuoli
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_gangtiejushou }
+		x = 57
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#重建海军部门
+	focus = {
+		id = HUN_chongjianhaijun
+		icon = GFX_HUN_juxingdaxuan
+		x = 67
+		y = 1
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#加强海军建设
+	focus = {
+		id = HUN_jiaqinaghaijunjianshe
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_chongjianhaijun }
+		x = 65
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#达尔马提亚军港重建
+	focus = {
+		id = HUN_jungangchongjian
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jiaqinaghaijunjianshe }
+		x = 64
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#新建黑海舰队
+	focus = {
+		id = HUN_xinjianheihaijiandui
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jiaqinaghaijunjianshe }
+		x = 66
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#从国外购置舰艇
+	focus = {
+		id = HUN_waiguojianting
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jungangchongjian focus = HUN_xinjianheihaijiandui }
+		x = 64
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#启用造船设备
+	focus = {
+		id = HUN_qiyongzaochuan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jungangchongjian focus = HUN_xinjianheihaijiandui }
+		x = 66
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#招募海军人员
+	focus = {
+		id = HUN_zhaomuhaijunrenyuan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_chongjianhaijun }
+		x = 69
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#成立海军研究院
+	focus = {
+		id = HUN_haijunyanjiuyuan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_zhaomuhaijunrenyuan }
+		x = 68
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#从内河舰队中抽调人手
+	focus = {
+		id = HUN_haijunyanjiuyuan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_zhaomuhaijunrenyuan }
+		x = 70
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#重启霍尔蒂
+	focus = {
+		id = HUN_haijunyanjiuyuan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_haijunyanjiuyuan }
+		x = 70
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#加强人员培训
+	focus = {
+		id = HUN_jiaqiangrenyuanpeixun
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_haijunyanjiuyuan }
+		x = 68
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#宣告海军成立
+	focus = {
+		id = HUN_xuangaohaijunchengli
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jiaqiangrenyuanpeixun }
+		prerequisite = { focus = HUN_qiyongzaochuan focus = HUN_waiguojianting }
+		x = 67
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#重新审视对外政策
+	focus = {
+		id = HUN_duiwaizhengce
+		icon = GFX_HUN_juxingdaxuan
+		x = 55
+		y = 7
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#向西交流
+	focus = {
+		id = HUN_xiangxijiaoliu
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_duiwaizhengce }
+		x = 51
+		y = 8
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#重启对奥谈判
+	focus = {
+		id = HUN_chongqiduiaotanpan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_xiangxijiaoliu }
+		x = 49
+		y = 9
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#共同的敌人
+	focus = {
+		id = HUN_gongtongdediren
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_chongqiduiaotanpan }
+		x = 49
+		y = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#军事合作
+	focus = {
+		id = HUN_junshihezuo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_gongtongdediren }
+		x = 49
+		y = 11
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#对意交流
+	focus = {
+		id = HUN_duiyijiaoliu
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_xiangxijiaoliu }
+		x = 51
+		y = 9
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#夺回克罗地亚
+	focus = {
+		id = HUN_duohuikeluodiya
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_duiyijiaoliu }
+		x = 51
+		y = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#干预意大利内战
+	focus = {
+		id = HUN_ganyuyidali
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_duohuikeluodiya }
+		x = 51
+		y = 11
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#向南扩张
+	focus = {
+		id = HUN_xiangnankuozhang
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_duiwaizhengce }
+		x = 55
+		y = 8
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#重新评估法国
+	focus = {
+		id = HUN_pinggufaguo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_xiangxijiaoliu focus = HUN_xiangnankuozhang }
+		x = 53
+		y = 9
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#稳固塞尔维亚
+	focus = {
+		id = HUN_wengusaierweiya
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_xiangnankuozhang }
+		x = 55
+		y = 9
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#加强与保加利亚关系
+	focus = {
+		id = HUN_baojialiya
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_xiangnankuozhang focus = HUN_xiangdonghezuo}
+		x = 57
+		y = 9
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#介入巴尔干冲突
+	focus = {
+		id = HUN_jierubaergan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_pinggufaguo }
+		prerequisite = { focus = HUN_wengusaierweiya }
+		x = 54
+		y = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#进军瓦拉几亚
+	focus = {
+		id = HUN_jinjunwalajiya
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_pinggufaguo }
+		prerequisite = { focus = HUN_baojialiya }
+		x = 56
+		y = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#新的巴尔干霸权
+	focus = {
+		id = HUN_baerganbaquan
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jierubaergan }
+		prerequisite = { focus = HUN_jinjunwalajiya }
+		x = 55
+		y = 11
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#向东合作
+	focus = {
+		id = HUN_xiangdonghezuo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_duiwaizhengce }
+		x = 59
+		y = 8
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#重叙旧友谊
+	focus = {
+		id = HUN_chongxujiuyouyi
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_xiangdonghezuo }
+		x = 59
+		y = 9
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#结交新朋友
+	focus = {
+		id = HUN_jiejiaoxinpengyou
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_xiangdonghezuo }
+		x = 61
+		y = 9
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#科技合作
+	focus = {
+		id = HUN_kejihezuo
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jiejiaoxinpengyou focus = HUN_chongxujiuyouyi focus = HUN_baojialiya }
+		x = 58
+		y = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#军事交流
+	focus = {
+		id = HUN_junshijiaoliu
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_jiejiaoxinpengyou focus = HUN_chongxujiuyouyi focus = HUN_baojialiya }
+		x = 60
+		y = 10
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
+	}
+	#“东墙”
+	focus = {
+		id = HUN_dongqiang
+		icon = GFX_HUN_juxingdaxuan
+		prerequisite = { focus = HUN_kejihezuo }
+		prerequisite = { focus = HUN_junshijiaoliu }
+		x = 59
+		y = 11
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { air_experience = 50 }
 	}
 }

@@ -65,46 +65,37 @@ if = {
 		mtg_transport = 1
 	}
 }
-add_ideas = {
-	free_trade
-	limited_conscription
-	low_economic_mobilisation
-}
 
 set_convoys = 10
 
 set_politics = {
-	ruling_party = liberalism
+	ruling_party = consociationalism
 	last_election = "1935.6.9"
 	election_frequency = 12
 	elections_allowed = yes # none after offset 1
 }
 set_popularities = {
-	totalism = 0
-	despotism = 0
-	authoritarianism = 0
-	conservatism = 22
-	liberalism = 43
-	reformism = 25
-	socialism = 7
-	radicalism = 3
+	national_corporatism = 15
+	sacred_revivalism = 5
+	leader_despotism = 0
+	authoritarian_oligarchy = 0
+	conservative_democracy = 10
+	liberal_democracy = 0
+	consociationalism = 35
+	social_democrat = 35
+	agroindustrial_socialism = 0
+	moderate_socialism = 0
+	council_socialism = 0
+	vanguard_socialism = 0
 }
-
-set_stability = 0.75
-
 create_country_leader = {
 	name = "Elisfrios Venizelos"
 	desc = "POLITICS_ELISFRIOS_VENIZELOS_DESC"
 	picture = "Portrait_GRE_Elisfrios_Venizelos.png"
 	expire = "1965.1.1"
-	ideology = liberalism_subtype
+	ideology = liberal_democracy_subtype
 }
 
-country_lock_all_division_template = yes
+recruit_character = GRE_Elisfrios_Venizelos
 
-create_faction = "巴尔干同盟"
-add_to_faction = GRE
-add_to_faction = CRO
-add_to_faction = AUS
-add_to_faction = ROM
-add_to_faction = SER
+country_lock_all_division_template = yes

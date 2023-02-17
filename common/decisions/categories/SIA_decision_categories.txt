@@ -1,0 +1,68 @@
+#SIA暹罗决议组
+
+SIA_decision_l_1 = {
+	#icon = ger_mefo_bills
+	#picture = GFX_decision_cat_generic_mefo_bills	
+	
+	allowed = { 
+		original_tag = SIA
+	}	
+	
+	priority = 100
+}
+
+SIA_decision_l_1_zuoyouyipingheng = {  #共和军左右翼权利斗争
+	priority = 10
+
+	icon = power_struggle
+
+	picture = GFX_decision_cat_picture_faction_management_bulgaria
+
+	scripted_gui = SIA_zuoyouyipingheng_ui
+
+	visible = {
+		#has_country_flag = BUL_factions_unlocked_flag
+	}
+
+	allowed = {
+		original_tag = SIA
+	}
+}
+
+SIA_balance_of_power_category = {  #bop相关
+	icon = GFX_decision_category_power_struggle
+	
+	allowed = {
+		original_tag = SIA
+	}
+	
+	priority = 90
+	
+	visible = {
+		
+	}
+}
+
+SIA_decision_l_2_ljzkd = {	#共和军陆军掌控度
+	icon = generic_political_actions	
+	picture = GFX_decision_cat_generic_mefo_bills	
+	
+	available = { 
+		original_tag = SIA
+	    #has_completed_focus = xxx
+    }	
+	
+	priority = 90
+}
+
+SIA_decision_l_3_drdxd = {	#敌人的行动
+	icon = generic_political_actions	
+	picture = GFX_decision_cat_generic_mefo_bills	
+	
+	available = { 
+		original_tag = SIA
+	    #has_completed_focus = xxx
+    }	
+	
+	priority = 90
+}

@@ -1,0 +1,443 @@
+﻿units = {
+	##### NAVAL UNITS #####
+	### Atlantic Fleet ###
+	fleet = {
+		name = "Atlantic Fleet"			
+		naval_base = 6384 #Liverpool
+		task_force = {
+			name = "Liverpool Force"
+			location = 6384 #Liverpool
+			ship = { name = "HMS Furious" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = ENG version_name = "Courageous Class" } } }
+			ship = { name = "HMS Warspite" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Queen Elizabeth Class" } } }			
+			ship = { name = "HMS Hood" pride_of_the_fleet = yes definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Admiral Class" } } }
+			ship = { name = "HMS Norfolk" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			ship = { name = "HMS Calcutta" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class"} } }
+			ship = { name = "HMS Emerald" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "HMS Enterprise" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "HMS Sabre" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "HMS Shikari" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			### 6th Destroyer Flotilla
+			ship = { name = "HMS Keith" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "HMS Exeter" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }		
+			ship = { name = "HMS Cumberland" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			ship = { name = "HMS Ajax" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }	
+			# Destroyer Division 11
+			ship = { name = "HMS Venetia" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Vanessa" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Viscount" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Wessex" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			# Destroyer Division 12
+			ship = { name = "HMS Vesper" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Vivacious" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Wakeful" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Windsor" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			### 8th Destroyer Flotilla
+			ship = { name = "HMS Faulknor" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			# Destroyer Division 15
+			ship = { name = "HMS Foxhound" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } } 						# to RCN as Qu'Appelle, 1943	
+			ship = { name = "HMS Fury" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "HMS Fearless" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "HMS Forester" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			# Destroyer Division 16
+			ship = { name = "HMS Fame" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "HMS Firedrake" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "HMS Foresight" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "HMS Fortune" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }							# to RCN as Saskatchewan, 1943	
+		}				
+		task_force = {
+			name = "Faslane Force"
+			location = 6395 # Faslane, west of Glasgow
+			ship = { name = "HMS Colombo" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "HMS Capetown" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "HMS Wryneck" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }	
+			# 13th Destroyer Flotilla
+			ship = { name = "HMS Keppel" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			# Destroyer Division 25
+			ship = { name = "HMS Vidette" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Vortigern" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Velox" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Watchman" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			# Destroyer Division 26
+			ship = { name = "HMS Douglas" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Active" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			ship = { name = "HMS Wishart" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Wrestler" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+		}
+		task_force = {
+			name = "5th Submarine Flotilla"
+			location = 6384 #Liverpool
+			# Submarine Division 51
+			ship = { name = "HMS Oberon" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS Thames" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			# Submarine Division 52
+			ship = { name = "HMS L23" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H28" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H31" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H33" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H34" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H43" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H44" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H49" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS H50" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+		}
+	}
+	#North Fleet
+	fleet = {
+		name = "North Sea Fleet"			
+		naval_base = 11064 # Scapa Flow			
+		task_force = {
+			name = "Northern Force"
+			location = 11064 # Scapa Flow
+			ship = { name = "HMS Royal Oak" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }
+			ship = { name = "HMS Royal Sovereign" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }
+			ship = { name = "HMS Ramillies" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }
+			# 7th Cruiser Squadron
+			ship = { name = "HMS Diomede" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class" } } }
+			ship = { name = "HMS Dragon" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class" } } }
+			# 12th Cruiser Squadron
+			ship = { name = "HMS Effingham" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Hawkins Class" } } }
+			ship = { name = "HMS Cardiff" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "HMS Delhi" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
+			ship = { name = "HMS Dunedin" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
+						### 14th Destroyer Flotilla
+			ship = { name = "HMS Codrington" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			# Destroyer Division 27
+			ship = { name = "HMS Basilisk" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "HMS Beagle" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			ship = { name = "HMS Boreas" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "HMS Bulldog" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			# Destroyer Division 28
+			ship = { name = "HMS Blanche" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "HMS Boadicea" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			ship = { name = "HMS Brazen" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "HMS Brilliant" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+		}
+		task_force = {
+			name = "Humber Force"
+			location = 11297 # Hull
+			### 7th Destroyer Flotilla
+			# Destroyer Division 13
+			ship = { name = "HMS Broke" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Wanderer" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Whitehall" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Witch" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }	
+			# Destroyer Division 14
+			ship = { name = "HMS Verity" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Volunteer" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Witherington" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Wolverine" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }	
+		}	
+		task_force = {
+			name = "Rosyth Escort Force"
+			location = 6300 # Rosyth
+			# Rosyth Destroyer Division
+			ship = { name = "HMS Wallace" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Valorous" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Whitley" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+		}
+		task_force = {
+			name = "Nore Force"
+			location = 3501 # Dover
+			ship = { name = "HMS London" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			ship = { name = "HMS Curacoa" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class"} } }
+			# Nore Destroyer Division
+			ship = { name = "HMS Campbell" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Vivien" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Worcester" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Woolston" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "HMS Wolfhound" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+		}
+		task_force = {
+			name = "North Submarine Flotilla"
+			location = 11064 # Scapa Flow
+			# Submarine Division 21
+			ship = { name = "HMS Oxley" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS Swordfish" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			ship = { name = "HMS Sturgeon" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			ship = { name = "HMS Seahorse" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			ship = { name = "HMS Starfish" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			# Submarine Division 22
+			ship = { name = "HMS H32" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS L26" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "HMS L27" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+		}
+	}
+	#Channel Fleet
+	fleet = {
+		name = "Channel Fleet"			
+		naval_base = 9458 # Portsmouth
+		task_force = {
+			name = "Channel Force"			
+			location = 9458 # Portsmouth
+			ship = { name = "HMS Resolution" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }			
+			ship = { name = "HMS Repulse" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Renown Class" } } }
+			ship = { name = "HMS Renown" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Renown Class" } } }
+			ship = { name = "HMS Ceres" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "HMS Caradoc" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "HMS Cairo" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			# 5th Destroyer Flotilla
+			ship = { name = "HMS Kempenfelt" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		# to RCN as Assiniboine, 1939
+			# Destroyer Division 9
+			ship = { name = "HMS Acasta" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "HMS Antelope" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "HMS Ardent" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "HMS Acheron" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			# Destroyer Division 10
+			ship = { name = "HMS Achates" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }				
+			ship = { name = "HMS Anthony" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "HMS Arrow" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "HMS Amazon" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
+		}
+		task_force = {
+			name = "Portsmouth Force"
+			location = 9458 # Portsmouth
+			ship = { name = "HMS Suffolk" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			### 9th Destroyer Flotilla
+			# Destroyer Division 17
+			ship = { name = "HMS Skate" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "HMS Saladin" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "HMS Scimitar" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "HMS Sardonyx" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			# Destroyer Division 18
+			ship = { name = "HMS Ambuscade" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "HMS Winchester" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }	
+		}
+		task_force = {
+			name = "Western Approaches Force"
+			location = 540 # Plymouth
+			# Western Approaches Destroyer Division
+			ship = { name = "HMS Montrose" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Sturdy" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Valentine" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Vega" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Westminster" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			# 11th Destroyer Flotilla
+			ship = { name = "HMS Mackay" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			# Destroyer Division 21
+			ship = { name = "HMS Vanquisher" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Vanoc" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Walpole" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Winchelsea" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			# Destroyer Division 22
+			ship = { name = "HMS Versatile" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Vimiera" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Whirlwind" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "HMS Warwick" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+		}
+	}
+}
+instant_effect = {
+	### Ongoing Ship Production Jan 1 1936 ###
+	# CV&BB
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_carrier_1
+			creator = "ENG" 
+			version_name = "Ark Royal Class"
+		}
+		name = "HMS Ark Royal"
+		requested_factories = 1
+		progress = 0.90
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "ENG" 
+			version_name = "Nelson Class"
+		}
+		name = "HMS Nelson"
+		requested_factories = 1
+		progress = 0.95
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_carrier_1
+			creator = "ENG" 
+			version_name = "Ark Royal Class"
+		}
+		name = "HMS Illustrious"
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_1
+			creator = "ENG" 
+			version_name = "Nelson Class"
+		}
+		name = "HMS Rodney"
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	#CL Leander
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Leander Class"
+		}
+		name = "HMS Apollo"
+		requested_factories = 1
+		progress = 0.95
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Leander Class"
+		}
+		name = "HMS Amphion"
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Leander Class"
+		}
+		name = "HMS Penelope"
+		requested_factories = 1
+		progress = 0.15
+		amount = 1
+	}
+
+	#CL Town
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Town Class"
+		}
+		requested_factories = 1
+		progress = 0.5
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Town Class"
+		}
+		requested_factories = 1
+		progress = 0.5
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Town Class"
+		}
+		requested_factories = 1
+		progress = 0.25
+		amount = 1
+	}
+	# SS: S-class variant (x2) ("HMS Seawolf" "HMS Narwhal")
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_1
+			creator = "ENG" 
+			version_name = "S Class"
+		}
+		name = "HMS Seawolf"
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_1
+			creator = "ENG" 
+			version_name = "S Class"
+		}
+		name = "HMS Narwhal"
+		requested_factories = 1
+		progress = 0.40
+		amount = 1
+	}
+	#DD
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "HMS Gallant"
+		requested_factories = 1
+		progress = 0.90
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "HMS Garland"
+		requested_factories = 1
+		progress = 0.90
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "HMS Gipsy"
+		requested_factories = 1
+		progress = 0.70
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "HMS Glowworm"
+		requested_factories = 1
+		progress = 0.60
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "HMS Grafton"
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "HMS Grenade"
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "HMS Greyhound"
+		requested_factories = 1
+		progress = 0.50
+		amount = 1
+	}
+}

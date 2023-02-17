@@ -785,28 +785,28 @@ create_equipment_variant = {
 	icon = "GFX_GER_tactical_bomber1_medium"
 }
 create_equipment_variant = {
-		name = "RN 76"
-		type = small_plane_cas_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-            fixed_auxiliary_weapon_slot_1 = bomb_locks
-			engine_type_slot = engine_2_1x
-			special_type_slot_1 = dive_brakes_small
-		}
+	name = "RN 76"
+	type = small_plane_cas_airframe_1
+	modules = {
+		fixed_main_weapon_slot = bomb_locks
+        fixed_auxiliary_weapon_slot_1 = light_mg_2x
+		engine_type_slot = engine_2_1x
+		special_type_slot_1 = dive_brakes_small
 	}
+	icon = "GFX_GER_tactical_bomber1_medium"
+}
 	
 create_equipment_variant = {
-		name = "BW 54"
-		type = small_plane_naval_bomber_airframe_1
-		modules = {
-			fixed_main_weapon_slot = light_mg_2x
-			fixed_auxiliary_weapon_slot_1 = torpedo_mounting
-			engine_type_slot = engine_2_1x
-			special_type_slot_1 = lmg_defense_turret
-			special_type_slot_2 = floats
-		}
+	name = "BW 54"
+	type = small_plane_naval_bomber_airframe_1
+	modules = {
+		fixed_main_weapon_slot = torpedo_mounting
+		fixed_auxiliary_weapon_slot_1 = light_mg_2x
+		engine_type_slot = engine_2_1x
+		special_type_slot_1 = lmg_defense_turret
 	}
-}	
+	icon = "GFX_GER_tactical_bomber1_medium"
+}
 
 create_equipment_variant = {
 	name = "SF 51" 
@@ -823,11 +823,12 @@ create_equipment_variant = {
 	name = "SF 51T" 
 	type = cv_small_plane_naval_bomber_airframe_0
 	modules = {
-	    fixed_main_weapon_slot = light_mg_2x
-		fixed_auxiliary_weapon_slot_1 = torpedo_mounting
+	    fixed_main_weapon_slot = torpedo_mounting
+		fixed_auxiliary_weapon_slot_1 = light_mg_2x
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = empty
 	}
+	icon = "GFX_GER_tactical_bomber1_medium"
 }		
 
 

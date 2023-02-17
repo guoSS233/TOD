@@ -56,8 +56,8 @@ ideas = {
 			}
 		}
 		#农业现代化
-		HUN_nongyexiandahua_idea = {
-			name = HUN_nongyexiandahua_idea
+		HUN_nongyexiandahua = {
+			name = HUN_nongyexiandahua
 
 			picture = HUN_fadadenongyeguojia
 
@@ -72,8 +72,8 @@ ideas = {
 			}
 		}
 		#扶助农业
-		HUN_fuzhunongye_idea = {
-			name = HUN_fuzhunongye_idea
+		HUN_fuzhunongye = {
+			name = HUN_fuzhunongye
 
 			picture = HUN_nongyeguojia
 
@@ -88,8 +88,8 @@ ideas = {
 			}
 		}
 		#蚂蚁合作社
-		HUN_mayihezuoshe_idea = {
-			name = HUN_mayihezuoshe_idea
+		HUN_mayihezuoshe = {
+			name = HUN_mayihezuoshe
 
 			picture = HUN_nongyeguojia
 
@@ -103,8 +103,8 @@ ideas = {
 			}
 		}
 		#土地改革
-		HUN_tudigaige_idea = {
-			name = HUN_tudigaige_idea
+		HUN_tudigaige = {
+			name = HUN_tudigaige
 
 			picture = HUN_nongyeguojia
 
@@ -119,8 +119,8 @@ ideas = {
 			}
 		}
 		#解决贫困
-		HUN_jiejuepinkun_idea = {
-			name = HUN_jiejuepinkun_idea
+		HUN_jiejuepinkun = {
+			name = HUN_jiejuepinkun
 
 			picture = HUN_nongyeguojia
 
@@ -137,8 +137,8 @@ ideas = {
 			}
 		}
 		#繁荣的匈牙利
-		HUN_fanrongdexiongyali_idea = {
-			name = HUN_fanrongdexiongyali_idea
+		HUN_fanrongdexiongyali = {
+			name = HUN_fanrongdexiongyali
 
 			picture = HUN_nongyeguojia
 
@@ -157,8 +157,8 @@ ideas = {
 			}
 		}
 		#消费券
-		HUN_xiaofeiquan_idea = {
-			name = HUN_xiaofeiquan_idea
+		HUN_xiaofeiquan = {
+			name = HUN_xiaofeiquan
 
 			picture = HUN_xiaofeiquan
 
@@ -174,8 +174,8 @@ ideas = {
 			}
 		}
 		#工业技术研究所
-		HUN_gongyejishuyanjiusuo_idea = {
-			name = HUN_gongyejishuyanjiusuo_idea
+		HUN_gongyejishuyanjiusuo = {
+			name = HUN_gongyejishuyanjiusuo
 
 			picture = HUN_nongyeguojia
 
@@ -190,8 +190,8 @@ ideas = {
 			}
 		}
 		#农业发展研究所
-		HUN_nongyefazhanyanjiusuo_idea = {
-			name = HUN_nongyefazhanyanjiusuo_idea
+		HUN_nongyefazhanyanjiusuo = {
+			name = HUN_nongyefazhanyanjiusuo
 
 			picture = HUN_nongyeguojia
 
@@ -312,8 +312,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = -0.05
-				consumer_goods_factor = -0.05
+				stability_factor = 0.05
+				consumer_goods_factor = 0.05
 				industrial_capacity_factory = 0.1
 			}
 		}
@@ -328,8 +328,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_factor = 0.05
-				consumer_goods_factor = 0.05
+				stability_factor = -0.05
+				consumer_goods_factor = -0.05
 				industrial_capacity_factory = 0.1
 				conscription_factor = 0.1
 			}
@@ -364,7 +364,7 @@ ideas = {
 
 			modifier = {
 				stability_factor = -0.05
-				consumer_goods_factor = -0.05
+				consumer_goods_factor = -0.03
 			}
 		}
 		#教育平等
@@ -398,9 +398,24 @@ ideas = {
 				consumer_goods_factor = 0.05
 			}
 		}
+		#土地改革
+		HUN_tudigaige = {
+			name = HUN_tudigaige
+
+			picture = HUN_fangshou
+
+			allowed = { original_tag = HUN }
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				consumer_goods_factor = -0.05
+			}
+		}
 		#帮助贫农
-		HUN_bangzhupinnong = {
-			name = HUN_bangzhupinnong
+		HUN_bangzhu = {
+			name = HUN_bangzhu
 
 			picture = HUN_fangshou
 
@@ -417,8 +432,8 @@ ideas = {
 			}
 		}
 		#打击地主
-		HUN_dajidizhu = {
-			name = HUN_dajidizhu
+		HUN_daji = {
+			name = HUN_daji
 
 			picture = HUN_fangshou
 
@@ -448,6 +463,7 @@ ideas = {
 				MONTHLY_POPULATION = 0.1
 			}
 		}
+		#防守
 		HUN_fangshou = {
 			name = HUN_fangshou
 
@@ -541,8 +557,8 @@ ideas = {
 			removal_cost = -1
 
 			modifier = {
-				stability_weekly = -0.03
-				political_power_factor = -0.1
+				stability_weekly = -0.003
+				political_power_factor = 0.1
 			}
 		}
 		#民主思想

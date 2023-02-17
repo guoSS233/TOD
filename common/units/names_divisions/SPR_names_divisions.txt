@@ -1,0 +1,291 @@
+#西班牙共和军
+SPR_INF_01 = 
+{
+	name = "Republican Infantry"
+
+	for_countries = { SPR }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%da División de Infantería"
+
+	ordered =
+	{
+		1 = { "%da División de Infantería" }
+		2 = { "%da División de Infantería" }
+		3 = { "%da División de Infantería" }
+		4 = { "%da División de Infantería" }
+		5 = { "%da División de Infantería" }
+		6 = { "%da División de Infantería" }
+		7 = { "%da División de Infantería" }
+		8 = { "%da División de Infantería" }
+		9 = { "%da División de Infantería" }
+		10 = { "%da División de Infantería" }
+		11 = { "%da División de Infantería" }
+		12 = { "%da División de Infantería" }
+		13 = { "%da División de Infantería" }
+		14 = { "%da División de Infantería" }
+		15 = { "%da División de Infantería" }
+		16 = { "%da División de Infantería" }
+		17 = { "%da División de Infantería" }
+		18 = { "%da División de Infantería" }
+		19 = { "%da División de Infantería" }
+		20 = { "%da División de Infantería" }		
+	}
+}
+
+#共和山地旅
+SPR_MNT_01 = 
+{
+	name = "Mountain Division"
+
+	for_countries = { SPR }
+
+	can_use = { always = yes }
+
+	division_types = { "mountaineers" }
+
+	fallback_name = "%da División de Montaña"
+
+	ordered =
+	{
+		1 = { "%da División de Montaña" }
+		2 = { "%da División de Montaña" }
+		3 = { "%da División de Montaña" }
+		4 = { "%da División de Montaña" }
+		5 = { "%da División de Montaña" }
+		6 = { "%da División de Montaña" }
+		7 = { "%da División de Montaña" }
+		8 = { "%da División de Montaña" }
+		9 = { "%da División de Montaña" }
+		10 = { "%da División de Montaña" }
+	}
+}
+
+SPR_CAV_01 = 
+{
+	name = "Cavalry Division"
+
+	for_countries = { SPR }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SPR_INF_01 }
+
+	fallback_name = "%da División de Caballería"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%da División de Caballería" }
+		2 = { "%da División de Caballería" }
+		3 = { "%da División de Caballería" }
+		4 = { "%da División de Caballería" }
+		5 = { "%da División de Caballería" }
+		6 = { "%da División de Caballería" }
+		7 = { "%da División de Caballería" }
+		8 = { "%da División de Caballería" }
+		9 = { "%da División de Caballería" }
+		10 = { "%da División de Caballería" }
+	}
+}
+
+SPR_MOT_01 = 
+{
+	name = "Motorized Division"
+
+	for_countries = { SPR }
+
+	can_use = { always = yes }
+
+	division_types = { "motorized" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SPR_INF_01 }
+
+	fallback_name = "%da División Motorizada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%da División Motorizada" }
+		2 = { "%da División Motorizada" }
+		3 = { "%da División Motorizada" }
+		4 = { "%da División Motorizada" }
+		5 = { "%da División Motorizada" }
+		6 = { "%da División Motorizada" }
+		7 = { "%da División Motorizada" }
+		8 = { "%da División Motorizada" }
+		9 = { "%da División Motorizada" }
+		10 = { "%da División Motorizada" }
+	}
+}
+
+SPR_MEC_01 = 
+{
+	name = "Mechanized Division"
+
+	for_countries = { SPR }
+
+	can_use = { always = yes }
+
+	division_types = { "mechanized" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SPR_INF_01 }
+
+	fallback_name = "%da División Mecanizada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%da División Mecanizada" }
+		2 = { "%da División Mecanizada" }
+		3 = { "%da División Mecanizada" }
+		4 = { "%da División Mecanizada" }
+		5 = { "%da División Mecanizada" }
+		6 = { "%da División Mecanizada" }
+		7 = { "%da División Mecanizada" }
+		8 = { "%da División Mecanizada" }
+		9 = { "%da División Mecanizada" }
+		10 = { "%da División Mecanizada" }
+	}
+}
+
+SPR_ARM_01 = 
+{
+	name = "Armored Division"
+
+	for_countries = { SPR }
+
+	can_use = { always = yes }
+
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SPR_INF_01 }
+
+	fallback_name = "%da División Blindada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%da Div. Blindada 'Brunete'" }
+		2 = { "%da División Blindada" }
+		3 = { "%da División Blindada" }
+		4 = { "%da División Blindada" }
+		5 = { "%da División Blindada" }
+		6 = { "%da División Blindada" }
+		7 = { "%da División Blindada" }
+		8 = { "%da División Blindada" }
+		9 = { "%da División Blindada" }
+		10 = { "%da División Blindada" }
+	}
+}
+
+SPR_PAR_01 = 
+{
+	name = "Airborne Division"
+
+	for_countries = { SPR }
+
+	can_use = { always = yes }
+
+	division_types = { "paratrooper" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SPR_INF_01 }
+
+	fallback_name = "%da División Aerotransportada"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%da División Aerotransportada" }
+		2 = { "%da División Aerotransportada" }
+		3 = { "%da División Aerotransportada" }
+		4 = { "%da División Aerotransportada" }
+		5 = { "%da División Aerotransportada" }
+		6 = { "%da División Aerotransportada" }
+		7 = { "%da División Aerotransportada" }
+		8 = { "%da División Aerotransportada" }
+		9 = { "%da División Aerotransportada" }
+		10 = { "%da División Aerotransportada" }
+	}
+}
+
+SPR_MAR_01 = 
+{
+	name = "Marine Division"
+
+	for_countries = { SPR }
+
+	can_use = { always = yes }
+
+	division_types = { "marine" }
+
+	# Number reservation system will tie to another group.
+	#link_numbering_with = { SPR_INF_01 }
+
+	fallback_name = "%da Div. de Infantería de Marina"
+
+	# Names with numbers (only one number per entry). 
+	# It's okay to have gaps in numbering.
+	ordered =
+	{
+		1 = { "%da Div. de Infantería de Marina" }
+		2 = { "%da Div. de Infantería de Marina" }
+		3 = { "%da Div. de Infantería de Marina" }
+		4 = { "%da Div. de Infantería de Marina" }
+		5 = { "%da Div. de Infantería de Marina" }
+		6 = { "%da Div. de Infantería de Marina" }
+		7 = { "%da Div. de Infantería de Marina" }
+		8 = { "%da Div. de Infantería de Marina" }
+		9 = { "%da Div. de Infantería de Marina" }
+		10 = { "%da Div. de Infantería de Marina" }
+	}
+}
+
+#西班牙王国军
+KSN_INF_01 = 
+{
+	name = "Nationalist Infantry"
+
+	for_countries = { KSN }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%da División de Infantería"
+
+	ordered =
+	{
+		1 = { "%da División de Infantería" }
+		2 = { "%da División de Infantería" }
+		3 = { "%da División de Infantería" }
+		4 = { "%da División de Infantería" }
+		5 = { "%da División de Infantería" }
+		6 = { "%da División de Infantería" }
+		7 = { "%da División de Infantería" }
+		8 = { "%da División de Infantería" }
+		9 = { "%da División de Infantería" }
+		10 = { "%da División de Infantería" }
+		11 = { "%da División de Infantería" }
+		12 = { "%da División de Infantería" }
+		13 = { "%da División de Infantería" }
+		14 = { "%da División de Infantería" }
+		15 = { "%da División de Infantería" }
+		16 = { "%da División de Infantería" }
+		17 = { "%da División de Infantería" }
+		18 = { "%da División de Infantería" }
+		19 = { "%da División de Infantería" }
+		20 = { "%da División de Infantería" }		
+	}
+}

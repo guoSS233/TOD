@@ -5,6 +5,7 @@ tags={
 }
 name="TOD-kanglongyouhui"
 supported_version="1.12.*"
+replace_path="common/autonomous_states"
 replace_path="common/countries"
 replace_path="common/country_tags"
 replace_path="common/state_category"
@@ -18,4 +19,8 @@ replace_path="map/strategicregions"
 replace_path="map/supplyareas"
 replace_path="localisation"
 replace_path="gfx/loadingscreen"
+
+
+replace_path="common/on_actions"
 path="mod/TOD"
+

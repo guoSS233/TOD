@@ -1,0 +1,362 @@
+division_template = { 
+	name = "Divisione di Fanteria" 
+	division_names_group = ITA_INF_01 
+
+	
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = { 
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+}#步兵师
+
+division_template = { 
+	name = "Divisione Alpina" 
+	division_names_group = ITA_MNT_01 
+
+	regiments = { 
+		mountaineers = { x = 0 y = 0 }												# (elite) Alpini Regiment
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	support = { 
+		engineer = { x = 0 y = 0 }
+		artillery = { x = 0 y = 1 }
+	}
+
+	priority = 2 
+}#山地师
+
+division_template = { 
+	name = "Divisione Celere" 
+	division_names_group = ITA_CAV_02 
+
+	regiments = { 
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		light_armor = { x = 2 y = 0 }												
+		light_armor = { x = 2 y = 1 }
+	}
+	priority = 2 
+}#装甲师
+
+division_template = { 
+	name = "Reggimento di Cavalleria" 
+	division_names_group = ITA_CAV_01 
+
+	regiments = { 
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+}#骑兵师
+
+division_template = { 
+	name = "Divisione Coloniale" 
+	division_names_group = ITA_COL_01
+	override_model = ITA_infantry_alt_1_entity
+	template_counter = 67
+
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+	}
+
+	priority = 0 
+}#殖民地驻扎师
+
+
+
+####### OOB #######
+units = {
+	
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 11584 
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 6780 
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 6788 
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 6973 
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 9907 
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 925 
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 9904
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+			division_name = {
+				is_name_ordered = yes
+				name_order = 8
+			}
+			location = 6626
+			division_template = "Divisione di Fanteria"
+			start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = 11773
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+}
+	division = {   	
+		division_name = {
+			is_name_ordered = yes
+			name_order = 10
+	}
+		location = 10074
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+			name_order = 11
+	}
+		location = 11726
+		division_template = "Divisione di Fanteria"
+		start_experience_factor = 0.3 
+}
+division = {  
+	division_name = {
+		is_name_ordered = yes
+		name_order = 12
+}
+	location = 11564
+	division_template = "Divisione di Fanteria"
+	start_experience_factor = 0.3 
+}
+division = {  
+	division_name = {
+		is_name_ordered = yes
+		name_order = 13
+}
+	location = 3924
+	division_template = "Divisione di Fanteria"
+	start_experience_factor = 0.3 
+}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 3657
+		division_template = "Divisione Alpina"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 9613
+		division_template = "Divisione Alpina"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 11861
+		division_template = "Divisione Alpina"
+		start_experience_factor = 0.3 
+	}
+
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 9904
+		division_template = "Divisione Celere"
+		start_experience_factor = 0.3 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 9904
+		division_template = "Divisione Celere"
+		start_experience_factor = 0.1 
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 819
+		division_template = "Reggimento di Cavalleria"
+		start_experience_factor = 0.1
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 11833
+		division_template = "Reggimento di Cavalleria"
+		start_experience_factor = 0.1
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 1130
+		division_template = "Divisione Coloniale"
+		start_experience_factor = 0.1
+	}
+	division = {  
+		division_name = {
+			is_name_ordered = yes
+		}
+		location = 1149
+		division_template = "Divisione Coloniale"
+		start_experience_factor = 0.2
+	}
+
+	#division = { #Somlia Dubats (Somali Irregular Infantry)
+	#	division_name = {
+	#		is_name_ordered = yes
+	#		name_order = 1
+	#	} 
+	#	location = 1964 
+	#	division_template = "Banda Irregolare Somala"
+	#	start_experience_factor = 0.2
+	#	start_equipment_factor = 0.7
+	#	force_equipment_variants = { infantry_equipment_0 = { owner = "ITA" }}
+	#}
+}
+
+
+
+
+
+
+####### Starting Production Queue #######
+instant_effect = { 
+	if = { 
+		limit = { is_tutorial = no } 
+
+		##### Equipments #####
+		add_equipment_production = { 
+			equipment = { 
+				type = infantry_equipment_1 
+				creator = "ITA" 
+			} 
+
+			requested_factories = 5
+			progress = 0.1 
+			efficiency = 50 
+		} 
+
+		add_equipment_production = { 
+			equipment = { 
+				type = support_equipment_1 
+				creator = "ITA" 
+			} 
+
+			requested_factories = 1 
+			progress = 0.3 
+			efficiency = 50 
+		} 
+
+		add_equipment_production = { 
+			equipment = { 
+				type = artillery_equipment_1
+				creator = "ITA" 
+			} 
+
+			requested_factories = 2
+			progress = 0.3 
+			efficiency = 50 
+		} 
+
+		add_equipment_production = { 
+			equipment = { 
+				type = light_tank_chassis_1
+				version_name = "L3/35"
+				creator = "ITA" 
+			} 
+
+			requested_factories = 1 
+			progress = 0.4 
+			efficiency = 50 
+		} 
+
+		add_equipment_production = { 
+			equipment = { 
+				type = motorized_equipment_1 
+				creator = "ITA" 
+			} 
+
+			requested_factories = 2 
+			progress = 0.4 
+			efficiency = 50 
+		} 
+	}
+} 

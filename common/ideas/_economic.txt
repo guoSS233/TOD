@@ -44,6 +44,10 @@ ideas = {
 			cost = 150
 			removal_cost = -1
 
+			available = {
+				NOT = { has_idea = SPR_RF_Fenglie }
+			}
+
 			modifier = {
 				consumer_goods_factor = 0.35
 				production_speed_industrial_complex_factor = -0.3
@@ -104,6 +108,10 @@ ideas = {
 			cost = 150
 			removal_cost = -1
 
+			available = {
+				NOT = { has_idea = SPR_RF_Fenglie }
+			}
+
 			modifier = {
 				consumer_goods_factor = 0.25
 				production_speed_arms_factory_factor = 0.1
@@ -128,6 +136,7 @@ ideas = {
 
 
 			available = {
+				NOT = { has_idea = SPR_RF_Fenglie }
 				has_war_support > 0.5
 				OR = {
 					has_government = national_corporatism
@@ -194,6 +203,7 @@ ideas = {
 
 
 			available = {
+				NOT = { has_idea = SPR_RF_Fenglie }
 				has_war = yes
 				has_war_support > 0.8
 				any_enemy_country = {
@@ -330,13 +340,6 @@ ideas = {
 		free_trade = {
 
 			available = {
-				if = {
-					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
-				}
 			}
 
 			cost = 150
@@ -364,6 +367,10 @@ ideas = {
 
 			cost = 150
 			removal_cost = -1
+
+			available = {
+				NOT = { has_idea = SPR_RF_Fenglie }
+			}
 
 			modifier = {
 				min_export = 0.5
@@ -394,6 +401,7 @@ ideas = {
 
 		limited_exports = {
 			available = {
+				NOT = { has_idea = SPR_RF_Fenglie }
 				OR = {
 					AND = {
 						OR = {
@@ -474,6 +482,7 @@ ideas = {
 
 
 			available = {
+				NOT = { has_idea = SPR_RF_Fenglie }
 				has_war = yes
 				OR = {
 					has_government = national_corporatism
