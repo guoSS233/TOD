@@ -1,0 +1,65 @@
+ideas = {    
+	country = {
+		#龙之忠犬
+		KOR_longzhi_zhongquan = {
+			picture = zan_wu_tu_pian
+			modifier = {
+				political_power_gain = 0.2
+				stability_factor = 0.2
+				research_speed_factor = 0.05
+				conscription_factor = 0.05
+				custom_modifier_tooltip = wufaqiehuanfalv
+				custom_modifier_tooltip = yumngtigaoguanxi
+			}
+		}
+		#朝业之国
+		KOR_chaoye_zhiguo = {
+			picture = zan_wu_tu_pian
+			modifier = {
+				production_factory_max_efficiency_factor = 0.15
+				consumer_goods_factor = 0.05
+				weekly_manpower = -50
+				min_export = 0.3
+				local_resources_factor = 0.1
+			}
+		}
+		#财荒的冲击
+		KOR_caihuang_chongji = {
+			picture = zan_wu_tu_pian
+			modifier = {
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.1
+			}
+		}
+		#军警合流
+		KOR_junjing_heliu = {
+			picture = zan_wu_tu_pian
+			modifier = {
+				army_org_factor = 0.05
+				resistance_growth = -0.5
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+		#釜马事态
+		KOR_fuma_shitai = {
+			picture = zan_wu_tu_pian
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				custom_modifier_tooltip = qingshang_fjsq
+			}
+		}
+		#工人罢工
+		KOR_gongren_bagong = {
+			picture = zan_wu_tu_pian
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				custom_modifier_tooltip = xianjing_qingjin_fjsq
+				industrial_complex_factory = -0.2
+				production_speed_buildings_factor = -0.1
+			}
+		}
+	}
+}

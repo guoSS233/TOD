@@ -1,33 +1,55 @@
-﻿capital = 525
+﻿recruit_character = KOR_FengHuafu
+recruit_character = KOR_LiJingji
+
+recruit_character = KOR_ZhangYunong 
+
+capital = 525
 
 oob = "empty"
 
 set_politics = {
-	ruling_party = authoritarian_oligarchy
+	ruling_party = conservative_democracy
 	last_election = "1912.6.15"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	national_corporatism = 10
-	despotism = 24
-	authoritarian_oligarchy = 36
-	conservative_democracy = 5
-	liberal_democracy = 2
-	reformism = 12
-	socialism = 7
-	radicalism = 4
+	leader_despotism = 50
+	conservative_democracy = 23
+	authoritarian_oligarchy = 27
 }
 
-create_country_leader = {
-	name = "Lee Woo"
-	desc = "POLITICS_LEE_WOO_DESC"
-	picture = "Portrait_KOR_Lee_Woo.png"
-	expire = "1965.1.1"
-	ideology = authoritarian_oligarchy_subtype
-}
+
 
 add_ideas = {
 	AthCfc_type
+	KOR_longzhi_zhongquan #龙之忠犬
+	KOR_chaoye_zhiguo #朝业之国
+	KOR_caihuang_chongji #财荒的冲击
+	KOR_junjing_heliu #军警合流
+	KOR_fuma_shitai #釜马事态
+	KOR_gongren_bagong #工人罢工
+
 }
+add_opinion_modifier = {
+	target = MNG
+	modifier = KOR_longzhi_zhongquan
+}
+
+country_lock_all_division_template = yes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
