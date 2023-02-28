@@ -39,6 +39,15 @@ UKR_gaigechuchengdejundui = {
 	army_speed_factor = UKR_lujunsudu
 }
 
+#混乱的殖民地
+SPR_hunluanzhimingdi = {
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_military_industry
+	recruitable_population_factor = -1
+	local_factories = -1
+	local_building_slots_factor = -1
+	state_resources_factor = -1
+}
 asian_heart = {
 	enable = { always = yes }
 
@@ -128,4 +137,34 @@ Desolate_land = {
 	local_manpower = -0.5
 	local_resources = -0.25
 	global_building_slots_factor = -0.5
+}
+#精锐士兵
+HUN_jingruishibing = {
+	enable = { always = yes }
+	icon = GFX_modifiers_tur_traditionalist_sedition
+	army_attack_factor = HUN_lujungongji
+	army_defence_factor = HUN_lujunfangyu
+	army_speed_factor = HUN_lujunsudu
+	experience_loss_factor = HUN_shibingsunshi
+	experience_gain_army_factor = HUN_jingyanzengzhang
+	attrition = HUN_lujunsunhao
+	army_org_factor = HUN_lujunzuzhi
+	army_morale_factor = HUN_lujunhuifu
+	mountain = {
+		attack = HUN_shandi
+		defence = HUN_shandi
+	}
+	terrain_penalty_reduction = HUN_shiying
+	acclimatization_cold_climate_gain_factor = HUN_shiying
+	acclimatization_hot_climate_gain_factor = HUN_shiying
+}
+#匈牙利海军
+HUN_haijun = {
+	enable = { always = yes }
+	icon = GFX_modifiers_tur_traditionalist_sedition
+	naval_manufacturer_cost_factor = HUN_renyuan
+	industrial_capacity_dockyard = HUN_shebei
+	production_speed_dockyard_factor = HUN_haijunrenyuan
+	naval_training_xp_gain_factor = HUN_peixun
+	navy_training_xp_gain_factor = HUN_peixun
 }
