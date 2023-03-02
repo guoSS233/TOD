@@ -1,0 +1,285 @@
+capital = 16
+
+#军队编制
+
+oob = "oob"
+
+#基础设定
+
+set_stability = 0.6
+set_war_support = 0.53
+
+#政党比例
+
+set_politics = {
+	ruling_party = liberal_democracy
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	national_corporatism = 0
+	sacred_revivalism = 0
+	leader_despotism = 5
+	authoritarian_oligarchy = 0
+	conservative_democracy = 10
+	liberal_democracy = 65
+	consociationalism = 0
+	social_democrat = 15
+	agroindustrial_socialism = 0
+	moderate_socialism = 0
+	council_socialism = 0
+	vanguard_socialism = 5
+}
+
+#民族精神/内阁
+
+add_ideas = {
+	FRA_WW_shenglizhe
+	FRA_fubai
+	FRA_jingjibaquan
+	FRA_shilizhe
+	FRA_ziyou_dengta
+	FRA_deguo_shouwang
+	FRA_wangshi
+}
+
+set_variable = { FRA_tongzhangdu1 = -0.5 }
+set_variable = { FRA_tongzhangdu2 = -0.3 }
+set_variable = { FRA_tongzhangdu2 = -0.8 }
+
+add_ideas = {
+	civilian_economy
+	export_focus
+	volunteer_only
+}
+
+#政党领袖
+
+recruit_character = FRA_Edouard_Daladier
+recruit_character = FRA_Cachin_Marcel
+recruit_character = FRA_Francois_de_La_Rocque
+recruit_character = FRA_Andre_Leon_Blum
+recruit_character = FRA_Paul_Reynaud
+
+#傀儡
+if = {
+	limit = {
+		OR = {
+			has_dlc = "Together for Victory"
+			has_dlc = "Man the Guns"
+		}
+	}
+	set_autonomy = {
+		target = FWA
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = FEA
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = SYR
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = FTS
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = FCG
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = JOF
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = IOF
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}
+	set_autonomy = {
+		target = MOR
+		autonomous_state =  kr_default_puppet
+		freedom_level = 0.2
+	}	
+	else = {
+		puppet = FWA
+		puppet = FEA
+		puppet = FCG
+		puppet = JOF
+		puppet = AOF
+		puppet = IOF
+		puppet = MOR
+	}
+}
+
+#联盟
+create_faction = "洛迦勒公约"
+add_to_faction = FRA
+add_to_faction = ITA
+add_to_faction = SYR
+add_to_faction = IEA
+add_to_faction = KSN
+add_to_faction = CAN
+add_to_faction = RIN
+add_to_faction = SAX
+add_to_faction = BAV
+add_to_faction = DEN
+add_to_faction = POL
+add_to_faction = LAB
+add_to_faction = FWA
+add_to_faction = FEA
+add_to_faction = FCG
+add_to_faction = JOF
+add_to_faction = AOI
+add_to_faction = IOF
+add_to_faction = HYD
+add_to_faction = MSO
+add_to_faction = TAV
+add_to_faction = MOR
+add_to_faction = EGY
+add_to_faction = SHE
+add_to_faction = YEM
+add_to_faction = HAS
+
+#科技
+set_research_slots = 4
+# 基础
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_recon = 1
+	tech_mountaineers = 1
+	motorised_infantry = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	trench_warfare = 1
+	fleet_in_being = 1
+	fuel_silos = 1
+	fuel_refining = 1
+	basic_train = 1
+}
+# 陆军
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		basic_heavy_tank = 1
+		improved_light_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		armor_tech_1 = 1
+		engine_tech_1 = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	set_technology = {
+		armored_car1 = 1
+	}
+}
+# 海军
+if = {
+	limit = {
+		has_dlc = "Battle for the Bosporus"
+	}
+	set_technology = { camelry = 1 }
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+		set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		early_battlecruiser = 1
+		basic_battlecruiser = 1
+		early_carrier = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		basic_battery = 1
+		basic_heavy_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		basic_heavy_armor_scheme = 1
+		basic_cruiser_armor_scheme = 1
+		mtg_transport = 1
+		basic_dp_light_battery = 1
+		cruiser_submarines = 1
+	}
+}
+# 空军
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "FRA_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			aa_cannon_1 = 1
+			engines_1 = 1
+			engines_2 = 1
+			early_bombs = 1
+			aircraft_construction = 1
+			iw_small_airframe = 1
+			iw_medium_airframe = 1
+			iw_large_airframe = 1
+		}
+	else = {
+		set_air_oob = "FRA_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			naval_bomber1 = 1
+			cv_early_fighter = 1
+			cv_naval_bomber1 = 1
+			early_bomber = 1
+			tactical_bomber1 = 1
+			CAS1 = 1
+		}
+	}
+}
+
