@@ -91,7 +91,7 @@ focus_tree = {
 	#收紧媒体
 	focus = {
 		id = HUN_shoujinmeiti
-		icon = GFX_HUN_shoujinmeiti
+		icon = GFX_HUN_zhengzhigaige
 		prerequisite = { focus = HUN_zhunbei1936daxuan}
 		x = 22
 		y = 2
@@ -114,7 +114,7 @@ focus_tree = {
 	#蒂萨的身后事
 	focus = {
 		id = HUN_disadeshenhoushi
-		icon = GFX_HUN_disadeshenhoushi
+		icon = GFX_HUN_zhengzhigaige
 		prerequisite = {  focus =  HUN_fangkaimeiti focus =  HUN_shoujinmeiti}
 		x = 21
 		y = 3
@@ -292,6 +292,7 @@ focus_tree = {
 				set_country_flag = HUN_zuoyilianmenghuodeshengli
 			}
 			country_event = { id = TODHungary.8 }
+			remove_ideas = HUN_ziyoudechunfeng
 		}
 	}
 	#右翼的胜利
@@ -2359,7 +2360,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { custom_effect_tooltip }
+		completion_reward = { custom_effect_tooltip =  }
 	}
 	#后勤保障
 	focus = {
@@ -2796,7 +2797,6 @@ focus_tree = {
 		
 		completion_reward = { 
 			add_dynamic_modifier = HUN_chongfandayang
-			add_to_variable = { HUN_shebei = 0.1 }
 		 }
 	}
 	#招募海军人员
@@ -2817,6 +2817,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			custom_effect_tooltip = HUN.12.tt
 			add_to_variable = { HUN_renyuan = -0.25 }
 			add_to_variable = { HUN_haijunrenyuan = 0.1 }
 		 }
@@ -2912,6 +2913,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			custom_effect_tooltip = HUN.13.tt
 			add_to_variable = { HUN_peixun = 0.1 }
 		 }
 	}
