@@ -1,0 +1,55 @@
+ideas = {    
+	country = {
+        #靖难之师
+		XBJ_The_Army_of_Salvation = { 
+			picture = XBJ_The_Army_of_Salvation
+			modifier = {
+				army_org_factor = 0.1
+                army_speed_factor = 0.05
+                army_attack_factor = 0.1
+                army_defence_factor = 0.1
+                max_dig_in_factor = 0.1
+                custom_modifier_tooltip = XBJ_zhuanxing #随着靖难军转型成为一支大型普通军队，这个国家精神将被移除
+			}
+		}
+        #边塞将领与乡村勋贵
+        XBJ_The_Frontier_Generals_and_Rural_Junkers = { 
+			picture = XBJ_The_Frontier_Generals_and_Rural_Junkers
+			modifier = {
+				experience_gain_army = 0.1
+                army_chief_cost_factor = -0.15
+                planning_speed = -0.2
+                max_planning = 0.1
+                research_speed_factor = -0.25
+                political_power_factor = -0.25
+                weekly_manpower = -25
+                consumer_goods_factor = 0.15
+			}
+		}
+        #民族熔炉
+        XBJ_Multinational_Melting_Pot = { 
+			picture = XBJ_Multinational_Melting_Pot
+			modifier = {
+				political_power_factor = -0.25
+                consumer_goods_factor = 0.15
+                stability_factor = -0.1
+                war_support_factor = -0.1
+                conscription_factor = -0.3
+                non_core_manpower = -0.75
+                custom_modifier_tooltip = XBJ_maodun #如果矛盾得不到缓解，西域将会陷入动荡
+			}
+		}
+        #落后的地区
+        XBJ_Backward_Region = { 
+			picture = XBJ_Backward_Region
+			modifier = {
+                research_speed_factor = -0.3
+                production_factory_efficiency_gain_factor = -0.25
+                production_factory_max_efficiency_factor = -0.25
+                production_speed_buildings_factor = -0.25
+                local_resources_factor = -0.25
+                industry_repair_factor = -0.25
+			}
+		}
+    }
+}

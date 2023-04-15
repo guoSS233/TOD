@@ -1,15 +1,106 @@
 add_namespace = mng
-
-country_event = { # Black Monday hits America
+add_namespace = mngtext
+country_event = {
+	# Black Monday hits America
 	id = mng.2
 	title = mng.2.t
 	desc = mng.2.d
 	picture = GFX_tao_lun_jun_shi
-
 	fire_only_once = yes
 	is_triggered_only = yes
-
 	option = {
 		name = mng.2.a
+	}
+}
+
+country_event = {
+	# 西北军测试
+	id = mngtext.1
+	title = mngtext.1.t
+	desc = mngtext.1.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event mngtext.1"
+		XBJ = {
+			hidden_effect = {
+				add_state_core = 744
+				transfer_state = 744
+				add_state_core = 618
+				transfer_state = 618
+				add_state_core = 760
+				transfer_state = 760
+				add_state_core = 1193
+				transfer_state = 1193
+				add_state_core = 844
+				transfer_state = 844
+				add_state_core = 1128
+				transfer_state = 1128
+				add_state_core = 759
+				transfer_state = 759
+				add_state_core = 1130
+				transfer_state = 1130
+				add_state_core = 617
+				transfer_state = 617
+				add_state_core = 434
+				transfer_state = 434
+				add_state_core = 732
+				transfer_state = 732
+				add_state_core = 1209
+				transfer_state = 1209
+				add_state_core = 1113
+				transfer_state = 1113
+				add_state_core = 756
+				transfer_state = 756
+				add_state_core = 881
+				transfer_state = 881
+				add_state_core = 616
+				transfer_state = 616
+				add_state_core = 843
+				transfer_state = 843
+				add_state_core = 754
+				transfer_state = 754
+				add_state_core = 755
+				transfer_state = 755
+				add_state_core = 1210
+				transfer_state = 1210
+				add_state_core = 283
+				transfer_state = 283
+				add_state_core = 753
+				transfer_state = 753
+				add_state_core = 1116
+				transfer_state = 1116
+				add_state_core = 842
+				transfer_state = 842
+				add_state_core = 621
+				transfer_state = 621
+				add_state_core = 746
+				transfer_state = 746
+				add_state_core = 622
+				transfer_state = 622
+				add_state_core = 619
+				transfer_state = 619
+				add_state_core = 287
+				transfer_state = 287
+				add_state_core = 1129
+				transfer_state = 1129	
+				set_capital = {
+					state = 744
+				}
+			}
+		}
+	}
+	option = {
+		#测试
+		name = mngtext.1.a
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			XBJ = {
+				set_country_flag = XBJ_duli
+				change_tag_from = MNG
+			}
+		}
 	}
 }
