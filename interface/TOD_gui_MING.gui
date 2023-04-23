@@ -1,0 +1,33 @@
+@army_reform_x_pos = -2
+@army_reform_y_pos = -48
+guiTypes = {
+    containerWindowType = {
+        name = "ming_province_state_panel"
+        position = {x=462 y=478}
+        size = { width=152 height=60 }
+
+        iconType = {
+            name = "ming_province_state"
+            position = { x= 0 y = 0 }
+            spriteType = "GFX_sheng_panel"
+            frame = 1
+
+            pdx_tooltip = "ming_province_state_title"
+            pdx_tooltip_delayed = "ming_province_state_desc"
+        }
+
+        instantTextboxType = {
+            name = "ming_province_state_text"
+            position = { x = 55 y = 15 }
+            font = "loadscreen_header"
+            text = "ming_province_state_title"
+            maxWidth = 140
+            maxHeight = 40
+            fixedsize = yes
+            format =  centre
+
+            pdx_tooltip = "ming_province_state_title"
+            pdx_tooltip_delayed = "ming_province_state_desc"
+        }
+    }
+}

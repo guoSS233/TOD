@@ -83,7 +83,7 @@ country_event = {
 				add_state_core = 287
 				transfer_state = 287
 				add_state_core = 1129
-				transfer_state = 1129	
+				transfer_state = 1129
 				set_capital = {
 					state = 744
 				}
@@ -99,6 +99,100 @@ country_event = {
 		hidden_effect = {
 			XBJ = {
 				set_country_flag = XBJ_duli
+				change_tag_from = MNG
+			}
+		}
+	}
+}
+
+country_event = {
+	# 长江七省测试
+	id = mngtext.2
+	title = mngtext.2.t
+	desc = mngtext.2.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event mngtext.2"
+		GOS = {
+			hidden_effect = {
+				add_state_core = 613
+				transfer_state = 613
+				add_state_core = 808
+				transfer_state = 808
+				add_state_core = 824
+				transfer_state = 824
+				add_state_core = 1109
+				transfer_state = 1109
+				add_state_core = 823
+				transfer_state = 823
+				add_state_core = 606
+				transfer_state = 606
+				add_state_core = 825
+				transfer_state = 825
+				add_state_core = 749
+				transfer_state = 749
+				add_state_core = 620
+				transfer_state = 620
+				add_state_core = 1132
+				transfer_state = 1132
+				add_state_core = 602
+				transfer_state = 602
+				add_state_core = 596
+				transfer_state = 596
+				add_state_core = 1119
+				transfer_state = 1119
+
+				add_state_core = 750
+				transfer_state = 750
+
+				add_state_core = 822
+				transfer_state = 822
+
+				add_state_core = 806
+				transfer_state = 806
+
+				add_state_core = 807
+				transfer_state = 807
+
+				add_state_core = 1108
+				transfer_state = 1108
+
+				add_state_core = 598
+				transfer_state = 598
+
+				add_state_core = 600
+				transfer_state = 600
+
+				add_state_core = 816
+				transfer_state = 816
+
+				add_state_core = 1110
+				transfer_state = 1110
+
+				add_state_core = 815
+				transfer_state = 815
+
+				add_state_core = 812
+				transfer_state = 812
+
+				add_state_core = 811
+				transfer_state=811
+				set_capital = {
+					state = 613
+				}
+			}
+		}
+	}
+	option = {
+		#测试
+		name = mngtext.2.a
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			GOS = {
+				set_country_flag = GOS_duli
 				change_tag_from = MNG
 			}
 		}
