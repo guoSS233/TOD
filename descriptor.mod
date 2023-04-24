@@ -11,6 +11,7 @@ replace_path="common/country_tags"
 replace_path="common/state_category"
 replace_path="common/bookmarks"
 replace_path="common/ideologies"
+replace_path="common/national_focus"
 replace_path="events"
 replace_path="history/countries"
 replace_path="history/states"
@@ -20,7 +21,7 @@ replace_path="map/supplyareas"
 replace_path="localisation"
 replace_path="gfx/loadingscreen"
 
-
+picture="thumbnail.png"
 replace_path="common/on_actions"
 path="mod/TOD"
 

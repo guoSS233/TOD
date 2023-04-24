@@ -1,17 +1,83 @@
-characters={
-	FRA_Philippe_VIII={
-		name=FRA_Philippe_VIII
-		portraits={
-			civilian={
-				large="gfx/leaders/FRA/Portrait_FRA_Philippe_VIII.png"
+characters = {
+	#爱德华·达拉第
+	FRA_Edouard_Daladier = {
+		name = FRA_Edouard_Daladier
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/Portrait_FRA_Edouard_Daladier.png"
 			}
 		}
-		country_leader={
-			ideology=conservative_democracy_subtype
-			desc = "POLITICS_PHILIPPE_VIII_DESC"
-			traits={  }
-			expire="1965.1.1.1"
-			id=-1
+		country_leader = {
+			ideology = liberal_democracy_subtype
+			desc = "POLITICS_Edouard_Daladier_DESC"
+			traits = {
+				Yazi_Laohaoren
+			}
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	#马赛尔·加香
+	FRA_Cachin_Marcel = {
+		name = FRA_Cachin_Marcel
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/Portrait_FRA_Cachin_Marcel.png"
+			}
+		}
+		country_leader = {
+			ideology = vanguard_socialism_subtype
+			desc = "POLITICS_Cachin_Marcel_DESC"
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	#弗朗索瓦·德·拉·罗克
+	FRA_Francois_de_La_Rocque = {
+		name = FRA_Francois_de_La_Rocque
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/Portrait_FRA_Francois_de_La_Rocque.png"
+			}
+		}
+		country_leader = {
+			ideology = leader_despotism_subtype
+			desc = "POLITICS_Francois_de_La_Rocque_DESC"
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	#安德烈·莱昂·布鲁姆
+	FRA_Andre_Leon_Blum = {
+		name = FRA_Andre_Leon_Blum
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/Portrait_FRA_Andre_Leon_Blum.png"
+			}
+		}
+		country_leader = {
+			ideology = social_democrat_subtype
+			desc = "POLITICS_Andre_Leon_Blum_DESC"
+			traits = {
+				Wenjian_Laohaoren
+			}
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	#保罗·雷诺
+	FRA_Paul_Reynaud = {
+		name = FRA_Paul_Reynaud
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/FRA/Portrait_FRA_Paul_Reynaud.png"
+			}
+		}
+		country_leader = {
+			ideology = conservative_democracy_subtype
+			desc = "POLITICS_Paul_Reynaud_DESC"
+			expire = "1965.1.1.1"
+			id = -1
 		}
 	}
 }

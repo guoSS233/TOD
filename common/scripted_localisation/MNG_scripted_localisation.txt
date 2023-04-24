@@ -1,0 +1,989 @@
+##省份系统
+defined_text = {
+	name = MingGetStateProvinceTitle
+	##顺天
+	text = {# 河南省
+		trigger = {
+			OR = {
+				state = 836 #豫北
+				state = 607 #豫东
+				state = 1118 #河洛
+				state = 835 #豫西
+				state = 834 #豫南
+			}
+		}
+		localization_key = henan_province_state
+	}
+	text = {# 河北省
+		trigger = {
+			OR = {
+				state = 1111 #冀中
+				state = 614 #冀南
+				state = 611 #宣化
+				state = 839 #冀北
+				state = 609 #冀东
+				state = 612 #察哈尔
+			}
+		}
+		localization_key = hebei_province_state
+	}
+	text = {# 山东省
+		trigger = {
+			OR = {
+				state = 597 #鲁西
+				state = 743 #胶东
+				state = 838 #鲁北
+				state = 837 #鲁南
+			}
+		}
+		localization_key = shandong_province_state
+	}
+	text = {# 山西省
+		trigger = {
+			OR = {
+				state = 1131 #晋西
+				state = 615 #晋中
+				state = 841 #晋南
+				state = 840 #雁北
+				state = 1211 #归化
+			}
+		}
+		localization_key = shanxi_province_state
+	}
+	text = {# 顺天府
+		trigger = {
+			state = 608 #顺天
+		}
+		localization_key = shuntian_province_state
+	}
+	##七省
+	text = {# 应天府
+		trigger = {
+			state = 613 #应天
+		}
+		localization_key = yingtian_province_state
+	}
+	text = {# 太仓府
+		trigger = {
+			state = 808 #太仓
+		}
+		localization_key = taicang_province_state
+	}
+	text = {# 湖北省
+		trigger = {
+			OR = {
+				state = 824 #鄂北
+				state = 823 #鄂中
+				state = 825 #鄂西
+				state = 620 #鄂东
+			}
+		}
+		localization_key = hubei_province_state
+	}
+	text = {# 湖南省
+		trigger = {
+			OR = {
+				state = 602 #湘北
+				state = 1119 #湘中
+				state = 750 #湘西
+				state = 822 #湘南
+			}
+		}
+		localization_key = hunan_province_state
+	}
+	text = {# 江苏省
+		trigger = {
+			OR = {
+				state = 806 #镇常
+				state = 807 #苏松
+				state = 1108 #扬越
+				state = 598 #淮阳
+				state = 809 #徐海
+			}
+		}
+		localization_key = jiangsu_province_state
+	}
+	text = {# 江西省
+		trigger = {
+			OR = {
+				state = 600 #赣北
+				state = 816 #赣东
+				state = 1110 #赣西
+				state = 815 #赣南
+			}
+		}
+		localization_key = jiangxi_province_state
+	}
+	text = {# 浙江省
+		trigger = {
+			OR = {
+				state = 812 #浙东
+				state = 811 #浙北
+				state = 1132 #浙中
+				state = 596 #浙南
+			}
+		}
+		localization_key = zhejiang_province_state
+	}
+	text = {# 安徽省
+		trigger = {
+			OR = {
+				state = 810 #皖北
+				state = 606 #皖中
+				state = 1109 #皖西
+				state = 749 #皖南
+			}
+		}
+		localization_key = anhui_province_state
+	}
+	##东北
+	text = {# 镇东省
+		trigger = {
+			OR = {
+				state = 409 #北海
+				state = 1112 #伯力
+				state = 408 #镇东
+			}
+		}
+		localization_key = zhendong_province_state
+	}
+	text = {# 吉林省
+		trigger = {
+			OR = {
+				state = 848 #延吉
+				state = 847 #吉林
+				state = 849 #林州
+				state = 717 #桦川
+				state = 328 #长春
+			}
+		}
+		localization_key = jilin_province_state
+	}
+	text = {# 黑龙江省
+		trigger = {
+			OR = {
+				state = 714 #龙江
+				state = 850 #汤原
+				state = 761 #兴安
+				state = 1126 #雅鲁
+				state = 1123 #呼伦
+				state = 715 #科尔沁
+			}
+		}
+		localization_key = heilongjiang_province_state
+	}
+	text = {# 辽东省
+		trigger = {
+			OR = {
+				state = 846 #辽北
+				state = 845 #辽中
+				state = 716 #辽西
+				state = 745 #辽南
+			}
+		}
+		localization_key = liaodong_province_state
+	}
+	text = {# 辽西省
+		trigger = {
+			OR = {
+				state = 610 #昭乌达
+				state = 1218 #通辽
+			}
+		}
+		localization_key = liaoxi_province_state
+	}
+	##广东
+	text = {# 宝安府
+		trigger = {
+			state = 326 #太仓
+		}
+		localization_key = baoan_province_state
+	}
+	text = {# 广东省
+		trigger = {
+			OR = {
+				state = 591 #海南
+				state = 592 #广州
+				state = 729 #香江
+				state = 1115 #粤中
+				state = 817 #粤北
+				state = 593 #粤东
+				state = 1114 #潮汕
+				state = 728 #粤西
+			}
+		}
+		localization_key = guangdong_province_state
+	}
+	text = {# 广西省
+		trigger = {
+			OR = {
+				state = 594 #桂南
+				state = 821 #桂西
+				state = 599 #桂北
+				state = 818 #廉钦
+				state = 1194 #谅山
+			}
+		}
+		localization_key = guangxi_province_state
+	}
+	text = {# 福建省
+		trigger = {
+			OR = {
+				state = 595 #闽西
+				state = 813 #闽东
+				state = 814 #闽南
+
+			}
+		}
+		localization_key = fujian_province_state
+	}
+	text = {# 台湾省
+		trigger = {
+			OR = {
+				state = 524 #北台湾
+				state = 1117 #南台湾
+			}
+		}
+		localization_key = taiwan_province_state
+	}
+	##西北军
+	text = {# 陕西省
+		trigger = {
+			OR = {
+				state = 621 #朔方
+				state = 746 #云中
+				state = 622 #陕北
+				state = 1116 #陕中
+				state = 744 #关中
+				state = 842 #汉中
+			}
+		}
+		localization_key = shaanxi_province_state
+	}
+	text = {# 青海省
+		trigger = {
+			OR = {
+				state = 604 #安多
+				state = 755 #海西
+				state = 754 #海东
+
+			}
+		}
+		localization_key = qinghai_province_state
+	}
+	text = {# 甘肃省
+		trigger = {
+			OR = {
+				state = 283 #陇东
+				state = 1113 #玉门
+				state = 756 #河西
+				state = 1210 #陇右
+				state = 753 #陇南
+				state = 843 #宁夏
+				state = 616 #天沙
+				state = 881 #内蒙戈壁
+			}
+		}
+		localization_key = gansu_province_state
+	}
+	text = {# 西域都护府
+		trigger = {
+			OR = {
+				state = 618 #庭州
+				state = 844 #伊犁
+				state = 1209 #热海
+				state = 732 #碎叶
+				state = 619 #蒲犁
+				state = 287 #和阗
+				state = 1129 #且末
+				state = 759 #若羌
+				state = 760 #哈密
+				state = 1193 #迪化
+				state = 617 #轮台
+				state = 1128 #焉耆
+				state = 434 #塔克拉玛干
+			}
+		}
+		localization_key = xiyu_province_state
+	}
+	##川渝
+	text = {# 四川省
+		trigger = {
+			OR = {
+				state = 832 #川北
+				state = 831 #川中
+				state = 751 #川南
+				state = 752 #川边
+			}
+		}
+		localization_key = sichuan_province_state
+	}
+	text = {# 重庆府
+		trigger = {
+			OR = {
+				state = 830 #重庆
+				state = 605 #川东
+			}
+		}
+		localization_key = chongqing_province_state
+	}
+	text = {# 西康省
+		trigger = {
+			OR = {
+				state = 601 #康巴
+				state = 1107 #甘孜
+			}
+		}
+		localization_key = xikang_province_state
+	}
+	##西南
+	text = {# 贵州省
+		trigger = {
+			OR = {
+				state = 603 #黔南
+				state = 1145 #黔西
+				state = 748 #黔北
+			}
+		}
+		localization_key = guizhou_province_state
+	}
+	text = {# 云南省
+		trigger = {
+			OR = {
+				state = 325 #滇北
+				state = 1133 #滇中
+				state = 747 #滇西
+				state = 851 #怒江
+				state = 866 #景洪
+				state = 828 #滇南
+			}
+		}
+		localization_key = yunnan_province_state
+	}
+	##蒙古
+	text = {# 蒙古地方司
+		trigger = {
+			OR = {
+				state = 329 #巴音图门
+				state = 330 #库伦
+				state = 880 #外蒙戈壁
+				state = 1208 #金山
+				state = 1121 #巴彦
+				state = 1120 #唐努乌梁
+				state = 1124 #燕然
+				state = 654 #柯布多
+				state = 1125 #漠北
+				state = 1217 #东荒
+			}
+		}
+		localization_key = mongolia_province_state
+	}
+	##西藏
+	text = {# 乌斯藏都司
+		trigger = {
+			OR = {
+				state = 322 #羌塘
+				state = 787 #拉达克
+				state = 758 #阿里
+				state = 1127 #日喀则
+				state = 757 #乌斯藏
+				state = 1106 #藏南
+			}
+		}
+		localization_key = tibet_province_state
+	}
+	##满剌加
+	text = {# 满剌加省
+		trigger = {
+			OR = {
+				state = 1186 #西满剌加
+				state = 336 #东满剌加
+				state = 1199 #西南满剌加
+				state = 1198 #巴生
+				state = 1200 #新山
+			}
+		}
+		localization_key = manlajia_province_state
+	}
+	text = {# 星洲府
+		trigger = {
+			state = 819 #星洲
+		}
+		localization_key = xingzhou_province_state
+	}
+	##吕宋
+	text = {# 吕宋省
+		trigger = {
+			OR = {
+				state = 623 #北吕宋
+				state = 327 #中吕宋
+				state = 624 #金银岛
+				state = 1201 #吕宋城
+				state = 1202 #南吕宋
+				state = 626 #巴拉望
+				state = 628 #宿务
+				state = 625 #萨马
+				state = 627 #棉兰老岛
+			}
+		}
+		localization_key = lvsong_province_state
+	}
+}
+
+defined_text = {
+	name = MingGetStateProvinceDesc
+	##顺天
+	text = {# 河南省
+		trigger = {
+			OR = {
+				state = 836 #豫北
+				state = 607 #豫东
+				state = 1118 #河洛
+				state = 835 #豫西
+				state = 834 #豫南
+			}
+		}
+		localization_key = henan_province_state_desc
+	}
+	text = {# 河北省
+		trigger = {
+			OR = {
+				state = 1111 #冀中
+				state = 614 #冀南
+				state = 611 #宣化
+				state = 839 #冀北
+				state = 609 #冀东
+				state = 612 #察哈尔
+			}
+		}
+		localization_key = hebei_province_state_desc
+	}
+	text = {# 山东省
+		trigger = {
+			OR = {
+				state = 597 #鲁西
+				state = 743 #胶东
+				state = 838 #鲁北
+				state = 837 #鲁南
+			}
+		}
+		localization_key = shandong_province_state_desc
+	}
+	text = {# 山西省
+		trigger = {
+			OR = {
+				state = 1131 #晋西
+				state = 615 #晋中
+				state = 841 #晋南
+				state = 840 #雁北
+				state = 1211 #归化
+			}
+		}
+		localization_key = shanxi_province_state_desc
+	}
+	text = {# 顺天府
+		trigger = {
+			state = 608 #顺天
+		}
+		localization_key = shuntian_province_state_desc
+	}
+	##七省
+	text = {# 应天府
+		trigger = {
+			state = 613 #应天
+		}
+		localization_key = yingtian_province_state_desc
+	}
+	text = {# 太仓府
+		trigger = {
+			state = 808 #太仓
+		}
+		localization_key = taicang_province_state_desc
+	}
+	text = {# 湖北省
+		trigger = {
+			OR = {
+				state = 824 #鄂北
+				state = 823 #鄂中
+				state = 825 #鄂西
+				state = 620 #鄂东
+			}
+		}
+		localization_key = hubei_province_state_desc
+	}
+	text = {# 湖南省
+		trigger = {
+			OR = {
+				state = 602 #湘北
+				state = 1119 #湘中
+				state = 750 #湘西
+				state = 822 #湘南
+			}
+		}
+		localization_key = hunan_province_state_desc
+	}
+	text = {# 江苏省
+		trigger = {
+			OR = {
+				state = 806 #镇常
+				state = 807 #苏松
+				state = 1108 #扬越
+				state = 598 #淮阳
+				state = 809 #徐海
+			}
+		}
+		localization_key = jiangsu_province_state_desc
+	}
+	text = {# 江西省
+		trigger = {
+			OR = {
+				state = 600 #赣北
+				state = 816 #赣东
+				state = 1110 #赣西
+				state = 815 #赣南
+			}
+		}
+		localization_key = jiangxi_province_state_desc
+	}
+	text = {# 浙江省
+		trigger = {
+			OR = {
+				state = 812 #浙东
+				state = 811 #浙北
+				state = 1132 #浙中
+				state = 596 #浙南
+			}
+		}
+		localization_key = zhejiang_province_state_desc
+	}
+	text = {# 安徽省
+		trigger = {
+			OR = {
+				state = 810 #皖北
+				state = 606 #皖中
+				state = 1109 #皖西
+				state = 749 #皖南
+			}
+		}
+		localization_key = anhui_province_state_desc
+	}
+	##东北
+	text = {# 镇东省
+		trigger = {
+			OR = {
+				state = 409 #北海
+				state = 1112 #伯力
+				state = 408 #镇东
+			}
+		}
+		localization_key = zhendong_province_state_desc
+	}
+	text = {# 吉林省
+		trigger = {
+			OR = {
+				state = 848 #延吉
+				state = 847 #吉林
+				state = 849 #林州
+				state = 717 #桦川
+				state = 328 #长春
+			}
+		}
+		localization_key = jilin_province_state_desc
+	}
+	text = {# 黑龙江省
+		trigger = {
+			OR = {
+				state = 714 #龙江
+				state = 850 #汤原
+				state = 761 #兴安
+				state = 1126 #雅鲁
+				state = 1123 #呼伦
+				state = 715 #科尔沁
+			}
+		}
+		localization_key = heilongjiang_province_state_desc
+	}
+	text = {# 辽东省
+		trigger = {
+			OR = {
+				state = 846 #辽北
+				state = 845 #辽中
+				state = 716 #辽西
+				state = 745 #辽南
+			}
+		}
+		localization_key = liaodong_province_state_desc
+	}
+	text = {# 辽西省
+		trigger = {
+			OR = {
+				state = 610 #昭乌达
+				state = 1218 #通辽
+			}
+		}
+		localization_key = liaoxi_province_state_desc
+	}
+	##广东
+	text = {# 宝安府
+		trigger = {
+			state = 326 #太仓
+		}
+		localization_key = baoan_province_state_desc
+	}
+	text = {# 广东省
+		trigger = {
+			OR = {
+				state = 591 #海南
+				state = 592 #广州
+				state = 729 #香江
+				state = 1115 #粤中
+				state = 817 #粤北
+				state = 593 #粤东
+				state = 1114 #潮汕
+				state = 728 #粤西
+			}
+		}
+		localization_key = guangdong_province_state_desc
+	}
+	text = {# 广西省
+		trigger = {
+			OR = {
+				state = 594 #桂南
+				state = 821 #桂西
+				state = 599 #桂北
+				state = 818 #廉钦
+				state = 1194 #谅山
+			}
+		}
+		localization_key = guangxi_province_state_desc
+	}
+	text = {# 福建省
+		trigger = {
+			OR = {
+				state = 595 #闽西
+				state = 813 #闽东
+				state = 814 #闽南
+
+			}
+		}
+		localization_key = fujian_province_state_desc
+	}
+	text = {# 台湾省
+		trigger = {
+			OR = {
+				state = 524 #北台湾
+				state = 1117 #南台湾
+			}
+		}
+		localization_key = taiwan_province_state_desc
+	}
+	##西北军
+	text = {# 陕西省
+		trigger = {
+			OR = {
+				state = 621 #朔方
+				state = 746 #云中
+				state = 622 #陕北
+				state = 1116 #陕中
+				state = 744 #关中
+				state = 842 #汉中
+			}
+		}
+		localization_key = shaanxi_province_state_desc
+	}
+	text = {# 青海省
+		trigger = {
+			OR = {
+				state = 604 #安多
+				state = 755 #海西
+				state = 754 #海东
+
+			}
+		}
+		localization_key = qinghai_province_state_desc
+	}
+	text = {# 甘肃省
+		trigger = {
+			OR = {
+				state = 283 #陇东
+				state = 1113 #玉门
+				state = 756 #河西
+				state = 1210 #陇右
+				state = 753 #陇南
+				state = 843 #宁夏
+				state = 616 #天沙
+				state = 881 #内蒙戈壁
+			}
+		}
+		localization_key = gansu_province_state_desc
+	}
+	text = {# 西域都护府
+		trigger = {
+			OR = {
+				state = 618 #庭州
+				state = 844 #伊犁
+				state = 1209 #热海
+				state = 732 #碎叶
+				state = 619 #蒲犁
+				state = 287 #和阗
+				state = 1129 #且末
+				state = 759 #若羌
+				state = 760 #哈密
+				state = 1193 #迪化
+				state = 617 #轮台
+				state = 1128 #焉耆
+				state = 434 #塔克拉玛干
+			}
+		}
+		localization_key = xiyu_province_state_desc
+	}
+	##川渝
+	text = {# 四川省
+		trigger = {
+			OR = {
+				state = 832 #川北
+				state = 831 #川中
+				state = 751 #川南
+				state = 752 #川边
+			}
+		}
+		localization_key = sichuan_province_state_desc
+	}
+	text = {# 重庆府
+		trigger = {
+			OR = {
+				state = 830 #重庆
+				state = 605 #川东
+			}
+		}
+		localization_key = chongqing_province_state_desc
+	}
+	text = {# 西康省
+		trigger = {
+			OR = {
+				state = 601 #康巴
+				state = 1107 #甘孜
+			}
+		}
+		localization_key = xikang_province_state_desc
+	}
+	##西南
+	text = {# 贵州省
+		trigger = {
+			OR = {
+				state = 603 #黔南
+				state = 1145 #黔西
+				state = 748 #黔北
+			}
+		}
+		localization_key = guizhou_province_state_desc
+	}
+	text = {# 云南省
+		trigger = {
+			OR = {
+				state = 325 #滇北
+				state = 1133 #滇中
+				state = 747 #滇西
+				state = 851 #怒江
+				state = 866 #景洪
+				state = 828 #滇南
+			}
+		}
+		localization_key = yunnan_province_state_desc
+	}
+	##蒙古
+	text = {# 蒙古地方司
+		trigger = {
+			OR = {
+				state = 329 #巴音图门
+				state = 330 #库伦
+				state = 880 #外蒙戈壁
+				state = 1208 #金山
+				state = 1121 #巴彦
+				state = 1120 #唐努乌梁
+				state = 1124 #燕然
+				state = 654 #柯布多
+				state = 1125 #漠北
+				state = 1217 #东荒
+			}
+		}
+		localization_key = mongolia_province_state_desc
+	}
+	##西藏
+	text = {# 乌斯藏都司
+		trigger = {
+			OR = {
+				state = 322 #羌塘
+				state = 787 #拉达克
+				state = 758 #阿里
+				state = 1127 #日喀则
+				state = 757 #乌斯藏
+				state = 1106 #藏南
+			}
+		}
+		localization_key = tibet_province_state_desc
+	}
+	##满剌加
+	text = {# 满剌加省
+		trigger = {
+			OR = {
+				state = 1186 #西满剌加
+				state = 336 #东满剌加
+				state = 1199 #西南满剌加
+				state = 1198 #巴生
+				state = 1200 #新山
+			}
+		}
+		localization_key = manlajia_province_state_desc
+	}
+	text = {# 星洲府
+		trigger = {
+			state = 819 #星洲
+		}
+		localization_key = xingzhou_province_state_desc
+	}
+	##吕宋
+	text = {# 吕宋省
+		trigger = {
+			OR = {
+				state = 623 #北吕宋
+				state = 327 #中吕宋
+				state = 624 #金银岛
+				state = 1201 #吕宋城
+				state = 1202 #南吕宋
+				state = 626 #巴拉望
+				state = 628 #宿务
+				state = 625 #萨马
+				state = 627 #棉兰老岛
+			}
+		}
+		localization_key = lvsong_province_state_desc
+	}
+}
+
+# 用来替换的，但我不知道为啥KR制作组写一半不写了
+defined_text = {# 西北+四川意识形态描述
+	name = xibeiideologies
+	text = {#西北左
+		trigger = {
+			AND = {
+				every_country = {
+					limit = {
+						is_ming_tag = yes
+					}
+				}
+				ROOT = {
+					OR = {
+						has_government = vanguard_socialism
+						has_government = council_socialism
+						has_government = moderate_socialism
+						has_government = agroindustrial_socialism
+					}
+				}
+			}
+		}
+		localization_key = xibeiideologies_socialism
+	}
+	text = {#西北中
+		trigger = {
+			AND = {
+				every_country = {
+					limit = {
+						is_ming_tag = yes
+					}
+				}
+				ROOT = {
+					OR = {
+						has_government = social_democrat
+						has_government = liberal_democracy
+						has_government = consociationalism
+						has_government = conservative_democracy
+					}
+				}
+			}
+		}
+		localization_key = xibeiideologies_democracy
+	}
+	text = {#西北右
+		trigger = {
+			AND = {
+				every_country = {
+					limit = {
+						is_ming_tag = yes
+					}
+				}
+				ROOT = {
+					OR = {
+						has_government = authoritarian_oligarchy
+						has_government = leader_despotism
+						has_government = sacred_revivalism
+						has_government = national_corporatism
+					}
+				}
+			}
+		}
+		localization_key = xibeiideologies_conservative
+	}
+}
+defined_text = {# 西北省份修改
+	name = xibei
+	text = {#陕西
+		trigger = {
+			OR = {
+				state = 621 #朔方
+				state = 746 #云中
+				state = 622 #陕北
+				state = 1116 #陕中
+				state = 744 #关中
+				state = 842 #汉中
+			}
+		}
+		localization_key = xibei_shanxi
+	}
+	text = {#甘肃
+		trigger = {
+			OR = {
+				state = 283 #陇东
+				state = 1113 #玉门
+				state = 756 #河西
+				state = 1210 #陇右
+				state = 753 #陇南
+				state = 843 #宁夏
+				state = 616 #天沙
+				state = 881 #内蒙戈壁
+			}
+		}
+		localization_key = xibei_gansu
+	}
+	text = {#西域
+		trigger = {
+			OR = {
+				state = 618 #庭州
+				state = 844 #伊犁
+				state = 1209 #热海
+				state = 732 #碎叶
+				state = 619 #蒲犁
+				state = 287 #和阗
+				state = 1129 #且末
+				state = 759 #若羌
+				state = 760 #哈密
+				state = 1193 #迪化
+				state = 617 #轮台
+				state = 1128 #焉耆
+				state = 434 #塔克拉玛干
+			}
+		}
+		localization_key = xibei_xiyu
+	}
+	text = {#四川
+		trigger = {
+			OR = {
+				state = 832 #川北
+				state = 831 #川中
+				state = 751 #川南
+				state = 752 #川边
+			}
+		}
+		localization_key = xibei_sichuan
+	}
+}
