@@ -373,6 +373,7 @@ defined_text = {
 				state = 1124 #燕然
 				state = 654 #柯布多
 				state = 1125 #漠北
+				state = 1217 #东荒
 			}
 		}
 		localization_key = mongolia_province_state
@@ -803,6 +804,7 @@ defined_text = {
 				state = 1124 #燕然
 				state = 654 #柯布多
 				state = 1125 #漠北
+				state = 1217 #东荒
 			}
 		}
 		localization_key = mongolia_province_state_desc
@@ -860,7 +862,7 @@ defined_text = {
 }
 
 # 用来替换的，但我不知道为啥KR制作组写一半不写了
-defined_text = {# 西北意识形态描述
+defined_text = {# 西北+四川意识形态描述
 	name = xibeiideologies
 	text = {#西北左
 		trigger = {
@@ -872,7 +874,7 @@ defined_text = {# 西北意识形态描述
 				}
 				ROOT = {
 					OR = {
-						has_gove rnment = vanguard_socialism
+						has_government = vanguard_socialism
 						has_government = council_socialism
 						has_government = moderate_socialism
 						has_government = agroindustrial_socialism
@@ -922,55 +924,66 @@ defined_text = {# 西北意识形态描述
 		}
 		localization_key = xibeiideologies_conservative
 	}
-
-	defined_text = {# 西北省份修改
-		name = xibei
-		text = {#陕西
-			trigger = {
-				OR = {
-					state = 621 #朔方
-					state = 746 #云中
-					state = 622 #陕北
-					state = 1116 #陕中
-					state = 744 #关中
-					state = 842 #汉中
-				}
+}
+defined_text = {# 西北省份修改
+	name = xibei
+	text = {#陕西
+		trigger = {
+			OR = {
+				state = 621 #朔方
+				state = 746 #云中
+				state = 622 #陕北
+				state = 1116 #陕中
+				state = 744 #关中
+				state = 842 #汉中
 			}
-			localization_key = xibei_shanxi
 		}
-		text = {#甘肃
-			trigger = {
-				OR = {
-					state = 283 #陇东
-					state = 1113 #玉门
-					state = 756 #河西
-					state = 1210 #陇右
-					state = 753 #陇南
-					state = 843 #宁夏
-					state = 616 #天沙
-					state = 881 #内蒙戈壁
-				}
-			}
-			localization_key = xibei_gansu
-		}
-		text = {#西域
-			trigger = {
-				OR = {
-					state = 618 #庭州
-					state = 844 #伊犁
-					state = 1209 #热海
-					state = 732 #碎叶
-					state = 619 #蒲犁
-					state = 287 #和阗
-					state = 1129 #且末
-					state = 759 #若羌
-					state = 760 #哈密
-					state = 1193 #迪化
-					state = 617 #轮台
-					state = 1128 #焉耆
-					state = 434 #塔克拉玛干
-				}
-			}
-			localization_key = xibei_xiyu
-		}
+		localization_key = xibei_shanxi
 	}
+	text = {#甘肃
+		trigger = {
+			OR = {
+				state = 283 #陇东
+				state = 1113 #玉门
+				state = 756 #河西
+				state = 1210 #陇右
+				state = 753 #陇南
+				state = 843 #宁夏
+				state = 616 #天沙
+				state = 881 #内蒙戈壁
+			}
+		}
+		localization_key = xibei_gansu
+	}
+	text = {#西域
+		trigger = {
+			OR = {
+				state = 618 #庭州
+				state = 844 #伊犁
+				state = 1209 #热海
+				state = 732 #碎叶
+				state = 619 #蒲犁
+				state = 287 #和阗
+				state = 1129 #且末
+				state = 759 #若羌
+				state = 760 #哈密
+				state = 1193 #迪化
+				state = 617 #轮台
+				state = 1128 #焉耆
+				state = 434 #塔克拉玛干
+			}
+		}
+		localization_key = xibei_xiyu
+	}
+	text = {#四川
+		trigger = {
+			OR = {
+				state = 832 #川北
+				state = 831 #川中
+				state = 751 #川南
+				state = 752 #川边
+			}
+		}
+		localization_key = xibei_sichuan
+	}
+}

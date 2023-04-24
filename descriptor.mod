@@ -21,7 +21,7 @@ replace_path="map/supplyareas"
 replace_path="localisation"
 replace_path="gfx/loadingscreen"
 
-
+picture="thumbnail.png"
 replace_path="common/on_actions"
 path="mod/TOD"
 
