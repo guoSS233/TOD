@@ -52,4 +52,24 @@ ideas = {
 			}
 		}
     }
+    TOD_minister_head = { ### 政府首脑 ###
+    XBJ_Guan_zhu_hof = {
+        allowed = { original_tag = XBJ }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = head_of_gov_available
+                always = no
+            }
+        }
+        cancel_if_invalid = no
+        on_add = {
+            log = "[GetDateText]: [Root.GetName]: add idea EDO_Sakai_Tadamasa_hog_con"
+        }
+        traits = {
+            TOD_minister_head
+            conservative_democracy
+            hog_pragmatic_statesman
+        }
+    }
+}
 }
