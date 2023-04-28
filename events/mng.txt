@@ -634,6 +634,33 @@ country_event = { #太子遇刺 在南京遇刺
 
 }
 
+country_event = { #大明登顶珠峰
+	id = ming_event_dengding.1
+	title = ming_event_dengding.1.t
+	desc = ming_event_dengding.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_event_dengding.1.a #登顶
+
+		every_country = {
+			limit = {
+				is_major = yes
+			}
+			news_event = ming_newsevent_dengding.1
+		}
+
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+
+
+
 ###新闻事件 news 
 
 news_event = {
