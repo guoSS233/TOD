@@ -778,6 +778,81 @@ country_event = {
 	}
 }
 
+country_event = { #青丘来的家书
+	id = ming_richang.7
+	title = ming_richang.7.t
+	desc = ming_richang.7.d
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = MNG}
+	option = {
+		name = ming_richang.7.a #日常
+	}
+}
+
+#陈岱孙发表论文引起轰动
+country_event = {
+	id = ming_richang.8
+	title = ming_richang.8.t 
+	desc = ming_richang.8.d 
+	picture = GFX_huochetiegui
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = MNG}
+	option = {
+		name = ming_richang.8.a #赞扬论文观点
+		add_popularity = {
+			ideology = national_corporatism
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = leader_despotism
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = conservative_democracy
+			popularity = 0.02
+		}
+		add_political_power = -25
+	}
+	option = {
+		name = ming_richang.8.b #驳斥论文观点
+		add_popularity = {
+			ideology = national_corporatism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = leader_despotism
+			popularity = -0.02
+		}
+		add_popularity = {
+			ideology = authoritarian_oligarchy
+			popularity = 0.02
+		}
+		add_political_power = -50
+	}
+	option = {
+		name = ming_richang.8.c #无视论文观点
+		add_popularity = {
+			ideology = liberal_democracy
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = social_democrat
+			popularity = 0.02
+		}
+		add_popularity = {
+			ideology = national_corporatism
+			popularity = 0.02
+		}
+	}
+}
+
 ###王记烤肉事件链###
 country_event = { #王记烤肉1
 	id = ming_kaorou.1
@@ -1193,22 +1268,6 @@ country_event = { #王记烤肉D8
 	trigger = {tag = MNG}
 	option = {
 		name = ming_kaorou.25.a #日常
-	}
-}
-
-#桑弘羊传热映
-country_event = {
-	id = ming_richang.5
-	title = ming_richang.5.t 
-	desc = ming_richang.5.d 
-	picture = GFX_zixingchegongchang 
-
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = MNG}
-	option = {
-		name = ming_richang.a #日常
 	}
 }
 
