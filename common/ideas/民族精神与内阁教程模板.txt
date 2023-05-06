@@ -1,23 +1,28 @@
 #ABC为你想写的国家TAG
 #### 内阁模板
 ideas = {#总框架，记得套
-    TOD_minister_head = { ### 政府首脑 ###
-    ABC_名字_hog_con = {
-        allowed = { original_tag = EDO }
-        available = {
-            custom_trigger_tooltip = {
-                tooltip = head_of_gov_available
-                always = no
+    TOD_minister_head = { ### 政府首脑 ### 
+    #還可以填TOD_foreign_minister （外交部長）
+    #TOD_economy_minister（经济部长）
+    #TOD_security_minister（安全部長）
+    #head_of_intel（情報部長）
+        ABC_名字_hog_con = {
+            allowed = { original_tag = EDO }
+            available = {
+                custom_trigger_tooltip = {
+                    tooltip = head_of_gov_available
+                    always = no
+                }
             }
-        }
-        cancel_if_invalid = no
-        on_add = {
-            log = "[GetDateText]: [Root.GetName]: add idea EDO_Sakai_Tadamasa_hog_con"
-        }
-        traits = {
-            TOD_minister_head
-            conservative_democracy
-            hog_pragmatic_statesman
+            cancel_if_invalid = no
+            on_add = {
+                log = "[GetDateText]: [Root.GetName]: add idea EDO_Sakai_Tadamasa_hog_con"
+            }
+            traits = {
+                TOD_minister_head
+                conservative_democracy
+                hog_pragmatic_statesman
+            }
         }
     }
 }

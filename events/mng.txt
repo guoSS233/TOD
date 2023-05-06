@@ -1,5 +1,5 @@
 ###########################
-# 关于在内战中的各种一定会发生的事件的统合
+# 关于在内战前的各种一定会发生的事件的统合
 # 单独小事件应添加到各势力文件内
 ###########################
 
@@ -9,6 +9,9 @@
 
 add_namespace = chinese_events_ezo #虾夷相关事件
 add_namespace = chinese_events_taiji #太子有关的事件
+add_namespace = ming_event_dengding #大明登顶珠峰
+add_namespace = ming_richang #大明日常
+add_namespace = ming_kaorou #王记烤肉事件链
 
 #虾夷事件
 country_event = { #是否清洗虾夷内部党派
@@ -644,22 +647,440 @@ country_event = { #大明登顶珠峰
 
 	option = {
 		name = ming_event_dengding.1.a #登顶
-
-		every_country = {
-			limit = {
-				is_major = yes
-			}
-			news_event = ming_newsevent_dengding.1
-		}
-
 		ai_chance = {
 			factor = 100
 		}
 	}
 }
 
+###日常事件
+country_event = { #明帝国欢庆春节
+	id = ming_richang.1
+	title = ming_richang.1.t
+	desc = ming_richang.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
 
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_richang.1.a #日常
+	}
+}
 
+country_event = { #劳工过春节
+	id = ming_richang.2
+	title = ming_richang.2.t
+	desc = ming_richang.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_richang.2.a #日常
+	}
+}
+
+country_event = { #士兵过春节
+	id = ming_richang.3
+	title = ming_richang.3.t
+	desc = ming_richang.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_richang.3.a #日常
+	}
+}
+
+country_event = { #研究生过春节
+	id = ming_richang.4
+	title = ming_richang.4.t
+	desc = ming_richang.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting 
+
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_richang.4.a #日常
+	}
+}
+
+###王记烤肉事件链###
+country_event = { #王记烤肉1
+	id = ming_kaorou.1
+	title = ming_kaorou.1.t
+	desc = ming_kaorou.1.d
+	picture = GFX_zhongshipingfang 
+
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_kaorou.1.a #日常
+		MNG = {country_event = { id = ming_kaorou.2 days = 15}}
+	}
+}
+
+country_event = { #王记烤肉2
+	id = ming_kaorou.2
+	title = ming_kaorou.2.t
+	desc = ming_kaorou.2.d
+	picture = GFX_zhongshipingfang 
+
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_kaorou.2.a #日常
+		MNG = {country_event = { id = ming_kaorou.3 days = 46}}
+	}
+}
+
+country_event = { #王记烤肉3
+	id = ming_kaorou.3 
+	title = ming_kaorou.3.t 
+	desc = ming_kaorou.3.d 
+	picture = GFX_zhongshipingfang 
+
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_kaorou.3.a #日常
+		MNG = {country_event = { id = ming_kaorou.4 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉4
+	id = ming_kaorou.4
+	title = ming_kaorou.4.t 
+	desc = ming_kaorou.4.d 
+	picture = GFX_zhongshipingfang 
+
+	fire_only_once = yes
+	trigger = {tag = MNG}
+	is_triggered_only = yes
+	option = {
+		name = ming_kaorou.4.a #日常
+		ai_chance = {
+			factor = 50
+		}
+		MNG = {country_event = { id = ming_kaorou.5 days = 0}}
+	}
+	option = {
+		name = ming_kaorou.4.b #日常
+		ai_chance = {
+			factor = 50
+		}
+		MNG = {country_event = { id = ming_kaorou.7 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉A1
+	id = ming_kaorou.5
+	title = ming_kaorou.5.t 
+	desc = ming_kaorou.5.d 
+	picture = GFX_zhongshipingfang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.5.a #日常
+		MNG = {country_event = { id = ming_kaorou.6 days = 239}}
+	}
+}
+
+country_event = { #王记烤肉A2
+	id = ming_kaorou.6
+	title = ming_kaorou.6.t 
+	desc = ming_kaorou.6.d 
+	picture = GFX_zhongshipingfang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.6.a #日常
+	}
+}
+
+country_event = { #王记烤肉B1
+	id = ming_kaorou.7
+	title = ming_kaorou.7.t 
+	desc = ming_kaorou.7.d 
+	picture = GFX_xiaoxiang
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.7.a #日常
+		MNG = {country_event = { id = ming_kaorou.8 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉B2
+	id = ming_kaorou.8
+	title = ming_kaorou.8.t 
+	desc = ming_kaorou.8.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.8.a #日常
+		MNG = {country_event = { id = ming_kaorou.9 days = 88}}
+	}
+}
+
+country_event = { #王记烤肉B3
+	id = ming_kaorou.9
+	title = ming_kaorou.9.t 
+	desc = ming_kaorou.9.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.9.a #日常
+		MNG = {country_event = { id = ming_kaorou.10 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉B4
+	id = ming_kaorou.10
+	title = ming_kaorou.10.t 
+	desc = ming_kaorou.10.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.10.a #日常
+		MNG = {country_event = { id = ming_kaorou.11 days = 40}}
+	}
+}
+
+country_event = { #王记烤肉B5
+	id = ming_kaorou.11
+	title = ming_kaorou.11.t 
+	desc = ming_kaorou.11.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.11.a #日常
+		MNG = {country_event = { id = ming_kaorou.12 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉B6
+	id = ming_kaorou.12
+	title = ming_kaorou.12.t 
+	desc = ming_kaorou.12.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.12.a #日常
+		MNG = {country_event = { id = ming_kaorou.13 days = 30}}
+	}
+}
+
+country_event = { #王记烤肉B6
+	id = ming_kaorou.13
+	title = ming_kaorou.13.t 
+	desc = ming_kaorou.13.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.13.a #日常
+		ai_chance = {
+			factor = 50
+		}
+		MNG = {country_event = { id = ming_kaorou.14 days = 1}}
+	}
+	option = {
+		name = ming_kaorou.13.b #日常
+		ai_chance = {
+			factor = 50
+		}
+		MNG = {country_event = { id = ming_kaorou.18 days = 1}}
+	}
+}
+
+country_event = { #王记烤肉C1
+	id = ming_kaorou.14
+	title = ming_kaorou.14.t 
+	desc = ming_kaorou.14.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.14.a #日常
+		MNG = {country_event = { id = ming_kaorou.15 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉C2
+	id = ming_kaorou.15
+	title = ming_kaorou.15.t 
+	desc = ming_kaorou.15.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.15.a #日常
+		MNG = {country_event = { id = ming_kaorou.16 days = 19}}
+	}
+}
+
+country_event = { #王记烤肉C3
+	id = ming_kaorou.16
+	title = ming_kaorou.16.t 
+	desc = ming_kaorou.16.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.16.a #日常
+		MNG = {country_event = { id = ming_kaorou.17 days = 9}}
+	}
+}
+
+country_event = { #王记烤肉C4
+	id = ming_kaorou.17
+	title = ming_kaorou.17.t 
+	desc = ming_kaorou.17.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.17.a #日常
+	}
+}
+
+country_event = { #王记烤肉D1
+	id = ming_kaorou.18
+	title = ming_kaorou.18.t 
+	desc = ming_kaorou.18.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.18.a #日常
+		MNG = {country_event = { id = ming_kaorou.19 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉D2
+	id = ming_kaorou.19
+	title = ming_kaorou.19.t 
+	desc = ming_kaorou.19.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.19.a #日常
+		MNG = {country_event = { id = ming_kaorou.20 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉D3
+	id = ming_kaorou.20
+	title = ming_kaorou.20.t 
+	desc = ming_kaorou.20.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.20.a #日常
+		MNG = {country_event = { id = ming_kaorou.21 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉D4
+	id = ming_kaorou.21
+	title = ming_kaorou.21.t 
+	desc = ming_kaorou.21.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.21.a #日常
+		MNG = {country_event = { id = ming_kaorou.22 days = 0}}
+	}
+}
+
+country_event = { #王记烤肉D5
+	id = ming_kaorou.22
+	title = ming_kaorou.22.t 
+	desc = ming_kaorou.22.d 
+	picture = GFX_xiaoxiang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.22.a #日常
+		MNG = {country_event = { id = ming_kaorou.23 days = 50}}
+	}
+}
+
+country_event = { #王记烤肉D6
+	id = ming_kaorou.23
+	title = ming_kaorou.23.t 
+	desc = ming_kaorou.23.d 
+	picture = GFX_huochetiegui 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.23.a #日常
+		MNG = {country_event = { id = ming_kaorou.24 days = 14}}
+	}
+}
+
+country_event = { #王记烤肉D7
+	id = ming_kaorou.24
+	title = ming_kaorou.24.t 
+	desc = ming_kaorou.24.d 
+	picture = GFX_zixingchegongchang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.24.a #日常
+		MNG = {country_event = { id = ming_kaorou.24 days = 11}}
+	}
+}
+
+country_event = { #王记烤肉D8
+	id = ming_kaorou.25
+	title = ming_kaorou.25.t 
+	desc = ming_kaorou.25.d 
+	picture = GFX_zixingchegongchang 
+
+	fire_only_once = yes
+
+	option = {
+		name = ming_kaorou.25.a #日常
+	}
+}
 
 ###新闻事件 news 
 

@@ -102,7 +102,7 @@ country_event = {
 		hidden_effect = {
 			XBJ = {
 				set_country_flag = XBJ_duli
-				change_tag_from = MNG
+			#	change_tag_from = MNG
 			}
 		}
 	}
@@ -185,7 +185,7 @@ country_event = {
 		hidden_effect = {
 			GOS = {
 				set_country_flag = GOS_duli
-				change_tag_from = MNG
+			#	change_tag_from = MNG
 			}
 		}
 	}
@@ -216,9 +216,26 @@ country_event = {
 				transfer_state = 832
 				add_state_core = 831
 				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
 				set_capital = {
 					state = 831
 				}
+				load_oob = SIC_1937
 			}
 		}
 	}
@@ -231,9 +248,128 @@ country_event = {
 		hidden_effect = {
 			SIC = {
 				set_country_flag = SIC_duli
-				change_tag_from = MNG
+			#	change_tag_from = MNG
 			}
 		}
 	}
 }
 
+###提督写的另一种版本，需和scripted_effect连用
+country_event = {
+	# 关东巡抚司/红军测试
+	id = mngtext.4
+	title = mngtext.4.t
+	desc = mngtext.4.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.4.a #大明释放关东司
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_GPS = yes
+		MNG_release_SRC = yes
+	}
+}
+
+country_event = {
+	# 关东司内东北红军测试
+	id = mngtext.5
+	title = mngtext.5.t
+	desc = mngtext.5.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.5.a #关东司释放红军
+		trigger = {
+			is_ai = no
+		}
+		SRC_WIN_GPS = yes
+	}
+}
+
+country_event = {
+	# 大同党测试
+	id = mngtext.6
+	title = mngtext.6.t
+	desc = mngtext.6.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.6.a #大明释放大同党
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_ROC = yes
+	}
+}
+country_event = {
+	# 西南军测试
+	id = mngtext.7
+	title = mngtext.7.t
+	desc = mngtext.7.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.7.a #大明释放西南军
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_XIN = yes
+	}
+}
+country_event = {
+	# 蒙古地方司测试
+	id = mngtext.8
+	title = mngtext.8.t
+	desc = mngtext.8.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.8.a #大明释放蒙古地方司
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_MGS = yes
+	}
+}

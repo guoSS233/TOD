@@ -4,15 +4,15 @@
 
 if = {
 	limit = { has_dlc = "Man the Guns" }
-		set_naval_oob = "MNG_Naval_mtg"
+	set_naval_oob = "MNG_Naval_mtg"
 	else = {
 		set_naval_oob = "MNG_Naval_legacy"
 	}
 }
 
 1936.1.1 = {
-    if = { 
-		limit = { has_dlc = "Battle for the Bosporus" }	
+	if = {
+		limit = { has_dlc = "Battle for the Bosporus" }
 		1193 = {
 			add_dynamic_modifier = { modifier = asian_heart }
 		}
@@ -63,9 +63,9 @@ add_ideas = {
 	MNG_Dominant_power_of_Far_East
 	MNG_A_Suspected_Army
 	MNG_Unsettled_Republicians
-	
-	
-	
+
+
+
 	MNG_zhang_wei_han_hog_con
 	MNG_zhu_zhao_xin_for_con
 	MNG_zhang_guo_gan_eco_con
@@ -96,6 +96,12 @@ set_popularities = {
 	vanguard_socialism = 4
 }
 
+country_event = { id = ming_kaorou.1 days = 186 }
+news_event = { id = mingnews.2 days = 91 }
+country_event = { id = ming_richang.2 days = 23}
+country_event = { id = ming_richang.3 days = 25}
+country_event = { id = ming_richang.4 days = 26}
+country_event = {id = ming_richang.1 days = 24}
 #政党领袖
 
 recruit_character = MNG_Changde
@@ -155,7 +161,7 @@ if = {
 		autonomous_state = tod_ming_xuanfusi
 		freedom_level = 0.2
 	}
-		set_autonomy = {
+	set_autonomy = {
 		target = BRM
 		autonomous_state = kr_occupied_puppet
 		freedom_level = 0.2
