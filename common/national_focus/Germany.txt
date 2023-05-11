@@ -1,71 +1,71 @@
 focus_tree = {
 	id = german_focus
-	
+
 	country = {
 		factor = 0
-		
+
 		modifier = {
 			add = 10
 			tag = GER
 		}
 	}
-	
+
 	default = no
 
 	continuous_focus_position = { x = 2000 y = 2000 }
 
-#	focus = {
-#		id = GER_
-#		icon = GFX_
-#		prerequisite = { focus = }
-#		mutually_exclusive = { focus =  }
-#		x = -3
-#		y = 0
-#		relative_position_id = 
-#
-#		cost = 10
-#
-#		ai_will_do = {
-#			factor = 1
-#		}
-#
-#		available = {
-#
-#		}
-#		
-#		bypass = {
-#
-#		}
-#
-#		cancel_if_invalid = yes
-#		continue_if_invalid = no
-#		available_if_capitulated = no
-#
-#		complete_tooltip = {
-#
-#		}
-#
-#		completion_reward = {
-#
-#		}
-#	}
+	#	focus = {
+	#		id = GER_
+	#		icon = GFX_
+	#		prerequisite = { focus = }
+	#		mutually_exclusive = { focus =  }
+	#		x = -3
+	#		y = 0
+	#		relative_position_id =
+	#
+	#		cost = 10
+	#
+	#		ai_will_do = {
+	#			factor = 1
+	#		}
+	#
+	#		available = {
+	#
+	#		}
+	#
+	#		bypass = {
+	#
+	#		}
+	#
+	#		cancel_if_invalid = yes
+	#		continue_if_invalid = no
+	#		available_if_capitulated = no
+	#
+	#		complete_tooltip = {
+	#
+	#		}
+	#
+	#		completion_reward = {
+	#
+	#		}
+	#	}
 	#再见罗莎
 	focus = {
 		id = GER_zaijianluosha
 		icon = GFX_GER_zai_jian_luosha
 		x = 17
 		y = 1
-		
-		
-		cost = 5
-		
+
+
+		cost = 0
+
 		ai_will_do = {factor = 10}
 		available = {
 			always = no
 		}
-		
+
 		bypass = {
-			has_country_flag = GER_luoshaqushi
+			has_country_flag = GER_luoshatuixiu
 		}
 		completion_reward = {}
 	}
@@ -77,11 +77,13 @@ focus_tree = {
 		y = 2
 
 		cost = 5
-		prerequisite = { focus = GER_zaijianluosha}
-	
+		prerequisite = { focus = GER_zaijianluosha }
+
 		ai_will_do = {factor = 10}
-		available = {}
-		
+		available = {
+			has_country_flag = GER_wenmingzuobi
+		}
+		bypass = {}
 		completion_reward = {}
 	}
 	#团结FAUD
@@ -93,10 +95,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = { focus = GER_minzhudedengta}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#维系老同志
@@ -108,10 +110,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = { focus = GER_minzhudedengta}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#全德工会联合会
@@ -123,10 +125,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = { focus = GER_tuanjieFAUD}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#工人总动员
@@ -138,10 +140,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = { focus = GER_tuanjieFAUD focus = GER_weixilaotongzhi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#地区公共建设委员会
@@ -153,10 +155,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_weixilaotongzhi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#工业分散化
@@ -168,10 +170,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_quandegonghuilianhehui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#自由思想
@@ -183,10 +185,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_quandegonghuilianhehui focus = GER_gongrenzongdongyuan focus = GER_diqugonggongjiansheweiyuanhui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#农村工会组织
@@ -198,10 +200,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_diqugonggongjiansheweiyuanhui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#革命工业精神
@@ -213,10 +215,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_gongyefensanhua}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#同甘共苦
@@ -228,10 +230,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_nongcungonghuizuzhi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#十一月革命的遗产
@@ -245,10 +247,10 @@ focus_tree = {
 		prerequisite = {focus = GER_geminggongyejingshen}
 		prerequisite = {focus = GER_ziyousixiang}
 		prerequisite = {focus = GER_tonggangongku}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#向未来前进
@@ -260,10 +262,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_shiyiyuegemingdeyichan}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#改革的玫瑰
@@ -275,10 +277,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_zaijianluosha}
-	
+
 		ai_will_do = {factor = 10}
-		available = {}
-		
+		available = {always = no}
+		bypass = {has_country_flag = GER_baobaobashi}
 		completion_reward = {}
 	}
 	#反对激进主义
@@ -290,10 +292,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_gaigedemeigui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#无产阶级多党民主
@@ -305,10 +307,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_gaigedemeigui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#放宽市场限制
@@ -320,10 +322,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_gaigedemeigui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#部分私有化
@@ -335,10 +337,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_gaigedemeigui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#改善国际关系
@@ -351,10 +353,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = GER_fanduijijinzhuyi}
 		prerequisite = {focus = GER_wuchanjiejiduodangminzhu}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#工会监督
@@ -367,10 +369,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = GER_fangkuanshichangxianzhi}
 		prerequisite = {focus = GER_bufensiyouhua}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#改良主义革命
@@ -382,10 +384,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_gaishanguojiguanxi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#市场社会主义
@@ -397,10 +399,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_gonghuijiandu}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#人道的革命
@@ -413,10 +415,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = GER_gailiangzhuyigeming}
 		prerequisite = {focus = GER_shichangshehuizhuyi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#斗争的赤旗
@@ -428,10 +430,12 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_zaijianluosha}
-	
+
 		ai_will_do = {factor = 10}
-		available = {}
-		
+		available = {
+			has_country_flag = GER_wochaojizuo
+		}
+		bypass = {}
 		completion_reward = {}
 	}
 	#导师的理想
@@ -443,11 +447,11 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_douzhengdechiqi}
-	
+
 		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = {}
+		available = {has_country_flag = GER_wochaolie}
+
+		completion_reward = {always = no}
 	}
 	#成立全国工会中心组织
 	focus = {
@@ -458,10 +462,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_daoshidelixiang}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#全德中央执行委员会
@@ -473,10 +477,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_daoshidelixiang}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#授权史塔西
@@ -488,10 +492,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_daoshidelixiang}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#确保一党专政
@@ -505,10 +509,10 @@ focus_tree = {
 		prerequisite = {focus = GER_chengliquanguogonghuizhongxinzuzhi}
 		prerequisite = {focus = GER_quandezhongyangzhixingweiyuanhui}
 		prerequisite = {focus = GER_shouquanshitaxi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#成立集体农庄合作社
@@ -520,10 +524,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_quebaoyidangzhuanzheng}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#《土地法令》
@@ -535,10 +539,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_quebaoyidangzhuanzheng}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#德意志少年先锋队
@@ -551,10 +555,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = GER_chenglijitinongzhuanghezuoshe}
 		prerequisite = {focus = GER_tudifaling}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#十五年的阶级斗争
@@ -566,10 +570,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_deyizhishaonianxianfengdui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#革命先锋
@@ -581,10 +585,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_shiwuniandejiejidouzheng}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#魔鬼的契约
@@ -596,11 +600,13 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_douzhengdechiqi}
-	
+
 		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = {}
+		available = {has_country_flag = GER_wochaominbu}
+
+		completion_reward = {
+			hidden_effect = {country_event = {id = TODgermany.11}}
+		}
 	}
 	#伟人之死
 	focus = {
@@ -609,12 +615,12 @@ focus_tree = {
 		x = 29
 		y = 4
 
-		cost = 5
+		cost = 1
 		prerequisite = {focus = GER_moguideqiyue}
-	
+
 		ai_will_do = {factor = 10}
-		available = {}
-		
+		available = {has_country_flag = GER_zuobiqushi}
+		bypass = {}
 		completion_reward = {}
 	}
 	#解散中央委员会
@@ -626,10 +632,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_weirenzhisi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#整合士兵委员会
@@ -641,10 +647,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_weirenzhisi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#清洗党内异见者
@@ -656,10 +662,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_weirenzhisi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#中间派之死
@@ -671,10 +677,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_weirenzhisi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#全面掌控
@@ -687,10 +693,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = GER_qingxidangneiyijianzhe}
 		prerequisite = {focus = GER_zhongjianpaizhisi}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#兑现承诺
@@ -703,10 +709,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = GER_qingxidangneiyijianzhe}
 		prerequisite = {focus = GER_zhengheshibingweiyuanhui}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#全国戒严令
@@ -719,10 +725,10 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = GER_quanmianzhangkong}
 		prerequisite = {focus = GER_duixianchengnuo}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#对法复仇宣传
@@ -734,10 +740,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_quanguojieyanling}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
 	#红色腓特烈
@@ -749,465 +755,10 @@ focus_tree = {
 
 		cost = 5
 		prerequisite = {focus = GER_duifafuchouxuanchuan}
-	
+
 		ai_will_do = {factor = 10}
 		available = {}
-		
+
 		completion_reward = {}
 	}
-# 	#人民海军1937计划
-# 	focus = {
-# 		id = GER_haijun1937
-# 		icon = GFX_GER_haijun1937
-# 		x = 37
-# 		y = 1
-
-# 		cost = 5
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#进攻型海军
-# 	focus = {
-# 		id = GER_jingongxinghaijun
-# 		icon = GFX_GER_jingongxinghaijun
-# 		x = 35
-# 		y = 2
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_haijun1937}
-# 		mutually_exclusive = { focus = GER_fangyuxinghaishangliliang }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#扩建东部造船设施
-# 	focus = {
-# 		id = GER_kuojiandongbu
-# 		icon = GFX_GER_kuojiandongbu
-# 		x = 35
-# 		y = 3
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_haijun1937}
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#航空打击方案
-# 	focus = {
-# 		id = GER_hangkongdaji
-# 		icon = GFX_GER_hangkongdaji
-# 		x = 34
-# 		y = 4
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_kuojiandongbu}
-# 		mutually_exclusive = {focus = GER_dajianduijihua }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#海空联合航空学校
-# 	focus = {
-# 		id = GER_haikongxuexiao
-# 		icon = GFX_GER_haikongxuexiao
-# 		x = 34
-# 		y = 5
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_hangkongdaji}
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#航母战斗编队
-# 	focus = {
-# 		id = GER_hangmubiandui
-# 		icon = GFX_GER_haikongxuexiao
-# 		x = 34
-# 		y = 6
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_haikongxuexiao}
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#海军飞机项目
-# 	focus = {
-# 		id = GER_haijunfeiji
-# 		icon = GFX_GER_haijunfeiji
-# 		x = 34
-# 		y = 7
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_hangmubiandui}
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#“巴黎公社”级航空母舰
-# 	focus = {
-# 		id = GER_baligongshehangmu
-# 		icon = GFX_GER_baligongshehangmu
-# 		x = 34
-# 		y = 8
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_haijunfeiji}
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#大舰队计划
-# 	focus = {
-# 		id = GER_dajianduijihua
-# 		icon = GFX_GER_dajianduijihua
-# 		x = 36
-# 		y = 4
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_kuojiandongbu }
-# 		mutually_exclusive = {focus = GER_hangkongdaji }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#扩建恩格斯港
-# 	focus = {
-# 		id = GER_kuojianengesigang
-# 		icon = GFX_GER_kuojianengesigang
-# 		x = 36
-# 		y = 5
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_dajianduijihua }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#扩大公海舰队
-# 	focus = {
-# 		id = GER_kuodagonghaijiandui
-# 		icon = GFX_GER_kuodagonghaijiandui
-# 		x = 36
-# 		y = 6
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_kuojianengesigang }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#雷达和火控计算机
-# 	focus = {
-# 		id = GER_leidahehuokong
-# 		icon = GFX_GER_leidahehuokong
-# 		x = 36
-# 		y = 7
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_kuodagonghaijiandui }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#“世界革命”级战列舰
-# 	focus = {
-# 		id = GER_shijiegemingzhanliejian
-# 		icon = GFX_GER_shijiegemingzhanliejian
-# 		x = 36
-# 		y = 8
-
-# 		cost = 5
-# 		prerequisite = {focus = GER_leidahehuokong }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#我们是顽强的工农儿女
-# 	focus = {
-# 		id = GER_gongnongernv
-# 		icon = GFX_GER_gongnongernv
-# 		x = 35
-# 		y = 9
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_baligongshehangmu focus = GER_shijiegemingzhanliejian }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#防御型海上力量
-# 	focus = {
-# 		id = GER_fangyuxinghaishangliliang
-# 		icon = GFX_GER_fangyuxinghaishangliliang
-# 		x = 39
-# 		y = 2
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_haijun1937 }
-# 		mutually_exclusive = { focus = GER_jingongxinghaijun }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#扩建西部造船设施
-# 	focus = {
-# 		id = GER_kuojianxibu
-# 		icon = GFX_GER_kuojianxibu
-# 		x = 39
-# 		y = 3
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_fangyuxinghaishangliliang }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#水下的革命
-# 	focus = {
-# 		id = GER_shuixiadegeming
-# 		icon = GFX_GER_shuixiadegeming
-# 		x = 38
-# 		y = 4
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_kuojianxibu }
-# 		mutually_exclusive = { focus = GER_kuaisujiandui }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#基尔潜艇基地
-# 	focus = {
-# 		id = GER_jierqianting
-# 		icon = GFX_GER_jierqianting
-# 		x = 38
-# 		y = 5
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_shuixiadegeming }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#新式鱼雷
-# 	focus = {
-# 		id = GER_xinshiyulei
-# 		icon = GFX_GER_xinshiyulei
-# 		x = 38
-# 		y = 6
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_jierqianting }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#不间断袭扰作战
-# 	focus = {
-# 		id = GER_xiraozuozhan
-# 		icon = GFX_GER_xiraozuozhan
-# 		x = 38
-# 		y = 7
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_xinshiyulei }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#模块化结构
-# 	focus = {
-# 		id = GER_mokuaihuajiegou
-# 		icon = GFX_GER_mokuaihuajiegou
-# 		x = 38
-# 		y = 8
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_xiraozuozhan }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#快速舰队方案
-# 	focus = {
-# 		id = GER_kuaisujiandui
-# 		icon = GFX_GER_kuaisujiandui
-# 		x = 40
-# 		y = 4
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_kuojianxibu }
-# 		mutually_exclusive = { focus = GER_shuixiadegeming }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#舰队破交计划
-# 	focus = {
-# 		id = GER_jianduipojiaojihua
-# 		icon = GFX_GER_jianduipojiaojihua
-# 		x = 40
-# 		y = 5
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_kuaisujiandui }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#大型鱼雷艇
-# 	focus = {
-# 		id = GER_daxingyuleiting
-# 		icon = GFX_GER_daxingyuleiting
-# 		x = 40
-# 		y = 6
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_jianduipojiaojihua }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#战斗巡洋舰
-# 	focus = {
-# 		id = GER_zhandouxunyangjian
-# 		icon = GFX_GER_zhandouxunyangjian
-# 		x = 40
-# 		y = 7
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_daxingyuleiting }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#航速，射速，精度
-# 	focus = {
-# 		id = GER_hangsujing
-# 		icon = GFX_GER_hangsujing
-# 		x = 40
-# 		y = 8
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_zhandouxunyangjian }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#我们的意志坚韧如铁
-# 	focus = {
-# 		id = GER_jianrenrutie
-# 		icon = GFX_GER_jianrenrutie
-# 		x = 39
-# 		y = 9
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_mokuaihuajiegou focus = GER_hangsujing }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#穿过世界
-# 	focus = {
-# 		id = GER_chuanguoshijie
-# 		icon = GFX_GER_chuanguoshijie
-# 		x = 37
-# 		y = 10
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_gongnongernv focus = GER_jianrenrutie }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#越过海洋
-# 	focus = {
-# 		id = GER_yueguohaiyang
-# 		icon = GFX_GER_yueguohaiyang
-# 		x = 37
-# 		y = 11
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_chuanguoshijie }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# 	#让劳动的红旗飘荡吧
-# 	focus = {
-# 		id = GER_hongqipiaodang
-# 		icon = GFX_GER_hongqipiaodang
-# 		x = 37
-# 		y = 12
-
-# 		cost = 5
-# 		prerequisite = { focus = GER_yueguohaiyang }
-	
-# 		ai_will_do = {factor = 10}
-# 		available = {}
-		
-# 		completion_reward = {}
-# 	}
-# }
+}

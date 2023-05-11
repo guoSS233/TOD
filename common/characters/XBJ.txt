@@ -1,11 +1,22 @@
 characters = {
 	XBJ_Zhu_Juanshen = {
-        #庆王 朱眷堔
+		#庆王 朱眷堔
 		name = XBJ_Zhu_Juanshen
 		portraits = {
+			army = {
+				large = "gfx/leaders/XBJ/Portrait_XBJ_Zhu_Juanshen.dds"
+			}
 			civilian = {
 				large = "gfx/leaders/XBJ/Portrait_XBJ_Zhu_Juanshen.dds"
 			}
+		}
+		field_marshal={
+			traits= { war_hero politically_connected old_guard inflexible_strategist career_officer trait_cautious skilled_staffer }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
 		}
 		country_leader = {
 			ideology = authoritarian_oligarchy_subtype
@@ -14,8 +25,44 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Fan_Jingsheng = {
-        #范静生
+	XBJ_Wei_Lihuang = {
+		name = XBJ_Wei_Lihuang
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Wei_Lihuang.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+		corps_commander = {
+			traits = { war_hero organizer }
+			#以下与旧版将领一样
+			skill = 4
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	XBJ_Ji_Hongchang = {
+		name = XBJ_Ji_Hongchang
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Ji_Hongchang.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+		field_marshal = {
+			traits = { war_hero adaptable trait_cautious career_officer }
+			#以下与旧版将领一样
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id=-1
+		}
+	}
+
+	XBJ_Fan_Jingsheng = {
+		#范静生
 		name = XBJ_Fan_Jingsheng
 		portraits = {
 			civilian = {
@@ -29,8 +76,8 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Jin_Shuren = {
-        #金树仁
+	XBJ_Jin_Shuren = {
+		#金树仁
 		name = XBJ_Jin_Shuren
 		portraits = {
 			civilian = {
@@ -44,12 +91,15 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Jiang_Baili = {
-        #蒋百里
+	XBJ_Jiang_Baili = {
+		#蒋百里
 		name = XBJ_Jiang_Baili
 		portraits = {
+			army = {
+				large = "gfx/leaders/XBJ/Portrait_XBJ_Jiang_Baili.png"
+			}
 			civilian = {
-				large = "gfx/leaders/XBJ/Portrait_XBJ_Jiang_Baili.dds"
+				large = "gfx/leaders/XBJ/Portrait_XBJ_Jiang_Baili.png"
 			}
 		}
 		country_leader = {
@@ -58,9 +108,18 @@ characters = {
 			expire = "1965.1.1.1"
 			id = -1
 		}
+		field_marshal = {
+			traits = { trickster politically_connected career_officer skilled_staffer brilliant_strategist harsh_leader }
+			#以下与旧版将领一样
+			skill = 4
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
 	}
-    XBJ_Ma_Hongbing = {
-        #马鸿宾
+	XBJ_Ma_Hongbing = {
+		#马鸿宾
 		name = XBJ_Ma_Hongbing
 		portraits = {
 			civilian = {
@@ -74,8 +133,8 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Zhu_Ruichi = {
-        #朱瑞墀
+	XBJ_Zhu_Ruichi = {
+		#朱瑞墀
 		name = XBJ_Zhu_Ruichi
 		portraits = {
 			civilian = {
@@ -89,8 +148,8 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Ehmetjan_Qasim = {
-        #阿合买提江
+	XBJ_Ehmetjan_Qasim = {
+		#阿合买提江
 		name = XBJ_Ehmetjan_Qasim
 		portraits = {
 			civilian = {
@@ -104,8 +163,8 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Chen_Cheng = {
-        #陈澄
+	XBJ_Chen_Cheng = {
+		#陈澄
 		name = XBJ_Chen_Cheng
 		portraits = {
 			civilian = {
@@ -119,8 +178,8 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Zunun_Taipov = {
-        #祖农·太也夫
+	XBJ_Zunun_Taipov = {
+		#祖农·太也夫
 		name = XBJ_Zunun_Taipov
 		portraits = {
 			civilian = {
@@ -134,8 +193,8 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Du_Qianxue = {
-        #杜乾学
+	XBJ_Du_Qianxue = {
+		#杜乾学
 		name = XBJ_Du_Qianxue
 		portraits = {
 			civilian = {
@@ -149,8 +208,8 @@ characters = {
 			id = -1
 		}
 	}
-    XBJ_Fan_Yaonan = {
-        #樊耀南
+	XBJ_Fan_Yaonan = {
+		#樊耀南
 		name = XBJ_Fan_Yaonan
 		portraits = {
 			civilian = {

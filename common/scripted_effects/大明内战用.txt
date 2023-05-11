@@ -6,9 +6,9 @@
 #明释放SRC
 #明释放XBJ-西北军
 #明释放XIN-西南
-#MNG释放MGS蒙古地方司
+#MNG释放MOB蒙古地方司
 #明释放ROC-广东大同党
-#
+#明释放STG-顺天政府
 #
 #
 #
@@ -430,9 +430,9 @@ MNG_release_XIN = {#MNG释放XIN西南军
 
 
 
-MNG_release_MGS = {#MNG释放MGS蒙古地方司
+MNG_release_MOB = {#MNG释放MOB蒙古地方司
 	hidden_effect = {
-		MGS = {
+		MOB = {
 			add_state_core = 1208
 			add_state_core = 1120
 			add_state_core = 654
@@ -457,7 +457,7 @@ MNG_release_MGS = {#MNG释放MGS蒙古地方司
 		}
 
 		MNG = {
-			MGS = { transfer_technology = yes }
+			MOB = { transfer_technology = yes }
 			#if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
 			#		limit = { has_template = "Loyalist Militia" }
 			#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
@@ -475,8 +475,8 @@ MNG_release_MGS = {#MNG释放MGS蒙古地方司
 
 		#########从下开始为不需要tag即可运行的部分#########
 		every_owned_state = {#转移州控制权
-			limit = { is_core_of = MGS }
-			MGS = { transfer_state = PREV }
+			limit = { is_core_of = MOB }
+			MOB = { transfer_state = PREV }
 			teleport_armies = {
 				limit = { tag = MNG }
 				to_state_array = owned_controlled_states
@@ -485,7 +485,7 @@ MNG_release_MGS = {#MNG释放MGS蒙古地方司
 
 		every_state = {#加宣称用
 			limit = {
-				is_core_of = MGS
+				is_core_of = MOB
 				NOT = {
 					#is_core_of = SRC
 					is_claimed_by = MNG
@@ -572,6 +572,87 @@ MNG_release_ROC = {#MNG释放ROC大同党
 		every_state = {#加宣称用
 			limit = {
 				is_core_of = ROC
+				NOT = {
+					#is_core_of = SRC
+					is_claimed_by = MNG
+					#state = 630 #在此单独加
+				}
+			}
+
+			add_claim_by = MNG
+		}
+
+		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
+		#	limit = {
+		#		OR = {
+		#			has_id = 60 #Smedley Butler
+		#			has_id = 61 #Herbert Holdridge
+		#		}
+		#	}
+		#	set_nationality = CSA
+		#}
+
+
+
+
+
+	}
+}
+MNG_release_STG = {#MNG释放STG顺天政府
+	hidden_effect = {
+		STG = {
+			add_state_core = 1211
+			add_state_core = 840
+			add_state_core = 615
+			add_state_core = 1131
+			add_state_core = 841 #山西
+			add_state_core = 611
+			add_state_core = 839
+			add_state_core = 609
+			add_state_core = 608
+			add_state_core = 614
+			add_state_core = 1111 #河北
+			add_state_core = 838
+			add_state_core = 837
+			add_state_core = 743
+			add_state_core = 597 #山东
+			add_state_core = 836
+			add_state_core = 1118
+			add_state_core = 835
+			add_state_core = 834
+			add_state_core = 607
+			add_state_core = 833 #河南
+			add_state_core = 810 #皖北
+			add_state_core = 809 #徐海
+			load_oob = "STG_1937"
+			add_ideas = {
+				#
+			}
+
+		}
+
+		MNG = {
+			STG = { transfer_technology = yes }
+			#if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+			#		limit = { has_template = "Loyalist Militia" }
+			#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+			#	}
+
+		}
+
+		#########从下开始为不需要tag即可运行的部分#########
+		every_owned_state = {#转移州控制权
+			limit = { is_core_of = STG }
+			STG = { transfer_state = PREV }
+			teleport_armies = {
+				limit = { tag = MNG }
+				to_state_array = owned_controlled_states
+			}
+		}
+
+		every_state = {#加宣称用
+			limit = {
+				is_core_of = STG
 				NOT = {
 					#is_core_of = SRC
 					is_claimed_by = MNG

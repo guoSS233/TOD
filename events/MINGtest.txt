@@ -316,7 +316,9 @@ country_event = {
 	}
 
 	immediate = {
-
+		STG = {
+			load_oob = "STG_1937"
+		}
 	}
 	option = {
 		#测试
@@ -370,6 +372,29 @@ country_event = {
 		trigger = {
 			is_ai = no
 		}
-		MNG_release_MGS = yes
+		MNG_release_MOB = yes
+	}
+}
+country_event = {
+	# 顺天政府测试
+	id = mngtext.9
+	title = mngtext.9.t
+	desc = mngtext.9.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.9.a #大明释放顺天政府
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_STG = yes
 	}
 }
