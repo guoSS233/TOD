@@ -1,5 +1,5 @@
 ###########################
-# 关于在内战前的各种一定会发生的事件的统合
+# 关于在内战中的各种一定会发生的事件的统合
 # 单独小事件应添加到各势力文件内
 ###########################
 
@@ -19,7 +19,7 @@ country_event = { #是否清洗虾夷内部党派
 	id = chinese_events_ezo.1
 	title = chinese_events_ezo.1.t
 	desc = chinese_events_ezo.1.d
-	picture = GFX_zixingchegongchang
+	picture = GFX_report_event_chinese_soldiers_fighting
 
 	fire_only_once = yes
 
@@ -48,7 +48,7 @@ country_event = { #虾夷如何应对
 	id = chinese_events_ezo.2
 	title = chinese_events_ezo.2.t
 	desc = chinese_events_ezo.2.d
-	picture = GFX_zixingchegongchang
+	picture = GFX_report_event_chinese_soldiers_fighting
 
 	fire_only_once = yes
 
@@ -99,7 +99,7 @@ country_event = { #血流漂橹
 	id = chinese_events_ezo.3
 	title = chinese_events_ezo.3.t
 	desc = chinese_events_ezo.3.d
-	picture = GFX_zixingchegongchang
+	picture = GFX_report_event_chinese_soldiers_fighting
 
 	fire_only_once = yes
 
@@ -125,7 +125,7 @@ country_event = { #无力的抵抗
 	id = chinese_events_ezo.4
 	title = chinese_events_ezo.4.t
 	desc = chinese_events_ezo.4.d
-	picture = GFX_zixingchegongchang
+	picture = GFX_report_event_chinese_soldiers_fighting
 
 	fire_only_once = yes
 
@@ -149,8 +149,9 @@ country_event = { #太子南巡
 	id = chinese_events_taiji.1
 	title = chinese_events_taiji.1.t
 	desc = chinese_events_taiji.1.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -178,20 +179,21 @@ country_event = { #在大名暂歇
 	id = chinese_events_taiji.2
 	title = chinese_events_taiji.2.t
 	desc = chinese_events_taiji.2.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
-		name = chinese_events_taiji.1.a #希望这次暂留不会有什么危险
+		name = chinese_events_taiji.2.a #希望这次暂留不会有什么危险
 
 		MNG = {
 			clr_country_flag = TOD_MNG_taiji_has_departed
 			set_country_flag = TOD_MNG_taiji_in_damin
 
 			random_list = {
-				9 = { country_event = chinese_events_taiji.11 }
-				#1 = {  }
+				9 = { country_event = { id = chinese_events_taiji.11 days = 0 } }
+				1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 			}
 		}
 
@@ -206,8 +208,9 @@ country_event = { #视察郑州
 	id = chinese_events_taiji.3
 	title = chinese_events_taiji.3.t
 	desc = chinese_events_taiji.3.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -218,8 +221,8 @@ country_event = { #视察郑州
 			set_country_flag = TOD_MNG_taiji_in_zhengzhou
 
 			random_list = {
-				9 = { country_event = chinese_events_taiji.12 }
-				#1 = {  }
+				9 = { country_event = { id = chinese_events_taiji.12 days = 0 } }
+				1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 			}
 		}
 
@@ -234,8 +237,9 @@ country_event = { #视察开封黄河大桥
 	id = chinese_events_taiji.4
 	title = chinese_events_taiji.4.t
 	desc = chinese_events_taiji.4.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -243,11 +247,10 @@ country_event = { #视察开封黄河大桥
 
 		MNG = {
 			clr_country_flag = TOD_MNG_taiji_in_zhengzhou
-			set_country_flag = TOD_MNG_taiji_in_kfc
 
 			random_list = {
-				1 = { country_event = chinese_events_taiji.13 }
-				#19 = { country_event = chinese_events_taiji.101 }
+				1 = { country_event = { id = chinese_events_taiji.13 days = 0 } }
+				99 = { country_event = { id = chinese_events_taiji.101 days = 0 } }
 			}
 		}
 
@@ -262,20 +265,20 @@ country_event = { #有惊无险
 	id = chinese_events_taiji.5
 	title = chinese_events_taiji.5.t
 	desc = chinese_events_taiji.5.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
 		name = chinese_events_taiji.5.a #去徐州转一转吧
 
 		MNG = {
-			clr_country_flag = TOD_MNG_taiji_in_kfc
 			set_country_flag = TOD_MNG_taiji_going_to_huaihai
 
 			random_list = {
-				9 = { country_event = chinese_events_taiji.9 }
-				#1 = {  }
+				9 = { country_event = { id = chinese_events_taiji.9 days = 0 } }
+				1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 			}
 		}
 
@@ -290,8 +293,9 @@ country_event = { #徐州
 	id = chinese_events_taiji.6
 	title = chinese_events_taiji.6.t
 	desc = chinese_events_taiji.6.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -302,8 +306,8 @@ country_event = { #徐州
 			set_country_flag = TOD_MNG_taiji_in_huaihai
 
 			random_list = {
-				9 = { country_event = chinese_events_taiji.14 }
-				#1 = {  }
+				9 = { country_event = { id = chinese_events_taiji.14 days = 0 } }
+				1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 			}
 		}
 
@@ -318,8 +322,9 @@ country_event = { #整点淮扬菜恰恰
 	id = chinese_events_taiji.7
 	title = chinese_events_taiji.7.t
 	desc = chinese_events_taiji.7.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -330,8 +335,8 @@ country_event = { #整点淮扬菜恰恰
 			set_country_flag = TOD_MNG_taiji_in_yangzhou
 
 			random_list = {
-				9 = { country_event = chinese_events_taiji.15 }
-				#1 = { country_event = chinese_events_taiji.102 }
+				9 = { country_event = { id = chinese_events_taiji.15 days = 0 } }
+				1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 			}
 		}
 
@@ -346,8 +351,9 @@ country_event = { #到达应天
 	id = chinese_events_taiji.8
 	title = chinese_events_taiji.8.t
 	desc = chinese_events_taiji.8.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -358,8 +364,8 @@ country_event = { #到达应天
 			set_country_flag = TOD_MNG_taiji_travel_end
 
 			random_list = {
-				10 = { country_event = chinese_events_taiji.10 }
-				#100 = { country_event = chinese_events_taiji.4444 } #太子啊你安心去吧
+				10 = { country_event = { id = chinese_events_taiji.10 days = 0 } }
+				90 = { country_event = { id = chinese_events_taiji.4444 days = 0 } } #太子啊你安心去吧
 			}
 		}
 
@@ -374,9 +380,9 @@ country_event = { #继续行程
 	id = chinese_events_taiji.9
 	title = chinese_events_taiji.9.t
 	desc = chinese_events_taiji.9.d
-	picture = GFX_zixingchegongchang
-
-	fire_only_once = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 
 	option = {
 		name = chinese_events_taiji.9.a #让我们前往下一个城市······
@@ -400,8 +406,9 @@ country_event = { #功德圆满
 	id = chinese_events_taiji.10
 	title = chinese_events_taiji.10.t
 	desc = chinese_events_taiji.10.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -410,6 +417,11 @@ country_event = { #功德圆满
 		random_list = {
 			1 = { add_stability = 0.01 }
 			1 = { add_political_power = 5 }
+		}
+
+		random_list = {
+			9 = {}
+			1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 		}
 
 
@@ -425,8 +437,9 @@ country_event = { #大名的安徽板面
 	id = chinese_events_taiji.11
 	title = chinese_events_taiji.11.t
 	desc = chinese_events_taiji.11.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -438,8 +451,8 @@ country_event = { #大名的安徽板面
 		}
 
 		random_list = {
-			9 = { country_event = chinese_events_taiji.9 }
-			#1 = { country_event = chinese_events_taiji.102 }
+			9 = { country_event = { id = chinese_events_taiji.9 days = 0 } }
+			1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 		}
 
 		ai_chance = {
@@ -453,8 +466,9 @@ country_event = { #太子视察郑州铁路局
 	id = chinese_events_taiji.12
 	title = chinese_events_taiji.12.t
 	desc = chinese_events_taiji.12.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -466,8 +480,8 @@ country_event = { #太子视察郑州铁路局
 		}
 
 		random_list = {
-			9 = { country_event = chinese_events_taiji.9 }
-			#1 = { country_event = chinese_events_taiji.102 }
+			9 = { country_event = { id = chinese_events_taiji.9 days = 0 } }
+			1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 		}
 
 		ai_chance = {
@@ -481,8 +495,9 @@ country_event = { #开封菜
 	id = chinese_events_taiji.13
 	title = chinese_events_taiji.13.t
 	desc = chinese_events_taiji.13.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -494,8 +509,8 @@ country_event = { #开封菜
 		}
 
 		random_list = {
-			9 = { country_event = chinese_events_taiji.9 }
-			#1 = { country_event = chinese_events_taiji.102 }
+			9 = { country_event = { id = chinese_events_taiji.5 days = 0 } }
+			1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 		}
 
 		ai_chance = {
@@ -509,8 +524,9 @@ country_event = { #砀山酥梨
 	id = chinese_events_taiji.14
 	title = chinese_events_taiji.14.t
 	desc = chinese_events_taiji.14.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -522,8 +538,8 @@ country_event = { #砀山酥梨
 		}
 
 		random_list = {
-			9 = { country_event = chinese_events_taiji.9 }
-			#1 = { country_event = chinese_events_taiji.102 }
+			9 = { country_event = { id = chinese_events_taiji.9 days = 0 } }
+			1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 		}
 
 		ai_chance = {
@@ -535,10 +551,11 @@ country_event = { #砀山酥梨
 
 country_event = { #扬州的茶馆
 	id = chinese_events_taiji.15
-	title = chinese_events_taiji.15t
+	title = chinese_events_taiji.15.t
 	desc = chinese_events_taiji.15.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -550,8 +567,8 @@ country_event = { #扬州的茶馆
 		}
 
 		random_list = {
-			9 = { country_event = chinese_events_taiji.9 }
-			1 = { country_event = chinese_events_taiji.102 }
+			9 = { country_event = { id = chinese_events_taiji.9 days = 0 } }
+			1 = { country_event = { id = chinese_events_taiji.102 days = 0 } }
 		}
 
 		ai_chance = {
@@ -565,8 +582,9 @@ country_event = { #太子遇刺 黄河大桥爆炸案
 	id = chinese_events_taiji.101
 	title = chinese_events_taiji.101.t
 	desc = chinese_events_taiji.101.d
-	picture = GFX_zixingchegongchang
-
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
@@ -590,14 +608,15 @@ country_event = { #太子遇刺 黄河大桥爆炸案
 
 country_event = { #太子遇刺 常规
 	id = chinese_events_taiji.102
-	title = chinese_events_taiji.101.t
-	desc = chinese_events_taiji.101.d
-	picture = GFX_zixingchegongchang
-
+	title = chinese_events_taiji.102.t
+	desc = chinese_events_taiji.102.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = YES
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
 
 	option = {
-		name = chinese_events_taiji.101.a #
+		name = chinese_events_taiji.102.a #
 
 		every_country = {
 			limit = {
@@ -617,10 +636,11 @@ country_event = { #太子遇刺 在南京遇刺
 	id = chinese_events_taiji.4444
 	title = chinese_events_taiji.4444.t
 	desc = chinese_events_taiji.4444.d
-	picture = GFX_zixingchegongchang
+	picture = GFX_report_event_chinese_soldiers_fighting
 
+	trigger = { original_tag = MNG }
 	fire_only_once = yes
-
+	is_triggered_only = YES
 	option = {
 		name = chinese_events_taiji.4444.a #这下太子死透了
 
@@ -1277,7 +1297,7 @@ country_event = { #王记烤肉D8
 news_event = {
 	id = chinese_events_ezo.1001
 	title = chinese_events_ezo.1001.t
-	picture = GFX_zixingchegongchang
+	picture = GFX_report_event_chinese_soldiers_fighting
 	desc = {text = chinese_events_ezo.1001.d}
 
 	major = no
@@ -1314,7 +1334,7 @@ news_event = {
 news_event = {
 	id = chinese_events_taiji.666
 	title = chinese_events_taiji.666.t
-	picture = GFX_zixingchegongchang
+	picture = GFX_report_event_chinese_soldiers_fighting
 	desc = {text = chinese_events_taiji.666.d}
 
 	major = yes
