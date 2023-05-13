@@ -1,0 +1,79 @@
+ideas = {
+
+	country = {
+		#封建残余
+		PER_fengjian = {
+			name = PER_fengjian
+
+			picture = PER_fengjian
+
+			modifier = {
+                monthly_population = 0.1
+                conscription = 0.01
+                consumer_goods_factor = 0.1
+                stability_factor = -0.1
+                production_speed_buildings_factor = -0.1
+                industrial_capacity_factory = -0.1
+                leader_despotism_drift = 0.01
+                production_speed_infrastructure_factor = -0.1
+			}
+		}
+		#暗流涌动
+        PER_anliu = {
+			name = PER_anliu
+
+			picture = PER_anliu
+
+			modifier = {
+                political_power_cost = 0.05
+                liberal_democracy_drift = 0.05
+                moderate_socialism_drift = 0.05
+
+			}
+		}
+		#法国-伊朗石油协定
+        PER_FaYixieding = {
+			name = PER_FaYixieding
+
+			picture = PER_FaYixieding
+
+			modifier = {
+                consumer_goods_factor = -0.05
+                base_fuel_gain_factor = 0.1
+			}
+		}
+		#宗派之争
+        PER_zongpai = {
+			name = PER_zongpai
+
+			picture = PER_zongpai
+
+			modifier = {
+                stability_factor = -0.15
+                political_power_cost = 0.3
+			}
+		}
+		#民族问题
+        PER_minzu = {
+			name = PER_minzu
+
+			picture = PER_minzu
+
+			modifier = {
+                stability_factor = -0.1
+				custom_modifier_tooltip = PER_demilitarized_zone #非军事区
+			}
+		}
+		#去部落化
+        PER_qubuluohua = {
+			name = PER_qubuluohua
+
+			picture = PER_qubuluohua
+
+			modifier = {
+                consumer_goods_factor = 0.1
+                stability_factor = -0.2
+			}
+		}
+    }
+}

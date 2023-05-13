@@ -3,21 +3,28 @@ capital = 303
 oob = "oob"
 
 set_politics = {
-	ruling_party = despotism
+	ruling_party = leader_despotism
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	totalism = 4
-	despotism = 48
-	authoritarianism = 4
-	conservatism = 10
-	liberalism = 10
-	reformism = 12
-	socialism = 10
-	radicalism = 2
+	vanguard_socialism = 3
+	council_socialism = 2
+	moderate_socialism = 0
+	agroindustrial_socialism = 5
+	#
+	social_democrat = 10
+	liberal_democracy = 5
+	#
+	consociationalism = 10
+	conservative_democracy = 10
+	authoritarian_oligarchy = 10
+	#
+	leader_despotism = 44
+	sacred_revivalism = 0
+	national_corporatism = 1
 }
 
 create_country_leader = {
@@ -25,9 +32,9 @@ create_country_leader = {
 	desc = "POLITICS_Oscar_R_Benavides_DESC"
 	picture = "Portrait_UPB_Oscar_R_Benavides.tga"
 	expire = "1965.1.1"
-	ideology = despotism_subtype
+	ideology = leader_despotism_subtype
 }
 
 add_ideas = {
-	DesDic_type
+	#
 }

@@ -51,7 +51,7 @@ SIA_decision_l_1_zuoyouyipingheng = {
 SIA_decision_l_2_ljzkd = { #共和军陆军掌控度
 	
 	SIA_decision_add_ljzkd = {    #加10
-		
+		allowed = { tag = SIA }
 		icon = ger_mefo_bills		
 		cost = 1
 		days_remove = 1
@@ -74,7 +74,7 @@ SIA_decision_l_2_ljzkd = { #共和军陆军掌控度
 	}
 	
 	SIA_decision_lose_ljzkd = {     #减10
-
+		allowed = { tag = SIA }
 		icon = ger_mefo_bills		
 		cost = 1
 		days_remove = 1
@@ -92,7 +92,8 @@ SIA_decision_l_2_ljzkd = { #共和军陆军掌控度
 			VAR_SIA_lujunzhangkongdu_clamp = yes
 		}
 	}
-	SIA_decision_clr_ljzkd = {    
+	SIA_decision_clr_ljzkd = {   
+		allowed = { tag = SIA }
 		icon = ger_mefo_bills		
 		cost = 1
 		days_remove = 1

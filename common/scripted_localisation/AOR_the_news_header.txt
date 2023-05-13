@@ -1,0 +1,228 @@
+defined_text = {
+    name = Get_title_news_header
+
+    text = {
+        trigger = {
+            original_tag = ENG  ##大不列颠尼亚报
+        }
+        localization_key = AOR_Great_Britain_news_header
+    }
+
+    text = {
+        trigger = {
+            original_tag = RUS   ##革命先锋报
+            has_government = marxism 
+        }
+        localization_key = AOR_geming_news_header
+    }
+
+    text = {
+        trigger = {       ##德意志日报
+            or = {
+                original_tag = GER
+                original_tag = KSH
+                original_tag = HAN
+                original_tag = WUR      
+                original_tag = BAV
+                original_tag = RHI 
+                original_tag = PRE
+                original_tag = SIL
+                original_tag = SAX
+                original_tag = SHL
+                original_tag = MEK 
+                original_tag = NAU 
+            }
+            NOT = {
+                has_government = marxism
+            }
+        }
+        localization_key = AOR_deyizhi_news_header
+    }
+
+    text = {
+        trigger = {  ##人民观察家报
+            original_tag = WUR
+            has_government = NSDVP
+        }
+        localization_key = AOR_renminguanzhajia_news_header
+    }
+
+    text = {
+        trigger = {  ##罗曼语报
+            original_tag = FRA
+        }
+        localization_key = AOR_Ruoman_news_header
+    }
+
+    text = {
+        trigger = {  ##共和报
+            original_tag = MNG 
+        }
+        localization_key = AOR_gonghe_news_header 
+    }
+
+    text = {   ##联合皇家报
+        trigger = {
+            original_tag = YUG 
+        }
+        localization_key = AOR_lianhehuangjiabao_news_header
+    }
+
+    text = {  ##二十世纪报
+        trigger = {  
+            original_tag = BEL
+        }
+        localization_key = AOR_ershishiji_news_header
+    }
+
+    text = { ##梵蒂冈人民报
+        trigger = {
+            original_tag = VAT 
+        }
+        localization_key = AOR_fandigangrenmin_news_haeder
+    }
+
+    text = {  ##意大利每日报
+        trigger = {
+            original_tag = ITA 
+        }
+        localization_key = AOR_yidalimeiribao_news_haeder
+    }
+
+    text = { ##世界联合报
+        trigger = {
+            always = yes
+        }
+        localization_key = AOR_shijielianhebao_news_haeder
+    }
+
+    text = {  ##赤旗报
+        trigger = {
+            original_tag = JAP
+            has_government = marxism
+        }
+        localization_key = AOR_chiqibao_news_haeder
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+defined_text = {
+    name = Get_title_news_pic
+
+    text = {
+        trigger = {  ##共和报 - pic
+            original_tag = CHI 
+        }
+        localization_key = AOR_gonghe_news_pic
+    }
+
+    text = {   ##联合皇家报 - pic
+        trigger = {
+            original_tag = YUG 
+        }
+        localization_key = AOR_lianhehuangjiabao_news_pic
+    }
+
+    text = {  ##德意志日报 - pic
+        trigger = {
+            or = {
+                original_tag = GER
+                original_tag = KSH
+                original_tag = HAN
+                original_tag = WUR      
+                original_tag = BAV
+                original_tag = RHI 
+                original_tag = PRE
+                original_tag = SIL
+                original_tag = SAX
+                original_tag = SHL
+                original_tag = MEK 
+                original_tag = NAU 
+            }
+            NOT = {
+                has_government = marxism
+            }
+        }
+        localization_key = AOR_deyizhi_news_pic
+    }
+
+    text = { ##大不列颠报 - pic 
+        trigger = { 
+            original_tag = ENG
+        }
+        localization_key = AOR_Great_Britain_news_pic 
+    }
+
+    text = { ##二十世纪报 - pic 
+        trigger = {
+            original_tag = BEL 
+        }
+        localization_key = AOR_ershishiji_news_pic 
+    }
+ 
+    text = { ##罗曼语报 - pic
+        trigger = {
+            original_tag = FRA
+        }
+        localization_key = AOR_Ruoman_news_pic
+    }
+
+    text = { ##人民观察家报 - pic 
+        trigger = {
+            original_tag = WUR
+            has_government = NSDVP
+        }
+        localization_key = AOR_renminguanzhajia_news_pic
+    }
+
+    text = { ##革命先锋报 - pic
+        trigger = {
+            original_tag = RUS   
+            has_government = marxism
+        }
+        localization_key = AOR_geming_news_pic
+    }
+
+    text = { ##梵蒂冈人民报 - pic
+        trigger = {
+            original_tag = VAT 
+        }
+        localization_key = AOR_fandigangrenmin_news_pic
+    }
+
+    text = { ##意大利每日报 - pic
+        trigger = { 
+            original_tag = ITA 
+        }
+        localization_key = AOR_yidalimeiribao_news_pic
+    }
+
+    text = { ##世界联合报 - pic
+        trigger = {
+            always = yes 
+        }
+        localization_key = AOR_shijielianhebao_news_pic
+    }
+
+    text = {  ##赤旗报 - pic
+        trigger = {
+            original_tag = JAP
+            has_government = marxism
+        }
+        localization_key = AOR_chiqibao_news_pic
+    }
+}
+

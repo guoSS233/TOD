@@ -1,10 +1,18 @@
-capital = 608
+﻿capital = 608
 
+#军队编制
 
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_naval_oob = "MNG_Naval_mtg"
+	else = {
+		set_naval_oob = "MNG_Naval_legacy"
+	}
+}
 
 1936.1.1 = {
-    if = { 
-		limit = { has_dlc = "Battle for the Bosporus" }	
+	if = {
+		limit = { has_dlc = "Battle for the Bosporus" }
 		1193 = {
 			add_dynamic_modifier = { modifier = asian_heart }
 		}
@@ -55,9 +63,9 @@ add_ideas = {
 	MNG_Dominant_power_of_Far_East
 	MNG_A_Suspected_Army
 	MNG_Unsettled_Republicians
-	
-	
-	
+
+
+
 	MNG_zhang_wei_han_hog_con
 	MNG_zhu_zhao_xin_for_con
 	MNG_zhang_guo_gan_eco_con
@@ -78,24 +86,17 @@ set_politics = {
 }
 
 set_popularities = {
-	totalism = 2
-	despotism = 23
-	authoritarianism = 32
-	conservatism = 20
-	liberalism = 8
-	reformism = 8
-	socialism = 3
-	radicalism = 4
+	national_corporatism = 2
+	leader_despotism = 23
+	authoritarian_oligarchy = 32
+	conservative_democracy = 20
+	liberal_democracy = 8
+	moderate_socialism = 8
+	social_democrat = 3
+	vanguard_socialism = 4
 }
 
-
-create_country_leader = {
-	name = "昌德"
-	desc = "POLITICS_CHANGDE_DESC"
-	picture = "Portrait_MNG_Changde.png"
-	expire = "1965.1.1"
-	ideology = authoritarianism_subtype
-}
+recruit_character = MNG_Changde
 
 country_lock_all_division_template = yes
 
@@ -152,7 +153,7 @@ if = {
 		autonomous_state = tod_ming_xuanfusi
 		freedom_level = 0.2
 	}
-		set_autonomy = {
+	set_autonomy = {
 		target = BRM
 		autonomous_state = kr_occupied_puppet
 		freedom_level = 0.2
@@ -205,7 +206,44 @@ add_to_faction = TSO
 add_to_faction = OMA
 
 
+### 科技 ###
+
+set_research_slots = 4
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		panzerschiffe = 1
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		improved_secondary_battery = 1
+		improved_airplane_launcher = 1
+	}
+}
 ### 战舰型号 ###
+
 
 if = {
 	limit = { not = { has_dlc = "Man the Guns" } }
@@ -546,4 +584,4 @@ if = {
 		}
 		obsolete = yes
 	}
-	}
+}

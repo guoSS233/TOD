@@ -1,0 +1,585 @@
+######################
+All Hail BRITANNIA!!!
+######################
+
+add_namespace = britain
+add_namespace = news_britain
+add_namespace = focus_britain
+
+### Introduction events
+
+#不列颠历史Part1
+country_event = {
+	id = britain.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.1 FROM = [From.GetName]" }
+	title = britain.1.t
+	desc = britain.1.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #Keep calm...
+		name = britain.1.a
+		hidden_effect = {
+			country_event = { id = britain.2 days = 1 }
+		}
+	}
+}
+
+#不列颠历史Part2
+country_event = {
+	id = britain.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.2 FROM = [From.GetName]" }
+	title = britain.2.t
+	desc = britain.2.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #And carry on.
+		name = britain.2.a
+		country_event = { id = britain.3 days = 1 }
+	}
+}
+
+#不列颠历史Part3
+country_event = {
+	id = britain.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.3 FROM = [From.GetName]" }
+	title = britain.3.t
+	desc = britain.3.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #行动党万岁！
+		name = britain.3.a
+		country_event = { id = britain.4 days = 1 }
+	}
+}
+
+#不列颠现状
+country_event = {
+	id = britain.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.4 FROM = [From.GetName]" }
+	title = britain.4.t
+	desc = britain.4.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #小问题
+		name = britain.4.a
+	}
+}
+
+#乔治公爵与世长辞
+news_event = {
+	id = news_britain.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event news_britain.1 FROM = [From.GetName]" }
+	title = news_britain.1.t
+	desc = news_britain.1.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	trigger = {
+		date>1936.1.19
+		date<1936.1.21
+	}
+	option = { #一个时代的终结。
+		name = news_britain.1.a
+	}
+}
+
+#1936年不列颠行动党大会
+country_event = {
+	id = britain.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.6 FROM = [From.GetName]" }
+	title = britain.6.t
+	desc = britain.6.d
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+	trigger = {
+		date>1936.1.19
+	}
+
+	option = { #首项议题：经济
+		name = britain.6.a
+		ai_chance = {
+			base = 50
+		}
+		hidden_effect = {
+			set_country_flag  = ENG_Assassin_success
+		}
+		country_event = { id = britain.7 days = 7 }
+	}
+	option = { #我好像听见了什么声音？
+		name = britain.6.b
+		ai_chance = {
+			base = 50
+		}
+		hidden_effect = {
+			set_country_flag  = ENG_Assassin_failure
+			country_event = { id = britain.7 days = 7 }
+		}
+	}
+}
+
+#首项议题：经济/小插曲
+country_event = {
+	id = britain.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.7 FROM = [From.GetName]" }
+	title = {
+		text = britain.7.t.su
+		trigger = { has_country_flag = ENG_Assassin_success }
+	}
+	title = {
+		text = britain.7.t.fa
+		trigger = { has_country_flag = ENG_Assassin_failure }
+	}
+	desc = {
+		text = britain.7.d.su
+		trigger = { has_country_flag = ENG_Assassin_success }
+	}
+	desc = {
+		text = britain.7.d.fa
+		trigger = { has_country_flag = ENG_Assassin_failure }
+	}
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #罗莎没了，但命只有一条……“
+		name = britain.7.a
+		trigger = { has_country_flag = ENG_Assassin_success }
+		
+		hidden_effect = {
+			country_event = { id = britain.8 days = 12 }
+		}
+	}
+	option = { #罗莎活下来了，你也知道，命只有一条……“ 
+		name = britain.7.b
+		trigger = { has_country_flag = ENG_Assassin_failure }
+		
+		hidden_effect = {
+			country_event = { id = britain.8 days = 12 }
+		}
+	}
+}
+	
+#寂静后的暴风雨
+country_event = {
+	id = britain.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.8 FROM = [From.GetName]" }
+	title = text = britain.8.t
+	desc = {
+		text = britain.8.d.su
+		trigger = { has_country_flag = ENG_Assassin_success }
+	}
+	desc = {
+		text = britain.8.d.fa
+		trigger = { has_country_flag = ENG_Assassin_failure }
+	}
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #刺杀失败，承认袭击
+		name = britain.8.a
+		trigger = { has_country_flag = ENG_Assassin_failure }
+		news_event = { id = news_britain.2 days = 0 }
+		hidden_effect = {
+			country_event = { id = britain.10 days = 1 }
+		}
+	}
+	option = { #刺杀失败，否认袭击
+		name = britain.8.b
+		trigger = { has_country_flag = ENG_Assassin_failure }
+		hidden_effect = {
+			country_event = { id = britain.10 days = 1 }
+		}
+	}
+	option = { #刺杀成功，承认袭击，承认罗莎死亡
+		name = britain.8.c
+		trigger = { has_country_flag = ENG_Assassin_success }
+		set_country_flag = ENG_admit_death
+		news_event = { id = news_britain.2 days = 0 }
+		hidden_effect = {
+			country_event = { id = britain.10 days = 1 }
+		}
+	}
+	option = { #刺杀成功，承认袭击，否认罗莎死亡
+		name = britain.8.d
+		trigger = { has_country_flag = ENG_Assassin_success }
+		set_country_flag = ENG_not_admit_death
+		news_event = { id = news_britain.2 days = 0 }
+		hidden_effect = {
+			country_event = { id = britain.10 days = 1 }
+			country_event = { id = britain.9 days = 7 }
+		}
+	}
+	option = { #刺杀成功，否认袭击
+		name = britain.8.e
+		trigger = { has_country_flag = ENG_Assassin_success }
+		set_country_flag = ENG_not_admit_death
+		news_event = { id = news_britain.2 days = 0 }
+		hidden_effect = {
+			country_event = { id = britain.10 days = 1 }
+			country_event = { id = britain.9 days = 7 }
+		}
+	}
+}
+
+#全球新闻：行动党大会上的炸弹袭击！
+news_event = {
+	id = news_britain.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event news_britain.1 FROM = [From.GetName]" }
+	title = news_britain.2.t
+	desc = {#罗莎存活
+		text = news_britain.2.d.ra
+		trigger = { has_country_flag = ENG_Assassin_failure }
+	}
+	desc = {#罗莎生死未卜
+		text = news_britain.7.d.aa
+		trigger = { has_country_flag = ENG_not_admit_death }
+	}
+	desc = {#当局承认袭击，并表示罗莎死亡
+		text = news_britain.7.d.ad
+		trigger = { has_country_flag = ENG_admit_death }
+	}
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #吓人
+		name = news_britain.1.a
+	}
+}
+
+#罗莎失踪
+country_event = {
+	id = britain.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.9 FROM = [From.GetName]" }
+	title = britain.9.t
+	desc = britain.9.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #现在允许公开哀悼
+		name = britain.9.a
+	}
+}
+
+#调查开始
+country_event = {
+	id = britain.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.10 FROM = [From.GetName]" }
+	title = britain.10.t
+	desc = britain.10.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #反正会场管理者肯定要倒霉了……
+		name = britain.10.a
+		hidden_effect = {
+			country_event = { id = britain.11 days = 1 }
+		}
+	}
+}
+
+#内奸？
+country_event = {
+	id = britain.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.11 FROM = [From.GetName]" }
+	title = britain.11.t
+	desc = britain.11.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #结案并立刻开始调查党内部
+		name = britain.11.a
+		hidden_effect = {
+			country_event = { id = britain.12 days = 7 }
+		}
+	}
+	option = { #别急，继续调查
+		name = britain.11.b
+		hidden_effect = {
+			country_event = { id = britain.14 days = 7 }
+		}
+	}
+}
+
+#鼠患
+country_event = {
+	id = britain.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.12 FROM = [From.GetName]" }
+	title = britain.12.t
+	desc = britain.12.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #“以任何必要的手段迅速肃清党内的叛徒。“
+		name = britain.12.a
+		hidden_effect = {
+			country_event = { id = britain.13 days = 7 }
+		}
+	}
+}
+
+#净手行动
+country_event = {
+	id = britain.13
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.13 FROM = [From.GetName]" }
+	title = britain.13.t
+	desc = britain.13.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #我们的司法系统会将他们冲入监狱，或是地狱
+		name = britain.13.a
+		set_country_flag = ENG_investigation_traitor
+	}
+}
+
+#法国间谍？
+country_event = {
+	id = britain.14
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.14 FROM = [From.GetName]" }
+	title = britain.14.t
+	desc = britain.14.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #是法国人的阴谋，结案并致力于揪出间谍
+		name = britain.14.a
+		hidden_effect = {
+			country_event = { id = britain.15 days = 7 }
+		}
+	}
+	option = { #是党内反对派搞的鬼，结案并调查党内部
+		name = britain.14.b
+		hidden_effect = {
+			country_event = { id = britain.12 days = 7 }
+		}
+	}
+	option = { #继续调查
+		name = britain.14.c
+		hidden_effect = {
+			country_event = { id = britain.16 days = 7 }
+		}
+	}
+}
+
+#大蛇
+country_event = {
+	id = britain.15
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.15 FROM = [From.GetName]" }
+	title = britain.15.t
+	desc = britain.15.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #他去哪了？
+		name = britain.15.a
+		set_country_flag = ENG_investigation_spy
+		hidden_effect = {
+			country_event = { id = britain.19 days = 7 }#爱丁堡危机
+		}
+	}
+}
+
+#激进党？
+country_event = {
+	id = britain.16
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.16 FROM = [From.GetName]" }
+	title = britain.16.t
+	desc = britain.16.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #是激进党残党的阴谋
+		name = britain.16.a
+		hidden_effect = {
+			country_event = { id = britain.17 days = 7 }
+		}
+	}
+	option = { #是法国间谍的阴谋
+		name = britain.16.b
+		hidden_effect = {
+			country_event = { id = britain.15 days = 7 }
+		}
+	}
+	option = { #是党内反对派的阴谋
+		name = britain.16.c
+		hidden_effect = {
+			country_event = { id = britain.12 days = 7 }
+		}
+	}
+	option = { #继续调查
+		name = britain.16.d
+		hidden_effect = {
+			country_event = { id = britain.18 days = 7 }
+		}
+	}
+}
+
+#除草
+country_event = {
+	id = britain.17
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.17 FROM = [From.GetName]" }
+	title = britain.17.t
+	desc = britain.17.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #就这样吧
+		name = britain.17.a
+		set_country_flag = ENG_investigation_radical
+	}
+}
+
+#真相？
+country_event = {
+	id = britain.18
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.18 FROM = [From.GetName]" }
+	title = britain.18.t
+	desc = britain.18.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #是激进党残党的阴谋
+		name = britain.18.a
+		hidden_effect = {
+			country_event = { id = britain.17 days = 7 }
+		}
+	}
+	option = { #是法国间谍的阴谋
+		name = britain.18.b
+		hidden_effect = {
+			country_event = { id = britain.15 days = 7 }
+		}
+	}
+	option = { #是党内反对派的阴谋
+		name = britain.18.c
+		hidden_effect = {
+			country_event = { id = britain.12 days = 7 }
+		}
+	}
+	option = { #如果我们错了，麻烦会更多！继续查！
+		name = britain.18.d
+		set_country_flag = ENG_investigation_failure
+	}
+}
+
+#爱丁堡危机
+country_event = {
+	id = britain.19
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.19 FROM = [From.GetName]" }
+	title = britain.19.t
+	desc = britain.19.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #他怎么敢！
+		name = britain.19.a
+		9392 = { set_demilitarized_zone = yes }
+		hidden_effect = {
+			country_event = { id = britain.21 days = 7 }#咋整
+			country_event = { id = britain.20 days = 1 }#自约克来
+		}
+	}
+}
+
+#自约克来
+country_event = {
+	id = britain.20
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.20 FROM = [From.GetName]" }
+	title = britain.20.t
+	desc = britain.20.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #爱德华八世万岁！
+		name = britain.20.a
+		set_country_flag = ENG_king_edward_VIII
+	}
+}
+
+#咋整
+country_event = {
+	id = britain.21
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.21 FROM = [From.GetName]" }
+	title = britain.21.t
+	desc = britain.21.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = { #劝降
+		name = britain.21.a
+		hidden_effect = {
+			country_event = { id = britain.22 days = 7 }
+		}
+	}
+	option = { #打他丫的
+		name = britain.21.b
+		hidden_effect = {
+			country_event = { id = britain.23 days = 7 }
+		}
+	}
+	option = { #中心开花
+		name = britain.21.c
+		hidden_effect = {
+			country_event = { id = britain.24 days = 7 }
+		}
+	}
+}
+
+#劝降
+country_event = {
+	id = britain.22
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.22 FROM = [From.GetName]" }
+	title = text = britain.22.t
+	desc = {#领导者不是乔伊斯，成功
+		text = britain.22.d.su
+		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+	}
+	desc = {#领导者是乔伊斯，失败
+		text = britain.22.d.fa
+		trigger = { has_country_flag = ENG_pm_joyce }
+	}
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #早知今日，何必当初？
+		name = britain.22.a
+		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+		9392 = { set_demilitarized_zone = no }
+	}
+	option = { #敬酒不吃吃罚酒！
+		name = britain.22.b
+		trigger = { has_country_flag = ENG_pm_joyce }
+		set_country_flag = ENG_powerful_vice_king
+		country_event = { id = britain.23 days = 7 }
+	}
+}
+
+#爱丁堡之战
+country_event = {
+	id = britain.23
+	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.23 FROM = [From.GetName]" }
+	title = text = britain.23.t
+	desc = {#如果发生过卡尔顿山的日落/劝降 30%可能选择此文本,否则60
+		text = britain.23.d.su
+		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+	}
+	desc = {#领导者是乔伊斯，失败
+		text = britain.23.d.fa
+		trigger = { has_country_flag = ENG_pm_joyce }
+	}
+	picture = GFX_report_event_soldiers_marching
+
+	is_triggered_only = yes
+
+	option = { #早知今日，何必当初？
+		name = britain.22.a
+		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+		9392 = { set_demilitarized_zone = no }
+	}
+	option = { #敬酒不吃吃罚酒！
+		name = britain.22.b
+		trigger = { has_country_flag = ENG_pm_joyce }
+		set_country_flag = ENG_powerful_vice_king
+		country_event = { id = britain.23 days = 7 }
+	}
+}
+
+
+
+
