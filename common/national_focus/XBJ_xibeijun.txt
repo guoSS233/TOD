@@ -1,0 +1,740 @@
+focus_tree = {
+	id = XBJ_xibeijun
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = XBJ
+		}
+	}
+	default = no
+	continuous_focus_position = {
+		x = 2000,
+		y = 2000
+	}
+	focus = {
+		id = XBJ_weiyuchoumou
+		text = XBJ_weiyuchoumou
+		icon = GFX_weiyuchoumou
+		cost = 1
+		x = 12
+		y = 0
+	}
+	focus = {
+		id = XBJ_jieruchou
+		text = XBJ_jieruchou
+		icon = GFX_jieruchou
+		cost = 10
+		mutually_exclusive = {
+			focus = XBJ_nixiahangou
+		}
+		prerequisite = {
+			focus = XBJ_yingquanermu
+		}
+		x = 8
+		y = 6
+	}
+	focus = {
+		id = XBJ_nixiahangou
+		text = XBJ_nixiahangou
+		icon = GFX_nixiahangou
+		cost = 10
+		mutually_exclusive = {
+			focus = XBJ_jieruchou
+		}
+		prerequisite = {
+			focus = XBJ_yingquanermu
+		}
+		x = 10
+		y = 6
+	}
+	focus = {
+		id = XBJ_jueshengqianli
+		text = XBJ_jueshengqianli
+		icon = GFX_jueshengqianli
+		cost = 10
+		prerequisite = {
+			focus = XBJ_bichangbujing
+		}
+		prerequisite = {
+			focus = XBJ_chuleibacui
+		}
+		x = 23
+		y = 7
+	}
+	focus = {
+		id = XBJ_chuanxitianxia
+		text = XBJ_chuanxitianxia
+		icon = GFX_chuanxitianxia
+		cost = 0
+		x = 29
+		y = 0
+	}
+	focus = {
+		id = XBJ_wugunnongbang
+		text = XBJ_wugunnongbang
+		icon = GFX_wugunnongbang
+		cost = 2
+		prerequisite = {
+			focus = XBJ_weiyuchoumou
+		}
+		mutually_exclusive = {
+			focus = XBJ_jiezeeryu
+		}
+		x = 9
+		y = 1
+	}
+	focus = {
+		id = XBJ_jiezeeryu
+		text = XBJ_jiezeeryu
+		icon = GFX_jiezeeryu
+		cost = 2
+		prerequisite = {
+			focus = XBJ_weiyuchoumou
+		}
+		mutually_exclusive = {
+			focus = XBJ_wugunnongbang
+		}
+		x = 15
+		y = 1
+	}
+	focus = {
+		id = XBJ_jishizhengshi
+		text = XBJ_jishizhengshi
+		icon = GFX_jishizhengshi
+		cost = 2
+		prerequisite = {
+			focus = XBJ_wugunnongbang
+			focus = XBJ_jiezeeryu
+		}
+		x = 2
+		y = 2
+	}
+	focus = {
+		id = XBJ_xinglijieyong
+		text = XBJ_xinglijieyong
+		icon = GFX_xinglijieyong
+		cost = 4
+		prerequisite = {
+			focus = XBJ_jishizhengshi
+		}
+		x = 2
+		y = 3
+	}
+	focus = {
+		id = XBJ_qiwujiuguo
+		text = XBJ_qiwujiuguo
+		icon = GFX_qiwujiuguo
+		cost = 5
+		prerequisite = {
+			focus = XBJ_xinglijieyong
+		}
+		mutually_exclusive = {
+			focus = XBJ_liyuexingguo
+		}
+		x = 0
+		y = 4
+	}
+	focus = {
+		id = XBJ_liyuexingguo
+		text = XBJ_liyuexingguo
+		icon = GFX_liyuexingguo
+		cost = 5
+		prerequisite = {
+			focus = XBJ_xinglijieyong
+		}
+		mutually_exclusive = {
+			focus = XBJ_qiwujiuguo
+		}
+		x = 4
+		y = 4
+	}
+	focus = {
+		id = XBJ_liuchuxingwang
+		text = XBJ_liuchuxingwang
+		icon = GFX_liuchuxingwang
+		cost = 10
+		prerequisite = {
+			focus = XBJ_liyuexingguo
+			focus = XBJ_qiwujiuguo
+			focus = XBJ_liyuexingguo
+			focus = XBJ_qiwujiuguo
+		}
+		x = 2
+		y = 5
+	}
+	focus = {
+		id = XBJ_qutuxixin
+		text = XBJ_qutuxixin
+		icon = GFX_qutuxixin
+		cost = 10
+		prerequisite = {
+			focus = XBJ_qiwujiuguo
+			focus = XBJ_liyuexingguo
+			focus = XBJ_qiwujiuguo
+		}
+		x = 0
+		y = 5
+	}
+	focus = {
+		id = XBJ_yiriqianli
+		text = XBJ_yiriqianli
+		icon = GFX_yiriqianli
+		cost = 10
+		prerequisite = {
+			focus = XBJ_liuchuxingwang
+		}
+		prerequisite = {
+			focus = XBJ_qutuxixin
+		}
+		x = 2
+		y = 6
+	}
+	focus = {
+		id = XBJ_jinzhongshanqun
+		text = XBJ_jinzhongshanqun
+		icon = GFX_jinzhongshanqun
+		cost = 10
+		prerequisite = {
+			focus = XBJ_liyuexingguo
+			focus = XBJ_qiwujiuguo
+		}
+		x = 4
+		y = 5
+	}
+	focus = {
+		id = XBJ_zhoujingmuxun
+		text = XBJ_zhoujingmuxun
+		icon = GFX_zhoujingmuxun
+		cost = 2
+		prerequisite = {
+			focus = XBJ_wugunnongbang
+			focus = XBJ_jiezeeryu
+		}
+		x = 7
+		y = 2
+	}
+	focus = {
+		id = XBJ_yichuidingyin
+		text = XBJ_yichuidingyin
+		icon = GFX_yichuidingyin
+		cost = 4
+		prerequisite = {
+			focus = XBJ_zhoujingmuxun
+		}
+		x = 5
+		y = 3
+	}
+	focus = {
+		id = XBJ_kongtouzhipiao
+		text = XBJ_kongtouzhipiao
+		icon = GFX_kongtouzhipiao
+		cost = 4
+		prerequisite = {
+			focus = XBJ_zhoujingmuxun
+		}
+		x = 9
+		y = 3
+	}
+	focus = {
+		id = XBJ_enweibingshi
+		text = XBJ_enweibingshi
+		icon = GFX_enweibingshi
+		cost = 10
+		prerequisite = {
+			focus = XBJ_yichuidingyin
+		}
+		prerequisite = {
+			focus = XBJ_kongtouzhipiao
+		}
+		x = 6
+		y = 5
+	}
+	focus = {
+		id = XBJ_tongpaolianjin
+		text = XBJ_tongpaolianjin
+		icon = GFX_tongpaolianjin
+		cost = 10
+		prerequisite = {
+			focus = XBJ_jinzhongshanqun
+		}
+		prerequisite = {
+			focus = XBJ_enweibingshi
+		}
+		mutually_exclusive = {
+			focus = XBJ_huayiyuzhi
+		}
+		x = 4
+		y = 6
+	}
+	focus = {
+		id = XBJ_huayiyuzhi
+		text = XBJ_huayiyuzhi
+		icon = GFX_huayiyuzhi
+		cost = 10
+		prerequisite = {
+			focus = XBJ_enweibingshi
+		}
+		prerequisite = {
+			focus = XBJ_jinzhongshanqun
+		}
+		mutually_exclusive = {
+			focus = XBJ_tongpaolianjin
+		}
+		x = 6
+		y = 6
+	}
+	focus = {
+		id = XBJ_yingquanermu
+		text = XBJ_yingquanermu
+		icon = GFX_yingquanermu
+		cost = 5
+		prerequisite = {
+			focus = XBJ_kongtouzhipiao
+		}
+		prerequisite = {
+			focus = XBJ_yichuidingyin
+		}
+		prerequisite = {
+			focus = XBJ_kongtouzhipiao
+		}
+		x = 9
+		y = 5
+	}
+	focus = {
+		id = XBJ_gongshangguoshi
+		text = XBJ_gongshangguoshi
+		icon = GFX_gongshangguoshi
+		cost = 2
+		prerequisite = {
+			focus = XBJ_jiezeeryu
+			focus = XBJ_wugunnongbang
+		}
+		x = 17
+		y = 2
+	}
+	focus = {
+		id = XBJ_bamaolianru
+		text = XBJ_bamaolianru
+		icon = GFX_bamaolianru
+		cost = 4
+		prerequisite = {
+			focus = XBJ_gongshangguoshi
+		}
+		x = 15
+		y = 3
+	}
+	focus = {
+		id = XBJ_yuqiuzhendao
+		text = XBJ_yuqiuzhendao
+		icon = GFX_yuqiuzhendao
+		cost = 5
+		prerequisite = {
+			focus = XBJ_kongtouzhipiao
+		}
+		prerequisite = {
+			focus = XBJ_bamaolianru
+		}
+		x = 12
+		y = 4
+	}
+	focus = {
+		id = XBJ_zonghengbaihe
+		text = XBJ_zonghengbaihe
+		icon = GFX_zonghengbaihe
+		cost = 4
+		prerequisite = {
+			focus = XBJ_gongshangguoshi
+		}
+		x = 19
+		y = 3
+	}
+	focus = {
+		id = XBJ_hunshuimoyu
+		text = XBJ_hunshuimoyu
+		icon = GFX_hunshuimoyu
+		cost = 5
+		prerequisite = {
+			focus = XBJ_bamaolianru
+		}
+		prerequisite = {
+			focus = XBJ_zonghengbaihe
+		}
+		x = 15
+		y = 5
+	}
+	focus = {
+		id = XBJ_shanfengdianhuo
+		text = XBJ_shanfengdianhuo
+		icon = GFX_shanfengdianhuo
+		cost = 5
+		prerequisite = {
+			focus = XBJ_hunshuimoyu
+		}
+		mutually_exclusive = {
+			focus = XBJ_mulinyouhao
+		}
+		x = 14
+		y = 6
+	}
+	focus = {
+		id = XBJ_mulinyouhao
+		text = XBJ_mulinyouhao
+		icon = GFX_mulinyouhao
+		cost = 5
+		prerequisite = {
+			focus = XBJ_hunshuimoyu
+		}
+		mutually_exclusive = {
+			focus = XBJ_shanfengdianhuo
+		}
+		x = 16
+		y = 6
+	}
+	focus = {
+		id = XBJ_hujiahuwei
+		text = XBJ_hujiahuwei
+		icon = GFX_hujiahuwei
+		cost = 5
+		prerequisite = {
+			focus = XBJ_zonghengbaihe
+		}
+		prerequisite = {
+			focus = XBJ_bamaolianru
+		}
+		x = 18
+		y = 5
+	}
+	focus = {
+		id = XBJ_chengtianzhiwei
+		text = XBJ_chengtianzhiwei
+		icon = GFX_chengtianzhiwei
+		cost = 2
+		prerequisite = {
+			focus = XBJ_wugunnongbang
+			focus = XBJ_jiezeeryu
+		}
+		x = 22
+		y = 2
+	}
+	focus = {
+		id = XBJ_toulianghuanzhu
+		text = XBJ_toulianghuanzhu
+		icon = GFX_toulianghuanzhu
+		cost = 4
+		prerequisite = {
+			focus = XBJ_chengtianzhiwei
+		}
+		x = 22
+		y = 3
+	}
+	focus = {
+		id = XBJ_xiaoguicaosui
+		text = XBJ_xiaoguicaosui
+		icon = GFX_xiaoguicaosui
+		cost = 5
+		prerequisite = {
+			focus = XBJ_toulianghuanzhu
+		}
+		mutually_exclusive = {
+			focus = XBJ_houshengkewei
+		}
+		x = 20
+		y = 4
+	}
+	focus = {
+		id = XBJ_houshengkewei
+		text = XBJ_houshengkewei
+		icon = GFX_houshengkewei
+		cost = 5
+		prerequisite = {
+			focus = XBJ_toulianghuanzhu
+		}
+		mutually_exclusive = {
+			focus = XBJ_xiaoguicaosui
+		}
+		x = 24
+		y = 4
+	}
+	focus = {
+		id = XBJ_kumufengchun
+		text = XBJ_kumufengchun
+		icon = GFX_kumufengchun
+		cost = 10
+		prerequisite = {
+			focus = XBJ_xiaoguicaosui
+			focus = XBJ_houshengkewei
+		}
+		x = 22
+		y = 5
+	}
+	focus = {
+		id = XBJ_xihejinche
+		text = XBJ_xihejinche
+		icon = GFX_xihejinche
+		cost = 10
+		prerequisite = {
+			focus = XBJ_xiaoguicaosui
+			focus = XBJ_houshengkewei
+		}
+		x = 24
+		y = 5
+	}
+	focus = {
+		id = XBJ_bichangbujing
+		text = XBJ_bichangbujing
+		icon = GFX_bichangbujing
+		cost = 10
+		prerequisite = {
+			focus = XBJ_kumufengchun
+		}
+		prerequisite = {
+			focus = XBJ_xihejinche
+		}
+		x = 22
+		y = 6
+	}
+	focus = {
+		id = XBJ_chuleibacui
+		text = XBJ_chuleibacui
+		icon = GFX_chuleibacui
+		cost = 10
+		prerequisite = {
+			focus = XBJ_kumufengchun
+		}
+		prerequisite = {
+			focus = XBJ_xihejinche
+		}
+		x = 24
+		y = 6
+	}
+	focus = {
+		id = XBJ_busuzhike
+		text = XBJ_busuzhike
+		icon = GFX_busuzhike
+		cost = 0
+		prerequisite = {
+			focus = XBJ_chuanxitianxia
+		}
+		x = 27
+		y = 1
+	}
+	focus = {
+		id = XBJ_piananyiyu
+		text = XBJ_piananyiyu
+		icon = GFX_piananyiyu
+		cost = 0
+		prerequisite = {
+			focus = XBJ_chuanxitianxia
+		}
+		x = 31
+		y = 1
+	}
+	focus = {
+		id = XBJ_tianzhuguozei
+		text = XBJ_tianzhuguozei
+		icon = GFX_tianzhuguozei
+		cost = 0
+		prerequisite = {
+			focus = XBJ_busuzhike
+			focus = XBJ_piananyiyu
+		}
+		x = 27
+		y = 2
+	}
+	focus = {
+		id = XBJ_zhaishanzhuhai
+		text = XBJ_zhaishanzhuhai
+		icon = GFX_zhaishanzhuhai
+		cost = 10
+		prerequisite = {
+			focus = XBJ_liuchuxingwang
+		}
+		prerequisite = {
+			focus = XBJ_qutuxixin
+		}
+		x = 0
+		y = 6
+	}
+	focus = {
+		id = XBJ_jiumaoxinyan
+		text = XBJ_jiumaoxinyan
+		icon = GFX_jiumaoxinyan
+		cost = 10
+		prerequisite = {
+			focus = XBJ_yiriqianli
+		}
+		prerequisite = {
+			focus = XBJ_zhaishanzhuhai
+		}
+		x = 1
+		y = 7
+	}
+	focus = {
+		id = XBJ_shenzhoushunyao
+		text = XBJ_shenzhoushunyao
+		icon = GFX_shenzhoushunyao
+		cost = 10
+		prerequisite = {
+			focus = XBJ_tongpaolianjin
+		}
+		x = 4
+		y = 7
+	}
+	focus = {
+		id = XBJ_yishitongren
+		text = XBJ_yishitongren
+		icon = GFX_yishitongren
+		cost = 10
+		prerequisite = {
+			focus = XBJ_huayiyuzhi
+		}
+		x = 6
+		y = 7
+	}
+	focus = {
+		id = XBJ_gegudingxin
+		text = XBJ_gegudingxin
+		icon = GFX_gegudingxin
+		cost = 10
+		prerequisite = {
+			focus = XBJ_jieruchou
+		}
+		x = 8
+		y = 7
+	}
+	focus = {
+		id = XBJ_yiyinhuoguang
+		text = XBJ_yiyinhuoguang
+		icon = GFX_yiyinhuoguang
+		cost = 10
+		prerequisite = {
+			focus = XBJ_nixiahangou
+		}
+		x = 10
+		y = 7
+	}
+	focus = {
+		id = XBJ_bocaizhongchang
+		text = XBJ_bocaizhongchang
+		icon = GFX_bocaizhongchang
+		cost = 10
+		prerequisite = {
+			focus = XBJ_laomashitu
+		}
+		x = 12
+		y = 7
+	}
+	focus = {
+		id = XBJ_laomashitu
+		text = XBJ_laomashitu
+		icon = GFX_laomashitu
+		cost = 10
+		prerequisite = {
+			focus = XBJ_yuqiuzhendao
+		}
+		x = 12
+		y = 5
+	}
+	focus = {
+		id = XBJ_suiyuanbizhu
+		text = XBJ_suiyuanbizhu
+		icon = GFX_suiyuanbizhu
+		cost = 10
+		prerequisite = {
+			focus = XBJ_shanfengdianhuo
+		}
+		x = 14
+		y = 7
+	}
+	focus = {
+		id = XBJ_chunwangchihan
+		text = XBJ_chunwangchihan
+		icon = GFX_chunwangchihan
+		cost = 10
+		prerequisite = {
+			focus = XBJ_mulinyouhao
+		}
+		x = 16
+		y = 7
+	}
+	focus = {
+		id = XBJ_renyizhishi
+		text = XBJ_renyizhishi
+		icon = GFX_renyizhishi
+		cost = 10
+		prerequisite = {
+			focus = XBJ_zhongguanbairi
+		}
+		x = 18
+		y = 7
+	}
+	focus = {
+		id = XBJ_zhongguanbairi
+		text = XBJ_zhongguanbairi
+		icon = GFX_zhongguanbairi
+		cost = 10
+		prerequisite = {
+			focus = XBJ_hujiahuwei
+		}
+		prerequisite = {
+			focus = XBJ_tongchoudikai
+		}
+		mutually_exclusive = {
+			focus = XBJ_tieshixinchang
+		}
+		x = 18
+		y = 6
+	}
+	focus = {
+		id = XBJ_xiongpibaiwan
+		text = XBJ_xiongpibaiwan
+		icon = GFX_xiongpibaiwan
+		cost = 10
+		prerequisite = {
+			focus = XBJ_tieshixinchang
+		}
+		x = 20
+		y = 7
+	}
+	focus = {
+		id = XBJ_tieshixinchang
+		text = XBJ_tieshixinchang
+		icon = GFX_tieshixinchang
+		cost = 10
+		prerequisite = {
+			focus = XBJ_tongchoudikai
+		}
+		prerequisite = {
+			focus = XBJ_hujiahuwei
+		}
+		mutually_exclusive = {
+			focus = XBJ_zhongguanbairi
+		}
+		x = 20
+		y = 6
+	}
+	focus = {
+		id = XBJ_tongchoudikai
+		text = XBJ_tongchoudikai
+		icon = GFX_tongchoudikai
+		cost = 5
+		prerequisite = {
+			focus = XBJ_xiaoguicaosui
+			focus = XBJ_houshengkewei
+		}
+		x = 20
+		y = 5
+	}
+	focus = {
+		id = XBJ_zhechongzunzu
+		text = XBJ_zhechongzunzu
+		icon = GFX_zhechongzunzu
+		cost = 0
+		prerequisite = {
+			focus = XBJ_piananyiyu
+		}
+		x = 31
+		y = 2
+	}
+}
