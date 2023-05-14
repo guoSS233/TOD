@@ -445,29 +445,31 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "ideas"
-			position = { x = 0 y = 425 }
+			position = { x = 0 y = 505 }
 			size = { width=100%% height=100%% }
 			verticalScrollbar = "right_vertical_slider"
 			scroll_wheel_factor = 40
 			smooth_scrolling = yes
 			margin = { top = 14 bottom = 13}
+			clipping = yes
 		
 			background = {
 				name = "Background"
 				#quadTextureSprite ="GFX_tiled_window_2b_border"
 				#quadTextureSprite ="GFX_tiled_window_1b_border"
 				quadTextureSprite ="GFX_tiled_window_1b_border"
-				position = { x = 0 y = 60 }
+				position = { x = 0 y = 20 }
 			}
 			
-			gridBoxType = {
-				name = "idea_categories_grid"
-				position = { x = 17 y = 0 }
-				size = { width = 100%% height = 100%% }
-				slotsize = { width = 64 height = 106 }
-				max_slots_horizontal = 1
-				format = "UPPER_LEFT"
-			}
+				gridBoxType = {
+					name = "idea_categories_grid"
+					position = { x = 17 y = 0 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 64 height = 106 }
+					max_slots_horizontal = 1
+					format = "UPPER_LEFT"
+				}
+
 
 
 		}
@@ -589,19 +591,19 @@ guiTypes = {
 	}
 	
 	containerWindowType = {
-		name = "country_politics_idea_category_entry"
-		position = { x = 0 y = 100 }
+		name = "country_politics_idea_category_entry" #企业顾问选择
+		position = { x = 0 y = 10 }
 		size = { width=550 height= 100 }
 		clipping = no
 		
 		iconType ={
-			name ="category_header"
+			name ="category_header" #那个棕色的一条
 			spriteType = "GFX_category_header"
 			position = { x=-5 y=2 }
 			Orientation = "UPPER_LEFT"
 		}
-		iconType ={
-			name ="category_icon"
+		iconType ={ #
+			name ="category_icon" #分类图标
 			spriteType = "GFX_idea_categories"
 			position = { x=4 y=8 }
 			Orientation = "UPPER_LEFT"
@@ -609,7 +611,7 @@ guiTypes = {
 		
 		
 		instantTextboxType = {
-			name = "name"
+			name = "name" #分类名
 			position = { x = 70 y = 14 }
 			font = "hoi_20b"
 			text = "Government"
@@ -618,9 +620,9 @@ guiTypes = {
 		}
 		
 		gridboxtype = {
-			name = "ideas_grid"
+			name = "ideas_grid" #下面的小圆选项
 			position = { x = 17 y = 46 }
-			size = { width = 100%% height = 100%% }
+			size = { width = 100%% height = 12%% }
 			slotsize = { width = 80 height = 64 }
 			max_slots = { x = 7 y = 1 }
 			format = "UPPER_LEFT"
@@ -682,17 +684,17 @@ guiTypes = {
 				}
 
 				gridBoxType = {
-					name = "box_grid"
+					name = "box_grid" #顾问方块
 					position = { x = 10 y = 10 }
 					size = { width = 500 height = 1 }
-					slotsize = { width = 231 height = 74 }
+					slotsize = { width = 231 height = 100 }
 					max_slots_horizontal = 2
 					add_horizontal = yes
 					format = "UPPER_LEFT"
 				}
 
 				gridBoxType = {
-					name = "box_list"
+					name = "box_list" #法案列表
 					position = { x = 10 y = 10 }
 					size = { width = 500 height = 1 }
 					slotsize = { width = 462 height = 74 }
