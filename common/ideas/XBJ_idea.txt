@@ -1,5 +1,5 @@
 ideas = {
-    country = {
+    country = { ### 民族精神 ###
         #靖难之师
         XBJ_The_Army_of_Salvation = {
             picture = XBJ_The_Army_of_Salvation
@@ -54,6 +54,7 @@ ideas = {
     }
     TOD_minister_head = { ### 政府首脑 ###
         XBJ_Guan_zhu = {#管竹
+            picture = GFX_idea_XBJ_Guan_zhu
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -68,6 +69,7 @@ ideas = {
             }
         }
         XBJ_Jing_Yuexiu = {#井岳秀
+            picture = GFX_idea_XBJ_Jing_Yuexiu
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -82,6 +84,7 @@ ideas = {
             }
         }
         XBJ_He_Yaozu = {#贺耀祖
+            picture = GFX_idea_XBJ_He_Yaozu
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -96,6 +99,7 @@ ideas = {
             }
         }
         XBJ_Zhu_Jiahua = {#朱家骅
+            picture = GFX_idea_XBJ_Zhu_Jiahua
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -112,6 +116,7 @@ ideas = {
     }
     TOD_foreign_minister = {### 外交部长 ###
         XBJ_sun_mingjing = {#孙明经
+            picture = GFX_idea_XBJ_sun_mingjing
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -126,6 +131,7 @@ ideas = {
             }
         }
         XBJ_cheng_tianfang = {#程天放
+            picture =  GFX_idea_XBJ_cheng_tianfang
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -140,6 +146,7 @@ ideas = {
             }
         }
         XBJ_chen_jie = {#陈介
+            picture = GFX_idea_XBJ_chen_jie
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -156,6 +163,7 @@ ideas = {
     }
     TOD_economy_minister = {### 经济部长 ###
         XBJ_he_cuilian = {#何淬廉
+            picture = GFX_idea_XBJ_he_cuilian
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -170,6 +178,7 @@ ideas = {
             }
         }
         XBJ_liu_dazhong = {#刘大中
+            picture = GFX_idea_XBJ_liu_dazhong
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -184,6 +193,7 @@ ideas = {
             }
         }
         XBJ_chen_daisun = {#陈岱孙
+            picture = GFX_idea_XBJ_chen_daisun
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -198,6 +208,7 @@ ideas = {
             }
         }
         XBJ_song_xiangcheng = {#宋向辰
+            picture = GFX_idea_XBJ_song_xiangcheng
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -212,8 +223,9 @@ ideas = {
             }
         }
     }
-    TOD_security_minister = {
+    TOD_security_minister = {### 安全部长 ###
         XBJ_cao_shiying = {#曹世英
+            picture = GFX_idea_XBJ_cao_shiying
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -228,6 +240,7 @@ ideas = {
             }
         }
         XBJ_ye_xiufeng = {#叶秀峰
+            picture = GFX_idea_XBJ_ye_xiufeng
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -242,6 +255,7 @@ ideas = {
             }
         }
         XBJ_guo_xiren = {#郭希仁
+            picture = GFX_idea_XBJ_guo_xiren
             allowed = { original_tag = XBJ }
             available = {
                 custom_trigger_tooltip = {
@@ -253,6 +267,453 @@ ideas = {
             traits = {
                 TOD_security_minister
                 XBJ_wukong_buru
+            }
+        }
+    }
+    tank_manufacturer = { ### 坦克设计商 ###
+        designer = yes
+        Zhong_Wu2 = {#忠武特种装备-重型坦克制造商
+            name = Zhong_Wu
+            picture = XBJ_Zhong_Wu
+            allowed = {
+                is_ming_tag = YES
+            }
+            available = {
+                controls_state = 1210 #陇右
+            }
+            research_bonus = {
+                armor = 0.15 #装甲
+            }
+            equipment_bonus = {#可靠性 对人员杀伤
+                armor = {
+                    reliability = 0.05
+                    soft_attack = 0.05
+                }
+            }
+            traits = { heavy_tank_producer_Infantry_0 }#重型坦克制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Ying_Chuan2 = {#银川机动车辆-轻型坦克制造商
+            name = Ying_Chuan
+            picture = XBJ_Ying_Chuan
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                armor = 0.15
+            }
+            available = {
+                controls_state = 843 #宁夏
+            }
+            modifier = {
+                motorized_defence_factor = 0.05
+                mechanized_defence_factor =0.05
+            }
+            traits = { small_tank_producer }#轻型坦克制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        XiBei_NongJi1 = {#西北农业机械总厂-轻型坦克制造商
+            name = XiBei_NongJi
+            picture = XBJ_XiBei_NongJi
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                armor = 0.15 #装甲
+            }
+            available = {
+                controls_state = 756 #河西
+            }
+            equipment_bonus = {
+                armor = {
+                    reliability = 0.1 #可靠性
+                    maximum_speed = 0.05 #最大速度
+                }
+            }
+            traits = { small_tank_producer }#轻型坦克制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    naval_manufacturer = { ### 海军制造商 ###
+        designer = YES
+        She_Yang = {#慑洋海军联谊会-舰艇制造商
+            picture = XBJ_She_Yang
+            allowed = {
+                is_ming_tag = YES
+            }
+            available = {
+                controls_state = 1209 #热海
+            }
+            research_bonus = {
+                naval_equipment = 0.15 #海军
+            }
+            traits = { naval_producer }#舰艇制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    aircraft_manufacturer = { ### 空军制造商 ###
+        designer = YES
+        Guan_Long = {#关陇航空动力-轻型飞机制造商
+            picture = XBJ_Guan_Long
+            allowed = {
+                is_ming_tag = YES
+            }
+            available = {
+                controls_state = 1210 #陇右
+            }
+            research_bonus = {
+                air_equipment = 0.15 #空军
+            }
+            equipment_bonus = {
+                small_plane_airframe = {#战斗机
+                    air_agility = 0.1 #机动
+                    maximum_speed = 0.1 #最大速度
+                }
+            }
+            traits = { light_aircraft_producer }#轻型飞机制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Tian_Huang = {#天山-黄河航空机械-中型飞机制造商
+            picture = XBJ_Tian_Huang
+            allowed = {
+                is_ming_tag = YES
+            }
+            available = {
+                controls_state = 1193 #迪化
+            }
+            research_bonus = {
+                air_equipment = 0.15 #空军
+            }
+            equipment_bonus = {
+                medium_plane_fighter_airframe = {
+                    reliability = 0.2
+                }
+                medium_plane_airframe = {
+                    reliability = 0.2
+                }
+                medium_plane_scout_plane_airframe = {
+                    reliability = 0.2
+                }
+            }
+            traits = { medium_aircraft_producer }#中型飞机制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Zhong_Wu1 = {#忠武特种设备-重型飞机制造商
+            name = Zhong_Wu
+            picture = XBJ_Zhong_Wu
+            allowed = {
+                is_ming_tag = YES
+            }
+            available = {
+                controls_state = 1210 #陇右
+            }
+            research_bonus = {
+                air_equipment = 0.15 #空军
+            }
+            equipment_bonus = {
+
+                large_plane_airframe = {
+                    air_bombing = 0.1
+                }
+            }
+            traits = { heavy_aircraft_producer }#重型飞机制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    industrial_concern = { ### 工业企业 ###
+        designer = yes
+        Rong_Shi = {#荣氏电子通讯-电子企业
+            picture = XBJ_Rong_Shi
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                electronics = 0.05
+            }
+            available = {
+                controls_state = 1116 #汉中
+            }
+            modifier = {
+                land_reinforce_rate = 0.03
+                production_speed_radar_station_factor = 0.25
+                production_factory_efficiency_gain_factor = 0.1
+            }
+            traits = { Electronics_concern }#电子企业
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Di_Wei = {#帝威化学工业-工业企业
+            picture = XBJ_Di_Wei
+            allowed = {
+                is_ming_tag = YES
+            }
+            available = {
+                controls_state = 756 #河西
+            }
+            modifier = {
+                industrial_capacity_factory = 0.1 #工厂产出
+                min_export = 0.05
+                local_resources_factor = 0.05
+            }
+            traits = { industrial_concern }#工业企业
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Ru_Yi = {#如意道观-工业企业
+            picture = XBJ_Ru_Yi
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                industry = 0.05
+                electronics = 0.15
+            }
+            available = {
+                controls_state = 1128 #焉耆
+            }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.1
+            }
+            traits = { industrial_concern }#工业企业
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Sheng_De = {#圣德工业技术大学-高校
+            picture = XBJ_Sheng_De
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                industry = 0.15
+            }
+            available = {
+                controls_state = 744 #关中
+            }
+            modifier = {
+                production_factory_max_efficiency_factor = 0.05
+                local_building_slots_factor = 0.05
+            }
+            traits = { university }#高校
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Zheng_Dao = {#真道高校协作体-高校
+            picture = XBJ_Zheng_Dao
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                industry = 0.15
+            }
+            available = {
+                controls_state = 744 #关中
+                has_completed_focus = XBJ_yuqiuzhendao
+            }
+            modifier = {
+                production_speed_buildings_factor = 0.1
+                production_speed_infrastructure_factor = 0.1
+            }
+            traits = { university }#高校
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Gan_Su = {#甘肃工矿采掘集团-精炼企业
+            picture = XBJ_Gan_Su
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                industry = 0.05
+                synth_resources = 0.15
+            }
+            available = {
+                controls_state = 1113 #玉门
+            }
+            modifier = {
+                PRODUCTION_OIL_FACTOR = 0.05
+                FUEL_GAIN_FACTOR_FROM_STATES = 0.1
+            }
+            traits = { refinery_concern }#精炼企业
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    materiel_manufacturer = { ### 军需品设计商 ###
+        Liu_GuoChen = {#刘国臣设计院-步兵装备制造商
+            picture = XBJ_Liu_GuoChen
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                infantry_weapons = 0.15
+            }
+            available = {
+                controls_state = 1116 #陕中
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    reliability = 0.05 #可靠性
+                    soft_attack = 0.05 #软攻
+                }
+            }
+            traits = { infantry_equipment_producer }#步兵装备制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        XiBei_NongJi2 = {#西北农业机械总厂-摩托化装备制造商
+            name = XiBei_NongJi
+            picture = XBJ_XiBei_NongJi
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                motorized_equipment = 0.15
+            }
+            available = {
+                controls_state = 756 #河西
+            }
+            equipment_bonus = {
+                motorized_equipment = {
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+                mechanized_equipment = {
+                    build_cost_ic = -0.05
+                    instant = yes
+                }
+            }
+            traits = { motorized_equipment_producer }#摩托化装备制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Ying_Chuan1 = {#银川机动车辆-摩托化装备制造商
+            name = Ying_Chuan
+            picture = XBJ_Ying_Chuan
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                motorized_equipment = 0.15
+            }
+            available = {
+                controls_state = 843 #宁夏
+            }
+            equipment_bonus = {
+                motorized_equipment = {
+                    maximum_speed = 0.05
+                }
+                mechanized_equipment = {
+                    maximum_speed = 0.05
+                }
+            }
+            traits = { motorized_equipment_producer }#摩托化装备制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        XiBei_Junxie1 = {#西北军械修造所-步兵装备设计商
+            name = XiBei_Junxie
+            picture = XBJ_XiBei_Junxie
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                infantry_weapons = 0.15
+            }
+            available = {
+                controls_state = 744 #关中
+            }
+            modifier = {
+                army_infantry_attack_factor = 0.05 #步兵攻击
+            }
+            traits = { infantry_equipment_producer }#步兵装备设计商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        XiBei_Junxie2 = {#西北军械修造所-火炮制造商
+            name = XiBei_Junxie
+            picture = XBJ_XiBei_Junxie
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                artillery = 0.15
+            }
+            available = {
+                controls_state = 744 #关中
+            }
+            equipment_bonus = {
+                artillery_equipment = {#火炮
+                    reliability = 0.2 #可靠性
+                }
+            }
+            traits = { artillery_producer }#火炮制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Di_Wei_Pao = {#帝威火炮铸造所-火炮制造商
+            picture = XBJ_Di_Wei
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                artillery = 0.15
+            }
+            available = {
+                controls_state = 756 #河西
+            }
+            modifier = {
+                army_artillery_attack_factor = 0.03
+                army_artillery_defence_factor = 0.03
+            }
+            traits = { artillery_producer }#火炮制造商
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        Yi_Yong = {#义勇金属-火炮制造商
+            picture = XBJ_Yi_Yong
+            allowed = {
+                is_ming_tag = YES
+            }
+            research_bonus = {
+                artillery = 0.15
+            }
+            available = {
+                controls_state = 843 #宁夏
+            }
+            equipment_bonus = {
+                artillery_equipment = {#火炮
+                    reliability = 0.2 #可靠性
+                }
+            }
+            traits = { artillery_producer }#火炮制造商
+            ai_will_do = {
+                factor = 1
             }
         }
     }

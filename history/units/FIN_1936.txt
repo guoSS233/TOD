@@ -1,8 +1,8 @@
 ##### Division Templates #####
+#芬兰红军步兵
 
- #苏俄红军步兵
-division_template = {                             
-	name = "TTPA Jalkaväkidivisioona"  	
+division_template = {
+	name = "TTPA Jalkaväkidivisioona"
 
 	division_names_group = 	FIN_INF_01
 
@@ -15,15 +15,15 @@ division_template = {
 		infantry = { x = 1 y = 2 }
 	}
 	support = {
-		engineer = { x = 0 y = 0 }   
+		engineer = { x = 0 y = 0 }
 	}
 }
+#苏俄红军步兵
 
-#芬兰红军步兵
-division_template = {                        
-	name = "RKKA Strelkovaya Diviziya"  	
+division_template = {
+	name = "RKKA Strelkovaya Diviziya"
 
-	division_names_group = 	FIN_INF_01
+	division_names_group = 	FIN_INF_SOV
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -38,15 +38,15 @@ division_template = {
 		infantry = { x = 3 y = 0 }
 	}
 	support = {
-		artillery = { x = 0 y = 0 }   
+		artillery = { x = 0 y = 0 }
 	}
 }
 
 #山地
 division_template = {
-	name = "TTPA Vuoristojääkäridivisioona"  	
+	name = "TTPA Vuoristojääkäridivisioona"
 
-	division_names_group = 	FIN_INF_01
+	division_names_group = 	FIN_MOU_01
 
 	regiments = {
 		mountaineers = { x = 0 y = 0 }
@@ -60,17 +60,17 @@ division_template = {
 		mountaineers = { x = 2 y = 2 }
 	}
 	support = {
-		artillery = { x = 0 y = 0 } 
-                               / recon = { x = 0 y = 1 } 
-		engineer = { x = 0 y = 2 } 
+		artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
 	}
 }
 
 #边防
 division_template = {
-	name = "SJSK Divisioona"  	
+	name = "SJSK Divisioona"
 
-	division_names_group = 	FIN_INF_01
+	division_names_group = 	FIN_INF_02
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -79,14 +79,18 @@ division_template = {
 		infantry = { x = 1 y = 0 }
 		infantry = { x = 1 y = 1 }
 		infantry = { x = 1 y = 2 }
+
+	}
+	support = {
+		military_police = { x = 0 y = 0 }
 	}
 }
 
 #骑兵
 division_template = {
-	name = "TTPA Ratsuväkiprikaati"  	
+	name = "TTPA Ratsuväkiprikaati"
 
-	division_names_group = 	FIN_INF_01
+	division_names_group = 	FIN_CAV_01
 
 	regiments = {
 		cavalry = { x = 0 y = 0 }
@@ -96,16 +100,16 @@ division_template = {
 		cavalry = { x = 1 y = 1 }
 		cavalry = { x = 1 y = 2 }
 	}
-	 support = {
-	        recon = { x = 0 y = 0 } 
-	 }
+	support = {
+		recon = { x = 0 y = 0 }
+	}
 }
 
 #摩托车
 division_template = {
-	name = "Motostrelkovaya Diviziya"  	
+	name = "Motostrelkovaya Diviziya"
 
-	division_names_group = 	FIN_INF_01
+	division_names_group = 	FIN_MOT_01
 
 	regiments = {
 		motorized = { x = 0 y = 0 }
@@ -114,17 +118,17 @@ division_template = {
 		motorized = { x = 1 y = 0 }
 		motorized = { x = 1 y = 1 }
 		motorized = { x = 1 y = 2 }
-	 }
-	 support = {
-	        engineer = { x = 0 y = 0 } 
-	 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
 }
 
 #装甲
 division_template = {
-	name = "TTPA Panssaridivisioona"  	
+	name = "TTPA Panssaridivisioona"
 
-	division_names_group = 	FIN_INF_01
+	division_names_group = 	FIN_AOR_01
 
 	regiments = {
 		light_armor = { x = 0 y = 0 }
@@ -133,199 +137,199 @@ division_template = {
 		motorized = { x = 1 y = 1 }
 		motorized = { x = 2 y = 0 }
 		motorized = { x = 2 y = 1 }
-	 }
-	 support = {
-	        engineer = { x = 0 y = 0 }
-            mot_recon = { x = 0 y = 1 }	
-            artillery = { x = 0 y = 2 }			
-	 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+		mot_recon = { x = 0 y = 1 }
+		artillery = { x = 0 y = 2 }
+	}
 }
 
 ### 部队 ###
 
 units = {
-         division = {			
-		
+	division = {
+
 		location = 11105
 		division_template = "RKKA Strelkovaya Diviziya"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1
 
 	}
-	
-	 division = {			
-		
+
+	division = {
+
 		location = 9105
 		division_template = "RKKA Strelkovaya Diviziya"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 3083
 		division_template = "RKKA Strelkovaya Diviziya"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 3137
 		division_template = "RKKA Strelkovaya Diviziya"
 		start_experience_factor = 0.5
 		start_equipment_factor = 1
 
 	}
-	
-	division = {#1			
-		
+
+	division = {#1
+
 		location = 11105
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {	#2		
-		
+
+	division = {	#2
+
 		location = 6066
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {#3			
-		
+
+	division = {#3
+
 		location = 3122
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {	#4		
-		
+
+	division = {	#4
+
 		location = 6153
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {		#5	
-		
+
+	division = {		#5
+
 		location = 9206
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {#6		
-		
+
+	division = {#6
+
 		location = 6045
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {#8			
-		
+
+	division = {#8
+
 		location = 197
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {	#9		
-		
+
+	division = {	#9
+
 		location = 11125
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {		#10#	
-		
+
+	division = {		#10#
+
 		location = 11130
 		division_template = "TTPA Jalkaväkidivisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 3193
 		division_template = "TTPA Vuoristojääkäridivisioona"
 		start_experience_factor = 0.4
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 11115
 		division_template = "TTPA Vuoristojääkäridivisioona"
 		start_experience_factor = 0.4
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 3083
 		division_template = "SJSK Divisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 3060
 		division_template = "SJSK Divisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 11142
 		division_template = "SJSK Divisioona"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 3073
 		division_template = "TTPA Ratsuväkiprikaati"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 9158
 		division_template = "TTPA Ratsuväkiprikaati"
 		start_experience_factor = 0.1
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 9167
 		name = "NKVD Motostrelk. Diviziya'Felix Dzerzhinsky'"
 		division_template = "Motostrelkovaya Diviziya"
@@ -333,9 +337,9 @@ units = {
 		start_equipment_factor = 1
 
 	}
-	
-	division = {			
-		
+
+	division = {
+
 		location = 6144
 		division_template = "TTPA Panssaridivisioona"
 		start_experience_factor = 0.3
@@ -376,7 +380,7 @@ instant_effect = {
 		progress = 0.50
 		efficiency = 100
 	}
-    add_equipment_production = {
+	add_equipment_production = {
 		equipment = {
 			type = fighter_equipment_1
 			creator = "FIN"
