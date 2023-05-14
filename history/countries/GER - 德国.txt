@@ -105,6 +105,7 @@ set_technology = {
 	basic_train = 1
 	tech_mountaineers = 1
 	electronic_mechanical_engineering = 1
+	tech_military_police = 1
 }
 
 if = {
@@ -132,7 +133,6 @@ if = {
 		gwtank = 1
 		basic_light_tank = 1
 		improved_light_tank = 1
-		basic_medium_tank = 1
 		basic_heavy_tank = 1
 	}
 }
@@ -144,7 +144,6 @@ if = {
 		gwtank_chassis = 1
 		basic_light_tank_chassis = 1
 		improved_light_tank_chassis = 1
-		basic_medium_tank_chassis = 1
 		engine_tech_1 = 1
 		basic_heavy_tank_chassis = 1
 	}
@@ -214,7 +213,7 @@ if = {
 		modules = {
 			main_armament_slot = tank_auto_cannon
 			turret_type_slot = tank_light_two_man_tank_turret
-			suspension_type_slot = tank_christie_suspension
+			suspension_type_slot = tank_bogie_suspension
 			armor_type_slot = tank_riveted_armor
 			engine_type_slot = tank_gasoline_engine
 			special_type_slot_1 = tank_radio_1
@@ -243,7 +242,7 @@ if = {
 		}
 		icon = "GFX_GER_improved_light_tank_medium"
 	}
-}
+
 create_equipment_variant = {
 	name = "Großetraktor"
 	type = heavy_tank_chassis_1
@@ -265,6 +264,54 @@ create_equipment_variant = {
 	}
 	icon = "GFX_GER_basic_heavy_tank_medium"
 }
+
+create_equipment_variant = {
+			name = "Panzer III Ausf. A"
+			type = medium_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_cannon
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 1
+				tank_nsb_armor_upgrade = 1
+			}
+			obsolete = yes
+			icon = "GFX_GER_basic_medium_tank_medium"
+		}
+
+create_equipment_variant = {
+			name = "Panzer III Ausf. C"
+			type = medium_tank_chassis_0
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_cannon
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = empty
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 4
+				tank_nsb_armor_upgrade = 2
+			}
+			icon = "GFX_GER_basic_medium_tank_medium"
+		}
+
+}
+
 
 ### 海军模板 ###
 if = {
