@@ -6,7 +6,7 @@ set_politics = {
 	ruling_party = conservative_democracy
 	last_election = "1936.1.1"
 	election_frequency = 48
-	elections_allowed = no
+	elections_allowed = yes
 }
 
 set_popularities = {
@@ -26,8 +26,19 @@ set_popularities = {
 	sacred_revivalism = 0
 	national_corporatism = 0
 }
+
+set_cosmetic_tag = BRA_republic
+
 recruit_character = BRA_Washington_Luis_Pereira_de_Sousa
 recruit_character = BRA_Li_Desheng
 
 add_ideas = {
 }
+
+#附庸
+set_autonomy = {
+	target = URG
+	autonomy_state = kr_default_puppet
+}
+#保障独立
+give_guarantee = PAR
