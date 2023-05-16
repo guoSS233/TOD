@@ -1,0 +1,43 @@
+#巴西
+BRA_important_crisis_categories = {
+	priority = 2
+	
+	icon = gre_faction_management
+
+	allowed = {
+		original_tag = BRA
+	}
+}
+
+BRA_industrial_categories = {
+	priority = 2
+	
+	icon = gre_faction_management
+
+	allowed = {
+		original_tag = BRA
+	}
+}
+
+#查科事件
+SA_oil_categories = {
+	priority = 100
+	
+	icon = gre_faction_management
+
+	allowed = {
+		original_tag = PRU
+	}
+}
+SA_Guerra_del_Chaco_decisions_categories = {
+	priority = 100
+	
+	icon = gre_faction_management
+
+	allowed = {
+		OR = {
+			has_country_flag = flag_event_in_SA_Guerra_del_Chaco
+			is_debug = yes
+		}
+	}
+}
