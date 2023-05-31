@@ -1,0 +1,47 @@
+SIC_gongye_seffects = {
+	remove_ideas = SIC_fanrongdechanyelian
+	remove_ideas = SIC_wendingdechanyelian
+	remove_ideas = SIC_huifuzhongdechanyelian
+	remove_ideas = SIC_bengkuidechanyelian
+	remove_ideas = SIC_huimiedechanyelian
+	if = {
+		limit = {check_variable = {SIC.gongye > 79}}
+		add_ideas = SIC_huimiedechanyelian
+	}else_if = {
+		limit = {check_variable = {SIC.gongye > 59}}
+		add_ideas = SIC_bengkuidechanyelian
+	}else_if = {
+		limit = {check_variable = {SIC.gongye > 39}
+		add_ideas = SIC_huifuzhongdechanyelian
+	}else_if = {
+		limit = {check_variable = {SIC.gongye > 19}}
+		add_ideas = SIC_wendingdechanyelian
+	}else = {
+		add_ideas = SIC_fanrongdechanyelian
+	}
+}
+SIC_minzhong_seffects = {
+	#差到好
+	remove_ideas = SIC_wufawutian
+	remove_ideas = SIC_jinrukonghuang
+	remove_ideas = SIC_chongmannuqi
+	remove_ideas = SIC_liuyoubuman
+	remove_ideas = SIC_wendingdequnzong
+	if = {
+		limit = {check_variable = {	SIC.minzhong > 79}}
+		add_ideas = SIC_wufawutian
+	}
+	else_if = {
+		limit = {check_variable = {SIC.minzhong > 59}}
+		add_ideas = SIC_jinrukonghuang
+	}else_if = {
+		limit = {check_variable = {	SIC.minzhong > 39}}
+		add_ideas = SIC_chongmannuqi
+	}else_if = {
+		limit = {check_variable = {SIC.minzhong > 19}}
+		add_ideas = SIC_liuyoubuman
+	}
+	else = {
+		add_ideas = SIC_wendingdequnzong
+	}
+}
