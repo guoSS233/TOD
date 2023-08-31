@@ -1,0 +1,201 @@
+leader_traits = {
+    GOS_traits_bmll= { #八面玲珑的政客
+		random = no
+		political_power_gain = 0.11
+		tank_manufacturer_cost_factor = -0.1
+		naval_manufacturer_cost_factor = -0.1
+		aircraft_manufacturer_cost_factor = -0.1
+		materiel_manufacturer_cost_factor = -0.1
+		industrial_concern_cost_factor = -0.1
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GOS_traits_gt= { #寡头
+		random = no
+		consumer_goods_factor = -0.03 #生活消费品
+		industrial_capacity_factory = 0.02 #工厂产出
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_jbqyj= { #进步企业家
+		random = no
+		political_power_gain = 0.07
+		production_factory_max_efficiency_factor = 0.05 #生产效率上限
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_srxyz= { #施荣系议长
+		random = no
+		political_power_gain = 0.13
+		party_popularity_stability_factor = 0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_nhzzz= { #农会组织者
+		random = no
+		political_power_gain = 0.09
+		production_factory_max_efficiency_factor = 0.05 #生产效率上限
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_dtdpt= { #大同党的叛徒
+		random = no
+		industrial_capacity_factory = 0.05 #工厂产出
+		stability_factor = -0.03
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_cf = { #财阀
+		random = no
+		industrial_capacity_factory = 0.05 #工厂产出
+		consumer_goods_factor = -0.03 #生活消费品
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_ytfy = { #受欢迎的应天府尹
+		random = no
+		stability_factor = 0.1
+		war_support_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_dtdhsr = { #大同党话事人
+		random = no
+		stability_factor = 0.5
+		industrial_capacity_factory = 0.05 #工厂产出
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_jjbs = { #经济博士
+		random = no
+		industrial_capacity_factory = 0.05 #工厂产出
+		line_change_production_efficiency_factor = 0.01
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_jzfdyr= { #军政府代言人
+		random = no
+		army_org_factor = 0.05
+		opinion_gain_monthly_factor = -0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_ylzzj= { #舆论战专家
+		random = no
+		opinion_gain_monthly_factor = 0.2
+		drift_defence_factor = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_cps= { #世界大战的操盘手
+		random = no
+		political_power_gain = 0.15
+		opinion_gain_monthly_factor = 0.2
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	GOS_traits_fdxgz= { #反地下工作专家
+		random = no
+		intelligence_agency_defense = 0.5 #反间谍
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GOS_traits_hb= { #黑帮
+		random = no
+		operative_slot = 1 #特工位
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GOS_traits_tshw= { #少帝的贴身护卫
+		random = no
+		intelligence_agency_defense = 0.25 #反间谍
+		agency_upgrade_time = -0.25 #情报机构升级时间
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GOS_traits_dtdmy= { #大同党的盟友
+		random = no
+		army_org_factor = 0.05
+		army_morale_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#总司令
+	GOS_traits_dpbzy = { #大炮兵主义者
+		random = no
+		equipment_bonus = {
+			armor = {
+				breakthrough = 0.1
+				build_cost_ic = -0.1
+				instant = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	GOS_traits_zjzzcdz = { #装甲作战倡导者
+		random = no
+		equipment_bonus = {
+			armor = {
+				hard_attack = 0.1
+				ap_attack = 0.1
+				build_cost_ic = -0.15
+				instant = yes
+			}
+			tank_artillery_equipment = {
+				soft_attack = 0.2
+				instant = yes
+			}
+
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}

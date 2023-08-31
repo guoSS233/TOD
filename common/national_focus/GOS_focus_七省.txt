@@ -1,0 +1,2484 @@
+focus_tree = {
+	id = GOS01
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = GOS
+		}
+	}
+	default = no
+###政治
+ #少帝线
+	focus = { #
+		id = GOS_focus_0
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 4
+		y = 0
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_sd
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_1
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_0
+		}
+		x = 4
+		y = 1
+
+	}
+	focus = { #
+		id = GOS_focus_2
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_1
+		}
+		x = 2
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_3
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_1
+		}
+		x = 4
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_5
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_2
+		}
+		prerequisite = {
+			focus = GOS_focus_3
+		}
+		x = 3
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_7
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_5
+		}
+		x = 2
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_4
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_1
+		}
+		x = 6
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_6
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_3
+		}
+		prerequisite = {
+			focus = GOS_focus_4
+		}
+		x = 5
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_8
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_5
+		}
+		prerequisite = {
+			focus = GOS_focus_6
+		}
+		x = 4
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_10
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_7
+		}
+		prerequisite = {
+			focus = GOS_focus_8
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_9
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_6
+		}
+		x = 6
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_11
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_10
+		}
+		prerequisite = {
+			focus = GOS_focus_9
+		}
+		x = 5
+		y = 6
+
+	}
+	focus = { #
+		id = GOS_focus_12
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_11
+		}
+		x = 5
+		y = 7
+
+	}
+ #施荣系
+	focus = { #
+		id = GOS_focus_86
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 4
+		y = 0
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_srx
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_87
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_86
+		}
+		x = 4
+		y = 1
+
+	}
+	focus = { #
+		id = GOS_focus_88
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_87
+		}
+		x = 2
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_89
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_87
+		}
+		x = 4
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_91
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_88
+		}
+		prerequisite = {
+			focus = GOS_focus_89
+		}
+		x = 3
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_93
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_91
+		}
+		x = 2
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_90
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_87
+		}
+		x = 6
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_92
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_89
+		}
+		prerequisite = {
+			focus = GOS_focus_90
+		}
+		x = 5
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_94
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_91
+		}
+		prerequisite = {
+			focus = GOS_focus_92
+		}
+		x = 4
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_96
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_93
+		}
+		prerequisite = {
+			focus = GOS_focus_94
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_95
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_92
+		}
+		x = 6
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_97
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_94
+		}
+		prerequisite = {
+			focus = GOS_focus_95
+		}
+		x = 5
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_98
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_96
+		}
+		prerequisite = {
+			focus = GOS_focus_97
+		}
+		x = 4
+		y = 6
+
+	}
+
+ #大同党
+	focus = { #
+		id = GOS_focus_99
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 4
+		y = 0
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_dtd
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_100
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_99
+		}
+		x = 4
+		y = 1
+
+	}
+	focus = { #
+		id = GOS_focus_101
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_100
+		}
+		x = 4
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_102
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_101
+		}
+		x = 2
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_103
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_101
+		}
+		x = 4
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_105
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_102
+		}
+		prerequisite = {
+			focus = GOS_focus_103
+		}
+		x = 3
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_107
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_105
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_108
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_104
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_101
+		}
+		x = 6
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_106
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_103
+		}
+		prerequisite = {
+			focus = GOS_focus_104
+		}
+		x = 5
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_108
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_106
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_107
+		}
+		x = 5
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_110
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_107
+			focus = GOS_focus_108
+		}
+		x = 4
+		y = 6
+
+	}
+	focus = { #
+		id = GOS_focus_111
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_108
+		}
+		x = 6
+		y = 6
+
+	}
+	focus = { #
+		id = GOS_focus_113
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_110
+		}
+		prerequisite = {
+			focus = GOS_focus_111
+		}
+		x = 5
+		y = 7
+
+	}
+	focus = { #
+		id = GOS_focus_109
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_107
+		}
+		x = 2
+		y = 6
+
+	}
+	focus = { #
+		id = GOS_focus_112
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_109
+		}
+		prerequisite = {
+			focus = GOS_focus_110
+		}
+		x = 3
+		y = 7
+
+	}
+	focus = { #
+		id = GOS_focus_114
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_112
+		}
+		prerequisite = {
+			focus = GOS_focus_113
+		}
+		x = 4
+		y = 8
+
+	}
+
+ #军政府
+	focus = { #
+		id = GOS_focus_115
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 4
+		y = 0
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_jzf
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_116
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_115
+		}
+		x = 3
+		y = 1
+
+	}
+	focus = { #
+		id = GOS_focus_117
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_116
+		}
+		x = 3
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_118
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_117
+		}
+		x = 3
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_119
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_118
+		}
+		x = 3
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_124
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_119
+		}
+		x = 2
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_120
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_115
+		}
+		x = 5
+		y = 1
+
+	}
+	focus = { #
+		id = GOS_focus_121
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_120
+		}
+		x = 5
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_122
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_121
+		}
+		x = 5
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_123
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_122
+		}
+		x = 5
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_125
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_119
+		}
+		prerequisite = {
+			focus = GOS_focus_123
+		}
+		x = 4
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_126
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_123
+		}
+		x = 6
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_127
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_124
+		}
+		prerequisite = {
+			focus = GOS_focus_125
+		}
+		prerequisite = {
+			focus = GOS_focus_126
+		}
+		x = 4
+		y = 6
+
+	}
+
+ #商盟	
+	focus = { #
+		id = GOS_focus_128
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 4
+		y = 0
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_sm
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_129
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_128
+		}
+		x = 4
+		y = 1
+
+	}
+	focus = { #
+		id = GOS_focus_130
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_129
+		}
+		x = 2
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_131
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_130
+		}
+		x = 2
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_132
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_129
+		}
+		x = 4
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_133
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_132
+		}
+		x = 4
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_136
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_133
+		}
+		prerequisite = {
+			focus = GOS_focus_131
+		}
+		x = 3
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_134
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_129
+		}
+		x = 6
+		y = 2
+
+	}
+	focus = { #
+		id = GOS_focus_135
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_134
+		}
+		x = 6
+		y = 3
+
+	}
+	focus = { #
+		id = GOS_focus_137
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_135
+		}
+		prerequisite = {
+			focus = GOS_focus_133
+		}
+		x = 5
+		y = 4
+
+	}
+	focus = { #
+		id = GOS_focus_138
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_136
+		}
+		prerequisite = {
+			focus = GOS_focus_137
+		}
+		x = 4
+		y = 5
+
+	}
+	focus = { #
+		id = GOS_focus_139
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_138
+		}
+		x = 3
+		y = 6
+
+	}
+	focus = { #
+		id = GOS_focus_140
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_138
+		}
+		x = 5
+		y = 6
+
+	}
+
+
+###工业
+
+	focus = {#取消证券交易所限制
+		id = GOS_focus_13
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 15
+		y = 0
+		
+
+	}
+	focus = { #投资江南建设发展公司
+		id = GOS_focus_14
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_13
+		}
+		x = 12
+		y = 1
+
+	}
+	focus = { #扩建应天学府
+		id = GOS_focus_15
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_14
+		}
+		x = 10
+		y = 2
+
+	}
+	focus = { #电子学与密码学
+		id = GOS_focus_16
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_15
+		}
+		x = 10
+		y = 3
+
+	}
+	focus = { #长江水运
+		id = GOS_focus_17
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_14
+		}
+		x = 12
+		y = 2
+
+	}
+	focus = { #农业生产机械化
+		id = GOS_focus_18
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_17
+		}
+		x = 12
+		y = 3
+
+	}
+	focus = { #湖南农林产业链
+		id = GOS_focus_19
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_18
+		}
+		x = 12
+		y = 4
+
+	}
+	focus = { #重振湖北重工业
+		id = GOS_focus_20
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_19
+		}
+		x = 12
+		y = 5
+
+	}
+	focus = { #投资江西矿业
+		id = GOS_focus_21
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_20
+		}
+		x = 12
+		y = 6
+
+	}
+	focus = { #七省铁路计划
+		id = GOS_focus_22
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_21
+		}
+		x = 12
+		y = 7
+
+	}
+	focus = { #内地联动发展
+		id = GOS_focus_23
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_22
+		}
+		x = 12
+		y = 8
+
+	}
+	focus = { #朝贡体系经济纽带
+		id = GOS_focus_24
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_13
+		}
+		x = 15
+		y = 1
+
+	}
+	focus = { #投资民用工业
+		id = GOS_focus_25
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_24
+		}
+		x = 14
+		y = 2
+
+	}
+	focus = { #蓬勃的汽车产业
+		id = GOS_focus_26
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_25
+		}
+		x = 14
+		y = 3
+
+	}
+	focus = { #提升冶炼技术
+		id = GOS_focus_27
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_24
+		}
+		x = 16
+		y = 2
+
+	}
+	focus = { #大规模铁矿开采
+		id = GOS_focus_28
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_27
+		}
+		x = 16
+		y = 3
+
+	}
+	focus = { #新型机械工业
+		id = GOS_focus_29
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_26
+		}
+		prerequisite = {
+			focus = GOS_focus_28
+		}
+		x = 14
+		y = 5
+
+	}
+	focus = { #重拾军工产业
+		id = GOS_focus_31
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_28
+		}
+		x = 16
+		y = 5
+
+	}
+	focus = { #扩大农产品出口
+		id = GOS_focus_32
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_24
+		}
+		x = 19
+		y = 2
+
+	}
+	focus = { #扩建太仓造船厂
+		id = GOS_focus_33
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_32
+		}
+		x = 18
+		y = 3
+
+	}
+	focus = { #海上经济命脉
+		id = GOS_focus_34
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_33
+		}
+		x = 18
+		y = 4
+
+	}
+	focus = { #入海口经济带
+		id = GOS_focus_35
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_34
+		}
+		x = 18
+		y = 5
+
+	}
+	focus = { #发展七省区位优势
+		id = GOS_focus_30
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_29
+		}
+		prerequisite = {
+			focus = GOS_focus_31
+		}
+		prerequisite = {
+			focus = GOS_focus_20
+		}
+		x = 14
+		y = 8
+
+	}
+	focus = { #七省经济发展委员会
+		id = GOS_focus_36
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_32
+		}
+		x = 20
+		y = 3
+
+	}
+	focus = { #长江经济带
+		id = GOS_focus_37
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_36
+		}
+		x = 20
+		y = 5
+
+	}
+	focus = { #区域协同发展
+		id = GOS_focus_38 
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_35
+		}
+		prerequisite = {
+			focus = GOS_focus_37
+		}
+		x = 19
+		y = 8
+
+	}
+	focus = { #繁华之都
+		id = GOS_focus_39
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_23
+		}
+		prerequisite = {
+			focus = GOS_focus_30
+		}
+		prerequisite = {
+			focus = GOS_focus_38
+		}
+		x = 14
+		y = 9
+
+	}
+
+###海军
+	focus = { #
+		id = GOS_focus_60
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 4
+		y = 11
+
+	}
+	focus = { #
+		id = GOS_focus_40
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_60
+		}
+		x = 4
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_41
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_40
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_43
+			focus = GOS_focus_43
+		}
+		x = 3
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_42
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_41
+		}
+		x = 3
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_45
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_42
+		}
+		x = 2
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_43
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_40
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_41
+			focus = GOS_focus_41
+		}
+		x = 5
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_44
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_43
+		}
+		x = 5
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_46
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_42
+		}
+		prerequisite = {
+			focus = GOS_focus_44
+		}
+		x = 4
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_48
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_46
+		}
+		prerequisite = {
+			focus = GOS_focus_45
+		}
+		x = 3
+		y = 16
+
+	}
+	focus = { #
+		id = GOS_focus_47
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_44
+		}
+		x = 6
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_49
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_46
+		}
+		prerequisite = {
+			focus = GOS_focus_47
+		}
+		x = 5
+		y = 16
+
+	}
+	focus = { #
+		id = GOS_focus_50
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_48
+		}
+		prerequisite = {
+			focus = GOS_focus_49
+		}
+		x = 4
+		y = 17
+
+	}
+
+###空军
+	focus = { #
+		id = GOS_focus_51
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 10
+		y = 11
+
+	}
+	focus = { #
+		id = GOS_focus_52
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_51
+		}
+		x = 10
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_53
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_52
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_54
+			focus = GOS_focus_54
+		}
+		x = 9
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_56
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_53
+		}
+		x = 9
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_54
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_52
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_53
+			focus = GOS_focus_53
+		}
+		x = 11
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_55
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_53
+		}
+		prerequisite = {
+			focus = GOS_focus_54
+		}
+		x = 10
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_57
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_54
+		}
+		x = 11
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_58
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_56
+		}
+		prerequisite = {
+			focus = GOS_focus_57
+		}
+		prerequisite = {
+			focus = GOS_focus_55
+		}
+		x = 10
+		y = 16
+
+	}
+	focus = { #
+		id = GOS_focus_59
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_58
+		}
+		x = 10
+		y = 17
+
+	}
+
+
+
+###陆军
+ #施荣系
+	focus = { #
+		id = GOS_focus_61
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 20
+		y = 11
+		allow_branch = {
+			or = {
+				has_country_flag = FLAG_GOS_focus_srx
+				has_country_flag = FLAG_GOS_focus_sm
+			}
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_62
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_61
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_68
+		}
+		x = 16
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_63
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_62
+		}
+		x = 15
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_64
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_63
+		}
+		x = 15
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_65
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_62
+		}
+		x = 17
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_66
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_65
+		}
+		x = 17
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_67
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_64
+		}
+		prerequisite = {
+			focus = GOS_focus_66
+		}
+		x = 16
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_68
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_61
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_62
+		}
+		x = 20
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_69
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_68
+		}
+		x = 19
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_70
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_69
+		}
+		x = 19
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_71
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_68
+		}
+		x = 21
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_72
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_71
+		}
+		x = 21
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_73
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_70
+		}
+		prerequisite = {
+			focus = GOS_focus_72
+		}
+		x = 20
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_75
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_61
+		}
+		x = 28
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_76
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_75
+		}
+		x = 25
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_77
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_76
+		}
+		x = 25
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_78
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_77
+		}
+		x = 23
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_79
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_77
+		}
+		x = 25
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_80
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_77
+		}
+		x = 27
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_81
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_75
+		}
+		x = 31
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_82
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_81
+		}
+		x = 31
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_83
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_82
+		}
+		x = 29
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_84
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_82
+		}
+		x = 31
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_74
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_67
+		}
+		prerequisite = {
+			focus = GOS_focus_73
+		}
+		x = 18
+		y = 16
+
+	}
+	focus = { #
+		id = GOS_focus_85
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_82
+		}
+		x = 33
+		y = 15
+
+	}
+ #大同党
+	focus = { #
+		id = GOS_focus_141
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 20
+		y = 11
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_dtd
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_142
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_141
+		}
+		x = 17
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_143
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_142
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_151
+		}
+		x = 15
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_144
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_143
+		}
+		x = 15
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_145
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_144
+		}
+		x = 14
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_146
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_144
+		}
+		x = 16
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_147
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_145
+		}
+		prerequisite = {
+			focus = GOS_focus_146
+		}
+		x = 15
+		y = 16
+
+	}
+	focus = { #
+		id = GOS_focus_149
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_147
+		}
+		x = 16
+		y = 17
+
+	}
+	focus = { #
+		id = GOS_focus_151
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_142
+		}
+		mutually_exclusive = {
+			focus = GOS_focus_143
+		}
+		x = 19
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_152
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_151
+		}
+		x = 19
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_153
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_152
+		}
+		x = 18
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_154
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_152
+		}
+		x = 20
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_155
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_153
+		}
+		prerequisite = {
+			focus = GOS_focus_154
+		}
+		x = 19
+		y = 16
+
+	}
+	focus = { #
+		id = GOS_focus_157
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_155
+		}
+		x = 1
+		y = 1
+		relative_position_id = GOS_focus_155
+
+	}
+	focus = { #
+		id = GOS_focus_159
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_141
+		}
+		x = 23
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_160
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_159
+		}
+		x = 22
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_161
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_160
+		}
+		x = 22
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_162
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_161
+		}
+		x = 22
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_163
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_162
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_162
+
+	}
+	focus = { #
+		id = GOS_focus_148
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_147
+		}
+		x = 14
+		y = 17
+
+	}
+	focus = { #
+		id = GOS_focus_150
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_148
+		}
+		prerequisite = {
+			focus = GOS_focus_149
+		}
+		x = 15
+		y = 18
+
+	}
+	focus = { #
+		id = GOS_focus_156
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_155
+		}
+		x = 18
+		y = 17
+
+	}
+	focus = { #
+		id = GOS_focus_158
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_156
+		}
+		prerequisite = {
+			focus = GOS_focus_157
+		}
+		x = 19
+		y = 18
+
+	}
+	focus = { #
+		id = GOS_focus_164
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_159
+		}
+		x = 24
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_165
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_164
+		}
+		x = 24
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_166
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_165
+		}
+		x = 24
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_167
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_166
+		}
+		x = 24
+		y = 16
+
+	}
+
+ #军政府
+	focus = { #
+		id = GOS_focus_168
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 20
+		y = 11
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_jzf
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_169
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_168
+		}
+		x = 16
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_170
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_169
+		}
+		x = 16
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_171
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_170
+		}
+		x = 14
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_173
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_170
+		}
+		x = 16
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_174
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_173
+		}
+		x = 16
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_175
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_170
+		}
+		x = 18
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_176
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_175
+		}
+		x = 18
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_178
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_168
+		}
+		x = 23
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_179
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_178
+		}
+		x = 21
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_180
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_179
+		}
+		x = 21
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_181
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_180
+		}
+		x = 21
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_182
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_180
+		}
+		x = 23
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_172
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_171
+		}
+		x = 14
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_177
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_172
+		}
+		prerequisite = {
+			focus = GOS_focus_174
+		}
+		prerequisite = {
+			focus = GOS_focus_176
+		}
+		x = 16
+		y = 16
+
+	}
+	focus = { #
+		id = GOS_focus_183
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_178
+		}
+		x = 25
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_184
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_183
+		}
+		x = 25
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_185
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_184
+		}
+		x = 25
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_186
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_181
+		}
+		prerequisite = {
+			focus = GOS_focus_182
+		}
+		prerequisite = {
+			focus = GOS_focus_185
+		}
+		x = 23
+		y = 16
+
+	}
+
+ #少帝
+	focus = { #
+		id = GOS_focus_187
+		icon = GFX_goal_unknown
+		cost = 10.00
+		x = 20
+		y = 11
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_sd
+		}
+
+	}
+	focus = { #
+		id = GOS_focus_188
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_187
+		}
+		x = 17
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_189
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_188
+		}
+		x = 15
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_190
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_189
+		}
+		x = 15
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_191
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_188
+		}
+		x = 17
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_192
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_191
+		}
+		prerequisite = {
+			focus = GOS_focus_189
+		}
+		x = 17
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_193
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_188
+		}
+		x = 19
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_194
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_193
+		}
+		x = 19
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_195
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_190
+		}
+		prerequisite = {
+			focus = GOS_focus_192
+		}
+		prerequisite = {
+			focus = GOS_focus_194
+		}
+		x = 17
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_196
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_187
+		}
+		x = 23
+		y = 12
+
+	}
+	focus = { #
+		id = GOS_focus_197
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_196
+		}
+		x = 21
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_198
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_197
+		}
+		x = 21
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_199
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_196
+		}
+		x = 23
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_200
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_199
+		}
+		x = 23
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_201
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_196
+		}
+		x = 25
+		y = 13
+
+	}
+	focus = { #
+		id = GOS_focus_202
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_201
+		}
+		x = 25
+		y = 14
+
+	}
+	focus = { #
+		id = GOS_focus_203
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_198
+		}
+		prerequisite = {
+			focus = GOS_focus_200
+		}
+		prerequisite = {
+			focus = GOS_focus_202
+		}
+		x = 23
+		y = 15
+
+	}
+	focus = { #
+		id = GOS_focus_204
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = GOS_focus_195
+		}
+		prerequisite = {
+			focus = GOS_focus_203
+		}
+		x = 20
+		y = 16
+
+	}
+
+
+
+}

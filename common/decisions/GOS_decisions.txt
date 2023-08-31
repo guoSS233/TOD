@@ -1,0 +1,91 @@
+GOS_decision_l_0 = {
+	
+	GOS_decision_sdx = {		 #少帝线
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = { 
+			clr_country_flag = FLAG_GOS_focus_jzf
+			clr_country_flag = FLAG_GOS_focus_srx
+			clr_country_flag = FLAG_GOS_focus_sm
+			clr_country_flag = FLAG_GOS_focus_dtd
+			set_country_flag = FLAG_GOS_focus_sd
+			mark_focus_tree_layout_dirty = yes
+		}
+	}	
+	GOS_decision_srx = {		 #施荣系线
+		#icon = ger_mefo_bills		
+		cost = 0
+
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = { 
+			clr_country_flag = FLAG_GOS_focus_jzf
+			clr_country_flag = FLAG_GOS_focus_sd
+			clr_country_flag = FLAG_GOS_focus_sm
+			clr_country_flag = FLAG_GOS_focus_dtd
+			set_country_flag = FLAG_GOS_focus_srx
+			mark_focus_tree_layout_dirty = yes
+		}
+	}	
+	GOS_decision_smx = {		 #商盟线
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = { 
+			clr_country_flag = FLAG_GOS_focus_jzf
+			clr_country_flag = FLAG_GOS_focus_srx
+			clr_country_flag = FLAG_GOS_focus_sd
+			clr_country_flag = FLAG_GOS_focus_dtd
+			set_country_flag = FLAG_GOS_focus_sm
+			mark_focus_tree_layout_dirty = yes
+		}
+	}	
+	GOS_decision_dtdx = {		 #大同党线
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = { 
+			clr_country_flag = FLAG_GOS_focus_srx
+			clr_country_flag = FLAG_GOS_focus_sm
+			clr_country_flag = FLAG_GOS_focus_sd
+			clr_country_flag = FLAG_GOS_focus_jzf
+			set_country_flag = FLAG_GOS_focus_dtd
+			mark_focus_tree_layout_dirty = yes
+		}
+	}	
+	GOS_decision_jzfx = {		 #军政府线
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = { 
+			clr_country_flag = FLAG_GOS_focus_dtd
+			clr_country_flag = FLAG_GOS_focus_srx
+			clr_country_flag = FLAG_GOS_focus_sm
+			clr_country_flag = FLAG_GOS_focus_sd
+			set_country_flag = FLAG_GOS_focus_jzf
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+}
+
