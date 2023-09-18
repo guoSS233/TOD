@@ -1,4 +1,3 @@
-###TUR National Focuses###
 focus_tree = {
 	id = Sichuan_focus
 	
@@ -71,8 +70,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
-			add_stability = 0.05
-			add_war_support = 0.05
+			add_stability = 0.1
+			add_war_support = 0.1
 		 }
 	}
 	#召集各方商讨
@@ -93,7 +92,7 @@ focus_tree = {
 		available = {}
 		select_effect = {country_event = { id = TODSIC.1 days = 7}}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { add_political_power = 50 }
 	}
 	#保持中立
 	focus = {
@@ -151,7 +150,17 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			831 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			} 
+			custom_effect_tooltip = SIC_huifugongye.t
+		}
 	}
 	#稳定农业
 	focus = {
@@ -170,7 +179,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { add_stability = 0.1 }
 	}
 	#整顿军备
 	focus = {
@@ -267,7 +276,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_war_support = -0.2 }
+		completion_reward = { add_war_support = 0.2 }
 	}
 	#中华一统
 	focus = {
@@ -308,7 +317,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { has_country_flag = SIC_zunwangtaojian }
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { news_event = news_event.252 }
 	}
 	#镇压骚乱
 	focus = {
@@ -327,7 +336,11 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_stability = 0.1
+			add_to_variable = { SIC.minzhong = 10 }
+			custom_effect_tooltip = SIC_zhenyasaoluan.t
+		 }
 	}
 	#紧急动员
 	focus = {
@@ -346,7 +359,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = {idea = SIC_dongyuanqinwang days = 180 } }
+		completion_reward = { 
+			add_timed_idea = {idea = SIC_dongyuanqinwang days = 180 } 
+			add_ideas = extensive_conscription
+		}
 	}
 	#转向军工
 	focus = {
@@ -366,30 +382,14 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
-			random_owned_controlled_state = {
-				limit = {
-					num_of_civilian_factories > 1	
-				}
+			add_ideas = war_economy
+			830 = {
 				add_building_construction = {
 					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
-				remove_building = {	#移除省内建筑
-					type = industrial_complex
-					level = 2
-				}
-			} 
-			random_owned_controlled_state = {
-				limit = {
-					num_of_civilian_factories > 1	
-				}
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-				remove_building = {	#移除省内建筑
+				remove_building = {
 					type = industrial_complex
 					level = 2
 				}
@@ -586,7 +586,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = {idea = SIC_tianyoudamin days = 90 } }
+		completion_reward = { add_timed_idea = {idea = SIC_tianyoudaming days = 90 } }
 	}
 	#稳固乌斯藏
 	focus = {
@@ -755,7 +755,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { has_completed_focus = SIC_zhaojigefang }
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { army_experience = 50 }
 	}
 	#增加军校生
 	focus = {
@@ -775,7 +775,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { add_timed_idea = {idea = SIC_junxiaoshengzengjia days = 365 } }
 	}
 	#军官速成
 	focus = {
@@ -795,7 +795,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { add_timed_idea = {idea = SIC_suchengban days = 365 } }
 	}
 	#精锐作战
 	focus = {
@@ -918,7 +918,7 @@ focus_tree = {
 		id = SIC_bubingyanhu
 		icon = GFX_SIC_bubingyanhu
 		prerequisite = { focus = SIC_zhancheqianjin }
-		mutually_exclusive = { focus = SIC_yidonghuopao }
+		mutually_exclusive = { focus = SIC_huopaozhiyuan }
 		x = 41
 		y = 3
 		
@@ -1072,7 +1072,7 @@ focus_tree = {
 	focus = {
 		id = SIC_shashangdijun
 		icon = GFX_SIC_shashangdijun
-		prerequisite = { focus = SIC_yidongbaolei }
+		prerequisite = { focus = SIC_zhanjifeixiang }
 		mutually_exclusive = = { focus = SIC_pohuaihouqin }
 		x = 55
 		y = 3
