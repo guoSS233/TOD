@@ -1,0 +1,400 @@
+add_namespace = mng
+add_namespace = mngtext
+country_event = {
+	# Black Monday hits America
+	id = mng.2
+	title = mng.2.t
+	desc = mng.2.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = mng.2.a
+	}
+}
+
+country_event = {
+	# 西北军测试
+	id = mngtext.1
+	title = mngtext.1.t
+	desc = mngtext.1.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event mngtext.1"
+		XBJ = {
+			hidden_effect = {
+				add_state_core = 744
+				transfer_state = 744
+				add_state_core = 618
+				transfer_state = 618
+				add_state_core = 760
+				transfer_state = 760
+				add_state_core = 1193
+				transfer_state = 1193
+				add_state_core = 844
+				transfer_state = 844
+				add_state_core = 1128
+				transfer_state = 1128
+				add_state_core = 759
+				transfer_state = 759
+				add_state_core = 1130
+				transfer_state = 1130
+				add_state_core = 617
+				transfer_state = 617
+				add_state_core = 434
+				transfer_state = 434
+				add_state_core = 732
+				transfer_state = 732
+				add_state_core = 1209
+				transfer_state = 1209
+				add_state_core = 1113
+				transfer_state = 1113
+				add_state_core = 756
+				transfer_state = 756
+				add_state_core = 881
+				transfer_state = 881
+				add_state_core = 616
+				transfer_state = 616
+				add_state_core = 843
+				transfer_state = 843
+				add_state_core = 754
+				transfer_state = 754
+				add_state_core = 755
+				transfer_state = 755
+				add_state_core = 1210
+				transfer_state = 1210
+				add_state_core = 283
+				transfer_state = 283
+				add_state_core = 753
+				transfer_state = 753
+				add_state_core = 1116
+				transfer_state = 1116
+				add_state_core = 842
+				transfer_state = 842
+				add_state_core = 621
+				transfer_state = 621
+				add_state_core = 746
+				transfer_state = 746
+				add_state_core = 622
+				transfer_state = 622
+				add_state_core = 619
+				transfer_state = 619
+				add_state_core = 287
+				transfer_state = 287
+				add_state_core = 1129
+				transfer_state = 1129
+				transfer_state = 604
+				add_state_core = 604
+				set_capital = {
+					state = 744
+				}
+				load_oob = XBJ_1937
+			}
+		}
+	}
+	option = {
+		#测试
+		name = mngtext.1.a
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			XBJ = {
+				set_country_flag = XBJ_duli
+			#	change_tag_from = MNG
+			}
+		}
+	}
+}
+
+country_event = {
+	# 长江七省测试
+	id = mngtext.2
+	title = mngtext.2.t
+	desc = mngtext.2.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event mngtext.2"
+		GOS = {
+			hidden_effect = {
+				add_state_core = 613
+				transfer_state = 613
+				add_state_core = 808
+				transfer_state = 808
+				add_state_core = 824
+				transfer_state = 824
+				add_state_core = 1109
+				transfer_state = 1109
+				add_state_core = 823
+				transfer_state = 823
+				add_state_core = 606
+				transfer_state = 606
+				add_state_core = 825
+				transfer_state = 825
+				add_state_core = 749
+				transfer_state = 749
+				add_state_core = 620
+				transfer_state = 620
+				add_state_core = 1132
+				transfer_state = 1132
+				add_state_core = 602
+				transfer_state = 602
+				add_state_core = 596
+				transfer_state = 596
+				add_state_core = 1119
+				transfer_state = 1119
+				add_state_core = 750
+				transfer_state = 750
+				add_state_core = 822
+				transfer_state = 822
+				add_state_core = 806
+				transfer_state = 806
+				add_state_core = 807
+				transfer_state = 807
+				add_state_core = 1108
+				transfer_state = 1108
+				add_state_core = 598
+				transfer_state = 598
+				add_state_core = 600
+				transfer_state = 600
+				add_state_core = 816
+				transfer_state = 816
+				add_state_core = 1110
+				transfer_state = 1110
+				add_state_core = 815
+				transfer_state = 815
+				add_state_core = 812
+				transfer_state = 812
+				add_state_core = 811
+				transfer_state=811
+				set_capital = {
+					state = 613
+				}
+				load_oob = GOS_1937
+			}
+		}
+	}
+	option = {
+		#测试
+		name = mngtext.2.a
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			GOS = {
+				set_country_flag = GOS_duli
+			#	change_tag_from = MNG
+			}
+		}
+	}
+}
+
+country_event = {
+	# 川渝地方司测试
+	id = mngtext.3
+	title = mngtext.3.t
+	desc = mngtext.3.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event mngtext.3"
+		SIC = {
+			hidden_effect = {
+				add_state_core = 751
+				transfer_state = 751
+				add_state_core = 1107
+				transfer_state = 1107
+				add_state_core = 752
+				transfer_state = 752
+				add_state_core = 605
+				transfer_state = 605
+				add_state_core = 830
+				transfer_state = 830
+				add_state_core = 832
+				transfer_state = 832
+				add_state_core = 831
+				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
+				set_capital = {
+					state = 831
+				}
+				load_oob = SIC_1937
+			}
+		}
+	}
+	option = {
+		#测试
+		name = mngtext.3.a
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			SIC = {
+				set_country_flag = SIC_duli
+			#	change_tag_from = MNG
+			}
+		}
+	}
+}
+
+###提督写的另一种版本，需和scripted_effect连用
+country_event = {
+	# 关东巡抚司/红军测试
+	id = mngtext.4
+	title = mngtext.4.t
+	desc = mngtext.4.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.4.a #大明释放关东司
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_GPS = yes
+		MNG_release_SRC = yes
+	}
+}
+
+country_event = {
+	# 关东司内东北红军测试
+	id = mngtext.5
+	title = mngtext.5.t
+	desc = mngtext.5.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.5.a #关东司释放红军
+		trigger = {
+			is_ai = no
+		}
+		SRC_WIN_GPS = yes
+	}
+}
+
+country_event = {
+	# 大同党测试
+	id = mngtext.6
+	title = mngtext.6.t
+	desc = mngtext.6.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+		STG = {
+			load_oob = "STG_1937"
+		}
+	}
+	option = {
+		#测试
+		name = mngtext.6.a #大明释放大同党
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_ROC = yes
+	}
+}
+country_event = {
+	# 西南军测试
+	id = mngtext.7
+	title = mngtext.7.t
+	desc = mngtext.7.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.7.a #大明释放西南军
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_XIN = yes
+	}
+}
+country_event = {
+	# 蒙古地方司测试
+	id = mngtext.8
+	title = mngtext.8.t
+	desc = mngtext.8.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.8.a #大明释放蒙古地方司
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_MOB = yes
+	}
+}
+country_event = {
+	# 顺天政府测试
+	id = mngtext.9
+	title = mngtext.9.t
+	desc = mngtext.9.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = {
+
+	}
+
+	immediate = {
+
+	}
+	option = {
+		#测试
+		name = mngtext.9.a #大明释放顺天政府
+		trigger = {
+			is_ai = no
+		}
+		MNG_release_STG = yes
+	}
+}
