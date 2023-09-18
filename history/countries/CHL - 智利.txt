@@ -3,31 +3,33 @@ capital = 279
 oob = "oob"
 
 set_politics = {
-	ruling_party = despotism
+	ruling_party = social_democrat
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	national_corporatism = 4
-	despotism = 48
-	authoritarian_oligarchy = 4
-	conservative_democracy = 10
-	liberal_democracy = 10
-	reformism = 12
-	socialism = 10
-	radicalism = 2
+	vanguard_socialism = 5 #先锋社会主义
+	council_socialism = 15 #委员会社会主义
+	moderate_socialism = 10 #温和社会主义
+	agroindustrial_socialism = 25 #农业社会主义
+	#
+	social_democrat = 35 #社会民主主义
+	liberal_democracy = 10 #自由民主主义
+	#
+	consociationalism = 0 #调和民主主义
+	conservative_democracy = 0 #保守民主主义
+	authoritarian_oligarchy = 0 #威权主义
+	#
+	leader_despotism = 0 #领袖主义
+	sacred_revivalism = 0 #神圣复兴主义
+	national_corporatism = 0 #法团主义
 }
 
-create_country_leader = {
-	name = "卡洛斯·伊瓦涅斯·德尔·坎波"
-	desc = "POLITICS_Carlos_Ibanez_del_Campo_DESC"
-	picture = "Portrait_CHL_Carlos_Ibanez_del_Campo.tga"
-	expire = "1965.1.1"
-	ideology = leader_despotism_subtype
-}
 
 add_ideas = {
-	DesDic_type
+	#
 }
+
+recruit_character = CHL_Salvador_Guillermo_Allende_Gossens

@@ -1,21 +1,30 @@
 BRA_important_crisis_categories = {
 	BRA_important_crisis.1 = {
-		icon = GFX_decision_BHR_example
-
-		allowed = {
-			original_tag = BRA
-		}
-		visible = {
-			#
-		}
-		available = {
-			#
-		}
+		icon = mission_icon
 		
 		priority = 10
-		days_re_enable = 200
-		
+
+		activation = {
+			original_tag = BRA
+			#has_civil_war = yes
+		}
+		available = {
+			has_civil_war = no
+			has_war = yes
+		}
+		cancel_trigger = {
+			#has_war = no
+		}
+
+		is_good = no
+		days_mission_timeout = 100
+		selectable_mission = no
+
 		complete_effect = {
+			#
+		}
+		
+		timeout_effect = {
 			#
 		}
 	}
@@ -24,7 +33,7 @@ BRA_important_crisis_categories = {
 		icon = GFX_decision_BHR_example
 
 		allowed = {
-			original_tag = BRA
+			#
 		}
 		visible = {
 			#
@@ -53,7 +62,7 @@ BRA_industrial_categories = {
 		icon = GFX_decision_BHR_example
 
 		target_root_trigger = {
-			has_completed_focus = BRA_城市工业化
+			#has_completed_focus = BRA_城市工业化
 		}
 		target_array = BRA.core_states
 		target_trigger = {
