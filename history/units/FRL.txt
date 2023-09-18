@@ -1,0 +1,521 @@
+##### Division Templates #####
+division_template = {
+	name = "共和国步兵师"  	
+
+	division_names_group = FRL_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  
+		engineer = { x = 0 y = 1 }   
+	}
+}
+division_template = {
+	name = "共和国骑兵师" 	
+	division_names_group = FRL_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      
+	}
+}
+division_template = {
+	name = "实验摩托化师"	
+	division_names_group = FRL_MOT_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		mot_recon = { x = 0 y = 0 }       
+		engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "实验装甲师"
+
+	division_names_group = FRL_Arm_01
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		light_armor = { x = 2 y = 0 }
+        light_armor = { x = 2 y = 1 }
+	}
+	support = {
+        mot_recon = { x = 0 y = 0 }
+        engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {
+	name = "共和国陆战师" 		
+
+	division_names_group = FRL_MAR_01
+
+	regiments = {
+		marine = { x = 0 y = 0 }
+		marine = { x = 0 y = 1 }
+		marine = { x = 1 y = 0 }
+		marine = { x = 1 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }   
+	}
+	priority = 2
+}
+division_template = {
+	name = "西方卫戍师"	
+	division_names_group = FRL_MNT_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }	
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      
+	}
+}
+###### OOB ######
+units = {
+	####### CONUS Theater #######
+	### 西方卫戍集团军 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12627
+		division_template = "西方卫戍师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7780
+		division_template = "西方卫戍师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1815
+		division_template = "西方卫戍师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 6742
+		division_template = "西方卫戍师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1347
+		division_template = "西方卫戍师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	### 海外陆战队 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 13010
+		division_template = "共和国陆战师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 1843
+		division_template = "共和国陆战师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	### 伊利诺伊集团军 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 9654
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 1655
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 4508
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 954
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 1604
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 4437
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 9450
+		division_template = "实验摩托化师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 720
+		division_template = "实验装甲师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	### 西南集团军 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 1500
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 6968
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 5085
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 5103
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 2055
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 3875
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	### 奇克索集团军 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 10586
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 10753
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 7
+		}
+		location = 10615
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 8
+		}
+		location = 5059
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 1987
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 10192
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 7797
+		division_template = "实验摩托化师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 7615
+		division_template = "实验装甲师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	### 阿拉巴马集团军 ###
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 9
+		}
+		location = 13647
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 10
+		}
+		location = 11509
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 11
+		}
+		location = 10380
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 12
+		}
+		location = 7640
+		division_template = "共和国步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 860
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 4594
+		division_template = "共和国骑兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 10352
+		division_template = "实验摩托化师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 12735
+		division_template = "实验装甲师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+
+	}
+	}
