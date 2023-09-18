@@ -1,0 +1,17 @@
+scripted_gui = {
+    ming_province_states = {
+        context_type = selected_state_context
+        window_name = "ming_province_state_panel"
+        parent_window_token = selected_state_view
+        dirty = ming_province_states_variable
+
+        ai_enabled = {
+            always = no
+        }
+
+        visible = {
+                is_ming = yes
+                owner = { has_country_flag = is_ming_tag }
+        }
+    }
+}

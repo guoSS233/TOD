@@ -1,4 +1,4 @@
-﻿
+
 focus_tree = {
 	id = hungarian_focus
 	
@@ -53,7 +53,7 @@ focus_tree = {
 	#准备1936年大选
 	focus = {
 		id = HUN_zhunbei1936daxuan
-		icon = GFX_HUN_zhengzhigaige
+		icon = GFX_HUN_zhunbeidaxuan
 		x = 21
 		y = 1
 
@@ -71,7 +71,7 @@ focus_tree = {
 	#放开媒体
 	focus = {
 		id = HUN_fangkaimeiti
-		icon = GFX_HUN_weidaxuanzaoshi
+		icon = GFX_HUN_fangkaimeiti
 		prerequisite = { focus = HUN_zhunbei1936daxuan}
 		x = 20
 		y = 2
@@ -136,7 +136,7 @@ focus_tree = {
 	#右翼的行动
 	focus = {
 		id = HUN_youyidexingdong
-		icon = GFX_HUN_anzhonglianxiyoupai
+		icon = GFX_HUN_youyidexingdong
 		prerequisite = { focus = HUN_disadeshenhoushi}
 		x = 21
 		y = 4
@@ -156,7 +156,7 @@ focus_tree = {
 	#左翼的对策
 	focus = {
 		id = HUN_zuoyideduice
-		icon = GFX_HUN_anzhonglianxizuopai
+		icon = GFX_HUN_zuoyideduice
 		prerequisite = { focus = HUN_youyidexingdong}
 		x = 21
 		y = 5
@@ -292,12 +292,13 @@ focus_tree = {
 				set_country_flag = HUN_zuoyilianmenghuodeshengli
 			}
 			country_event = { id = TODHungary.8 }
+			remove_ideas = HUN_ziyoudechunfeng
 		}
 	}
 	#右翼的胜利
 	focus = {
 		id = HUN_youyideshengli
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_youyideshengli
 		prerequisite = { focus = HUN_juxing1936daxuan}
 		mutually_exclusive = { focus =  HUN_zuoyidenixi}
 		x = 12
@@ -341,7 +342,7 @@ focus_tree = {
 	#政治调整
 	focus = {
 		id = HUN_zhengzhitiaozheng
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_zhengzhitiaozheng
 		prerequisite = { focus = HUN_youyideshengli}
 		x = 5
 		y = 8
@@ -361,7 +362,7 @@ focus_tree = {
 	#盖博斯的计划
 	focus = {
 		id = HUN_gaibosidejihua
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_gaibosidejihua
 		prerequisite = { focus = HUN_zhengzhitiaozheng}
 		x = 3
 		y = 9
@@ -382,7 +383,7 @@ focus_tree = {
 	#国家工作计划
 	focus = {
 		id = HUN_guojiagongzuojihua
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_guojiagongzuojihua
 		prerequisite = { focus = HUN_gaibosidejihua}
 		x = 3
 		y = 10
@@ -401,7 +402,7 @@ focus_tree = {
 	#97原则
 	focus = {
 		id = HUN_97yuanze
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_97yuanze
 		prerequisite = { focus = HUN_guojiagongzuojihua}
 		x = 3
 		y = 11
@@ -423,7 +424,7 @@ focus_tree = {
 	#团结的匈牙利
 	focus = {
 		id = HUN_tuanjiedexiongyali
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_tuanjiedexiongyali
 		prerequisite = { focus = HUN_97yuanze}
 		x = 3
 		y = 12
@@ -445,7 +446,7 @@ focus_tree = {
 	#贝特伦的决定
 	focus = {
 		id = HUN_beitelundejueding
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_beitelundejueding
 		prerequisite = { focus = HUN_zhengzhitiaozheng}
 		x = 5
 		y = 9
@@ -466,7 +467,7 @@ focus_tree = {
 	#修建水利
 	focus = {
 		id = HUN_xiujianshuili
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_xiujianshuili
 		prerequisite = { focus = HUN_beitelundejueding}
 		x = 5
 		y = 10
@@ -509,7 +510,7 @@ focus_tree = {
 	#蚂蚁合作社
 	focus = {
 		id = HUN_mayihezuoshe
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_mayihezuoshe
 		prerequisite = { focus = HUN_xiujianshuili}
 		x = 5
 		y = 11
@@ -528,7 +529,7 @@ focus_tree = {
 	#稳定的匈牙利
 	focus = {
 		id = HUN_wendingdexiongyali
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_wendingdexiongyali
 		prerequisite = { focus = HUN_mayihezuoshe}
 		x = 5
 		y = 12
@@ -550,7 +551,7 @@ focus_tree = {
 	#小农党的想法
 	focus = {
 		id = HUN_xiaonongdangdexiangfa
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_xiaonongdangdexiangfa
 		prerequisite = { focus = HUN_zhengzhitiaozheng}
 		x = 7
 		y = 9
@@ -571,7 +572,7 @@ focus_tree = {
 	#对农业的调整
 	focus = {
 		id = HUN_duinongyedetiaozheng
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_duinongyedetiaozheng
 		prerequisite = { focus = HUN_xiaonongdangdexiangfa}
 		x = 7
 		y = 10
@@ -590,7 +591,7 @@ focus_tree = {
 	#解决贫困
 	focus = {
 		id = HUN_jiejuepinkun
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_jiejuepinkun
 		prerequisite = { focus = HUN_duinongyedetiaozheng}
 		x = 7
 		y = 11
@@ -612,7 +613,7 @@ focus_tree = {
 	#繁荣的匈牙利
 	focus = {
 		id = HUN_fanrongdexiongyali
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_fanrongdexiongyali
 		prerequisite = { focus = HUN_jiejuepinkun}
 		x = 7
 		y = 12
@@ -636,7 +637,7 @@ focus_tree = {
 	#从经济危机中恢复
 	focus = {
 		id = HUN_congjingjiweijizhonghuifu
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_congjingjiweijizhonghuifu
 		prerequisite = { focus = HUN_youyideshengli}
 		x = 12
 		y = 8
@@ -655,7 +656,7 @@ focus_tree = {
 	#gyor计划
 	focus = {
 		id = HUN_gyorjihua
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_gyorjihua
 		prerequisite = { focus = HUN_congjingjiweijizhonghuifu}
 		x = 9
 		y = 9
@@ -701,7 +702,7 @@ focus_tree = {
 	#带动其他地区发展
 	focus = {
 		id = HUN_daidongqitadiqu
-		icon = GFX_HUN_fazhanduonaohejinjidai
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = HUN_touziduonaohejingjidai}
 		x = 9
 		y = 11
@@ -720,7 +721,7 @@ focus_tree = {
 	#科技投资
 	focus = {
 		id = HUN_kejitouzi
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_kejitouzi
 		prerequisite = { focus = HUN_congjingjiweijizhonghuifu}
 		x = 12
 		y = 9
@@ -739,7 +740,7 @@ focus_tree = {
 	#布达佩斯技术大学
 	focus = {
 		id = HUN_jishudaxue
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_jishudaxue
 		prerequisite = { focus = HUN_kejitouzi}
 		x = 12
 		y = 10
@@ -758,7 +759,7 @@ focus_tree = {
 	#工业技术研究所
 	focus = {
 		id = HUN_gongyejishuyanjiusuo
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_gongyejishuyanjiusuo
 		prerequisite = { focus = HUN_jishudaxue}
 		prerequisite = { focus = HUN_touziduonaohejingjidai}
 		x = 11
@@ -778,7 +779,7 @@ focus_tree = {
 	#农业发展研究所
 	focus = {
 		id = HUN_nongyefazhanyanjiusuo
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_nongyefazhanyanjiusuo
 		prerequisite = { focus = HUN_jishudaxue}
 		prerequisite = { focus = HUN_fuzhunongye}
 		x = 13
@@ -798,7 +799,7 @@ focus_tree = {
 	#布达佩斯研究中心
 	focus = {
 		id = HUN_budapesiyanjiuzhongxin
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_budapesiyanjiuzhongxin
 		prerequisite = { focus = HUN_gongyejishuyanjiusuo focus = HUN_nongyefazhanyanjiusuo}
 		x = 12
 		y = 12
@@ -817,7 +818,7 @@ focus_tree = {
 	#消费券
 	focus = {
 		id = HUN_xiaofeiquan
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_xiaofeiquan
 		prerequisite = { focus = HUN_congjingjiweijizhonghuifu}
 		x = 15
 		y = 9
@@ -836,7 +837,7 @@ focus_tree = {
 	#扶助农业
 	focus = {
 		id = HUN_fuzhunongye
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_fuzhunongye
 		prerequisite = { focus = HUN_xiaofeiquan}
 		x = 15
 		y = 10
@@ -858,7 +859,7 @@ focus_tree = {
 	#农业现代化
 	focus = {
 		id = HUN_nongyexiandaihua
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_nongyexiandaihua
 		prerequisite = { focus = HUN_fuzhunongye}
 		x = 15
 		y = 11
@@ -883,7 +884,7 @@ focus_tree = {
 	#不，不，绝不！
 	focus = {
 		id = HUN_bubujuebu
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_bubujuebu
 		prerequisite = { focus = HUN_youyideshengli}
 		x = 19
 		y = 8
@@ -905,7 +906,7 @@ focus_tree = {
 	#稳固斯洛伐克
 	focus = {
 		id = HUN_wengusilfake
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_wengusilfake
 		prerequisite = { focus = HUN_bubujuebu}
 		x = 19
 		y = 9
@@ -927,7 +928,7 @@ focus_tree = {
 	#解决罗马尼亚
 	focus = {
 		id = HUN_jiejueluomaniya
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_jiejueluomaniya
 		prerequisite = { focus = HUN_bubujuebu}
 		x = 17
 		y = 9
@@ -946,7 +947,7 @@ focus_tree = {
 	#处理摩尔多瓦
 	focus = {
 		id = HUN_chulimoerduowa
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_chulimoerduowa
 		prerequisite = { focus = HUN_bubujuebu}
 		x = 21
 		y = 9
@@ -965,7 +966,7 @@ focus_tree = {
 	#培植亲匈势力
 	focus = {
 		id = HUN_peizhiqinxiongshili
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_peizhiqinxiongshili
 		prerequisite = { focus = HUN_jiejueluomaniya focus = HUN_wengusilfake}
 		prerequisite = { focus = HUN_chulimoerduowa }
 		x = 20
@@ -985,7 +986,7 @@ focus_tree = {
 	#增加马扎儿移民
 	focus = {
 		id = HUN_zengjiamazhaeryimin
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_zengjiamazhaeryimin
 		prerequisite = { focus = HUN_chulimoerduowa focus = HUN_wengusilfake}
 		prerequisite = { focus = HUN_jiejueluomaniya }
 		x = 18
@@ -1005,7 +1006,7 @@ focus_tree = {
 	#建立少民军队
 	focus = {
 		id = HUN_jianlishaominjundui
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_jianlishaominjundui
 		prerequisite = { focus = HUN_peizhiqinxiongshili }
 		prerequisite = { focus = HUN_zengjiamazhaeryimin }
 		x = 18
@@ -1025,7 +1026,7 @@ focus_tree = {
 	#发展当地产业
 	focus = {
 		id = HUN_fazhandangdichanye
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_fazhandangdichanye
 		prerequisite = { focus = HUN_peizhiqinxiongshili }
 		prerequisite = { focus = HUN_zengjiamazhaeryimin }
 		x = 20
@@ -1045,7 +1046,7 @@ focus_tree = {
 	#解决克罗地亚和达尔马提亚问题
 	focus = {
 		id = HUN_jiejuekeluodiyahedaermatiyawenti
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_jiejuekeluodiyahedaermatiyawenti
 		prerequisite = {focus = HUN_fazhandangdichanye}
 		prerequisite = { focus = HUN_jianlishaominjundui}
 		x = 18
@@ -1065,7 +1066,7 @@ focus_tree = {
 	#向比萨拉比亚进军
 	focus = {
 		id = HUN_xiangbisalabiyajinjun
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_xiangbisalabiyajinjun
 		prerequisite = {focus = HUN_fazhandangdichanye}
 		prerequisite = { focus = HUN_jianlishaominjundui}
 		x = 20
@@ -1093,7 +1094,7 @@ focus_tree = {
 	#左翼的逆袭
 	focus = {
 		id = HUN_zuoyidenixi
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_zuoyidenixi
 		prerequisite = { focus = HUN_juxing1936daxuan}
 		x = 30
 		y = 7
@@ -1137,7 +1138,7 @@ focus_tree = {
 	#政治改革
 	focus = {
 		id = HUN_zhengzhigaige
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_zhengzhigaige
 		prerequisite = { focus = HUN_zuoyidenixi}
 		x = 25
 		y = 8
@@ -1870,10 +1871,10 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { has_completed_focus = HUN_juxing1936daxuan }
 		
 		completion_reward = {  air_experience = 50 }
 	}
@@ -1889,12 +1890,22 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = light_fighter
+				category = cas_bomber
+				category = cat_heavy_fighter
+				category = tactical_bomber
+				category = cat_strategic_bomber
+			}
+		 }
 	}
 	#改善国内条件
 	focus = {
@@ -1908,12 +1919,43 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes						
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes						
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes						
+				}
+			}
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes						
+				}
+			}
+		 }
 	}
 	#引进外国工程师
 	focus = {
@@ -1934,7 +1976,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { country_event = {  id = TODhungary.30 } }
 	}
 	#坚持本国制造
 	focus = {
@@ -1950,12 +1992,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { add_ideas = HUN_benguozhizao }
 	}
 	#引入外国生产线
 	focus = {
@@ -1971,12 +2013,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { country_event = {  id = TODhungary.31 }}
 	}
 	#联合飞机研发
 	focus = {
@@ -1992,12 +2034,20 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_to_tech_sharing_group = HUN_joint_air_development_group
+			every_other_country = {
+				limit = {
+					is_in_faction_with = HUN
+				}
+				add_to_tech_sharing_group = HUN_joint_air_development_group
+			}
+		}
 	}
 	#强调自主设计
 	focus = {
@@ -2013,12 +2063,23 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				name = HUN_heavy_fighter_effort
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = cat_heavy_fighter
+				category = light_fighter
+				category = cas_bomber
+				category = tactical_bomber
+			}
+		}
 	}
 	#加强飞行员培训
 	focus = {
@@ -2032,12 +2093,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { add_timed_idea = { idea = HUN_feixingyuan days = 730 }  }
 	}
 	#航空技术研究所
 	focus = {
@@ -2051,12 +2112,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { add_ideas = HUN_hangkongjishuyanjiusuo }
 	}
 	#声敏火箭弹
 	focus = {
@@ -2071,12 +2132,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { add_ideas = HUN_huojiandan }
 	}
 	#军事重组
 	focus = {
@@ -2089,12 +2150,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { has_completed_focus = HUN_juxing1936daxuan }
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { army_experience = 50 }
 	}
 	#精兵战术
 	focus = {
@@ -2109,12 +2170,17 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = {  
+			remove_ideas = HUN_pangdadejundui
+			add_dynamic_modifier = { modifier = HUN_jingruishibing }
+			custom_effect_tooltip = HUN_caijun
+			hidden_effect = { HUN = {country_event = { days = 60 id = HUN } } }
+		}
 	}
 	#保持规模
 	focus = {
@@ -2129,12 +2195,15 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+				custom_effect_tooltip = HUN.8.tt
+				country_lock_all_division_template = no
+		 }
 	}
 	#特种化作战
 	focus = {
@@ -2148,12 +2217,16 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			custom_effect_tooltip = HUN.9.tt
+			add_to_variable = { HUN_lujungongji = 0.1 }
+			add_to_variable = { HUN_lujunfangyu = 0.1 } 
+		 }
 	}
 	#山地训练
 	focus = {
@@ -2167,12 +2240,15 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			custom_effect_tooltip = HUN.10.tt
+			add_to_variable = { HUN_shandi = 0.1 }
+		 }
 	}
 	#气候适应
 	focus = {
@@ -2186,12 +2262,15 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			custom_effect_tooltip = HUN.11.tt
+			add_to_variable = { HUN_shiying = 0.1 }
+		 }
 	}
 	#伞兵组建
 	focus = {
@@ -2205,12 +2284,18 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = para_tech
+			}
+		}
 	}
 	#扩大生产
 	focus = {
@@ -2229,7 +2314,9 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_ideas = HUN_zhuangbeishengchan
+		 }
 	}
 	#工兵支援
 	focus = {
@@ -2243,12 +2330,18 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = support_tech
+			}
+		 }
 	}
 	#装备研究
 	focus = {
@@ -2267,7 +2360,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { custom_effect_tooltip =  }
 	}
 	#后勤保障
 	focus = {
@@ -2281,12 +2374,23 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = motorized_equipment
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = train_tech
+			}
+		 }
 	}
 	#加强火力
 	focus = {
@@ -2305,7 +2409,18 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = artillery
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_anti_tank
+			}
+		 }
 	}
 	#达努维亚冲锋枪
 	focus = {
@@ -2319,16 +2434,22 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = infantry_weapons
+			}
+		 }
 	}
-	#炮火加强
+	#攻坚克难
 	focus = {
-		id = HUN_paohuojiaqiang
+		id = HUN_gongjiankenan
 		icon = GFX_HUN_juxingdaxuan
 		prerequisite = { focus = HUN_danuweiya}
 		x = 54
@@ -2338,12 +2459,18 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = artillery
+			}
+		 }
 	}
 	#机械骑兵
 	focus = {
@@ -2357,12 +2484,18 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = armor
+			}
+		 }
 	}
 	#阜博通卡车
 	focus = {
@@ -2376,7 +2509,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
@@ -2400,13 +2533,22 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_tech_bonus = {
+				ahead_reduction = 2
+				bonus = 1.0
+				uses = 1
+				technology = light_armor
+				technology = medium_armor
+				technology = heavy_armor
+			}
+		 }
 	}
 	#通讯畅通
 	focus = {
 		id = HUN_tongxunchangtong
 		icon = GFX_HUN_juxingdaxuan
-		prerequisite = { focus = HUN_paohuojiaqiang }
+		prerequisite = { focus = HUN_gongjiankenan }
 		x = 53
 		y = 6
 
@@ -2425,7 +2567,7 @@ focus_tree = {
 	focus = {
 		id = HUN_zhanchangtupo
 		icon = GFX_HUN_juxingdaxuan
-		prerequisite = { focus = HUN_paohuojiaqiang focus = HUN_gangtiejushou }
+		prerequisite = { focus = HUN_gongjiankenan focus = HUN_gangtiejushou }
 		x = 55
 		y = 6
 
@@ -2433,12 +2575,34 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			has_tech = improved_medium_tank_chassis
+			has_tech = artillery1
+		}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+				create_equipment_variant = {
+					name = "Zrinyi"
+					type = medium_tank_artillery_chassis_2
+					parent_version = 0
+					modules = {
+						main_armament_slot = tank_medium_howitzer
+						turret_type_slot = tank_medium_fixed_superstructure_turret
+						suspension_type_slot = tank_bogie_suspension
+						armor_type_slot = tank_riveted_armor
+						engine_type_slot = tank_diesel_engine
+						special_type_slot_1 = sloped_armor
+					}
+					upgrades = {
+						tank_nsb_engine_upgrade = 10
+						tank_nsb_armor_upgrade = 8
+					}
+					icon = "GFX_HUN_improved_medium_art_medium"
+				}
+		 }
 	}
 	#防空火力
 	focus = {
@@ -2452,12 +2616,32 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			has_tech = improved_light_tank_chassis
+			has_tech = antiair2
+		}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			create_equipment_variant = {
+				name = "Vadasz"
+				type = medium_tank_aa_chassis_2
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_anti_air_cannon_2
+					turret_type_slot = tank_light_two_man_tank_turret
+					suspension_type_slot = tank_bogie_suspension
+					armor_type_slot = tank_riveted_armor
+					engine_type_slot = tank_diesel_engine
+				}
+				upgrades = {
+					tank_nsb_engine_upgrade = 12
+					tank_nsb_armor_upgrade = 6
+				}
+			}
+		}
 	}
 	#重建海军部门
 	focus = {
@@ -2470,12 +2654,18 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			any_state = {
+				is_controlled_by = HUN
+				is_coastal = yes
+			}
+			has_completed_focus = HUN_juxing1936daxuan
+		}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { navy_experience = 50 }
 	}
 	#加强海军建设
 	focus = {
@@ -2494,7 +2684,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { add_timed_idea = { idea = HUN_haijunjianshe days = 365 } }
 	}
 	#达尔马提亚军港重建
 	focus = {
@@ -2508,12 +2698,36 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			or = {
+				has_full_control_of_state = 763
+				has_full_control_of_state = 1214
+				has_full_control_of_state = 1212
+				has_full_control_of_state = 103
+			}
+		}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				limit = {
+					dockyard > 0
+					free_building_slots = {
+						building = dockyard
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	#新建黑海舰队
 	focus = {
@@ -2527,12 +2741,23 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			has_full_control_of_state = 766
+		}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			766 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		 }
 	}
 	#从国外购置舰艇
 	focus = {
@@ -2565,12 +2790,14 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			add_dynamic_modifier = HUN_chongfandayang
+		 }
 	}
 	#招募海军人员
 	focus = {
@@ -2584,18 +2811,43 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			custom_effect_tooltip = HUN.12.tt
+			add_to_variable = { HUN_renyuan = -0.25 }
+			add_to_variable = { HUN_haijunrenyuan = 0.1 }
+		 }
 	}
 	#成立海军研究院
 	focus = {
 		id = HUN_haijunyanjiuyuan
 		icon = GFX_HUN_juxingdaxuan
 		prerequisite = { focus = HUN_zhaomuhaijunrenyuan }
+		x = 70
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			
+		 }
+	}
+	#从内河舰队中抽调人手
+	focus = {
+		id = HUN_choudiaorenshou
+		icon = GFX_HUN_choudiaorenshou
+		prerequisite = { focus = HUN_zhaomuhaijunrenyuan }
 		x = 68
 		y = 3
 
@@ -2608,32 +2860,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
-	}
-	#从内河舰队中抽调人手
-	focus = {
-		id = HUN_haijunyanjiuyuan
-		icon = GFX_HUN_juxingdaxuan
-		prerequisite = { focus = HUN_zhaomuhaijunrenyuan }
-		x = 70
-		y = 3
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 10
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			
+		}
 	}
 	#重启霍尔蒂
 	focus = {
-		id = HUN_haijunyanjiuyuan
-		icon = GFX_HUN_juxingdaxuan
-		prerequisite = { focus = HUN_haijunyanjiuyuan }
+		id = HUN_chongqihuoerdi
+		icon = GFX_HUN_chongqihuoerdi
+		prerequisite = { focus = HUN_choudiaorenshou }
 		x = 70
 		y = 4
 
@@ -2641,17 +2876,29 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = {  }
+		completion_reward = {
+			add_naval_commander_role = {
+				character = HUN_miklos_horthy
+				traits = { gunnery_expert navy_media_personality superior_tactician }
+				skill = 3
+				legacy_id = 556 #Navy Miklos
+				attack_skill = 2
+				defense_skill = 2
+				maneuvering_skill = 2
+				coordination_skill = 4				
+			} 
+		}
 	}
 	#加强人员培训
 	focus = {
 		id = HUN_jiaqiangrenyuanpeixun
-		icon = GFX_HUN_juxingdaxuan
+		icon = GFX_HUN_jiaqiangrenyuanpeixun
 		prerequisite = { focus = HUN_haijunyanjiuyuan }
 		x = 68
 		y = 4
@@ -2665,7 +2912,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { 
+			custom_effect_tooltip = HUN.13.tt
+			add_to_variable = { HUN_peixun = 0.1 }
+		 }
 	}
 	#宣告海军成立
 	focus = {
@@ -2698,12 +2948,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { has_completed_focus = HUN_juxing1936daxuan }
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { add_political_power = 100 }
 	}
 	#向西交流
 	focus = {
@@ -2717,12 +2967,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 10
+		cost = 4
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { air_experience = 50 }
+		completion_reward = { air_experience = add_political_power = 50 }
 	}
 	#重启对奥谈判
 	focus = {

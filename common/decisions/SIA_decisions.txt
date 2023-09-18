@@ -1,0 +1,254 @@
+SIA_decision_l_1 = {
+	
+	SIA_decision_shifangros = {		 #释放民主暹罗
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = yes		
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			country_event = {
+				id = SIA_event.1
+			}
+		}
+	}	
+	SIA_decision_jiesuo = {		
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			set_power_balance = {
+				id = SIA_power_balance
+				left_side = SIA_left_side
+				right_side = SIA_right_side
+				set_default = yes 
+			}
+		}
+	}	
+	
+}
+
+SIA_decision_l_1_zuoyouyipingheng = {
+	SIA_decision_jiapp = {		
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_political_power = 100
+		}
+	}	
+}
+
+SIA_decision_l_2_ljzkd = { #共和军陆军掌控度
+	
+	SIA_decision_add_ljzkd = {    #加10
+		allowed = { tag = SIA }
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no		
+			
+		available = {			
+		}
+		
+		ai_will_do = {
+			factor = 100			
+		}
+	
+		remove_effect = {
+			add_to_variable = { 
+			    VAR_SIA_lujunzhangkongdu = 10 
+		        tooltip = ljzkd_save_up_10	
+		    }	
+			VAR_SIA_lujunzhangkongdu_clamp = yes					
+		}
+	}
+	
+	SIA_decision_lose_ljzkd = {     #减10
+		allowed = { tag = SIA }
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no		
+
+		ai_will_do = {
+			factor = 100			
+		}
+	
+		remove_effect = {
+			add_to_variable = { 
+				VAR_SIA_lujunzhangkongdu = -10
+		        tooltip = ljzkd_save_down_10		
+		    }
+			VAR_SIA_lujunzhangkongdu_clamp = yes
+		}
+	}
+	SIA_decision_clr_ljzkd = {   
+		allowed = { tag = SIA }
+		icon = ger_mefo_bills		
+		cost = 1
+		days_remove = 1
+		fire_only_once = no		
+		ai_will_do = {
+			factor = 100			
+		}	
+		remove_effect = {
+			clear_variable = VAR_SIA_lujunzhangkongdu
+		}
+	}
+}
+
+SIA_balance_of_power_category = {  #权力斗争决议
+	
+	SIA_decision_right_yingxaingli_10 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = 0.1
+			}
+		}
+	}	
+	SIA_decision_right_yingxaingli_20 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = 0.2
+			}
+		}
+	}	
+	SIA_decision_right_yingxaingli_50 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = 0.5
+			}
+		}
+	}	
+	SIA_decision_left_yingxaingli_10 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = -0.1
+			}
+		}
+	}	
+	SIA_decision_left_yingxaingli_20 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = -0.2
+			}
+		}
+	}	
+	SIA_decision_left_yingxaingli_50 = {		
+		icon = ger_mefo_bills		
+		cost = 1		
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 1			
+	    }
+		remove_effect = {
+			add_power_balance_value = {
+				id = SIA_power_balance
+				value = -0.5
+			}
+		}
+	}	
+}
+
+SIA_decision_l_3_drdxd = {  #敌人的行动
+	
+	SIA_mission_1_bwdlljg = {   #保王党拉拢陆军军官
+		priority = 10
+		name = SIA_mission_1_bwdlljg
+		icon = eng_trade_unions_support
+		available = {
+			hidden_trigger = { always = no }
+		}
+		activation = {
+			always = no
+		}
+		days_mission_timeout = 2
+		fire_only_once = no
+		visible = {
+			tag = SIA
+			#NOT = { has_global_flag = spanish_civil_war }
+		}
+		cancel_if_not_visible = yes
+		is_good = no
+		timeout_effect = {
+			add_to_variable = { 
+				VAR_SIA_lujunzhangkongdu = -10
+		        tooltip = ljzkd_save_down_10		
+		    }
+			VAR_SIA_lujunzhangkongdu_clamp = yes
+			hidden_effect = { activate_mission = SIA_mission_1_bwdlljg }
+		}
+	}
+	SIA_mission_2_ghjjqkz = {    #共和军加强对军队的控制
+		priority = 10
+		name = SIA_mission_2_ghjjqkz
+		icon = eng_trade_unions_support
+		available = {
+			hidden_trigger = { always = no }
+		}
+		activation = {
+			always = no
+		}
+		days_mission_timeout = 2
+		fire_only_once = no
+		visible = {
+			tag = SIA
+			#NOT = { has_global_flag = spanish_civil_war }
+		}
+		cancel_if_not_visible = yes
+		is_good = no
+		timeout_effect = {
+			add_to_variable = { 
+			    VAR_SIA_lujunzhangkongdu = 10 
+		        tooltip = ljzkd_save_up_10	
+		    }	
+			VAR_SIA_lujunzhangkongdu_clamp = yes
+			hidden_effect = { activate_mission = SIA_mission_2_ghjjqkz }
+		}
+	}
+}

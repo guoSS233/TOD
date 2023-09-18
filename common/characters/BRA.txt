@@ -7,11 +7,37 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=conservatism_subtype
+			ideology=conservative_democracy_subtype
 			desc = "POLITICS_Washington_Luis_Pereira_de_Sousa_DESC"
 			traits={  }
 			expire="1965.1.1.1"
 			id=-1
+		}
+	}
+
+	BRA_Li_Desheng = {
+		name=BRA_Li_Desheng
+		portraits={
+			civilian={
+				large="gfx/leaders/BRA/Portrait_BRA_Li_Desheng.tga"
+				small = "gfx/leaders/BRA/Portrait_BRA_Li_Desheng_minister.tga"
+			}
+		}
+		country_leader={
+			ideology=agroindustrial_socialism_subtype
+			desc = "POLITICS_Li_Desheng_DESC"
+			traits={ cornered_fox }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		corps_commander={
+			traits={ trait_cautious politically_connected defensive_doctrine }
+			skill=4
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
 		}
 	}
 }

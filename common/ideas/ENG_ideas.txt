@@ -1,0 +1,123 @@
+ideas = {
+	hidden_ideas = {
+		ENG_cheating_marseille_treaty = {
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_cheating_marseille_treaty"}
+			modifier = {
+				conscription = +0.005
+				production_speed_arms_factory_factor = +0.25
+				production_cost_max_ship_hull_cruiser = +700
+				production_cost_max_ship_hull_heavy = +2500
+				production_cost_max_ship_hull_carrier = +1500
+				#limit the amount of divisions and the size of ships 
+			}
+		}
+		ENG_ignoring_marseille_treaty = {
+			modifier = {
+				conscription = +0.01
+				production_speed_arms_factory_factor = +0.5
+				production_cost_max_ship_hull_cruiser = +1500
+				production_cost_max_ship_hull_heavy = +5000
+				production_cost_max_ship_hull_carrier = +2500
+				#limit the amount of divisions and the size of ships 
+			}
+		}
+		mi_and_the_unified_police = {
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea mi_and_the_unified_police"}
+			modifier = {
+				encryption = 1
+				decryption = 1
+			}
+		}
+	}
+	country = {
+		###STARTING IDEAS###
+		ENG_limit_of_marseille_treaty = {#马赛和约的限制
+			picture = ENG_limit_of_marseille_treaty
+			allowed = { always = no }
+			modifier = {
+				conscription = -0.01
+				production_speed_arms_factory_factor = -0.5
+				production_cost_max_ship_hull_cruiser = 5000
+				production_cost_max_ship_hull_heavy = 9000
+				production_cost_max_ship_hull_carrier = 8500
+				#limit the amount of divisions and the size of ships 
+			}
+		}
+		ENG_1934_labour_charter = {#1934劳工法案
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_1934_labour_charter"}
+			picture = ENG_1934_labour_charter
+			allowed = { always = no }
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = 0.05
+				consumer_goods_factor = 0.03
+			}
+		}
+		ENG_public_construction_committee = {#公共建设委员会
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_public_construction_committee"}
+			picture = ENG_public_construction_committee
+			allowed = { always = no }
+			modifier = {
+				production_speed_buildings_factor = 0.2
+				consumer_goods_factor = 0.02
+				weekly_manpower = -200
+			}
+		}
+		ENG_agriculture_reform = {#农业改革
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_agriculture_reform"}
+			picture = ENG_agriculture_reform
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+				weekly_manpower = 100
+				conscription_factor = -0.1
+			}
+		}
+		ENG_unpopular_vases = {#不受欢迎的花瓶
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_unpopular_vases"}
+			picture = ENG_unpopular_vases
+			allowed = { always = no }
+			modifier = {
+				national_corporatism_drift = 0.01
+				leader_despotism_drift = 0.01
+				stability_factor = -0.10
+				war_support_factor = -0.10
+			}
+		}
+		ENG_stiff_upper_lip = {#英国斯多葛主义
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ENG_stiff_upper_lip"}
+			picture = ENG_stiff_upper_lip
+			allowed = { always = no }
+			modifier = {
+				drift_defence_factor = 0.2
+				army_core_defence_factor = 0.05
+			}
+		}
+		
+		###军备限制条约###
+		ENG_cheating_exposed = {
+			picture = ENG_limit_of_marseille_treaty
+			allowed = { always = no }
+			modifier = {
+				conscription = +0.005
+				production_speed_arms_factory_factor = +0.25
+				production_cost_max_ship_hull_cruiser = +700
+				production_cost_max_ship_hull_heavy = +2500
+				production_cost_max_ship_hull_carrier = +1500
+				#limit the amount of divisions and the size of ships 
+			}
+		}
+		ENG_ignoring_exposed = {
+			picture = ENG_limit_of_marseille_treaty
+			allowed = { always = no }
+			modifier = {
+				conscription = +0.01
+				production_speed_arms_factory_factor = +0.5
+				production_cost_max_ship_hull_cruiser = +1500
+				production_cost_max_ship_hull_heavy = +5000
+				production_cost_max_ship_hull_carrier = +2500
+				#limit the amount of divisions and the size of ships 
+			}
+		}
+		
+}

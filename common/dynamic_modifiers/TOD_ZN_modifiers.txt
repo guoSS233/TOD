@@ -1,0 +1,35 @@
+
+#艰苦的自然环境（大部分地区）
+ZN_state_jiankuhuanjing = {	
+	icon = GFX_modifiers_sabotaged_resource
+	enable = { always = yes }
+	production_speed_infrastructure_factor = -0.5
+	production_speed_rail_way_factor = -0.8
+	production_speed_supply_node_factor = -0.8
+	
+	supply_consumption_factor = 0.2
+	
+	org_loss_when_moving = 0.2
+	army_speed_factor = -0.2
+}
+#被开发的自然环境（部分地区）
+ZN_state_kaifahuanjing = {
+	icon = GFX_modifiers_sabotaged_resource
+	enable = { always = yes }
+	production_speed_infrastructure_factor = -0.25
+	production_speed_rail_way_factor = -0.4
+	production_speed_supply_node_factor = -0.4
+	
+	supply_consumption_factor = 0.1
+	
+	org_loss_when_moving = 0.1
+	army_speed_factor = -0.1
+}
+#人口密集的城市（少部分地区）
+ZN_state_bigcity = {
+	icon = GFX_modifiers_sabotaged_resource
+	enable = { always = yes }
+	local_building_slots_factor = 0.25
+	industrial_capacity_factory = 0.25
+	production_speed_buildings_factor = 0.1
+}

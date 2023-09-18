@@ -1,8 +1,8 @@
 ideas = {
 
-  ################################################################################################################################################################################################
-  ### EDO
-  ################################################################################################################################################################################################
+	################################################################################################################################################################################################
+	### EDO
+	################################################################################################################################################################################################
 
 	TOD_minister_head = { ### Head of Government ###
 		EDO_Sakai_Tadamasa_hog_con = {
@@ -19,7 +19,7 @@ ideas = {
 			}
 			traits = {
 				TOD_minister_head
-				conservatism
+				conservative_democracy
 				hog_pragmatic_statesman
 			}
 		}
@@ -39,11 +39,11 @@ ideas = {
 			}
 			traits = {
 				TOD_foreign_minister
-				conservatism
+				conservative_democracy
 				for_general_staffer
 			}
 		}
-		}
+	}
 	TOD_economy_minister = { ### economy minister ###
 		EDO_Tokugawa_Muneyoshi_eco_con = {
 			allowed = { original_tag = EDO }
@@ -59,11 +59,11 @@ ideas = {
 			}
 			traits = {
 				TOD_economy_minister
-				conservatism
+				conservative_democracy
 				eco_economic_organizer
 			}
 		}
-		}
+	}
 	TOD_security_minister = { ### security minister ###
 		EDO_Ikeda_Nakahiro_sec_con = {
 			allowed = { original_tag = EDO }
@@ -79,15 +79,15 @@ ideas = {
 			}
 			traits = {
 				TOD_security_minister
-				conservatism
+				conservative_democracy
 				sec_crime_fighter
 			}
 		}
-		}
-	    
-  ################################################################################################################################################################################################
-  ### MEX
-  ################################################################################################################################################################################################
+	}
+
+	################################################################################################################################################################################################
+	### MEX
+	################################################################################################################################################################################################
 
 	TOD_minister_head = { ### Head of Government ###
 		MEX_Bernardo_Reyes_hog_aut = {
@@ -104,7 +104,7 @@ ideas = {
 			}
 			traits = {
 				TOD_minister_head
-				authoritarianism
+				authoritarian_oligarchy
 				hog_respected_war_hero
 			}
 		}
@@ -122,7 +122,7 @@ ideas = {
 			}
 			traits = {
 				TOD_minister_head
-				conservatism
+				conservative_democracy
 				hog_pragmatic_statesman
 			}
 		}
@@ -144,7 +144,7 @@ ideas = {
 				hog_silent_workhorse
 			}
 		}
-		}
+	}
 	TOD_foreign_minister = { ### foreign minister ###
 		MEX_Leopoldo_Ortiz_for_aut = {
 			allowed = { original_tag = MEX }
@@ -160,11 +160,11 @@ ideas = {
 			}
 			traits = {
 				TOD_foreign_minister
-				authoritarianism
+				authoritarian_oligarchy
 				for_biased_intellectual
 			}
 		}
-		}
+	}
 	TOD_economy_minister = { ### economy minister ###
 		MEX_Luis_Montes_de_Oca_eco_aut = {
 			allowed = { original_tag = MEX }
@@ -180,11 +180,11 @@ ideas = {
 			}
 			traits = {
 				TOD_economy_minister
-				authoritarianism
+				authoritarian_oligarchy
 				eco_balanced_budget_economy
 			}
 		}
-		}
+	}
 	TOD_security_minister = { ### security minister ###
 		MEX_Francisco_Cardenas_sec_aut = {
 			allowed = { original_tag = MEX }
@@ -200,11 +200,11 @@ ideas = {
 			}
 			traits = {
 				TOD_security_minister
-				authoritarianism
+				authoritarian_oligarchy
 				sec_preserver_of_culture
 			}
 		}
-		}
+	}
 	chief_of_staff = { ### 总参谋长 ###
 		MEX_Bernardo_Reyes_cos_sco = {
 			allowed = { original_tag = MEX }
@@ -233,7 +233,7 @@ ideas = {
 			}
 			cancel_if_invalid = yes
 		}
-		}
+	}
 	chief_of_navy = { ### 海军部长 ###
 		MEX_OthonP_Blanco_cnav_ade = {
 			allowed = { original_tag = MEX }
@@ -247,7 +247,7 @@ ideas = {
 			}
 			cancel_if_invalid = yes
 		}
-		}
+	}
 	chief_of_air_force = { ### 空军部长 ###
 		MEX_Antonio_Cardenas_Rodriguez_cair_ade = {
 			allowed = { original_tag = MEX }
@@ -261,14 +261,14 @@ ideas = {
 			}
 			cancel_if_invalid = yes
 		}
-		}
+	}
 
-		
 
-	
-  ################################################################################################################################################################################################
-  ### MNG
-  ################################################################################################################################################################################################
+
+
+	################################################################################################################################################################################################
+	### MNG
+	################################################################################################################################################################################################
 
 	TOD_minister_head = { ### Head of Government ###
 		MNG_zhang_wei_han_hog_con = {
@@ -285,7 +285,7 @@ ideas = {
 			}
 			traits = {
 				TOD_minister_head
-				conservatism
+				conservative_democracy
 				hog_pragmatic_statesman
 			}
 		}
@@ -305,7 +305,7 @@ ideas = {
 			}
 			traits = {
 				TOD_foreign_minister
-				liberalism
+				liberal_democracy
 				for_genius_diplomat
 			}
 		}
@@ -325,7 +325,7 @@ ideas = {
 			}
 			traits = {
 				TOD_economy_minister
-				conservatism
+				conservative_democracy
 				eco_outstanding_mediator
 			}
 		}
@@ -345,20 +345,20 @@ ideas = {
 			}
 			traits = {
 				TOD_security_minister
-				authoritarianism
+				authoritarian_oligarchy
 				sec_silent_fire_watcher
-				
+
 			}
 		}
 	}
-	  
 
 
-    chief_of_staff = { ### Chief of Staff ###
+
+	chief_of_staff = { ### Chief of Staff ###
 		MNG_jiang_yan_xing_cos_sco = {
 			allowed = { original_tag = MNG }
 			available = { }
-			
+
 			on_add = {
 				log = "[GetDateText]: [Root.GetName]: add idea MNG_jiang_yan_xing_cos_sco"
 			}
@@ -398,5 +398,4 @@ ideas = {
 			cancel_if_invalid = yes
 		}
 	}
-		}
-	
+}

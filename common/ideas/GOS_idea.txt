@@ -1,0 +1,64 @@
+ideas = {    
+	country = {
+		#庚午财荒的余波
+		GOS_gengwucaihuangdeyubo = {
+			picture = GOS_gengwucaihuangdeyubo
+			modifier = {
+				consumer_goods_factor =	0.4
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_factory_max_efficiency_factor = -0.2
+				industrial_capacity_factory = -0.1
+				political_power_gain = -0.1
+			}
+		}
+		#军备废弛
+		GOS_junbeifeichi = {
+			picture = GOS_junbeifeichi
+			modifier = {
+				army_org_factor = -0.1
+				army_morale_factor = -0.2
+				army_attack_factor = -0.2
+				army_defence_factor = -0.2
+				training_time_army_factor = 0.2
+				industrial_capacity_factory = -0.1
+				conscription_factor = -0.5
+				mobilization_speed = -0.25
+				experience_gain_army_factor = -0.5
+				command_power_gain_mult = -0.35
+				module_armor_design_cost_factor = 10
+			}
+			research_bonus = {
+				artillery = -0.1
+				armor = -0.1
+			}
+			
+		}
+		#大同党在行动
+		GOS_datongdangzaixingdong = {
+			picture = GOS_datongdangzaixingdong
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				political_power_gain = -0.1
+			}
+		}
+		#社民工党的骚乱
+		GOS_shemingongdangdesaoluan = {
+			picture = POL_bisusijizhisi
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				political_power_gain = -0.1
+			}
+		}
+		#湖广粮仓
+		GOS_huguangliangcang = {
+			picture = GOS_huguangliangcang
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				monthly_population = 0.15
+			}
+		}
+	}
+}
