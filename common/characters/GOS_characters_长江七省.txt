@@ -1,0 +1,1474 @@
+characters={
+
+
+
+
+  	#将领/顾问
+		GOS_ctk = { #蔡廷锴
+			name = GOS_ctk
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = {
+				#陆军部长
+				slot = army_chief
+				ledger = army
+				idea_token = gos_ctk
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_chief_offensive_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			field_marshal = {
+				traits = {
+					war_hero
+					brilliant_strategist
+					trickster
+				}
+				skill = 4
+				attack_skill = 5
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 3
+			}
+
+		}
+		GOS_scz = { #施承志
+			name = GOS_scz
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			field_marshal = {
+				traits = {
+					organisational_leader
+					harsh_leader
+					media_personality
+				}
+				skill = 4
+				attack_skill = 4
+				defense_skill = 5
+				planning_skill = 2
+				logistics_skill = 2
+			}
+		}
+		GOS_lz = { #刘峙
+			name = GOS_lz
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					old_guard
+					politically_connected
+				}
+				skill = 3
+				attack_skill = 1
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 1
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_lz
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_entrenchment_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_lg = { #刘公
+			name = GOS_lg
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					career_officer
+					infantry_officer
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 1
+				logistics_skill = 4
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_lg
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_commando_3
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_hj = { #何键
+			name = GOS_hj
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					inflexible_strategist
+					media_personality 
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 4
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_hj
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_infantry_1
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_jyw = { #蒋翊武
+			name = GOS_jyw
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					infantry_officer
+					urban_assault_specialist
+				}
+				skill = 3
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_jyw
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_infantry_3
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+
+		GOS_zzx = { #朱执信
+			name = GOS_zzx
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = {
+				#陆军部长
+				slot = army_chief
+				ledger = army
+				idea_token = GOS_zzx
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_chief_reform_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			corps_commander = {
+				traits = {
+					trait_cautious
+					commando 
+				}
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 4
+				logistics_skill = 1
+			}
+		}
+		GOS_cyb = { #曹亚伯
+			name = GOS_cyb
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					harsh_leader
+				}
+				skill = 3
+				attack_skill = 2
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 2
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_cyb
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_artillery_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_gzt = { #顾祝同
+			name = GOS_gzt
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					cavalry_officer
+					hill_fighter
+				}
+				skill = 3
+				attack_skill = 4
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_gzt
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_CombinedArms_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_llj = { #李烈钧
+			name = GOS_llj
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					naval_invader
+					commando
+				}
+				skill = 3
+				attack_skill = 3
+				defense_skill = 3
+				planning_skill = 1
+				logistics_skill = 3
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_llj
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					navy_amphibious_assault_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_ltw = { #蓝天蔚
+			name = GOS_ltw
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					
+					career_officer
+				}
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 3
+			}
+			advisor = {#理论家
+				cost = 150
+				slot = theorist
+				idea_token = GOS_ltw
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				available = {
+				}
+				traits = {
+					superior_firepower_expert
+				}
+			}
+		}
+		GOS_xyn = { #萧耀南
+			name = GOS_xyn 
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					old_guard
+
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 5
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			advisor = {
+				#陆军部长
+				slot = army_chief
+				ledger = army
+				idea_token = GOS_xyn
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_chief_entrenchment_1
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_jjg = { #蒋经国
+
+			name = GOS_jjg 
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					brilliant_strategist
+					armor_officer
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
+			}
+		}
+		GOS_sxl = { #宋希濂
+			name = GOS_sxl
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					
+
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_sxl
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					GOS_traits_dpbzy
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_qdj = { #钱大钧
+			name = GOS_qdj
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					career_officer
+					trait_reckless
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}
+		GOS_zzw = { #张振武
+			name = GOS_zzw 
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					organizer
+
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
+			}
+		}
+		GOS_zzz = { #张治中
+
+			name = zzz
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					trait_cautious
+
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 1
+			}
+		}
+		GOS_lky = { #刘揆一
+
+			name = GOS_lky
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					cavalry_leader
+
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_lky
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_cavalry_1
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_lk = { #刘戡
+
+			name = GOS_lk
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					cavalry_officer
+					cavalry_expert
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}
+		GOS_xsl = { #萧山令
+
+			name = GOS_xsl
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					career_officer
+
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 1
+			}
+			advisor = {
+				#陆军部长
+				slot = army_chief
+				ledger = army
+				idea_token = GOS_xsl
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_chief_defensive_1
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_qqq = { #邱清泉
+
+			name = GOS_qqq 
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					career_officer
+					trait_reckless
+				}
+				skill = 2
+				attack_skill = 4
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_xkx = { #许克祥
+
+			name = GOS_xkx
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					politically_connected	
+
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 2
+			}
+		}
+		GOS_slr = { #孙立人
+
+			name = GOS_slr
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					brilliant_strategist
+
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_slr
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					GOS_traits_zjzzcdz
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+
+		GOS_cqm = { #陈其美
+
+			name = GOS_cqm
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					inflexible_strategist
+
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 2
+				planning_skill = 3
+				logistics_skill = 1
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_cqm
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					army_concealment_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_cgs = { #蔡公时
+
+			name = GOS_cgs
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					cavalry_leader
+
+				}
+				skill = 2
+				attack_skill = 2
+				defense_skill = 2
+				planning_skill = 1
+				logistics_skill = 2
+			}
+		}
+		GOS_xsh = { #熊式辉
+
+			name = GOS_xsh
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					urban_assault_specialist
+
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 3
+				logistics_skill = 2
+			}
+		}
+		GOS_hcj = { #何成浚
+
+			name = GOS_hcj
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					old_guard
+
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 3
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}
+		GOS_xyq = { #徐源泉
+
+			name = GOS_xyq
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					old_guard
+					infantry_officer
+				}
+				skill = 2
+				attack_skill = 1
+				defense_skill = 4
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_lyx = { #廖耀湘
+
+			name = GOS_lyx
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					infantry_leader
+					hill_fighter
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_dal = { #戴安澜
+
+			name = GOS_dal
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					armor_officer
+					ranger
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_hkz = { #霍揆彰
+
+			name = GOS_hkz
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					jungle_rat
+
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_zxb = { #曾宪邦
+
+			name = GOS_zxb
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					harsh_leader
+
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_qqw = { #秦庆武
+
+			name = GOS_qqw
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					urban_assault_specialist
+
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_xzl = { #肖作霖
+
+			name = GOS_xzl
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					skilled_staffer
+
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_yjs = { #俞济时
+
+			name = GOS_yjs
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					skilled_staffer
+
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+		GOS_hw = { #黄维
+
+			name = GOS_hw
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			corps_commander = {
+				traits = {
+					hill_fighter
+
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+
+
+
+	#总司令
+		GOS_wml = { #吴毓麟
+
+			name = GOS_wml
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_wml
+				ledger = navy
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					navy_naval_air_defense_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_oyg = { #欧阳格
+
+			name = GOS_oyg 
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_oyg 
+				ledger = navy
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					navy_screen_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_txm = { #汤芗铭
+
+			name = GOS_txm
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_txm
+				ledger = navy
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					navy_carrier_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_sch = { #沈崇诲
+
+
+			name = GOS_sch 
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_sch 
+				ledger = air
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					air_air_superiority_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_cxc = { #陈锡纯
+
+			name = GOS_cxc
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_cxc
+				ledger = air
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					air_close_air_support_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_chm = { #陈怀民
+
+			name = GOS_chm
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #总司令
+				slot = high_command
+				idea_token = GOS_chm
+				ledger = air
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					air_air_combat_training_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+    #海军部长
+		GOS_wrl = { #吴纫礼
+
+			name = GOS_wrl
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #海军部长
+				slot = navy_chief
+				idea_token = GOS_wrl
+				ledger = navy
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					navy_chief_reform_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			advisor = { #理论家
+				slot = theorist
+				idea_token = GOS_wrl
+				ledger = air
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					naval_theorist
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_gyq = { #桂永清
+
+			name = GOS_gyq
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #海军部长
+				slot = navy_chief
+				idea_token = GOS_gyq
+				ledger = navy
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					navy_chief_naval_aviation_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+
+	#空军部长
+		GOS_xhs = { #徐焕升
+
+			name = GOS_xhs
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #空军部长
+				slot = air_chief
+				idea_token = GOS_xhs
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					air_chief_all_weather_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_zzr = { #周至柔
+
+			name = GOS_zzr
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #空军部长
+				slot = air_chief
+				idea_token = GOS_zzr
+				ledger = air
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					air_chief_reform_2
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+			advisor = { #理论家
+				slot = theorist
+				idea_token = GOS_zzr
+				ledger = air
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					air_warfare_theorist
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+
+
+ 	#理论家
+	
+		GOS_wlz = { #吴禄贞
+			name = GOS_wlz
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #理论家
+				slot = theorist
+				idea_token = GOS_wlz
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				traits = {
+					grand_battle_plan_expert
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+		GOS_qxs = { #钱学森
+
+			name = GOS_qxs
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #理论家
+				slot = theorist
+				idea_token = GOS_qxs
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				research_bonus = {
+					rocketry = 0.150
+				}
+				traits = {
+					rocket_scientist
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+
+		GOS_zgy = { #朱光亚
+
+			name = GOS_zgy
+			portraits = {
+				army = {
+					small = "GFX_idea_hugh_dowding"
+				}
+				army = {
+					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
+				}
+			}
+			advisor = { #理论家
+				slot = theorist
+				idea_token = GOS_zgy
+				ledger = army
+				allowed = {
+					original_tag = GOS
+				}
+				research_bonus = {
+					nuclear = 0.150
+				}
+				traits = {
+					nuclear_scientist
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
+		}
+
+		
+
+
+	#
+
+
+
+}
