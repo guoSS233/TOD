@@ -47,6 +47,7 @@ ideas = {
 			
 			allowed = { original_tag = SIC }
 			modifier = {
+				consumer_goods_factor = -0.05
 				production_speed_buildings_factor = 0.2
 				stability_factor = 0.1
 				conscription_factor = -0.1
@@ -54,6 +55,18 @@ ideas = {
 		}
 		#稳定的产业链
 		SIC_wendingdechanyelian = {
+			name = SIC_bengkuidechanyelian
+			
+		    picture = SIC_bengkuidechanyelian
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+		#恢复中的产业链
+		SIC_huifuzhongdechanyelian = {
 			name = SIC_bengkuidechanyelian
 			
 		    picture = SIC_bengkuidechanyelian
@@ -85,6 +98,67 @@ ideas = {
 				production_speed_buildings_factor = -0.4
 				stability_factor = -0.3
 				conscription_factor = -0.5
+			}
+		}
+		#无法无天的群众
+		SIC_wufawutian = {
+			name = SIC_wufawutian
+			
+		    picture = SIC_wufawutian
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				war_support_factor = -0.5
+				stability_factor = -0.5
+				conscription_factor = -0.05
+			}
+		}
+		#进入恐慌的群众
+		SIC_jinrukonghuang = {
+			name = SIC_jinrukonghuang
+			
+		    picture = SIC_jinrukonghuang
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				war_support_factor = -0.3
+				stability_factor = -0.3
+				conscription_factor = -0.03
+			}
+		}
+		#充满怒气的群众
+		SIC_chongmannuqi = {
+			name = SIC_chongmannuqi
+			
+		    picture = SIC_chongmannuqi
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				war_support_factor = -0.1
+				stability_factor = -0.1
+				conscription_factor = -0.01
+			}
+		}
+		#留有不满的群众
+		SIC_liuyoubuman = {
+			name = SIC_liuyoubuman
+			
+		    picture = SIC_liuyoubuman
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+			}
+		}
+		#稳定的群众
+		SIC_wendingdequnzong = {
+			name = SIC_wendingdequnzong
+			
+		    picture = SIC_wendingdequnzong
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				war_support_factor = 0.1
+				stability_factor = 0.1
 			}
 		}
 		#恢复商业
@@ -171,6 +245,44 @@ ideas = {
 				stability_factor = 0.1
 			}
 		}
-		#
-	}	
+		#稳定教育
+		SIC_wendingjiaoyu = {
+			name = SIC_wendingjiaoyu
+			
+		    picture = SIC_wendingjiaoyu
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				consumer_goods_factor = 0.02
+				research_speed_factor = 0.1
+			}
+		}
+		#军校生增加
+		SIC_junxiaoshengzengjia = {
+			name = SIC_junxiaoshengzengjia
+			
+		    picture = SIC_junxiaoshengzengjia
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				command_power_gain_mult = 0.1
+				training_time_army_factor = 0.1
+				experience_gain_army = 0.1
+			}
+		}
+		#速成班
+		SIC_suchengban = {
+			name = SIC_suchengban
+			
+		    picture = SIC_suchengban
+			
+			allowed = { original_tag = SIC }
+			modifier = {
+				command_power_gain_mult = -0.1
+				training_time_army_factor = -0.1
+				experience_gain_army_factor = 0.1
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
 }

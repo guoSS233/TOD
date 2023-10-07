@@ -1,0 +1,78 @@
+defined_text = {
+	name = SICgongyelevel
+	text = {
+		trigger = {
+			tag = SIC
+			check_variable = { SIC.gongye > 79 }
+		}
+		localization_key = SIC_huimiedechanyelian_desc
+	}
+	text = {
+		trigger = {
+			tag = SIC
+			check_variable = { SIC.gongye < 80 }
+			check_variable = { SIC.gongye > 59 }
+		}
+		localization_key = SIC_bengkuidechanyelian_desc
+	}
+	text = {
+		trigger = {
+			tag = SIC
+			check_variable = { SIC.gongye < 60 }
+			check_variable = { SIC.gongye > 39 }
+		}
+		localization_key = SIC_huifuzhongdechanyelian_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { SIC.gongye < 40 }
+			check_variable = { SIC.gongye > 19 }
+		}
+		localization_key = SIC_wendingdechanyelian_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { SIC.gongye < 20 }
+		}
+		localization_key = SIC_fanrongdechanyelian_desc
+	}
+}
+defined_text = {
+	name = SICminzhonglevel
+	text = {
+		trigger = {
+			tag = SIC
+			check_variable = { SIC.minzhong > 79 }
+		}
+		localization_key = SIC_wufawutian_desc
+	}
+	text = {
+		trigger = {
+			tag = SIC
+			check_variable = { SIC.minzhong < 80 }
+			check_variable = { SIC.minzhong > 59 }
+		}
+		localization_key = SIC_jinrukonghuang_desc
+	}
+	text = {
+		trigger = {
+			tag = SIC
+			check_variable = { SIC.minzhong < 60 }
+			check_variable = { SIC.minzhong > 39 }
+		}
+		localization_key = SIC_chongmannuqi_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { SIC.minzhong < 40 }
+			check_variable = { SIC.minzhong > 19 }
+		}
+		localization_key = SIC_liuyoubuman_desc
+	}
+	text = {
+		trigger = {
+			check_variable = { SIC.minzhong < 20 }
+		}
+		localization_key = SIC_wendingdequnzong_desc
+	}
+}

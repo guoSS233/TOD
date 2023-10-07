@@ -2,6 +2,8 @@
 
 #军队编制
 
+oob = "MNG_1936"
+
 if = {
 	limit = { has_dlc = "Man the Guns" }
 	set_naval_oob = "MNG_Naval_mtg"
@@ -11,6 +13,8 @@ if = {
 }
 
 1936.1.1 = {
+	if = {
+		limit = { has_dlc = "Battle for the Bosporus" }
 	if = {
 		limit = { has_dlc = "Battle for the Bosporus" }
 		1193 = {
@@ -94,9 +98,19 @@ set_popularities = {
 	moderate_socialism = 8
 	social_democrat = 3
 	vanguard_socialism = 4
+	national_corporatism = 2
+	leader_despotism = 23
+	authoritarian_oligarchy = 32
+	conservative_democracy = 20
+	liberal_democracy = 8
+	moderate_socialism = 8
+	social_democrat = 3
+	vanguard_socialism = 4
 }
 
 recruit_character = MNG_Changde
+#recruit_character = MNG_chizhang_zhujuanlin
+
 
 country_lock_all_division_template = yes
 
@@ -153,6 +167,7 @@ if = {
 		autonomous_state = tod_ming_xuanfusi
 		freedom_level = 0.2
 	}
+	set_autonomy = {
 	set_autonomy = {
 		target = BRM
 		autonomous_state = kr_occupied_puppet
@@ -211,6 +226,655 @@ add_to_faction = OMA
 set_research_slots = 4
 
 if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_technology = {
+		aa_lmg = 1
+		engines_1 = 1
+		early_bombs = 1
+		iw_small_airframe = 1
+		iw_medium_airframe = 1
+		iw_large_airframe = 1
+	}
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	interwar_artillery = 1
+	interwar_antiair = 1
+	early_fighter = 1
+	fighter1 = 1
+	cv_early_fighter = 1
+	cv_naval_bomber1 = 1
+	cv_CAS1 = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+	early_bomber = 1
+	tactical_bomber1 = 1
+	superior_firepower = 1
+	base_strike = 1
+	motorised_infantry = 1
+	marines = 1
+	basic_train = 1
+	tech_mountaineers = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		panzerschiffe = 1
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		improved_secondary_battery = 1
+		improved_airplane_launcher = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+	}
+}
+
+### 坦克设计 ###
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "辽阳造 昌德卅五年式 白山机车总厂 “应龙” 试制铁甲战车"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 0
+		}
+		obsolete = yes
+		icon = 
+	}
+	create_equipment_variant = {
+		name = "辽阳造 昌德卌三年式 白山机车总厂 “烛龙” 试制铁甲轻战车"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 1
+		}
+	}
+
+	create_equipment_variant = {
+		name = "顺天造 昌德卌二年式 景山机车制作所 “虚耗” 试制铁甲重战车"
+		type = heavy_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_small_cannon
+			special_type_slot_2 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "太仓造 昌德卌六年式 五一集团会社 “饕餮” 重战车"
+		type = heavy_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = tank_radio_1
+			special_type_slot_4 = empty
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "南昌造 昌德卌三年式 洪都交通运载机械厂 “夔牛” 铁甲自行炮车"
+		type = medium_tank_artillery_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+
+	create_equipment_variant = {
+		name = "长沙造 昌德卌五年式 国立芙蓉机器制备坊 “腓腓” 铁甲中战车"
+		type = medium_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "杭州造 昌德卌六年式 钱塘工程机械集团 “螣蛇” 铁甲中战车"
+		type = medium_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_medium_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+			special_type_slot_2 = additional_machine_guns
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 1
+		}
+	}
+
+}
+
+
+### 飞机 ###
+
+create_equipment_variant = {
+	name = "西安造 昌德卌二年式 关陇航空动力 “精卫” 试制双翼陆战"
+	type = small_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = light_mg_2x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌二年式 关陇航空动力 “精卫” 双翼陆战改甲"
+	type = small_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = light_mg_4x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌三年式 关陇航空动力 “金鸾” 单翼轻型陆爆"
+	type = small_plane_cas_airframe_0
+	modules = {
+		fixed_main_weapon_slot = bomb_locks
+		fixed_auxiliary_weapon_slot_1 = light_mg_2x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "兰州造 昌德卌四年式 天山-黄河航空机械 “天蓬” 重型陆爆"
+	type = medium_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = medium_bomb_bay
+		fixed_auxiliary_weapon_slot_1 = empty
+		fixed_auxiliary_weapon_slot_2 = empty
+		fixed_auxiliary_weapon_slot_3 = empty
+		engine_type_slot = engine_1_2x
+		special_type_slot_1 = lmg_defense_turret_2x
+		special_type_slot_2 = empty
+		special_type_slot_3 = empty
+		special_type_slot_4 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌四年式 关陇航空动力 “梼杌” 单翼舰战"
+	type = cv_small_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = light_mg_2x
+		fixed_auxiliary_weapon_slot_1 = empty
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌五年式 关陇航空动力 “螭吻” 单翼舰爆"
+	type =cv_small_plane_cas_airframe_0
+	modules = {
+		fixed_main_weapon_slot = bomb_locks
+		fixed_auxiliary_weapon_slot_1 = light_mg_2x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = lmg_defense_turret
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌二年式 关陇航空动力 “獬豸” 双翼舰攻改乙"
+	type = cv_small_plane_naval_bomber_airframe_0
+	modules = {
+		fixed_main_weapon_slot = torpedo_mounting
+		fixed_auxiliary_weapon_slot_1 = empty
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = lmg_defense_turret
+	}
+}
+
+
+### 科技 ###
+
+set_research_slots = 4
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_technology = {
+		aa_lmg = 1
+		engines_1 = 1
+		early_bombs = 1
+		iw_small_airframe = 1
+		iw_medium_airframe = 1
+		iw_large_airframe = 1
+	}
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	interwar_artillery = 1
+	interwar_antiair = 1
+	early_fighter = 1
+	fighter1 = 1
+	cv_early_fighter = 1
+	cv_naval_bomber1 = 1
+	cv_CAS1 = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+	early_bomber = 1
+	tactical_bomber1 = 1
+	superior_firepower = 1
+	base_strike = 1
+	motorised_infantry = 1
+	marines = 1
+	basic_train = 1
+	tech_mountaineers = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		panzerschiffe = 1
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		improved_secondary_battery = 1
+		improved_airplane_launcher = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+	}
+}
+
+### 坦克设计 ###
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "辽阳造 昌德卅五年式 白山机车总厂 “应龙” 试制铁甲战车"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 0
+		}
+		obsolete = yes
+		icon = 
+	}
+
+	create_equipment_variant = {
+		name = "辽阳造 昌德卌三年式 白山机车总厂 “烛龙” 试制铁甲轻战车"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 1
+		}
+	}
+
+	create_equipment_variant = {
+		name = "顺天造 昌德卌二年式 景山机车制作所 “虚耗” 试制铁甲重战车"
+		type = heavy_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_small_cannon
+			special_type_slot_2 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "太仓造 昌德卌六年式 五一集团会社 “饕餮” 重战车"
+		type = heavy_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = tank_radio_1
+			special_type_slot_4 = empty
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "南昌造 昌德卌三年式 洪都交通运载机械厂 “夔牛” 铁甲自行炮车"
+		type = medium_tank_artillery_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+
+	create_equipment_variant = {
+		name = "长沙造 昌德卌五年式 国立芙蓉机器制备坊 “腓腓” 铁甲中战车"
+		type = medium_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "杭州造 昌德卌六年式 钱塘工程机械集团 “螣蛇” 铁甲中战车"
+		type = medium_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_medium_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+			special_type_slot_2 = additional_machine_guns
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 1
+		}
+	}
+
+}
+
+
+### 飞机 ###
+
+create_equipment_variant = {
+	name = "西安造 昌德卌二年式 关陇航空动力 “精卫” 试制双翼陆战"
+	type = small_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = light_mg_2x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+	obsolete = yes
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌二年式 关陇航空动力 “精卫” 双翼陆战改甲"
+	type = small_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = light_mg_4x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌三年式 关陇航空动力 “金鸾” 单翼轻型陆爆"
+	type = small_plane_cas_airframe_0
+	modules = {
+		fixed_main_weapon_slot = bomb_locks
+		fixed_auxiliary_weapon_slot_1 = light_mg_2x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "兰州造 昌德卌四年式 天山-黄河航空机械 “天蓬” 重型陆爆"
+	type = medium_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = medium_bomb_bay
+		fixed_auxiliary_weapon_slot_1 = empty
+		fixed_auxiliary_weapon_slot_2 = empty
+		fixed_auxiliary_weapon_slot_3 = empty
+		engine_type_slot = engine_1_2x
+		special_type_slot_1 = lmg_defense_turret_2x
+		special_type_slot_2 = empty
+		special_type_slot_3 = empty
+		special_type_slot_4 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌四年式 关陇航空动力 “梼杌” 单翼舰战"
+	type = cv_small_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = light_mg_2x
+		fixed_auxiliary_weapon_slot_1 = empty
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌五年式 关陇航空动力 “螭吻” 单翼舰爆"
+	type =cv_small_plane_cas_airframe_0
+	modules = {
+		fixed_main_weapon_slot = bomb_locks
+		fixed_auxiliary_weapon_slot_1 = light_mg_2x
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = lmg_defense_turret
+	}
+}
+
+create_equipment_variant = {
+	name = "西安造 昌德卌二年式 关陇航空动力 “獬豸” 双翼舰攻改乙"
+	type = cv_small_plane_naval_bomber_airframe_0
+	modules = {
+		fixed_main_weapon_slot = torpedo_mounting
+		fixed_auxiliary_weapon_slot_1 = empty
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = lmg_defense_turret
+	}
+}
+
+
+### 科技 ###
+
+set_research_slots = 4
+
+if = {
 	limit = {
 		has_dlc = "Man the Guns"
 	}
@@ -243,6 +907,7 @@ if = {
 	}
 }
 ### 战舰型号 ###
+
 
 
 if = {

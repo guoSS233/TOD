@@ -3,21 +3,28 @@ capital = 301
 oob = "oob"
 
 set_politics = {
-	ruling_party = authoritarian_oligarchy
+	ruling_party = conservative_democracy
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	national_corporatism = 4
-	despotism = 10
-	authoritarian_oligarchy = 48
-	conservative_democracy = 10
-	liberal_democracy = 10
-	reformism = 12
-	socialism = 4
-	radicalism = 2
+	vanguard_socialism = 0 #先锋
+	council_socialism = 5 #委员会
+	moderate_socialism = 0 #温和
+	agroindustrial_socialism = 0 #农业
+	#
+	social_democrat = 10 #社民
+	liberal_democracy = 10 #自民
+	#
+	consociationalism = 20 #调和
+	conservative_democracy = 0 #保守
+	authoritarian_oligarchy = 10 #威权
+	#
+	leader_despotism = 5 #领袖
+	sacred_revivalism = 30 #复兴
+	national_corporatism = 10 #法团
 }
 
 create_country_leader = {

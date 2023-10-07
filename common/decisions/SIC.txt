@@ -1,0 +1,107 @@
+SIC_chuanneijushi_categories = {
+	SIC_shehuiqingxu = { 
+		allowed = { tag = SIC } 
+		available = {check_variable = {SIC.gongye < 40}}
+		activation = {check_variable = {SIC.gongye > 39}}
+		is_good = no
+		days_mission_timeout = 30
+		days_re_enable = 0
+		timeout_effect = {
+			custom_effect_tooltip = SIC_shehuiqingxu.t1
+			if = {
+				limit = {check_variable = {SIC.gongye > 79}}
+				add_to_variable = { SIC.minzhong = 20 }
+				add_to_variable = { SIC.gongye = 10 }
+			}else_if = {
+				limit = {check_variable = {SIC.gongye > 59}}
+				add_to_variable = { SIC.minzhong = 10 }
+				add_to_variable = { SIC.gongye = 5 }
+			}else_if = {
+				limit = {check_variable = {SIC.gongye > 39}}
+				add_to_variable = { SIC.minzhong = 5 }
+			}
+			if = {
+				limit = {check_variable = {SIC.minzhong > 79}}
+				add_to_variable = { SIC.gongye = 10 }
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 59}}
+				add_to_variable = { SIC.gongye = 5 }
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIC_shehuiqingxu.t2
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	SIC_butiegongchang = {
+
+		icon = ger_military_buildup
+		
+		visible = {
+			always = yes
+		}
+		allowed = {
+			consumer_goods_factor < 0.9
+			tag = SIC
+		}
+		modifier = {
+			consumer_goods_factor = 0.1
+			industrial_capacity_factory = 0.1
+		}
+		
+		days_remove = 30
+
+		days_re_enable = 0
+		remove_effect = {
+			add_to_variable = { SIC.gongye = -5 }
+			custom_effect_tooltip = SIC_butiegongchang.t
+		 }
+	}
+	SIC_anfuminzhong = {
+
+		icon = ger_military_buildup
+		
+		visible = {
+			always = yes
+		}
+		allowed = {
+			consumer_goods_factor < 0.9
+			tag = SIC
+		}
+		modifier = {
+			consumer_goods_factor = 0.1
+			stability_factor = 0.1
+		}
+		
+		days_remove = 30
+		days_re_enable = 0
+		remove_effect = { 
+			add_to_variable = { SIC.minzhong = -5 }
+			custom_effect_tooltip = SIC_anfuminzhong.t
+		}
+	}
+	SIC_chongjianchanyelian = {
+
+		icon = ger_military_buildup
+		
+		visible = {
+			has_completed_focus = SIC_huifugongye
+			always = yes
+		}
+		allowed = {
+			num_of_civilian_factories_available_for_projects > 9
+			tag = SIC
+		}
+		modifier = {
+			civilian_factory_use = 10
+		}
+		
+		days_remove = 30
+		days_re_enable = 0
+		remove_effect = { 
+			add_to_variable = { SIC.gongye = -10 }
+			custom_effect_tooltip = SIC_chongjianchanyelian.t
+		}
+	}
+}

@@ -30,13 +30,25 @@ division_template = {
 			x = 1
 			y = 2
 		}
-		artillery_brigade = {
+		infantry = {
 			x = 1
 			y = 3
 		}
-		artillery_brigade = {
+        infantry = {
 			x = 2
 			y = 0
+		}
+		artillery_brigade = {
+			x = 2
+			y = 1
+		}
+        artillery_brigade = {
+			x = 2
+			y = 2
+		}
+        artillery_brigade = {
+			x = 2
+			y = 3
 		}
 	}
 	support = {
@@ -48,7 +60,7 @@ division_template = {
 			x = 0
 			y = 1
 		}
-		recon = {
+        recon = {
 			x = 0
 			y = 2
 		}
@@ -72,6 +84,10 @@ division_template = {
 			y = 2
 		}
 		infantry = {
+			x = 0
+			y = 3
+		}
+		infantry = {
 			x = 1
 			y = 0
 		}
@@ -82,6 +98,24 @@ division_template = {
 		infantry = {
 			x = 1
 			y = 2
+		}
+		infantry = {
+			x = 1
+			y = 3
+		}
+        infantry = {
+			x = 2
+			y = 0
+		}
+		artillery_brigade = {
+			x = 2
+			y = 1
+		}
+	}
+	support = {
+		engineer = {
+			x = 0
+			y = 0
 		}
 	}
 }
@@ -98,6 +132,14 @@ division_template = {
 			x = 0
 			y = 1
 		}
+		infantry = {
+			x = 1
+			y = 0
+		}
+		infantry = {
+			x = 1
+			y = 1
+		}
 	}
 	support = {
 		engineer = {
@@ -108,12 +150,24 @@ division_template = {
 }
 
 division_template = {
-	name = "昌德卌四年型治安骑警队"	#骑兵团
+	name = "昌德卌四年型治安骑警旅"	#骑兵旅
 	division_names_group = XBJ_CAV_01
 	regiments = {
 		cavalry = {
 			x = 0
 			y = 0
+		}
+		cavalry = {
+			x = 0
+			y = 1
+		}
+		cavalry = {
+			x = 0
+			y = 2
+		}
+		cavalry = {
+			x = 0
+			y = 3
 		}
 	}
 	support = {
@@ -142,6 +196,22 @@ division_template = {
 		}
 		cavalry = {
 			x = 0
+			y = 3
+		}
+        cavalry = {
+			x = 1
+			y = 0
+		}
+		cavalry = {
+			x = 1
+			y = 1
+		}
+		cavalry = {
+			x = 1
+			y = 2
+		}
+		cavalry = {
+			x = 1
 			y = 3
 		}
 	}
@@ -185,9 +255,21 @@ division_template = {
 			x = 1
 			y = 1
 		}
-		artillery_brigade = {
+		infantry = {
 			x = 1
 			y = 2
+		}
+		infantry = {
+			x = 1
+			y = 3
+		}
+        infantry = {
+			x = 2
+			y = 0
+		}
+		artillery_brigade = {
+			x = 2
+			y = 1
 		}
 	}
 	support = {
@@ -215,22 +297,34 @@ division_template = {
 			y = 2
 		}
 		infantry = {
-			x = 0
-			y = 3
-		}
-		artillery_brigade = {
 			x = 1
 			y = 0
 		}
-	}
-	support = {
-		engineer = {
-			x = 0
+		infantry = {
+			x = 1
+			y = 1
+		}
+		infantry = {
+			x = 1
+			y = 2
+		}
+		infantry = {
+			x = 2
 			y = 0
 		}
+		infantry = {
+			x = 2
+			y = 1
+		}
+        infantry = {
+			x = 2
+			y = 2
+		}
+	}
+	support = {
 		artillery = {
 			x = 0
-			y = 1
+			y = 0
 		}
 	}
 }
@@ -252,12 +346,20 @@ division_template = {
 			y = 2
 		}
 		cavalry = {
-			x = 0
-			y = 3
+			x = 1
+			y = 0
+		}
+        cavalry = {
+			x = 1
+			y = 1
+		}
+		cavalry = {
+			x = 1
+			y = 2
 		}
 	}
 	support = {
-		engineer = {
+		artillery = {
 			x = 0
 			y = 0
 		}
@@ -272,13 +374,21 @@ division_template = {
 	name = "昌德卌五年型近卫战车师"	#装甲师
 	division_names_group = XBJ_PAZ_01
 	regiments = {
-		light_armor = {
+		medium_armor = {
 			x = 0
 			y = 0
 		}
-		light_armor = {
+		medium_armor = {
 			x = 0
 			y = 1
+		}
+        medium_armor = {
+			x = 0
+			y = 2
+		}
+        medium_armor = {
+			x = 0
+			y = 3
 		}
 		motorized = {
 			x = 1
@@ -302,14 +412,18 @@ division_template = {
 			x = 0
 			y = 0
 		}
-		light_tank_recon = {
+		mot_recon = {
 			x = 0
 			y = 1
+		}
+        artillery = {
+			x = 0
+			y = 2
 		}
 	}
 }
 
-
+#单位位置#
 units = {
 	division = {
 		division_name = {
@@ -507,7 +621,7 @@ units = {
 			name_order = 1
 		}
 		location = 13465
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -517,7 +631,7 @@ units = {
 			name_order = 2
 		}
 		location = 7940
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -527,7 +641,7 @@ units = {
 			name_order = 3
 		}
 		location = 13484
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -537,7 +651,7 @@ units = {
 			name_order = 4
 		}
 		location = 1766
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -547,7 +661,7 @@ units = {
 			name_order = 5
 		}
 		location = 7702
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -557,7 +671,7 @@ units = {
 			name_order = 6
 		}
 		location = 13491
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -567,7 +681,7 @@ units = {
 			name_order = 7
 		}
 		location = 4843
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -577,7 +691,7 @@ units = {
 			name_order = 8
 		}
 		location = 10614
-		division_template = "昌德卌四年型治安骑警队"
+		division_template = "昌德卌四年型治安骑警旅"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -950,6 +1064,36 @@ units = {
 		division_template = "昌德卌五年型近卫战车师"
 		start_experience_factor = 1
 		start_equipment_factor = 1
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 12820
+		division_template = "昌德卌五年型关陇军骑行步兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 12732
+		division_template = "昌德卌五年型关陇军骑行步兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.5
+	}
+	division = {
+		division_name = {
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 13443
+		division_template = "昌德卌五年型关陇军骑行步兵师"
+		start_experience_factor = 0.5
+		start_equipment_factor = 0.5
 	}
 }
 
