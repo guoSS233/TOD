@@ -16,3 +16,14 @@
 		state_production_speed_buildings_factor = -0.2
 		local_building_slots_factor = -0.2
 	}
+
+	GOS_dynamic_modifiers_jjms = {	 #紧急经济模式
+		icon = GFX_idea_generic_production_bonus
+		enable = { always = yes }
+
+		stability_factor = GOS_VAR_jjms_stability_factor #稳定度
+		consumer_goods_factor = GOS_VAR_jjms_consumer_goods_factor #消费品
+		industrial_capacity_factory = GOS_VAR_jjms_industrial_capacity_factory #工厂产出
+		political_power_cost = GOS_VAR_jjms_political_power_cost #减pp
+
+	}

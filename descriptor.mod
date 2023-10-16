@@ -4,7 +4,7 @@ tags={
 	"National Focuses"
 }
 name="TOD_亢龙有悔"
-supported_version="1.12.*"
+supported_version="1.13.*"
 replace_path="common/autonomous_states"
 replace_path="common/ideas"
 replace_path="common/autonomous_states"

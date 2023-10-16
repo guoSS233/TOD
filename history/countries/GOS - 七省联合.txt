@@ -87,11 +87,11 @@ oob = "GOS_1937"
 		GOS_hkz
 	}
 	add_ideas = {
-		GOS_gengwucaihuangdeyubo
-		GOS_junbeifeichi
-		GOS_datongdangzaixingdong
-		GOS_shemingongdangdesaoluan
-		GOS_huguangliangcang
+		GOS_idea_gengwucaihuangdeyubo
+		GOS_idea_junbeifeichi
+		GOS_idea_datongdangzaixingdong
+		GOS_idea_shemingongdangdesaoluan
+		GOS_idea_huguangliangcang
 	}
 
 	613 = {
@@ -155,6 +155,20 @@ oob = "GOS_1937"
 	recruit_character = GOS_qxs
 	recruit_character = GOS_zgy
 
-#开局设定
-	#大同党线
-	set_country_flag = FLAG_GOS_focus_dtd
+#开局变量等设定
+	#默认走少帝线
+		set_country_flag = FLAG_GOS_focus_sd
+	#紧急经济模式	
+		set_variable = { #危机度
+			VAR_GOS_jjms_wjd = 50
+		}
+		set_variable = { #稳定系数
+			VAR_GOS_jjms_xs_wdd = -0.005
+		}
+		set_variable = { #消费品系数
+			VAR_GOS_jjms_xs_xfp = 0.010
+		}
+		set_variable = { #决议天数
+			VAR_GOS_jjms_days = 90
+		}
+		GOS_scripted_effects_jjms_js = yes

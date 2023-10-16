@@ -842,319 +842,384 @@ focus_tree = {
 
 ###工业
 
-	focus = {#取消证券交易所限制
+	focus = {#发挥金融手段
 		id = GOS_focus_13
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			
+		}
 		x = 15
 		y = 0
-		
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
 
+		}
+		completion_reward = {	
+			swap_ideas = {
+				remove_idea = GOS_idea_gengwucaihuangdeyubo
+				add_idea = GOS_idea_gengwucaihuangdeyubo_2			
+			}
+		}
 	}
-	focus = { #投资江南建设发展公司
+	focus = { #经济动员
 		id = GOS_focus_14
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_13
 		}
-		x = 12
+		x = 0
 		y = 1
+		relative_position_id = GOS_focus_13
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
 
+		}
+		completion_reward = {	
+			remove_ideas = GOS_idea_gengwucaihuangdeyubo_2
+			add_dynamic_modifier = {
+				modifier = GOS_dynamic_modifiers_jjms
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_14
+			set_country_flag = FLAG_GOS_decision_jjms_unlocked
+
+			set_variable = { #危机度
+				VAR_GOS_jjms_wjd = 50
+			}
+			set_variable = { #稳定系数
+				VAR_GOS_jjms_xs_wdd = -0.005
+			}
+			set_variable = { #消费品系数
+				VAR_GOS_jjms_xs_xfp = 0.010
+			}
+			GOS_scripted_effects_jjms_js = yes
+		}
 	}
-	focus = { #扩建应天学府
+	focus = { #基础建设
 		id = GOS_focus_15
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_14
 		}
-		x = 10
-		y = 2
+		x = -3
+		y = 1
+		relative_position_id = GOS_focus_14
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
 
+		}
+		completion_reward = {	
+			custom_effect_tooltip = GOS_tooltip_foc_bzyf
+			set_country_flag = FLAG_GOS_decision_bzyf_unlocked
+		}
 	}
-	focus = { #电子学与密码学
+	focus = { #船舶制造
 		id = GOS_focus_16
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_15
 		}
-		x = 10
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_15
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
 
+		}
+		completion_reward = {	
+			custom_effect_tooltip = GOS_tooltip_foc_cwjs
+			set_country_flag = FLAG_GOS_decision_cwjs_unlocked
+		}
 	}
-	focus = { #长江水运
+	focus = { #海上运输
 		id = GOS_focus_17
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_16
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_16
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+
+		}
+		completion_reward = {	
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = tp_tech
+			}
+
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -10 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_10
+			GOS_scripted_effects_jjms_js = yes
+
+			
+		}
+	}
+	focus = { #保障战时民生
+		id = GOS_focus_18
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_14
 		}
-		x = 12
-		y = 2
-
-	}
-	focus = { #农业生产机械化
-		id = GOS_focus_18
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_17
+		x = -1
+		y = 1
+		relative_position_id = GOS_focus_14
+		ai_will_do = {
+			factor = 0
 		}
-		x = 12
-		y = 3
+		available = {
 
+		}
+		completion_reward = {	
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -10 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_10
+			GOS_scripted_effects_jjms_js = yes
+
+			custom_effect_tooltip = GOS_tooltip_foc_mgjs
+			set_country_flag = FLAG_GOS_decision_mgjs_unlocked
+		}
 	}
-	focus = { #湖南农林产业链
+	focus = { #扩大资源开采
 		id = GOS_focus_19
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_14
+		}
+		x = 1
+		y = 1
+		relative_position_id = GOS_focus_14
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+
+		}
+		completion_reward = {	
+			custom_effect_tooltip = GOS_tooltip_foc_zykc
+			set_country_flag = FLAG_GOS_decision_zykc_unlocked
+		}
+	}
+	focus = { #建设军事产业
+		id = GOS_focus_20
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_18
 		}
-		x = 12
-		y = 4
-
-	}
-	focus = { #重振湖北重工业
-		id = GOS_focus_20
-		icon = GFX_goal_unknown
-		cost = 10.00
 		prerequisite = {
 			focus = GOS_focus_19
 		}
-		x = 12
-		y = 5
+		x = 0
+		y = 2
+		relative_position_id = GOS_focus_14
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
 
+		}
+		completion_reward = {	
+			custom_effect_tooltip = GOS_tooltip_foc_jgjs
+			set_country_flag = FLAG_GOS_decision_jgjs_unlocked
+		}
 	}
-	focus = { #投资江西矿业
+	focus = { #改良生产线
 		id = GOS_focus_21
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_20
 		}
-		x = 12
-		y = 6
-
-	}
-	focus = { #七省铁路计划
-		id = GOS_focus_22
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_21
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_20
+		ai_will_do = {
+			factor = 0
 		}
-		x = 12
-		y = 7
+		available = {
 
+		}
+		completion_reward = {	
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+			set_variable = { #决议天数
+				VAR_GOS_jjms_days = 60
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_21
+		}
 	}
-	focus = { #内地联动发展
+	focus = { #农产品进口
+		id = GOS_focus_22
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_14
+		}
+		x = 3
+		y = 1
+		relative_position_id = GOS_focus_14
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+
+		}
+		completion_reward = {	
+			set_variable = { #稳定系数
+				VAR_GOS_jjms_xs_wdd = -0.004
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_22
+
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -10 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_10
+			GOS_scripted_effects_jjms_js = yes
+
+			
+		}
+	}
+	focus = { #稳固农本
 		id = GOS_focus_23
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_22
 		}
-		x = 12
-		y = 8
-
-	}
-	focus = { #朝贡体系经济纽带
-		id = GOS_focus_24
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_13
-		}
-		x = 15
+		x = 0
 		y = 1
+		relative_position_id = GOS_focus_22
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
 
-	}
-	focus = { #投资民用工业
-		id = GOS_focus_25
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_24
 		}
-		x = 14
-		y = 2
+		completion_reward = {	
+			set_variable = { #稳定系数
+				VAR_GOS_jjms_xs_wdd = -0.002
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_23
 
-	}
-	focus = { #蓬勃的汽车产业
-		id = GOS_focus_26
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_25
-		}
-		x = 14
-		y = 3
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -10 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_10
+			GOS_scripted_effects_jjms_js = yes
 
+			
+		}
 	}
-	focus = { #提升冶炼技术
-		id = GOS_focus_27
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_24
-		}
-		x = 16
-		y = 2
-
-	}
-	focus = { #大规模铁矿开采
-		id = GOS_focus_28
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_27
-		}
-		x = 16
-		y = 3
-
-	}
-	focus = { #新型机械工业
-		id = GOS_focus_29
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_26
-		}
-		prerequisite = {
-			focus = GOS_focus_28
-		}
-		x = 14
-		y = 5
-
-	}
-	focus = { #重拾军工产业
-		id = GOS_focus_31
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_28
-		}
-		x = 16
-		y = 5
-
-	}
-	focus = { #扩大农产品出口
-		id = GOS_focus_32
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_24
-		}
-		x = 19
-		y = 2
-
-	}
-	focus = { #扩建太仓造船厂
-		id = GOS_focus_33
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_32
-		}
-		x = 18
-		y = 3
-
-	}
-	focus = { #海上经济命脉
-		id = GOS_focus_34
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_33
-		}
-		x = 18
-		y = 4
-
-	}
-	focus = { #入海口经济带
-		id = GOS_focus_35
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_34
-		}
-		x = 18
-		y = 5
-
-	}
-	focus = { #发展七省区位优势
-		id = GOS_focus_30
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_29
-		}
-		prerequisite = {
-			focus = GOS_focus_31
-		}
-		prerequisite = {
-			focus = GOS_focus_20
-		}
-		x = 14
-		y = 8
-
-	}
-	focus = { #七省经济发展委员会
-		id = GOS_focus_36
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_32
-		}
-		x = 20
-		y = 3
-
-	}
-	focus = { #长江经济带
-		id = GOS_focus_37
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_36
-		}
-		x = 20
-		y = 5
-
-	}
-	focus = { #区域协同发展
-		id = GOS_focus_38 
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_35
-		}
-		prerequisite = {
-			focus = GOS_focus_37
-		}
-		x = 19
-		y = 8
-
-	}
-	focus = { #繁华之都
-		id = GOS_focus_39
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #拓展内需
+		id = GOS_focus_24
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_23
 		}
-		prerequisite = {
-			focus = GOS_focus_30
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_23
+		ai_will_do = {
+			factor = 0
 		}
-		prerequisite = {
-			focus = GOS_focus_38
-		}
-		x = 14
-		y = 9
+		available = {
 
+		}
+		completion_reward = {	
+			set_variable = { #消费品系数
+				VAR_GOS_jjms_xs_xfp = 0.005
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_24
+
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -10 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_10
+			GOS_scripted_effects_jjms_js = yes
+
+			
+		}
 	}
+	focus = { #重现富饶之明
+		id = GOS_focus_25
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_17
+		}
+		prerequisite = {
+			focus = GOS_focus_21
+		}
+		prerequisite = {
+			focus = GOS_focus_24
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_21
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+			613 = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+			592 = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+			608 = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+			744 = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+			}
+		}
+		completion_reward = {	
+			remove_dynamic_modifier = {
+				modifier = GOS_dynamic_modifiers_jjms				
+			}
+			set_variable = { #决议天数
+				VAR_GOS_jjms_days = 100
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_25
+		}
+	}
+
+	
+
+
+
+
 
 ###海军
 	focus = { #帝国舰队

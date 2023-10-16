@@ -88,4 +88,449 @@ GOS_decision_l_0 = {
 	}
 	
 }
+GOS_decision_l_1_jjms = {  #紧急经济模式
+ #debug
+ 	GOS_decision_addwjd_20 = {		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_jjms_wjd = 20  }	
+			GOS_scripted_effects_jjms_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_jianwjd_20 = {		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_jjms_wjd = -20  }	
+			GOS_scripted_effects_jjms_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+ #正式
+	GOS_mission_jjms_jjwj = {   #经济危机
+		priority = 100
+		name = GOS_mission_jjms_jjwj
+		icon = GOS_trade_unions_support		
+		days_mission_timeout = 180
+		fire_only_once = no
+		visible = {
+			tag = GOS			
+		}
+		cancel_if_not_visible = yes
+		is_good = no
+		available = { #完成任务的条件
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_wjd_xiaoyu_75
+				check_variable = {
+					VAR_GOS_jjms_wjd < 75
+				}
+			}
+		}
+		activation = { #触发任务的条件（满足这个条件就开始任务）
+			always = no
+		}
+		timeout_effect = {				
+			add_stability = -0.5
+			add_war_support = -0.5
+		}
+		complete_effect = {                        
+		}
+	}
+	GOS_decision_jjms_wdhb = { #稳定货币
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 50
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+	   	}
+		remove_effect = {
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -5 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_5
+		}	
+	}
+	GOS_decision_jjms_zzrb = { #政治让步
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 5
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			if = {
+				limit = {
+					has_government = consociationalism	
+				}
+				add_popularity = {
+					ideology = consociationalism
+					popularity = -0.05
+				}
+			}
+			if = {
+				limit = {
+					has_government = liberal_democracy	
+				}
+				add_popularity = {
+					ideology = liberal_democracy
+					popularity = -0.05
+				}
+			}
+			if = {
+				limit = {
+					has_government = conservative_democracy	
+				}
+				add_popularity = {
+					ideology = conservative_democracy
+					popularity = -0.05
+				}
+			}
+			if = {
+				limit = {
+					has_government = authoritarian_oligarchy	
+				}
+				add_popularity = {
+					ideology = authoritarian_oligarchy
+					popularity = -0.05
+				}
+			}
+			
+		}	
+		modifier = {
+	   	}
+		remove_effect = {
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -5 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_5
+		}	
+	}
+	GOS_decision_jjms_tzgg = { #体制改革
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 5
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			add_stability = -0.05	
+		}	
+		modifier = {
+	   	}
+		remove_effect = {
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = -5 
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_jian_5
+		}	
+	}
+	GOS_decision_jjms_zssc = { #战时生产
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 50
+		days_remove = 60
+		days_re_enable = 120
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+		}	
+		modifier = {
+			industrial_capacity_factory = 0.1
+	   	}
+		remove_effect = {
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = 5
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_add_5
+		}	
+	}
 
+
+	GOS_decision_jjms_bzyf = { #保障基础用房
+		icon = GFX_decision_generic_construction
+		fire_only_once = yes		
+		days_remove = VAR_GOS_jjms_days
+		cost = 30
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_country_flag =  FLAG_GOS_decision_bzyf_unlocked
+		}	
+		ai_will_do = {
+			factor = 0
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = pastoral #牧区	初始 1 建筑槽
+					has_state_category = small_island #小岛 初始 1 建筑槽
+					has_state_category = rural #乡村地区 初始 2 建筑槽
+					has_state_category = town #发达乡村地区 初始 4 建筑槽
+					has_state_category = large_town #稀疏城镇地区 初始 5 建筑槽
+
+					has_state_category = one
+					has_state_category = two
+					has_state_category = three
+					has_state_category = four
+					has_state_category = five
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 5
+		}
+		complete_effect = {  
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = 1
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_add_1
+			GOS_scripted_effects_jjms_js = yes	
+		}	
+		modifier = {
+			civilian_factory_use = 5
+	   	}
+		remove_effect = {
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+			}
+			
+		}
+	}
+	GOS_decision_jjms_cwjs = { #船坞建设
+		icon = GFX_decision_generic_merge_plant_ship
+		fire_only_once = yes		
+		days_remove = VAR_GOS_jjms_days
+		cost = 30
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_country_flag =  FLAG_GOS_decision_cwjs_unlocked
+		}	
+		ai_will_do = {
+			factor = 0
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					state = 808
+					state = 811
+
+					state = 592
+					state = 814
+
+					state = 743
+					state = 609
+					
+					state = 745
+					state = 524
+				}	
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 5
+			FROM = {
+				free_building_slots = { 
+					building = dockyard
+					size > 0
+					include_locked = no					 
+				} 
+				
+			}
+		}
+		complete_effect = {  
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = 1
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_add_1
+			GOS_scripted_effects_jjms_js = yes	
+		}	
+		modifier = {
+			civilian_factory_use = 5
+	   	}
+		remove_effect = {
+			FROM = {								
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes 
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			
+		}
+	}
+	GOS_decision_jjms_mgjs = { #民生建设
+		icon = GFX_decision_generic_factory
+		fire_only_once = yes		
+		days_remove = VAR_GOS_jjms_days
+		cost = 30
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_country_flag =  FLAG_GOS_decision_mgjs_unlocked
+		}	
+		ai_will_do = {
+			factor = 0
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = large_city #密集城镇地区 初始 8 建筑槽
+					has_state_category = metropolis #大城市地区 初始 10 建筑槽
+					has_state_category = megalopolis #大都市地区 初始 12 建筑槽
+
+					has_state_category = twelve
+					has_state_category = eleven
+					has_state_category = ten
+					has_state_category = nine
+					has_state_category = eight
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 5
+			FROM = {
+				free_building_slots = { 
+					building = industrial_complex
+					size > 0
+					include_locked = no					 
+				} 
+				
+			}
+		}
+		complete_effect = {  
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = 1
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_add_1
+			GOS_scripted_effects_jjms_js = yes	
+		}	
+		modifier = {
+			civilian_factory_use = 5
+	   	}
+		remove_effect = {
+			FROM = {								
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+			
+		}
+	}
+	GOS_decision_jjms_jgjs = { #军工建设
+		icon = GFX_decision_generic_industry
+		fire_only_once = yes		
+		days_remove = VAR_GOS_jjms_days
+		cost = 20
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_country_flag =  FLAG_GOS_decision_jgjs_unlocked
+		}	
+		ai_will_do = {
+			factor = 0
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = large_city #密集城镇地区 初始 8 建筑槽
+					has_state_category = metropolis #大城市地区 初始 10 建筑槽
+					has_state_category = megalopolis #大都市地区 初始 12 建筑槽
+
+					has_state_category = twelve
+					has_state_category = eleven
+					has_state_category = ten
+					has_state_category = nine
+					has_state_category = eight
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 1
+			FROM = {
+				industrial_complex > 0				
+			}
+		}
+		complete_effect = {  
+			add_to_variable = { #危机度
+				VAR_GOS_jjms_wjd = 1
+			}
+			custom_effect_tooltip = GOS_tooltip_var_jjms_wjd_add_1
+			GOS_scripted_effects_jjms_js = yes	
+		}	
+		modifier = {
+			civilian_factory_use = 1
+	   	}
+		remove_effect = {
+			FROM = {				
+				remove_building = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}				
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes 
+				}
+			}			
+		}
+	}
+}

@@ -1,7 +1,6 @@
 ideas = {    
 	country = {
-		#庚午财荒的余波
-		GOS_gengwucaihuangdeyubo = {
+		GOS_idea_gengwucaihuangdeyubo = {#庚午财荒的余波
 			picture = GOS_gengwucaihuangdeyubo
 			modifier = {
 				consumer_goods_factor =	0.4
@@ -12,8 +11,18 @@ ideas = {
 				political_power_gain = -0.1
 			}
 		}
+        GOS_idea_gengwucaihuangdeyubo_2 = {#庚午财荒的余波2
+			picture = GOS_gengwucaihuangdeyubo
+			modifier = {
+				consumer_goods_factor =	0.4
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+				production_factory_max_efficiency_factor = -0.1
+			}
+		}
+
 		#军备废弛
-		GOS_junbeifeichi = {
+		GOS_idea_junbeifeichi = {
 			picture = GOS_junbeifeichi
 			modifier = {
 				army_org_factor = -0.1
@@ -35,7 +44,7 @@ ideas = {
 			
 		}
 		#大同党在行动
-		GOS_datongdangzaixingdong = {
+		GOS_idea_datongdangzaixingdong = {
 			picture = GOS_datongdangzaixingdong
 			modifier = {
 				stability_factor = -0.1
@@ -44,7 +53,7 @@ ideas = {
 			}
 		}
 		#社民工党的骚乱
-		GOS_shemingongdangdesaoluan = {
+		GOS_idea_shemingongdangdesaoluan = {
 			picture = POL_bisusijizhisi
 			modifier = {
 				stability_factor = -0.05
@@ -53,7 +62,7 @@ ideas = {
 			}
 		}
 		#湖广粮仓
-		GOS_huguangliangcang = {
+		GOS_idea_huguangliangcang = {
 			picture = GOS_huguangliangcang
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.1
@@ -61,6 +70,7 @@ ideas = {
 			}
 		}
 	}
+
 #政府顾问
 	TOD_minister_head = { ### 政府首脑 ###
         GOS_gtq = {#郭泰祺

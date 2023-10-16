@@ -1,0 +1,28 @@
+#历史遗留代码
+	on_actions = {
+		on_startup = {
+			effect = {
+				MNG = {country_event = { id = gosrichang.1 days = 609} } 
+			}
+		}
+	}
+#七省
+on_actions = {
+	on_monthly = {
+		effect = { #紧急经济危机判定
+			GOS = {
+				if = {
+					limit = {
+						has_dynamic_modifier = { 
+							modifier = GOS_dynamic_modifiers_jjms 
+						} 
+						check_variable = { 
+							VAR_GOS_jjms_wjd > 90
+						}	
+					}
+					activate_mission = GOS_mission_jjms_jjwj
+				}
+			}
+		}
+	}
+}

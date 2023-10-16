@@ -1,0 +1,45 @@
+#GOS七省预设
+
+#紧急经济模式
+	GOS_scripted_effects_jjms_js = { #紧急经济模式计算
+		clamp_variable = {
+			var = VAR_GOS_jjms_wjd
+			min = 0
+			max = 100
+		}
+
+		set_variable = {
+			GOS_VAR_jjms_stability_factor = VAR_GOS_jjms_wjd
+		}
+		multiply_variable = {  
+			var = GOS_VAR_jjms_stability_factor
+			value = VAR_GOS_jjms_xs_wdd
+		}
+
+		set_variable = {
+			GOS_VAR_jjms_consumer_goods_factor = VAR_GOS_jjms_wjd
+		}
+		multiply_variable = {  
+			var = GOS_VAR_jjms_consumer_goods_factor
+			value = VAR_GOS_jjms_xs_xfp
+		}
+
+		set_variable = {
+			GOS_VAR_jjms_industrial_capacity_factory = VAR_GOS_jjms_wjd
+		}
+		multiply_variable = {  
+			var = GOS_VAR_jjms_industrial_capacity_factory
+			value = 0.002
+		}
+
+		set_variable = {
+			GOS_VAR_jjms_political_power_cost = VAR_GOS_jjms_wjd
+		}
+		multiply_variable = {  
+			var = GOS_VAR_jjms_political_power_cost
+			value = 0.002
+		}
+	}
+	
+
+

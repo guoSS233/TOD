@@ -1,13 +1,26 @@
 #GOS七省决议组
 
 GOS_decision_l_0 = { #debug
-	icon = ger_mefo_bills
-	
-	allowed = { 
+	priority = 200
+	icon = power_struggle	
+	visible_when_empty = yes
+	visible = {
+		is_debug = yes
+	}
+	allowed = {
 		original_tag = GOS
-		
-	}	
-	
-	priority = 100
+	}
 }
-
+GOS_decision_l_1_jjms = {  #紧急经济模式
+	priority = 89
+	icon = power_struggle
+	#picture = GFX_decision_faction_tur_unaligned
+	visible_when_empty = yes
+	#scripted_gui = GOS_sbgpzc_ui
+	visible = {
+		has_country_flag = FLAG_GOS_decision_jjms_unlocked
+	}
+	allowed = {
+		original_tag = GOS
+	}
+}
