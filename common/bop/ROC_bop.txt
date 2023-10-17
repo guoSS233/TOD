@@ -1,0 +1,183 @@
+#广东bop
+ROC_power_balance = {
+	initial_value = 0
+	left_side = ROC_left_side	
+	right_side = ROC_right_side	
+	decision_category = ROC_balance_of_power_category
+
+	### 中立
+	range = {
+		id = ROC_balance_range
+		min = -0.25
+		max = 0.25
+		modifier = {
+			stability_factor = 0.1
+			political_power_factor = 0.05
+		}
+		on_activate = {
+		}
+		on_deactivate = {
+		}
+	}
+
+	### 自由
+	side = {
+		id = ROC_left_side	
+		icon = GFX_bop_SIA_left_side  #图标
+
+		range = {
+			id = ROC_left_low_control_range
+			min = -0.5
+			max = -0.25
+			modifier = {
+				production_speed_buildings_factor = 0.05  #建造速度
+				local_resources_factor = 0.03	#资源产量
+				research_speed_factor = 0.03  #研究速度
+			}
+			on_activate = {
+			
+			}
+			on_deactivate = {
+			
+			}
+		}
+
+		range = {
+			id = ROC_left_medium_control_range
+			min = -0.75
+			max = -0.5
+			modifier = {
+				production_speed_buildings_factor = 0.10  #建造速度
+				local_resources_factor = 0.07	#资源产量
+				research_speed_factor = 0.07  #研究速度
+				war_support_factor = -0.05
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = ROC_left_total_control_range
+			min = -1
+			max = -0.75
+			modifier = {
+				production_speed_buildings_factor = 0.20  #建造速度
+				local_resources_factor = 0.15	#资源产量
+				research_speed_factor = 0.15  #研究速度
+				war_support_factor = -0.15
+				custom_modifier_tooltip = ROC_tooltip_bop_days
+			}
+			on_activate = {
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_1 = 60
+				}
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_2 = 120
+				}
+				set_power_balance_gfx = { #图标换成亮的
+					id = ROC_power_balance
+					side = ROC_left_side
+					gfx = GFX_bop_SIA_left_improved_side
+				}
+			}
+			on_deactivate = {
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_1 = 30
+				}
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_2 = 60
+				}
+				set_power_balance_gfx = {  #图标换回去
+					id = ITA_power_balance
+					side = ROC_left_side
+					gfx = GFX_bop_SIA_left_side
+				}
+			}
+		}
+	}
+
+	### 国有
+	side = {
+		id = ROC_right_side	
+		icon = GFX_bop_SIA_right_side
+
+		range = {
+			id = ROC_right_low_control_range
+			min = 0.25
+			max = 0.5
+			modifier = {
+				industrial_capacity_factory = 0.5  #工厂产出
+
+			}
+			on_activate = {
+				
+			}
+			on_deactivate = {
+				
+			}
+		}
+
+		range = {
+			id = ROC_right_medium_control_range
+			min = 0.5
+			max = 0.75
+			modifier = {
+				industrial_capacity_factory = 0.10  #工厂产出
+				production_factory_max_efficiency_factor = 0.05   #生产效率上限
+				stability_factor = -0.05	                  #稳定度
+			}
+			on_activate = {
+
+			}
+			on_deactivate = {
+
+			}
+		}
+
+		range = {
+			id = ROC_right_total_control_range
+			min = 0.75
+			max = 1
+			modifier = {
+				industrial_capacity_factory = 0.15  #工厂产出
+				production_factory_max_efficiency_factor = 0.10   #生产效率上限
+				production_factory_efficiency_gain_factor = 0.05   #生产效率增长 
+				stability_factor = -0.15	                  #稳定度
+				custom_modifier_tooltip = ROC_tooltip_bop_days
+			}
+			on_activate = {
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_1 = 60
+				}
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_2 = 120
+				}
+				set_power_balance_gfx = {
+					id = ROC_power_balance
+					side = ROC_right_side
+					gfx = GFX_bop_SIA_right_improved_side
+				}
+			}
+			on_deactivate = {
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_1 = 30
+				}
+				set_variable = { #决议天数
+					VAR_ROC_bop_days_2 = 60
+				}
+				set_power_balance_gfx = {
+					id = ROC_power_balance
+					side = ROC_right_side
+					gfx = GFX_bop_SIA_right_side
+				}
+			}
+		}
+	}
+
+	
+}
+
