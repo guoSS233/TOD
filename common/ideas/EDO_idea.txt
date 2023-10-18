@@ -1,6 +1,6 @@
 ideas = {
 	country = {
-		### Edo Shogunate ideas ###
+	 #历史遗留代码	
 		EDO_torn_society = {
 			picture = chi_war_of_resistance
 			modifier = {
@@ -21,8 +21,8 @@ ideas = {
 				army_org_factor = -0.05
 			}
 		}
-		### Japanese ideas ###
 		JAP_overseas_japanese_in_sanchen = {
+			picture = JAP_overseas_japanese_in_sanchen
 			modifier = {
 				research_speed_factor = -0.10
 				consumer_goods_factor = -0.02
@@ -37,5 +37,25 @@ ideas = {
 				custom_modifier_tooltip = JAP_sino_japanese_defense_treaty_tt
 			}	
 		}
+	 #开局精神	
+		EDO_idea_mdgtz = {
+			picture = WJP_slave_of_dragon
+			modifier = {
+				political_power_gain = -0.1
+				consumer_goods_factor = -0.10
+				production_speed_buildings_factor = 0.1  #建造速度			 
+				local_resources_factor = 0.1    #战略资源获取率
+
+				military_factory_donations = -2 #军工捐赠
+				industrial_factory_donations = -2 #民工捐赠
+				dockyard_donations = -1 #船厂捐赠
+			}
+			research_bonus = { #工业科技
+				industry = 0.15
+			}  
+		}
+
+
+
 	}
 }
