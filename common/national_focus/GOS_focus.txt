@@ -10,9 +10,9 @@ focus_tree = {
 	default = no
 ###政治
  #少帝线
-	focus = { #初来乍到
+	focus = { #初到应天
 		id = GOS_focus_0
-		icon = GFX_goal_unknown
+		icon = GFX_goal_generic_positive_trade_relations
 		cost = 10.00
 		x = 4
 		y = 0
@@ -21,153 +21,170 @@ focus_tree = {
 		}
 
 	}
-	focus = { #商盟面圣
+	focus = { #南方新朝廷
 		id = GOS_focus_1
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_0
 		}
-		x = 4
+		x = 0
 		y = 1
+		relative_position_id = GOS_focus_0
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #大同入阁
+	focus = { #新立宪
 		id = GOS_focus_2
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_1
 		}
-		x = 2
-		y = 2
+		x = -1
+		y = 1
+		relative_position_id = GOS_focus_1
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #施荣系掌舵
+	focus = { #天子内阁
 		id = GOS_focus_3
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_1
 		}
-		x = 4
-		y = 2
+		x = 1
+		y = 1
+		relative_position_id = GOS_focus_1
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #帝国议会法案
+	focus = { #首辅治国
+		id = GOS_focus_4
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_2
+		}
+		x = -2
+		y = 2
+		relative_position_id = GOS_focus_1
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #庶民之治
 		id = GOS_focus_5
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_2
 		}
 		prerequisite = {
 			focus = GOS_focus_3
 		}
-		x = 3
-		y = 3
-
-	}
-	focus = { #广开商路
-		id = GOS_focus_7
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_5
-		}
-		x = 2
-		y = 4
-
-	}
-	focus = { #宗室助力
-		id = GOS_focus_4
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_1
-		}
-		x = 6
+		x = 0
 		y = 2
+		relative_position_id = GOS_focus_1
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #总督归恩
+	focus = { #安稳民生
 		id = GOS_focus_6
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_3
 		}
+		x = 2
+		y = 2
+		relative_position_id = GOS_focus_1
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #民主大一统
+		id = GOS_focus_7
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_4
 		}
-		x = 5
-		y = 3
-
-	}
-	focus = { #内阁新制
-		id = GOS_focus_8
-		icon = GFX_goal_unknown
-		cost = 10.00
 		prerequisite = {
 			focus = GOS_focus_5
 		}
 		prerequisite = {
 			focus = GOS_focus_6
 		}
-		x = 4
-		y = 4
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_5
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #民主大一统
-		id = GOS_focus_10
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #虚位天子
+		id = GOS_focus_8
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_7
 		}
-		prerequisite = {
-			focus = GOS_focus_8
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_7
+		ai_will_do = {
+			factor = 0
 		}
-		x = 3
-		y = 5
+		available = {
+		}
+		completion_reward = {	
 
-	}
-	focus = { #地方变法
-		id = GOS_focus_9
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_6
 		}
-		x = 6
-		y = 4
+	}
 
-	}
-	focus = { #庶民之治
-		id = GOS_focus_11
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_10
-		}
-		prerequisite = {
-			focus = GOS_focus_9
-		}
-		x = 5
-		y = 6
 
-	}
-	focus = { #虚位天子
-		id = GOS_focus_12
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_11
-		}
-		x = 5
-		y = 7
-
-	}
+	
  #施荣系
 	focus = { #议会凯旋
 		id = GOS_focus_86
@@ -1228,6 +1245,9 @@ focus_tree = {
 		cost = 10.00
 		x = 4
 		y = 11
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_xx
+		}
 
 	}
 	focus = { #保护商船
@@ -1379,6 +1399,9 @@ focus_tree = {
 		cost = 10.00
 		x = 10
 		y = 11
+		allow_branch = {
+			has_country_flag = FLAG_GOS_focus_xx
+		}
 
 	}
 	focus = { #组建空军
@@ -2327,234 +2350,629 @@ focus_tree = {
 	}
 
  #少帝
- 	focus = { #沙场演习
+  ###军队审查
+ 	focus = { #军队审查
 		id = GOS_focus_205
-		icon = GFX_goal_unknown
-		cost = 10.00
-		x = 20
-		y = 10
-		allow_branch = {
-			has_country_flag = FLAG_GOS_focus_sd
-		}
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		x = 6
+		y = 6
 
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
 	}
-	focus = { #军校改革
-		id = GOS_focus_187
-		icon = GFX_goal_unknown
-		cost = 10.00
-		x = 20
-		y = 11
+	focus = { #军校人才
+		id = GOS_focus_206
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
 			focus = GOS_focus_205
 		}
+		x = -2
+		y = 1
+		relative_position_id = GOS_focus_205
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #青年才俊
-		id = GOS_focus_188
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #新式理论
+		id = GOS_focus_207
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
-			focus = GOS_focus_187
+			focus = GOS_focus_206
 		}
-		x = 17
-		y = 12
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_206
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #天雷轰鸣
-		id = GOS_focus_189
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #注重火力
+		id = GOS_focus_208
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
-			focus = GOS_focus_188
+			focus = GOS_focus_207
 		}
-		x = 15
-		y = 13
+		x = -1
+		y = 1
+		relative_position_id = GOS_focus_207
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #当世虎蹲
-		id = GOS_focus_190
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #参谋部改革
+		id = GOS_focus_209
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
-			focus = GOS_focus_189
+			focus = GOS_focus_207
 		}
-		x = 15
-		y = 14
+		x = 1
+		y = 1
+		relative_position_id = GOS_focus_207
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #战争巨兽
-		id = GOS_focus_191
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #战车设计
+		id = GOS_focus_210
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
-			focus = GOS_focus_188
+			focus = GOS_focus_208
 		}
-		x = 17
-		y = 13
+		x = -1
+		y = 1
+		relative_position_id = GOS_focus_208
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #新式学说
-		id = GOS_focus_192
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #统一装备标准
+		id = GOS_focus_211
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
-			focus = GOS_focus_191
+			focus = GOS_focus_208
 		}
 		prerequisite = {
-			focus = GOS_focus_189
+			focus = GOS_focus_209
 		}
-		x = 17
-		y = 14
+		x = 1
+		y = 1
+		relative_position_id = GOS_focus_208
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
+		}
 	}
-	focus = { #扩大兵役
-		id = GOS_focus_193
-		icon = GFX_goal_unknown
-		cost = 10.00
+	focus = { #侦察作战
+		id = GOS_focus_212
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
 		prerequisite = {
-			focus = GOS_focus_188
+			focus = GOS_focus_209
 		}
-		x = 19
-		y = 13
+		x = 1
+		y = 1
+		relative_position_id = GOS_focus_209
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
 
-	}
-	focus = { #战时政策
-		id = GOS_focus_194
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_193
 		}
-		x = 19
-		y = 14
-
-	}
-	focus = { #登坛拜将
-		id = GOS_focus_195
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_190
-		}
-		prerequisite = {
-			focus = GOS_focus_192
-		}
-		prerequisite = {
-			focus = GOS_focus_194
-		}
-		x = 17
-		y = 15
-
-	}
-	focus = { #生产规制
-		id = GOS_focus_196
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_187
-		}
-		x = 23
-		y = 12
-
-	}
-	focus = { #产业调整
-		id = GOS_focus_197
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_196
-		}
-		x = 21
-		y = 13
-
-	}
-	focus = { #战地工程
-		id = GOS_focus_198
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_197
-		}
-		x = 21
-		y = 14
-
-	}
-	focus = { #军工院校
-		id = GOS_focus_199
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_196
-		}
-		x = 23
-		y = 13
-
-	}
-	focus = { #科研改制
-		id = GOS_focus_200
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_199
-		}
-		x = 23
-		y = 14
-
-	}
-	focus = { #战地通讯
-		id = GOS_focus_201
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_196
-		}
-		x = 25
-		y = 13
-
-	}
-	focus = { #电子研究
-		id = GOS_focus_202
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_201
-		}
-		x = 25
-		y = 14
-
-	}
-	focus = { #粮草先行
-		id = GOS_focus_203
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_198
-		}
-		prerequisite = {
-			focus = GOS_focus_200
-		}
-		prerequisite = {
-			focus = GOS_focus_202
-		}
-		x = 23
-		y = 15
-
-	}
-	focus = { #重整军制
-		id = GOS_focus_204
-		icon = GFX_goal_unknown
-		cost = 10.00
-		prerequisite = {
-			focus = GOS_focus_195
-		}
-		prerequisite = {
-			focus = GOS_focus_203
-		}
-		x = 20
-		y = 16
-
 	}
 
+  ###战火南来
+	focus = { #战火南来
+		id = GOS_focus_213
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		x = 4
+		y = 0
+		relative_position_id = GOS_focus_205
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #战时经验
+		id = GOS_focus_214
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_205
+		}
+		prerequisite = {
+			focus = GOS_focus_213
+		}
+		x = -2
+		y = 1
+		relative_position_id = GOS_focus_213
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #吸纳共和军战术
+		id = GOS_focus_215
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_214
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_214
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #军备革新
+		id = GOS_focus_216
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_215
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_215
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #组织防线
+		id = GOS_focus_217
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_213
+		}
+		x = 2
+		y = 1
+		relative_position_id = GOS_focus_213
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #针对作战
+		id = GOS_focus_218
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_217
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_217
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #战时征募
+		id = GOS_focus_219
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_218
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_218
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #北定中原
+		id = GOS_focus_220
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_219
+		}
+		prerequisite = {
+			focus = GOS_focus_216
+		}
+		x = -2
+		y = 1
+		relative_position_id = GOS_focus_219
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
 
 
+  ###组建新军事工业集团
+	focus = { #组建新军事工业集团
+		id = GOS_focus_221
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_220
+		}
+		prerequisite = {
+			focus = GOS_focus_211
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_211
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #加大装备研发投入
+		id = GOS_focus_222
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_221
+		}
+		x = -1
+		y = 1
+		relative_position_id = GOS_focus_221
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #加强保密机制
+		id = GOS_focus_223
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_222
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_222
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #核研究
+		id = GOS_focus_224
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_223
+		}
+		x = -2
+		y = 1
+		relative_position_id = GOS_focus_223
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #导弹研究
+		id = GOS_focus_225
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_223
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_223
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #旧厂房现代化改造
+		id = GOS_focus_226
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_221
+		}
+		x = 1
+		y = 1
+		relative_position_id = GOS_focus_221
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #扩招技术人员
+		id = GOS_focus_227
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_226
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_226
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #企业制度改革
+		id = GOS_focus_228
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_227
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_227
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+
+  ###北定中原之后
+	focus = { #构筑防线
+		id = GOS_focus_229
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_220
+		}
+		x = -2
+		y = 1
+		relative_position_id = GOS_focus_220
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #战术反制
+		id = GOS_focus_230
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_229
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_229
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #扩大动员
+		id = GOS_focus_231
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_230
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_230
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #舆论攻势
+		id = GOS_focus_232
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_220
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_220
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #策反军官
+		id = GOS_focus_233
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_232
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_232
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #渗透作战
+		id = GOS_focus_234
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_233
+		}
+		x = 0
+		y = 1
+		relative_position_id = GOS_focus_233
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #殊死一搏
+		id = GOS_focus_235
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_231
+		}
+		prerequisite = {
+			focus = GOS_focus_234
+		}
+		x = -1
+		y = 1
+		relative_position_id = GOS_focus_234
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
+	focus = { #诏令天下
+		id = GOS_focus_236
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 5
+		prerequisite = {
+			focus = GOS_focus_220
+		}
+		x = 2
+		y = 1
+		relative_position_id = GOS_focus_220
+		ai_will_do = {
+			factor = 0
+		}
+		available = {
+		}
+		completion_reward = {	
+
+		}
+	}
 }

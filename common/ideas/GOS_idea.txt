@@ -3,10 +3,10 @@ ideas = {
 		GOS_idea_gengwucaihuangdeyubo = {#庚午财荒的余波
 			picture = GOS_gengwucaihuangdeyubo
 			modifier = {
-				consumer_goods_factor =	0.4
+				consumer_goods_factor =	0.5
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_infrastructure_factor = 0.1
-				production_factory_max_efficiency_factor = -0.2
+				production_factory_max_efficiency_factor = -0.1
 				industrial_capacity_factory = -0.1
 				political_power_gain = -0.1
 			}
@@ -14,36 +14,22 @@ ideas = {
         GOS_idea_gengwucaihuangdeyubo_2 = {#庚午财荒的余波2
 			picture = GOS_gengwucaihuangdeyubo
 			modifier = {
-				consumer_goods_factor =	0.4
+				consumer_goods_factor =	0.5
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_infrastructure_factor = 0.1
-				production_factory_max_efficiency_factor = -0.1
 			}
 		}
 
-		#军备废弛
-		GOS_idea_junbeifeichi = {
+		#突如其来的战争
+		GOS_idea_trqldzz = {
 			picture = GOS_junbeifeichi
 			modifier = {
-				army_org_factor = -0.1
-				army_morale_factor = -0.2
-				army_attack_factor = -0.2
-				army_defence_factor = -0.2
-				training_time_army_factor = 0.2
-				industrial_capacity_factory = -0.1
-				conscription_factor = -0.5
-				mobilization_speed = -0.25
-				experience_gain_army_factor = -0.5
-				command_power_gain_mult = -0.35
-				module_armor_design_cost_factor = 10
-			}
-			research_bonus = {
-				artillery = -0.1
-				armor = -0.1
-			}
-			
+				army_org_factor = -0.2
+				army_attack_factor = -0.1
+				army_defence_factor = -0.1
+			}		
 		}
-		#大同党在行动
+		#人心思变
 		GOS_idea_datongdangzaixingdong = {
 			picture = GOS_datongdangzaixingdong
 			modifier = {
@@ -66,13 +52,28 @@ ideas = {
 			picture = GOS_huguangliangcang
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.1
-				monthly_population = 0.15
+				monthly_population = 0.1
 			}
 		}
 	}
 
 #政府顾问
 	TOD_minister_head = { ### 政府首脑 ###
+        GOS_zjj = {#张静江
+			picture = GFX_idea_GOS_chen_jie
+			allowed = { original_tag = GOS }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			traits = {
+				TOD_minister_head
+				GOS_traits_ytfy
+			}
+		}
         GOS_gtq = {#郭泰祺
             #picture = GFX_idea_GOS_Guan_zhu
             allowed = { original_tag = GOS }
@@ -195,23 +196,24 @@ ideas = {
                 GOS_traits_cps
             }
         }
-		GOS_zjj = {#张静江
-			picture = GFX_idea_GOS_chen_jie
-			allowed = { original_tag = GOS }
-			available = {
-				custom_trigger_tooltip = {
-					tooltip = head_of_gov_available
-					always = no
-				}
-			}
-			cancel_if_invalid = no
-			traits = {
-				TOD_foreign_minister
-				GOS_traits_ytfy
-			}
-		}
+		
     }
     TOD_economy_minister = {### 经济部长 ###
+        GOS_qym = {#钱永铭
+            picture = GFX_idea_GOS_he_cuilian
+            allowed = { original_tag = GOS }
+            available = {
+                custom_trigger_tooltip = {
+                    tooltip = head_of_gov_available
+                    always = no
+                }
+            }
+            cancel_if_invalid = no
+            traits = {
+                TOD_economy_minister
+                GOS_traits_nfdcf
+            }
+        }
         GOS_zfh = {#周佛海
             picture = GFX_idea_GOS_he_cuilian
             allowed = { original_tag = GOS }
@@ -274,6 +276,21 @@ ideas = {
         }
     }
     TOD_security_minister = {### 安全部长 ###
+        GOS_zbj = {#赵秉钧
+            picture = GFX_idea_GOS_cao_shiying
+            allowed = { original_tag = GOS }
+            available = {
+                custom_trigger_tooltip = {
+                    tooltip = head_of_gov_available
+                    always = no
+                }
+            }
+            cancel_if_invalid = no
+            traits = {
+                TOD_security_minister
+                GOS_traits_fdxgz
+            }
+        }
         GOS_hzh = {#贺衷寒
             picture = GFX_idea_GOS_cao_shiying
             allowed = { original_tag = GOS }

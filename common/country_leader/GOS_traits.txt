@@ -5,7 +5,30 @@ leader_traits = {
 		political_power_factor = -0.5			#政治点百分比	
 		war_support_factor = -0.5				#战争支持度	
 		ai_will_do = {
-			factor = 1
+			factor = 0
+		}
+	}
+	GOS_traits_jgzn= { #惊弓之鸟
+		random = no
+		political_power_factor = -0.15			#政治点百分比	
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	GOS_traits_sd= { #少帝
+		random = no
+		party_popularity_stability_factor = 0.25	#政党支持率对稳定度修正
+		compliance_growth = 0.20   #顺从度增长速度
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	GOS_traits_nfdcf= { #南方大财阀
+		random = no
+		political_power_gain = 0.02			#政治点	
+		industrial_capacity_factory = 0.02 #工厂产出
+		ai_will_do = {
+			factor = 0
 		}
 	}
     GOS_traits_bmll= { #八面玲珑的政客
@@ -17,7 +40,7 @@ leader_traits = {
 		materiel_manufacturer_cost_factor = -0.1
 		industrial_concern_cost_factor = -0.1
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	GOS_traits_gt= { #寡头
@@ -26,7 +49,7 @@ leader_traits = {
 		industrial_capacity_factory = 0.02 #工厂产出
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -36,7 +59,7 @@ leader_traits = {
 		production_factory_max_efficiency_factor = 0.05 #生产效率上限
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -46,7 +69,7 @@ leader_traits = {
 		party_popularity_stability_factor = 0.25
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -56,7 +79,7 @@ leader_traits = {
 		production_factory_max_efficiency_factor = 0.05 #生产效率上限
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -66,7 +89,7 @@ leader_traits = {
 		stability_factor = -0.03
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -76,17 +99,16 @@ leader_traits = {
 		consumer_goods_factor = -0.03 #生活消费品
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
-	GOS_traits_ytfy = { #受欢迎的应天府尹
+	GOS_traits_ytfy = { #管学系话事人
 		random = no
 		stability_factor = 0.1
-		war_support_factor = 0.05
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -96,7 +118,7 @@ leader_traits = {
 		industrial_capacity_factory = 0.05 #工厂产出
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -106,7 +128,7 @@ leader_traits = {
 		line_change_production_efficiency_factor = 0.01
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -116,17 +138,17 @@ leader_traits = {
 		opinion_gain_monthly_factor = -0.1
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
 	GOS_traits_ylzzj= { #舆论战专家
 		random = no
 		opinion_gain_monthly_factor = 0.2
-		drift_defence_factor = 1
+		drift_defence_factor = 0
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -136,7 +158,7 @@ leader_traits = {
 		opinion_gain_monthly_factor = 0.2
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -145,7 +167,7 @@ leader_traits = {
 		intelligence_agency_defense = 0.5 #反间谍
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	GOS_traits_hb= { #黑帮
@@ -153,7 +175,7 @@ leader_traits = {
 		operative_slot = 1 #特工位
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	GOS_traits_tshw= { #少帝的贴身护卫
@@ -162,7 +184,7 @@ leader_traits = {
 		agency_upgrade_time = -0.25 #情报机构升级时间
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	GOS_traits_dtdmy= { #大同党的盟友
@@ -171,7 +193,7 @@ leader_traits = {
 		army_morale_factor = 0.1
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
@@ -186,7 +208,7 @@ leader_traits = {
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	GOS_traits_zjzzcdz = { #装甲作战倡导者
@@ -205,7 +227,7 @@ leader_traits = {
 
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 }
