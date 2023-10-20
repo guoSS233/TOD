@@ -88,6 +88,7 @@ GOS_decision_l_0 = {
 	}
 	
 }
+
 GOS_decision_l_1_jjms = {  #紧急经济模式
  #debug
  	GOS_decision_addwjd_20 = {		
@@ -533,4 +534,716 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 			}			
 		}
 	}
+}
+
+GOS_decision_l_2_tzngpx = {  #天子内阁派系
+ #debug
+ 	GOS_decision_add_dth_sl_20 = {	#大同会势力+20	
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_dth_sl = 20  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_add_gxx_sl_20 = {	#管学系势力+20			
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_gxx_sl = 20  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_add_jd_sl_20 = {	#军队势力+20			
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_jd_sl = 20  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_jian_dth_sl_20 = {	#大同会势力-20	
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_dth_sl = -20  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_jian_gxx_sl_20 = {	#管学系势力-20			
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_gxx_sl = -20  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_jian_jd_sl_20 = {	#军队势力-20			
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_jd_sl = -20  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+
+	GOS_decision_add_dth_zcd_10 = {	#大同会支持度+10%		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_dth_zcd = 0.10  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_add_gxx_zcd_10 = {	#管学系支持度+10%		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_gxx_zcd = 0.10  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}
+	GOS_decision_add_jd_zcd_10 = {	#军队支持度+10%		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_jd_zcd = 0.10  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}
+	GOS_decision_jian_dth_zcd_10 = {	#大同会支持度-10%		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_dth_zcd = -0.10  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}	
+	GOS_decision_jian_gxx_zcd_10 = {	#管学系支持度-10%		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_gxx_zcd = -0.10  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}
+	GOS_decision_jian_jd_zcd_10 = {	#军队支持度-10%		
+		icon = GFX_decision_generic_decision		
+		cost = 0
+		days_remove = 0
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 0			
+		}
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_to_variable = { VAR_GOS_jd_zcd = -0.10  }	
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+		remove_effect = {
+		}
+	}
+
+ #决议	
+	GOS_decision_tzngpx_jryd = { #军人优待
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+			consumer_goods_factor = 0.10
+	   	}
+		remove_effect = {
+			army_experience = 5
+			add_to_variable = { VAR_GOS_jd_zcd = 0.05  }	
+			custom_effect_tooltip = GOS_tooltip_var_jd_zcd_add_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+	GOS_decision_tzngpx_gefl = { #工人福利
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			
+		}	
+		modifier = {
+			consumer_goods_factor = 0.10	
+	   	}
+		remove_effect = {
+			add_war_support = 0.02
+			add_to_variable = { VAR_GOS_dth_zcd = 0.05  }	
+			custom_effect_tooltip = GOS_tooltip_var_dth_zcd_add_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+	GOS_decision_tzngpx_qybt = { #企业补贴
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  
+			
+		}	
+		modifier = {
+			consumer_goods_factor = 0.10	
+			production_factory_efficiency_gain_factor = 0.05	
+	   	}
+		remove_effect = {
+
+			add_to_variable = { VAR_GOS_gxx_zcd = 0.05  }	
+			custom_effect_tooltip = GOS_tooltip_var_gxx_zcd_add_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+
+	GOS_decision_tzngpx_chjg = { #撤换军官
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+			army_org_factor = -0.10
+	   	}
+		remove_effect = {
+
+			add_to_variable = { VAR_GOS_jd_sl = -5  }	
+			custom_effect_tooltip = GOS_tooltip_var_jd_sl_jian_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+	GOS_decision_tzngpx_syjc = { #商业监察
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+			industrial_capacity_factory = -0.05
+	   	}
+		remove_effect = {
+
+			add_to_variable = { VAR_GOS_gxx_sl = -5  }	
+			custom_effect_tooltip = GOS_tooltip_var_gxx_sl_jian_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+	GOS_decision_tzngpx_yxjl = { #游行禁令
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+			stability_weekly = -0.015
+	   	}
+		remove_effect = {
+
+			add_to_variable = { VAR_GOS_dth_sl = -5  }	
+			custom_effect_tooltip = GOS_tooltip_var_dth_sl_jian_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+
+	GOS_decision_tzngpx_jgsx = { #军功授勋
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+			army_attack_factor = 0.05
+	   	}
+		remove_effect = {
+
+			add_to_variable = { VAR_GOS_jd_sl = 5  }	
+			custom_effect_tooltip = GOS_tooltip_var_jd_sl_add_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+	GOS_decision_tzngpx_jjsb = { #经济松绑
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+			production_speed_buildings_factor = 0.05
+	   	}
+		remove_effect = {
+
+			add_to_variable = { VAR_GOS_gxx_sl = 5  }	
+			custom_effect_tooltip = GOS_tooltip_var_gxx_sl_add_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+	GOS_decision_tzngpx_mzjc = { #民主决策
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 30
+		days_re_enable = 60
+		fire_only_once = no				
+		visible = {
+		}	
+		available = {					
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  		
+		}	
+		modifier = {
+			consumer_goods_factor = -0.10
+	   	}
+		remove_effect = {
+
+			add_to_variable = { VAR_GOS_dth_sl = 5  }	
+			custom_effect_tooltip = GOS_tooltip_var_dth_sl_add_5
+			GOS_scripted_effects_tzqw_js = yes	
+		}	
+	}
+
+	
+}
+
+GOS_decision_l_3_fn = {  #法案
+	GOS_decision_fn_ql = { #权利法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_ql_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_ql_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_ql	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_rq = { #人权法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_rq_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_rq_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_rq	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_jj = { #经济法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_jj_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_jj_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_jj	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_jy = { #教育法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_jy_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_jy_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_jy	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_cc = { #财产法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_cc_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_jy_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_jy	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_df = { #地方法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_df_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_df_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_df	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_tz = { #天子法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_tz_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_tz_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_tz	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_my = { #贸易法案
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_my_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_my_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_my	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_dgxf = { #帝国宪法
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_dg_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		}
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_dgxf_complete
+			custom_effect_tooltip = GOS_tooltip_decision_fn_dgxf	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+
+
 }

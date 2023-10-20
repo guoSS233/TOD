@@ -80,6 +80,7 @@ oob = "GOS_1937"
 	add_ideas = {#开局法律
 		free_trade #自由贸易
 	}
+
 	add_ideas = {#内阁
 		GOS_qym
 		GOS_zbj
@@ -182,3 +183,29 @@ oob = "GOS_1937"
 			VAR_GOS_jjms_days = 90
 		}
 		GOS_scripted_effects_jjms_js = yes
+	#天子内阁派系	
+		set_variable = { #大同会势力
+			VAR_GOS_dth_sl = 100
+		}
+		set_variable = { #管学系势力
+			VAR_GOS_gxx_sl = 120
+		}
+		set_variable = { #军队势力
+			VAR_GOS_jd_sl = 100
+		}
+
+		set_variable = { #大同会支持度
+			VAR_GOS_dth_zcd = 0.10
+		}
+		set_variable = { #管学系支持度
+			VAR_GOS_gxx_zcd = 0.60
+		}
+		set_variable = { #军队支持度
+			VAR_GOS_jd_zcd = 0.10
+		}
+
+		set_variable = { #天子权威
+			GOS_VAR_tzqw = 0
+		}
+
+		GOS_scripted_effects_tzqw_js = yes

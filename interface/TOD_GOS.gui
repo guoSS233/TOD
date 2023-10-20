@@ -1,0 +1,217 @@
+@FACTION_TEXT_X = 55
+@LOYALTY_TEXT_X = 240
+@POPULARITY_TEXT_X = 380
+@FACTION_ICONS_X = 10
+@FACTION_NAMES_X = 55
+@HEADERS_Y = 0
+guiTypes = {
+	containerWindowType = {
+		name = "GOS_tzngpx_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 230 }
+
+	 #大同会
+		iconType = {
+			name ="GOS_tzngpx_dth_icon"
+			spriteType = "GFX_decision_faction_bul_zveno"
+			position = { x = @FACTION_ICONS_X y = 30 }
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_dth_name"
+			position = { x = @FACTION_NAMES_X y = 40 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_dth_name_text"
+			format = left
+			maxHeight = 24
+		}
+
+		
+		instantTextBoxType = {  #注释
+			name ="GOS_gui_tzngpx_dth_tooltip"
+			position = { x = @FACTION_ICONS_X y = 30 }
+			maxwidth = 230
+			maxHeight = 38
+			pdx_tooltip = GOS_gui_tzngpx_dth_tooltip_text
+		}
+	 #管学系
+		iconType = {
+			name ="GOS_tzngpx_gxx_icon"
+			spriteType = "GFX_decision_faction_bul_bs"
+			position = { x = @FACTION_ICONS_X y = 75 }
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_gxx_name"
+			position = { x = @FACTION_NAMES_X y = 85 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_gxx_name_text"
+			format = left
+			maxHeight = 24
+		}
+		
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_gxx_tooltip"
+			position = { x = @FACTION_ICONS_X y = 75 }
+			maxwidth = 230
+			maxHeight = 38
+			pdx_tooltip = GOS_gui_tzngpx_gxx_tooltip_text
+		}
+     #军队
+		iconType = {
+			name ="GOS_tzngpx_jd_icon"
+			spriteType = "GFX_decision_faction_bul_bzns"
+			position = { x = @FACTION_ICONS_X y = 120 }
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_jd_name"
+			position = { x = @FACTION_NAMES_X y = 130 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_jd_name_text"
+			format = left
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_jd_tooltip"
+			position = { x = @FACTION_ICONS_X y = 120 }
+			maxwidth = 230
+			maxHeight = 38
+			pdx_tooltip = GOS_gui_tzngpx_jd_tooltip_text
+		}
+
+
+
+
+	 #势力
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_sl_header"
+			position = { x = @LOYALTY_TEXT_X y = @HEADERS_Y }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_sl_header_text"
+			format = center
+			maxHeight = 24
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_dth_sl_status"
+			position = { x = @LOYALTY_TEXT_X y = 40 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_dth_sl_status_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_gxx_sl_status"
+			position = { x = @LOYALTY_TEXT_X y = 85 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_gxx_sl_status_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_jd_sl_status"
+			position = { x = @LOYALTY_TEXT_X y = 130 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_jd_sl_status_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = { #Tooltip
+			name ="GOS_gui_tzngpx_sl_tooltip"
+			position = { x = @LOYALTY_TEXT_X y = @HEADERS_Y }
+			format = center
+			maxwidth = 110
+			maxHeight = 160
+			pdx_tooltip = GOS_gui_tzngpx_sl_tooltip_text
+		}
+
+     #支持度
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_zcd_header"
+			position = { x = @POPULARITY_TEXT_X y = @HEADERS_Y }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_zcd_header_text"
+			format = center
+			maxHeight = 24
+			maxwidth = 120
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_dth_zcd_status"
+			position = { x = @POPULARITY_TEXT_X y = 40 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_dth_zcd_status_text"
+			format = center
+			maxwidth = 120
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_gxx_zcd_status"
+			position = { x = @POPULARITY_TEXT_X y = 85 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_gxx_zcd_status_text"
+			format = center
+			maxwidth = 120
+		}
+
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_jd_zcd_status"
+			position = { x = @POPULARITY_TEXT_X y = 130 }
+			font = "hoi_18mbs"
+			text = "GOS_gui_tzngpx_jd_zcd_status_text"
+			format = center
+			maxwidth = 120
+		}
+
+		#Tooltip
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_zcd_tooltip"
+			position = { x = @POPULARITY_TEXT_X y = @HEADERS_Y }
+			format = center
+			maxwidth = 110
+			maxHeight = 160
+			pdx_tooltip = GOS_gui_tzngpx_zcd_tooltip_text
+		}
+     #天子权威
+		instantTextBoxType = {
+			name ="GOS_gui_tzngpx_tzqw"
+			position = { x = 180 y = 175 }
+			font = "hoi_36header"
+			text = "GOS_gui_tzngpx_tzqw_text"
+			format = left
+		}
+	 #
+	 	#iconType = {
+		#	name ="GOS_tzqw_txjdt"
+		#	position = { x = 101 y = -50 }
+		#	spriteType = "GFX_GOS_tzqw_txjdt_icon"
+		#	scale = 0.1
+		#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 #	
+	}
+
+}

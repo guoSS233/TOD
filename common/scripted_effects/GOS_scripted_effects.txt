@@ -40,6 +40,241 @@
 			value = 0.002
 		}
 	}
+#天子内阁派系
+	GOS_scripted_effects_tzqw_js = { #天子权威相关计算
+	 #限制上限
+		clamp_variable = {
+			var = VAR_GOS_dth_sl
+			min = 0
+			max = 999
+		}
+		clamp_variable = {
+			var = VAR_GOS_gxx_sl
+			min = 0
+			max = 999
+		}
+		clamp_variable = {
+			var = VAR_GOS_jd_sl
+			min = 0
+			max = 999
+		}
+
+		clamp_variable = {
+			var = VAR_GOS_dth_zcd
+			min = 0
+			max = 1
+		}
+		clamp_variable = {
+			var = VAR_GOS_gxx_zcd
+			min = 0
+			max = 1
+		}
+		clamp_variable = {
+			var = VAR_GOS_jd_zcd
+			min = 0
+			max = 1
+		}
+		
+	 #支持×势力	
+		set_variable = {
+			GOS_VAR_ngpx_dth_zcxsl = VAR_GOS_dth_sl
+		}
+		multiply_variable = {  
+			var = GOS_VAR_ngpx_dth_zcxsl
+			value = VAR_GOS_dth_zcd
+		}
+
+		set_variable = {
+			GOS_VAR_ngpx_gxx_zcxsl = VAR_GOS_gxx_sl
+		}
+		multiply_variable = {  
+			var = GOS_VAR_ngpx_gxx_zcxsl
+			value = VAR_GOS_gxx_zcd
+		}
+
+		set_variable = {
+			GOS_VAR_ngpx_jd_zcxsl = VAR_GOS_jd_sl
+		}
+		multiply_variable = {  
+			var = GOS_VAR_ngpx_jd_zcxsl
+			value = VAR_GOS_jd_zcd
+		}
+
+		set_variable = {
+			GOS_VAR_ngpx_zg_zcxsl = GOS_VAR_ngpx_dth_zcxsl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_zg_zcxsl = GOS_VAR_ngpx_gxx_zcxsl 
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_zg_zcxsl = GOS_VAR_ngpx_jd_zcxsl 
+		}
+
+	 #三派势力相加
+		set_variable = {
+			GOS_VAR_ngpx_zg_sl = VAR_GOS_dth_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_zg_sl = VAR_GOS_gxx_sl 
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_zg_sl = VAR_GOS_jd_sl 
+		}
+
+		set_variable = {
+			GOS_VAR_ngpx_zg_sl2 = GOS_VAR_ngpx_zg_sl
+			
+		}
+		divide_variable = { 
+			GOS_VAR_ngpx_zg_sl2 = 2 
+		}
+
+	 #两者相除
+		set_variable = { #天子权威
+			GOS_VAR_tzqw = GOS_VAR_ngpx_zg_zcxsl
+		}
+		divide_variable = { 
+			GOS_VAR_tzqw = GOS_VAR_ngpx_zg_sl 
+		}
+		set_variable = { #天子权威进度条用
+			GOS_VAR_tzqw_jdt = GOS_VAR_tzqw
+		}
+		multiply_variable = {  
+			var = GOS_VAR_tzqw_jdt
+			value = 100
+		}
+	 #法案计算	
+	  #法案扣除的稳定度计算
+		set_variable = { #天子权威
+			GOS_VAR_fnkc_wdd = GOS_VAR_tzqw
+		}
+		multiply_variable = {  
+			var = GOS_VAR_fnkc_wdd
+			value = -1
+		}
+		add_to_variable = { 
+			GOS_VAR_fnkc_wdd = 1 
+		}
+		divide_variable = { 
+			GOS_VAR_fnkc_wdd = -4 
+		}
+
+      #各派支持计算
+	  	set_variable = {
+			GOS_VAR_ngpx_fnzc_dth = VAR_GOS_dth_sl
+		}
+		multiply_variable = {  
+			var = GOS_VAR_ngpx_fnzc_dth
+			value = VAR_GOS_dth_zcd
+		}
+
+		set_variable = {
+			GOS_VAR_ngpx_fnzc_jd = VAR_GOS_jd_sl
+		}
+		multiply_variable = {  
+			var = GOS_VAR_ngpx_fnzc_jd
+			value = VAR_GOS_jd_zcd
+		}
+
+		set_variable = {
+			GOS_VAR_ngpx_fnzc_gxx = VAR_GOS_gxx_sl
+		}
+		multiply_variable = {  
+			var = GOS_VAR_ngpx_fnzc_gxx
+			value = VAR_GOS_gxx_zcd
+		}
+
+      #权利与军事
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_ql_dqzc = VAR_GOS_dth_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_ql_dqzc = GOS_VAR_ngpx_fnzc_gxx 
+		}
+
+      #人权
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_rq_dqzc = VAR_GOS_dth_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_rq_dqzc = GOS_VAR_ngpx_fnzc_gxx 
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_rq_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+		
+      #经济
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_jj_dqzc = VAR_GOS_gxx_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_rq_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+		
+      #教育
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_jy_dqzc = VAR_GOS_dth_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_jy_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+		
+      #财产
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_cc_dqzc = VAR_GOS_gxx_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_cc_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+		
+      #地方
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_df_dqzc = VAR_GOS_dth_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_df_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+		
+      #天子
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_tz_dqzc = VAR_GOS_dth_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_tz_dqzc = VAR_GOS_gxx_sl 
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_tz_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+		
+      #贸易
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_my_dqzc = VAR_GOS_gxx_sl
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_my_dqzc = GOS_VAR_ngpx_fnzc_dth 
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_my_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+		
+      #帝国宪法
+	  	set_variable = {
+			GOS_VAR_ngpx_fn_dg_dqzc = GOS_VAR_ngpx_fnzc_dth
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_dg_dqzc = GOS_VAR_ngpx_fnzc_gxx 
+		}
+		add_to_variable = { 
+			GOS_VAR_ngpx_fn_dg_dqzc = GOS_VAR_ngpx_fnzc_jd 
+		}
+
+		
+
+
+
+
+
+	}
 	
 
 

@@ -90,6 +90,10 @@
     GOS_decision_l_0:"debug决议"
     GOS_decision_l_1_jjms:"紧急经济模式"
     GOS_decision_l_1_jjms_desc:"§Y当前危机度：§![?VAR_GOS_jjms_wjd]"
+    GOS_decision_l_2_tzngpx:"天子内阁派系"
+    GOS_decision_l_2_tzngpx_desc:"天子内阁派系决议组简介"
+    GOS_decision_l_3_fn:"法案"
+    GOS_decision_l_3_fn_desc:"法案决议组简介"
 ### 决议 ###
   #debug
     GOS_decision_sdx:"少帝线"
@@ -111,6 +115,54 @@
     GOS_decision_jjms_cwjs:"船坞建设"
     GOS_decision_jjms_mgjs:"民生建设"
     GOS_decision_jjms_jgjs:"军工建设"
+
+  #内阁派系
+    GOS_decision_add_dth_sl_20:"debug-大同会势力+20"	
+    GOS_decision_add_gxx_sl_20:"debug-管学系势力+20"
+    GOS_decision_add_jd_sl_20:"debug-军队势力+20"
+
+    GOS_decision_jian_dth_sl_20:"debug-大同会势力-20"	
+    GOS_decision_jian_gxx_sl_20:"debug-管学系势力-20"
+    GOS_decision_jian_jd_sl_20:"debug-军队势力-20"
+
+    GOS_decision_add_dth_zcd_10:"debug-大同会支持度+10%"
+    GOS_decision_add_gxx_zcd_10:"debug-管学系支持度+10%"
+    GOS_decision_add_jd_zcd_10:"debug-军队支持度+10%"
+
+    GOS_decision_jian_dth_zcd_10:"debug-大同会支持度-10%"
+    GOS_decision_jian_gxx_zcd_10:"debug-管学系支持度-10%"
+    GOS_decision_jian_jd_zcd_10:"debug-军队支持度-10%"
+
+    GOS_decision_tzngpx_jryd:"军人优待"
+    GOS_decision_tzngpx_gefl:"工人福利"
+    GOS_decision_tzngpx_qybt:"企业补贴"
+    GOS_decision_tzngpx_chjg:"撤换军官"
+    GOS_decision_tzngpx_syjc:"商业监察"
+    GOS_decision_tzngpx_yxjl:"游行禁令"
+    GOS_decision_tzngpx_jgsx:"军功授勋"
+    GOS_decision_tzngpx_jjsb:"经济松绑"
+    GOS_decision_tzngpx_mzjc:"民主决策"
+  #法案
+    GOS_decision_fn_ql:"权利法案                         ([?GOS_VAR_ngpx_fn_ql_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    #GOS_decision_fn_rq:"人权法案        (当前支持：[?GOS_VAR_ngpx_fn_rq_dqzc|G]/最低所需支持：[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_rq:"人权法案                         ([?GOS_VAR_ngpx_fn_rq_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_jj:"经济法案                         ([?GOS_VAR_ngpx_fn_jj_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_jy:"教育法案                         ([?GOS_VAR_ngpx_fn_jy_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_cc:"财产法案                         ([?GOS_VAR_ngpx_fn_cc_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_df:"地方法案                         ([?GOS_VAR_ngpx_fn_df_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_tz:"天子法案                         ([?GOS_VAR_ngpx_fn_tz_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_my:"贸易法案                         ([?GOS_VAR_ngpx_fn_my_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+    GOS_decision_fn_dgxf:"帝国宪法                         ([?GOS_VAR_ngpx_fn_dg_dqzc|G]/[?GOS_VAR_ngpx_zg_sl2|Y])"
+
+    GOS_decision_fn_ql_desc:"§0大同会§!对此法案的态度为§G支持§!\n§C管学系§!对此法案的态度为§Y中立§!\n§W军队§!对此法案的态度为§R反对§!"
+    GOS_decision_fn_rq_desc:"人权法案"
+    GOS_decision_fn_jj_desc:"经济法案"
+    GOS_decision_fn_jy_desc:"教育法案"
+    GOS_decision_fn_cc_desc:"财产法案"
+    GOS_decision_fn_df_desc:"地方法案"
+    GOS_decision_fn_tz_desc:"天子法案"
+    GOS_decision_fn_my_desc:"贸易法案"
+    GOS_decision_fn_dgxf_desc:"帝国宪法"
 
 ### 动态修正 ###
  #地区修正
@@ -399,6 +451,23 @@
     GOS_tooltip_var_jjms_wjd_jian_10:"§Y危机度§!减少§G10§!"
 
     GOS_tooltip_var_wjd_xiaoyu_75:"§Y危机度§!小于§G75§!"
+  #内阁派系
+    GOS_tooltip_var_jd_zcd_add_5:"§L军队§!§G支持度§!增加§G5%§!"
+    GOS_tooltip_var_gxx_zcd_add_5:"§C管学系§!§G支持度§!增加§G5%§!"
+    GOS_tooltip_var_dth_zcd_add_5:"§0大同会§!§G支持度§!增加§G5%§!"
+
+
+    GOS_tooltip_var_jd_sl_jian_5:"§L军队§!§Y势力§!减少§G5%§!"
+    GOS_tooltip_var_gxx_sl_jian_5:"§C管学系§!§Y势力§!减少§G5%§!"
+    GOS_tooltip_var_dth_sl_jian_5:"§0大同会§!§Y势力§!减少§G5%§!"
+
+
+    GOS_tooltip_var_jd_sl_add_5:"§L军队§!§Y势力§!增加§R5§!"
+    GOS_tooltip_var_gxx_sl_add_5:"§C管学系§!§Y势力§!增加§R5§!"
+    GOS_tooltip_var_dth_sl_add_5:"§0大同会§!§Y势力§!增加§R5§!"
+
+    GOS_tooltip_var_fn_dayu_zc:"议会同意此法案通过"
+
  #国策提示
     GOS_tooltip_foc_14:"启用§Y紧急经济模式§!决议组"
     GOS_tooltip_foc_bzyf:"在§Y决议地图§!上启用§Y保障住房§!决议" 
@@ -508,6 +577,52 @@
   GOS_wlz:"吴禄贞"
   GOS_qxs:"钱学森"
   GOS_zgy:"朱光亚"
+
+### GUI ###
+ #天子内阁派系
+  GOS_gui_tzngpx_dth_name_text:"大同会"
+  GOS_gui_tzngpx_gxx_name_text:"管学系"
+  GOS_gui_tzngpx_jd_name_text:"军队"
+
+  GOS_gui_tzngpx_dth_tooltip_text:"大同会简介"
+  GOS_gui_tzngpx_gxx_tooltip_text:"管学系简介"
+  GOS_gui_tzngpx_jd_tooltip_text:"军队简介"
+
+  GOS_gui_tzngpx_sl_header_text:"势力"
+  GOS_gui_tzngpx_dth_sl_status_text:"[?VAR_GOS_dth_sl]"  
+  GOS_gui_tzngpx_gxx_sl_status_text:"[?VAR_GOS_gxx_sl]"
+  GOS_gui_tzngpx_jd_sl_status_text:"[?VAR_GOS_jd_sl]"
+  GOS_gui_tzngpx_sl_tooltip_text:"势力影响哪方面的简介"
+
+  GOS_gui_tzngpx_zcd_header_text:"支持度"
+  GOS_gui_tzngpx_dth_zcd_status_text:"[?VAR_GOS_dth_zcd|%0]"
+  GOS_gui_tzngpx_gxx_zcd_status_text:"[?VAR_GOS_gxx_zcd|%0]"
+  GOS_gui_tzngpx_jd_zcd_status_text:"[?VAR_GOS_jd_zcd|%0]"
+  GOS_gui_tzngpx_zcd_tooltip_text:"支持度影响哪方面的简介"
+
+  GOS_gui_tzngpx_tzqw_text:"§Y天子权威：§![?GOS_VAR_tzqw|%0]"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ###日常事件
   gosrichang.1.t:0 "新学期"

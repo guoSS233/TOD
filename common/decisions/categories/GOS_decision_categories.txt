@@ -12,13 +12,38 @@ GOS_decision_l_0 = { #debug
 	}
 }
 GOS_decision_l_1_jjms = {  #紧急经济模式
-	priority = 89
+	priority = 90
 	icon = power_struggle
 	#picture = GFX_decision_faction_tur_unaligned
 	visible_when_empty = yes
 	#scripted_gui = GOS_sbgpzc_ui
 	visible = {
 		has_country_flag = FLAG_GOS_decision_jjms_unlocked
+	}
+	allowed = {
+		original_tag = GOS
+	}
+}
+GOS_decision_l_2_tzngpx = {  #天子内阁派系
+	priority = 100
+	icon = power_struggle
+	picture = GFX_decision_cat_picture_faction_management_bulgaria
+	visible_when_empty = yes
+	scripted_gui = GOS_tzngpx_ui
+	visible = {
+		#has_country_flag = GOS_decision_l_1_sbgpzc_unlocked_flag
+	}
+	allowed = {
+		original_tag = GOS
+	}
+}
+GOS_decision_l_3_fn = {  #法案
+	priority = 95
+	icon = power_struggle
+	picture = GFX_decision_cat_picture_faction_management_bulgaria
+	
+	visible = {
+		#has_country_flag = GOS_decision_l_1_sbgpzc_unlocked_flag
 	}
 	allowed = {
 		original_tag = GOS
