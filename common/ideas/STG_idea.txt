@@ -1,0 +1,110 @@
+ideas = {
+    country = { ### 民族精神 ###
+        #实验型新军
+        STG_Xperimental_New_Army = {
+            picture = STG_Xperimental_New_Army
+            modifier = {
+                stability_factor = -0.05
+                breakthrough_factor = 0.05
+                defence = 0.02
+                monthly_population = 0.01
+            }
+        }
+        #军工起步
+        STG_Military_Industry_Begins = {
+            picture = STG_Military_Industry_Begins
+            modifier = {
+                stability_factor = -0.05
+                army_org_factor = 0.01
+                production_factory_start_efficiency_factor = -0.1
+            }
+        }
+        #齐鲁农政的成功
+        STG_Success_ShanDong_NZ = {
+            picture = STG_Success_ShanDong_NZ
+            modifier = {
+                stability_factor = 0.05
+                consumer_goods_factor = -0.02
+                conscription_factor = 0.05
+                production_speed_industrial_complex_factor = 0.05
+            }
+        }
+        #帝国教育体系
+        STG_Imperial_Education_System = {
+            picture = STG_Imperial_Education_System
+            modifier = {
+                training_time_army_factor = -0.1
+                research_speed_factor = 0.1
+            }
+        }
+        #浮躁的青年组织
+        STG_Impetuous_Youth_Organizations = {
+            picture = STG_Impetuous_Youth_Organizations
+            modifier = {
+                stability_factor = -0.1
+                war_support_factor = 0.05
+                supply_consumption_factor = 0.1
+            }
+            equipment_bonus = {
+                infantry_equipment = {
+                    soft_attack = 0.05
+                }
+            }
+        }
+        #军工巨头
+        STG_Military_Industry_Giants = {
+            picture = STG_Military_Industry_Giants
+            modifier = {
+                political_power_gain = 1
+            }
+        }
+    }
+    TOD_minister_head = { ### 政府首脑 ###
+        STG_Shang_zhen = {#商震
+            picture = STG_SHANG_ZHEN
+            allowed = { original_tag = STG }
+            available = {
+                custom_trigger_tooltip = {
+                    tooltip = head_of_gov_available
+                    always = no
+                }
+            }
+            cancel_if_invalid = no
+            traits = {
+                TOD_minister_head
+            }
+        }
+    }
+    TOD_foreign_minister = {### 外交部长 ###
+        STG_Li_jinglin = {#李景林
+            picture = STG_Li_jinglin
+            allowed = { original_tag = STG }
+            available = {
+                custom_trigger_tooltip = {
+                    tooltip = head_of_gov_available
+                    always = no
+                }
+            }
+            cancel_if_invalid = no
+            traits = {
+                TOD_foreign_minister
+            }
+        }
+    }
+    TOD_economy_minister = {### 经济部长 ###
+        STG_Tan_yankai = {#谭延闿
+            picture = STG_Tan_yankai
+            allowed = { original_tag = STG }
+            available = {
+                custom_trigger_tooltip = {
+                    tooltip = head_of_gov_available
+                    always = no
+                }
+            }
+            cancel_if_invalid = no
+            traits = {
+                TOD_economy_minister
+            }
+        }
+    }
+}
