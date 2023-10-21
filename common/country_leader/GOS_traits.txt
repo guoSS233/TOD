@@ -1,28 +1,40 @@
 leader_traits = {
+#领导人特质	
 	GOS_traits_qlws= { #群龙无首
 		random = no
 		stability_factor = -0.5					#稳定度
 		political_power_factor = -0.5			#政治点百分比	
 		war_support_factor = -0.5				#战争支持度	
-		ai_will_do = {
-			factor = 0
-		}
 	}
 	GOS_traits_jgzn= { #惊弓之鸟
 		random = no
 		political_power_factor = -0.15			#政治点百分比	
-		ai_will_do = {
-			factor = 0
-		}
 	}
 	GOS_traits_sd= { #少帝
 		random = no
 		party_popularity_stability_factor = 0.25	#政党支持率对稳定度修正
-		compliance_growth = 0.20   #顺从度增长速度
-		ai_will_do = {
-			factor = 0
-		}
+		compliance_growth = 0.10   #顺从度增长速度
 	}
+	GOS_traits_ng= { #内阁
+		random = no
+		political_power_factor = 0.2			#政治点百分比	
+		mobilization_laws_cost_factor = -0.33   #征兵法案花费
+		trade_laws_cost_factor  = -0.33    #贸易法案花费
+		economy_cost_factor = -0.33    #经济法案花费
+	}
+	GOS_traits_yj= { #原君
+		random = no
+		stability_factor = 0.1					#稳定度
+		party_popularity_stability_factor = 0.25	#政党支持率对稳定度修正
+		compliance_growth = 0.20   #顺从度增长速度
+		resistance_target = -0.20   #抵抗目标
+		resistance_damage_to_garrison = -0.20   #驻军所受伤害
+	}
+
+
+
+
+#顾问特质
 	GOS_traits_nfdcf= { #南方大财阀
 		random = no
 		political_power_gain = 0.02			#政治点	
@@ -114,7 +126,7 @@ leader_traits = {
 
 	GOS_traits_dtdhsr = { #大同党话事人
 		random = no
-		stability_factor = 0.5
+		stability_factor = 0.05
 		industrial_capacity_factory = 0.05 #工厂产出
 
 		ai_will_do = {

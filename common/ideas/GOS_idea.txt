@@ -1,5 +1,6 @@
 ideas = {    
 	country = {
+     #开局民族精神    
 		GOS_idea_gengwucaihuangdeyubo = {#庚午财荒的余波
 			picture = GOS_gengwucaihuangdeyubo
 			modifier = {
@@ -18,42 +19,131 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_infrastructure_factor = 0.1
 			}
-		}
-
-		#突如其来的战争
-		GOS_idea_trqldzz = {
-			picture = GOS_junbeifeichi
-			modifier = {
-				army_org_factor = -0.2
-				army_attack_factor = -0.1
-				army_defence_factor = -0.1
-			}		
-		}
-		#人心思变
-		GOS_idea_datongdangzaixingdong = {
+		}		
+		GOS_idea_datongdangzaixingdong = { #人心思变
 			picture = GOS_datongdangzaixingdong
 			modifier = {
 				stability_factor = -0.1
 				war_support_factor = -0.1
 				political_power_gain = -0.1
 			}
-		}
-		#社民工党的骚乱
-		GOS_idea_shemingongdangdesaoluan = {
+		}	
+		GOS_idea_shemingongdangdesaoluan = { #社民工党的骚乱
 			picture = POL_bisusijizhisi
 			modifier = {
 				stability_factor = -0.05
 				war_support_factor = -0.05
 				political_power_gain = -0.1
 			}
-		}
-		#湖广粮仓
-		GOS_idea_huguangliangcang = {
+		}	
+		GOS_idea_huguangliangcang = { #湖广粮仓
 			picture = GOS_huguangliangcang
 			modifier = {
 				production_factory_efficiency_gain_factor = 0.1
 				monthly_population = 0.1
 			}
+		}
+     #动态修正用假民族精神
+      #咨议院法案
+        GOS_idea_zyyfn_jia = { #咨议院法案	
+			modifier = {
+			}
+		}
+        GOS_idea_zyyfn_ql_jia = { #权利法案		
+			modifier = {
+				political_power_gain = 0.2
+			}
+		}
+        GOS_idea_zyyfn_rq_jia = { #人权法案		
+			modifier = {
+				war_support_factor = 0.1
+			}
+		}
+        GOS_idea_zyyfn_cc_jia = { #财产法案		
+			modifier = {
+				consumer_goods_factor = -0.2
+			}
+		}
+        GOS_idea_zyyfn_df_jia = { #地方法案		
+			modifier = {
+				conscription_factor = 0.2
+			}
+		}
+        GOS_idea_zyyfn_tz_jia = { #天子法案		
+			modifier = {
+				stability_factor = 0.1
+			}
+		}
+        GOS_idea_zyyfn_my_jia = { #贸易法案		
+			modifier = {
+				trade_opinion_factor = 0.2
+			}
+		}
+        GOS_idea_zyyfn_dgxf_jia = { #帝国宪法		
+			modifier = {
+				compliance_growth = 0.2
+                surrender_limit = 0.1
+			}
+		}
+
+      #江南明军
+        GOS_idea_jnmj_jia = { #默认	
+            modifier = {
+            }
+        }
+        GOS_idea_jnmj_jia_2 = { #改名为江南明军	
+            modifier = {
+                army_org_factor = 0.1
+            }
+        }
+        GOS_idea_jnmj_jia_3 = { #改名为兴师北伐
+            modifier = {
+                breakthrough_factor = 0.1
+            }
+        }
+        GOS_idea_jnmj_jia_4 = { #参谋部改革	
+            modifier = {
+                command_power_gain_mult = 0.35
+            }
+        }
+        GOS_idea_jnmj_jia_5 = { #默认	
+            modifier = {
+                army_org_factor = 0.1
+            }
+        }
+        GOS_idea_jnmj_jia_6 = { #默认	
+            modifier = {
+                army_attack_factor = 0.1
+            }
+        }
+        GOS_idea_jnmj_jia_7 = { #默认	
+            modifier = {
+                army_defence_factor = 0.1
+            }
+        }
+        
+
+    
+     #民族精神 
+        GOS_idea_ngjsbd = { #内阁局势变动
+			picture = man_five_year_plan_air	
+			modifier = {
+				custom_modifier_tooltip = GOS_tooltip_idea_ngjsbd
+			}
+		}
+        GOS_idea_trqldzz_1 = { #王朝新气象
+			picture = generic_exploit_mines
+			modifier = {
+				defensive_war_stability_factor = 0.20     #防御战争对稳定度修正
+			}		
+		}
+        GOS_idea_trqldzz_2 = { #王朝新气象
+			picture = generic_exploit_mines
+			modifier = {
+				defensive_war_stability_factor = 0.20     #防御战争对稳定度修正
+                offensive_war_stability_factor = 0.10    #进攻战争对稳定度修正
+				war_support_factor = 0.1
+			}		
 		}
 	}
 

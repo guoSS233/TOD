@@ -27,3 +27,41 @@
 		political_power_cost = GOS_VAR_jjms_political_power_cost #减pp
 
 	}
+	GOS_dynamic_modifiers_tzqw = {	 #天子权威
+		icon = GFX_idea_generic_production_bonus
+		enable = { always = yes }
+
+		stability_factor = GOS_VAR_tzqw_stability_factor #稳定度
+		war_support_factor = GOS_VAR_tzqw_war_support_factor #战争支持度
+		political_power_gain = GOS_VAR_tzqw_political_power_gain #每日pp
+		army_core_defence_factor = GOS_VAR_tzqw_army_core_defence_factor #核心领土防御
+
+	}
+
+	GOS_dynamic_modifiers_zyyfn = {	 #咨议院法案
+		icon = GFX_idea_generic_production_bonus
+		enable = { always = yes }
+
+		political_power_gain = GOS_VAR_zyyfn_political_power_gain #每日pp
+		war_support_factor = GOS_VAR_zyyfn_war_support_factor #战争支持度
+		consumer_goods_factor = GOS_VAR_zyyfn_consumer_goods_factor #消费品
+		stability_factor = GOS_VAR_zyyfn_stability_factor #稳定度
+		conscription_factor = GOS_VAR_zyyfn_conscription_factor #适役人口修正
+		trade_opinion_factor = GOS_VAR_zyyfn_trade_opinion_factor #贸易协定关系修正
+		compliance_growth = GOS_VAR_zyyfn_compliance_growth #顺从度增长速度
+		surrender_limit = GOS_VAR_zyyfn_surrender_limit #投降界限
+
+
+	}
+
+	GOS_dynamic_modifiers_jnmj = {	 #江南明军
+		icon = GFX_idea_generic_production_bonus
+		enable = { always = yes }
+
+		army_org_factor = GOS_VAR_jnmj_army_org_factor #组织度
+		army_attack_factor = GOS_VAR_jnmj_army_attack_factor #陆军进攻
+		army_defence_factor = GOS_VAR_jnmj_army_defence_factor #陆军防御
+		breakthrough_factor = GOS_VAR_jnmj_breakthrough_factor #突破
+		command_power_gain_mult = GOS_VAR_jnmj_command_power_gain_mult #每日指挥点增长百分比
+
+	}

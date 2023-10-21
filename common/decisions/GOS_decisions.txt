@@ -1012,7 +1012,14 @@ GOS_decision_l_3_fn = {  #法案
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_ql_complete
-			custom_effect_tooltip = GOS_tooltip_decision_fn_ql	
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_zyyfn_jia
+					add_idea = GOS_idea_zyyfn_ql_jia			
+				}
+			}
+			add_to_variable = { GOS_VAR_zyyfn_political_power_gain = 0.2  }
+			#custom_effect_tooltip = GOS_tooltip_decision_fn_ql	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
 		modifier = {
@@ -1040,6 +1047,13 @@ GOS_decision_l_3_fn = {  #法案
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_rq_complete
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_zyyfn_jia
+					add_idea = GOS_idea_zyyfn_rq_jia			
+				}
+			}
+			add_to_variable = { GOS_VAR_zyyfn_war_support_factor = 0.1  }
 			custom_effect_tooltip = GOS_tooltip_decision_fn_rq	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
@@ -1064,10 +1078,29 @@ GOS_decision_l_3_fn = {  #法案
 			}
 		}					
 		ai_will_do = {
-			factor = 0		
+			factor = 0		 
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_jj_complete
+
+			if = {
+				limit = {
+					has_idea = civilian_economy
+				}
+				add_ideas = low_economic_mobilisation
+			}
+			else_if = {
+				limit = {
+					has_idea = low_economic_mobilisation
+				}
+				add_ideas = partial_economic_mobilisation
+			}
+			else_if = {
+				limit = {
+					has_idea = partial_economic_mobilisation
+				}
+				add_ideas = war_economy
+			}
 			custom_effect_tooltip = GOS_tooltip_decision_fn_jj	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
@@ -1096,7 +1129,8 @@ GOS_decision_l_3_fn = {  #法案
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_jy_complete
-			custom_effect_tooltip = GOS_tooltip_decision_fn_jy	
+			add_research_slot = 1
+			#custom_effect_tooltip = GOS_tooltip_decision_fn_jy	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
 		modifier = {
@@ -1123,8 +1157,15 @@ GOS_decision_l_3_fn = {  #法案
 			factor = 0		
 		}
 		complete_effect = {  	
-			set_country_flag = FLAG_GOS_decision_fn_jy_complete
-			custom_effect_tooltip = GOS_tooltip_decision_fn_jy	
+			set_country_flag = FLAG_GOS_decision_fn_cc_complete
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_zyyfn_jia
+					add_idea = GOS_idea_zyyfn_cc_jia			
+				}
+			}
+			add_to_variable = { GOS_VAR_zyyfn_consumer_goods_factor = -0.2  }
+			custom_effect_tooltip = GOS_tooltip_decision_fn_cc	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
 		modifier = {
@@ -1152,7 +1193,14 @@ GOS_decision_l_3_fn = {  #法案
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_df_complete
-			custom_effect_tooltip = GOS_tooltip_decision_fn_df	
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_zyyfn_jia
+					add_idea = GOS_idea_zyyfn_df_jia			
+				}
+			}
+			add_to_variable = { GOS_VAR_zyyfn_conscription_factor = 0.2  }
+			#custom_effect_tooltip = GOS_tooltip_decision_fn_df	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
 		modifier = {
@@ -1180,7 +1228,14 @@ GOS_decision_l_3_fn = {  #法案
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_tz_complete
-			custom_effect_tooltip = GOS_tooltip_decision_fn_tz	
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_zyyfn_jia
+					add_idea = GOS_idea_zyyfn_tz_jia			
+				}
+			}
+			add_to_variable = { GOS_VAR_zyyfn_stability_factor = 0.1  }
+			#custom_effect_tooltip = GOS_tooltip_decision_fn_tz	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
 		modifier = {
@@ -1208,7 +1263,45 @@ GOS_decision_l_3_fn = {  #法案
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_my_complete
-			custom_effect_tooltip = GOS_tooltip_decision_fn_my	
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_zyyfn_jia
+					add_idea = GOS_idea_zyyfn_my_jia			
+				}
+			}
+			add_to_variable = { GOS_VAR_zyyfn_trade_opinion_factor = 0.2  }
+			#custom_effect_tooltip = GOS_tooltip_decision_fn_my	
+			add_stability = GOS_VAR_fnkc_wdd
+		}	
+		modifier = {
+	   	}
+		remove_effect = {			
+		}	
+	}
+	GOS_decision_fn_js = { #军事
+		icon = GFX_decision_ger_mefo_bills		
+		cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+		}	
+		available = {		
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_fn_dayu_zc
+				check_variable = {
+					GOS_VAR_ngpx_fn_ql_dqzc > GOS_VAR_ngpx_zg_sl2
+				}
+			}
+		}					
+		ai_will_do = {
+			factor = 0		
+		} 
+		complete_effect = {  	
+			set_country_flag = FLAG_GOS_decision_fn_js_complete
+			GOS_scz = {
+				remove_unit_leader_role = yes
+			}
+			custom_effect_tooltip = GOS_tooltip_decision_fn_js	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
 		modifier = {
@@ -1236,7 +1329,15 @@ GOS_decision_l_3_fn = {  #法案
 		}
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_dgxf_complete
-			custom_effect_tooltip = GOS_tooltip_decision_fn_dgxf	
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_zyyfn_jia
+					add_idea = GOS_idea_zyyfn_dgxf_jia			
+				}
+			}
+			add_to_variable = { GOS_VAR_zyyfn_compliance_growth = 0.2  }
+			add_to_variable = { GOS_VAR_zyyfn_surrender_limit = 0.2  }
+			#custom_effect_tooltip = GOS_tooltip_decision_fn_dgxf	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
 		modifier = {

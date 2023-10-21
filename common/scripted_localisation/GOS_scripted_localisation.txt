@@ -1,0 +1,133 @@
+#内阁派系势力变动	
+	defined_text = {  #军事法案
+		name = GET_GOS_ngjsbd_js_name_txt
+		text = {
+			trigger = {
+				not ={has_country_flag = FLAG_GOS_decision_fn_js_complete }
+			}
+			localization_key = GET_GOS_ngjsbd_js_name_txt_1
+		}
+		text = {
+			trigger = {
+				has_country_flag = FLAG_GOS_decision_fn_js_complete		
+			}
+			localization_key = GET_GOS_ngjsbd_js_name_txt_2
+		}	
+	}
+	defined_text = {  #战争状态
+		name = GET_GOS_ngjsbd_zzzt_name_txt
+		text = {
+			trigger = {
+				has_war = yes
+			}
+			localization_key = GET_GOS_ngjsbd_zzzt_name_txt_1
+		}
+		text = {
+			trigger = {
+				not = {
+					has_war = yes
+				}
+			}
+			localization_key = GET_GOS_ngjsbd_zzzt_name_txt_2
+		}	
+	}
+	defined_text = {  #经济法案
+		name = GET_GOS_ngjsbd_jj_name_txt
+		text = {
+			trigger = {
+				not ={has_country_flag = FLAG_GOS_decision_fn_jj_complete }
+				or = {
+					has_idea = war_economy
+					has_idea = tot_economic_mobilisation
+				}
+			}
+			localization_key = GET_GOS_ngjsbd_jj_name_txt_1
+		}
+		text = {
+			trigger = {
+				has_country_flag = FLAG_GOS_decision_fn_jj_complete		
+			}
+			localization_key = GET_GOS_ngjsbd_jj_name_txt_2
+		}	
+	}
+	defined_text = {  #财产法案
+		name = GET_GOS_ngjsbd_cc_name_txt
+		text = {
+			trigger = {
+				not ={has_country_flag = FLAG_GOS_decision_fn_cc_complete }
+				check_variable = { 
+					VAR_GOS_jjms_wjd > 50
+				}
+			}
+			localization_key = GET_GOS_ngjsbd_cc_name_txt_1
+		}
+		text = {
+			trigger = {	
+				not ={has_country_flag = FLAG_GOS_decision_fn_cc_complete }
+				check_variable = { 
+					VAR_GOS_jjms_wjd < 51
+				}
+			}
+			localization_key = GET_GOS_ngjsbd_cc_name_txt_2
+		}
+		text = {
+			trigger = {
+				has_country_flag = FLAG_GOS_decision_fn_cc_complete		
+			}
+			localization_key = GET_GOS_ngjsbd_cc_name_txt_3
+		}	
+	}
+	defined_text = {  #人权法案
+		name = GET_GOS_ngjsbd_rq_name_txt
+		text = {
+			trigger = {
+				not ={has_country_flag = FLAG_GOS_decision_fn_rq_complete }
+			}
+			localization_key = GET_GOS_ngjsbd_rq_name_txt_1
+		}
+		text = {
+			trigger = {
+				has_country_flag = FLAG_GOS_decision_fn_rq_complete		
+			}
+			localization_key = GET_GOS_ngjsbd_rq_name_txt_2
+		}	
+	}
+
+#江南明军
+	defined_text = {  #江南明军
+		name = GET_GOS_idea_jnmj_name_txt
+		text = {
+			trigger = {
+				not = {
+					has_country_flag = FLAG_GOS_idea_name_jnmj		
+					has_country_flag = FLAG_GOS_idea_name_xsbf
+				}
+			}
+			localization_key = GET_GOS_idea_jnmj_name_txt_1
+		}
+		text = {
+			trigger = {
+				has_country_flag = FLAG_GOS_idea_name_jnmj		
+				not = {
+					has_country_flag = FLAG_GOS_idea_name_xsbf
+				}
+			}
+			localization_key = GET_GOS_idea_jnmj_name_txt_2
+		}	
+		text = {
+			trigger = {
+				has_country_flag = FLAG_GOS_idea_name_xsbf		
+			}
+			localization_key = GET_GOS_idea_jnmj_name_txt_3
+		}	
+	}
+
+
+
+
+
+
+
+#
+#
+#	

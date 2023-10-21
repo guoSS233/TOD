@@ -8,7 +8,7 @@
 	}
 #七省
 on_actions = {
-	on_monthly = {
+	on_monthly_GOS = {
 		effect = { #紧急经济危机判定
 			GOS = {
 				if = {
@@ -23,6 +23,70 @@ on_actions = {
 					activate_mission = GOS_mission_jjms_jjwj
 				}
 			}
+		}
+	}
+	on_weekly_GOS = {
+		effect = { #内阁派系判定
+			GOS = { #战争状态
+				if = {
+					limit = {
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+						has_war = yes
+					}
+					add_to_variable = { VAR_GOS_jd_sl = 1.5  }
+				}
+			}
+			GOS = { #军事法案
+				if = {
+					limit = {
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+						not ={has_country_flag = FLAG_GOS_decision_fn_js_complete }
+					}
+					add_to_variable = { VAR_GOS_jd_zcd = -0.05  }
+				}
+			}
+			GOS = { #经济法案
+				if = {
+					limit = {
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+						not ={has_country_flag = FLAG_GOS_decision_fn_jj_complete }
+						or = {
+							has_idea = war_economy
+							has_idea = tot_economic_mobilisation
+						}
+					}
+					add_to_variable = { VAR_GOS_dth_zcd = -0.03  }
+				}
+			}
+			GOS = { #财产法案
+				if = {
+					limit = {
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+						not ={has_country_flag = FLAG_GOS_decision_fn_jj_complete }
+						check_variable = { 
+							VAR_GOS_jjms_wjd > 50
+						}
+					}
+					add_to_variable = { VAR_GOS_gxx_zcd = -0.03  }
+				}
+				else_if = {
+					limit = {
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+						has_country_flag = FLAG_GOS_decision_fn_jj_complete
+					}
+					add_to_variable = { VAR_GOS_gxx_sl = 0.5  }
+				}
+			}
+			GOS = { #人权法案
+				if = {
+					limit = {
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+						has_country_flag = FLAG_GOS_decision_fn_rq_complete 
+					}
+					add_to_variable = { VAR_GOS_dth_sl = 0.5  }
+				}
+			}
+			GOS_scripted_effects_tzqw_js = yes
 		}
 	}
 }

@@ -13,11 +13,46 @@ focus_tree = {
 	focus = { #初到应天
 		id = GOS_focus_0
 		icon = GFX_goal_generic_positive_trade_relations
-		cost = 10.00
+		cost = 5
 		x = 4
 		y = 0
 		allow_branch = {
 			has_country_flag = FLAG_GOS_focus_sd
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {	
+			add_political_power = 100
+			
+			add_dynamic_modifier = {
+				modifier = GOS_dynamic_modifiers_tzqw
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_0
+			set_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+			add_ideas = GOS_idea_ngjsbd
+
+			set_variable = { #大同会势力
+				VAR_GOS_dth_sl = 100
+			}
+			set_variable = { #管学系势力
+				VAR_GOS_gxx_sl = 120
+			}
+			set_variable = { #军队势力
+				VAR_GOS_jd_sl = 100
+			}
+
+			set_variable = { #大同会支持度
+				VAR_GOS_dth_zcd = 0.10
+			}
+			set_variable = { #管学系支持度
+				VAR_GOS_gxx_zcd = 0.60
+			}
+			set_variable = { #军队支持度
+				VAR_GOS_jd_zcd = 0.10
+			}
+
+			GOS_scripted_effects_tzqw_js = yes
 		}
 
 	}
@@ -37,7 +72,12 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			add_political_power = 100
+			remove_country_leader_trait = {
+				ideology = consociationalism
+				trait = GOS_traits_jgzn
+			}
+			add_ideas = GOS_hjw
 		}
 	}
 	focus = { #新立宪
@@ -56,7 +96,11 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			add_dynamic_modifier = {
+				modifier = GOS_dynamic_modifiers_zyyfn
+			}
+			custom_effect_tooltip = GOS_tooltip_foc_2
+			set_country_flag = FLAG_GOS_decision_fn_unlocked
 		}
 	}
 	focus = { #天子内阁
@@ -75,7 +119,11 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			add_political_power = 100
+			add_country_leader_trait = {
+				ideology = consociationalism
+				trait = GOS_traits_ng
+			}
 		}
 	}
 	focus = { #首辅治国
@@ -94,7 +142,7 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			remove_ideas = GOS_idea_datongdangzaixingdong
 		}
 	}
 	focus = { #庶民之治
@@ -116,7 +164,17 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			add_political_power = 100
+			add_stability = 0.1
+			add_popularity = {  #增加支持率
+				ideology = social_democrat 
+				popularity = 0.1 
+			}
+			add_popularity = {  #增加支持率
+				ideology = liberal_democracy
+				popularity = 0.1 
+			}
+			
 		}
 	}
 	focus = { #安稳民生
@@ -135,7 +193,9 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			add_political_power = 50
+			add_war_support = 0.1
+			add_ideas = GOS_idea_trqldzz_1
 		}
 	}
 	focus = { #民主大一统
@@ -158,9 +218,20 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_tzqw_dayu_75
+				check_variable = {
+					GOS_VAR_tzqw > 75
+				}
+			}
+			NOT = { country_exists = XBJ }
+			NOT = { country_exists = STG }
 		}
 		completion_reward = {	
-
+			swap_ideas = {
+				remove_idea = GOS_idea_trqldzz_1
+				add_idea = GOS_idea_trqldzz_2			
+			}
 		}
 	}
 	focus = { #虚位天子
@@ -177,9 +248,21 @@ focus_tree = {
 			factor = 0
 		}
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_var_tzqw_dayu_90
+				check_variable = {
+					GOS_VAR_tzqw > 90
+				}
+			}
 		}
 		completion_reward = {	
-
+			GOS_characters_zxz = {
+				swap_country_leader_traits = {
+					remove = GOS_traits_sd
+					add = GOS_traits_yj
+				}
+			}
+			
 		}
 	}
 
@@ -2364,7 +2447,15 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
+			set_country_flag = FLAG_GOS_idea_name_jnmj
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_jnmj_jia
+					add_idea = GOS_idea_jnmj_jia_2			
+				}
+			}
 
+			#custom_effect_tooltip = GOS_tooltip_idea_name_jnmj
 		}
 	}
 	focus = { #军校人才
@@ -2440,7 +2531,12 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_jnmj_jia
+					add_idea = GOS_idea_jnmj_jia_4			
+				}
+			}
 		}
 	}
 	focus = { #战车设计
@@ -2657,7 +2753,14 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
-
+			set_country_flag = FLAG_GOS_idea_name_xsbf
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = GOS_idea_jnmj_jia
+					add_idea = GOS_idea_jnmj_jia_3			
+				}
+			}
+			#custom_effect_tooltip = GOS_tooltip_idea_name_xsbf
 		}
 	}
 

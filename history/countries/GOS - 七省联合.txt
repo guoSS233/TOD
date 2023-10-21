@@ -89,9 +89,12 @@ oob = "GOS_1937"
 	}
 	add_ideas = { #开局民族精神
 		GOS_idea_gengwucaihuangdeyubo
-		GOS_idea_trqldzz
 		GOS_idea_datongdangzaixingdong
 		GOS_idea_huguangliangcang
+	}
+
+	add_dynamic_modifier = {
+		modifier = GOS_dynamic_modifiers_jnmj
 	}
 
 	613 = {
@@ -209,3 +212,44 @@ oob = "GOS_1937"
 		}
 
 		GOS_scripted_effects_tzqw_js = yes
+	#议院法案	 
+		set_variable = { #
+			GOS_VAR_zyyfn_political_power_gain = 0
+		}
+		set_variable = { #
+			GOS_VAR_zyyfn_war_support_factor = 0
+		}
+		set_variable = { #
+			GOS_VAR_zyyfn_consumer_goods_factor = 0
+		}
+		set_variable = { #
+			GOS_VAR_zyyfn_stability_factor = 0
+		}
+		set_variable = { #
+			GOS_VAR_zyyfn_conscription_factor = 0
+		}
+		set_variable = { #
+			GOS_VAR_zyyfn_trade_opinion_factor = 0
+		}
+		set_variable = { #
+			GOS_VAR_zyyfn_compliance_growth = 0
+		}
+		set_variable = { #
+			GOS_VAR_zyyfn_surrender_limit = 0
+		}
+	#江南明军buff	 
+		set_variable = { #
+			GOS_VAR_jnmj_army_org_factor = -0.2
+		}
+		set_variable = { #
+			GOS_VAR_jnmj_army_attack_factor = -0.1
+		}
+		set_variable = { #
+			GOS_VAR_jnmj_army_defence_factor = -0.1
+		}
+		set_variable = { #
+		GOS_VAR_jnmj_breakthrough_factor = 0
+		}
+		set_variable = { #
+			GOS_VAR_jnmj_command_power_gain_mult = 0
+		}

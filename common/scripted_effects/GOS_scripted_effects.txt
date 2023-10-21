@@ -136,6 +136,7 @@
 		divide_variable = { 
 			GOS_VAR_tzqw = GOS_VAR_ngpx_zg_sl 
 		}
+
 		set_variable = { #天子权威进度条用
 			GOS_VAR_tzqw_jdt = GOS_VAR_tzqw
 		}
@@ -208,7 +209,7 @@
 			GOS_VAR_ngpx_fn_jj_dqzc = VAR_GOS_gxx_sl
 		}
 		add_to_variable = { 
-			GOS_VAR_ngpx_fn_rq_dqzc = GOS_VAR_ngpx_fnzc_jd 
+			GOS_VAR_ngpx_fn_jj_dqzc = GOS_VAR_ngpx_fnzc_jd 
 		}
 		
       #教育
@@ -269,8 +270,45 @@
 		}
 
 		
-
-
+     #buff计算
+	  #稳定度
+		set_variable = { #天子权威
+			GOS_VAR_tzqw_stability_factor = GOS_VAR_tzqw
+		}
+		add_to_variable = { 
+			GOS_VAR_tzqw_stability_factor = -0.5 
+		}
+		multiply_variable = {  
+			var = GOS_VAR_tzqw_stability_factor
+			value = 0.5
+		}
+	  #战争支持度
+		set_variable = { #天子权威
+			GOS_VAR_tzqw_war_support_factor = GOS_VAR_tzqw
+		}
+		add_to_variable = { 
+			GOS_VAR_tzqw_war_support_factor = -0.5 
+		}
+		multiply_variable = {  
+			var = GOS_VAR_tzqw_war_support_factor
+			value = 0.5
+		}
+	  #每日pp
+		set_variable = { #天子权威
+			GOS_VAR_tzqw_political_power_gain = GOS_VAR_tzqw
+		}
+		multiply_variable = {  
+			var = GOS_VAR_tzqw_political_power_gain
+			value = 0.5
+		}
+	  #核心领土防御
+		set_variable = { #天子权威
+			GOS_VAR_tzqw_army_core_defence_factor = GOS_VAR_tzqw
+		}
+		multiply_variable = {  
+			var = GOS_VAR_tzqw_army_core_defence_factor
+			value = 0.2
+		}
 
 
 
