@@ -1,19 +1,29 @@
-HUN_gyorjihua = {
+HUN_gyorjihuajueyi = {
 	#投资基建
 	HUN_touzijijian = {
 		icon = ger_military_buildup
 		
-		visible = {any_owned_state = { infrastructure < 5 }}
+		visible = {
+			any_owned_state = { 
+				is_core_of = HUN
+				infrastructure < 4 
+			}
+		}
         cost = 50
-		modifier = {civilian_factory_use = 5}
+		modifier = {civilian_factory_use = 10 }
 		days_remove =  60
 		days_re_enable = 0
 		complete_effect = {
 			random_owned_controlled_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+				if = {
+					limit = {
+						is_core_of = HUN
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 		}
@@ -30,7 +40,7 @@ HUN_gyorjihua = {
 			has_completed_focus = HUN_touziduonaohejingjidai
 		}
         cost = 50
-		modifier = {civilian_factory_use = 5}
+		modifier = {civilian_factory_use = 10}
 		days_remove =  60
 		days_re_enable = 0
 		complete_effect = {
@@ -59,7 +69,7 @@ HUN_gyorjihua = {
 			has_completed_focus = HUN_daidongqitadiqu
 		}
         cost = 50
-		modifier = {civilian_factory_use = 5}
+		modifier = {civilian_factory_use = 10}
 		days_remove =  60
 		days_re_enable = 0
 		complete_effect = {
@@ -75,51 +85,59 @@ HUN_gyorjihua = {
 	}
 }
 #国家工作计划
-HUN_guojiagongzuojihua = {
+HUN_guojiagongzuojihuajueyi = {
 	#投资教育
 	HUN_touzijiaoyu = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		modifier = {research_speed_factor = 0.1}
 		visible = {}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 	}
 	#投资轻工业
 	HUN_touziqinggongye = {
 		icon = ger_military_buildup
-		
-		modifier = {consumer_goods_factor = -0.05}
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
+		modifier = {consumer_goods_factor = -0.2}
 		visible = {}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 	}
 	#投资重工业
 	HUN_touzizhonggongye = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		modifier = {industrial_capacity_factory = 0.1}
 		visible = {}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 	}
 	#投资建筑
 	HUN_touzijianzhu = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		modifier = {production_speed_buildings_factor = 0.1}
 		visible = {}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 	}
 	#投资物流
 	HUN_touziwuliu = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		visible = {}
 		modifier = { 
 			production_speed_rail_way_factor = 0.25 
@@ -127,88 +145,184 @@ HUN_guojiagongzuojihua = {
 		}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 	}
 	#保持货币稳定
 	HUN_huobizhengce = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		visible = {}
 		modifier = {stability_weekly = 0.01}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 	}
 	#对外交往
 	HUN_duiwaijiaowange = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		visible = {}
 		modifier = {
 			trade_opinion_factor = 0.15
 			opinion_gain_monthly_factor = 0.1
 		}
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
 	}
 	#矿产开采
 	HUN_kuangchankaicai = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		modifier = {local_resources_factor = 0.01}
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 		visible = {}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
 	}
 	#燃料供应
 	HUN_ranliaogongying = {
 		icon = ger_military_buildup
-		
+		available = {NOT = {has_country_flag = HUN_guojiagongzuojihua_jinxing}}
 		modifier = {
 			production_speed_synthetic_refinery_factor = 0.1
 			fuel_gain_factor = 0.05
 			production_speed_fuel_silo_factor = 0.1
 		}
+		complete_effect = {set_country_flag = HUN_guojiagongzuojihua_jinxing}
+		remove_effect = {clr_country_flag = HUN_guojiagongzuojihua_jinxing}
 		visible = {}
         cost = 50
 		days_remove =  60
-		days_re_enable = 30
+		days_re_enable = 300
 	}
 }
 #解决少民问题
-HUN_jiejueshaominwenti = {
+HUN_jiejueshaominwentijueyi = {
 	#扶植亲匈势力
 	HUN_peizhiqinxiongshili = {
-		icon = ger_military_buildup
-		
-		modifier = {
-			consumer_goods_factor = 0.02
-			political_power_factor = -0.1
-		}
+		icon = infiltrate_state
+		modifier = {consumer_goods_factor = 0.05}
 		visible = {
-			any_owned_state = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
+			NOT = {
+				every_owned_state = {
+					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }}
+					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }}
+					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }}
+					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }}
+					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }}
+				}
+			}
 			has_completed_focus = HUN_peizhiqinxiongshili
 		}
-		remove_effect = { add_to_variable = { HUN_shaominfankang = 0.1 }}
-        cost = 100
-		days_remove =  60
-		days_re_enable = 30
+		remove_effect = { 
+			custom_effect_tooltip = HUN.jueyi.1
+			random_list = {
+				80 = {
+					custom_effect_tooltip = HUN.jueyi.3 
+					random_owned_controlled_state = {
+						limit = {
+							OR = {
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
+							}
+						}
+						if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan}}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan}
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wanquankongzhi}
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong}}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong}
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan}
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong}}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong}
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong}
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }	}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+						}
+					}
+				}
+				20 = {
+					custom_effect_tooltip = HUN.jueyi.4 
+					random_owned_controlled_state = {
+						limit = {
+							OR = {
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+								has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
+							}
+						}
+						if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
+						}
+						else_if = {
+							limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }	}
+							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
+						}
+						else = {limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }}}
+					}
+				}
+			}
+		}
+        cost = 10
+		days_remove =  30
+		days_re_enable = 0
 	}
 	#增加马扎儿移民
 	HUN_zengjiamazhaeryimin = {
 		icon = ger_military_buildup
 		
-		modifier = {
-			production_speed_synthetic_refinery_factor = 0.1
-			fuel_gain_factor = 0.05
-			production_speed_fuel_silo_factor = 0.1
-		} 
+		modifier = {} 
 		available = { has_equipment = { motorized_equipment > 49 }  }
 		visible = {
-			any_owned_state = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
-			has_completed_focus = HUN_peizhiqinxiongshili
+			any_owned_state = { has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng} }
+			any_owned_state = { NOT = {is_core_of =HUN} }
+			has_completed_focus = HUN_zengjiamazhaeryimin
 		}
 		complete_effect = {
 			random_owned_state = {
@@ -218,6 +332,7 @@ HUN_jiejueshaominwenti = {
             }
         }
 		remove_effect = {
+			custom_effect_tooltip = HUN.jueyi.2
 			random_owned_controlled_state = {
 				limit = { 
 					is_core_of = ROM
@@ -225,14 +340,14 @@ HUN_jiejueshaominwenti = {
 				}
 				if = {
 					limit = { 
-						NOT = { has_state_flag = HUN_2jiyimin }}
-						NOT = { has_state_flag = HUN_3jiyimin }}
+						NOT = { has_state_flag = HUN_2jiyimin }
+						NOT = { has_state_flag = HUN_3jiyimin }
 					}
 					add_state_flag = HUN_1jiyimin
 				}
 				if = {
 					limit = { 
-						NOT = { has_state_flag = HUN_3jiyimin }}
+						NOT = { has_state_flag = HUN_3jiyimin }
 						has_state_flag = HUN_1jiyimin 
 					}
 					add_state_flag = HUN_2jiyimin
@@ -243,6 +358,7 @@ HUN_jiejueshaominwenti = {
 					}
 					add_state_flag = HUN_3jiyimin
 					add_core_of = HUN
+					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng }
 				}
 				add_manpower = 3000
 				add_equipment_to_stockpile = { type = motorized_equipment amount = 50 producer = HUN }
@@ -258,7 +374,7 @@ HUN_jiejueshaominwenti = {
 		icon = ger_military_buildup
 		fire_only_once = yes  
 		modifier = {
-			consumer_goods_factor = 0.5
+			consumer_goods_factor = 0.1
 			political_power_factor = -0.1
 		}
 		visible = {
@@ -275,7 +391,7 @@ HUN_jiejueshaominwenti = {
 		icon = ger_military_buildup
 		fire_only_once = yes  
 		modifier = {
-			consumer_goods_factor = 0.5
+			consumer_goods_factor = 0.1
 			political_power_factor = -0.1
 		}
 		visible = {
@@ -292,7 +408,7 @@ HUN_jiejueshaominwenti = {
 		icon = ger_military_buildup
 		fire_only_once = yes  
 		modifier = {
-			consumer_goods_factor = 0.5
+			consumer_goods_factor = 0.1
 			political_power_factor = -0.1
 		}
 		visible = {
@@ -308,16 +424,17 @@ HUN_jiejueshaominwenti = {
 	HUN_fazhandangdichanye = {
 		icon = ger_military_buildup
 		visible = {
-			any_owned_state = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
+			any_owned_state = { has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng} }
+			any_owned_state = { is_core_of = HUN }
 			has_completed_focus = HUN_fazhandangdichanye
 		}
         cost = 100
-		modifier = {civilian_factory_use = 5}
+		modifier = {civilian_factory_use = 10}
 		days_remove =  60
-		days_re_enable = 0
+		days_re_enable = 30
 		complete_effect = {
 			random_owned_controlled_state = {
-			limit = {has_state_flag = HUN_duonaoheliuyu}
+				limit = {has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng}}
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
