@@ -210,34 +210,20 @@ leader_traits = {
 	}
 
 #总司令
-	GOS_traits_dpbzy = { #大炮兵主义者
+	GOS_traits_dpbzy = { #阵地战专精
 		random = no
-		equipment_bonus = {
-			armor = {
-				breakthrough = 0.1
-				build_cost_ic = -0.1
-				instant = yes
-			}
-		}
+		command_cap = 20
+		experience_gain_army = 0.3
+		army_org_factor = 0.1
 		ai_will_do = {
 			factor = 0
 		}
 	}
-	GOS_traits_zjzzcdz = { #装甲作战倡导者
+	GOS_traits_zjzzcdz = { #注重后勤
 		random = no
-		equipment_bonus = {
-			armor = {
-				hard_attack = 0.1
-				ap_attack = 0.1
-				build_cost_ic = -0.15
-				instant = yes
-			}
-			tank_artillery_equipment = {
-				soft_attack = 0.2
-				instant = yes
-			}
-
-		}
+		command_cap = 20
+		experience_gain_army = 0.3
+		supply_consumption_factor = -0.1
 		ai_will_do = {
 			factor = 0
 		}

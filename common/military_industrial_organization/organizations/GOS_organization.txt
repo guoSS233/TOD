@@ -1,0 +1,220 @@
+#坦克
+
+GOS_organization_tank_qtgcjt = { #钱塘工程机械集团
+	include = generic_infantry_tank_organization #步兵坦克
+	icon = GFX_idea_osaka_army_arsenal
+	allowed = {	
+		tag = GOS
+	}
+	add_trait = { #组建新军事工业集团
+		token = GOS_mio_trait_zjgyjt
+		name = GOS_mio_trait_zjgyjt
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+		
+		available = {
+			has_completed_focus = GOS_focus_221
+		}
+
+		#limit_to_equipment_type = { capital_ship screen_ship }
+
+		equipment_bonus = {
+			reliability = 0.10
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+} 
+GOS_organization_tank_wyjt = { #五一集团会社
+	include = generic_heavy_tank_organization #重型坦克
+	icon = GFX_idea_osaka_army_arsenal
+	allowed = {	
+		tag = GOS
+	}
+	add_trait = { #组建新军事工业集团
+		token = GOS_mio_trait_zjgyjt
+		name = GOS_mio_trait_zjgyjt
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+		
+		available = {
+			has_completed_focus = GOS_focus_221
+		}
+
+		#limit_to_equipment_type = { capital_ship screen_ship }
+
+		equipment_bonus = {
+			reliability = 0.10
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+} 
+
+#造船
+GOS_organization_ship_qtyy = { #钱塘远洋船舶集团
+	include = generic_battle_line_ship_organization #战列线
+	icon = GFX_idea_kure_naval_arsenal
+	allowed = {	
+		tag = GOS
+	}
+	available = {
+	}
+}
+GOS_organization_ship_gljn = { #国立江南水师修造厂
+	include = generic_task_force_ship_organization #特遣
+	icon = GFX_idea_yokosuka_naval_arsenal
+	allowed = {	
+		tag = GOS
+	}
+}
+GOS_organization_ship_ntjt = { #南通舰艇公司
+	include = generic_raider_ship_organization #袭击
+	icon = GFX_idea_sasebo_naval_arsenal
+	allowed = {	 
+		tag = GOS
+	}
+}
+
+#飞机
+GOS_organization_plane_yrlh = { #御日联合航空集团
+	include = generic_high_agility_fighter_aircraft_organization #高机动
+	icon = GFX_idea_mitsubishi
+	
+	allowed = {	 
+		tag = GOS 
+	}	
+	visible = {
+	}
+	available = {
+	}
+} 
+
+GOS_organization_plane_sljs = { #升力先进技术研究所
+	include = generic_range_focused_aircraft_organization #长航程
+	icon = GFX_idea_aichi
+	allowed = {	
+		tag = GOS
+	}
+	available = {
+	}
+}
+
+GOS_organization_plane_gljr = { #国立九如飞行设计院
+	include = generic_medium_aircraft_organization #中型飞机
+	icon = GFX_idea_nakajima
+	allowed = {	
+		tag = GOS
+	}
+}
+
+###陆军装备 
+
+GOS_organization_infantry_cjbq = { #长江兵器制作所
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_tokyo_arsenal #步兵
+	allowed = {	
+		tag = GOS
+	}
+	add_trait = { #组建新军事工业集团
+		token = GOS_mio_trait_zjgyjt
+		name = GOS_mio_trait_zjgyjt
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+		
+		available = {
+			has_completed_focus = GOS_focus_221
+		}
+
+		#limit_to_equipment_type = { capital_ship screen_ship }
+
+		equipment_bonus = {
+			reliability = 0.10
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+}
+
+GOS_organization_infantry_hbgd = { #虎贲高等火炮铸造所
+	include = generic_artillery_organization #火炮
+	icon = GFX_idea_osaka_army_arsenal
+	allowed = {	
+		tag = GOS
+	}
+	add_trait = { #组建新军事工业集团
+		token = GOS_mio_trait_zjgyjt
+		name = GOS_mio_trait_zjgyjt
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+		
+		available = {
+			has_completed_focus = GOS_focus_221
+		}
+
+		#limit_to_equipment_type = { capital_ship screen_ship }
+
+		equipment_bonus = {
+			reliability = 0.10
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+} 
+
+GOS_organization_infantry_hhmy = { #黄鹤民用机车会社
+	include = generic_motorized_mechanized_organization  #机动装备
+	icon = GFX_idea_nissan
+	allowed = {	 
+		OR = {
+			tag = GOS 
+		}
+	}	
+	visible = {
+	}	
+	available = {		
+	}
+	add_trait = { #组建新军事工业集团
+		token = GOS_mio_trait_zjgyjt
+		name = GOS_mio_trait_zjgyjt
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+		special_trait_background = yes
+
+		position = { x=9 y=0 }
+		
+		available = {
+			has_completed_focus = GOS_focus_221
+		}
+
+		#limit_to_equipment_type = { capital_ship screen_ship }
+
+		equipment_bonus = {
+			reliability = 0.10
+		}
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+}

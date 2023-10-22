@@ -125,6 +125,7 @@ ideas = {
 
     
      #民族精神 
+      #政治
         GOS_idea_ngjsbd = { #内阁局势变动
 			picture = man_five_year_plan_air	
 			modifier = {
@@ -145,7 +146,330 @@ ideas = {
 				war_support_factor = 0.1
 			}		
 		}
+      #陆军
+        GOS_idea_fyzz = { #防御作战
+			picture = generic_exploit_mines
+			modifier = {
+				dig_in_speed_factor = 0.20 #堑壕速度
+                max_dig_in_factor = 0.20 #堑壕上线修正
+				production_speed_bunker_factor = 0.20 #堡垒建造速度
+			}		
+		}
+        GOS_idea_phsc = { #军事生产遭到破坏
+			picture = generic_exploit_mines
+			modifier = {
+                industrial_capacity_factory = -0.1
+			}		
+		}
+        GOS_idea_bmj = { #保密局
+			picture = generic_exploit_mines
+			modifier = {
+                crypto_strength = 2 #加密等级
+                intelligence_agency_defense = 1 #反间谍
+			}		
+		}
+        GOS_idea_jgcyl_1 = { #军工产业链
+			picture = generic_exploit_mines
+			modifier = {
+                production_speed_arms_factory_factor = 0.1 #军用工厂建造速度
+			}		
+		}
+        GOS_idea_jgcyl_2 = { #军工产业链
+			picture = generic_exploit_mines
+			modifier = {
+                production_speed_arms_factory_factor = 0.1 #军用工厂建造速度
+                equipment_conversion_speed = 0.2     #改装速度
+			}		
+		}
+        GOS_idea_jgcyl_3 = { #军工产业链
+			picture = generic_exploit_mines
+			modifier = {
+                production_speed_arms_factory_factor = 0.1 #军用工厂建造速度
+                equipment_conversion_speed = 0.2       #改装速度
+                industrial_capacity_factory = 0.1        #工厂产出
+			}		
+		}
+      #海空
+        GOS_idea_qshj_1 = { #七省海军
+			picture = generic_exploit_mines
+			modifier = {
+                convoy_escort_efficiency = 0.1 #护航效率
+			}		
+		}
+        GOS_idea_qshj_2 = { #七省海军
+			picture = generic_exploit_mines
+			modifier = {
+                convoy_escort_efficiency = 0.1 #护航效率
+                navy_carrier_air_agility_factor = 0.10 #航母舰载机机动性
+			}		
+		}
+        GOS_idea_qshj_3 = { #七省海军
+			picture = generic_exploit_mines
+			modifier = {
+                convoy_escort_efficiency = 0.1 #护航效率
+                navy_carrier_air_agility_factor = 0.10 #航母舰载机机动性
+			}		
+            equipment_bonus = {	
+                ship_hull_carrier = {
+                    #instant = yes
+                    carrier_size = 1
+                }
+            }
+		}
+        GOS_idea_qshj_4 = { #海上霸主
+			picture = generic_exploit_mines
+			modifier = {
+                convoy_escort_efficiency = 0.1 #护航效率
+                navy_carrier_air_agility_factor = 0.10 #航母舰载机机动性
+                naval_coordination = 0.05 #舰队协同性
+			}	
+            equipment_bonus = {	
+                ship_hull_carrier = {
+                    #instant = yes
+                    carrier_size = 1
+                }
+            }
+		}
+        GOS_idea_qshj_12 = { #七省海军
+			picture = generic_exploit_mines
+			modifier = {
+                convoy_escort_efficiency = 0.1 #护航效率
+                navy_capital_ship_attack_factor = 0.1 #主力舰攻击
+			}		
+		}
+        GOS_idea_qshj_13 = { #七省海军
+			picture = generic_exploit_mines
+			modifier = {
+                convoy_escort_efficiency = 0.1 #护航效率
+                navy_capital_ship_attack_factor = 0.1 #主力舰攻击
+                naval_enemy_fleet_size_ratio_penalty_factor = 0.1 #敌人舰队规模惩罚
+			}		
+		}
+        GOS_idea_qshj_14 = { #海上霸主
+			picture = generic_exploit_mines
+			modifier = {
+                convoy_escort_efficiency = 0.1 #护航效率
+                naval_coordination = 0.05 #舰队协同性
+                navy_capital_ship_attack_factor = 0.1 #主力舰攻击
+                naval_enemy_fleet_size_ratio_penalty_factor = 0.1 #敌人舰队规模惩罚
+			}	
+		}
+
+        GOS_idea_qdtk = { #抢夺天空
+			picture = generic_exploit_mines
+			modifier = {
+                army_bonus_air_superiority_factor = 0.1 #空优
+			}	
+		}
+
+        GOS_idea_qskj_1 = { #七省空军
+			picture = generic_exploit_mines
+			modifier = {
+                experience_gain_air_factor = 0.1 #空军经验增长
+                production_speed_air_base_factor = 0.2 #空军基地建造速度
+			}	
+		}
+        GOS_idea_qskj_2 = { #七省空军
+			picture = generic_exploit_mines
+			modifier = {
+                experience_gain_air_factor = 0.1 #空军经验增长
+                production_speed_air_base_factor = 0.2 #空军基地建造速度
+                air_strategic_bomber_bombing_factor = 0.2 #战略轰炸
+			}	
+		}
+        GOS_idea_qskj_3 = { #七省空军
+			picture = generic_exploit_mines
+			modifier = {
+                experience_gain_air_factor = 0.1 #空军经验增长
+                production_speed_air_base_factor = 0.2 #空军基地建造速度
+                air_cas_present_factor = 0.1 #对地支援
+			}	
+		}
+        GOS_idea_qskj_4 = { #天空霸主
+			picture = generic_exploit_mines
+			modifier = {
+                experience_gain_air_factor = 0.1 #空军经验增长
+                production_speed_air_base_factor = 0.2 #空军基地建造速度
+                air_strategic_bomber_bombing_factor = 0.2 #战略轰炸
+			}	
+            equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				small_plane_naval_bomber_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+            equipment_bonus = {
+				medium_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				large_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+        GOS_idea_qskj_5 = { #天空霸主
+			picture = generic_exploit_mines
+			modifier = {
+                experience_gain_air_factor = 0.1 #空军经验增长
+                production_speed_air_base_factor = 0.2 #空军基地建造速度
+                air_cas_present_factor = 0.1 #对地支援
+			}	
+            equipment_bonus = {
+				small_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				small_plane_cas_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				small_plane_naval_bomber_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+            equipment_bonus = {
+				medium_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+			equipment_bonus = {
+				large_plane_airframe = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+       
 	}
+
+    industrial_concern = { #工业
+		GOS_zzs_lstm = { #灵山土木工程建筑集团
+			picture = generic_industrial_concern_1
+			allowed = {
+				original_tag = GOS
+			}
+			available = {
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+			traits = {
+				industrial_concern
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		GOS_zzs_slsy = { #私立岳麓书院
+			picture = generic_build_infrastructure
+			allowed = {
+				original_tag = GOS
+			}
+			available = {
+			}
+			research_bonus = {
+			}
+			traits = {
+			}
+			modifier = {
+                research_speed_factor = 0.05
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+        GOS_zzs_ytzy = { #国立应天中央大学堂
+			picture = generic_build_infrastructure
+			allowed = {
+				original_tag = GOS
+			}
+			available = {
+			}
+			research_bonus = {
+			}
+			traits = {
+			}
+			modifier = {
+                research_speed_factor = 0.03
+                stability_factor = 0.05	
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		GOS_zzs_hjys = { #汉江有色金属制备集团
+			picture = generic_refining_concern_1
+			allowed = {
+				original_tag = GOS
+			}
+			available = {
+			}
+			research_bonus = {
+				industry = 0.1
+			}
+			traits = {
+				industrial_concern
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.2
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		GOS_zzs_dgyz = { #帝国扬子电气化开发局
+			picture = usa_magic
+			allowed = {
+				original_tag = GOS
+			}
+			available = {
+			}
+			research_bonus = {
+				electronics = 0.1
+			}
+			traits = {
+				electronics_concern
+			}
+			modifier = {
+                production_speed_radar_station_factor = 0.1 #雷达建造速度
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
+
+
+
+
+
+
+
 
 #政府顾问
 	TOD_minister_head = { ### 政府首脑 ###

@@ -94,6 +94,7 @@
     GOS_decision_l_2_tzngpx_desc:"天子内阁派系决议组简介"
     GOS_decision_l_3_fn:"咨议院法案"
     GOS_decision_l_3_fn_desc:"法案决议组简介"
+    GOS_decision_l_4_jsjy:"军事决议"
 ### 决议 ###
   #debug
     GOS_decision_sdx:"少帝线"
@@ -165,6 +166,21 @@
     GOS_decision_fn_my_desc:"§0大同会§!对此法案的态度为§Y中立§!\n§C管学系§!对此法案的态度为§G支持§!\n§W军队§!对此法案的态度为§Y中立§!"
     GOS_decision_fn_js_desc:"§0大同会§!对此法案的态度为§G支持§!\n§C管学系§!对此法案的态度为§Y中立§!\n§W军队§!对此法案的态度为§R反对§!"
     GOS_decision_fn_dgxf_desc:"§0大同会§!对此法案的态度为§Y中立§!\n§C管学系§!对此法案的态度为§Y中立§!\n§W军队§!对此法案的态度为§Y中立§!"
+  #军事决议
+    GOS_decision_jsgg_1:"军事改革-第一阶段"
+    GOS_decision_jsgg_2:"军事改革-第二阶段"
+    GOS_decision_jsgg_3:"军事改革-第三阶段"
+    GOS_decision_jsjy_bf:"北伐"
+    GOS_decision_zzyj_ghj:"对共和军的作战研究"
+    GOS_decision_zzyj_xbj:"对西北军的作战研究"
+    GOS_decision_zzyj_st:"对顺天的作战研究"
+    GOS_decision_jsjy_zzgs:"注重工事"
+    GOS_decision_jsjy_ylz:"舆论战"
+    GOS_decision_jsjy_zsxc:"战时宣传"
+    GOS_decision_jsjy_jsjm:"窃取军事机密"
+    GOS_decision_jsjy_phsc:"破坏生产"
+    GOS_decision_jsjy_bsyz:"背水一战"
+
 
 ### 动态修正 ###
  #地区修正
@@ -239,6 +255,27 @@
     GOS_idea_trqldzz_1:"王朝新气象"
     GOS_idea_trqldzz_2:"王朝新气象"
     GOS_idea_ngjsbd:"内阁局势变动"
+    GOS_idea_fyzz:"防御作战"
+    GOS_idea_phsc:"军事生产遭到破坏"
+    GOS_idea_bmj:"保密局"
+    GOS_idea_jgcyl_1:"军工产业链"
+    GOS_idea_jgcyl_2:"军工产业链"
+    GOS_idea_jgcyl_3:"军工产业链"
+
+    GOS_idea_qshj_1:"七省海军"
+    GOS_idea_qshj_2:"七省海军"
+    GOS_idea_qshj_3:"七省海军"
+    GOS_idea_qshj_4:"海上霸主"
+    GOS_idea_qshj_12:"七省海军"
+    GOS_idea_qshj_13:"七省海军"
+    GOS_idea_qshj_14:"海上霸主"
+
+    GOS_idea_qdtk:"抢夺天空"
+    GOS_idea_qskj_1:"七省空军"
+    GOS_idea_qskj_2:"七省空军"
+    GOS_idea_qskj_3:"七省空军"
+    GOS_idea_qskj_4:"天空霸主"
+    GOS_idea_qskj_5:"天空霸主"
 #其他
   mngtext.2.b:"切换至七省"
 
@@ -526,6 +563,20 @@
     GOS_tooltip_idea_name_jnmj:"§Y突如其来的战争§!更名为§Y江南明军§!"
     GOS_tooltip_idea_name_xsbf:"§Y江南明军§!更名为§Y兴师北伐§!"
 
+    GOS_tooltip_foc_214:"启用§Y军事决议§!决议组"
+    GOS_tooltip_foc_218:"在§Y军事决议§!决议组中启用§Y对共和军的作战研究§!决议"
+    GOS_tooltip_foc_230:"在§Y军事决议§!决议组中启用§Y对西北军的作战研究§!和§Y对顺天的作战研究§!决议"
+    GOS_tooltip_foc_220:"在§Y军事决议§!决议组中启用§Y北伐§!决议"
+    GOS_tooltip_foc_229:"在§Y军事决议§!决议组中启用§Y注重工事§!决议"
+    GOS_tooltip_foc_232:"在§Y军事决议§!决议组中启用§Y舆论战§!和§Y战时宣传§!决议决议"
+    GOS_tooltip_foc_233:"在§Y军事决议§!决议组中启用§Y窃取军事机密§!决议"
+    GOS_tooltip_foc_234:"在§Y军事决议§!决议组中启用§Y破坏生产§!决议"
+    GOS_tooltip_foc_235:"在§Y军事决议§!决议组中启用§Y背水一战§!决议"
+
+    GOS_tooltip_foc_229_2:"§C如果§!我们§R控制§!§Y信阳§!地区："
+    GOS_tooltip_foc_221:"我们的所有§Y军工组织§!和§Y工业企业§!将§Y变更名称§!\n\n为§Y所有§!§C坦克§!和§C军需品装备§!§Y军工组织§!解锁§Y特质§!§C组建新军事工业集团§!"
+
+
  #民族精神修正注释
     GOS_tooltip_idea_ngjsbd:"[GET_GOS_ngjsbd_js_name_txt]\n\n[GET_GOS_ngjsbd_zzzt_name_txt]\n\n[GET_GOS_ngjsbd_jj_name_txt]\n\n[GET_GOS_ngjsbd_cc_name_txt]\n\n[GET_GOS_ngjsbd_rq_name_txt]"
 
@@ -558,8 +609,8 @@
     GOS_traits_tshw:"少帝的贴身护卫"
     GOS_traits_dtdmy:"大同党的盟友"
   #总司令特质
-    GOS_traits_dpbzy:"大炮兵主义"
-    GOS_traits_zjzzcdz:"装甲作战倡导者"
+    GOS_traits_dpbzy:"阵地战专精"
+    GOS_traits_zjzzcdz:"注重后勤"
 ### 人物 ###
  #领导人
   GOS_characters_wwkx:"王位空悬"
@@ -651,21 +702,125 @@
   GOS_gui_tzngpx_tzqw_text:"§Y天子权威：§![?GOS_VAR_tzqw|%0]"
 
 ### 本地化预设 ###
-GET_GOS_ngjsbd_js_name_txt_1:"未通过§Y军事法案§!：§L军队§!§G支持度§!每周减少§R5%§!"
-GET_GOS_ngjsbd_js_name_txt_2:""
+    GET_GOS_ngjsbd_js_name_txt_1:"未通过§Y军事法案§!：§L军队§!§G支持度§!每周减少§R5%§!"
+    GET_GOS_ngjsbd_js_name_txt_2:""
 
-GET_GOS_ngjsbd_zzzt_name_txt_1:"处于战争状态：§L军队§!§Y势力§!每周增加§R1.5§!"
-GET_GOS_ngjsbd_zzzt_name_txt_2:""
+    GET_GOS_ngjsbd_zzzt_name_txt_1:"处于战争状态：§L军队§!§Y势力§!每周增加§R1.5§!"
+    GET_GOS_ngjsbd_zzzt_name_txt_2:""
 
-GET_GOS_ngjsbd_jj_name_txt_1:"处于§Y战时经济§!或§Y总动员§!状态：§0大同会§!§G支持度§!每周减少§R3%§!"
-GET_GOS_ngjsbd_jj_name_txt_2:""
+    GET_GOS_ngjsbd_jj_name_txt_1:"处于§Y战时经济§!或§Y总动员§!状态：§0大同会§!§G支持度§!每周减少§R3%§!"
+    GET_GOS_ngjsbd_jj_name_txt_2:""
 
-GET_GOS_ngjsbd_cc_name_txt_1:"§Y经济危机度§!大于§R50§!：§C管学系§!§G支持度§!每周减少§R3%§!"
-GET_GOS_ngjsbd_cc_name_txt_2:""
-GET_GOS_ngjsbd_cc_name_txt_3:"已通过§Y财产法案§!：§C管学系§!§Y势力§!每周增加§R0.5§!"
+    GET_GOS_ngjsbd_cc_name_txt_1:"§Y经济危机度§!大于§R50§!：§C管学系§!§G支持度§!每周减少§R3%§!"
+    GET_GOS_ngjsbd_cc_name_txt_2:""
+    GET_GOS_ngjsbd_cc_name_txt_3:"已通过§Y财产法案§!：§C管学系§!§Y势力§!每周增加§R0.5§!"
 
-GET_GOS_ngjsbd_rq_name_txt_1:""
-GET_GOS_ngjsbd_rq_name_txt_2:"已通过§Y人权法案§!：§0大同会§!§Y势力§!每周增加§R0.5§!"
+    GET_GOS_ngjsbd_rq_name_txt_1:""
+    GET_GOS_ngjsbd_rq_name_txt_2:"已通过§Y人权法案§!：§0大同会§!§Y势力§!每周增加§R0.5§!"
+
+### 决议消耗图标及注释 ###
+  #xp
+    GOS_cost_xp_army_30:"£army_experience §Y30§!"
+    GOS_cost_xp_army_30_blocked:"£army_experience §R30§!"
+    GOS_cost_xp_army_30_tooltip:"执行此决议需要£army_experience §Y30§!"
+
+    GOS_cost_xp_army_25:"£army_experience §Y25§!"
+    GOS_cost_xp_army_25_blocked:"£army_experience §R25§!"
+    GOS_cost_xp_army_25_tooltip:"执行此决议需要£army_experience §Y25§!"
+
+    GOS_cost_xp_army_100:"£army_experience §Y100§!"
+    GOS_cost_xp_army_100_blocked:"£army_experience §R100§!"
+    GOS_cost_xp_army_100_tooltip:"执行此决议需要£army_experience §Y100§!"
+
+    GOS_cost_xp_navy_50:"£navy_experience §Y50§!"
+    GOS_cost_xp_navy_50_blocked:"£navy_experience §R50§!"
+    GOS_cost_xp_navy_50_tooltip:"执行此决议需要£navy_experience §Y50§!"
+
+    GOS_cost_xp_navy_50:"£navy_experience §Y50§!"
+    GOS_cost_xp_navy_50_blocked:"£navy_experience §R50§!"
+    GOS_cost_xp_navy_50_tooltip:"执行此决议需要£navy_experience §Y50§!"
+  #cp
+    GOS_cost_CP_20:0 "£command_power §Y20§!"
+    GOS_cost_CP_20_blocked:0 "£command_power §R20§!"
+    GOS_cost_CP_20_tooltip:0 "执行此决议需要£command_power §Y20§!"
+
+    GOS_cost_CP_50:0 "£command_power §Y50§!"
+    GOS_cost_CP_50_blocked:0 "£command_power §R50§!"
+    GOS_cost_CP_50_tooltip:0 "执行此决议需要£command_power §Y50§!"
+
+    GOS_cost_CP_10_pp_50:"£command_power  §Y10§! £pol_power  §Y50§!"
+    GOS_cost_CP_10_pp_50_blocked:"£command_power  §R10§! £pol_power  §R50§!"
+    GOS_cost_CP_10_pp_50_tooltip:"执行此决议需要£command_power §Y10§!£pol_power §Y50§!"
+
+    GOS_cost_CP_10_pp_25:"£command_power  §Y10§! £pol_power  §Y25§!"
+    GOS_cost_CP_10_pp_25_blocked:"£command_power  §R10§! £pol_power  §R25§!"
+    GOS_cost_CP_10_pp_25_tooltip:"执行此决议需要£command_power §Y10§!£pol_power §Y25§!"
+
+### 制造商 ###
+GOS_mio_trait_zjgyjt:"组建新军事工业集团"
+
+GOS_zzs_lstm:"[GET_GOS_zzs_lstm_name_txt]"
+GOS_zzs_slsy:"[GET_GOS_zzs_slsy_name_txt]"
+GOS_zzs_ytzy:"[GET_GOS_zzs_ytzy_name_txt]"
+GOS_zzs_hjys:"[GET_GOS_zzs_hjys_name_txt]"
+GOS_zzs_dgyz:"[GET_GOS_zzs_dgyz_name_txt]"
+
+GOS_organization_tank_qtgcjt:"[GET_GOS_organization_tank_qtgcjt_name_txt]"
+GOS_organization_tank_wyjt:"[GET_GOS_organization_tank_wyjt_name_txt]"
+
+GOS_organization_ship_qtyy:"[GET_GOS_organization_ship_qtyy_name_txt]"
+GOS_organization_ship_gljn:"[GET_GOS_organization_ship_gljn_name_txt]"
+GOS_organization_ship_ntjt:"[GET_GOS_organization_ship_ntjt_name_txt]"
+
+GOS_organization_plane_yrlh:"[GET_GOS_organization_plane_yrlh_name_txt]"
+GOS_organization_plane_sljs:"[GET_GOS_organization_plane_sljs_name_txt]"
+GOS_organization_plane_gljr:"[GET_GOS_organization_plane_gljr_name_txt]"
+
+GOS_organization_infantry_cjbq:"[GET_GOS_organization_infantry_cjbq_name_txt]"
+GOS_organization_infantry_hbgd:"[GET_GOS_organization_infantry_hbgd_name_txt]"
+GOS_organization_infantry_hhmy:"[GET_GOS_organization_infantry_hhmy_name_txt]"
+
+GET_GOS_zzs_lstm_name_txt_1:"灵山土木工程建筑集团"
+GET_GOS_zzs_slsy_name_txt_1:"私立岳麓书院"
+GET_GOS_zzs_ytzy_name_txt_1:"国立应天中央大学堂"
+GET_GOS_zzs_hjys_name_txt_1:"汉江有色金属制备集团"
+GET_GOS_zzs_dgyz_name_txt_1:"帝国扬子电气化开发局"
+
+GET_GOS_organization_tank_qtgcjt_name_txt_1:"钱塘工程机械集团"
+GET_GOS_organization_tank_wyjt_name_txt_1:"五一集团会社"
+
+GET_GOS_organization_ship_qtyy_name_txt_1:"钱塘远洋船舶集团"
+GET_GOS_organization_ship_gljn_name_txt_1:"国立江南水师修造厂"
+GET_GOS_organization_ship_ntjt_name_txt_1:"南通舰艇公司"
+
+GET_GOS_organization_plane_yrlh_name_txt_1:"御日联合航空集团"
+GET_GOS_organization_plane_sljs_name_txt_1:"升力先进技术研究所"
+GET_GOS_organization_plane_gljr_name_txt_1:"国立九如飞行设计院"
+
+GET_GOS_organization_infantry_cjbq_name_txt_1:"长江兵器制作所" 
+GET_GOS_organization_infantry_hbgd_name_txt_1:"虎贲高等火炮铸造所"
+GET_GOS_organization_infantry_hhmy_name_txt_1:"黄鹤民用机车会社"
+
+GET_GOS_zzs_lstm_name_txt_2:"大明建设公司" 
+GET_GOS_zzs_slsy_name_txt_2:"岳麓书院教育集团"
+GET_GOS_zzs_ytzy_name_txt_2:"应天大学"
+GET_GOS_zzs_hjys_name_txt_2:"大明金属冶炼集团"
+GET_GOS_zzs_dgyz_name_txt_2:"国家电气局"
+
+GET_GOS_organization_tank_qtgcjt_name_txt_2:"南方工业集团"
+GET_GOS_organization_tank_wyjt_name_txt_2:"南方装备集团"
+
+GET_GOS_organization_ship_qtyy_name_txt_2:"大明远洋船舶工业集团"
+GET_GOS_organization_ship_gljn_name_txt_2:"大明船舶重型工业集团"
+GET_GOS_organization_ship_ntjt_name_txt_2:"国家舰艇公司"
+
+GET_GOS_organization_plane_yrlh_name_txt_2:"国家航空工业集团"
+GET_GOS_organization_plane_sljs_name_txt_2:"飞行动力技术研究所"
+GET_GOS_organization_plane_gljr_name_txt_2:"国家飞机设计局"
+
+GET_GOS_organization_infantry_cjbq_name_txt_2:"国家兵器集团"
+GET_GOS_organization_infantry_hbgd_name_txt_2:"国家火炮工业集团"
+GET_GOS_organization_infantry_hhmy_name_txt_2:"黄鹤汽车公司"
 
 
 
@@ -683,11 +838,7 @@ GET_GOS_ngjsbd_rq_name_txt_2:"已通过§Y人权法案§!：§0大同会§!§Y�
 
 
 
-
-
-
-
-###日常事件
+###日常事件（历史遗留内容）
   gosrichang.1.t:0 "新学期"
   gosrichang.1.d:0 "眼见着日历一页一页被撕下，湖南株洲国立第一中学的新学期开学日终于到了。来自湘潭农村的中一学生章宇喘着粗气告别了刚结识的同伴，将三大包生活物资扛上宿舍门前的台阶。但当他得知自己的宿舍位于六楼尽头时，章宇一双布满老茧的手还是微微颤抖起来。九月的湖南天气依旧酷热难耐，大把大把的汗水从章宇的头上肩上淌下，很快将身上那件充满补丁的短衫浸湿。章宇抖动瘦削的臂膀，把从肩头滑落的包裹重新挑起，往前走了几步，但腿脚逐渐有些不听使唤——他绊到了一块台阶，然后失去平衡，重重地撞在宿舍大门的门框上。章宇忍痛抬头望去，包裹里的东西已散落一地，几个衣着光鲜的学生哄笑着从他的被褥上踩过。\n“前面的同学，请站住一下。”一句充满湘潭口音的话从宿舍外面传来，“请你们帮这位同学收拾一下东西，再给他道歉。”\n章宇从摔倒的眩晕中缓过劲来，拖动擦伤的肢体蜷缩到墙角。方才还在哄笑的几个学生回头瞥了一眼门外，喊着“校长来啦”“快跑”一哄而散。章宇心里一沉，又想起父母“莫与城里人起矛盾”的叮嘱，只好噙着泪爬去收拾残局。\n“同学，你伤到那里莫有啊？叫甚么名字？”那个被同学叫做校长的男人跨过宿舍的门槛，轻轻拍了拍章宇湿透的右肩。“若是伤到了，千万要跟我说啊。”\n章宇回头，埋头盯着校长下颌左侧的肉痣发愣，不敢发话。“莫要害怕，我又不是食人魔，怕甚莫？”眼前这个中年人眯起眼睛，伸出双手将章宇扶起，微笑着把章宇肩头沾上的墙灰掸掉，“站得起来哇？去阴凉地歇息下，我来帮你收拾一下。”\n章宇呆站在原地，看着那个宽阔的背影俯下身去蹲下，掏出手帕将被踩过的衣物拿起擦净，再把洒落的碗盆放回原位，最后给三个包裹打上结。“你看哇，这样打结更牢靠、又好解开，搬上去也省事哟。”\n“你是乡下来的新同学哇，莫要怕生，我们这里莫有城里乡下之分。有甚么生活学习的问题，尽管给我们说，一定尽力帮助。你就先在这里歇息吧，我帮你搬上去，同学你住哪一间呢？”"
   gosrichang.1.a:0 "“我叫章宇，住在五三零室——万谢校长！”"

@@ -695,23 +695,16 @@ characters = {
 					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
 				}
 			}
-			corps_commander = {
-				traits = {
-					
-
-				}
-				skill = 2
-				attack_skill = 3
-				defense_skill = 1
-				planning_skill = 1
-				logistics_skill = 2
-			}
-			advisor = { #总司令
-				slot = high_command
-				idea_token = GOS_sxl
+			advisor = {
+				#陆军部长
+				slot = army_chief
 				ledger = army
+				idea_token = GOS_sxl
 				allowed = {
 					original_tag = GOS
+				}
+				available = {
+					has_completed_focus = GOS_focus_209
 				}
 				traits = {
 					GOS_traits_dpbzy
@@ -720,6 +713,15 @@ characters = {
 				ai_will_do = {
 					factor = 1
 				}
+			}
+			corps_commander = {
+				traits = {				
+				}
+				skill = 2
+				attack_skill = 3
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
 			}
 		}
 		GOS_qdj = { #钱大钧
@@ -946,6 +948,25 @@ characters = {
 					large = "gfx/leaders/ENG/Portrait_Britain_Claude_Auchinleck.dds"
 				}
 			}
+			advisor = {
+				#陆军部长
+				slot = army_chief
+				ledger = army
+				idea_token = GOS_slr
+				allowed = {
+					original_tag = GOS
+				}
+				available = {
+					has_completed_focus = GOS_focus_209
+				}
+				traits = {
+					GOS_traits_zjzzcdz
+				}
+				cost = 150
+				ai_will_do = {
+					factor = 1
+				}
+			}
 			corps_commander = {
 				traits = {
 					brilliant_strategist
@@ -956,21 +977,6 @@ characters = {
 				defense_skill = 2
 				planning_skill = 1
 				logistics_skill = 1
-			}
-			advisor = { #总司令
-				slot = high_command
-				idea_token = GOS_slr
-				ledger = army
-				allowed = {
-					original_tag = GOS
-				}
-				traits = {
-					GOS_traits_zjzzcdz
-				}
-				cost = 150
-				ai_will_do = {
-					factor = 1
-				}
 			}
 		}
 
