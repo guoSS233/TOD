@@ -35,7 +35,7 @@ guiTypes = {
 			spriteType = "GFX_EDO_state_03"
 			position = { x = @state_x y = @state_y }			
 		}
-		buttonType = {
+		buttonType = { #对马
 			clicksound = click_default
 			pdx_tooltip = "EDO_state_04_tooltip"
 			name = "EDO_election_states_04"
@@ -169,8 +169,8 @@ guiTypes = {
 
 			instantTextboxType = {
 				name = "EDO_Map_GUI_State_Title"
-				position = { x = 50 y = 20 }
-				font = "aldrich_32_outline"
+				position = { x = 150 y = 20 }
+				font = "hoi_36header"
 				text = "EDO_map_state_name"
 				maxWidth = 200
 				format = center
@@ -184,6 +184,52 @@ guiTypes = {
 				shortcut = "ESCAPE"
 				clicksound = "click_close"
 			}
+
+			iconType = { 
+				name = "EDO_tdgg_jdt_icon"
+				spriteType = "GFX_EDO_jdt_icon"
+				position = { x = 15 y = 50 }
+			}
+
+			iconType = { 
+				name = "EDO_gyh_jdt_icon"
+				spriteType = "GFX_EDO_jdt_icon"
+				position = { x = 15 y = 100 }
+			}
+
+			iconType = { 
+				name = "EDO_jypj_jdt_icon"
+				spriteType = "GFX_EDO_jdt_icon"
+				position = { x = 15 y = -150 }
+			}
+
+			instantTextboxType = {
+				name = "EDO_Map_Info_tdgg"
+				position = { x = 15 y = 20 }
+				font = "hoi_24header"
+				text = "EDO_Map_Info_tdgg_text"
+				maxWidth = 200
+				format = left
+			}
+
+			instantTextboxType = {
+				name = "EDO_Map_Info_gyh"
+				position = { x = 15 y = 70 }
+				font = "hoi_24header"
+				text = "EDO_Map_Info_gyh_text"
+				maxWidth = 200
+				format = left
+			}
+
+			instantTextboxType = {
+				name = "EDO_Map_Info_jypj"
+				position = { x = 15 y = 120 }
+				font = "hoi_24header"
+				text = "EDO_Map_Info_jypj_text"
+				maxWidth = 200
+				format = left
+			}
+			
 		}
 	}
 }
