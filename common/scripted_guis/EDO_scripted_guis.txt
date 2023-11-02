@@ -1,0 +1,33 @@
+scripted_gui = {
+	EDO_rbdt_ui_window = {
+		context_type = decision_category
+		window_name = "EDO_rbdt_ui_window"
+
+		triggers = {
+			
+		}
+		properties = {
+			
+		}
+		effects = {
+			EDO_election_states_01_click = {
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+			}
+		}
+	}
+	EDO_Map_GUI_Info_Window = {
+		context_type = player_context
+		window_name = "EDO_Map_GUI_Info_Window"
+
+		visible = {
+			has_country_flag = EDO_Map_GUI_Info_Window_Visible
+		}
+
+		effects = {
+			EDO_Map_GUI_Close_Button_click = {
+				clr_country_flag = EDO_Map_GUI_Info_Window_Visible
+				#clear_variable = EDO_map_selected_state
+			}
+		}
+	}
+}
