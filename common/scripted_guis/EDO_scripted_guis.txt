@@ -1,0 +1,114 @@
+scripted_gui = {
+	EDO_rbdt_ui_window = {
+		context_type = decision_category
+		window_name = "EDO_rbdt_ui_window"
+
+		triggers = {
+			
+		}
+		properties = {
+			
+		}
+		effects = {
+			EDO_election_states_01_click = { #九州南部
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 1221 }
+			}
+			EDO_election_states_02_click = { #长崎
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 826 }
+			}
+			EDO_election_states_03_click = { #九州北部
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 528 }
+			}
+			EDO_election_states_04_click = { #对马
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 798 }
+			}
+			EDO_election_states_05_click = { #山阴
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 1222 }
+			}
+			EDO_election_states_06_click = { #山阳
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 529 }
+			}
+			EDO_election_states_07_click = { #四国
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 530 }
+			}
+			EDO_election_states_08_click = { #兵库
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 1223 }
+			}
+			EDO_election_states_09_click = { #关西
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 531 }
+			}
+			EDO_election_states_10_click = { #东海
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 532 }
+			}
+			EDO_election_states_11_click = { #北陆
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 1224 }
+			}
+			EDO_election_states_12_click = { #甲信静
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 852 }
+			}
+			EDO_election_states_13_click = { #横滨
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 827 }
+			}
+			EDO_election_states_14_click = { #江户
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 282 }
+			}
+			EDO_election_states_15_click = { #关东北部
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 1220 }
+			}
+			EDO_election_states_16_click = { #新潟
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 534 }
+			}
+			EDO_election_states_17_click = { #东北南部
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 533 }
+			}
+			EDO_election_states_18_click = { #东北北部
+				set_country_flag = EDO_Map_GUI_Info_Window_Visible
+				set_variable = { EDO_map_selected_state = 853 }
+			}
+		}
+	}
+	EDO_Map_GUI_Info_Window = {
+		context_type = player_context
+		window_name = "EDO_Map_GUI_Info_Window"
+
+		visible = {
+			has_country_flag = EDO_Map_GUI_Info_Window_Visible
+		}
+
+		effects = {
+			EDO_Map_GUI_Close_Button_click = {
+				clr_country_flag = EDO_Map_GUI_Info_Window_Visible
+				clear_variable = EDO_map_selected_state
+			}
+		}
+
+		properties = {
+			EDO_tdgg_jdt_icon = {
+				frame = EDO_map_selected_state:EDO_tdgg_jd
+			}
+			EDO_gyh_jdt_icon = {
+				frame = EDO_map_selected_state:EDO_gyh_jd
+			}
+			EDO_jypj_jdt_icon = {
+				frame = EDO_map_selected_state:EDO_jypj_jd
+			}
+		}
+	}
+}
