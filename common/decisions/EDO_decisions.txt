@@ -1,5 +1,77 @@
 EDO_decision_l_0 = { #debug
-
+	EDO_decision_1221_1 = {		 #
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0			
+	    }
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			var:EDO_map_selected_state = {
+				set_variable = { gui_display_frame = 1 }
+			}	
+		}
+		remove_effect = {
+		}
+	}
+	EDO_decision_1221_2 = {		 #  
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0			
+	    }
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			var:EDO_map_selected_state = {
+				set_variable = { gui_display_frame = 2 }
+			}	
+		}
+		remove_effect = {
+		}
+	}
+	EDO_decision_1221_3 = {		 # 
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0			
+	    }
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			var:EDO_map_selected_state = {
+				set_variable = { gui_display_frame = 3 }
+			}	
+		}
+		remove_effect = {
+		}
+	}
+	EDO_decision_dsa = {		 #
+		#icon = ger_mefo_bills		
+		cost = 0
+		fire_only_once = no
+		ai_will_do = {
+			factor = 0			
+	    }
+		visible = {
+			is_debug = yes
+		}
+		complete_effect = {  
+			add_popularity = {  #增加支持率
+				ideology = consociationalism 
+				popularity = -0.1 
+			}
+		}
+		remove_effect = {
+		}
+	}
 }
 EDO_decision_l_1_rbxdh = {  #日本现代化 
 	EDO_decision_jjms_mgjs = { #民生建设

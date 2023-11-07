@@ -3,12 +3,6 @@ scripted_gui = {
 		context_type = decision_category
 		window_name = "EDO_rbdt_ui_window"
 
-		triggers = {
-			
-		}
-		properties = {
-			
-		}
 		effects = {
 			EDO_election_states_01_click = { #九州南部
 				set_country_flag = EDO_Map_GUI_Info_Window_Visible
@@ -82,7 +76,29 @@ scripted_gui = {
 				set_country_flag = EDO_Map_GUI_Info_Window_Visible
 				set_variable = { EDO_map_selected_state = 853 }
 			}
+
+			
 		}
+
+		triggers = {
+			EDO_State_1_Outline_visible = {
+				check_variable = { EDO_map_selected_state = 1221 }
+			}
+			EDO_State_2_Outline_visible = {
+				check_variable = { EDO_map_selected_state = 826 }
+			}
+		}
+
+
+		properties = {
+			EDO_election_states_01 = {
+				frame = 1221:gui_display_frame
+			}
+			EDO_election_states_02 = {
+				frame = 826:gui_display_frame
+			}
+		}
+		
 	}
 	EDO_Map_GUI_Info_Window = {
 		context_type = player_context
