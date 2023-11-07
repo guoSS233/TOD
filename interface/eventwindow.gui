@@ -465,7 +465,7 @@ guiTypes = {
 # ## ##  # # #  #      ##   # #  ##  # ##  #   #  
 #  # #   # # #   #     #    # #  #   #  #  #    # 
 #  # ###  # #  ##      ###   #   ### #  #  #  ##  
-
+ #tod特殊新闻事件（aor） 23.11.7修改
 	containerWindowType = {
 		name = "EventWindow_News"
 		position = { x=0 y=0 }	
@@ -487,8 +487,8 @@ guiTypes = {
 			size = { width = 1400 height =752 }
 			Orientation = UPPER_LEFT
 			clipping = no
-			iconType =
-			{
+
+			iconType = { #事件图片（大小可调）
 				name ="event_picture"
 				spriteType = "GFX_news_event_001"
 				position = { x = 159 y = 231 }
@@ -496,23 +496,39 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 			
-			iconType = {
+			iconType = { #背景材质图片（原版）
 				name ="event_picture_overlay"
 				spriteType = "GFX_event_news_pic_overlay"
 				position = { x = 159 y = 231 }
 				Orientation = "UPPER_LEFT"
 				alwaystransparent = yes
-			}			
+			}	
+			
+			iconType = { #上方装饰图片
+				name ="news_picture_header"
+				spriteType = "GFX_custom_header_gonghe_news_header"
+				position = { x = 170 y = 50 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
+
+			iconType = { #左下方装饰图片
+				name ="news_picture_zs"
+				spriteType = "GFX_custom_header_gonghe_news_pic"
+				position = { x = 152 y = 485 }
+				Orientation = "UPPER_LEFT"
+				alwaystransparent = yes
+			}
 			
 			instantTextBoxType = {
 				name = "Title"
-				position = { x = 146 y = 54 }
+				position = { x = 720 y = 234 }
 				font = "hoi4_typewriter22"
 				borderSize = {x = 0 y = 0}
 				text = "Title text here!"	
-				maxWidth = 1400
+				maxWidth = 500
 				maxHeight = 800
-				format = left
+				format = centre
 			}
 			
 			buttonType = {
