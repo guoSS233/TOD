@@ -112,7 +112,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { has_country_flag = SIC_baochizhongli }
 		
-		completion_reward = { news_event = news_event.251 }
+		completion_reward = { news_event = chinese_events_sic.1 }
 	}
 	#重振商业
 	focus = {
@@ -159,6 +159,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			} 
+            add_to_variable = {SIC.gongchang = 2}
 			custom_effect_tooltip = SIC_huifugongye.t
 		}
 	}
@@ -317,7 +318,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { has_country_flag = SIC_zunwangtaojian }
 		
-		completion_reward = { news_event = news_event.252 }
+		completion_reward = { news_event = chinese_events_sic.2 }
 	}
 	#镇压骚乱
 	focus = {
@@ -338,7 +339,7 @@ focus_tree = {
 		
 		completion_reward = { 
 			add_stability = 0.1
-			add_to_variable = { SIC.minzhong = 10 }
+			add_to_variable = { SIC.minzhong = -10 }
 			custom_effect_tooltip = SIC_zhenyasaoluan.t
 		 }
 	}
@@ -527,7 +528,10 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { has_completed_focus = SIC_zhaojigefang }
+		available = { 
+			always = no
+			has_completed_focus = SIC_zhaojigefang 
+		}
 		
 		completion_reward = { add_political_power = 150 }
 	}
@@ -593,6 +597,7 @@ focus_tree = {
 		id = SIC_wenguwusizang
 		icon = GFX_SIC_huangdiwansui
 		prerequisite = { focus = SIC_duiwaijiaoliu }
+		allow_branch = {always = no}
 		x = 12
 		y = 2
 		
@@ -743,6 +748,7 @@ focus_tree = {
 	focus = {
 		id = SIC_kuodajunxiao
 		icon = GFX_SIC_kuodajunxiao
+		allow_branch = {always = no}
 		x = 48
 		y = 1
 		
