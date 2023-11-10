@@ -1,8 +1,12 @@
 SIC_chuanneijushi_categories = {
+	#社会情绪
 	SIC_shehuiqingxu = { 
 		allowed = { tag = SIC } 
-		available = {check_variable = {SIC.gongye < 40}}
-		activation = {check_variable = {SIC.gongye > 39}}
+		available = {check_variable = {SIC.minzhong < 19}}
+		activation = {
+			check_variable = {SIC.minzhong > 19}
+			check_variable = {SIC.minzhong < 100}
+		}
 		is_good = no
 		days_mission_timeout = 30
 		days_re_enable = 0
@@ -12,20 +16,53 @@ SIC_chuanneijushi_categories = {
 				limit = {check_variable = {SIC.gongye > 79}}
 				add_to_variable = { SIC.minzhong = 20 }
 				add_to_variable = { SIC.gongye = 10 }
+				add_ideas = SIC_huimiedechanyelian
+				remove_ideas = SIC_bengkuidechanyelian
 			}else_if = {
 				limit = {check_variable = {SIC.gongye > 59}}
 				add_to_variable = { SIC.minzhong = 10 }
 				add_to_variable = { SIC.gongye = 5 }
+				add_ideas = SIC_bengkuidechanyelian
+				remove_ideas = SIC_huimiedechanyelian
+				remove_ideas = SIC_huifuzhongdechanyelian
 			}else_if = {
 				limit = {check_variable = {SIC.gongye > 39}}
 				add_to_variable = { SIC.minzhong = 5 }
+				add_ideas = SIC_huifuzhongdechanyelian
+				remove_ideas = SIC_bengkuidechanyelian
+				remove_ideas = SIC_wendingdechanyelian
+			}else_if = {
+				add_ideas = SIC_wendingdechanyelian
+				remove_ideas = SIC_huifuzhongdechanyelian
 			}
 			if = {
+				limit = {check_variable = {SIC.minzhong > 99}}
+				SCG = {transfer_state = 831}
+				declare_war_on = { target = SCG type = annex_everything }
+			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 79}}
 				add_to_variable = { SIC.gongye = 10 }
+				add_ideas = SIC_wufawutian
+				remove_ideas = SIC_jinrukonghuang
 			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 59}}
 				add_to_variable = { SIC.gongye = 5 }
+				add_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_wufawutian
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 39}}
+				add_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_liuyoubuman
+				remove_ideas = SIC_jinrukonghuang
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 19}}
+				add_ideas = SIC_liuyoubuman
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_wendingdequnzong
+			}else_if = {
+				add_ideas = SIC_wendingdequnzong
+				remove_ideas = SIC_liuyoubuman
 			}
 		}
 		complete_effect = {
@@ -34,19 +71,15 @@ SIC_chuanneijushi_categories = {
 			add_war_support = 0.1
 		}
 	}
+	#补贴工厂
 	SIC_butiegongchang = {
 
 		icon = ger_military_buildup
 		
-		visible = {
-			always = yes
-		}
-		allowed = {
-			consumer_goods_factor < 0.9
-			tag = SIC
-		}
+		visible = {always = yes}
+		available = {num_of_available_civilian_factories > 4}
 		modifier = {
-			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
 			industrial_capacity_factory = 0.1
 		}
 		
@@ -56,21 +89,39 @@ SIC_chuanneijushi_categories = {
 		remove_effect = {
 			add_to_variable = { SIC.gongye = -5 }
 			custom_effect_tooltip = SIC_butiegongchang.t
-		 }
+			if = {
+				limit = {check_variable = {SIC.minzhong > 79}}
+				add_ideas = SIC_wufawutian
+				remove_ideas = SIC_jinrukonghuang
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 59}}
+				add_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_wufawutian
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 39}}
+				add_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_liuyoubuman
+				remove_ideas = SIC_jinrukonghuang
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 19}}
+				add_ideas = SIC_liuyoubuman
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_wendingdequnzong
+			}else_if = {
+				add_ideas = SIC_wendingdequnzong
+				remove_ideas = SIC_liuyoubuman
+			}
 	}
+	#安抚民众
 	SIC_anfuminzhong = {
 
 		icon = ger_military_buildup
 		
-		visible = {
-			always = yes
-		}
-		allowed = {
-			consumer_goods_factor < 0.9
-			tag = SIC
-		}
+		visible = {always = yes}
+		available = {num_of_available_civilian_factories > 4}
 		modifier = {
-			consumer_goods_factor = 0.1
+			civilian_factory_use = 5
 			stability_factor = 0.1
 		}
 		
@@ -79,22 +130,41 @@ SIC_chuanneijushi_categories = {
 		remove_effect = { 
 			add_to_variable = { SIC.minzhong = -5 }
 			custom_effect_tooltip = SIC_anfuminzhong.t
+			if = {
+				limit = {check_variable = {SIC.minzhong > 79}}
+				add_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_wufawutian
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 59}}
+				add_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_liuyoubuman
+				remove_ideas = SIC_jinrukonghuang
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 39}}
+				add_ideas = SIC_liuyoubuman
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_wendingdequnzong
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 19}}
+				add_ideas = SIC_wendingdequnzong
+				remove_ideas = SIC_liuyoubuman
+			}
 		}
 	}
+	#重建产业链
 	SIC_chongjianchanyelian = {
 
 		icon = ger_military_buildup
 		
-		visible = {
-			has_completed_focus = SIC_huifugongye
-			always = yes
+		visible = {has_completed_focus = SIC_huifugongye}
+		available = {
+			has_political_power > 0
+			num_of_available_civilian_factories > 4
 		}
-		allowed = {
-			num_of_civilian_factories_available_for_projects > 9
-			tag = SIC
-		}
-		modifier = {
+		modifier = { 
 			civilian_factory_use = 10
+			political_power_cost = 0.1
 		}
 		
 		days_remove = 30
@@ -102,6 +172,24 @@ SIC_chuanneijushi_categories = {
 		remove_effect = { 
 			add_to_variable = { SIC.gongye = -10 }
 			custom_effect_tooltip = SIC_chongjianchanyelian.t
+			if = {
+				limit = {check_variable = {SIC.gongye > 79}}
+				add_ideas = SIC_huimiedechanyelian
+				remove_ideas = SIC_bengkuidechanyelian
+			}else_if = {
+				limit = {check_variable = {SIC.gongye > 59}}
+				add_ideas = SIC_bengkuidechanyelian
+				remove_ideas = SIC_huimiedechanyelian
+				remove_ideas = SIC_huifuzhongdechanyelian
+			}else_if = {
+				limit = {check_variable = {SIC.gongye > 39}}
+				add_ideas = SIC_huifuzhongdechanyelian
+				remove_ideas = SIC_bengkuidechanyelian
+				remove_ideas = SIC_wendingdechanyelian
+			}else_if = {
+				add_ideas = SIC_wendingdechanyelian
+				remove_ideas = SIC_huifuzhongdechanyelian
+			}
 		}
 	}
 }
