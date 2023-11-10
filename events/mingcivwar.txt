@@ -24,7 +24,7 @@ country_event = { # 是否筹建关东司
 	    hidden_effect = {
 	        country_event = {
 				id = mingcivwar.2#红军力量增长分支
-				days = 28
+				days = 32
 			}
 	    }
 	}
@@ -343,17 +343,1026 @@ country_event = {
 	}
 }
 
+###以上为老版本的东西，不用管###
 
+#中传邸报上的争论 1936.1.8
+country_event = {
+	id = mingcivwar.21
+	title = mingcivwar.21.t
+	desc = mingcivwar.21.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	option = { name = mingcivwar.21.a}
+}
+#御前会议1 1936.2.8
+country_event = {
+	id = mingcivwar.22
+	title = mingcivwar.22.t
+	desc = mingcivwar.22.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.22.a
+		country_event = { id = mingcivwar.23 random = 1 }
+	}
+}
+#御前会议2
+country_event = {
+	id = mingcivwar.23
+	title = mingcivwar.23.t
+	desc = mingcivwar.23.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.23.a
+		country_event = { id = mingcivwar.24 random = 1 }
+		complete_national_focus = MNG_check_our_weapon
+	}
+}
+#御前会议3
+country_event = {
+	id = mingcivwar.24
+	title = mingcivwar.24.t
+	desc = mingcivwar.24.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.24.a
+		country_event = { id = mingcivwar.25 random = 10 }
+		complete_national_focus = MNG_check_our_weapon
+	}
+}
+#家宴之后
+country_event = {
+	id = mingcivwar.25
+	title = mingcivwar.25.t
+	desc = mingcivwar.25.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.25.a }
+}
+#顺天日报 1936.2.15
+news_event = {
+	id = mingcivwar.26
+	title = mingcivwar.26.t
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	desc = {text = mingcivwar.26.d}
+	trigger = {tag = MNG}
+	option = {name = mingcivwar.26.a}
+}
+#锦衣卫的报告 1936.4.1
+country_event = {
+	id = mingcivwar.27
+	title = mingcivwar.27.t
+	desc = mingcivwar.27.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.27.a 
+		complete_national_focus = MNG_stop_the_army
+	}
+}
 
-
-
-
-
-
-
-
-
-
+###太子出巡
+#东巡出发 1936.6.1
+country_event = {
+	id = mingcivwar.28
+	title = mingcivwar.28.t
+	desc = mingcivwar.28.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 	name = mingcivwar.28.a }
+}
+#天津卫 1936.6.2
+country_event = {
+	id = mingcivwar.29
+	title = mingcivwar.29.t
+	desc = mingcivwar.29.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.32.a
+		country_event = { id = mingcivwar.32 random = 12 }
+	}
+}
+#辽阳工业区 1936.6.12
+country_event = {
+	id = mingcivwar.30
+	title = mingcivwar.30.t
+	desc = mingcivwar.30.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.30.a}
+}
+#镇东府刺杀 1936.6.30
+country_event = {
+	id = mingcivwar.31
+	title = mingcivwar.31.t
+	desc = mingcivwar.31.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.31.a }
+}
+#霞仪开展大规模清洗活动 1936.7.10
+country_event = {
+	id = mingcivwar.32
+	title = mingcivwar.32.t
+	desc = mingcivwar.32.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.32.a }
+}
+#南巡出发 1936.9.1
+country_event = {
+	id = mingcivwar.33
+	title = mingcivwar.33.t
+	desc = mingcivwar.33.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.33.a }
+}
+#正定（石家庄）1936.9.13
+country_event = {
+	id = mingcivwar.34
+	title = mingcivwar.34.t
+	desc = mingcivwar.34.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.34.a }
+}
+#曲阜 1936.9.21
+country_event = {
+	id = mingcivwar.35
+	title = mingcivwar.35.t
+	desc = mingcivwar.35.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 	name = mingcivwar.35.a }
+}
+#徐州请愿 1936.9.28
+country_event = {
+	id = mingcivwar.36
+	title = mingcivwar.36.t
+	desc = mingcivwar.36.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.36.a }
+}
+#凤阳祭祖 1936.10.2
+country_event = {
+	id = mingcivwar.37
+	title = mingcivwar.37.t
+	desc = mingcivwar.37.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.37.a }
+}
+#应天巡礼 1936.10.11
+country_event = {
+	id = mingcivwar.38
+	title = mingcivwar.38.t
+	desc = mingcivwar.38.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.38.a }
+}
+#太仓演讲 1936.10.17
+country_event = {
+	id = mingcivwar.39
+	title = mingcivwar.39.t
+	desc = mingcivwar.39.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.39.a }
+}
+#杭州故事 1936.10.24
+country_event = {
+	id = mingcivwar.40
+	title = mingcivwar.40.t
+	desc = mingcivwar.40.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.40.a }
+}
+#泉州老将 1936.11.4
+country_event = {
+	id = mingcivwar.41
+	title = mingcivwar.41.t
+	desc = mingcivwar.41.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.41.a }
+}
+#广交所 1936.11.13
+country_event = {
+	id = mingcivwar.42
+	title = mingcivwar.42.t
+	desc = mingcivwar.42.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.42.a }
+}
+#武汉三镇 1936.11.23
+country_event = {
+	id = mingcivwar.43
+	title = mingcivwar.43.t
+	desc = mingcivwar.43.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.43.a }
+}
+#四川饥荒 1936.12.2
+country_event = {
+	id = mingcivwar.44
+	title = mingcivwar.44.t
+	desc = mingcivwar.44.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.44.a }
+}
+#西安视察 1936.12.12
+country_event = {
+	id = mingcivwar.45
+	title = mingcivwar.45.t
+	desc = mingcivwar.45.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.45.a }
+}
+#太子遇刺 1936.12.20
+country_event = {
+	id = mingcivwar.46
+	title = mingcivwar.46.t
+	desc = mingcivwar.46.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.46.a 
+		mark_focus_tree_layout_dirty = yes
+		set_country_flag = MNG_taiziyuci
+		country_event = { id = mingcivwar.47 random = 2 }
+	}
+}
+###
+#搜捕通知 1936.12.20
+country_event = {
+	id = mingcivwar.47
+	title = mingcivwar.47.t
+	desc = mingcivwar.47.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.47.a
+		complete_national_focus = MNG_qidongjieyan
+	}
+}
+#锦衣卫审讯报告
+country_event = {
+	id = mingcivwar.48
+	title = mingcivwar.48.t
+	desc = mingcivwar.48.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.48.a }
+	option = { 
+		name = mingcivwar.48.b
+		country_event = { id = mingcivwar.49 }
+	}
+	option = { 
+		name = mingcivwar.48.c
+		country_event = { id = mingcivwar.50 }
+	}
+}
+#职员审讯记录
+country_event = {
+	id = mingcivwar.49
+	title = mingcivwar.49.t
+	desc = mingcivwar.49.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.49.a }
+	option = { 
+		name = mingcivwar.49.b
+		country_event = { id = mingcivwar.52 }
+	}
+}
+#局长审讯记录
+country_event = {
+	id = mingcivwar.50
+	title = mingcivwar.50.t
+	desc = mingcivwar.50.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.50.a }
+	option = { 
+		name = mingcivwar.50.b
+		country_event = { id = mingcivwar.51 }
+	}
+}
+#职员审讯记录
+country_event = {
+	id = mingcivwar.51
+	title = mingcivwar.51.t
+	desc = mingcivwar.51.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.51.a }
+}
+#局长审讯记录
+country_event = {
+	id = mingcivwar.52
+	title = mingcivwar.52.t
+	desc = mingcivwar.52.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.52.a }
+}
+#转载纽约时报
+news_event = {
+	id = mingcivwar.53
+	title = mingcivwar.53.t
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	desc = {text = mingcivwar.53.d}
+	option = {name = mingcivwar.53.a}
+}
+#老陈的故事1
+country_event = {
+	id = mingcivwar.54
+	title = mingcivwar.54.t
+	desc = mingcivwar.54.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.54.a
+		country_event = { id = mingcivwar.55 }
+	}
+}
+#老陈的故事2
+country_event = {
+	id = mingcivwar.55
+	title = mingcivwar.55.t
+	desc = mingcivwar.55.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.55.a
+		country_event = { id = mingcivwar.56 }
+	}
+}
+#老陈的故事3
+country_event = {
+	id = mingcivwar.56
+	title = mingcivwar.56.t
+	desc = mingcivwar.56.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.56.a }
+}
+#太孙监国 1937.3.1
+country_event = {
+	id = mingcivwar.57
+	title = mingcivwar.57.t
+	desc = mingcivwar.57.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.57.a 
+		complete_national_focus = MNG_kaolvjichengren
+	}
+	option = { 
+		name = mingcivwar.57.b 
+		complete_national_focus = MNG_kaolvjichengren
+	}
+}
+#改革启动
+country_event = {
+	id = mingcivwar.58
+	title = mingcivwar.58.t
+	desc = mingcivwar.58.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.58.a }
+}
+#咨议院会议上的争论
+country_event = {
+	id = mingcivwar.59
+	title = mingcivwar.59.t
+	desc = mingcivwar.59.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.59.a }
+}
+#顺天府实业局通知
+country_event = {
+	id = mingcivwar.60
+	title = mingcivwar.60.t
+	desc = mingcivwar.60.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.60.a }
+	option = { name = mingcivwar.60.b }
+}
+#天朝经济周报
+country_event = {
+	id = mingcivwar.61
+	title = mingcivwar.61.t
+	desc = mingcivwar.61.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.61.a }
+}
+#出镇西北，筹备换防 1937.7.19
+country_event = {
+	id = mingcivwar.62
+	title = mingcivwar.62.t
+	desc = mingcivwar.62.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.62.a 
+		complete_national_focus = MNG_youbeiwuhuan
+	}
+}
+#卫国公府中的争论
+country_event = {
+	id = mingcivwar.63
+	title = mingcivwar.63.t
+	desc = mingcivwar.63.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.63.a }
+}
+#皇陵兵变系列事件
+#贼喊抓贼 1937.8.18
+country_event = {
+	id = mingcivwar.64
+	title = mingcivwar.64.t
+	desc = mingcivwar.64.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.64.a }
+}
+#少帝赴皇陵 1937.8.21
+country_event = {
+	id = mingcivwar.65
+	title = mingcivwar.65.t
+	desc = mingcivwar.65.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.65.a
+		country_event = { id = mingcivwar.66 random = 1 }
+	}
+}
+#深夜惊梦 1937.8.21
+country_event = {
+	id = mingcivwar.66
+	title = mingcivwar.66.t
+	desc = mingcivwar.66.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.66.a
+		country_event = { id = mingcivwar.67 random = 1 }
+	}
+}
+#瞒天过海 1937.8.21
+country_event = {
+	id = mingcivwar.67
+	title = mingcivwar.67.t
+	desc = mingcivwar.67.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.67.a
+		country_event = { id = mingcivwar.68 random = 1 }
+	}
+}
+#皇陵兵变过程
+#勋贵，祭肉，雨
+country_event = {
+	id = mingcivwar.68
+	title = mingcivwar.68.t
+	desc = mingcivwar.68.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.68.a
+		country_event = { id = mingcivwar.67 random = 1 }
+	}
+}
+#顺天的雨
+country_event = {
+	id = mingcivwar.69
+	title = mingcivwar.69.t
+	desc = mingcivwar.69.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.69.a
+		country_event = { id = mingcivwar.70 random = 1 }
+	}
+}
+#白陵蓝调
+country_event = {
+	id = mingcivwar.70
+	title = mingcivwar.70.t
+	desc = mingcivwar.70.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.70.a
+		country_event = { id = mingcivwar.71 random = 1 }
+	}
+}
+#水晶
+country_event = {
+	id = mingcivwar.71
+	title = mingcivwar.71.t
+	desc = mingcivwar.71.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.71.a }
+	option = { name = mingcivwar.71.b }
+	option = { 
+		name = mingcivwar.71.c
+		country_event = { id = mingcivwar.72 random = 1 }
+	}
+}
+#抉择
+country_event = {
+	id = mingcivwar.72
+	title = mingcivwar.72.t
+	desc = mingcivwar.72.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.72.a }
+	option = { 
+		name = mingcivwar.72.b
+		country_event = { id = mingcivwar.73 random = 1 }
+	}
+}
+#抵达
+country_event = {
+	id = mingcivwar.73
+	title = mingcivwar.73.t
+	desc = mingcivwar.73.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.73.a
+		country_event = { id = mingcivwar.74 }
+	}
+}
+#忠义
+country_event = {
+	id = mingcivwar.74
+	title = mingcivwar.74.t
+	desc = mingcivwar.74.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.74.a }
+}
+#大明分裂
+#设立关东招抚司 1937.1.1
+country_event = {
+	id = mingcivwar.75
+	title = mingcivwar.75.t
+	desc = mingcivwar.75.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.75.a
+		MNG_release_GPS = yes
+		MNG_release_SRC = yes
+		complete_national_focus = MNG_qingjiaotongchangonghui
+	}
+	option = { 
+		name = mingcivwar.75.b
+		MNG_release_GPS = yes
+		MNG_release_SRC = yes
+		change_tag_from = GPS	
+	}
+}
+#设立华南招抚司(大同会) 1937.2.1
+country_event = {
+	id = mingcivwar.76
+	title = mingcivwar.76.t
+	desc = mingcivwar.76.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.76.a
+		complete_national_focus = 
+		MNG_release_ROC = yes
+	}
+	option = { 
+		name = mingcivwar.76.b
+		change_tag_from = ROC	
+		MNG_release_ROC = yes
+		complete_national_focus = MNG_soubudatonghui
+	}
+}
+#西北都督府成立 1937.8.22
+country_event = {
+	id = mingcivwar.77
+	title = mingcivwar.77.t
+	desc = mingcivwar.77.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.77.a
+		change_tag_from = XBJ
+		XBJ = {
+			hidden_effect = {
+				add_state_core = 744
+				transfer_state = 744
+				add_state_core = 618
+				transfer_state = 618
+				add_state_core = 760
+				transfer_state = 760
+				add_state_core = 1193
+				transfer_state = 1193
+				add_state_core = 844
+				transfer_state = 844
+				add_state_core = 1128
+				transfer_state = 1128
+				add_state_core = 759
+				transfer_state = 759
+				add_state_core = 1130
+				transfer_state = 1130
+				add_state_core = 617
+				transfer_state = 617
+				add_state_core = 434
+				transfer_state = 434
+				add_state_core = 732
+				transfer_state = 732
+				add_state_core = 1209
+				transfer_state = 1209
+				add_state_core = 1113
+				transfer_state = 1113
+				add_state_core = 756
+				transfer_state = 756
+				add_state_core = 881
+				transfer_state = 881
+				add_state_core = 616
+				transfer_state = 616
+				add_state_core = 843
+				transfer_state = 843
+				add_state_core = 754
+				transfer_state = 754
+				add_state_core = 755
+				transfer_state = 755
+				add_state_core = 1210
+				transfer_state = 1210
+				add_state_core = 283
+				transfer_state = 283
+				add_state_core = 753
+				transfer_state = 753
+				add_state_core = 1116
+				transfer_state = 1116
+				add_state_core = 842
+				transfer_state = 842
+				add_state_core = 621
+				transfer_state = 621
+				add_state_core = 746
+				transfer_state = 746
+				add_state_core = 622
+				transfer_state = 622
+				add_state_core = 619
+				transfer_state = 619
+				add_state_core = 287
+				transfer_state = 287
+				add_state_core = 1129
+				transfer_state = 1129
+				transfer_state = 604
+				add_state_core = 604
+				set_capital = {state = 744 }
+				load_oob = XBJ_1937
+			}
+		}
+	}
+	option = { 
+		name = mingcivwar.77.b
+		XBJ = {
+			hidden_effect = {
+				add_state_core = 744
+				transfer_state = 744
+				add_state_core = 618
+				transfer_state = 618
+				add_state_core = 760
+				transfer_state = 760
+				add_state_core = 1193
+				transfer_state = 1193
+				add_state_core = 844
+				transfer_state = 844
+				add_state_core = 1128
+				transfer_state = 1128
+				add_state_core = 759
+				transfer_state = 759
+				add_state_core = 1130
+				transfer_state = 1130
+				add_state_core = 617
+				transfer_state = 617
+				add_state_core = 434
+				transfer_state = 434
+				add_state_core = 732
+				transfer_state = 732
+				add_state_core = 1209
+				transfer_state = 1209
+				add_state_core = 1113
+				transfer_state = 1113
+				add_state_core = 756
+				transfer_state = 756
+				add_state_core = 881
+				transfer_state = 881
+				add_state_core = 616
+				transfer_state = 616
+				add_state_core = 843
+				transfer_state = 843
+				add_state_core = 754
+				transfer_state = 754
+				add_state_core = 755
+				transfer_state = 755
+				add_state_core = 1210
+				transfer_state = 1210
+				add_state_core = 283
+				transfer_state = 283
+				add_state_core = 753
+				transfer_state = 753
+				add_state_core = 1116
+				transfer_state = 1116
+				add_state_core = 842
+				transfer_state = 842
+				add_state_core = 621
+				transfer_state = 621
+				add_state_core = 746
+				transfer_state = 746
+				add_state_core = 622
+				transfer_state = 622
+				add_state_core = 619
+				transfer_state = 619
+				add_state_core = 287
+				transfer_state = 287
+				add_state_core = 1129
+				transfer_state = 1129
+				transfer_state = 604
+				add_state_core = 604
+				set_capital = { state = 744 }
+				load_oob = XBJ_1937
+			}
+		}
+	}
+}
+#七省联合自保 1937.8.24
+country_event = {
+	id = mingcivwar.78
+	title = mingcivwar.78.t
+	desc = mingcivwar.78.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.78.a
+		GOS = {
+			hidden_effect = {
+				add_state_core = 613
+				transfer_state = 613
+				add_state_core = 808
+				transfer_state = 808
+				add_state_core = 824
+				transfer_state = 824
+				add_state_core = 1109
+				transfer_state = 1109
+				add_state_core = 823
+				transfer_state = 823
+				add_state_core = 606
+				transfer_state = 606
+				add_state_core = 825
+				transfer_state = 825
+				add_state_core = 749
+				transfer_state = 749
+				add_state_core = 620
+				transfer_state = 620
+				add_state_core = 1132
+				transfer_state = 1132
+				add_state_core = 602
+				transfer_state = 602
+				add_state_core = 596
+				transfer_state = 596
+				add_state_core = 1119
+				transfer_state = 1119
+				add_state_core = 750
+				transfer_state = 750
+				add_state_core = 822
+				transfer_state = 822
+				add_state_core = 806
+				transfer_state = 806
+				add_state_core = 807
+				transfer_state = 807
+				add_state_core = 1108
+				transfer_state = 1108
+				add_state_core = 598
+				transfer_state = 598
+				add_state_core = 600
+				transfer_state = 600
+				add_state_core = 816
+				transfer_state = 816
+				add_state_core = 1110
+				transfer_state = 1110
+				add_state_core = 815
+				transfer_state = 815
+				add_state_core = 812
+				transfer_state = 812
+				add_state_core = 811
+				transfer_state=811
+				set_capital = { state = 613 }
+				load_oob = GOS_1937
+			}
+		}
+	}
+	option = { 
+		name = mingcivwar.78.b
+		change_tag_from = GOS	
+		GOS = {
+			hidden_effect = {
+				add_state_core = 613
+				transfer_state = 613
+				add_state_core = 808
+				transfer_state = 808
+				add_state_core = 824
+				transfer_state = 824
+				add_state_core = 1109
+				transfer_state = 1109
+				add_state_core = 823
+				transfer_state = 823
+				add_state_core = 606
+				transfer_state = 606
+				add_state_core = 825
+				transfer_state = 825
+				add_state_core = 749
+				transfer_state = 749
+				add_state_core = 620
+				transfer_state = 620
+				add_state_core = 1132
+				transfer_state = 1132
+				add_state_core = 602
+				transfer_state = 602
+				add_state_core = 596
+				transfer_state = 596
+				add_state_core = 1119
+				transfer_state = 1119
+				add_state_core = 750
+				transfer_state = 750
+				add_state_core = 822
+				transfer_state = 822
+				add_state_core = 806
+				transfer_state = 806
+				add_state_core = 807
+				transfer_state = 807
+				add_state_core = 1108
+				transfer_state = 1108
+				add_state_core = 598
+				transfer_state = 598
+				add_state_core = 600
+				transfer_state = 600
+				add_state_core = 816
+				transfer_state = 816
+				add_state_core = 1110
+				transfer_state = 1110
+				add_state_core = 815
+				transfer_state = 815
+				add_state_core = 812
+				transfer_state = 812
+				add_state_core = 811
+				transfer_state=811
+				set_capital = { state = 613 }
+				load_oob = GOS_1937
+			}
+		}
+	}
+}
+#西南变局 1936.8.25
+country_event = {
+	id = mingcivwar.79
+	title = mingcivwar.79.t
+	desc = mingcivwar.79.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.79.a
+		complete_national_focus = 
+		MNG_release_XIN = yes
+		SIC = {
+			hidden_effect = {
+				add_state_core = 751
+				transfer_state = 751
+				add_state_core = 1107
+				transfer_state = 1107
+				add_state_core = 752
+				transfer_state = 752
+				add_state_core = 605
+				transfer_state = 605
+				add_state_core = 830
+				transfer_state = 830
+				add_state_core = 832
+				transfer_state = 832
+				add_state_core = 831
+				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
+				set_capital = { state = 831 }
+				load_oob = SIC_1937
+			}
+		}
+	}
+	option = { 
+		name = mingcivwar.79.b
+		change_tag_from = XIN
+		MNG_release_XIN = yes
+		SIC = {
+			hidden_effect = {
+				add_state_core = 751
+				transfer_state = 751
+				add_state_core = 1107
+				transfer_state = 1107
+				add_state_core = 752
+				transfer_state = 752
+				add_state_core = 605
+				transfer_state = 605
+				add_state_core = 830
+				transfer_state = 830
+				add_state_core = 832
+				transfer_state = 832
+				add_state_core = 831
+				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
+				set_capital = { state = 831 }
+				load_oob = SIC_1937
+			}
+		}
+	}
+	option = { 
+		name = mingcivwar.79.c
+		change_tag_from = SIC
+		MNG_release_XIN = yes
+		SIC = {
+			hidden_effect = {
+				add_state_core = 751
+				transfer_state = 751
+				add_state_core = 1107
+				transfer_state = 1107
+				add_state_core = 752
+				transfer_state = 752
+				add_state_core = 605
+				transfer_state = 605
+				add_state_core = 830
+				transfer_state = 830
+				add_state_core = 832
+				transfer_state = 832
+				add_state_core = 831
+				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
+				set_capital = { state = 831 }
+				load_oob = SIC_1937
+			}
+		}
+	}
+}
+#漠北中立 1937.8.26
+country_event = {
+	id = mingcivwar.80
+	title = mingcivwar.80.t
+	desc = mingcivwar.80.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.80.a
+		change_tag_from = MOB
+		MNG_release_MOB = yes
+	}
+	option = { 
+		name = mingcivwar.80.b
+		MNG_release_MOB = yes
+	}
+}
+#海外自治 1937.8.27
+country_event = {
+	id = mingcivwar.81
+	title = mingcivwar.81.t
+	desc = mingcivwar.81.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.81.a
+	}
+	option = { 
+		name = mingcivwar.81.b
+	}
+	option = { 
+		name = mingcivwar.81.c
+	}
+	option = { 
+		name = mingcivwar.81.d
+	}
+}
+#新皇登基 1937.8.28
+country_event = {
+	id = mingcivwar.82
+	title = mingcivwar.82.t
+	desc = mingcivwar.82.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.82.a
+		change_tag_from = STG
+		MNG_release_STG = yes
+	}
+}
 
 
 

@@ -1,4 +1,5 @@
 add_namespace = TODSIC
+add_namespace = chinese_events_sic
 #发生甚么事了？
 country_event = {
 	id = TODSIC.1
@@ -41,4 +42,46 @@ country_event = {
 		name = TODSIC.3.b
 		set_country_flag = SIC_zunwangtaojian
 	}
+}
+#四川宣布中立
+news_event = {
+	id = chinese_events_sic.1
+	title = chinese_events_sic.1.t
+	picture = GFX_report_event_chinese_soldiers_fighting
+	desc = {text = chinese_events_sic.1.d}
+
+    trigger = {
+        tag = SIC
+		tag = ROC
+		tag = XIN
+		tag = XBJ
+		tag = STG
+		tag = MOB
+		tag = SRC
+		tag = GOS
+		tag = GPS
+    }
+
+	option = {name = chinese_events_sic.1.a}
+}
+#四川宣布勤王
+news_event = {
+	id = chinese_events_sic.2
+	title = chinese_events_sic.2.t
+	picture = GFX_report_event_chinese_soldiers_fighting
+	desc = {text = chinese_events_sic.2.d}
+
+    trigger = {
+        tag = SIC
+		tag = ROC
+		tag = XIN
+		tag = XBJ
+		tag = STG
+		tag = MOB
+		tag = SRC
+		tag = GOS
+		tag = GPS
+    }
+
+	option = {name = chinese_events_sic.2.a}
 }
