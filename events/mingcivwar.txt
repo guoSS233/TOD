@@ -1,350 +1,5 @@
-###########################
-# 关于在内战中的各种一定会发生的事件的统合
-#单独小事件应添加到各势力文件内
-###########################
 
 add_namespace = mingcivwar
-
-country_event = { # 是否筹建关东司
-	id = mingcivwar.1
-	title = mingcivwar.1.t
-	desc = mingcivwar.1.d
-	picture = GFX_report_event_chinese_soldiers_fighting 
-	fire_only_once = yes
-	trigger = {
-		tag = MNG
-		date > 1937.3.02
-	}
-	mean_time_to_happen = {days = 0}
-    option = {
-		name = mingcivwar.1.a#想都别想
-		ai_chance = {
-			factor = 50
-		}
-	    hidden_effect = {
-	        country_event = {
-				id = mingcivwar.2#红军力量增长分支
-				days = 32
-			}
-	    }
-	}
-	
-	option = {
-		name = mingcivwar.1.b#不能再犹豫了，必须重拳出击
-		ai_chance = {factor = 50}
-		hidden_effect = {
-	        country_event = {
-				id = mingcivwar.3#跳到选择扮演关东司
-				days = 3
-			} 
-	    }
-		
-		
-	}
-}
-
-country_event = { # 红军力量增加，在内战开始时有额外的部队和更多控制区以及人力
-	id = mingcivwar.2
-	title = mingcivwar.2.t
-	desc = mingcivwar.2.d
-	picture = GFX_report_event_chinese_soldiers_fighting 
-    is_triggered_only = yes
-    option = {
-		name = mingcivwar.2.a#他妈的赤匪
-		trigger = {tag = MNG}
-		ai_chance = {factor = 100}
-	    hidden_effect = {
-			add_manpower = -5000
-			add_political_power = -10
-		    add_stability = -0.05
-	    }
-	}
-}
-
-country_event = { # 好样的关东司
-	id = mingcivwar.3
-	title = mingcivwar.3.t
-	desc = mingcivwar.3.d
-	picture = GFX_report_event_chinese_soldiers_fighting 
-    is_triggered_only = yes
-	trigger = {tag = MNG}
-    option = {
-		name = mingcivwar.3.a#报效朝廷就在今天
-		ai_chance = {factor = 100}
-	    hidden_effect = {add_stability = 0.01 }
-	}
-	option = {
-		name = mingcivwar.3.b#亲 自 执 行
-		ai_chance = {factor = 0}
-	    hidden_effect = { add_stability = 0.01 }
-		GPS = {change_tag_from = MNG}
-		
-	}
-}
-
-country_event = { # 筹备工作第二步，向关东司派遣后备部队和运输物资
-	id = mingcivwar.4
-	title = mingcivwar.4.t
-	desc = mingcivwar.4.d
-	picture = GFX_report_event_chinese_soldiers_fighting 
-    is_triggered_only = yes
-    option = {
-		name = mingcivwar.4.a
-		ai_chance = {factor = 100}
-		trigger = {tag = MNG}
-	    hidden_effect = {
-			add_country_flag = MNG_wuzi
-	    }
-	}
-}
-
-country_event = { # 筹备工作第三步，封锁道路
-	id = mingcivwar.5
-	title = mingcivwar.5.t
-	desc = mingcivwar.5.d
-	picture = GFX_report_event_chinese_soldiers_fighting 
-    is_triggered_only = yes
-	trigger = {tag = MNG}
-    option = {
-		name = mingcivwar.5.a
-		ai_chance = {factor = 100}
-	    hidden_effect = {
-	        set_country_flag = jinzhou_line_ready
-			#锦州防线地带添加堡垒
-	    }
-	}
-}
-
-country_event = { # 太子开始南巡，1936.11.26
-	id = mingcivwar.6
-	title = mingcivwar.6.t
-	desc = mingcivwar.6.d
-	picture = GFX_report_event_chinese_soldiers_fighting 
-	fire_only_once = yes
-	trigger = {
-		tag = MNG
-		date > 1936.11.25
-	}
-	mean_time_to_happen = {days = 1}
-    option = {
-		name = mingcivwar.6.a#
-		ai_chance = {factor = 100}
-	    hidden_effect = {
-	        country_event = {
-				id = mingcivwar.7
-				days = 10
-			}
-	    }
-	}
-}
-
-country_event = { # 太子到达应天府开始巡视，1936.12.06
-	id = mingcivwar.7
-	title = mingcivwar.7.t
-	desc = mingcivwar.7.d
-	picture = GFX_report_event_chinese_soldiers_fighting 
-    is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {
-		tag = MNG
-		date > 1936.12.05
-	}
-    option = {
-		name = mingcivwar.7.a
-		ai_chance = {
-			factor = 100
-		}
-	    hidden_effect = {
-	        country_event = {
-				id = mingcivwar.8
-				days = 0
-				
-			} 
-			
-	    }
-	}
-}
-
-country_event = { # 太子遇刺 1936.12.20
-	id = mingcivwar.8
-	title = mingcivwar.8.t
-	desc = mingcivwar.8.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-    is_triggered_only = yes
-	fire_only_once = yes
-	trigger = {tag = MNG}
-    option = {
-		name = mingcivwar.8.a
-		ai_chance = {factor = 100}
-	    hidden_effect = {news_event = { id = mingcivwar.666 days = 1 } }
-	}
-}
-#昌德皇帝病重
-country_event = {
-	id = mingcivwar.9
-	title = mingcivwar.9.t
-	desc = mingcivwar.9.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-	is_triggered_only = YES
-	mean_time_to_happen = {days = 0}
-	trigger = {
-		tag = MNG 
-		date > 1936.1.1 
-	}
-	
-	option = { 
-		name = mingcivwar.9.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.10 days = 0}}
-	}
-}
-#庆王返回西安
-country_event = {
-	id = mingcivwar.10
-	title = mingcivwar.10.t
-	desc = mingcivwar.10.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.10.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.11 days = 0}}
-	}
-}
-#顺天朝堂上的斗争
-country_event = {
-	id = mingcivwar.11
-	title = mingcivwar.11.t
-	desc = mingcivwar.11.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.11.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.12 days = 0}}
-	}
-}
-#施荣系要求更多席位
-country_event = {
-	id = mingcivwar.12
-	title = mingcivwar.12.t
-	desc = mingcivwar.12.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.12.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.13 days = 0}}
-	}
-}
-#昌德皇帝驾崩，太孙继位
-country_event = {
-	id = mingcivwar.13
-	title = mingcivwar.13.t
-	desc = mingcivwar.13.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.13.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.14 days = 0}}
-	}
-}
-#锦王不满
-country_event = {
-	id = mingcivwar.14
-	title = mingcivwar.14.t
-	desc = mingcivwar.14.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.14.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.15 days = 0}}
-	}
-}
-#武备系不满
-country_event = {
-	id = mingcivwar.15
-	title = mingcivwar.15.t
-	desc = mingcivwar.15.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.15.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.16 days = 0}}
-	}
-}
-#锦王与武备系串联
-country_event = {
-	id = mingcivwar.16
-	title = mingcivwar.16.t
-	desc = mingcivwar.16.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.16.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.17 days = 0}}
-	}
-}
-#顺天兵变
-country_event = {
-	id = mingcivwar.17
-	title = mingcivwar.17.t
-	desc = mingcivwar.17.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.17.a
-		ai_chance = { factor = 100 }
-		MNG = {country_event = { id = mingcivwar.18 days = 0}}
-	}
-}
-#锦王与武备系串联
-country_event = {
-	id = mingcivwar.18
-	title = mingcivwar.18.t
-	desc = mingcivwar.18.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	fire_only_once = yes
-    is_triggered_only = yes
-	mean_time_to_happen = {days = 0}
-	trigger = {tag = MNG}
-	option = { 
-		name = mingcivwar.18.a
-		ai_chance = { factor = 100 }
-	}
-}
-
-###以上为老版本的东西，不用管###
-
 #中传邸报上的争论 1936.1.8
 country_event = {
 	id = mingcivwar.21
@@ -352,6 +7,7 @@ country_event = {
 	desc = mingcivwar.21.d
 	picture = GFX_report_event_chinese_soldiers_fighting
 	fire_only_once = yes
+	is_triggered_only = yes
 	option = { name = mingcivwar.21.a}
 }
 #御前会议1 1936.2.8
@@ -359,10 +15,12 @@ country_event = {
 	id = mingcivwar.22
 	title = mingcivwar.22.t
 	desc = mingcivwar.22.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.22.a
-		country_event = { id = mingcivwar.23 random = 1 }
+		country_event = { id = mingcivwar.23 }
 	}
 }
 #御前会议2
@@ -370,11 +28,12 @@ country_event = {
 	id = mingcivwar.23
 	title = mingcivwar.23.t
 	desc = mingcivwar.23.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.23.a
-		country_event = { id = mingcivwar.24 random = 1 }
-		complete_national_focus = MNG_check_our_weapon
+		country_event = { id = mingcivwar.24 }
 	}
 }
 #御前会议3
@@ -382,10 +41,12 @@ country_event = {
 	id = mingcivwar.24
 	title = mingcivwar.24.t
 	desc = mingcivwar.24.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.24.a
-		country_event = { id = mingcivwar.25 random = 10 }
+		country_event = { id = mingcivwar.25 }
 		complete_national_focus = MNG_check_our_weapon
 	}
 }
@@ -394,6 +55,8 @@ country_event = {
 	id = mingcivwar.25
 	title = mingcivwar.25.t
 	desc = mingcivwar.25.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.25.a }
 }
@@ -401,6 +64,8 @@ country_event = {
 news_event = {
 	id = mingcivwar.26
 	title = mingcivwar.26.t
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting 
 	desc = {text = mingcivwar.26.d}
 	trigger = {tag = MNG}
@@ -411,6 +76,8 @@ country_event = {
 	id = mingcivwar.27
 	title = mingcivwar.27.t
 	desc = mingcivwar.27.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.27.a 
@@ -424,6 +91,8 @@ country_event = {
 	id = mingcivwar.28
 	title = mingcivwar.28.t
 	desc = mingcivwar.28.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 	name = mingcivwar.28.a }
 }
@@ -432,17 +101,18 @@ country_event = {
 	id = mingcivwar.29
 	title = mingcivwar.29.t
 	desc = mingcivwar.29.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
-	option = { 
-		name = mingcivwar.32.a
-		country_event = { id = mingcivwar.32 random = 12 }
-	}
+	option = {  name = mingcivwar.29.a }
 }
 #辽阳工业区 1936.6.12
 country_event = {
 	id = mingcivwar.30
 	title = mingcivwar.30.t
 	desc = mingcivwar.30.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.30.a}
 }
@@ -451,6 +121,8 @@ country_event = {
 	id = mingcivwar.31
 	title = mingcivwar.31.t
 	desc = mingcivwar.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.31.a }
 }
@@ -459,6 +131,8 @@ country_event = {
 	id = mingcivwar.32
 	title = mingcivwar.32.t
 	desc = mingcivwar.32.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.32.a }
 }
@@ -467,6 +141,8 @@ country_event = {
 	id = mingcivwar.33
 	title = mingcivwar.33.t
 	desc = mingcivwar.33.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.33.a }
 }
@@ -475,6 +151,8 @@ country_event = {
 	id = mingcivwar.34
 	title = mingcivwar.34.t
 	desc = mingcivwar.34.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.34.a }
 }
@@ -483,6 +161,8 @@ country_event = {
 	id = mingcivwar.35
 	title = mingcivwar.35.t
 	desc = mingcivwar.35.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 	name = mingcivwar.35.a }
 }
@@ -491,6 +171,8 @@ country_event = {
 	id = mingcivwar.36
 	title = mingcivwar.36.t
 	desc = mingcivwar.36.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.36.a }
 }
@@ -499,6 +181,8 @@ country_event = {
 	id = mingcivwar.37
 	title = mingcivwar.37.t
 	desc = mingcivwar.37.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.37.a }
 }
@@ -507,6 +191,8 @@ country_event = {
 	id = mingcivwar.38
 	title = mingcivwar.38.t
 	desc = mingcivwar.38.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.38.a }
 }
@@ -515,6 +201,8 @@ country_event = {
 	id = mingcivwar.39
 	title = mingcivwar.39.t
 	desc = mingcivwar.39.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.39.a }
 }
@@ -523,6 +211,8 @@ country_event = {
 	id = mingcivwar.40
 	title = mingcivwar.40.t
 	desc = mingcivwar.40.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.40.a }
 }
@@ -531,6 +221,8 @@ country_event = {
 	id = mingcivwar.41
 	title = mingcivwar.41.t
 	desc = mingcivwar.41.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.41.a }
 }
@@ -539,6 +231,8 @@ country_event = {
 	id = mingcivwar.42
 	title = mingcivwar.42.t
 	desc = mingcivwar.42.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.42.a }
 }
@@ -547,6 +241,8 @@ country_event = {
 	id = mingcivwar.43
 	title = mingcivwar.43.t
 	desc = mingcivwar.43.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.43.a }
 }
@@ -555,6 +251,8 @@ country_event = {
 	id = mingcivwar.44
 	title = mingcivwar.44.t
 	desc = mingcivwar.44.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.44.a }
 }
@@ -563,6 +261,8 @@ country_event = {
 	id = mingcivwar.45
 	title = mingcivwar.45.t
 	desc = mingcivwar.45.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.45.a }
 }
@@ -571,12 +271,14 @@ country_event = {
 	id = mingcivwar.46
 	title = mingcivwar.46.t
 	desc = mingcivwar.46.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.46.a 
 		mark_focus_tree_layout_dirty = yes
 		set_country_flag = MNG_taiziyuci
-		country_event = { id = mingcivwar.47 random = 2 }
+		country_event = { id = mingcivwar.47 }
 	}
 }
 ###
@@ -585,6 +287,8 @@ country_event = {
 	id = mingcivwar.47
 	title = mingcivwar.47.t
 	desc = mingcivwar.47.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.47.a
@@ -596,6 +300,8 @@ country_event = {
 	id = mingcivwar.48
 	title = mingcivwar.48.t
 	desc = mingcivwar.48.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.48.a }
 	option = { 
@@ -612,6 +318,8 @@ country_event = {
 	id = mingcivwar.49
 	title = mingcivwar.49.t
 	desc = mingcivwar.49.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.49.a }
 	option = { 
@@ -624,6 +332,8 @@ country_event = {
 	id = mingcivwar.50
 	title = mingcivwar.50.t
 	desc = mingcivwar.50.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.50.a }
 	option = { 
@@ -636,6 +346,8 @@ country_event = {
 	id = mingcivwar.51
 	title = mingcivwar.51.t
 	desc = mingcivwar.51.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.51.a }
 }
@@ -644,6 +356,8 @@ country_event = {
 	id = mingcivwar.52
 	title = mingcivwar.52.t
 	desc = mingcivwar.52.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.52.a }
 }
@@ -651,6 +365,8 @@ country_event = {
 news_event = {
 	id = mingcivwar.53
 	title = mingcivwar.53.t
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting 
 	desc = {text = mingcivwar.53.d}
 	option = {name = mingcivwar.53.a}
@@ -660,6 +376,8 @@ country_event = {
 	id = mingcivwar.54
 	title = mingcivwar.54.t
 	desc = mingcivwar.54.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.54.a
@@ -671,6 +389,8 @@ country_event = {
 	id = mingcivwar.55
 	title = mingcivwar.55.t
 	desc = mingcivwar.55.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.55.a
@@ -682,6 +402,8 @@ country_event = {
 	id = mingcivwar.56
 	title = mingcivwar.56.t
 	desc = mingcivwar.56.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.56.a }
 }
@@ -690,6 +412,8 @@ country_event = {
 	id = mingcivwar.57
 	title = mingcivwar.57.t
 	desc = mingcivwar.57.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.57.a 
@@ -705,6 +429,8 @@ country_event = {
 	id = mingcivwar.58
 	title = mingcivwar.58.t
 	desc = mingcivwar.58.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.58.a }
 }
@@ -713,6 +439,8 @@ country_event = {
 	id = mingcivwar.59
 	title = mingcivwar.59.t
 	desc = mingcivwar.59.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.59.a }
 }
@@ -721,6 +449,8 @@ country_event = {
 	id = mingcivwar.60
 	title = mingcivwar.60.t
 	desc = mingcivwar.60.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.60.a }
 	option = { name = mingcivwar.60.b }
@@ -730,6 +460,8 @@ country_event = {
 	id = mingcivwar.61
 	title = mingcivwar.61.t
 	desc = mingcivwar.61.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.61.a }
 }
@@ -738,6 +470,8 @@ country_event = {
 	id = mingcivwar.62
 	title = mingcivwar.62.t
 	desc = mingcivwar.62.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.62.a 
@@ -749,6 +483,8 @@ country_event = {
 	id = mingcivwar.63
 	title = mingcivwar.63.t
 	desc = mingcivwar.63.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.63.a }
 }
@@ -758,6 +494,8 @@ country_event = {
 	id = mingcivwar.64
 	title = mingcivwar.64.t
 	desc = mingcivwar.64.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.64.a }
 }
@@ -766,10 +504,12 @@ country_event = {
 	id = mingcivwar.65
 	title = mingcivwar.65.t
 	desc = mingcivwar.65.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.65.a
-		country_event = { id = mingcivwar.66 random = 1 }
+		country_event = { id = mingcivwar.66 }
 	}
 }
 #深夜惊梦 1937.8.21
@@ -777,10 +517,12 @@ country_event = {
 	id = mingcivwar.66
 	title = mingcivwar.66.t
 	desc = mingcivwar.66.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.66.a
-		country_event = { id = mingcivwar.67 random = 1 }
+		country_event = { id = mingcivwar.67 }
 	}
 }
 #瞒天过海 1937.8.21
@@ -788,10 +530,12 @@ country_event = {
 	id = mingcivwar.67
 	title = mingcivwar.67.t
 	desc = mingcivwar.67.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.67.a
-		country_event = { id = mingcivwar.68 random = 1 }
+		country_event = { id = mingcivwar.68 }
 	}
 }
 #皇陵兵变过程
@@ -800,10 +544,12 @@ country_event = {
 	id = mingcivwar.68
 	title = mingcivwar.68.t
 	desc = mingcivwar.68.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.68.a
-		country_event = { id = mingcivwar.67 random = 1 }
+		country_event = { id = mingcivwar.69 }
 	}
 }
 #顺天的雨
@@ -811,10 +557,12 @@ country_event = {
 	id = mingcivwar.69
 	title = mingcivwar.69.t
 	desc = mingcivwar.69.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.69.a
-		country_event = { id = mingcivwar.70 random = 1 }
+		country_event = { id = mingcivwar.70 }
 	}
 }
 #白陵蓝调
@@ -822,10 +570,12 @@ country_event = {
 	id = mingcivwar.70
 	title = mingcivwar.70.t
 	desc = mingcivwar.70.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.70.a
-		country_event = { id = mingcivwar.71 random = 1 }
+		country_event = { id = mingcivwar.71 }
 	}
 }
 #水晶
@@ -833,12 +583,14 @@ country_event = {
 	id = mingcivwar.71
 	title = mingcivwar.71.t
 	desc = mingcivwar.71.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.71.a }
 	option = { name = mingcivwar.71.b }
 	option = { 
 		name = mingcivwar.71.c
-		country_event = { id = mingcivwar.72 random = 1 }
+		country_event = { id = mingcivwar.72 }
 	}
 }
 #抉择
@@ -846,11 +598,13 @@ country_event = {
 	id = mingcivwar.72
 	title = mingcivwar.72.t
 	desc = mingcivwar.72.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.72.a }
 	option = { 
 		name = mingcivwar.72.b
-		country_event = { id = mingcivwar.73 random = 1 }
+		country_event = { id = mingcivwar.73 }
 	}
 }
 #抵达
@@ -858,6 +612,8 @@ country_event = {
 	id = mingcivwar.73
 	title = mingcivwar.73.t
 	desc = mingcivwar.73.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.73.a
@@ -869,6 +625,8 @@ country_event = {
 	id = mingcivwar.74
 	title = mingcivwar.74.t
 	desc = mingcivwar.74.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { name = mingcivwar.74.a }
 }
@@ -878,6 +636,8 @@ country_event = {
 	id = mingcivwar.75
 	title = mingcivwar.75.t
 	desc = mingcivwar.75.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.75.a
@@ -889,7 +649,7 @@ country_event = {
 		name = mingcivwar.75.b
 		MNG_release_GPS = yes
 		MNG_release_SRC = yes
-		change_tag_from = GPS	
+		GPS = {change_tag_from = ROOT}
 	}
 }
 #设立华南招抚司(大同会) 1937.2.1
@@ -897,15 +657,17 @@ country_event = {
 	id = mingcivwar.76
 	title = mingcivwar.76.t
 	desc = mingcivwar.76.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.76.a
-		complete_national_focus = 
+		complete_national_focus = MNG_soubudatonghui
 		MNG_release_ROC = yes
 	}
 	option = { 
 		name = mingcivwar.76.b
-		change_tag_from = ROC	
+		ROC = {change_tag_from = ROOT}
 		MNG_release_ROC = yes
 		complete_national_focus = MNG_soubudatonghui
 	}
@@ -915,10 +677,12 @@ country_event = {
 	id = mingcivwar.77
 	title = mingcivwar.77.t
 	desc = mingcivwar.77.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.77.a
-		change_tag_from = XBJ
+		XBJ = {change_tag_from = ROOT}
 		XBJ = {
 			hidden_effect = {
 				add_state_core = 744
@@ -1065,6 +829,8 @@ country_event = {
 	id = mingcivwar.78
 	title = mingcivwar.78.t
 	desc = mingcivwar.78.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.78.a
@@ -1127,7 +893,7 @@ country_event = {
 	}
 	option = { 
 		name = mingcivwar.78.b
-		change_tag_from = GOS	
+		GOS = {change_tag_from = ROOT}
 		GOS = {
 			hidden_effect = {
 				add_state_core = 613
@@ -1191,10 +957,11 @@ country_event = {
 	id = mingcivwar.79
 	title = mingcivwar.79.t
 	desc = mingcivwar.79.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.79.a
-		complete_national_focus = 
 		MNG_release_XIN = yes
 		SIC = {
 			hidden_effect = {
@@ -1235,7 +1002,7 @@ country_event = {
 	}
 	option = { 
 		name = mingcivwar.79.b
-		change_tag_from = XIN
+		XIN = {change_tag_from = ROOT}
 		MNG_release_XIN = yes
 		SIC = {
 			hidden_effect = {
@@ -1276,7 +1043,7 @@ country_event = {
 	}
 	option = { 
 		name = mingcivwar.79.c
-		change_tag_from = SIC
+		SIC = {change_tag_from = ROOT}
 		MNG_release_XIN = yes
 		SIC = {
 			hidden_effect = {
@@ -1321,10 +1088,12 @@ country_event = {
 	id = mingcivwar.80
 	title = mingcivwar.80.t
 	desc = mingcivwar.80.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.80.a
-		change_tag_from = MOB
+		MOB = {change_tag_from = ROOT}
 		MNG_release_MOB = yes
 	}
 	option = { 
@@ -1337,6 +1106,8 @@ country_event = {
 	id = mingcivwar.81
 	title = mingcivwar.81.t
 	desc = mingcivwar.81.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.81.a
@@ -1356,10 +1127,12 @@ country_event = {
 	id = mingcivwar.82
 	title = mingcivwar.82.t
 	desc = mingcivwar.82.d
+	fire_only_once = yes
+	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.82.a
-		change_tag_from = STG
+		STG = {change_tag_from = ROOT}
 		MNG_release_STG = yes
 	}
 }
