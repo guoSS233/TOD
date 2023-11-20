@@ -1,0 +1,93 @@
+
+guiTypes = {
+    containerWindowType = {
+        name = "XBJ_officers_and_landlords_GUI_window"
+        position = { x=0 y=0 }
+        size = { width=100% height=450 }
+
+        instantTextboxType = {
+            name = "XBJ_officers_and_landlords_GUI_textbox"
+            position = { x = 15 y = 0 }
+            font = "hoi_16mbs"
+            text = "XBJ_officers_and_landlords_GUI_text"
+            maxWidth = 470
+            maxHeight = 290
+            fixedsize = yes
+        }
+        iconType = {
+            name = "XBJ_officers"
+            quadTextureSprite = "GFX_XBJ_officers"
+            position = { x= 70 y = 300 }
+            pdx_tooltip = XBJ_officers_effects_tooltip
+            frame = 1
+        }
+        iconType = {
+            name = "XBJ_landlords"
+            quadTextureSprite = "GFX_XBJ_landlords"
+            position = { x= 310 y = 300 }
+            pdx_tooltip = XBJ_landlords_effects_tooltip
+			frame = 1
+        }
+        instantTextboxType = {
+            name = "XBJ_officers_textbox"
+            position = { x = 1 y = 400 }
+            font = "hoi_20b"
+            text = "XBJ_officers_text"
+            format = centre
+            maxWidth = 245
+            maxHeight = 340
+            fixedsize = yes
+        }
+        instantTextboxType = {
+            name = "XBJ_landlords_textbox"
+            position = { x = 245 y = 400 }
+            font = "hoi_20b"
+            text = "XBJ_landlords_text"
+            format = centre
+            maxWidth = 245
+            maxHeight = 340
+            fixedsize = yes
+        }
+    }
+    containerWindowType = {
+        name = "XBJ_shequn_tuanjie_GUI_window"
+        position = { x=0 y=0 }
+        size = { width=100% height=250 }
+
+        instantTextboxType = {
+            name = "XBJ_shequn_tuanjie_GUI_textbox"
+            position = { x = 15 y = 0 }
+            font = "hoi_16mbs"
+            text = "XBJ_shequn_tuanjie_GUI_text"
+            maxWidth = 470
+            maxHeight = 290
+            fixedsize = yes
+        }
+        iconType = {
+            name = "XBJ_shequn_tuanjie_FRAME"
+            quadTextureSprite = "GFX_XBJ_shequn_tuanjie_FRAME"
+            position = { x= 40 y = 100 }
+            pdx_tooltip = XBJ_shequn_tuanjie_effects_tooltip
+            frame = 8
+        }
+        instantTextboxType = {
+            name = "XBJ_shequn_tuanjiedu_textbox"
+            position = { x = 170 y = 120 }
+            font = "hoi_20b"
+            text = "XBJ_shequn_tuanjie_text"
+            format = left
+            maxWidth = 330
+            maxHeight = 340
+            fixedsize = yes
+        }
+        instantTextboxType = {
+            name = "XBJ_shequn_jinbu_GUI_textbox"
+            position = { x = 20 y = 210 }
+            font = "hoi_16mbs"
+            text = "XBJ_shequn_jinbu_GUI_text"
+            maxWidth = 470
+            maxHeight = 290
+            fixedsize = yes
+        }
+    }
+}

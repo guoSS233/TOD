@@ -1,0 +1,39 @@
+scripted_gui = {
+    XBJ_officers_and_landlords_GUI = {
+        context_type = decision_category
+        window_name = "XBJ_officers_and_landlords_GUI_window"
+
+        ai_enabled = {
+            always = yes
+        }
+
+        properties = {
+            XBJ_officers = {
+                frame = XBJ_officers_frame_var
+            }
+            XBJ_landlords = {
+                frame = XBJ_landlords_frame_var
+            }
+        }
+
+        triggers = {
+        }
+    }
+    XBJ_shequn_tuanjie_GUI = {
+        context_type = decision_category
+        window_name = "XBJ_shequn_tuanjie_GUI_window"
+
+        ai_enabled = {
+            always = yes
+        }
+
+        properties = {
+            XBJ_shequn_tuanjie_FRAME = {
+                frame = XBJ_tuanjie_frame_var
+            }
+        }
+
+        triggers = {
+        }
+    }
+}
