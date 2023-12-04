@@ -1,16 +1,13 @@
 
 state={
 	id=303
-	name="STATE_303" # Lima
-	manpower = 3563249
+	name="STATE_303"
 	resources={
-		oil=14 # was: 18
+		oil=14.000
 	}
-	
-	state_category = large_city
 
 	history={
-		owner = PRU
+		owner = UPB
 		buildings = {
 			infrastructure = 1
 			arms_factory = 1
@@ -18,16 +15,25 @@ state={
 			air_base = 3
 			12997 = {
 				naval_base = 5
+
 			}
+
 		}
-		add_core_of = PRU
+		add_core_of = UPB
 		victory_points = {
 			12997 5 
+		}
+		victory_points = {
+			2162 1
 		}
 
 	}
 
 	provinces={
-		2156 2162 5190 8199 12969 12983 12997 
+		2162 12983 12997 
 	}
+	manpower=1563249
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
 }
