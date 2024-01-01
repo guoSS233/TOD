@@ -1,0 +1,776 @@
+focus_tree = {
+	id = Sichuan_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 11
+			tag = SCG
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+
+#	focus = {
+#		id = SCG_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+
+	#掌握成都局势
+	focus = {
+		id = SCG_zhangwochengdujushi
+		icon = GFX_SCG_zhangwochengdujushi
+		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
+		x = 25
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_ideas = war_economy
+			add_core_of = 831
+		}
+	}
+	#发动工人
+	focus = {
+		id = SCG_fadonggongren
+		icon = GFX_SCG_fadonggongren
+		prerequisite = { focus = SCG_zhangwochengdujushi}
+		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
+		x = 22
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.1
+			load_oob = "SCG_gongren"
+			add_ideas = extensive_conscription
+		}
+	}
+	#重组军队
+	focus = {
+		id = SCG_chongzujundui
+		icon = GFX_SCG_chongzujundui
+		prerequisite = { focus = SCG_zhangwochengdujushi}
+		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
+		x = 24
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			army_experience = 25
+			add_war_support = 0.1
+			load_oob = "SCG_gemingjundui"
+		}
+	}
+	#与大同党合作
+	focus = {
+		id = SCG_hezuo
+		icon = GFX_SCG_hezuo
+		prerequisite = { focus = SCG_zhangwochengdujushi}
+		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
+		x = 26
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	#联络其他城市
+	focus = {
+		id = SCG_lianluoqitachengshi
+		icon = GFX_SCG_lianluoqitachengshi
+		prerequisite = { focus = SCG_zhangwochengdujushi}
+		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
+		x = 28
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			unlock_decision_category_tooltip = SCG_quanchuanqiyi_categories
+		}
+	}
+	#建立红军
+	focus = {
+		id = SCG_jianlihongjun
+		icon = GFX_SCG_jianlihongjun
+		prerequisite = { focus = SCG_fadonggongren focus = SCG_chongzujundui}
+		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
+		x = 23
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = SCG_hongjun
+			army_experience = 25
+		}
+	}
+	#发动全川起义
+	focus = {
+		id = SCG_quanchuanqiyi
+		icon = GFX_SCG_quanchuanqiyi
+		prerequisite = { focus = SCG_hezuo focus = SCG_lianluoqitachengshi}
+		allow_branch = {if = { NOT = { has_country_flag = SCG_gemingchenggong }}}
+		x = 27
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			custom_effect_tooltip = SCG.tt.1
+			hidden_effect = {
+				if = {
+					limit = { 832 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 832}
+				}
+				if = {
+					limit = { 605 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 605}
+				}
+				if = {
+					limit = { 830 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 830}
+				}
+				if = {
+					limit = { 751 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 751}
+				}
+				if = {
+					limit = { 1219 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 1219}
+				}
+				if = {
+					limit = { 787 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 787 }
+				}
+				if = {
+					limit = { 1107 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 1107 }
+				}
+				if = {
+					limit = { 601 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 601 }
+				}
+				if = {
+					limit = { 758 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 758 }
+				}
+				if = {
+					limit = { 1127 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 1127 }
+				}
+				if = {
+					limit = { 1127 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 1127 }
+				}
+				if = {
+					limit = { 1106 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 1106 }
+				}
+				if = {
+					limit = { 757 = {has_state_flag = SCG_qiyizhunbei}}
+					SCG = {transfer_state = 757 }
+				}
+			}
+		}
+	}
+	#进行决战
+	focus = {
+		id = SCG_jinxingjuezhan
+		icon = GFX_SCG_jinxingjuezhan
+		prerequisite = { focus = SCG_quanchuanqiyi}
+		prerequisite = { focus = SCG_jianlihongjun }
+		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
+		x = 25
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_timed_idea = {idea = SCG_juezhangongshi days = 90 } }
+	}
+	#革命成功
+	focus = {
+		id = SCG_gemingchenggong
+		icon = GFX_SCG_jinxingjuezhan
+		allow_branch = {if = {has_country_flag = SCG_gemingchenggong}}
+		x = 25
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	#组建联合政府
+	focus = {
+		id = SCG_lianhezhengfu
+		icon = GFX_SCG_lianhezhengfu
+		prerequisite = { focus = SCG_gemingchenggong }
+		x = 27
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { country_event = { id = TODSIC.1006 } }
+	}
+	#组织工会
+	focus = {
+		id = SCG_zuzhigonghui
+		icon = GFX_SCG_zuzhigonghui
+		prerequisite = { focus = SCG_gemingchenggong }
+		x = 23
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { country_event = { id = TODSIC.1007 } }
+	}
+	#企业改组
+	focus = {
+		id = SCG_qiyegaizu
+		icon = GFX_SCG_qiyegaizu
+		prerequisite = { focus = SCG_zuzhigonghui }
+		x = 22
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_timed_idea = {idea = SCG_renyuanchongzu days = 180 } 
+			add_ideas = SCG_xinxingqiye
+		}
+	}
+	#工人治厂
+	focus = {
+		id = SCG_gongrenzhichang
+		icon = GFX_SCG_gongrenzhichang
+		prerequisite = { focus = SCG_zuzhigonghui }
+		x = 24
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = SCG_gongrenhezuoshe
+		}
+	}
+	#完全国有化
+	focus = {
+		id = SCG_wanquanguoyouhua
+		icon = GFX_SCG_wanquanguoyouhua
+		prerequisite = { focus = SCG_qiyegaizu }
+		prerequisite = { focus = SCG_gongrenzhichang }
+		mutually_exclusive = { focus =  SCG_gongsiheying}
+		x = 22
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = SCG_xinxingqiye
+			add_ideas = SCG_guoyouqiye
+		}
+	}
+	#公私合营
+	focus = {
+		id = SCG_gongsiheying
+		icon = GFX_SCG_gongsiheying
+		prerequisite = { focus = SCG_qiyegaizu }
+		prerequisite = { focus = SCG_gongrenzhichang }
+		mutually_exclusive = { focus =  SCG_wanquanguoyouhua}
+		x = 24
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = SCG_xinxingqiye
+			add_ideas = SCG_gongyouqiye
+		}
+	}
+	#稳定粮食供给
+	focus = {
+		id = SCG_wendingliangshigongji
+		icon = GFX_SCG_wendingliangshigongji
+		prerequisite = { focus = SCG_lianhezhengfu }
+		x = 26
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_timed_idea = {idea = SCG_liangshigongji days = 90 } 
+		}
+	}
+	#组织党员下乡
+	focus = {
+		id = SCG_zuzhidangyuanxiaxiang
+		icon = GFX_SCG_zuzhidangyuanxiaxiang
+		prerequisite = { focus = SCG_lianhezhengfu }
+		x = 28
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_manpower = -3000
+			add_timed_idea = {idea = SCG_dangyuanxianxiang days = 180 } 
+			add_stability = 0.1
+		}
+	}
+	#进行土地改革
+	focus = {
+		id = SCG_tudigaige
+		icon = GFX_SCG_tudigaige
+		prerequisite = { focus = SCG_wendingliangshigongji }
+		prerequisite = { focus = SCG_zuzhidangyuanxiaxiang }
+		mutually_exclusive = { focus =  SCG_jitihuanongye}
+		x = 26
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_timed_idea = {idea = SCG_funongfankang days = 90 } 
+			add_ideas = SCG_nongcungongshe
+		}
+	}
+	#集体化农业
+	focus = {
+		id = SCG_jitihuanongye
+		icon = GFX_SCG_jitihuanongye
+		prerequisite = { focus = SCG_wendingliangshigongji }
+		prerequisite = { focus = SCG_zuzhidangyuanxiaxiang }
+		mutually_exclusive = { focus =  SCG_tudigaige}
+		x = 28
+		y = 4
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_timed_idea = {idea = SCG_nongminfandui days = 90 } 
+			add_ideas = SCG_jitinongzhuang 
+		}
+	}
+	#实行计划经济
+	focus = {
+		id = SCG_shixingjihuajingji
+		icon = GFX_SCG_shixingjihuajingji
+		prerequisite = { focus = SCG_jitihuanongye }
+		prerequisite = { focus = SCG_wanquanguoyouhua }
+		x = 22
+		y = 5
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_ideas = SCG_jihuajingji }
+	}
+	#产业链整合
+	focus = {
+		id = SCG_chanyelianzhenghe
+		icon = GFX_SCG_chanyelianzhenghe
+		prerequisite = { focus = SCG_shixingjihuajingji }
+		x = 22
+		y = 6
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_ideas = SCG_quanchanyelian }
+	}
+	#剪刀差理论
+	focus = {
+		id = SCG_jiandaochalilun
+		icon = GFX_SCG_jiandaochalilun
+		prerequisite = { focus = SCG_tudigaige }
+		prerequisite = { focus = SCG_wanquanguoyouhua }
+		x = 24
+		y = 5
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_ideas = SCG_gongnongjiandaocha }
+	}
+	#工业反哺农业
+	focus = {
+		id = SCG_gongyefanbunongye
+		icon = GFX_SCG_gongyefanbunongye
+		prerequisite = { focus = SCG_jiandaochalilun }
+		x = 24
+		y = 6
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remoce_ideas = SCG_gongnongjiandaocha
+			add_ideas = SCG_nongyejixiehua 
+		}
+	}
+	#社会主义改造
+	focus = {
+		id = SCG_shehuizhuyigaizao
+		icon = GFX_SCG_shehuizhuyigaizao
+		prerequisite = { focus = SCG_jitihuanongye }
+		prerequisite = { focus = SCG_gongsiheying }
+		x = 26
+		y = 5
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_ideas = SCG_shehuizhuyijinji }
+	}
+	#农业工人改造
+	focus = {
+		id = SCG_nongyegongrengaizao
+		icon = GFX_SCG_nongyegongrengaizao
+		prerequisite = { focus = SCG_shehuizhuyigaizao }
+		x = 26
+		y = 6
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_ideas = SCG_chengxiangyitihua }
+	}
+	#新经济政策
+	focus = {
+		id = SCG_xinjingjizhengce
+		icon = GFX_SCG_xinjingjizhengce
+		prerequisite = { focus = SCG_tudigaige }
+		prerequisite = { focus = SCG_gongsiheying }
+		x = 28
+		y = 5
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_ideas = SCG_zujianshichang }
+	}
+	#混合经济体制
+	focus = {
+		id = SCG_hunhejingjitizhi
+		icon = GFX_SCG_hunhejingjitizhi
+		prerequisite = { focus = SCG_xinjingjizhengce }
+		x = 28
+		y = 6
+		ai_will_do = {
+			factor = 10
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = SCG_zujianshichang
+			add_ideas = SCG_shehuizhuyishichangjingji 
+		}
+	}
+}
