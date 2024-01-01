@@ -37,10 +37,12 @@ country_event = {
 	option = {
 		name = TODSIC.3.a
 		set_country_flag = SIC_baochizhongli
+		complete_national_focus = SIC_baochizhongli
 	}
 	option = {
 		name = TODSIC.3.b
 		set_country_flag = SIC_zunwangtaojian
+		complete_national_focus = SIC_zunwangtaojian
 	}
 }
 #四川宣布中立
@@ -84,4 +86,67 @@ news_event = {
     }
 
 	option = {name = chinese_events_sic.2.a}
+}
+#成都爆发革命
+country_event = {
+	id = TODSIC.1001
+	title = TODSIC.1001.t
+	desc = TODSIC.1001.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = { declare_war_on = { target = SCG type = annex_everything } }
+	option = {
+		name = TODSIC.1001.a
+		SCG = { change_tag_from = ROOT }
+	}
+	option = { name = TODSIC.1001.b  }
+}
+#革命成功
+country_event = {
+	id = TODSIC.1005
+	title = TODSIC.1005.t
+	desc = TODSIC.1005.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	trigger = {	
+		tag = SCG
+		NOT = { country_exists = SIC }
+	}
+	option = {
+		name = TODSIC.1005.a
+		set_country_flag = SCG_gemingchenggong
+		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = SCG_gemingchenggong
+		every_owned_state = {
+			limit = { is_core_of = SIC }
+			add_core_of = SCG
+		}
+	}
+}
+#组建联合政府
+country_event = {
+	id = TODSIC.1006
+	title = TODSIC.1006.t
+	desc = TODSIC.1006.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.1006.a
+		add_stability = 0.1
+	}
+}
+#组建工会
+country_event = {
+	id = TODSIC.1007
+	title = TODSIC.1007.t
+	desc = TODSIC.1007.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.1007.a
+		add_ideas = SCG_gonghui
+	}
 }
