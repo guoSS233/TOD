@@ -1,0 +1,267 @@
+ideas = {
+	country = {
+		#红军
+		SCG_hongjun = {
+			name = SCG_hongjun
+			
+		    picture = SCG_hongjun
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				army_morale_factor = 0.1
+				army_core_attack_factor = 0.1
+				army_core_defence_factor = 0.1
+			}
+		}
+		#决战攻势
+		SCG_juezhangongshi = {
+			name = SCG_juezhangongshi
+			
+		    picture = SCG_juezhangongshi
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				army_speed_factor = 0.2
+				army_core_attack_factor = 0.5
+			}
+		}
+		#人员重组
+		SCG_renyuanchongzu = {
+			name = SCG_renyuanchongzu
+			
+		    picture = SCG_renyuanchongzu
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				line_change_production_efficiency_factor = -0.2   
+				production_factory_efficiency_gain_factor = -0.2
+				industrial_capacity_factory = -0.2
+			}
+		}
+		#新型企业
+		SCG_xinxingqiye = {
+			name = SCG_xinxingqiye
+			
+		    picture = SCG_xinxingqiye
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.1
+				industrial_capacity_factory = 0.05
+			}
+		}
+		#工人合作社
+		SCG_gongrenhezuoshe = {
+			name = SCG_gongrenhezuoshe
+			
+		    picture = SCG_gongrenhezuoshe
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				consumer_goods_factor =	-0.1
+				industrial_capacity_factory = 0.05
+			}
+		}
+		#国有企业
+		SCG_guoyouqiye = {
+			name = SCG_guoyouqiye
+			
+		    picture = SCG_guoyouqiye
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				line_change_production_efficiency_factor = -0.1
+				industrial_capacity_factory = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		#公有企业
+		SCG_gongyouqiye = {
+			name = SCG_gongyouqiye
+			
+		    picture = SCG_gongyouqiye
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				consumer_goods_factor =	-0.1
+				line_change_production_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.1
+				production_factory_efficiency_gain_factor = -0.1
+			}
+		}
+		#粮食供给
+		SCG_liangshigongji = {
+			name = SCG_liangshigongji
+			
+		    picture = SCG_liangshigongji
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				political_power_gain = 0.2
+			}
+		}
+		#党员下乡
+		SCG_dangyuanxianxiang = {
+			name = SCG_dangyuanxianxiang
+			
+		    picture = SCG_dangyuanxianxiang
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor =	-0.1
+			}
+		}
+		#富农反抗
+		SCG_funongfankang = {
+			name = SCG_funongfankang
+			
+		    picture = SCG_funongfankang
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = -0.05
+				consumer_goods_factor =	0.1
+			}
+		}
+		#农村公社
+		SCG_nongcungongshe = {
+			name = SCG_nongcungongshe
+			
+		    picture = SCG_nongcungongshe
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor =	-0.1
+			}
+		}
+		#集体农庄
+		SCG_jitinongzhuang = {
+			name = SCG_jitinongzhuang
+			
+		    picture = SCG_jitinongzhuang
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor =	-0.05
+				production_speed_buildings_factor = 0.10
+			}
+		}
+		#农民反对
+		SCG_nongminfandui = {
+			name = SCG_nongminfandui
+			
+		    picture = SCG_nongminfandui
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor =	0.2
+				political_power_cost = 0.05
+			}
+		}
+		#计划经济
+		SCG_jihuajingji = {
+			name = SCG_jihuajingji
+			
+		    picture = SCG_jihuajingji
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor =	0.1
+				political_power_cost = 0.02
+				line_change_production_efficiency_factor = -0.2
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		#全产业链
+		SCG_quanchanyelian = {
+			name = SCG_quanchanyelian
+			
+		    picture = SCG_quanchanyelian
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor =	-0.2
+			}
+		}
+		#工农剪刀差
+		SCG_gongnongjiandaocha = {
+			name = SCG_gongnongjiandaocha
+			
+		    picture = SCG_gongnongjiandaocha
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.2
+				consumer_goods_factor =	0.2
+			}
+		}
+		#农业机械化
+		SCG_nongyejixiehua = {
+			name = SCG_nongyejixiehua
+			
+		    picture = SCG_nongyejixiehua
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.2
+				consumer_goods_factor =	-0.2
+			}
+		}
+		#社会主义经济
+		SCG_shehuizhuyijinji = {
+			name = SCG_shehuizhuyijinji
+			
+		    picture = SCG_shehuizhuyijinji
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor =	-0.1
+				line_change_production_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+			}
+		}
+		#城乡一体化
+		SCG_chengxiangyitihua = {
+			name = SCG_chengxiangyitihua
+			
+		    picture = SCG_chengxiangyitihua
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.3
+			}
+		}
+		#组建市场
+		SCG_zujianshichang = {
+			name = SCG_zujianshichang
+			
+		    picture = SCG_zujianshichang
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				political_power_cost = 0.02
+				consumer_goods_factor = -0.1
+			}
+		}
+		#社会主义市场经济
+		SCG_shehuizhuyishichangjingji = {
+			name = SCG_shehuizhuyishichangjingji
+			
+		    picture = SCG_shehuizhuyishichangjingji
+			
+			allowed = { original_tag = SCG }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = -0.2
+			}
+		}
+	}
+}

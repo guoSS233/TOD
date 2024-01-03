@@ -10,14 +10,14 @@ SIC_chuanneijushi_categories = {
 			check_variable = {SIC.minzhong > 19}
 			check_variable = {SIC.gongye > 39}
 		}
-		NOT = {country_exists = SCG}
+		NOT = {has_war_with = SCG}
 	}
-	visible = {
+	visible = {	
 		check_variable = {SIC.minzhong < 99}
 		OR = {
 			check_variable = {SIC.minzhong > 19}
 			check_variable = {SIC.gongye > 39}
 		}
-		NOT = {country_exists = SCG}
+		NOT = {has_war_with = SCG}
 	}
 }

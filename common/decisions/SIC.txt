@@ -5,7 +5,7 @@ SIC_chuanneijushi_categories = {
 		available = {check_variable = {SIC.minzhong < 19}}
 		activation = {
 			check_variable = {SIC.minzhong > 19}
-			check_variable = {SIC.minzhong < 100}
+			check_variable = {SIC.minzhong < 100} 
 		}
 		is_good = no
 		days_mission_timeout = 30
@@ -38,7 +38,7 @@ SIC_chuanneijushi_categories = {
 			if = {
 				limit = {check_variable = {SIC.minzhong > 99}}
 				SCG = {transfer_state = 831}
-				declare_war_on = { target = SCG type = annex_everything }
+				country_event = { id = TODSIC.1001 }
 			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 79}}
 				add_to_variable = { SIC.gongye = 10 }
@@ -112,6 +112,7 @@ SIC_chuanneijushi_categories = {
 				add_ideas = SIC_wendingdequnzong
 				remove_ideas = SIC_liuyoubuman
 			}
+		}
 	}
 	#安抚民众
 	SIC_anfuminzhong = {

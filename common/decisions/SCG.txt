@@ -1,0 +1,25 @@
+SCG_quanchuanqiyi_categories = {
+	
+	SIC_chuannanqiyi = {
+		icon = ger_military_buildup
+		
+		visible = {always = yes}
+		allowed = { tag = SCG } 
+		available = { }
+		modifier = { political_power_factor = -0.5 }
+		
+		days_remove = 7
+		days_re_enable = 0
+		remove_effect = { 
+			custom_effect_tooltip = SCG.tt.2
+			SIC = {
+				random_owned_controlled_state = {
+					limit = {NOT = {has_state_flag = SCG_qiyizhunbei}}
+					add_state_flag = SCG_qiyizhunbei
+				}
+			}
+		}
+	}
+
+
+}
