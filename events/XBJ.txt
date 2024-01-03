@@ -1,2 +1,30 @@
-add_namespace = xbjtext
-
+add_namespace = xbjdecision
+country_event = {
+	#关陇阴云
+	id = xbjdecision.1
+	title = xbjdecision.1.t
+	desc = xbjdecision.1.d
+	picture = GFX_tao_lun_jun_shi
+	trigger = {
+		tag = XBJ
+        has_country_flag = FLAG_XBJ_events_guanlong_yinyun_1
+		has_country_flag = FLAG_XBJ_events_guanlong_yinyun_2  
+		NOT = {
+			has_country_flag = FLAG_XBJ_events_guanlong_yinyun_3
+		}
+    }
+	mean_time_to_happen = {
+		month = 3
+	}
+	immediate = {
+		XBJ = {
+			add_dynamic_modifier = {
+				modifier = XBJ_guanlong_yingyun_dm
+				days = 30
+			}
+		}
+	}
+	option = {
+			name = xbjdecision.1.a
+	}
+}

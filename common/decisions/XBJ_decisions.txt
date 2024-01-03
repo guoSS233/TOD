@@ -1,35 +1,478 @@
 ### 西北军决议 ###
-
-XBJ_officers_and_landlords = {#军官团和地主支持度
+XBJ_officers_and_landlords = {
+	#军官团和地主支持度
 	XBJ_seek_officer_support = {
-		allowed = { tag = XBJ }
-		visible = { always = yes }
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
 		available = {
 			has_political_power > 50
 		}
 		cost = 50
+		#days_re_enable = 30
 		complete_effect = {
-			set_temp_variable = { change_XBJ_officers_influence_by = 5 }
-			set_temp_variable = { change_XBJ_officers_support_by = 5 }
-			set_temp_variable = { change_XBJ_landlords_influence_by = 5 }
-			set_temp_variable = { change_XBJ_landlords_support_by = 5 }
+			set_temp_variable = {
+				change_XBJ_officers_influence_by = 5
+			}
+			set_temp_variable = {
+				change_XBJ_officers_support_by = 5
+			}
+			set_temp_variable = {
+				change_XBJ_landlords_influence_by = 5
+			}
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = 5
+			}
 			XBJ_officers_update = yes
 			XBJ_landlords_update = yes
 		}
 	}
 }
-XBJ_shequn_tuanjie = {#社群团结
+
+XBJ_shequn_tuanjie = {
+	#社群团结
 	XBJ_seek_officer_support1 = {
-		allowed = { tag = XBJ }
-		visible = { always = yes }
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
 		available = {
 			has_political_power > 1
 		}
 		cost = 1
+		#days_re_enable = 30
 		complete_effect = {
-			set_temp_variable = { change_XBJ_shequn_tuanjiedu_by = 5 }
-			set_temp_variable = { change_XBJ_shequn_zhichidu_by = 5 }
+			set_temp_variable = {
+				change_XBJ_shequn_tuanjiedu_by = 5
+			}
+			set_temp_variable = {
+				change_XBJ_shequn_zhichidu_by = 5
+			}
 			XBJ_tuanjie_update = yes
+		}
+	}
+}
+
+XBJ_quanmian_jieguan = {
+	#全民接管
+	XBJ_jinji_guanlishu = {
+		#成立特别经济管理署
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = yes
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			add_political_power = 5
+			unlock_decision_tooltip = XBJ_quanmian_jieguan_1
+			unlock_decision_tooltip = XBJ_quanmian_jieguan_2
+			unlock_decision_tooltip = XBJ_quanmian_jieguan_3
+			unlock_decision_tooltip = XBJ_quanmian_jieguan_4
+			unlock_decision_tooltip = XBJ_quanmian_jieguan_5
+			set_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
+		}
+	}
+	XBJ_quanmian_jieguan_1 = {
+		#金融管制
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 14
+		remove_effect = {
+			add_stability = 0.025
+			add_dynamic_modifier = {
+				modifier = XBJ_quanmian_jieguan_1_dm
+				days = 180
+			}
+		}
+	}
+	XBJ_quanmian_jieguan_2 = {
+		#物价管制
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 14
+		remove_effect = {
+			add_dynamic_modifier = {
+				modifier = XBJ_quanmian_jieguan_2_dm
+				days = 180
+			}
+		}
+	}
+	XBJ_quanmian_jieguan_3 = {
+		#物资储备
+		icon = GFX_decision_ger_military_buildup
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 14
+		remove_effect = {
+			add_stability = 0.025
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 100
+			}
+			add_equipment_to_stockpile = {
+				type = motorized_equipment
+				amount = 100
+			}
+		}
+	}
+	XBJ_quanmian_jieguan_4 = {
+		#协调运输
+		icon = GFX_decision_generic_motorized
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 14
+		remove_effect = {
+			add_dynamic_modifier = {
+				modifier = XBJ_quanmian_jieguan_4_dm
+				days = 180
+			}
+		}
+	}
+	XBJ_quanmian_jieguan_5 = {
+		#军工优先使用原料
+		icon = GFX_decision_generic_protection
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 14
+		remove_effect = {
+			add_dynamic_modifier = {
+				modifier = XBJ_quanmian_jieguan_5_dm
+				days = 180
+			}
+		}
+	}
+}
+
+XBJ_kaiyuan_jieliu = {
+	#开源节流
+	XBJ_jinji_huiyi = {
+		#召开高层经济会议
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = yes
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+			add_political_power = 20
+			unlock_decision_tooltip = XBJ_kaiyuan_jieliu_1
+			unlock_decision_tooltip = XBJ_kaiyuan_jieliu_2
+			unlock_decision_tooltip = XBJ_kaiyuan_jieliu_3
+			unlock_decision_tooltip = XBJ_kaiyuan_jieliu_4
+			unlock_decision_tooltip = XBJ_kaiyuan_jieliu_5
+			set_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
+		}
+	}
+	XBJ_kaiyuan_jieliu_1 = {
+		#严打囤积居奇
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 30
+		remove_effect = {
+			add_stability = 0.025
+			add_war_support = 0.025
+			add_political_power = 100
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -2.5
+			}
+			XBJ_landlords_update = yes
+		}
+	}
+	XBJ_kaiyuan_jieliu_2 = {
+		#查抄贪腐财产
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 30
+		remove_effect = {
+			add_war_support = 0.025
+			add_political_power = 100
+			set_temp_variable = {
+				change_XBJ_officers_support_by = -2.5
+			}
+			XBJ_officers_update = yes
+		}
+	}
+	XBJ_kaiyuan_jieliu_3 = {
+		#发行担保债券
+		icon = GFX_decision_ger_military_buildup
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+			political_power_daily > 0.2
+		}
+		cost = 20
+		days_remove = 30
+		modifier = {
+			political_power_cost = 0.2
+		}
+		remove_effect = {
+			add_political_power = 200
+			political_power_cost = 0.2
+		}
+	}
+	XBJ_kaiyuan_jieliu_4 = {
+		#私印钞票
+		icon = GFX_decision_generic_motorized
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 30
+		remove_effect = {
+			add_political_power = 100
+			add_stability = -0.05
+			set_temp_variable = {
+				change_XBJ_officers_support_by = -2.5
+			}
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -2.5
+			}
+			XBJ_officers_update = yes
+			XBJ_landlords_update = yes
+			set_country_flag = FLAG_XBJ_events_guanlong_yinyun_1
+		}
+	}
+	XBJ_kaiyuan_jieliu_5 = {
+		#预征粮食税
+		icon = GFX_decision_generic_protection
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		modifier = {
+			political_power_gain = 0.2
+		}
+		cost = 20
+		days_remove = 30
+		remove_effect = {
+			add_political_power = 100
+			set_country_flag = FLAG_XBJ_events_guanlong_yinyun_2
+			add_stability = -0.025
+			add_war_support = -0.025
+		}
+	}
+	XBJ_jieyue_changyi = {
+		#发出节约倡议
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 5
+		}
+		cost = 5
+		fire_only_once = yes
+		days_remove = 5
+		remove_effect = {
+			unlock_decision_tooltip = XBJ_jieyue_changyi_1
+			unlock_decision_tooltip = XBJ_jieyue_changyi_2
+			unlock_decision_tooltip = XBJ_jieyue_changyi_3
+			unlock_decision_tooltip = XBJ_jieyue_changyi_4
+			unlock_decision_tooltip = XBJ_jieyue_changyi_5
+			set_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
+		}
+	}
+	XBJ_jieyue_changyi_1 = {
+		#限制上层挥霍
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 30
+		modifier = {
+			political_power_gain = 0.5
+		}
+		remove_effect = {
+			set_temp_variable = {
+				change_XBJ_officers_support_by = -2.5
+			}
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -2.5
+			}
+			XBJ_officers_update = yes
+			XBJ_landlords_update = yes
+		}
+	}
+	XBJ_jieyue_changyi_2 = {
+		#定量配给物资
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 30
+		remove_effect = {
+			add_dynamic_modifier = {
+				modifier = XBJ_jieyue_changyi_2_dm
+			}
+			add_stability = -0.05
+			add_war_support = -0.05
+		}
+	}
+	XBJ_jieyue_changyi_3 = {
+		#拖欠部分货款
+		icon = GFX_decision_ger_military_buildup
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 30
+		remove_effect = {
+
+		}
+	}
+	XBJ_jieyue_changyi_4 = {
+		#协调运输
+		icon = GFX_decision_generic_motorized
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 14
+		remove_effect = {
+			add_dynamic_modifier = {
+				modifier = XBJ_jieyue_changyi_4_dm
+				days = 180
+			}
+		}
+	}
+	XBJ_jieyue_changyi_5 = {
+		#军工优先使用原料
+		icon = GFX_decision_generic_protection
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
+		}
+		available = {
+			has_political_power > 20
+		}
+		cost = 20
+		days_remove = 14
+		remove_effect = {
+			add_dynamic_modifier = {
+				modifier = XBJ_jieyue_changyi_5_dm
+				days = 180
+			}
 		}
 	}
 }

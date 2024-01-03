@@ -1,0 +1,51 @@
+###西北军特殊机制
+#军官团与地主
+XBJ_officers_and_landlords_dm = {
+	enable = { always = yes }
+	army_org_factor = officers_influence_army_org
+	max_planning = officers_influence_war_support_factor_max_planning
+	war_support_factor = officers_influence_war_support_factor_max_planning
+	production_factory_max_efficiency_factor = landlords_influence_max_efficiency_factor
+	political_power_factor = landlords_influence_political_power_gain_stability
+	stability_factor = landlords_influence_political_power_gain_stability
+}
+#社群团结
+XBJ_shequn_tuanjie_dm = {
+	enable = { always = yes }
+	consumer_goods_factor = tuanjie_cunsumer_goods
+	war_support_factor = tuanjie_war_support
+	stability_factor = tuanjie_stability
+}
+
+###西北军决议
+#金融管制
+XBJ_quanmian_jieguan_1_dm = {
+    enable = { always = yes }
+    political_power_cost = 0.01
+}
+#物价管制
+XBJ_quanmian_jieguan_2_dm = {
+    enable = { always = yes }
+    consumer_goods_factor = -0.15
+}
+#协调运输
+XBJ_quanmian_jieguan_4_dm = {
+    enable = { always = yes }
+    production_factory_efficiency_gain_factor = 0.05
+}
+#军工优先使用原料
+XBJ_quanmian_jieguan_5_dm = {
+    enable = { always = yes }
+    production_factory_efficiency_gain_factor = 0.025
+    industrial_capacity_factory = 0.05
+    production_speed_buildings_factor = -0.025
+}
+#关陇阴云
+XBJ_guanlong_yingyun_dm = {
+	enable = { always = yes }
+	monthly_population = -0.1
+}
+XBJ_jieyue_changyi_2_dm = {
+    enable = { always = yes }
+    consumer_goods_factor = -0.15
+}

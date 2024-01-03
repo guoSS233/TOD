@@ -1,290 +1,601 @@
 XBJ_officers_update = {
-    add_to_variable = { XBJ_officers_influence = change_XBJ_officers_influence_by }
-    custom_effect_tooltip = officers_influence_will_change_by
-    add_to_variable = { XBJ_officers_support = change_XBJ_officers_support_by }
-    custom_effect_tooltip = officers_support_will_change_by
-
-    clamp_variable = {
-        var = XBJ_officers_influence
-        min = 0
-        max = 100
-    }
-    clamp_variable = {
-        var = XBJ_officers_support
-        min = 0
-        max = 100
-    }
-    if = {# 换图
-        limit = {
-            check_variable = { XBJ_officers_influence > 90 }
-            check_variable = { XBJ_officers_support < 10 }
-        }
-        set_variable = { XBJ_officers_frame_var = 2 }
-    }
-    else = {
-        set_variable = { XBJ_officers_frame_var = 1 }
-    }
-
-    # 计算组织度
-    set_variable = { officers_influence_army_org = XBJ_officers_support }
-    add_to_variable = { officers_influence_army_org = -50 }
-    multiply_variable = { officers_influence_army_org = 0.2 }
-    multiply_variable = { officers_influence_army_org = XBJ_officers_influence }
-    multiply_variable = { officers_influence_army_org = 0.01 }
-    multiply_variable = { officers_influence_army_org = 0.01 }
-
-    # 计算战争支持度和计划加成上限
-    set_variable = { officers_influence_war_support_factor_max_planning = XBJ_officers_support }
-    add_to_variable = { officers_influence_war_support_factor_max_planning = -50 }
-    multiply_variable = { officers_influence_war_support_factor_max_planning = XBJ_officers_influence }
-    multiply_variable = { officers_influence_war_support_factor_max_planning = 0.01 }
-    multiply_variable = { officers_influence_war_support_factor_max_planning = 0.01 }
-    # 计算计划加成上限
-    # set_variable = { officers_influence_max_planning = change_XBJ_officers_influence_by }
-    # multiply_variable = { officers_influence_max_planning = 0.25 }
-    # multiply_variable = { officers_influence_max_planning = 0.01 }
-
-    hidden_effect = {
-        if = {
-            limit = { check_variable = { XBJ_officers_frame_var = 2 } }
-        }
-    }
+	add_to_variable = {
+		XBJ_officers_influence = change_XBJ_officers_influence_by
+	}
+	custom_effect_tooltip = officers_influence_will_change_by
+	add_to_variable = {
+		XBJ_officers_support = change_XBJ_officers_support_by
+	}
+	custom_effect_tooltip = officers_support_will_change_by
+	clamp_variable = {
+		var = XBJ_officers_influence
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = XBJ_officers_support
+		min = 0
+		max = 100
+	}
+	if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_officers_influence > 90
+			}
+			check_variable = {
+				XBJ_officers_support < 10
+			}
+		}
+		set_variable = {
+			XBJ_officers_frame_var = 2
+		}
+	}
+	else = {
+		set_variable = {
+			XBJ_officers_frame_var = 1
+		}
+	}
+	# 计算组织度
+	set_variable = {
+		officers_influence_army_org = XBJ_officers_support
+	}
+	add_to_variable = {
+		officers_influence_army_org = -50
+	}
+	multiply_variable = {
+		officers_influence_army_org = 0.2
+	}
+	multiply_variable = {
+		officers_influence_army_org = XBJ_officers_influence
+	}
+	multiply_variable = {
+		officers_influence_army_org = 0.01
+	}
+	multiply_variable = {
+		officers_influence_army_org = 0.01
+	}
+	# 计算战争支持度和计划加成上限
+	set_variable = {
+		officers_influence_war_support_factor_max_planning = XBJ_officers_support
+	}
+	add_to_variable = {
+		officers_influence_war_support_factor_max_planning = -50
+	}
+	multiply_variable = {
+		officers_influence_war_support_factor_max_planning = XBJ_officers_influence
+	}
+	multiply_variable = {
+		officers_influence_war_support_factor_max_planning = 0.01
+	}
+	multiply_variable = {
+		officers_influence_war_support_factor_max_planning = 0.01
+	}
+	# 计算计划加成上限
+	# set_variable = { officers_influence_max_planning = change_XBJ_officers_influence_by }
+	# multiply_variable = { officers_influence_max_planning = 0.25 }
+	# multiply_variable = { officers_influence_max_planning = 0.01 }
+	hidden_effect = {
+		if = {
+			limit = {
+				check_variable = {
+					XBJ_officers_frame_var = 2
+				}
+			}
+		}
+	}
 }
+
 XBJ_landlords_update = {
-    add_to_variable = { XBJ_landlords_influence = change_XBJ_landlords_influence_by }
-    custom_effect_tooltip = landlords_influence_will_change_by
-    add_to_variable = { XBJ_landlords_support = change_XBJ_landlords_support_by }
-    custom_effect_tooltip = landlords_support_will_change_by
-
-    clamp_variable = {
-        var = XBJ_landlords_influence
-        min = 0
-        max = 100
-    }
-    clamp_variable = {
-        var = XBJ_landlords_support
-        min = 0
-        max = 100
-    }
-    if = {# 换图
-        limit = {
-            check_variable = { XBJ_landlords_influence > 90 }
-            check_variable = { XBJ_landlords_support < 10 }
-        }
-        set_variable = { XBJ_landlords_frame_var = 2 }
-    }
-    else = {
-        set_variable = { XBJ_landlords_frame_var = 1 }
-    }
-
-    # 计算生产效率
-    set_variable = { landlords_influence_max_efficiency_factor = XBJ_landlords_support }
-    add_to_variable = { landlords_influence_max_efficiency_factor = -50 }
-    multiply_variable = { landlords_influence_max_efficiency_factor = 0.2 }
-    multiply_variable = { landlords_influence_max_efficiency_factor = XBJ_landlords_influence }
-    multiply_variable = { landlords_influence_max_efficiency_factor = 0.01 }
-    multiply_variable = { landlords_influence_max_efficiency_factor = 0.01 }
-
-    # 计算政治点数获取和稳定度
-    set_variable = { landlords_influence_political_power_gain_stability = XBJ_landlords_support }
-    add_to_variable = { landlords_influence_political_power_gain_stability = -50 }
-    multiply_variable = { landlords_influence_political_power_gain_stability = XBJ_landlords_influence }
-    multiply_variable = { landlords_influence_political_power_gain_stability = 0.01 }
-    multiply_variable = { landlords_influence_political_power_gain_stability = 0.01 }
-    # 计算稳定度
-    # set_variable = { landlords_influence_stability = change_XBJ_landlords_influence_by }
-    # multiply_variable = { landlords_influence_stability = 0.25 }
-    # multiply_variable = { landlords_influence_stability = 0.01 }
-
-    hidden_effect = {
-        if = {
-            limit = { check_variable = { XBJ_landlords_frame_var = 2 } }
-        }
-    }
+	add_to_variable = {
+		XBJ_landlords_influence = change_XBJ_landlords_influence_by
+	}
+	custom_effect_tooltip = landlords_influence_will_change_by
+	add_to_variable = {
+		XBJ_landlords_support = change_XBJ_landlords_support_by
+	}
+	custom_effect_tooltip = landlords_support_will_change_by
+	clamp_variable = {
+		var = XBJ_landlords_influence
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = XBJ_landlords_support
+		min = 0
+		max = 100
+	}
+	if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_landlords_influence > 90
+			}
+			check_variable = {
+				XBJ_landlords_support < 10
+			}
+		}
+		set_variable = {
+			XBJ_landlords_frame_var = 2
+		}
+	}
+	else = {
+		set_variable = {
+			XBJ_landlords_frame_var = 1
+		}
+	}
+	# 计算生产效率
+	set_variable = {
+		landlords_influence_max_efficiency_factor = XBJ_landlords_support
+	}
+	add_to_variable = {
+		landlords_influence_max_efficiency_factor = -50
+	}
+	multiply_variable = {
+		landlords_influence_max_efficiency_factor = 0.2
+	}
+	multiply_variable = {
+		landlords_influence_max_efficiency_factor = XBJ_landlords_influence
+	}
+	multiply_variable = {
+		landlords_influence_max_efficiency_factor = 0.01
+	}
+	multiply_variable = {
+		landlords_influence_max_efficiency_factor = 0.01
+	}
+	# 计算政治点数获取和稳定度
+	set_variable = {
+		landlords_influence_political_power_gain_stability = XBJ_landlords_support
+	}
+	add_to_variable = {
+		landlords_influence_political_power_gain_stability = -50
+	}
+	multiply_variable = {
+		landlords_influence_political_power_gain_stability = XBJ_landlords_influence
+	}
+	multiply_variable = {
+		landlords_influence_political_power_gain_stability = 0.01
+	}
+	multiply_variable = {
+		landlords_influence_political_power_gain_stability = 0.01
+	}
+	# 计算稳定度
+	# set_variable = { landlords_influence_stability = change_XBJ_landlords_influence_by }
+	# multiply_variable = { landlords_influence_stability = 0.25 }
+	# multiply_variable = { landlords_influence_stability = 0.01 }
+	hidden_effect = {
+		if = {
+			limit = {
+				check_variable = {
+					XBJ_landlords_frame_var = 2
+				}
+			}
+		}
+	}
 }
+
 XBJ_tuanjie_update = {
-    add_to_variable = { XBJ_shequn_tuanjiedu = change_XBJ_shequn_tuanjiedu_by }
-    custom_effect_tooltip = shequn_tuanjiedu_will_change_by
-    add_to_variable = { XBJ_shequn_zhichidu = change_XBJ_shequn_zhichidu_by }
-    custom_effect_tooltip = shequn_zhichidu_will_change_by
-    add_to_variable = { XBJ_shequn_jinbudu = change_XBJ_shequn_jinbudu_by }
-    custom_effect_tooltip = shequn_jinbudu_will_change_by
-
-    clamp_variable = {
-        var = XBJ_shequn_tuanjiedu
-        min = 0
-        max = 100
-    }
-    clamp_variable = {
-        var = XBJ_shequn_zhichidu
-        min = 0
-        max = 100
-    }
-    clamp_variable = {
-        var = XBJ_shequn_jinbudu
-        min = 0
-        max = 100
-    }
-    if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 8 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu > 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 7 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu > 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 6 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu > 40 }
-            check_variable = { XBJ_shequn_jinbudu > 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 5 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu > 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 4 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu > 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu > 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 3 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu > 40 }
-            check_variable = { XBJ_shequn_zhichidu > 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 2 }
-    }
-    else = {
-        set_variable = { XBJ_tuanjie_frame_var = 1 }
-    }
-
-    # 计算稳定度
-    set_variable = { tuanjie_stability = XBJ_shequn_tuanjiedu }
-    add_to_variable = { tuanjie_stability = -25 }
-    multiply_variable = { tuanjie_stability = 0.01 }
-    multiply_variable = { tuanjie_stability = XBJ_shequn_zhichidu }
-    multiply_variable = { tuanjie_stability = 0.01 }
-    multiply_variable = { tuanjie_stability = 0.3 }
-    # 计算战争支持度
-    set_variable = { tuanjie_war_support = XBJ_shequn_zhichidu }
-    add_to_variable = { tuanjie_war_support = -25 }
-    multiply_variable = { tuanjie_war_support = 0.01 }
-    multiply_variable = { tuanjie_war_support = 0.1 }
-    # 计算生产消费品
-    set_variable = { tuanjie_cunsumer_goods = tuanjie_war_support }
-    multiply_variable = { tuanjie_cunsumer_goods = -2 }
+	add_to_variable = {
+		XBJ_shequn_tuanjiedu = change_XBJ_shequn_tuanjiedu_by
+	}
+	custom_effect_tooltip = shequn_tuanjiedu_will_change_by
+	add_to_variable = {
+		XBJ_shequn_zhichidu = change_XBJ_shequn_zhichidu_by
+	}
+	custom_effect_tooltip = shequn_zhichidu_will_change_by
+	add_to_variable = {
+		XBJ_shequn_jinbudu = change_XBJ_shequn_jinbudu_by
+	}
+	custom_effect_tooltip = shequn_jinbudu_will_change_by
+	clamp_variable = {
+		var = XBJ_shequn_tuanjiedu
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = XBJ_shequn_zhichidu
+		min = 0
+		max = 100
+	}
+	clamp_variable = {
+		var = XBJ_shequn_jinbudu
+		min = 0
+		max = 100
+	}
+	if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+            }
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 8
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_jinbudu > 40
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 7
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_zhichidu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+            }
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 6
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_zhichidu > 40
+			}
+			check_variable = {
+				XBJ_shequn_jinbudu > 40
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 5
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_shequn_tuanjiedu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+            }
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 4
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_shequn_tuanjiedu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_jinbudu > 40
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 3
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_shequn_tuanjiedu > 40
+			}
+			check_variable = {
+				XBJ_shequn_zhichidu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+            }
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 2
+		}
+	}
+	else = {
+		set_variable = {
+			XBJ_tuanjie_frame_var = 1
+		}
+	}
+	# 计算稳定度
+	set_variable = {
+		tuanjie_stability = XBJ_shequn_tuanjiedu
+	}
+	add_to_variable = {
+		tuanjie_stability = -25
+	}
+	multiply_variable = {
+		tuanjie_stability = 0.01
+	}
+	multiply_variable = {
+		tuanjie_stability = XBJ_shequn_zhichidu
+	}
+	multiply_variable = {
+		tuanjie_stability = 0.01
+	}
+	multiply_variable = {
+		tuanjie_stability = 0.3
+	}
+	# 计算战争支持度
+	set_variable = {
+		tuanjie_war_support = XBJ_shequn_zhichidu
+	}
+	add_to_variable = {
+		tuanjie_war_support = -25
+	}
+	multiply_variable = {
+		tuanjie_war_support = 0.01
+	}
+	multiply_variable = {
+		tuanjie_war_support = 0.1
+	}
+	# 计算生产消费品
+	set_variable = {
+		tuanjie_cunsumer_goods = tuanjie_war_support
+	}
+	multiply_variable = {
+		tuanjie_cunsumer_goods = -6
+	}
 }
+
 XBJ_jinbu_update = {
-    set_variable = { XBJ_jinbudu_speed = 0.01 }
-    set_variable = { XBJ_X = XBJ_shequn_tuanjiedu }
-    multiply_variable = { XBJ_X = 0.01 }
-    add_to_variable= { XBJ_X = 1 }
-    set_variable = { XBJ_Y = XBJ_shequn_zhichidu }
-    multiply_variable = { XBJ_Y = 0.01 }
-    add_to_variable= { XBJ_Y = 1 }
-    set_variable = { XBJ_Z = XBJ_shequn_jinbudu }
-    multiply_variable = { XBJ_Z = 0.01 }
-    multiply_variable = { XBJ_Z = XBJ_Z }
-    set_variable = { XBJ_Z1 = 1 }
-    subtract_from_variable = { XBJ_Z1 = XBJ_Z }
-    multiply_variable = { XBJ_jinbudu_speed = XBJ_Z1 }
-    multiply_variable = { XBJ_jinbudu_speed = XBJ_X }
-    multiply_variable = { XBJ_jinbudu_speed = XBJ_Y }
-    clamp_variable = {
-        var = XBJ_jinbudu_speed
-        min = 0.001
-        max = 100
-    }
-    add_to_variable= { XBJ_shequn_jinbudu = XBJ_jinbudu_speed }
-    clamp_variable = {
-        var = XBJ_shequn_jinbudu
-        min = 0
-        max = 100
-    }
-    if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 8 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu > 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 7 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu > 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 6 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu <= 40 }
-            check_variable = { XBJ_shequn_zhichidu > 40 }
-            check_variable = { XBJ_shequn_jinbudu > 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 5 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu > 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 4 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu > 40 }
-            check_variable = { XBJ_shequn_zhichidu <= 40 }
-            check_variable = { XBJ_shequn_jinbudu > 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 3 }
-    }
-    else_if = {# 换图
-        limit = {
-            check_variable = { XBJ_shequn_tuanjiedu > 40 }
-            check_variable = { XBJ_shequn_zhichidu > 40 }
-            check_variable = { XBJ_shequn_jinbudu <= 40 }
-        }
-        set_variable = { XBJ_tuanjie_frame_var = 2 }
-    }
-    else = {
-        set_variable = { XBJ_tuanjie_frame_var = 1 }
-    }
+	set_variable = {
+		XBJ_jinbudu_speed = 0.01
+	}
+	set_variable = {
+		XBJ_X = XBJ_shequn_tuanjiedu
+	}
+	multiply_variable = {
+		XBJ_X = 0.01
+	}
+	add_to_variable = {
+		XBJ_X = 1
+	}
+	set_variable = {
+		XBJ_Y = XBJ_shequn_zhichidu
+	}
+	multiply_variable = {
+		XBJ_Y = 0.01
+	}
+	add_to_variable = {
+		XBJ_Y = 1
+	}
+	set_variable = {
+		XBJ_Z = XBJ_shequn_jinbudu
+	}
+	multiply_variable = {
+		XBJ_Z = 0.01
+	}
+	multiply_variable = {
+		XBJ_Z = XBJ_Z
+	}
+	set_variable = {
+		XBJ_Z1 = 1
+	}
+	subtract_from_variable = {
+		XBJ_Z1 = XBJ_Z
+	}
+	multiply_variable = {
+		XBJ_jinbudu_speed = XBJ_Z1
+	}
+	multiply_variable = {
+		XBJ_jinbudu_speed = XBJ_X
+	}
+	multiply_variable = {
+		XBJ_jinbudu_speed = XBJ_Y
+	}
+	clamp_variable = {
+		var = XBJ_jinbudu_speed
+		min = 0.001
+		max = 100
+	}
+	add_to_variable = {
+		XBJ_shequn_jinbudu = XBJ_jinbudu_speed
+	}
+	clamp_variable = {
+		var = XBJ_shequn_jinbudu
+		min = 0
+		max = 100
+	}
+	if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+            }
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 8
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_jinbudu > 40
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 7
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_zhichidu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+            }
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 6
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				var = XBJ_shequn_tuanjiedu
+				value = 40
+				compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_zhichidu > 40
+			}
+			check_variable = {
+				XBJ_shequn_jinbudu > 40
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 5
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_shequn_tuanjiedu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 4
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_shequn_tuanjiedu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_zhichidu
+                value = 40
+                compare = less_than_or_equals
+			}
+			check_variable = {
+				XBJ_shequn_jinbudu > 40
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 3
+		}
+	}
+	else_if = {
+		# 换图
+		limit = {
+			check_variable = {
+				XBJ_shequn_tuanjiedu > 40
+			}
+			check_variable = {
+				XBJ_shequn_zhichidu > 40
+			}
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+                value = 40
+                compare = less_than_or_equals
+			}
+		}
+		set_variable = {
+			XBJ_tuanjie_frame_var = 2
+		}
+	}
+	else = {
+		set_variable = {
+			XBJ_tuanjie_frame_var = 1
+		}
+	}
 }

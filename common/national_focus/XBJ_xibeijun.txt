@@ -12,13 +12,14 @@ focus_tree = {
 		x = 2000,
 		y = 2000
 	}
-	focus = {
+	focus = {#未雨绸缪
 		id = XBJ_weiyuchoumou
 		text = XBJ_weiyuchoumou
 		icon = GFX_weiyuchoumou
 		cost = 1
 		x = 12
 		y = 0
+		search_filters = { FOCUS_FILTER_POLITICAL } #政治筛选器
 		completion_reward = {
 			add_political_power = 100
 		}
@@ -73,11 +74,37 @@ focus_tree = {
 		x = 29
 		y = 0
 	}
-	focus = {
+	focus = {#舞棍弄棒
 		id = XBJ_wugunnongbang
 		text = XBJ_wugunnongbang
 		icon = GFX_wugunnongbang
 		cost = 2
+		search_filters = { FOCUS_FILTER_MANPOWER } #人力筛选器
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+			add_war_support = -0.05
+			custom_effect_tooltip = XBJ_wugunnongbang_tt
+			hidden_effect = {
+				1193 = {
+					create_unit = {
+						division = "name = \"第一治安警备骑兵队\" division_template = \"昌德卌四年型治安骑警旅\" start_experience_factor = 0.3"
+						prioritize_location = 13498
+						owner = XBJ
+					}
+					create_unit = {
+						division = "name = \"第二治安警备骑兵队\" division_template = \"昌德卌四年型治安骑警旅\" start_experience_factor = 0.3"
+						prioritize_location = 4709
+						owner = XBJ
+					}
+					create_unit = {
+						division = "name = \"第三治安警备骑兵队\" division_template = \"昌德卌四年型治安骑警旅\" start_experience_factor = 0.3"
+						prioritize_location = 12656
+						owner = XBJ
+					}
+				}
+			}
+		}				
 		prerequisite = {
 			focus = XBJ_weiyuchoumou
 		}
@@ -101,11 +128,20 @@ focus_tree = {
 		x = 15
 		y = 1
 	}
-	focus = {
+	focus = {#济时拯世
 		id = XBJ_jishizhengshi
 		text = XBJ_jishizhengshi
 		icon = GFX_jishizhengshi
 		cost = 2
+		search_filters = { FOCUS_FILTER_POLITICAL }	#政治筛选器
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = civilian_economy
+    			add_idea = partial_economic_mobilisation
+			}
+			add_timed_idea = { idea = XBJ_duanshitongku days = 180 }
+			unlock_decision_category_tooltip = XBJ_quanmian_jieguan
+		}
 		prerequisite = {
 			focus = XBJ_wugunnongbang
 			focus = XBJ_jiezeeryu
@@ -113,11 +149,16 @@ focus_tree = {
 		x = 2
 		y = 2
 	}
-	focus = {
+	focus = {#兴利节用
 		id = XBJ_xinglijieyong
 		text = XBJ_xinglijieyong
 		icon = GFX_xinglijieyong
 		cost = 4
+		search_filters = { FOCUS_FILTER_POLITICAL }	#政治筛选器
+		completion_reward = {
+			modify_timed_idea = { idea = XBJ_duanshitongku days = 180 }
+			unlock_decision_category_tooltip = XBJ_kaiyuan_jieliu
+		}
 		prerequisite = {
 			focus = XBJ_jishizhengshi
 		}
@@ -160,8 +201,6 @@ focus_tree = {
 		prerequisite = {
 			focus = XBJ_liyuexingguo
 			focus = XBJ_qiwujiuguo
-			focus = XBJ_liyuexingguo
-			focus = XBJ_qiwujiuguo
 		}
 		x = 2
 		y = 5
@@ -174,7 +213,6 @@ focus_tree = {
 		prerequisite = {
 			focus = XBJ_qiwujiuguo
 			focus = XBJ_liyuexingguo
-			focus = XBJ_qiwujiuguo
 		}
 		x = 0
 		y = 5
