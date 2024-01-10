@@ -75,6 +75,19 @@ focus_tree = {
 			add_war_support = 0.1
 			add_ideas = war_economy
 			add_core_of = 831
+			831 = {
+				set_building_level = {
+					type = bunker
+					province = {
+						id = 4925
+						id = 13341
+					}
+					level = 2
+					instant_build = yes
+					add_core_of = SCG
+				}
+			}
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 }
 		}
 	}
 	#发动工人
@@ -233,55 +246,55 @@ focus_tree = {
 			custom_effect_tooltip = SCG.tt.1
 			hidden_effect = {
 				if = {
-					limit = { 832 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 832 = {is_core_of = SCG}}
 					SCG = {transfer_state = 832}
 				}
 				if = {
-					limit = { 605 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 605 = {is_core_of = SCG}}
 					SCG = {transfer_state = 605}
 				}
 				if = {
-					limit = { 830 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 830 = {is_core_of = SCG}}
 					SCG = {transfer_state = 830}
 				}
 				if = {
-					limit = { 751 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 751 = {is_core_of = SCG}}
 					SCG = {transfer_state = 751}
 				}
 				if = {
-					limit = { 1219 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 1219 = {is_core_of = SCG}}
 					SCG = {transfer_state = 1219}
 				}
 				if = {
-					limit = { 787 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 787 = {is_core_of = SCG}}
 					SCG = {transfer_state = 787 }
 				}
 				if = {
-					limit = { 1107 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 1107 = {is_core_of = SCG}}
 					SCG = {transfer_state = 1107 }
 				}
 				if = {
-					limit = { 601 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 601 = {is_core_of = SCG}}
 					SCG = {transfer_state = 601 }
 				}
 				if = {
-					limit = { 758 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 758 = {is_core_of = SCG}}
 					SCG = {transfer_state = 758 }
 				}
 				if = {
-					limit = { 1127 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 1127 = {is_core_of = SCG}}
 					SCG = {transfer_state = 1127 }
 				}
 				if = {
-					limit = { 1127 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 1127 = {is_core_of = SCG}}
 					SCG = {transfer_state = 1127 }
 				}
 				if = {
-					limit = { 1106 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 1106 = {is_core_of = SCG}}
 					SCG = {transfer_state = 1106 }
 				}
 				if = {
-					limit = { 757 = {has_state_flag = SCG_qiyizhunbei}}
+					limit = { 757 = {is_core_of = SCG}}
 					SCG = {transfer_state = 757 }
 				}
 			}

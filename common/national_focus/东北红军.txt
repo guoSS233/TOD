@@ -11,13 +11,23 @@ focus_tree = {
 	}
 	default = no
 	continuous_focus_position = { x = 2000 y = 2000 }
-
-	focus = { #中革命临时政府
-		id = SRC_revolutionary_provisional_government
-		icon = GFX_goal_construction_engineering
+	#工人武装起来
+	focus = {
+		id = SRC_wuzhuangqilai
+		icon = GFX_SRC_wuzhuangqilai
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
 
 		x = 9
 		y = 0
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {always = no}
 		cost = 7
 		ai_will_do = {
 			factor = 100
@@ -26,832 +36,1166 @@ focus_tree = {
 		}
 	}
 
-	#左侧分支，大概是军事相关#
-	focus = { #左拿起枪
-		id = SRC_get_your_gun
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_revolutionary_provisional_government
-		}
-		relative_position_id = SRC_revolutionary_provisional_government
-		x = -7
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
+	#手握红章
+	focus = {
+		id = SRC_shouwohuongzhang
+		icon = GFX_SRC_shouwohuongzhang
 
-	#左一，工厂相关
-	focus = { #左左一抢修辽阳兵工厂
-		id = SRC_repair_Liaoyang_Arms_Factory
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_get_your_gun
-		}
-		relative_position_id = SRC_get_your_gun
-		x = -1
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 9
 		y = 1
-		cost = 7
+		
+		cost = 2
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_wuzhuangqilai}
+		
 		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 1 }
+			add_offsite_building = { type = industrial_complex level = 1 }
 		}
 	}
+	#辽东特委成立
 	focus = {
-		id = SRC_call_from_labor_union #左左二 工会的号召
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_repair_Liaoyang_Arms_Factory
-		}
-		relative_position_id = SRC_repair_Liaoyang_Arms_Factory
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_confiscated_military_warehouses #左左三 没收边防军仓库
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_call_from_labor_union
-		}
-		relative_position_id = SRC_call_from_labor_union
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
+		id = SRC_liaodongteweichengli
+		icon = GFX_SRC_liaodongteweichengli
 
-	#左二，人力
-	focus = {
-		id = SRC_the_man_in_army #左右一 军队里的同志
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_get_your_gun
-		}
-		relative_position_id = SRC_get_your_gun
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 9
+		y = 2
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_shouwohuongzhang}
+		
+		completion_reward = { add_political_power = 50 }
 	}
+	#成立中国工农红军
 	focus = {
-		id = SRC_call_they_back #左右二 农民武装队
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_the_man_in_army
-		}
-		relative_position_id = SRC_the_man_in_army
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_students_army #左右三 学生干部团
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_call_they_back
-		}
-		relative_position_id = SRC_call_they_back
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
+		id = SRC_chenglizhongguogongnonghongjun
+		icon = GFX_SRC_chenglizhongguogongnonghongjun
 
-	#左下
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 7
+		y = 3
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_liaodongteweichengli}
+		
+		completion_reward = {
+			recruit_character = SRC_yang_jingyu
+			recruit_character = SRC_xu_xiangqian
+			recruit_character = SRC_zhu_rui
+			recruit_character = SRC_wang_yongqing
+			recruit_character = SRC_wang_minjing
+		}
+	}
+	#动员工人民兵
 	focus = {
-		id = SRC_people #左下 炉火正旺
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_confiscated_military_warehouses
-		}
-		prerequisite = {
-			focus = SRC_students_army
-		}
-		relative_position_id = SRC_get_your_gun
-		x = 0
+		id = SRC_dongyuangongrenminbing
+		icon = GFX_SRC_dongyuangongrenminbing
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 6
 		y = 4
-		cost = 7
-		completion_reward = {
-		}
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_chenglizhongguogongnonghongjun}
+		
+		completion_reward = { add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 3000 } }
 	}
-
-
-	#中
+	#工农革命军事委员会
 	focus = {
-		id = SRC_wartimeism  #战时主义
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_revolutionary_provisional_government
-		}
-		relative_position_id = SRC_revolutionary_provisional_government
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
+		id = SRC_gongnonggemingjunshiweiyuanhui
+		icon = GFX_SRC_gongnonggemingjunshiweiyuanhui
 
-
-	#中左
-	focus = {
-		id = SRC_awake_people #中左一 大规模宣传
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_wartimeism
-		}
-		relative_position_id = SRC_wartimeism
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_why_we_fight #中左二 革命教育
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_awake_people
-		}
-		relative_position_id = SRC_awake_people
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_artillery_academy #中左三 辽阳炮兵学院
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_why_we_fight
-		}
-		relative_position_id = SRC_why_we_fight
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#中右
-	focus = {
-		id = SRC_seized_enterprise #中右一 查封企业
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_wartimeism
-		}
-		relative_position_id = SRC_wartimeism
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_central_bank #中右二 中央银行
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_seized_enterprise
-		}
-		relative_position_id = SRC_seized_enterprise
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_rationing #中右三 优化配给制
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_central_bank
-		}
-		relative_position_id = SRC_central_bank
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#中下
-
-	focus = {
-		id = SRC_land #中下 粮草先行
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_rationing
-		}
-		prerequisite = {
-			focus = SRC_artillery_academy
-		}
-
-		relative_position_id = SRC_wartimeism
-		x = 0
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 8
 		y = 4
-		cost = 7
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_chenglizhongguogongnonghongjun}
+		
+		completion_reward = { army_experience = 50 }
+	}
+	#整编投诚部队
+	focus = {
+		id = SRC_zhengbiantouchengbudui
+		icon = GFX_SRC_zhengbiantouchengbudui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 7
+		y = 5
+		
+		cost = 6
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_dongyuangongrenminbing}
+		prerequisite = {focus = SRC_gongnonggemingjunshiweiyuanhui}
+		
+		completion_reward = { load_oob = "SRC_toucheng" }
+	}
+	#十万旌旗斩阎罗
+	focus = {
+		id = SRC_shiwanjingqizhanyanluo
+		icon = GFX_SRC_shiwanjingqizhanyanluo
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 7
+		y = 6
+		
+		cost = 6
+		
+		ai_will_do = {factor = 10}
+		available = {always = no}
+		prerequisite = {focus = SRC_zhengbiantouchengbudui}
+		
+		completion_reward = { load_oob = "SRC_toucheng" }
+	}
+	#东北临时革命政府
+	focus = {
+		id = SRC_dongbeilinshigemingzhengfu
+		icon = GFX_SRC_dongbeilinshigemingzhengfu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 11
+		y = 3
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_liaodongteweichengli}
+		
+		completion_reward = { add_stability = 0.1 }
+	}
+	#临时军管委员会
+	focus = {
+		id = SRC_linshijunguanweiyuanhui
+		icon = GFX_SRC_linshijunguanweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 10
+		y = 4
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_dongbeilinshigemingzhengfu}
+		
+		completion_reward = { add_war_support = 0.1 }
+	}
+	#军事优先
+	focus = {
+		id = SRC_junshiyouxian
+		icon = GFX_SRC_junshiyouxian
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 10
+		y = 5
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_linshijunguanweiyuanhui}
+		
+		completion_reward = { add_to_variable = { SRC_siliedeshehui_gongchangchanchu = 0.1 } }
+	}
+	#组建工厂委员会
+	focus = {
+		id = SRC_zujiangongchangweiyuanhui
+		icon = GFX_SRC_zujiangongchangweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 12
+		y = 4
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_dongbeilinshigemingzhengfu}
+		
 		completion_reward = {
+			add_to_variable = { SRC_siliedeshehui_gongchangxiaolv = 0.05 }
+			add_to_variable = { SRC_siliedeshehui_gongchangzengzhang = 0.05 }
 		}
 	}
-
-
-	#右
+	#恢复工厂生产
 	focus = {
-		id = SRC_unified_command #右 统一指挥
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_revolutionary_provisional_government
+		id = SRC_huifugongchangshengchan
+		icon = GFX_SRC_huifugongchangshengchan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 12
+		y = 5
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_zujiangongchangweiyuanhui}
+		
+		completion_reward = { add_to_variable = { SRC_siliedeshehui_wendingdu = 0.15 } }
+	}
+	#政府正规化
+	focus = {
+		id = SRC_zhengfuzhengguihua
+		icon = GFX_SRC_zhengfuzhengguihua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 11
+		y = 6
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		prerequisite = {focus = SRC_junshiyouxian}
+		prerequisite = {focus = SRC_huifugongchangshengchan}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_siliedeshehui }
+			add_research_slot = 1
 		}
-		relative_position_id = SRC_revolutionary_provisional_government
+	}
+	#同产公会中央抵达
+	focus = {
+		id = SRC_tongchangonghuizhongyangdida
+		icon = GFX_SRC_tongchangonghuizhongyangdida
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { NOT = {  has_country_flag = SRC_zhongyangdida }}}
+		x = 9
+		y = 6
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {always = no}
+		prerequisite = {focus = SRC_liaodongteweichengli}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_siliedeshehui }
+			add_research_slot = 1
+		}
+	}
+	#东北革命大会召开
+	focus = {
+		id = SRC_dongbeigemingdahuizhaokai
+		icon = GFX_SRC_tongchangonghuizhongyangdida
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { has_country_flag = SRC_zhongyangdida }}
+		x = 9
+		y = 0
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_buwangkulaojichou
+			remove_ideas = SRC_qiyireqing
+		}
+	}
+	#任辅臣主席
+	focus = {
+		id = SRC_renfuchenzhuxi
+		icon = GFX_SRC_renfuchenzhuxi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { has_country_leader = SRC_ren_fuchen }}
+		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
+		x = 9
+		y = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#中央计划委员会
+	focus = {
+		id = SRC_zhongyangjihuaweiyuanhui
+		icon = GFX_SRC_zhongyangjihuaweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renfuchenzhuxi}
 		x = 7
 		y = 1
-		cost = 7
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
 		completion_reward = {
+			remove_ideas = SRC_gongrenhuchangreqing
+			add_dynamic_modifier = { modifier = SRC_jihuashengchan }
+			add_to_variable = { SRC_jihuashengchan_gongchangchanchu = 0.05 }
+			add_to_variable = { SRC_jihuashengchan_xiaofeiping = -0.1 }
 		}
 	}
+	#工业国有化
+	focus = {
+		id = SRC_gongyeguoyouhua
+		icon = GFX_SRC_gongyeguoyouhua
 
-
-	#右左
-	focus = {
-		id = SRC_staff #右左一 临时参谋部
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_unified_command
-		}
-		relative_position_id = SRC_unified_command
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_army_establishment #右左二 统一编制
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_staff
-		}
-		relative_position_id = SRC_staff
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_new_tactics #右左三 更新战术思想
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_army_establishment
-		}
-		relative_position_id = SRC_army_establishment
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#右右
-	focus = {
-		id = SRC_red_navy #右右一 红旗海军
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_unified_command
-		}
-		relative_position_id = SRC_unified_command
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_red_air_force #右右二 红翼大鹏
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_red_navy
-		}
-		relative_position_id = SRC_red_navy
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	focus = {
-		id = SRC_modern_equipment #右右三 现代化装备
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_red_air_force
-		}
-		relative_position_id = SRC_red_air_force
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-	#右下
-	focus = {
-		id = SRC_red_tank # 红色铁骑兵
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_new_tactics
-		}
-		prerequisite = {
-			focus = SRC_modern_equipment
-		}
-		relative_position_id = SRC_unified_command
-		x = 0
-		y = 4
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#下
-	focus = {
-		id = SRC_for_the_future # 革命万岁
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_red_tank
-		}
-		prerequisite = {
-			focus = SRC_people
-		}
-		prerequisite = {
-			focus = SRC_land
-		}
-		relative_position_id = SRC_revolutionary_provisional_government
-		x = 0
-		y = 6
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#从下开始为另一端东北或全国革命用国策
-
-	focus = {
-		id = SRC_prepare_for_long_day # 准备持久战
-		icon = GFX_goal_construction_engineering
-		x = 30
-		y = 0
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#左
-	focus = {
-		id = SRC_wartime_office # 战时工部局
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_prepare_for_long_day
-		}
-
-		relative_position_id = SRC_prepare_for_long_day
-		x = -5
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_zhongyangjihuaweiyuanhui}
+		x = 7
 		y = 2
-		cost = 7
-		completion_reward = {
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SRC_jihuashengchan_jianzaosudu = 0.1 }
 		}
 	}
-
+	#农业集体化
 	focus = {
-		id = SRC_continue_repair_liaoyang_arsenal # 继续修复辽阳兵工厂
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_wartime_office
-		}
-		relative_position_id = SRC_wartime_office
-		x = -3
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
+		id = SRC_nongyejitihua
+		icon = GFX_SRC_nongyejitihua
 
-	focus = {
-		id = SRC_repair_jinzhou_shipyard # 修复金州造船厂
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_wartime_office
-		}
-		relative_position_id = SRC_wartime_office
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_shengyang_aircraft_factory # 沈阳飞机制造厂
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_wartime_office
-		}
-		relative_position_id = SRC_wartime_office
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_changchun_arm_factory # 长春军工所
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_wartime_office
-		}
-		relative_position_id = SRC_wartime_office
-		x = 3
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_adjust_production_plan # 调整生产方案
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_continue_repair_liaoyang_arsenal
-		}
-		prerequisite = {
-			focus = SRC_repair_jinzhou_shipyard
-		}
-		prerequisite = {
-			focus = SRC_shengyang_aircraft_factory
-		}
-		prerequisite = {
-			focus = SRC_changchun_arm_factory
-		}
-
-		relative_position_id = SRC_wartime_office
-		x = 0
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gongyeguoyouhua}
+		x = 7
 		y = 3
-		cost = 7
-		completion_reward = {
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SRC_jihuashengchan_xiaofeiping = -0.1 }
 		}
 	}
-
-	#中
-
+	#一五计划
 	focus = {
-		id = SRC_liaoyang_SC # 辽阳前线司令部
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_prepare_for_long_day
-		}
-		relative_position_id = SRC_prepare_for_long_day
-		x = 2
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
+		id = SRC_yiwujihua
+		icon = GFX_SRC_yiwujihua
 
-
-	focus = {
-		id = SRC_finish_bzf # 剿灭北镇
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_prepare_for_long_day
-		}
-		relative_position_id = SRC_prepare_for_long_day
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-
-
-
-
-	#左支
-
-	focus = {
-		id = SRC_send_more_man_to_liaoxi # 增兵辽西
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_liaoyang_SC
-		}
-
-		relative_position_id = SRC_liaoyang_SC
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_liaoxi_bunker # 辽西堡垒化
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_send_more_man_to_liaoxi
-		}
-
-		relative_position_id = SRC_send_more_man_to_liaoxi
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_liaoning_antiaircraft_plan # 辽东防空方案
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_liaoxi_bunker
-		}
-
-		relative_position_id = SRC_liaoxi_bunker
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_expansion_jinzhou_bunker # 扩大锦州防线
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_liaoning_antiaircraft_plan
-		}
-
-		relative_position_id = SRC_liaoning_antiaircraft_plan
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#右支
-
-	focus = {
-		id = SRC_changchun_fast_school # 长春速成学堂
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_liaoyang_SC
-		}
-
-		relative_position_id = SRC_liaoyang_SC
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_expand_recruitment_promotion # 扩大招兵宣传
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_changchun_fast_school
-		}
-
-		relative_position_id = SRC_changchun_fast_school
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_united_revolutionary_front # 团结革命阵线
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_expand_recruitment_promotion
-		}
-
-		relative_position_id = SRC_expand_recruitment_promotion
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_friend_from_CCCP # 布尔什维克兄弟
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_united_revolutionary_front
-		}
-
-		relative_position_id = SRC_united_revolutionary_front
-		x = 0
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-
-
-	focus = {
-		id = SRC_redarmy_strong # 红军最强大
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_adjust_production_plan
-		}
-		prerequisite = {
-			focus = SRC_friend_from_CCCP
-		}
-		prerequisite = {
-			focus = SRC_expansion_jinzhou_bunker
-		}
-
-		relative_position_id = SRC_adjust_production_plan
-		x = 2
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#继续革命战争
-
-
-	focus = {
-		id = SRC_continue_tatakai # 继续革命
-		icon = GFX_goal_construction_engineering
-		x = 40
-		y = 0
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#入关
-	focus = {
-		id = SRC_get_ready_in_jinzhou # 踹北门
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_continue_tatakai
-		}
-
-		relative_position_id = SRC_continue_tatakai
-		x = -2
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_call_menggu # 联系蒙古同志
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_get_ready_in_jinzhou
-		}
-
-		relative_position_id = SRC_get_ready_in_jinzhou
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_the_man_in_bailiu # 渗透百柳防线
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_get_ready_in_jinzhou
-		}
-
-		relative_position_id = SRC_get_ready_in_jinzhou
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_blow_up_bunker # 准备爆破
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_call_menggu
-		}
-		prerequisite = {
-			focus = SRC_the_man_in_bailiu
-		}
-		relative_position_id = SRC_get_ready_in_jinzhou
-		x = 0
-		y = 2
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#
-
-	focus = {
-		id = SRC_worker_in_shandong # 山东工人起义
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_continue_tatakai
-		}
-
-		relative_position_id = SRC_continue_tatakai
-		x = 2
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	#
-
-	focus = {
-		id = SRC_call_the_comrade_in_shandong # 联络同志
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_worker_in_shandong
-		}
-
-		relative_position_id = SRC_worker_in_shandong
-		x = -1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_call_the_worker_in_shandong # 工会起义
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_worker_in_shandong
-		}
-		relative_position_id = SRC_worker_in_shandong
-		x = 1
-		y = 1
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-	focus = {
-		id = SRC_send_the_weapon # 输送人员物资
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_call_the_comrade_in_shandong
-		}
-		prerequisite = {
-			focus = SRC_call_the_worker_in_shandong
-		}
-		relative_position_id = SRC_worker_in_shandong
-		x = 0
-		y = 2
-		cost = 7
-		completion_reward = {
-		}
-	}
-
-
-
-	focus = {
-		id = SRC_for_a_new_china # 为了光明的未来
-		icon = GFX_goal_construction_engineering
-		prerequisite = {
-			focus = SRC_blow_up_bunker
-		}
-		prerequisite = {
-			focus = SRC_send_the_weapon
-		}
-		relative_position_id = SRC_continue_tatakai
-		x = 0
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_nongyejitihua}
+		x = 7
 		y = 4
-		cost = 7
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
 		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_jihuashengchan }
+			add_ideas = SRC_yiwu
 		}
 	}
+	#坚持领导权
+	focus = {
+		id = SRC_jianchilingdaoquan
+		icon = GFX_SRC_jianchilingdaoquan
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renfuchenzhuxi}
+		x = 9
+		y = 1
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {
+			add_dynamic_modifier = { modifier = SRC_dangdelingdao }
+		}
+		
+		completion_reward = {}
+	}
+	#反自由主义与宗派主义运动
+	focus = {
+		id = SRC_fanyundong
+		icon = GFX_SRC_fanyundong
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_jianchilingdaoquan}
+		x = 9
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_popularity = { ideology = vanguard_socialism popularity = 0.2 } }
+	}
+	#工协是大学
+	focus = {
+		id = SRC_gongxieshidaxue
+		icon = GFX_SRC_gongxieshidaxue
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_fanyundong}
+		x = 9
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_jihuashengchan_zhengzhidianshu = 0.15 }
+		}
+	}
+	#从群众中来到群众中去
+	focus = {
+		id = SRC_qunzhong
+		icon = GFX_SRC_qunzhong
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gongxieshidaxue}
+		x = 9
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_stability = 0.1}
+	}
+	#东北人民大学
+	focus = {
+		id = SRC_dongbeirenmindaxue
+		icon = GFX_SRC_dongbeirenmindaxue
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renfuchenzhuxi}
+		x = 11
+		y = 1
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_research_slot = 1 }
+	}
+	#东北革命格致校
+	focus = {
+		id = SRC_dongbeigeminggezhiyuan
+		icon = GFX_SRC_dongbeigeminggezhiyuan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeirenmindaxue}
+		x = 11
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				technology = industry
+			}
+		}
+	}
+	#坚决反对个人崇拜
+	focus = {
+		id = SRC_jianjuefanduigerenchongbai
+		icon = GFX_SRC_jianjuefanduigerenchongbai
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeigeminggezhiyuan}
+		x = 11
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_ideas = SRC_wuchanjiejiminzhu }
+	}
+	#同产主义新文化运动
+	focus = {
+		id = SRC_xinwenhuayundong
+		icon = GFX_SRC_xinwenhuayundong
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_jianjuefanduigerenchongbai}
+		x = 11
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_wuchanjiejiminzhu
+			add_ideas = SRC_wuchanjiejiwenhua
+		}
+	}
+	#红星照耀东方
+	focus = {
+		id = SRC_hongxingzhaoyaodongfang
+		icon = GFX_SRC_hongxingzhaoyaodongfang
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_yiwujihua}
+		prerequisite = {focus = SRC_qunzhong}
+		prerequisite = {focus = SRC_xinwenhuayundong}
+		x = 9
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_wuchanjiejiwenhua
+			add_ideas = SRC_zhaoyaodongfang
+		}
+	}
+	#李大钊主席
+	focus = {
+		id = SRC_lidazhaozhuxi
+		icon = GFX_SRC_lidazhaozhuxi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { has_country_leader = SRC_li_dazhao }}
+		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
+		x = 9
+		y = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#东北高校自治会
+	focus = {
+		id = SRC_dongbeigaoxiaozizhihui
+		icon = GFX_SRC_dongbeigaoxiaozizhihui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_lidazhaozhuxi}
+		x = 7
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_ides = SRC_xueshuminzhu}
+	}
+	#东北格致院委员会
+	focus = {
+		id = SRC_dongbeigezhiyuanweiyuanhui
+		icon = GFX_SRC_dongbeigezhiyuanweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeigaoxiaozizhihui}
+		x = 7
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_research_slot = 1}
+	}
+	#新文化思潮
+	focus = {
+		id = SRC_xinwenhuasichao
+		icon = GFX_SRC_xinwenhuasichao
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeigaoxiaozizhihui}
+		x = 7
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_stability = 0.1}
+	}
+	#建立基层工农民主机制
+	focus = {
+		id = SRC_jicengminzhu
+		icon = GFX_SRC_jicengminzhu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_xinwenhuasichao}
+		x = 7
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_xueshuminzhu
+			add_ideas = SRC_xinwenhua
+		}
+	}
+	#革命委员会
+	focus = {
+		id = SRC_gemingweiyuanhui
+		icon = GFX_SRC_gemingweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_lidazhaozhuxi}
+		x = 9
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_ideas = SRC_gemingzhengfu}
+	}
+	#赋权人民代表大会
+	focus = {
+		id = SRC_renmindaibiaodahui
+		icon = GFX_SRC_renmindaibiaodahui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gemingweiyuanhui}
+		x = 9
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_popularity = { ideology = council_socialism popularity = 0.1 } }
+	}
+	#政治大民主
+	focus = {
+		id = SRC_zhengzhidaminzhu
+		icon = GFX_SRC_zhengzhidaminzhu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renmindaibiaodahui}
+		x = 9
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = SRC_gemingzhengfu
+			add_dynamic_modifier = { modifier = SRC_renminminzhu }
+		}
+	}
+	#群众直接监督
+	focus = {
+		id = SRC_qunzhongzhijiejiandu
+		icon = GFX_SRC_qunzhongzhijiejiandu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_zhengzhidaminzhu}
+		x = 9
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_renminminzhu_gongyeqiye = -0.5 }
+			add_to_variable = { SRC_renminminzhu_zhanzhengzhichi = 0.1 }
+		}
+	}
+	#国家经济委员会
+	focus = {
+		id = SRC_guojiajingjiweiyuanhui
+		icon = GFX_SRC_guojiajingjiweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_lidazhaozhuxi}
+		x = 11
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = SRC_gongrenhuchangreqing
+			add_dynamic_modifier = { modifier = SRC_jingweihui }
+			add_to_variable = { SRC_jingweihui_xiaofeiping = -0.1 }
+		}
+	}
+	#关系再平衡
+	focus = {
+		id = SRC_guanxizaipingheng
+		icon = GFX_SRC_guanxizaipingheng
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guojiajingjiweiyuanhui}
+		x = 11
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_jingweihui_gongchangzengzhang = 0.1 }
+		}
+	}
+	#农业合作化
+	focus = {
+		id = SRC_nongyehezuohua
+		icon = GFX_SRC_guanxizaipingheng
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guojiajingjiweiyuanhui}
+		x = 11
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_jingweihui_xiaofeiping = -0.2 }
+		}
+	}
+	#召开经委大会
+	focus = {
+		id = SRC_zhaokaijingweidahui
+		icon = GFX_SRC_zhaokaijingweidahui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_nongyehezuohua}
+		x = 11
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_jingweihui_gongchangchanchu = 0.1 }
+		}
+	}
+	#赤旗指引未来
+	focus = {
+		id = SRC_chiqizhiyinweilai
+		icon = GFX_SRC_chiqizhiyinweilai
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_jicengminzhu}
+		prerequisite = {focus = SRC_qunzhongzhijiejiandu}
+		prerequisite = {focus = SRC_zhaokaijingweidahui}
+		x = 9
+		y = 6
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_renminminzhu }
+			add_ideas = SRC_chiqizhiyin
+		}
+	}
+	#陈独秀主席
+	focus = {
+		id = SRC_chenduxiuzhuxi
+		icon = GFX_SRC_chenduxiuzhuxi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {if = { has_country_leader = SRC_chen_duxiu }}
+		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
+		x = 9
+		y = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#学术，文化革命化
+	focus = {
+		id = SRC_xueshuwenhuageminghua
+		icon = GFX_SRC_xueshuwenhuageminghua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_chenduxiuzhuxi}
+		x = 7
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_dynamic_modifier = { modifier = SRC_gemingwenhua }
+			add_to_variable = { SRC_gemingwenhua_keyan = 0.1 }
+		}
+	}
+	#东北劳动大学
+	focus = {
+		id = SRC_dongbeilaodongdaxue
+		icon = GFX_SRC_dongbeilaodongdaxue
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_xueshuwenhuageminghua}
+		x = 7
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingwenhua_keyan = 0.1 }
+			add_to_variable = { SRC_gemingwenhua_gongchangxiaolv = 0.1 }
+		}
+	}
+	#强化青年工作
+	focus = {
+		id = SRC_qianghuaqingniangongzuo
+		icon = GFX_SRC_qianghuaqingniangongzuo
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeilaodongdaxue}
+		x = 7
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingwenhua_wendingdu = 0.1 }
+		}
+	}
+	#社会主义接班人
+	focus = {
+		id = SRC_shehuizhuyijiebanren
+		icon = GFX_SRC_shehuizhuyijiebanren
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_qianghuaqingniangongzuo}
+		x = 7
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingwenhua_zhengzhidianshu = 0.1 }
+		}
+	}
+	#革命统一战线
+	focus = {
+		id = SRC_gemingtongyizhanxian
+		icon = GFX_SRC_gemingtongyizhanxian
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_chenduxiuzhuxi}
+		x = 9
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_dynamic_modifier = { modifier = SRC_gemingtongmeng}}
+	}
+	#构建反帝同盟
+	focus = {
+		id = SRC_goujianfanditongmeng
+		icon = GFX_SRC_goujianfanditongmeng
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gemingtongyizhanxian}
+		x = 9
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingtongmeng_faan = -0.33 }
+		}
+	}
+	#改造资产阶级
+	focus = {
+		id = SRC_gaizaozichanjieji
+		icon = GFX_SRC_gaizaozichanjieji
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_goujianfanditongmeng}
+		x = 9
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_popularity = { ideology = moderate_socialism popularity = 0.1 } }
+	}
+	#逐步向大同世界过度
+	focus = {
+		id = SRC_datongshijieguodu
+		icon = GFX_SRC_dagtonshijieguodu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gaizaozichanjieji}
+		x = 9
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingtongmeng_shuncong = 0.01 }
+		}
+	}
+	#国家改革委员会
+	focus = {
+		id = SRC_guojiagaigeweiyuanhui
+		icon = GFX_SRC_guojiagaigeweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_chenduxiuzhuxi}
+		x = 11
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_gongrenhuchangreqing
+			add_dynamic_modifier = { modifier = SRC_gaigewei }
+		}
+	}
+	#赎买企业
+	focus = {
+		id = SRC_shumaiqiye
+		icon = GFX_SRC_shumaiqiye
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guojiagaigeweiyuanhui}
+		x = 11
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_jichusheshi = 0.1 }
+		}
+	}
+	#土地改革
+	focus = {
+		id = SRC_shumaiqiye
+		icon = GFX_SRC_shumaiqiye
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guojiagaigeweiyuanhui}
+		x = 11
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_diqugongye = 0.1}
+		}
+	}
+	#铁锅炖大鹅
+	focus = {
+		id = SRC_tieguodundae
+		icon = GFX_SRC_tieguodundae
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guojiagaigeweiyuanhui}
+		x = 11
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_minzhuanjun = -0.2 }
+		}
+	}
+	#朱门换新天
+	focus = {
+		id = SRC_zhumenhuanxintian
+		icon = GFX_SRC_zhumenhuanxintian
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_shehuizhuyijiebanren}
+		prerequisite = {focus = SRC_tieguodundae}
+		prerequisite = {focus = SRC_datongshijieguodu}
+		x = 9
+		y = 6
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_gemingwenhua }
+			add_ideas = SRC_zhumen
+		}
+	}
 
 
 }
