@@ -419,12 +419,8 @@ country_event = {
 		name = mingcivwar.57.a 
 		complete_national_focus = MNG_kaolvjichengren
 	}
-	option = { 
-		name = mingcivwar.57.b 
-		complete_national_focus = MNG_kaolvjichengren
-	}
 }
-#改革启动
+#改革启动 1937.3.15
 country_event = {
 	id = mingcivwar.58
 	title = mingcivwar.58.t
@@ -432,7 +428,12 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
-	option = { name = mingcivwar.58.a }
+	option = { 
+		name = mingcivwar.58.a 
+		complete_national_focus = MNG_bingzhengjianguo
+		set_country_flag = MNG_taisunjiwei
+		mark_focus_tree_layout_dirty = yes
+	}
 }
 #咨议院会议上的争论
 country_event = {
