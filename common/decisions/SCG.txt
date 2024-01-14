@@ -111,6 +111,24 @@ SCG_quanchuanqiyi_categories = {
 			1219 = {add_core_of = SCG}
 		}
 	}
+	SIC_ganziqiyi = {
+		icon = ger_military_buildup
+		
+		visible = {always = yes}
+		allowed = { tag = SCG } 
+		available = { }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 1107 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+			custom_effect_tooltip = SCG.tt.2
+			1107 = {add_core_of = SCG}
+		}
+	}
 	
 	SIC_xizangqiyi = {
 		icon = ger_military_buildup
