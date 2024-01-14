@@ -1,0 +1,77 @@
+#撕裂的社会
+SRC_siliedeshehui = {
+	enable = { always = yes }
+	icon = SRC_siliedeshehui
+	production_factory_max_efficiency_factor = SRC_siliedeshehui_gongchangxiaolv
+	production_factory_efficiency_gain_factor = SRC_siliedeshehui_gongchangzengzhang
+	industrial_capacity_factory = SRC_siliedeshehui_gongchangchanchu
+	stability_factor = SRC_siliedeshehui_wendingdu
+	political_power_gain = SRC_siliedeshehui_zhengzhidianshu
+}
+#计划生产
+SRC_jihuashengchan = {
+	enable = { always = yes }
+	icon = SRC_jihuashengchan
+	industry_repair_factor = 0.1
+	production_factory_max_efficiency_factor = SRC_jihuashengchan_gongchangxiaolv
+	industrial_capacity_factory = SRC_jihuashengchan_gongchangchanchu
+	production_speed_buildings_factor = SRC_jihuashengchan_jianzaosudu
+	consumer_goods_factor = SRC_jihuashengchan_xiaofeiping
+}
+#党的领导
+SRC_jihuashengchan = {
+	enable = { always = yes }
+	icon = SRC_jihuashengchan
+	MODIFIER_STABILITY_POPULARITY_FACTOR = 0.5
+	political_power_factor = SRC_jihuashengchan_zhengzhidianshu
+}
+#人民民主
+SRC_renminminzhu = {
+	enable = { always = yes }
+	icon = SRC_renminminzhu
+	MODIFIER_STABILITY_WAR_FACTOR = -0.5 
+	MODIFIER_STABILITY_WAR_FACTOR = -0.5
+	MODIFIER_COMPLIANCE_GROWTH = 0.25
+	industrial_concern_cost_factor = SRC_renminminzhu_gongyeqiye
+	war_support_factor = SRC_renminminzhu_zhanzhengzhichi
+}
+#经委会
+SRC_jingweihui = {
+	enable = { always = yes }
+	icon = SRC_jingweihui
+	industry_repair_factor = 0.1
+	production_speed_buildings_factor = 0.1
+	production_factory_efficiency_gain_factor = SRC_jingweihui_gongchangzengzhang
+	industrial_capacity_factory = SRC_jingweihui_gongchangchanchu
+	consumer_goods_factor = SRC_jingweihui_xiaofeiping
+}
+#革命文化
+SRC_gemingwenhua = {
+	enable = { always = yes }
+	icon = SRC_gemingwenhua
+	research_speed_factor = SRC_gemingwenhua_keyan
+	production_factory_max_efficiency_factor = SRC_gemingwenhua_gongchangxiaolv
+	stability_factor = SRC_gemingwenhua_wendingdu
+}
+#革命同盟
+SRC_gemingtongmeng = {
+	enable = { always = yes }
+	icon = SRC_gemingtongmeng
+	mobilization_laws_cost_factor = SRC_gemingtongmeng_faan
+	trade_laws_cost_factor = SRC_gemingtongmeng_faan
+	economy_cost_factor = SRC_gemingtongmeng_faan
+	political_power_gain = 0.1
+	MODIFIER_COMPLIANCE_GROWTH = SRC_gemingtongmeng_shuncong
+}
+#改革委
+SRC_gaigewei = {
+	enable = { always = yes }
+	icon = SRC_gemingtongmeng
+	industry_repair_factor = 0.1
+	consumer_goods_factor = -0.1
+	production_factory_max_efficiency_factor = 0.1
+	MODIFIER_CONVERSION_COST_CIV_TO_MIL_FACTOR = SRC_gaigewei_minzhuanjun
+	local_building_slots_factor = SRC_gaigewei_diqugongye
+}
+
+

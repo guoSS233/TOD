@@ -1,0 +1,49 @@
+#帝国工业心脏
+GPS_diguogongyexinzang = {
+	icon = GPS_diguogongyexinzang
+	production_speed_infrastructure_factor = GPS_diguogongyexinzang_jichusheshi#0.15
+	production_speed_rail_way_factor = GPS_diguogongyexinzang_tielu#0.15
+	local_resources_factor = GPS_diguogongyexinzang_ziyuan#0.1
+}
+#奉诏剿匪
+GPS_fengzhaojiaofei = {
+	icon = GPS_fengzhaojiaofei
+	army_core_defence_factor = GPS_fengzhaojiaofei_fangyu#0.2
+	production_speed_bunker_factor = GPS_fengzhaojiaofei_yaosai
+	conscription_factor = GPS_fengzhaojiaofei
+	army_core_attack_factor = GPS_fengzhaojiaofei_gongji
+}
+#风雨飘荡
+GPS_fengyupiaodang = {
+	icon = GPS_fengyupiaodang
+	consumer_goods_factor = GPS_diguogongyexinzang_xiaofeiping#0.25
+	stability_factor = GPS_diguogongyexinzang_wendingdu#-0.15
+	army_org_factor = GPS_diguogongyexinzang_zuzhidu#-0.05
+	political_power_gain = GPS_fengyupiaodang_zhengzhidian
+	planning_speed = GPS_fengyupiaodang_jihuasudu
+	DIG_IN_SPEED = GPS_fengyupiaodang_qianhaosudu
+	MAX_DIG_IN = GPS_fengyupiaodang_qianhao
+	industrial_capacity_factory = GPS_fengyupiaodang_chanchu
+	production_factory_max_efficiency_factor = GPS_fengyupiaodang_xiaolv
+}
+#开府仪同三司
+GPS_kaifuyitongsansi = {
+	icon = GPS_kaifuyitongsansi
+	political_power_gain = GPS_kaifuyitongsansi_zhengzhidian
+	army_defence_factor = GPS_kaifuyitongsansi_fangyu
+	army_core_attack_factor = GPS_kaifuyitongsansi_gongji
+	consumer_goods_factor = GPS_kaifuyitongsansi_xiaofeiping
+	equipment_bonus = {
+		infantry_equipment = {
+			build_cost_ic = GPS_kaifuyitongsansi_buqiang
+			instant = yes
+		}
+	}
+}
+#战后重建
+GPS_zhanhouchongjian = {
+	icon = GPS_zhanhouchongjian
+	INDUSTRY_REPAIR_FACTOR = 0.1
+}
+
+
