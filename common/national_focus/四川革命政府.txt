@@ -57,9 +57,6 @@ focus_tree = {
 		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
 		x = 25
 		y = 1
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -74,7 +71,6 @@ focus_tree = {
 			add_stability = 0.1
 			add_war_support = 0.1
 			add_ideas = war_economy
-			add_core_of = 831
 			831 = {
 				set_building_level = {
 					type = bunker
@@ -84,8 +80,8 @@ focus_tree = {
 					}
 					level = 2
 					instant_build = yes
-					add_core_of = SCG
 				}
+				add_core_of = SCG
 			}
 			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1500 }
 		}
@@ -98,9 +94,6 @@ focus_tree = {
 		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
 		x = 22
 		y = 2
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -125,9 +118,6 @@ focus_tree = {
 		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
 		x = 24
 		y = 2
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -152,9 +142,6 @@ focus_tree = {
 		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
 		x = 26
 		y = 2
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -178,9 +165,6 @@ focus_tree = {
 		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
 		x = 28
 		y = 2
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -199,13 +183,11 @@ focus_tree = {
 	focus = {
 		id = SCG_jianlihongjun
 		icon = GFX_SCG_jianlihongjun
-		prerequisite = { focus = SCG_fadonggongren focus = SCG_chongzujundui}
+		prerequisite = { focus = SCG_fadonggongren }
+		prerequisite = { focus = SCG_chongzujundui }
 		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
 		x = 23
 		y = 3
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -225,13 +207,11 @@ focus_tree = {
 	focus = {
 		id = SCG_quanchuanqiyi
 		icon = GFX_SCG_quanchuanqiyi
-		prerequisite = { focus = SCG_hezuo focus = SCG_lianluoqitachengshi}
+		prerequisite = { focus = SCG_lianluoqitachengshi }
+		prerequisite = { focus = SCG_hezuo }
 		allow_branch = {if = { NOT = { has_country_flag = SCG_gemingchenggong }}}
 		x = 27
 		y = 3
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -247,55 +227,39 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = { 832 = {is_core_of = SCG}}
-					SCG = {transfer_state = 832}
+					load_oob = SCG_qiyi_832
 				}
 				if = {
 					limit = { 605 = {is_core_of = SCG}}
-					SCG = {transfer_state = 605}
+					load_oob = SCG_qiyi_605
 				}
 				if = {
-					limit = { 830 = {is_core_of = SCG}}
-					SCG = {transfer_state = 830}
+					limit = { 830 = {is_core_of = SCG}
+					load_oob = SCG_qiyi_830
 				}
 				if = {
 					limit = { 751 = {is_core_of = SCG}}
-					SCG = {transfer_state = 751}
+					load_oob = SCG_qiyi_751
 				}
 				if = {
 					limit = { 1219 = {is_core_of = SCG}}
-					SCG = {transfer_state = 1219}
-				}
-				if = {
-					limit = { 787 = {is_core_of = SCG}}
-					SCG = {transfer_state = 787 }
+					load_oob = SCG_qiyi_1219
 				}
 				if = {
 					limit = { 1107 = {is_core_of = SCG}}
-					SCG = {transfer_state = 1107 }
+					load_oob = SCG_qiyi_1107
 				}
 				if = {
 					limit = { 601 = {is_core_of = SCG}}
-					SCG = {transfer_state = 601 }
-				}
-				if = {
-					limit = { 758 = {is_core_of = SCG}}
-					SCG = {transfer_state = 758 }
-				}
-				if = {
-					limit = { 1127 = {is_core_of = SCG}}
-					SCG = {transfer_state = 1127 }
-				}
-				if = {
-					limit = { 1127 = {is_core_of = SCG}}
-					SCG = {transfer_state = 1127 }
-				}
-				if = {
-					limit = { 1106 = {is_core_of = SCG}}
-					SCG = {transfer_state = 1106 }
+					load_oob = SCG_qiyi_601
 				}
 				if = {
 					limit = { 757 = {is_core_of = SCG}}
-					SCG = {transfer_state = 757 }
+					load_oob = SCG_qiyi_757
+				}
+				if = {
+					limit = { 752 = {is_core_of = SCG}}
+					load_oob = SCG_qiyi_752
 				}
 			}
 		}
@@ -309,9 +273,6 @@ focus_tree = {
 		allow_branch = {if = { NOT = {  has_country_flag = SCG_gemingchenggong }}}
 		x = 25
 		y = 4
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -331,9 +292,6 @@ focus_tree = {
 		allow_branch = {if = {has_country_flag = SCG_gemingchenggong}}
 		x = 25
 		y = 1
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -356,9 +314,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_gemingchenggong }
 		x = 27
 		y = 2
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -378,9 +333,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_gemingchenggong }
 		x = 23
 		y = 2
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -400,9 +352,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_zuzhigonghui }
 		x = 22
 		y = 3
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -425,9 +374,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_zuzhigonghui }
 		x = 24
 		y = 3
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -451,9 +397,6 @@ focus_tree = {
 		mutually_exclusive = { focus =  SCG_gongsiheying}
 		x = 22
 		y = 4
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -478,9 +421,6 @@ focus_tree = {
 		mutually_exclusive = { focus =  SCG_wanquanguoyouhua}
 		x = 24
 		y = 4
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -503,9 +443,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_lianhezhengfu }
 		x = 26
 		y = 3
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -527,9 +464,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_lianhezhengfu }
 		x = 28
 		y = 3
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -555,9 +489,6 @@ focus_tree = {
 		mutually_exclusive = { focus =  SCG_jitihuanongye}
 		x = 26
 		y = 4
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -582,9 +513,6 @@ focus_tree = {
 		mutually_exclusive = { focus =  SCG_tudigaige}
 		x = 28
 		y = 4
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -608,9 +536,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_wanquanguoyouhua }
 		x = 22
 		y = 5
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -630,9 +555,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_shixingjihuajingji }
 		x = 22
 		y = 6
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -653,9 +575,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_wanquanguoyouhua }
 		x = 24
 		y = 5
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -675,9 +594,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_jiandaochalilun }
 		x = 24
 		y = 6
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -689,7 +605,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
-			remoce_ideas = SCG_gongnongjiandaocha
+			remove_ideas = SCG_gongnongjiandaocha
 			add_ideas = SCG_nongyejixiehua 
 		}
 	}
@@ -701,9 +617,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_gongsiheying }
 		x = 26
 		y = 5
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -723,9 +636,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_shehuizhuyigaizao }
 		x = 26
 		y = 6
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -746,9 +656,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_gongsiheying }
 		x = 28
 		y = 5
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -768,9 +675,6 @@ focus_tree = {
 		prerequisite = { focus = SCG_xinjingjizhengce }
 		x = 28
 		y = 6
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
