@@ -1,0 +1,561 @@
+﻿focus_tree = {
+	id = shuntian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 11
+			tag = STG
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+
+#	focus = {
+#		id = STG_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+
+	#新皇上位
+	focus = {
+		id = STG_xinhuangshangwei
+		icon = GFX_STG_xinhuangshangwei
+		allow_branch = {if = { NOT = {  has_country_flag = }}}
+		x = 25
+		y = 1
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 0
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+		}
+	}
+	#应对乱局
+	focus = {
+		id = STG_yingduiluanju
+		icon = GFX_STG_yingduiluanju
+		prerequisite = { focus = STG_xinhuangshangwei}
+
+		x = 25
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_stability = 0.05
+			political_power_cost = 25
+		}
+	}
+	#西北戡乱
+	focus = {
+		id = STG_xibeikanluan
+		icon = GFX_STG_xibeikanluan
+		prerequisite = { focus = STG_yingduiluanju}
+		mutually_exclusive = { focus = STG_yijingzhidong }
+
+		x = 25
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+				country_event = { id = TOD_STG.1 }
+		}
+	}
+	#速攻破敌
+	focus = {
+		id = STG_sugongpodi
+		icon = GFX_STG_sugongpodi
+		prerequisite = { focus = STG_xibeikanluan}
+		mutually_exclusive = { focus = STG_yijingzhidong }
+
+		x = 22
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			every_army_leader = {
+				add_attack = 1
+			}
+			add_timed_idea = { idea = STG_jingying days = 180 }
+		}
+	}
+	#机械化作战
+	focus = {
+		id = STG_jixiehuazuozhan
+		icon = GFX_STG_jixiehuazuozhan
+		prerequisite = { focus = STG_sugongpodi}
+
+		x = 22
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 300 }
+			add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 50  variant_name = "辽阳造 昌德卌三年式 白山机车总厂 “烛龙” 试制铁甲轻战车"}
+			load_oob = shuntian_zhuangjia
+		}
+	}
+	#组织黄河会战
+	focus = {
+		id = STG_huanghehuizhan
+		icon = GFX_STG_huanghehuizhan
+		prerequisite = { focus = STG_jixiehuazuozhan}
+
+		x = 22
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_timed_idea = { idea = STG_bafuhuanglong days = 180 }
+		}
+	}
+	#放手一搏
+	focus = {
+		id = STG_fangshouyibo
+		icon = GFX_STG_fangshouyibo
+		prerequisite = { focus = STG_huanghehuizhan}
+
+		x = 22
+		y = 7
+
+		select_effect = {add_ideas = STG_bujidaijia}
+		
+		cost = 9
+		
+		ai_will_do = {factor = 10}
+		available = {
+			NOT = {
+				has_idea = STG_jingying
+				has_idea = STG_bafuhuanglong
+			}
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = STG.1.tt
+			remove_ideas = STG_bujidaijia
+			if = {
+				limit = { country_exists = XBJ }
+				add_ideas = STG_bengkuidetianming
+			}
+			else = {
+				add_ideas = STG_jingyingzhinu
+			}
+		}
+	}
+	#以静制动
+	focus = {
+		id = STG_yijingzhidong
+		icon = GFX_STG_yijingzhidong
+		prerequisite = { focus = STG_xibeikanluan}
+		mutually_exclusive = { focus = STG_sugongpodi }
+
+		x = 24
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			every_army_leader = {
+				add_defense = 1
+			}
+			add_ideas = STG_qianzhiqianxian_1
+		}
+	}
+	#火力覆盖
+	focus = {
+		id = STG_huolifugai
+		icon = GFX_STG_huolifugai
+		prerequisite = { focus = STG_yijingzhidong}
+
+		x = 24
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = STG_qianzhiqianxian_1
+				add_idea = STG_qianzhiqianxian_2
+			}
+		}
+	}
+	#加固黄河防线
+	focus = {
+		id = STG_huanghefangxian
+		icon = GFX_STG_huanghefangxian
+		prerequisite = { focus = STG_huolifugai}
+
+		x = 24
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			1131 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						id = 12300
+						id = 4074
+						id = 13424
+						id = 10367
+						id = 13428
+						id = 1034
+					}
+					instant_build = yes
+				}
+			}
+			841 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						id = 13429
+						id = 1575
+						id = 13431
+					}
+					instant_build = yes
+				}
+			}
+			835 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					province = {
+						id = 6932
+						id = 13378
+					}
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#防守反击
+	focus = {
+		id = STG_fangshoufanji
+		icon = GFX_STG_fangshoufanji
+		prerequisite = { focus = STG_huanghefangxian}
+
+		x = 24
+		y = 7
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+		}
+	}
+	#政治宣传
+	focus = {
+		id = STG_zhengzhixuanchuan
+		icon = GFX_STG_zhengzhixuanchuan
+		prerequisite = { focus = STG_xibeikanluan}
+
+		x = 26
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.15
+			add_political_power = 50
+		}
+	}
+	#分化拉拢
+	focus = {
+		id = STG_fenhualalong
+		icon = GFX_STG_fenhualalong
+		prerequisite = { focus = STG_zhengzhixuanchuan}
+
+		x = 26
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_intelligence_agency = no
+				}
+				create_intelligence_agency = yes
+			}
+			XBJ = {
+				add_collaboration = {
+					target = STG
+					value = 0.3
+				}
+			}
+		}
+	}
+	#银弹攻势
+	focus = {
+		id = STG_yindangongshi
+		icon = GFX_STG_yindangongshi
+		prerequisite = { focus = STG_fenhualalong}
+
+		x = 26
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_timed_idea = { idea = STG_yindangongshi days = 120 }
+			XBJ = { add_timed_idea = { idea = STG_yinpiaodadaduyou days = 120 } }
+		}
+	}
+	#重申法统
+	focus = {
+		id = STG_chongshenfatong
+		icon = GFX_STG_chongshenfatong
+		prerequisite = { focus = STG_yindangongshi}
+
+		x = 26
+		y = 7
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {
+			NOT = {country_exists = XBJ}
+		}
+		
+		completion_reward = {
+			add_ideas = STG_tianmingzaiwo
+			if = {
+				limit = {has_idea = STG_jingyingzhinu}
+				remove_ideas = STG_jingyingzhinu
+			}
+			if = {
+				limit = {has_idea = STG_qianzhiqianxian_1}
+				remove_ideas = STG_qianzhiqianxian_1
+			}
+			if = {
+				limit = {has_idea = STG_qianzhiqianxian_2}
+				remove_ideas = STG_qianzhiqianxian_2
+			}
+		}
+	}
+	#生产战备化
+	focus = {
+		id = STG_shengchanzhanbeihua
+		icon = GFX_STG_shengchanzhanbeihua
+		prerequisite = { focus = STG_xibeikanluan}
+
+		x = 28
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { STG_jieyanling_minzhuanjun = -0.3}
+			add_dynamic_modifier = { modifier = STG_jieyanling }
+		}
+	}
+	#颁布紧急军事法令
+	focus = {
+		id = STG_banbujingjijunshifaling
+		icon = GFX_STG_banbujingjijunshifaling
+		prerequisite = { focus = STG_shengchanzhanbeihua}
+
+		x = 28
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_stability = -0.1
+			add_to_variable = { STG_jieyanling_shangwang = -0.5}
+			add_to_variable = { STG_jieyanling_renkou = 0.2}
+		}
+	}
+	#拉拢割据势力
+	focus = {
+		id = STG_lalonggejushili
+		icon = GFX_STG_lalonggejushili
+		prerequisite = { focus = STG_banbujingjijunshifaling}
+
+		x = 28
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+		}
+	}
+	#孤立西北军
+	focus = {
+		id = STG_gulixibeijun
+		icon = GFX_STG_gulixibeijun
+		prerequisite = { focus = STG_lalonggejushili}
+
+		x = 28
+		y = 7
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+		}
+	}
+
+}

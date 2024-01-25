@@ -228,7 +228,7 @@ focus_tree = {
 	#压制地方山头
 	focus = {
 		id = GPS_yazhidifangshantou
-		icon = GFX_GPS_quanlitangdudushiquan
+		icon = GFX_GPS_yazhidifangshantou
 		prerequisite = { focus = GPS_quanlitangdudushiquan}
 		x = 4
 		y = 4
@@ -709,8 +709,8 @@ focus_tree = {
 	}
 	#宣告平乱胜利
 	focus = {
-		id = GPS_yanchataiziyuci
-		icon = GFX_GPS_yanchataiziyuci
+		id = GPS_xuangaopingluanshengli
+		icon = GFX_GPS_xuangaopingluanshengli
 		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
 		allow_branch = {if = NOT = {{country_exists = SRC }}}
 		x = 7
@@ -735,7 +735,7 @@ focus_tree = {
 	focus = {
 		id = GPS_huifuzhanzhengchuangshang
 		icon = GFX_GPS_huifuzhanzhengchuangshang
-		prerequisite = { focus = GPS_yanchataiziyuci}
+		prerequisite = { focus = GPS_xuangaopingluanshengli}
 		x = 7
 		y = 2
 		
@@ -750,7 +750,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
-			add_dynamic_modifier = { modifier = GPS_zhanhouchongjian }
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 365 }
+			add_dynamic_modifier = { modifier = GPS_zhanhouchongjian days = GPS_zhanhouchongjian_shijian }
 			add_political_power = 60
 		}
 	}
@@ -774,6 +775,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_jungong = 0.1 }
 		}
 	}
 	#工人保障方案
@@ -795,6 +798,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_dynamic_modifier = { modifier = GPS_laodongzhengce }
 		}
 	}
 	#分化工人群体
@@ -815,8 +819,7 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { 
-		}
+		completion_reward = { add_stability = 0.2 }
 	}
 	#温情脉脉
 	focus = {
@@ -837,6 +840,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_laodongzhengce_chanchu = 0.05 }
+			add_to_variable = { GPS_laodongzhengce_xiaofeiping = 0.1 }
 		}
 	}
 	#强化劳动纪律
@@ -859,6 +864,9 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_stability = -0.05
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_jianzao = 0.1 }
 		}
 	}
 	#产能第一
@@ -880,6 +888,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_stability = -0.1
+			add_dynamic_modifier = { modifier = GPS_junshiguanli }
 		}
 	}
 	#禁绝极端思想
@@ -900,8 +910,7 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { 
-		}
+		completion_reward = { add_popularity = { ideology = authoritarian_oligarchy popularity = 0.2 } }
 	}
 	#重拳出击
 	focus = {
@@ -922,6 +931,9 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_stability = -0.1
+			add_to_variable = { GPS_junshiguanli_xiaofeiping = -0.1 }
+			add_to_variable = { GPS_junshiguanli_zhengzhi = -0.1 }
 		}
 	}
 	#修复工厂
@@ -943,6 +955,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_mingong = 0.1 }
 		}
 	}
 	#完善基建
@@ -964,6 +978,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_jijian = 0.1 }
 		}
 	}
 	#镇压破坏运动
@@ -985,6 +1001,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_ideas = GPS_zhengyaluandang
+			add_political_power = 20
 		}
 	}
 	#构建戡乱体质
@@ -1006,6 +1024,9 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			remove_ideas = GPS_zhengyaluandang
+			add_dynamic_modifier = { modifier = GPS_kanluantizhi }
+			add_to_variable = { GPS_kanluantizhi_dangpai = 0.2 }
 		}
 	}
 	#加速军事研究
@@ -1027,6 +1048,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_kanluantizhi_yanjiu = 0.1 }
 		}
 	}
 	#选择未来战法
@@ -1068,13 +1090,12 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { 
-		}
+		completion_reward = { add_research_slot = 1 }
 	}
 	#加强文化教育
 	focus = {
-		id = GPS_zunzhongzhishifenzi
-		icon = GFX_GPS_zunzhongzhishifenzi
+		id = GPS_qianghuawenhuajiaoyu
+		icon = GFX_GPS_qianghuawenhuajiaoyu
 		prerequisite = { focus = GPS_goujiankanluantizhi}
 		x = 8
 		y = 7
@@ -1089,7 +1110,7 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = { add_stability = 0.1
 		}
 	}
 	#会见武备系官僚
@@ -1112,6 +1133,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_popularity = { ideology = leader_despotism popularity = 0.1 }
+			add_stability = 0.1
 		}
 	}
 	#保障国企利益
@@ -1133,6 +1156,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_diguogongyexinzang_gongye = 0.1 }
 		}
 	}
 	#密会交通系
@@ -1154,7 +1178,7 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = { add_war_support = 0.1
 		}
 	}
 	#赋予国铁特权
@@ -1176,6 +1200,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_diguogongyexinzang_ziyuan = 0.1 }
+			add_to_variable = { GPS_diguogongyexinzang_buji = 0.1 }
 		}
 	}
 	#加紧关内联络
@@ -1198,6 +1224,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_diguogongyexinzang_chanchu = 0.05 }
 		}
 	}
 	#形成统制经济
@@ -1219,6 +1246,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			remove_dynamic_modifier = { modifier = GPS_diguogongyexinzang }
+			add_dynamic_modifier = { modifier = GPS_tongzhijingji }
 		}
 	}
 	#谁主沉浮
@@ -1240,6 +1269,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			add_to_variable = { GPS_tongzhijingji_shangxian = 0.1 }
 		}
 	}
 	#介入周边局势
@@ -1247,7 +1277,7 @@ focus_tree = {
 		id = GPS_jieruzhoubianjushi
 		icon = GFX_GPS_jieruzhoubianjushi
 		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
-		allow_branch = {if = NOT = {{country_exists = SRC }}}
+		allow_branch = {if = {NOT = {country_exists = SRC }}}
 		x = 15
 		y = 1
 		
@@ -1268,8 +1298,8 @@ focus_tree = {
 	}
 	#确保朝鲜王国
 	focus = {
-		id = GPS_sheizhuchenfu
-		icon = GFX_GPS_sheizhuchenfu
+		id = GPS_quebaochaoxianwangguo
+		icon = GFX_GPS_quebaochaoxianwangguo
 		prerequisite = { focus = GPS_jieruzhoubianjushi}
 		x = 15
 		y = 2
@@ -1291,7 +1321,7 @@ focus_tree = {
 	focus = {
 		id = GPS_weihudongyangliyi
 		icon = GFX_GPS_weihudongyangliyi
-		prerequisite = { focus = GPS_sheizhuchenfu}
+		prerequisite = { focus = GPS_quebaochaoxianwangguo}
 		x = 15
 		y = 3
 		
