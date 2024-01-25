@@ -4,6 +4,21 @@ GPS_diguogongyexinzang = {
 	production_speed_infrastructure_factor = GPS_diguogongyexinzang_jichusheshi#0.15
 	production_speed_rail_way_factor = GPS_diguogongyexinzang_tielu#0.15
 	local_resources_factor = GPS_diguogongyexinzang_ziyuan#0.1
+	local_building_slots_factor = GPS_diguogongyexinzang_gongye
+	SUPPLY_NODE_RANGE = GPS_diguogongyexinzang_buji
+	industrial_capacity_factory = GPS_diguogongyexinzang_chanchu
+}
+#统制经济
+GPS_tongzhijingji = {
+	icon = GPS_tongzhijingji
+	production_speed_infrastructure_factor = GPS_diguogongyexinzang_jichusheshi#0.15
+	production_speed_rail_way_factor = GPS_diguogongyexinzang_tielu#0.15
+	local_resources_factor = GPS_diguogongyexinzang_ziyuan#0.1
+	local_building_slots_factor = GPS_diguogongyexinzang_gongye
+	SUPPLY_NODE_RANGE = GPS_diguogongyexinzang_buji
+	industrial_capacity_factory = GPS_diguogongyexinzang_chanchu
+	consumer_goods_factor = -0.1
+	production_factory_max_efficiency_factor = GPS_tongzhijingji_shangxian
 }
 #奉诏剿匪
 GPS_fengzhaojiaofei = {
@@ -44,6 +59,31 @@ GPS_kaifuyitongsansi = {
 GPS_zhanhouchongjian = {
 	icon = GPS_zhanhouchongjian
 	INDUSTRY_REPAIR_FACTOR = 0.1
+	production_speed_industrial_complex_factor = GPS_zhanhouchongjian_mingong
+	production_speed_infrastructure_factor = GPS_zhanhouchongjian_jijian
+	production_speed_arms_factory_factor = GPS_zhanhouchongjian_jungong
+	production_speed_buildings_factor = GPS_zhanhouchongjian_jianzao
 }
+#戡乱体质
+GPS_kanluantizhi = {
+	icon = GPS_kanluantizhi
+	resistance_target = -0.2
+	STABILITY_POPULARITY_FACTOR = GPS_kanluantizhi_dangpai
+	research_speed_factor = GPS_kanluantizhi_yanjiu
 
+}
+#劳动政策
+GPS_laodongzhengce = {
+	icon = GPS_laodongzhengce
+	line_change_production_efficiency_factor = 0.1
+	industrial_capacity_factory = GPS_laodongzhengce_chanchu
+	consumer_goods_factor = GPS_laodongzhengce_xiaofeiping
+}
+#军事管理
+GPS_junshiguanli = {
+	icon = GPS_junshiguanli
+	industrial_capacity_factory = 0.1
+	consumer_goods_factor = GPS_junshiguanli_xiaofeiping
+	political_power_gain = GPS_junshiguanli_zhengzhi
+}
 
