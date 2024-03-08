@@ -1,4 +1,4 @@
-XBJ_officers_and_landlords = {#军官团和地主支持度
+XBJ_officers_and_landlords = { #军官团和地主支持度
 	icon = GFX_decision_officers_and_landlords
 	priority = 200
 	allowed = {
@@ -10,7 +10,8 @@ XBJ_officers_and_landlords = {#军官团和地主支持度
 	visible_when_empty = yes
 	scripted_gui = XBJ_officers_and_landlords_GUI
 }
-XBJ_shequn_tuanjie = {#社群团结
+
+XBJ_shequn_tuanjie = { #社群团结
 	icon = GFX_decision_shequn_tuanjie
 	priority = 190
 	allowed = {
@@ -22,7 +23,8 @@ XBJ_shequn_tuanjie = {#社群团结
 	visible_when_empty = yes
 	scripted_gui = XBJ_shequn_tuanjie_GUI
 }
-XBJ_quanmian_jieguan = {#全面接管
+
+XBJ_quanmian_jieguan = { #全面接管
 	icon = GFX_decision_category_generic_economy
 	priority = 180
 	allowed = {
@@ -30,6 +32,7 @@ XBJ_quanmian_jieguan = {#全面接管
 	}
 	visible = { has_completed_focus = XBJ_jishizhengshi }
 }
+
 XBJ_kaiyuan_jieliu = {#开源节流
 	icon = GFX_decision_category_generic_economy
 	priority = 170
@@ -37,4 +40,40 @@ XBJ_kaiyuan_jieliu = {#开源节流
 		tag = XBJ 
 	}
 	visible = { has_completed_focus = XBJ_xinglijieyong }
+}
+
+XBJ_jiyi_gaijin = { #技艺改进
+	icon = GFX_decision_category_generic_economy
+	priority = 160
+	allowed = {
+		tag = XBJ 
+	}
+	visible = { has_completed_focus = XBJ_qutuxixin }
+}
+
+XBJ_kuangchan_kaifa = { #矿产开发
+	icon = GFX_decision_category_generic_economy
+	priority = 150
+	allowed = {
+		tag = XBJ
+	}
+	visible = { has_completed_focus = XBJ_zhaishanzhuhai }
+}
+
+XBJ_nongye_zhenxing = { #农业振兴
+	icon = GFX_decision_category_generic_economy
+	priority = 140
+	allowed = {
+		tag = XBJ
+	}
+	visible = { has_completed_focus = XBJ_liuchuxingwang }
+}
+
+XBJ_jiaotong_fazhan = { #交通发展
+	icon = GFX_decision_category_generic_economy
+	priority = 130
+	allowed = {
+		tag = XBJ
+	}
+	visible = { has_completed_focus = XBJ_yiriqianli }
 }

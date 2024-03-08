@@ -9,7 +9,7 @@ XBJ_officers_and_landlords = {
 			always = yes
 		}
 		available = {
-			has_political_power > 50
+			has_political_power > 49
 		}
 		cost = 50
 		#days_re_enable = 30
@@ -42,7 +42,7 @@ XBJ_shequn_tuanjie = {
 			always = yes
 		}
 		available = {
-			has_political_power > 1
+			has_political_power > 0
 		}
 		cost = 1
 		#days_re_enable = 30
@@ -92,7 +92,7 @@ XBJ_quanmian_jieguan = {
 			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
 		days_remove = 14
@@ -114,7 +114,7 @@ XBJ_quanmian_jieguan = {
 			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
 		days_remove = 14
@@ -135,7 +135,7 @@ XBJ_quanmian_jieguan = {
 			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
 		days_remove = 14
@@ -161,7 +161,7 @@ XBJ_quanmian_jieguan = {
 			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
 		days_remove = 14
@@ -182,7 +182,7 @@ XBJ_quanmian_jieguan = {
 			has_country_flag = FLAG_XBJ_decision_quanmian_jieguan_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
 		days_remove = 14
@@ -229,9 +229,10 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
 			add_stability = 0.025
@@ -253,9 +254,10 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
 			add_war_support = 0.025
@@ -276,10 +278,11 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 			political_power_daily > 0.2
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		modifier = {
 			political_power_cost = 0.2
@@ -299,9 +302,10 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
 			add_political_power = 100
@@ -327,12 +331,13 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jinji_huiyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		modifier = {
 			political_power_gain = 0.2
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
 			add_political_power = 100
@@ -375,9 +380,10 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		modifier = {
 			political_power_gain = 0.5
@@ -403,9 +409,10 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
 			add_dynamic_modifier = {
@@ -425,16 +432,24 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 30
 		remove_effect = {
-
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -2.5
+			}
+			add_dynamic_modifier = {
+				modifier = XBJ_jieyue_changyi_3_dm
+				days = 100
+			}
+			XBJ_landlords_update = yes
 		}
 	}
 	XBJ_jieyue_changyi_4 = {
-		#协调运输
+		#暗中克扣军饷
 		icon = GFX_decision_generic_motorized
 		allowed = {
 			tag = XBJ
@@ -443,19 +458,19 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 14
 		remove_effect = {
-			add_dynamic_modifier = {
-				modifier = XBJ_jieyue_changyi_4_dm
-				days = 180
-			}
+			add_stability = -0.05
+			add_political_power = 200
+			country_event = xbjdecision.2
 		}
 	}
 	XBJ_jieyue_changyi_5 = {
-		#军工优先使用原料
+		#惩罚铺张浪费
 		icon = GFX_decision_generic_protection
 		allowed = {
 			tag = XBJ
@@ -464,15 +479,761 @@ XBJ_kaiyuan_jieliu = {
 			has_country_flag = FLAG_XBJ_decision_jieyue_changyi_unlocked
 		}
 		available = {
-			has_political_power > 20
+			has_political_power > 19
 		}
 		cost = 20
+		fire_only_once = yes
 		days_remove = 14
 		remove_effect = {
-			add_dynamic_modifier = {
-				modifier = XBJ_jieyue_changyi_5_dm
-				days = 180
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -2.5
 			}
+			set_temp_variable = {
+				change_XBJ_officers_support_by = -2.5
+			}
+			XBJ_landlords_update = yes
+			XBJ_officers_update = yes
+			add_political_power = 75
+		}
+	}
+}
+
+XBJ_jiyi_gaijin = {
+	#技艺改进
+	XBJ_jiyi_gaijin_0 = {
+		#制定产业改良计划
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		days_remove = 30
+		cost = 30
+		remove_effect = {
+			unlock_decision_tooltip = XBJ_jiyi_gaijin_1
+			unlock_decision_tooltip = XBJ_jiyi_gaijin_2
+			unlock_decision_tooltip = XBJ_jiyi_gaijin_3
+			unlock_decision_tooltip = XBJ_jiyi_gaijin_4
+			unlock_decision_tooltip = XBJ_jiyi_gaijin_5
+			set_country_flag = FLAG_XBJ_decision_jiyi_gaijin_unlocked
+		}
+	}
+	XBJ_jiyi_gaijin_1 = {
+		#规范生产标准
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_unlocked
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			set_country_flag = FLAG_XBJ_decision_jiyi_gaijin_1
+		}
+	}
+	XBJ_jiyi_gaijin_2 = {
+		#改造手工作坊
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_unlocked
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			set_country_flag = FLAG_XBJ_decision_jiyi_gaijin_2
+		}
+	}
+	XBJ_jiyi_gaijin_3 = {
+		#计件工资激励
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_unlocked
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			set_country_flag = FLAG_XBJ_decision_jiyi_gaijin_3
+		}
+	}
+	XBJ_jiyi_gaijin_4 = {
+		#大量引入女工
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_unlocked
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			set_country_flag = FLAG_XBJ_decision_jiyi_gaijin_4
+		}
+	}
+	XBJ_jiyi_gaijin_5 = {
+		#废除传统师徒制度
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_unlocked
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 30
+		remove_effect = {
+			set_country_flag = FLAG_XBJ_decision_jiyi_gaijin_5
+		}
+	}
+	XBJ_jiyi_gaijin_6 = {
+		#实施产业改良计划
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_1
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_2
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_3
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_4
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_5
+		}
+		available = yes
+		fire_only_once = yes
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = XBJ_Backward_Region_3
+    			add_idea = XBJ_Backward_Region_4
+			}
+			set_country_flag = FLAG_XBJ_decision_jiyi_gaijin_6
+		}
+	}
+}
+
+XBJ_kuangchan_kaifa = {
+	#矿产开发
+	XBJ_kuangchuan_kaifa_0 = {
+		#全面资源普查
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 49
+		}
+		fire_only_once = yes
+		days_remove = 60
+		cost = 50
+		remove_effect = {
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_1
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_2
+			set_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_unlocked
+		}
+	}
+	XBJ_kuangchan_kaifa_1 = {
+		#西域资源开发计划
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_unlocked
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		remove_effect = {
+			set_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_1_unlocked
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_1_1
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_1_2
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_1_3
+		}
+	}
+	XBJ_kuangchan_kaifa_2 = {
+		#关陇资源开发计划
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_unlocked
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		remove_effect = {
+			set_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_2_unlocked
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_2_1
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_2_2
+			unlock_decision_tooltip = XBJ_kuangchan_kaifa_2_3
+		}
+	}
+	XBJ_kuangchan_kaifa_1_1 = {
+		#增产伊犁金矿
+		icon = steel
+		allowed = {
+			tag = XBJ
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 844
+			}
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 3
+			owns_state = 844
+			controls_state = 844
+			has_political_power > 24
+			has_manpower > 999
+		}
+
+		visible = {
+			owns_state = 844
+			controls_state = 844
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_1_unlocked
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 120
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		complete_effect = {
+			add_manpower = -1000
+		}
+		remove_effect = {
+			add_dynamic_modifier = {
+				modifier = XBJ_kuangchan_kaifa_1_1_dm
+			}
+		}
+	}
+	XBJ_kuangchan_kaifa_1_2 = {
+		#开采阿克苏油田
+		icon = oil
+		allowed = {
+			tag = XBJ
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 617
+			}
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 617
+			controls_state = 617
+			has_political_power > 29
+			has_manpower > 999
+		}
+
+		visible = {
+			owns_state = 617
+			controls_state = 617
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_1_unlocked
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		complete_effect = {
+			add_manpower = -1000
+		}
+		remove_effect = {
+			617 = {
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+		}
+	}
+	XBJ_kuangchan_kaifa_1_3 = {
+		#开采迪化铬矿
+		icon = chromium
+		allowed = {
+			tag = XBJ
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1193
+			}
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 1193
+			controls_state = 1193
+			has_political_power > 29
+			has_manpower > 999
+		}
+
+		visible = {
+			owns_state = 1193
+			controls_state = 1193
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_1_unlocked
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		complete_effect = {
+			add_manpower = -1000
+		}
+		remove_effect = {
+			1193 = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+		}
+	}
+	XBJ_kuangchan_kaifa_2_1 = {
+		#增产玉门油田
+		icon = oil
+		allowed = {
+			tag = XBJ
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1113
+			}
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 1
+			owns_state = 1113
+			controls_state = 1113
+			has_political_power > 29
+			has_manpower > 999
+		}
+
+		visible = {
+			owns_state = 1113
+			controls_state = 1113
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_2_unlocked
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		complete_effect = {
+			add_manpower = -1000
+		}
+		remove_effect = {
+			1113 = {
+				add_resource = {
+					type = oil
+					amount = 8
+				}
+			}
+		}
+	}
+	XBJ_kuangchan_kaifa_2_2 = {
+		#开发甘肃钨矿
+		icon = tungsten
+		allowed = {
+			tag = XBJ
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1113
+			}
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 1113
+			controls_state = 1113
+			has_political_power > 29
+			has_manpower > 999
+		}
+
+		visible = {
+			owns_state = 1113
+			controls_state = 1113
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_2_unlocked
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 90
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		complete_effect = {
+			add_manpower = -1000
+		}
+		remove_effect = {
+			1113 = {
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
+		}
+	}
+	XBJ_kuangchan_kaifa_2_3 = {
+		#增产陕西铁矿
+		icon = steel
+		allowed = {
+			tag = XBJ
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 842
+			}
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 842
+			controls_state = 842
+			has_political_power > 29
+			has_manpower > 999
+		}
+
+		visible = {
+			owns_state = 842
+			controls_state = 842
+			has_country_flag = FLAG_XBJ_decision_kuangchan_kaifa_2_unlocked
+		}
+
+		fire_only_once = yes
+
+		cost = 30
+		days_remove = 120
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+		
+		complete_effect = {
+			add_manpower = -1000
+		}
+		remove_effect = {
+			842 = {
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+		}
+	}
+}
+
+XBJ_nongye_zhenxing = { #农业振兴
+	XBJ_nongye_zhenxing_0 = { #制定农业振兴计划
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		days_remove = 20
+		cost = 30
+		remove_effect = {
+			unlock_decision_tooltip = XBJ_nongye_zhenxing_1
+			unlock_decision_tooltip = XBJ_nongye_zhenxing_2
+			unlock_decision_tooltip = XBJ_nongye_zhenxing_3
+			set_country_flag = FLAG_XBJ_decision_nongye_zhenxing_unlocked
+			set_temp_variable = {
+				change_XBJ_landlords_influence_by = 5
+			}
+			XBJ_landlords_update = yes
+		}
+	}
+	XBJ_nongye_zhenxing_1 = { #扩大屯田规模
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_nongye_zhenxing_unlocked
+		}
+		available = {
+			has_political_power > 29
+			has_manpower > 5000
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		complete_effect = {
+			add_manpower = -5000
+		}
+		remove_effect = {
+			add_stability = 0.05
+		}
+	}
+	XBJ_nongye_zhenxing_2 = { #改良水利设施
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_nongye_zhenxing_unlocked
+		}
+		available = {
+			has_political_power > 29
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			add_stability = 0.05
+		}
+	}
+	XBJ_nongye_zhenxing_3 = { #解决温饱问题
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_nongye_zhenxing_unlocked
+			has_country_flag = FLAG_XBJ_events_guanlong_yinyun_1
+			has_country_flag = FLAG_XBJ_events_guanlong_yinyun_2  
+			set_country_flag = FLAG_XBJ_events_guanlong_yinyun
+		}
+		available = {
+			has_political_power > 50
+			has_decision = XBJ_nongye_zhenxing_2
+			has_decision = XBJ_nongye_zhenxing_1
+		}
+		fire_only_once = yes
+		cost = 50
+		days_remove = 30
+		remove_effect = {
+			add_stability = 0.05
+			set_country_flag = FLAG_XBJ_events_guanlong_yinyun_3
+			country_event = xbjdecision.3
+		}
+	}
+}
+
+XBJ_jiaotong_fazhan = { #交通发展
+	XBJ_jiaotong_fazhan_1 = { #铁路整修计划
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		days_remove = 20
+		cost = 30
+		remove_effect = {
+			unlock_decision_tooltip = XBJ_jiaotong_fazhan_1_1
+			unlock_decision_tooltip = XBJ_jiaotong_fazhan_1_2
+			set_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_1_unlocked
+			modifier_production_speed_rail_way_factor = 0.1
+		}
+	}
+	XBJ_jiaotong_fazhan_1_1 = { #翻修升级西域铁路
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_1_unlocked
+		}
+		available = {
+			has_political_power > 29
+			
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		complete_effect = {
+			add_manpower = -5000
+		}
+		remove_effect = {
+			add_stability = 0.05
+		}
+	}
+	XBJ_jiaotong_fazhan_1_2 = { #翻修升级关陇铁路
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_1_unlocked
+		}
+		available = {
+			has_political_power > 29
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			add_stability = 0.05
+		}
+	}
+
+	XBJ_jiaotong_fazhan_2 = { #公路扩建计划
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 29
+		}
+		fire_only_once = yes
+		days_remove = 20
+		cost = 20
+		remove_effect = {
+			unlock_decision_tooltip = XBJ_jiaotong_fazhan_2_1
+			unlock_decision_tooltip = XBJ_jiaotong_fazhan_2_2
+			set_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_2_unlocked
+			set_temp_variable = {
+				change_XBJ_landlords_influence_by = 5
+			}
+			XBJ_landlords_update = yes
+		}
+	}
+	XBJ_jiaotong_fazhan_2_1 = { #翻修扩建伊犁-迪化公路
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_2_unlocked
+		}
+		available = {
+			has_political_power > 29
+			has_manpower > 5000
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		complete_effect = {
+			add_manpower = -5000
+		}
+		remove_effect = {
+			add_stability = 0.05
+		}
+	}
+	XBJ_jiaotong_fazhan_2_2 = { #翻修扩建宁夏-河套公路
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			has_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_2_unlocked
+		}
+		available = {
+			has_political_power > 29
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		fire_only_once = yes
+		cost = 30
+		days_remove = 14
+		modifier = {
+			civilian_factory_use = 3
+		}
+		remove_effect = {
+			add_stability = 0.05
 		}
 	}
 }

@@ -45,7 +45,26 @@ XBJ_guanlong_yingyun_dm = {
 	enable = { always = yes }
 	monthly_population = -0.1
 }
+#定量配给物资
 XBJ_jieyue_changyi_2_dm = {
     enable = { always = yes }
     consumer_goods_factor = -0.15
+}
+#拖欠部分货款
+XBJ_jieyue_changyi_3_dm = {
+    enable = { always = yes }
+    political_power_gain = 0.2
+}
+#斗志涣散
+XBJ_douzhi_huansan_dm = {
+	icon = XBJ_Backward_Region
+	enable = { always = yes }
+	army_attack_factor = -0.05
+	army_defence_factor = -0.05
+}
+#伊犁金矿
+XBJ_kuangchan_kaifa_1_1_dm = {
+	enable = { always = yes }
+	icon = GFX_modifiers_tur_pan_turkic_propaganda
+	consumer_goods_factor = -0.15
 }

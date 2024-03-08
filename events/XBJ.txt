@@ -23,6 +23,51 @@ country_event = {
 				days = 30
 			}
 		}
+		set_country_flag = FLAG_XBJ_events_guanlong_yinyun
+	}
+	option = {
+			name = xbjdecision.1.a
+	}
+}
+country_event = {
+	#斗志涣散
+	id = xbjdecision.2
+	title = xbjdecision.2.t
+	desc = xbjdecision.2.d
+	picture = GFX_tao_lun_jun_shi
+	trigger = {
+		tag = XBJ
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		XBJ = {
+			add_dynamic_modifier = {
+				modifier = XBJ_douzhi_huansan_dm
+				days = 90
+			}
+		}
+	}
+	option = {
+		name = xbjdecision.2.a
+	}
+}
+country_event = { 	#解决温饱问题
+ 
+	id = xbjdecision.3
+	title = xbjdecision.3.t
+	desc = xbjdecision.3.d
+	picture = GFX_tao_lun_jun_shi
+	trigger = {
+		tag = XBJ
+		has_country_flag = FLAG_XBJ_events_guanlong_yinyun_3
+    }
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		remove_dynamic_modifier = {
+			modifier = XBJ_guanlong_yingyun_dm
+		}
 	}
 	option = {
 			name = xbjdecision.1.a

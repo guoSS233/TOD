@@ -176,6 +176,18 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = XBJ_liyuexingguo
 		}
+		completion_reward = {
+			add_tech_bonus ={
+				bonus = 1
+				uses = 2
+				category = industry
+				name = industry
+			}
+			swap_ideas = {
+				remove_idea = XBJ_Backward_Region_1
+    			add_idea = XBJ_Backward_Region_2
+			}
+		}
 		x = 0
 		y = 4
 	}
@@ -202,6 +214,10 @@ focus_tree = {
 			focus = XBJ_liyuexingguo
 			focus = XBJ_qiwujiuguo
 		}
+		completion_reward = {
+			add_stability = 0.05
+			unlock_decision_category_tooltip = XBJ_nongye_zhenxing
+		}
 		x = 2
 		y = 5
 	}
@@ -213,6 +229,13 @@ focus_tree = {
 		prerequisite = {
 			focus = XBJ_qiwujiuguo
 			focus = XBJ_liyuexingguo
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBJ_Backward_Region_2
+    			add_idea = XBJ_Backward_Region_3
+			}
+			unlock_decision_category_tooltip = XBJ_jiyi_gaijin
 		}
 		x = 0
 		y = 5
@@ -227,6 +250,10 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = XBJ_qutuxixin
+		}
+		completion_reward = {
+			add_stability = 0.05
+			unlock_decision_category_tooltip = XBJ_jiaotong_fazhan
 		}
 		x = 2
 		y = 6
@@ -594,7 +621,18 @@ focus_tree = {
 		prerequisite = {
 			focus = XBJ_qutuxixin
 		}
-		x = 0
+		available = {
+			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_6
+			has_country_flag = FLAG_XBJ_neizhan
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBJ_Backward_Region_4
+    			add_idea = XBJ_Backward_Region_5
+			}
+			unlock_decision_category_tooltip = XBJ_kuangchan_kaifa
+		}
+		x = 0`FIY
 		y = 6
 	}
 	focus = {
@@ -607,6 +645,23 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = XBJ_zhaishanzhuhai
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = XBJ_qiwujiuguo
+				}
+				swap_ideas = {
+					remove_idea = XBJ_Backward_Region_5
+					add_idea = XBJ_xibei_yougaolou_1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = XBJ_Backward_Region_5
+					add_idea = XBJ_xibei_yougaolou_2
+				}
+			}
 		}
 		x = 1
 		y = 7
