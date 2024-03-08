@@ -38,7 +38,9 @@ SIC_chuanneijushi_categories = {
 			if = {
 				limit = {check_variable = {SIC.minzhong > 99}}
 				SCG = {transfer_state = 831}
+				SCG = {load_oob = "SCG_1937"}
 				country_event = { id = TODSIC.1001 }
+				add_ideas = SIC_hunluandejundui
 			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 79}}
 				add_to_variable = { SIC.gongye = 10 }

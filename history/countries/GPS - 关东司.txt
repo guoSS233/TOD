@@ -1,5 +1,58 @@
 capital = 408 #
-oob = "GPS_1936"
+oob = "GPS_1937"
+
+
+set_politics = {
+	ruling_party = authoritarian_oligarchy
+	last_election = "1935.3.14"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	vanguard_socialism =10
+	council_socialism = 5
+	moderate_socialism = 5
+	agroindustrial_socialism = 5
+	social_democrat = 5
+	liberal_democracy = 0
+	conservative_democracy = 0
+	consociationalism = 0
+	sacred_revivalism = 0
+	authoritarian_oligarchy = 60
+	leader_despotism = 5
+	national_corporatism = 5
+}
+
+set_stability = 0.2
+set_war_support = 0.5
+set_research_slots = 3
+
+#add_opinion_modifier = { target = CSO modifier = embargo }
+
+add_to_variable = { GPS_diguogongyexinzang_jichusheshi = 0.15 }
+add_to_variable = { GPS_diguogongyexinzang_tielu = 0.15 }
+add_to_variable = { GPS_diguogongyexinzang_ziyuan = 0.1 }
+add_to_variable = { GPS_fengzhaojiaofei_fangyu = 0.2}
+add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = 0.25 }
+add_to_variable = { GPS_diguogongyexinzang_wendingdu = -0.15 }
+add_to_variable = { GPS_diguogongyexinzang_zuzhidu = -0.05 }
+add_dynamic_modifier = { modifier = GPS_diguogongyexinzang }
+add_dynamic_modifier = { modifier = GPS_fengzhaojiaofei }
+add_dynamic_modifier = { modifier = GPS_fengyupiaodang }
+
+
+recruit_character = GPS_Tang_Yulin
+recruit_character = GPS_yu_zhishan
+recruit_character = GPS_lian_chengji
+recruit_character = GPS_yang_yuting
+recruit_character = GPS_chen_duxiu
+recruit_character = GPS_du_jiceng
+recruit_character = GPS_li_dazhao
+recruit_character = GPS_qian_wangchao
+
+
+
 
 
 if = {
@@ -237,46 +290,6 @@ if = {
 	}
 
 }
-
-set_politics = {
-	ruling_party = authoritarian_oligarchy
-	last_election = "1935.3.14"
-	election_frequency = 48
-	elections_allowed = no
-}
-
-set_popularities = {
-	vanguard_socialism =9
-	council_socialism = 8
-	moderate_socialism = 3
-	agroindustrial_socialism = 3
-	social_democrat = 2
-	liberal_democracy = 1
-	conservative_democracy = 1
-	consociationalism = 0
-	sacred_revivalism = 0
-	authoritarian_oligarchy = 66
-	leader_despotism = 2
-	national_corporatism = 3
-}
-
-set_stability = 0.4
-set_war_support = 0.9
-set_fuel_ratio = 0
-set_research_slots = 2
-set_convoys = 50
-
-#add_opinion_modifier = { target = CSO modifier = embargo }
-
-add_ideas = {
-	GPS_diguobianjiang
-	GPS_fengzhaojiaofei
-	GPS_fengyupiaodang
-}
-
-
-recruit_character = GPS_Tang_Yulin
-
 
 
 

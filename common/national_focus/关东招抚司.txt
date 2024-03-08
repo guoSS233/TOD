@@ -1,0 +1,1341 @@
+﻿
+focus_tree = {
+	id = GPS_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 11
+			tag = GPS
+		}
+	}
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+
+#	focus = {
+#		id = GPS_
+#		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+#		x = -3
+#		y = 0
+#		relative_position_id = 
+#
+#		cost = 10
+#
+#		ai_will_do = {
+#			factor = 1
+#		}
+#
+#		available = {
+#
+#		}
+#		
+#		bypass = {
+#
+#		}
+#
+#		cancel_if_invalid = yes
+#		continue_if_invalid = no
+#		available_if_capitulated = no
+#
+#		complete_tooltip = {
+#
+#		}
+#
+#		completion_reward = {
+#
+#		}
+#	}
+	#严查太子遇刺事件
+	focus = {
+		id = GPS_yanchataiziyuci
+		icon = GFX_GPS_yanchataiziyuci
+		allow_branch = {if = { NOT = {  has_country_flag = GPS_liaoyangqiyi }}}
+		x = 7
+		y = 1
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.05
+			add_political_power = 20
+		}
+	}
+	#搜捕同产公会
+	focus = {
+		id = GPS_soubutongchangonghui
+		icon = GFX_GPS_soubutongchangonghui
+		prerequisite = { focus = GPS_yanchataiziyuci}
+		x = 7
+		y = 2
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 10
+		
+		available = {}
+		
+		completion_reward = { add_popularity = { ideology = authoritarian_oligarchy popularity = 0.1 } }
+	}
+	#逮捕扩大化
+	focus = {
+		id = GPS_daibukuodahua
+		icon = GFX_GPS_daibukuodahua
+		prerequisite = { focus = GPS_soubutongchangonghui}
+		x = 7
+		y = 3
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		available = {}
+		
+		completion_reward = { 
+			add_manpower = -2000
+			add_war_support = 0.05
+		}
+	}
+	#镇压示威游行
+	focus = {
+		id = GPS_zhenyashiweiyouxing
+		icon = GFX_GPS_zhenyashiweiyouxing
+		prerequisite = { focus = GPS_daibukuodahua}
+		x = 7
+		y = 4
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.05
+			add_political_power = 10
+		}
+	}
+	#有备无患
+	focus = {
+		id = GPS_youbeiwuhuan
+		icon = GFX_GPS_youbeiwuhuan
+		prerequisite = { focus = GPS_zhenyashiweiyouxing}
+		x = 7
+		y = 5
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 8
+		
+		
+		available = { date > 1937.8.21 }
+		
+		completion_reward = { 
+			army_experience = 20
+		}
+	}
+	#紧急弹压辽阳起义
+	focus = {
+		id = GPS_tanyaqiyi
+		icon = GFX_GPS_tanyaqiyi
+		allow_branch = {if = {country_exists = SRC }}
+		x = 7
+		y = 1
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = { always = no }
+		
+		completion_reward = { 
+			army_experience = 20
+		}
+	}
+	#攻取沈阳
+	focus = {
+		id = GPS_gongqushenyang
+		icon = GFX_GPS_gongqushenyang
+		prerequisite = { focus = GPS_tanyaqiyi}
+		mutually_exclusive = { focus = GPS_gongshishoucuo }
+		x = 5
+		y = 2
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = { always = no }
+		
+		completion_reward = { 
+			army_experience = 20
+			war_support_factor = 0.1
+		}
+	}
+	#确立汤都督实权
+	focus = {
+		id = GPS_quanlitangdudushiquan
+		icon = GFX_GPS_quanlitangdudushiquan
+		prerequisite = { focus = GPS_gongqushenyang}
+		x = 5
+		y = 3
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.1
+			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
+		}
+	}
+	#压制地方山头
+	focus = {
+		id = GPS_yazhidifangshantou
+		icon = GFX_GPS_yazhidifangshantou
+		prerequisite = { focus = GPS_quanlitangdudushiquan}
+		x = 4
+		y = 4
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
+		}
+	}
+	#分化当地将领
+	focus = {
+		id = GPS_fenhuadangdijiangling
+		icon = GFX_GPS_fenhuadangdijiangling
+		prerequisite = { focus = GPS_yazhidifangshantou}
+		x = 4
+		y = 5
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
+		}
+	}
+	#强化都督府指挥权
+	focus = {
+		id = GPS_qianghuazhihuiquan
+		icon = GFX_GPS_qianghuazhihuiquan
+		prerequisite = { focus = GPS_quanlitangdudushiquan}
+		x = 6
+		y = 4
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { GPS_diguogongyexinzang_zuzhidu = 0.05 }
+		}
+	}
+	#军令再统合
+	focus = {
+		id = GPS_junlingzaitonghe
+		icon = GFX_GPS_junlingzaitonghe
+		prerequisite = { focus = GPS_qianghuazhihuiquan}
+		x = 6
+		y = 5
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			army_experience = 15
+			remove_dynamic_modifier = { modifier = GPS_fengyupiaodang }
+			add_dynamic_modifier = { modifier = GPS_kaifuyitongsansi }
+			add_to_variable = { GPS_kaifuyitongsansi_fangyu = 0.1 }
+		}
+	}
+	#政令归一
+	focus = {
+		id = GPS_zhenglingguiyi
+		icon = GFX_GPS_zhenglingguiyi
+		prerequisite = { focus = GPS_junlingzaitonghe}
+		prerequisite = { focus = GPS_fenhuadangdijiangling}
+		x = 5
+		y = 6
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_political_power = 60
+			add_stability = 0.1
+		}
+	}
+	#维持军管
+	focus = {
+		id = GPS_weichijunguan
+		icon = GFX_GPS_weichijunguan
+		prerequisite = { focus = GPS_zhenglingguiyi}
+		x = 5
+		y = 7
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	#解散工协
+	focus = {
+		id = GPS_jiesangongxie
+		icon = GFX_GPS_jiesangongxie
+		prerequisite = { focus = GPS_weichijunguan}
+		x = 4
+		y = 8
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { GPS_kaifuyitongsansi_xiaofeiping = -0.15 }
+			add_stability = -0.05
+		}
+	}
+	#生产军事化
+	focus = {
+		id = GPS_shengchanjunshihua
+		icon = GFX_GPS_shengchanjunshihua
+		prerequisite = { focus = GPS_jiesangongxie}
+		x = 4
+		y = 9
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { GPS_kaifuyitongsansi_buqiang = -0.15 }
+			add_stability = -0.05
+		}
+	}
+	#东北安民令
+	focus = {
+		id = GPS_dongbeianminling
+		icon = GFX_GPS_dongbeianminling
+		prerequisite = { focus = GPS_weichijunguan}
+		x = 6
+		y = 8
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { GPS_kaifuyitongsansi_zhengzhidian = 0.15 }
+		}
+	}
+	#追剿赤匪
+	focus = {
+		id = GPS_zhuijiaochifei
+		icon = GFX_GPS_zhuijiaochifei
+		prerequisite = { focus = GPS_dongbeianminling}
+		x = 6
+		y = 9
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { GPS_kaifuyitongsansi_gongji = 0.1 }
+			if = {
+				limit = {NOT = {country_exists = SRC}}
+				add_research_slot = 1
+			}
+		}
+	}
+	#攻势受挫
+	focus = {
+		id = GPS_gongshishoucuo
+		icon = GFX_GPS_gongshishoucuo
+		prerequisite = { focus = GPS_tanyaqiyi}
+		mutually_exclusive = { focus = GPS_gongqushenyang }
+		x = 9
+		y = 2
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = { always = no }
+		
+		completion_reward = { 
+			add_stability = -0.1
+			army_experience = 30
+		}
+	}
+	#转战镇东
+	focus = {
+		id = GPS_zhuanzhanzhengdong
+		icon = GFX_GPS_zhuanzhanzhengdong
+		prerequisite = { focus = GPS_gongshishoucuo}
+		x = 9
+		y = 3
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = { 
+			408 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#架空汤都督
+	focus = {
+		id = GPS_jiakongtangdudu
+		icon = GFX_GPS_jiakongtangdudu
+		prerequisite = { focus = GPS_zhuanzhanzhengdong}
+		x = 9
+		y = 4
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.15 }
+			add_to_variable = { GPS_fengyupiaodang_zhengzhidian = -0.1 }
+		}
+	}
+	#将领集体领导
+	focus = {
+		id = GPS_jianglingjitilingdao
+		icon = GFX_GPS_jianglingjitilingdao
+		prerequisite = { focus = GPS_jiakongtangdudu}
+		x = 9
+		y = 5
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 6
+		
+		completion_reward = { 
+			add_to_variable = { GPS_fengyupiaodang_jihuasudu = 0.2 }
+			add_to_variable = { GPS_fengyupiaodang_qianhaosudu = 0.2}
+			add_to_variable = { GPS_fengyupiaodang_qianhao = 0.05 }
+			add_to_variable = { GPS_diguogongyexinzang_zuzhidu = 0.05 }
+		}
+	}
+	#民用工厂军用化
+	focus = {
+		id = GPS_minyonggongchangjunyonghua
+		icon = GFX_GPS_minyonggongchangjunyonghua
+		prerequisite = { focus = GPS_jianglingjitilingdao}
+		x = 8
+		y = 6
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_to_variable = { GPS_fengyupiaodang_chanchu = 0.1 }
+			add_war_support = -0.1
+		}
+	}
+	#扩大武器产能
+	focus = {
+		id = GPS_kuodawuqichanneng
+		icon = GFX_GPS_kuodawuqichanneng
+		prerequisite = { focus = GPS_minyonggongchangjunyonghua}
+		x = 8
+		y = 7
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_to_variable = { GPS_fengyupiaodang_chanchu = 0.1 }
+			add_to_variable = { GPS_fengyupiaodang_zhengzhidian = -0.15 }
+		}
+	}
+	#紧急生产法案
+	focus = {
+		id = GPS_jinjishengchanfaan
+		icon = GFX_GPS_jinjishengchanfaan
+		prerequisite = { focus = GPS_kuodawuqichanneng}
+		x = 8
+		y = 8
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_to_variable = { GPS_fengyupiaodang_xiaolv = 0.1 }
+			add_war_support = -0.1
+		}
+	}
+	#加固速江防线
+	focus = {
+		id = GPS_jiagusujiangfangxian
+		icon = GFX_GPS_jiagusujiangfangxian
+		prerequisite = { focus = GPS_jianglingjitilingdao}
+		x = 10
+		y = 6
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_to_variable = { GPS_fengzhaojiaofei_fangyu = 0.1 }
+			add_to_variable = { GPS_fengzhaojiaofei_yaosai = 0.15 }
+		}
+	}
+	#动员预备役
+	focus = {
+		id = GPS_dongyuanyubeiyi
+		icon = GFX_GPS_dongyuanyubeiyi
+		prerequisite = { focus = GPS_jiagusujiangfangxian}
+		x = 10
+		y = 7
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_war_support = -0.1
+			add_to_variable = { conscription_factor = 0.2 }
+		}
+	}
+	#寻求海外支援
+	focus = {
+		id = GPS_xunqiuhaiwaizhiyuan
+		icon = GFX_GPS_xunqiuhaiwaizhiyuan
+		prerequisite = { focus = GPS_dongyuanyubeiyi}
+		x = 10
+		y = 8
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = industrial_complex level = 1 }
+		}
+	}
+	#放手一搏
+	focus = {
+		id = GPS_fangshouyibo
+		icon = GFX_GPS_fangshouyibo
+		prerequisite = { focus = GPS_xunqiuhaiwaizhiyuan}
+		prerequisite = { focus = GPS_jinjishengchanfaan}
+		x = 9
+		y = 9
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		cost = 5
+		
+		completion_reward = { 
+			add_stability = -0.2
+			add_to_variable = { GPS_fengzhaojiaofei_gongji = 0.2 }
+			if = {
+				limit = {NOT = {country_exists = SRC}}
+				add_research_slot = 1
+				remove_dynamic_modifier = { modifier = GPS_fengyupiaodang }
+				add_ideas = GPS_junzhengtuanjie
+			}
+		}
+	}
+	#宣告平乱胜利
+	focus = {
+		id = GPS_xuangaopingluanshengli
+		icon = GFX_GPS_xuangaopingluanshengli
+		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
+		allow_branch = {if = NOT = {{country_exists = SRC }}}
+		x = 7
+		y = 1
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 2
+		
+		available = {}
+		
+		completion_reward = { 
+			remove_dynamic_modifier = { modifier = GPS_fengzhaojiaofei }
+			add_political_power = 50
+		}
+	}
+	#恢复战争创伤
+	focus = {
+		id = GPS_huifuzhanzhengchuangshang
+		icon = GFX_GPS_huifuzhanzhengchuangshang
+		prerequisite = { focus = GPS_xuangaopingluanshengli}
+		x = 7
+		y = 2
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 365 }
+			add_dynamic_modifier = { modifier = GPS_zhanhouchongjian days = GPS_zhanhouchongjian_shijian }
+			add_political_power = 60
+		}
+	}
+	#构建“新工协”
+	focus = {
+		id = GPS_goujianxingongxie
+		icon = GFX_GPS_goujianxingongxie
+		prerequisite = { focus = GPS_huifuzhanzhengchuangshang}
+		mutually_exclusive = { focus = GPS_qianghualaodongjilv }
+		x = 3
+		y = 3
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_jungong = 0.1 }
+		}
+	}
+	#工人保障方案
+	focus = {
+		id = GPS_gongrenbaozhangfangan
+		icon = GFX_GPS_gongrenbaozhangfangan
+		prerequisite = { focus = GPS_goujianxingongxie}
+		x = 3
+		y = 4
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_dynamic_modifier = { modifier = GPS_laodongzhengce }
+		}
+	}
+	#分化工人群体
+	focus = {
+		id = GPS_fenhuagongrenqunti
+		icon = GFX_GPS_fenhuagongrenqunti
+		prerequisite = { focus = GPS_gongrenbaozhangfangan}
+		x = 3
+		y = 5
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { add_stability = 0.2 }
+	}
+	#温情脉脉
+	focus = {
+		id = GPS_wenqingmomo
+		icon = GFX_GPS_wenqingmomo
+		prerequisite = { focus = GPS_fenhuagongrenqunti}
+		x = 3
+		y = 6
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_laodongzhengce_chanchu = 0.05 }
+			add_to_variable = { GPS_laodongzhengce_xiaofeiping = 0.1 }
+		}
+	}
+	#强化劳动纪律
+	focus = {
+		id = GPS_qianghualaodongjilv
+		icon = GFX_GPS_qianghualaodongjilv
+		prerequisite = { focus = GPS_huifuzhanzhengchuangshang}
+		mutually_exclusive = { focus = GPS_goujianxingongxie }
+		x = 5
+		y = 3
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_stability = -0.05
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_jianzao = 0.1 }
+		}
+	}
+	#产能第一
+	focus = {
+		id = GPS_channengdiyi
+		icon = GFX_GPS_channengdiyi
+		prerequisite = { focus = GPS_qianghualaodongjilv}
+		x = 5
+		y = 4
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_stability = -0.1
+			add_dynamic_modifier = { modifier = GPS_junshiguanli }
+		}
+	}
+	#禁绝极端思想
+	focus = {
+		id = GPS_jinjuejiduansixiang
+		icon = GFX_GPS_jinjuejiduansixiang
+		prerequisite = { focus = GPS_channengdiyi}
+		x = 5
+		y = 5
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { add_popularity = { ideology = authoritarian_oligarchy popularity = 0.2 } }
+	}
+	#重拳出击
+	focus = {
+		id = GPS_chongquanchuji
+		icon = GFX_GPS_chongquanchuji
+		prerequisite = { focus = GPS_jinjuejiduansixiang}
+		x = 5
+		y = 6
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_stability = -0.1
+			add_to_variable = { GPS_junshiguanli_xiaofeiping = -0.1 }
+			add_to_variable = { GPS_junshiguanli_zhengzhi = -0.1 }
+		}
+	}
+	#修复工厂
+	focus = {
+		id = GPS_xiufugongchang
+		icon = GFX_GPS_xiufugongchang
+		prerequisite = { focus = GPS_huifuzhanzhengchuangshang}
+		x = 7
+		y = 3
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_mingong = 0.1 }
+		}
+	}
+	#完善基建
+	focus = {
+		id = GPS_wanshanjijian
+		icon = GFX_GPS_wanshanjijian
+		prerequisite = { focus = GPS_xiufugongchang}
+		x = 7
+		y = 4
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
+			add_to_variable = { GPS_zhanhouchongjian_jijian = 0.1 }
+		}
+	}
+	#镇压破坏运动
+	focus = {
+		id = GPS_zhenyapohuaiyundong
+		icon = GFX_GPS_zhenyapohuaiyundong
+		prerequisite = { focus = GPS_wanshanjijian}
+		x = 7
+		y = 5
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = GPS_zhengyaluandang
+			add_political_power = 20
+		}
+	}
+	#构建戡乱体质
+	focus = {
+		id = GPS_goujiankanluantizhi
+		icon = GFX_GPS_goujiankanluantizhi
+		prerequisite = { focus = GPS_zhenyapohuaiyundong}
+		x = 7
+		y = 6
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = GPS_zhengyaluandang
+			add_dynamic_modifier = { modifier = GPS_kanluantizhi }
+			add_to_variable = { GPS_kanluantizhi_dangpai = 0.2 }
+		}
+	}
+	#加速军事研究
+	focus = {
+		id = GPS_jiasujunshiyanjiu
+		icon = GFX_GPS_jiasujunshiyanjiu
+		prerequisite = { focus = GPS_goujiankanluantizhi}
+		x = 6
+		y = 7
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_kanluantizhi_yanjiu = 0.1 }
+		}
+	}
+	#选择未来战法
+	focus = {
+		id = GPS_xuanzeweilaizhanfa
+		icon = GFX_GPS_xuanzeweilaizhanfa
+		prerequisite = { focus = GPS_jiasujunshiyanjiu}
+		x = 6
+		y = 8
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+		}
+	}
+	#尊重知识分子
+	focus = {
+		id = GPS_zunzhongzhishifenzi
+		icon = GFX_GPS_zunzhongzhishifenzi
+		prerequisite = { focus = GPS_goujiankanluantizhi}
+		x = 8
+		y = 7
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { add_research_slot = 1 }
+	}
+	#加强文化教育
+	focus = {
+		id = GPS_qianghuawenhuajiaoyu
+		icon = GFX_GPS_qianghuawenhuajiaoyu
+		prerequisite = { focus = GPS_goujiankanluantizhi}
+		x = 8
+		y = 7
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { add_stability = 0.1
+		}
+	}
+	#会见武备系官僚
+	focus = {
+		id = GPS_huijianwubeixi
+		icon = GFX_GPS_huijianwubeixi
+		prerequisite = { focus = GPS_huifuzhanzhengchuangshang}
+		mutually_exclusive = { focus = GPS_mihuijiaotongxi }
+		x = 9
+		y = 3
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_popularity = { ideology = leader_despotism popularity = 0.1 }
+			add_stability = 0.1
+		}
+	}
+	#保障国企利益
+	focus = {
+		id = GPS_baozhangguoqiliyi
+		icon = GFX_GPS_baozhangguoqiliyi
+		prerequisite = { focus = GPS_huijianwubeixi}
+		x = 9
+		y = 4
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_diguogongyexinzang_gongye = 0.1 }
+		}
+	}
+	#密会交通系
+	focus = {
+		id = GPS_mihuijiaotongxi
+		icon = GFX_GPS_mihuijiaotongxi
+		prerequisite = { focus = GPS_huifuzhanzhengchuangshang}
+		mutually_exclusive = { focus = GPS_huijianwubeixi }
+		x = 11
+		y = 3
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { add_war_support = 0.1
+		}
+	}
+	#赋予国铁特权
+	focus = {
+		id = GPS_fuyuguotietequan
+		icon = GFX_GPS_fuyuguotietequan
+		prerequisite = { focus = GPS_mihuijiaotongxi}
+		x = 11
+		y = 4
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_diguogongyexinzang_ziyuan = 0.1 }
+			add_to_variable = { GPS_diguogongyexinzang_buji = 0.1 }
+		}
+	}
+	#加紧关内联络
+	focus = {
+		id = GPS_jiajinguanneilianluo
+		icon = GFX_GPS_jiajinguanneilianluo
+		prerequisite = { focus = GPS_baozhangguoqiliyi}
+		prerequisite = { focus = GPS_fuyuguotietequan}
+		x = 10
+		y = 5
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_diguogongyexinzang_chanchu = 0.05 }
+		}
+	}
+	#形成统制经济
+	focus = {
+		id = GPS_xingchengtongzhijingji
+		icon = GFX_GPS_xingchengtongzhijingji
+		prerequisite = { focus = GPS_jiajinguanneilianluo}
+		x = 10
+		y = 6
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			remove_dynamic_modifier = { modifier = GPS_diguogongyexinzang }
+			add_dynamic_modifier = { modifier = GPS_tongzhijingji }
+		}
+	}
+	#谁主沉浮
+	focus = {
+		id = GPS_sheizhuchenfu
+		icon = GFX_GPS_sheizhuchenfu
+		prerequisite = { focus = GPS_xingchengtongzhijingji}
+		x = 10
+		y = 7
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { GPS_tongzhijingji_shangxian = 0.1 }
+		}
+	}
+	#介入周边局势
+	focus = {
+		id = GPS_jieruzhoubianjushi
+		icon = GFX_GPS_jieruzhoubianjushi
+		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
+		allow_branch = {if = {NOT = {country_exists = SRC }}}
+		x = 15
+		y = 1
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {}
+		
+		completion_reward = { 
+			remove_dynamic_modifier = { modifier = GPS_fengzhaojiaofei }
+			add_political_power = 50
+		}
+	}
+	#确保朝鲜王国
+	focus = {
+		id = GPS_quebaochaoxianwangguo
+		icon = GFX_GPS_quebaochaoxianwangguo
+		prerequisite = { focus = GPS_jieruzhoubianjushi}
+		x = 15
+		y = 2
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {has_country_flag = GPS_chaoxianzhichi}
+		
+		completion_reward = { 
+		}
+	}
+	#维护东洋利益
+	focus = {
+		id = GPS_weihudongyangliyi
+		icon = GFX_GPS_weihudongyangliyi
+		prerequisite = { focus = GPS_quebaochaoxianwangguo}
+		x = 15
+		y = 3
+		
+		ai_will_do = {factor = 10}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 6
+		
+		available = {has_country_flag = GPS_xiayizhichi}
+		
+		completion_reward = { 
+		}
+	}
+}

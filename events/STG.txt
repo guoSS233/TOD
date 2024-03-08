@@ -1,0 +1,19 @@
+add_namespace = TOD_STG
+
+#介绍
+country_event = {
+	id = TOD_STG.1
+	title = TOD_STG.1.t
+	desc =TOD_STG.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.1.a
+		add_war_support = 0.05
+	}
+}
