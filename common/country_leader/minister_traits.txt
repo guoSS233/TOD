@@ -113,7 +113,7 @@ leader_traits = {
 
 		random = no
 	}
-	
+
 	hog_political_protege = {
 		political_power_gain = 0.11
 
@@ -453,7 +453,7 @@ leader_traits = {
 
 		random = no
 	}
-	
+
 	eco_outstanding_mediator = {
 		stability_factor = 0.05
 		political_power_gain = 0.25
@@ -626,7 +626,7 @@ leader_traits = {
 
 		random = no
 	}
-	
+
 	for_genius_diplomat = {
 		opinion_gain_monthly_factor = 0.15
 		opinion_gain_monthly_same_ideology_factor = 0.25
@@ -719,7 +719,7 @@ leader_traits = {
 
 		random = no
 	}
-	
+
 	sec_silent_fire_watcher = {
 		stability_factor = 0.05
 		conscription_factor = -0.01
@@ -1295,5 +1295,77 @@ leader_traits = {
 
 		random = no
 	}
+	##前面都是KR的，我建议你们以后写从我这开始
 
+	#### 西北军
+	# 政府首脑
+	XBJ_Shenshou_Xinlai = { #深受信赖
+		political_power_factor = 0.1
+		mobilization_laws_cost_factor = -0.2
+		trade_laws_cost_factor = -0.2
+		economy_cost_factor = -0.2
+	}
+	XBJ_Yuanhua_Chushi = { #圆滑处世
+		political_power_factor = 0.05
+		stability_factor = 0.1
+	}
+	XBJ_JiE_Ruchou = { #嫉恶如仇
+		war_support_factor = 0.1
+		stability_factor = -0.05
+	}
+	XBJ_jinzhi_jinze = { #尽职尽责
+		political_power_factor = 0.1
+		industrial_capacity_factory = 0.05
+	}
+	# 外交部长
+	XBJ_tianya_bilin = { #天涯比邻
+		trade_laws_cost_factor = -0.2
+		trade_opinion_factor = 0.1
+	}
+	XBJ_qiaoshe_ruhuang = { #巧舌如簧
+		opinion_gain_monthly_factor = 0.2
+		opinion_gain_monthly_same_ideology_factor = 0.2
+	}
+	XBJ_bawo_renxin = { #把握人心
+		opinion_gain_monthly_factor = 0.2
+		monthly_population = 0.05
+	}
+	# 经济部长
+	XBJ_dianshi_chengjin = { #点石成金
+		production_factory_max_efficiency_factor = 0.05
+		local_resources_factor = 0.15
+	}
+	XBJ_jiaota_shidi = { #脚踏实地
+		industrial_capacity_factory = 0.15
+		production_factory_efficiency_gain_factor = 0.05
+	}
+	XBJ_chaoqian_yanguang = { #超前眼光
+		monthly_population = 0.05
+		production_speed_infrastructure_factor = 0.15
+	}
+	XBJ_tongqing_laoren = { #同情劳人
+		production_factory_max_efficiency_factor = 0.1
+		production_speed_industrial_complex_factor = 0.1
+	}
+	# 安全部长
+	XBJ_ruying_suixing = { #如影随形
+		stability_factor = 0.05
+		drift_defence_factor = 0.2
+	}
+	XBJ_buze_shouduan = { #不择手段
+		conscription = -0.005
+		stability_factor = 0.15
+	}
+	XBJ_wukong_buru = { #无孔不入
+		AGENCY_UPGRADE_TIME = -0.1
+		operative_slot = 2
+		if = {
+			limit = { has_dlc = "La Resistance" }
+			operative_slot = 2
+			else = {
+				ENCRYPTION = 2
+				DECRYPTION = 2
+			}
+		}
+	}
 }

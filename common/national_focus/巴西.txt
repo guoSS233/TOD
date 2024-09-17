@@ -1,0 +1,96 @@
+###Brasil National Focuses###
+focus_tree = {
+	id = brasil_focus
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BRA
+		}
+	}
+	
+	continuous_focus_position = { x = 50 y = 2500 }
+
+	#城市工业化
+	focus = {
+		id = BRA_城市工业化
+		icon = GFX_
+#		prerequisite = { focus = }
+#		mutually_exclusive = { focus =  }
+		x = 3
+		y = 0
+#		relative_position_id = 
+
+		cost = 5.00
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = 120
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = liberal_democracy
+				popularity = 0.05
+			}
+		}
+	}
+	
+	focus = {
+		id = BRA_提振经济
+		icon = GFX_
+		prerequisite = { focus = BRA_城市工业化 }
+#		mutually_exclusive = { focus =  }
+		x = 0
+		y = 1
+		relative_position_id = BRA_城市工业化
+
+		cost = 5.00
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+
+		}
+		
+		bypass = {
+
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		complete_tooltip = {
+
+		}
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.1
+		}
+	}
+}

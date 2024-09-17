@@ -87,14 +87,14 @@ SIA_release_ROS = {
 
 
 			#set_cosmetic_tag = ROS         #好像指装备外观？#						
-		}
-		every_state = {
-			limit = {
-				is_claim_or_core_of_ROOT = yes
-				NOT = { is_claimed_by = ROS }
-				NOT = { is_core_of = ROS }
-			}
-			add_claim_by = ROS
-		}
+		}#需修改
+		#every_state = {
+		#	limit = {
+		#		is_claim_or_core_of_ROOT = yes
+		#		NOT = { is_claimed_by = ROS }
+		#		NOT = { is_core_of = ROS }
+		#	}
+		#	add_claim_by = ROS
+		#}
 	}
 }

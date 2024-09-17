@@ -1,9 +1,8 @@
 ﻿capital = 141
+
 oob = "SWE_1936"
 if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
+	limit = { has_dlc = "Man the Guns" }
 	set_naval_oob = "SWE_Naval_mtg"
 	else = {
 		set_naval_oob = "SWE_Naval_legacy"
@@ -41,12 +40,6 @@ add_ideas = {
 	SWE_Statare
 }
 
-country_lock_all_division_template = yes
-recruit_character = SWE_Carl_Gustaf_Ekman
-recruit_character = SWE_Pierre_Albin_Hansen
-recruit_character = SWE_GustavV
-recruit_character = SWE_Axel_Person_Bramstorp
-recruit_character = SWE_Olof_Tonell
 set_technology = {
 	infantry_weapons = 1
 	infantry_weapons1 = 1
@@ -68,9 +61,7 @@ set_technology = {
 
 if = {
 	limit = {
-		not = {
-			has_dlc = "Man the Guns"
-		}
+		not = { has_dlc = "Man the Guns" }
 	}
 	set_technology = {
 		early_submarine = 1
@@ -89,9 +80,7 @@ if = {
 
 if = {
 	limit = {
-		NOT = {
-			has_dlc = "No Step Back"
-		}
+		NOT = { has_dlc = "No Step Back" }
 	}
 	set_technology = {
 		gwtank = 1
@@ -100,7 +89,6 @@ if = {
 		basic_medium_tank = 1
 	}
 }
-
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -144,6 +132,7 @@ if = {
 	}
 }
 
+
 if = {
 	limit = {
 		has_dlc = "No Step Back"
@@ -166,6 +155,7 @@ if = {
 		obsolete = yes
 		icon = "GFX_gwtank_medium"
 	}
+
 	create_equipment_variant = {
 		name = "Strv m/31"
 		type = light_tank_chassis_1
@@ -183,6 +173,7 @@ if = {
 			tank_nsb_armor_upgrade = 2
 		}
 	}
+
 	create_equipment_variant = {
 		name = "Strv m/36"
 		type = light_tank_chassis_2
@@ -200,6 +191,7 @@ if = {
 			tank_nsb_armor_upgrade = 2
 		}
 	}
+
 	create_equipment_variant = {
 		name = "Strv m/33 'Lago I'"
 		type = medium_tank_chassis_1
@@ -217,357 +209,366 @@ if = {
 			tank_nsb_engine_upgrade = 5
 		}
 	}
-}
+	country_lock_all_division_template = yes
+	recruit_character = SWE_Carl_Gustaf_Ekman
+	recruit_character = SWE_Pierre_Albin_Hansen
+	recruit_character = SWE_GustavV
+	recruit_character = SWE_Axel_Person_Bramstorp
+	recruit_character = SWE_Olof_Tonell
 
-###海军设计
-if = {
-	limit = {
-		has_dlc = "Man the Guns"
-	}
-	create_equipment_variant = {
-		#瑞典级
-		name = "Sweden Class"
-		type = ship_hull_heavy_2
-		name_group = SWE_BC_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_heavy_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_2
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bc_2
-			front_1_custom_slot = ship_heavy_battery_2
-			mid_1_custom_slot = ship_anti_air_2
-			mid_2_custom_slot = ship_secondaries_1
-			rear_1_custom_slot = ship_heavy_battery_2
+
+	###海军设计
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+
+		create_equipment_variant = { #瑞典级
+			name = "Sweden Class"
+			type = ship_hull_heavy_2
+			name_group = SWE_BC_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_bc_2
+				front_1_custom_slot = ship_heavy_battery_2
+				mid_1_custom_slot = ship_anti_air_2
+				mid_2_custom_slot = ship_secondaries_1
+				rear_1_custom_slot = ship_heavy_battery_2
+			}
 		}
-	}
-	create_equipment_variant = {
-		#古斯塔夫国王
-		name = "King Gustav Class"
-		type = ship_hull_heavy_2
-		name_group = SWE_BB_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_heavy_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bb_2
-			front_1_custom_slot = ship_heavy_battery_2
-			mid_1_custom_slot = ship_heavy_battery_2
-			mid_2_custom_slot = ship_secondaries_1
-			rear_1_custom_slot = ship_airplane_launcher_1
+
+		create_equipment_variant = { #古斯塔夫国王
+			name = "King Gustav Class"
+			type = ship_hull_heavy_2
+			name_group = SWE_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_bb_2
+				front_1_custom_slot = ship_heavy_battery_2
+				mid_1_custom_slot = ship_heavy_battery_2
+				mid_2_custom_slot = ship_secondaries_1
+				rear_1_custom_slot = ship_airplane_launcher_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#瓦尔基里
-		name = "Valkiri Class"
-		type = ship_hull_heavy_1
-		name_group = SWE_BB_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_heavy_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bb_1
-			front_1_custom_slot = ship_heavy_battery_1
-			mid_1_custom_slot = ship_secondaries_1
-			mid_2_custom_slot = empty
-			rear_1_custom_slot = empty
+
+		create_equipment_variant = { #瓦尔基里
+			name = "Valkiri Class"
+			type = ship_hull_heavy_1
+			name_group = SWE_BB_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_bb_1
+				front_1_custom_slot = ship_heavy_battery_1
+				mid_1_custom_slot = ship_secondaries_1
+				mid_2_custom_slot = empty
+				rear_1_custom_slot = empty
+			}
 		}
-	}
-	create_equipment_variant = {
-		#哥特兰
-		name = "Gotland Class"
-		type = ship_hull_cruiser_1
-		name_group = SWE_CA_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = empty
-			mid_1_custom_slot = ship_secondaries_1
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_medium_battery_1
+
+
+		create_equipment_variant = { #哥特兰
+			name = "Gotland Class"
+			type = ship_hull_cruiser_1
+			name_group = SWE_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = empty
+				mid_1_custom_slot = ship_secondaries_1
+				mid_2_custom_slot = ship_anti_air_1
+				rear_1_custom_slot = ship_medium_battery_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#斯德哥尔摩
-		name = "Stockholm Class"
-		type = ship_hull_cruiser_2
-		name_group = SWE_CA_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_2
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_2
-			front_1_custom_slot = ship_torpedo_1
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = empty
-			rear_1_custom_slot = ship_medium_battery_2
+
+		create_equipment_variant = { #斯德哥尔摩
+			name = "Stockholm Class"
+			type = ship_hull_cruiser_2
+			name_group = SWE_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				front_1_custom_slot = empty
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = ship_torpedo_1
+				rear_1_custom_slot = ship_medium_battery_2
+			}
 		}
-	}
-	create_equipment_variant = {
-		#约塔兰级
-		name = "Yotland Class"
-		type = ship_hull_cruiser_1
-		name_group = SWE_CA_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_
-			front_1_custom_slot = empty
-			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot = ship_anti_air_1
-			rear_1_custom_slot = ship_light_battery_1
+
+		create_equipment_variant = { #约塔兰级
+			name = "Yotland Class"
+			type = ship_hull_cruiser_1
+			name_group = SWE_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_
+				front_1_custom_slot = empty
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot = ship_anti_air_1
+				rear_1_custom_slot = ship_light_battery_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#奥斯卡二世
-		name = "Oscar II Class"
-		type = ship_hull_cruiser_coastal_defense_ship
-		name_group = SWE_CA_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = empty
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = empty
-			rear_1_custom_slot = ship_light_medium_battery_1
+		create_equipment_variant = { #奥斯卡二世
+			name = "Oscar II Class"
+			type = ship_hull_cruiser_coastal_defense_ship
+			name_group = SWE_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = empty
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = empty
+				rear_1_custom_slot = ship_light_medium_battery_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#延雪平级
-		name = "Jonkoping Class"
-		type = ship_hull_cruiser_coastal_defense_ship
-		name_group = SWE_CA_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = empty
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_secondaries_1
-			rear_1_custom_slot = empty
+
+		create_equipment_variant = { #延雪平级
+			name = "Jonkoping Class"
+			type = ship_hull_cruiser_coastal_defense_ship
+			name_group = SWE_CA_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = empty
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = empty
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = ship_secondaries_1
+				rear_1_custom_slot = empty
+			}
 		}
-	}
-	create_equipment_variant = {
-		#霍尔姆
-		name = "Holm Class"
-		type = ship_hull_cruiser_2
-		name_group = SWE_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_2
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_2
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_2
-			front_1_custom_slot = ship_anti_air_2
-			mid_1_custom_slot = ship_light_battery_1
-			mid_2_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_light_medium_battery_2
+		create_equipment_variant = { #霍尔姆
+			name = "Holm Class"
+			type = ship_hull_cruiser_2
+			name_group = SWE_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_2
+				front_1_custom_slot = ship_anti_air_2
+				mid_1_custom_slot = ship_light_battery_1
+				mid_2_custom_slot = ship_torpedo_1
+				rear_1_custom_slot = ship_light_medium_battery_2
+			}
 		}
-	}
-	create_equipment_variant = {
-		#哥德堡级
-		name = "Gothrnburg Class"
-		type = ship_hull_cruiser_1
-		name_group = SWE_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = ship_sonar_1
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = ship_light_battery_1
-			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot = ship_depth_charge_1
+
+		create_equipment_variant = { #哥德堡级
+			name = "Gothrnburg Class"
+			type = ship_hull_cruiser_1
+			name_group = SWE_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = ship_sonar_1
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = empty
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = ship_light_battery_1
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot =  empty
+				rear_1_custom_slot = ship_depth_charge_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#吕勒奥
-		name = "Lulea Class"
-		type = ship_hull_cruiser_1
-		name_group = SWE_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = empty
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			mid_2_custom_slot = ship_light_medium_battery_1
+
+		create_equipment_variant = { #吕勒奥
+			name = "Lulea Class"
+			type = ship_hull_cruiser_1
+			name_group = SWE_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = empty
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_torpedo_1
+				mid_2_custom_slot =  ship_light_medium_battery_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#凯布纳山
-		name = "Kebnekaise Class"
-		type = ship_hull_cruiser_1
-		name_group = SWE_CL_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_medium_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = cruiser_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = empty
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = ship_light_battery_1
+
+		create_equipment_variant = { #凯布纳山
+			name = "Kebnekaise Class"
+			type = ship_hull_cruiser_1
+			name_group = SWE_CL_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_medium_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = cruiser_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_cruiser_1
+				front_1_custom_slot = empty
+				mid_1_custom_slot = empty
+				mid_2_custom_slot =  ship_light_battery_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#维斯比
-		name = "Visby Class"
-		type = ship_hull_light_1
-		name_group = SWE_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = empty
-			rear_1_custom_slot = ship_depth_charge_1
+		create_equipment_variant = { #维斯比
+			name = "Visby Class"
+			type = ship_hull_light_1
+			name_group = SWE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = empty
+				rear_1_custom_slot = ship_depth_charge_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#塞斯卡尔
-		name = "Seskal Class"
-		type = ship_hull_light_1
-		name_group = SWE_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_depth_charge_1
-			rear_1_custom_slot = ship_mine_sweeper_1
+
+		create_equipment_variant = { #塞斯卡尔
+			name = "Seskal Class"
+			type = ship_hull_light_1
+			name_group = SWE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_depth_charge_1
+				rear_1_custom_slot = ship_mine_sweeper_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#博登
-		name = "Borden Class"
-		type = ship_hull_light_1
-		name_group = SWE_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = light_ship_engine_1
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_mine_sweeper_1
-			rear_1_custom_slot = ship_mine_layer_1
+
+		create_equipment_variant = { #博登
+			name = "Borden Class"
+			type = ship_hull_light_1
+			name_group = SWE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = light_ship_engine_1
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_mine_sweeper_1
+				rear_1_custom_slot = ship_mine_layer_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#卡尔斯克鲁纳
-		name = "Karlskrona Class"
-		type = ship_hull_light_2
-		name_group = SWE_DD_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_light_battery_2
-			fixed_ship_anti_air_slot = ship_anti_air_2
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = ship_sonar_1
-			fixed_ship_engine_slot = light_ship_engine_2
-			fixed_ship_torpedo_slot = ship_torpedo_1
-			mid_1_custom_slot = ship_torpedo_1
-			rear_1_custom_slot = ship_depth_charge_1
+
+
+		create_equipment_variant = { #卡尔斯克鲁纳
+			name = "Karlskrona Class"
+			type = ship_hull_light_2
+			name_group = SWE_DD_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_light_battery_2
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = ship_sonar_1
+				fixed_ship_engine_slot = light_ship_engine_2
+				fixed_ship_torpedo_slot = ship_torpedo_1
+				mid_1_custom_slot = ship_torpedo_1
+				rear_1_custom_slot = ship_depth_charge_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		#奥丁
-		name = "Odin Class"
-		type = ship_hull_pre_dreadnought
-		name_group = SWE_BB_MYTHOLOGY
-		parent_version = 0
-		modules = {
-			fixed_ship_battery_slot = ship_heavy_battery_1
-			fixed_ship_anti_air_slot = ship_anti_air_1
-			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-			fixed_ship_radar_slot = empty
-			fixed_ship_engine_slot = heavy_ship_engine_1
-			fixed_ship_secondaries_slot = ship_secondaries_1
-			fixed_ship_armor_slot = ship_armor_bb_1
-			front_1_custom_slot = empty
-			mid_1_custom_slot = empty
-			mid_2_custom_slot = empty
+
+		create_equipment_variant = { #奥丁
+			name = "Odin Class"
+			type = ship_hull_pre_dreadnought
+			name_group = SWE_BB_MYTHOLOGY
+			parent_version = 0
+			modules = {
+				fixed_ship_battery_slot = ship_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_1
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_1
+				fixed_ship_secondaries_slot = ship_secondaries_1
+				fixed_ship_armor_slot = ship_armor_bb_1
+				front_1_custom_slot = empty
+				mid_1_custom_slot = empty
+				mid_2_custom_slot = empty
+			}
 		}
-	}
-	create_equipment_variant = {
-		name = "Dragon Class"
-		type = ship_hull_submarine_2
-		name_group = SWE_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_2
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = ship_torpedo_sub_1
+
+
+
+		create_equipment_variant = {
+			name = "Dragon Class"
+			type = ship_hull_submarine_2
+			name_group = SWE_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_2
+				fixed_ship_engine_slot = sub_ship_engine_1
+				rear_1_custom_slot = ship_torpedo_sub_1
+			}
 		}
-	}
-	create_equipment_variant = {
-		name = "whale Class"
-		type = ship_hull_submarine_1
-		name_group = SWE_SS_HISTORICAL
-		parent_version = 0
-		modules = {
-			fixed_ship_torpedo_slot = ship_torpedo_sub_1
-			fixed_ship_engine_slot = sub_ship_engine_1
-			rear_1_custom_slot = ship_mine_layer_sub
+
+		create_equipment_variant = {
+			name = "whale Class"
+			type = ship_hull_submarine_1
+			name_group = SWE_SS_HISTORICAL
+			parent_version = 0
+			modules = {
+				fixed_ship_torpedo_slot = ship_torpedo_sub_1
+				fixed_ship_engine_slot = sub_ship_engine_1
+				rear_1_custom_slot = ship_mine_layer_sub
+			}
 		}
 	}
 }

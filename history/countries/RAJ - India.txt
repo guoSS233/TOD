@@ -84,7 +84,7 @@ if = {
 }
 
 set_politics = {
-	ruling_party = reformism
+	ruling_party = leader_despotism
 	last_election = "1932.12.30"
 	election_frequency = 68
 	elections_allowed = yes
@@ -92,13 +92,8 @@ set_politics = {
 
 set_popularities = {
 	national_corporatism = 0
-	despotism = 0
+	leader_despotism = 100
 	authoritarian_oligarchy = 0
-	conservative_democracy = 1
-	liberal_democracy = 46
-	reformism = 47
-	socialism = 6
-	radicalism = 0
 }
 
 create_country_leader = {
@@ -113,22 +108,4 @@ add_ideas = {
 	RefTon_type
 	LibMrk type
 
-}
-
-# DIPLOMACY
-if = {
-	limit = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Man the Guns"
-		}
-	}
-	set_autonomy = {
-		target = AFG
-		autonomous_state =  kr_default_puppet
-		freedom_level = 0.2
-	}
-	else = {
-		puppet = AFG
-	}
 }

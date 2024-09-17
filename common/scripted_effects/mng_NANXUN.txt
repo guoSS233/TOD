@@ -1,0 +1,66 @@
+TOD_mngtaiji_travel = {
+	if = {
+		limit = {
+			MNG = {
+				has_country_flag = TOD_MNG_taiji_has_departed
+			}
+		}
+		MNG = { country_event = chinese_events_taiji.2 }
+	}
+	
+	if = {
+		limit = {
+			MNG = {
+				has_country_flag = TOD_MNG_taiji_in_damin
+			}
+		}
+		MNG = { country_event = chinese_events_taiji.3 }
+	}
+	
+	if = {
+		limit = {
+			MNG = {
+				has_country_flag = TOD_MNG_taiji_in_zhengzhou
+			}
+		}
+		MNG = { country_event = chinese_events_taiji.4 }
+	}
+	
+	if = {
+		limit = {
+			MNG = {
+				has_country_flag = TOD_MNG_taiji_going_to_huaihai
+			}
+		}
+		MNG = { country_event = chinese_events_taiji.6 }
+	}
+	
+	if = {
+		limit = {
+			MNG = {
+				has_country_flag = TOD_MNG_taiji_in_huaihai
+			}
+		}
+		MNG = { country_event = chinese_events_taiji.7 }
+	}
+	
+	if = {
+		limit = {
+			MNG = {
+				has_country_flag = TOD_MNG_taiji_in_yangzhou
+			}
+		}
+		MNG = { country_event = chinese_events_taiji.8 }
+	}
+	
+}
+
+TOD_mngtaiji_dead = {
+	clr_country_flag = TOD_MNG_taiji_has_departed
+	clr_country_flag = TOD_MNG_taiji_in_damin
+	clr_country_flag = TOD_MNG_taiji_in_zhengzhou
+	clr_country_flag = TOD_MNG_taiji_in_kfc
+	clr_country_flag = TOD_MNG_taiji_going_to_huaihai
+	clr_country_flag = TOD_MNG_taiji_in_huaihai
+	clr_country_flag = TOD_MNG_taiji_in_yangzhou
+}

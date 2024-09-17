@@ -85,9 +85,9 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 2
+				factor = 2
 
-   				modifier = {
+				modifier = {
 					factor = 20
 
 					is_major = yes
@@ -96,7 +96,7 @@ ideas = {
 					has_war_support > 0.25
 					factor = 0 #don't even look at it if you could be taking partial mob
 				}
-   			}
+			}
 		}
 
 		partial_economic_mobilisation = {
@@ -122,14 +122,14 @@ ideas = {
 
 			cancel_if_invalid = no
 			ai_will_do = {
-   				factor = 2
+				factor = 2
 
-   				modifier = {
+				modifier = {
 					factor = 20
 
 					is_major = yes
 				}
-   			}
+			}
 		}
 
 		war_economy = {
@@ -166,7 +166,7 @@ ideas = {
 
 			cancel_if_invalid = no
 			ai_will_do = {
-   				factor = 3
+				factor = 3
 
 				modifier = {
 					#High prio on production
@@ -196,7 +196,7 @@ ideas = {
 					has_idea = closed_economy
 					has_large_ally_not_pick_closed_economy = yes
 				}
-   			}
+			}
 		}
 
 		tot_economic_mobilisation = {
@@ -214,7 +214,7 @@ ideas = {
 				}
 			}
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 
 				modifier = {
 					factor = 25
@@ -237,7 +237,7 @@ ideas = {
 						has_idea = limited_conscription
 					}
 				}
-   			}
+			}
 
 			cost = 150
 			removal_cost = -1
@@ -278,8 +278,8 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 0
-   			}
+				factor = 0
+			}
 		}
 		new_economic_policy_2 = {
 			name = new_economic_policy
@@ -307,8 +307,8 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 0
-   			}
+				factor = 0
+			}
 		}
 	}
 
@@ -333,7 +333,7 @@ ideas = {
 				agency_upgrade_time = 0.15
 			}
 
-			
+
 			cancel_if_invalid = no
 		}
 
@@ -358,8 +358,8 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1
-   			}
+				factor = 1
+			}
 		}
 
 		export_focus = {
@@ -390,13 +390,13 @@ ideas = {
 				NOT = { has_idea = RUS_shuailuodezhongyangzhengfu }
 			}
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 
 				modifier = {
 					factor = 1000
 					has_idea = uncontrolled_exports #Poland should try and escape this as soon as they can
 				}
-   			}
+			}
 		}
 
 		limited_exports = {
@@ -419,7 +419,7 @@ ideas = {
 						}
 					}
 					AND = {
-						NOT = { 
+						NOT = {
 							has_government = social_democrat
 							has_government = conservative_democracy
 							has_government = liberal_democracy
@@ -450,9 +450,9 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 
-   				modifier = {
+				modifier = {
 					add = -1
 
 					is_major = no
@@ -475,7 +475,7 @@ ideas = {
 					has_idea = closed_economy
 					has_large_ally_not_pick_closed_economy = yes
 				}
-   			}
+			}
 		}
 
 		closed_economy = {
@@ -510,9 +510,9 @@ ideas = {
 			cancel_if_invalid = no
 
 			ai_will_do = {
-   				factor = 1
+				factor = 1
 
-   				modifier = {
+				modifier = {
 					factor = 0
 
 					is_major = no
@@ -535,7 +535,7 @@ ideas = {
 					# since they will require our trades
 					has_large_ally_not_pick_closed_economy = yes
 				}
-   			}
+			}
 		}
 	}
 }

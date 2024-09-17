@@ -3,7 +3,7 @@ focus_tree = {
 	id = MNG_start_focus
 	country = {
 		factor = 0
-		
+
 		modifier = {
 			add = 10
 			tag = MNG
@@ -11,8 +11,8 @@ focus_tree = {
 	}
 	default = no
 	continuous_focus_position = { x = 2000 y = 2000 }
-	
-	
+
+
 	focus = { #中 惩前毖后
 		id = MNG_we_must_do_something
 		icon = GFX_focus_MNG_cheng_qian_bi_hou
@@ -27,19 +27,19 @@ focus_tree = {
 			add_political_power = 100
 		}
 	}
-	
-###左###	
+
+	###左###
 
 
 	focus = { #在祀与戎
 		id = MNG_check_our_weapon
 		icon = GFX_focus_MNG_zai_si_yu_rong
-		
-	    prerequisite = {
-		  focus = MNG_we_must_do_something
-   		  }
+
+		prerequisite = {
+			focus = MNG_we_must_do_something
+		}
 		relative_position_id = MNG_we_must_do_something
-        x = -5
+		x = -5
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -50,18 +50,18 @@ focus_tree = {
 			navy_experience = 10
 			army_experience = 10
 			air_experience = 10
-			}
+		}
 	}
 	focus = { #俱收并蓄
 		id = MNG_better_to_buy
 		icon = GFX_focus_MNG_better_to_buy
 		mutually_exclusive = {
 			focus = MNG_make_in_our_country
-			}
-			
+		}
+
 		prerequisite = {
-		  focus = MNG_check_our_weapon
-   		  }
+			focus = MNG_check_our_weapon
+		}
 		relative_position_id = MNG_check_our_weapon
 		x = -2
 		y = 1
@@ -72,15 +72,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_2
 			add_political_power = -100
-			}
+		}
 	}
 	focus = { #四牡暌暌
 		id = MNG_buy_some_tank
 		icon = GFX_focus_MNG_Si_Du_kuikui
 
 		prerequisite = {
-		  focus = MNG_better_to_buy
-   		  }
+			focus = MNG_better_to_buy
+		}
 		relative_position_id = MNG_better_to_buy
 		x = -1
 		y = 1
@@ -91,15 +91,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_3
 			add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = 100 }
-			}
+		}
 	}
 	focus = { #骖鸾驭鹤
 		id = MNG_and_airplane
 		icon = GFX_focus_MNG_Can_luan_yu_he
 
 		prerequisite = {
-		  focus = MNG_better_to_buy
-   		  }
+			focus = MNG_better_to_buy
+		}
 		relative_position_id = MNG_better_to_buy
 		x = 1
 		y = 1
@@ -110,19 +110,19 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_4
 			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 100 }
-		} 
+		}
 	}
-	
+
 	focus = { #自力更生
 		id = MNG_make_in_our_country
 		icon = GFX_focus_MNG_zi_li_geng_sheng
 		mutually_exclusive = {
 			focus = MNG_better_to_buy
-			}
+		}
 
 		prerequisite = {
-		  focus = MNG_check_our_weapon
-   		  }
+			focus = MNG_check_our_weapon
+		}
 		relative_position_id = MNG_check_our_weapon
 		x = 2
 		y = 1
@@ -133,15 +133,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_5
 			add_political_power = -50
-			}
+		}
 	}
 	focus = { #翩其反矣
 		id = MNG_every_man_a_gun
 		icon = GFX_focus_MNG_luo_qi_jiao_gong
 
 		prerequisite = {
-		  focus = MNG_make_in_our_country
-   		  }
+			focus = MNG_make_in_our_country
+		}
 		relative_position_id = MNG_make_in_our_country
 		x = -1
 		y = 1
@@ -152,15 +152,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_6
 			add_ideas = MNG_infantry_equipment
-			}
+		}
 	}
 	focus = { #艨艟御日
 		id = MNG_kantai_ready
 		icon = GFX_focus_MNG_mengchong_yu_ri
 
 		prerequisite = {
-		  focus = MNG_make_in_our_country
-   		  }
+			focus = MNG_make_in_our_country
+		}
 		relative_position_id = MNG_make_in_our_country
 		x = 1
 		y = 1
@@ -171,19 +171,19 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_7
 			add_ideas = MNG_capital_ship
-			}
+		}
 	}
 
 
-###右###
+	###右###
 
 	focus = { #民亦劳止
 		id = MNG_stimulate_the_economy
 		icon = GFX_focus_MNG_min_lao_yi_zhi
 
 		prerequisite = {
-		  focus = MNG_we_must_do_something
-   		  }
+			focus = MNG_we_must_do_something
+		}
 		relative_position_id = MNG_we_must_do_something
 		x = 5
 		y = 1
@@ -194,15 +194,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_8
 			add_ideas = MNG_consumer_goods_factor
-			}
+		}
 	}
 	focus = { #斩钉截铁
 		id = MNG_the_hard_way
 		icon = GFX_focus_MNG_zhan_ding_jie_tie
 
 		prerequisite = {
-		  focus = MNG_stimulate_the_economy
-   		  }
+			focus = MNG_stimulate_the_economy
+		}
 		mutually_exclusive = {
 			focus = MNG_the_easy_way
 		}
@@ -216,15 +216,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_9
 			add_political_power = -100
-			}
+		}
 	}
 	focus = { #倾心秦淮
 		id = MNG_smile_to_the_money
 		icon = GFX_focus_MNG_qing_xin_qin_huai
 
 		prerequisite = {
-		  focus = MNG_the_hard_way
-   		  }
+			focus = MNG_the_hard_way
+		}
 		relative_position_id = MNG_the_hard_way
 		x = -1
 		y = 1
@@ -235,15 +235,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_10
 			add_ideas = MNG_compromise_with_shi_rong
-			}
+		}
 	}
 	focus = { #仁至义尽
 		id = MNG_stop_the_army
 		icon = GFX_focus_MNG_ren_zhi_yi_jin
 
 		prerequisite = {
-		  focus = MNG_the_hard_way
-   		  }
+			focus = MNG_the_hard_way
+		}
 		relative_position_id = MNG_the_hard_way
 		x = 1
 		y = 1
@@ -261,11 +261,11 @@ focus_tree = {
 		icon = GFX_focus_MNG_run_wu_wu_sheng
 
 		prerequisite = {
-		  focus = MNG_stimulate_the_economy
-   		  }
-		mutually_exclusive = { 
+			focus = MNG_stimulate_the_economy
+		}
+		mutually_exclusive = {
 			focus = MNG_the_hard_way
-			}
+		}
 		relative_position_id = MNG_stimulate_the_economy
 		x = 2
 		y = 1
@@ -276,15 +276,15 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MNG_12
 			add_political_power = -50
-			}
+		}
 	}
 	focus = { #委信心腹
 		id = MNG_our_friends_inside
 		icon = GFX_focus_MNG_wei_xin_xin_fu
 
 		prerequisite = {
-		  focus = MNG_the_easy_way
-   		  }
+			focus = MNG_the_easy_way
+		}
 		relative_position_id = MNG_the_easy_way
 		x = -1
 		y = 1
@@ -302,8 +302,8 @@ focus_tree = {
 		icon = GFX_focus_MNG_xi_shi_ning_ren
 
 		prerequisite = {
-		  focus = MNG_the_easy_way
-   		  }
+			focus = MNG_the_easy_way
+		}
 		relative_position_id = MNG_the_easy_way
 		x = 1
 		y = 1
@@ -317,9 +317,9 @@ focus_tree = {
 		}
 	}
 
-	
-	
-		
-	
+
+
+
+
 }
-	
+

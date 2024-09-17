@@ -1,0 +1,903 @@
+focus_tree = {
+	id = brasil_focus
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 20
+			OR = {
+				original_tag = BRA #巴西
+				original_tag = GYA #圭亚那
+				original_tag = SUR #苏里南
+				original_tag = VEN #委内瑞拉
+				original_tag = COL #哥伦比亚
+				original_tag = PRU #秘鲁
+				original_tag = BOL #玻利维亚
+				original_tag = CHL #智利
+				original_tag = ARG #阿根廷
+				original_tag = PAR #巴拉圭
+				original_tag = UGR #乌拉圭
+			}
+			
+		}
+		
+		continuous_focus_position = { x = 50 y = 2500 }
+
+	#工业化
+		focus = {
+			id = SA_全国工业化
+			icon = GFX_
+			x = 7
+			y = 0
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+				
+			}
+			
+			bypass = {
+				custom_trigger_tooltip = {
+					tooltip = construction_effort_tt
+					all_owned_state = {
+						free_building_slots = {
+							building = industrial_complex
+							size < 1
+							include_locked = yes
+						}					
+					}
+				}
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+
+			completion_reward = {
+				add_political_power = 120
+				#
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = yes
+						}
+						OR = {
+							is_in_home_area = yes
+							NOT = {
+								owner = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+										is_in_home_area = yes
+									}
+								}
+							}
+						}
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+
+		focus = {
+			id = SA_乡土经济
+			icon = GFX_
+			prerequisite = { focus = SA_全国工业化 }
+			#mutually_exclusive = { focus =  }
+			x = -5
+			y = 1
+			relative_position_id = SA_全国工业化
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_农业建设注资
+			icon = GFX_
+			prerequisite = { focus = SA_乡土经济 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_乡土经济
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+	
+		focus = {
+			id = SA_高山农业
+			icon = GFX_
+			prerequisite = { focus = SA_农业建设注资 }
+			#mutually_exclusive = { focus =  }
+			x = 2
+			y = 1
+			relative_position_id = SA_农业建设注资
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_开发平原
+			icon = GFX_
+			prerequisite = { focus = SA_农业建设注资 }
+			#mutually_exclusive = { focus =  }
+			x = -2
+			y = 1
+			relative_position_id = SA_农业建设注资
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+				original_tag = BOL
+				original_tag = PRU
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_集体农业
+			icon = GFX_
+			prerequisite = { focus = SA_开发平原 focus = SA_高山农业 }
+			#mutually_exclusive = { focus =  }
+			x = 4
+			y = 1
+			relative_position_id = SA_开发平原
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_集中力量
+			icon = GFX_
+			prerequisite = { focus = SA_集体农业 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_集体农业
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_庄园农业
+			icon = GFX_
+			prerequisite = { focus = SA_开发平原 focus = SA_高山农业 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_开发平原
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_种植园经济
+			icon = GFX_
+			prerequisite = { focus = SA_庄园农业 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_庄园农业
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_农业现代化
+			icon = GFX_
+			prerequisite = { focus = SA_开发平原 focus = SA_高山农业 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 2
+			relative_position_id = SA_农业建设注资
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_化肥工厂
+			icon = GFX_
+			prerequisite = { focus = SA_农业现代化 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_农业现代化
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_城市工业化
+			icon = GFX_
+			prerequisite = { focus = SA_全国工业化 }
+			#mutually_exclusive = { focus =  }
+			x = 5
+			y = 1
+			relative_position_id = SA_全国工业化
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_思想
+			icon = GFX_
+			prerequisite = { focus = SA_城市工业化 }
+			#mutually_exclusive = { focus =  }
+			x = -3
+			y = 1
+			relative_position_id = SA_城市工业化
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_扫盲教育
+			icon = GFX_
+			prerequisite = { focus = SA_思想 }
+			#mutually_exclusive = { focus =  }
+			x = -3
+			y = 1
+			relative_position_id = SA_思想
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_大学
+			icon = GFX_
+			prerequisite = { focus = SA_扫盲教育 }
+			prerequisite = { focus = SA_人权 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_扫盲教育
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_妇女运动
+			icon = GFX_
+			prerequisite = { focus = SA_大学 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_大学
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_人权
+			icon = GFX_
+			prerequisite = { focus = SA_思想 }
+			#mutually_exclusive = { focus =  }
+			x = -1
+			y = 1
+			relative_position_id = SA_思想
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_民族主义
+			icon = GFX_
+			prerequisite = { focus = SA_人权 }
+			prerequisite = { focus = SA_扫盲教育 }
+			prerequisite = { focus = SA_解放神学 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 1
+			relative_position_id = SA_人权
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_解放神学
+			icon = GFX_
+			prerequisite = { focus = SA_思想 }
+			#mutually_exclusive = { focus =  }
+			x = 1
+			y = 1
+			relative_position_id = SA_思想
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_技术
+			icon = GFX_
+			prerequisite = { focus = SA_城市工业化 }
+			#mutually_exclusive = { focus =  }
+			x = 3
+			y = 1
+			relative_position_id = SA_城市工业化
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+
+		focus = {
+			id = SA_民主与科学
+			icon = GFX_
+			prerequisite = { focus = SA_思想 }
+			prerequisite = { focus = SA_技术 }
+			#mutually_exclusive = { focus =  }
+			x = 0
+			y = 2
+			relative_position_id = SA_城市工业化
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_现代官僚
+			icon = GFX_
+			prerequisite = { focus = SA_民主与科学 }
+			#mutually_exclusive = { focus =  }
+			x = -1
+			y = 1
+			relative_position_id = SA_民主与科学
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+
+		focus = {
+			id = SA_
+			icon = GFX_
+			prerequisite = { focus = SA_民主与科学 }
+			#mutually_exclusive = { focus =  }
+			x = 1
+			y = 1
+			relative_position_id = SA_民主与科学
+
+			cost = 5.00
+
+			ai_will_do = {
+				factor = 1
+			}
+
+			available = {
+
+			}
+			
+			bypass = {
+
+			}
+
+			cancel_if_invalid = yes
+			continue_if_invalid = no
+			available_if_capitulated = no
+
+			complete_tooltip = {
+
+			}
+
+			completion_reward = {
+				#
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			# Setup up a player array
+			every_country = {
+				limit = { is_ai = no }
+				add_to_array = { # It will automatically add the scope
+					array = global.players
+				}
+			}
+            #设置明数组
+			add_to_array = { global.ming_tags_array = MNG }
+			add_to_array = { global.ming_tags_array = XBJ }
+			add_to_array = { global.ming_tags_array = GOS }
+			add_to_array = { global.ming_tags_array = SRC }
+			add_to_array = { global.ming_tags_array = SIC }
+			add_to_array = { global.ming_tags_array = GPS }
+			add_to_array = { global.ming_tags_array = MOB }
+			add_to_array = { global.ming_tags_array = XIN }
+            for_each_scope_loop = {
+				array = global.ming_tags_array
+				set_country_flag = is_ming_tag
+			}
+        }
+    }
+}

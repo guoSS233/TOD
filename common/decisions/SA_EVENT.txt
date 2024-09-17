@@ -1,0 +1,717 @@
+#查科事件
+SA_Guerra_del_Chaco_decisions_categories = {
+	#巴拉圭能做的
+	SA_Guerra_del_Chaco_decisions.1 = {
+		priority = 100
+
+		icon = x
+
+		allowed = {
+			original_tag = PAR
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		#days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				#has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.2 = {
+		priority = 90
+
+		icon = x
+
+		allowed = {
+			original_tag = PAR
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		#days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				#has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.3 = {
+		priority = 80
+
+		icon = x
+
+		allowed = {
+			original_tag = PAR
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		#days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				#has_war_with = tag
+			}
+		}
+	}
+	#秘鲁能做的
+	SA_Guerra_del_Chaco_decisions.11 = { #解散秘鲁-玻利维亚联邦
+		priority = 100
+
+		icon = x
+
+		allowed = {
+			original_tag = PRU
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#has_cosmetic_tag = UPB
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			country_event = {
+				id =  SA_Guerra_del_Chaco.11 days = 0
+			}
+		}
+
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 100
+			modifier = {
+				add = 10
+				has_war_with = PAR
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.12 = {
+		priority = 90
+
+		icon = x
+
+		allowed = {
+			original_tag = PRU
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.13 = {
+		priority = 80
+
+		icon = x
+
+		allowed = {
+			original_tag = 
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	#巴西和阿根廷
+	SA_Guerra_del_Chaco_decisions.101 = {
+		priority = 100
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = BRA
+				original_tag = ARG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.102 = {
+		priority = 90
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = BRA
+				original_tag = ARG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.103 = {
+		priority = 80
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = BRA
+				original_tag = ARG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	#其他南美国家
+	SA_Guerra_del_Chaco_decisions.201 = {
+		priority = 100
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = COL
+				original_tag = CHL
+				original_tag = VEN
+				original_tag = URG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.202 = {
+		priority = 90
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = COL
+				original_tag = CHL
+				original_tag = VEN
+				original_tag = URG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.203 = {
+		priority = 80
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = COL
+				original_tag = CHL
+				original_tag = VEN
+				original_tag = URG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	#列强
+	SA_Guerra_del_Chaco_decisions.501 = {
+		priority = 100
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = FRA
+				original_tag = HOL
+				original_tag = MNG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = 60
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.502 = {
+		priority = 90
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = FRA
+				original_tag = HOL
+				original_tag = MNG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	SA_Guerra_del_Chaco_decisions.503 = {
+		priority = 80
+
+		icon = x
+
+		allowed = {
+			OR = {
+				original_tag = FRA
+				original_tag = HOL
+				original_tag = MNG
+			}
+		}
+
+		available = {
+			#
+		}
+
+		visible = {
+			#
+		}
+
+		cost = 50 #花费（政治点）
+
+		complete_effect = {
+			#
+		}
+
+		days_remove = x
+		cancel_trigger = {}
+
+		modifier = {
+			#
+		}
+
+		remove_effect = {
+			#
+		}
+
+		days_re_enable = 30 #
+		#fire_only_once = yes
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				add = 10
+				has_war_with = tag
+			}
+		}
+	}
+	#美洲的几个主要的国家
+	SA_Guerra_del_Chaco_decisions.701 = {}
+	SA_Guerra_del_Chaco_decisions.702 = {}
+	SA_Guerra_del_Chaco_decisions.703 = {}
+	#共产国际
+	SA_Guerra_del_Chaco_decisions.1001 = {}
+	SA_Guerra_del_Chaco_decisions.1002 = {}
+	SA_Guerra_del_Chaco_decisions.1003 = {}
+}

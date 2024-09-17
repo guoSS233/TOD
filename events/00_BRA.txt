@@ -1,0 +1,322 @@
+add_namespace = TOD_BRA #巴西相关事件
+add_namespace = TOD_BRA_elections #巴西选举事件
+
+#介绍
+country_event = {
+	id = TOD_BRA.1
+	title = TOD_BRA.1.t
+	desc =TOD_BRA.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = BRA }
+	
+	option = { 
+		name = TOD_BRA.1.a
+		#
+	}
+}
+
+#政治活动#
+#橡胶工人游行
+country_event = {
+	id = TOD_BRA.101
+	title = TOD_BRA.101.t
+	desc =TOD_BRA.101.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #逮捕闹事的头头
+		name = TOD_BRA.101.a
+
+		BRA = {
+			add_political_power = -50
+			add_stability = -0.05
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = -0.02
+			}
+			country_event = { id = TOD_BRA.102 days = 0 }
+		}
+	}
+
+	option = { #和他们的领袖谈谈
+		name = TOD_BRA.101.b
+
+		BRA = {
+			add_political_power = -25
+			add_stability = 0.03
+			country_event = { id = TOD_BRA.103 days = 0 }
+		}
+	}
+}
+
+#暴乱变得激烈
+country_event = {
+	id = TOD_BRA.102
+	title = TOD_BRA.102.t
+	desc =TOD_BRA.102.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #重拳出击
+		name = TOD_BRA.102.a
+
+		BRA = {
+			add_political_power = -100
+			add_stability = -0.1
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = council_socialism
+				popularity = -0.1
+			}
+			add_popularity = {
+				ideology = moderate_socialism
+				popularity = -0.1
+			}
+			country_event = { id = TOD_BRA.104 days = 0 }
+		}
+	}
+
+	option = { #坐视事态升级
+		name = TOD_BRA.102.b
+
+		BRA = {
+			add_political_power = -50
+			add_stability = -0.1
+			country_event = { id = TOD_BRA.105 days = 0 }
+		}
+	}
+}
+
+#谈判
+country_event = {
+	id = TOD_BRA.103
+	title = TOD_BRA.103.t
+	desc =TOD_BRA.103.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = { #同意
+		name = TOD_BRA.103.a
+
+		BRA = {
+			add_political_power = -50
+			add_stability = 0.1
+			#add_ideas = 
+			country_event = { id = TOD_BRA.105 days = 0 }
+		}
+	}
+
+	option = { #贿赂
+		name = TOD_BRA.103.b
+
+		BRA = {
+			add_political_power = -50
+			add_stability = 0.1
+			add_popularity = {
+				ideology = council_socialism
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = moderate_socialism
+				popularity = -0.02
+			}
+			add_popularity = {
+				ideology = social_democrat
+				popularity = 0.05
+			}
+			country_event = { id = TOD_BRA.104 days = 0 }
+		}
+	}
+
+	option = { #瓮中捉鳖
+		name = TOD_BRA.103.c
+
+		BRA = {
+			add_political_power = -50
+			add_stability = 0.1
+			add_popularity = {
+				ideology = council_socialism
+				popularity = -0.03
+			}
+			add_popularity = {
+				ideology = moderate_socialism
+				popularity = -0.02
+			}
+			country_event = { id = TOD_BRA.102 days = 0 }
+		}
+	}
+}
+
+#暴动被镇压
+country_event = {
+	id = TOD_BRA.104
+	title = TOD_BRA.104.t
+	desc =TOD_BRA.104.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #很好
+		name = TOD_BRA.104.a
+
+		BRA = {
+			add_political_power = 50
+			add_stability = 0.3
+			country_event = { id = TOD_BRA.1001 days = 0 }
+		}
+	}
+
+}
+
+#签署条约
+country_event = {
+	id = TOD_BRA.105
+	title = TOD_BRA.105.t
+	desc =TOD_BRA.105.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #好吧我们只能同意了
+		name = TOD_BRA.105.a
+
+		BRA = {
+			add_political_power = -50
+			add_stability = 0.1
+		}
+	}
+
+}
+
+
+
+#雨林行军
+country_event = {
+	id = TOD_BRA.1001
+	title = TOD_BRA.1001.t
+	desc =TOD_BRA.1001.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { #看我用大炮把他们送上天！
+		name = TOD_BRA.1001.a
+		BRA = {
+			add_political_power = -50
+			add_stability = -0.1
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = agroindustrial_socialism
+				popularity = 0.1
+			}
+		}
+	}
+
+	option = { #我们或许得先摆平外交问题？
+		name = TOD_BRA.1001.b
+		HOL = {
+			#country_event = 
+		}
+		BRA = {
+			add_political_power = -50
+			add_stability = -0.1
+			add_popularity = {
+				ideology = vanguard_socialism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = agroindustrial_socialism
+				popularity = 0.1
+			}
+		}
+	}
+}
+
+#
+country_event = {
+	id = TOD_BRA.1002
+	title = TOD_BRA.1002.t
+	desc =TOD_BRA.1002.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = TOD_BRA.1002.a
+		#
+	}
+}
+
+###选举
+#大选
+country_event = {
+	id = TOD_BRA_elections.1
+	title = TOD_BRA_elections.1.t
+	desc =TOD_BRA_elections.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	trigger = { tag = BRA }
+	
+	option = { 
+		name = TOD_BRA_elections.1.a
+		#
+	}
+}
+
+country_event = {
+	id = TOD_BRA_elections.1001
+	title = TOD_BRA_elections.1001.t
+	desc =TOD_BRA_elections.1001.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = BRA }
+	
+	option = { 
+		name = TOD_BRA_elections.1001.a
+		#
+	}
+
+	option = { 
+		name = TOD_BRA_elections.1001.b
+		#
+	}
+
+	option = { 
+		name = TOD_BRA_elections.1001.c
+		#
+	}
+
+	option = { 
+		name = TOD_BRA_elections.1001.e
+		#
+	}
+
+	option = { 
+		name = TOD_BRA_elections.1001.f
+		#
+	}
+}

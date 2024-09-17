@@ -1,5 +1,7 @@
 capital = 166
+
 #军队编制
+
 oob = "KSN_1936"
 if = {
 	limit = {
@@ -37,6 +39,23 @@ set_popularities = {
 	vanguard_socialism = 0
 }
 
+#民族精神/内阁
+add_ideas = {
+	SPR_Faguozhaiquan
+	SPR_lianbang_4
+	KSN_Shibai
+}
+
+add_ideas = {
+	free_trade
+	low_economic_mobilisation
+	limited_conscription
+}
+
+#政党领袖
+recruit_character = KSN_Juan_Carlos
+recruit_character = KSN_Prince_of_Xavier
+
 #自治
 if = {
 	limit = {
@@ -55,22 +74,6 @@ if = {
 	}
 }
 
-#民族精神/内阁
-add_ideas = {
-	SPR_Faguozhaiquan
-	SPR_lianbang_4
-	KSN_Shibai
-}
-
-add_ideas = {
-	free_trade
-	low_economic_mobilisation
-	limited_conscription
-}
-
-#政党领袖
-recruit_character = KSN_Juan_Carlos
-recruit_character = KSN_Prince_of_Xavier
 #科技
 set_research_slots = 3
 set_technology = {

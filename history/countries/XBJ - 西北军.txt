@@ -1,0 +1,149 @@
+capital = 744
+
+#军队编制
+
+oob = "XBJ_1937"
+
+#政党比例
+
+set_politics = {
+	ruling_party = authoritarian_oligarchy
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	national_corporatism = 0
+	sacred_revivalism = 0
+	leader_despotism = 20
+	authoritarian_oligarchy = 40
+	conservative_democracy = 20
+	liberal_democracy = 5
+	consociationalism = 5
+	social_democrat = 5
+	agroindustrial_socialism = 0
+	moderate_socialism = 0
+	council_socialism = 0
+	vanguard_socialism = 5
+}
+
+#民族精神
+
+add_ideas = {
+	XBJ_The_Army_of_Salvation
+    XBJ_The_Frontier_Generals_and_Rural_Junkers
+    XBJ_Multinational_Melting_Pot
+    XBJ_Backward_Region
+}
+#法案
+add_ideas = {
+	closed_economy
+	civilian_economy
+	volunteer_only
+}
+#内阁
+add_ideas = {
+	XBJ_Guan_zhu
+	XBJ_he_cuilian
+	XBJ_sun_mingjing
+	XBJ_cao_shiying
+}
+
+#政党领袖
+
+recruit_character = XBJ_Zhu_Juanshen
+recruit_character = XBJ_Fan_Jingsheng
+recruit_character = XBJ_Jin_Shuren
+recruit_character = XBJ_Jiang_Baili
+recruit_character = XBJ_Ma_Hongbing
+recruit_character = XBJ_Zhu_Ruichi
+recruit_character = XBJ_Ehmetjan_Qasim
+recruit_character = XBJ_Chen_Cheng
+recruit_character = XBJ_Zunun_Taipov
+recruit_character = XBJ_Du_Qianxue
+recruit_character = XBJ_Fan_Yaonan
+recruit_character = XBJ_Jiang_Dingwen
+recruit_character = XBJ_Cheng_Xixian
+recruit_character = XBJ_Gao_Jun
+recruit_character = XBJ_Ge_Jinzhang
+recruit_character = XBJ_Guo_Jiqiao
+recruit_character = XBJ_Guo_Jian
+recruit_character = XBJ_Guo_Zhigang
+recruit_character = XBJ_Han_Fuju
+recruit_character = XBJ_Jing_Wumu
+recruit_character = XBJ_Ma_Buqing
+recruit_character = XBJ_Ma_Fuxiang
+recruit_character = XBJ_Ma_Hongkui
+recruit_character = XBJ_Sun_Yuanliang
+recruit_character = XBJ_Wen_Chenglie
+recruit_character = XBJ_Yang_Hucheng
+recruit_character = XBJ_Zhang_Fenghui
+recruit_character = XBJ_Zhang_Weixi
+recruit_character = XBJ_Zhao_Xipin
+recruit_character = XBJ_Zhao_Zhangcheng
+recruit_character = XBJ_Liu_Zhongming
+recruit_character = XBJ_Wei_Lihuang
+recruit_character = XBJ_Ji_Hongchang
+
+#科技
+
+set_research_slots = 2
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "By Blood Alone" }
+	}
+	set_technology = {
+		early_fighter = 1
+		early_bomber = 1
+		naval_bomber1 = 1
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_medium_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		mtg_transport = 1
+	}
+}
+
+set_variable = { var = XBJ.landlords_influence value = 1 }
+set_variable = { var = XBJ.landlords_loyalty value = 1 }

@@ -1,0 +1,567 @@
+focus_tree = {
+	id = FRA_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = FRA
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 2000 y = 2000 }
+	#达拉第的第一个任期
+	focus = {
+		id = FRA_daladi
+		icon = GFX_focus_FRA_daladi
+		cost = 4
+		x = 5
+		y = 0
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = FRA_zangli
+				days = 28
+			}
+		}
+	}
+	#巩固激进党
+	focus = {
+		id = FRA_jijindang
+		icon = GFX_focus_FRA_jijindang
+		cost = 10
+		prerequisite = {
+			focus = FRA_daladi
+		}
+		x = 5
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = FRA_jijindangI
+				days = 80
+			}
+		}
+	}
+	#国家统计局
+	focus = {
+		id = FRA_tongjiju
+		icon = GFX_focus_FRA_tongjiju
+		cost = 5
+		prerequisite = {
+			focus = FRA_jijindang
+		}
+		x = 5
+		y = 2
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = FRA_tongjijuI
+		}
+	}
+	#揭开大幕
+	focus = {
+		id = FRA_jiekaidamu
+		icon = GFX_focus_FRA_jiekaidamu
+		cost = 5
+		prerequisite = {
+			focus = FRA_tongjiju
+		}
+		x = 5
+		y = 3
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_dynamic_modifier = {
+				modifier = FRA_jingjiweiji
+				days = 770
+			}
+			add_timed_idea = {
+				idea = FRA_paomopo
+				days = 770
+			}
+		}
+	}
+	#踏出泥潭
+	focus = {
+		id = FRA_tachunitan
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_jiekaidamu
+		}
+		mutually_exclusive = {
+			focus = FRA_tianpingdianfu
+		}
+		x = 5
+		y = 4
+
+	}
+	#社民派的胜利
+	focus = {
+		id = FRA_sheminpai
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_tachunitan
+		}
+		mutually_exclusive = {
+			focus = FRA_pingheng
+			focus = FRA_shiyepai
+			focus = FRA_jinrongpai
+		}
+		x = 0
+		y = 5
+
+	}
+	focus = {
+		id = FRA_shiyepai
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_tachunitan
+		}
+		mutually_exclusive = {
+			focus = FRA_sheminpai
+			focus = FRA_pingheng
+			focus = FRA_jinrongpai
+		}
+		x = 3
+		y = 5
+
+	}
+	focus = {
+		id = FRA_gongguzhengquan
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_shiyepai
+		}
+		mutually_exclusive = {
+			focus = FRA_quanweizhixu
+		}
+		x = 2
+		y = 6
+
+	}
+	focus = {
+		id = FRA_quanweizhixu
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_shiyepai
+		}
+		mutually_exclusive = {
+			focus = FRA_gongguzhengquan
+		}
+		x = 4
+		y = 6
+
+	}
+	focus = {
+		id = FRA_pingheng
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_tachunitan
+		}
+		mutually_exclusive = {
+			focus = FRA_jinrongpai
+			focus = FRA_shiyepai
+			focus = FRA_sheminpai
+		}
+		x = 6
+		y = 5
+
+	}
+	focus = {
+		id = FRA_jinrongpai
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_tachunitan
+		}
+		mutually_exclusive = {
+			focus = FRA_pingheng
+			focus = FRA_shiyepai
+			focus = FRA_sheminpai
+		}
+		x = 9
+		y = 5
+
+	}
+	focus = {
+		id = FRA_tianpingdianfu
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_jiekaidamu
+		}
+		mutually_exclusive = {
+			focus = FRA_tachunitan
+		}
+		x = 15
+		y = 4
+
+	}
+	focus = {
+		id = FRA_jinrongpaiduoquan
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_tianpingdianfu
+		}
+		mutually_exclusive = {
+			focus = FRA_shiyepaiduoquan
+			focus = FRA_baolijiqi
+		}
+		x = 12
+		y = 5
+
+	}
+	focus = {
+		id = FRA_shuziyouxi
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_jinrongpaiduoquan
+		}
+		x = 12
+		y = 6
+
+	}
+	focus = {
+		id = FRA_guquanchongzu
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_shuziyouxi
+		}
+		x = 12
+		y = 7
+
+	}
+	focus = {
+		id = FRA_wangzhengfugu
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_guquanchongzu
+		}
+		x = 12
+		y = 8
+
+	}
+	focus = {
+		id = FRA_baolijiqi
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_tianpingdianfu
+		}
+		mutually_exclusive = {
+			focus = FRA_shiyepaiduoquan
+			focus = FRA_jinrongpaiduoquan
+		}
+		x = 14
+		y = 5
+
+	}
+	focus = {
+		id = FRA_jieguanbali
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_baolijiqi
+		}
+		x = 14
+		y = 6
+
+	}
+	focus = {
+		id = FRA_zhianbaoquan
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_jieguanbali
+		}
+		x = 14
+		y = 7
+
+	}
+	focus = {
+		id = FRA_zhihuiwenti
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_zhianbaoquan
+		}
+		x = 14
+		y = 8
+
+	}
+	focus = {
+		id = FRA_ziyoudaijia
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_gongguzhengquan
+		}
+		x = 2
+		y = 7
+
+	}
+	focus = {
+		id = FRA_bubiange
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_ziyoudaijia
+		}
+		x = 2
+		y = 8
+
+	}
+	focus = {
+		id = FRA_zhengjiaosuo
+		icon = GFX_goal_unknown
+		cost = 8.00
+		prerequisite = {
+			focus = FRA_jinrongpai
+		}
+		x = 9
+		y = 6
+
+	}
+	focus = {
+		id = FRA_jinronghuiyi
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_zhengjiaosuo
+		}
+		x = 9
+		y = 7
+
+	}
+	focus = {
+		id = FRA_jingying
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = FRA_jinronghuiyi
+		}
+		mutually_exclusive = {
+			focus = FRA_qiye
+		}
+		x = 8
+		y = 8
+
+	}
+	focus = {
+		id = FRA_qiye
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = FRA_jinronghuiyi
+			focus = FRA_guquanchongzu
+		}
+		mutually_exclusive = {
+			focus = FRA_jingying
+		}
+		x = 10
+		y = 8
+
+	}
+	focus = {
+		id = FRA_zhongqidahui
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = FRA_pingheng
+		}
+		x = 6
+		y = 6
+
+	}
+	focus = {
+		id = FRA_ziyou
+		icon = GFX_goal_unknown
+		cost = 8.00
+		prerequisite = {
+			focus = FRA_zhongqidahui
+		}
+		x = 6
+		y = 7
+
+	}
+	focus = {
+		id = FRA_feichuwangshi
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = FRA_ziyou
+		}
+		x = 6
+		y = 8
+
+	}
+	focus = {
+		id = FRA_dengta
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_feichuwangshi
+		}
+		x = 6
+		y = 9
+
+	}
+	focus = {
+		id = FRA_renxingguanghui
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = FRA_sheminpai
+		}
+		x = 0
+		y = 6
+
+	}
+	focus = {
+		id = FRA_jinjianhui
+		icon = GFX_goal_unknown
+		cost = 8.00
+		prerequisite = {
+			focus = FRA_renxingguanghui
+		}
+		x = 0
+		y = 7
+
+	}
+	focus = {
+		id = FRA_renquandahui
+		icon = GFX_goal_unknown
+		cost = 8.00
+		prerequisite = {
+			focus = FRA_jinjianhui
+		}
+		x = 0
+		y = 8
+
+	}
+	focus = {
+		id = FRA_chengzhongzhixu
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_zhihuiwenti
+		}
+		mutually_exclusive = {
+			focus = FRA_zhanzhengjiqi
+		}
+		x = 13
+		y = 9
+
+	}
+	focus = {
+		id = FRA_zhanzhengjiqi
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_zhihuiwenti
+		}
+		mutually_exclusive = {
+			focus = FRA_chengzhongzhixu
+		}
+		x = 15
+		y = 9
+
+	}
+	focus = {
+		id = FRA_shiyepaiduoquan
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_tianpingdianfu
+		}
+		mutually_exclusive = {
+			focus = FRA_baolijiqi
+		}
+		x = 17
+		y = 5
+
+	}
+	focus = {
+		id = FRA_maliquankai
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_shiyepaiduoquan
+		}
+		x = 17
+		y = 6
+
+	}
+	focus = {
+		id = FRA_minzurentong
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_maliquankai
+		}
+		x = 17
+		y = 7
+
+	}
+	focus = {
+		id = FRA_qingxicaifa
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_minzurentong
+		}
+		x = 17
+		y = 8
+
+	}
+	focus = {
+		id = FRA_chouhenjiaoyu
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_qingxicaifa
+		}
+		x = 17
+		y = 9
+
+	}
+	focus = {
+		id = FRA_jiesanjijindang
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = FRA_quanweizhixu
+		}
+		x = 4
+		y = 7
+
+	}
+	focus = {
+		id = FRA_gangtiejushou
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = FRA_jiesanjijindang
+		}
+		x = 4
+		y = 8
+
+	}
+}
+

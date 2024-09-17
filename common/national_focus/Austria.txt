@@ -10,100 +10,397 @@ focus_tree = {
 		}
 	}
 	
+	default = no
+
+	continuous_focus_position = { x = 2000 y = 2000 }
+	#皇帝崩殂
 	focus = {
-		id = AUS_solve_food_crisis
-		x = 6
-		y = 0
-	}
-	
-	focus = {
-		id = AUS_crisis_domestic
-		prerequisite = { focus = AUS_solve_food_crisis }
-		x = 3
+		id = AUS_huangdibengcu
+		icon = GFX_AUS_huangdibengcu
+		x = 21
 		y = 1
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 0
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { add_stability = -0.4 }
 	}
-	
+	#新皇登基
 	focus = {
-		id = AUS_agricultural_machine
-		prerequisite = { focus = AUS_crisis_domestic }
-		x = 2
+		id = AUS_xinhuangdengji
+		icon = GFX_AUS_xinhuangdengji
+		x = 21
 		y = 2
-	}
-	
-	focus = {
-		id = AUS_industrialized_farm
-		prerequisite = { focus = AUS_agricultural_machine }
-		x = 1
-		y = 3
-	}
-	
-	focus = {
-		id = AUS_agricultural_science
-		prerequisite = { focus = AUS_crisis_domestic }
-		x = 4
-		y = 2
-	}
-	
-	focus = {
-		id = AUS_mendel_legacy
-		prerequisite = { focus = AUS_agricultural_science }
-		x = 5
-		y = 3
-	}
-	
-	focus = {
-		id = AUS_technological_measure
-		prerequisite = { focus = AUS_agricultural_machine }
-		prerequisite = { focus = AUS_agricultural_science }
-		x = 3
-		y = 3
-	}
-	
-	focus = {
-		id = AUS_agricultural_regulation
-		prerequisite = { focus = AUS_technological_measure }
-		x = 2
-		y = 4
-		mutually_exclusive = { focus = AUS_free_food_market }
-	}
-	
-	focus = {
-		id = AUS_free_food_market
-		prerequisite = { focus = AUS_technological_measure }
-		x = 4
-		y = 4
-		mutually_exclusive = { focus = AUS_agricultural_machine }
-	}
-	
-	focus = {
-		id = AUS_food_distribution_office
-		prerequisite = { focus = AUS_agricultural_regulation }
-		x = 2
-		y = 5
-	}
-	
-	focus = {
-		id = AUS_food_money_must_flow
-		prerequisite = { focus = AUS_free_food_market }
-		x = 4
-		y = 5
-	}
-	
-	focus = {
-		id = AUS_domestic_food_production
-		prerequisite = {
-			focus = AUS_food_distribution_office
-			focus = AUS_food_money_must_flow
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_huangdibengcu}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_popularity = { ideology = conservative_democracy popularity = 0.1 }
+			add_stability = 0.2
 		}
-		x = 3
-		y = 6
 	}
-	
+	#社会民主工党的胜利
 	focus = {
-		id = AUS_crisis_abroad
-		prerequisite = { focus = AUS_solve_food_crisis }
-		x = 9
-		y = 1
+		id = AUS_shehuiminzhu
+		icon = GFX_AUS_shehuiminzhu
+		x = 19
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_xinhuangdengji}
+		mutually_exclusive = { focus = AUS_jidujiao}
+		
+		cost = 1
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_popularity = { ideology = social_democrat popularity = 0.2 }
+			add_stability = 0.1
+		}
+	}
+	#提高妇女地位
+	focus = {
+		id = AUS_tigaofunvdiwei
+		icon = GFX_AUS_tigaofunvdiwei
+		x = 18
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_shehuiminzhu}
+		
+		cost = 4
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_popularity = { ideology = social_democrat popularity = 0.1 }
+			add_stability = 0.05
+		}
+	}
+	#推进公共教育制度
+	focus = {
+		id = AUS_tuijingonggongjiaoyu
+		icon = GFX_AUS_tuijingonggongjiaoyu
+		x = 18
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_tigaofunvdiwei}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = AUS_gonggongjiaoyu
+		}
+	}
+	#推进普选
+	focus = {
+		id = AUS_tuijinpuxuan
+		icon = GFX_AUS_tuijinpuxuan
+		x = 18
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_gonggongjiaoyu}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.05
+		}
+	}
+	#建立国家发展委员会
+	focus = {
+		id = AUS_guojiafazhanweiyuanhui
+		icon = GFX_AUS_guojiafazhanweiyuanhui
+		x = 20
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_shehuiminzhu}
+		
+		cost = 8
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_dynamic_modifier = { modifier = AUS_jinjijihua }
+			remove_ideas = AUS_diguodebengkui
+		}
+	}
+	#推进大型国有企业建设
+	focus = {
+		id = AUS_daxingguoyou
+		icon = GFX_AUS_daxingguoyou
+		x = 20
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_guojiafazhanweiyuanhui}
+		
+		cost = 8
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { HUN_guoyou = 0.15 }
+			add_to_variable = { HUN_qiye = 0.1 }
+			custom_effect_tooltip = AUS.1.tt
+		}
+	}
+	#推行社会福利制度
+	focus = {
+		id = AUS_shehuifulizhidu
+		icon = GFX_AUS_shehuifulizhidu
+		x = 20
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_daxingguoyou}
+		
+		cost = 8
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { HUN_qiye = 0.1 }
+			add_stability = 0.05
+		}
+	}
+	#社民工党政权稳固
+	focus = {
+		id = AUS_shemingongdangzhengquanwengu
+		icon = GFX_AUS_shemingongdangzhengquanwengu
+		x = 19
+		y = 7
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_tuijinpuxuan}
+		prerequisite = { focus = AUS_shehuifulizhidu}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = AUS_duoshizhiqiu
+		}
+	}
+	#基督教社会党的胜利
+	focus = {
+		id = AUS_jidujiao
+		icon = GFX_AUS_jidujiao
+		x = 23
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_xinhuangdengji}
+		mutually_exclusive = { focus = AUS_shehuiminzhu}
+		
+		cost = 1
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_popularity = { ideology = social_democrat popularity = 0.2 }
+			add_stability = 0.1
+		}
+	}
+	#降低农民赋税
+	focus = {
+		id = AUS_jiangdifushui
+		icon = GFX_AUS_jiangdifushui
+		x = 22
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_jidujiao}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = AUS_jiangdifushui
+		}
+	}
+	#成立奥地利理工大学
+	focus = {
+		id = AUS_chenglidaxue
+		icon = GFX_AUS_chenglidaxue
+		x = 22
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_jiangdifushui}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_research_slot = 1
+		}
+	}
+	#成立基督教劳工会
+	focus = {
+		id = AUS_laogonghui
+		icon = GFX_AUS_laogonghui
+		x = 22
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_chenglidaxue}
+		
+		cost = 5
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_popularity = { ideology = social_democrat popularity = 0.1 }
+			add_political_power = -50
+		}
+	}
+	#成立国家财政委员会
+	focus = {
+		id = AUS_caizhengweiyuanhui
+		icon = GFX_AUS_caizhengweiyuanhui
+		x = 24
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_jidujiao}
+		
+		cost = 8
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = AUS_jinrongganggan
+			remove_ideas = AUS_diguodebengkui
+		}
+	}
+	#成立奥地利商会
+	focus = {
+		id = AUS_chenglishanghui
+		icon = GFX_AUS_chenglishanghui
+		x = 24
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_caizhengweiyuanhui}
+		
+		cost = 8
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = AUS_aodilishanghui
+		}
+	}
+	#修补社会关系
+	focus = {
+		id = AUS_xiubushehuiguanxi
+		icon = GFX_AUS_xiubushehuiguanxi
+		x = 24
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_chenglishanghui}
+		
+		cost = 8
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			add_political_power = 100
+		}
+	}
+	#基督教社会党政权巩固
+	focus = {
+		id = AUS_jishedangzhengquangonggu
+		icon = GFX_AUS_jishedangzhengquangonggu
+		x = 23
+		y = 7
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = { focus = AUS_laogonghui}
+		prerequisite = { focus = AUS_xiubushehuiguanxi}
+		
+		cost = 10
+		
+		ai_will_do = {factor = 100}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = AUS_duoshizhiqiu
+		}
 	}
 		
 		
