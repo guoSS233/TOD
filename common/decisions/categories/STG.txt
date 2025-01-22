@@ -1,0 +1,28 @@
+#地方军阀
+STG_difangjunfa = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = STG
+		has_completed_focus = STG_lalonggejushili
+	}
+	visible = {
+		tag = STG
+		has_completed_focus = STG_lalonggejushili
+	}
+}
+#展开会战
+STG_zhankaihuizhan = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = STG
+		has_completed_focus = STG_fangshoufanji
+		country_exists = XBJ
+	}
+	visible = {
+		tag = STG
+		has_completed_focus = STG_fangshoufanji
+		country_exists = XBJ
+	}
+}
