@@ -1,0 +1,339 @@
+#地方军阀
+STG_difangjunfa = {
+	#联系四川
+	STG_lianxisichuan = {
+		icon = ger_military_buildup
+		
+		visible = { country_exists = SIC}
+		allowed = { tag = STG } 
+		available = { country_exists = SIC }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 831 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+			SIC = { country_event = { id = TOD_STG.1 } }
+		}
+	}
+	#联系漠北
+	STG_lianximobei = {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = MOB}
+		allowed = { tag = STG } 
+		available = { country_exists = MOB }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 330 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+		}
+	}
+	#联系西南
+	STG_lianxixinan = {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = XIN}
+		allowed = { tag = STG } 
+		available = { }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 325 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+		}
+	}
+	#联系七省
+	STG_lianxiqishen = {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GOS}
+		allowed = { tag = STG } 
+		available = { }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 613 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+		}
+	}
+}
+#展开会战
+STG_zhankaihuizhan = {
+	#陕中会战
+	STG_shanzhonghuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 1116 } 
+			1116 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 1116 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			1116 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#陕北会战
+	STG_shanbeihuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 622 } 
+			622 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 622 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			622 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#关中会战
+	STG_guanzhonghuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 744 } 
+			744 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 744 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			744 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#汉中会战
+	STG_hanzhonghuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 842 } 
+			842 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 842 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			842 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#陇南会战
+	STG_longnanhuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 753 } 
+			753 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 753 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			753 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#陇东会战
+	STG_longdonghuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 283 } 
+			283 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 283 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			283 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#宁夏会战
+	STG_ningxiahuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 843 } 
+			843 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 843 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			843 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#陇右会战
+	STG_longyouhuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 1210 } 
+			1210 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 1210 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			1210 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#海东会战
+	STG_haidonghuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 754 } 
+			754 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 754 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			754 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+	#河西会战
+	STG_hexihuizhan = {
+		icon = ger_military_buildup
+		allowed = { tag = STG }
+		available = { 
+			NOT = { has_full_control_of_state = 756 } 
+			756 = {any_neighbor_state = {is_controlled_by = STG}}
+		}
+		cost = 30
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 756 }
+		days_remove = 30
+		days_re_enable = 30
+		
+		complete_effect = { 
+ 			756 = {
+	 			add_dynamic_modifier = {
+	 				modifier = STG_huizhan
+	 				scope = STG
+	 				days = 30
+	 			}
+	 		}
+		}
+	}
+}
+
+
+
+

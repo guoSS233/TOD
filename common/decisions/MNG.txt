@@ -83,3 +83,513 @@ MNG_text_categories = {
         }
     }
 }
+#派系博弈
+MNG_paixiboyi_categories = {
+    #扶持紫禁系
+	MNG_fuchizijinxi = {
+		icon = ger_military_buildup
+		days_remove = 7
+		days_re_enable = 30
+        cost = 15
+		remove_effect = { add_to_variable = { MNG_zijinxi = 7 } }
+	}
+    #扶持武备系
+	MNG_fuchiwubeixi = {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = {
+            add_to_variable = { MNG_wubeixi = 5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #打击武备系
+	MNG_dajiwubeixi= {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = {
+            add_to_variable = { MNG_wubeixi = -5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #扶持管学系
+	MNG_fuchiguanxuexi = {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = { 
+            add_to_variable = { MNG_guanxuexi = 5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #打击管学系
+	MNG_dajiguanxuexi= {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = {
+            add_to_variable = { MNG_guanxuexi= -5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #扶持清政系
+	MNG_fuchiqingzhengxi = {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = {
+            add_to_variable = { MNG_qingzhengxi = 5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #打击清政系
+	MNG_dajiqingzhengxi= {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = {
+            add_to_variable = { MNG_qingzhengxi = -5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #扶持交通系
+	MNG_fuchijiaotongxi = {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = { 
+            add_to_variable = { MNG_jiaotongxi = 5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #打击交通系
+	MNG_dajiqingzhengxi= {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+        }
+		days_remove = 7
+		days_re_enable = 0
+        cost = 15
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = 52
+				value = 1
+            } 
+        }
+		remove_effect = {
+            add_to_variable = { MNG_jiaotongxi = -5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #铲除武备系
+	MNG_chanchuwubeixi= {
+		icon = ger_military_buildup
+        visible = { has_completed_focus = MNG_zhengdunguanchang  }
+		available = { 
+            check_variable = { MNG_zijinxi > 69}  
+            check_variable = { MNG_wubeixi < 36}
+        }
+		days_remove = 7
+        fire_only_once = yes
+        cost = 120
+		remove_effect = {
+            add_to_variable = { MNG_wubeixi = -10 } 
+            add_to_variable = { MNG_zijinxi = -7 }
+            set_country_flag = MNG_wubeixibeichanchu
+        }
+	}
+    #重创管学系
+	MNG_zhongchuangguanxuexi = {
+		icon = ger_military_buildup
+        visible = { has_completed_focus = MNG_zhengdunguanchang  }
+		available = { 
+            check_variable = { MNG_zijinxi > 64}  
+            check_variable = { MNG_guanxuexi < 19}
+        }
+		days_remove = 7
+        fire_only_once = yes
+        cost = 120
+		remove_effect = {
+            add_to_variable = { MNG_guanxuexi = -10 } 
+            add_to_variable = { MNG_zijinxi = -7 }
+            set_country_flag = MNG_zhongchuangguanxuexi
+        }
+	}
+    #打击农民运动
+	MNG_dajinongminyundong = {
+		icon = ger_military_buildup
+        visible = { has_completed_focus = MNG_soubudatonghui  }
+		available = { 
+            check_variable = { MNG_zijinxi > 64}  
+            army_experience > 14
+        }
+		custom_cost_text = 15_army_experience
+		days_remove = 7
+        fire_only_once = yes
+        cost = 100
+		remove_effect = {
+            add_to_variable = { MNG_zijinxi = -5 }
+            set_country_flag = MNG_nongminyundongbeidaji
+        }
+	}
+    #镇压工人运动
+	MNG_zhenyagongrenyundong = {
+		icon = ger_military_buildup
+        visible = { has_completed_focus = MNG_qingjiaotongchangonghui }
+		available = { 
+            check_variable = { MNG_zijinxi > 64}  
+            army_experience > 14
+        }
+		custom_cost_text = 15_army_experience
+		days_remove = 7
+        fire_only_once = yes
+        cost = 100
+		remove_effect = {
+            add_to_variable = { MNG_zijinxi = -5 }
+            set_country_flag = MNG_gongrenyundongbeizhenya
+        }
+	}
+    #干扰东延铁路
+	MNG_ganraodongyantielu = {
+		icon = ger_military_buildup
+		days_remove = 7
+		days_re_enable = 80
+        cost = 40
+        visible = { 
+            check_variable = { MNG_dongyantielu > 0 }
+            NOT = {
+                has_country_flag = MNG_ganraotielu
+                has_country_flag = MNG_ganraodongyantielu
+            }
+        }
+		remove_effect = { 
+            add_to_variable = { MNG_dongyantielu = 60 } 
+            set_country_flag = MNG_ganraodongyantielu
+            activate_mission = MNG_dongyantielutongche_1
+            clr_country_flag = MNG_dongyantielutongche_1
+            set_country_flag = { 
+                flag = MNG_ganraotielu
+                days = 80
+				value = 1
+            } 
+        }
+	}
+    #干扰东延铁路1
+	MNG_ganraodongyantielu_1 = {
+		icon = ger_military_buildup
+		days_remove = 7
+		days_re_enable = 80
+        cost = 40
+        visible = { 
+            check_variable = { MNG_dongyantielu > 0 }
+            NOT = {
+                has_country_flag = MNG_ganraotielu
+                has_country_flag = MNG_dongyantielutongche_1
+            }
+        }
+		remove_effect = { 
+            add_to_variable = { MNG_dongyantielu = 60 } 
+            set_country_flag = MNG_dongyantielutongche_1
+            activate_mission = MNG_dongyantielutongche
+            clr_country_flag = MNG_ganraodongyantielu
+            set_country_flag = { 
+                flag = MNG_ganraotielu
+                days = 80
+				value = 1
+            } 
+        }
+	}
+    #东延铁路通车
+	MNG_dongyantielutongche = {
+		icon = ger_military_buildup
+        activation = { check_variable = { MNG_dongyantielu > 0 }   }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = MNG_dongyantielu
+        fire_only_once = yes
+        cancel_trigger = { hidden_trigger = { has_country_flag = MNG_ganraodongyantielu } }
+        timeout_effect = { 
+
+        }
+	}
+    #东延铁路通车1
+	MNG_dongyantielutongche_1 = {
+		icon = ger_military_buildup
+        activation = { check_variable = { MNG_dongyantielu > 0 }   }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = MNG_dongyantielu
+        fire_only_once = yes
+        cancel_trigger = { hidden_trigger = { has_country_flag = MNG_dongyantielutongche_1 } }
+        timeout_effect = { 
+
+        }
+	}
+    #扶持西北军工
+	MNG_fuchixibeijungong = {
+		icon = ger_military_buildup
+		available = { check_variable = { MNG_jiaotongxi > 29} }
+		days_remove = 60
+        days_re_enable = 180
+        cost = 50
+        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		remove_effect = {
+            add_to_variable = { MNG_jiaotongxi = 6 }
+            random_owned_controlled_state = {
+                limit = {
+                    OR = {
+                        state = 744
+                        state = 1210
+                        state = 1193
+                        state = 843
+                        state = 844
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+	}
+    #扶持西南军工
+	MNG_fuchixinanjungong = {
+		icon = ger_military_buildup
+		available = { check_variable = { MNG_qingzhengxi > 34} }
+		days_remove = 60
+        days_re_enable = 180
+        cost = 50
+        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		remove_effect = {
+            add_to_variable = { MNG_qingzhengxi = 6 }
+            random_owned_controlled_state = {
+                limit = {
+                    OR = {
+                        state = 831
+                        state = 830
+                        state = 832
+                        state = 325
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+	}
+    #振兴华北国企
+	MNG_zhenxinghuabeiguoqi = {
+		icon = ger_military_buildup
+		available = { check_variable = { MNG_wubeixi > 49} }
+		days_remove = 60
+        days_re_enable = 180
+        cost = 50
+        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		remove_effect = {
+            add_to_variable = { MNG_wubeixi = 6 }
+            random_owned_controlled_state = {
+                limit = {
+                    OR = {
+                        state = 609
+                        state = 615
+                        state = 597
+                        state = 1111
+                        state = 740
+                        state = 1118
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+	}
+    #促进华东民营
+	MNG_cujinhuadongminying = {
+		icon = ger_military_buildup
+		available = { check_variable = { MNG_guanxuexi > 39} }
+		days_remove = 60
+        days_re_enable = 180
+        cost = 50
+        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		remove_effect = {
+            add_to_variable = { MNG_guanxuexi = 6 }
+            clr_country_flag = MNG_gongyejianshe
+            random_owned_controlled_state = {
+                limit = {
+                    OR = {
+                        state = 807
+                        state = 811
+                        state = 600
+                        state = 602
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+	}
+    #促进华南民营
+	MNG_cujinhuananminying = {
+		icon = ger_military_buildup
+		available = { check_variable = { MNG_guanxuexi > 39} }
+		days_remove = 60
+        days_re_enable = 180
+        cost = 50
+        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		remove_effect = {
+            add_to_variable = { MNG_guanxuexi = 3 }
+            add_to_variable = { MNG_zhengxuexi = 3 }
+            clr_country_flag = MNG_gongyejianshe
+            random_owned_controlled_state = {
+                limit = {
+                    OR = {
+                        state = 814
+                        state = 813
+                        state = 592
+                        state = 1114
+                        state = 594
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+	}
+    #恢复东北产能
+	MNG_huifudongbeichanneng = {
+		icon = ger_military_buildup
+		available = { 
+            check_variable = { MNG_wubeixi > 49 } 
+            check_variable = { MNG_zijinxi > 64 } 
+        }
+		days_remove = 60
+        days_re_enable = 180
+        cost = 50
+        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		remove_effect = {
+            add_to_variable = { MNG_wubeixi = 3 }
+            add_to_variable = { MNG_zijinxi = 3 }
+            clr_country_flag = MNG_gongyejianshe
+            random_owned_controlled_state = {
+                limit = {
+                    OR = {
+                        state = 328
+                        state = 846
+                        state = 849
+                        state = 408
+                        state = 847
+                    }
+                }
+                add_extra_state_shared_building_slots = 2
+                add_building_construction = {
+                    type = arms_factory
+                    level = 1
+                    instant_build = yes
+                }
+            }
+        }
+	}
+}
