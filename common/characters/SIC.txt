@@ -53,6 +53,19 @@ characters={
 			civilian={
 				large="gfx/leaders/SIC/Portrait_SIC_Yang_Sen.png"
 			}
+			army={
+				large="gfx/leaders/SIC/SIC_shang_zheng.png"
+				small="gfx/SIC/ideas/SIC_shang_zheng.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=1
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
 		}
 		country_leader={
 			ideology=leader_despotism_subtype
@@ -85,6 +98,10 @@ characters={
 			civilian={
 				large="gfx/leaders/SIC/Portrait_SIC_Xiong_Kewu.png"
 			}
+			army={
+				large="gfx/leaders/SIC/SIC_xiong_kewu.dds"
+				small="gfx/SIC/ideas/SIC_xiong_kewu.png"
+			}
 		}
 		country_leader={
 			ideology=liberal_democracy_subtype
@@ -92,6 +109,22 @@ characters={
 			traits={ }
 			expire="1965.1.1.1"
 			id=-1
+		}
+		field_marshal={
+			traits={ generallissimo }
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SIC_xiong_kewu
+			allowed = { tag = SIC }
+			traits = { army_chief_organizational_2 SIC_qingzhengxi }
+			cost = 150
 		}
 	}
 
@@ -110,5 +143,291 @@ characters={
 			id=-1
 		}
 	}
+
+	SIC_liu_cunhou={
+		name=SIC_liu_cunhou
+		portraits={
+			army={
+				small="gfx/SIC/ideas/SIC_liu_cunhou.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SIC_liu_cunhou
+			allowed = { tag = SIC }
+			traits = { army_artillery_2 SIC_jingwangpai }
+			cost = 150
+		}
+	}
 	
+	SIC_wang_zanxu={
+		name=SIC_wang_zanxu
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_wang_zanxu.dds"
+				small="gfx/SIC/ideas/SIC_wang_zanxu.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SIC_wang_zanxu
+			allowed = { tag = SIC }
+			traits = { army_infantry_2 SIC_jingwangpai }
+			cost = 150
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	SIC_wang_lingji={
+		name=SIC_wang_lingji
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_wang_lingji.dds"
+				small="gfx/SIC/ideas/SIC_wang_lingji.png"
+			}
+		}
+		field_marshal={
+			traits={ guerilla_fighter }
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SIC_wang_lingji
+			allowed = { tag = SIC }
+			traits = { army_chief_offensive_2 SIC_jingwangpai }
+			cost = 150
+		}
+	}
+	
+	SIC_liu_chengxun={
+		name=SIC_liu_chengxun
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_liu_chengxun.dds"
+				small="gfx/SIC/ideas/SIC_liu_chengxun.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SIC_liu_chengxun
+			allowed = { tag = SIC }
+			traits = { army_infantry_2 SIC_xibeipai }
+			cost = 150
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	
+	SIC_lai_xinghui={
+		name=SIC_lai_xinghui
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_lai_xinghui.dds"
+				small="gfx/SIC/ideas/SIC_lai_xinghui.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SIC_lai_xinghui
+			allowed = { tag = SIC }
+			traits = { army_chief_maneuver_2 SIC_xibeipai }
+			cost = 150
+		}
+		corps_commander={
+			traits={  }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	SIC_deng_xihou={
+		name=SIC_deng_xihou
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_deng_xihou.dds"
+				small="gfx/SIC/ideas/SIC_deng_xihou.png"
+			}
+		}
+		field_marshal={
+			traits={ logistics_wizard }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SIC_deng_xihou
+			allowed = { tag = SIC }
+			traits = { army_artillery_2 SIC_xibeipai }
+			cost = 150
+		}
+	}
+	SIC_wang_mingzheng={
+		name=SIC_wang_mingzheng
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_wang_mingzheng.dds"
+				small="gfx/SIC/ideas/SIC_wang_mingzheng.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = SIC_wang_mingzheng
+			allowed = { tag = SIC }
+			traits = { army_chief_planning_1 SIC_qingzhengxi }
+			cost = 150
+		}
+		corps_commander={
+			traits={  }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	
+	SIC_dan_yixin={
+		name=SIC_dan_yixin
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_dan_yixin.png"
+				small="gfx/SIC/ideas/SIC_dan_yixin.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=1
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = SIC_dan_yixin
+			allowed = { tag = SIC }
+			traits = { army_infantry_2 SIC_qingzhengxi }
+			cost = 150
+		}
+	}
+
+	SIC_liu_cunhou={
+		name=SIC_liu_cunhou
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_liu_cunhou.png"
+				small="gfx/SIC/ideas/SIC_liu_cunhou.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	SIC_lv_chao={
+		name=SIC_lv_chao
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_lv_chao.png"
+				small="gfx/SIC/ideas/SIC_lv_chao.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	SIC_li_jiayu={
+		name=SIC_li_jiayu
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_li_jiayu.png"
+				small="gfx/SIC/ideas/SIC_li_jiayu.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	SIC_rao_guohua={
+		name=SIC_rao_guohua
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_rao_guohua.png"
+				small="gfx/SIC/ideas/SIC_rao_guohua.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=1
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	SIC_guo_xunqi={
+		name=SIC_guo_xunqi
+		portraits={
+			army={
+				large="gfx/leaders/SIC/SIC_guo_xunqi.png"
+				small="gfx/SIC/ideas/SIC_guo_xunqi.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=1
+			attack_skill=1
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
 }

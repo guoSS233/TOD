@@ -3,15 +3,36 @@ characters={
 		name=STG_zhu_rongkun
 		portraits={
 			civilian={
-				large="gfx/leaders/STG/STG_zhu_rongkun.png"
+				large="gfx/leaders/STG/STG_zhu_rongkun.dds"
+			}
+			army={
+				large="gfx/leaders/STG/STG_zhu_rongkun.dds"
+				small="gfx/STG/ideas/STG_zhu_rongkun.png"
 			}
 		}
 		country_leader={
 			ideology=leader_despotism_subtype
 			desc = "POLITICS_STG_zhu_rongkun_DESC"
-			traits={  }
+			traits={ STG_traits_txwh }
 			expire="1965.1.1.1"
 			id=-1
+		}
+		field_marshal={
+			traits={ media_personality war_hero }
+			skill=4
+			attack_skill=4
+			defense_skill=5
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=-1
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = STG_zhu_rongkun
+			allowed = { tag = STG }
+			traits = { army_chief_offensive_2 }
+			cost = 150
 		}
 	}
 	STG_yi_xinhui={
@@ -119,6 +140,678 @@ characters={
 			id=-1
 		}
 	}
-
 	
+	STG_sun_chuanfang={
+		name=STG_sun_chuanfang
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_sun_chuanfang.png"
+				small="gfx/STG/ideas/STG_sun_chuanfang.png"
+			}
+		}
+		field_marshal={
+			traits={ skilled_staffer }
+			skill=3
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=4
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = STG_sun_chuanfang
+			allowed = { tag = STG }
+			traits = { army_chief_organizational_2 }
+			cost = 150
+		}
+	}
+	
+	STG_yan_xishan={
+		name=STG_yan_xishan
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_yan_xishan.png"
+				small="gfx/STG/ideas/STG_yan_xishan.png"
+			}
+		}
+		field_marshal={
+			skill=3
+			attack_skill=1
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = STG_yan_xishan
+			allowed = { tag = STG }
+			traits = { yixinhuifuzeren }
+			cost = 150
+		}
+	}
+	STG_wang_shizheng={
+		name=STG_wang_shizheng
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_wang_shizheng.png"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = STG_wang_shizheng
+			allowed = { tag = STG }
+			ledger = army
+			traits = { mobile_warfare_expert }
+			cost = 150
+		}
+	}
+	STG_duan_qirui={
+		name=STG_duan_qirui
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_duan_qirui.png"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = STG_duan_qirui
+			allowed = { tag = STG }
+			ledger = army
+			traits = { superior_firepower_expert }
+			cost = 150
+		}
+	}
+	STG_feng_guozhang={
+		name=STG_feng_guozhang
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_feng_guozhang.png"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = STG_feng_guozhang
+			allowed = { tag = STG }
+			ledger = army
+			traits = { grand_battle_plan_expert }
+			cost = 150
+		}
+	}
+	STG_qing_guoyong={
+		name=STG_qing_guoyong
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_qing_guoyong.png"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = STG_qing_guoyong
+			allowed = { tag = STG }
+			traits = { air_chief_reform_2 }
+			cost = 150
+		}
+	}
+	STG_li_ruyan={
+		name=STG_li_ruyan
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_li_ruyan.png"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = STG_li_ruyan
+			allowed = { tag = STG }
+			traits = { air_close_air_support_2 }
+			cost = 150
+		}
+	}
+	STG_bao_bingcheng={
+		name=STG_bao_bingcheng
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_bao_bingcheng.png"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = STG_bao_bingcheng
+			allowed = { tag = STG }
+			traits = { air_chief_all_weather_2 }
+			cost = 150
+		}
+	}
+	STG_cai_tinggan={
+		name=STG_cai_tinggan
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_cai_tinggan.png"
+				small="gfx/STG/ideas/STG_cai_tinggan.png"
+			}
+		}
+		navy_leader={
+			skill=3
+			attack_skill=1
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = STG_cai_tinggan
+			allowed = { tag = STG }
+			traits = { navy_chief_reform_2 }
+			cost = 150
+		}
+	}
+	STG_qu_tongfeng={
+		name=STG_qutongfeng
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_qu_tongfeng.png"
+				small="gfx/STG/ideas/STG_qu_tongfeng.png"
+			}
+		}
+		navy_leader={
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = STG_qu_tongfeng
+			allowed = { tag = STG }
+			traits = { navy_chief_commerce_raiding_2 }
+			cost = 150
+		}
+	}
+	STG_li_yuanhong={
+		name=STG_li_yuanhong
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_li_yuanhong.png"
+				small="gfx/STG/ideas/STG_li_yuanhong.png"
+			}
+		}
+		navy_leader={
+			skill=4
+			attack_skill=1
+			defense_skill=4
+			planning_skill=5
+			logistics_skill=3
+			legacy_id=-1
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = STG_li_yuanhong
+			allowed = { tag = STG }
+			traits = { navy_chief_decisive_battle_2 }
+			cost = 150
+		}
+	}
+	STG_yuan_keding={
+		name=STG_yuan_keding
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_yuan_keding.png"
+				small="gfx/STG/ideas/STG_yuan_keding.png"
+			}
+		}
+		field_marshal={
+			traits={ media_personality armor_officer }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = STG_yuan_keding
+			allowed = { tag = STG }
+			traits = { army_CombinedArms_2 }
+			cost = 150
+		}
+	}
+	STG_cai_chengxun={
+		name=STG_cai_chengxun
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_cai_chengxun.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = STG_cai_chengxun
+			allowed = { tag = STG }
+			traits = { army_artillery_2 }
+			cost = 150
+		}
+	}
+	STG_cao_kun={
+		name=STG_cao_kun
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_cao_kun.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = STG_cao_kun
+			allowed = { tag = STG }
+			traits = { army_entrenchment_2 }
+			cost = 150
+		}
+	}
+	STG_li_chun={
+		name=STG_li_chun
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_li_chun.png"
+				small="gfx/STG/ideas/STG_li_chun.png"
+			}
+		}
+		field_marshal={
+			traits={ politically_connected inflexible_strategist }
+			skill=4
+			attack_skill=4
+			defense_skill=5
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = STG_li_chun
+			allowed = { tag = STG }
+			traits = { army_infantry_2 }
+			cost = 150
+		}
+	}
+	STG_feng_yong={
+		name=STG_feng_yong
+		portraits={
+			army={
+				small="gfx/STG/ideas/STG_feng_yong.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = STG_feng_yong
+			allowed = { tag = STG }
+			traits = { air_air_superiority_2 }
+			cost = 150
+		}
+	}
+	STG_shang_zheng={
+		name=STG_shang_zheng
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_shang_zheng.png"
+				small="gfx/STG/ideas/STG_shang_zheng.dds"
+			}
+		}
+		corps_commander={
+			traits={ trait_cautious organizer }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	STG_jiang_dengxuan={
+		name=STG_jiang_dengxuan
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_jiang_dengxuan.png"
+				small="gfx/STG/ideas/STG_jiang_dengxuan.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	STG_zhou_fengqi={
+		name=STG_zhou_fengqi
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_zhou_fengqi.png"
+				small="gfx/STG/ideas/STG_zhou_fengqi.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_han_fuqu={
+		name=STG_han_fuqu
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_han_fuqu.png"
+				small="gfx/STG/ideas/STG_han_fuqu.dds"
+			}
+		}
+		corps_commander={
+			traits={ trait_cautious }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=4
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_shangguan_yunxiang={
+		name=STG_shangguan_yunxiang
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_shangguan_yunxiang.png"
+				small="gfx/STG/ideas/STG_shangguan_yunxiang.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_leader }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_zhou_yingren={
+		name=STG_zhou_yingren
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_zhou_yingren.png"
+				small="gfx/STG/ideas/STG_zhou_yingren.dds"
+			}
+		}
+		corps_commander={
+			traits={ trait_engineer fortress_buster }
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	STG_chen_tiaoyuan={
+		name=STG_chen_tiaoyuan
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_chen_tiaoyuan.png"
+				small="gfx/STG/ideas/STG_chen_tiaoyuan.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	STG_shi_yousan={
+		name=STG_shi_yousan
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_shi_yousan.png"
+				small="gfx/STG/ideas/STG_shi_yousan.dds"
+			}
+		}
+		corps_commander={
+			traits={ trait_reckless }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_sun_dianying={
+		name=STG_sun_dianying
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_sun_dianying.png"
+				small="gfx/STG/ideas/STG_sun_dianying.dds"
+			}
+		}
+		corps_commander={
+			traits={ mojing_xiaowei }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_lu_xiangting={
+		name=STG_lu_xiangting
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_lu_xiangting.png"
+				small="gfx/STG/ideas/STG_lu_xiangting.dds"
+			}
+		}
+		corps_commander={
+			traits={  }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_wang_jingguo={
+		name=STG_wang_jingguo
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_wang_jingguo.png"
+				small="gfx/STG/ideas/STG_wang_jingguo.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_leader }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_cao_shijie={
+		name=STG_cao_shijie
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_cao_shijie.png"
+				small="gfx/STG/ideas/STG_cao_shijie.dds"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_li_fuying={
+		name=STG_li_fuying
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_li_fuying.png"
+				small="gfx/STG/ideas/STG_li_fuying.dds"
+			}
+		}
+		corps_commander={
+			traits={ trait_mountaineer }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_li_jinglin={
+		name=STG_li_jinglin
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_li_jinglin.png"
+				small="gfx/STG/ideas/STG_li_jinglin.dds"
+			}
+		}
+		corps_commander={
+			traits={ ranger }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_qing_dechun={
+		name=STG_qing_dechun
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_qing_dechun.png"
+				small="gfx/STG/ideas/STG_qing_dechun.dds"
+			}
+		}
+		corps_commander={
+			traits={ hill_fighter }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_li_xianzhou={
+		name=STG_li_xianzhou
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_li_xianzhou.png"
+				small="gfx/STG/ideas/STG_li_xianzhou.dds"
+			}
+		}
+		corps_commander={
+			traits={ urban_assault_specialist }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_wang_zhanyuan={
+		name=STG_wang_zhanyuan
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_wang_zhanyuan.png"
+				small="gfx/STG/ideas/STG_wang_zhanyuan.dds"
+			}
+		}
+		navy_leader={
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_wu_mingling={
+		name=STG_wu_mingling
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_wu_mingling.png"
+				small="gfx/STG/ideas/STG_wu_mingling.dds"
+			}
+		}
+		navy_leader={
+			skill=3
+			attack_skill=1
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	STG_tang_xiangming={
+		name=STG_tang_xiangming
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_tang_xiangming.png"
+				small="gfx/STG/ideas/STG_tang_xiangming.dds"
+			}
+		}
+		navy_leader={
+			skill=3
+			attack_skill=3
+			defense_skill=5
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	STG_qi_kuiyuan={
+		name=STG_qi_kuiyuan
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_qi_kuiyuan.png"
+				small="gfx/STG/ideas/STG_qi_kuiyuan.png"
+			}
+		}
+		navy_leader={
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = STG_qi_kuiyuan
+			allowed = { tag = STG }
+			traits = { navy_screen_2 }
+			cost = 150
+		}
+	}
 }
