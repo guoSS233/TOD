@@ -165,7 +165,7 @@ focus_tree = {
 		x = 2
 		y = 3
 	}
-	focus = {
+	focus = {#器物救国
 		id = XBJ_qiwujiuguo
 		text = XBJ_qiwujiuguo
 		icon = GFX_qiwujiuguo
@@ -191,7 +191,7 @@ focus_tree = {
 		x = 0
 		y = 4
 	}
-	focus = {
+	focus = {#礼乐兴国
 		id = XBJ_liyuexingguo
 		text = XBJ_liyuexingguo
 		icon = GFX_liyuexingguo
@@ -201,6 +201,18 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = XBJ_qiwujiuguo
+		}
+		completion_reward = {
+			add_tech_bonus ={
+				bonus = 1
+				uses = 1
+				category = electronics
+				name = electronics
+			}
+			swap_ideas = {
+				remove_idea = XBJ_Backward_Region_1
+    			add_idea = XBJ_Backward_Region_2
+			}
 		}
 		x = 4
 		y = 4
@@ -251,6 +263,9 @@ focus_tree = {
 		prerequisite = {
 			focus = XBJ_qutuxixin
 		}
+		available = {
+			has_country_flag = FLAG_XBJ_neizhan
+		}
 		completion_reward = {
 			add_stability = 0.05
 			unlock_decision_category_tooltip = XBJ_jiaotong_fazhan
@@ -258,7 +273,7 @@ focus_tree = {
 		x = 2
 		y = 6
 	}
-	focus = {
+	focus = {#进种善群
 		id = XBJ_jinzhongshanqun
 		text = XBJ_jinzhongshanqun
 		icon = GFX_jinzhongshanqun
@@ -267,8 +282,14 @@ focus_tree = {
 			focus = XBJ_liyuexingguo
 			focus = XBJ_qiwujiuguo
 		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBJ_Backward_Region_2
+    			add_idea = XBJ_Backward_Region_3
+			}
 		x = 4
 		y = 5
+		}
 	}
 	focus = {
 		id = XBJ_zhoujingmuxun
@@ -610,7 +631,7 @@ focus_tree = {
 		x = 27
 		y = 2
 	}
-	focus = {
+	focus = { #摘山煮海
 		id = XBJ_zhaishanzhuhai
 		text = XBJ_zhaishanzhuhai
 		icon = GFX_zhaishanzhuhai
@@ -632,7 +653,7 @@ focus_tree = {
 			}
 			unlock_decision_category_tooltip = XBJ_kuangchan_kaifa
 		}
-		x = 0`FIY
+		x = 0
 		y = 6
 	}
 	focus = {

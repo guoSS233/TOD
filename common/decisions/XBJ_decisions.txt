@@ -646,7 +646,7 @@ XBJ_jiyi_gaijin = {
 
 XBJ_kuangchan_kaifa = {
 	#矿产开发
-	XBJ_kuangchuan_kaifa_0 = {
+	XBJ_kuangchan_kaifa_0 = {
 		#全面资源普查
 		icon = GFX_decision_SOV_place_hq
 		allowed = {
@@ -1120,7 +1120,6 @@ XBJ_jiaotong_fazhan = { #交通发展
 			unlock_decision_tooltip = XBJ_jiaotong_fazhan_1_1
 			unlock_decision_tooltip = XBJ_jiaotong_fazhan_1_2
 			set_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_1_unlocked
-			modifier_production_speed_rail_way_factor = 0.1
 		}
 	}
 	XBJ_jiaotong_fazhan_1_1 = { #翻修升级西域铁路
@@ -1133,16 +1132,27 @@ XBJ_jiaotong_fazhan = { #交通发展
 		}
 		available = {
 			has_political_power > 29
-			
+			has_manpower > 5000
+			num_of_civilian_factories_available_for_projects > 2
 		}
 		fire_only_once = yes
-		cost = 30
-		days_remove = 14
+		cost = 50
+		days_remove = 90
 		complete_effect = {
 			add_manpower = -5000
 		}
+		modifier = {
+			civilian_factory_use = 3
+		}
 		remove_effect = {
-			add_stability = 0.05
+			build_railway = {
+				level = 2
+				path = { 12583 12511 4224 1591 4845 12601 13505 1783 13500 13498 4709 12656 7732 13492 1838 4843 }
+			}
+			build_railway = {
+				level = 2
+				path = { 13479 7790 4973 8112 1970 2015 13484 7949 4682 13486 7702 13488 13489 10545 10614 12656}
+			}
 		}
 	}
 	XBJ_jiaotong_fazhan_1_2 = { #翻修升级关陇铁路
@@ -1155,16 +1165,23 @@ XBJ_jiaotong_fazhan = { #交通发展
 		}
 		available = {
 			has_political_power > 29
+			has_manpower > 5000
 			num_of_civilian_factories_available_for_projects > 2
 		}
 		fire_only_once = yes
-		cost = 30
-		days_remove = 14
+		cost = 50
+		days_remove = 90
+		complete_effect = {
+			add_manpower = -5000
+		}
 		modifier = {
 			civilian_factory_use = 3
 		}
 		remove_effect = {
-			add_stability = 0.05
+			build_railway = {
+				level = 2
+				path = { 12820 7971 8102 2028 7803 6638 4313 12797 13457 12882 2022 5193 556 7911 2006 13447 13448 1976 7418 13440 }
+			}
 		}
 	}
 
@@ -1186,10 +1203,6 @@ XBJ_jiaotong_fazhan = { #交通发展
 			unlock_decision_tooltip = XBJ_jiaotong_fazhan_2_1
 			unlock_decision_tooltip = XBJ_jiaotong_fazhan_2_2
 			set_country_flag = FLAG_XBJ_decision_jiaotong_fazhan_2_unlocked
-			set_temp_variable = {
-				change_XBJ_landlords_influence_by = 5
-			}
-			XBJ_landlords_update = yes
 		}
 	}
 	XBJ_jiaotong_fazhan_2_1 = { #翻修扩建伊犁-迪化公路
@@ -1203,15 +1216,32 @@ XBJ_jiaotong_fazhan = { #交通发展
 		available = {
 			has_political_power > 29
 			has_manpower > 5000
+			num_of_civilian_factories_available_for_projects > 2
 		}
 		fire_only_once = yes
-		cost = 30
-		days_remove = 14
+		cost = 50
+		days_remove = 180
 		complete_effect = {
 			add_manpower = -5000
 		}
+		modifier = {
+			civilian_factory_use = 3
+		}
 		remove_effect = {
-			add_stability = 0.05
+			1193 = {
+				set_building_level = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+			844 = {
+				set_building_level = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
 		}
 	}
 	XBJ_jiaotong_fazhan_2_2 = { #翻修扩建宁夏-河套公路
@@ -1224,16 +1254,30 @@ XBJ_jiaotong_fazhan = { #交通发展
 		}
 		available = {
 			has_political_power > 29
+			has_manpower > 5000
 			num_of_civilian_factories_available_for_projects > 2
 		}
 		fire_only_once = yes
-		cost = 30
-		days_remove = 14
+		cost = 50
+		days_remove = 180
 		modifier = {
 			civilian_factory_use = 3
 		}
 		remove_effect = {
-			add_stability = 0.05
+			843 = {
+				set_building_level = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+			621 = {
+				set_building_level = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
 		}
 	}
 }
