@@ -160,6 +160,174 @@ ideas = {
 				defense_bonus_against = -0.03
 			}
 		}
+		#民主牌面
+		STG_minzhupaimian = {
+			name = STG_minzhupaimian
+			
+		    picture = STG_minzhupaimian
+			
+			allowed = { tag = STG }
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = -0.05
+				political_power_gain = 0.05
+			}
+		}
     }
+	### 内阁 ###
 
+	TOD_minister_head = { 
+		STG_wang_yongjiang = {
+			allowed = { tag = STG }
+			cancel_if_invalid = no
+			traits = {
+				TOD_minister_head
+				STG_wubeixi
+				caishenye
+			}
+		}
+		STG_jiang_dengxuan = {
+			allowed = { tag = STG }
+			cancel_if_invalid = no
+			traits = {
+				TOD_minister_head
+				STG_wubeixi
+				junshizhengzhijia
+			}
+		}
+		STG_xu_shichang = {
+			allowed = { tag = STG }
+			cancel_if_invalid = no
+			traits = {
+				TOD_minister_head
+				STG_jingwangxi
+				zhengtanpinghengzhe
+			}
+		}
+		STG_wu_peifu = {
+			allowed = { tag = STG }
+			cancel_if_invalid = no
+			traits = {
+				TOD_minister_head
+				STG_xungui
+				xunguixinrui
+			}
+		}
+	}
+	TOD_foreign_minister = { 
+		STG_lu_zhixiang = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_foreign_minister
+				STG_wubeixi
+				ouzhanhepingjianyuezhe
+			}
+		}
+		STG_cao_ruling = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_foreign_minister
+				STG_wubeixi
+				linghuodixian
+			}
+		}
+		STG_yan_huiqing = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_foreign_minister
+				STG_jingwangxi
+				waijiaoqiaoshou
+			}
+		}
+		STG_li_guojie = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_foreign_minister
+				STG_xungui
+				duiwaiqiangyingpai
+			}
+		}
+	}
+	TOD_economy_minister = {
+		STG_zhou_xuexi = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_economy_minister
+				STG_wubeixi
+				licaidaheng
+			}
+		}
+		STG_kong_xiangxi = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_economy_minister
+				STG_wubeixi
+				licaixiaonengshou
+			}
+		}
+		STG_zhang_shouyong = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_economy_minister
+				STG_jingwangxi
+				zhiluanxingyelilun
+			}
+		}
+		STG_fan_xudong = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_economy_minister
+				STG_xungui
+				huagongxinxiu
+			}
+		}
+	}
+	TOD_security_minister = { 
+		STG_shang_zheng = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_security_minister
+				STG_wubeixi
+				junqingdiaochake
+			}
+		}
+		STG_jiang_yanxing = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_security_minister
+				STG_jingwangxi
+				xianbinglilun
+			}
+		}
+		STG_xin_yunpeng = {
+			allowed = { tag = STG }
+			available = {}
+			cancel_if_invalid = no
+			traits = {
+				TOD_security_minister
+				STG_xungui
+				dixiashouduan
+			}
+		}
+	}
 }
