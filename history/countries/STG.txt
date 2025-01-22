@@ -1,0 +1,349 @@
+capital = 608
+
+oob = "STG_1937"
+
+
+set_politics = {
+	ruling_party = leader_despotism
+	last_election = "1935.3.14"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	vanguard_socialism =0
+	council_socialism = 5
+	moderate_socialism = 5
+	agroindustrial_socialism = 5
+	social_democrat = 0
+	liberal_democracy = 0
+	conservative_democracy = 5
+	consociationalism = 5
+	sacred_revivalism = 0
+	authoritarian_oligarchy = 35
+	leader_despotism = 35
+	national_corporatism = 5
+}
+
+set_stability = 0.3
+set_war_support = 0.75
+set_research_slots = 3
+
+add_ideas = {
+	STG_rendimaodun
+	STG_jingjizhengce
+
+	STG_wang_yongjiang
+	STG_yan_huiqing
+	STG_fan_xudong
+	STG_shang_zheng
+}
+add_to_variable = { STG_yixinhui_zhanzheng = 0.1 }
+add_to_variable = { STG_yixinhui_zuzhi = 0.1 }
+add_to_variable = { STG_yixinhui_zhengzhi = -0.1 }
+add_to_variable = { STG_junzhengjituan_zhengzhi = -0.1 }
+add_to_variable = { STG_junzhengjituan_jingji = 0.5 }
+add_to_variable = { STG_junzhengjituan_jihuasudu = -0.2 }
+add_to_variable = { STG_xungui_renkou = 0.01 }
+add_to_variable = { STG_xungui_sunhao = 0.1 }
+add_to_variable = { STG_xungui_zhengzhi = 0.1}
+add_dynamic_modifier = { modifier = STG_yixinhui }
+add_dynamic_modifier = { modifier = STG_junzhengjituan }
+add_dynamic_modifier = { modifier = STG_xungui }
+
+
+recruit_character = STG_zhu_rongkun
+recruit_character = STG_yi_xinhui
+recruit_character = STG_wang_yongjiang
+recruit_character = STG_zhu_qichen
+recruit_character = STG_liang_ruhao
+recruit_character = STG_chen_yilong
+recruit_character = STG_bai_lang
+recruit_character = STG_zhou_enlai
+recruit_character = STG_sun_chuanfang
+recruit_character = STG_yan_xishan
+recruit_character = STG_wang_shizheng
+recruit_character = STG_duan_qirui
+recruit_character = STG_feng_guozhang
+recruit_character = STG_qing_guoyong
+recruit_character = STG_li_ruyan
+recruit_character = STG_bao_bingcheng
+recruit_character = STG_cai_tinggan
+recruit_character = STG_qu_tongfeng
+recruit_character = STG_li_yuanhong
+recruit_character = STG_yuan_keding
+recruit_character = STG_cai_chengxun
+recruit_character = STG_cao_kun
+recruit_character = STG_feng_yong
+recruit_character = STG_li_chun
+recruit_character = STG_shang_zheng
+recruit_character = STG_jiang_dengxuan
+recruit_character = STG_zhou_fengqi
+recruit_character = STG_han_fuqu
+recruit_character = STG_shangguan_yunxiang
+recruit_character = STG_zhou_yingren
+recruit_character = STG_chen_tiaoyuan
+recruit_character = STG_shi_yousan
+recruit_character = STG_sun_dianying
+recruit_character = STG_lu_xiangting
+recruit_character = STG_wang_jingguo
+recruit_character = STG_cao_shijie
+recruit_character = STG_li_fuying
+recruit_character = STG_li_jinglin
+recruit_character = STG_qing_dechun
+recruit_character = STG_li_xianzhou
+recruit_character = STG_wang_zhanyuan
+recruit_character = STG_wu_mingling
+recruit_character = STG_tang_xiangming
+recruit_character = STG_qi_kuiyuan
+
+
+
+
+
+
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+	set_technology = {
+		aa_lmg = 1
+		engines_1 = 1
+		early_bombs = 1
+		iw_small_airframe = 1
+		iw_medium_airframe = 1
+		iw_large_airframe = 1
+	}
+}
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1
+	tech_engineers = 1
+	tech_military_police = 1
+	gw_artillery = 1
+	interwar_artillery = 1
+	interwar_antiair = 1
+	early_fighter = 1
+	fighter1 = 1
+	cv_early_fighter = 1
+	cv_naval_bomber1 = 1
+	cv_CAS1 = 1
+	naval_bomber1 = 1
+	CAS1 = 1
+	early_bomber = 1
+	tactical_bomber1 = 1
+	superior_firepower = 1
+	base_strike = 1
+	motorised_infantry = 1
+	marines = 1
+	basic_train = 1
+	tech_mountaineers = 1
+	electronic_mechanical_engineering = 1
+	radio = 1
+}
+
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		early_ship_hull_carrier = 1
+		panzerschiffe = 1
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_torpedo = 1
+		sonar = 1
+		basic_depth_charges = 1
+		basic_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+		basic_heavy_armor_scheme = 1
+		mtg_transport = 1
+		improved_secondary_battery = 1
+		improved_airplane_launcher = 1
+	}
+}
+
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+	}
+}
+
+### 坦克设计 ###
+
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	create_equipment_variant = {
+		name = "辽阳造 昌德卅五年式 白山机车总厂 “应龙” 试制铁甲战车"
+		type = light_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_machine_gun
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 0
+		}
+		obsolete = yes
+		icon =
+	}
+
+	create_equipment_variant = {
+		name = "辽阳造 昌德卌三年式 白山机车总厂 “烛龙” 试制铁甲轻战车"
+		type = light_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_light_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 1
+		}
+	}
+
+	create_equipment_variant = {
+		name = "顺天造 昌德卌二年式 景山机车制作所 “虚耗” 试制铁甲重战车"
+		type = heavy_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_heavy_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_small_cannon
+			special_type_slot_2 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 1
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = " 太仓造 昌德卌六年式 五一集团会社 “饕餮” 重战车"
+		type = heavy_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = secondary_turret_hmg
+			special_type_slot_2 = secondary_turret_hmg
+			special_type_slot_3 = tank_radio_1
+			special_type_slot_4 = empty
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "南昌造 昌德卌三年式 洪都交通运载机械厂 “夔牛” 铁甲自行炮车"
+		type = medium_tank_artillery_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_christie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 0
+		}
+	}
+
+	create_equipment_variant = {
+		name = "长沙造 昌德卌五年式 国立芙蓉机器制备坊 “腓腓” 铁甲中战车"
+		type = medium_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_close_support_gun
+			turret_type_slot = tank_medium_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+
+	create_equipment_variant = {
+		name = "杭州造 昌德卌六年式 钱塘工程机械集团 “螣蛇” 铁甲中战车"
+		type = medium_tank_chassis_0
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_small_cannon
+			turret_type_slot = tank_medium_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+			special_type_slot_2 = additional_machine_guns
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 1
+		}
+	}
+
+}
+
+
+
+
+### Field Marshal
+
+
+
+### Corps Commander
+
