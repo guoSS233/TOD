@@ -52,4 +52,12 @@ on_actions = {
 			MNG = {country_event = { id = mingcivwar.82 days = 594 } }
 		}
 	}
+	on_daily_MNG = {
+		effect = {
+			if = { 
+				limit = { check_variable = { MNG_dongyantielu > 0 } } 
+				add_to_variable = { MNG_dongyantielu = -1 } 
+			}
+		}
+	}
 }
