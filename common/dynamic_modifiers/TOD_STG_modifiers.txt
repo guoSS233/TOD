@@ -9,8 +9,9 @@ STG_yixinhui = {
 STG_junzhengjituan = {
 	icon = STG_junzhengjituan
 	political_power_gain = STG_junzhengjituan_zhengzhi
-	economy_cost_factor = STG_junzhengjituan_jingji
 	planning_speed = STG_junzhengjituan_jihuasudu
+	stability_factor = STG_junzhengjituan_wendingdu
+	economy_cost_factor = STG_junzhengjituan_faan
 }
 #勋贵
 STG_xungui = {
@@ -18,6 +19,8 @@ STG_xungui = {
 	conscription = STG_xungui_renkou
 	attrition = STG_xungui_sunhao
 	political_power_gain = STG_xungui_zhengzhi
+	army_core_attack_factor = STG_xungui_hexin
+	army_core_defence_factor = STG_xungui_hexin
 }
 #戒严令
 STG_jieyanling = {
@@ -26,5 +29,113 @@ STG_jieyanling = {
 	WEEKLY_CASUALTIES_WAR_SUPPORT = STG_jieyanling_shangwang
 	conscription_factor = STG_jieyanling_renkou
 }
+#武人秉政
+STG_wurenbingzheng = {
+	icon = STG_wurenbingzheng
+	max_command_power = STG_wurenbingzheng_zhihuidian
+	experience_gain_army_factor = STG_wurenbingzheng_jingyan
+	stability_factor = STG_wurenbingzheng_wendingdu
+	war_support_factor = STG_wurenbingzheng_zhanzheng
+	land_doctrine = STG_wurenbingzheng_lujunxueshuo
+	mobilization_speed = STG_wurenbingzheng_dongyuan
+	military_leader_cost_factor = STG_wurenbingzheng_zhihui
+}
+#重建中央威权
+STG_chongjianzhongyangweiquan = {
+	icon = STG_chongjianzhongyangweiquan
+	local_building_slots_factor = STG_chongjianzhongyangweiquan_diqu
+	political_power_gain = STG_chongjianzhongyangweiquan_zhengzhi
+	party_popularity_stability_factor = STG_chongjianzhongyangweiquan_dangpai
+	local_resources_factor = STG_chongjianzhongyangweiquan_ziyuan
+	production_speed_buildings_factor = STG_chongjianzhongyangweiquan_jianzao
+	line_change_production_efficiency_factor = STG_chongjianzhongyangweiquan_baochi
+	industrial_capacity_factory = STG_chongjianzhongyangweiquan_chanchu
+	supply_consumption_factor = STG_chongjianzhongyangweiquan_buji
+	production_lack_of_resource_penalty_factor = STG_chongjianzhongyangweiquan_queshi
+	production_factory_max_efficiency_factor = STG_chongjianzhongyangweiquan_shangxian
+	consumer_goods_factor = STG_chongjianzhongyangweiquan_xiaofei
+	justify_war_goal_time = STG_chongjianzhongyangweiquan_zhengdanghua
+}
+#乾纲独断
+STG_qiangangduduan = {
+	icon = STG_qiangangduduan
+	stability_factor = STG_qiangangduduan_wending
+	political_power_gain = STG_qiangangduduan_zhengzhi
+	consumer_goods_factor = STG_qiangangduduan_xiaofei
+	production_factory_efficiency_gain_factor = STG_qiangangduduan_zengzhang
+	leader_despotism_drift = STG_qiangangduduan_zhichi
+	conscription_factor = STG_qiangangduduan_renkou
+	production_speed_industrial_complex_factor = STG_qiangangduduan_minggong
+	production_speed_supply_node_factor = STG_qiangangduduan_buji
+	local_resources_factor = STG_qiangangduduan_ziyuan
+	industrial_capacity_factory = STG_qiangangduduan_chanchu
+	production_factory_max_efficiency_factor = STG_qiangangduduan_shangxian
+}
+#绝对支持
+STG_jueduizhichi = {
+	icon = STG_jueduizhichi
+	stability_factor = STG_jueduizhichi_wending
+	army_org_factor = STG_jueduizhichi_zuzhi
+	supply_consumption_factor = STG_jueduizhichi_buji
+	army_attack_factor = STG_jueduizhichi_gongji
+	consumer_goods_factor = STG_qiangangduduan_xiaofei
+	production_factory_efficiency_gain_factor = STG_qiangangduduan_zengzhang
+	leader_despotism_drift = STG_qiangangduduan_zhichi
+	conscription_factor = STG_qiangangduduan_renkou
+	stability_weekly = STG_qiangangduduan_wendingzengzhang
+    max_command_power = STG_qiangangduduan_zhihuidian
+	war_stability_factor = STG_qiangangduduan_zhanzhengzhichi
+	army_core_attack_factor = STG_jueduizhichi_hexin
+	army_core_defence_factor = STG_jueduizhichi_hexin
+	mobilization_speed = STG_jueduizhichi_dongyuan
+}
+#仁德施政
+STG_rendeshizheng = {
+	icon = STG_rendeshizheng
+	consumer_goods_factor = STG_rendeshizheng_xiaofei
+	stability_weekly = STG_rendeshizheng_wendingzengzhang
+    max_command_power = STG_qiangangduduan_zhihuidian
+	war_stability_factor = STG_qiangangduduan_zhanzhengzhichi
+	army_core_attack_factor = STG_jueduizhichi_hexin
+	army_core_defence_factor = STG_jueduizhichi_hexin
+	mobilization_speed = STG_jueduizhichi_dongyuan
+}
+#统制之道
+STG_tongzhizhidao = {
+	icon = STG_tongzhizhidao
+	stability_factor = STG_tongzhizhidao_wending
+	production_speed_buildings_factor = STG_tongzhizhidao_jianzao
+	consumer_goods_factor = STG_tongzhizhidao_xiaofei
+	industrial_capacity_factory = STG_tongzhizhidao_chanchu
+	production_factory_efficiency_gain_factor = STG_tongzhizhidao_zengzhang
+	production_speed_industrial_complex_factor = STG_tongzhizhidao_minggong
+	production_speed_infrastructure_factor = STG_tongzhizhidao_jijian
+	state_production_speed_rail_way_factor = STG_tongzhizhidao_tielu
+	research_speed_factor = STG_tongzhizhidao_keyan
+	political_advisor_cost_factor = STG_tongzhizhidao_guwen
+	mobilization_laws_cost_factor = STG_tongzhizhidao_zhengbing
+	trade_laws_cost_factor  = STG_tongzhizhidao_maoyi
+	economy_cost_factor = STG_tongzhizhidao_jingji
+	political_power_gain = STG_tongzhizhidao_zhengzhi
+	stability_weekly = STG_tongzhizhidao_meizhou
+}
+#忠勇可嘉
+STG_zhongyongkejia = {
+	icon = STG_zhongyongkejia
+	land_reinforce_rate = STG_zhongyongkejia_znegyuan
+	army_speed_factor = STG_zhongyongkejia_sudu
+	production_speed_arms_factory_factor = STG_zhongyongkejia_jungong
+	resistance_decay = STG_zhongyongkejia_dikang
+	conscription_factor = STG_zhongyongkejia_renkou
+	weekly_casualties_war_support = STG_zhongyongkejia_shangwang
+}
+#会战
+STG_huizhan = {
+	icon = STG_huizhan
+	army_org_factor = STG.STG_huizhan_zuzhi
+	army_attack_factor = STG.STG_huizhan_jingong
+	max_planning = STG.STG_huizhan_jihua
+}
+
 
 
