@@ -20,7 +20,7 @@ focus_tree = {
 		
 		x = 13
 		y = 1
-		cost = 10
+		cost = 1
 		ai_will_do = {
 			factor = 100
 		}
@@ -41,6 +41,7 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 10
 		y = 2
+		available = { always = no }
 		cost = 10
 		ai_will_do = {
 			factor = 100
@@ -50,6 +51,7 @@ focus_tree = {
 			navy_experience = 15
 			army_experience = 15
 			air_experience = 15
+			custom_effect_tooltip = MNG_check_our_weapon_xiaoguo
 		}
 	}
 
@@ -60,13 +62,16 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 10
 		y = 3
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
-			custom_effect_tooltip = MNG_5
+			custom_effect_tooltip = MNG_make_in_our_country_xiaoguo
 			add_political_power = -70
+			add_to_variable = { MNG_wubeixi = 5 } 
+			custom_effect_tooltip = MNG_wubeixiyingxiang_2
+			unlock_decision_category_tooltip = MNG_gongyejianshe
 		}
 	}
 	focus = { #艨艟御日
@@ -77,13 +82,14 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 7
 		y = 4
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_7
 			add_ideas = MNG_capital_ship
+			navy_experience = 25
 		}
 	}
 	focus = { #翩其反矣
@@ -94,13 +100,15 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 9
 		y = 4
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_6
 			add_ideas = MNG_infantry_equipment
+			army_experience = 15
+			add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 1000 }
 		}
 	}
 	focus = { #四牡暌暌
@@ -111,13 +119,13 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 11
 		y = 4
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_3
-			add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = 100 }
+			add_ideas = MNG_sidukuikui
 		}
 	}
 	focus = { #骖鸾驭鹤
@@ -128,13 +136,13 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 13
 		y = 4
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_4
-			add_equipment_to_stockpile = { type = fighter_equipment_1 amount = 100 }
+			add_ideas = MNG_Can_luan_yu_he
 		}
 	}
 	###右###
@@ -145,7 +153,7 @@ focus_tree = {
 
 		x = 16
 		y = 2
-		cost = 10
+		cost = 3
 		prerequisite = {focus = MNG_we_must_do_something}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		ai_will_do = {
@@ -161,6 +169,7 @@ focus_tree = {
 		icon = GFX_focus_MNG_zhan_ding_jie_tie
 
 		prerequisite = {focus = MNG_stimulate_the_economy}
+		available = { always = no }
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 16
 		y = 3
@@ -170,7 +179,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_9
-			add_political_power = -100
+			add_political_power = -50
+			unlock_decision_category_tooltip = MNG_ganyupaixi
 		}
 	}
 	focus = { #仁至义尽
@@ -181,13 +191,14 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
 		y = 4
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
-			custom_effect_tooltip = MNG_11
-			add_ideas = MNG_suppress_the_armed_forces_department
+			custom_effect_tooltip = MNG_stop_the_army_xiaoguo
+			add_political_power = 30
+			add_to_variable = { MNG_wubeixi = -10 }
 		}
 	}
 	focus = { #杀鸡儆猴
@@ -198,12 +209,18 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
 		y = 5
-		cost = 10
+		cost = 3
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_12
+			army_experience = -5
+			add_stability = -0.05
+			swap_ideas = {
+				add_idea = MNG_A_Suspected_Army_1
+				remove_idea = MNG_A_Suspected_Army
+			}
 		}
 	}
 	#整顿官场
@@ -215,12 +232,15 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
 		y = 6
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			unlock_decision_category_tooltip = MNG_jinyiweizaixingdong
+			add_to_variable = { MNG_boyishijian_1 = 15 }
+			add_to_variable = { MNG_boyishijian_2 = 22 }
+			custom_effect_tooltip = MNG_zhengdunguanchang_xiaoguo
 		}
 	}
 	#尺竹伍符
@@ -232,11 +252,15 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
 		y = 7
-		cost = 10
+		cost = 6
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
+			swap_ideas = {
+				add_idea = MNG_A_Suspected_Army_2
+				remove_idea = MNG_A_Suspected_Army_1
+			}
 		}
 	}
 	focus = { #楚弓复得
@@ -247,13 +271,23 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 15
 		y = 4
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_14
 			add_ideas = MNG_suppress_the_armed_forces_department_two
+			add_to_variable = { MNG_guanxuexi = -5 }
+			custom_effect_tooltip = MNG_chugongfude_xiaoguo
+			608 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	focus = { #委信心腹
@@ -264,12 +298,12 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 15
 		y = 5
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
-			custom_effect_tooltip = MNG_13
+			custom_effect_tooltip = MNG_our_friends_inside_xiaoguo
 			add_ideas = MNG_support_the_forbidden_system
 		}
 	}
@@ -281,13 +315,22 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 15
 		y = 6
-		cost = 10
+		cost = 5
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			custom_effect_tooltip = MNG_10
 			add_ideas = MNG_compromise_with_shi_rong
+			add_to_variable = { MNG_guanxuexi = 10 }
+			custom_effect_tooltip = MNG_smile_to_the_money_xiaoguo
+			613 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}
 	}
 	#政清人和
@@ -304,6 +347,9 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = 30
+			add_to_variable = { MNG_wubeixi = -10 }
+			custom_effect_tooltip = MNG_zhengqingrenhe_xiaoguo
 		}
 	}
 
@@ -317,11 +363,18 @@ focus_tree = {
 		x = 7
 		y = 1
 		cost = 5
-		bypass = { has_country_flag = MNG_taiziyuci }	
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = 15
+			add_to_variable = { MNG_zijinxi = 2 }
+			add_to_variable = { MNG_wubeixi = -2 }
+			add_to_variable = { MNG_guanxuexi = -2 }
+			add_to_variable = { MNG_qingzhengxi = -2 }
+			add_to_variable = { MNG_jiaotongxi = -2 }
+			add_to_variable = { MNG_zhengxuexi = -2 }
+			custom_effect_tooltip = MNG_qidongjieyan_xiaoguo
 		}
 	}
 	#调查太子遇刺
@@ -334,12 +387,15 @@ focus_tree = {
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
 		x = 7
 		y = 2
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			country_event = { id = mingcivwar.48 }
+			add_to_variable = { MNG_zijinxi = 2 }
+			custom_effect_tooltip = MNG_qidongjieyan_xiaoguo
+			add_stability = 0.02
 		}
 	}
 	#清剿同产工会
@@ -352,11 +408,17 @@ focus_tree = {
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
 		x = 5
 		y = 3
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
+			add_popularity = { ideology = vanguard_socialism popularity = -0.02 }
+			add_popularity = { ideology = moderate_socialism popularity = -0.02 }
+			swap_ideas = {
+				add_idea = MNG_Unsettled_Republicians
+				remove_idea = MNG_Unsettled_Republicians_1
+			}
 		}
 	}
 	#搜捕大同会
@@ -369,11 +431,17 @@ focus_tree = {
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
 		x = 5
 		y = 4
-		cost = 5
+		cost = 2
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
+			unlock_decision_category_tooltip = MNG_dajinongminyundong
+			add_popularity = { ideology = social_democrat popularity = -0.02 }
+			swap_ideas = {
+				add_idea = MNG_Unsettled_Republicians_1
+				remove_idea = MNG_Unsettled_Republicians_2
+			}
 		}
 	}
 	#调查涉案官员
@@ -386,11 +454,20 @@ focus_tree = {
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
 		x = 9
 		y = 3
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 100
 		}
-		completion_reward = { news_event = { id = mingcivwar.53 } }
+		completion_reward = { 
+			news_event = { id = mingcivwar.53 } 
+			add_to_variable = { MNG_zijinxi = -3 }
+			add_to_variable = { MNG_wubeixi = -3 }
+			add_to_variable = { MNG_guanxuexi = -3 }
+			add_to_variable = { MNG_qingzhengxi = -3 }
+			add_to_variable = { MNG_jiaotongxi = -3 }
+			add_to_variable = { MNG_zhengxuexi = -3 }
+			custom_effect_tooltip = MNG_diaochasheanguanyuan_xiaoguo
+		}
 	}
 	#斩尽杀绝
 	focus = {
@@ -402,19 +479,26 @@ focus_tree = {
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
 		x = 9
 		y = 4
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
+			add_to_variable = { MNG_wubeixi = -10 }
+			custom_effect_tooltip = MNG_zhanjinshajue_xiaoguo
 			country_event = { id = mingcivwar.54 }
+			swap_ideas = {
+				add_idea = MNG_Unsettled_Republicians_1
+				remove_idea = MNG_Unsettled_Republicians_2
+			}
+			add_manpower = -3000
 		}
 	}
 	#考虑继承人
 	focus = {
 		id = MNG_kaolvjichengren
 		icon = GFX_focus_MNG_zai_si_yu_rong
-
+		available = { always = no }
 		prerequisite = {focus = MNG_diaochataiziyuci}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
@@ -424,7 +508,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
-		completion_reward = {}
+		completion_reward = { add_stability = 0.05 }
 	}
 	#全国大搜捕
 	focus = {
@@ -435,13 +519,19 @@ focus_tree = {
 		prerequisite = {focus = MNG_kaolvjichengren}
 		prerequisite = {focus = MNG_zhanjinshajue}
 		prerequisite = {focus = MNG_soubudatonghui}
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 100
 		}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
 		completion_reward = {
+			add_to_variable = { MNG_qingzhengxi = -2 }
+			custom_effect_tooltip = MNG_quanguodasoubu_xiaoguo
+			swap_ideas = {
+				add_idea = MNG_Disharmony_within_the_Constitutional_Party_1
+				remove_idea = MNG_Disharmony_within_the_Constitutional_Party
+			}
 		}
 	}
 	#整顿官员
@@ -459,6 +549,13 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			custom_effect_tooltip = MNG_zhengdunguanyuan_xiaoguo
+			add_to_variable = { MNG_zijinxi = 5 }
+			add_to_variable = { MNG_wubeixi = -3 }
+			add_to_variable = { MNG_guanxuexi = -3 }
+			add_to_variable = { MNG_qingzhengxi = -3 }
+			add_to_variable = { MNG_jiaotongxi = -3 }
+			add_to_variable = { MNG_zhengxuexi = -3 }
 		}
 	}
 	#安抚民心
@@ -476,6 +573,10 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			swap_ideas = {
+				add_idea = MNG_Disharmony_within_the_Constitutional_Party_2
+				remove_idea = MNG_Disharmony_within_the_Constitutional_Party_1
+			}
 		}
 	}
 
@@ -493,6 +594,8 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.1
 		}
 	}
 	#为政以德
@@ -508,6 +611,11 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = 30
+			add_stability = 0.02
+			add_to_variable = { MNG_qingzhengxi = 2 }
+			add_to_variable = { MNG_zhengxuexi = 2 }
+			custom_effect_tooltip = MNG_weizhengyide_xiaoguo
 		}
 	}
 	#民为邦一
@@ -524,6 +632,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = mingcivwar.59 }
+			add_political_power = 40
+			add_to_variable = { MNG_qingzhengxi = 2 }
+			add_to_variable = { MNG_guanxuexi = 2 }
+			add_to_variable = { MNG_zhengxuexi = 2 }
+			add_to_variable = { MNG_zijinxi = -5 }
+			custom_effect_tooltip = MNG_minweibangyi_xiaoguo
 		}
 	}
 	#肱股之臣
@@ -539,6 +653,10 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = 40
+			add_stability = 0.02
+			add_to_variable = { MNG_zijinxi = 3 }
+			custom_effect_tooltip = MNG_gongguzhichen_xiaoguo
 		}
 	}
 	#激扬浊清
@@ -554,6 +672,10 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = 40
+			add_stability = 0.03
+			add_to_variable = { MNG_qingzhengxi = 5 }
+			custom_effect_tooltip = MNG_jiyangzhuoqing_xiaoguo
 		}
 	}
 	#矫国革俗
@@ -570,6 +692,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = mingcivwar.60 }
+			add_political_power = 10
+			add_stability = -0.05
+			add_to_variable = { MNG_qingzhengxi = 5 }
+			custom_effect_tooltip = MNG_jiaoguogesu_xiaoguo
 		}
 	}
 	#破旧立新
@@ -580,12 +706,16 @@ focus_tree = {
 		allow_branch = {if = {has_country_flag = MNG_taisunjiwei}}
 		x = 11
 		y = 3
-		cost = 5
+		cost = 3
 		ai_will_do = {
 			factor = 100
 		}
 		completion_reward = {
 			country_event = { id = mingcivwar.61 }
+			add_political_power = 35
+			add_to_variable = { MNG_guanxuexi = 4 }
+			add_to_variable = { MNG_wubeixi = -3 }
+			custom_effect_tooltip = MNG_pojiulixin_xiaoguo
 		}
 	}
 	#洗削更革
@@ -601,6 +731,11 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			add_political_power = 35
+			add_to_variable = { MNG_qingzhengxi = 2 }
+			add_to_variable = { MNG_guanxuexi = 2 }
+			add_to_variable = { MNG_wubeixi = -4 }
+			custom_effect_tooltip = MNG_xixuegengge_xiaoguo
 		}
 	}
 	#继往开来
@@ -616,27 +751,37 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-		}
-	}
-	#有备无患
-	focus = {
-		id = MNG_youbeiwuhuan
-		icon = GFX_focus_MNG_zai_si_yu_rong
-		prerequisite = {focus = MNG_bingzhengjianguo}
-		allow_branch = {if = {has_country_flag = MNG_taisunjiwei}}
-		x = 9
-		y = 2
-		cost = 5
-		ai_will_do = {
-			factor = 100
-		}
-		completion_reward = {
+			swap_ideas = {
+				add_idea = MNG_Undesirable_economic_recovery
+				remove_idea = MNG_Undesirable_economic_recovery_1
+			}
 		}
 	}
 	#整军饬武
 	focus = {
 		id = MNG_zhengjunchiwu
 		icon = GFX_focus_MNG_zai_si_yu_rong
+		prerequisite = {focus = MNG_bingzhengjianguo}
+		allow_branch = {if = {has_country_flag = MNG_taisunjiwei}}
+		x = 9
+		y = 2
+		cost = 3
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			country_event = { id = mingcivwar.63 }
+			swap_ideas = {
+				add_idea = MNG_A_Suspected_Army_2
+				remove_idea = MNG_A_Suspected_Army_3
+			}
+		}
+	}
+	#有备无患
+	focus = {
+		id = MNG_youbeiwuhuan
+		icon = GFX_focus_MNG_zai_si_yu_rong
+		available = {always = no}
 		prerequisite = {focus = MNG_youbeiwuhuan}
 		allow_branch = {if = {has_country_flag = MNG_taisunjiwei}}
 		x = 9
@@ -646,7 +791,9 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			country_event = { id = mingcivwar.63 }
+			army_experience = 25
+			add_to_variable = { MNG_jiaotongxi = 7 }
+			custom_effect_tooltip = MNG_youbeiwuhuan_xiaoguo
 		}
 	}
 	#裁汰冗弱
@@ -662,6 +809,10 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			swap_ideas = {
+				add_idea = MNG_A_Suspected_Army_3
+				remove_idea = MNG_A_Suspected_Army_4
+			}
 		}
 	}
 	#黜幽陟明
@@ -677,6 +828,10 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
+			swap_ideas = {
+				add_idea = MNG_A_Suspected_Army_4
+				remove_idea = MNG_A_Suspected_Army_5
+			}
 		}
 	}
 }
