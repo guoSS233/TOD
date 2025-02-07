@@ -89,8 +89,8 @@ MNG_paixiboyi_categories = {
 	MNG_fuchizijinxi = {
 		icon = ger_military_buildup
 		days_remove = 7
-		days_re_enable = 30
-        cost = 15
+		days_re_enable = MNG_boyishijian_1
+        cost = MNG_boyidianshu
 		remove_effect = { add_to_variable = { MNG_zijinxi = 7 } }
 	}
     #扶持武备系
@@ -106,7 +106,7 @@ MNG_paixiboyi_categories = {
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
-                days = 52
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -127,8 +127,8 @@ MNG_paixiboyi_categories = {
         cost = 15
 		complete_effect = { 
             set_country_flag = { 
-                flag = MNG_ganyupaixi 
-                days = 52
+                flag = MNG_ganyupaixi
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -150,7 +150,7 @@ MNG_paixiboyi_categories = {
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
-                days = 52
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -172,7 +172,7 @@ MNG_paixiboyi_categories = {
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
-                days = 52
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -194,7 +194,7 @@ MNG_paixiboyi_categories = {
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
-                days = 52
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -216,7 +216,7 @@ MNG_paixiboyi_categories = {
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
-                days = 52
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -238,7 +238,7 @@ MNG_paixiboyi_categories = {
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
-                days = 52
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -260,7 +260,7 @@ MNG_paixiboyi_categories = {
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
-                days = 52
+                days = MNG_boyishijian_2
 				value = 1
             } 
         }
@@ -334,7 +334,7 @@ MNG_paixiboyi_categories = {
         cost = 100
 		remove_effect = {
             add_to_variable = { MNG_zijinxi = -5 }
-            set_country_flag = MNG_gongrenyundongbeizhenya
+            GPS = {set_country_flag = MNG_gongrenyundongbeizhenya}
         }
 	}
     #干扰东延铁路
@@ -414,7 +414,10 @@ MNG_paixiboyi_categories = {
     #扶持西北军工
 	MNG_fuchixibeijungong = {
 		icon = ger_military_buildup
-		available = { check_variable = { MNG_jiaotongxi > 29} }
+		available = { 
+            check_variable = { MNG_jiaotongxi > 29} 
+            has_completed_focus = MNG_make_in_our_country
+        }
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -443,7 +446,10 @@ MNG_paixiboyi_categories = {
     #扶持西南军工
 	MNG_fuchixinanjungong = {
 		icon = ger_military_buildup
-		available = { check_variable = { MNG_qingzhengxi > 34} }
+		available = { 
+            check_variable = { MNG_qingzhengxi > 34} 
+            has_completed_focus = MNG_make_in_our_country
+        }
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -471,7 +477,10 @@ MNG_paixiboyi_categories = {
     #振兴华北国企
 	MNG_zhenxinghuabeiguoqi = {
 		icon = ger_military_buildup
-		available = { check_variable = { MNG_wubeixi > 49} }
+		available = { 
+            check_variable = { MNG_wubeixi > 49} 
+            has_completed_focus = MNG_make_in_our_country
+        }
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -501,7 +510,10 @@ MNG_paixiboyi_categories = {
     #促进华东民营
 	MNG_cujinhuadongminying = {
 		icon = ger_military_buildup
-		available = { check_variable = { MNG_guanxuexi > 39} }
+		available = { 
+            check_variable = { MNG_guanxuexi > 39} 
+            has_completed_focus = MNG_make_in_our_country
+        }
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -530,7 +542,10 @@ MNG_paixiboyi_categories = {
     #促进华南民营
 	MNG_cujinhuananminying = {
 		icon = ger_military_buildup
-		available = { check_variable = { MNG_guanxuexi > 39} }
+		available = { 
+            check_variable = { MNG_guanxuexi > 39} 
+            has_completed_focus = MNG_make_in_our_country
+        }
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -562,6 +577,7 @@ MNG_paixiboyi_categories = {
 	MNG_huifudongbeichanneng = {
 		icon = ger_military_buildup
 		available = { 
+            has_completed_focus = MNG_make_in_our_country
             check_variable = { MNG_wubeixi > 49 } 
             check_variable = { MNG_zijinxi > 64 } 
         }
