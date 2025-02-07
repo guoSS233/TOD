@@ -60,4 +60,18 @@ on_actions = {
 			}
 		}
 	}
+	on_monthly_MNG = {
+		effect = {
+			if = { 
+				limit = { has_completed_focus = MNG_check_our_weapon } 
+				add_to_variable = { MNG_wubeixi = 3 } 
+			}
+		}
+		effect = {
+			if = { 
+				limit = { has_completed_focus = MNG_our_friends_inside } 
+				add_to_variable = { MNG_zijinxi = 2 } 
+			}
+		}
+	}
 }
