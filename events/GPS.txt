@@ -1,0 +1,453 @@
+add_namespace = GPSevents
+#关东招抚司通告
+country_event = {
+	id = GPSevents.1
+	title = GPSevents.1.t
+	desc =GPSevents.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.1.a
+	}
+}
+#颁布紧急戒严令
+country_event = {
+	id = GPSevents.2
+	title = GPSevents.2.t
+	desc =GPSevents.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.2.a
+	}
+}
+#《劳动界》海外特刊（头条内容）
+country_event = {
+	id = GPSevents.3
+	title = GPSevents.3.t
+	desc =GPSevents.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.3.a
+        add_manpower = -100
+        add_war_support = 0.01
+	}
+	option = { 
+		name = GPSevents.3.b
+        add_manpower = -100
+        add_stability = 0.01
+	}
+}
+#《周饶日报》关东司镇压东北各地抗议游行
+country_event = {
+	id = GPSevents.4
+	title = GPSevents.4.t
+	desc =GPSevents.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.4.a
+	}
+}
+#关内生变，局势不稳
+country_event = {
+	id = GPSevents.5
+	title = GPSevents.5.t
+	desc =GPSevents.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.5.a
+	}
+}
+#辽阳起义
+country_event = {
+	id = GPSevents.6
+	title = GPSevents.6.t
+	desc =GPSevents.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.6.a
+		716 = { set_demilitarized_zone = yes }
+		846 = { set_demilitarized_zone = yes }
+		845 = { set_demilitarized_zone = yes }
+		745 = { set_demilitarized_zone = yes }
+	}
+}
+#沈阳生变
+country_event = {
+	id = GPSevents.7
+	title = GPSevents.7.t
+	desc =GPSevents.7.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.7.a
+        add_to_variable = { GPS_bai = 1 } 
+	}
+	option = { 
+		name = GPSevents.7.b
+        add_to_variable = { GPS_sheng = 1 } 
+	}
+}
+#分散攻击、主攻一方？
+country_event = {
+	id = GPSevents.8
+	title = GPSevents.8.t
+	desc =GPSevents.8.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.8.a
+        add_to_variable = { GPS_bai = 1 } 
+	}
+	option = { 
+		name = GPSevents.8.b
+        add_to_variable = { GPS_sheng = 1 } 
+	}
+}
+#决战沈阳
+country_event = {
+	id = GPSevents.9
+	title = GPSevents.9.t
+	desc =GPSevents.9.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.9.a
+        if = {
+			limit = {check_variable = { GPS_sheng > GPS_bai}}
+            GPS = {country_event = { id = GPSevents.10 days = 2 } }
+		}
+        if = {
+			limit = {check_variable = { GPS_sheng = GPS_bai}}
+            GPS = {country_event = { id = GPSevents.10 days = 2 } }
+		}
+        if = {
+			limit = {check_variable = { GPS_sheng < GPS_bai}}
+            GPS = {country_event = { id = GPSevents.11 days = 2 } }
+		}
+	}
+	option = { 
+		name = GPSevents.9.b
+        if = {
+			limit = {check_variable = { GPS_sheng > GPS_bai}}
+            GPS = {country_event = { id = GPSevents.10 days = 2 } }
+		}
+        if = {
+			limit = {check_variable = { GPS_sheng = GPS_bai}}
+            GPS = {country_event = { id = GPSevents.11 days = 2 } }
+		}
+        if = {
+			limit = {check_variable = { GPS_sheng < GPS_bai}}
+            GPS = {country_event = { id = GPSevents.11 days = 2 } }
+		}
+	}
+}
+#明军攻克沈阳
+country_event = {
+	id = GPSevents.10
+	title = GPSevents.10.t
+	desc =GPSevents.10.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.10.a
+		SRC = {
+			transfer_state = 1218
+			transfer_state = 716
+			transfer_state = 845
+			transfer_state = 745
+		}
+		716 = { set_demilitarized_zone = no }
+		846 = { set_demilitarized_zone = no }
+		845 = { set_demilitarized_zone = no }
+		745 = { set_demilitarized_zone = no }
+	}
+	option = { 
+		name = GPSevents.10.b
+		SRC = {
+			transfer_state = 1218
+			transfer_state = 716
+			transfer_state = 845
+			transfer_state = 745
+		}
+		SRC = {change_tag_from = ROOT}
+		716 = { set_demilitarized_zone = no }
+		846 = { set_demilitarized_zone = no }
+		845 = { set_demilitarized_zone = no }
+		745 = { set_demilitarized_zone = no }
+	}
+}
+#明军攻势受阻
+country_event = {
+	id = GPSevents.11
+	title = GPSevents.11.t
+	desc =GPSevents.11.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.11.a
+		SRC = {
+			transfer_state = 846
+			transfer_state = 716
+			transfer_state = 845
+			transfer_state = 745
+		}
+		716 = { set_demilitarized_zone = no }
+		846 = { set_demilitarized_zone = no }
+		845 = { set_demilitarized_zone = no }
+		745 = { set_demilitarized_zone = no }
+	}
+	option = { 
+		name = GPSevents.11.b
+		SRC = {
+			transfer_state = 846
+			transfer_state = 716
+			transfer_state = 845
+			transfer_state = 745
+		}
+		SRC = {change_tag_from = ROOT}
+		716 = { set_demilitarized_zone = no }
+		846 = { set_demilitarized_zone = no }
+		845 = { set_demilitarized_zone = no }
+		745 = { set_demilitarized_zone = no }
+	}
+}
+#辽西失守
+country_event = {
+	id = GPSevents.12
+	title = GPSevents.12.t
+	desc =GPSevents.12.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		date > 1937.9.22
+		tag = GPS
+        GPS = {has_country_flag = MNG_gongrenyundongbeizhenya}
+    }
+	option = { 
+		name = GPSevents.12.a
+        SRC = {country_event = { id = SRCevents.1 } } 
+		SRC = {
+			transfer_state = 715
+			transfer_state = 1218
+			transfer_state = 610
+		}
+	}
+}
+#稳固辽西局面
+country_event = {
+	id = GPSevents.13
+	title = GPSevents.13.t
+	desc =GPSevents.13.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		date > 1937.9.22
+		tag = GPS
+        GPS = {NOT ={has_country_flag = MNG_gongrenyundongbeizhenya}}
+    }
+	option = { 
+		name = GPSevents.13.a
+        SRC = {country_event = { id = SRCevents.2 } } 
+        add_stability = 0.03
+	}
+}
+#研究战法：
+country_event = {
+	id = GPSevents.14
+	title = GPSevents.14.t
+	desc =GPSevents.14.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.14.a
+	}
+}
+#关东招抚司通告
+country_event = {
+	id = GPSevents.15
+	title = GPSevents.15.t
+	desc =GPSevents.15.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.15.a
+	}
+}
+#汤玉麟突发恶疾
+country_event = {
+	id = GPSevents.16
+	title = GPSevents.16.t
+	desc =GPSevents.16.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.16.a
+	}
+	option = { 
+		name = GPSevents.16.b
+	}
+}
+#关东招抚司军政委员会成立
+country_event = {
+	id = GPSevents.17
+	title = GPSevents.17.t
+	desc =GPSevents.17.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.17.a
+	}
+	option = { 
+		name = GPSevents.17.b
+	}
+}
+#维护大明海外利益
+country_event = {
+	id = GPSevents.18
+	title = GPSevents.18.t
+	desc =GPSevents.18.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.18.a
+	}
+}
+#维护大明海外利益
+country_event = {
+	id = GPSevents.18
+	title = GPSevents.18.t
+	desc =GPSevents.18.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.18.a
+	}
+}
+#朝鲜归附
+country_event = {
+	id = GPSevents.19
+	title = GPSevents.19.t
+	desc =GPSevents.19.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.19.a
+	}
+}
+#霞仪，日本归附
+country_event = {
+	id = GPSevents.20
+	title = GPSevents.20.t
+	desc =GPSevents.20.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {tag = GPS}
+	
+	option = { 
+		name = GPSevents.20.a
+	}
+}

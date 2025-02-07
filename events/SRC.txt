@@ -1,0 +1,204 @@
+add_namespace = SRCevents
+#辽西起义胜利
+country_event = {
+	id = SRCevents.1
+	title = SRCevents.1.t
+	desc =SRCevents.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.1.a
+	}
+}
+#辽西起义失败
+country_event = {
+	id = SRCevents.2
+	title = SRCevents.2.t
+	desc =SRCevents.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.2.a
+		add_stability = -0.01
+	}
+}
+#革命大会召开
+country_event = {
+	id = SRCevents.3
+	title = SRCevents.3.t
+	desc =SRCevents.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.3.a
+        add_political_power = 30
+		SRC = {country_event = { id = SRCevents.4 days = 1 } } 
+	}
+}
+#基层组织议题：
+country_event = {
+	id = SRCevents.4
+	title = SRCevents.4.t
+	desc =SRCevents.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.4.a
+        add_to_variable = { SRC_xianfeng = 1 } 
+		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.4.b
+        add_to_variable = { SRC_weiyuan = 1 } 
+		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.4.c
+        add_to_variable = { SRC_wenhe = 1 } 
+		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
+	}
+}
+#经济模式议题：
+country_event = {
+	id = SRCevents.5
+	title = SRCevents.5.t
+	desc =SRCevents.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.5.a
+        add_to_variable = { SRC_xianfeng = 1 } 
+		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.5.b
+        add_to_variable = { SRC_weiyuan = 1 } 
+		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.5.c
+        add_to_variable = { SRC_wenhe = 1 } 
+		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
+	}
+}
+#政府权力结构议题
+country_event = {
+	id = SRCevents.6
+	title = SRCevents.6.t
+	desc =SRCevents.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.6.a
+        add_to_variable = { SRC_xianfeng = 1 } 
+		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.6.b
+        add_to_variable = { SRC_weiyuan = 1 } 
+		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.6.c
+        add_to_variable = { SRC_wenhe = 1 } 
+		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
+	}
+}
+#军事体系议题
+country_event = {
+	id = SRCevents.7
+	title = SRCevents.7.t
+	desc =SRCevents.7.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.7.a
+        add_to_variable = { SRC_xianfeng = 1 } 
+		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.7.b
+        add_to_variable = { SRC_weiyuan = 1 } 
+		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
+	}
+	option = { 
+		name = SRCevents.7.c
+        add_to_variable = { SRC_wenhe = 1 } 
+		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
+	}
+}
+#大会闭幕
+country_event = {
+	id = SRCevents.8
+	title = SRCevents.8.t
+	desc =SRCevents.8.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.8.a
+		trigger = {
+			check_variable = { SRC_xianfeng > SRC_wenhe }
+			check_variable = { SRC_xianfeng > SRC_weiyuan }
+		}
+		create_country_leader = SRC_chen_duxiu
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = { 
+		name = SRCevents.8.b
+		trigger = {
+			check_variable = { SRC_weiyuan > SRC_xianfeng }
+			check_variable = { SRC_weiyuan > SRC_wenhe }
+		}
+		create_country_leader = SRC_ren_fuchen
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = { 
+		trigger = {
+			check_variable = { SRC_xianfeng < SRC_wenhe }
+			check_variable = { SRC_weiyuan < SRC_wenhe }
+		}
+		name = SRCevents.8.c
+		create_country_leader = SRC_li_dazhao
+		mark_focus_tree_layout_dirty = yes
+	}
+}

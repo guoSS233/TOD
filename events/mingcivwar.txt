@@ -81,7 +81,7 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.27.a 
-		complete_national_focus = MNG_stop_the_army
+		complete_national_focus = MNG_the_hard_way
 	}
 }
 
@@ -1137,7 +1137,20 @@ country_event = {
 		MNG_release_STG = yes
 	}
 }
-
+#颁布紧急戒严令
+country_event = {
+	id = mingcivwar.83
+	title = mingcivwar.83.t
+	desc = mingcivwar.83.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.83.a
+		STG = {change_tag_from = ROOT}
+		MNG_release_STG = yes
+	}
+}
 
 
 
