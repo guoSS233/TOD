@@ -640,6 +640,14 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
+	immediate = { 
+		hidden_effect = {
+			GPS = {country_event = { id = GPSevents.6 days = 232 } }   #1937.8.31
+			GPS = {country_event = { id = GPSevents.7 days = 236 } }   #1937.9.4
+			GPS = {country_event = { id = GPSevents.8 days = 247 } }   #1937.9.15
+			GPS = {country_event = { id = GPSevents.9 days = 252 } }   #1937.9.20	
+		}
+	}
 	option = { 
 		name = mingcivwar.75.a
 		MNG_release_GPS = yes

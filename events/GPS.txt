@@ -93,10 +93,10 @@ country_event = {
 	desc =GPSevents.6.d
 	picture = GFX_report_event_chinese_soldiers_fighting
 	
-	fire_only_once = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 	
-	trigger = {tag = GPS}
+	trigger = { tag = GPS }
 	
 	option = { 
 		name = GPSevents.6.a
@@ -279,12 +279,11 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	
 	fire_only_once = yes
-	is_triggered_only = yes
 	
 	trigger = {
 		date > 1937.9.22
 		tag = GPS
-        GPS = {has_country_flag = MNG_gongrenyundongbeizhenya}
+        GPS = { NOT = {has_country_flag = MNG_gongrenyundongbeizhenya} }
     }
 	option = { 
 		name = GPSevents.12.a
@@ -304,12 +303,11 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	
 	fire_only_once = yes
-	is_triggered_only = yes
 	
 	trigger = {
 		date > 1937.9.22
 		tag = GPS
-        GPS = {NOT ={has_country_flag = MNG_gongrenyundongbeizhenya}}
+        GPS = { has_country_flag = MNG_gongrenyundongbeizhenya }
     }
 	option = { 
 		name = GPSevents.13.a
