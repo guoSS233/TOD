@@ -15,6 +15,9 @@ ROC_power_balance = {
 			political_power_factor = 0.05
 		}
 		on_activate = {
+			set_variable = { #决议天数
+				VAR_ROC_jianshe_pp_factor = 1
+			}
 		}
 		on_deactivate = {
 		}
@@ -23,7 +26,7 @@ ROC_power_balance = {
 	### 自由
 	side = {
 		id = ROC_left_side	
-		icon = GFX_bop_SIA_left_side  #图标
+		icon = GFX_bop_ROC_left_side  #图标
 
 		range = {
 			id = ROC_left_low_control_range
@@ -35,7 +38,6 @@ ROC_power_balance = {
 				research_speed_factor = 0.03  #研究速度
 			}
 			on_activate = {
-			
 			}
 			on_deactivate = {
 			
@@ -53,7 +55,6 @@ ROC_power_balance = {
 				war_support_factor = -0.05
 			}
 			on_activate = {
-
 			}
 			on_deactivate = {
 
@@ -72,29 +73,25 @@ ROC_power_balance = {
 				custom_modifier_tooltip = ROC_tooltip_bop_days
 			}
 			on_activate = {
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_1 = 60
+				set_variable = { #决议花费修正
+					VAR_ROC_jianshe_days_factor = 2
 				}
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_2 = 120
-				}
+				ROC_scripted_effects_jianshe = yes
 				set_power_balance_gfx = { #图标换成亮的
 					id = ROC_power_balance
 					side = ROC_left_side
-					gfx = GFX_bop_SIA_left_improved_side
+					gfx = GFX_bop_ROC_improved_left_side
 				}
 			}
 			on_deactivate = {
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_1 = 30
+				set_variable = { #决议花费修正
+					VAR_ROC_jianshe_days_factor = 1
 				}
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_2 = 60
-				}
+				ROC_scripted_effects_jianshe = yes
 				set_power_balance_gfx = {  #图标换回去
 					id = ITA_power_balance
 					side = ROC_left_side
-					gfx = GFX_bop_SIA_left_side
+					gfx = GFX_bop_ROC_left_side
 				}
 			}
 		}
@@ -103,7 +100,7 @@ ROC_power_balance = {
 	### 国有
 	side = {
 		id = ROC_right_side	
-		icon = GFX_bop_SIA_right_side
+		icon = GFX_bop_ROC_right_side
 
 		range = {
 			id = ROC_right_low_control_range
@@ -150,29 +147,25 @@ ROC_power_balance = {
 				custom_modifier_tooltip = ROC_tooltip_bop_days
 			}
 			on_activate = {
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_1 = 60
+				set_variable = { #决议时间修正
+					VAR_ROC_jianshe_pp_factor = 2
 				}
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_2 = 120
-				}
+				ROC_scripted_effects_jianshe = yes
 				set_power_balance_gfx = {
 					id = ROC_power_balance
 					side = ROC_right_side
-					gfx = GFX_bop_SIA_right_improved_side
+					gfx = GFX_bop_ROC_improved_right_side
 				}
 			}
 			on_deactivate = {
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_1 = 30
+				set_variable = { #决议时间修正
+					VAR_ROC_jianshe_pp_factor = 1
 				}
-				set_variable = { #决议天数
-					VAR_ROC_bop_days_2 = 60
-				}
+				ROC_scripted_effects_jianshe = yes
 				set_power_balance_gfx = {
 					id = ROC_power_balance
 					side = ROC_right_side
-					gfx = GFX_bop_SIA_right_side
+					gfx = GFX_bop_ROC_right_side
 				}
 			}
 		}
