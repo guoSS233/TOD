@@ -26,3 +26,57 @@ ROC_balance_of_power_category = {  #bop相关
 	}
 }
 
+ROC_focus_gonggubianjie = {
+	priority = 110
+	icon = generic_mountain_fortification
+	visible = {
+		has_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
+	}
+	allowed = {
+		original_tag = ROC
+	}
+}
+
+ROC_focus_beifa = {
+	priority = 120
+	icon = ger_military_buildup
+	visible = {
+		has_country_flag = FLAG_ROC_decision_beifa_unlocked
+	}
+	allowed = {
+		original_tag = ROC
+	}
+}
+
+ROC_focus_quanguogeming = {
+	priority = 150
+	icon = ger_military_buildup
+	visible = {
+		original_tag = ROC
+	}
+	allowed = {
+		original_tag = ROC
+	}
+}
+
+ROC_focus_minshengjingjijianshe = {#民生经济建设
+	priority = 160
+	icon = SOV_merge_designers
+	visible = {
+		has_completed_focus = weidashijiandekaishi
+	}
+	allowed = {
+		original_tag = ROC
+	}
+}
+
+ROC_focus_junshixunlian = {#军事训练
+	priority = 160
+	icon = infiltration
+	visible = {
+		original_tag = ROC
+	}
+	allowed = {
+		original_tag = ROC
+	}
+}
