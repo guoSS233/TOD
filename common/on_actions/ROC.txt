@@ -1,0 +1,50 @@
+on_actions = {
+    on_daily = {
+        effect = {
+            ROC = {
+                if = {
+                    limit = {
+                        NOT = { country_exists = GOS }
+                        ROC = {
+                            owns_state = 613
+                        }
+                    }
+                    ROC = {country_event = { id = ROC_focus.20 } }
+                }   
+
+            }
+            ROC = {
+                if = {
+                    limit = {
+                        OR = {
+                            has_war_with = XBJ
+                            has_war_with = STG
+                        }
+                    }
+                    ROC = {country_event = { id = ROC_focus.21 } }
+                } 
+            }
+            ROC = {
+                if = {
+                    limit = {
+                        has_country_flag = FLAG_ROC_decision_beifa_unlocked
+                        NOT = { country_exists = XBJ }
+                        NOT = { country_exists = STG }
+                    }
+                    ROC = {country_event = { id = ROC_focus.22 } }
+                } 
+            }
+            ROC = { country_event = { id = ROC_start.1 } }
+            ROC = { country_event = { id = ROC_start.2 } }
+            ROC = { country_event = { id = ROC_start.3 } }
+            ROC = { country_event = { id = ROC_start.4 } }
+            ROC = { country_event = { id = ROC_start.5 } }
+            ROC = { country_event = { id = ROC_start.6 } }
+            ROC = { country_event = { id = ROC_start.7 } }
+            ROC = { country_event = { id = ROC_start.8 } }
+            ROC = { country_event = { id = ROC_start.9 } }
+            ROC = { country_event = { id = ROC_start.10 } }
+            ROC = { country_event = { id = ROC_start.11 } }
+        }
+    }
+}
