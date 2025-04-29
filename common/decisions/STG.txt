@@ -333,7 +333,306 @@ STG_zhankaihuizhan = {
 		}
 	}
 }
+#至高皇权
+STG_zhigaohuangquan = {
+	#敲打勋贵派系
+	STG_qiaodaxunguipaixi = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		visible = {
+			tag = STG
+			has_completed_focus = STG_shengxinduduan
+		}
+        cost = 10
+		modifier = { }
+		days_remove =  14
+		complete_effect = {
+			add_stability = -0.02
+			add_popularity = { ideology = authoritarian_oligarchy popularity = -0.05 }
+		}
+	}
+	#集中指挥权力
+	STG_jizhongzhihuiquanli = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		visible = {
+			tag = STG
+			has_completed_focus = STG_shengxinduduan
+		}
+        cost = 10
+		modifier = { }
+		days_remove =  14
+		complete_effect = {
+			add_stability = -0.02
+			add_popularity = { ideology = authoritarian_oligarchy popularity = -0.03 }
+			add_popularity = { ideology = national_corporatism popularity = -0.02 }
+		}
+	}
+	#执行陛下的战争经济学
+	STG_bixiadezhanzhengjingjixue = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		visible = { has_completed_focus = STG_tiaozhengzhengfujigou }
+        cost = 100
+		modifier = { civilian_factory_use = 3}
+		days_remove =  60
+		complete_effect = {
+		}
+	}
+	#忠诚的内阁
+	STG_bixiadezhanzhengjingjixue = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		visible = { has_completed_focus = STG_tiaozhengzhengfujigou }
+        cost = 200
+		days_remove =  60
+		complete_effect = {
+		}
+	}
+	#无可质疑的三军统帅
+	STG_bixiadezhanzhengjingjixue = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		visible = { has_completed_focus = STG_tiaozhengzhengfujigou }
+		custom_cost_trigger = {
+			has_army_experience > 10
+			has_navy_experience > 10
+			has_air_experience > 10
+		}
+		custom_cost_text = army_xp_more_than_10
+		custom_cost_text = air_xp_more_than_10
+		custom_cost_text = navy_xp_more_than_10
+        cost = 300
+		days_remove =  60
+		complete_effect = {
+			hidden_effect = {
+				army_experience = -10
+				navy_experience = -10
+				air_experience = -10
+			}
+		}
+	}
+}
+#武备会议
+STG_wubeihuiyi = {
+	#注重工艺革新
+	STG_zhuzhonggongyigexin = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
+		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = industry
+				technology = industry
+			}
+			clr_country_flag = STG_wubeihuiyi_jinxing
+		}
+        cost = 100
+		days_remove =  180
+	}
+	#增加军购订单
+	STG_zengjiajungoudingdan = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
+		modifier = {local_resources_factor = 0.01}
+		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {
+			clr_country_flag = STG_wubeihuiyi_jinxing
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 500
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+			}
 
+		}
+		visible = {}
+        cost = 200
+		days_remove =  180
+	}
+	#发展实体经济
+	STG_fazhanshitijingji = {
+		icon = ger_military_buildup
+		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
+		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {
+			clr_country_flag = STG_wubeihuiyi_jinxing
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		visible = {}
+        cost = 200
+		days_remove =  180
+		days_re_enable = 360
+	}
+	#加订军用机床
+	STG_jiadingjunyongjichuang = {
+		icon = ger_military_buildup
+		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
+		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {
+			clr_country_flag = STG_wubeihuiyi_jinxing
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		visible = {}
+        cost = 200
+		days_remove =  180
+		days_re_enable = 360
+	}
+	#扩建电报网
+	STG_kuojiandianbaowang = {
+		icon = ger_military_buildup
+		available = {
+			NOT = {has_country_flag = STG_wubeihuiyi_jinxing}
+			has_tech = radio_detection
+		}
+		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {
+			clr_country_flag = STG_wubeihuiyi_jinxing
+			random_owned_controlled_state = {
+				add_building_construction = {
+					type = radar_station
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+		visible = {}
+        cost = 200
+		days_remove =  180
+		days_re_enable = 360
+	}
+	#鼓励降本增效
+	STG_gulijiangbenzengxiao = {
+		icon = ger_military_buildup
+		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
+		modifier = {consumer_goods_factor = -0.1}
+		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {clr_country_flag = STG_wubeihuiyi_jinxing}
+		visible = {}
+        cost = 100
+		days_remove =  180
+		days_re_enable = 360
+	}
+	#整顿朝廷秩序
+	STG_zhengdunchaotingzhixu = {
+		icon = ger_military_buildup
+		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
+		modifier = {
+			political_power_gain = 0.4
+			stability_weekly = -0.001
+		}
+		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {clr_country_flag = STG_wubeihuiyi_jinxing}
+		visible = {}
+        cost = 100
+		days_remove =  180
+		days_re_enable = 360
+	}
+}
 
-
-
+#整顿直隶军区
+STG_zhengdunzhilijunqu = {
+	#现代化监军体制
+	STG_xiandaihuajianjuntizhi = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		available = { NOT = { has_country_flag = STG_zhengdunzhilijunqu_1 } }
+		remove_effect = {
+			add_to_variable = { STG_jingying_zuzhiduhuifu = 0.15 }
+			set_country_flag = STG_zhengdunzhilijunqu_1
+		}
+        cost = 50
+		days_remove =  60
+	}
+	#成立联合参谋总部
+	STG_chenglilianhecanmouzongbu = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		available = { 
+			has_country_flag = STG_zhengdunzhilijunqu_1 
+			has_equipment = { support_equipment > 99 }
+			command_power > 49
+		}
+		complete_effect = { 
+			set_country_flag = STG_zhengdunzhilijunqu_1 
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = -100
+			}
+			add_command_power = -50
+		}
+		remove_effect = {
+			add_to_variable = { STG_jingying_jihuashangxian = 0.10 }
+			add_to_variable = { STG_jingying_zengyuanlv = 0.03 }
+			set_country_flag = STG_zhengdunzhilijunqu_2
+		}
+        cost = 50
+		days_remove =  60
+	}
+	#现代化监军体制
+	STG_xiandaihuajianjuntizhi = {
+		icon = ger_military_buildup
+		fire_only_once = yes  
+		available = { 
+			has_country_flag = STG_zhengdunzhilijunqu_2 
+			OR = {
+				has_tech = elastic_defence
+				has_tech = mobile_defence
+				has_tech = prepared_defense
+				has_tech = defence_in_depth
+			}
+		}
+		remove_effect = {
+			add_to_variable = { STG_jingying_zuzhiduhuifu = 0.15 }
+			set_country_flag = STG_zhengdunzhilijunqu_3
+		}
+        cost = 50
+		days_remove =  60
+	}
+}
+#军工发展
+STG_jungongfazhan = {
+	#集中税赋
+	STG_xiandaihuajianjuntizhi = {
+	}
+	#轻武器实验
+	STG_qingwuqishiyan = {
+	}
+	#新炮试射
+	STG_xinpaoshishe = {
+	}
+	#制空权演练
+	STG_zhikongquanyanlian = {
+	}
+	#抵近支援
+	STG_dijingzhiyuan = {
+	}
+	#易更换组件研制
+	STG_yigenghuanzujianyanzhii = {
+	}
+}
