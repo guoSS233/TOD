@@ -1011,8 +1011,6 @@ country_event = {
 	}
 	option = { 
 		name = mingcivwar.79.b
-		XIN = {change_tag_from = ROOT}
-		MNG_release_XIN = yes
 		SIC = {
 			hidden_effect = {
 				add_state_core = 751
@@ -1049,10 +1047,11 @@ country_event = {
 				load_oob = SIC_1937
 			}
 		}
+		MNG_release_XIN = yes
+		XIN = {change_tag_from = ROOT}
 	}
 	option = { 
 		name = mingcivwar.79.c
-		SIC = {change_tag_from = ROOT}
 		MNG_release_XIN = yes
 		SIC = {
 			hidden_effect = {
@@ -1090,6 +1089,7 @@ country_event = {
 				load_oob = SIC_1937
 			}
 		}
+		SIC = {change_tag_from = ROOT}
 	}
 }
 #漠北中立 1937.8.26
@@ -1118,6 +1118,108 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
+	immediate = {
+		LSM = {
+			hidden_effect = {
+				add_state_core = 623
+				transfer_state = 623
+				add_state_core = 327
+				transfer_state = 327
+				add_state_core = 1201
+				transfer_state = 1201
+				add_state_core = 624
+				transfer_state = 624
+				add_state_core = 1202
+				transfer_state = 1202
+				add_state_core = 625
+				transfer_state = 625
+				add_state_core = 628
+				transfer_state = 628
+				add_state_core = 626
+				transfer_state = 626
+			}
+		}
+		MLJ = {
+			hidden_effect = {
+				add_state_core = 1186
+				transfer_state = 1186
+				add_state_core = 1198
+				transfer_state = 1198
+				add_state_core = 336
+				transfer_state = 336
+				add_state_core = 1199
+				transfer_state = 1199
+				add_state_core = 1200
+				transfer_state = 1200
+				add_state_core = 819
+				transfer_state = 819
+				add_state_core = 1241
+				transfer_state = 1241
+			}
+		}
+		HWH = {
+			hidden_effect = {
+				add_state_core = 826
+				transfer_state = 826
+				add_state_core = 827
+				transfer_state = 827
+				add_state_core = 855
+				transfer_state = 855
+				add_state_core = 733
+				transfer_state = 733
+				add_state_core = 712
+				transfer_state = 712
+				add_state_core = 711
+				transfer_state = 711
+				add_state_core = 708
+				transfer_state = 708
+				add_state_core = 710
+				transfer_state = 710
+				add_state_core = 707
+				transfer_state = 707
+				add_state_core = 645
+				transfer_state = 645
+				add_state_core = 648
+				transfer_state = 648
+				add_state_core = 646
+				transfer_state = 646
+				add_state_core = 631
+				transfer_state = 631
+				add_state_core = 630
+				transfer_state = 630
+				add_state_core = 650
+				transfer_state = 650
+				add_state_core = 270
+				transfer_state = 270
+				add_state_core = 641
+				transfer_state = 641
+				add_state_core = 726
+				transfer_state = 726
+				add_state_core = 636
+				transfer_state = 636
+				add_state_core = 642
+				transfer_state = 642
+				add_state_core = 643
+				transfer_state = 643
+				add_state_core = 639
+				transfer_state = 639
+				add_state_core = 633
+				transfer_state = 633
+				add_state_core = 638
+				transfer_state = 638
+				add_state_core = 632
+				transfer_state = 632
+				add_state_core = 684
+				transfer_state = 684
+				add_state_core = 634
+				transfer_state = 634
+				add_state_core = 647
+				transfer_state = 647
+				add_state_core = 727
+				transfer_state = 727
+			}
+		}
+	}
 	option = { 
 		name = mingcivwar.81.a
 	}
@@ -1140,9 +1242,36 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
+		every_other_country = {
+			limit = {
+				is_in_faction_with = FROM
+				is_subject = no
+			}
+			leave_faction = yes
+		}
 		name = mingcivwar.82.a
-		STG = {change_tag_from = ROOT}
+		STG = {
+			add_state_core = 608
+			transfer_state = 608
+		}
+		STG = {
+			change_tag_from = ROOT
+		}
 		MNG_release_STG = yes
+		hidden_effect = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = MNG
+						is_claimed_by = MNG
+					}
+				}
+				MNG = {
+					remove_state_core = PREV
+					remove_state_claim = PREV
+				}
+			}
+		}
 	}
 }
 #颁布紧急戒严令
