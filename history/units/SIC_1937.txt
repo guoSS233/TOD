@@ -1,148 +1,372 @@
-division_template = {
-	name = "川边山地师"	
+# division_template = {
+# 	name = "川边山地师"	
 
-	regiments = {
-		mountaineers = { x = 0 y = 0 }
-		mountaineers = { x = 0 y = 1 }
-		mountaineers = { x = 0 y = 2 }
-		mountaineers = { x = 1 y = 0 }
-		mountaineers = { x = 1 y = 1 }
-		mountaineers = { x = 1 y = 2 }
-	}
-}
+# 	regiments = {
+# 		mountaineers = { x = 0 y = 0 }
+# 		mountaineers = { x = 0 y = 1 }
+# 		mountaineers = { x = 0 y = 2 }
+# 		mountaineers = { x = 1 y = 0 }
+# 		mountaineers = { x = 1 y = 1 }
+# 		mountaineers = { x = 1 y = 2 }
+# 	}
+# }
 
-division_template = {
-	name = "川中近卫师" 
+# division_template = {
+# 	name = "川中近卫师" 
 
-	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 0 y = 3 }
-		infantry = { x = 0 y = 4 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-		infantry = { x = 1 y = 3 }
-		artillery_brigade = { x = 1 y = 4 }
-	}
-	support = {
-		engineer = { x = 0 y = 0 }
-	}
-}
-division_template = {
-	name = "昭武军校机械化实验师" 
+# 	regiments = {
+# 		infantry = { x = 0 y = 0 }
+# 		infantry = { x = 0 y = 1 }
+# 		infantry = { x = 0 y = 2 }
+# 		infantry = { x = 0 y = 3 }
+# 		infantry = { x = 0 y = 4 }
+# 		infantry = { x = 1 y = 0 }
+# 		infantry = { x = 1 y = 1 }
+# 		infantry = { x = 1 y = 2 }
+# 		infantry = { x = 1 y = 3 }
+# 		artillery_brigade = { x = 1 y = 4 }
+# 	}
+# 	support = {
+# 		engineer = { x = 0 y = 0 }
+# 	}
+# }
+# division_template = {
+# 	name = "昭武军校机械化实验师" 
 
-	regiments = {
-		light_armor= { x = 0 y = 0 }
-		light_armor = { x = 0 y = 1 }
-		light_armor = { x = 0 y = 2 }
-		motorized = { x = 1 y = 0 }
-        motorized = { x = 1 y = 1 }
-        motorized = { x = 1 y = 2 }
-	}
-	support = {
-        mot_recon = { x = 0 y = 0 }
-	}
-}
-division_template = {
-	name = "川渝地方师" 
+# 	regiments = {
+# 		light_armor= { x = 0 y = 0 }
+# 		light_armor = { x = 0 y = 1 }
+# 		light_armor = { x = 0 y = 2 }
+# 		motorized = { x = 1 y = 0 }
+#         motorized = { x = 1 y = 1 }
+#         motorized = { x = 1 y = 2 }
+# 	}
+# 	support = {
+#         mot_recon = { x = 0 y = 0 }
+# 	}
+# }
+# division_template = {
+# 	name = "川渝地方师" 
 
-	regiments = {
-		infantry = { x = 0 y = 0 }
-		infantry = { x = 0 y = 1 }
-		infantry = { x = 0 y = 2 }
-		infantry = { x = 1 y = 0 }
-		infantry = { x = 1 y = 1 }
-		infantry = { x = 1 y = 2 }
-	}
-}
+# 	regiments = {
+# 		infantry = { x = 0 y = 0 }
+# 		infantry = { x = 0 y = 1 }
+# 		infantry = { x = 0 y = 2 }
+# 		infantry = { x = 1 y = 0 }
+# 		infantry = { x = 1 y = 1 }
+# 		infantry = { x = 1 y = 2 }
+# 	}
+# }
 
+# units = {
+# 	division= {	
+# 		location = 10856
+# 		division_template = "川边山地师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 5033
+# 		division_template = "川边山地师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 5018
+# 		division_template = "川边山地师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 2098
+# 		division_template = "川边山地师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 13365
+# 		division_template = "川渝地方师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 11865
+# 		division_template = "川渝地方师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 13328
+# 		division_template = "川渝地方师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 1893
+# 		division_template = "川渝地方师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 13339
+# 		division_template = "川渝地方师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 12274
+# 		division_template = "川渝地方师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 13346
+# 		division_template = "川中近卫师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 13344
+# 		division_template = "川中近卫师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 7294
+# 		division_template = "川中近卫师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 12141
+# 		division_template = "川中近卫师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 4925
+# 		division_template = "川中近卫师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 4925
+# 		division_template = "昭武军校机械化实验师"
+# 		start_experience_factor = 0.2
+# 	}
+# 	division= {	
+# 		location = 13340
+# 		division_template = "昭武军校机械化实验师"
+# 		start_experience_factor = 0.2
+# 	}
+# }
 units = {
-	division= {	
-		location = 10856
-		division_template = "川边山地师"
+    #重庆#
+	division= {
+		name = "西南甲种第1步兵师"
+		location =13365
+		division_template = "昌德卌四年型甲种步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 5033
-		division_template = "川边山地师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "四川第1步兵旅"
+		location =13365
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 5018
-		division_template = "川边山地师"
+		start_equipment_factor = 1.0
+	} 
+    #万州#
+	division= {
+		name = "西南乙种第11步兵师"
+		location =10144
+		division_template = "昌德卌四年型乙种步兵师"
 		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
 	}
-	division= {	
-		location = 2098
-		division_template = "川边山地师"
+	division= {
+		name = "四川第2步兵旅"
+		location =10144
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 13365
-		division_template = "川渝地方师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "四川第3步兵旅"
+		location =10144
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 11865
-		division_template = "川渝地方师"
+		start_equipment_factor = 1.0
+	} 
+    #川北#
+	division= {
+		name = "西南甲种第4步兵师"
+		location =12274
+		division_template = "昌德卌四年型甲种步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 13328
-		division_template = "川渝地方师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "四川第4步兵旅"
+		location =12274
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 1893
-		division_template = "川渝地方师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "四川第5步兵旅"
+		location =12274
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 13339
-		division_template = "川渝地方师"
+		start_equipment_factor = 1.0
+	} 
+    #川中#
+	division= {
+		name = "甲种第8战车师"
+		location =13341
+		division_template = "昌德卌四年型甲种战车师"
 		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
 	}
-	division= {	
-		location = 12274
-		division_template = "川渝地方师"
+	division= {
+		name = "西南甲种第5步兵师"
+		location =13341
+		division_template = "昌德卌四年型甲种步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 13346
-		division_template = "川中近卫师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "西南乙种第12步兵师"
+		location =13341
+		division_template = "昌德卌四年型乙种步兵师"
 		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
 	}
-	division= {	
-		location = 13344
-		division_template = "川中近卫师"
+	division= {
+		name = "四川第6步兵旅"
+		location =13341
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 7294
-		division_template = "川中近卫师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "四川第7步兵旅"
+		location =13341
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 12141
-		division_template = "川中近卫师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "四川第8步兵旅"
+		location =13341
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
 	}
-	division= {	
-		location = 4925
-		division_template = "川中近卫师"
+    #川南#
+	division= {
+		name = "西南乙种第13步兵师"
+		location =13346
+		division_template = "昌德卌四年型乙种步兵师"
 		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
 	}
-	division= {	
-		location = 4925
-		division_template = "昭武军校机械化实验师"
+	division= {
+		name = "四川第9步兵旅"
+		location =13346
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
-	}
-	division= {	
-		location = 13340
-		division_template = "昭武军校机械化实验师"
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "四川第10步兵旅"
+		location =13346
+		division_template = "昌德卌四年型省军步兵师"
 		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+    #川边#
+	division= {
+		name = "西南乙种第14步兵师"
+		location =13361
+		division_template = "昌德卌四年型乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
 	}
-}
-	
+	division= {
+		name = "四川第11步兵旅"
+		location =13361
+		division_template = "昌德卌四年型省军步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+	#安多
+	division= {
+		name = "西北第37骑行旅"
+		location =13458
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "西北第38骑行旅"
+		location =13458
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+    #藏南#
+	division= {
+		name = "西南第1骑行旅"
+		location =1996
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "西南第2骑行旅"
+		location =1996
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+    #乌斯藏#
+	division= {
+		name = "西南乙种第16步兵师"
+		location =2098
+		division_template = "昌德卌四年型乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "西南第3骑行旅"
+		location =2098
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "西南第4骑行旅"
+		location =2098
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+    #日喀则#
+	division= {
+		name = "西南第6骑行旅"
+		location =4900
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+    #阿里#
+	division= {
+		name = "西南第7骑行旅"
+		location =1961
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+    #拉达克#
+	division= {
+		name = "藏地第2步兵旅"
+		location =8005
+		division_template = "昌德卌四年型省军步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+	division= {
+		name = "西南第8骑行旅"
+		location =8005
+		division_template = "昌德卌四年型骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	} 
+
+}	
