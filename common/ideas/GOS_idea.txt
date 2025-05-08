@@ -28,14 +28,6 @@ ideas = {
 				political_power_gain = -0.1
 			}
 		}	
-		GOS_idea_shemingongdangdesaoluan = { #社民工党的骚乱
-			picture = POL_bisusijizhisi
-			modifier = {
-				stability_factor = -0.05
-				war_support_factor = -0.05
-				political_power_gain = -0.1
-			}
-		}	
 		GOS_idea_huguangliangcang = { #湖广粮仓
 			picture = GOS_huguangliangcang
 			modifier = {
@@ -133,13 +125,13 @@ ideas = {
 			}
 		}
         GOS_idea_trqldzz_1 = { #王朝新气象
-			picture = generic_exploit_mines
+			picture = GOS_wangchaoxinqixiang
 			modifier = {
 				defensive_war_stability_factor = 0.20     #防御战争对稳定度修正
 			}		
 		}
         GOS_idea_trqldzz_2 = { #王朝新气象
-			picture = generic_exploit_mines
+			picture = GOS_wangchaoxinqixiang
 			modifier = {
 				defensive_war_stability_factor = 0.20     #防御战争对稳定度修正
                 offensive_war_stability_factor = 0.10    #进攻战争对稳定度修正
@@ -148,7 +140,7 @@ ideas = {
 		}
       #陆军
         GOS_idea_fyzz = { #防御作战
-			picture = generic_exploit_mines
+			picture = GOS_fangyuzuozhan
 			modifier = {
 				dig_in_speed_factor = 0.20 #堑壕速度
                 max_dig_in_factor = 0.20 #堑壕上线修正
@@ -156,33 +148,33 @@ ideas = {
 			}		
 		}
         GOS_idea_phsc = { #军事生产遭到破坏
-			picture = generic_exploit_mines
+			picture = GOS_junshishengchanzaodaopohuai
 			modifier = {
                 industrial_capacity_factory = -0.1
 			}		
 		}
         GOS_idea_bmj = { #保密局
-			picture = generic_exploit_mines
+			picture = GOS_baomiju
 			modifier = {
                 crypto_strength = 2 #加密等级
                 intelligence_agency_defense = 1 #反间谍
 			}		
 		}
         GOS_idea_jgcyl_1 = { #军工产业链
-			picture = generic_exploit_mines
+			picture = GOS_jungongchanyelian
 			modifier = {
                 production_speed_arms_factory_factor = 0.1 #军用工厂建造速度
 			}		
 		}
         GOS_idea_jgcyl_2 = { #军工产业链
-			picture = generic_exploit_mines
+			picture = GOS_jungongchanyelian
 			modifier = {
                 production_speed_arms_factory_factor = 0.1 #军用工厂建造速度
                 equipment_conversion_speed = 0.2     #改装速度
 			}		
 		}
         GOS_idea_jgcyl_3 = { #军工产业链
-			picture = generic_exploit_mines
+			picture = GOS_jungongchanyelian
 			modifier = {
                 production_speed_arms_factory_factor = 0.1 #军用工厂建造速度
                 equipment_conversion_speed = 0.2       #改装速度
@@ -191,20 +183,20 @@ ideas = {
 		}
       #海空
         GOS_idea_qshj_1 = { #七省海军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qshj
 			modifier = {
                 convoy_escort_efficiency = 0.1 #护航效率
 			}		
 		}
         GOS_idea_qshj_2 = { #七省海军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qshj
 			modifier = {
                 convoy_escort_efficiency = 0.1 #护航效率
                 navy_carrier_air_agility_factor = 0.10 #航母舰载机机动性
 			}		
 		}
         GOS_idea_qshj_3 = { #七省海军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qshj
 			modifier = {
                 convoy_escort_efficiency = 0.1 #护航效率
                 navy_carrier_air_agility_factor = 0.10 #航母舰载机机动性
@@ -217,7 +209,7 @@ ideas = {
             }
 		}
         GOS_idea_qshj_4 = { #海上霸主
-			picture = generic_exploit_mines
+			picture = GOS_idea_haishangbazhu
 			modifier = {
                 convoy_escort_efficiency = 0.1 #护航效率
                 navy_carrier_air_agility_factor = 0.10 #航母舰载机机动性
@@ -231,14 +223,14 @@ ideas = {
             }
 		}
         GOS_idea_qshj_12 = { #七省海军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qshj
 			modifier = {
                 convoy_escort_efficiency = 0.1 #护航效率
                 navy_capital_ship_attack_factor = 0.1 #主力舰攻击
 			}		
 		}
         GOS_idea_qshj_13 = { #七省海军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qshj
 			modifier = {
                 convoy_escort_efficiency = 0.1 #护航效率
                 navy_capital_ship_attack_factor = 0.1 #主力舰攻击
@@ -246,7 +238,7 @@ ideas = {
 			}		
 		}
         GOS_idea_qshj_14 = { #海上霸主
-			picture = generic_exploit_mines
+			picture = GOS_idea_haishangbazhu
 			modifier = {
                 convoy_escort_efficiency = 0.1 #护航效率
                 naval_coordination = 0.05 #舰队协同性
@@ -254,23 +246,21 @@ ideas = {
                 naval_enemy_fleet_size_ratio_penalty_factor = 0.1 #敌人舰队规模惩罚
 			}	
 		}
-
         GOS_idea_qdtk = { #抢夺天空
-			picture = generic_exploit_mines
+			picture = air_war_plans_division_focus
 			modifier = {
                 army_bonus_air_superiority_factor = 0.1 #空优
 			}	
 		}
-
         GOS_idea_qskj_1 = { #七省空军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qskj
 			modifier = {
                 experience_gain_air_factor = 0.1 #空军经验增长
                 production_speed_air_base_factor = 0.2 #空军基地建造速度
 			}	
 		}
         GOS_idea_qskj_2 = { #七省空军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qskj
 			modifier = {
                 experience_gain_air_factor = 0.1 #空军经验增长
                 production_speed_air_base_factor = 0.2 #空军基地建造速度
@@ -278,7 +268,7 @@ ideas = {
 			}	
 		}
         GOS_idea_qskj_3 = { #七省空军
-			picture = generic_exploit_mines
+			picture = GOS_idea_qskj
 			modifier = {
                 experience_gain_air_factor = 0.1 #空军经验增长
                 production_speed_air_base_factor = 0.2 #空军基地建造速度
@@ -286,7 +276,7 @@ ideas = {
 			}	
 		}
         GOS_idea_qskj_4 = { #天空霸主
-			picture = generic_exploit_mines
+			picture = GOS_idea_qskj
 			modifier = {
                 experience_gain_air_factor = 0.1 #空军经验增长
                 production_speed_air_base_factor = 0.2 #空军基地建造速度
@@ -324,7 +314,7 @@ ideas = {
 			}
 		}
         GOS_idea_qskj_5 = { #天空霸主
-			picture = generic_exploit_mines
+			picture = GOS_idea_qskj
 			modifier = {
                 experience_gain_air_factor = 0.1 #空军经验增长
                 production_speed_air_base_factor = 0.2 #空军基地建造速度
