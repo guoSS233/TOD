@@ -651,7 +651,6 @@ country_event = {
 	option = { 
 		name = mingcivwar.75.a
 		MNG_release_GPS = yes
-		MNG_release_SRC = yes
 		complete_national_focus = MNG_qingjiaotongchangonghui
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
@@ -659,6 +658,12 @@ country_event = {
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
 		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+		MNG = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = tod_ming_tongzhidusi
+			}
+		}
 		hidden_effect = {
 			GPS = {
 				load_oob = "GPS_1937"
@@ -673,6 +678,27 @@ country_event = {
 				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
 				delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+				set_politics = {
+					ruling_party = authoritarian_oligarchy
+					last_election = "1935.3.14"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				
+				set_popularities = {
+					vanguard_socialism =10
+					council_socialism = 5
+					moderate_socialism = 5
+					agroindustrial_socialism = 5
+					social_democrat = 5
+					liberal_democracy = 0
+					conservative_democracy = 0
+					consociationalism = 0
+					sacred_revivalism = 0
+					authoritarian_oligarchy = 60
+					leader_despotism = 5
+					national_corporatism = 5
+				}
 			}
 		}
 	}
@@ -682,7 +708,12 @@ country_event = {
 		}
 		name = mingcivwar.75.b
 		MNG_release_GPS = yes
-		MNG_release_SRC = yes
+		MNG = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = tod_ming_tongzhidusi
+			}
+		}
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
@@ -704,6 +735,27 @@ country_event = {
 				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
 				delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+				set_politics = {
+					ruling_party = authoritarian_oligarchy
+					last_election = "1935.3.14"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				
+				set_popularities = {
+					vanguard_socialism =10
+					council_socialism = 5
+					moderate_socialism = 5
+					agroindustrial_socialism = 5
+					social_democrat = 5
+					liberal_democracy = 0
+					conservative_democracy = 0
+					consociationalism = 0
+					sacred_revivalism = 0
+					authoritarian_oligarchy = 60
+					leader_despotism = 5
+					national_corporatism = 5
+				}
 			}
 		}
 	}
@@ -719,6 +771,12 @@ country_event = {
 	option = { 
 		name = mingcivwar.76.a
 		complete_national_focus = MNG_soubudatonghui
+		MNG = {
+			set_autonomy = {
+				target = ROC
+				autonomy_state = tod_ming_tongzhidusi
+			}
+		}
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
@@ -729,6 +787,39 @@ country_event = {
 			hidden_effect = {
 				set_cosmetic_tag = huananzhaofusi
 				load_oob = "ROC_1937"
+				set_politics = {
+					ruling_party =  leader_despotism
+					last_election = "1936.1.1"
+					election_frequency = 48
+					elections_allowed = no
+				}
+			
+				set_popularities = {
+					##先锋
+					vanguard_socialism = 0
+					##委员会
+					council_socialism = 2
+					##温和
+					moderate_socialism = 5
+					##工农
+					agroindustrial_socialism = 8
+					##社民
+					social_democrat = 10
+					##调和民主
+					consociationalism = 15
+					##自由民
+					liberal_democracy = 5
+					##保保
+					conservative_democracy = 5
+					##寡头专制
+					authoritarian_oligarchy = 0
+					##领袖意识
+					leader_despotism = 45
+					##神圣复兴
+					sacred_revivalism = 0
+					##国家法团主义
+					national_corporatism = 5
+				}
 			}
 		}
 	}
@@ -739,6 +830,12 @@ country_event = {
 		MNG = {
 			complete_national_focus = MNG_soubudatonghui
 		}
+		MNG = {
+			set_autonomy = {
+				target = ROC
+				autonomy_state = tod_ming_tongzhidusi
+			}
+		}
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
@@ -748,6 +845,39 @@ country_event = {
 			hidden_effect = {
 				set_cosmetic_tag = huananzhaofusi
 				load_oob = "ROC_1937"
+				set_politics = {
+					ruling_party =  leader_despotism
+					last_election = "1936.1.1"
+					election_frequency = 48
+					elections_allowed = no
+				}
+			
+				set_popularities = {
+					##先锋
+					vanguard_socialism = 0
+					##委员会
+					council_socialism = 2
+					##温和
+					moderate_socialism = 5
+					##工农
+					agroindustrial_socialism = 8
+					##社民
+					social_democrat = 10
+					##调和民主
+					consociationalism = 15
+					##自由民
+					liberal_democracy = 5
+					##保保
+					conservative_democracy = 5
+					##寡头专制
+					authoritarian_oligarchy = 0
+					##领袖意识
+					leader_despotism = 45
+					##神圣复兴
+					sacred_revivalism = 0
+					##国家法团主义
+					national_corporatism = 5
+				}
 			}
 		}
 	}
