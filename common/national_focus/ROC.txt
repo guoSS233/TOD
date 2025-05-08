@@ -23,7 +23,13 @@ focus_tree = {#共和军国策
 		cost = 1.00
 		x = 34
 		y = 0
-		ai_will_do = {factor = 10}
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
 		completion_reward = {
 			country_event = ROC_focus.2
 		}
@@ -43,7 +49,7 @@ focus_tree = {#共和军国策
 		cost = 0
 		x = 14
 		y = 10
-
+		ai_will_do = {factor = 10}
 		available = {
 			any_country = {
 				OR = {
@@ -74,6 +80,7 @@ focus_tree = {#共和军国策
 		}
 		x = 6
 		y = 1
+		ai_will_do = {factor = 50}
 		completion_reward = {	
 			add_political_power = 75
 			country_event = ROC_focus.3
@@ -88,6 +95,7 @@ focus_tree = {#共和军国策
 		}
 		x = 6
 		y = 2
+		ai_will_do = {factor = 50}
 		completion_reward = {	
 			add_stability = 0.1
 		}
@@ -101,6 +109,7 @@ focus_tree = {#共和军国策
 		}
 		x = 2
 		y = 3
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			custom_effect_tooltip = ROC_custom_tudigaige
 			set_variable = {
@@ -136,6 +145,7 @@ focus_tree = {#共和军国策
 		}
 		x = 1
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_popularity = { ideology = liberal_democracy popularity = 0.04 }
 			country_event = ROC_focus.4
@@ -153,6 +163,7 @@ focus_tree = {#共和军国策
 		}
 		x = 3
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_popularity = { ideology = agroindustrial_socialism popularity = 0.03 }
 			country_event = ROC_focus.5
@@ -167,6 +178,7 @@ focus_tree = {#共和军国策
 		}
 		x = 6
 		y = 3
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_research_slot = 1
 		}
@@ -180,6 +192,7 @@ focus_tree = {#共和军国策
 		}
 		x = 6
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -246,6 +259,7 @@ focus_tree = {#共和军国策
 		}
 		x = 10
 		y = 3
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_offsite_building = { type = arms_factory level = 3 }
 			set_variable = {
@@ -273,6 +287,7 @@ focus_tree = {#共和军国策
 		}
 		x = 9
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_stability = 0.1
 			every_state = {
@@ -306,6 +321,7 @@ focus_tree = {#共和军国策
 		}
 		x = 9
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 50
 			add_power_balance_value = {
@@ -327,6 +343,7 @@ focus_tree = {#共和军国策
 		}
 		x = 11
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_stability = 0.05
 			add_offsite_building = { type = industrial_complex level = 2 }
@@ -342,6 +359,7 @@ focus_tree = {#共和军国策
 		}
 		x = 11
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 50
 			add_power_balance_value = {
@@ -360,7 +378,7 @@ focus_tree = {#共和军国策
 		}
 		x = 10
 		y = 6
-
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			swap_ideas = {
 				add_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
@@ -388,6 +406,7 @@ focus_tree = {#共和军国策
 		}
 		x = 15
 		y = 1
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 50
 			country_event = ROC_focus.8
@@ -402,6 +421,7 @@ focus_tree = {#共和军国策
 		}
 		x = 15
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 50
 			country_event = ROC_focus.9
@@ -419,6 +439,7 @@ focus_tree = {#共和军国策
 		}
 		x = 14
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			country_event = ROC_focus.10
 		}
@@ -432,6 +453,7 @@ focus_tree = {#共和军国策
 		}
 		x = 14
 		y = 6
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -483,6 +505,7 @@ focus_tree = {#共和军国策
 		}
 		x = 16
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			country_event = ROC_focus.11
 		}
@@ -496,6 +519,7 @@ focus_tree = {#共和军国策
 		}
 		x = 16
 		y = 6
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -545,6 +569,7 @@ focus_tree = {#共和军国策
 		}
 		x = 15
 		y = 8
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 50
 			country_event = ROC_focus.12
@@ -559,7 +584,7 @@ focus_tree = {#共和军国策
 		}
 		x = 14
 		y = 11
-
+		ai_will_do = {factor = 10}
 	}
 	focus = {#93、击碎玉玺
 		id = jisuiyuxi
@@ -573,6 +598,7 @@ focus_tree = {#共和军国策
 		}	
 		x = 18
 		y = 12
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			custom_effect_tooltip = ROC_custom_jisuiyuxi
 		}
@@ -589,6 +615,7 @@ focus_tree = {#共和军国策
 		}	
 		x = 18
 		y = 14
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			custom_effect_tooltip = ROC_custom_xibeigongfa
 		}
@@ -603,6 +630,7 @@ focus_tree = {#共和军国策
 		}
 		x = 22
 		y = 1
+		ai_will_do = {factor = 30}
 		select_effect = {
 			country_event = ROC_focus.14
 		}
@@ -619,6 +647,7 @@ focus_tree = {#共和军国策
 		}
 		x = 20
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			country_event = ROC_focus.15
 		}
@@ -632,6 +661,7 @@ focus_tree = {#共和军国策
 		}
 		x = 20
 		y = 3
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			division_template = {
 				name = "精锐山地师"   
@@ -671,6 +701,7 @@ focus_tree = {#共和军国策
 		}
 		x = 20
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -693,6 +724,7 @@ focus_tree = {#共和军国策
 		}
 		x = 22
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 50
 			add_popularity = { ideology = moderate_socialism popularity = 0.02 }
@@ -707,6 +739,7 @@ focus_tree = {#共和军国策
 		}
 		x = 22
 		y = 3
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 25
 		}
@@ -720,6 +753,7 @@ focus_tree = {#共和军国策
 		}
 		x = 22
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 15
 		}
@@ -733,6 +767,13 @@ focus_tree = {#共和军国策
 		}
 		x = 24
 		y = 2
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
 		completion_reward = {	
 			add_political_power = 35
 		}
@@ -746,6 +787,13 @@ focus_tree = {#共和军国策
 		}
 		x = 24
 		y = 3
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
 		completion_reward = {	
 			add_political_power = 35
 		}
@@ -759,6 +807,7 @@ focus_tree = {#共和军国策
 		}
 		x = 24
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 35
 		}
@@ -778,6 +827,7 @@ focus_tree = {#共和军国策
 		}
 		x = 22
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			country_event = ROC_focus.17
 		}
@@ -791,6 +841,13 @@ focus_tree = {#共和军国策
 		}
 		x = 28
 		y = 1
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
 		completion_reward = {	
 			set_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
 			custom_effect_tooltip = ROC_custom_xinjunshiweiyuanhui
@@ -805,6 +862,13 @@ focus_tree = {#共和军国策
 		}
 		x = 28
 		y = 2
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
 		completion_reward = {	
 			army_experience = 100
 			add_dynamic_modifier = {
@@ -832,6 +896,13 @@ focus_tree = {#共和军国策
 		}
 		x = 28
 		y = 3
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
 		completion_reward = {	
 			custom_effect_tooltip = ROC_custom_fadondihoujijindatongdangren
 		}
@@ -848,6 +919,13 @@ focus_tree = {#共和军国策
 		}
 		x = 28
 		y = 4
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
 		completion_reward = {	
 			add_war_support = 0.05
 			custom_effect_tooltip = ROC_custom_gemingzhihuoranbiandongnan
@@ -862,6 +940,7 @@ focus_tree = {#共和军国策
 		}
 		x = 33
 		y = 1
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -901,6 +980,7 @@ focus_tree = {#共和军国策
 		}
 		x = 33
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -947,6 +1027,7 @@ focus_tree = {#共和军国策
 		}
 		x = 33
 		y = 3
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_ideas = ROC_idea_dangdaibiaozhizhu
 		}
@@ -960,6 +1041,7 @@ focus_tree = {#共和军国策
 		}
 		x = 35
 		y = 1
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -999,6 +1081,7 @@ focus_tree = {#共和军国策
 		}
 		x = 35
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			swap_ideas = {
 				add_idea = ROC_idea_weigongheerzhan_1
@@ -1015,6 +1098,7 @@ focus_tree = {#共和军国策
 		}
 		x = 35
 		y = 3
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -1090,6 +1174,7 @@ focus_tree = {#共和军国策
 		}
 		x = 34
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			if = {
 				limit = {
@@ -1117,6 +1202,7 @@ focus_tree = {#共和军国策
 		}
 		x = 30
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_ideas = ROC_idea_huolifugai
 		}
@@ -1130,6 +1216,7 @@ focus_tree = {#共和军国策
 		}
 		x = 38
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1.0
@@ -1147,6 +1234,7 @@ focus_tree = {#共和军国策
 		}
 		x = 38
 		y = 6
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_ideas = ROC_idea_bubingzuozhan
 		}
@@ -1160,6 +1248,7 @@ focus_tree = {#共和军国策
 		}
 		x = 38
 		y = 7
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1.0
@@ -1180,6 +1269,7 @@ focus_tree = {#共和军国策
 		}
 		x = 37
 		y = 8
+		ai_will_do = {factor = 10}
 		available = {
 			has_army_experience > 24.99
 			has_army_manpower = { size > 150000 }
@@ -1212,6 +1302,7 @@ focus_tree = {#共和军国策
 		}
 		x = 39
 		y = 8
+		ai_will_do = {factor = 10}
 		available = {
 			has_army_experience > 24.99
 			has_army_manpower = { size > 150000 }
@@ -1241,6 +1332,7 @@ focus_tree = {#共和军国策
 		}
 		x = 43
 		y = 1
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			air_experience = 50
 			add_ideas = ROC_idea_gonghechuying
@@ -1259,6 +1351,7 @@ focus_tree = {#共和军国策
 		}
 		x = 42
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_stability = 0.05
 			swap_ideas = {
@@ -1279,6 +1372,7 @@ focus_tree = {#共和军国策
 		}
 		x = 44
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_stability = -0.05
 			add_war_support = 0.1
@@ -1298,6 +1392,7 @@ focus_tree = {#共和军国策
 		}
 		x = 43
 		y = 3
+		ai_will_do = {factor = 10}
 		available = {
 			AND = {
 				has_deployed_air_force_size = {
@@ -1381,6 +1476,7 @@ focus_tree = {#共和军国策
 				size > 399
 			}
 		}
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
@@ -1398,6 +1494,7 @@ focus_tree = {#共和军国策
 		}
 		x = 44
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			592 = {
 				add_building_construction = {
@@ -1426,6 +1523,7 @@ focus_tree = {#共和军国策
 		}
 		x = 44
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			air_experience = 50
 			if = {
@@ -1478,6 +1576,7 @@ focus_tree = {#共和军国策
 		}
 		x = 44
 		y = 6
+		ai_will_do = {factor = 10}
 		available = {
 			has_tech = tech_logistics_company
 		}
@@ -1498,6 +1597,7 @@ focus_tree = {#共和军国策
 		}
 		x = 50
 		y = 1
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_ideas = ROC_idea_nanyangzhijian
 		}
@@ -1511,6 +1611,7 @@ focus_tree = {#共和军国策
 		}
 		x = 50
 		y = 2
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			country_event = ROC_focus.1
 		}
@@ -1527,6 +1628,7 @@ focus_tree = {#共和军国策
 		}
 		x = 48
 		y = 3
+		ai_will_do = {factor = 10}
 		available = {
 			has_navy_experience > 24.99
 			has_idea = ROC_idea_nanyangzhijian_2
@@ -1557,6 +1659,7 @@ focus_tree = {#共和军国策
 		}
 		x = 1
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_political_power = 50
 			add_power_balance_value = {
@@ -1574,6 +1677,7 @@ focus_tree = {#共和军国策
 		}
 		x = 3
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_popularity = { ideology = moderate_socialism popularity = 0.03 }
 			add_power_balance_value = {
@@ -1592,6 +1696,7 @@ focus_tree = {#共和军国策
 		}
 		x = 2
 		y = 6
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			custom_effect_tooltip = ROC_custom_tuidongxiangcunjiansheyundong
 			set_variable = {
@@ -1622,6 +1727,7 @@ focus_tree = {#共和军国策
 		}
 		x = 6
 		y = 7
+		ai_will_do = {factor = 10}
 		available = {
 			num_of_factories > 70
 		}
@@ -1636,8 +1742,59 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = kuojianguangzhoudaxue
 		}
+		available = {
+			591 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_nongcunjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_nongcunjianshe
+				}
+			}
+			817 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_nongcunjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_nongcunjianshe
+				}
+			}
+			595 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_nongcunjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_nongcunjianshe
+				}
+			}
+			592 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_minshengjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_minshengjianshe
+				}
+			}
+			729 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_minshengjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_minshengjianshe
+				}
+			}
+			326 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_minshengjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_minshengjianshe
+				}
+			}
+		}
 		x = 6
 		y = 9
+		ai_will_do = {factor = 50}
 		completion_reward = {
 			every_state = {
 				limit = {
@@ -1672,6 +1829,7 @@ focus_tree = {#共和军国策
 		}
 		x = 22
 		y = 6
+		ai_will_do = {factor = 10}
 		available = {
 			NOT = {
 				country_exists = XBJ
@@ -1696,6 +1854,7 @@ focus_tree = {#共和军国策
 		available = {
 			has_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
 		}
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			country_event = { id = ROC_focus.38 }
 			swap_ideas = {
@@ -1758,6 +1917,7 @@ focus_tree = {#共和军国策
 		}
 		x = 30
 		y = 6
+		ai_will_do = {factor = 10}
 		available = {
 			has_army_experience > 25
 			arms_factory > 24
@@ -1787,6 +1947,7 @@ focus_tree = {#共和军国策
 		}
 		x = 30
 		y = 7
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -1802,6 +1963,7 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = huopaojishugexin
 		}
+		ai_will_do = {factor = 10}
 		mutually_exclusive = {
 			focus = jizhidehuoli
 		}
@@ -1843,6 +2005,7 @@ focus_tree = {#共和军国策
 			has_army_experience > 50
 			arms_factory > 29
 		}
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			if = {
 				limit = {
@@ -1871,6 +2034,7 @@ focus_tree = {#共和军国策
 		}
 		x = 34
 		y = 7
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			create_equipment_variant = {
 				name = "甲式轻型坦克"
@@ -1928,6 +2092,7 @@ focus_tree = {#共和军国策
 		}
 		x = 34
 		y = 8
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			swap_ideas = {
 				add_idea = ROC_idea_gonghejun_2
@@ -1979,6 +2144,7 @@ focus_tree = {#共和军国策
 		}
 		x = 34
 		y = 9
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_tech_bonus = {
 				bonus = 1
@@ -1999,6 +2165,7 @@ focus_tree = {#共和军国策
 		}
 		x = 33
 		y = 10
+		ai_will_do = {factor = 10}
 		available = {
 			has_tech = improved_medium_tank_chassis
 		}
@@ -2021,6 +2188,7 @@ focus_tree = {#共和军国策
 		}
 		x = 35
 		y = 10
+		ai_will_do = {factor = 10}
 		available = {
 			has_tech = improved_medium_tank_chassis
 		}
@@ -2040,6 +2208,7 @@ focus_tree = {#共和军国策
 		}
 		x = 42
 		y = 5
+		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_tech_bonus = {
 				bonus = 1
@@ -2062,6 +2231,7 @@ focus_tree = {#共和军国策
 		}
 		x = 42
 		y = 6
+		ai_will_do = {factor = 10}
 		available = {
 			has_deployed_air_force_size = {
 				size > 799
@@ -2121,6 +2291,7 @@ focus_tree = {#共和军国策
 		}
 		x = 43
 		y = 7
+		ai_will_do = {factor = 10}
 		available = {
 			has_air_experience >119.99
 		}
@@ -2146,6 +2317,7 @@ focus_tree = {#共和军国策
 			else = {
 				add_ideas = ROC_idea_gonghechuying_2B
 			}
+			custom_effect_tooltip = ROC_custom_hailujiezaiwomentiankongzhixia
 		}
 	}
 	focus = {#80、海军作战模式革新
@@ -2157,6 +2329,7 @@ focus_tree = {#共和军国策
 		}
 		x = 48
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
@@ -2179,6 +2352,7 @@ focus_tree = {#共和军国策
 		}
 		x = 48
 		y = 5
+		ai_will_do = {factor = 10}
 		available = {
 			has_navy_size = { 
 				size > 0 # Use < or >
@@ -2202,6 +2376,7 @@ focus_tree = {#共和军国策
 		}
 		x = 48
 		y = 6
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			create_equipment_variant = {
 				name = "天级"
@@ -2245,6 +2420,7 @@ focus_tree = {#共和军国策
 		}
 		x = 52
 		y = 3
+		ai_will_do = {factor = 10}
 		available = {
 			has_navy_experience > 24.99
 			has_idea = ROC_idea_nanyangzhijian_1
@@ -2275,6 +2451,7 @@ focus_tree = {#共和军国策
 		}
 		x = 52
 		y = 4
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
@@ -2297,6 +2474,7 @@ focus_tree = {#共和军国策
 		}
 		x = 52
 		y = 5
+		ai_will_do = {factor = 10}
 		available = {
 			OR = {
 				has_navy_size = { 
@@ -2325,6 +2503,7 @@ focus_tree = {#共和军国策
 		}
 		x = 52
 		y = 6
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			create_equipment_variant = {
 				name = "山级"
@@ -2370,6 +2549,7 @@ focus_tree = {#共和军国策
 		}
 		x = 50
 		y = 7
+		ai_will_do = {factor = 10}
 		available = {
 			592 = {
 				dockyard > 3
@@ -2414,6 +2594,7 @@ focus_tree = {#共和军国策
 		}
 		x = 50
 		y = 8
+		ai_will_do = {factor = 10}
 		available = {
 			has_navy_experience >99.99
 		}
@@ -2436,6 +2617,7 @@ focus_tree = {#共和军国策
 		}
 		x = 10
 		y = 12
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_political_power = 30
 			custom_effect_tooltip = ROC_custom_bashuzhiguo
@@ -2450,6 +2632,7 @@ focus_tree = {#共和军国策
 		}
 		x = 10
 		y = 14
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_political_power = 30
 			custom_effect_tooltip = ROC_custom_hengsaoxinan
@@ -2467,6 +2650,7 @@ focus_tree = {#共和军国策
 		}
 		x = 14
 		y = 12
+		ai_will_do = {factor = 10}
 	}
 	focus = {#96、革命的同志
 		id = gemingdetongzhi
@@ -2478,6 +2662,7 @@ focus_tree = {#共和军国策
 		available = {
 			
 		}
+		ai_will_do = {factor = 10}
 		mutually_exclusive = {
 			focus = yueguoshanhaiguan
 		}
@@ -2503,6 +2688,7 @@ focus_tree = {#共和军国策
 		}
 		x = 15
 		y = 13
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			custom_effect_tooltip = ROC_custom_yueguoshanhaiguan
 		}
@@ -2520,6 +2706,7 @@ focus_tree = {#共和军国策
 		}	
 		x = 14
 		y = 14
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			custom_effect_tooltip = ROC_custom_jiefangmobei
 		}
@@ -2558,7 +2745,7 @@ focus_tree = {#华南招抚司国策
 		cost = 5
 		x = 15
 		y = 0
-		ai_will_do = {factor = 0}
+		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_stability = 0.03
 		}
@@ -2569,7 +2756,7 @@ focus_tree = {#华南招抚司国策
 		cost = 5
 		x = 15
 		y = 1
-		ai_will_do = {factor = 0}
+		ai_will_do = {factor = 10}
 		prerequisite = {
 			focus = banbutongjiling
 		}
@@ -2588,7 +2775,7 @@ focus_tree = {#华南招抚司国策
 		cost = 5
 		x = 17
 		y = 2
-		ai_will_do = {factor = 0}
+		ai_will_do = {factor = 10}
 		prerequisite = {
 			focus = zhenduixingsoubu
 		}
@@ -2606,7 +2793,7 @@ focus_tree = {#华南招抚司国策
 		cost = 5
 		x = 15
 		y = 2
-		ai_will_do = {factor = 0}
+		ai_will_do = {factor = 10}
 		prerequisite = {
 			focus = zhenduixingsoubu
 		}
@@ -2636,7 +2823,7 @@ focus_tree = {#华南招抚司国策
 		cost = 5
 		x = 13
 		y = 2
-		ai_will_do = {factor = 0}
+		ai_will_do = {factor = 10}
 		prerequisite = {
 			focus = zhenduixingsoubu
 		}
@@ -2664,7 +2851,7 @@ focus_tree = {#华南招抚司国策
 		cost = 5
 		x = 15
 		y = 3
-		ai_will_do = {factor = 0}
+		ai_will_do = {factor = 10}
 		prerequisite = {
 			focus = baozhenggongchangshengchan
 		}
@@ -2687,7 +2874,7 @@ focus_tree = {#华南招抚司国策
 		cost = 5
 		x = 15
 		y = 4
-		ai_will_do = {factor = 0}
+		ai_will_do = {factor = 10}
 		prerequisite = {
 			focus = kaizhanyulunxuanchuan
 		}
