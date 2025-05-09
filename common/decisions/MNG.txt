@@ -412,8 +412,12 @@ MNG_paixiboyi_categories = {
 		icon = ger_military_buildup
 		available = { 
             check_variable = { MNG_jiaotongxi > 29} 
-            has_completed_focus = MNG_make_in_our_country
+            has_completed_focus = MNG_ziligengsheng
         }
+		custom_cost_trigger = {
+            check_variable = { MNG_jiaotongxi > 29 } 
+		}
+		custom_cost_text = MNG_jiaotongxi_dayu_30
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -444,8 +448,12 @@ MNG_paixiboyi_categories = {
 		icon = ger_military_buildup
 		available = { 
             check_variable = { MNG_qingzhengxi > 34} 
-            has_completed_focus = MNG_make_in_our_country
+            has_completed_focus = MNG_ziligengsheng
         }
+		custom_cost_trigger = {
+            check_variable = { MNG_qingzhengxi > 34 } 
+		}
+		custom_cost_text = MNG_qingzhengxi_dayu_35
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -475,8 +483,12 @@ MNG_paixiboyi_categories = {
 		icon = ger_military_buildup
 		available = { 
             check_variable = { MNG_wubeixi > 49} 
-            has_completed_focus = MNG_make_in_our_country
+            has_completed_focus = MNG_ziligengsheng
         }
+		custom_cost_trigger = {
+            check_variable = { MNG_wubeixi > 49 } 
+		}
+		custom_cost_text = MNG_wubeixi_dayu_50
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -508,8 +520,12 @@ MNG_paixiboyi_categories = {
 		icon = ger_military_buildup
 		available = { 
             check_variable = { MNG_guanxuexi > 39} 
-            has_completed_focus = MNG_make_in_our_country
+            has_completed_focus = MNG_ziligengsheng
         }
+		custom_cost_trigger = {
+            check_variable = { MNG_guanxuexi > 39 } 
+		}
+		custom_cost_text = MNG_guanxuexi_dayu_40
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -540,8 +556,12 @@ MNG_paixiboyi_categories = {
 		icon = ger_military_buildup
 		available = { 
             check_variable = { MNG_guanxuexi > 39} 
-            has_completed_focus = MNG_make_in_our_country
+            has_completed_focus = MNG_ziligengsheng
         }
+		custom_cost_trigger = {
+            check_variable = { MNG_guanxuexi > 19 } 
+		}
+		custom_cost_text = MNG_guanxuexi_dayu_40
 		days_remove = 60
         days_re_enable = 180
         cost = 50
@@ -573,10 +593,15 @@ MNG_paixiboyi_categories = {
 	MNG_huifudongbeichanneng = {
 		icon = ger_military_buildup
 		available = { 
-            has_completed_focus = MNG_make_in_our_country
+            has_completed_focus = MNG_ziligengsheng
             check_variable = { MNG_wubeixi > 49 } 
             check_variable = { MNG_zijinxi > 64 } 
         }
+		custom_cost_trigger = {
+            check_variable = { MNG_wubeixi > 49 } 
+            check_variable = { MNG_zijinxi > 64 } 
+		}
+		custom_cost_text = MNG_wubeixi_dayu_50_MNG_zijinxi_dayu_65
 		days_remove = 60
         days_re_enable = 180
         cost = 50
