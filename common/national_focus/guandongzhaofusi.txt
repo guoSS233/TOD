@@ -53,7 +53,7 @@ focus_tree = {
 	focus = {
 		id = GPS_yanchataiziyuci
 		icon = GFX_GPS_yanchataiziyuci
-		allow_branch = {if = { NOT = {  has_country_flag = GPS_liaoyangqiyi }}}
+		allow_branch = { NOT = {  has_country_flag = GPS_liaoyangqiyi }}
 		x = 7
 		y = 1
 		
@@ -172,7 +172,7 @@ focus_tree = {
 	focus = {
 		id = GPS_tanyaqiyi
 		icon = GFX_GPS_tanyaqiyi
-		allow_branch = {if = {country_exists = SRC }}
+		allow_branch = { country_exists = SRC }
 		x = 7
 		y = 1
 		
@@ -721,8 +721,10 @@ focus_tree = {
 	focus = {
 		id = GPS_xuangaopingluanshengli
 		icon = GFX_GPS_xuangaopingluanshengli
-		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
-		allow_branch = {if = NOT = {{country_exists = SRC }}}
+		allow_branch = {
+			has_country_flag = GPS_liaoyangqiyi
+			NOT = {country_exists = SRC }
+		}
 		x = 7
 		y = 1
 		
@@ -1287,8 +1289,10 @@ focus_tree = {
 	focus = {
 		id = GPS_jieruzhoubianjushi
 		icon = GFX_GPS_jieruzhoubianjushi
-		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
-		allow_branch = {if = {NOT = {country_exists = SRC }}}
+		allow_branch = {
+			has_country_flag = GPS_liaoyangqiyi
+			NOT = {country_exists = SRC }
+		}
 		x = 15
 		y = 1
 		

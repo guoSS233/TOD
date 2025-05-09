@@ -89,6 +89,8 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			political_power_cost = 25
+			country_event = { id = TOD_STG.1 }
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	#西北戡乱
@@ -97,6 +99,7 @@ focus_tree = {
 		icon = GFX_STG_xibeikanluan
 		prerequisite = { focus = STG_yingduiluanju}
 		mutually_exclusive = { focus = STG_yijingzhidong }
+		available = { always = no}
 
 		x = 28
 		y = 3
@@ -111,8 +114,6 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-				country_event = { id = TOD_STG.1 }
-				mark_focus_tree_layout_dirty = yes
 		}
 	}
 	#速攻破敌
