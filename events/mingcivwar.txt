@@ -1524,7 +1524,22 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
+	immediate = {
+		hidden_effect = {
+			STG = {
+				add_state_core = 608
+				transfer_state = 608
+			}
+		}
+		STG = { 
+			change_tag_from = ROOT
+			country_event = {
+				id = mingcivwar.83
+			}
+		}
+	}
 	option = { 
+		name = mingcivwar.83.a
 		every_other_country = {
 			limit = {
 				is_in_faction_with = FROM
@@ -1532,12 +1547,6 @@ country_event = {
 			}
 			leave_faction = yes
 		}
-		name = mingcivwar.83.a
-		STG = {
-			add_state_core = 608
-			transfer_state = 608
-		}
-		STG = { change_tag_from = ROOT }
 		MNG_release_STG = yes
 		hidden_effect = {
 			load_oob = "STG_1937"

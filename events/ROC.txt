@@ -944,30 +944,30 @@ country_event = {
 		load_focus_tree = ROC_gonghe
 		hidden_effect = {
 			set_popularities = {
-				##先锋
-				vanguard_socialism = 1
-				##委员会
-				council_socialism = 4
-				##温和
-				moderate_socialism = 18
-				##工农
-				agroindustrial_socialism = 5
-				##社民
-				social_democrat = 40
-				##调和民主
-				consociationalism = 4
-				##自由民
-				liberal_democracy = 16
-				##保保
-				conservative_democracy = 5
-				##寡头专制
-				authoritarian_oligarchy = 5
-				##领袖意识
-				leader_despotism = 1
-				##神圣复兴
-				sacred_revivalism = 1
-				##国家法团主义
-				national_corporatism = 0
+					##先锋
+					vanguard_socialism = 1
+					##委员会
+					council_socialism = 4
+					##温和
+					moderate_socialism = 18
+					##工农
+					agroindustrial_socialism = 5
+					##社民
+					social_democrat = 40
+					##调和民主
+					consociationalism = 4
+					##自由民
+					liberal_democracy = 16
+					##保保
+					conservative_democracy = 5
+					##寡头专制
+					authoritarian_oligarchy = 5
+					##领袖意识
+					leader_despotism = 1
+					##神圣复兴
+					sacred_revivalism = 1
+					##国家法团主义
+					national_corporatism = 0
 			}
 			remove_ideas = {
 				MNG_Unsettled_Republicians
@@ -980,52 +980,54 @@ country_event = {
 				ROC_idea_huanandasoubu
 				ROC_idea_huanandasoubu_1
 			}
-			recruit_character = ROC_zhangxiaozhun
-			recruit_character = ROC_zhangshaozeng
-			recruit_character = ROC_dengkeng
-			recruit_character = ROC_lijishen
-			recruit_character = ROC_chenmingshu
-			recruit_character = ROC_yuzuobai
-			recruit_character = ROC_dengyanda
-			recruit_character = ROC_xueyue
-			recruit_character = ROC_limingrui
-			recruit_character = ROC_jiangxianyun
-			recruit_character = ROC_helong
-			recruit_character = ROC_zhangfakui
-			recruit_character = ROC_chengeng
-			recruit_character = ROC_zhoushidi
-			recruit_character = ROC_ludeming
-			recruit_character = ROC_wangerzhuo
-			recruit_character = ROC_wangyaowu
-			recruit_character = ROC_lizhangda
-			recruit_character = ROC_jinfozhuang
-			recruit_character = ROC_guanlinzheng
-			recruit_character = ROC_xujishen
-			recruit_character = ROC_duyuming
-			recruit_character = ROC_zhuyunqing
-			recruit_character = ROC_huangqixiang
-			recruit_character = ROC_caoyuan
-			recruit_character = ROC_huangzaixin
-			recruit_character = ROC_xuguangda
-			recruit_character = ROC_liuchouxi
-			recruit_character = ROC_duandechang
-			recruit_character = ROC_caishenxi
-			recruit_character = ROC_linjianzhang
-			recruit_character = ROC_chengbiguang
-			recruit_character = ROC_yangshuzhuang
-			recruit_character = ROC_chenshaokuan
-			recruit_character = ROC_chence
-			recruit_character = ROC_lizhilong
-			recruit_character = ROC_duxigui
-			recruit_character = ROC_chenjiliang
-			recruit_character = ROC_linzun
-	
-			#部长，理论家
-			recruit_character = ROC_yangxianyi
-			recruit_character = ROC_huangguangrui
-			recruit_character = ROC_wangbi
-			recruit_character = ROC_changqiankun
-			recruit_character = ROC_liufuji
+			ROC = {
+				ROC_zhangxiaozhun = { set_nationality = ROC }
+				ROC_zhangshaozeng = { set_nationality = ROC }
+				ROC_dengkeng = { set_nationality = ROC }
+				ROC_lijishen = { set_nationality = ROC }
+				ROC_chenmingshu = { set_nationality = ROC }
+				ROC_yuzuobai = { set_nationality = ROC }
+				ROC_dengyanda = { set_nationality = ROC }
+				ROC_xueyue = { set_nationality = ROC }
+				ROC_limingrui = { set_nationality = ROC }
+				ROC_jiangxianyun = { set_nationality = ROC }
+				ROC_helong = { set_nationality = ROC }
+				ROC_zhangfakui = { set_nationality = ROC }
+				ROC_chengeng = { set_nationality = ROC }
+				ROC_zhoushidi = { set_nationality = ROC }
+				ROC_ludeming = { set_nationality = ROC }
+				ROC_wangerzhuo = { set_nationality = ROC }
+				ROC_wangyaowu = { set_nationality = ROC }
+				ROC_lizhangda = { set_nationality = ROC }
+				ROC_jinfozhuang = { set_nationality = ROC }
+				ROC_guanlinzheng = { set_nationality = ROC }
+				ROC_xujishen = { set_nationality = ROC }
+				ROC_duyuming = { set_nationality = ROC }
+				ROC_zhuyunqing = { set_nationality = ROC }
+				ROC_huangqixiang = { set_nationality = ROC }
+				ROC_caoyuan = { set_nationality = ROC }
+				ROC_huangzaixin = { set_nationality = ROC }
+				ROC_xuguangda = { set_nationality = ROC }
+				ROC_liuchouxi = { set_nationality = ROC }
+				ROC_duandechang = { set_nationality = ROC }
+				ROC_caishenxi = { set_nationality = ROC }
+				ROC_linjianzhang = { set_nationality = ROC }
+				ROC_chengbiguang = { set_nationality = ROC }
+				ROC_yangshuzhuang = { set_nationality = ROC }
+				ROC_chenshaokuan = { set_nationality = ROC }
+				ROC_chence = { set_nationality = ROC }
+				ROC_lizhilong = { set_nationality = ROC }
+				ROC_duxigui = { set_nationality = ROC }
+				ROC_chenjiliang = { set_nationality = ROC }
+				ROC_linzun = { set_nationality = ROC }
+
+				#部长，理论家
+				ROC_yangxianyi = { set_nationality = ROC }
+				ROC_huangguangrui = { set_nationality = ROC }
+				ROC_wangbi = { set_nationality = ROC }
+				ROC_changqiankun = { set_nationality = ROC }
+				ROC_liufuji = { set_nationality = ROC }
+			}	
 		}
 	}
 }
@@ -1228,7 +1230,9 @@ country_event = {
 			set_demilitarized_zone = no
 		}
 		hidden_effect = {
-			recruit_character = ROC_characters_huananjiaofusi
+			ROC_characters_huananjiaofusi = {
+				
+			}
 		}
 		promote_character = {
 			character = ROC_characters_huananjiaofusi
@@ -1254,9 +1258,6 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {
-		tag = ROC
-	}
 	option = {
 		name = ROC_datong.1.a 
 		add_political_power = 25
