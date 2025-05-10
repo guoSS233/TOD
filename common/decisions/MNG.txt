@@ -96,13 +96,14 @@ MNG_paixiboyi_categories = {
     #扶持武备系
 	MNG_fuchiwubeixi = {
 		icon = ger_military_buildup
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 59}  
             NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
 		days_remove = 7
 		days_re_enable = 0
-        cost = 15
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
@@ -111,6 +112,7 @@ MNG_paixiboyi_categories = {
             } 
         }
 		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
             add_to_variable = { MNG_wubeixi = 5 } 
             add_to_variable = { MNG_zijinxi = -2 }
         }
@@ -118,21 +120,23 @@ MNG_paixiboyi_categories = {
     #打击武备系
 	MNG_dajiwubeixi= {
 		icon = ger_military_buildup
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 59}  
             NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
 		days_remove = 7
 		days_re_enable = 0
-        cost = 15
 		complete_effect = { 
             set_country_flag = { 
-                flag = MNG_ganyupaixi
+                flag = MNG_ganyupaixi 
                 days = MNG_boyishijian_2
 				value = 1
             } 
         }
 		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
             add_to_variable = { MNG_wubeixi = -5 } 
             add_to_variable = { MNG_zijinxi = -2 }
         }
@@ -140,13 +144,14 @@ MNG_paixiboyi_categories = {
     #扶持管学系
 	MNG_fuchiguanxuexi = {
 		icon = ger_military_buildup
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 59}  
             NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
 		days_remove = 7
 		days_re_enable = 0
-        cost = 15
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
@@ -154,7 +159,8 @@ MNG_paixiboyi_categories = {
 				value = 1
             } 
         }
-		remove_effect = { 
+		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
             add_to_variable = { MNG_guanxuexi = 5 } 
             add_to_variable = { MNG_zijinxi = -2 }
         }
@@ -162,13 +168,14 @@ MNG_paixiboyi_categories = {
     #打击管学系
 	MNG_dajiguanxuexi= {
 		icon = ger_military_buildup
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 59}  
             NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
 		days_remove = 7
 		days_re_enable = 0
-        cost = 15
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
@@ -177,6 +184,7 @@ MNG_paixiboyi_categories = {
             } 
         }
 		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
             add_to_variable = { MNG_guanxuexi= -5 } 
             add_to_variable = { MNG_zijinxi = -2 }
         }
@@ -184,13 +192,14 @@ MNG_paixiboyi_categories = {
     #扶持清政系
 	MNG_fuchiqingzhengxi = {
 		icon = ger_military_buildup
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 59}  
             NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
 		days_remove = 7
 		days_re_enable = 0
-        cost = 15
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
@@ -199,6 +208,7 @@ MNG_paixiboyi_categories = {
             } 
         }
 		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
             add_to_variable = { MNG_qingzhengxi = 5 } 
             add_to_variable = { MNG_zijinxi = -2 }
         }
@@ -206,13 +216,14 @@ MNG_paixiboyi_categories = {
     #打击清政系
 	MNG_dajiqingzhengxi= {
 		icon = ger_military_buildup
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 59}  
             NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
 		days_remove = 7
 		days_re_enable = 0
-        cost = 15
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
@@ -221,6 +232,7 @@ MNG_paixiboyi_categories = {
             } 
         }
 		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
             add_to_variable = { MNG_qingzhengxi = -5 } 
             add_to_variable = { MNG_zijinxi = -2 }
         }
@@ -228,35 +240,14 @@ MNG_paixiboyi_categories = {
     #扶持交通系
 	MNG_fuchijiaotongxi = {
 		icon = ger_military_buildup
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 59}  
             NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
 		days_remove = 7
 		days_re_enable = 0
-        cost = 15
-		complete_effect = { 
-            set_country_flag = { 
-                flag = MNG_ganyupaixi 
-                days = MNG_boyishijian_2
-				value = 1
-            } 
-        }
-		remove_effect = { 
-            add_to_variable = { MNG_jiaotongxi = 5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #打击交通系
-	MNG_dajiqingzhengxi= {
-		icon = ger_military_buildup
-		available = { 
-            check_variable = { MNG_zijinxi > 59}  
-            NOT = { has_country_flag =  MNG_ganyupaixi }
-        }
-		days_remove = 7
-		days_re_enable = 0
-        cost = 15
 		complete_effect = { 
             set_country_flag = { 
                 flag = MNG_ganyupaixi 
@@ -265,6 +256,31 @@ MNG_paixiboyi_categories = {
             } 
         }
 		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
+            add_to_variable = { MNG_jiaotongxi = 5 } 
+            add_to_variable = { MNG_zijinxi = -2 }
+        }
+	}
+    #打击交通系
+	MNG_dajiqingzhengxi= {
+		icon = ger_military_buildup
+		custom_cost_trigger = {
+            check_variable = { MNG_zijinxi > 59}  
+            NOT = { has_country_flag =  MNG_ganyupaixi }
+            has_political_power > 15
+		}
+		custom_cost_text = MNG_zijinxi_dayu_60
+		days_remove = 7
+		days_re_enable = 0
+		complete_effect = { 
+            set_country_flag = { 
+                flag = MNG_ganyupaixi 
+                days = MNG_boyishijian_2
+				value = 1
+            } 
+        }
+		remove_effect = {
+            hidden_effect = { political_power_cost = 15}
             add_to_variable = { MNG_jiaotongxi = -5 } 
             add_to_variable = { MNG_zijinxi = -2 }
         }
@@ -273,14 +289,16 @@ MNG_paixiboyi_categories = {
 	MNG_chanchuwubeixi= {
 		icon = ger_military_buildup
         visible = { has_completed_focus = MNG_zhengdunguanchang  }
-		available = { 
+		custom_cost_trigger = {
+            has_political_power > 120
             check_variable = { MNG_zijinxi > 69}  
             check_variable = { MNG_wubeixi < 36}
-        }
+		}
+		custom_cost_text = MNG_zijinxi_dayu_70_MNG_wubeixi_xiaoyu_35
 		days_remove = 7
         fire_only_once = yes
-        cost = 120
 		remove_effect = {
+            hidden_effect = { political_power_cost = 120 }
             add_to_variable = { MNG_wubeixi = -10 } 
             add_to_variable = { MNG_zijinxi = -7 }
             set_country_flag = MNG_wubeixibeichanchu
@@ -292,12 +310,17 @@ MNG_paixiboyi_categories = {
         visible = { has_completed_focus = MNG_zhengdunguanchang  }
 		available = { 
             check_variable = { MNG_zijinxi > 64}  
-            check_variable = { MNG_guanxuexi < 19}
+            check_variable = { MNG_guanxuexi < 21}
         }
+		custom_cost_trigger = {
+            check_variable = { MNG_zijinxi > 64}  
+            check_variable = { MNG_guanxuexi < 21}
+		}
+		custom_cost_text = MNG_zijinxi_dayu_65_MNG_guanxuexi_xiaoyu_20
 		days_remove = 7
         fire_only_once = yes
-        cost = 120
 		remove_effect = {
+            hidden_effect = { political_power_cost = 120}
             add_to_variable = { MNG_guanxuexi = -10 } 
             add_to_variable = { MNG_zijinxi = -7 }
             set_country_flag = MNG_zhongchuangguanxuexi
@@ -307,15 +330,19 @@ MNG_paixiboyi_categories = {
 	MNG_dajinongminyundong = {
 		icon = ger_military_buildup
         visible = { has_completed_focus = MNG_soubudatonghui  }
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 64}  
-            army_experience > 14
-        }
-		custom_cost_text = 15_army_experience
+            has_army_experience > 14
+            has_political_power > 99
+		}
+		custom_cost_text = MNG_zijinxi_dayu_65
 		days_remove = 7
         fire_only_once = yes
-        cost = 100
 		remove_effect = {
+            hidden_effect = { 
+                political_power_cost = 120
+                army_experience = -15
+            }
             add_to_variable = { MNG_zijinxi = -5 }
             set_country_flag = MNG_nongminyundongbeidaji
         }
@@ -324,15 +351,19 @@ MNG_paixiboyi_categories = {
 	MNG_zhenyagongrenyundong = {
 		icon = ger_military_buildup
         visible = { has_completed_focus = MNG_qingjiaotongchangonghui }
-		available = { 
+		custom_cost_trigger = {
             check_variable = { MNG_zijinxi > 64}  
-            army_experience > 14
-        }
-		custom_cost_text = 15_army_experience
+            has_army_experience > 14
+            has_political_power > 99
+		}
+		custom_cost_text = MNG_zijinxi_dayu_65
 		days_remove = 7
         fire_only_once = yes
-        cost = 100
 		remove_effect = {
+            hidden_effect = { 
+                political_power_cost = 120
+                army_experience = -15
+            }
             add_to_variable = { MNG_zijinxi = -5 }
             GPS = {set_country_flag = MNG_gongrenyundongbeizhenya}
         }
@@ -410,19 +441,17 @@ MNG_paixiboyi_categories = {
     #扶持西北军工
 	MNG_fuchixibeijungong = {
 		icon = ger_military_buildup
-		available = { 
-            check_variable = { MNG_jiaotongxi > 29} 
-            has_completed_focus = MNG_ziligengsheng
-        }
 		custom_cost_trigger = {
             check_variable = { MNG_jiaotongxi > 29 } 
+            has_political_power > 49
 		}
 		custom_cost_text = MNG_jiaotongxi_dayu_30
 		days_remove = 60
         days_re_enable = 180
-        cost = 50
+        
         complete_effect = { set_country_flag = MNG_gongyejianshe }
 		remove_effect = {
+            hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_jiaotongxi = 6 }
             random_owned_controlled_state = {
                 limit = {
@@ -446,19 +475,16 @@ MNG_paixiboyi_categories = {
     #扶持西南军工
 	MNG_fuchixinanjungong = {
 		icon = ger_military_buildup
-		available = { 
-            check_variable = { MNG_qingzhengxi > 34} 
-            has_completed_focus = MNG_ziligengsheng
-        }
 		custom_cost_trigger = {
             check_variable = { MNG_qingzhengxi > 34 } 
+            has_political_power > 49
 		}
 		custom_cost_text = MNG_qingzhengxi_dayu_35
 		days_remove = 60
         days_re_enable = 180
-        cost = 50
         complete_effect = { set_country_flag = MNG_gongyejianshe }
 		remove_effect = {
+            hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_qingzhengxi = 6 }
             random_owned_controlled_state = {
                 limit = {
@@ -481,19 +507,16 @@ MNG_paixiboyi_categories = {
     #振兴华北国企
 	MNG_zhenxinghuabeiguoqi = {
 		icon = ger_military_buildup
-		available = { 
-            check_variable = { MNG_wubeixi > 49} 
-            has_completed_focus = MNG_ziligengsheng
-        }
 		custom_cost_trigger = {
             check_variable = { MNG_wubeixi > 49 } 
+            has_political_power > 49
 		}
 		custom_cost_text = MNG_wubeixi_dayu_50
 		days_remove = 60
         days_re_enable = 180
-        cost = 50
         complete_effect = { set_country_flag = MNG_gongyejianshe }
 		remove_effect = {
+            hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_wubeixi = 6 }
             random_owned_controlled_state = {
                 limit = {
@@ -518,19 +541,16 @@ MNG_paixiboyi_categories = {
     #促进华东民营
 	MNG_cujinhuadongminying = {
 		icon = ger_military_buildup
-		available = { 
-            check_variable = { MNG_guanxuexi > 39} 
-            has_completed_focus = MNG_ziligengsheng
-        }
 		custom_cost_trigger = {
             check_variable = { MNG_guanxuexi > 39 } 
+            has_political_power > 49
 		}
 		custom_cost_text = MNG_guanxuexi_dayu_40
 		days_remove = 60
         days_re_enable = 180
-        cost = 50
         complete_effect = { set_country_flag = MNG_gongyejianshe }
 		remove_effect = {
+            hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_guanxuexi = 6 }
             clr_country_flag = MNG_gongyejianshe
             random_owned_controlled_state = {
@@ -554,19 +574,16 @@ MNG_paixiboyi_categories = {
     #促进华南民营
 	MNG_cujinhuananminying = {
 		icon = ger_military_buildup
-		available = { 
-            check_variable = { MNG_guanxuexi > 39} 
-            has_completed_focus = MNG_ziligengsheng
-        }
 		custom_cost_trigger = {
             check_variable = { MNG_guanxuexi > 19 } 
+            has_political_power > 49
 		}
 		custom_cost_text = MNG_guanxuexi_dayu_40
 		days_remove = 60
         days_re_enable = 180
-        cost = 50
         complete_effect = { set_country_flag = MNG_gongyejianshe }
 		remove_effect = {
+            hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_guanxuexi = 3 }
             add_to_variable = { MNG_zhengxuexi = 3 }
             clr_country_flag = MNG_gongyejianshe
@@ -592,21 +609,18 @@ MNG_paixiboyi_categories = {
     #恢复东北产能
 	MNG_huifudongbeichanneng = {
 		icon = ger_military_buildup
-		available = { 
-            has_completed_focus = MNG_ziligengsheng
-            check_variable = { MNG_wubeixi > 49 } 
-            check_variable = { MNG_zijinxi > 64 } 
-        }
 		custom_cost_trigger = {
+            has_political_power > 49
+            has_completed_focus = MNG_ziligengsheng
             check_variable = { MNG_wubeixi > 49 } 
             check_variable = { MNG_zijinxi > 64 } 
 		}
 		custom_cost_text = MNG_wubeixi_dayu_50_MNG_zijinxi_dayu_65
 		days_remove = 60
         days_re_enable = 180
-        cost = 50
         complete_effect = { set_country_flag = MNG_gongyejianshe }
 		remove_effect = {
+            hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_wubeixi = 3 }
             add_to_variable = { MNG_zijinxi = 3 }
             clr_country_flag = MNG_gongyejianshe

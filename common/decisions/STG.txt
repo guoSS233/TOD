@@ -636,3 +636,20 @@ STG_jungongfazhan = {
 	STG_yigenghuanzujianyanzhii = {
 	}
 }
+#靖难
+STG_jingnan = {
+	#开战
+	STG_kaizhan = {
+		available = {
+			NOT = { country_exists = XBJ }
+		}
+        activation = {
+             country_exists = XBJ
+        }
+		days_mission_timeout = 30
+        fire_only_once = yes
+		timeout_effect = {
+            declare_war_on = { target = XBJ type = annex_everything }
+        }
+	}
+}
