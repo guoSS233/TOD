@@ -26,3 +26,68 @@ STG_zhankaihuizhan = {
 		country_exists = XBJ
 	}
 }
+#至高皇权
+STG_zhigaohuangquan = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = STG
+		has_completed_focus = STG_shengxinduduan
+	}
+	visible = {
+		tag = STG
+		has_completed_focus = STG_shengxinduduan
+	}
+}
+#武备会议
+STG_wubeihuiyi = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = STG
+		has_completed_focus = STG_banbuxinxianfa
+	}
+	visible = {
+		tag = STG
+		has_completed_focus = STG_banbuxinxianfa
+	}
+}
+#整顿直隶军区
+STG_zhengdunzhilijunqu = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = STG
+		has_completed_focus = STG_jinrugouzhong
+		NOT = { has_country_flag = STG_zhengdunzhilijunqu_3 }
+	}
+	visible = {
+		tag = STG
+		has_completed_focus = STG_jinrugouzhong
+		NOT = { has_country_flag = STG_zhengdunzhilijunqu_3 }
+	}
+}
+#军工发展
+STG_jungongfazhan = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = STG
+		has_completed_focus = STG_zongjiejingyan
+	}
+	visible = {
+		tag = STG
+		has_completed_focus = STG_zongjiejingyan
+	}
+}
+#靖难
+STG_jingnan = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = STG
+	}
+	visible = {
+		tag = STG
+	}
+}

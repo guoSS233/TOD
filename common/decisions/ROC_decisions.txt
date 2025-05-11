@@ -27,256 +27,1315 @@ ROC_decision_l_0 = {
 		}	
 		remove_effect = {
 		}
-	}		
+	}	
 }
 
 ROC_balance_of_power_category = {  #权力斗争决议
- #debug	
-	ROC_decision_right_yingxaingli_10 = {		
-		icon = ger_mefo_bills		
-		cost = 1		
-		fire_only_once = no				
-		ai_will_do = {
-			factor = 0			
-	    }
-		visible = {
-			is_debug = yes
-		}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.1
-			}
-		}
-	}	
-	ROC_decision_right_yingxaingli_20 = {		
-		icon = ger_mefo_bills		
-		cost = 1		
-		fire_only_once = no				
-		ai_will_do = {
-			factor = 0			
-	    }
-		visible = {
-			is_debug = yes
-		}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.2
-			}
-		}
-	}	
-	ROC_decision_right_yingxaingli_50 = {		
-		icon = ger_mefo_bills		
-		cost = 1		
-		fire_only_once = no				
-		ai_will_do = {
-			factor = 0			
-	    }
-		visible = {
-			is_debug = yes
-		}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.5
-			}
-		}
-	}	
-	ROC_decision_left_yingxaingli_10 = {		
-		icon = ger_mefo_bills		
-		cost = 1		
-		fire_only_once = no				
-		ai_will_do = {
-			factor = 0			
-	    }
-		visible = {
-			is_debug = yes
-		}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.1
-			}
-		}
-	}	
-	ROC_decision_left_yingxaingli_20 = {		
-		icon = ger_mefo_bills		
-		cost = 1		
-		fire_only_once = no				
-		ai_will_do = {
-			factor = 0			
-	    }
-		visible = {
-			is_debug = yes
-		}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.2
-			}
-		}
-	}	
-	ROC_decision_left_yingxaingli_50 = {		
-		icon = ger_mefo_bills		
-		cost = 1		
-		fire_only_once = no				
-		ai_will_do = {
-			factor = 0			
-	    }
-		visible = {
-			is_debug = yes
-		}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.5
-			}
-		}
-	}	
- #决议	
- 	ROC_decision_bop_left_fcsyqy = {	#扶持私营企业
-		icon = GFX_decision_generic_decision		
-		cost = 30	
-		fire_only_once = no		
-		days_remove = VAR_ROC_bop_days_1	
-		days_re_enable = 60	
-		ai_will_do = {
-			factor = 0			
-	    }
-		available = {
-		}	
-		complete_effect = {  	
-		}
-		modifier = {
-			consumer_goods_factor = 0.10
-	   	}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.07
-			}
-		}
-	}
-	ROC_decision_bop_left_jqmysc = {	#加强民生产业促进会技术分享
-		icon = GFX_decision_generic_decision		
-		cost = 30	
-		fire_only_once = no		
-		days_remove = VAR_ROC_bop_days_1	
-		days_re_enable = 60	
-		ai_will_do = {
-			factor = 0			
-	    }
-		available = {
-		}	
-		complete_effect = {  	
-		}
-		modifier = {
-			political_power_cost = 0.5
-			production_factory_max_efficiency_factor = 0.05   #生产效率上限
-	   	}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.05
-			}
-		}
-	}
-	ROC_decision_bop_left_clgq = {	#推动处理冗余国企
-		icon = GFX_decision_generic_decision		
-		cost = 50	
-		fire_only_once = no		
-		days_remove = VAR_ROC_bop_days_2	
-		days_re_enable = 80	
-		ai_will_do = {
-			factor = 0			
-	    }
-		available = {
-		}	
-		complete_effect = {  	
-		}
-		modifier = {
-			consumer_goods_factor = 0.10
-			stability_factor = -0.05
-	   	}
-		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.15
-			}
-		}
-	}
+	#debug	
+	   ROC_decision_right_yingxaingli_10 = {		
+		   icon = ger_mefo_bills		
+		   cost = 1		
+		   fire_only_once = no				
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   visible = {
+			   is_debug = yes
+		   }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = 0.1
+			   }
+		   }
+	   }	
+	   ROC_decision_right_yingxaingli_20 = {		
+		   icon = ger_mefo_bills		
+		   cost = 1		
+		   fire_only_once = no				
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   visible = {
+			   is_debug = yes
+		   }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = 0.2
+			   }
+		   }
+	   }	
+	   ROC_decision_right_yingxaingli_50 = {		
+		   icon = ger_mefo_bills		
+		   cost = 1		
+		   fire_only_once = no				
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   visible = {
+			   is_debug = yes
+		   }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = 0.5
+			   }
+		   }
+	   }	
+	   ROC_decision_left_yingxaingli_10 = {		
+		   icon = ger_mefo_bills		
+		   cost = 1		
+		   fire_only_once = no				
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   visible = {
+			   is_debug = yes
+		   }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = -0.1
+			   }
+		   }
+	   }	
+	   ROC_decision_left_yingxaingli_20 = {		
+		   icon = ger_mefo_bills		
+		   cost = 1		
+		   fire_only_once = no				
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   visible = {
+			   is_debug = yes
+		   }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = -0.2
+			   }
+		   }
+	   }	
+	   ROC_decision_left_yingxaingli_50 = {		
+		   icon = ger_mefo_bills		
+		   cost = 1		
+		   fire_only_once = no				
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   visible = {
+			   is_debug = yes
+		   }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = -0.5
+			   }
+		   }
+	   }	
+	#决议	
+		ROC_decision_bop_left_fcsyqy = {	#扶持私营企业
+		   icon = GFX_decision_generic_decision		
+		   cost = 30	
+		   fire_only_once = no		
+		   days_remove = 30	
+		   days_re_enable = 60	
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   available = {
+		   }	
+		   complete_effect = {  	
+		   }
+		   modifier = {
+			   consumer_goods_factor = 0.10
+			  }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = -0.07
+			   }
+		   }
+	   }
+	   ROC_decision_bop_left_jqmysc = {	#加强民生产业促进会技术分享
+		   icon = GFX_decision_generic_decision		
+		   cost = 30	
+		   fire_only_once = no		
+		   days_remove = 30
+		   days_re_enable = 60	
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   available = {
+		   }	
+		   complete_effect = {  	
+		   }
+		   modifier = {
+			   political_power_cost = 0.5
+			   production_factory_max_efficiency_factor = 0.05   #生产效率上限
+			  }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = -0.05
+			   }
+		   }
+	   }
+	   ROC_decision_bop_left_clgq = {	#推动处理冗余国企
+		   icon = GFX_decision_generic_decision		
+		   cost = 50	
+		   fire_only_once = no		
+		   days_remove = 120	
+		   days_re_enable = 80	
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   available = {
+		   }	
+		   complete_effect = {  	
+		   }
+		   modifier = {
+			   consumer_goods_factor = 0.10
+			   stability_factor = -0.05
+			  }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = -0.15
+			   }
+		   }
+	   }
+   
+	   ROC_decision_bop_right_qhgh = {	#强化国企工会权力
+		   icon = GFX_decision_generic_decision		
+		   cost = 30	
+		   fire_only_once = no		
+		   days_remove = 30	
+		   days_re_enable = 60	
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   available = {
+		   }	
+		   complete_effect = {  	
+		   }
+		   modifier = {
+			   consumer_goods_factor = 0.10
+			  }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = 0.07
+			   }
+		   }
+	   }
+	   ROC_decision_bop_right_ssjm = {	#国企税收减免
+		   icon = GFX_decision_generic_decision		
+		   cost = 30	
+		   fire_only_once = no		
+		   days_remove = 30	
+		   days_re_enable = 60	
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   available = {
+		   }	
+		   complete_effect = {  	
+		   }
+		   modifier = {
+			   political_power_cost = 0.5
+			   production_factory_efficiency_gain_factor = 0.05   #生产效率增长		
+			  }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = 0.05
+			   }
+		   }
+	   }
+	   ROC_decision_bop_right_sqgyh = {	#推动私企国有化改造
+		   icon = GFX_decision_generic_decision		
+		   cost = 50	
+		   fire_only_once = no		
+		   days_remove = 120	
+		   days_re_enable = 80	
+		   ai_will_do = {
+			   factor = 0			
+		   }
+		   available = {
+		   }	
+		   complete_effect = {  	
+		   }
+		   modifier = {
+			   consumer_goods_factor = 0.10
+			   stability_factor = -0.05
+			  }
+		   remove_effect = {
+			   add_power_balance_value = {
+				   id = ROC_power_balance
+				   value = 0.15
+			   }
+		   }
+	   }
+   }
 
-	ROC_decision_bop_right_qhgh = {	#强化国企工会权力
-		icon = GFX_decision_generic_decision		
-		cost = 30	
-		fire_only_once = no		
-		days_remove = VAR_ROC_bop_days_1	
-		days_re_enable = 60	
+ROC_focus_gonggubianjie = {#巩固边界
+	ROC_decision_chubugoujianfangxian = {#初步构建防线	
+		icon = border_war		
+		cost = 50		
+		days_remove = 30
+		fire_only_once = yes				
 		ai_will_do = {
-			factor = 0			
+			factor = 100			
 	    }
-		available = {
-		}	
-		complete_effect = {  	
+		visible = {
+
 		}
+		complete_effect = {  	
+
+		}	
 		modifier = {
-			consumer_goods_factor = 0.10
-	   	}
+			civilian_factory_use = 2
+		}
+		cancel_if_not_visible = yes
 		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.07
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4177
+				}
+			}
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 12407
+				}
+			}
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1023
+				}
+			}
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 11983
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9997
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 13237
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9970
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1120
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1162
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1078
+				}
+			}
+			1114 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4165
+				}
+			}
+			1114 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 7141
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4053
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10084
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1138
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4113
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10012
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4070
+				}
+			}
+			813 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10069
+				}
 			}
 		}
-	}
-	ROC_decision_bop_right_ssjm = {	#国企税收减免
-		icon = GFX_decision_generic_decision		
-		cost = 30	
-		fire_only_once = no		
-		days_remove = VAR_ROC_bop_days_1	
-		days_re_enable = 60	
+	}	
+	ROC_decision_paiqianzhenggongganbudaonongcun = {#派遣政工干部到农村	
+		icon = border_war		
+		cost = 50		
+		days_remove = 60
+		fire_only_once = no				
 		ai_will_do = {
-			factor = 0			
+			factor = 100			
 	    }
-		available = {
-		}	
-		complete_effect = {  	
+		visible = {
+			NOT = {
+				has_country_flag = ROC_decision_bubing_10
+			}
+
 		}
+		complete_effect = {  	
+
+		}	
 		modifier = {
-			political_power_cost = 0.5
-			production_factory_efficiency_gain_factor = 0.05   #生产效率增长		
-	   	}
+			civilian_factory_use = 2
+		}
 		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.05
+			if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_1
+				}
+				clr_country_flag = ROC_decision_bubing_1
+				set_country_flag = ROC_decision_bubing_2
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_2
+				}
+				clr_country_flag = ROC_decision_bubing_2
+				set_country_flag = ROC_decision_bubing_3
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_3
+				}
+				clr_country_flag = ROC_decision_bubing_3
+				set_country_flag = ROC_decision_bubing_4
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_4
+				}
+				clr_country_flag = ROC_decision_bubing_4
+				set_country_flag = ROC_decision_bubing_5
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_5
+				}
+				clr_country_flag = ROC_decision_bubing_5
+				set_country_flag = ROC_decision_bubing_6
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_6
+				}
+				clr_country_flag = ROC_decision_bubing_6
+				set_country_flag = ROC_decision_bubing_7
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_7
+				}
+				clr_country_flag = ROC_decision_bubing_7
+				set_country_flag = ROC_decision_bubing_8
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_8
+				}
+				clr_country_flag = ROC_decision_bubing_8
+				set_country_flag = ROC_decision_bubing_9
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_9
+				}
+				clr_country_flag = ROC_decision_bubing_9
+				set_country_flag = ROC_decision_bubing_10
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_10
+				}
+				clr_country_flag = ROC_decision_bubing_10
+			}
+			else = {
+				division_template = {
+					name = "步兵师"   
+					is_locked = yes
+					division_names_group = ROC_INT_01
+					regiments = {
+						infantry = { x = 0 y = 0 } 
+						infantry = { x = 0 y = 1 } 
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+					}
+				}
+				set_country_flag = ROC_decision_bubing_1
+			}
+			592 = {
+				create_unit = {
+					division = "name = \"步兵师第%1师\" division_template = \"步兵师\" start_experience_factor = 1.0"
+					prioritize_location = 1047
+					owner = ROC
+				}
+			}
+			custom_effect_tooltip = ROC_decision_paiqianzhenggongganbudaonongcun_tt
+		}
+	}	
+	ROC_decision_zaiguanjiandiqubufang = {#在关键地区重点布防
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = zhenduixingzhanshuyantao
+			check_variable = { 
+				ROC_VAR_nanguo_defence_factor = 0
 			}
 		}
-	}
-	ROC_decision_bop_right_sqgyh = {	#推动私企国有化改造
-		icon = GFX_decision_generic_decision		
-		cost = 50	
-		fire_only_once = no		
-		days_remove = VAR_ROC_bop_days_2	
-		days_re_enable = 80	
-		ai_will_do = {
-			factor = 0			
-	    }
 		available = {
-		}	
-		complete_effect = {  	
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zaiguanjiandiqubufang_tt
+			add_to_variable = { #防御修正
+				ROC_VAR_nanguo_defence_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_zengjinduidirendeliaojie = {#增进对敌人的了解
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = zhenduixingzhanshuyantao
+			check_variable = { 
+				ROC_VAR_nanguo_attack_factor = 0
+			}
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zengjinduidirendeliaojie_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_attack_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_caiqujidongzuozhan = {#采取机动作战
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = zhenduixingzhanshuyantao
+			check_variable = { 
+				ROC_VAR_nanguo_speed_factor = 0
+			}
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_caiqujidongzuozhan_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_speed_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_tuijinqishengbianjie = {#推进边界
+		icon = border_war		
+		cost = 50
+		days_remove = 90
+		days_re_enable = 30
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+		}
+		available = {
 		}
 		modifier = {
-			consumer_goods_factor = 0.10
-			stability_factor = -0.05
-	   	}
+		}
+		targeted_modifier = {
+			tag = GOS
+			#战斗修正种类
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
+		}
+		complete_effect = {
+		}
 		remove_effect = {
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.15
+
+		}
+	}	
+	ROC_decision_shusifangyu = {#殊死防御
+		icon = border_war		
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+			add_stability = -0.02
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_shusifangyu_tt
+			set_country_flag = ROC_decision_fangyu
+		}
+	}
+	ROC_decision_kuaisujianlidangzuzhi = {#快速建立党组织
+		icon = border_war		
+		cost = 75
+		days_remove = 120
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+		}
+		available = {
+		}
+		modifier = {
+			resistance_target = -0.02
+			compliance_growth = 0.1
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	ROC_decision_fadongdihoudangzuzhinonghui = {#发动敌后党组织、农会
+		icon = border_war		
+		cost = 30
+		days_remove = 60
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 50			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			ROC = {
+				add_intel = {
+					target = GOS
+					army_intel = 10
+				}
 			}
 		}
 	}
 }
 
+ROC_focus_beifa = {#北伐
+	ROC_decision_zaiguanjiandiqubufang_1 = {#在关键地区重点布防
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zaiguanjiandiqubufang_tt
+			add_to_variable = { #防御修正
+				ROC_VAR_nanguo_defence_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_zengjinduidirendeliaojie_1 = {#增进对敌人的了解
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zengjinduidirendeliaojie_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_attack_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_caiqujidongzuozhan_1 = {#采取机动作战
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_caiqujidongzuozhan_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_speed_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_tuijinqishengbianjie_1 = {#推进边界
+		icon = border_war		
+		cost = 50
+		days_remove = 90
+		days_re_enable = 30
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+		}
+		modifier = {
+		}
+		targeted_modifier = {
+			tag = STG
+			#战斗修正种类
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
+		}
+		targeted_modifier = {
+			tag = XBJ
+			#战斗修正种类
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+
+		}
+	}	
+	ROC_decision_shusifangyu_1 = {#殊死防御
+		icon = border_war		
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+			add_stability = -0.02
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_shusifangyu_tt
+			set_country_flag = ROC_decision_fangyu
+		}
+	}
+	ROC_decision_kuaisujianlidangzuzhi_1 = {#快速建立党组织
+		icon = border_war		
+		cost = 75
+		days_remove = 120
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+		}
+		modifier = {
+			resistance_target = -0.02
+			compliance_growth = 0.1
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	ROC_decision_fadongdihoudangzuzhinonghui_1 = {#发动敌后党组织、农会
+		icon = border_war		
+		cost = 30
+		days_remove = 60
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 50			
+	    }
+		visible = {
+
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			ROC = {
+				add_intel = {
+					target = XBJ
+					army_intel = 10
+				}
+			}
+			ROC = {
+				add_intel = {
+					target = STG
+					army_intel = 10
+				}
+			}
+		}
+	}
+}
+
+ROC_focus_quanguogeming = {#全国革命
+	ROC_decision_geming_qisheng = {#对七省宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500			
+	    }
+		visible = {
+			has_completed_focus = gemingzhihuoranbiandongnan
+		}
+		remove_effect = {
+			declare_war_on = { target = GOS type = take_state_focus }
+		}
+	}
+	ROC_decision_geming_xibei = {#对西北宣战
+		icon = generic_civil_support		
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500			
+	    }
+		visible = {
+			has_completed_focus = xibeigongfa
+		}
+		remove_effect = {
+			declare_war_on = { target = XBJ type = take_state_focus }
+		}
+	}
+	ROC_decision_geming_shuntian = {#对顺天宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500			
+	    }
+		visible = {
+			has_completed_focus = jisuiyuxi
+		}
+		remove_effect = {
+			declare_war_on = { target = STG type = take_state_focus }
+		}
+	}
+	ROC_decision_geming_dongbei = {#对东北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500			
+	    }
+		visible = {
+			has_completed_focus = yueguoshanhaiguan
+		}
+		remove_effect = {
+			declare_war_on = { target = GPS type = take_state_focus }
+		}
+	}
+	ROC_decision_geming_xinan = {#对西南宣战
+		icon = generic_civil_support		
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500			
+	    }
+		visible = {
+			has_completed_focus = hengsaoxinan
+		}
+		remove_effect = {
+			declare_war_on = { target = XIN type = take_state_focus }
+		}
+	}
+	ROC_decision_geming_bashu = {#对川藏宣战
+		icon = generic_civil_support		
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500			
+	    }
+		visible = {
+			has_completed_focus = bashuzhiguo
+		}
+		remove_effect = {
+			declare_war_on = { target = SIC type = take_state_focus }
+		}
+	}
+	ROC_decision_geming_menggu = {#对漠北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500			
+	    }
+		visible = {
+			has_completed_focus = jiefangmobei
+		}
+		remove_effect = {
+			declare_war_on = { target = BOC type = take_state_focus }
+		}
+	}
+}
+
+ROC_focus_quanguogeming = {#经济建设
+	ROC_decision_nongcunjianshe = { #农村建设
+		icon = SOV_place_hq
+		fire_only_once = yes		
+		days_remove = ROC_VAR_nongcun_days
+		cost = ROC_VAR_nongcun_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_completed_focus = tudigaige
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = pastoral #牧区	初始 1 建筑槽
+					has_state_category = small_island #小岛 初始 1 建筑槽
+					has_state_category = rural #乡村地区 初始 2 建筑槽
+					has_state_category = town #发达乡村地区 初始 4 建筑槽
+					has_state_category = large_town #稀疏城镇地区 初始 5 建筑槽
+
+					has_state_category = one
+					has_state_category = two
+					has_state_category = three
+					has_state_category = four
+					has_state_category = five
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 3
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 3
+	   	}
+		remove_effect = {
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = ROC_nongcunjianshe
+			}
+		}
+	}
+	ROC_decision_minshengjianshe = { #民生建设
+		icon = GFX_decision_generic_construction
+		fire_only_once = yes		
+		days_remove = ROC_VAR_chengshi_days
+		cost = ROC_VAR_chengshi_minsheng_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_completed_focus = jieguanguanyinggongcheng
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = megalopolis #大都市 初始 12 建筑槽
+					has_state_category = metropolis #大城市 初始 10 建筑槽
+
+					has_state_category = ten
+					has_state_category = eleven
+					has_state_category = twelve
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 4
+	   	}
+		remove_effect = {
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = ROC_minshengjianshe
+			}
+		}
+	}
+	ROC_decision_junshijianshe = { #军事建设
+		icon = CHL_carabineros
+		fire_only_once = yes		
+		days_remove = ROC_VAR_chengshi_days
+		cost = ROC_VAR_chengshi_junshi_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_completed_focus = jieguanguanyinggongcheng
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = megalopolis #大都市 初始 12 建筑槽
+					has_state_category = metropolis #大城市 初始 10 建筑槽
+
+					has_state_category = ten
+					has_state_category = eleven
+					has_state_category = twelve
+				}
+			}
+		}
+		available = {
+			FROM = {
+				industrial_complex > 0				
+			}
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 4
+	   	}
+		remove_effect = {
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				remove_building = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	ROC_decision_kuojiangangkou = { #扩建港口
+		icon = SWE_set_navy_budget
+		fire_only_once = yes		
+		days_remove = ROC_VAR_chengshi_days
+		cost = ROC_VAR_chengshi_junshi_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			has_completed_focus = kuojianhaijunjidi
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					state = 813
+					state = 524
+					state = 811
+					state = 808
+					state = 743
+					state = 609
+					state = 745
+				}
+			}
+		}
+		available = {
+			FROM = {
+				industrial_complex > 0				
+			}
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 4
+	   	}
+		remove_effect = {
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+ROC_focus_junshixunlian = {
+	ROC_decision_zhuangjiayanxi = {#装甲演习
+		icon = ger_military_buildup
+		fire_only_once = yes		
+		days_remove = 90
+		visible = {
+			has_completed_focus = jiangxianyundezhuangjialilun
+		}	
+		available = {
+			has_army_experience > 49.99
+		}
+		ai_will_do = {
+			factor = 50			
+	    }
+		remove_effect = {
+			army_experience = -50
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	ROC_decision_zhengdunkongjun = {#整顿空军
+		icon = generic_air
+		fire_only_once = yes		
+		days_remove = 90
+		cost = 50
+		visible = {
+			has_completed_focus = qingnianfeixingyuanweiyuanhui
+		}	
+		ai_will_do = {
+			factor = 50			
+	    }
+		remove_effect = {
+			air_experience = 100
+		}
+	}
+	ROC_decision_haihangyanxi = {#海航演习
+		icon = generic_air
+		fire_only_once = yes		
+		days_remove = 90
+		cost = 50
+		visible = {
+			has_completed_focus = haijunhangkonmgdafazhan
+		}	
+		available = {
+			has_equipment = {
+				cv_small_plane_naval_bomber_airframe > 4
+			}
+			has_equipment = {
+				cv_small_plane_airframe > 4
+			}
+		}
+		ai_will_do = {
+			factor = 50			
+	    }
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = cv_small_plane_naval_bomber_airframe
+				amount = -5
+			}
+			add_equipment_to_stockpile = {
+				type = cv_small_plane_airframe
+				amount = -5
+			}
+			add_ace = {
+				name = "关"
+				surname = "荣"
+				type = support_genius
+				is_female = yes
+			}
+		}
+	}
+}

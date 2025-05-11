@@ -1,0 +1,60 @@
+ROC_scripted_effects_gonggubianjie = { #巩固边界
+    set_variable = {
+        ROC_VAR_nanguo_speed = 0.07
+    }
+    multiply_variable = {  
+        var = ROC_VAR_nanguo_speed
+        value = ROC_VAR_nanguo_speed_factor
+    }
+    set_variable = {
+        ROC_VAR_nanguo_attack  = 0.05
+    }
+    multiply_variable = {  
+        var = ROC_VAR_nanguo_attack 
+        value = ROC_VAR_nanguo_attack_factor
+    }
+    set_variable = {
+        ROC_VAR_nanguo_defence  = 0.05
+    }
+    multiply_variable = {  
+        var = ROC_VAR_nanguo_defence
+        value = ROC_VAR_nanguo_defence_factor
+    }
+}
+ROC_scripted_effects_jianshe = {
+    set_variable = {
+        ROC_VAR_nongcun_pp = ROC_VAR_nongcun_pp_base
+    }
+    multiply_variable = {  
+        var = ROC_VAR_nongcun_pp
+        value = VAR_ROC_jianshe_pp_factor
+    }
+    set_variable = {
+        ROC_VAR_chengshi_minsheng_pp = ROC_VAR_chengshi_minsheng_pp_base
+    }
+    multiply_variable = {  
+        var = ROC_VAR_chengshi_minsheng_pp
+        value = VAR_ROC_jianshe_pp_factor
+    }
+    set_variable = {
+        ROC_VAR_chengshi_junshi_pp = ROC_VAR_chengshi_junshi_pp_base
+    }
+    multiply_variable = {  
+        var = ROC_VAR_chengshi_junshi_pp
+        value = VAR_ROC_jianshe_pp_factor
+    }
+    set_variable = {
+        ROC_VAR_nongcun_days = ROC_VAR_nongcun_days_base
+    }
+    multiply_variable = {  
+        var = ROC_VAR_nongcun_days
+        value = VAR_ROC_jianshe_days_factor
+    }
+    set_variable = {
+        ROC_VAR_chengshi_days = ROC_VAR_chengshi_days_base
+    }
+    multiply_variable = {  
+        var = ROC_VAR_chengshi_days
+        value = VAR_ROC_jianshe_days_factor
+    }
+}

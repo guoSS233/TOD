@@ -24,35 +24,6 @@ focus_tree = {
 		}
 		completion_reward = {	
 			add_political_power = 100
-			
-			add_dynamic_modifier = {
-				modifier = GOS_dynamic_modifiers_tzqw
-			}
-			custom_effect_tooltip = GOS_tooltip_foc_0
-			set_country_flag = FLAG_GOS_decision_tzngpx_unlocked
-			add_ideas = GOS_idea_ngjsbd
-
-			set_variable = { #大同会势力
-				VAR_GOS_dth_sl = 100
-			}
-			set_variable = { #管学系势力
-				VAR_GOS_gxx_sl = 120
-			}
-			set_variable = { #军队势力
-				VAR_GOS_jd_sl = 100
-			}
-
-			set_variable = { #大同会支持度
-				VAR_GOS_dth_zcd = 0.10
-			}
-			set_variable = { #管学系支持度
-				VAR_GOS_gxx_zcd = 0.60
-			}
-			set_variable = { #军队支持度
-				VAR_GOS_jd_zcd = 0.10
-			}
-
-			GOS_scripted_effects_tzqw_js = yes
 		}
 
 	}
@@ -2964,15 +2935,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 0
 		}
-		bypass = {
-			or = {
-				has_war_with = ROC
-				NOT = { country_exists = ROC }
-			}
-		}
-		available = { 
-			always = no
-		}
+		available = {always = no}
 		completion_reward = {	
 
 		}

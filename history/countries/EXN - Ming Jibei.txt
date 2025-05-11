@@ -10,36 +10,26 @@ set_politics = {
 }
 
 set_popularities = {
-	national_corporatism = 35
-	despotism = 35
-	authoritarian_oligarchy = 40
+	vanguard_socialism = 5 #先锋社会主义
+	council_socialism = 15 #委员会社会主义
+	moderate_socialism = 10 #温和社会主义
+	agroindustrial_socialism = 25 #农业社会主义
+	#
+	social_democrat = 35 #社会民主主义
+	liberal_democracy = 10 #自由民主主义
+	#
+	consociationalism = 0 #调和民主主义
+	conservative_democracy = 0 #保守民主主义
+	authoritarian_oligarchy = 0 #威权主义
+	#
+	leader_despotism = 0 #领袖主义
+	sacred_revivalism = 0 #神圣复兴主义
+	national_corporatism = 0 #法团主义
 }
 
 
+recruit_character = EXN_kang_tongbi
 
-create_country_leader = {
-	name = "康同璧"
-	desc = "POLITICS_KANG_TONGBI_DESC"
-	picture = "Portrait_EXN_KangTongbi.png"
-	expire = "1965.1.1"
-	ideology = authoritarian_oligarchy_subtype
-}
-
-create_country_leader = {
-	name = "谢仁"
-	desc = "POLITICS_XIEREN_DESC"
-	picture = "Portrait_EXN_Xie_Ren.png"
-	expire = "1965.1.1"
-	ideology = national_corporatism_subtype
-}
-
-create_country_leader = {
-	name = "张西卿"
-	desc = "POLITICS_ZHANGXIQIN_DESC"
-	picture = "Portrait_EXN_Zhangxiqin.png"
-	expire = "1965.1.1"
-	ideology = leader_despotism_subtype
-}
 
 add_ideas = {
 	AthCfc_types

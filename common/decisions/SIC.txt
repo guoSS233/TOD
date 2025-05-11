@@ -43,28 +43,42 @@ SIC_chuanneijushi_categories = {
 				add_ideas = SIC_hunluandejundui
 			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 79}}
-				add_to_variable = { SIC.gongye = 10 }
 				add_ideas = SIC_wufawutian
-				remove_ideas = SIC_jinrukonghuang
-			}else_if = {
-				limit = {check_variable = {SIC.minzhong > 59}}
-				add_to_variable = { SIC.gongye = 5 }
-				add_ideas = SIC_jinrukonghuang
 				remove_ideas = SIC_chongmannuqi
-				remove_ideas = SIC_wufawutian
-			}else_if = {
-				limit = {check_variable = {SIC.minzhong > 39}}
-				add_ideas = SIC_chongmannuqi
-				remove_ideas = SIC_liuyoubuman
 				remove_ideas = SIC_jinrukonghuang
-			}else_if = {
-				limit = {check_variable = {SIC.minzhong > 19}}
-				add_ideas = SIC_liuyoubuman
-				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_lueyoubuman
 				remove_ideas = SIC_wendingdequnzong
 			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 59}}
+				remove_ideas = SIC_wufawutian
+				add_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 39}}
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				add_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 19}}
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				add_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
+			}else_if{
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
 				add_ideas = SIC_wendingdequnzong
-				remove_ideas = SIC_liuyoubuman
+			}
+			if = {
+				limit = {check_variable = {SIC.gongye > 99}}
+				set_variable = { SIC.gongye = 100 }
 			}
 		}
 		complete_effect = {
@@ -94,25 +108,37 @@ SIC_chuanneijushi_categories = {
 			if = {
 				limit = {check_variable = {SIC.minzhong > 79}}
 				add_ideas = SIC_wufawutian
-				remove_ideas = SIC_jinrukonghuang
-			}else_if = {
-				limit = {check_variable = {SIC.minzhong > 59}}
-				add_ideas = SIC_jinrukonghuang
 				remove_ideas = SIC_chongmannuqi
-				remove_ideas = SIC_wufawutian
-			}else_if = {
-				limit = {check_variable = {SIC.minzhong > 39}}
-				add_ideas = SIC_chongmannuqi
-				remove_ideas = SIC_liuyoubuman
 				remove_ideas = SIC_jinrukonghuang
-			}else_if = {
-				limit = {check_variable = {SIC.minzhong > 19}}
-				add_ideas = SIC_liuyoubuman
-				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_lueyoubuman
 				remove_ideas = SIC_wendingdequnzong
 			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 59}}
+				remove_ideas = SIC_wufawutian
+				add_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 39}}
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				add_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
+			}else_if = {
+				limit = {check_variable = {SIC.minzhong > 19}}
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				add_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
+			}else_if{
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
 				add_ideas = SIC_wendingdequnzong
-				remove_ideas = SIC_liuyoubuman
 			}
 		}
 	}
@@ -135,23 +161,38 @@ SIC_chuanneijushi_categories = {
 			custom_effect_tooltip = SIC_anfuminzhong.t
 			if = {
 				limit = {check_variable = {SIC.minzhong > 79}}
-				add_ideas = SIC_jinrukonghuang
+				add_ideas = SIC_wufawutian
 				remove_ideas = SIC_chongmannuqi
-				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
 			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 59}}
+				remove_ideas = SIC_wufawutian
 				add_ideas = SIC_chongmannuqi
-				remove_ideas = SIC_liuyoubuman
 				remove_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
 			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 39}}
-				add_ideas = SIC_liuyoubuman
+				remove_ideas = SIC_wufawutian
 				remove_ideas = SIC_chongmannuqi
+				add_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
 				remove_ideas = SIC_wendingdequnzong
 			}else_if = {
 				limit = {check_variable = {SIC.minzhong > 19}}
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				add_ideas = SIC_lueyoubuman
+				remove_ideas = SIC_wendingdequnzong
+			}else_if{
+				remove_ideas = SIC_wufawutian
+				remove_ideas = SIC_chongmannuqi
+				remove_ideas = SIC_jinrukonghuang
+				remove_ideas = SIC_lueyoubuman
 				add_ideas = SIC_wendingdequnzong
-				remove_ideas = SIC_liuyoubuman
 			}
 		}
 	}

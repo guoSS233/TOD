@@ -1,0 +1,384 @@
+ROC_nanyanghangkongjituan_organization = {#南洋航空集团
+	include = generic_naval_aircraft_organization
+	icon = GFX_idea_ROC_nanyanghangkongjituan_organization
+	
+	allowed = {	 
+		tag = ROC
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_smooth_finish
+		name = USA_mio_trait_smooth_finish
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+		
+		position = { x=2 y=1 }  
+		relative_position_id = generic_mio_trait_reinforced_fuselage
+		
+		any_parent = { generic_mio_trait_reinforced_fuselage }
+		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft small_plane_naval_bomber_airframe }
+			
+		equipment_bonus = {
+			air_agility = 0.05
+			maximum_speed = 0.05
+		}
+	}
+	
+	override_trait = {
+		token = generic_mio_advanced_materials
+		position = { x=-1 y=1 }
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_jet_fighter_design
+		name = USA_mio_trait_jet_fighter_design
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+		special_trait_background = yes
+
+		available = {
+			FROM = {
+				is_special_project_completed = sp:sp_air_jet_engine
+			}
+		}
+		position = { x=1 y=1 }  
+		relative_position_id = generic_mio_water_injection
+		
+		any_parent = { generic_mio_water_injection }
+		limit_to_equipment_type = { mio_cat_eq_all_cv_aircraft }
+			
+		equipment_bonus = {
+			maximum_speed = 0.1
+		}
+	}
+}
+
+ROC_feicaihangxingqizhizaojituan_organization = {#飞彩航行器制造集团
+	include = generic_range_focused_aircraft_organization
+	icon = GFX_idea_ROC_feicaihangxingqizhizaojituan_organization
+	
+	allowed = {	
+        tag = ROC
+	}
+
+	available = {
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_light_long_range_aircraft
+	}
+	
+	add_trait = {
+		token = USA_mio_trait_outsourced_engines
+		name = USA_mio_trait_outsourced_engines
+		icon = GFX_generic_mio_trait_icon_air_agility
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }  
+		relative_position_id = generic_mio_trait_advanced_production_techniques
+		
+		any_parent = { generic_mio_trait_advanced_production_techniques }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
+		
+		equipment_bonus = {
+			air_agility = 0.05
+			maximum_speed = 0.05
+		}
+	}
+
+	add_trait = {
+		token = USA_mio_trait_light_aircraft_development
+		name = USA_mio_trait_light_aircraft_development
+		icon = GFX_generic_mio_department_icon_plane_light_combat
+		special_trait_background = yes
+		
+		position = { x=0 y=1 }  
+		relative_position_id = generic_mio_trait_strafing_techniques
+		
+		any_parent = { generic_mio_trait_strafing_techniques }
+		
+		limit_to_equipment_type = { mio_cat_eq_all_small_plane }
+
+		equipment_bonus = {
+			air_agility = 0.05
+			air_ground_attack = 0.05
+			air_attack = 0.02
+		}
+	}
+}
+
+ROC_gemingfeixingyanjiusuo_organization = {#革命飞行研究所
+	include = generic_medium_aircraft_organization
+	icon = GFX_idea_ROC_gemingfeixingyanjiusuo_organization
+	allowed = {	
+        tag = ROC
+		has_country_flag = guangzhouqiyi_flag
+	}
+}
+
+ROC_langshengzhizaojituan_organization = {#浪升制造集团
+	include = generic_tank_organization
+	icon = GFX_idea_ROC_langshengzhizaojituan_organization
+	allowed = {	
+		tag = ROC
+	}
+	available = {
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_dedicated_tank_factory
+		
+		equipment_bonus = {
+			armor_value = -0.05
+			defense =-0.05
+			build_cost_ic = -0.02
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_arsenal_of_democracy
+		name = USA_mio_trait_arsenal_of_democracy
+		icon = GFX_generic_mio_department_icon_tank_medium_tank_line_efficiency
+		special_trait_background = yes
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_standardized_components
+
+		all_parents = { generic_mio_trait_standardized_components }
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+		}
+	}
+
+}
+
+ROC_changyuetongyongjixiejituan_organization = {#昌岳通用机械集团
+	include = generic_medium_tank_organization
+	icon = GFX_idea_ROC_changyuetongyongjixiejituan_organization
+	
+	allowed = {	
+        tag = ROC
+	}
+
+	available = {
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_medium_tank_manufacturer
+
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+
+		equipment_bonus = {
+			reliability = 0.1
+			soft_attack = 0.02
+			hard_attack = 0.03
+			defense = -0.15
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_strict_design_specifications
+		name = USA_mio_trait_strict_design_specifications
+		icon = GFX_generic_mio_trait_icon_reliability
+		special_trait_background = yes
+
+		position = { x=2 y=1 }
+		relative_position_id = generic_mio_trait_simplified_turret_design
+
+		all_parents = { generic_mio_trait_simplified_turret_design generic_mio_trait_armor_steel_working }
+		limit_to_equipment_type = { mio_cat_eq_all_medium_tank }
+
+		equipment_bonus = {
+			reliability = 0.1
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_expanded_production_facilities
+		name = USA_mio_trait_expanded_production_facilities
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+		special_trait_background = yes
+
+		position = { x=0 y=1 }
+		relative_position_id = USA_mio_trait_strict_design_specifications
+
+		all_parents = { USA_mio_trait_strict_design_specifications }
+		production_bonus = {
+			production_cost_factor = -0.1
+			production_capacity_factor = 0.05
+		}
+	}
+}
+
+ROC_haitianhuoqizhizaosuo_organization = {#海天火器制造所
+	include = generic_infantry_equipment_organization
+	icon = GFX_idea_ROC_haitianhuoqizhizaosuo_organization
+	
+	allowed = {	 
+		tag = ROC
+	}
+}
+
+ROC_wuyangcheliangzhizaochang_organization = {#五羊车辆制造厂
+	include = generic_motorized_mechanized_organization
+	icon = GFX_idea_ROC_wuyangcheliangzhizaochang_organization
+	
+	allowed = {	 
+        tag = ROC 
+	}
+	
+	visible = {
+	}
+	
+	available = {
+		# When in a Foreign MIO, countries need to be at peace with original country
+	}
+	
+	initial_trait = {
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+}
+
+ROC_changlingjunjixiuzaoju_organization = {#长岭军机修造局
+	include = generic_artillery_organization
+	icon = GFX_idea_ROC_changlingjunjixiuzaoju_organization
+	
+	allowed = {	 
+		tag = ROC
+	}
+}
+
+ROC_longdeyuanyangjixiejituan_organization = {#龙德远洋机械集团
+	include = generic_escort_ship_organization
+	icon = GFX_idea_ROC_longdeyuanyangjixiejituan_organization
+	allowed = {	
+		tag = ROC
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_shipyard_expansion
+		name = USA_mio_trait_shipyard_expansion
+		icon = GFX_generic_mio_trait_icon_production_capacity
+		special_trait_background = yes
+
+		position = { x=2 y=0 }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_naval_station_norfolk
+		name = USA_mio_trait_naval_station_norfolk
+		icon = GFX_generic_mio_trait_icon_naval_range
+		special_trait_background = yes
+
+		all_parents = { USA_mio_trait_shipyard_expansion }
+
+		position = { x=0 y=1 }
+		relative_position_id = USA_mio_trait_shipyard_expansion
+
+		equipment_bonus = {
+			reliability = 0.1
+			naval_range = 0.1
+		}
+	}
+}
+
+ROC_huananxinghezaochuanchang_organization = {#华南兴和造船厂
+	include = generic_task_force_ship_organization
+	icon = GFX_idea_ROC_huananxinghezaochuanchang_organization
+	allowed = {	
+        tag = ROC
+	}
+	available = {
+	}
+
+	initial_trait = {
+		name = USA_mio_trait_carrier_specialists
+		
+		limit_to_equipment_type = { 
+			carrier
+		}
+		
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_north_carolina_shipbuilding_company
+		name = USA_mio_trait_north_carolina_shipbuilding_company
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+		special_trait_background = yes
+
+		limit_to_equipment_type = {
+			screen_ship
+		}
+
+		all_parents = {  }
+
+		position = { x=3 y=0 }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+}
+
+ROC_fuzhouchuanzhengju_organization = {#福州船政局
+	include = generic_submarine_organization
+	icon = GFX_idea_ROC_fuzhouchuanzhengju_organization
+	allowed = {	
+		tag = ROC 
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_gould_centrifugal_pump
+		name = USA_mio_trait_gould_centrifugal_pump
+		icon = GFX_generic_mio_trait_icon_sub_visibility
+		special_trait_background = yes
+
+		any_parent = { generic_mio_trait_efficient_fuel_engines generic_mio_trait_high_powered_engines }
+
+		position = { x=-1 y=1 }
+		relative_position_id = generic_mio_trait_efficient_fuel_engines
+
+		equipment_bonus = {
+			sub_visibility = -0.03
+		}
+	}
+
+	add_trait = { 
+		token = USA_mio_trait_radar_experimentation
+		name = USA_mio_trait_radar_experimentation
+		icon = GFX_generic_mio_trait_icon_surface_detection
+		special_trait_background = yes
+
+		all_parents = { generic_mio_trait_experimental_anechoic_tiles generic_mio_trait_improved_torpedo_detonators }
+
+		available = {
+			FROM = {
+				has_tech = centimetric_radar
+			}
+		}
+
+		position = { x=0 y=1 }
+		relative_position_id = generic_mio_trait_experimental_anechoic_tiles
+
+		equipment_bonus = {
+			sub_visibility = -0.03
+			surface_detection = 0.03
+		}
+	}
+
+}

@@ -151,7 +151,7 @@ ideas = {
 		STG_yinpiaodadaduyou = {
 			name = STG_yinpiaodadaduyou
 			
-		    picture = STG_yinpiaodadaduyou
+		    picture = STG_yindangongshi
 			
 			allowed = { tag = XBJ }
 			targeted_modifier = {
@@ -171,6 +171,29 @@ ideas = {
 				stability_factor = 0.05
 				war_support_factor = -0.05
 				political_power_gain = 0.05
+			}
+		}
+		#扩建工程进行中
+		STG_kuojiangongcheng = {
+			name = STG_kuojiangongcheng
+			
+		    picture = STG_kuojiangongcheng
+			
+			allowed = { tag = STG }
+			modifier = {
+				civilian_factory_use = 3
+			}
+		}
+		#战时速成操典
+		STG_zhanshisuchengzaodian = {
+			name = STG_zhanshisuchengzaodian
+			
+		    picture = STG_zhanshisuchengzaodian
+			
+			allowed = { tag = STG }
+			modifier = {
+				training_time_army_factor = -0.1
+				experience_gain_army_factor = 0.1
 			}
 		}
     }
@@ -329,5 +352,128 @@ ideas = {
 				dixiashouduan
 			}
 		}
+	}
+
+    industrial_concern = { #工业
+        STG_guolishuntiandiguodaxuetang = {#国立顺天帝国大学堂
+            picture = STG_guolishuntiandiguodaxuetang
+            allowed = {
+				original_tag = STG
+			}
+            available = {
+			}
+            traits = {
+				university
+			}
+            research_bonus = {
+			}
+            modifier = {
+				research_speed_factor = 0.05
+				stability_factor = 0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        STG_shuntianjianshegongchengzonggongshu = {#顺天建设工程总公署
+            picture = STG_shuntianjianshegongchengzonggongshu
+            allowed = {
+				original_tag = STG
+			}
+            available = {
+			}
+            traits = {
+				industrial_concern
+			}
+            research_bonus = {
+				industry = 0.1
+			}
+            modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        STG_damingdianlidianqijituan = {#大明电力电气集团
+            picture = STG_damingdianlidianqijituan
+            allowed = {
+				original_tag = STG
+			}
+            available = {
+			}
+            traits = {
+				Electronics_concern
+			}
+            research_bonus = {
+				electronics = 0.1
+			}
+            modifier = {
+				land_reinforce_rate = 0.05
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        STG_gewuyuan = {#格物院
+            picture = STG_gewuyuan
+            allowed = {
+				original_tag = STG
+			}
+            available = {
+			}
+            traits = {
+				university
+			}
+            research_bonus = {
+
+			}
+            modifier = {
+				research_speed_factor = 0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        STG_luanzhoukuangwuju = {#滦州矿务局
+            picture = STG_luanzhoukuangwuju
+            allowed = {
+				original_tag = STG
+			}
+            available = {
+			}
+            traits = {
+				refinery_concern
+			}
+            research_bonus = {
+                synth_resources = 0.1
+			}
+            modifier = {
+				fuel_gain_factor = 0.2
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        STG_yujinmeikuanggongsi = {#裕晋煤矿公司
+            picture = STG_yujinmeikuanggongsi
+            allowed = {
+				original_tag = STG
+			}
+            available = {
+			}
+            traits = {
+				industrial_concern
+			}
+            research_bonus = {
+                construction_tech = 0.1
+			}
+            modifier = {
+				local_resources_factor = 0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
 	}
 }

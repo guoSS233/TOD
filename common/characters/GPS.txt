@@ -82,6 +82,21 @@ characters = {
 				large="gfx/leaders/GPS/Portrait_GPS_yu_zhishan.png"
 			}
 		}
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_yu_zhishan.png"
+				small="gfx/GPS/ideas/GPS_yu_zhishan.png"
+			}
+		}
+		corps_commander={
+			traits={ trait_reckless }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=-1
+		}
 		country_leader={
 			ideology=national_corporatism_subtype
 			desc = "POLITICS_GPS_yu_zhishan_DESC"
@@ -96,6 +111,10 @@ characters = {
 			civilian={
 				large="gfx/leaders/GPS/Portrait_GPS_yang_yuting.png"
 			}
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_yang_yuting.png"
+				small="gfx/GPS/ideas/GPS_yang_yuting.png"
+			}
 		}
 		country_leader={
 			ideology=leader_despotism_subtype
@@ -103,6 +122,22 @@ characters = {
 			traits={ }
 			expire="1965.1.1.1"
 			id=-1
+		}
+		field_marshal={
+			traits={ career_officer }
+			skill=4
+			attack_skill=4
+			defense_skill=1
+			planning_skill=4
+			logistics_skill=4
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = GPS_yang_yuting
+			allowed = { tag = GPS }
+			traits = { army_chief_offensive_2 }
+			cost = 150
 		}
 	}
 	GPS_li_dazhao = {
@@ -118,6 +153,514 @@ characters = {
 			traits={ }
 			expire="1965.1.1.1"
 			id=-1
+		}
+	}
+	GPS_ma_zhanshan = {
+		name=GPS_ma_zhanshan
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_ma_zhanshan.png"
+				small="gfx/GPS/ideas/GPS_ma_zhanshan.png"
+			}
+		}
+		field_marshal={
+			traits={ war_hero armor_officer }
+			skill=4
+			attack_skill=2
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = GPS_ma_zhanshan
+			allowed = { tag = GPS }
+			traits = { army_chief_organizational_2 }
+			cost = 150
+		}
+		advisor={
+			slot = high_command
+			idea_token = GPS_ma_zhanshan
+			allowed = { tag = GPS }
+			traits = { master_armorer }
+			cost = 150
+		}
+	}
+	GPS_wu_junsheng = {
+		name=GPS_wu_junsheng
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_wu_junsheng.png"
+				small="gfx/GPS/ideas/GPS_wu_junsheng.png"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=1
+			legacy_id=-1
+		}
+		advisor={
+			slot = army_chief
+			idea_token = GPS_wu_junsheng
+			allowed = { tag = GPS }
+			traits = { army_chief_defensive_2 }
+			cost = 150
+		}
+	}
+	GPS_zhang_zuoxiang = {
+		name=GPS_zhang_zuoxiang
+		portraits={
+			army={
+				small="gfx/GPS/ideas/GPS_zhang_zuoxiang.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GPS_zhang_zuoxiang
+			allowed = { tag = GPS }
+			traits = { army_infantry_2 }
+			cost = 150
+		}
+	}
+	GPS_wei_yisan = {
+		name=GPS_wei_yisan
+		portraits={
+			army={
+				small="gfx/GPS/ideas/GPS_wei_yisan.png"
+				large="gfx/leaders/GPS/Portrait_GPS_wei_yisan.png"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = GPS_wei_yisan
+			allowed = { tag = GPS }
+			traits = { army_artillery_2 }
+			cost = 150
+		}
+	}
+	GPS_meng_enyuan = {
+		name=GPS_meng_enyuan
+		portraits={
+			army={
+				small="gfx/GPS/ideas/GPS_meng_enyuan.png"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GPS_meng_enyuan
+			allowed = { tag = GPS }
+			traits = { army_logistics_2 }
+			cost = 150
+		}
+	}
+	GPS_yu_zheng = {
+		name=GPS_yu_zheng
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_yu_zheng.png"
+				small="gfx/GPS/ideas/GPS_yu_zheng.png"
+			}
+		}
+		corps_commander={
+			traits={ winter_specialist }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = GPS_yu_zheng
+			allowed = { tag = GPS }
+			traits = { army_commando_2 }
+			cost = 150
+		}
+	}
+	GPS_shan_duowen = {
+		name=GPS_shan_duowen
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_shan_duowen.png"
+				small="gfx/GPS/ideas/GPS_shan_duowen.png"
+			}
+		}
+		navy_leader={
+			traits={  }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=3
+			coordination_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = high_command
+			idea_token = GPS_shan_duowen
+			allowed = { tag = GPS }
+			traits = { navy_carrier_2 }
+			cost = 150
+		}
+	}
+	GPS_ying_detian = {
+		name=GPS_ying_detian
+		portraits={
+			army={
+				small="gfx/GPS/ideas/GPS_ying_detian.png"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = GPS_ying_detian
+			allowed = { tag = GPS }
+			traits = { air_air_superiority_2 }
+			cost = 150
+		}
+	}
+	GPS_sun_mingjiu = {
+		name=GPS_sun_mingjiu
+		portraits={
+			army={
+				small="gfx/GPS/ideas/GPS_sun_mingjiu.png"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = GPS_sun_mingjiu
+			allowed = { tag = GPS }
+			traits = { air_chief_night_operations_2 }
+			cost = 150
+		}
+	}
+	GPS_shen_honglie = {
+		name=GPS_shen_honglie
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_shen_honglie.png"
+				small="gfx/GPS/ideas/GPS_shen_honglie.png"
+			}
+		}
+		navy_leader={
+			traits={  }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			maneuvering_skill=3
+			coordination_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = GPS_shen_honglie
+			allowed = { tag = GPS }
+			traits = { navy_chief_decisive_battle_2 }
+			cost = 150
+		}
+	}
+	GPS_chang_yinghuai = {
+		name=GPS_chang_yinghuai
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_chang_yinghuai.png"
+				small="gfx/GPS/ideas/GPS_chang_yinghuai.png"
+			}
+		}
+		navy_leader={
+			traits={  }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=4
+			coordination_skill=3
+			legacy_id=-1
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = GPS_chang_yinghuai
+			allowed = { tag = GPS }
+			traits = { navy_chief_commerce_raiding_2 }
+			cost = 150
+		}
+	}
+	GPS_xu_lanzhou = {
+		name=GPS_xu_lanzhou
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_xu_lanzhou.png"
+				small="gfx/GPS/ideas/GPS_xu_lanzhou.png"
+			}
+		}
+		corps_commander={
+			traits={ media_personality }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = theorist
+			idea_token = GPS_xu_lanzhou
+			allowed = { tag = GPS }
+			traits = { grand_battle_plan_expert }
+			cost = 150
+		}
+	}
+	GPS_yu_xuezhong = {
+		name=GPS_yu_xuezhong
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_yu_xuezhong.png"
+				small="gfx/GPS/ideas/GPS_yu_xuezhong.png"
+			}
+		}
+		corps_commander={
+			traits={ harsh_leader }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+		advisor={
+			slot = theorist
+			idea_token = GPS_yu_xuezhong
+			allowed = { tag = GPS }
+			traits = { superior_firepower_expert }
+			cost = 150
+		}
+	}
+	GPS_wang_yizhe = {
+		name=GPS_wang_yizhe
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_wang_yizhe.png"
+				small="gfx/GPS/ideas/GPS_wang_yizhe.png"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	GPS_zhang_haipeng = {
+		name=GPS_zhang_haipeng
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_zhang_haipeng.png"
+				small="gfx/GPS/ideas/GPS_zhang_haipeng.png"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	GPS_he_zhuguo = {
+		name=GPS_he_zhuguo
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_he_zhuguo.png"
+				small="gfx/GPS/ideas/GPS_he_zhuguo.png"
+			}
+		}
+		corps_commander={
+			traits={ hill_fighter }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	GPS_wang_shuchang = {
+		name=GPS_wang_shuchang
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_wang_shuchang.png"
+				small="gfx/GPS/ideas/GPS_wang_shuchang.png"
+			}
+		}
+		corps_commander={
+			traits={ organizer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	GPS_xing_shilian = {
+		name=GPS_xing_shilian
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_xing_shilian.png"
+				small="gfx/GPS/ideas/GPS_xing_shilian.png"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	GPS_miao_jianqiu = {
+		name=GPS_GPS_miao_jianqiu
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_miao_jianqiu.png"
+				small="gfx/GPS/ideas/GPS_miao_jianqiu.png"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	GPS_bao_wenyue = {
+		name=GPS_bao_wenyue
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_bao_wenyue.png"
+				small="gfx/GPS/ideas/GPS_bao_wenyue.png"
+			}
+		}
+		corps_commander={
+			traits={ }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	GPS_zhou_zuohua = {
+		name=GPS_zhou_zuohua
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_zhou_zuohua.png"
+				small="gfx/GPS/ideas/GPS_zhou_zuohua.png"
+			}
+		}
+		corps_commander={
+			traits={ ranger }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	GPS_wen_shude = {
+		name=GPS_wen_shude
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_wen_shude.png"
+				small="gfx/GPS/ideas/GPS_wen_shude.png"
+			}
+		}
+		navy_leader={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	GPS_wan_fulin = {
+		name=GPS_wan_fulin
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_wan_fulin.png"
+				small="gfx/GPS/ideas/GPS_wan_fulin.png"
+			}
+		}
+		navy_leader={
+			traits={ }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	GPS_wu_yuanwu = {
+		name=GPS_wu_yuanwu
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_wu_yuanwu.png"
+				small="gfx/GPS/ideas/GPS_wu_yuanwu.png"
+			}
+		}
+		navy_leader={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	GPS_ying_zuoqian = {
+		name=GPS_ying_zuoqian
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_ying_zuoqian.png"
+				small="gfx/GPS/ideas/GPS_ying_zuoqian.png"
+			}
+		}
+		navy_leader={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
 		}
 	}
 }

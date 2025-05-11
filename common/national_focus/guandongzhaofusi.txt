@@ -53,7 +53,7 @@ focus_tree = {
 	focus = {
 		id = GPS_yanchataiziyuci
 		icon = GFX_GPS_yanchataiziyuci
-		allow_branch = {if = { NOT = {  has_country_flag = GPS_liaoyangqiyi }}}
+		allow_branch = { NOT = {  has_country_flag = GPS_liaoyangqiyi }}
 		x = 7
 		y = 1
 		
@@ -70,6 +70,7 @@ focus_tree = {
 		completion_reward = { 
 			add_stability = 0.05
 			add_political_power = 20
+			country_event = { id = GPSevents.1 }
 		}
 	}
 	#搜捕同产公会
@@ -90,7 +91,10 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { add_popularity = { ideology = authoritarian_oligarchy popularity = 0.1 } }
+		completion_reward = { 
+			add_popularity = { ideology = authoritarian_oligarchy popularity = 0.1 } 
+			country_event = { id = GPSevents.2 }
+		}
 	}
 	#逮捕扩大化
 	focus = {
@@ -113,6 +117,7 @@ focus_tree = {
 		completion_reward = { 
 			add_manpower = -2000
 			add_war_support = 0.05
+			country_event = { id = GPSevents.3 }
 		}
 	}
 	#镇压示威游行
@@ -136,6 +141,7 @@ focus_tree = {
 		completion_reward = { 
 			add_stability = 0.05
 			add_political_power = 10
+			country_event = { id = GPSevents.4 }
 		}
 	}
 	#有备无患
@@ -159,13 +165,14 @@ focus_tree = {
 		
 		completion_reward = { 
 			army_experience = 20
+			country_event = { id = GPSevents.5 }
 		}
 	}
 	#紧急弹压辽阳起义
 	focus = {
 		id = GPS_tanyaqiyi
 		icon = GFX_GPS_tanyaqiyi
-		allow_branch = {if = {country_exists = SRC }}
+		allow_branch = { country_exists = SRC }
 		x = 7
 		y = 1
 		
@@ -486,6 +493,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			country_event = { id = GPSevents.15 }
 			408 = {
 				add_building_construction = {
 					type = arms_factory
@@ -518,6 +526,7 @@ focus_tree = {
 		cost = 5
 		
 		completion_reward = { 
+			country_event = { id = GPSevents.16 }
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.15 }
 			add_to_variable = { GPS_fengyupiaodang_zhengzhidian = -0.1 }
 		}
@@ -540,6 +549,7 @@ focus_tree = {
 		cost = 6
 		
 		completion_reward = { 
+			country_event = { id = GPSevents.17 }
 			add_to_variable = { GPS_fengyupiaodang_jihuasudu = 0.2 }
 			add_to_variable = { GPS_fengyupiaodang_qianhaosudu = 0.2}
 			add_to_variable = { GPS_fengyupiaodang_qianhao = 0.05 }
@@ -711,8 +721,10 @@ focus_tree = {
 	focus = {
 		id = GPS_xuangaopingluanshengli
 		icon = GFX_GPS_xuangaopingluanshengli
-		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
-		allow_branch = {if = NOT = {{country_exists = SRC }}}
+		allow_branch = {
+			has_country_flag = GPS_liaoyangqiyi
+			NOT = {country_exists = SRC }
+		}
 		x = 7
 		y = 1
 		
@@ -1070,6 +1082,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			country_event = { id = GPSevents.14 }
 		}
 	}
 	#尊重知识分子
@@ -1276,8 +1289,10 @@ focus_tree = {
 	focus = {
 		id = GPS_jieruzhoubianjushi
 		icon = GFX_GPS_jieruzhoubianjushi
-		allow_branch = {if = { has_country_flag = GPS_liaoyangqiyi }}
-		allow_branch = {if = {NOT = {country_exists = SRC }}}
+		allow_branch = {
+			has_country_flag = GPS_liaoyangqiyi
+			NOT = {country_exists = SRC }
+		}
 		x = 15
 		y = 1
 		
@@ -1292,6 +1307,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			country_event = { id = GPSevents.18 }
 			remove_dynamic_modifier = { modifier = GPS_fengzhaojiaofei }
 			add_political_power = 50
 		}
@@ -1315,6 +1331,7 @@ focus_tree = {
 		available = {has_country_flag = GPS_chaoxianzhichi}
 		
 		completion_reward = { 
+			country_event = { id = GPSevents.19 }
 		}
 	}
 	#维护东洋利益
@@ -1336,6 +1353,7 @@ focus_tree = {
 		available = {has_country_flag = GPS_xiayizhichi}
 		
 		completion_reward = { 
+			country_event = { id = GPSevents.20 }
 		}
 	}
 }

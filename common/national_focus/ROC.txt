@@ -1,81 +1,141 @@
-focus_tree = {
-	id = ROC
+focus_tree = {#共和军国策
+	id = ROC_gonghe
 	country = {
 		factor = 0
-		modifier = {
-			add = 10
-			tag = ROC
-		}
+		# modifier = {
+		# 	add = 10
+		# 	tag = ROC
+		# }
 	}
 	default = no
-	focus = {
+	focus = {#1、广州起义
 		id = guangzhouqiyi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_guangzhouqiyi
 		cost = 0.00
 		x = 15
 		y = 0
-
+		available = {always = no}
+		ai_will_do = {factor = 0}
 	}
-	focus = {
+	focus = {#38、组建共和武装
 		id = zujiangonghewuzhuang
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zujiangonghewuzhuang
 		cost = 1.00
 		x = 34
 		y = 0
-
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
+		completion_reward = {
+			country_event = ROC_focus.2
+		}
 	}
-	focus = {
+	focus = {#76、策动南洋舰队参与革命
 		id = cedongnanyangjianduicanyugeming
-		icon = GFX_goal_unknown
-		cost = 10.00
+		icon = GFX_ROC_cedongnanyangjianduicanyugeming
+		cost = 0
 		x = 50
 		y = 0
-
+		available = {always = no}
+		ai_will_do = {factor = 0}
 	}
-	focus = {
+	focus = {#89、颁布共和临时宪法
 		id = banbugonghelinshixianfa
-		icon = GFX_goal_unknown
-		cost = 8.00
+		icon = GFX_ROC_banbugonghelinshixianfa
+		cost = 0
 		x = 14
 		y = 10
-
+		ai_will_do = {factor = 10}
+		available = {
+			any_country = {
+				OR = {
+					AND = {
+						tag = ROC
+						controls_state = 613
+					}
+					AND = {
+						controls_state = 613
+						OR = {
+							is_in_faction_with = ROC
+							is_subject_of = ROC
+						}
+					}
+				}
+			}
+		}
+		completion_reward = {
+			country_event = ROC_focus.13
+		}
 	}
-	focus = {
+	focus = {#2、改造经济的准备
 		id = gaizaojingjidezhunbei
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_gaizaojingjidezhunbei
 		cost = 2.00
 		prerequisite = {
 			focus = guangzhouqiyi
 		}
 		x = 6
 		y = 1
-
+		ai_will_do = {factor = 50}
+		completion_reward = {	
+			add_political_power = 75
+			country_event = ROC_focus.3
+		}
 	}
-	focus = {
+	focus = {#3、伟大实践的开始
 		id = weidashijiandekaishi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_weidashijiandekaishi
 		cost = 3.00
 		prerequisite = {
 			focus = gaizaojingjidezhunbei
 		}
 		x = 6
 		y = 2
-
+		ai_will_do = {factor = 50}
+		completion_reward = {	
+			add_stability = 0.1
+		}
 	}
-	focus = {
+	focus = {#4、土地改革
 		id = tudigaige
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_tudigaige
 		cost = 5.00
 		prerequisite = {
 			focus = weidashijiandekaishi
 		}
 		x = 2
 		y = 3
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			custom_effect_tooltip = ROC_custom_tudigaige
+			set_variable = {
+				ROC_VAR_nongcun_days_base = 90
+			}
+			set_variable = {
+				ROC_VAR_nongcun_pp_base = 30
+			}
+			swap_ideas = {
+				add_idea = ROC_idea_meihuazhihai_1
+				remove_idea = ROC_idea_meihuazhihai
+			}
+			592 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			ROC_scripted_effects_jianshe = yes
+		}
 	}
-	focus = {
-		id = shanghuinongchanggaige
-		icon = GFX_goal_unknown
+	focus = {#5、商会农场改制
+		id = shanghuinongchanggaizhi
+		icon = GFX_ROC_shanghuinongchanggaizhi
 		cost = 5.00
 		prerequisite = {
 			focus = tudigaige
@@ -85,58 +145,139 @@ focus_tree = {
 		}
 		x = 1
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_popularity = { ideology = liberal_democracy popularity = 0.04 }
+			country_event = ROC_focus.4
+		}
 	}
-	focus = {
+	focus = {#7、落实平均地权
 		id = luoshipingjundiquan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_luoshipingjundiquan
 		cost = 5.00
 		prerequisite = {
 			focus = tudigaige
 		}
 		mutually_exclusive = {
-			focus = shanghuinongchanggaige
+			focus = shanghuinongchanggaizhi
 		}
 		x = 3
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_popularity = { ideology = agroindustrial_socialism popularity = 0.03 }
+			country_event = ROC_focus.5
+		}
 	}
-	focus = {
+	focus = {#10、整合优秀知识分子
 		id = zhengheyouxiuzhishifenzi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhengheyouxiuzhishifenzi
 		cost = 5.00
 		prerequisite = {
 			focus = weidashijiandekaishi
 		}
 		x = 6
 		y = 3
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_research_slot = 1
+		}
 	}
-	focus = {
+	focus = {#11、鼓励学术自由
 		id = gulixueshuziyou
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_gulixueshuziyou
 		cost = 5.00
 		prerequisite = {
 			focus = zhengheyouxiuzhishifenzi
 		}
 		x = 6
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_11
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_10
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_11
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_10
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_21
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_20
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_21
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_20
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#13、接管官营工厂
 		id = jieguanguanyinggongcheng
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jieguanguanyinggongcheng
 		cost = 5.00
 		prerequisite = {
 			focus = weidashijiandekaishi
 		}
 		x = 10
 		y = 3
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_offsite_building = { type = arms_factory level = 3 }
+			set_variable = {
+				ROC_VAR_chengshi_days_base = 120
+			}
+			set_variable = {
+				ROC_VAR_chengshi_minsheng_pp_base = 40
+			}
+			set_variable = {
+				ROC_VAR_chengshi_junshi_pp_base = 30
+			}
+			custom_effect_tooltip = ROC_custom_jieguanguanyinggongcheng
+			ROC_scripted_effects_jianshe = yes
+		}
 	}
-	focus = {
+	focus = {#14、联合商会势力
 		id = lianheshanghuishili
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_lianheshanghuishili
 		cost = 5.00
 		prerequisite = {
 			focus = jieguanguanyinggongcheng
@@ -146,22 +287,53 @@ focus_tree = {
 		}
 		x = 9
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_stability = 0.1
+			every_state = {
+				limit = {
+					OR = {
+						state = 591 #海南
+						state = 592 #广州
+						state = 729 #香江
+						state = 1115 #粤中
+						state = 817 #粤北
+						state = 593 #粤东
+						state = 1114 #潮汕
+						state = 728 #粤西
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			country_event = ROC_focus.6
+		}
 	}
-	focus = {
+	focus = {#15、扩大“民促会”范围
 		id = kuodamincuhuifanwei
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kuodamincuhuifanwei
 		cost = 6.00
 		prerequisite = {
 			focus = lianheshanghuishili
 		}
 		x = 9
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 50
+			add_power_balance_value = {
+				id = ROC_power_balance
+				value = -0.15
+			}
+			country_event = { id = ROC_focus.32 }
+		}
 	}
-	focus = {
+	focus = {#14、践行节制资本
 		id = shijianjiezhiziben
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_shijianjiezhiziben
 		cost = 5.00
 		prerequisite = {
 			focus = jieguanguanyinggongcheng
@@ -171,58 +343,93 @@ focus_tree = {
 		}
 		x = 11
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_stability = 0.05
+			add_offsite_building = { type = industrial_complex level = 2 }
+			country_event = ROC_focus.7
+		}
 	}
-	focus = {
+	focus = {#15、强化工会权力
 		id = qianghuagonghuiquanli
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_qianghuagonghuiquanli
 		cost = 6.00
 		prerequisite = {
 			focus = shijianjiezhiziben
 		}
 		x = 11
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 50
+			add_power_balance_value = {
+				id = ROC_power_balance
+				value = 0.15
+			}
+		}
 	}
-	focus = {
+	focus = {#16、落实四时辰工作制度
 		id = luoshisishichengongzuozhi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_luoshisishichengongzuozhi
 		cost = 6.00
 		prerequisite = {
 			focus = qianghuagonghuiquanli
-		}
-		prerequisite = {
 			focus = kuodamincuhuifanwei
 		}
 		x = 10
 		y = 6
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			swap_ideas = {
+				add_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
+				remove_idea = ROC_idea_minzhongduidatonglixiangrenkedu_A
+			}
+			set_variable = {
+				ROC_VAR_chengshi_days_base = 60
+			}
+			set_variable = {
+				ROC_VAR_chengshi_minsheng_pp_base = 20
+			}
+			set_variable = {
+				ROC_VAR_chengshi_junshi_pp_base = 15
+			}
+			custom_effect_tooltip = ROC_custom_luoshisishichengongzuozhi
+			ROC_scripted_effects_jianshe = yes
+		}
 	}
-	focus = {
+	focus = {#18、广州革命委员会
 		id = guangzhougemingweiyuanhui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_guangzhougemingweiyuanhui
 		cost = 5.00
 		prerequisite = {
 			focus = guangzhouqiyi
 		}
 		x = 15
 		y = 1
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 50
+			country_event = ROC_focus.8
+		}
 	}
-	focus = {
+	focus = {#19、会社与政府
 		id = huisheyuzhengfu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_huisheyuzhengfu
 		cost = 5.00
 		prerequisite = {
 			focus = guangzhougemingweiyuanhui
 		}
 		x = 15
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 50
+			country_event = ROC_focus.9
+		}
 	}
-	focus = {
+	focus = {#20、扩张省议会权力
 		id = kuozhangshengyihuiquanli
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kuozhangshengyihuiquanli
 		cost = 5.00
 		prerequisite = {
 			focus = huisheyuzhengfu
@@ -232,22 +439,63 @@ focus_tree = {
 		}
 		x = 14
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			country_event = ROC_focus.10
+		}
 	}
-	focus = {
+	focus = {#21、再议央地关系
 		id = zaiyiyangdiguanxi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zaiyiyangdiguanxi
 		cost = 5.00
 		prerequisite = {
 			focus = kuozhangshengyihuiquanli
 		}
 		x = 14
 		y = 6
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_11
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_11
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_10
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#22、强化县级民主
 		id = qianghuaxianjiminzhu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_qianghuaxianjiminzhu
 		cost = 5.00
 		prerequisite = {
 			focus = huisheyuzhengfu
@@ -257,179 +505,316 @@ focus_tree = {
 		}
 		x = 16
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			country_event = ROC_focus.11
+		}
 	}
-	focus = {
+	focus = {#23、中央集权制政府
 		id = zhongyangjiquanzhizhengfu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhongyangjiquanzhizhengfu
 		cost = 5.00
 		prerequisite = {
 			focus = qianghuaxianjiminzhu
 		}
 		x = 16
 		y = 6
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_21
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_21
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_20
+					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#24、军政、训政与宪政
 		id = junzhengxunzhengyuxianzheng
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_junzhengxunzhengyuxianzheng
 		cost = 5.00
 		prerequisite = {
 			focus = zaiyiyangdiguanxi
-		}
-		prerequisite = {
 			focus = zhongyangjiquanzhizhengfu
 		}
 		x = 15
 		y = 8
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 50
+			country_event = ROC_focus.12
+		}
 	}
-	focus = {
+	focus = {#90、统一中华
 		id = tongyizhonghua
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_tongyizhonghua
 		cost = 2.00
 		prerequisite = {
 			focus = banbugonghelinshixianfa
 		}
 		x = 14
 		y = 11
-
+		ai_will_do = {factor = 10}
 	}
-	focus = {
+	focus = {#93、击碎玉玺
 		id = jisuiyuxi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jisuiyuxi
 		cost = 3.00
 		prerequisite = {
 			focus = tongyizhonghua
 		}
+		bypass = {
+			NOT = { country_exists = STG }
+		}	
 		x = 18
 		y = 12
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			custom_effect_tooltip = ROC_custom_jisuiyuxi
+		}
 	}
-	focus = {
+	focus = {#94、西北攻伐
 		id = xibeigongfa
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_xibeigongfa
 		cost = 3.00
 		prerequisite = {
 			focus = jisuiyuxi
 		}
+		bypass = {
+			NOT = { country_exists = XBJ }
+		}	
 		x = 18
 		y = 14
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			custom_effect_tooltip = ROC_custom_xibeigongfa
+		}
 	}
-	focus = {
+	focus = {#25、大同会紧急全会
 		id = zhaokaidatonghuijinjiquanhui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhaokaidatonghuijinjiquanhui
 		cost = 3.00
+		cancelable = no
 		prerequisite = {
 			focus = guangzhouqiyi
 		}
 		x = 22
 		y = 1
-
+		ai_will_do = {factor = 30}
+		select_effect = {
+			country_event = ROC_focus.14
+		}
+		completion_reward = {	
+			add_political_power = 50
+		}
 	}
-	focus = {
+	focus = {#26、召开大同会国际会议
 		id = zhaokaidatpnghuiguojihuiyi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhaokaidatpnghuiguojihuiyi
 		cost = 3.00
 		prerequisite = {
 			focus = zhaokaidatonghuijinjiquanhui
 		}
 		x = 20
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			country_event = ROC_focus.15
+		}
 	}
-	focus = {
+	focus = {#27、来自周饶的支持
 		id = laizizhouraodezhichi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_laizizhouraodezhichi
 		cost = 3.00
 		prerequisite = {
 			focus = zhaokaidatpnghuiguojihuiyi
 		}
 		x = 20
 		y = 3
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			division_template = {
+				name = "精锐山地师"   
+				is_locked = yes
+				division_names_group = ROC_MNT_01
+				regiments = {
+					mountaineers = { x = 0 y = 0 } 
+					mountaineers = { x = 0 y = 1 } 
+					mountaineers = { x = 0 y = 2 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+				}
+			}
+			592 = {
+				create_unit = {
+					division = "name = \"山地步兵第一师\" division_template = \"精锐山地师\" start_experience_factor = 1.0"
+					prioritize_location = 1047
+					owner = ROC
+				}
+			}
+			country_event = ROC_focus.16
+		}
 	}
-	focus = {
+	focus = {#28、与炎州方面展开合作
 		id = yuyanzhoufangmianzhankaihezuo
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_yuyanzhoufangmianzhankaihezuo
 		cost = 6.00
 		prerequisite = {
 			focus = laizizhouraodezhichi
 		}
 		x = 20
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 6000
+				producer = YZR
+			}	
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 1500
+				producer = YZR
+			}	
+		}
 	}
-	focus = {
+	focus = {#29、支援吕宋革命委员会
 		id = zhichilvsonggemingweiyuanhui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhichilvsonggemingweiyuanhui
 		cost = 3.00
 		prerequisite = {
 			focus = zhaokaidatonghuijinjiquanhui
 		}
 		x = 22
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 50
+			add_popularity = { ideology = moderate_socialism popularity = 0.02 }
+		}
 	}
-	focus = {
+	focus = {#30、支持大同党四川支部
 		id = zhichidatongdangsichuanzhibu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhichidatongdangsichuanzhibu
 		cost = 3.00
 		prerequisite = {
 			focus = zhichilvsonggemingweiyuanhui
 		}
 		x = 22
 		y = 3
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 25
+		}
 	}
-	focus = {
+	focus = {#31、联络满剌加支部
 		id = lianluomanlejiazhibu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_lianluomanlejiazhibu
 		cost = 3.00
 		prerequisite = {
 			focus = zhichidatongdangsichuanzhibu
 		}
 		x = 22
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 15
+		}
 	}
-	focus = {
+	focus = {#32、联络长江临时委员会左派
 		id = lianluochangjianglinshiweiyuanhuizuopai
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_lianluochangjianglinshiweiyuanhuizuopai
 		cost = 5.00
 		prerequisite = {
 			focus = zhaokaidatonghuijinjiquanhui
 		}
 		x = 24
 		y = 2
-
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
+		completion_reward = {	
+			add_political_power = 35
+		}
 	}
-	focus = {
+	focus = {#33、联络长江临时委员会右派
 		id = lianluochangjianglinshiweiyuanhuiyoupai
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_lianluochangjianglinshiweiyuanhuiyoupai
 		cost = 5.00
 		prerequisite = {
 			focus = lianluochangjianglinshiweiyuanhuizuopai
 		}
 		x = 24
 		y = 3
-
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
+		completion_reward = {	
+			add_political_power = 35
+		}
 	}
-	focus = {
+	focus = {#34、联络西南的共和派
 		id = lianluoxinangonghepai
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_lianluoxinangonghepai
 		cost = 5.00
 		prerequisite = {
 			focus = lianluochangjianglinshiweiyuanhuiyoupai
 		}
 		x = 24
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_political_power = 35
+		}
 	}
-	focus = {
+	focus = {#35、重组基层党支部
 		id = chongzujicengdangzibu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_chongzujicengdangzibu
 		cost = 6.00
 		prerequisite = {
 			focus = lianluomanlejiazhibu
@@ -442,44 +827,89 @@ focus_tree = {
 		}
 		x = 22
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			country_event = ROC_focus.17
+		}
 	}
-	focus = {
+	focus = {#39、新军事委员
 		id = xinjunshiweiyuanhui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_xinjunshiweiyuanhui
 		cost = 3.00
 		prerequisite = {
 			focus = zujiangonghewuzhuang
 		}
 		x = 28
 		y = 1
-
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
+		completion_reward = {	
+			set_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
+			custom_effect_tooltip = ROC_custom_xinjunshiweiyuanhui
+		}
 	}
-	focus = {
+	focus = {#40、针对性战术研讨
 		id = zhenduixingzhanshuyantao
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhenduixingzhanshuyantao
 		cost = 5.00
 		prerequisite = {
 			focus = xinjunshiweiyuanhui
 		}
 		x = 28
 		y = 2
-
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
+		completion_reward = {	
+			army_experience = 100
+			add_dynamic_modifier = {
+				modifier = ROC_dynamic_modifiers_nanguozhengfa
+			}
+			custom_effect_tooltip = ROC_custom_zhenduixingzhanshuyantao
+			set_variable = {#速度
+				ROC_VAR_nanguo_speed_factor = 0
+			}
+			set_variable = {#进攻
+				ROC_VAR_nanguo_attack_factor = 0
+			}
+			set_variable = {#防御
+				ROC_VAR_nanguo_defence_factor = 0
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
 	}
-	focus = {
+	focus = {#41、发动敌后激进大同党人
 		id = fadondihoujijindatongdangren
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_fadondihoujijindatongdangren
 		cost = 5.00
 		prerequisite = {
 			focus = zhenduixingzhanshuyantao
 		}
 		x = 28
 		y = 3
-
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
+		completion_reward = {	
+			custom_effect_tooltip = ROC_custom_fadondihoujijindatongdangren
+		}
 	}
-	focus = {
+	focus = {#42、革命之火燃遍东南
 		id = gemingzhihuoranbiandongnan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_gemingzhihuoranbiandongnan
 		cost = 3.00
 		prerequisite = {
 			focus = lianluochangjianglinshiweiyuanhuiyoupai
@@ -489,77 +919,252 @@ focus_tree = {
 		}
 		x = 28
 		y = 4
-
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 1000
+				date > 1938.3.1
+			}
+		}
+		completion_reward = {	
+			add_war_support = 0.05
+			custom_effect_tooltip = ROC_custom_gemingzhihuoranbiandongnan
+		}
 	}
-	focus = {
+	focus = {#43、招降明廷叛军
 		id = zhaoxiangmingtingpanjun
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhaoxiangmingtingpanjun
 		cost = 5.00
 		prerequisite = {
 			focus = zujiangonghewuzhuang
 		}
 		x = 33
 		y = 1
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_10_00
+					remove_idea = ROC_idea_gonghejun
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_00_10
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_10_10
+					remove_idea = ROC_idea_gonghejun_00_10
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_00_11
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_10_11
+					remove_idea = ROC_idea_gonghejun_00_11
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#44、旧军队再教育
 		id = jiujunduizaijiaoyu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jiujunduizaijiaoyu
 		cost = 5.00
 		prerequisite = {
 			focus = zhaoxiangmingtingpanjun
 		}
 		x = 33
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_10_00
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_11_00
+					remove_idea = ROC_idea_gonghejun_10_00
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_10_10
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_11_10
+					remove_idea = ROC_idea_gonghejun_10_10
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_10_11
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_11_11
+					remove_idea = ROC_idea_gonghejun_10_11
+				}
+			}
+			else = {
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_01_00
+					remove_idea = ROC_idea_gonghejun
+				}
+			}
+			country_event = ROC_focus.19
+		}
 	}
-	focus = {
+	focus = {#45、建立军队党代表制度
 		id = jianlidangdaibiaozhidu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jianlidangdaibiaozhidu
 		cost = 6.00
 		prerequisite = {
 			focus = jiujunduizaijiaoyu
 		}
 		x = 33
 		y = 3
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_ideas = ROC_idea_dangdaibiaozhizhu
+		}
 	}
-	focus = {
+	focus = {#46、改编农会部队
 		id = gaibiannonghuibudui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_gaibiannonghuibudui
 		cost = 5.00
 		prerequisite = {
 			focus = zujiangonghewuzhuang
 		}
 		x = 35
 		y = 1
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_00_10
+					remove_idea = ROC_idea_gonghejun
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_10_00
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_10_10
+					remove_idea = ROC_idea_gonghejun_10_00
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_11_00
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_11_10
+					remove_idea = ROC_idea_gonghejun_11_00
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#47、吸收工人武装
 		id = xishougongrenwuzhuang
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_xishougongrenwuzhuang
 		cost = 5.00
 		prerequisite = {
 			focus = gaibiannonghuibudui
 		}
 		x = 35
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			swap_ideas = {
+				add_idea = ROC_idea_weigongheerzhan_1
+				remove_idea = ROC_idea_weigongheerzhan
+			}
+		}
 	}
-	focus = {
+	focus = {#48、加强军事训练
 		id = jiaqiangjunshixunlian
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jiaqiangjunshixunlian
 		cost = 5.00
 		prerequisite = {
 			focus = xishougongrenwuzhuang
 		}
 		x = 35
 		y = 3
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_00_10
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_00_11
+					remove_idea = ROC_idea_gonghejun_00_10
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_10_10
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_10_11
+					remove_idea = ROC_idea_gonghejun_10_10
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_11_10
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_11_11
+					remove_idea = ROC_idea_gonghejun_11_10
+				}
+			}
+			else = {
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_00_01
+					remove_idea = ROC_idea_gonghejun
+				}
+			}
+			if = {
+				limit = {
+					has_idea = volunteer_only
+				}
+				swap_ideas = {
+					remove_idea = volunteer_only
+					add_idea = limited_conscription
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = limited_conscription
+				}
+				swap_ideas = {
+					remove_idea = limited_conscription
+					add_idea = extensive_conscription
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = extensive_conscription
+				}
+				swap_ideas = {
+					remove_idea = extensive_conscription
+					add_idea = service_by_requirement
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#49、共和军正规化
 		id = gonghejunzhengguihua
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_gonghejunzhengguihua
 		cost = 8.00
 		prerequisite = {
 			focus = jiaqiangjunshixunlian
@@ -569,55 +1174,92 @@ focus_tree = {
 		}
 		x = 34
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghejun_11_11
+				}	
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_1
+					remove_idea = ROC_idea_gonghejun_11_11
+				}
+			}
+			else = {
+				swap_ideas = {
+					add_idea = ROC_idea_gonghejun_1_1
+					remove_idea = ROC_idea_gonghejun
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#50、火力覆盖
 		id = zhangshaozengdehuopaolinian
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhangshaozengdehuopaolinian
 		cost = 5.00
 		prerequisite = {
 			focus = gonghejunzhengguihua
 		}
 		x = 30
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_ideas = ROC_idea_huolifugai
+		}
 	}
-	focus = {
+	focus = {#60、步兵作战
 		id = dengkengdebubingzuozhanlilun
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_dengkengdebubingzuozhanlilun
 		cost = 5.00
 		prerequisite = {
 			focus = gonghejunzhengguihua
 		}
 		x = 38
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = support_tech
+			}
+		}
 	}
-	focus = {
+	focus = {#61、丘陵适应训练
 		id = qiulingshiyingxunlian
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_qiulingshiyingxunlian
 		cost = 5.00
 		prerequisite = {
 			focus = dengkengdebubingzuozhanlilun
 		}
 		x = 38
 		y = 6
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_ideas = ROC_idea_bubingzuozhan
+		}
 	}
-	focus = {
+	focus = {#62、步兵武器更新
 		id = bubingwuqigengxin
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_bubingwuqigengxin
 		cost = 5.00
 		prerequisite = {
 			focus = qiulingshiyingxunlian
 		}
 		x = 38
 		y = 7
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
 	}
-	focus = {
+	focus = {#63、强化特种作战
 		id = qianghuatezhongzuozhan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_qianghuatezhongzuozhan
 		cost = 5.00
 		prerequisite = {
 			focus = bubingwuqigengxin
@@ -627,11 +1269,30 @@ focus_tree = {
 		}
 		x = 37
 		y = 8
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_army_experience > 24.99
+			has_army_manpower = { size > 150000 }
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ROC_idea_bubingzuozhan
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_bubingzuozhan_1
+					remove_idea = ROC_idea_bubingzuozhan
+			}
+			}
+			else = {
+				add_ideas = ROC_idea_bubingzuozhan_1
+			}
+			custom_effect_tooltip = ROC_custom_qianghuatezhongzuozhan
+		}
 	}
-	focus = {
+	focus = {#64、现代化的散兵作战理念
 		id = xiandaihuadesanbingzuozhanlinian
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_xiandaihuadesanbingzuozhanlinian
 		cost = 5.00
 		prerequisite = {
 			focus = bubingwuqigengxin
@@ -641,22 +1302,46 @@ focus_tree = {
 		}
 		x = 39
 		y = 8
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_army_experience > 24.99
+			has_army_manpower = { size > 150000 }
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ROC_idea_bubingzuozhan
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_bubingzuozhan_2
+					remove_idea = ROC_idea_bubingzuozhan
+			}
+			}
+			else = {
+				add_ideas = ROC_idea_bubingzuozhan_2
+			}
+			custom_effect_tooltip = ROC_custom_xiandaihuadesanbingzuozhanlinian
+		}
 	}
-	focus = {
+	focus = {#65、青年飞行员委员会
 		id = qingnianfeixingyuanweiyuanhui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_qingnianfeixingyuanweiyuanhui
 		cost = 1.00
 		prerequisite = {
 			focus = zujiangonghewuzhuang
 		}
 		x = 43
 		y = 1
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			air_experience = 50
+			add_ideas = ROC_idea_gonghechuying
+			custom_effect_tooltip = ROC_custom_qingnianfeixingyuanweiyuanhui
+		}
 	}
-	focus = {
+	focus = {#66、考察旧军官
 		id = kaochajiujunguan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kaochajiujunguan
 		cost = 5.00
 		prerequisite = {
 			focus = qingnianfeixingyuanweiyuanhui
@@ -666,11 +1351,18 @@ focus_tree = {
 		}
 		x = 42
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = ROC_idea_gonghechuying
+				add_idea = ROC_idea_gonghechuying_1
+			}
+		}
 	}
-	focus = {
+	focus = {#67、提拔革命干部
 		id = tibagemingganbu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_tibagemingganbu
 		cost = 5.00
 		prerequisite = {
 			focus = qingnianfeixingyuanweiyuanhui
@@ -680,91 +1372,253 @@ focus_tree = {
 		}
 		x = 44
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.1
+			swap_ideas = {
+				remove_idea = ROC_idea_gonghechuying
+				add_idea = ROC_idea_gonghechuying_2
+			}
+		}
 	}
-	focus = {
+	focus = {#68、扩大航校招生
 		id = kuodahangxiaozhaosheng
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kuodahangxiaozhaosheng
 		cost = 5.00
 		prerequisite = {
 			focus = tibagemingganbu
-		}
-		prerequisite = {
 			focus = kaochajiujunguan
 		}
 		x = 43
 		y = 3
-
+		ai_will_do = {factor = 10}
+		available = {
+			AND = {
+				has_deployed_air_force_size = {
+					size > 199
+					type = fighter
+				}
+				has_deployed_air_force_size = {
+					size > 49
+					type = cas
+				}
+			}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_1
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_11
+					remove_idea = ROC_idea_gonghechuying_1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_2
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_21
+					remove_idea = ROC_idea_gonghechuying_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_01
+					remove_idea = ROC_idea_gonghechuying
+				}
+			}
+			add_ace = {
+				name = "乐"
+				surname = "以琴"
+				type = fighter_genius
+				is_female = yes
+			}
+			add_ace = {
+				name = "陈"
+				surname = "怀民"
+				type = bomber_unique
+				is_female = yes
+			}
+			add_ace = {
+				name = "丁"
+				surname = "纪徐"
+				type = support_genius
+				is_female = yes
+			}
+			add_ace = {
+				name = "唐"
+				surname = "铎"
+				type = fighter_genius
+				is_female = yes
+			}
+			add_ace = {
+				name = "陈"
+				surname = "卓林"
+				type = fighter_genius
+				is_female = yes
+			}
+		}
 	}
-	focus = {
+	focus = {#69、成立航校专家组
 		id = chenglihangxiaozhuanjiazu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_chenglihangxiaozhuanjiazu
 		cost = 5.00
 		prerequisite = {
 			focus = kuodahangxiaozhaosheng
 		}
 		x = 42
 		y = 4
-
+		available = {
+			has_deployed_air_force_size = {
+				size > 399
+			}
+		}
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
 	}
-	focus = {
+	focus = {#72、扩建机场
 		id = kuojianjichang
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kuojianjichang
 		cost = 5.00
 		prerequisite = {
 			focus = kuodahangxiaozhaosheng
 		}
 		x = 44
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			592 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes 
+					# province = 小地块代码
+				}
+			}
+			813 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes 
+					# province = 小地块代码
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#73、航空器监造处
 		id = hangtianqijianzaochu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_hangtianqijianzaochu
 		cost = 5.00
 		prerequisite = {
 			focus = kuojianjichang
 		}
 		x = 44
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			air_experience = 50
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_11
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_112
+					remove_idea = ROC_idea_gonghechuying_11
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_21
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_212
+					remove_idea = ROC_idea_gonghechuying_21
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_211
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_2A
+					remove_idea = ROC_idea_gonghechuying_211
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_111
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_1A
+					remove_idea = ROC_idea_gonghechuying_111
+				}
+			}
+			else = {
+				add_ideas = ROC_idea_gonghechuying_1A
+			}
+		}
 	}
-	focus = {
+	focus = {#74、空中后勤线
 		id = kongzhonghouqinxian
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kongzhonghouqinxian
 		cost = 6.00
 		prerequisite = {
 			focus = hangtianqijianzaochu
 		}
 		x = 44
 		y = 6
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_tech = tech_logistics_company
+		}
+		completion_reward = {	
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment
+				amount = 150
+				producer = ROC
+			}
+		}
 	}
-	focus = {
+	focus = {#77、整编革命海军
 		id = zhengbiangeminghaijun
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhengbiangeminghaijun
 		cost = 5.00
 		prerequisite = {
 			focus = cedongnanyangjianduicanyugeming
 		}
 		x = 50
 		y = 1
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_ideas = ROC_idea_nanyangzhijian
+		}
 	}
-	focus = {
+	focus = {#78、革命海军的发展方向
 		id = geminghaijundefazhanfangxiang
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_geminghaijundefazhanfangxiang
 		cost = 5.00
 		prerequisite = {
 			focus = zhengbiangeminghaijun
 		}
 		x = 50
 		y = 2
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			country_event = ROC_focus.1
+		}
 	}
-	focus = {
+	focus = {#79、海航理论
 		id = linjianzhangdehaihanglilun
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_linjianzhangdehaihanglilun
 		cost = 5.00
 		prerequisite = {
 			focus = geminghaijundefazhanfangxiang
@@ -774,47 +1628,93 @@ focus_tree = {
 		}
 		x = 48
 		y = 3
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_navy_experience > 24.99
+			has_idea = ROC_idea_nanyangzhijian_2
+			OR = {
+				has_tech = early_ship_hull_carrier
+				has_tech = air_torpedoe_1
+			}
+		}
+		completion_reward = {
+			navy_experience = -25
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				uses = 2
+				category = cat_base_strike
+			}
+			swap_ideas = {
+				remove_idea = ROC_idea_nanyangzhijian_2
+				add_idea = ROC_idea_nanyangzhijian_21
+			}
+		}
 	}
-	focus = {
+	focus = {#6、国营农场与农业工会
 		id = guoyingnongcyunongyegonghui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_guoyingnongcyunongyegonghui
 		cost = 5.00
 		prerequisite = {
-			focus = shanghuinongchanggaige
+			focus = shanghuinongchanggaizhi
 		}
 		x = 1
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_political_power = 50
+			add_power_balance_value = {
+				id = ROC_power_balance
+				value = -0.1
+			}
+		}
 	}
-	focus = {
+	focus = {#8、推动农业合作社发展
 		id = tuidongnongyehezuoshefazhan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_tuidongnongyehezuoshefazhan
 		cost = 5.00
 		prerequisite = {
 			focus = luoshipingjundiquan
 		}
 		x = 3
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_popularity = { ideology = moderate_socialism popularity = 0.03 }
+			add_power_balance_value = {
+				id = ROC_power_balance
+				value = 0.1
+			}
+		}
 	}
-	focus = {
+	focus = {#9、推动乡村建设运动
 		id = tuidongxiangcunjiansheyundong
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_tuidongxiangcunjiansheyundong
 		cost = 6.00
 		prerequisite = {
 			focus = tuidongnongyehezuoshefazhan
-		}
-		prerequisite = {
 			focus = guoyingnongcyunongyegonghui
 		}
 		x = 2
 		y = 6
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			custom_effect_tooltip = ROC_custom_tuidongxiangcunjiansheyundong
+			set_variable = {
+				ROC_VAR_nongcun_days_base = 80
+			}
+			set_variable = {
+				ROC_VAR_nongcun_pp_base = 15
+			}
+			ROC_scripted_effects_jianshe = yes
+			swap_ideas = {
+				add_idea = ROC_idea_meihuazhihai_2
+				remove_idea = ROC_idea_meihuazhihai_1
+			}
+		}
 	}
-	focus = {
-		id = 扩建广州大学
-		icon = GFX_goal_unknown
+	focus = {#12、扩建广州大学
+		id = kuojianguangzhoudaxue
+		icon = GFX_ROC_kuojianguangzhoudaxue
 		cost = 6.00
 		prerequisite = {
 			focus = tuidongxiangcunjiansheyundong
@@ -827,53 +1727,152 @@ focus_tree = {
 		}
 		x = 6
 		y = 7
-
+		ai_will_do = {factor = 10}
+		available = {
+			num_of_factories > 70
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
 	}
-	focus = {
+	focus = {#17、华夏发展方略()
 		id = huaxiafazhanzhanlue
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_huaxiafazhanzhanlue
 		cost = 10.00
 		prerequisite = {
-			focus = luoshisishichengongzuozhi
+			focus = kuojianguangzhoudaxue
 		}
-		prerequisite = {
-			focus = tuidongxiangcunjiansheyundong
+		available = {
+			591 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_nongcunjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_nongcunjianshe
+				}
+			}
+			817 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_nongcunjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_nongcunjianshe
+				}
+			}
+			595 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_nongcunjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_nongcunjianshe
+				}
+			}
+			592 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_minshengjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_minshengjianshe
+				}
+			}
+			729 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_minshengjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_minshengjianshe
+				}
+			}
+			326 = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_minshengjianshe
+				}
+				hidden_trigger = {
+					has_state_flag = ROC_minshengjianshe
+				}
+			}
 		}
 		x = 6
 		y = 9
-
+		ai_will_do = {factor = 50}
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						state = 592
+						state = 613
+						state = 608
+						state = 620
+						state = 744
+						state = 831
+						state = 845
+						state = 1118
+						state = 325
+					}
+					is_owned_and_controlled_by = ROC
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#36、大同主义再思考
 		id = datongzhuyizaisikao
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_datongzhuyizaisikao
 		cost = 3.00
 		prerequisite = {
 			focus = chongzujicengdangzibu
 		}
 		x = 22
 		y = 6
-
+		ai_will_do = {factor = 10}
+		available = {
+			NOT = {
+				country_exists = XBJ
+			}
+			NOT = {
+				country_exists = STG
+			}
+		}
+		completion_reward = {
+			country_event = ROC_focus.18
+		}
 	}
-	focus = {
+	focus = {#37、第三届大同会全会
 		id = disanjiedatonghuiquanhui
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_disanjiedatonghuiquanhui
 		cost = 5.00
 		prerequisite = {
 			focus = datongzhuyizaisikao
 		}
 		x = 22
 		y = 7
-
+		available = {
+			has_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
+		}
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			country_event = { id = ROC_focus.38 }
+			swap_ideas = {
+				add_idea = ROC_idea_minzhongduidatonglixiangrenkedu_C
+				remove_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
+			}
+		}
 	}
 	focus = {
 		id = jingtingbindegouxiang
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jingtingbindegouxiang
 		cost = 10.00
 		prerequisite = {
 			focus = disanjiedatonghuiquanhui
 		}
 		mutually_exclusive = {
 			focus = sunwendexinnian
+			focus = zhangtaiyandezhuiqiu
 		}
 		x = 19
 		y = 8
@@ -881,7 +1880,7 @@ focus_tree = {
 	}
 	focus = {
 		id = sunwendexinnian
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_sunwendexinnian
 		cost = 10.00
 		prerequisite = {
 			focus = disanjiedatonghuiquanhui
@@ -896,57 +1895,103 @@ focus_tree = {
 	}
 	focus = {
 		id = zhangtaiyandezhuiqiu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhangtaiyandezhuiqiu
 		cost = 10.00
 		prerequisite = {
 			focus = disanjiedatonghuiquanhui
 		}
 		mutually_exclusive = {
 			focus = sunwendexinnian
+			focus = jingtingbindegouxiang
 		}
 		x = 25
 		y = 8
 
 	}
-	focus = {
+	focus = {#51、轻量化炮兵理论
 		id = qinglianghuapaobing
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_qinglianghuapaobing
 		cost = 5.00
 		prerequisite = {
 			focus = zhangshaozengdehuopaolinian
 		}
 		x = 30
 		y = 6
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_army_experience > 25
+			arms_factory > 24
+		}
+		completion_reward = {
+			# add_ideas = ROC_idea_huolifugai_1
+			if = {
+				limit = {
+					has_idea = ROC_idea_huolifugai
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_huolifugai_1
+					remove_idea = ROC_idea_huolifugai
+			}
+			}
+			else = {
+				add_ideas = ROC_idea_huolifugai_1
+			}
+		}
 	}
-	focus = {
+	focus = {#52、火炮技术革新
 		id = huopaojishugexin
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_huopaojishugexin
 		cost = 5.00
 		prerequisite = {
 			focus = qinglianghuapaobing
 		}
 		x = 30
 		y = 7
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
 	}
-	focus = {
+	focus = {#53、远距离火力压制
 		id = yuanjulihuoliyazhi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_yuanjulihuoliyazhi
 		cost = 5.00
 		prerequisite = {
 			focus = huopaojishugexin
 		}
+		ai_will_do = {factor = 10}
 		mutually_exclusive = {
 			focus = jizhidehuoli
 		}
 		x = 29
 		y = 8
-
+		available = {
+			has_army_experience > 50
+			arms_factory > 29
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ROC_idea_huolifugai_1
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_huolifugai_1_1
+					remove_idea = ROC_idea_huolifugai_1
+			}
+			}
+			else = {
+				add_ideas = ROC_idea_huolifugai_1_1
+			}
+			custom_effect_tooltip = ROC_custom_yuanjulihuoliyazhi
+		}
 	}
-	focus = {
+	focus = {#54、极致的火力
 		id = jizhidehuoli
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jizhidehuoli
 		cost = 5.00
 		prerequisite = {
 			focus = huopaojishugexin
@@ -956,11 +2001,30 @@ focus_tree = {
 		}
 		x = 31
 		y = 8
-
+		available = {
+			has_army_experience > 50
+			arms_factory > 29
+		}
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ROC_idea_huolifugai_1
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_huolifugai_1_2
+					remove_idea = ROC_idea_huolifugai_1
+			}
+			}
+			else = {
+				add_ideas = ROC_idea_huolifugai_1_2
+			}
+			custom_effect_tooltip = ROC_custom_jizhidehuoli
+		}
 	}
-	focus = {
+	focus = {#55、装甲理论
 		id = jiangxianyundezhuangjialilun
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jiangxianyundezhuangjialilun
 		cost = 5.00
 		prerequisite = {
 			focus = qinglianghuapaobing
@@ -970,33 +2034,128 @@ focus_tree = {
 		}
 		x = 34
 		y = 7
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			create_equipment_variant = {
+				name = "甲式轻型坦克"
+				type = light_tank_chassis_1
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_heavy_machine_gun#炮
+					turret_type_slot = tank_light_one_man_tank_turret#塔
+					suspension_type_slot = tank_bogie_suspension#悬挂
+					armor_type_slot = tank_riveted_armor#甲
+					engine_type_slot = tank_gasoline_engine#发动机
+					special_type_slot_1 = additional_machine_guns#额外部件
+				}
+				upgrades = {
+				}
+				icon = "GFX_GER_basic_medium_tank_medium"
+			}
+			create_equipment_variant = {
+				name = "甲式中型坦克"
+				type = medium_tank_chassis_0
+				parent_version = 0
+				modules = {
+					main_armament_slot = tank_small_cannon#炮
+					turret_type_slot = tank_medium_three_man_tank_turret#塔
+					suspension_type_slot = tank_bogie_suspension#悬挂
+					armor_type_slot = tank_riveted_armor#甲
+					engine_type_slot = tank_gasoline_engine#发动机
+					special_type_slot_1 = secondary_turret_hmg#额外部件
+				}
+				upgrades = {
+				}
+				icon = "GFX_GER_basic_medium_tank_medium"
+			}
+			add_equipment_to_stockpile = { 
+				type = light_tank_chassis_1
+				variant_name = "甲式轻型坦克"
+				amount = 50
+				producer = ROC
+			}
+			add_equipment_to_stockpile = { 
+				type = medium_tank_chassis_0
+				variant_name = "甲式中型坦克"
+				amount = 50
+				producer = ROC
+			}
+			custom_effect_tooltip = ROC_custom_jiangxianyundezhuangjialilun
+		}
 	}
-	focus = {
+	focus = {#56、组建新式装甲部队
 		id = zujianxinshizhuangjia
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zujianxinshizhuangjia
 		cost = 5.00
 		prerequisite = {
 			focus = jiangxianyundezhuangjialilun
 		}
 		x = 34
 		y = 8
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ROC_idea_gonghejun_2
+				remove_idea = ROC_idea_gonghejun_1
+			}
+			division_template = {
+				name = "装甲师"   
+				is_locked = yes
+				division_names_group = ROC_TAN_01
+				regiments = {
+					motorized = { x = 0 y = 0 } 
+					motorized = { x = 0 y = 1 } 
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					medium_armor = { x = 2 y = 0 }
+					medium_armor = { x = 2 y = 1 }
+					medium_armor = { x = 2 y = 2 }
+					medium_armor = { x = 2 y = 3 }
+				}
+				support = {
+					recon = { x = 0 y = 0 }
+					engineer = { x = 0 y = 1 }
+					maintenance_company = { x = 0 y = 2 }
+				}
 
+			}
+			592 = {
+				create_unit = {
+					division = "name = \"装甲第一师\" division_template = \"装甲师\" start_experience_factor = 1.0"
+					prioritize_location = 1047
+					owner = ROC
+				}
+				create_unit = {
+					division = "name = \"装甲第二师\" division_template = \"装甲师\" start_experience_factor = 1.0"
+					prioritize_location = 1047
+					owner = ROC
+				}
+			}
+		}
 	}
-	focus = {
+	focus = {#57、装甲技术研究
 		id = zhuangjiajishuyanjiu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhuangjiajishuyanjiu
 		cost = 5.00
 		prerequisite = {
 			focus = zujianxinshizhuangjia
 		}
 		x = 34
 		y = 9
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
 	}
-	focus = {
+	focus = {#58、快速突进
 		id = kuaisutujin
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kuaisutujin
 		cost = 5.00
 		prerequisite = {
 			focus = zhuangjiajishuyanjiu
@@ -1006,11 +2165,20 @@ focus_tree = {
 		}
 		x = 33
 		y = 10
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_tech = improved_medium_tank_chassis
+		}
+		completion_reward = {	
+			swap_ideas = {
+				add_idea = ROC_idea_gonghejun_2_1
+				remove_idea = ROC_idea_gonghejun_2
+			}
+		}
 	}
-	focus = {
+	focus = {#59、正面向敌
 		id = zhengmianxiangdi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhengmianxiangdi
 		cost = 5.00
 		prerequisite = {
 			focus = zhuangjiajishuyanjiu
@@ -1020,33 +2188,100 @@ focus_tree = {
 		}
 		x = 35
 		y = 10
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_tech = improved_medium_tank_chassis
+		}
+		completion_reward = {	
+			swap_ideas = {
+				add_idea = ROC_idea_gonghejun_2_2
+				remove_idea = ROC_idea_gonghejun_2
+			}
+		}
 	}
-	focus = {
+	focus = {#70、培训试飞员
 		id = peixunshifeiyuan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_peixunshifeiyuan
 		cost = 5.00
 		prerequisite = {
 			focus = chenglihangxiaozhuanjiazu
 		}
 		x = 42
 		y = 5
-
+		ai_will_do = {factor = 10}
+		completion_reward = {	
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_air
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = medium_air
+			}
+		}
 	}
-	focus = {
+	focus = {#71、空军大中队演习
 		id = kongjundazhongduiyanxi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kongjundazhongduiyanxi
 		cost = 6.00
 		prerequisite = {
 			focus = peixunshifeiyuan
 		}
 		x = 42
 		y = 6
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_deployed_air_force_size = {
+				size > 799
+			}
+		}
+		completion_reward = {	
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_11
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_111
+					remove_idea = ROC_idea_gonghechuying_11
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_21
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_211
+					remove_idea = ROC_idea_gonghechuying_21
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_212
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_2A
+					remove_idea = ROC_idea_gonghechuying_212
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_112
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_1A
+					remove_idea = ROC_idea_gonghechuying_112
+				}
+			}
+			else = {
+				add_ideas = ROC_idea_gonghechuying_1A
+			}
+		}
 	}
-	focus = {
+	focus = {#75、海陆皆在我们天空之下
 		id = hailujiezaiwomentiankongzhixia
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_hailujiezaiwomentiankongzhixia
 		cost = 6.00
 		prerequisite = {
 			focus = kongzhonghouqinxian
@@ -1056,44 +2291,126 @@ focus_tree = {
 		}
 		x = 43
 		y = 7
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_air_experience >119.99
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_1A
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_1B
+					remove_idea = ROC_idea_gonghechuying_1A
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_gonghechuying_2A
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_gonghechuying_2B
+					remove_idea = ROC_idea_gonghechuying_2A
+				}
+			}
+			else = {
+				add_ideas = ROC_idea_gonghechuying_2B
+			}
+			custom_effect_tooltip = ROC_custom_hailujiezaiwomentiankongzhixia
+		}
 	}
-	focus = {
+	focus = {#80、海军作战模式革新
 		id = haijunzuozhanmoshigexin
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_haijunzuozhanmoshigexin
 		cost = 5.00
 		prerequisite = {
 			focus = linjianzhangdehaihanglilun
 		}
 		x = 48
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_base_strike
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cv_tech
+			}
+		}
 	}
-	focus = {
+	focus = {#81、海军航空大发展
 		id = haijunhangkonmgdafazhan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_haijunhangkonmgdafazhan
 		cost = 5.00
 		prerequisite = {
 			focus = haijunzuozhanmoshigexin
 		}
 		x = 48
 		y = 5
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_navy_size = { 
+				size > 0 # Use < or >
+				unit = carrier# optional
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ROC_idea_nanyangzhijian_22
+				remove_idea = ROC_idea_nanyangzhijian_21
+			}
+			custom_effect_tooltip = ROC_custom_haijunhangkonmgdafazhan
+		}
 	}
-	focus = {
+	focus = {#82、升级“天级”航母
 		id = shengjitianjihangmu
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_shengjitianjihangmu
 		cost = 5.00
 		prerequisite = {
 			focus = haijunhangkonmgdafazhan
 		}
 		x = 48
 		y = 6
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			create_equipment_variant = {
+				name = "天级"
+				type = ship_hull_carrier_2
+				name_group = ROC_CV_TIAN
+				parent_version = 0
+				allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
+				modules = {
+					fixed_ship_deck_slot_1 = ship_deck_space
+					fixed_ship_deck_slot_2 = ship_deck_space
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = carrier_ship_engine_2
+					fixed_ship_secondaries_slot = dp_ship_secondaries_1
+					front_1_custom_slot = ship_deck_space
+					mid_1_custom_slot = ship_deck_space
+				}
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_2
+					creator = "ROC" 
+					version_name = "天级"
+				}
+				name = "天同" 
+				requested_factories = 1
+				progress = 0.75
+				amount = 1
+			}
+		}
 	}
-	focus = {
+	focus = {#83、巨舰构想
 		id = yangshuzhuangdejujiangouxiang
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_yangshuzhuangdejujiangouxiang
 		cost = 5.00
 		prerequisite = {
 			focus = geminghaijundefazhanfangxiang
@@ -1103,106 +2420,249 @@ focus_tree = {
 		}
 		x = 52
 		y = 3
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_navy_experience > 24.99
+			has_idea = ROC_idea_nanyangzhijian_1
+			OR = {
+				has_tech = basic_ship_hull_heavy
+				has_tech = basic_heavy_battery
+			}
+		}
+		completion_reward = {
+			navy_experience = -25
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				uses = 2
+				category = cat_fleet_in_being
+			}
+			swap_ideas = {
+				remove_idea = ROC_idea_nanyangzhijian_1
+				add_idea = ROC_idea_nanyangzhijian_11
+			}
+		}
 	}
-	focus = {
+	focus = {#84、尊重世界大战的经验
 		id = zunzhongshijiedazhanjingyan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zunzhongshijiedazhanjingyan
 		cost = 5.00
 		prerequisite = {
 			focus = yangshuzhuangdejujiangouxiang
 		}
 		x = 52
 		y = 4
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_fleet_in_being
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bb_tech
+			}
+		}
 	}
-	focus = {
+	focus = {#85、大炮与巨舰
 		id = dajianyujupao
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_dajianyujupao
 		cost = 5.00
 		prerequisite = {
 			focus = zunzhongshijiedazhanjingyan
 		}
 		x = 52
 		y = 5
-
+		ai_will_do = {factor = 10}
+		available = {
+			OR = {
+				has_navy_size = { 
+					size > 4 # Use < or >
+					unit = battleship# optional
+				}
+				has_navy_size = { 
+					size > 7 # Use < or >
+					unit = heavy_cruiser# optional
+				}
+			}
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ROC_idea_nanyangzhijian_12
+				remove_idea = ROC_idea_nanyangzhijian_11
+			}
+		}
 	}
-	focus = {
+	focus = {#86、设计新“山级”战列舰
 		id = shejixinshanjizhanliejian
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_shejixinshanjizhanliejian
 		cost = 5.00
 		prerequisite = {
 			focus = dajianyujupao
 		}
 		x = 52
 		y = 6
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			create_equipment_variant = {
+				name = "山级"
+				type = ship_hull_heavy_3
+				name_group = ROC_BB_SHAN
+				parent_version = 0
+				allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
+				modules = {
+					fixed_ship_battery_slot = ship_heavy_battery_3
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = heavy_ship_engine_2
+					fixed_ship_secondaries_slot = dp_ship_secondaries_2
+					fixed_ship_armor_slot = ship_armor_bb_2
+					front_1_custom_slot = ship_heavy_battery_3
+					mid_1_custom_slot = empty
+					mid_2_custom_slot = dp_ship_secondaries_2
+					mid_3_custom_slot = empty
+					rear_1_custom_slot = ship_airplane_launcher_1
+				}
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_heavy_3
+					creator = "ROC" 
+					version_name = "山级"
+				}
+				name = "罗浮" 
+				requested_factories = 1
+				progress = 0.75
+				amount = 1
+			}
+		}
 	}
-	focus = {
+	focus = {#87、扩建海军基地
 		id = kuojianhaijunjidi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_kuojianhaijunjidi
 		cost = 5.00
 		prerequisite = {
 			focus = shejixinshanjizhanliejian
-		}
-		prerequisite = {
 			focus = shengjitianjihangmu
 		}
 		x = 50
 		y = 7
-
+		ai_will_do = {factor = 10}
+		available = {
+			592 = {
+				dockyard > 3
+			}
+		}
+		completion_reward = {
+			592 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			if = {
+				limit = {
+					has_idea = ROC_idea_nanyangzhijian_12
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_nanyangzhijian_13
+					remove_idea = ROC_idea_nanyangzhijian_12
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = ROC_idea_nanyangzhijian_22
+				}
+				swap_ideas = {
+					add_idea = ROC_idea_nanyangzhijian_23
+					remove_idea = ROC_idea_nanyangzhijian_22
+				}
+			}
+			custom_effect_tooltip = ROC_custom_kuojianhaijunjidi
+		}
 	}
-	focus = {
+	focus = {#88、大同革命之花开遍四海
 		id = datonggemingzhihuakaibiansihai
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_datonggemingzhihuakaibiansihai
 		cost = 5.00
 		prerequisite = {
 			focus = kuojianhaijunjidi
 		}
 		x = 50
 		y = 8
-
+		ai_will_do = {factor = 10}
+		available = {
+			has_navy_experience >99.99
+		}
+		completion_reward = {
+			navy_experience = -100
+			every_navy_leader = {
+				add_attack = 1
+				add_defense = 1
+				add_planning = 1
+				add_logistics = 1
+			}
+		}
 	}
-	focus = {
+	focus = {#91、巴蜀之国
 		id = bashuzhiguo
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_bashuzhiguo
 		cost = 3.00
 		prerequisite = {
 			focus = tongyizhonghua
 		}
 		x = 10
 		y = 12
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_political_power = 30
+			custom_effect_tooltip = ROC_custom_bashuzhiguo
+		}
 	}
-	focus = {
+	focus = {#92、横扫西南
 		id = hengsaoxinan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_hengsaoxinan
 		cost = 3.00
 		prerequisite = {
 			focus = bashuzhiguo
 		}
 		x = 10
 		y = 14
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_political_power = 30
+			custom_effect_tooltip = ROC_custom_hengsaoxinan
+		}
 	}
-	focus = {
+	focus = {#95、东北问题
 		id = dongbeiwenti
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_dongbeiwenti
 		cost = 0.00
 		prerequisite = {
 			focus = tongyizhonghua
 		}
+		available = {
+			always = no
+		}
 		x = 14
 		y = 12
-
+		ai_will_do = {factor = 10}
 	}
-	focus = {
+	focus = {#96、革命的同志
 		id = gemingdetongzhi
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_gemingdetongzhi
 		cost = 3.00
 		prerequisite = {
 			focus = dongbeiwenti
 		}
+		available = {
+			
+		}
+		ai_will_do = {factor = 10}
 		mutually_exclusive = {
 			focus = yueguoshanhaiguan
 		}
@@ -1210,37 +2670,50 @@ focus_tree = {
 		y = 13
 
 	}
-	focus = {
+	focus = {#97、越过山海关
 		id = yueguoshanhaiguan
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_yueguoshanhaiguan
 		cost = 2.00
 		prerequisite = {
 			focus = dongbeiwenti
 		}
+		available = {
+
+		}
+		bypass = {
+			NOT = { country_exists = GPS }
+		}	
 		mutually_exclusive = {
 			focus = gemingdetongzhi
 		}
 		x = 15
 		y = 13
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			custom_effect_tooltip = ROC_custom_yueguoshanhaiguan
+		}
 	}
-	focus = {
+	focus = {#98、解放漠北
 		id = jiefangmobei
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_jiefangmobei
 		cost = 3.00
 		prerequisite = {
 			focus = yueguoshanhaiguan
-		}
-		prerequisite = {
 			focus = gemingdetongzhi
 		}
+		bypass = {
+			NOT = { country_exists = BOC }
+		}	
 		x = 14
 		y = 14
-
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			custom_effect_tooltip = ROC_custom_jiefangmobei
+		}
 	}
-	focus = {
+	focus = {#99、中华永远共和！
 		id = zhonghuayongyuangonghe
-		icon = GFX_goal_unknown
+		icon = GFX_ROC_zhonghuayongyuangonghe
 		cost = 3.00
 		prerequisite = {
 			focus = hengsaoxinan
@@ -1254,5 +2727,162 @@ focus_tree = {
 		x = 14
 		y = 15
 
+	}
+}
+
+focus_tree = {#华南招抚司国策
+	id = ROC
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ROC
+		}
+	}
+	focus = {#颁布通缉令
+		id = banbutongjiling
+		icon = GFX_ROC_banbutongjiling
+		cost = 5
+		x = 15
+		y = 0
+		ai_will_do = {factor = 10}
+		completion_reward = {
+			add_stability = 0.03
+		}
+	}
+	focus = {#针对性搜捕
+		id = zhenduixingsoubu
+		icon = GFX_ROC_zhenduixingsoubu
+		cost = 5
+		x = 15
+		y = 1
+		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = banbutongjiling
+		}
+		completion_reward = {
+			add_manpower = -1000
+			add_ideas = ROC_idea_huanandasoubu
+			swap_ideas = {
+				add_idea = ROC_Unsettled_Republicians
+				remove_idea = MNG_Unsettled_Republicians
+			}
+		}
+	}
+	focus = {#压制抗议学生
+		id = yazhikangyixuesheng
+		icon = GFX_ROC_yazhikangyixuesheng
+		cost = 5
+		x = 17
+		y = 2
+		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = zhenduixingsoubu
+		}
+		completion_reward = {
+			add_stability = 0.02
+			swap_ideas = {
+				add_idea = ROC_idea_huanandasoubu_1
+				remove_idea = ROC_idea_huanandasoubu
+			}
+		}
+	}
+	focus = {#打击农会暴徒
+		id = dajinonghuibaotu
+		icon = GFX_ROC_dajinonghuibaotu
+		cost = 5
+		x = 15
+		y = 2
+		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = zhenduixingsoubu
+		}
+		completion_reward = {
+			add_manpower = -10000
+			add_popularity = { ideology = agroindustrial_socialism popularity = -0.02 }
+			if = {
+				limit = {
+					has_idea = ROC_Unsettled_Republicians
+				}
+				swap_ideas = {
+					add_idea = ROC_Unsettled_Republicians_2
+					remove_idea = ROC_Unsettled_Republicians
+				}
+			}
+			else = {
+				swap_ideas = {
+					add_idea = ROC_Unsettled_Republicians_3
+					remove_idea = ROC_Unsettled_Republicians_1
+				}
+			}
+		}
+	}
+	focus = {#保证工厂生产
+		id = baozhenggongchangshengchan
+		icon = GFX_ROC_baozhenggongchangshengchan
+		cost = 5
+		x = 13
+		y = 2
+		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = zhenduixingsoubu
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = ROC_Unsettled_Republicians
+				}
+				swap_ideas = {
+					add_idea = ROC_Unsettled_Republicians_1
+					remove_idea = ROC_Unsettled_Republicians
+				}
+			}
+			else = {
+				swap_ideas = {
+					add_idea = ROC_Unsettled_Republicians_3
+					remove_idea = ROC_Unsettled_Republicians_2
+				}
+			}
+		}
+	}
+	focus = {#开展舆论宣传
+		id = kaizhanyulunxuanchuan
+		icon = GFX_ROC_kaizhanyulunxuanchuan
+		cost = 5
+		x = 15
+		y = 3
+		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = baozhenggongchangshengchan
+		}
+		prerequisite = {
+			focus = dajinonghuibaotu
+		}
+		prerequisite = {
+			focus = yazhikangyixuesheng
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ROC_Unsettled_Republicians_4
+				remove_idea = ROC_Unsettled_Republicians_3
+			}
+		}
+	}
+	focus = {#筹备军事戒严
+		id = choubeijunshijieyan
+		icon = GFX_ROC_choubeijunshijieyan
+		cost = 5
+		x = 15
+		y = 4
+		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = kaizhanyulunxuanchuan
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ROC_Unsettled_Republicians_5
+				remove_idea = ROC_Unsettled_Republicians_4
+			}
+		}
 	}
 }
