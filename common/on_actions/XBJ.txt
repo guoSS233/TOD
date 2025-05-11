@@ -4,11 +4,54 @@ on_actions = {
             XBJ_officers_update = yes
             XBJ_landlords_update = yes
             XBJ_tuanjie_update = yes
+            XBJ_jinbu_update = yes
         }
     }
     on_monthly_XBJ = {
         effect = {
             XBJ_jinbu_update = yes
+        }
+    }
+    on_weekly_XBJ = {
+        effect = {
+            if = {
+                limit = {
+                    has_country_flag = FLAG_XBJ_shequn_zhichidu
+                }
+                set_temp_variable = {
+                    change_XBJ_shequn_zhichidu_by = -0.5
+                }
+                XBJ_tuanjie_update = yes
+            }
+            
+        }
+    }
+    on_weekly_XBJ = {
+        effect = {
+            if = {
+                limit = {
+                    has_country_flag = FLAG_XBJ_dizhu_zhichidu
+                }
+                set_temp_variable = {
+                    change_XBJ_landlords_support_by = 0.5
+                }
+                XBJ_landlords_update = yes
+            }
+            
+        }
+    }
+    on_weekly_XBJ = {
+        effect = {
+            if = {
+                limit = {
+                    has_country_flag = FLAG_XBJ_shequn_tuanjiedu
+                }
+                set_temp_variable = {
+                    change_XBJ_shequn_tuanjiedu_by = 0.5
+                }
+                XBJ_landlords_update = yes
+            }
+            
         }
     }
 }

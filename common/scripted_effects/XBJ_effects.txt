@@ -393,7 +393,7 @@ XBJ_tuanjie_update = {
 
 XBJ_jinbu_update = {
 	set_variable = {
-		XBJ_jinbudu_speed = 0.01
+		XBJ_jinbudu_adds = XBJ_jinbudu_speed
 	}
 	set_variable = {
 		XBJ_X = XBJ_shequn_tuanjiedu
@@ -429,21 +429,24 @@ XBJ_jinbu_update = {
 		XBJ_Z1 = XBJ_Z
 	}
 	multiply_variable = {
-		XBJ_jinbudu_speed = XBJ_Z1
+		XBJ_jinbudu_adds = XBJ_Z1
 	}
 	multiply_variable = {
-		XBJ_jinbudu_speed = XBJ_X
+		XBJ_jinbudu_adds = XBJ_X
 	}
 	multiply_variable = {
-		XBJ_jinbudu_speed = XBJ_Y
+		XBJ_jinbudu_adds = XBJ_Y
+	}
+	multiply_variable = {
+		XBJ_jinbudu_adds = 100
 	}
 	clamp_variable = {
-		var = XBJ_jinbudu_speed
+		var = XBJ_jinbudu_adds
 		min = 0.001
 		max = 100
 	}
 	add_to_variable = {
-		XBJ_shequn_jinbudu = XBJ_jinbudu_speed
+		XBJ_shequn_jinbudu = XBJ_jinbudu_adds
 	}
 	clamp_variable = {
 		var = XBJ_shequn_jinbudu
@@ -598,4 +601,85 @@ XBJ_jinbu_update = {
 			XBJ_tuanjie_frame_var = 1
 		}
 	}
+}
+
+XBJ_update_backward_region = {
+    if = {
+        limit = {
+			check_variable = {
+				var = XBJ_shequn_jinbudu
+				value = 85
+				compare = greater_than_or_equals
+			}
+            has_idea = XBJ_Backward_Region_1
+        }
+        remove_ideas = XBJ_Backward_Region_1
+    }
+    else_if = {
+        limit = {
+            check_variable = {
+                var = XBJ_shequn_jinbudu
+                value = 70
+                compare = greater_than_or_equals
+            }
+            has_idea = XBJ_Backward_Region_1
+        }
+        add_ideas = XBJ_Backward_Region_1
+    }
+    else_if = {
+        limit = {
+            check_variable = {
+                var = XBJ_shequn_jinbudu
+                value = 50
+                compare = greater_than_or_equals
+            }
+            has_idea = XBJ_Backward_Region_1
+        }
+        add_idea = {
+            id = XBJ_Backward_Region_1
+            modifier = {
+                research_speed_factor = -0.1
+                production_factory_efficiency_gain_factor = -0.1
+                production_factory_max_efficiency_factor = -0.1
+                production_speed_buildings_factor = -0.1
+                local_resources_factor = -0.1
+                industry_repair_factor = -0.1
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            check_variable = {
+                var = XBJ_shequn_jinbudu
+                value = 30
+                compare = greater_than_or_equals
+            }
+            has_idea = XBJ_Backward_Region_1
+        }
+        add_idea = {
+            id = XBJ_Backward_Region_1
+            modifier = {
+                research_speed_factor = -0.15
+                production_factory_efficiency_gain_factor = -0.15
+                production_factory_max_efficiency_factor = -0.15
+                production_speed_buildings_factor = -0.15
+                local_resources_factor = -0.15
+                industry_repair_factor = -0.15
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            check_variable = {
+                var = XBJ_shequn_jinbudu
+                value = 15
+                compare = greater_than_or_equals
+            }
+            has_idea = XBJ_Backward_Region_1
+        }
+        add_idea = {
+            id = XBJ_Backward_Region_1
+
+        }
+    }
 }

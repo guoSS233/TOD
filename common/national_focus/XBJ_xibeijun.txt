@@ -205,7 +205,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus ={
 				bonus = 1
-				uses = 1
+				uses = 2
 				category = electronics
 				name = electronics
 			}
@@ -217,11 +217,11 @@ focus_tree = {
 		x = 4
 		y = 4
 	}
-	focus = {
+	focus = {#六畜兴旺
 		id = XBJ_liuchuxingwang
 		text = XBJ_liuchuxingwang
 		icon = GFX_liuchuxingwang
-		cost = 10
+		cost = 7
 		prerequisite = {
 			focus = XBJ_liyuexingguo
 			focus = XBJ_qiwujiuguo
@@ -233,11 +233,11 @@ focus_tree = {
 		x = 2
 		y = 5
 	}
-	focus = {
+	focus = {#曲突徙薪
 		id = XBJ_qutuxixin
 		text = XBJ_qutuxixin
 		icon = GFX_qutuxixin
-		cost = 10
+		cost = 7
 		prerequisite = {
 			focus = XBJ_qiwujiuguo
 			focus = XBJ_liyuexingguo
@@ -252,11 +252,11 @@ focus_tree = {
 		x = 0
 		y = 5
 	}
-	focus = {
+	focus = {#一日千里
 		id = XBJ_yiriqianli
 		text = XBJ_yiriqianli
 		icon = GFX_yiriqianli
-		cost = 10
+		cost = 7
 		prerequisite = {
 			focus = XBJ_liuchuxingwang
 		}
@@ -273,24 +273,7 @@ focus_tree = {
 		x = 2
 		y = 6
 	}
-	focus = {#进种善群
-		id = XBJ_jinzhongshanqun
-		text = XBJ_jinzhongshanqun
-		icon = GFX_jinzhongshanqun
-		cost = 10
-		prerequisite = {
-			focus = XBJ_liyuexingguo
-			focus = XBJ_qiwujiuguo
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = XBJ_Backward_Region_2
-    			add_idea = XBJ_Backward_Region_3
-			}
-		x = 4
-		y = 5
-		}
-	}
+
 	focus = {
 		id = XBJ_zhoujingmuxun
 		text = XBJ_zhoujingmuxun
@@ -339,7 +322,7 @@ focus_tree = {
 		x = 6
 		y = 5
 	}
-	focus = {
+	focus = {#同袍连襟
 		id = XBJ_tongpaolianjin
 		text = XBJ_tongpaolianjin
 		icon = GFX_tongpaolianjin
@@ -352,6 +335,15 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = XBJ_huayiyuzhi
+		}
+		available = {
+			has_country_flag = FLAG_XBJ_dongluan_pingxi
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBJ_Multinational_Melting_Pot_4
+				add_idea = XBJ_Multinational_Melting_Pot_5
+			}
 		}
 		x = 4
 		y = 6
@@ -635,7 +627,7 @@ focus_tree = {
 		id = XBJ_zhaishanzhuhai
 		text = XBJ_zhaishanzhuhai
 		icon = GFX_zhaishanzhuhai
-		cost = 10
+		cost = 7
 		prerequisite = {
 			focus = XBJ_liuchuxingwang
 		}
@@ -656,11 +648,11 @@ focus_tree = {
 		x = 0
 		y = 6
 	}
-	focus = {
+	focus = {#旧貌新颜
 		id = XBJ_jiumaoxinyan
 		text = XBJ_jiumaoxinyan
 		icon = GFX_jiumaoxinyan
-		cost = 10
+		cost = 7
 		prerequisite = {
 			focus = XBJ_yiriqianli
 		}
@@ -853,5 +845,36 @@ focus_tree = {
 		}
 		x = 31
 		y = 2
+	}
+	focus = {#进种善群
+		id = XBJ_jinzhongshanqun
+		text = XBJ_jinzhongshanqun
+		icon = GFX_jinzhongshanqun
+		cost = 7
+		prerequisite = {
+			focus = XBJ_liyuexingguo
+			focus = XBJ_qiwujiuguo
+		}
+		completion_reward = {
+			add_stability = 0.05
+			unlock_decision_category_tooltip = XBJ_guangshi_jiaohua
+				if = {
+					limit = {
+						has_completed_focus = XBJ_enweibingshi
+					}
+					swap_ideas = {
+						remove_idea = XBJ_Multinational_Melting_Pot_2
+						add_idea = XBJ_Multinational_Melting_Pot_3
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = XBJ_Multinational_Melting_Pot_1
+						add_idea = XBJ_Multinational_Melting_Pot_2
+					}
+				}
+		}
+		x = 4
+		y = 5
 	}
 }

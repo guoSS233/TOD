@@ -43,12 +43,12 @@ ideas = {
         XBJ_Multinational_Melting_Pot_2 = {
             picture = XBJ_Multinational_Melting_Pot
             modifier = {
-                political_power_factor = -0.3
+                political_power_factor = -0.2
                 consumer_goods_factor = 0.4
-                stability_factor = -0.05
-                war_support_factor = -0.05
+                stability_factor = -0.075
+                war_support_factor = -0.075
                 conscription_factor = -0.25
-                non_core_manpower = -0.5
+                non_core_manpower = -0.6
                 custom_modifier_tooltip = XBJ_maodun #如果矛盾得不到缓解，西域将会陷入动荡
             }
         }
@@ -56,10 +56,12 @@ ideas = {
         XBJ_Multinational_Melting_Pot_3 = {
             picture = XBJ_Multinational_Melting_Pot
             modifier = {
-                political_power_factor = -0.2
-                consumer_goods_factor = 0.3
+                political_power_factor = -0.15
+                consumer_goods_factor = 0.35
+                stability_factor = -0.05
+                war_support_factor = -0.05
                 conscription_factor = -0.2
-                non_core_manpower = -0.25
+                non_core_manpower = -0.45
                 custom_modifier_tooltip = XBJ_maodun #如果矛盾得不到缓解，西域将会陷入动荡
             }
         }
@@ -68,22 +70,49 @@ ideas = {
             picture = XBJ_Multinational_Melting_Pot
             modifier = {
                 political_power_factor = -0.1
-                consumer_goods_factor = 0.2
-                conscription_factor = -0.1
+                consumer_goods_factor = 0.3
+                stability_factor = -0.025
+                war_support_factor = -0.025
+                conscription_factor = -0.15
+                non_core_manpower = -0.3
                 custom_modifier_tooltip = XBJ_maodun #如果矛盾得不到缓解，西域将会陷入动荡
                 }
         }
-        #上与浮云齐_1
-        XBJ_shangyu_fuyunqi_1 = {
+        #民族熔炉_5
+        XBJ_Multinational_Melting_Pot_5 = {
             picture = XBJ_Multinational_Melting_Pot
             modifier = {
-                political_power_factor = -0.25
-                consumer_goods_factor = 0.45
-                stability_factor = -0.1
-                war_support_factor = -0.1
-                conscription_factor = -0.3
-                non_core_manpower = -0.75
+                political_power_factor = -0.05
+                consumer_goods_factor = 0.25
+                conscription_factor = -0.1
+                non_core_manpower = -0.15
                 custom_modifier_tooltip = XBJ_maodun #如果矛盾得不到缓解，西域将会陷入动荡
+            }
+        }
+        #西北诸夏
+        XBJ_xibei_zhuxia = {
+            picture = XBJ_Multinational_Melting_Pot
+            modifier = {
+                resistance_decay = 0.1
+                political_power_factor = 0.15
+                consumer_goods_factor = 0.05
+                army_core_attack_factor = 0.05
+                army_core_denfec_factor = 0.05
+                stability_factor = 0.1
+                war_support_factor = 0.1
+                conscription_factor = 0.1
+                non_core_manpower = 0.1
+            }
+        }
+        #华夷一家
+        XBJ_huazi_yijia = {
+            picture = XBJ_Multinational_Melting_Pot
+            modifier = {
+                industrial_capacity_factory = 0.1
+                consumer_goods_factor = -0.1
+                research_speed_factor = 0.05
+                war_support_factor = 0.1
+                non_core_manpower = 0.1
             }
         }
         #落后的地区_1
@@ -177,7 +206,13 @@ ideas = {
                 stability_factor = -0.1
             }
         }
-    }
+        #三化主义
+        XBJ_Sanhuazhuyi = {
+            picture = XBJ_Sanhuazhuyi
+            modifier = {
+                political_power_factor = 0.05
+            }
+        }
     TOD_minister_head = { ### 政府首脑 ###
         XBJ_Guan_zhu = {#管竹
             picture = GFX_idea_XBJ_Guan_zhu
@@ -842,5 +877,6 @@ ideas = {
                 factor = 1
             }
         }
+    }
     }
 }
