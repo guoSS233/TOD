@@ -285,7 +285,7 @@ ROC_focus_gonggubianjie = {#巩固边界
 		icon = border_war		
 		cost = 50		
 		days_remove = 30
-		fire_only_once = no				
+		fire_only_once = yes				
 		ai_will_do = {
 			factor = 100			
 	    }
@@ -854,7 +854,13 @@ ROC_focus_beifa = {#北伐
 		modifier = {
 		}
 		targeted_modifier = {
-			tag = GOS
+			tag = STG
+			#战斗修正种类
+			attack_bonus_against = 0.2
+			defense_bonus_against = 0.2
+		}
+		targeted_modifier = {
+			tag = XBJ
 			#战斗修正种类
 			attack_bonus_against = 0.2
 			defense_bonus_against = 0.2
