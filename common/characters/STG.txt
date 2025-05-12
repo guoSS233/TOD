@@ -31,8 +31,39 @@ characters={
 			slot = army_chief
 			idea_token = STG_zhu_rongkun
 			allowed = { tag = STG }
-			traits = { army_chief_offensive_2 }
-			cost = 150
+			available = { always = no }
+			traits = { STG_weicaodehangjia }
+		}
+	}
+	STG_zhu_rongkun_kongjun={
+		name=STG_zhu_rongkun
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_zhu_rongkun.dds"
+				small="gfx/STG/ideas/STG_zhu_rongkun.png"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = STG_zhu_rongkun_kongjun
+			allowed = { tag = STG }
+			available = { always = no }
+			traits = { STG_duilililunjia }
+		}
+	}
+	STG_zhu_rongkun_haijun={
+		portraits={
+			army={
+				large="gfx/leaders/STG/STG_zhu_rongkun.dds"
+				small="gfx/STG/ideas/STG_zhu_rongkun.png"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = STG_zhu_rongkun_haijun
+			allowed = { tag = STG }
+			available = { always = no }
+			traits = { STG_handixingzhoushijianzhe }
 		}
 	}
 	STG_yi_xinhui={
@@ -161,6 +192,9 @@ characters={
 		advisor={
 			slot = army_chief
 			idea_token = STG_sun_chuanfang
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun }
+			}
 			allowed = { tag = STG }
 			traits = { army_chief_organizational_2 }
 			cost = 150
@@ -187,6 +221,9 @@ characters={
 			slot = army_chief
 			idea_token = STG_yan_xishan
 			allowed = { tag = STG }
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun }
+			}
 			traits = { yixinhuifuzeren }
 			cost = 150
 		}
@@ -250,6 +287,9 @@ characters={
 			slot = air_chief
 			idea_token = STG_qing_guoyong
 			allowed = { tag = STG }
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun_kongjun }
+			}
 			traits = { air_chief_reform_2 }
 			cost = 150
 		}
@@ -265,6 +305,9 @@ characters={
 			slot = air_chief
 			idea_token = STG_li_ruyan
 			allowed = { tag = STG }
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun_kongjun }
+			}
 			traits = { air_close_air_support_2 }
 			cost = 150
 		}
@@ -280,6 +323,9 @@ characters={
 			slot = air_chief
 			idea_token = STG_bao_bingcheng
 			allowed = { tag = STG }
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun_kongjun }
+			}
 			traits = { air_chief_all_weather_2 }
 			cost = 150
 		}
@@ -304,12 +350,15 @@ characters={
 			slot = navy_chief
 			idea_token = STG_cai_tinggan
 			allowed = { tag = STG }
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun_haijun }
+			}
 			traits = { navy_chief_reform_2 }
 			cost = 150
 		}
 	}
 	STG_qu_tongfeng={
-		name=STG_qutongfeng
+		name=STG_qu_tongfeng
 		portraits={
 			army={
 				large="gfx/leaders/STG/STG_qu_tongfeng.png"
@@ -328,6 +377,9 @@ characters={
 			slot = navy_chief
 			idea_token = STG_qu_tongfeng
 			allowed = { tag = STG }
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun_haijun }
+			}
 			traits = { navy_chief_commerce_raiding_2 }
 			cost = 150
 		}
@@ -352,6 +404,9 @@ characters={
 			slot = navy_chief
 			idea_token = STG_li_yuanhong
 			allowed = { tag = STG }
+			available = {
+				NOT = { has_idea = STG_zhu_rongkun_haijun }
+			}
 			traits = { navy_chief_decisive_battle_2 }
 			cost = 150
 		}
