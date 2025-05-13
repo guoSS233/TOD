@@ -62,7 +62,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 5
+		cost = 1
 		
 		ai_will_do = {factor = 10}
 		available = {}
@@ -79,6 +79,15 @@ focus_tree = {
 						id = 13341
 					}
 					level = 2
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					province = {
+						id = 1367
+						id = 13342
+					}
+					level = 1
 					instant_build = yes
 				}
 				add_core_of = SCG
@@ -99,15 +108,16 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 5
+		cost = 2
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
 		completion_reward = { 
 			add_stability = 0.1
-			load_oob = "SCG_gongren"
+			hidden_effect = {load_oob = "SCG_gongren"}
 			add_ideas = extensive_conscription
+			custom_cost_text = SCG_fadonggongren_xiaoguo
 		}
 	}
 	#重组军队
@@ -123,7 +133,7 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 5
+		cost = 2
 		
 		ai_will_do = {factor = 10}
 		available = {}
@@ -131,7 +141,8 @@ focus_tree = {
 		completion_reward = { 
 			army_experience = 25
 			add_war_support = 0.1
-			load_oob = "SCG_gemingjundui"
+			hidden_effect = { load_oob = "SCG_gemingjundui"}
+			custom_cost_text = SCG_chongzujundui_xiaoguo
 		}
 	}
 	#与大同党合作

@@ -89,7 +89,6 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.05
 			political_power_cost = 25
-			country_event = { id = TOD_STG.1 }
 			mark_focus_tree_layout_dirty = yes
 		}
 	}
@@ -99,7 +98,7 @@ focus_tree = {
 		icon = GFX_STG_xibeikanluan
 		prerequisite = { focus = STG_yingduiluanju}
 		mutually_exclusive = { focus = STG_yijingzhidong }
-		available = { always = no}
+		available = { always = no }
 
 		x = 28
 		y = 3
@@ -120,7 +119,7 @@ focus_tree = {
 	focus = {
 		id = STG_sugongpodi
 		icon = GFX_STG_sugongpodi
-		prerequisite = { focus = STG_yingduiluanju}
+		prerequisite = { focus = STG_xibeikanluan}
 		mutually_exclusive = { focus = STG_yijingzhidong }
 
 		x = 25
@@ -219,7 +218,7 @@ focus_tree = {
 	focus = {
 		id = STG_yijingzhidong
 		icon = GFX_STG_yijingzhidong
-		prerequisite = { focus = STG_yingduiluanju}
+		prerequisite = { focus = STG_xibeikanluan}
 		mutually_exclusive = { focus = STG_sugongpodi }
 
 		x = 27
@@ -353,7 +352,7 @@ focus_tree = {
 	focus = {
 		id = STG_zhengzhixuanchuan
 		icon = GFX_STG_zhengzhixuanchuan
-		prerequisite = { focus = STG_yingduiluanju}
+		prerequisite = { focus = STG_xibeikanluan}
 
 		x = 29
 		y = 4
@@ -467,7 +466,7 @@ focus_tree = {
 	focus = {
 		id = STG_shengchanzhanbeihua
 		icon = GFX_STG_shengchanzhanbeihua
-		prerequisite = { focus = STG_yingduiluanju}
+		prerequisite = { focus = STG_xibeikanluan}
 
 		x = 31
 		y = 4
@@ -556,7 +555,7 @@ focus_tree = {
 	focus = {
 		id = STG_zannanweiju
 		icon = GFX_STG_zannanweiju
-		allow_branch = {if = { has_completed_focus = STG_xibeikanluan }}
+		allow_branch = {if = { has_completed_focus = STG_yingduiluanju }}
 
 		x = 14
 		y = 1
@@ -2425,7 +2424,7 @@ focus_tree = {
 	focus = {
 		id = STG_shumiyuanguihua
 		icon = GFX_STG_shumiyuanguihua
-		allow_branch = {if = { has_completed_focus = STG_xibeikanluan }}
+		allow_branch = {if = { has_completed_focus = STG_yingduiluanju }}
 
 		x = 41
 		y = 1
