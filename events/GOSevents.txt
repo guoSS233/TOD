@@ -1,5 +1,5 @@
 add_namespace = gosrichang
-
+add_namespace = GOS_focus
 
 #猫校长！
 country_event = { 
@@ -17,3 +17,59 @@ country_event = {
 	}
 }
 
+country_event = { 
+	id = GOS_focus.1
+	title = GOS_focus.1.t
+	desc = GOS_focus.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GOS}
+	option = {
+		name = GOS_focus.1.a 
+		complete_national_focus = GOS_focus_213
+	}
+}
+
+country_event = { 
+	id = GOS_focus.2
+	title = GOS_focus.2.t
+	desc = GOS_focus.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = GOS}
+	option = {
+		name = GOS_focus.2.a 
+		add_dynamic_modifier = {
+			modifier = GOS_dynamic_modifiers_tzqw
+		}
+		custom_effect_tooltip = GOS_tooltip_foc_0
+		set_country_flag = FLAG_GOS_decision_tzngpx_unlocked
+		add_ideas = GOS_idea_ngjsbd
+
+		set_variable = { #大同会势力
+			VAR_GOS_dth_sl = 100
+		}
+		set_variable = { #管学系势力
+			VAR_GOS_gxx_sl = 120
+		}
+		set_variable = { #军队势力
+			VAR_GOS_jd_sl = 100
+		}
+
+		set_variable = { #大同会支持度
+			VAR_GOS_dth_zcd = 0.10
+		}
+		set_variable = { #管学系支持度
+			VAR_GOS_gxx_zcd = 0.60
+		}
+		set_variable = { #军队支持度
+			VAR_GOS_jd_zcd = 0.10
+		}
+
+		GOS_scripted_effects_tzqw_js = yes
+	}
+}

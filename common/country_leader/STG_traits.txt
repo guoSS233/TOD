@@ -124,4 +124,49 @@ leader_traits = {
 	#勋贵
 	STG_xungui = {
 	}
+	#是！陛下！
+	STG_shi_bixia = {
+		stability_factor = -0.05
+		political_power_gain = 0.2
+		consumer_goods_factor = -0.1
+		war_support_factor = 0.15
+	}
+	#锦王经济学
+	STG_jingwangjingjixue = {
+		stability_factor = -0.05
+		production_factory_max_efficiency_factor = 0.1
+		industrial_capacity_factor = 0.15
+		equipment_bonus = {
+			infantry_equipment = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+		equipment_bonus = {
+			artillery_equipment = {
+				build_cost_ic = -0.05
+				instant = yes
+			}
+		}
+	}
+	#微操的行家
+	STG_weicaodehangjia = {
+		stability_factor = -0.05
+		army_attack_factor = 0.15
+		army_defence_factor = 0.15
+		experience_gain_army_factor = 0.2
+	}
+	#旱地行舟实践者
+	STG_handixingzhoushijianzhe = {
+		stability_factor = 0.05
+		experience_gain_navy_factor = 0.05
+		navy_screen_attack_factor = 0.05
+		navy_screen_defence_factor = -0.05
+	}
+	#对地理论家
+	STG_duilililunjia = {
+		stability_factor = -0.05
+		experience_gain_air_factor = 0.1
+		air_cas_efficiency = 0.1
+	}
 }
