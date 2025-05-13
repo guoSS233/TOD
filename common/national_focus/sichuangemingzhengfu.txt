@@ -117,7 +117,7 @@ focus_tree = {
 			add_stability = 0.1
 			hidden_effect = {load_oob = "SCG_gongren"}
 			add_ideas = extensive_conscription
-			custom_cost_text = SCG_fadonggongren_xiaoguo
+			custom_effect_tooltip = SCG_fadonggongren_xiaoguo
 		}
 	}
 	#重组军队
@@ -142,7 +142,7 @@ focus_tree = {
 			army_experience = 25
 			add_war_support = 0.1
 			hidden_effect = { load_oob = "SCG_gemingjundui"}
-			custom_cost_text = SCG_chongzujundui_xiaoguo
+			custom_effect_tooltip = SCG_chongzujundui_xiaoguo
 		}
 	}
 	#与大同党合作
@@ -419,6 +419,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			remove_ideas = SCG_gongrenhezuoshe
 			remove_ideas = SCG_xinxingqiye
 			add_ideas = SCG_guoyouqiye
 		}
@@ -443,6 +444,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
+			remove_ideas = SCG_gongrenhezuoshe
 			remove_ideas = SCG_xinxingqiye
 			add_ideas = SCG_gongyouqiye
 		}
