@@ -11,3 +11,27 @@ MNG_paixiboyi_categories = {
 
     allowed = { original_tag = MNG }
 }
+MNG_jinyiweizaixingdong_categories = {
+	priority = 2
+	icon = gre_faction_management
+
+    allowed = { 
+        original_tag = MNG 
+        has_completed_focus = MNG_zhengdunguanchang 
+    }
+}
+MNG_jingjijianshe_categories = {
+	priority = 2
+	icon = gre_faction_management
+
+    allowed = { original_tag = MNG }
+}
+MNG_chongjiandifangzhixu_categories = {
+	priority = 2
+	icon = gre_faction_management
+
+    allowed = { 
+        is_ming_tag = yes
+        NOT = { tag = MNG }
+     }
+}
