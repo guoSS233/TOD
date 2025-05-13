@@ -37,8 +37,9 @@ SIC_chuanneijushi_categories = {
 			}
 			if = {
 				limit = {check_variable = {SIC.minzhong > 99}}
-				SCG = {transfer_state = 831}
-				SCG = {load_oob = "SCG_1937"}
+				SCG = { transfer_state = 831 }
+				SCG = { add_state_core = 831 }
+				SCG = { load_oob = "SCG_1937" }
 				country_event = { id = TODSIC.1001 }
 				add_ideas = SIC_hunluandejundui
 			}else_if = {
@@ -69,7 +70,7 @@ SIC_chuanneijushi_categories = {
 				remove_ideas = SIC_jinrukonghuang
 				add_ideas = SIC_lueyoubuman
 				remove_ideas = SIC_wendingdequnzong
-			}else_if{
+			}else_if = {
 				remove_ideas = SIC_wufawutian
 				remove_ideas = SIC_chongmannuqi
 				remove_ideas = SIC_jinrukonghuang
@@ -133,7 +134,7 @@ SIC_chuanneijushi_categories = {
 				remove_ideas = SIC_jinrukonghuang
 				add_ideas = SIC_lueyoubuman
 				remove_ideas = SIC_wendingdequnzong
-			}else_if{
+			}else_if = {
 				remove_ideas = SIC_wufawutian
 				remove_ideas = SIC_chongmannuqi
 				remove_ideas = SIC_jinrukonghuang
@@ -187,7 +188,7 @@ SIC_chuanneijushi_categories = {
 				remove_ideas = SIC_jinrukonghuang
 				add_ideas = SIC_lueyoubuman
 				remove_ideas = SIC_wendingdequnzong
-			}else_if{
+			}else_if = {
 				remove_ideas = SIC_wufawutian
 				remove_ideas = SIC_chongmannuqi
 				remove_ideas = SIC_jinrukonghuang
