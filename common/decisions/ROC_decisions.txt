@@ -278,7 +278,7 @@ ROC_balance_of_power_category = {  #权力斗争决议
 			   }
 		   }
 	   }
-   }
+}
 
 ROC_focus_gonggubianjie = {#巩固边界
 	ROC_decision_chubugoujianfangxian = {#初步构建防线	
@@ -957,10 +957,16 @@ ROC_focus_quanguogeming = {#全国革命
 		days_remove = 10
 		fire_only_once = no				
 		ai_will_do = {
-			factor = 500			
+			factor = 500	
+			modifier = {
+				factor = -500
+				has_war = yes
+			}		
 	    }
 		visible = {
 			has_completed_focus = gemingzhihuoranbiandongnan
+			country_exists = GOS 
+			NOT = { has_war_with = GOS}
 		}
 		remove_effect = {
 			declare_war_on = { target = GOS type = take_state_focus }
@@ -972,10 +978,16 @@ ROC_focus_quanguogeming = {#全国革命
 		days_remove = 10
 		fire_only_once = no				
 		ai_will_do = {
-			factor = 500			
+			factor = 500	
+			modifier = {
+				factor = -500
+				has_war = yes
+			}			
 	    }
 		visible = {
 			has_completed_focus = xibeigongfa
+			country_exists = XBJ 
+			NOT = { has_war_with = XBJ}
 		}
 		remove_effect = {
 			declare_war_on = { target = XBJ type = take_state_focus }
@@ -987,10 +999,16 @@ ROC_focus_quanguogeming = {#全国革命
 		days_remove = 10
 		fire_only_once = no				
 		ai_will_do = {
-			factor = 500			
+			factor = 500	
+			modifier = {
+				factor = -500
+				has_war = yes
+			}			
 	    }
 		visible = {
 			has_completed_focus = jisuiyuxi
+			country_exists = STG 
+			NOT = { has_war_with = STG }
 		}
 		remove_effect = {
 			declare_war_on = { target = STG type = take_state_focus }
@@ -1002,13 +1020,28 @@ ROC_focus_quanguogeming = {#全国革命
 		days_remove = 10
 		fire_only_once = no				
 		ai_will_do = {
-			factor = 500			
+			factor = 500	
+			modifier = {
+				factor = -500
+				has_war = yes
+			}			
 	    }
 		visible = {
 			has_completed_focus = yueguoshanhaiguan
+			OR = {
+				AND = {
+					country_exists = GPS 
+					NOT = { has_war_with = GPS }
+				}
+				AND = {
+					country_exists = ROC 
+					NOT = { has_war_with = ROC }
+				}
+			}
 		}
 		remove_effect = {
 			declare_war_on = { target = GPS type = take_state_focus }
+			declare_war_on = { target = SRC type = take_state_focus }
 		}
 	}
 	ROC_decision_geming_xinan = {#对西南宣战
@@ -1017,10 +1050,16 @@ ROC_focus_quanguogeming = {#全国革命
 		days_remove = 10
 		fire_only_once = no				
 		ai_will_do = {
-			factor = 500			
+			factor = 500	
+			modifier = {
+				factor = -500
+				has_war = yes
+			}				
 	    }
 		visible = {
 			has_completed_focus = hengsaoxinan
+			country_exists = XIN 
+			NOT = { has_war_with = XIN }
 		}
 		remove_effect = {
 			declare_war_on = { target = XIN type = take_state_focus }
@@ -1032,10 +1071,16 @@ ROC_focus_quanguogeming = {#全国革命
 		days_remove = 10
 		fire_only_once = no				
 		ai_will_do = {
-			factor = 500			
+			factor = 500	
+			modifier = {
+				factor = -500
+				has_war = yes
+			}				
 	    }
 		visible = {
 			has_completed_focus = bashuzhiguo
+			country_exists = SIC 
+			NOT = { has_war_with = SIC }
 		}
 		remove_effect = {
 			declare_war_on = { target = SIC type = take_state_focus }
@@ -1047,13 +1092,19 @@ ROC_focus_quanguogeming = {#全国革命
 		days_remove = 10
 		fire_only_once = no				
 		ai_will_do = {
-			factor = 500			
+			factor = 500	
+			modifier = {
+				factor = -500
+				has_war = yes
+			}				
 	    }
 		visible = {
 			has_completed_focus = jiefangmobei
+			country_exists = MOB 
+			NOT = { has_war_with = MOB }
 		}
 		remove_effect = {
-			declare_war_on = { target = BOC type = take_state_focus }
+			declare_war_on = { target = MOB type = take_state_focus }
 		}
 	}
 }
