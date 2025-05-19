@@ -1,0 +1,149 @@
+guiTypes = {
+	containerWindowType = {
+		name = "welcome_window"
+		position = { x = 600 y = 350 }
+		size = { width = 1100 height = 650 }
+		orientation = UPPER_LEFT
+		clipping = no
+		moveable = yes
+		background = {
+			name = "welcome_bg"
+			quadtexturesprite = "GFX_welcome_bg"
+		}
+		iconType = {
+			name = "welcome_logo_1"
+			position = { x = 347 y = -230 }
+			spriteType = "GFX_welcome_LOGO_1"
+			scale = 0.3
+		}
+		iconType = {
+			name = "welcome_logo"
+			position = { x = 349 y = 650 }
+			spriteType = "GFX_welcome_LOGO_2"
+			scale = 0.3
+		}
+
+		containerwindowtype = {
+			name = "welcome_sidebar"
+			position = { x = 55 y = 70 }
+			size = { width =192 height = 450}
+			background = {
+				name = "welcome_sidebar_bg"
+				quadTextureSprite = "GFX_BusinessHub_view_button_background"
+			}
+		}
+########################
+##文本框
+		containerwindowtype = {
+			name = "welcome_body"
+			position = { x = 260 y = 70 }
+			size = { width = 575 height = 450 }
+			clipping =yes
+			background = {
+				name = "welcome_body_bg"
+				quadTextureSprite = "GFX_BusinessHub_view_button_background_2"
+			}
+			margin = {
+				top = 10
+				bottom= 10
+			}
+			verticalScrollbar = "right_vertical_slider"
+			vertical_scroll_step = 50
+			scroll_wheel_factor = 100
+			smooth_scrolling = yes
+
+			instantTextBoxType = {
+				name = "welcome_body_3_1_tt"
+				SCROLLBARTYPE = "standardtext_slider"
+				fixedsize = no
+				maxwidth = 500
+				maxheight = 390
+				position = { x = 36 y = 20 }
+				text = "[welcome_body_tt_31]"
+				font = "hoi_18mbs"
+				format = left
+			}
+		}
+#########################	
+		containerwindowtype = {
+			name = "welcome_sidebar_2"
+			orientation = UPPER_LEFT
+			position = { x = 850 y = 70 }
+			size = { width =192 height = 450 }
+			background = {
+				name = "welcome_sidebar_2_bg"
+				quadtexturesprite = "GFX_welcome_sidebar_2_background"
+			}
+			iconType = {
+				name = "welcome_sidebar_2_PIC"
+				spriteType = "GFX_welcome_FRA"
+				position = { x = 22 y = 20 }
+				orientation = UPPER_LEFT
+				scale = 0.86	
+				
+			}
+			
+		}
+
+		##标题栏目
+		gridboxtype = {
+			name = "welcome_title_grid"
+			position = { x = -227 y = -800	}
+			size = { width = 1400 height = 1130 }
+			slotsize = { width = 210 height = 100 }
+			max_slots_horizontal = 1
+			max_slots_vertical = 4
+			add_horizontal = no
+			orientation = UPPER_LEFT
+		}
+
+		buttontype = {
+			name = "welcome_close_btn"
+			position = { x = 430 y = 550 }
+			spritetype = "GFX_welcome_continue_bt"
+			orientation = UPPER_LEFT
+			clicksound = Spy_Agency_Build_Agency_Confirm
+			shortcut = "ESCAPE"
+			pdx_tooltip = "welcome_continue_btn_tt"
+			
+		}
+		instantTextBoxType = {
+			name = "welcome_close_btn_tt"
+			orientation = UPPER_LEFT
+			maxheight = 16
+			position = { x = 463 y = 567 }
+			text = "[GetWelcomeCloseBtnTT]"
+			font = "hoi_24header"
+			format = center
+			pdx_tooltip = "welcome_continue_btn_tt"
+			
+		}
+		
+	}
+	#标题
+	containerWindowType = {
+		name = "welcome_title_grid_window"
+		position = { x = -290 y = 920 }
+		size = { width = 200 height = 100 }
+		orientation = UPPER_LEFT
+		clipping = no
+		buttontype = {
+			name = "welcome_title_btn"
+			position = { x = 0 y = 0 }
+			spritetype = "GFX_BusinessHub_level_up_button"
+			orientation = UPPER_LEFT
+			clicksound = "click_close"
+			shortcut = ""
+			scale = 1.2
+		}
+		instantTextBoxType = {
+			name = "welcome_title_tt"
+			position = { x = -28 y = 9 }
+			text = "[GetWelcomeTitle]"
+			font = "hoi_24header"
+			format = center
+		}
+
+	}
+
+}

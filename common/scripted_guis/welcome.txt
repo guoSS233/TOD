@@ -1,0 +1,152 @@
+scripted_gui = {
+	welcome_window = {
+		context_type = player_context
+		window_name = "welcome_window"
+		visible = {
+			ROOT = {
+				NOT = {has_country_flag = welcome_has_done}
+				is_ai = no
+			}
+
+		}
+		effects = {
+			##标题点击效果
+			welcome_close_btn_click = {
+				ROOT = {
+					set_country_flag = welcome_has_done
+				}
+			}
+			welcome_title_btn_click = {
+				ROOT = {
+					clr_country_flag = welcome_title_btn_click_1
+					clr_country_flag = welcome_title_btn_click_2
+					clr_country_flag = welcome_title_btn_click_3
+					clr_country_flag = welcome_title_btn_click_4
+					if = {
+						limit = {
+							check_variable = {
+								v=1
+							}
+						}
+						set_country_flag = welcome_title_btn_click_1
+						set_variable = {
+							ROOT.welcome_text = 11
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								v=2
+							}
+							
+						}
+						set_country_flag = welcome_title_btn_click_2
+						set_variable = {
+							ROOT.welcome_text = 21
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								v=3
+							}
+						}
+						set_country_flag = welcome_title_btn_click_3
+						set_variable = {
+							ROOT.welcome_text = 31
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								v=4
+							}
+						}
+						set_country_flag = welcome_title_btn_click_4
+						set_variable = {
+							ROOT.welcome_text = 41
+						}
+					}
+				}
+				ROOT = {
+					if = {
+						limit = {
+							NOT = {
+								check_variable = {
+									v = 1
+								}
+							}
+						}
+						set_country_flag = title_1_off
+						
+					}
+					else = {
+						clr_country_flag = title_1_off
+						clr_country_flag = title_3_on
+						clr_country_flag = title_2_on
+						clr_country_flag = title_4_on
+					}
+				}
+				ROOT = {
+					if = {
+						limit = {
+								check_variable = {
+									v = 2
+								}
+						}
+						set_country_flag = title_2_on
+						clr_country_flag = title_3_on
+						clr_country_flag = title_4_on
+					}
+					else_if = {
+						limit = {
+								check_variable = {
+									v = 3
+								}
+						}
+						set_country_flag = title_3_on
+						clr_country_flag = title_2_on
+						clr_country_flag = title_4_on
+					}
+					else_if = {
+						limit = {
+								check_variable = {
+									v = 4
+								}
+						}
+						set_country_flag = title_4_on
+						clr_country_flag = title_3_on
+						clr_country_flag = title_2_on
+					}
+				}
+			}
+		}
+
+
+		properties = {
+			welcome_sidebar_2_PIC = {
+				image = "[GetWelcomeTagPic]"
+			}
+			player_flag = {
+				image = [?ROOT.GetFlag]
+			}
+			welcome_title_btn = {
+				image = "[GetWelcomeButton]"
+			}
+		}
+		dynamic_lists = {
+			welcome_title_grid = {
+				array = global.welcome_title
+				index = idx
+				value = v
+				change_scope = no
+				entry_container = welcome_title_grid_window
+			}
+		}
+
+
+
+	}
+
+}
+

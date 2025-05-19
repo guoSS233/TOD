@@ -1,0 +1,34 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+#########################################################################
+				every_country = {
+					set_country_flag = welcome_title_btn_click_1
+					set_country_flag = sidebar_1_1_on
+					set_variable = {
+						THIS.welcome_text = 11
+					}
+				}
+##########################################
+				#模组介绍
+					add_to_array = {
+						global.welcome_title = 1
+					}	
+				#架空历史
+					add_to_array = {
+						global.welcome_title = 2
+					}	
+				##国家概况
+					add_to_array = {
+						global.welcome_title = 3
+					}	
+				##制作与鸣谢
+					add_to_array = {
+						global.welcome_title = 4
+					}	
+
+
+		}
+	}
+}

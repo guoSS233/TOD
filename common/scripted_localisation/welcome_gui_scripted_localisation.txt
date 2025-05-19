@@ -1,0 +1,231 @@
+##欢迎########################################################33
+
+##关闭文字##
+
+defined_text = { 
+	name = GetWelcomeCloseBtnTT
+	
+	text = {
+		trigger = {
+			ROOT = {TAG = MNG}
+		}
+		localization_key = "WelcomeCloseBtnTT_MNG"
+	}
+
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					OR = {
+						TAG = MNG
+						TAG = USA#占位符
+					}
+				}
+			}
+		}
+		localization_key = "WelcomeCloseBtnTT_OTHER"
+	}
+
+}
+
+###侧栏图片####
+
+defined_text = { 
+	name = GetWelcomeTagPic
+	
+	text = {
+		trigger = {
+			ROOT = {TAG = MNG}
+		}
+		localization_key = "GFX_welcome_MNG"
+	}
+	text = {
+		trigger = {
+			ROOT = {
+				NOT = {
+					OR = {
+						TAG = MNG
+						TAG = USA#占位符
+					}
+				}
+			}
+		}
+		localization_key = "GFX_welcome_OTHER"
+	}
+
+}
+
+###标题按钮
+
+defined_text = { 
+	name = GetWelcomeButton
+	
+	text = {
+		trigger = {
+			check_variable = {
+				v = 1
+			}
+			has_country_flag = welcome_title_btn_click_1
+		}
+		localization_key = "GFX_welcome_title_button_light"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				v = 2
+			}
+			has_country_flag = welcome_title_btn_click_2
+		}
+		localization_key = "GFX_welcome_title_button_light"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				v = 3
+			}
+			has_country_flag = welcome_title_btn_click_3
+		}
+		localization_key = "GFX_welcome_title_button_light"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				v = 4
+			}
+			has_country_flag = welcome_title_btn_click_4
+		}
+		localization_key = "GFX_welcome_title_button_light"
+	}
+	text = {
+		trigger = {
+			OR = {
+				NOT = {
+					check_variable = {
+						v = 1
+					}
+					has_country_flag = welcome_title_btn_click_1
+				}
+				NOT = {
+					check_variable = {
+						v = 2
+					}
+					has_country_flag = welcome_title_btn_click_2
+				}
+				NOT = {
+					check_variable = {
+						v = 3
+					}
+					has_country_flag = welcome_title_btn_click_3
+				}
+				NOT = {
+					check_variable = {
+						v = 4
+					}
+					has_country_flag = welcome_title_btn_click_4
+				}
+			}
+			
+		}
+		localization_key = "GFX_welcome_title_button_NORMAL"
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+##总标题
+defined_text = { 
+	name = GetWelcomeTitle
+	
+	text = {
+		trigger = {
+			check_variable = {
+				v = 1
+			}
+		}
+		localization_key = "WelcomeTitle_1"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				v = 2
+			}
+		}
+		localization_key = "WelcomeTitle_2"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				v = 3
+			}
+		}
+		localization_key = "WelcomeTitle_3"
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				v = 4
+			}
+		}
+		localization_key = "WelcomeTitle_4"
+	}
+}
+
+###国家概况：
+
+defined_text = { 
+	name = welcome_body_tt_31
+	
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					ROOT.welcome_text = 31
+				}
+				TAG = MNG
+			}
+		}
+		localization_key = "welcome_body_tt_31_MNG"
+	}
+
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					ROOT.welcome_text = 11
+				}
+			}
+		}
+		localization_key = "welcome_body_tt_11"
+	}
+
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					ROOT.welcome_text = 21
+				}
+			}
+		}
+		localization_key = "welcome_body_tt_21"
+	}
+
+	text = {
+		trigger = {
+			ROOT = {
+				check_variable = {
+					ROOT.welcome_text = 41
+				}
+			}
+		}
+		localization_key = "welcome_body_tt_41"
+	}
+
+}
