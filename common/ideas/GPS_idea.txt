@@ -184,4 +184,114 @@ ideas = {
 			}
 		}
 	}
+
+    industrial_concern = { #工业
+        GPS_guotie = {#国家铁路总局
+            picture = GPS_guotie
+            allowed = {
+				original_tag = GPS
+			}
+            available = {
+			}
+            traits = {
+				industrial_concern
+			}
+            research_bonus = {
+				industry = 0.1
+			}
+            modifier = {
+				production_speed_infrastructure_factor = 0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        GPS_changbaikuangwuju = {#长白矿务局
+            picture = GPS_changbaikuangwuju
+            allowed = {
+				original_tag = GPS
+			}
+            available = {
+			}
+            traits = {
+				industrial_concern
+			}
+            research_bonus = {
+                construction_tech = 0.1
+			}
+            modifier = {
+				local_resources_factor = 0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        GPS_guandongligongdaxue = {#关东理工大学
+            picture = GPS_guandongligongdaxue
+            allowed = {
+				original_tag = GPS
+			}
+            available = {
+			}
+            traits = {
+				university
+			}
+            research_bonus = {
+
+			}
+            modifier = {
+				research_speed_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        GPS_damingdianlidianqijituan = {#大明电力电气集团
+            picture = GPS_damingdianlidianqijituan
+            allowed = {
+				original_tag = GPS
+			}
+            available = {
+			}
+            traits = {
+				Electronics_concern
+			}
+            research_bonus = {
+				electronics = 0.1
+			}
+            modifier = {
+				land_reinforce_rate = 0.05
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+        GPS_dongbeigongyejituan = {#东北工业集团
+            picture = GPS_dongbeigongyejituan
+            allowed = {
+				original_tag = GPS
+			}
+			available = {
+			}
+            traits = {
+				industrial_concern
+			}
+            research_bonus = {
+				industry = 0.1
+			}
+            modifier = {
+
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
+	}
 }

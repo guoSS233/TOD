@@ -1,0 +1,354 @@
+division_template = {
+	name = "民兵旅"	#步兵师
+	division_names_group = MNG_INF_SHE
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}   
+
+division_template = {
+	name = "革命乙种步兵师"	#步兵师
+	division_names_group = MNG_INF_02
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0}
+		infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+	}
+}
+
+division_template = {
+	name = "革命甲种步兵师"	#步兵师
+	division_names_group = MNG_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0}
+		infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0}
+	}
+	support = {
+		engineer = { x = 0 y = 0}
+	}
+}
+
+division_template = {
+	name = "精锐步兵师"	#步兵师
+	division_names_group = MNG_INF_GAD
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0}
+		infantry = { x = 2 y = 1 }
+        infantry = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0}
+        artillery_brigade = { x = 3 y = 1 }
+        artillery_brigade = { x = 3 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0}
+		artillery = { x = 0 y = 1 }
+        recon = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "精锐坦克师"	#装甲师
+	division_names_group = MNG_AOR_GAD
+	regiments = {
+		medium_armor = { x = 0 y = 0}
+		medium_armor = { x = 0 y = 1 }
+        medium_armor = { x = 0 y = 2 }
+        medium_armor = { x = 0 y = 3}
+		motorized = { x = 1 y = 0}
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3}
+	}
+	support = {
+		engineer = { x = 0 y = 0}
+		mot_recon = { x = 0 y = 1 }
+        artillery = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "革命甲种战车师"	#装甲师
+	division_names_group = MNG_AOR_01
+	regiments = {
+		heavy_armor = { x = 0 y = 0}
+		heavy_armor = { x = 0 y = 1 }
+        medium_armor = { x = 0 y = 2 }
+        medium_armor = { x = 0 y = 3}
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3}
+	}
+	support = {
+        artillery = { x = 0 y = 0}
+	}
+}
+
+division_template = {
+	name = "革命骑兵旅"	#骑兵师
+	division_names_group = MNG_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0}
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0}
+		cavalry = { x = 1 y = 1 }
+        cavalry = { x = 2 y = 0}
+		cavalry = { x = 2 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+		recon = { x = 0 y = 1 }
+	}
+}
+units = {
+    #辽南#
+	division= {
+		name = "第1步兵旅"
+		location =964
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第2步兵旅"
+		location =964
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第3步兵旅"
+		location =964
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第4步兵旅"
+		location =964
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "乙种第1步兵师"
+		location =964
+		division_template = "革命乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "甲种第1步兵师"
+		location =964
+		division_template = "革命甲种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第1骑行旅"
+		location =964
+		division_template = "革命骑兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#辽中#
+	division= {
+		name = "精锐第1步兵师"
+		location =836
+		division_template = "精锐步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "精锐第1战车师"
+		location =836
+		division_template = "精锐坦克师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "乙种第2步兵师"
+		location =836
+		division_template = "革命乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第5步兵旅"
+		location =836
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第6步兵旅"
+		location =836
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第7步兵旅"
+		location =836
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第8步兵旅"
+		location =836
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "甲种第2步兵师"
+		location =836
+		division_template = "革命甲种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "甲种第1战车师"
+		location =836
+		division_template = "革命甲种战车师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第2骑行旅"
+		location =964
+		division_template = "革命骑兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第5骑行旅"
+		location =964
+		division_template = "革命骑兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+    #辽北#
+	division= {
+		name = "甲种第3步兵师"
+		location =13525
+		division_template = "革命甲种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "乙种3第步兵师"
+		location =13525
+		division_template = "革命乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第9步兵旅"
+		location =13525
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第10步兵旅"
+		location =13525
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第11步兵旅"
+		location =13525
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第12步兵旅"
+		location =13525
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第3骑行旅"
+		location =13525
+		division_template = "革命骑兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+    #辽西#
+	division= {
+		name = "乙种第4步兵师"
+		location =13522
+		division_template = "革命乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第13步兵旅"
+		location =13522
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第14步兵旅"
+		location =13522
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第15步兵旅"
+		location =13522
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第16步兵旅"
+		location =13522
+		division_template = "民兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division= {
+		name = "第4骑行旅"
+		location =13522
+		division_template = "革命骑兵旅"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
+

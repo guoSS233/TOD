@@ -875,6 +875,7 @@ country_event = {
 			}
 			set_demilitarized_zone = yes
 		}
+		delete_unit = {}
 	}
 }
 #二、广州兴师
@@ -1065,7 +1066,7 @@ country_event = {
 		name = ROC_start.4.a 
 	}
 }
-#五、宝安港党人施连环计
+#五、李总督兵败佛冈县
 country_event = { 
 	id = ROC_start.5
 	title = ROC_start.5.t
@@ -1076,13 +1077,29 @@ country_event = {
 	
 	trigger = {
 		tag = ROC
-		date > 1937.9.10
+		date > 1937.9.20
 	}
 	option = {
 		name = ROC_start.5.a 
+		add_army_experience = 15
+		every_state = {
+			limit = {
+				OR = {
+					state = 1115
+					state = 729
+					state = 728
+					state = 818
+					state = 599
+					state = 817
+					state = 591
+					state = 594
+				}
+			}
+			set_demilitarized_zone = no
+		}
 	}
 }
-#六、李总督兵败南雄县
+#六、宝安港党人施连环计
 country_event = { 
 	id = ROC_start.6
 	title = ROC_start.6.t
@@ -1093,24 +1110,15 @@ country_event = {
 	
 	trigger = {
 		tag = ROC
-		date > 1937.9.14
+		date > 1937.9.30
 	}
 	option = {
 		name = ROC_start.6.a 
-		add_army_experience = 15
 		every_state = {
 			limit = {
 				OR = {
-					state = 1115
-					state = 729
-					state = 326
-					state = 728
-					state = 818
-					state = 599
-					state = 817
 					state = 593
-					state = 591
-					state = 594
+					state = 326
 				}
 			}
 			set_demilitarized_zone = no
@@ -1118,59 +1126,59 @@ country_event = {
 	}
 }
 #七、厦门港总督坐艄
-country_event = { 
-	id = ROC_start.7
-	title = ROC_start.7.t
-	desc = ROC_start.7.d
+# country_event = { 
+# 	id = ROC_start.7
+# 	title = ROC_start.7.t
+# 	desc = ROC_start.7.d
 
-	fire_only_once = yes
-	is_triggered_only = yes
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
 	
-	trigger = {
-		tag = ROC
-		date > 1937.9.19
-	}
-	option = {
-		name = ROC_start.7.a 
-		every_state = {
-			limit = {
-				OR = {
-					state = 1114
-					state = 814
-					state = 595
-					state = 813
-				}
-			}
-			set_demilitarized_zone = no
-		}
-	}
-}
+# 	trigger = {
+# 		tag = ROC
+# 		date > 1937.10.5
+# 	}
+# 	option = {
+# 		name = ROC_start.7.a 
+# 		every_state = {
+# 			limit = {
+# 				OR = {
+# 					state = 1114
+# 					state = 814
+# 					state = 595
+# 					state = 813
+# 				}
+# 			}
+# 			set_demilitarized_zone = no
+# 		}
+# 	}
+# }
 #八、李总督淡水城被捕【新闻】
-country_event = { 
-	id = ROC_start.8
-	title = ROC_start.8.t
-	desc = ROC_start.8.d
+# country_event = { 
+# 	id = ROC_start.8
+# 	title = ROC_start.8.t
+# 	desc = ROC_start.8.d
 
-	fire_only_once = yes
-	is_triggered_only = yes
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
 	
-	trigger = {
-		tag = ROC
-		date > 1937.9.21
-	}
-	option = {
-		name = ROC_start.8.a 
-		every_state = {
-			limit = {
-				OR = {
-					state = 1117
-					state = 524
-				}
-			}
-			set_demilitarized_zone = no
-		}
-	}
-}
+# 	trigger = {
+# 		tag = ROC
+# 		date > 1937.9.21
+# 	}
+# 	option = {
+# 		name = ROC_start.8.a 
+# 		every_state = {
+# 			limit = {
+# 				OR = {
+# 					state = 1117
+# 					state = 524
+# 				}
+# 			}
+# 			set_demilitarized_zone = no
+# 		}
+# 	}
+# }
 #九、中务局追逃火车站【新闻】
 country_event = { 
 	id = ROC_start.9
@@ -1182,10 +1190,37 @@ country_event = {
 	
 	trigger = {
 		tag = ROC
-		date > 1937.9.23
+		date > 1937.10.5
 	}
 	option = {
 		name = ROC_start.9.a 
+		every_state = {
+			limit = {
+				OR = {
+					state = 1114
+					state = 814
+					state = 595
+					state = 813
+					state = 1117
+					state = 524
+				}
+			}
+			set_demilitarized_zone = no
+		}
+		load_oob = "ROC_gonghe_1937"
+		hidden_effect = {
+				delete_unit_template_and_units = { division_template = "昌德卌四年型近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型卫戍步兵旅" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌八年实验机动步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型山地步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型海军陆战队师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种战车师" }
+		}
 	}
 }
 #十、赣州城农协出击
@@ -1199,7 +1234,7 @@ country_event = {
 	
 	trigger = {
 		tag = ROC
-		date > 1937.9.29
+		date > 1937.11.5
 	}
 	option = {
 		name = ROC_start.10.a 
@@ -1216,7 +1251,7 @@ country_event = {
 	
 	trigger = {
 		tag = ROC
-		date > 1937.10.4
+		date > 1937.11.20
 	}
 	option = {
 		name = ROC_start.11.a 

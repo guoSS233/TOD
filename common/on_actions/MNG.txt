@@ -57,21 +57,21 @@ on_actions = {
 	on_daily_MNG = {
 		effect = {
 			if = { 
-				limit = { check_variable = { MNG_dongyantielu > 0 } } 
-				add_to_variable = { MNG_dongyantielu = -1 } 
+				limit = { check_variable = { MNG_boyishijian_3 > 0 } } 
+				add_to_variable = { MNG_boyishijian_3 = -1 } 
 			}
 		}
 	}
 	on_monthly_MNG = {
 		effect = {
 			if = { 
-				limit = { has_completed_focus = MNG_check_our_weapon } 
+				limit = { has_completed_focus = MNG_zaisiyurong } 
 				add_to_variable = { MNG_wubeixi = 3 } 
 			}
 		}
 		effect = {
 			if = { 
-				limit = { has_completed_focus = MNG_our_friends_inside } 
+				limit = { has_completed_focus = GFX_MNG_weixinxinfu } 
 				add_to_variable = { MNG_zijinxi = 2 } 
 			}
 		}

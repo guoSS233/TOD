@@ -557,7 +557,6 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.62.a 
-		complete_national_focus = MNG_youbeiwuhuan
 		add_political_power = -30
 		add_to_variable = { MNG_zijinxi = -10}
 	}
@@ -623,7 +622,7 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.67.a
-		country_event = { id = mingcivwar.67 }
+		country_event = { id = mingcivwar.68 }
 	}
 }
 #瞒天过海 1937.8.21
@@ -942,7 +941,11 @@ country_event = {
 					election_frequency = 48
 					elections_allowed = no
 				}
-			
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
 				set_popularities = {
 					vanguard_socialism = 0
 					council_socialism = 2
@@ -1109,6 +1112,8 @@ country_event = {
 				transfer_state = 1129
 				transfer_state = 604
 				add_state_core = 604
+				transfer_state = 1253
+				add_state_core = 1253
 				set_capital = { state = 744 }
 				load_oob = XBJ_1937
 			}
@@ -1531,12 +1536,10 @@ country_event = {
 			STG = {
 				add_state_core = 608
 				transfer_state = 608
-			}
-		}
-		STG = { 
-			change_tag_from = ROOT
-			country_event = {
-				id = mingcivwar.83
+				change_tag_from = ROOT
+				country_event = {
+					id = mingcivwar.83
+				}
 			}
 		}
 	}
@@ -1552,18 +1555,6 @@ country_event = {
 		MNG_release_STG = yes
 		hidden_effect = {
 			load_oob = "STG_1937"
-			every_state = {
-				limit = {
-					OR = {
-						is_core_of = MNG
-						is_claimed_by = MNG
-					}
-				}
-				MNG = {
-					remove_state_core = PREV
-					remove_state_claim = PREV
-				}
-			}
 		}
 	}
 }
