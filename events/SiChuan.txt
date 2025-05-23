@@ -87,6 +87,70 @@ news_event = {
 
 	option = {name = chinese_events_sic.2.a}
 }
+#拿下荆州
+country_event = {
+	id = TODSIC.4
+	title = TODSIC.4.t
+	desc = TODSIC.4.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.4.a
+		transfer_state = 825
+		transfer_state = 750
+	}
+}
+#没能拿下荆州
+country_event = {
+	id = TODSIC.5
+	title = TODSIC.5.t
+	desc = TODSIC.5.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.5.a 
+		add_war_support = -0.1
+	}
+}
+#战局僵持
+country_event = {
+	id = TODSIC.6
+	title = TODSIC.6.t
+	desc = TODSIC.6.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.6.a 
+		transfer_state = 825
+	}
+}
+#防守胜利
+country_event = {
+	id = TODSIC.7
+	title = TODSIC.7.t
+	desc = TODSIC.7.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.7.a 
+	}
+}
+#防守失败
+country_event = {
+	id = TODSIC.8
+	title = TODSIC.8.t
+	desc = TODSIC.8.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.8.a 
+	}
+}
 #成都爆发革命
 country_event = {
 	id = TODSIC.1001
