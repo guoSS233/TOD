@@ -1,5 +1,5 @@
 focus_tree = {
-	id = Sichuan_focus
+	id = Sichuanlingshizhengfu_focus
 	
 	country = {
 		factor = 0
@@ -72,6 +72,8 @@ focus_tree = {
 		completion_reward = { 
 			add_stability = 0.1
 			add_war_support = 0.1
+            add_to_variable = {SIC.minzhong = -10}
+			custom_effect_tooltip = SIC_wendingchuanneijushi_xiaoguo
 		 }
 	}
 	#召集各方商讨
@@ -135,6 +137,7 @@ focus_tree = {
 			add_timed_idea = { idea = SIC_huifushangye days = 365 }  
             add_to_variable = {SIC.minzhong = -10}
             add_to_variable = {SIC.gongye = -5}
+			custom_effect_tooltip = SIC_chongzhenshangye_xiaoguo
 		}
 	}
 	#恢复工业
@@ -165,7 +168,8 @@ focus_tree = {
 			} 
             add_to_variable = {SIC.gongchang = 2}
             add_to_variable = {SIC.gongye = -10}
-			custom_effect_tooltip = SIC_huifugongye.t
+			unlock_decision_tooltip = SIC_chongjianchanyelian
+			custom_effect_tooltip = SIC_huifugongye_xiaoguo
 		}
 	}
 	#稳定农业
@@ -188,6 +192,7 @@ focus_tree = {
 		completion_reward = { 
             add_to_variable = {SIC.minzhong = -10}
 			add_stability = 0.1 
+			custom_effect_tooltip = SIC_wendingnongye_xiaoguo
 		}
 	}
 	#整顿军备
@@ -208,7 +213,11 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = { idea = SIC_junduichongjain days = 180 } }
+		completion_reward = { 
+			add_timed_idea = { idea = SIC_junduichongjain days = 180 } 
+            add_to_variable = {SIC.gongye = -10}
+			custom_effect_tooltip = SIC_zhengdunjunbei_xiaoguo
+		}
 	}
 	#组织防御
 	focus = {
@@ -348,7 +357,7 @@ focus_tree = {
 		completion_reward = { 
 			add_stability = 0.1
 			add_to_variable = { SIC.minzhong = -10 }
-			custom_effect_tooltip = SIC_zhenyasaoluan.t
+			custom_effect_tooltip = SIC_zhenyasaoluan_xiaoguo
 		 }
 	}
 	#紧急动员
@@ -419,10 +428,19 @@ focus_tree = {
 		
 		cost = 5
 		
+		bypass = {
+			NOT = { country_exists = STG }
+		}
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_stability = 0.1
+			add_opinion_modifier = {
+				target = STG
+				modifier = SIC_zunwangtaojian
+			}
+		 }
 	}
 	#以讨不臣
 	focus = {
@@ -437,11 +455,17 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		cost = 5
+		bypass = {
+			NOT = { country_exists = XBJ }
+		}
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_war_support = 0.1
+			declare_war_on = { target = XBJ type = annex_everything }
+		 }
 	}
 	#六出祁山
 	focus = {
@@ -457,11 +481,19 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		cost = 5
+		bypass = {
+			NOT = { country_exists = XBJ }
+		}
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_timed_idea = {
+				idea = SIC_chuqibuyi
+				days = 60
+			}
+		 }
 	}
 	#深入不毛
 	focus = {
@@ -471,6 +503,9 @@ focus_tree = {
 		prerequisite = { focus = SIC_yitaobuchen }
 		x = 28
 		y = 6
+		bypass = {
+			NOT = { country_exists = XIN }
+		}
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -481,7 +516,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { declare_war_on = { target = XIN type = annex_everything } }
 	}
 	#智取荆州
 	focus = {
@@ -491,6 +526,9 @@ focus_tree = {
 		prerequisite = { focus = SIC_yitaobuchen }
 		x = 30
 		y = 6
+		bypass = {
+			NOT = { country_exists = GOS }
+		}
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -499,9 +537,28 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { has_war =  GOS }
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = 605
+					num_provinces = 4
+					on_win = TODSIC.4
+					on_lose = TODSIC.5
+					on_cancel = TODSIC.6
+				}
+				
+				defender = {
+					state = 825
+					num_provinces = 4
+					on_win = TODSIC.7
+					on_lose = TODSIC.8
+					on_cancel = TODSIC.6
+				}
+			}
+	}
 	}
 	#拥立正统
 	focus = {
