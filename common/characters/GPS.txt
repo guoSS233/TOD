@@ -163,13 +163,13 @@ characters = {
 				small="gfx/GPS/ideas/GPS_ma_zhanshan.png"
 			}
 		}
-		field_marshal={
+		corps_commander={
 			traits={ war_hero armor_officer }
-			skill=4
+			skill=3
 			attack_skill=2
-			defense_skill=5
+			defense_skill=3
 			planning_skill=3
-			logistics_skill=3
+			logistics_skill=2
 			legacy_id=-1
 		}
 		advisor={
@@ -183,7 +183,7 @@ characters = {
 			slot = high_command
 			idea_token = GPS_ma_zhanshan
 			allowed = { tag = GPS }
-			traits = { master_armorer }
+			traits = { army_armored_2 }
 			cost = 150
 		}
 	}
@@ -217,6 +217,7 @@ characters = {
 		portraits={
 			army={
 				small="gfx/GPS/ideas/GPS_zhang_zuoxiang.png"
+				large="gfx/leaders/GPS/Portrait_GPS_zhang_zuoxiang.png"
 			}
 		}
 		advisor={
@@ -225,6 +226,15 @@ characters = {
 			allowed = { tag = GPS }
 			traits = { army_infantry_2 }
 			cost = 150
+		}
+		field_marshal={
+			traits={ politically_connected }
+			skill=4
+			attack_skill=2
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
 		}
 	}
 	GPS_wei_yisan = {
@@ -358,10 +368,10 @@ characters = {
 		navy_leader={
 			traits={  }
 			skill=4
-			attack_skill=4
-			defense_skill=4
-			maneuvering_skill=3
-			coordination_skill=2
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=4
+			coordination_skill=3
 			legacy_id=-1
 		}
 		advisor={
@@ -383,10 +393,10 @@ characters = {
 		navy_leader={
 			traits={  }
 			skill=4
-			attack_skill=3
-			defense_skill=3
-			maneuvering_skill=4
-			coordination_skill=3
+			attack_skill=4
+			defense_skill=4
+			maneuvering_skill=3
+			coordination_skill=2
 			legacy_id=-1
 		}
 		advisor={
@@ -405,13 +415,13 @@ characters = {
 				small="gfx/GPS/ideas/GPS_xu_lanzhou.png"
 			}
 		}
-		corps_commander={
-			traits={ media_personality }
-			skill=3
-			attack_skill=2
-			defense_skill=2
+		field_marshal={
+			traits={ media_personality skilled_staffer }
+			skill=4
+			attack_skill=3
+			defense_skill=3
 			planning_skill=4
-			logistics_skill=2
+			logistics_skill=3
 			legacy_id=-1
 		}
 		advisor={
@@ -461,6 +471,23 @@ characters = {
 			attack_skill=2
 			defense_skill=2
 			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	GPS_sun_liechen = {
+		name=GPS_sun_liechen
+		portraits={
+			army={
+				large="gfx/leaders/GPS/Portrait_GPS_sun_liechen.png"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
 			logistics_skill=2
 			legacy_id=-1
 		}
@@ -538,7 +565,7 @@ characters = {
 		}
 	}
 	GPS_miao_jianqiu = {
-		name=GPS_GPS_miao_jianqiu
+		name=GPS_miao_jianqiu
 		portraits={
 			army={
 				large="gfx/leaders/GPS/Portrait_GPS_miao_jianqiu.png"

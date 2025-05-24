@@ -1167,22 +1167,6 @@ characters = {
             logistics_skill = 4
         }
         advisor = {
-            #海军部长
-            slot = navy_chief
-            ledger = navy
-            idea_token = ROC_linjianzhang
-            allowed = {
-                original_tag = ROC
-            }
-            traits = {
-                navy_chief_naval_aviation_2
-            }
-            cost = 150
-            ai_will_do = {
-                factor = 1
-            }
-        }
-        advisor = {
             #总司令
             slot = high_command
             ledger = navy
@@ -1203,26 +1187,42 @@ characters = {
         name = ROC_chengbiguang
         portraits = {
             army = {
-                # small = "gfx/leaders/ROC/general/chengbiguang_1.png"
+                small = "gfx/leaders/ROC/general/chengbiguang_1.png"
             }
             army = {
                 large = "gfx/leaders/ROC/general/chengbiguang.png"
             }
         }
-        navy_leader = {
-            traits = {
-                gentlemanly
-                naval_lineage
-                gunnery_expert
-                ironside
-                battleship_adherent
+        advisor = {
+            #总司令
+            slot = high_command
+            ledger = navy
+            idea_token = ROC_chengbiguang
+            allowed = {
+                original_tag = ROC
             }
-            skill = 4
-            attack_skill =5
-            defense_skill = 2
-            planning_skill = 4
-            logistics_skill = 1
+            traits = {
+                air_naval_strike_2
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
         }
+        # navy_leader = {
+        #     traits = {
+        #         gentlemanly
+        #         naval_lineage
+        #         gunnery_expert
+        #         ironside
+        #         battleship_adherent
+        #     }
+        #     skill = 4
+        #     attack_skill =5
+        #     defense_skill = 2
+        #     planning_skill = 4
+        #     logistics_skill = 1
+        # }
     }
     ROC_yangshuzhuang = { #杨树庄
         name = ROC_yangshuzhuang
@@ -1247,22 +1247,6 @@ characters = {
             logistics_skill = 3
         }
         advisor = {
-            #海军部长
-            slot = navy_chief
-            ledger = navy
-            idea_token = ROC_yangshuzhuang
-            allowed = {
-                original_tag = ROC
-            }
-            traits = {
-                navy_chief_decisive_battle_2
-            }
-            cost = 150
-            ai_will_do = {
-                factor = 1
-            }
-        }
-        advisor = {
             #总司令
             slot = high_command
             ledger = navy
@@ -1283,7 +1267,7 @@ characters = {
         name = ROC_chenshaokuan
         portraits = {
             army = {
-                # small = "gfx/leaders/ROC/general/chenshaokuan_1.png"
+                small = "gfx/leaders/ROC/general/chenshaokuan1.png"
             }
             army = {
                 large = "gfx/leaders/ROC/general/chenshaokuan.png"
@@ -1295,35 +1279,51 @@ characters = {
                 destroyer_leader
                 superior_tactician
             }
-            skill = 33
+            skill = 3
             attack_skill =2
             defense_skill = 4
             planning_skill = 3
             logistics_skill = 1
         }
-    }
-    ROC_chence = { #陈策
-        name = ROC_chence
-        portraits = {
-            army = {
-                # small = "gfx/leaders/ROC/general/chence_1.png"
+        advisor = {
+            #海军部长
+            slot = navy_chief
+            ledger = navy
+            idea_token = ROC_chenshaokuan
+            allowed = {
+                original_tag = ROC
             }
-            army = {
-                large = "gfx/leaders/ROC/general/chence.png"
-            }
-        }
-        navy_leader = {
             traits = {
-                big_guns_expert
-                battleship_adherent
+                navy_chief_decisive_battle_2
             }
-            skill = 3
-            attack_skill =3
-            defense_skill = 3
-            planning_skill = 2
-            logistics_skill = 2
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
         }
     }
+    # ROC_chence = { #陈策
+    #     name = ROC_chence
+    #     portraits = {
+    #         army = {
+    #             # small = "gfx/leaders/ROC/general/chence_1.png"
+    #         }
+    #         army = {
+    #             large = "gfx/leaders/ROC/general/chence.png"
+    #         }
+    #     }
+    #     navy_leader = {
+    #         traits = {
+    #             big_guns_expert
+    #             battleship_adherent
+    #         }
+    #         skill = 3
+    #         attack_skill =3
+    #         defense_skill = 3
+    #         planning_skill = 2
+    #         logistics_skill = 2
+    #     }
+    # }
     ROC_lizhilong = { #李之龙
         name = ROC_lizhilong
         portraits = {
@@ -1338,6 +1338,7 @@ characters = {
             traits = {
                 bold
                 ironside
+                big_guns_expert
             }
             skill = 3
             attack_skill =4
@@ -1355,22 +1356,6 @@ characters = {
             }
             traits = {
                 navy_chief_reform_2
-            }
-            cost = 150
-            ai_will_do = {
-                factor = 1
-            }
-        }
-        advisor = {
-            #总司令
-            slot = high_command
-            ledger = navy
-            idea_token = ROC_lizhilong
-            allowed = {
-                original_tag = ROC
-            }
-            traits = {
-                air_naval_strike_2
             }
             cost = 150
             ai_will_do = {
@@ -1686,4 +1671,235 @@ characters = {
             }
         }
     }
+    ROC_zhaosheng = {#赵声
+        name = ROC_zhaosheng
+        portraits = {
+            army = {
+                small = "gfx/leaders/ROC/general/ROC_zhaosheng1.png"
+                large = "gfx/leaders/ROC/general/ROC_zhaosheng.png"
+            }
+        }
+        navy_leader = {
+            traits = {
+                gentlemanly
+                naval_lineage
+                gunnery_expert
+                ironside
+                battleship_adherent
+            }
+            skill = 4
+            attack_skill =5
+            defense_skill = 2
+            planning_skill = 4
+            logistics_skill = 1
+        }
+        advisor = {
+            #海军部长
+            slot = navy_chief
+            ledger = navy
+            idea_token = ROC_zhaosheng
+            allowed = {
+                original_tag = ROC
+            }
+            traits = {
+                navy_chief_naval_aviation_2
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    ROC_tangrongbing = {#唐榕柄
+        name = ROC_tangrongbing
+        portraits = {
+            army = {
+                small = "gfx/leaders/ROC/general/ROC_tangrongbing1.png"
+                large = "gfx/leaders/ROC/general/ROC_tangrongbing.png"
+            }
+        }
+        navy_leader = {
+            traits = {
+                air_controller
+                flight_deck_manager
+                blue_water_expert
+            }
+            skill = 3
+            attack_skill =3
+            defense_skill = 3
+            planning_skill = 2
+            logistics_skill = 2
+        }
+        advisor = {
+            #海军部长
+            slot = theorist
+            ledger = navy
+            idea_token = ROC_tangrongbing
+            allowed = {
+                original_tag = ROC
+            }
+            traits = {
+                naval_aviation_pioneer
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    ROC_wuzhixin = {#吴志馨
+        name = ROC_wuzhixin
+        portraits = {
+            army = {
+                # small = "gfx/leaders/ROC/general/ROC_wuzhixin.png"
+                large = "gfx/leaders/ROC/general/ROC_wuzhixin.png"
+            }
+        }
+        navy_leader = {
+            traits = {
+                air_controller
+                flight_deck_manager
+                blue_water_expert
+            }
+            skill = 3
+            attack_skill =2
+            defense_skill = 2
+            planning_skill = 3
+            logistics_skill = 3
+        }
+    }
+    ROC_lishijia = {#李世甲
+        name = ROC_lishijia
+        portraits = {
+            army = {
+                # small = "gfx/leaders/ROC/general/ROC_wuzhixin.png"
+                large = "gfx/leaders/ROC/general/ROC_lishijia.png"
+            }
+        }
+        navy_leader = {
+            traits = {
+                big_guns_expert
+                battleship_adherent
+                ironside
+            }
+            skill = 3
+            attack_skill =3
+            defense_skill = 3
+            planning_skill = 2
+            logistics_skill = 2
+        }
+    }
+    ROC_xufengzao = {#许凤藻
+        name = ROC_xufengzao
+        portraits = {
+            army = {
+                # small = "gfx/leaders/ROC/general/ROC_wuzhixin.png"
+                large = "gfx/leaders/ROC/general/ROC_xufengzao.png"
+            }
+        }
+        navy_leader = {
+            traits = {
+                search_pattern_expert
+                spotter
+            }
+            skill = 2
+            attack_skill =3
+            defense_skill = 1
+            planning_skill = 1
+            logistics_skill = 2
+        }
+    }
+    ROC_caozhongyuan = {#曹仲渊
+        name = ROC_caozhongyuan
+        portraits = {
+            army = {
+                small = "gfx/leaders/ROC/general/ROC_caozhongyuan1.png"
+                # large = "gfx/leaders/ROC/general/ROC_caozhongyuan.png"
+            }
+        }
+        advisor = {
+            slot = theorist
+            ledger = navy
+            idea_token = ROC_caozhongyuan
+            allowed = {
+                original_tag = ROC
+            }
+            traits = {
+                grand_fleet_proponent
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    ROC_anjiaju = {#安家驹
+        name = ROC_anjiaju
+        portraits = {
+            army = {
+                small = "gfx/leaders/ROC/general/ROC_anjiaju1.png"
+                # large = "gfx/leaders/ROC/general/ROC_caozhongyuan.png"
+            }
+        }
+        advisor = {
+            slot = theorist
+            ledger = air
+            idea_token = ROC_anjiaju
+            allowed = {
+                original_tag = ROC
+            }
+            traits = {
+                air_warfare_theorist
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+	ROC_wangganchang = {#王淦昌
+		name = ROC_wangganchang
+		portraits = {
+			army = {
+                large = "gfx/leaders/ROC/ROC_wangganchang.png"
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_nuclear_specialist scientist_trait_gifted_engineer }
+			skills = {
+				specialization_nuclear = 2
+			}
+		}
+	}
+	ROC_wuyouxun = {#吴有训
+		name = ROC_wuyouxun
+		portraits = {
+			army = {
+                large = "gfx/leaders/ROC/ROC_wuyouxun.png"
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_rocketry_specialist scientist_trait_brilliant_theorist }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
+	ROC_fengru = {#冯如
+		name = ROC_fengru
+		portraits = {
+			army = {
+                large = "gfx/leaders/ROC/ROC_fengru.png"
+			}
+		}
+
+		scientist = {
+			traits = { scientist_trait_aircraft_specialist scientist_trait_genius }
+			skills = {
+				specialization_air = 2
+			}
+		}
+	}
 }
