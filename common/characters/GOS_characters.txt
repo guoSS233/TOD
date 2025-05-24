@@ -1012,69 +1012,48 @@ characters = {
 
 
 #总司令
-	GOS_wml = { #吴毓麟
-		name = GOS_wml
-		portraits = {
-			army = {
-				small="gfx/GOS/ideas/GOS_wml.png"
-			}
-		}
-		advisor = { #总司令
-			slot = high_command
-			idea_token = GOS_wml
-			ledger = navy
-			allowed = {
-				original_tag = GOS
-			}
-			traits = { navy_naval_air_defense_2 }
-			cost = 150
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	GOS_oyg = { #欧阳格
-		name = GOS_oyg 
-		portraits = {
-			army = {
-				small="gfx/GOS/ideas/GOS_oyg.png"
-			}
-		}
-		advisor = { #总司令
-			slot = high_command
-			idea_token = GOS_oyg 
-			ledger = navy
-			allowed = {
-				original_tag = GOS
-			}
-			traits = { navy_screen_2 }
-			cost = 150
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	GOS_txm = { #汤芗铭
-		name = GOS_txm
-		portraits = {
-			army = {
-				small="gfx/GOS/ideas/GOS_txm.png"
-			}
-		}
-		advisor = { #总司令
-			slot = high_command
-			idea_token = GOS_txm
-			ledger = navy
-			allowed = {
-				original_tag = GOS
-			}
-			traits = { navy_carrier_2 }
-			cost = 150
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
+	# GOS_wml = { #吴毓麟
+	# 	name = GOS_wml
+	# 	portraits = {
+	# 		army = {
+	# 			small="gfx/GOS/ideas/GOS_wml.png"
+	# 		}
+	# 	}
+	# 	advisor = { #总司令
+	# 		slot = high_command
+	# 		idea_token = GOS_wml
+	# 		ledger = navy
+	# 		allowed = {
+	# 			original_tag = GOS
+	# 		}
+	# 		traits = { navy_naval_air_defense_2 }
+	# 		cost = 150
+	# 		ai_will_do = {
+	# 			factor = 1
+	# 		}
+	# 	}
+	# }
+	# GOS_txm = { #汤芗铭
+	# 	name = GOS_txm
+	# 	portraits = {
+	# 		army = {
+	# 			small="gfx/GOS/ideas/GOS_txm.png"
+	# 		}
+	# 	}
+	# 	advisor = { #总司令
+	# 		slot = high_command
+	# 		idea_token = GOS_txm
+	# 		ledger = navy
+	# 		allowed = {
+	# 			original_tag = GOS
+	# 		}
+	# 		traits = { navy_carrier_2 }
+	# 		cost = 150
+	# 		ai_will_do = {
+	# 			factor = 1
+	# 		}
+	# 	}
+	# }
 	GOS_sch = { #沈崇诲
 		name = GOS_sch 
 		portraits = {
@@ -1140,61 +1119,8 @@ characters = {
 		}
 	}
 #海军部长
-	GOS_wrl = { #吴纫礼
-		name = GOS_wrl
-		portraits = {
-			army = {
-				small="gfx/GOS/ideas/GOS_wrl.png"
-			}
-		}
-		advisor = { #海军部长
-			slot = navy_chief
-			idea_token = GOS_wrl
-			ledger = navy
-			allowed = {
-				original_tag = GOS
-			}
-			traits = { navy_chief_reform_2 }
-			cost = 150
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		advisor = { #理论家
-			slot = theorist
-			idea_token = GOS_wrl
-			ledger = air
-			allowed = {
-				original_tag = GOS
-			}
-			traits = { naval_theorist }
-			cost = 150
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
-	GOS_gyq = { #桂永清
-		name = GOS_gyq
-		portraits = {
-			army = {
-				small="gfx/GOS/ideas/GOS_gyq.png"
-			}
-		}
-		advisor = { #海军部长
-			slot = navy_chief
-			idea_token = GOS_gyq
-			ledger = navy
-			allowed = {
-				original_tag = GOS
-			}
-			traits = { navy_chief_naval_aviation_2 }
-			cost = 150
-			ai_will_do = {
-				factor = 1
-			}
-		}
-	}
+
+
 
 #空军部长
 	GOS_xhs = { #徐焕升
@@ -1277,61 +1203,422 @@ characters = {
 			}
 		}
 	}
-	GOS_qxs = { #钱学森
-		name = GOS_qxs
+	# GOS_qxs = { #钱学森
+	# 	name = GOS_qxs
+	# 	portraits = {
+	# 		army = {
+	# 			small="gfx/GOS/ideas/GOS_qxs.png"
+	# 		}
+	# 	}
+	# 	advisor = { #理论家
+	# 		slot = theorist
+	# 		idea_token = GOS_qxs
+	# 		ledger = army
+	# 		allowed = {
+	# 			original_tag = GOS
+	# 		}
+	# 		research_bonus = {
+	# 			rocketry = 0.150
+	# 		}
+	# 		traits = { rocket_scientist }
+	# 		cost = 150
+	# 		ai_will_do = {
+	# 			factor = 1
+	# 		}
+	# 	}
+	# }
+
+	# GOS_zzy = { #赵忠尧
+	# 	name = GOS_zzy
+	# 	portraits = {
+	# 		army = {
+	# 			small="gfx/GOS/ideas/GOS_zzy.png"
+	# 		}
+	# 	}
+	# 	advisor = { #理论家
+	# 		slot = theorist
+	# 		idea_token = GOS_zzy
+	# 		ledger = army
+	# 		allowed = {
+	# 			original_tag = GOS
+	# 		}
+	# 		research_bonus = {
+	# 			nuclear = 0.150
+	# 		}
+	# 		traits = { nuclear_scientist }
+	# 		cost = 150
+	# 		ai_will_do = {
+	# 			factor = 1
+	# 		}
+	# 	}
+	# }
+#海军
+	GOS_chence = { #陈策
+		name = GOS_chence
 		portraits = {
 			army = {
-				small="gfx/GOS/ideas/GOS_qxs.png"
+				large = "gfx/leaders/GOS/GOS_chence.png"
+				small="gfx/GOS/ideas/GOS_chence.png"
 			}
 		}
 		advisor = { #理论家
 			slot = theorist
-			idea_token = GOS_qxs
-			ledger = army
+			idea_token = GOS_chence
+			ledger = air
 			allowed = {
 				original_tag = GOS
 			}
-			research_bonus = {
-				rocketry = 0.150
+			traits = { grand_fleet_proponent }
+			cost = 150
+			ai_will_do = {
+				factor = 1
 			}
-			traits = { rocket_scientist }
+		}
+		navy_leader = {#海军将领
+            traits = {
+                superior_tactician
+                blue_water_expert
+				navy_media_personality
+				naval_lineage
+            }
+            skill = 4
+            attack_skill =3
+            defense_skill = 3
+            planning_skill = 3
+            logistics_skill = 4
+		}
+	}
+	GOS_lingxiao = { #凌霄
+		name = GOS_lingxiao
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_lingxiao.png"
+				small="gfx/GOS/ideas/GOS_lingxiao.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				air_controller
+				navy_media_personality
+            }
+            skill = 2
+            attack_skill =2
+            defense_skill = 2
+            planning_skill = 2
+            logistics_skill = 1
+		}
+		advisor = { #理论家
+			slot = theorist
+			idea_token = GOS_lingxiao
+			ledger = air
+			allowed = {
+				original_tag = GOS
+			}
+			traits = { naval_aviation_pioneer }
 			cost = 150
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-
-	GOS_zzy = { #赵忠尧
-		name = GOS_zzy
+	GOS_wurenli = { #吴纫礼
+		name = GOS_wurenli
 		portraits = {
 			army = {
-				small="gfx/GOS/ideas/GOS_zzy.png"
+				small="gfx/GOS/ideas/GOS_wurenli.png"
+				large = "gfx/leaders/GOS/GOS_wurenli.png"
 			}
 		}
-		advisor = { #理论家
-			slot = theorist
-			idea_token = GOS_zzy
-			ledger = army
+		advisor = { #海军部长
+			slot = navy_chief
+			idea_token = GOS_wurenli
+			ledger = navy
 			allowed = {
 				original_tag = GOS
 			}
-			research_bonus = {
-				nuclear = 0.150
+			traits = { navy_chief_reform_2 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
 			}
-			traits = { nuclear_scientist }
+		}
+		navy_leader = {#海军将领
+            traits = {
+				ground_pounder
+				big_guns_expert
+				gunnery_expert
+				bold
+            }
+            skill = 4
+            attack_skill =2
+            defense_skill = 4
+            planning_skill = 4
+            logistics_skill = 3
+		}
+		# advisor = { #理论家
+		# 	slot = theorist
+		# 	idea_token = GOS_wrl
+		# 	ledger = air
+		# 	allowed = {
+		# 		original_tag = GOS
+		# 	}
+		# 	traits = { naval_theorist }
+		# 	cost = 150
+		# 	ai_will_do = {
+		# 		factor = 1
+		# 	}
+		# }
+	}
+	GOS_ouyangge = { #欧阳格
+		name = GOS_ouyangge 
+		portraits = {
+			army = {
+				small="gfx/GOS/ideas/GOS_ouyangge.png"
+				large = "gfx/leaders/GOS/GOS_ouyangge.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				navy_career_officer
+				green_water_expert
+				fleet_protector
+            }
+            skill = 3
+            attack_skill =2
+            defense_skill = 3
+            planning_skill = 3
+            logistics_skill = 2
+		}
+		advisor = { #总司令
+			slot = high_command
+			idea_token = GOS_ouyangge 
+			ledger = navy
+			allowed = {
+				original_tag = GOS
+			}
+			traits = { navy_screen_2 }
 			cost = 150
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
-
-	
-
+	GOS_xiasunpeng = { #夏孙鹏
+		name = GOS_xiasunpeng 
+		portraits = {
+			army = {
+				small="gfx/GOS/ideas/GOS_xiasunpeng.png"
+				large = "gfx/leaders/GOS/GOS_xiasunpeng.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				ironside
+				cruiser_captain
+				chief_engineer
+            }
+            skill = 3
+            attack_skill =2
+            defense_skill = 2
+            planning_skill = 3
+            logistics_skill = 3
+		}
+	}
+	GOS_ganlianao = { #甘联璈
+		name = GOS_ganlianao 
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_ganlianao.png"
+				small="gfx/GOS/ideas/GOS_ganlianao.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				blockade_runner
+				mine_craft
+				superior_tactician
+            }
+            skill = 3
+            attack_skill =2
+            defense_skill = 2
+            planning_skill = 3
+            logistics_skill = 3
+		}
+	}
+	GOS_guiyongqing = { #桂永清
+		name = GOS_guiyongqing 
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_guiyongqing.png"
+				small="gfx/GOS/ideas/GOS_guiyongqing.png"
+			}
+		}
+		advisor = { #海军部长
+			slot = navy_chief
+			idea_token = GOS_guiyongqing
+			ledger = navy
+			allowed = {
+				original_tag = GOS
+			}
+			traits = { navy_chief_naval_aviation_2 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				aviation_enthusiast
+				air_controller
+				flight_deck_manager
+            }
+            skill = 3
+            attack_skill =2
+            defense_skill = 2
+            planning_skill = 3
+            logistics_skill = 3
+		}
+	}
+	GOS_liuyonggao = { #刘永诰
+		name = GOS_liuyonggao 
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_liuyonggao.png"
+				small="gfx/GOS/ideas/GOS_liuyonggao.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				fleet_protector
+				safety_first
+            }
+            skill = 2
+            attack_skill =2
+            defense_skill = 2
+            planning_skill = 1
+            logistics_skill = 2
+		}
+	}
+	GOS_chenganqing = { #陈干青
+		name = GOS_chenganqing 
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_chenganqing.png"
+				small="gfx/GOS/ideas/GOS_chenganqing.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				blockade_runner
+				concealment_expert
+            }
+            skill = 2
+            attack_skill =2
+            defense_skill = 1
+            planning_skill = 2
+            logistics_skill = 2
+		}
+	}
+	GOS_bishucheng = { #毕庶澄
+		name = GOS_bishucheng 
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_bishucheng.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				fleet_protector
+				spotter
+            }
+            skill = 2
+            attack_skill =1
+            defense_skill = 2
+            planning_skill = 2
+            logistics_skill = 2
+		}
+	}
+	GOS_anbangqi = { #毕庶澄
+		name = GOS_anbangqi 
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_anbangqi.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				blockade_runner
+				lancer
+				torpedo_expert
+            }
+            skill = 2
+            attack_skill =4
+            defense_skill = 1
+            planning_skill = 1
+            logistics_skill = 1
+		}
+	}
+	GOS_zhangchentong = { #章臣桐
+		name = GOS_zhangchentong 
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_zhangchentong.png"
+			}
+		}
+		navy_leader = {#海军将领
+            traits = {
+				green_water_expert
+				navy_career_officer
+            }
+            skill = 2
+            attack_skill =1
+            defense_skill = 1
+            planning_skill = 3
+            logistics_skill = 2
+		}
+	}
+	GOS_chenzhaoqiang = { #陈兆锵
+		name = GOS_chenzhaoqiang
+		portraits = {
+			army = {
+				small="gfx/GOS/ideas/GOS_chenzhaoqiang.png"
+			}
+		}
+		advisor = { #总司令
+			slot = high_command
+			idea_token = GOS_chenzhaoqiang 
+			ledger = navy
+			allowed = {
+				original_tag = GOS
+			}
+			traits = { navy_capital_ship_2 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	GOS_raohuaiwen = { #饶怀文
+		name = GOS_raohuaiwen
+		portraits = {
+			army = {
+				small="gfx/GOS/ideas/GOS_raohuaiwen.png"
+			}
+		}
+		advisor = { #总司令
+			slot = high_command
+			idea_token = GOS_raohuaiwen 
+			ledger = navy
+			allowed = {
+				original_tag = GOS
+			}
+			traits = { navy_carrier_2 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
 
 #
-
-
-
 }
