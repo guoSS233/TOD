@@ -45,6 +45,56 @@ on_actions = {
             ROC = { country_event = { id = ROC_start.9 } }
             ROC = { country_event = { id = ROC_start.10 } }
             ROC = { country_event = { id = ROC_start.11 } }
+            ROC = { country_event = { id = ROC_pingheng.1001 } }
+            ROC = { country_event = { id = ROC_pingheng.1002 } }
+            ROC = { country_event = { id = ROC_pingheng.1003 } }
+            ROC = { country_event = { id = ROC_pingheng.1004 } }
+        }
+    }
+    on_monthly_ROC = {
+        effect = {
+        if = {
+            limit = {
+                has_idea = ROC_idea_Xuqian
+                has_idea = ROC_idea_FangShengdong
+                has_idea = ROC_idea_ChenYouren
+            }
+            add_ideas = ROC_idea_gemingyuanlao
+        }
+        else_if = {
+            limit = {
+                has_idea = ROC_idea_gemingyuanlao
+            }
+            remove_ideas = ROC_idea_gemingyuanlao
+        }
+        if = {
+            limit = {
+                has_idea = ROC_idea_ZhangBoling
+                has_idea = ROC_idea_ChenZanxian
+                has_idea = ROC_idea_XiaMinghan
+            }
+            add_ideas = ROC_idea_gongnongxuedalianhe
+        }
+        else_if = {
+            limit = {
+                has_idea = ROC_idea_gongnongxuedalianhe
+            }
+            remove_ideas = ROC_idea_gongnongxuedalianhe
+        }
+        if = {
+            limit = {
+                has_idea = ROC_idea_HuangYanpei
+                has_idea = ROC_idea_ChuFucheng
+                has_idea = ROC_idea_XiaoZheng
+            }
+            add_ideas = ROC_idea_minquanxianfeng
+        }
+        else_if = {
+            limit = {
+                has_idea = ROC_idea_minquanxianfeng
+            }
+            remove_ideas = ROC_idea_minquanxianfeng
+        }
         }
     }
 }
