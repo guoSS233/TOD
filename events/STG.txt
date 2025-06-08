@@ -18,3 +18,1468 @@ country_event = {
 		complete_national_focus = STG_xibeikanluan
 	}
 }
+#历代帝王庙
+country_event = {
+	id = TOD_STG.2
+	title = TOD_STG.2.t
+	desc =TOD_STG.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.2.a
+	}
+}
+#西北靖难？
+country_event = {
+	id = TOD_STG.3
+	title = TOD_STG.3.t
+	desc =TOD_STG.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.3.a
+		add_war_support = 0.05
+	}
+}
+#战争部署
+country_event = {
+	id = TOD_STG.4
+	title = TOD_STG.4.t
+	desc =TOD_STG.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.4.a
+		complete_national_focus = STG_sugongpodi
+	}
+	option = { 
+		name = TOD_STG.4.b
+		complete_national_focus = STG_yijingzhidong
+	}
+}
+#新朝气象
+country_event = {
+	id = TOD_STG.5
+	title = TOD_STG.5.t
+	desc =TOD_STG.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.5.a
+		add_stability = 0.01
+	}
+}
+#顺天紧急大会召开
+country_event = {
+	id = TOD_STG.6
+	title = TOD_STG.6.t
+	desc =TOD_STG.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.6.a
+		add_stability = 0.02
+	}
+}
+#大会开幕
+country_event = {
+	id = TOD_STG.7
+	title = TOD_STG.7.t
+	desc =TOD_STG.7.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.7.a
+	}
+}
+#政治架构的调整
+country_event = {
+	id = TOD_STG.8
+	title = TOD_STG.8.t
+	desc =TOD_STG.8.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.8.a
+		add_to_variable = { STG_wubeixi_jiaquan = 1 }
+	}
+	option = { 
+		name = TOD_STG.8.b
+		add_to_variable = { STG_xungui_jiaquan = 1 }
+	}
+	option = { 
+		name = TOD_STG.8.c
+		add_to_variable = { STG_tianzi_jiaquan = 1.5 }
+	}
+}
+#军事权力再分配
+country_event = {
+	id = TOD_STG.9
+	title = TOD_STG.9.t
+	desc =TOD_STG.9.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.9.a
+		add_to_variable = { STG_wubeixi_jiaquan = 1 }
+		set_country_flag = STG_tibayixinhui
+	}
+	option = { 
+		name = TOD_STG.9.b
+		add_to_variable = { STG_xungui_jiaquan = 1 }
+		set_country_flag = STG_renyonglaojiang
+	}
+	option = { 
+		name = TOD_STG.9.c
+		add_to_variable = { STG_tianzi_jiaquan = 1.5 }
+	}
+}
+#人事升迁调动
+country_event = {
+	id = TOD_STG.10
+	title = TOD_STG.10.t
+	desc =TOD_STG.10.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.10.a
+		add_to_variable = { STG_wubeixi_jiaquan = 1 }
+	}
+	option = { 
+		name = TOD_STG.10.b
+		add_to_variable = { STG_xungui_jiaquan = 1 }
+	}
+	option = { 
+		name = TOD_STG.10.c
+		add_to_variable = { STG_tianzi_jiaquan = 1.5 }
+	}
+}
+#大会结果
+country_event = {
+	id = TOD_STG.11
+	title = TOD_STG.11.t
+	desc =TOD_STG.11.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.11.a
+		trigger = {
+			check_variable = { STG_wubeixi_jiaquan > STG_xungui_jiaquan }
+			check_variable = { STG_wubeixi_jiaquan > STG_tianzi_jiaquan }
+		}
+		complete_national_focus = STG_wubeijueqi
+	}
+	option = { 
+		name = TOD_STG.11.b
+		trigger = {
+			check_variable = { STG_xungui_jiaquan > STG_wubeixi_jiaquan }
+			check_variable = { STG_xungui_jiaquan > STG_tianzi_jiaquan }
+		}
+		complete_national_focus = STG_xunguizhangquan
+	}
+	option = { 
+		name = TOD_STG.11.c
+		trigger = {
+			check_variable = { STG_tianzi_jiaquan > STG_wubeixi_jiaquan }
+			check_variable = { STG_tianzi_jiaquan > STG_xungui_jiaquan }
+		}
+		complete_national_focus = STG_shengxinduduan
+	}
+}
+#夜宴
+country_event = {
+	id = TOD_STG.12
+	title = TOD_STG.12.t
+	desc =TOD_STG.12.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.12.a
+	}
+}
+#政治花瓶
+country_event = {
+	id = TOD_STG.13
+	title = TOD_STG.13.t
+	desc =TOD_STG.13.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.13.a
+	}
+}
+#大明咨议院议员充实的一天（1）
+country_event = {
+	id = TOD_STG.14
+	title = TOD_STG.14.t
+	desc =TOD_STG.14.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.14.a
+		country_event = {id = TOD_STG.15 }
+	}
+}
+#大明咨议院议员充实的一天（2）
+country_event = {
+	id = TOD_STG.15
+	title = TOD_STG.15.t
+	desc =TOD_STG.15.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.15.a
+	}
+}
+#美酒
+country_event = {
+	id = TOD_STG.16
+	title = TOD_STG.16.t
+	desc =TOD_STG.16.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.16.a
+	}
+}
+#转任地方
+country_event = {
+	id = TOD_STG.17
+	title = TOD_STG.17.t
+	desc =TOD_STG.17.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.17.a
+		country_event = {id = TOD_STG.18 days = 45 }
+	}
+}
+#[定武元年，南阳府小吏孙兴的日记]
+country_event = {
+	id = TOD_STG.18
+	title = TOD_STG.18.t
+	desc =TOD_STG.18.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.18.a
+	}
+}
+#垂拱而治
+country_event = {
+	id = TOD_STG.19
+	title = TOD_STG.19.t
+	desc =TOD_STG.19.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.19.a
+	}
+}
+#“莫谈国事”
+country_event = {
+	id = TOD_STG.20
+	title = TOD_STG.20.t
+	desc =TOD_STG.20.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.20.a
+	}
+}
+#茶馆展演（1）
+country_event = {
+	id = TOD_STG.21
+	title = TOD_STG.21.t
+	desc =TOD_STG.21.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.21.a
+		country_event = {id = TOD_STG.22 }
+	}
+}
+#茶馆展演（2）
+country_event = {
+	id = TOD_STG.22
+	title = TOD_STG.22.t
+	desc =TOD_STG.22.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.22.a
+	}
+}
+#例行检查：
+country_event = {
+	id = TOD_STG.23
+	title = TOD_STG.23.t
+	desc =TOD_STG.23.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.23.a
+	}
+}
+#战时经济会议（1）
+country_event = {
+	id = TOD_STG.24
+	title = TOD_STG.24.t
+	desc =TOD_STG.24.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.24.a
+		country_event = {id = TOD_STG.25 }
+	}
+}
+#战时经济会议（2）
+country_event = {
+	id = TOD_STG.25
+	title = TOD_STG.25.t
+	desc =TOD_STG.25.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.25.a
+	}
+}
+#新仪器
+country_event = {
+	id = TOD_STG.26
+	title = TOD_STG.26.t
+	desc =TOD_STG.26.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.26.a
+	}
+}
+#军工经济改良（1）
+country_event = {
+	id = TOD_STG.27
+	title = TOD_STG.27.t
+	desc =TOD_STG.27.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.27.a
+		country_event = {id = TOD_STG.28 }
+	}
+}
+#军工经济改良（2）
+country_event = {
+	id = TOD_STG.28
+	title = TOD_STG.28.t
+	desc =TOD_STG.28.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.28.a
+	}
+}
+#弹性工时（1）
+country_event = {
+	id = TOD_STG.29
+	title = TOD_STG.29.t
+	desc =TOD_STG.29.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.29.a
+		country_event = {id = TOD_STG.30 }
+	}
+}
+#弹性工时（2）
+country_event = {
+	id = TOD_STG.30
+	title = TOD_STG.30.t
+	desc =TOD_STG.30.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.30.a
+	}
+}
+#引入民营经济（1）
+country_event = {
+	id = TOD_STG.31
+	title = TOD_STG.31.t
+	desc =TOD_STG.31.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.31.a
+		country_event = {id = TOD_STG.32 }
+	}
+}
+#引入民营经济（2）
+country_event = {
+	id = TOD_STG.32
+	title = TOD_STG.32.t
+	desc =TOD_STG.32.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.32.a
+		news_event = {id = TOD_STG.33 days = 20 }
+	}
+}
+#《顺天日报》
+news_event = {
+	id = TOD_STG.33
+	title = TOD_STG.33.t
+	desc =TOD_STG.33.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.33.a
+	}
+}
+#皇明荣光（1）
+country_event = {
+	id = TOD_STG.34
+	title = TOD_STG.34.t
+	desc =TOD_STG.34.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.34.a
+		country_event = {id = TOD_STG.35 }
+	}
+}
+#皇明荣光（2）
+country_event = {
+	id = TOD_STG.35
+	title = TOD_STG.35.t
+	desc =TOD_STG.35.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.35.a
+	}
+}
+#枢密院规划（1）
+country_event = {
+	id = TOD_STG.36
+	title = TOD_STG.36.t
+	desc =TOD_STG.36.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.36.a
+		complete_national_focus = STG_yixinhuigaigefangan
+	}
+}
+#枢密院规划（2）
+country_event = {
+	id = TOD_STG.37
+	title = TOD_STG.37.t
+	desc =TOD_STG.37.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.37.a
+		complete_national_focus = STG_zunzhongxunguiyijian
+	}
+}
+#枢密院规划（3）
+country_event = {
+	id = TOD_STG.38
+	title = TOD_STG.38.t
+	desc =TOD_STG.38.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.38.a
+		complete_national_focus = STG_yixinhuigaigefangan
+	}
+	option = { 
+		name = TOD_STG.38.b
+		complete_national_focus = STG_zunzhongxunguiyijian
+	}
+}
+#枢密院的思考
+country_event = {
+	id = TOD_STG.39
+	title = TOD_STG.39.t
+	desc =TOD_STG.39.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.39.a
+	}
+	option = { 
+		name = TOD_STG.39.b
+	}
+}
+#选拔勋贵子弟
+country_event = {
+	id = TOD_STG.40
+	title = TOD_STG.40.t
+	desc =TOD_STG.40.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.40.a
+		manpower = 1000
+	}
+}
+#消弭内忧（1）
+country_event = {
+	id = TOD_STG.41
+	title = TOD_STG.41.t
+	desc =TOD_STG.41.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.41.a
+		country_event = { id = TOD_STG.42 }
+	}
+}
+#消弭内忧（2）
+country_event = {
+	id = TOD_STG.42
+	title = TOD_STG.42.t
+	desc =TOD_STG.42.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.42.a
+	}
+}
+#联系四川
+country_event = {
+	id = TOD_STG.43
+	title = TOD_STG.43.t
+	desc =TOD_STG.43.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.43.a
+		SIC = { country_event = { id = TOD_STG.44 }}
+	}
+}
+#四川回复
+country_event = {
+	id = TOD_STG.44
+	title = TOD_STG.44.t
+	desc =TOD_STG.44.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = SIC }
+	
+	option = { 
+		name = TOD_STG.44.a
+		STG = { country_event = { id = TOD_STG.45 }}
+		send_embargo = XBJ
+	}
+	option = { 
+		name = TOD_STG.44.b
+		STG = { country_event = { id = TOD_STG.46 }}
+	}
+}
+#四川同意
+country_event = {
+	id = TOD_STG.45
+	title = TOD_STG.45.t
+	desc =TOD_STG.45.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.45.a
+
+	}
+}
+#四川拒绝
+country_event = {
+	id = TOD_STG.46
+	title = TOD_STG.46.t
+	desc =TOD_STG.46.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.46.a
+	}
+}
+#联系漠北
+country_event = {
+	id = TOD_STG.47
+	title = TOD_STG.47.t
+	desc =TOD_STG.47.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.47.a
+		MOB = { country_event = { id = TOD_STG.48 }}
+	}
+}
+#漠北回复
+country_event = {
+	id = TOD_STG.48
+	title = TOD_STG.48.t
+	desc =TOD_STG.48.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = MOB }
+	
+	option = { 
+		name = TOD_STG.48.a
+		STG = { country_event = { id = TOD_STG.49 }}
+		send_embargo = XBJ
+	}
+	option = { 
+		name = TOD_STG.48.b
+		STG = { country_event = { id = TOD_STG.50 }}
+	}
+}
+#漠北同意
+country_event = {
+	id = TOD_STG.49
+	title = TOD_STG.49.t
+	desc =TOD_STG.49.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.49.a
+
+	}
+}
+#漠北拒绝
+country_event = {
+	id = TOD_STG.50
+	title = TOD_STG.50.t
+	desc =TOD_STG.50.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.50.a
+	}
+}
+#联系西南
+country_event = {
+	id = TOD_STG.51
+	title = TOD_STG.51.t
+	desc =TOD_STG.51.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.51.a
+		XIN = { country_event = { id = TOD_STG.52 }}
+	}
+}
+#西南回复
+country_event = {
+	id = TOD_STG.52
+	title = TOD_STG.52.t
+	desc =TOD_STG.52.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = XIN }
+	
+	option = { 
+		name = TOD_STG.52.a
+		STG = { country_event = { id = TOD_STG.53 }}
+		send_embargo = XBJ
+	}
+	option = { 
+		name = TOD_STG.52.b
+		STG = { country_event = { id = TOD_STG.54 }}
+	}
+}
+#西南同意
+country_event = {
+	id = TOD_STG.53
+	title = TOD_STG.53.t
+	desc =TOD_STG.53.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.53.a
+
+	}
+}
+#西南拒绝
+country_event = {
+	id = TOD_STG.54
+	title = TOD_STG.54.t
+	desc =TOD_STG.54.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.54.a
+	}
+}
+#联系七省
+country_event = {
+	id = TOD_STG.55
+	title = TOD_STG.55.t
+	desc =TOD_STG.55.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.55.a
+		GOS = { country_event = { id = TOD_STG.56 }}
+	}
+}
+#七省回复
+country_event = {
+	id = TOD_STG.56
+	title = TOD_STG.56.t
+	desc =TOD_STG.56.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = GOS }
+	
+	option = { 
+		name = TOD_STG.56.a
+		STG = { country_event = { id = TOD_STG.57 }}
+	}
+	option = { 
+		name = TOD_STG.56.b
+		STG = { country_event = { id = TOD_STG.58 }}
+	}
+}
+#七省同意
+country_event = {
+	id = TOD_STG.57
+	title = TOD_STG.57.t
+	desc =TOD_STG.57.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.57.a
+
+	}
+}
+#七省拒绝
+country_event = {
+	id = TOD_STG.58
+	title = TOD_STG.58.t
+	desc =TOD_STG.58.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.58.a
+	}
+}
+#联系关东
+country_event = {
+	id = TOD_STG.59
+	title = TOD_STG.59.t
+	desc =TOD_STG.59.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.59.a
+		GPS = { country_event = { id = TOD_STG.60 }}
+	}
+}
+#关东回复
+country_event = {
+	id = TOD_STG.60
+	title = TOD_STG.60.t
+	desc =TOD_STG.60.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = GPS }
+	
+	option = { 
+		name = TOD_STG.60.a
+		STG = { country_event = { id = TOD_STG.61 }}
+		send_embargo = XBJ
+	}
+	option = { 
+		name = TOD_STG.60.b
+		STG = { country_event = { id = TOD_STG.62 }}
+	}
+}
+#关东同意
+country_event = {
+	id = TOD_STG.61
+	title = TOD_STG.61.t
+	desc =TOD_STG.61.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.61.a
+
+	}
+}
+#关东拒绝
+country_event = {
+	id = TOD_STG.62
+	title = TOD_STG.62.t
+	desc =TOD_STG.62.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.62.a
+	}
+}
+#施压四川
+country_event = {
+	id = TOD_STG.63
+	title = TOD_STG.63.t
+	desc =TOD_STG.63.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.63.a
+		SIC = { country_event = { id = TOD_STG.64 }}
+	}
+}
+#四川回复
+country_event = {
+	id = TOD_STG.64
+	title = TOD_STG.64.t
+	desc =TOD_STG.64.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = SIC }
+	
+	option = { 
+		name = TOD_STG.64.a
+		STG = { country_event = { id = TOD_STG.65 }}
+	}
+	option = { 
+		name = TOD_STG.64.b
+		STG = { country_event = { id = TOD_STG.66 }}
+	}
+}
+#四川同意
+country_event = {
+	id = TOD_STG.65
+	title = TOD_STG.65.t
+	desc =TOD_STG.65.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.65.a
+		set_autonomy = {
+			target = SIC
+			autonomy_state = autonomy_puppet
+		}
+	}
+}
+#四川拒绝
+country_event = {
+	id = TOD_STG.66
+	title = TOD_STG.66.t
+	desc =TOD_STG.66.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.66.a
+	}
+}
+#联系漠北
+country_event = {
+	id = TOD_STG.67
+	title = TOD_STG.67.t
+	desc =TOD_STG.67.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.67.a
+		MOB = { country_event = { id = TOD_STG.68 }}
+	}
+}
+#漠北回复
+country_event = {
+	id = TOD_STG.68
+	title = TOD_STG.68.t
+	desc =TOD_STG.68.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = MOB }
+	
+	option = { 
+		name = TOD_STG.68.a
+		STG = { country_event = { id = TOD_STG.69 }}
+	}
+	option = { 
+		name = TOD_STG.68.b
+		STG = { country_event = { id = TOD_STG.70 }}
+	}
+}
+#漠北同意
+country_event = {
+	id = TOD_STG.69
+	title = TOD_STG.69.t
+	desc =TOD_STG.69.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.69.a
+		set_autonomy = {
+			target = MOB
+			autonomy_state = autonomy_puppet
+		}
+	}
+}
+#漠北拒绝
+country_event = {
+	id = TOD_STG.70
+	title = TOD_STG.70.t
+	desc =TOD_STG.70.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.70.a
+	}
+}
+#联系西南
+country_event = {
+	id = TOD_STG.71
+	title = TOD_STG.71.t
+	desc =TOD_STG.71.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.71.a
+		XIN = { country_event = { id = TOD_STG.72 }}
+	}
+}
+#西南回复
+country_event = {
+	id = TOD_STG.72
+	title = TOD_STG.72.t
+	desc =TOD_STG.72.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = XIN }
+	
+	option = { 
+		name = TOD_STG.72.a
+		STG = { country_event = { id = TOD_STG.73 }}
+	}
+	option = { 
+		name = TOD_STG.72.b
+		STG = { country_event = { id = TOD_STG.74 }}
+	}
+}
+#西南同意
+country_event = {
+	id = TOD_STG.73
+	title = TOD_STG.73.t
+	desc =TOD_STG.73.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.73.a
+		set_autonomy = {
+			target = XIN
+			autonomy_state = autonomy_puppet
+		}
+
+	}
+}
+#西南拒绝
+country_event = {
+	id = TOD_STG.74
+	title = TOD_STG.74.t
+	desc =TOD_STG.74.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.74.a
+	}
+}
+#联系关东
+country_event = {
+	id = TOD_STG.75
+	title = TOD_STG.75.t
+	desc =TOD_STG.75.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.75.a
+		GPS = { country_event = { id = TOD_STG.76 }}
+	}
+}
+#关东回复
+country_event = {
+	id = TOD_STG.76
+	title = TOD_STG.76.t
+	desc =TOD_STG.76.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = GPS }
+	
+	option = { 
+		name = TOD_STG.76.a
+		STG = { country_event = { id = TOD_STG.77 }}
+		send_embargo = XBJ
+	}
+	option = { 
+		name = TOD_STG.76.b
+		STG = { country_event = { id = TOD_STG.78 }}
+	}
+}
+#关东同意
+country_event = {
+	id = TOD_STG.77
+	title = TOD_STG.77.t
+	desc =TOD_STG.77.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.77.a
+		set_autonomy = {
+			target = GPS
+			autonomy_state = autonomy_puppet
+		}
+
+	}
+}
+#关东拒绝
+country_event = {
+	id = TOD_STG.78
+	title = TOD_STG.78.t
+	desc =TOD_STG.78.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.78.a
+	}
+}
+#书房中的思考（1）
+country_event = {
+	id = TOD_STG.79
+	title = TOD_STG.79.t
+	desc =TOD_STG.79.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.79.a
+		country_event = {id = TOD_STG.80 }
+	}
+}
+#书房中的思考（2）
+country_event = {
+	id = TOD_STG.80
+	title = TOD_STG.80.t
+	desc =TOD_STG.80.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.80.a
+	}
+}
+#校内闲谈（1）
+country_event = {
+	id = TOD_STG.81
+	title = TOD_STG.81.t
+	desc =TOD_STG.81.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.81.a
+		country_event = {id = TOD_STG.80 }
+	}
+}
+#校内闲谈（2）
+country_event = {
+	id = TOD_STG.82
+	title = TOD_STG.82.t
+	desc =TOD_STG.82.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = { 
+		name = TOD_STG.82.a
+	}
+}
+
+
+
+
+
+

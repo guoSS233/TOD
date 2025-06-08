@@ -962,6 +962,30 @@ ideas = {
 		# 	}
 			
 		# }
+        ROC_idea_gongnongxuedalianhe = {#工农学联盟
+            picture = por_iberian_workers_united
+            modifier = {
+                research_speed_factor = 0.05#研究速度
+                supply_factor = 0.15#补给效率
+                local_building_slots_factor = 0.15#最大工业值
+			}
+        }
+        ROC_idea_gemingyuanlao = {#革命元老
+            picture = SPR_international_brigades
+            modifier = {
+                stability_factor = 0.1#稳定度
+                army_org_factor = 0.1#陆军组织度
+                conscription_factor = 0.15#人口修正
+			}
+        }
+        ROC_idea_minquanxianfeng = {#民权先锋
+            picture = SPR_torchbearers_of_tomorrow
+            modifier = {
+                political_power_gain = 0.2#政治点固定值
+                resistance_damage_to_garrison = -0.2#驻军收到伤害
+                army_morale_factor = 0.1#组织度恢复速度
+			}
+        }
 	}
 	TOD_minister_head = { ### 政府首脑 ###
         ROC_idea_DongBiwu = {#董必武
@@ -1208,6 +1232,10 @@ ideas = {
                 original_tag = ROC
             }
 			available = {
+                custom_trigger_tooltip = {
+                    tooltip = ROC_economy_minister_NOT
+                    always = no
+                }
             	custom_trigger_tooltip = {
                     tooltip = guangzhouqiyi_flag_tt
                     has_country_flag = guangzhouqiyi_flag
@@ -1225,6 +1253,10 @@ ideas = {
                 original_tag = ROC
             }
 			available = {
+                custom_trigger_tooltip = {
+                    tooltip = ROC_economy_minister_NOT
+                    always = no
+                }
             	custom_trigger_tooltip = {
                     tooltip = guangzhouqiyi_flag_tt
                     has_country_flag = guangzhouqiyi_flag
@@ -1242,6 +1274,10 @@ ideas = {
                 original_tag = ROC
             }
 			available = {
+                custom_trigger_tooltip = {
+                    tooltip = ROC_economy_minister_NOT
+                    always = no
+                }
             	custom_trigger_tooltip = {
                     tooltip = guangzhouqiyi_flag_tt
                     has_country_flag = guangzhouqiyi_flag
@@ -1259,6 +1295,10 @@ ideas = {
                 original_tag = ROC
             }
 			available = {
+                custom_trigger_tooltip = {
+                    tooltip = ROC_economy_minister_NOT
+                    always = no
+                }
             	custom_trigger_tooltip = {
                     tooltip = guangzhouqiyi_flag_tt
                     has_country_flag = guangzhouqiyi_flag
@@ -1276,6 +1316,10 @@ ideas = {
                 original_tag = ROC
             }
 			available = {
+                custom_trigger_tooltip = {
+                    tooltip = ROC_economy_minister_NOT
+                    always = no
+                }
             	custom_trigger_tooltip = {
                     tooltip = guangzhouqiyi_flag_tt
                     has_country_flag = guangzhouqiyi_flag

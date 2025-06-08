@@ -15,7 +15,7 @@ STG_difangjunfa = {
 		days_remove = 30
 		fire_only_once = yes
 		remove_effect = { 
-			SIC = { country_event = { id = TOD_STG.1 } }
+			country_event = { id = TOD_STG.42 }
 		}
 	}
 	#联系漠北
@@ -33,6 +33,7 @@ STG_difangjunfa = {
 		days_remove = 30
 		fire_only_once = yes
 		remove_effect = { 
+			country_event = { id = TOD_STG.47 }
 		}
 	}
 	#联系西南
@@ -50,23 +51,115 @@ STG_difangjunfa = {
 		days_remove = 30
 		fire_only_once = yes
 		remove_effect = { 
+			country_event = { id = TOD_STG.51 }
 		}
 	}
 	#联系七省
-	STG_lianxiqishen = {
+	#STG_lianxiqishen = {
+	#	icon = ger_military_buildup
+	#	
+	#	visible = {country_exists = GOS}
+	#	allowed = { tag = STG } 
+	#	available = { }
+	#	cost = 15 
+	#	on_map_mode = map_and_decisions_view
+	#	
+	#	state_target = yes
+	#	targets = { state = 613 }
+	#	days_remove = 30
+	#	fire_only_once = yes
+	#	remove_effect = { 
+	#		country_event = { id = TOD_STG.55 }
+	#	}
+	#}
+	#联系关东
+	STG_lianxiguandong= {
 		icon = ger_military_buildup
 		
-		visible = {country_exists = GOS}
+		visible = {country_exists = GPS}
 		allowed = { tag = STG } 
 		available = { }
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
 		state_target = yes
-		targets = { state = 613 }
+		targets = { state = 328 }
 		days_remove = 30
 		fire_only_once = yes
 		remove_effect = { 
+			country_event = { id = TOD_STG.59 }
+		}
+	}
+	#施压四川
+	STG_lianxiguandong= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GPS}
+		allowed = { tag = STG } 
+		available = { }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 831 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+			country_event = { id = TOD_STG.63 }
+		}
+	}
+	#施压漠北都司
+	STG_lianxiguandong= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GPS}
+		allowed = { tag = STG } 
+		available = { }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 330 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+			country_event = { id = TOD_STG.67 }
+		}
+	}
+	#施压西南
+	STG_lianxiguandong= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GPS}
+		allowed = { tag = STG } 
+		available = { }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 325 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+			country_event = { id = TOD_STG.71 }
+		}
+	}
+	#施压关东
+	STG_lianxiguandong= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GPS}
+		allowed = { tag = STG } 
+		available = { }
+		cost = 15 
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 328 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+			country_event = { id = TOD_STG.75 }
 		}
 	}
 }

@@ -212,8 +212,8 @@ focus_tree = {
 	}
 	#确立汤都督实权
 	focus = {
-		id = GPS_quanlitangdudushiquan
-		icon = GFX_GPS_quanlitangdudushiquan
+		id = GPS_quelitangdudushiquan
+		icon = GFX_GPS_quelitangdudushiquan
 		prerequisite = { focus = GPS_gongqushenyang}
 		x = 5
 		y = 3
@@ -230,6 +230,7 @@ focus_tree = {
 		completion_reward = { 
 			add_stability = 0.1
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
+			country_event = { id = GPSevents.22 }
 		}
 	}
 	#压制地方山头
@@ -251,6 +252,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
+			country_event = { id = GPSevents.23 }
 		}
 	}
 	#分化当地将领
@@ -272,6 +274,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
+			country_event = { id = GPSevents.24 }
 		}
 	}
 	#强化都督府指挥权
@@ -339,6 +342,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 60
 			add_stability = 0.1
+			country_event = { id = GPSevents.25 }
 		}
 	}
 	#维持军管
@@ -361,6 +365,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1
 			add_war_support = 0.1
+			country_event = { id = GPSevents.26 }
 		}
 	}
 	#解散工协
@@ -383,6 +388,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { GPS_kaifuyitongsansi_xiaofeiping = -0.15 }
 			add_stability = -0.05
+			country_event = { id = GPSevents.27 }
 		}
 	}
 	#生产军事化
@@ -426,6 +432,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_to_variable = { GPS_kaifuyitongsansi_zhengzhidian = 0.15 }
+			country_event = { id = GPSevents.28 }
 		}
 	}
 	#追剿赤匪
@@ -451,6 +458,7 @@ focus_tree = {
 				limit = {NOT = {country_exists = SRC}}
 				add_research_slot = 1
 			}
+			country_event = { id = GPSevents.29 }
 		}
 	}
 	#攻势受挫
@@ -724,6 +732,7 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = GPS_liaoyangqiyi
 			NOT = {country_exists = SRC }
+			has_country_flag = GPS_pingluanshengli
 		}
 		x = 7
 		y = 1
@@ -741,6 +750,7 @@ focus_tree = {
 		completion_reward = { 
 			remove_dynamic_modifier = { modifier = GPS_fengzhaojiaofei }
 			add_political_power = 50
+			country_event = { id = GPSevents.30 }
 		}
 	}
 	#恢复战争创伤
@@ -854,6 +864,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_laodongzhengce_chanchu = 0.05 }
 			add_to_variable = { GPS_laodongzhengce_xiaofeiping = 0.1 }
+			country_event = { id = GPSevents.33 }
 		}
 	}
 	#强化劳动纪律
@@ -926,8 +937,8 @@ focus_tree = {
 	}
 	#重拳出击
 	focus = {
-		id = GPS_chongquanchuji
-		icon = GFX_GPS_chongquanchuji
+		id = GPS_zhongquanchuji
+		icon = GFX_GPS_zhongquanchuji
 		prerequisite = { focus = GPS_jinjuejiduansixiang}
 		x = 5
 		y = 6
@@ -946,6 +957,7 @@ focus_tree = {
 			add_stability = -0.1
 			add_to_variable = { GPS_junshiguanli_xiaofeiping = -0.1 }
 			add_to_variable = { GPS_junshiguanli_zhengzhi = -0.1 }
+			country_event = { id = GPSevents.33 }
 		}
 	}
 	#修复工厂
@@ -1015,6 +1027,7 @@ focus_tree = {
 		completion_reward = { 
 			add_ideas = GPS_zhengyaluandang
 			add_political_power = 20
+			country_event = { id = GPSevents.32 }
 		}
 	}
 	#构建戡乱体质
@@ -1103,7 +1116,10 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { add_research_slot = 1 }
+		completion_reward = { 
+			add_research_slot = 1 
+			country_event = { id = GPSevents.31 }
+		}
 	}
 	#加强文化教育
 	focus = {

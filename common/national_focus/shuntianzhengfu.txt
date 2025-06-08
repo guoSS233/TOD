@@ -90,6 +90,7 @@ focus_tree = {
 			add_stability = 0.05
 			political_power_cost = 25
 			mark_focus_tree_layout_dirty = yes
+			country_event = {id = TOD_STG.2}
 		}
 	}
 	#西北戡乱
@@ -103,6 +104,9 @@ focus_tree = {
 		x = 28
 		y = 3
 
+		select_effect = { 
+			country_event = { id = TOD_STG.3 }
+		}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -113,6 +117,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			country_event = {id = TOD_STG.4}
 		}
 	}
 	#速攻破敌
@@ -159,7 +164,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 300 }
-			add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 50  variant_name = "辽阳造 昌德卌三年式 白山机车总厂 “烛龙” 试制铁甲轻战车"}
+			add_equipment_to_stockpile = { type = light_tank_chassis_1 amount = 50 variant_name = "辽阳造 昌德卌三年式 白山机车总厂 “烛龙” 试制铁甲轻战车"}
 			load_oob = shuntian_zhuangjia
 		}
 	}
@@ -181,7 +186,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = { idea = STG_bafuhuanglong days = 180 } }
+		completion_reward = { add_timed_idea = { idea = STG_bafuhuanglong days = 180 }}
 	}
 	#放手一搏
 	focus = {
@@ -423,7 +428,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_timed_idea = { idea = STG_yindangongshi days = 120 }
-			XBJ = { add_timed_idea = { idea = STG_yinpiaodadaduyou days = 120 } }
+			XBJ = { add_timed_idea = { idea = STG_yinpiaodadaduyou days = 120 }}
 		}
 	}
 	#重申法统
@@ -547,9 +552,9 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { XBJ = { surrender_progress > 0.3 } 	}
+		available = { XBJ = { surrender_progress > 0.3 }	}
 		
-		completion_reward = { SIC = { send_embargo = XBJ } }
+		completion_reward = { SIC = { send_embargo = XBJ }}
 	}
 	#暂难危局
 	focus = {
@@ -571,9 +576,10 @@ focus_tree = {
 		
 		completion_reward = {
 			add_stability = 0.02
+			country_event = { id = TOD_STG.5 }
 		}
 	}
-	#顺天经济大会
+	#顺天紧急大会
 	focus = {
 		id = STG_shuntianjinjidahui
 		icon = GFX_STG_shuntianjinjidahui
@@ -592,6 +598,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			country_event = { id = TOD_STG.6 }
 		}
 	}
 	#权力再平衡
@@ -606,14 +613,19 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
+		select_effect = { 
+			country_event = { id = TOD_STG.7 }
+			country_event = { id = TOD_STG.8 days = 10 }
+			country_event = { id = TOD_STG.9 days = 20 }
+			country_event = { id = TOD_STG.10 days = 30 }
+		}
 		
 		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {
-		}
+		completion_reward = { country_event = { id = TOD_STG.11 }}
 	}
 	#武备崛起
 	focus = {
@@ -1277,7 +1289,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { remove_dynamic_modifier = { modifier = STG_junzhengjituan } }
+		completion_reward = { remove_dynamic_modifier = { modifier = STG_junzhengjituan }}
 	}
 	#分化武备系
 	focus = {
@@ -1868,7 +1880,8 @@ focus_tree = {
 		
 		completion_reward = {
 			add_political_power = 100
-			add_popularity = { ideology = conservative_democracy popularity = 0.02 } 
+			add_popularity = { ideology = conservative_democracy popularity = 0.02 }
+			country_event = {id = TOD_STG.12 }
 		}
 	}
 	#政治花瓶
@@ -1890,8 +1903,9 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			add_popularity = { ideology = authoritarian_oligarchy popularity = 0.1 } 
-			add_popularity = { ideology = leader_despotism popularity = 0.05 } 
+			add_popularity = { ideology = authoritarian_oligarchy popularity = 0.1 }
+			add_popularity = { ideology = leader_despotism popularity = 0.05 }
+			country_event = {id = TOD_STG.13 }
 		}
 	}
 	#架空咨政院
@@ -1912,7 +1926,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_ideas = STG_minzhupaimian }
+		completion_reward = { 
+			add_ideas = STG_minzhupaimian 
+			country_event = {id = TOD_STG.14 }
+		}
 	}
 	#与武备系协调
 	focus = {
@@ -1937,6 +1954,7 @@ focus_tree = {
 			add_to_variable = { STG_junzhengjituan_zhengzhi = 0.05 }
 			add_to_variable = { STG_junzhengjituan_faan = -0.2 }
 			custom_effect_tooltip = STG_yuwubeixixietiao_xiaoguo
+			country_event = {id = TOD_STG.16 }
 		}
 	}
 	#合作共荣
@@ -1962,7 +1980,7 @@ focus_tree = {
 			add_to_variable = { STG_junzhengjituan_zhengzhi = 0.05 }
 			add_to_variable = { STG_junzhengjituan_faan = -0.1 }
 			custom_effect_tooltip = STG_hezuogongrong_xiaoguo
-			
+			country_event = {id = TOD_STG.81 }
 		}
 	}
 	#赋权枢密院
@@ -1988,7 +2006,7 @@ focus_tree = {
 			add_to_variable = { STG_wurenbingzheng_zhihuidian = 25 }
 			add_to_variable = { STG_wurenbingzheng_jingyan = 0.05 }
 			custom_effect_tooltip = STG_fuquanshumiyuan_xiaoguo
-
+			country_event = {id = TOD_STG.79 }
 		}
 	}
 	#军文转化
@@ -2013,6 +2031,7 @@ focus_tree = {
 			add_to_variable = { STG_wurenbingzheng_zhihui = -0.2 }
 			add_to_variable = { STG_wurenbingzheng_dongyuan = 0.1 }
 			custom_effect_tooltip = STG_junwenzhuanhua_xiaoguo
+			country_event = {id = TOD_STG.17 }
 		}
 	}
 	#武人内阁
@@ -2066,6 +2085,7 @@ focus_tree = {
 			add_to_variable = { STG_xungui_renkou = 0.1 }
 			add_to_variable = { STG_xungui_hexin = 0.03 }
 			custom_effect_tooltip = STG_eryuanjunzhu_xiaoguo
+			country_event = {id = TOD_STG.19 }
 		}
 	}
 	#国家安全法案
@@ -2088,12 +2108,13 @@ focus_tree = {
 		
 		completion_reward = {
 			add_stability = 0.05
-			add_popularity = { ideology = authoritarian_oligarchy popularity = 0.15 } 
-			add_popularity = { ideology = social_democrat popularity = -0.05 } 
-			add_popularity = { ideology = agroindustrial_socialism popularity = -0.05 } 
-			add_popularity = { ideology = moderate_socialism popularity = -0.05 } 
-			add_popularity = { ideology = council_socialism popularity = -0.05 } 
-			add_popularity = { ideology = vanguard_socialism popularity = -0.05 } 
+			add_popularity = { ideology = authoritarian_oligarchy popularity = 0.15 }
+			add_popularity = { ideology = social_democrat popularity = -0.05 }
+			add_popularity = { ideology = agroindustrial_socialism popularity = -0.05 }
+			add_popularity = { ideology = moderate_socialism popularity = -0.05 }
+			add_popularity = { ideology = council_socialism popularity = -0.05 }
+			add_popularity = { ideology = vanguard_socialism popularity = -0.05 }
+			country_event = { id = TOD_STG.20 }
 		}
 	}
 	#集权国家机器
@@ -2118,6 +2139,7 @@ focus_tree = {
 			add_dynamic_modifier = { modifier = STG_chongjianzhongyangweiquan }
 			add_to_variable = { STG_chongjianzhongyangweiquan_diqu = 0.1 }
 			custom_effect_tooltip = STG_jiquanguojiajiqi_xiaoguo
+			country_event = { id = TOD_STG.21 }
 		}
 	}
 	#加强地方领导
@@ -2167,6 +2189,7 @@ focus_tree = {
 			add_to_variable = { STG_chongjianzhongyangweiquan_ziyuan = 0.1 }
 			add_to_variable = { STG_chongjianzhongyangweiquan_jianzao = 0.05 }
 			custom_effect_tooltip = STG_jianguanchangtaihua_xiaoguo
+			country_event = { id = TOD_STG.23 }
 		}
 	}
 	#消弭内忧
@@ -2190,6 +2213,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 200
 			add_stability = 0.1
+			country_event = { id = TOD_STG.41 }
 		}
 	}
 	#元老议政
@@ -2280,6 +2304,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			country_event = { id = TOD_STG.24 }
 		}
 	}
 	#经济结构中心化
@@ -2304,6 +2329,7 @@ focus_tree = {
 			add_to_variable = { STG_chongjianzhongyangweiquan_baochi = 0.1 }
 			add_to_variable = { STG_chongjianzhongyangweiquan_chanchu = 0.1 }
 			custom_effect_tooltip = STG_jingjijiegouzhongxinhua_xiaoguo
+			country_event = { id = TOD_STG.26 }
 		}
 	}
 	#军工经济改良
@@ -2333,6 +2359,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			country_event = { id = TOD_STG.27 }
 		}
 	}
 	#引入民营制衡
@@ -2365,6 +2392,7 @@ focus_tree = {
 			add_to_variable = { STG_chongjianzhongyangweiquan_buji = -0.05 }
 			add_to_variable = { STG_chongjianzhongyangweiquan_queshi = 0.1 }
 			custom_effect_tooltip = STG_yinruminyingzhiheng_xiaoguo
+			country_event = { id = TOD_STG.31 }
 		}
 	}
 	#弹性工时
@@ -2390,6 +2418,7 @@ focus_tree = {
 			add_offsite_building = { type = industrial_complex level = 1 }
 			add_to_variable = { STG_chongjianzhongyangweiquan_shangxian = 0.05 }
 			custom_effect_tooltip = STG_tanxinggongshi_xiaoguo
+			country_event = { id = TOD_STG.29 }
 		}
 	}
 	#皇明荣光
@@ -2417,6 +2446,7 @@ focus_tree = {
 			add_to_variable = { STG_chongjianzhongyangweiquan_zhengdanghua = -0.2 }
 			add_research_slot = 1
 			custom_effect_tooltip = STG_huangmingrongguang_xiaoguo
+			country_event = { id = TOD_STG.34 }
 		}
 	}
 	
@@ -2440,6 +2470,17 @@ focus_tree = {
 		
 		completion_reward = {
 			army_experience = 25
+			if = {
+				limit = { has_country_flag = STG_tibayixinhui }
+				country_event = { id = TOD_STG.36 }
+			}
+			else_if = {
+				limit = { has_country_flag = STG_renyonglaojiang }
+				country_event = { id = TOD_STG.37 }
+			}
+			else = {
+				country_event = { id = TOD_STG.38 }
+			}
 		}
 	}
 	#一心会改革方案
@@ -2760,7 +2801,7 @@ focus_tree = {
 		
 		completion_reward = {
 			army_experience = 20
-
+			country_event = { id = TOD_STG.39 }
 		}
 	}
 	#模块化组建
@@ -3051,6 +3092,7 @@ focus_tree = {
 			add_to_variable = { STG_jingying_shouxuan = -0.33 }
 			add_to_variable = { STG_jingying_hexinglingtu = 0.05 }
 			custom_effect_tooltip = STG_xuanbaxunguizidi_xiaoguo
+			country_event = {id = TOD_STG.40 }
 		}
 	}
 	#审定军校操典
