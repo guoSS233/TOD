@@ -1,0 +1,82 @@
+division_template = {
+	name = "精锐步兵师"#步兵师
+	division_names_group = EZO_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+       		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 3 y = 0 }
+		infantry = { x = 3 y = 1 }
+		infantry = { x = 3 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "步兵师"#步兵师
+	division_names_group = EZO_INF_02
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 -}
+		infantry = { x = 1 y = 1 }
+        	infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+units={
+	#玉龙#
+	 division= {
+	 	name = "玉龙禁军"
+	 	location = 10444
+	 	division_template = "精锐步兵师"
+	 	start_experience_factor = 0.8
+	 	start_equipment_factor = 1.0
+	 }
+}
+
+units={
+	#丰原#
+	 division= {
+	 	name = "丰原第1步兵师"
+	 	location = 12446
+	 	division_template = "步兵师"
+	 	start_experience_factor = 0.4
+	 	start_equipment_factor = 1.0
+	 }
+}
+
+units={
+	#函馆#
+	 division= {
+	 	name = "函馆第2步兵师"
+	 	location = 3962
+	 	division_template = "步兵师"
+	 	start_experience_factor = 0.4
+	 	start_equipment_factor = 1.0
+	 }
+}
+
+units={
+	#云雾#
+	 division= {
+	 	name = "云雾守备"
+	 	location = 1515
+	 	division_template = "步兵师"
+	 	start_experience_factor = 0.4
+	 	start_equipment_factor = 1.0
+	 }
+}

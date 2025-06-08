@@ -15,6 +15,11 @@ guiTypes = {
 		background = {
 			name = "Background"		
 			quadTextureSprite ="GFX_tiled_plain_bg"
+			position = {
+					x = 0
+					y = 5
+				}
+			
 		}
 
 		iconType ={ #顶头那条
@@ -111,7 +116,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "elections"
-				position = { x = 9 y = 29 }
+				position = { x = 9 y = 35 }
 				font = "hoi_16mbs"
 				text = "elections"
 				maxWidth = 155
@@ -357,7 +362,7 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "title"
-				position = { x = 128 y = 34 }
+				position = { x = 132 y = 34 }
 				font = "hoi_18mbs"
 				text = "POLITICS_ACTIVE_GOAL"
 				maxWidth = 200
@@ -388,7 +393,7 @@ guiTypes = {
 						
 			instantTextboxType = {
 				name = "title"
-				position = { x = 110 y = -2 }
+				position = { x = 110 y = -7 }
 				font = "hoi_18mbs"
 				text = "POLITICS_NATIONAL_SPIRIT"
 				maxWidth = 200
@@ -441,7 +446,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "leader_name"
-			position = { x = 18 y = 262 }
+			position = { x = 18 y = 258 }
 			font = "hoi_18mbs"
 			text = "leader_name"
 			maxWidth = 155
@@ -465,7 +470,7 @@ guiTypes = {
 				#quadTextureSprite ="GFX_tiled_window_2b_border"
 				#quadTextureSprite ="GFX_tiled_window_1b_border"
 				quadTextureSprite ="GFX_tiled_window_1b_border"
-				position = { x = 0 y = 20 }
+				position = { x = 0 y = 4 }
 			}
 			
 				gridBoxType = {
@@ -504,9 +509,9 @@ guiTypes = {
 		iconType ={
 			name ="politics_bottom"
 			spriteType = "GFX_main_screens_bottom"
-			position = { x = 0 y = 487 }
+			position = { x = -13 y = 492 }
 			Orientation = "UPPER_LEFT"
-			scale = 1.02
+			scale = 1.05
 		}
 
 		iconType = {
@@ -525,7 +530,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "manage_occupied_button_text"
-			position = { x = 48 y = 508 }
+			position = { x = 75 y = 508 }
 			font = "hoi_16mbs"
 			text = "MANAGE_OCCUPIED_TERRITORIES"
 			maxWidth = 122
@@ -599,27 +604,27 @@ guiTypes = {
 	
 	containerWindowType = {
 		name = "country_politics_idea_category_entry" #企业顾问选择
-		position = { x = 0 y = 10 }
+		position = { x = 0 y = 20 }
 		size = { width=550 height= 100 }
 		clipping = no
 		
 		iconType ={
 			name ="category_header" #那个棕色的一条
 			spriteType = "GFX_category_header"
-			position = { x=-5 y=2 }
+			position = { x=-3 y=5 }
 			Orientation = "UPPER_LEFT"
 		}
 		iconType ={ #
 			name ="category_icon" #分类图标
 			spriteType = "GFX_idea_categories"
-			position = { x=4 y=8 }
+			position = { x=4 y=10 }
 			Orientation = "UPPER_LEFT"
 		}
 		
 		
 		instantTextboxType = {
 			name = "name" #分类名
-			position = { x = 70 y = 14 }
+			position = { x = 70 y = 16 }
 			font = "hoi_20b"
 			text = "Government"
 			maxWidth = 300
@@ -628,7 +633,7 @@ guiTypes = {
 		
 		gridboxtype = {
 			name = "ideas_grid" #下面的小圆选项
-			position = { x = 17 y = 46 }
+			position = { x = 17 y = 48 }
 			size = { width = 100%% height = 12%% }
 			slotsize = { width = 80 height = 64 }
 			max_slots = { x = 7 y = 1 }

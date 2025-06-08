@@ -1,0 +1,31 @@
+scripted_gui = {	
+	subideology_notice = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "subideology_container"
+
+		ai_enabled = {
+			always = no
+		}
+		
+		visible = {
+			is_ai = no
+			NOT = {
+				OR = {
+					has_country_leader_ideology = national_corporatism_subtype
+					has_country_leader_ideology = sacred_revivalism_subtype
+					has_country_leader_ideology = leader_despotism_subtype
+					has_country_leader_ideology = authoritarian_oligarchy_subtype
+					has_country_leader_ideology = conservative_democracy_subtype
+					has_country_leader_ideology = consociationalism_subtype
+					has_country_leader_ideology = liberal_democracy_subtype
+					has_country_leader_ideology = social_democrat_subtype
+					has_country_leader_ideology = agroindustrial_socialism_subtype
+					has_country_leader_ideology = moderate_socialism_subtype
+					has_country_leader_ideology = council_socialism_subtype
+					has_country_leader_ideology = vanguard_socialism_subtype
+				}
+			}
+		}
+	}
+}

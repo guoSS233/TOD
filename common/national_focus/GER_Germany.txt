@@ -1,19 +1,17 @@
 focus_tree = {
 	id = german_focus
-
 	country = {
 		factor = 0
-
 		modifier = {
 			add = 10
 			tag = GER
 		}
 	}
-
 	default = no
-
-	continuous_focus_position = { x = 2000 y = 2000 }
-
+	continuous_focus_position = {
+		x = 2000
+		y = 2000
+	}
 	#	focus = {
 	#		id = GER_
 	#		icon = GFX_
@@ -55,19 +53,18 @@ focus_tree = {
 		icon = GFX_GER_zai_jian_luosha
 		x = 17
 		y = 1
-
-
 		cost = 0
-
-		ai_will_do = {factor = 10}
+		ai_will_do = {
+			factor = 10
+		}
 		available = {
 			always = no
 		}
-
 		bypass = {
 			has_country_flag = GER_luoshatuixiu
 		}
-		completion_reward = {}
+		completion_reward = {
+		}
 	}
 	#民主的灯塔
 	focus = {
@@ -75,16 +72,20 @@ focus_tree = {
 		icon = GFX_GER_min_zhu_de_deng_ta
 		x = 10
 		y = 2
-
 		cost = 5
-		prerequisite = { focus = GER_zaijianluosha }
-
-		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = GER_zaijianluosha
+		}
+		ai_will_do = {
+			factor = 10
+		}
 		available = {
 			has_country_flag = GER_wenmingzuobi
 		}
-		bypass = {}
-		completion_reward = {}
+		bypass = {
+		}
+		completion_reward = {
+		}
 	}
 	#团结FAUD
 	focus = {
@@ -92,14 +93,17 @@ focus_tree = {
 		icon = GFX_GER_tuan_jie_FAUD
 		x = 9
 		y = 3
-
 		cost = 5
-		prerequisite = { focus = GER_minzhudedengta}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_minzhudedengta
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#维系老同志
 	focus = {
@@ -107,14 +111,17 @@ focus_tree = {
 		icon = GFX_GER_wei_xi_lao_tong_zhi
 		x = 11
 		y = 3
-
 		cost = 5
-		prerequisite = { focus = GER_minzhudedengta}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_minzhudedengta
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#全德工会联合会
 	focus = {
@@ -122,14 +129,17 @@ focus_tree = {
 		icon = GFX_GER_quan_de_gong_hui_lianhehui
 		x = 8
 		y = 4
-
 		cost = 5
-		prerequisite = { focus = GER_tuanjieFAUD}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_tuanjieFAUD
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#工人总动员
 	focus = {
@@ -137,14 +147,18 @@ focus_tree = {
 		icon = GFX_GER_gong_ren_zongdongyuan
 		x = 10
 		y = 4
-
 		cost = 5
-		prerequisite = { focus = GER_tuanjieFAUD focus = GER_weixilaotongzhi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_tuanjieFAUD
+			focus = GER_weixilaotongzhi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#地区公共建设委员会
 	focus = {
@@ -152,14 +166,17 @@ focus_tree = {
 		icon = GFX_GER_di_qu_gong_gong_jiansheweiyuanhui
 		x = 12
 		y = 4
-
 		cost = 5
-		prerequisite = {focus = GER_weixilaotongzhi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_weixilaotongzhi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#工业分散化
 	focus = {
@@ -167,14 +184,17 @@ focus_tree = {
 		icon = GFX_GER_gong_ye_fensanhua
 		x = 8
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_quandegonghuilianhehui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_quandegonghuilianhehui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#自由思想
 	focus = {
@@ -182,14 +202,19 @@ focus_tree = {
 		icon = GFX_GER_zi_you_si_xiang
 		x = 10
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_quandegonghuilianhehui focus = GER_gongrenzongdongyuan focus = GER_diqugonggongjiansheweiyuanhui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_quandegonghuilianhehui
+			focus = GER_gongrenzongdongyuan
+			focus = GER_diqugonggongjiansheweiyuanhui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#农村工会组织
 	focus = {
@@ -197,14 +222,17 @@ focus_tree = {
 		icon = GFX_GER_nong_cun_gong_hui_zu_zhi
 		x = 12
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_diqugonggongjiansheweiyuanhui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_diqugonggongjiansheweiyuanhui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#革命工业精神
 	focus = {
@@ -212,14 +240,17 @@ focus_tree = {
 		icon = GFX_GER_ge_ming_gong_ye_jing_shen
 		x = 9
 		y = 6
-
 		cost = 5
-		prerequisite = {focus = GER_gongyefensanhua}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gongyefensanhua
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#同甘共苦
 	focus = {
@@ -227,14 +258,17 @@ focus_tree = {
 		icon = GFX_GER_tong_gan_gong_ku
 		x = 11
 		y = 6
-
 		cost = 5
-		prerequisite = {focus = GER_nongcungonghuizuzhi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_nongcungonghuizuzhi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#十一月革命的遗产
 	focus = {
@@ -242,16 +276,23 @@ focus_tree = {
 		icon = GFX_GER_shi_yi_yue_ge_ming_de_yi_chan
 		x = 10
 		y = 7
-
 		cost = 5
-		prerequisite = {focus = GER_geminggongyejingshen}
-		prerequisite = {focus = GER_ziyousixiang}
-		prerequisite = {focus = GER_tonggangongku}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_geminggongyejingshen
+		}
+		prerequisite = {
+			focus = GER_ziyousixiang
+		}
+		prerequisite = {
+			focus = GER_tonggangongku
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#向未来前进
 	focus = {
@@ -259,14 +300,17 @@ focus_tree = {
 		icon = GFX_GER_xiang_wei_lai_qian_jin
 		x = 10
 		y = 8
-
 		cost = 5
-		prerequisite = {focus = GER_shiyiyuegemingdeyichan}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_shiyiyuegemingdeyichan
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#改革的玫瑰
 	focus = {
@@ -274,14 +318,21 @@ focus_tree = {
 		icon = GFX_GER_gai_ge_demeigui
 		x = 17
 		y = 2
-
 		cost = 5
-		prerequisite = {focus = GER_zaijianluosha}
-
-		ai_will_do = {factor = 10}
-		available = {always = no}
-		bypass = {has_country_flag = GER_baobaobashi}
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_zaijianluosha
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = GER_baobaobashi
+		}
+		completion_reward = {
+		}
 	}
 	#反对激进主义
 	focus = {
@@ -289,14 +340,17 @@ focus_tree = {
 		icon = GFX_GER_fan_dui_ji_jin_zhu_yi
 		x = 14
 		y = 3
-
 		cost = 5
-		prerequisite = {focus = GER_gaigedemeigui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gaigedemeigui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#无产阶级多党民主
 	focus = {
@@ -304,14 +358,17 @@ focus_tree = {
 		icon = GFX_GER_wu_chan_jie_ji_duo_dang_min_zhu
 		x = 16
 		y = 3
-
 		cost = 5
-		prerequisite = {focus = GER_gaigedemeigui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gaigedemeigui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#放宽市场限制
 	focus = {
@@ -319,14 +376,17 @@ focus_tree = {
 		icon = GFX_GER_fang_kuan_shi_chang_xian_zhi
 		x = 18
 		y = 3
-
 		cost = 5
-		prerequisite = {focus = GER_gaigedemeigui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gaigedemeigui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#部分私有化
 	focus = {
@@ -334,14 +394,17 @@ focus_tree = {
 		icon = GFX_GER_bu_fen_si_you_hua
 		x = 20
 		y = 3
-
 		cost = 5
-		prerequisite = {focus = GER_gaigedemeigui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gaigedemeigui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#改善国际关系
 	focus = {
@@ -349,15 +412,20 @@ focus_tree = {
 		icon = GFX_GER_gai_shan_guo_ji_guan_xi
 		x = 15
 		y = 4
-
 		cost = 5
-		prerequisite = {focus = GER_fanduijijinzhuyi}
-		prerequisite = {focus = GER_wuchanjiejiduodangminzhu}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_fanduijijinzhuyi
+		}
+		prerequisite = {
+			focus = GER_wuchanjiejiduodangminzhu
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#工会监督
 	focus = {
@@ -365,15 +433,20 @@ focus_tree = {
 		icon = GFX_GER_gong_hui_jian_du
 		x = 19
 		y = 4
-
 		cost = 5
-		prerequisite = {focus = GER_fangkuanshichangxianzhi}
-		prerequisite = {focus = GER_bufensiyouhua}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_fangkuanshichangxianzhi
+		}
+		prerequisite = {
+			focus = GER_bufensiyouhua
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#改良主义革命
 	focus = {
@@ -381,14 +454,17 @@ focus_tree = {
 		icon = GFX_GER_gai_liang_zhu_yi_ge_ming
 		x = 16
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_gaishanguojiguanxi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gaishanguojiguanxi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#市场社会主义
 	focus = {
@@ -396,14 +472,17 @@ focus_tree = {
 		icon = GFX_GER_shi_chang_she_hui_zhu_yi
 		x = 18
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_gonghuijiandu}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gonghuijiandu
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#人道的革命
 	focus = {
@@ -411,15 +490,20 @@ focus_tree = {
 		icon = GFX_GER_ren_dao_de_ge_ming
 		x = 17
 		y = 6
-
 		cost = 5
-		prerequisite = {focus = GER_gailiangzhuyigeming}
-		prerequisite = {focus = GER_shichangshehuizhuyi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_gailiangzhuyigeming
+		}
+		prerequisite = {
+			focus = GER_shichangshehuizhuyi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#斗争的赤旗
 	focus = {
@@ -427,16 +511,20 @@ focus_tree = {
 		icon = GFX_GER_dou_zheng_de_chi_qi
 		x = 26
 		y = 2
-
 		cost = 5
-		prerequisite = {focus = GER_zaijianluosha}
-
-		ai_will_do = {factor = 10}
+		prerequisite = {
+			focus = GER_zaijianluosha
+		}
+		ai_will_do = {
+			factor = 10
+		}
 		available = {
 			has_country_flag = GER_wochaojizuo
 		}
-		bypass = {}
-		completion_reward = {}
+		bypass = {
+		}
+		completion_reward = {
+		}
 	}
 	#导师的理想
 	focus = {
@@ -444,14 +532,18 @@ focus_tree = {
 		icon = GFX_GER_dao_shi_de_li_xiang
 		x = 23
 		y = 3
-
 		cost = 5
-		prerequisite = {focus = GER_douzhengdechiqi}
-
-		ai_will_do = {factor = 10}
-		available = {has_country_flag = GER_wochaolie}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_douzhengdechiqi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_country_flag = GER_wochaolie
+		}
+		completion_reward = {
+		}
 	}
 	#成立全国工会中心组织
 	focus = {
@@ -459,14 +551,17 @@ focus_tree = {
 		icon = GFX_GER_cheng_li_quan_guo_gong_hui_zhong_xin_zu_zhi
 		x = 21
 		y = 4
-
 		cost = 5
-		prerequisite = {focus = GER_daoshidelixiang}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_daoshidelixiang
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#全德中央执行委员会
 	focus = {
@@ -474,14 +569,17 @@ focus_tree = {
 		icon = GFX_GER_quan_de_zhong_yang_zhi_xing_wei_yuan_hui
 		x = 23
 		y = 4
-
 		cost = 5
-		prerequisite = {focus = GER_daoshidelixiang}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_daoshidelixiang
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#授权史塔西
 	focus = {
@@ -489,14 +587,17 @@ focus_tree = {
 		icon = GFX_GER_shou_quan_shitaxi
 		x = 25
 		y = 4
-
 		cost = 5
-		prerequisite = {focus = GER_daoshidelixiang}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_daoshidelixiang
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#确保一党专政
 	focus = {
@@ -504,16 +605,23 @@ focus_tree = {
 		icon = GFX_GER_que_bao_yi_dang_zhuan_zheng
 		x = 23
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_chengliquanguogonghuizhongxinzuzhi}
-		prerequisite = {focus = GER_quandezhongyangzhixingweiyuanhui}
-		prerequisite = {focus = GER_shouquanshitaxi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_chengliquanguogonghuizhongxinzuzhi
+		}
+		prerequisite = {
+			focus = GER_quandezhongyangzhixingweiyuanhui
+		}
+		prerequisite = {
+			focus = GER_shouquanshitaxi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#成立集体农庄合作社
 	focus = {
@@ -521,14 +629,17 @@ focus_tree = {
 		icon = GFX_GER_cheng_li_ji_ti_nong_zhuang_he_zuo_she
 		x = 22
 		y = 6
-
 		cost = 5
-		prerequisite = {focus = GER_quebaoyidangzhuanzheng}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_quebaoyidangzhuanzheng
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#《土地法令》
 	focus = {
@@ -536,14 +647,17 @@ focus_tree = {
 		icon = GFX_GER_tu_di_fa_ling
 		x = 24
 		y = 6
-
 		cost = 5
-		prerequisite = {focus = GER_quebaoyidangzhuanzheng}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_quebaoyidangzhuanzheng
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#德意志少年先锋队
 	focus = {
@@ -551,15 +665,20 @@ focus_tree = {
 		icon = GFX_GER_de_yi_zhi_shao_nian_xian_feng_dui
 		x = 23
 		y = 7
-
 		cost = 5
-		prerequisite = {focus = GER_chenglijitinongzhuanghezuoshe}
-		prerequisite = {focus = GER_tudifaling}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_chenglijitinongzhuanghezuoshe
+		}
+		prerequisite = {
+			focus = GER_tudifaling
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#十五年的阶级斗争
 	focus = {
@@ -567,14 +686,17 @@ focus_tree = {
 		icon = GFX_GER_shi_wu_nian_de_jie_ji_dou_zheng
 		x = 23
 		y = 8
-
 		cost = 5
-		prerequisite = {focus = GER_deyizhishaonianxianfengdui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_deyizhishaonianxianfengdui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#革命先锋
 	focus = {
@@ -582,14 +704,17 @@ focus_tree = {
 		icon = GFX_GER_ge_ming_xian_feng
 		x = 23
 		y = 9
-
 		cost = 5
-		prerequisite = {focus = GER_shiwuniandejiejidouzheng}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_shiwuniandejiejidouzheng
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#魔鬼的契约
 	focus = {
@@ -597,15 +722,22 @@ focus_tree = {
 		icon = GFX_GER_mo_gui_de_qi_yue
 		x = 29
 		y = 3
-
 		cost = 5
-		prerequisite = {focus = GER_douzhengdechiqi}
-
-		ai_will_do = {factor = 10}
-		available = {has_country_flag = GER_wochaominbu}
-
+		prerequisite = {
+			focus = GER_douzhengdechiqi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_country_flag = GER_wochaominbu
+		}
 		completion_reward = {
-			hidden_effect = {country_event = {id = TODgermany.11}}
+			hidden_effect = {
+				country_event = {
+					id = TODgermany.11
+				}
+			}
 		}
 	}
 	#伟人之死
@@ -614,14 +746,20 @@ focus_tree = {
 		icon = GFX_GER_wei_ren_zhi_si
 		x = 29
 		y = 4
-
 		cost = 1
-		prerequisite = {focus = GER_moguideqiyue}
-
-		ai_will_do = {factor = 10}
-		available = {has_country_flag = GER_zuobiqushi}
-		bypass = {}
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_moguideqiyue
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_country_flag = GER_zuobiqushi
+		}
+		bypass = {
+		}
+		completion_reward = {
+		}
 	}
 	#解散中央委员会
 	focus = {
@@ -629,14 +767,17 @@ focus_tree = {
 		icon = GFX_GER_jie_san_zhong_yang_wei_yuan_hui
 		x = 26
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_weirenzhisi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_weirenzhisi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#整合士兵委员会
 	focus = {
@@ -644,14 +785,17 @@ focus_tree = {
 		icon = GFX_GER_zheng_he_shi_bing_wei_yuan_hui
 		x = 28
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_weirenzhisi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_weirenzhisi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#清洗党内异见者
 	focus = {
@@ -659,14 +803,17 @@ focus_tree = {
 		icon = GFX_GER_qing_xi_dang_nei_yi_jian_zhe
 		x = 30
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_weirenzhisi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_weirenzhisi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#中间派之死
 	focus = {
@@ -674,14 +821,17 @@ focus_tree = {
 		icon = GFX_GER_zhong_jian_pai_zhi_si
 		x = 32
 		y = 5
-
 		cost = 5
-		prerequisite = {focus = GER_weirenzhisi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_weirenzhisi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#全面掌控
 	focus = {
@@ -689,15 +839,20 @@ focus_tree = {
 		icon = GFX_GER_quan_mian_zhang_kong
 		x = 27
 		y = 6
-
 		cost = 5
-		prerequisite = {focus = GER_qingxidangneiyijianzhe}
-		prerequisite = {focus = GER_zhongjianpaizhisi}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_qingxidangneiyijianzhe
+		}
+		prerequisite = {
+			focus = GER_zhongjianpaizhisi
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#兑现承诺
 	focus = {
@@ -705,15 +860,20 @@ focus_tree = {
 		icon = GFX_GER_dui_xian_cheng_nuo
 		x = 31
 		y = 6
-
 		cost = 5
-		prerequisite = {focus = GER_qingxidangneiyijianzhe}
-		prerequisite = {focus = GER_zhengheshibingweiyuanhui}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_qingxidangneiyijianzhe
+		}
+		prerequisite = {
+			focus = GER_zhengheshibingweiyuanhui
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#全国戒严令
 	focus = {
@@ -721,15 +881,20 @@ focus_tree = {
 		icon = GFX_GER_quan_guo_jie_yan_ling
 		x = 29
 		y = 7
-
 		cost = 5
-		prerequisite = {focus = GER_quanmianzhangkong}
-		prerequisite = {focus = GER_duixianchengnuo}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_quanmianzhangkong
+		}
+		prerequisite = {
+			focus = GER_duixianchengnuo
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#对法复仇宣传
 	focus = {
@@ -737,14 +902,17 @@ focus_tree = {
 		icon = GFX_GER_dui_fa_fu_chou_xuan_chuan
 		x = 29
 		y = 8
-
 		cost = 5
-		prerequisite = {focus = GER_quanguojieyanling}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_quanguojieyanling
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
 	}
 	#红色腓特烈
 	focus = {
@@ -752,13 +920,761 @@ focus_tree = {
 		icon = GFX_GER_hong_se_feitelie
 		x = 29
 		y = 9
-
 		cost = 5
-		prerequisite = {focus = GER_duifafuchouxuanchuan}
-
-		ai_will_do = {factor = 10}
-		available = {}
-
-		completion_reward = {}
+		prerequisite = {
+			focus = GER_duifafuchouxuanchuan
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+		}
+		completion_reward = {
+		}
+	}
+	# 军事线国策
+	focus = {
+		id = GER_1936nianduguofangjunshijianshebaogao
+		icon = GFX_goal_1936nianduguofangjunshijianshebaogao
+		cost = 3
+		x = 43
+		y = 1
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = GER_1936nianrenminjunfazhanfangan
+		icon = GFX_goal_1936nianrenminjunfazhanfangan
+		cost = 5
+		x = 73
+		y = 1
+	}
+	focus = {
+		id = GER_zhongoudiyuanzhanlue
+		icon = GFX_goal_zhongoudiyuanzhanlue
+		cost = 3
+		x = 38
+		y = 2
+		prerequisite = {
+			focus = GER_1936nianduguofangjunshijianshebaogao
+		}
+	}
+	focus = {
+		id = GER_gaizuzhongyangjunshiweiyuanhui
+		icon = GFX_goal_gaizuzhongyangjunshiweiyuanhui
+		cost = 5
+		x = 43
+		y = 2
+		prerequisite = {
+			focus = GER_1936nianduguofangjunshijianshebaogao
+		}
+	}
+	focus = {
+		id = GER_renminjunjunshibangongzongju
+		icon = GFX_goal_renminjunjunshibangongzongju
+		cost = 5
+		x = 48
+		y = 2
+		prerequisite = {
+			focus = GER_1936nianduguofangjunshijianshebaogao
+		}
+	}
+	focus = {
+		id = GER_zhuanxingjingongxingjunshililiang
+		icon = GFX_goal_zhuanxingjingongxingjunshililiang
+		cost = 0
+		x = 43
+		y = 3
+		prerequisite = {
+			focus = GER_gaizuzhongyangjunshiweiyuanhui
+			focus = GER_zhongoudiyuanzhanlue
+		}
+		prerequisite = {
+			focus = GER_zhongoudiyuanzhanlue
+		}
+		prerequisite = {
+			focus = GER_gaizuzhongyangjunshiweiyuanhui
+		}
+		prerequisite = {
+			focus = GER_renminjunjunshibangongzongju
+		}
+	}
+	focus = {
+		id = GER_quanjunzhengzhigongzuodaibiaohui
+		icon = GFX_goal_quanjunzhengzhigongzuodaibiaohui
+		cost = 3
+		x = 38
+		y = 4
+		prerequisite = {
+			focus = GER_zhuanxingjingongxingjunshililiang
+		}
+	}
+	focus = {
+		id = GER_kuodashibingweiyuanhui
+		icon = GFX_goal_kuodashibingweiyuanhui
+		cost = 6
+		x = 48
+		y = 4
+		prerequisite = {
+			focus = GER_zhuanxingjingongxingjunshililiang
+		}
+	}
+	focus = {
+		id = GER_zhengweizhigaige
+		icon = GFX_goal_zhengweizhigaige
+		cost = 5
+		x = 48
+		y = 5
+		prerequisite = {
+			focus = GER_kuodashibingweiyuanhui
+		}
+	}
+	focus = {
+		id = GER_zhengwuyouyujunwu
+		icon = GFX_goal_zhengwuyouyujunwu
+		cost = 1
+		x = 45
+		y = 6
+		prerequisite = {
+			focus = GER_zhengweizhigaige
+		}
+		mutually_exclusive = {
+			focus = GER_junwuyouyuzhengwu
+		}
+		mutually_exclusive = {
+			focus = GER_zengsheqianxianweiyuanhui
+		}
+	}
+	focus = {
+		id = GER_zengsheqianxianweiyuanhui
+		icon = GFX_goal_zengsheqianxianweiyuanhui
+		cost = 5
+		x = 48
+		y = 6
+		prerequisite = {
+			focus = GER_zhengweizhigaige
+		}
+		mutually_exclusive = {
+			focus = GER_junwuyouyuzhengwu
+		}
+		mutually_exclusive = {
+			focus = GER_zhengwuyouyujunwu
+		}
+	}
+	focus = {
+		id = GER_junwuyouyuzhengwu
+		icon = GFX_goal_junwuyouyuzhengwu
+		cost = 1
+		x = 51
+		y = 6
+		prerequisite = {
+			focus = GER_zhengweizhigaige
+		}
+		mutually_exclusive = {
+			focus = GER_zhengwuyouyujunwu
+		}
+		mutually_exclusive = {
+			focus = GER_zengsheqianxianweiyuanhui
+		}
+	}
+	focus = {
+		id = GER_renminlujun
+		icon = GFX_goal_renminlujun
+		cost = 2
+		x = 58
+		y = 2
+		prerequisite = {
+			focus = GER_1936nianrenminjunfazhanfangan
+		}
+	}
+	focus = {
+		id = GER_lujunjunxiebangongshi
+		icon = GFX_goal_lujunjunxiebangongshi
+		cost = 3
+		x = 55
+		y = 3
+		prerequisite = {
+			focus = GER_renminlujun
+		}
+	}
+	focus = {
+		id = GER_tiaozhengjunduijiegou
+		icon = GFX_goal_tiaozhengjunduijiegou
+		cost = 5
+		x = 61
+		y = 3
+		prerequisite = {
+			focus = GER_renminlujun
+		}
+	}
+	focus = {
+		id = GER_tigaodanbinghuoli
+		icon = GFX_goal_tigaodanbinghuoli
+		cost = 5
+		x = 58
+		y = 4
+		prerequisite = {
+			focus = GER_lujunjunxiebangongshi
+		}
+		prerequisite = {
+			focus = GER_tiaozhengjunduijiegou
+		}
+	}
+	focus = {
+		id = GER_touzitankegongye
+		icon = GFX_goal_touzitankegongye
+		cost = 7
+		x = 53
+		y = 4
+		prerequisite = {
+			focus = GER_lujunjunxiebangongshi
+		}
+		prerequisite = {
+			focus = GER_tiaozhengjunduijiegou
+		}
+	}
+	focus = {
+		id = GER_zhanluezhanshugexin
+		icon = GFX_goal_zhanluezhanshugexin
+		cost = 5
+		x = 63
+		y = 4
+		prerequisite = {
+			focus = GER_tiaozhengjunduijiegou
+		}
+		prerequisite = {
+			focus = GER_lujunjunxiebangongshi
+		}
+	}
+	focus = {
+		id = GER_yingdejunshihezuodezhongje
+		icon = GFX_goal_yingdejunshihezuodezhongje
+		cost = 3
+		x = 58
+		y = 5
+		prerequisite = {
+			focus = GER_tigaodanbinghuoli
+		}
+		prerequisite = {
+			focus = GER_touzitankegongye
+		}
+		prerequisite = {
+			focus = GER_zhanluezhanshugexin
+		}
+	}
+	focus = {
+		id = GER_tezhongzuozhandanyuan
+		icon = GFX_goal_tezhongzuozhandanyuan
+		cost = 7
+		x = 58
+		y = 6
+		prerequisite = {
+			focus = GER_yingdejunshihezuodezhongje
+		}
+	}
+	focus = {
+		id = GER_jianshexinxingjunshiyuanxiao
+		icon = GFX_goal_jianshexinxingjunshiyuanxiao
+		cost = 10
+		x = 58
+		y = 7
+		prerequisite = {
+			focus = GER_tezhongzuozhandanyuan
+		}
+	}
+	focus = {
+		id = GER_youhuahouqinxitong
+		icon = GFX_goal_youhuahouqinxitong
+		cost = 7
+		x = 63
+		y = 6
+		prerequisite = {
+			focus = GER_yingdejunshihezuodezhongje
+		}
+	}
+	focus = {
+		id = GER_zengjiapaobingzhiyuanbudui
+		icon = GFX_goal_zengjiapaobingzhiyuanbudui
+		cost = 10
+		x = 63
+		y = 7
+		prerequisite = {
+			focus = GER_youhuahouqinxitong
+		}
+	}
+	focus = {
+		id = GER_renminhaijun
+		icon = GFX_goal_renminhaijun
+		cost = 5
+		x = 73
+		y = 2
+		prerequisite = {
+			focus = GER_1936nianrenminjunfazhanfangan
+		}
+	}
+	focus = {
+		id = GER_haijunshigemingdezhongjian
+		icon = GFX_goal_haijunshigemingdezhongjian
+		cost = 5
+		x = 68
+		y = 3
+		prerequisite = {
+			focus = GER_renminhaijun
+		}
+		mutually_exclusive = {
+			focus = GER_haijunshigemingdeweishi
+		}
+	}
+	focus = {
+		id = GER_kuodagonghaijiandui
+		icon = GFX_goal_kuodagonghaijiandui
+		cost = 5
+		x = 65
+		y = 4
+		prerequisite = {
+			focus = GER_haijunshigemingdezhongjian
+		}
+		mutually_exclusive = {
+			focus = GER_haijunhangkongliliang
+		}
+	}
+	focus = {
+		id = GER_haijunhangkongliliang
+		icon = GFX_goal_haijunhangkongliliang
+		cost = 5
+		x = 71
+		y = 4
+		prerequisite = {
+			focus = GER_haijunshigemingdezhongjian
+		}
+		mutually_exclusive = {
+			focus = GER_kuodagonghaijiandui
+		}
+	}
+	focus = {
+		id = GER_haianhangkongjidi
+		icon = GFX_goal_haianhangkongjidi
+		cost = 5
+		x = 71
+		y = 5
+		prerequisite = {
+			focus = GER_haijunhangkongliliang
+		}
+	}
+	focus = {
+		id = GER_haijunfeixingxuexiao
+		icon = GFX_goal_haijunfeixingxuexiao
+		cost = 5
+		x = 71
+		y = 6
+		prerequisite = {
+			focus = GER_haianhangkongjidi
+		}
+	}
+	focus = {
+		id = GER_baligongshejihangkongmujian
+		icon = GFX_goal_baligongshejihangkongmujian
+		cost = 5
+		x = 71
+		y = 7
+		prerequisite = {
+			focus = GER_haijunfeixingxuexiao
+		}
+	}
+	focus = {
+		id = GER_haijunshigemingdeweishi
+		icon = GFX_goal_haijunshigemingdeweishi
+		cost = 5
+		x = 78
+		y = 3
+		prerequisite = {
+			focus = GER_renminhaijun
+		}
+		mutually_exclusive = {
+			focus = GER_haijunshigemingdezhongjian
+		}
+	}
+	focus = {
+		id = GER_kuaisijianduifangan
+		icon = GFX_goal_kuaisijianduifangan
+		cost = 5
+		x = 75
+		y = 4
+		prerequisite = {
+			focus = GER_haijunshigemingdeweishi
+		}
+		mutually_exclusive = {
+			focus = GER_shuixiazhanzhengshexiang
+		}
+	}
+	focus = {
+		id = GER_jianchuanxiandaihuafangan
+		icon = GFX_goal_jianchuanxiandaihuafangan
+		cost = 5
+		x = 75
+		y = 5
+		prerequisite = {
+			focus = GER_kuaisijianduifangan
+		}
+	}
+	focus = {
+		id = GER_leidashekongxitong
+		icon = GFX_goal_leidashekongxitong
+		cost = 5
+		x = 75
+		y = 6
+		prerequisite = {
+			focus = GER_jianchuanxiandaihuafangan
+		}
+	}
+	focus = {
+		id = GER_tuomasimincaierhaozhanxun
+		icon = GFX_goal_tuomasimincaierhaozhanxun
+		cost = 5
+		x = 75
+		y = 7
+		prerequisite = {
+			focus = GER_leidashekongxitong
+		}
+	}
+	focus = {
+		id = GER_shuixiazhanzhengshexiang
+		icon = GFX_goal_shuixiazhanzhengshexiang
+		cost = 5
+		x = 81
+		y = 4
+		prerequisite = {
+			focus = GER_haijunshigemingdeweishi
+		}
+		mutually_exclusive = {
+			focus = GER_kuaisijianduifangan
+		}
+	}
+	focus = {
+		id = GER_kuodaqiantingjidi
+		icon = GFX_goal_kuodaqiantingjidi
+		cost = 5
+		x = 81
+		y = 5
+		prerequisite = {
+			focus = GER_shuixiazhanzhengshexiang
+		}
+	}
+	focus = {
+		id = GER_qunlangxiji
+		icon = GFX_goal_qunlangxiji
+		cost = 5
+		x = 81
+		y = 6
+		prerequisite = {
+			focus = GER_kuodaqiantingjidi
+		}
+	}
+	focus = {
+		id = GER_mokuaihuafangan
+		icon = GFX_goal_mokuaihuafangan
+		cost = 5
+		x = 81
+		y = 7
+		prerequisite = {
+			focus = GER_qunlangxiji
+		}
+	}
+	focus = {
+		id = GER_womendeyizhijianrenrugang
+		icon = GFX_goal_womendeyizhijianrenrugang
+		cost = 5
+		x = 78
+		y = 8
+		prerequisite = {
+			focus = GER_tuomasimincaierhaozhanxun
+			focus = GER_mokuaihuafangan
+		}
+	}
+	focus = {
+		id = GER_renminkongjun
+		icon = GFX_goal_renminkongjun
+		cost = 5
+		x = 88
+		y = 2
+		prerequisite = {
+			focus = GER_1936nianrenminjunfazhanfangan
+		}
+	}
+	focus = {
+		id = GER_zhuzhongqingxingfeiji
+		icon = GFX_goal_zhuzhongqingxingfeiji
+		cost = 5
+		x = 85
+		y = 3
+		prerequisite = {
+			focus = GER_renminkongjun
+		}
+		mutually_exclusive = {
+			focus = GER_fazhanzhongxingfeiji
+		}
+	}
+	focus = {
+		id = GER_kongdizhanshuxieshang
+		icon = GFX_goal_kongdizhanshuxieshang
+		cost = 5
+		x = 85
+		y = 4
+		prerequisite = {
+			focus = GER_zhuzhongqingxingfeiji
+		}
+	}
+	focus = {
+		id = GER_lunjunhangkonglianluoyuan
+		icon = GFX_goal_lunjunhangkonglianluoyuan
+		cost = 5
+		x = 83
+		y = 5
+		prerequisite = {
+			focus = GER_kongdizhanshuxieshang
+		}
+	}
+	focus = {
+		id = GER_fazhanzhongxingfeiji
+		icon = GFX_goal_fazhanzhongxingfeiji
+		cost = 5
+		x = 91
+		y = 3
+		prerequisite = {
+			focus = GER_renminkongjun
+		}
+		mutually_exclusive = {
+			focus = GER_zhuzhongqingxingfeiji
+		}
+	}
+	focus = {
+		id = GER_zhanluedajifangan
+		icon = GFX_goal_zhanluedajifangan
+		cost = 5
+		x = 91
+		y = 4
+		prerequisite = {
+			focus = GER_fazhanzhongxingfeiji
+		}
+	}
+	focus = {
+		id = GER_hangkongranyouguanliweiyuanhui
+		icon = GFX_goal_hangkongranyouguanliweiyuanhui
+		cost = 5
+		x = 88
+		y = 5
+		prerequisite = {
+			focus = GER_kongdizhanshuxieshang
+			focus = GER_kongdizhanshuxieshang
+			focus = GER_zhanluedajifangan
+		}
+	}
+	focus = {
+		id = GER_mingquerenminjunduideweiyizongzhi
+		icon = GFX_goal_mingquerenminjunduideweiyizongzhi
+		cost = 6
+		x = 38
+		y = 5
+		prerequisite = {
+			focus = GER_quanjunzhengzhigongzuodaibiaohui
+		}
+	}
+	focus = {
+		id = GER_weizuguoerzhan
+		icon = GFX_goal_weizuguoerzhan
+		cost = 1
+		x = 35
+		y = 6
+		prerequisite = {
+			focus = GER_mingquerenminjunduideweiyizongzhi
+		}
+		mutually_exclusive = {
+			focus = GER_weirenminerzhan
+		}
+		mutually_exclusive = {
+			focus = GER_weiminzuerzhan
+		}
+	}
+	focus = {
+		id = GER_weirenminerzhan
+		icon = GFX_goal_weirenminerzhan
+		cost = 1
+		x = 38
+		y = 6
+		prerequisite = {
+			focus = GER_mingquerenminjunduideweiyizongzhi
+		}
+		mutually_exclusive = {
+			focus = GER_weizuguoerzhan
+		}
+		mutually_exclusive = {
+			focus = GER_weiminzuerzhan
+		}
+	}
+	focus = {
+		id = GER_weiminzuerzhan
+		icon = GFX_goal_weiminzuerzhan
+		cost = 1
+		x = 41
+		y = 6
+		prerequisite = {
+			focus = GER_mingquerenminjunduideweiyizongzhi
+		}
+		mutually_exclusive = {
+			focus = GER_weirenminerzhan
+		}
+		mutually_exclusive = {
+			focus = GER_weizuguoerzhan
+		}
+	}
+	focus = {
+		id = GER_xiangtongyizuguomaijin
+		icon = GFX_goal_xiangtongyizuguomaijin
+		cost = 10
+		x = 43
+		y = 8
+		prerequisite = {
+			focus = GER_weizuguoerzhan
+			focus = GER_weirenminerzhan
+			focus = GER_weiminzuerzhan
+			focus = GER_zhengwuyouyujunwu
+			focus = GER_zengsheqianxianweiyuanhui
+			focus = GER_junwuyouyuzhengwu
+		}
+	}
+	focus = {
+		id = GER_kuodatankegongchang
+		icon = GFX_goal_kuodatankegongchang
+		cost = 5
+		x = 53
+		y = 6
+		prerequisite = {
+			focus = GER_yingdejunshihezuodezhongje
+		}
+	}
+	focus = {
+		id = GER_zhuangjiajiqunyunyongzhanshu
+		icon = GFX_goal_zhuangjiajiqunyunyongzhanshu
+		cost = 10
+		x = 53
+		y = 7
+		prerequisite = {
+			focus = GER_kuodatankegongchang
+		}
+	}
+	focus = {
+		id = GER_xiandaihuaengesigang
+		icon = GFX_goal_xiandaihuaengesigang
+		cost = 5
+		x = 65
+		y = 5
+		prerequisite = {
+			focus = GER_kuodagonghaijiandui
+		}
+	}
+	focus = {
+		id = GER_zhiliangzhanyou
+		icon = GFX_goal_zhiliangzhanyou
+		cost = 5
+		x = 65
+		y = 6
+		prerequisite = {
+			focus = GER_xiandaihuaengesigang
+		}
+	}
+	focus = {
+		id = GER_shijiegemingjizhanliejian
+		icon = GFX_goal_shijiegemingjizhanliejian
+		cost = 5
+		x = 65
+		y = 7
+		prerequisite = {
+			focus = GER_zhiliangzhanyou
+		}
+	}
+	focus = {
+		id = GER_shijiegemingjizhanliejian
+		icon = GFX_goal_shijiegemingjizhanliejian
+		cost = 5
+		x = 65
+		y = 7
+		prerequisite = {
+			focus = GER_zhiliangzhanyou
+		}
+	}
+	focus = {
+		id = GER_womenshiwanqiangdegongnongernv
+		icon = GFX_goal_womenshiwanqiangdegongnongernv
+		cost = 5
+		x = 68
+		y = 8
+		prerequisite = {
+			focus = GER_shijiegemingjizhanliejian
+			focus = GER_baligongshejihangkongmujian
+		}
+	}
+	focus = {
+		id = GER_kuayuegedayangkuayuequanguoshangxia
+		icon = GFX_goal_kuayuegedayangkuayuequanguoshangxia
+		cost = 5
+		x = 73
+		y = 9
+		prerequisite = {
+			focus = GER_womenshiwanqiangdegongnongernv
+			focus = GER_womendeyizhijianrenrugang
+		}
+	}
+	focus = {
+		id = GER_ranggemingdehongqipiaoyang
+		icon = GFX_goal_ranggemingdehongqipiaoyang
+		cost = 10
+		x = 73
+		y = 10
+		prerequisite = {
+			focus = GER_kuayuegedayangkuayuequanguoshangxia
+		}
+	}
+	focus = {
+		id = GER_yuanchenghaishanghongzhaji
+		icon = GFX_goal_yuanchenghaishanghongzhaji
+		cost = 5
+		x = 93
+		y = 5
+		prerequisite = {
+			focus = GER_zhanluedajifangan
+		}
+	}
+	focus = {
+		id = GER_penqishixitong
+		icon = GFX_goal_penqishixitong
+		cost = 10
+		x = 88
+		y = 6
+		prerequisite = {
+			focus = GER_yuanchenghaishanghongzhaji
+			focus = GER_lunjunhangkonglianluoyuan
+		}
+	}
+	focus = {
+		id = GER_gaosufeijisheji
+		icon = GFX_goal_gaosufeijisheji
+		cost = 5
+		x = 88
+		y = 7
+		prerequisite = {
+			focus = GER_penqishixitong
+		}
+	}
+	focus = {
+		id = GER_qijiwuqi
+		icon = GFX_goal_qijiwuqi
+		cost = 5
+		x = 93
+		y = 7
+		prerequisite = {
+			focus = GER_yuanchenghaishanghongzhaji
+			focus = GER_penqishixitong
+		}
 	}
 }

@@ -1,0 +1,379 @@
+division_template = {
+	name = "精锐步兵师"	#步兵师
+	division_names_group = EDO_INF_01
+	regiments = {
+		infantry = {
+			x = 0
+			y = 0
+		}
+		infantry = {
+			x = 0
+			y = 1
+		}
+		infantry = {
+			x = 0
+			y = 2
+		}
+		infantry = {
+			x = 1
+			y = 0
+		}
+		infantry = {
+			x = 1
+			y = 1
+		}
+		infantry = {
+			x = 1
+			y = 2
+		}
+		infantry = {
+			x = 2
+			y = 0
+		}
+		infantry = {
+			x = 2
+			y = 1
+		}
+		infantry = {
+			x = 2
+			y = 2
+		}
+		infantry = {
+			x = 3
+			y = 0
+		}
+		infantry = {
+			x = 3
+			y = 1
+		}
+		infantry = {
+			x = 3
+			y = 2
+		}
+	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+		engineer = {
+			x = 0
+			y = 1
+		}
+	}
+}
+
+division_template = {
+	name = "步兵师"	#步兵师
+	division_names_group = EDO_INF_02
+	regiments = {
+		infantry = {
+			x = 0
+			y = 0
+		}
+		infantry = {
+			x = 0
+			y = 1
+		}
+		infantry = {
+			x = 1
+			y = 0
+			-
+		}
+		infantry = {
+			x = 1
+			y = 1
+		}
+		infantry = {
+			x = 2
+			y = 0
+		}
+		infantry = {
+			x = 2
+			y = 1
+		}
+	}
+	support = {
+		engineer = {
+			x = 0
+			y = 0
+		}
+	}
+}
+
+division_template = {
+	name = "骑兵师"	#骑兵师
+	division_names_group = EDO_CAV_01
+	regiments = {
+		cavalry = {
+			x = 0
+			y = 0
+		}
+		cavalry = {
+			x = 0
+			y = 1
+		}
+		cavalry = {
+			x = 1
+			y = 0
+		}
+		cavalry = {
+			x = 1
+			y = 1
+		}
+		cavalry = {
+			x = 2
+			y = 0
+		}
+		cavalry = {
+			x = 2
+			y = 1
+		}
+	}
+	support = {
+		recon = {
+			x = 0
+			y = 0
+		}
+	}
+}
+
+division_template = {
+	name = "山地步兵师"	#山地师
+	division_names_group = EDO_MNT_01
+	regiments = {
+		mountaineers = {
+			x = 0
+			y = 0
+		}
+		mountaineers = {
+			x = 0
+			y = 1
+		}
+		mountaineers = {
+			x = 0
+			y = 2
+		}
+		mountaineers = {
+			x = 1
+			y = 0
+		}
+		mountaineers = {
+			x = 1
+			y = 1
+		}
+		mountaineers = {
+			x = 1
+			y = 2
+		}
+	}
+}
+
+units = {
+	#江户#
+	division = {
+		name = "江户近卫师团"
+		location = 1182
+		division_template = "精锐步兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#京都#
+	division = {
+		name = "京都近卫师团"
+		location = 11960
+		division_template = "精锐步兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#名古屋#
+	division = {
+		name = "名古屋近卫师团"
+		location = 10125
+		division_template = "精锐步兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#仙台#
+	division = {
+		name = "仙台近卫师团"
+		location = 7169
+		division_template = "精锐步兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#大阪#
+	division = {
+		name = "大阪近卫师团"
+		location = 7072
+		division_template = "精锐步兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#青森#
+	division = {
+		name = "第1师团"
+		location = 6994
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#青森#
+	division = {
+		name = "第2师团"
+		location = 6994
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#仙台#
+	division = {
+		name = "第3师团"
+		location = 7169
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#仙台#
+	division = {
+		name = "第4师团"
+		location = 7169
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#仙台#
+	division = {
+		name = "第5师团"
+		location = 7169
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#新潟#
+	division = {
+		name = "第6师团"
+		location = 1117
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#新潟#
+	division = {
+		name = "第7师团"
+		location = 1117
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#金泽#
+	division = {
+		name = "第8师团"
+		location = 10032
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#金泽#
+	division = {
+		name = "第9师团"
+		location = 10032
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#金泽#
+	division = {
+		name = "第10师团"
+		location = 10032
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#奈良#
+	division = {
+		name = "第1骑兵旅团"
+		location = 1052
+		division_template = "骑兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#奈良#
+	division = {
+		name = "第2骑兵旅团"
+		location = 1052
+		division_template = "骑兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#长野#
+	division = {
+		name = "第1山地旅团"
+		location = 4000
+		division_template = "山地步兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#群马#
+	division = {
+		name = "第1山地旅团"
+		location = 11908
+		division_template = "山地步兵师"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
