@@ -94,7 +94,10 @@ focus_tree = {
 		available = {}
 		select_effect = {country_event = { id = TODSIC.1 days = 7}}
 		
-		completion_reward = { add_political_power = 50 }
+		completion_reward = { 
+			add_political_power = 50
+			mark_focus_tree_layout_dirty = yes 
+		}
 	}
 	#保持中立
 	focus = {
@@ -813,7 +816,7 @@ focus_tree = {
 	focus = {
 		id = SIC_kuodajunxiao
 		icon = GFX_SIC_kuodajunxiao
-		allow_branch = {always = no}
+		allow_branch = {has_completed_focus = SIC_zhaojigefang}
 		x = 48
 		y = 1
 		
