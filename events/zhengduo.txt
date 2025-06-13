@@ -1,0 +1,381 @@
+add_namespace = zhengduo
+
+country_event = {
+    id = zhengduo.1
+	title = zhengduo.1.t
+	desc = zhengduo.1.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            tag = GOS
+            tag = STG
+        }
+    }
+    immediate = {
+        hidden_effect = {
+            set_global_flag = flag_lianghuaizhengduo
+            set_variable = {
+                zhengduo_wanbei_GOS = 0
+                zhengduo_wanbei_STG = 0
+                zhengduo_huaian_GOS = 0
+                zhengduo_huaian_STG = 0
+                zhengduo_xuhai_STG = 0
+                zhengduo_xuhai_GOS = 0
+                zhengduo_wanzhong_GOS = 0
+                zhengduo_wanzhong_STG = 0
+                zhengduo_xinyang_GOS = 0
+                zhengduo_xinyang_STG = 0
+            }
+            833 = {
+                set_demilitarized_zone = yes
+            }
+            810 = {
+                set_demilitarized_zone = yes
+            }
+            606 = {
+                set_demilitarized_zone = yes
+            }
+            598 = {
+                set_demilitarized_zone = yes
+            }
+            809 = {
+                set_demilitarized_zone = yes
+            }
+        }
+    }
+    option = {
+        name = zhengduo.1.a
+    }
+}
+
+country_event = {
+    id = zhengduo.2
+	title = zhengduo.2.t
+	desc = zhengduo.2.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            tag = GOS
+            tag = STG
+        }
+    }
+    immediate = {
+        clr_global_flag = flag_lianghuaizhengduo
+        hidden_effect = {
+            833 = {
+                set_demilitarized_zone = no
+            }
+            810 = {
+                set_demilitarized_zone = no
+            }
+            606 = {
+                set_demilitarized_zone = no
+            }
+            598 = {
+                set_demilitarized_zone = no
+            }
+            809 = {
+                set_demilitarized_zone = no
+            }
+        }
+    }
+    option = {
+        name = zhengduo.2.a
+            if = {
+                limit = {
+                    check_variable = { zhengduo_wanbei_GOS > zhengduo_wanbei_STG }
+                }
+                GOS = {
+                    transfer_state = 810
+                    add_state_core = 810
+                }
+                if = {
+                    limit = {
+                        tag = GOS
+                    }
+                    810 = {
+                        create_unit = {
+                            division = "name = \"华东乙种第7步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7094
+                            owner = GOS
+                        }
+                        create_unit = {
+                            division = "name = \"安徽第1步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7094
+                            owner = GOS
+                        }
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        check_variable = { zhengduo_wanbei_GOS < zhengduo_wanbei_STG }
+                        check_variable = { zhengduo_wanbei_GOS = zhengduo_wanbei_STG }
+                    }
+                }
+                STG = {
+                    transfer_state = 810
+                    add_state_core = 810
+                }
+                if = {
+                    limit = {
+                        tag = STG
+                    }
+                    810 = {
+                        create_unit = {
+                            division = "name = \"华东乙种第7步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7094
+                            owner = STG
+                        }
+                        create_unit = {
+                            division = "name = \"安徽第1步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7094
+                            owner = STG
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    check_variable = { zhengduo_xuhai_GOS > zhengduo_xuhai_STG }
+                }
+                GOS = {
+                    transfer_state = 809
+                    add_state_core = 809
+                }
+                if = {
+                    limit = {
+                        tag = GOS
+                    }
+                    809 = {
+                        create_unit = {
+                            division = "name = \"华东乙种第4步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7200
+                            owner = GOS
+                        }
+                        create_unit = {
+                            division = "name = \"江苏第3步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7200
+                            owner = GOS
+                        }
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        check_variable = { zhengduo_xuhai_GOS < zhengduo_xuhai_STG }
+                        check_variable = { zhengduo_xuhai_GOS = zhengduo_xuhai_STG }
+                    }
+                }
+                STG = {
+                    transfer_state = 809
+                    add_state_core = 809
+                }
+                if = {
+                    limit = {
+                        tag = STG
+                    }
+                    809 = {
+                        create_unit = {
+                            division = "name = \"华东乙种第4步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7200
+                            owner = STG
+                        }
+                        create_unit = {
+                            division = "name = \"江苏第3步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 7200
+                            owner = STG
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    check_variable = { zhengduo_xinyang_GOS > zhengduo_xinyang_STG }
+                }
+                GOS = {
+                    transfer_state = 833
+                    add_state_core = 833
+                }
+                if = {
+                    limit = {
+                        tag = GOS
+                    }
+                    833 = {
+                        create_unit = {
+                            division = "name = \"直隶乙种第15步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 13366
+                            owner = GOS
+                        }
+                        create_unit = {
+                            division = "name = \"河南第11步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 13366
+                            owner = GOS
+                        }
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        check_variable = { zhengduo_xinyang_GOS < zhengduo_xinyang_STG }
+                        check_variable = { zhengduo_xinyang_GOS = zhengduo_xinyang_STG }
+                    }
+                }
+                STG = {
+                    transfer_state = 833
+                    add_state_core = 833
+                }
+                if = {
+                    limit = {
+                        tag = STG
+                    }
+                    833 = {
+                        create_unit = {
+                            division = "name = \"直隶乙种第15步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 13366
+                            owner = STG
+                        }
+                        create_unit = {
+                            division = "name = \"河南第11步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 13366
+                            owner = STG
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    check_variable = { zhengduo_wanzhong_GOS < zhengduo_wanzhong_STG }
+                }
+                STG = {
+                    transfer_state = 606
+                    add_state_core = 606
+                }
+                if = {
+                    limit = {
+                        tag = STG
+                    }
+                    606 = {
+                        create_unit = {
+                            division = "name = \"华东甲种第3步兵师\" division_template = \"昌德卌四年型甲种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = STG
+                        }
+                        create_unit = {
+                            division = "name = \"乙种第8战车师\" division_template = \"昌德卌四年型乙种战车师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = STG
+                        }
+                        create_unit = {
+                            division = "name = \"安徽第2步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = STG
+                        }
+                        create_unit = {
+                            division = "name = \"安徽第3步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = STG
+                        }
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        check_variable = { zhengduo_wanzhong_GOS > zhengduo_wanzhong_STG }
+                        check_variable = { zhengduo_wanzhong_GOS = zhengduo_wanzhong_STG }
+                    }
+                }
+                GOS = {
+                    transfer_state = 606
+                    add_state_core = 606
+                }
+                if = {
+                    limit = {
+                        tag = GOS
+                    }
+                    606 = {
+                        create_unit = {
+                            division = "name = \"华东甲种第3步兵师\" division_template = \"昌德卌四年型甲种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = GOS
+                        }
+                        create_unit = {
+                            division = "name = \"乙种第8战车师\" division_template = \"昌德卌四年型乙种战车师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = GOS
+                        }
+                        create_unit = {
+                            division = "name = \"安徽第2步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = GOS
+                        }
+                        create_unit = {
+                            division = "name = \"安徽第3步兵旅\" division_template = \"昌德卌四年型省军步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 10017
+                            owner = GOS
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    check_variable = { zhengduo_huaian_GOS < zhengduo_huaian_STG }
+                }
+                STG = {
+                    transfer_state = 598
+                    add_state_core = 598
+                }
+                if = {
+                    limit = {
+                        tag = STG
+                    }
+                    598 = {
+                        create_unit = {
+                            division = "name = \"华东乙种第5步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 12067
+                            owner = STG
+                        }
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        check_variable = { zhengduo_huaian_GOS > zhengduo_huaian_STG }
+                        check_variable = { zhengduo_huaian_GOS = zhengduo_huaian_STG }
+                    }
+                }
+                GOS = {
+                    transfer_state = 598
+                    add_state_core = 598
+                }
+                if = {
+                    limit = {
+                        tag = GOS
+                    }
+                    598 = {
+                        create_unit = {
+                            division = "name = \"华东乙种第5步兵师\" division_template = \"昌德卌四年型乙种步兵师\" start_experience_factor = 0.2"
+                            prioritize_location = 12067
+                            owner = GOS
+                        }
+                    }
+                }
+            }
+    }
+}
+
+
+
+
+
