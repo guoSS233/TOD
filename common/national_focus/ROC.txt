@@ -78,12 +78,12 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = guangzhouqiyi
 		}
+		available = {always = no}
 		x = 6
 		y = 1
 		ai_will_do = {factor = 50}
 		completion_reward = {	
 			add_political_power = 75
-			country_event = ROC_focus.3
 		}
 	}
 	focus = {#3、伟大实践的开始
@@ -404,12 +404,39 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = guangzhouqiyi
 		}
+		available = {always = no}
 		x = 15
 		y = 1
 		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_political_power = 50
-			country_event = ROC_focus.8
+			mark_focus_tree_layout_dirty = yes
+			set_variable = {
+				ROC_var_zuo_yanchang_base = 15
+			}
+			set_variable = {
+				ROC_var_you_yanchang_base = 15
+			}
+			set_variable = {
+				ROC_var_PP_yanchang_base = 50
+			}
+			set_variable = {
+				ROC_var_time_yanchang_base = 120
+			}
+			set_variable = {
+				ROC_shengyihui_var = 0
+			}
+			set_variable = {
+				ROC_jijicanzhnegyizheng_var = 0
+			}
+			set_variable = {
+				ROC_qianghuatuanjie_var = 0
+			}
+			set_variable = {
+				ROC_xianjiminzhu_var = 0
+			}
+			ROC_scripted_effects_yanchang = yes
+			complete_national_focus = gemingweiyuanhui
 		}
 	}
 	focus = {#19、会社与政府
@@ -425,6 +452,14 @@ focus_tree = {#共和军国策
 		completion_reward = {	
 			add_political_power = 50
 			country_event = ROC_focus.9
+			add_days_mission_timeout = {
+				mission = ROC_decision_zuopai
+				days = 15
+			}
+			add_days_mission_timeout = {
+				mission = ROC_decision_youpai
+				days = 15
+			}
 		}
 	}
 	focus = {#20、扩张省议会权力
@@ -442,6 +477,11 @@ focus_tree = {#共和军国策
 		ai_will_do = {factor = 10}
 		completion_reward = {	
 			country_event = ROC_focus.10
+			set_variable = {
+				ROC_shengyihui_var = 10
+			}
+			ROC_scripted_effects_yanchang = yes
+			custom_effect_tooltip = ROC_tooltip_yanchang_shengyihui
 		}
 	}
 	focus = {#21、再议央地关系
@@ -508,6 +548,11 @@ focus_tree = {#共和军国策
 		ai_will_do = {factor = 10}
 		completion_reward = {	
 			country_event = ROC_focus.11
+			set_variable = {
+				ROC_xianjiminzhu_var = -30
+			}
+			ROC_scripted_effects_yanchang = yes
+			custom_effect_tooltip = ROC_tooltip_yanchang_xianji
 		}
 	}
 	focus = {#23、中央集权制政府
@@ -791,6 +836,14 @@ focus_tree = {#共和军国策
 		}
 		completion_reward = {	
 			add_political_power = 35
+			hidden_effect = {
+				GOS = {
+					delete_unit_template_and_units = {division_template = "昌德卌四年型华南省军步兵师"}
+					delete_unit_template_and_units = {division_template = "昌德卌四年型华南乙种步兵师"}
+				}
+				load_oob = "ROC_qiyi"
+			}
+			custom_effect_tooltip = ROC_tooltip_lianluoqishengzuopai
 		}
 	}
 	focus = {#33、联络长江临时委员会右派
@@ -2656,13 +2709,21 @@ focus_tree = {#共和军国策
 	focus = {#95、东北问题
 		id = dongbeiwenti
 		icon = GFX_ROC_dongbeiwenti
-		cost = 0.00
+		cost = 3
 		prerequisite = {
 			focus = tongyizhonghua
 		}
 		available = {
 			always = no
 		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = SRC }
+				SRC = {
+					is_in_faction_with = FROM
+				}
+			}
+		}	
 		x = 14
 		y = 12
 		ai_will_do = {factor = 10}
@@ -2676,6 +2737,10 @@ focus_tree = {#共和军国策
 		}
 		available = {
 			
+		}
+		bypass = {
+			NOT = { country_exists = GPS }
+			NOT = { country_exists = SRC }
 		}
 		ai_will_do = {factor = 10}
 		mutually_exclusive = {
@@ -2697,6 +2762,7 @@ focus_tree = {#共和军国策
 		}
 		bypass = {
 			NOT = { country_exists = GPS }
+			NOT = { country_exists = SRC }
 		}	
 		mutually_exclusive = {
 			focus = gemingdetongzhi
@@ -2742,6 +2808,871 @@ focus_tree = {#共和军国策
 		x = 14
 		y = 15
 
+	}
+	#三派国策
+	focus = {#革命委员会
+		id = gemingweiyuanhui
+		icon = GFX_goal_gemingweiyuanhui
+		cost = 10
+		x = 50
+		y = 10
+		available = {always = no}
+		allow_branch = {has_completed_focus = guangzhougemingweiyuanhui}
+		completion_reward = {
+			set_variable = {
+				ROC_VAR_youyi_base = 0
+			}
+			set_variable = {
+				ROC_VAR_zuoyi_base = 0
+			}
+			#决议时间
+			set_variable = {
+				ROC_sanpai_time_base_var = 50
+			}
+			set_variable = {
+				ROC_sanpai_time_war_var = 0
+			}
+			set_variable = {
+				ROC_sanpai_time_minister_zuo_var = 0
+			}
+			set_variable = {
+				ROC_sanpai_time_minister_zhong_var = 0
+			}
+			set_variable = {
+				ROC_sanpai_time_minister_you_var = 0
+			}
+			set_variable = {
+				ROC_sanpai_time_bop_zuo_var = 0
+			}
+			set_variable = {
+				ROC_sanpai_time_bop_you_var = 0
+			}
+    		ROC_scripted_effects_sanpai_time = yes
+			ROC_scripted_effects_youyi = yes
+			ROC_scripted_effects_zuoyi = yes
+			add_ideas = ROC_idea_jijindu
+		}
+	}
+	focus = {#右翼联盟
+		id = youyilianmeng
+		icon = GFX_goal_youyilianmeng
+		cost = 10
+		x = 46
+		y = 11
+		prerequisite = {
+			focus = gemingweiyuanhui
+		}
+		available = {always = no}
+		completion_reward = {
+			add_dynamic_modifier = { modifier = ROC_dynamic_modifier_youyibuman }
+		}
+	}
+	focus = {#自由大同盟
+		id = ziyoudatongmeng
+		icon = GFX_goal_ziyoudatongmeng
+		cost = 10
+		x = 46
+		y = 12
+		available = {always = no}
+		prerequisite = {
+			focus = youyilianmeng
+		}
+		completion_reward = {
+			add_political_power = 25
+			add_popularity = { ideology = liberal_democracy popularity = 0.05 }
+		}
+	}
+	focus = {#经济缓进方略
+		id = jingjihuanjingfanglue
+		icon = GFX_goal_jingjihuanjingfanglue
+		cost = 10
+		x = 46
+		y = 13
+		available = {always = no}
+		prerequisite = {
+			focus = ziyoudatongmeng
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.1
+			}
+		}
+	}
+	focus = {#要求保障民企利益
+		id = yaoqiubaozhangminqiquanyi
+		icon = GFX_goal_yaoqiubaozhangminqiquanyi
+		cost = 10
+		x = 45
+		y = 14
+		available = {always = no}
+		prerequisite = {
+			focus = jingjihuanjingfanglue
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.2
+			}
+		}
+	}
+	focus = {#缓和乡村斗争
+		id = huanhexiangcundouzheng
+		icon = GFX_goal_huanhexiangcundouzheng
+		cost = 10
+		x = 47
+		y = 14
+		available = {always = no}
+		prerequisite = {
+			focus = jingjihuanjingfanglue
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.5
+			}
+		}
+	}
+	focus = {#推动农会经济化转向
+		id = tuidongnongcunjingjihuazhuanxiang
+		icon = GFX_goal_tuidongnongcunjingjihuazhuanxiang
+		cost = 10
+		x = 47
+		y = 15
+		available = {always = no}
+		prerequisite = {
+			focus = huanhexiangcundouzheng
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.6
+			}
+		}
+	}
+	focus = {#提案土地流转权
+		id = tudiliuzhuanziyouhua
+		icon = GFX_goal_tudiliuzhuanziyouhua
+		cost = 10
+		x = 47
+		y = 16
+		available = {always = no}
+		prerequisite = {
+			focus = tuidongnongcunjingjihuazhuanxiang
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.7
+			}
+		}
+	}
+	focus = {#革命统一战线
+		id = gemingtongyizhanxian
+		icon = GFX_goal_gemingtongyizhanxian
+		cost = 10
+		x = 50
+		y = 11
+		available = {always = no}
+		prerequisite = {
+			focus = gemingweiyuanhui
+		}
+		completion_reward = {
+			add_manpower = 10000
+			country_event = {
+				id = ROC_pingheng.27
+			}
+		}
+	}
+	focus = {#强化政治团结
+		id = qianghuazhengzhituanjie
+		icon = GFX_goal_qianghuazhengzhituanjie
+		cost = 10
+		x = 50
+		y = 12
+		available = {always = no}
+		prerequisite = {
+			focus = gemingtongyizhanxian
+		}
+		completion_reward = {
+			set_variable = {
+				ROC_qianghuatuanjie_var = -10
+			}
+			ROC_scripted_effects_yanchang = yes
+			custom_effect_tooltip = ROC_tooltip_yanchang_qianghuazhengzhituanjie
+			country_event = {
+				id = ROC_pingheng.28
+			}
+		}
+	}
+	focus = {#积极参政议政
+		id = jijicanzhengyizheng
+		icon = GFX_goal_jijicanzhengyizheng
+		cost = 10
+		x = 50
+		y = 13
+		available = {always = no}
+		prerequisite = {
+			focus = qianghuazhengzhituanjie
+		}
+		completion_reward = {
+			set_variable = {
+				ROC_jijicanzhnegyizheng_var = 10
+			}
+			ROC_scripted_effects_yanchang = yes
+			country_event = {
+				id = ROC_pingheng.29
+			}
+			custom_effect_tooltip = ROC_tooltip_yanchang_jijicanzhengyizheng
+		}
+	}
+	focus = {#协助工业改造
+		id = xiezhugongyegaizao
+		icon = GFX_goal_xiezhugongyegaizao
+		cost = 10
+		x = 49
+		y = 14
+		available = {always = no}
+		prerequisite = {
+			focus = jijicanzhengyizheng
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+			country_event = {
+				id = ROC_pingheng.30
+			}
+		}
+	}
+	focus = {#协助农业改造
+		id = xiezhunongyegaizao
+		icon = GFX_goal_xiezhunongyegaizao
+		cost = 10
+		x = 51
+		y = 14
+		available = {always = no}
+		prerequisite = {
+			focus = jijicanzhengyizheng
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = construction_tech
+			}
+			country_event = {
+				id = ROC_pingheng.31
+			}
+		}
+	}
+	focus = {#落实新经济法
+		id = luoshixinjingjifa
+		icon = GFX_goal_luoshixinjingjifa
+		cost = 10
+		x = 50
+		y = 15
+		available = {always = no}
+		prerequisite = {
+			focus = xiezhunongyegaizao
+		}
+		prerequisite = {
+			focus = xiezhugongyegaizao
+		}
+		completion_reward = {
+			add_to_variable = {
+        	    var = ROC_VAR_youyi_base
+        	    value = -0.05
+			}
+			add_to_variable = {
+        	    var = ROC_VAR_zuoyi_base
+        	    value = -0.05
+			}
+			custom_effect_tooltip = ROC_tooltip_jijin_xinjingjifa
+			country_event = {
+				id = ROC_pingheng.32
+			}
+		}
+	}
+	focus = {#支持三三制政府
+		id = zhichisansanzhizhengfu
+		icon = GFX_goal_zhichisansanzhizhengfu
+		cost = 10
+		x = 50
+		y = 16
+		available = {always = no}
+		prerequisite = {
+			focus = luoshixinjingjifa
+		}
+		completion_reward = {
+			set_variable = {
+				ROC_sanpai_time_base_var = 60
+			}
+			add_days_mission_timeout = {
+				mission = ROC_decision_zuopai
+				days = 10
+			}
+			add_days_mission_timeout = {
+				mission = ROC_decision_youpai
+				days = 10
+			}
+			add_days_mission_timeout = {
+				mission = ROC_decision_zhongpai
+				days = 10
+			}
+			country_event = {
+				id = ROC_pingheng.33
+			}
+		}
+	}
+	focus = {#基层支部合作
+		id = jicengjibuhezuo
+		icon = GFX_goal_jicengjibuhezuo
+		cost = 10
+		x = 51
+		y = 17
+		available = {always = no}
+		prerequisite = {
+			focus = zhichisansanzhizhengfu
+		}
+		completion_reward = {
+			add_war_support = 0.05
+			country_event = {
+				id = ROC_pingheng.34
+			}
+		}
+	}
+	focus = {#推进跨党工作
+		id = tuijinkuadanghezuo
+		icon = GFX_goal_tuijinkuadanghezuo
+		cost = 10
+		x = 51
+		y = 18
+		available = {always = no}
+		prerequisite = {
+			focus = jicengjibuhezuo
+		}
+		completion_reward = {
+			add_political_power = 100
+			country_event = {
+				id = ROC_pingheng.35
+			}
+		}
+	}
+	focus = {#压制分裂主义
+		id = yazhifenliezhuyi
+		icon = GFX_goal_yazhifenliezhuyi
+		cost = 10
+		x = 51
+		y = 19
+		available = {always = no}
+		prerequisite = {
+			focus = tuijinkuadanghezuo
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = social_democrat 
+				popularity = 0.05
+			}
+			country_event = {
+				id = ROC_pingheng.36
+			}
+		}
+	}
+	focus = {#左翼联盟
+		id = zuoyilianmeng
+		icon = GFX_goal_zuoyilianmeng
+		cost = 10
+		x = 54
+		y = 11
+		available = {always = no}
+		prerequisite = {
+			focus = gemingweiyuanhui
+		}
+		completion_reward = {
+			add_dynamic_modifier = { modifier = ROC_dynamic_modifier_zuoyibuman }
+		}
+	}
+	focus = {#联络革命友党
+		id = lianluogemingyoudang
+		icon = GFX_goal_lianluogemingyoudang
+		cost = 10
+		x = 54
+		y = 12
+		available = {always = no}
+		prerequisite = {
+			focus = zuoyilianmeng
+		}
+		completion_reward = {
+			add_political_power = 25
+			add_popularity = { ideology = moderate_socialism popularity = 0.05 }
+		}
+	}
+	focus = {#推进所有制革命
+		id = tuijinsuoyouzhigeming
+		icon = GFX_goal_tuijinsuoyouzhigeming
+		cost = 10
+		x = 54
+		y = 13
+		available = {always = no}
+		prerequisite = {
+			focus = lianluogemingyoudang
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.14
+			}
+		}
+	}
+	focus = {#加快公私合营进程
+		id = jiakuaigongsiheyingjincheng
+		icon = GFX_goal_jiakuaigongsiheyingjincheng
+		cost = 10
+		x = 53
+		y = 14
+		available = {always = no}
+		prerequisite = {
+			focus = tuijinsuoyouzhigeming
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.15
+			}
+		}
+	}
+	focus = {#接纳大企业家入会
+		id = jianadaqiyejiaruhui
+		icon = GFX_goal_jianadaqiyejiaruhui
+		cost = 10
+		x = 45
+		y = 15
+		available = {always = no}
+		prerequisite = {
+			focus = yaoqiubaozhangminqiquanyi
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.3
+			}
+		}
+	}
+	focus = {#提议恢复广交所
+		id = tiyihuifuguangjiaosuo
+		icon = GFX_goal_tiyihuifuguangjiaosuo
+		cost = 10
+		x = 45
+		y = 16
+		available = {always = no}
+		prerequisite = {
+			focus = jianadaqiyejiaruhui
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.4
+			}
+		}
+	}
+	focus = {#革命自由化
+		id = gemingziyouhua
+		icon = GFX_goal_gemingziyouhua
+		cost = 10
+		x = 46
+		y = 17
+		available = {always = no}
+		prerequisite = {
+			focus = tiyihuifuguangjiaosuo
+		}
+		prerequisite = {
+			focus = tudiliuzhuanziyouhua
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.8
+			}
+		}
+	}
+	focus = {#宣扬“政治民主”
+		id = xuanyangzhengzhiminzhu
+		icon = GFX_goal_xuanyangzhengzhiminzhu
+		cost = 10
+		x = 46
+		y = 18
+		available = {always = no}
+		prerequisite = {
+			focus = gemingziyouhua
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.9
+			}
+		}
+	}
+	focus = {#要求速行宪政
+		id = yaoqiusuxingxianzheng
+		icon = GFX_goal_yaoqiusuxingxianzheng
+		cost = 10
+		x = 45
+		y = 19
+		available = {always = no}
+		prerequisite = {
+			focus = xuanyangzhengzhiminzhu
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.10
+			}
+		}
+	}
+	focus = {#放宽组党审核
+		id = fangkuanzudangshenhe
+		icon = GFX_goal_fangkuanzudangshenhe
+		cost = 10
+		x = 47
+		y = 19
+		available = {always = no}
+		prerequisite = {
+			focus = xuanyangzhengzhiminzhu
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.11
+			}
+		}
+	}
+	focus = {#质疑大同会地位
+		id = zhiyidatonghui
+		icon = GFX_goal_zhiyidatonghui
+		cost = 10
+		x = 46
+		y = 20
+		available = {always = no}
+		prerequisite = {
+			focus = fangkuanzudangshenhe
+		}
+		prerequisite = {
+			focus = yaoqiusuxingxianzheng
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.12
+			}
+		}
+	}
+	focus = {#轮流坐庄
+		id = lunliuzuozhuang
+		icon = GFX_goal_lunliuzuozhuang
+		cost = 10
+		x = 46
+		y = 21
+		available = {always = no}
+		prerequisite = {
+			focus = zhiyidatonghui
+		}
+		mutually_exclusive = {
+			focus = jixugeming
+		}
+		mutually_exclusive = {
+			focus = jingchenghezuo
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.13
+			}
+		}
+	}
+	focus = {#配合开展群众运动
+		id = peihekaizhanqunzhongyundong
+		icon = GFX_goal_peihekaizhanqunzhongyundong
+		cost = 10
+		x = 49
+		y = 17
+		available = {always = no}
+		prerequisite = {
+			focus = zhichisansanzhizhengfu
+		}
+		completion_reward = {
+			add_political_power = 100
+			country_event = {
+				id = ROC_pingheng.37
+			}
+		}
+	}
+	focus = {#强化合作宣传
+		id = qianghuahezuoxuanchuan
+		icon = GFX_goal_qianghuahezuoxuanchuan
+		cost = 10
+		x = 49
+		y = 18
+		available = {always = no}
+		prerequisite = {
+			focus = peihekaizhanqunzhongyundong
+		}
+		completion_reward = {
+			add_stability = 0.05
+			country_event = {
+				id = ROC_pingheng.38
+			}
+		}
+	}
+	focus = {#研讨革命理论
+		id = yantaogeminglilun
+		icon = GFX_goal_yantaogeminglilun
+		cost = 10
+		x = 49
+		y = 19
+		available = {always = no}
+		prerequisite = {
+			focus = qianghuahezuoxuanchuan
+		}
+		completion_reward = {
+			add_to_variable = {
+        	    var = ROC_VAR_youyi_base
+        	    value = -0.05
+			}
+			add_to_variable = {
+        	    var = ROC_VAR_zuoyi_base
+        	    value = -0.05
+			}
+			country_event = {
+				id = ROC_pingheng.39
+			}
+			custom_effect_tooltip = ROC_tooltip_jijin_yantaogeminglilun
+		}
+	}
+	focus = {#拥抱革命委员会政治
+		id = yongbaogemingweiyuanhuizhengzhi
+		icon = GFX_goal_yongbaogemingweiyuanhuizhengzhi
+		cost = 10
+		x = 50
+		y = 20
+		available = {always = no}
+		prerequisite = {
+			focus = yantaogeminglilun
+		}
+		prerequisite = {
+			focus = yazhifenliezhuyi
+		}
+		completion_reward = {
+			add_to_variable = {
+        	    var = ROC_VAR_youyi_base
+        	    value = -0.2
+			}
+			add_to_variable = {
+        	    var = ROC_VAR_zuoyi_base
+        	    value = -0.2
+			}
+			country_event = {
+				id = ROC_pingheng.40
+			}
+			custom_effect_tooltip = ROC_tooltip_jijin_yongbaoweiyuanhui
+		}
+	}
+	focus = {#精诚合作!
+		id = jingchenghezuo
+		icon = GFX_goal_jingchenghezuo
+		cost = 10
+		x = 50
+		y = 21
+		available = {always = no}
+		prerequisite = {
+			focus = yongbaogemingweiyuanhuizhengzhi
+		}
+		mutually_exclusive = {
+			focus = jixugeming
+		}
+		mutually_exclusive = {
+			focus = lunliuzuozhuang
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.41
+			}
+		}
+	}
+	focus = {#强化工会革命性
+		id = qianghuagonghuigemingxing
+		icon = GFX_goal_qianghuagonghuigemingxing
+		cost = 10
+		x = 53
+		y = 15
+		available = {always = no}
+		prerequisite = {
+			focus = jiakuaigongsiheyingjincheng
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.16
+			}
+		}
+	}
+	focus = {#确立公有制经济主体地位
+		id = queligongyouzhijingjizhutidiwei
+		icon = GFX_goal_queligongyouzhijingjizhutidiwei
+		cost = 10
+		x = 53
+		y = 16
+		available = {always = no}
+		prerequisite = {
+			focus = qianghuagonghuigemingxing
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.17
+			}
+		}
+	}
+	focus = {#土地改革激进化
+		id = tudigaigejijinhua
+		icon = GFX_goal_tudigaigejijinhua
+		cost = 10
+		x = 55
+		y = 14
+		available = {always = no}
+		prerequisite = {
+			focus = tuijinsuoyouzhigeming
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.18
+			}
+		}
+	}
+	focus = {#维持农会武装
+		id = weichinonghuiwuzhuang
+		icon = GFX_goal_weichinonghuiwuzhuang
+		cost = 10
+		x = 55
+		y = 15
+		available = {always = no}
+		prerequisite = {
+			focus = tudigaigejijinhua
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.19
+			}
+		}
+	}
+	focus = {#扩大农村合作社规模
+		id = kuodanongcunhezuosheguimo
+		icon = GFX_goal_kuodanongcunhezuosheguimo
+		cost = 10
+		x = 55
+		y = 16
+		available = {always = no}
+		prerequisite = {
+			focus = weichinonghuiwuzhuang
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.20
+			}
+		}
+	}
+	focus = {#革命激进化
+		id = gemingjijinhua
+		icon = GFX_goal_gemingjijinhua
+		cost = 10
+		x = 54
+		y = 17
+		available = {always = no}
+		prerequisite = {
+			focus = kuodanongcunhezuosheguimo
+		}
+		prerequisite = {
+			focus = queligongyouzhijingjizhutidiwei
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.21
+			}
+		}
+	}
+	focus = {#优先工农权益
+		id = youxiangongnongquanyi
+		icon = GFX_goal_youxiangongnongquanyi
+		cost = 10
+		x = 54
+		y = 18
+		available = {always = no}
+		prerequisite = {
+			focus = gemingjijinhua
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.22
+			}
+		}
+	}
+	focus = {#争夺革命领导权
+		id = zhengduogeminglingdaoquan
+		icon = GFX_goal_zhengduogeminglingdaoquan
+		cost = 10
+		x = 53
+		y = 19
+		available = {always = no}
+		prerequisite = {
+			focus = youxiangongnongquanyi
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.23
+			}
+		}
+	}
+	focus = {#掀起理论论战
+		id = xianqililunlunzhan
+		icon = GFX_goal_xianqililunlunzhan
+		cost = 10
+		x = 55
+		y = 19
+		available = {always = no}
+		prerequisite = {
+			focus = youxiangongnongquanyi
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.24
+			}
+		}
+	}
+	focus = {#打击修正分子
+		id = dajixiuzhengfenzi
+		icon = GFX_goal_dajixiuzhengfenzi
+		cost = 10
+		x = 54
+		y = 20
+		available = {always = no}
+		prerequisite = {
+			focus = zhengduogeminglingdaoquan
+		}
+		prerequisite = {
+			focus = xianqililunlunzhan
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.25
+			}
+		}
+	}
+	focus = {#继续革命
+		id = jixugeming
+		icon = GFX_goal_jixugeming
+		cost = 10
+		x = 54
+		y = 21
+		available = {always = no}
+		prerequisite = {
+			focus = dajixiuzhengfenzi
+		}
+		mutually_exclusive = {
+			focus = lunliuzuozhuang
+		}
+		mutually_exclusive = {
+			focus = jingchenghezuo
+		}
+		completion_reward = {
+			country_event = {
+				id = ROC_pingheng.26
+			}
+		}
 	}
 }
 
