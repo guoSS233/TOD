@@ -1,6 +1,356 @@
 on_actions = {
     on_daily = {
         effect = {
+            if = {
+                limit = {
+                    ROC = {
+                        has_war = yes
+                        check_variable = {
+                            ROC_sanpai_time_war_var = 0
+                        }
+                    }
+                }
+                set_variable = {
+                    ROC_sanpai_time_war_var = 50
+                }
+                ROC_scripted_effects_sanpai_time = yes
+				add_days_mission_timeout = {
+					mission = ROC_decision_zuopai
+					days = 50
+				}
+				add_days_mission_timeout = {
+					mission = ROC_decision_youpai
+					days = 50
+				}
+				add_days_mission_timeout = {
+					mission = ROC_decision_zhongpai
+					days = 50
+				}
+            }
+            else_if = {
+                limit = {
+                    ROC = {
+                        NOT = {has_war = yes}
+                        check_variable = {
+                            ROC_sanpai_time_war_var = 50
+                        }
+                    }
+                }
+                set_variable = {
+                    ROC_sanpai_time_war_var = 0
+                }
+                ROC_scripted_effects_sanpai_time = yes
+				add_days_mission_timeout = {
+					mission = ROC_decision_zuopai
+					days = -50
+				}
+				add_days_mission_timeout = {
+					mission = ROC_decision_youpai
+					days = -50
+				}
+				add_days_mission_timeout = {
+					mission = ROC_decision_zhongpai
+					days = -50
+				}
+            }
+            if = {
+                limit = {
+                    has_idea = ROC_idea_DongBiwu
+                    has_completed_focus = gemingweiyuanhui
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 0
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = 25
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 5
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = 20
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = -15
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = 15
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 25
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = -25
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 5
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = -5
+				    }
+                }
+                set_variable = {
+                    ROC_sanpai_time_minister_zuo_var = 25
+                }
+			    set_variable = {
+				    ROC_sanpai_time_minister_zhong_var = 0
+			    }
+			    set_variable = {
+				    ROC_sanpai_time_minister_you_var = 0
+			    }
+                ROC_scripted_effects_sanpai_time = yes
+            }
+            else_if = {
+                limit = {
+                    has_idea = ROC_idea_TanPingshan
+                    has_completed_focus = gemingweiyuanhui
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 25
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = -20
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 0
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = 5
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 0
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = -15
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 25
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = -25
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 5
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = -5
+				    }
+                }
+                set_variable = {
+                    ROC_sanpai_time_minister_zuo_var = 5
+                }
+			    set_variable = {
+				    ROC_sanpai_time_minister_zhong_var = -15
+			    }
+			    set_variable = {
+				    ROC_sanpai_time_minister_you_var = 0
+			    }
+                ROC_scripted_effects_sanpai_time = yes
+            }
+            else_if = {
+                limit = {
+                    has_idea = ROC_idea_Xuqian
+                    has_completed_focus = gemingweiyuanhui
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 25
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = -25
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 5
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = -5
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 0
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = -15
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 25
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = -20
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 0
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = 5
+				    }
+                }
+                set_variable = {
+                    ROC_sanpai_time_minister_zuo_var = 0
+                }
+			    set_variable = {
+				    ROC_sanpai_time_minister_zhong_var = -15
+			    }
+			    set_variable = {
+				    ROC_sanpai_time_minister_you_var = 5
+			    }
+                ROC_scripted_effects_sanpai_time = yes
+            }
+            else_if = {
+                limit = {
+                    has_idea = ROC_idea_HuangYanpei
+                    has_completed_focus = gemingweiyuanhui
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 25
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = -25
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zuo_var = 5
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zuopai
+				    	days = -5
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = -15
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = 15
+				    }
+                }
+                if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 0
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = 25
+				    }
+                }
+                else_if = {
+                    limit = {
+                        check_variable = {
+                            ROC_sanpai_time_minister_zhong_var = 5
+                        }
+                    }
+				    add_days_mission_timeout = {
+				    	mission = ROC_decision_zhongpai
+				    	days = 20
+				    }
+                }
+                set_variable = {
+                    ROC_sanpai_time_minister_zuo_var = 0
+                }
+			    set_variable = {
+				    ROC_sanpai_time_minister_zhong_var = 0
+			    }
+			    set_variable = {
+				    ROC_sanpai_time_minister_you_var = 25
+			    }
+                ROC_scripted_effects_sanpai_time = yes
+            }
+            set_variable = {
+                ROC_VAR_loc_youyi = ROC_VAR_youyi_base
+            }
+            multiply_variable = {
+                var = ROC_VAR_loc_youyi
+                value = 100
+            }
+            set_variable = {
+                ROC_VAR_loc_zuoyi = ROC_VAR_zuoyi_base
+            }
+            multiply_variable = {
+                var = ROC_VAR_loc_zuoyi
+                value = 100
+            }
             ROC = {
                 if = {
                     limit = {
@@ -53,6 +403,120 @@ on_actions = {
     }
     on_monthly_ROC = {
         effect = {
+        ROC = {
+            if = {
+    		    limit = {
+                    has_completed_focus = gemingweiyuanhui
+                    has_country_flag = ROC_flag_bop_jihua_3
+			    }
+                add_to_variable = {
+                    var = ROC_VAR_youyi_base
+                    value = -0.1
+                }
+                add_to_variable = {
+                    var = ROC_VAR_zuoyi_base
+                    value = 0.1
+                }
+            ROC_scripted_effects_youyi = yes
+            ROC_scripted_effects_zuoyi = yes
+        }
+        else_if = {
+    		limit = {
+                has_completed_focus = gemingweiyuanhui
+                has_country_flag = ROC_flag_bop_jihua_2
+			}
+            add_to_variable = {
+                var = ROC_VAR_youyi_base
+                value = -0.05
+            }
+            add_to_variable = {
+                var = ROC_VAR_zuoyi_base
+                value = 0.05
+            }
+        ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+        }
+        else_if = {
+    		limit = {
+                has_completed_focus = gemingweiyuanhui
+                has_country_flag = ROC_flag_bop_jihua_1
+			}
+            add_to_variable = {
+                var = ROC_VAR_youyi_base
+                value = -0.025
+            }
+            add_to_variable = {
+                var = ROC_VAR_zuoyi_base
+                value = 0.025
+            }
+        ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+        }
+        else_if = {
+    		limit = {
+                has_completed_focus = gemingweiyuanhui
+                has_country_flag = ROC_flag_bop_zhongli
+			}
+            add_to_variable = {
+                var = ROC_VAR_youyi_base
+                value = 0.005
+            }
+            add_to_variable = {
+                var = ROC_VAR_zuoyi_base
+                value = 0.005
+            }
+        ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+        }
+        else_if = {
+    		limit = {
+                has_completed_focus = gemingweiyuanhui
+                has_country_flag = ROC_flag_bop_ziyou_1
+			}
+            add_to_variable = {
+                var = ROC_VAR_youyi_base
+                value = -0.025
+            }
+            add_to_variable = {
+                var = ROC_VAR_zuoyi_base
+                value = 0.025
+            }
+        ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+        }
+        else_if = {
+    		limit = {
+                has_completed_focus = gemingweiyuanhui
+                has_country_flag = ROC_flag_bop_ziyou_2
+			}
+            add_to_variable = {
+                var = ROC_VAR_youyi_base
+                value = -0.05
+            }
+            add_to_variable = {
+                var = ROC_VAR_zuoyi_base
+                value = 0.05
+            }
+        ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+        }
+        else_if = {
+    		limit = {
+                has_completed_focus = gemingweiyuanhui
+                has_country_flag = ROC_flag_bop_ziyou_3
+			}
+            add_to_variable = {
+                var = ROC_VAR_youyi_base
+                value = -0.1
+            }
+            add_to_variable = {
+                var = ROC_VAR_zuoyi_base
+                value = 0.1
+            }
+        ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+        }
+        }
         if = {
             limit = {
                 has_idea = ROC_idea_Xuqian
@@ -67,6 +531,7 @@ on_actions = {
             }
             remove_ideas = ROC_idea_gemingyuanlao
         }
+
         if = {
             limit = {
                 has_idea = ROC_idea_ZhangBoling
@@ -81,6 +546,7 @@ on_actions = {
             }
             remove_ideas = ROC_idea_gongnongxuedalianhe
         }
+
         if = {
             limit = {
                 has_idea = ROC_idea_HuangYanpei
@@ -95,6 +561,6 @@ on_actions = {
             }
             remove_ideas = ROC_idea_minquanxianfeng
         }
-        }
+    }
     }
 }
