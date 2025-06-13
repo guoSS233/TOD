@@ -1,0 +1,204 @@
+@FACTION_TEXT_X = 55
+@LOYALTY_TEXT_X = 200
+@POPULARITY_TEXT_X = 380
+@FACTION_ICONS_X = 10
+@FACTION_NAMES_X = 55
+@HEADERS_Y = 20
+guiTypes = {
+	containerWindowType = {
+		name = "lianghuaizhengduo_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 300 }
+
+	 #信阳
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_xinyang"
+			position = { x = @FACTION_NAMES_X y = 60 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_xinyang_text"
+			format = left
+			maxHeight = 24
+		}
+
+	 #皖北
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_wanbei"
+			position = { x = @FACTION_NAMES_X y = 105 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_wanbei_text"
+			format = left
+			maxHeight = 24
+		}
+		
+     #徐海
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_xuhai"
+			position = { x = @FACTION_NAMES_X y = 150 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_xuhai_text"
+			format = left
+			maxHeight = 24
+		}
+
+     #皖中
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_wanzhong"
+			position = { x = @FACTION_NAMES_X y = 195 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_wanzhong_text"
+			format = left
+			maxHeight = 24
+		}
+
+     #淮安
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_huaian"
+			position = { x = @FACTION_NAMES_X y = 240 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_huaian_text"
+			format = left
+			maxHeight = 24
+		}
+
+
+	 #七省
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_qisheng"
+			position = { x = @LOYALTY_TEXT_X y = @HEADERS_Y }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_qisheng_header_text"
+			format = center
+			maxHeight = 24
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_xinyang_qisheng"
+			position = { x = @LOYALTY_TEXT_X y = 60 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_xinyang_qisheng_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_wanbei_qisheng"
+			position = { x = @LOYALTY_TEXT_X y = 105 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_wanbei_qisheng_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_xuhai_qisheng"
+			position = { x = @LOYALTY_TEXT_X y = 150 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_xuhai_qisheng_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_wanzhong_qisheng"
+			position = { x = @LOYALTY_TEXT_X y = 195 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_wanzhong_qisheng_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_huaian_qisheng"
+			position = { x = @LOYALTY_TEXT_X y = 240 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_huaian_qisheng_text"
+			format = center
+			maxwidth = 110
+		}
+
+     #顺天
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_shuntian"
+			position = { x = @POPULARITY_TEXT_X y = @HEADERS_Y }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_shuntian_header_text"
+			format = center
+			maxHeight = 24
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_xinyang_shuntian"
+			position = { x = @POPULARITY_TEXT_X y = 60 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_xinyang_shuntian_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_wanbei_shuntian"
+			position = { x = @POPULARITY_TEXT_X y = 105 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_wanbei_shuntian_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_xuhai_shuntian"
+			position = { x = @POPULARITY_TEXT_X y = 150 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_xuhai_shuntian_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_wanzhong_shuntian"
+			position = { x = @POPULARITY_TEXT_X y = 195 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_wanzhong_shuntian_text"
+			format = center
+			maxwidth = 110
+		}
+
+		instantTextBoxType = {
+			name ="lianghuaizhengduo_GUI_huaian_shuntian"
+			position = { x = @POPULARITY_TEXT_X y = 240 }
+			font = "hoi_18mbs"
+			text = "lianghuaizhengduo_GUI_huaian_shuntian_text"
+			format = center
+			maxwidth = 110
+		}
+	 #进度条
+	 	#iconType = {
+		#	name ="GOS_tzqw_txjdt"
+		#	position = { x = 101 y = -50 }
+		#	spriteType = "GFX_GOS_tzqw_txjdt_icon"
+		#	scale = 0.1
+		#}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 #	
+	}
+
+}
