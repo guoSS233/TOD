@@ -13,13 +13,23 @@ ROC_power_balance = {
 		modifier = {
 			stability_factor = 0.1
 			political_power_factor = 0.05
+			custom_modifier_tooltip = ROC_tooltip_bop_zhongli
 		}
 		on_activate = {
 			set_variable = { #决议天数
 				VAR_ROC_jianshe_pp_factor = 1
 			}
+			set_country_flag = ROC_flag_bop_zhongli
+			set_variable = {
+				ROC_sanpai_time_bop_zuo_var = 0
+			}
+			set_variable = {
+				ROC_sanpai_time_bop_you_var = 0
+			}
+			ROC_scripted_effects_sanpai_time = yes
 		}
 		on_deactivate = {
+			clc_country_flag = ROC_flag_bop_zhongli
 		}
 	}
 
@@ -36,11 +46,41 @@ ROC_power_balance = {
 				production_speed_buildings_factor = 0.05  #建造速度
 				local_resources_factor = 0.03	#资源产量
 				research_speed_factor = 0.03  #研究速度
+				custom_modifier_tooltip = ROC_tooltip_bop_ziyou_1
+				custom_modifier_tooltip = ROC_tooltip_bop_sanpai_you_1
 			}
 			on_activate = {
+				set_country_flag = ROC_flag_bop_ziyou_1
+				set_variable = {
+					ROC_sanpai_time_bop_zuo_var = -5
+				}	
+				set_variable = {
+					ROC_sanpai_time_bop_you_var = 5
+				}
+				ROC_scripted_effects_sanpai_time = yes
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = -5
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = 5
+					}
+				}
 			}
 			on_deactivate = {
-			
+				clc_country_flag = ROC_flag_bop_ziyou_1
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = 5
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = -5
+					}
+				}
 			}
 		}
 
@@ -53,11 +93,41 @@ ROC_power_balance = {
 				local_resources_factor = 0.07	#资源产量
 				research_speed_factor = 0.07  #研究速度
 				war_support_factor = -0.05
+				custom_modifier_tooltip = ROC_tooltip_bop_ziyou_2
+				custom_modifier_tooltip = ROC_tooltip_bop_sanpai_you_2
 			}
 			on_activate = {
+				set_country_flag = ROC_flag_bop_ziyou_2
+				set_variable = {
+					ROC_sanpai_time_bop_zuo_var = -10
+				}	
+				set_variable = {
+					ROC_sanpai_time_bop_you_var = 10
+				}
+				ROC_scripted_effects_sanpai_time = yes
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = -10
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = 10
+					}
+				}
 			}
 			on_deactivate = {
-
+				clc_country_flag = ROC_flag_bop_ziyou_2
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = 10
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = -10
+					}
+				}
 			}
 		}
 
@@ -71,8 +141,11 @@ ROC_power_balance = {
 				research_speed_factor = 0.15  #研究速度
 				war_support_factor = -0.15
 				custom_modifier_tooltip = ROC_tooltip_bop_days
+				custom_modifier_tooltip = ROC_tooltip_bop_ziyou_3
+				custom_modifier_tooltip = ROC_tooltip_bop_sanpai_you_3
 			}
 			on_activate = {
+				set_country_flag = ROC_flag_bop_ziyou_3
 				set_variable = { #决议花费修正
 					VAR_ROC_jianshe_days_factor = 2
 				}
@@ -82,8 +155,26 @@ ROC_power_balance = {
 					side = ROC_left_side
 					gfx = GFX_bop_ROC_improved_left_side
 				}
+				set_variable = {
+					ROC_sanpai_time_bop_zuo_var = -15
+				}	
+				set_variable = {
+					ROC_sanpai_time_bop_you_var = 15
+				}
+				ROC_scripted_effects_sanpai_time = yes
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = -15
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = 15
+					}
+				}
 			}
 			on_deactivate = {
+				clc_country_flag = ROC_flag_bop_ziyou_3
 				set_variable = { #决议花费修正
 					VAR_ROC_jianshe_days_factor = 1
 				}
@@ -92,6 +183,16 @@ ROC_power_balance = {
 					id = ITA_power_balance
 					side = ROC_left_side
 					gfx = GFX_bop_ROC_left_side
+				}
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = 15
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = -15
+					}
 				}
 			}
 		}
@@ -108,13 +209,41 @@ ROC_power_balance = {
 			max = 0.5
 			modifier = {
 				industrial_capacity_factory = 0.05  #工厂产出
-
+				custom_modifier_tooltip = ROC_tooltip_bop_guoyou_1
+				custom_modifier_tooltip = ROC_tooltip_bop_sanpai_zuo_1
 			}
 			on_activate = {
-				
+				set_country_flag = ROC_flag_bop_jihua_1
+				set_variable = {
+					ROC_sanpai_time_bop_zuo_var = 5
+				}	
+				set_variable = {
+					ROC_sanpai_time_bop_you_var = -5
+				}
+				ROC_scripted_effects_sanpai_time = yes
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = 5
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = -5
+					}
+				}
 			}
 			on_deactivate = {
-				
+				clc_country_flag = ROC_flag_bop_jihua_1
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = -5
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = 5
+					}
+				}
 			}
 		}
 
@@ -126,12 +255,41 @@ ROC_power_balance = {
 				industrial_capacity_factory = 0.10  #工厂产出
 				production_factory_max_efficiency_factor = 0.05   #生产效率上限
 				stability_factor = -0.05	                  #稳定度
+				custom_modifier_tooltip = ROC_tooltip_bop_guoyou_2
+				custom_modifier_tooltip = ROC_tooltip_bop_sanpai_zuo_2
 			}
 			on_activate = {
-
+				set_country_flag = ROC_flag_bop_jihua_2
+				set_variable = {
+					ROC_sanpai_time_bop_zuo_var = 10
+				}	
+				set_variable = {
+					ROC_sanpai_time_bop_you_var = -10
+				}
+				ROC_scripted_effects_sanpai_time = yes
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = 10
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = -10
+					}
+				}
 			}
 			on_deactivate = {
-
+				clc_country_flag = ROC_flag_bop_jihua_2
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = -10
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = 10
+					}
+				}
 			}
 		}
 
@@ -145,8 +303,11 @@ ROC_power_balance = {
 				production_factory_efficiency_gain_factor = 0.05   #生产效率增长 
 				stability_factor = -0.15	                  #稳定度
 				custom_modifier_tooltip = ROC_tooltip_bop_pp
+				custom_modifier_tooltip = ROC_tooltip_bop_guoyou_3
+				custom_modifier_tooltip = ROC_tooltip_bop_sanpai_zuo_3
 			}
 			on_activate = {
+				set_country_flag = ROC_flag_bop_jihua_3
 				set_variable = { #决议时间修正
 					VAR_ROC_jianshe_pp_factor = 2
 				}
@@ -156,8 +317,26 @@ ROC_power_balance = {
 					side = ROC_right_side
 					gfx = GFX_bop_ROC_improved_right_side
 				}
+				set_variable = {
+					ROC_sanpai_time_bop_zuo_var = 15
+				}	
+				set_variable = {
+					ROC_sanpai_time_bop_you_var = -15
+				}
+				ROC_scripted_effects_sanpai_time = yes
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = 15
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = -15
+					}
+				}
 			}
 			on_deactivate = {
+				clc_country_flag = ROC_flag_bop_jihua_3
 				set_variable = { #决议时间修正
 					VAR_ROC_jianshe_pp_factor = 1
 				}
@@ -167,10 +346,18 @@ ROC_power_balance = {
 					side = ROC_right_side
 					gfx = GFX_bop_ROC_right_side
 				}
+				hidden_effect = {
+					add_days_mission_timeout = {
+						mission = ROC_decision_zuopai
+						days = -15
+					}
+					add_days_mission_timeout = {
+						mission = ROC_decision_youpai
+						days = 15
+					}
+				}
 			}
 		}
 	}
-
-	
 }
 
