@@ -1,0 +1,17 @@
+lianghuaizhengduo = { #debug
+	priority = 240
+	icon = GFX_decision_category_border_conflicts	
+	visible_when_empty = yes
+	scripted_gui = lianghuaizhengduo_GUI
+	visible = {
+		has_global_flag = flag_lianghuaizhengduo
+	}
+	picture = GFX_decision_cat_picture_shoumingyutianjishouyongchang
+	
+    allowed = {
+		OR = {
+			original_tag = GOS
+			original_tag = STG
+		}
+	}
+}
