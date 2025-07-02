@@ -1492,3 +1492,534 @@ XBJ_guangshi_jiaohua = {
 #民族进步程度增长乘数*1.1；民族团结度+0.5%每周，持续140日
 #削弱民族熔炉DEBUFF
 }
+
+XBJ_difangjunfa = {
+	#向SIC施压
+	XBJ_ganyugejuSIC = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = SIC
+			has_completed_focus = XBJ_shanfengdianhuo
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = SIC
+				} 
+			}
+			has_equipment = { infantry_equipment > 999 }
+		}
+		cost = 50
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			hidden_effect = {
+				SIC = {
+					random_owned_controlled_state = {
+						limit = {
+							is_controlled_by = SIC
+							any_neighbor_state = {
+								is_fully_controlled_by = XBJ
+							}
+						}
+						set_variable = { XBJ.defender_state_vs_SIC = THIS }
+						set_state_flag = XBJ_SIC_bianjing_state_flag
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_controlled_by = XBJ
+						any_neighbor_state = {
+							is_fully_controlled_by = SIC
+							has_state_flag = XBJ_SIC_bianjing_state_flag
+						}
+					}
+					set_state_flag = XBJ_SIC_bianjing_state_flag
+					set_variable = { XBJ.attacker_state_vs_SIC = THIS }
+				}
+			}
+		}
+		remove_effect = { 
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = var:attacker_state_vs_SIC
+					num_provinces = 2
+					on_win = xbj_bianjing.1
+					on_lose = xbj_bianjing.2
+					on_cancel = xbj_bianjing.2
+				}
+
+				defender = {
+					state = var:defender_state_vs_SIC
+					num_provinces = 2
+					on_win = xbj_bianjing.2
+					on_lose = xbj_bianjing.1
+					on_cancel = xbj_bianjing.1
+				}
+			}
+		}
+	}
+	XBJ_ganyugejuMOB = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = MOB
+			has_completed_focus = XBJ_shanfengdianhuo
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = MOB
+				} 
+			}
+			has_equipment = { infantry_equipment > 999 }
+		}
+		cost = 50
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			hidden_effect = {
+				MOB = {
+					random_owned_controlled_state = {
+						limit = {
+							is_controlled_by = MOB
+							any_neighbor_state = {
+								is_fully_controlled_by = XBJ
+							}
+						}
+						set_variable = { XBJ.defender_state_vs_MOB = THIS }
+						set_state_flag = XBJ_MOB_bianjing_state_flag
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_controlled_by = XBJ
+						any_neighbor_state = {
+							is_fully_controlled_by = MOB
+							has_state_flag = XBJ_MOB_bianjing_state_flag
+						}
+					}
+					set_state_flag = XBJ_MOB_bianjing_state_flag
+					set_variable = { XBJ.attacker_state_vs_MOB = THIS }
+				}
+			}
+		}
+		remove_effect = { 
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = var:attacker_state_vs_MOB
+					num_provinces = 2
+					on_win = xbj_bianjing.3
+					on_lose = xbj_bianjing.4
+					on_cancel = xbj_bianjing.4
+				}
+
+				defender = {
+					state = var:defender_state_vs_MOB
+					num_provinces = 2
+					on_win = xbj_bianjing.4
+					on_lose = xbj_bianjing.3
+					on_cancel = xbj_bianjing.3
+				}
+			}
+		}
+	}
+	XBJ_ganyugejuGPS = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = GPS
+			has_completed_focus = XBJ_shanfengdianhuo
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = GPS
+				} 
+			}
+			has_equipment = { infantry_equipment > 999 }
+		}
+		cost = 50
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			hidden_effect = {
+				GPS = {
+					random_owned_controlled_state = {
+						limit = {
+							is_controlled_by = GPS
+							any_neighbor_state = {
+								is_fully_controlled_by = XBJ
+							}
+						}
+						set_variable = { XBJ.defender_state_vs_GPS = THIS }
+						set_state_flag = XBJ_GPS_bianjing_state_flag
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_controlled_by = XBJ
+						any_neighbor_state = {
+							is_fully_controlled_by = GPS
+							has_state_flag = XBJ_GPS_bianjing_state_flag
+						}
+					}
+					set_state_flag = XBJ_GPS_bianjing_state_flag
+					set_variable = { XBJ.attacker_state_vs_GPS = THIS }
+				}
+			}
+		}
+		remove_effect = { 
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = var:attacker_state_vs_GPS
+					num_provinces = 2
+					on_win = xbj_bianjing.5
+					on_lose = xbj_bianjing.6
+					on_cancel = xbj_bianjing.6
+				}
+
+				defender = {
+					state = var:defender_state_vs_GPS
+					num_provinces = 2
+					on_win = xbj_bianjing.6
+					on_lose = xbj_bianjing.5
+					on_cancel = xbj_bianjing.5
+				}
+			}
+		}
+	}
+	XBJ_ganyugejuXIN = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = XIN
+			has_completed_focus = XBJ_shanfengdianhuo
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = XIN
+				} 
+			}
+			has_equipment = { infantry_equipment > 999 }
+		}
+		cost = 50
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			hidden_effect = {
+				XIN = {
+					random_owned_controlled_state = {
+						limit = {
+							is_controlled_by = XIN
+							any_neighbor_state = {
+								is_fully_controlled_by = XBJ
+							}
+						}
+						set_variable = { XBJ.defender_state_vs_XIN = THIS }
+						set_state_flag = XBJ_XIN_bianjing_state_flag
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_controlled_by = XBJ
+						any_neighbor_state = {
+							is_fully_controlled_by = XIN
+							has_state_flag = XBJ_XIN_bianjing_state_flag
+						}
+					}
+					set_state_flag = XBJ_XIN_bianjing_state_flag
+					set_variable = { XBJ.attacker_state_vs_XIN = THIS }
+				}
+			}
+		}
+		remove_effect = { 
+			start_border_war = {
+				change_state_after_war = no
+				attacker = {
+					state = var:attacker_state_vs_XIN
+					num_provinces = 2
+					on_win = xbj_bianjing.7
+					on_lose = xbj_bianjing.8
+					on_cancel = xbj_bianjing.8
+				}
+
+				defender = {
+					state = var:defender_state_vs_XIN
+					num_provinces = 2
+					on_win = xbj_bianjing.8
+					on_lose = xbj_bianjing.7
+					on_cancel = xbj_bianjing.7
+				}
+			}
+		}
+	}
+
+	XBJ_zuihoutongdieSIC = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = SIC
+			OR = {
+				has_completed_focus = XBJ_suiyuanbizhu
+				has_completed_focus = XBJ_chunwangchihan
+			}
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = SIC
+				} 
+			}
+		}
+		cost = 30
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+
+		}
+		remove_effect = { 
+			SIC = { country_event = { id = xbj_bianjing.9 }}
+		}
+	}
+	XBJ_zuihoutongdieMOB = {
+		icon = ger_military_buildup
+		
+		visible = {
+			country_exists = MOB
+			OR = {
+				has_completed_focus = XBJ_suiyuanbizhu
+				has_completed_focus = XBJ_chunwangchihan
+			}
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = MOB
+				} 
+			}
+		}
+		cost = 30
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+
+		}
+		remove_effect = { 
+			MOB = { country_event = { id = xbj_bianjing.11 }}
+		}
+	}
+	XBJ_zuihoutongdieGPS = {
+		icon = ger_military_buildup
+		
+		visible = {
+			country_exists = GPS
+			OR = {
+				has_completed_focus = XBJ_suiyuanbizhu
+				has_completed_focus = XBJ_chunwangchihan
+			}
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = GPS
+				} 
+			}
+		}
+		cost = 30
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+
+		}
+		remove_effect = { 
+			GPS = { country_event = { id = xbj_bianjing.13 }}
+		}
+	}
+	XBJ_zuihoutongdieXIN = {
+		icon = ger_military_buildup
+		
+		visible = {
+			country_exists = XIN
+			OR = {
+				has_completed_focus = XBJ_suiyuanbizhu
+				has_completed_focus = XBJ_chunwangchihan
+			}
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = XIN
+				} 
+			}
+		}
+		cost = 30
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+
+		}
+		remove_effect = { 
+			XIN = { country_event = { id = xbj_bianjing.15 }}
+		}
+	}
+
+	XBJ_shihaoSIC = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = SIC
+			has_completed_focus = XBJ_mulinyouhao
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = SIC
+				} 
+			}
+		}
+		cost = 20
+		
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 3
+	   	}
+		remove_effect = { 
+			SIC = {
+				set_country_flag = XBJ_bianjing_shihao_flag
+			}
+		}
+	}
+	XBJ_shihaoMOB = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = MOB
+			has_completed_focus = XBJ_mulinyouhao
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = MOB
+				} 
+			}
+		}
+		cost = 20
+		
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 3
+	   	}
+		remove_effect = { 
+			MOB = {
+				set_country_flag = XBJ_bianjing_shihao_flag
+			}
+		}
+	}
+	XBJ_shihaoGPS = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = GPS
+			has_completed_focus = XBJ_mulinyouhao
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = GPS
+				} 
+			}
+		}
+		cost = 20
+		
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 3
+	   	}
+		remove_effect = { 
+			GPS = {
+				set_country_flag = XBJ_bianjing_shihao_flag
+			}
+		}
+	}
+	XBJ_shihaoXIN = {
+		icon = ger_military_buildup
+		
+		visible = { 
+			country_exists = XIN
+			has_completed_focus = XBJ_mulinyouhao
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = XIN
+				} 
+			}
+		}
+		cost = 20
+		
+		days_remove = 90
+		fire_only_once = yes
+		complete_effect = {
+		}
+		modifier = {
+			civilian_factory_use = 3
+	   	}
+		remove_effect = { 
+			XIN = {
+				set_country_flag = XBJ_bianjing_shihao_flag
+			}
+		}
+	}
+
+}
