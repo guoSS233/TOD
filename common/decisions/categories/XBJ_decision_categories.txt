@@ -86,3 +86,22 @@ XBJ_guangshi_jiaohua = { #广施教化
 	}
 	visible = { has_completed_focus = XBJ_jinzhongshanqun }
 }
+
+XBJ_difangjunfa = {
+	icon = gre_faction_management
+
+	allowed = {
+		tag = XBJ
+		OR = {
+			has_completed_focus = XBJ_shanfengdianhuo
+			has_completed_focus = XBJ_mulinyouhao
+		}
+	}
+	visible = {
+		tag = XBJ
+		OR = {
+			has_completed_focus = XBJ_shanfengdianhuo
+			has_completed_focus = XBJ_mulinyouhao
+		}
+	}
+}
