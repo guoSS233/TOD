@@ -263,6 +263,31 @@ ideas = {
 				consumer_goods_factor = -0.2
 			}
 		}
+		#政委
+		SCG_zhengwei = {
+			name = SCG_zhengwei
+			
+		    picture = SCG_zhengwei
+			
+			allowed = { tag = SCG }
+			modifier = {
+				army_org_factor = 0.1
+				army_morale_factor = 0.1
+			}
+		}
+		#军队重组
+		SCG_junduichongzu = {
+			name = SCG_junduichongzu
+			
+		    picture = SCG_junduichongzu
+			
+			allowed = { tag = SCG }
+			modifier = {
+				army_org_factor = -0.1
+				army_morale_factor = -0.1
+				attrition = 0.1
+			}
+		}
 	}
 	TOD_minister_head = { 
 		#杨闇公
