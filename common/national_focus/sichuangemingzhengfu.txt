@@ -704,4 +704,547 @@ focus_tree = {
 			add_ideas = SCG_shehuizhuyishichangjingji 
 		}
 	}
+	#人民军队
+	focus = {
+		id = SCG_renminjundui
+		icon = GFX_SCG_renminjundui
+		allow_branch = {if = {has_country_flag = SCG_gemingchenggong}}
+		x = 38
+		y = 1
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = { has_completed_focus = SCG_lianhezhengfu }
+		
+		completion_reward = { 
+			remove_ideas = SCG_hongjun
+			add_to_variable = { SCG_idea_renminjundui_gongji = 0.1 }
+			add_to_variable = { SCG_idea_renminjundui_fangyu = 0.1 }
+			add_to_variable = { SCG_idea_renminjundui_zuzhidu = 0.1 }
+			add_dynamic_modifier = { modifier = SCG_idea_renminjundui }
+			army_experience = 50
+			custom_effect_tooltip = SCG_renminjundui_xiaoguo
+		}
+	}
+	#建立政委制度
+	focus = {
+		id = SCG_jianlizhengwei
+		icon = GFX_SCG_jianlizhengwei
+		prerequisite = { focus = SCG_renminjundui }
+		x = 40
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = SCG_zhengwei
+		}
+	}
+	#重组革命军队
+	focus = {
+		id = SCG_chongzugemingjundui
+		icon = GFX_SCG_chongzugemingjundui
+		prerequisite = { focus = SCG_renminjundui }
+		x = 38
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_timed_idea = { idea = SCG_junduichongzu days = 90 }
+			add_to_variable = { SCG_idea_renminjundui_zuzhidu = 0.1 }
+			custom_effect_tooltip = SCG_chongzugemingjundui_xiaoguo
+		}
+	}
+	#官兵平等
+	focus = {
+		id = SCG_guanbingpingdeng
+		icon = GFX_SCG_guanbingpingdeng
+		prerequisite = { focus = SCG_renminjundui }
+		x = 36
+		y = 2
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			custom_effect_tooltip = SCG_guanbingpingdeng_xiaoguo
+			add_war_support = 0.1
+			add_to_variable = { SCG_idea_renminjundui_zuzhidu = -0.1 }
+			add_to_variable = { SCG_idea_renminjundui_zengyuan = 0.05 }
+			add_to_variable = { SCG_idea_renminjundui_buji = -0.05 }
+		}
+	}
+	#建立民兵制度
+	focus = {
+		id = SCG_jianliminbingzhidu
+		icon = GFX_SCG_jianliminbingzhidu
+		prerequisite = { focus = SCG_guanbingpingdeng }
+		prerequisite = { focus = SCG_chongzugemingjundui }
+		x = 35
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_dynamic_modifier = { modifier = SCG_minbing }
+			division_template = {
+				name = "sichuan mingbing"
+				priority = 1
+				division_names_group = SCG_INF_02
+				regiments = {
+					militia = { x = 0 y = 0 }
+					militia = { x = 0 y = 1 }
+					militia = { x = 0 y = 2 }
+		
+					militia = { x = 1 y = 0 }
+					militia = { x = 1 y = 1 }
+					militia = { x = 1 y = 2 }
+		
+				}
+				support = {
+					engineer = { x = 0 y = 0 }
+				}
+			}
+			831 = {
+				create_unit = {
+					division = "name = \"四川民兵第一师\" division_template = \"sichuan mingbing\" start_experience_factor = 0.6" 
+					owner = SCG
+				}
+				create_unit = {
+					division = "name = \"四川民兵第二师\" division_template = \"sichuan mingbing\" start_experience_factor = 0.6" 
+					owner = SCG
+				}
+			}
+		}
+	}
+	#民兵为辅
+	focus = {
+		id = SCG_minbingweifu
+		icon = GFX_SCG_minbingweifu
+		prerequisite = { focus = SCG_jianliminbingzhidu }
+		mutually_exclusive = { focus = SCG_minbingweizhu }
+		x = 34
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_minbing_renkou = 0.05 }
+			add_to_variable = { SCG_minbing_zuzhi = -0.1 }
+			custom_effect_tooltip = SCG_minbingweifu_xiaoguo
+		}
+	}
+	#民兵为主
+	focus = {
+		id = SCG_minbingweizhu
+		icon = GFX_SCG_minbingweizhu
+		prerequisite = { focus = SCG_jianliminbingzhidu }
+		mutually_exclusive = { focus = SCG_minbingweifu }
+		mutually_exclusive = { focus = SCG_yiliangqusheng }
+		x = 36
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_minbing_dongyuan = 0.1 }
+			add_to_variable = { SCG_minbing_gongji = 0.1 }
+			add_to_variable = { SCG_minbing_fangyu = 0.1 }
+			add_to_variable = { SCG_minbing_zuzhi = 0.1 }
+			custom_effect_tooltip = SCG_minbingweizhu_xiaguo
+		}
+	}
+	#有求必应
+	focus = {
+		id = SCG_youqiubiying
+		icon = GFX_SCG_youqiubiying
+		prerequisite = { focus = SCG_minbingweifu }
+		x = 33
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_minbing_zhengcha = 0.1 }
+			add_to_variable = { SCG_minbing_buji = -0.05 }
+			add_to_variable = { SCG_minbing_sunhao = -0.05 }
+			custom_effect_tooltip = SCG_youqiubiying_xiaguo
+		}
+	}
+	#自力更生
+	focus = {
+		id = SCG_ziligengsheng
+		icon = GFX_SCG_ziligengsheng
+		prerequisite = { focus = SCG_minbingweifu focus = SCG_minbingweizhu }
+		x = 35
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_minbing_jungong = 0.1 }
+			
+			custom_effect_tooltip = SCG_ziligengsheng_xiaoguo
+		}
+	}
+	#装备下放
+	focus = {
+		id = SCG_zhuangbeixiafang
+		icon = GFX_SCG_zhuangbeixiafang
+		prerequisite = { focus = SCG_minbingweizhu }
+		x = 37
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_minbing_gongji = 0.1 }
+			add_to_variable = { SCG_minbing_fangyu = 0.1 }
+			custom_effect_tooltip = SCG_zhuangbeixiafang_xiaoguo
+		}
+	}
+	#深入群众
+	focus = {
+		id = SCG_shenruqunzhong
+		icon = GFX_SCG_shenruqunzhong
+		prerequisite = { focus = SCG_youqiubiying focus = SCG_ziligengsheng  }
+		x = 34
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_minbing_renkou = 0.05 }
+			add_to_variable = { SCG_minbing_buji = -0.1 }
+			add_to_variable = { SCG_minbing_huifu = 0.1 }
+			custom_effect_tooltip = SCG_shenruqunzhong_xiaoguo
+		}
+	}
+	#自造武器
+	focus = {
+		id = SCG_zizaowuqi
+		icon = GFX_SCG_zizaowuqi
+		prerequisite = { focus = SCG_zhuangbeixiafang focus = SCG_ziligengsheng  }
+		x = 36
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_minbing_xiaolv = 0.05 }
+			add_to_variable = { SCG_minbing_chanchu = 0.1 }
+			custom_effect_tooltip = SCG_zizaowuqi_xiaoguo
+		}
+	}
+	#军队专业化
+	focus = {
+		id = SCG_junduizhuanyehua
+		icon = GFX_SCG_junduizhuanyehua
+		prerequisite = { focus = SCG_jianlizhengwei }
+		prerequisite = { focus = SCG_chongzugemingjundui }
+		x = 41
+		y = 3
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_idea_renminjundui_renkou = -0.05 }
+			add_to_variable = { SCG_idea_renminjundui_gongji = 0.1 }
+			add_to_variable = { SCG_idea_renminjundui_fangyu = 0.1 }
+			add_to_variable = { SCG_idea_renminjundui_dongyuan = 0.1 }
+			custom_effect_tooltip = SCG_junduizhuanyehua_xiaoguo
+		}
+	}
+	#以量取胜
+	focus = {
+		id = SCG_yiliangqusheng
+		icon = GFX_SCG_yiliangqusheng
+		prerequisite = { focus = SCG_junduizhuanyehua }
+		mutually_exclusive = { focus = SCG_minbingweizhu }
+		mutually_exclusive = { focus = SCG_yizhiqusheng }
+		x = 40
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_idea_renminjundui_chanchu = 0.1 }
+			add_to_variable = { SCG_idea_renminjundui_renkou = 0.05 }
+			custom_effect_tooltip = SCG_yiliangqusheng_xiaoguo
+		}
+	}
+	#以质取胜
+	focus = {
+		id = SCG_yizhiqusheng
+		icon = GFX_SCG_yizhiqusheng
+		prerequisite = { focus = SCG_junduizhuanyehua }
+		mutually_exclusive = { focus = SCG_yiliangqusheng }
+		x = 42
+		y = 4
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_tech_bonus = {
+				name = SCG_yizhiqusheng
+				bonus = 1
+				uses = 2
+				category = infantry_weapons
+				ahead_reduction = 1
+			}
+			add_to_variable = { SCG_idea_renminjundui_zuzhidu = 0.1 }
+			custom_effect_tooltip = SCG_yizhiqusheng_xiaoguo
+		}
+	}
+	#扩大装备生产
+	focus = {
+		id = SCG_kuodazhuangbeishengchan
+		icon = GFX_SCG_kuodazhuangbeishengchan
+		prerequisite = { focus = SCG_yiliangqusheng }
+		x = 39
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_tech_bonus = {
+				name = SCG_kuodazhuangbeishengchan
+				bonus = 1
+				uses = 1
+				category = industry
+				ahead_reduction = 1
+			}
+			add_to_variable = { SCG_idea_renminjundui_chanchu = 0.1 }
+			custom_effect_tooltip = SCG_kuodazhuangbeishengchan_xiaoguo
+		}
+	}
+	#火力研发
+	focus = {
+		id = SCG_huoliyanfa
+		icon = GFX_SCG_huoliyanfa
+		prerequisite = { focus = SCG_yiliangqusheng focus = SCG_yizhiqusheng }
+		x = 41
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_tech_bonus = {
+				name = SCG_huoliyanfa
+				bonus = 1
+				uses = 2
+				category = artillery
+				ahead_reduction = 1
+			}
+		}
+	}
+	#提升装备水平
+	focus = {
+		id = SCG_tishengzhuangbeishuiping
+		icon = GFX_SCG_tishengzhuangbeishuiping
+		prerequisite = { focus = SCG_yizhiqusheng }
+		x = 43
+		y = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_tech_bonus = {
+				name = SCG_tishengzhuangbeishuiping
+				bonus = 1
+				uses = 1
+				category = armor
+				ahead_reduction = 1
+			}
+			add_tech_bonus = {
+				name = SCG_tishengzhuangbeishuiping
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+				ahead_reduction = 1
+			}
+			add_tech_bonus = {
+				name = SCG_tishengzhuangbeishuiping
+				bonus = 1
+				uses = 1
+				category = artillery
+				ahead_reduction = 1
+			}
+		}
+	}
+	#提升产品工艺
+	focus = {
+		id = SCG_tishengchanpingongyi
+		icon = GFX_SCG_tishengchanpingongyi
+		prerequisite = { focus = SCG_kuodazhuangbeishengchan }
+		prerequisite = { focus = SCG_huoliyanfa }
+		x = 40
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_tech_bonus = {
+				name = SCG_tishengchanpingongyi
+				bonus = 1
+				uses = 2
+				category = industry
+			}
+		}
+	}
+	#全副武装
+	focus = {
+		id = SCG_quanfuwuzhuang
+		icon = GFX_SCG_quanfuwuzhuang
+		prerequisite = { focus = SCG_tishengzhuangbeishuiping }
+		prerequisite = { focus = SCG_huoliyanfa }
+		x = 42
+		y = 6
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SCG_idea_renminjundui_gongji = 0.1 }
+			add_to_variable = { SCG_idea_renminjundui_fangyu = 0.1 }
+			custom_effect_tooltip = SCG_quanfuwuzhuang_xiaoguo
+		}
+	}
 }

@@ -829,7 +829,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { has_completed_focus = SIC_zhaojigefang }
 		
-		completion_reward = { army_experience = 50 }
+		completion_reward = { 
+			add_dynamic_modifier = { modifier = SIC_zhaowujunxiao }
+			army_experience = 50
+		}
 	}
 	#增加军校生
 	focus = {
@@ -849,7 +852,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = {idea = SIC_junxiaoshengzengjia days = 365 } }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowujunxiao_jingyan = 0.1 }
+			custom_effect_tooltip = SIC_zengjiajunxiaosheng_xiaoguo
+		}
 	}
 	#军官速成
 	focus = {
@@ -869,7 +875,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_timed_idea = {idea = SIC_suchengban days = 365 } }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowujunxiao_xunlian = -0.1 }
+			custom_effect_tooltip = SIC_junguansucheng_xiaoguo
+		}
 	}
 	#精锐作战
 	focus = {
@@ -888,7 +897,11 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowujunxiao_gongji = 0.1 }
+			add_to_variable = { SIC_zhaowujunxiao_fangyu = 0.1 }
+			custom_effect_tooltip = SIC_jingruizuozhan_xiaoguo
+		}
 	}
 	#扩大部队规模
 	focus = {
@@ -907,7 +920,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowujunxiao_renkou = 0.005 }
+			custom_effect_tooltip = SIC_kuodabuduiguimo_xiaoguo
+		}
 	}
 	#车轮战术
 	focus = {
@@ -926,7 +942,11 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowujunxiao_huifu = 0.05 }
+			add_to_variable = { SIC_zhaowujunxiao_zengyuan = 0.05 }
+			custom_effect_tooltip = SIC_chelunzhanshu_xiaoguo
+		}
 	}
 	#特殊地形作战
 	focus = {
@@ -946,7 +966,13 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = {
+			add_to_variable = { SIC_zhaowujunxiao_shiying = 0.05 }
+			every_army_leader = {
+				add_unit_leader_trait = adaptable
+			}
+			custom_effect_tooltip = SIC_teshudixingzuozhan_xiaoguo
+		 }
 	}
 	#敢死队
 	focus = {
@@ -966,7 +992,12 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowujunxiao_sunhao = 0.05 }
+			add_to_variable = { SIC_zhaowujunxiao_gongji = 0.1 }
+			add_to_variable = { SIC_zhaowujunxiao_sunshi = 0.05 }
+			custom_effect_tooltip = SIC_gansidui_xiaoguo
+		}
 	}
 	#战车，前进
 	focus = {
@@ -985,7 +1016,14 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { has_completed_focus = SIC_zhaojigefang }
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = armor
+				ahead_reduction = 1
+			}
+		 }
 	}
 	#步兵掩护
 	focus = {
@@ -1005,7 +1043,18 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
 	}
 	#铁牛流马
 	focus = {
@@ -1024,7 +1073,18 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = support_tech
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+			}
+		}
 	}
 	#步坦协同
 	focus = {
@@ -1043,7 +1103,14 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			army_experience = 50
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+		 }
 	}
 	#火炮支援
 	focus = {
@@ -1063,7 +1130,13 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+		 }
 	}
 	#移动堡垒
 	focus = {
@@ -1082,7 +1155,13 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_heavy_armor
+			}
+		}
 	}
 	#战机，飞翔
 	focus = {
@@ -1101,7 +1180,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { has_completed_focus = SIC_zhaojigefang }
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			air_experience = 50
+			add_dynamic_modifier = { modifier = SIC_zhaowukongjun }
+		 }
 	}
 	#破坏后勤
 	focus = {
@@ -1121,7 +1203,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowukongjun_hongzha = 0.1 }
+			custom_effect_tooltip = SIC_pohuaihouqin_xiaoguo
+		 }
 	}
 	#大规模轰炸
 	focus = {
@@ -1140,7 +1225,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowukongjun_zhanluehongzha = 0.1 }
+			custom_effect_tooltip = SIC_daguimohongzha_xiaoguo
+		}
 	}
 	#杀伤敌军
 	focus = {
@@ -1160,7 +1248,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowukongjun_duidi = 0.1 }
+			custom_effect_tooltip = SIC_shashangdijun_xiaoguo
+		 }
 	}
 	#掩护部队
 	focus = {
@@ -1179,7 +1270,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowukongjun_duidijun = 0.1 }
+			custom_effect_tooltip = SIC_yanhubudui_xiaoguo
+		 }
 	}
 	#夺取制空权
 	focus = {
@@ -1198,6 +1292,9 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			add_to_variable = { SIC_zhaowukongjun_kongyou = 0.1 }
+			custom_effect_tooltip = SIC_duoquzhikongquan_xiaoguo
+		}
 	}
 }
