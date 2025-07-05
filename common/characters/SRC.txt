@@ -155,6 +155,7 @@ characters={
 		portraits={
 			civilian={
 				large="gfx/leaders/SRC/SRC_chen_duxiu.png"
+				small="gfx/SRC/advisors/SRC_chen_duxiu.png"
 			}
 		}
 		country_leader={
@@ -164,6 +165,14 @@ characters={
 			expire="1965.1.1.1"
 			id=-1
 		}
+		advisor = {
+			allowed = { tag = SRC }
+			cancel_if_invalid = no
+         	 	slot = second_in_command
+         	   	idea_token = SRC_chen_duxiu
+         	   	traits = { TOD_minister_head }
+          	  	cost = 50
+     	 	}
 	}
 	SRC_li_dazhao={
 		name=SRC_li_dazhao
@@ -746,22 +755,6 @@ characters={
             slot = political_advisor
             idea_token = SRC_cai_hesen
             traits = { TOD_foreign_minister }
-            cost = 50
-        }
-	}
-	SRC_chen_duxiu={
-		name="陈独秀"
-		portraits={
-			civilian ={
-			small="gfx/SRC/advisors/SRC_chen_duxiu.png"
-            }
-        }   
-		advisor = {
-			allowed = { tag = SRC }
-			cancel_if_invalid = no
-            slot = second_in_command
-            idea_token = SRC_chen_duxiu
-            traits = { TOD_minister_head }
             cost = 50
         }
 	}
