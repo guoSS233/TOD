@@ -42,3 +42,130 @@ country_event = {     #选边站事件
 		activate_mission = SIA_mission_2_ghjjqkz
 	}
 }
+
+country_event = {   #内战事件
+	id = SIA_event.3
+	title = SIA_event.3.t
+	desc = SIA_event.3.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trriger = {
+		date > 1937.1.1
+	}
+	immediate = {
+		hidden_effect = {
+			741 = {
+				set_demilitarized_zone = yes
+			}
+			858 = {
+				set_demilitarized_zone = yes
+			}
+			670 = {
+				set_demilitarized_zone = yes
+			}
+			1195 = {
+				set_demilitarized_zone = yes
+			}
+		}
+		
+	}
+	option = {
+		name = SIA_event.3.a		
+		SIA_release_ROS = yes
+		country_event = { id = SIA_event.4 days = 30}
+	}
+		
+	option = {
+		name = SIA_event.3.b
+		SIA_release_ROS = yes
+		ROS = { change_tag_from = ROOT }
+		country_event = { id = SIA_event.4 days = 30}
+	}
+
+}
+
+country_event = {   #高棉起义
+	id = SIA_event.4
+	title = SIA_event.4.t
+	desc = SIA_event.4.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+	option = {
+		name = SIA_event.4.a		
+		741 = {
+			set_demilitarized_zone = yes
+		}
+		741 = { 
+			add_core_of = CAM    #添加核心
+			remove_core_of = SIA	#移除核心
+			add_claim_by = SIA	#添加宣称
+			add_claim_by = ROS	#添加宣称
+			transfer_state_to = CAM		#转移控制权
+		}	
+		857 = {
+			add_core_of = CAM   
+		}
+		CAM = {
+			declare_war_on = { target = SIA type = take_state }
+			declare_war_on = { target = ROS type = take_state }
+		}
+		hidden_effect = {
+			741 = {
+				set_demilitarized_zone = yes
+			}
+			858 = {
+				set_demilitarized_zone = yes
+			}
+			670 = {
+				set_demilitarized_zone = yes
+			}
+			1195 = {
+				set_demilitarized_zone = yes
+			}
+		}
+	}
+		
+	option = {
+		name = SIA_event.4.b
+		741 = {
+			set_demilitarized_zone = yes
+		}
+		741 = { 
+			add_core_of = CAM    
+			remove_core_of = SIA
+			add_claim_by = SIA
+			add_claim_by = ROS
+			transfer_state_to = CAM
+		}		
+		857 = {
+			add_core_of = CAM   
+		}
+		CAM = { change_tag_from = ROOT }
+		CAM = {
+			declare_war_on = { target = SIA type = take_state }
+			declare_war_on = { target = ROS type = take_state }
+		}
+		hidden_effect = {
+			741 = {
+				set_demilitarized_zone = yes
+			}
+			858 = {
+				set_demilitarized_zone = yes
+			}
+			670 = {
+				set_demilitarized_zone = yes
+			}
+			1195 = {
+				set_demilitarized_zone = yes
+			}
+		}
+	}
+
+}
+
+

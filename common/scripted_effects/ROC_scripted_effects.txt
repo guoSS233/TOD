@@ -21,6 +21,7 @@ ROC_scripted_effects_gonggubianjie = { #巩固边界
         value = ROC_VAR_nanguo_defence_factor
     }
 }
+
 ROC_scripted_effects_jianshe = {
     set_variable = {
         ROC_VAR_nongcun_pp = ROC_VAR_nongcun_pp_base
@@ -56,5 +57,247 @@ ROC_scripted_effects_jianshe = {
     multiply_variable = {  
         var = ROC_VAR_chengshi_days
         value = VAR_ROC_jianshe_days_factor
+    }
+}
+
+ROC_scripted_effects_youyi = {
+    if = {
+        limit = {
+            check_variable = {
+                ROC_VAR_youyi_base > 1
+            }
+        }
+        set_variable = {
+            ROC_VAR_youyi_base = 1
+        }
+    }
+    if = {
+        limit = {
+            check_variable = {
+                ROC_VAR_youyi_base < 0
+            }
+        }
+        set_variable = {
+            ROC_VAR_youyi_base = 0
+        }
+    }
+    set_variable = {
+        ROC_dynamic_modifier_st = ROC_VAR_youyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_st
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_st
+        value = -0.2
+    }
+    set_variable = {
+        ROC_dynamic_modifier_consumer_goods = ROC_VAR_youyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_consumer_goods
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_consumer_goods
+        value = 0.4
+    }
+    set_variable = {
+        ROC_dynamic_modifier_research = ROC_VAR_youyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_research
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_research
+        value = -0.2
+    }
+    set_variable = {
+        ROC_dynamic_modifier_pp = ROC_VAR_youyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_pp
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_pp
+        value = -0.3
+    }
+    set_variable = {
+        ROC_dynamic_modifier_surrender_limit = ROC_VAR_youyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_surrender_limit
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_surrender_limit
+        value = -0.4
+    }
+
+}
+
+ROC_scripted_effects_zuoyi = {
+    if = {
+        limit = {
+            check_variable = {
+                ROC_VAR_zuoyi_base > 1
+            }
+        }
+        set_variable = {
+            ROC_VAR_zuoyi_base = 1
+        }
+    }
+    if = {
+        limit = {
+            check_variable = {
+                ROC_VAR_zuoyi_base < 0
+            }
+        }
+        set_variable = {
+            ROC_VAR_zuoyi_base = 0
+        }
+    }
+    set_variable = {
+        ROC_dynamic_modifier_st_zuo = ROC_VAR_zuoyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_st_zuo
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_st_zuo
+        value = -0.2
+    }
+    set_variable = {
+        ROC_dynamic_modifier_industrial = ROC_VAR_zuoyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_industrial
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_industrial
+        value = -0.2
+    }
+    set_variable = {
+        ROC_dynamic_modifier_conscription = ROC_VAR_zuoyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_conscription
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_conscription
+        value = -0.3
+    }
+    set_variable = {
+        ROC_dynamic_modifier_pp_zuo = ROC_VAR_zuoyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_pp_zuo
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_pp_zuo
+        value = -0.3
+    }
+    set_variable = {
+        ROC_dynamic_modifier_resistance = ROC_VAR_zuoyi_base
+    }
+    add_to_variable = {  
+        var = ROC_dynamic_modifier_resistance
+        value = -0.5
+    }
+    multiply_variable = {  
+        var = ROC_dynamic_modifier_resistance
+        value = 0.4
+    }   
+}
+
+ROC_scripted_effects_sanpai_time = {
+    set_variable = {
+        ROC_zuopai_time_var = ROC_sanpai_time_base_var
+    }
+    add_to_variable = {
+        var = ROC_zuopai_time_var
+        value = ROC_sanpai_time_war_var
+    }
+    add_to_variable = {
+        var = ROC_zuopai_time_var
+        value = ROC_sanpai_time_minister_zuo_var
+    }
+    add_to_variable = {
+        var = ROC_zuopai_time_var
+        value = ROC_sanpai_time_bop_zuo_var
+    }
+
+    set_variable = {
+        ROC_youpai_time_var = ROC_sanpai_time_base_var
+    }
+    add_to_variable = {
+        var = ROC_youpai_time_var
+        value = ROC_sanpai_time_war_var
+    }
+    add_to_variable = {
+        var = ROC_youpai_time_var
+        value = ROC_sanpai_time_minister_you_var
+    }
+    add_to_variable = {
+        var = ROC_youpai_time_var
+        value = ROC_sanpai_time_bop_zuo_var
+    }
+
+    set_variable = {
+        ROC_zhongpai_time_var = ROC_sanpai_time_base_var
+    }
+    add_to_variable = {
+        var = ROC_zhongpai_time_var
+        value = ROC_sanpai_time_war_var
+    }
+    add_to_variable = {
+        var = ROC_zhongpai_time_var
+        value = ROC_sanpai_time_minister_zhong_var
+    }
+}
+
+ROC_scripted_effects_yanchang = {
+    set_variable = {
+        ROC_var_zuo_yanchang = ROC_var_zuo_yanchang_base
+    }
+    add_to_variable = {
+        var = ROC_var_zuo_yanchang
+        value = ROC_shengyihui_var
+    }
+    add_to_variable = {
+        var = ROC_var_zuo_yanchang
+        value = ROC_jijicanzhnegyizheng_var
+    }
+    set_variable = {
+        ROC_var_you_yanchang = ROC_var_you_yanchang_base
+    }
+    add_to_variable = {
+        var = ROC_var_you_yanchang
+        value = ROC_shengyihui_var
+    }
+    add_to_variable = {
+        var = ROC_var_you_yanchang
+        value = ROC_jijicanzhnegyizheng_var
+    }
+    set_variable = {
+        ROC_var_PP_yanchang = ROC_var_PP_yanchang_base
+    }
+    add_to_variable = {
+        var = ROC_var_PP_yanchang
+        value = ROC_qianghuatuanjie_var
+    }
+    set_variable = {
+        ROC_var_time_yanchang = ROC_var_time_yanchang_base
+    }
+    add_to_variable = {
+        var = ROC_var_time_yanchang
+        value = ROC_xianjiminzhu_var
     }
 }

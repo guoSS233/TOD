@@ -853,6 +853,39 @@ country_event = {
 		name = GPSevents.34.a
 	}
 }
+#失控
+country_event = {
+	id = GPSevents.35
+	title = GPSevents.35.t
+	desc =GPSevents.35.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+	
+	option = { 
+		name = GPSevents.35.a
+	}
+}
+#开战
+country_event = {
+	id = GPSevents.36
+	title = GPSevents.36.t
+	desc =GPSevents.36.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+	
+	option = { 
+		name = GPSevents.36.a
+		declare_war_on = { target = SRC type = annex_everything }
+	}
+}
 
 
 

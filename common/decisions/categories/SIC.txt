@@ -5,12 +5,6 @@ SIC_chuanneijushi_categories = {
 
 	allowed = {
 		tag = SIC
-		check_variable = {SIC.minzhong < 99}
-		OR = {
-			check_variable = {SIC.minzhong > 19}
-			check_variable = {SIC.gongye > 39}
-		}
-		NOT = {has_war_with = SCG}
 	}
 	visible = {	
 		check_variable = {SIC.minzhong < 99}

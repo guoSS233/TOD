@@ -1,0 +1,193 @@
+add_namespace = TOD_XIN
+
+country_event = {
+	id = TOD_XIN.101
+	title = TOD_XIN.101.t
+	desc =TOD_XIN.101.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = BRM }
+	
+	option = { 
+		name = TOD_XIN.101.a
+        XIN = { set_country_flag = XIN_dali-laxutongche }
+        custom_effect_tooltip = BRN_jiashenkongzhi
+	}
+	option = { 
+		name = TOD_XIN.101.b
+
+	}
+}
+country_event = {
+	id = TOD_XIN.102
+	title = TOD_XIN.102.t
+	desc =TOD_XIN.102.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = XIN }
+	
+	option = { 
+		name = TOD_XIN.102.a
+        BRM = {country_event = { id = TOD_XIN.101 } }
+	}
+}
+country_event = {
+	id = TOD_XIN.103
+	title = TOD_XIN.103.t
+	desc =TOD_XIN.103.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = BRM }
+	
+	option = { 
+		name = TOD_XIN.103.a
+        XIN = { set_country_flag = XIN_laxu-mandeletongche }
+        custom_effect_tooltip = BRN_jiashenkongzhi
+	}
+	option = { 
+		name = TOD_XIN.103.b
+        
+	}
+}
+country_event = {
+	id = TOD_XIN.104
+	title = TOD_XIN.104.t
+	desc =TOD_XIN.104.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = XIN }
+	
+	option = { 
+		name = TOD_XIN.104.a
+        BRM = {country_event = { id = TOD_XIN.103 } }
+	}
+}
+country_event = {
+	id = TOD_XIN.105
+	title = TOD_XIN.105.t
+	desc =TOD_XIN.105.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = BRM }
+	
+	option = { 
+		name = TOD_XIN.105.a
+        XIN = { set_country_flag = XIN_mandele-binmanatongche }
+        custom_effect_tooltip = BRN_jiashenkongzhi
+	}
+	option = { 
+		name = TOD_XIN.105.b
+        
+	}
+}
+country_event = {
+	id = TOD_XIN.106
+	title = TOD_XIN.106.t
+	desc =TOD_XIN.106.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = XIN }
+	
+	option = { 
+		name = TOD_XIN.106.a
+        BRM = {country_event = { id = TOD_XIN.105 } }
+	}
+}
+country_event = {
+	id = TOD_XIN.107
+	title = TOD_XIN.107.t
+	desc =TOD_XIN.107.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = BRM }
+	
+	option = { 
+		name = TOD_XIN.107.a
+        XIN = { set_country_flag = XIN_binmana-dongxutongche }
+        custom_effect_tooltip = BRN_jiashenkongzhi
+	}
+	option = { 
+		name = TOD_XIN.107.b
+        
+	}
+}
+country_event = {
+	id = TOD_XIN.108
+	title = TOD_XIN.108.t
+	desc =TOD_XIN.108.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = XIN }
+	
+	option = { 
+		name = TOD_XIN.108.a
+        BRM = {country_event = { id = TOD_XIN.107 } }
+	}
+}
+country_event = {
+	id = TOD_XIN.109
+	title = TOD_XIN.109.t
+	desc =TOD_XIN.109.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = BRM }
+	
+	option = { 
+		name = TOD_XIN.109.a
+        XIN = { 
+            set_country_flag = XIN_dongxu-yangguangtongche 
+            
+            set_autonomy = {
+                target = BRM
+                autonomy_state = autonomy_puppet
+            }
+        }
+	}
+	option = { 
+		name = TOD_XIN.109.b
+
+	}
+}
+country_event = {
+	id = TOD_XIN.110
+	title = TOD_XIN.110.t
+	desc =TOD_XIN.110.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = XIN }
+	
+	option = { 
+		name = TOD_XIN.110.a
+        BRM = {country_event = { id = TOD_XIN.109 } }
+	}
+}

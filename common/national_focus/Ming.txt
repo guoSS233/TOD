@@ -217,10 +217,10 @@ focus_tree = {
 			custom_effect_tooltip = MNG_12
 			army_experience = -5
 			add_stability = -0.05
-			swap_ideas = {
-				add_idea = MNG_A_Suspected_Army_1
-				remove_idea = MNG_A_Suspected_Army
-			}
+			add_to_variable = { MNG_A_Suspected_Army_zuzhidu = -0.05 }
+			add_to_variable = { MNG_A_Suspected_Army_sunhao = -0.1 }
+			add_to_variable = { MNG_A_Suspected_Army_zengyuan = 0.01 }
+			custom_effect_tooltip = MNG_shajijinghou_xiaoguo
 		}
 	}
 	#整顿官场
@@ -257,10 +257,9 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			swap_ideas = {
-				add_idea = MNG_A_Suspected_Army_2
-				remove_idea = MNG_A_Suspected_Army_1
-			}
+			add_to_variable = { MNG_A_Suspected_Army_gongji = 0.2 }
+			add_to_variable = { MNG_A_Suspected_Army_fangyu = 0.2 }
+			custom_effect_tooltip = MNG_chizhuwufu_xiaoguo
 		}
 	}
 	focus = { #楚弓复得
@@ -413,11 +412,10 @@ focus_tree = {
 		completion_reward = {
 			add_popularity = { ideology = vanguard_socialism popularity = -0.02 }
 			add_popularity = { ideology = moderate_socialism popularity = -0.02 }
-			swap_ideas = {
-				remove_idea = MNG_Unsettled_Republicians
-				add_idea = MNG_Unsettled_Republicians_1
-			}
-			unlock_decision_category_tooltip = 
+			add_to_variable = { MNG_gonghepaideweixie_xianfengshehuizhuyisixiang = -0.02 }
+			add_to_variable = { MNG_gonghepaideweixie_wenheshehuizhuyisixiang = -0.02 }
+			unlock_decision_category_tooltip = MNG_zhenyagongrenyundong
+			custom_effect_tooltip = MNG_qingjiaotongchangonghui_xiaoguo
 		}
 	}
 	#搜捕大同会
@@ -438,10 +436,8 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_category_tooltip = MNG_dajinongminyundong
 			add_popularity = { ideology = social_democrat popularity = -0.02 }
-			swap_ideas = {
-				remove_idea = MNG_Unsettled_Republicians_1
-				add_idea = MNG_Unsettled_Republicians_2
-			}
+			add_to_variable = { MNG_gonghepaideweixie_shemingzhuyisixiang = -0.03 }
+			custom_effect_tooltip = MNG_soubudatonghui_xiaoguo
 		}
 	}
 	#调查涉案官员
@@ -460,6 +456,7 @@ focus_tree = {
 		}
 		completion_reward = { 
 			news_event = { id = mingcivwar.53 } 
+			add_political_power = 50
 			add_to_variable = { MNG_zijinxi = -3 }
 			add_to_variable = { MNG_wubeixi = -3 }
 			add_to_variable = { MNG_guanxuexi = -3 }
@@ -485,6 +482,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_to_variable = { MNG_wubeixi = -10 }
+			add_to_variable = { MNG_xianzhenghuidebuhe_zhanzhengzhichidu = -0.04 }
 			custom_effect_tooltip = MNG_zhanjinshajue_xiaoguo
 			country_event = { id = mingcivwar.54 }
 			add_manpower = -3000
@@ -524,10 +522,9 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { MNG_qingzhengxi = -2 }
 			custom_effect_tooltip = MNG_quanguodasoubu_xiaoguo
-			swap_ideas = {
-				add_idea = MNG_Disharmony_within_the_Constitutional_Party_1
-				remove_idea = MNG_Disharmony_within_the_Constitutional_Party
-			}
+			add_to_variable = { MNG_xianzhenghuidebuhe_wendingdu = -0.05 }
+			add_to_variable = { MNG_xianzhenghuidebuhe_zhengzhidian = -0.5 }
+			add_to_variable = { MNG_xianzhenghuidebuhe_shengchanxiaolv = -0.05 }
 		}
 	}
 	#整顿官员
@@ -569,10 +566,9 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			swap_ideas = {
-				add_idea = MNG_Disharmony_within_the_Constitutional_Party_2
-				remove_idea = MNG_Disharmony_within_the_Constitutional_Party_1
-			}
+			add_to_variable = { MNG_xianzhenghuidebuhe_wendingdu = 0.05 }
+			add_to_variable = { MNG_xianzhenghuidebuhe_xiaofeipin = 0.02 }
+			custom_effect_tooltip = MNG_anfuminxin_xiaoguo
 		}
 	}
 
@@ -767,10 +763,9 @@ focus_tree = {
 		}
 		completion_reward = {
 			country_event = { id = mingcivwar.64 }
-			swap_ideas = {
-				add_idea = MNG_A_Suspected_Army_3
-				remove_idea = MNG_A_Suspected_Army_2
-			}
+			add_to_variable = { MNG_A_Suspected_Army_sudu = 0.25 }
+			add_to_variable = { MNG_A_Suspected_Army_sunhao = -0.1 }
+			custom_effect_tooltip = MNG_zhengjunchiwu_xiaoguo
 		}
 	}
 	#有备无患
@@ -806,10 +801,9 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			swap_ideas = {
-				add_idea = MNG_A_Suspected_Army_4
-				remove_idea = MNG_A_Suspected_Army_3
-			}
+			add_to_variable = { MNG_A_Suspected_Army_zuzhidu= 0.1 }
+			add_to_variable = { MNG_A_Suspected_Army_zhanzhengzhichi = 0.05 }
+			custom_effect_tooltip = MNG_caitairongruo_xiaoguo
 		}
 	}
 	#黜幽陟明
@@ -825,10 +819,9 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			swap_ideas = {
-				add_idea = MNG_A_Suspected_Army_5
-				remove_idea = MNG_A_Suspected_Army_4
-			}
+			custom_effect_tooltip = MNG_chuyouzhiming_xiaoguo
+			add_to_variable = { MNG_A_Suspected_Army_gongji = 0.1 }
+			add_to_variable = { MNG_A_Suspected_Army_fangyu = 0.1 }
 		}
 	}
 }

@@ -1,4 +1,5 @@
 add_namespace = xbjdecision
+add_namespace = xbj_bianjing
 country_event = {
 	#关陇阴云
 	id = xbjdecision.1
@@ -71,5 +72,482 @@ country_event = { 	#解决温饱问题
 	}
 	option = {
 			name = xbjdecision.1.a
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.1
+	title = xbj_bianjing.1.t
+	desc = xbj_bianjing.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		SIC = {
+			set_country_flag = XBJ_bianjing_win_flag
+		}
+	}
+
+	option = {
+		name = xbj_bianjing.1.a
+		trigger = {
+			tag = SIC
+		}
+	}
+	option = {
+		name = xbj_bianjing.1.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.2
+	title = xbj_bianjing.2.t
+	desc = xbj_bianjing.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		SIC = {
+			set_country_flag = XBJ_bianjing_lose_flag
+		}
+	}
+	option = {
+		name = xbj_bianjing.2.a
+		trigger = {
+			tag = SIC
+		}
+	}
+	option = {
+		name = xbj_bianjing.2.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.3
+	title = xbj_bianjing.3.t
+	desc = xbj_bianjing.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		MOB = {
+			set_country_flag = XBJ_bianjing_win_flag
+		}
+	}
+	option = {
+		name = xbj_bianjing.3.a
+		trigger = {
+			tag = MOB
+		}
+	}
+	option = {
+		name = xbj_bianjing.3.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.4
+	title = xbj_bianjing.4.t
+	desc = xbj_bianjing.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		MOB = {
+			set_country_flag = XBJ_bianjing_lose_flag
+		}
+	}
+	option = {
+		name = xbj_bianjing.4.a
+		trigger = {
+			tag = MOB
+		}
+	}
+	option = {
+		name = xbj_bianjing.4.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.5
+	title = xbj_bianjing.5.t
+	desc = xbj_bianjing.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		GPS = {
+			set_country_flag = XBJ_bianjing_win_flag
+		}
+	}
+	option = {
+		name = xbj_bianjing.5.a
+		trigger = {
+			tag = GPS
+		}
+	}
+	option = {
+		name = xbj_bianjing.5.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.6
+	title = xbj_bianjing.6.t
+	desc = xbj_bianjing.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		GPS = {
+			set_country_flag = XBJ_bianjing_lose_flag
+		}
+	}
+	option = {
+		name = xbj_bianjing.6.a
+		trigger = {
+			tag = GPS
+		}
+	}
+	option = {
+		name = xbj_bianjing.6.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.7
+	title = xbj_bianjing.7.t
+	desc = xbj_bianjing.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		XIN = {
+			set_country_flag = XBJ_bianjing_win_flag
+		}
+	}
+	option = {
+		name = xbj_bianjing.7.a
+		trigger = {
+			tag = XIN
+		}
+	}
+	option = {
+		name = xbj_bianjing.7.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.8
+	title = xbj_bianjing.8.t
+	desc = xbj_bianjing.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	immediate = {
+		XIN = {
+			set_country_flag = XBJ_bianjing_lose_flag
+		}
+	}
+	option = {
+		name = xbj_bianjing.8.a
+		trigger = {
+			tag = XIN
+		}
+	}
+	option = {
+		name = xbj_bianjing.8.b
+		trigger = {
+			tag = XBJ
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.9
+	title = xbj_bianjing.9.t
+	desc = xbj_bianjing.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.9.a
+		XBJ = { country_event = { id = xbj_bianjing.10 }}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				SIC = {
+					has_country_flag = XBJ_bianjing_shihao_flag
+				}
+			}
+		}
+	}
+	option = {
+		name = xbj_bianjing.9.b
+		XBJ = {
+			set_autonomy = {
+				target = SIC
+				autonomy_state = kr_default_puppet
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 8
+				SIC = {
+					has_country_flag = XBJ_bianjing_win_flag
+				}
+			}
+			modifier = {
+				factor = 0
+				SIC = {
+					has_country_flag = XBJ_bianjing_lose_flag
+				}
+			}
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.10
+	title = xbj_bianjing.10.t
+	desc = xbj_bianjing.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.10.a
+		declare_war_on = { target = SIC type = annex_everything }
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.11
+	title = xbj_bianjing.11.t
+	desc = xbj_bianjing.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.11.a
+		XBJ = { country_event = { id = xbj_bianjing.12 }}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				MOB = {
+					has_country_flag = XBJ_bianjing_shihao_flag
+				}
+			}
+		}
+	}
+	option = {
+		name = xbj_bianjing.11.b
+		XBJ = {
+			set_autonomy = {
+				target = MOB
+				autonomy_state = kr_default_puppet
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 8
+				MOB = {
+					has_country_flag = XBJ_bianjing_win_flag
+				}
+			}
+			modifier = {
+				factor = 0
+				MOB = {
+					has_country_flag = XBJ_bianjing_lose_flag
+				}
+			}
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.12
+	title = xbj_bianjing.12.t
+	desc = xbj_bianjing.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.12.a
+		declare_war_on = { target = MOB type = annex_everything }
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.13
+	title = xbj_bianjing.13.t
+	desc = xbj_bianjing.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.13.a
+		XBJ = { country_event = { id = xbj_bianjing.14 }}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				GPS = {
+					has_country_flag = XBJ_bianjing_shihao_flag
+				}
+			}
+		}
+	}
+	option = {
+		name = xbj_bianjing.13.b
+		XBJ = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = kr_default_puppet
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 8
+				GPS = {
+					has_country_flag = XBJ_bianjing_win_flag
+				}
+			}
+			modifier = {
+				factor = 0
+				GPS = {
+					has_country_flag = XBJ_bianjing_lose_flag
+				}
+			}
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.14
+	title = xbj_bianjing.14.t
+	desc = xbj_bianjing.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.14.a
+		declare_war_on = { target = GPS type = annex_everything }
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.15
+	title = xbj_bianjing.15.t
+	desc = xbj_bianjing.15.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.15.a
+		XBJ = { country_event = { id = xbj_bianjing.16 }}
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0.5
+				XIN = {
+					has_country_flag = XBJ_bianjing_shihao_flag
+				}
+			}
+		}
+	}
+	option = {
+		name = xbj_bianjing.15.b
+		XBJ = {
+			set_autonomy = {
+				target = XIN
+				autonomy_state = kr_default_puppet
+			}
+		}
+		ai_chance = {
+			base = 5
+			modifier = {
+				factor = 8
+				XIN = {
+					has_country_flag = XBJ_bianjing_win_flag
+				}
+			}
+			modifier = {
+				factor = 0
+				XIN = {
+					has_country_flag = XBJ_bianjing_lose_flag
+				}
+			}
+		}
+	}
+}
+
+country_event = { 	
+ 
+	id = xbj_bianjing.16
+	title = xbj_bianjing.16.t
+	desc = xbj_bianjing.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = xbj_bianjing.16.a
+		declare_war_on = { target = XIN type = annex_everything }
 	}
 }

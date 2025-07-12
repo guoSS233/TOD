@@ -1,0 +1,73 @@
+#滇缅铁路决议
+XIN_dianmiantielu = {
+    #大理-腊戌
+	XIN_dali-laxu = {
+		icon = ger_military_buildup
+        activation = { 
+            tag = XIN  
+            has_country_flag = XIN_dali-laxutongche
+        }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 120
+        fire_only_once = yes
+        timeout_effect = { 
+            XIN = {country_event = { id = TOD_XIN.104 } }
+        }
+	}
+    #腊戌-曼德勒
+	XIN_laxu-mandedle = {
+		icon = ger_military_buildup
+        activation = { 
+            tag = XIN  
+            has_country_flag = XIN_laxu-mandeletongche
+        }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 120
+        fire_only_once = yes
+        timeout_effect = { 
+            XIN = {country_event = { id = TOD_XIN.106 } }
+        }
+	}
+    #曼德勒-彬马那
+	XIN_mandele-binmana = {
+		icon = ger_military_buildup
+        activation = { 
+            tag = XIN  
+            has_country_flag = XIN_mandele-binmanatongche
+        }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 120
+        fire_only_once = yes
+        timeout_effect = { 
+            XIN = {country_event = { id = TOD_XIN.108 } }
+        }
+	}
+    #彬马那-东吁
+	XIN_binmana-dongxu = {
+		icon = ger_military_buildup
+        activation = { 
+            tag = XIN
+            has_country_flag = XIN_binmana-dongxutongche
+        }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 120
+        fire_only_once = yes
+        timeout_effect = { 
+            XIN = {country_event = { id = TOD_XIN.110 } }
+        }
+	}
+    #东吁-仰光
+	XIN_dongxu-yangguang = {
+		icon = ger_military_buildup
+        activation = { 
+            tag = XIN
+            has_country_flag = XIN_dongxu-yangguangtongche
+        }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 120
+        fire_only_once = yes
+        timeout_effect = { 
+            
+        }
+	}
+}

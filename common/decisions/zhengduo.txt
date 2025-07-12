@@ -1,0 +1,451 @@
+lianghuaizhengduo = {
+
+    lianghuaizhengduo_xinyang = {
+		icon = GFX_decision_border_war
+		allowed = {
+		}
+        available = {
+		}
+		fire_only_once = no
+
+		state_target = yes
+		custom_cost_text = CP_15
+		custom_cost_trigger = {
+			NOT = { command_power < 15 }
+		}
+
+		days_remove = 15
+		ai_will_do = { base = 50 }
+		priority = 100
+		state_target = yes
+
+		targets = { 833 }
+		cancel_trigger = {
+		}
+		complete_effect = { 
+            hidden_effect = {
+                add_command_power = -15
+            }
+        }
+		remove_effect = {
+            if = {
+                limit = {
+                    tag = GOS
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_xinyang_GOS
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_xinyang_GOS
+                        value = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    tag = STG
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_xinyang_STG
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_xinyang_STG
+                        value = 1
+                    }
+                }
+            }
+		}
+    }
+    lianghuaizhengduo_xuhai = {
+		icon = GFX_decision_border_war
+		allowed = {
+
+		}
+        available = {
+            OR ={
+                tag = STG
+                tag = GOS
+            }
+            hidden_trigger = {
+            OR = {
+                tag = STG
+                AND = {
+                    tag = GOS
+                    OR = {
+                        check_variable = { zhengduo_wanbei_GOS > zhengduo_wanbei_STG }
+                        check_variable = { zhengduo_huaian_GOS > zhengduo_huaian_STG }
+                    }
+                }
+            }
+            }
+		}
+		fire_only_once = no
+
+		state_target = yes
+		custom_cost_text = CP_15_zhengduo_xuhai
+		custom_cost_trigger = {
+			NOT = { command_power < 15 }
+		}
+
+		days_remove = 15
+		ai_will_do = { base = 50 }
+		priority = 100
+		state_target = yes
+
+		targets = { 809 }
+		cancel_trigger = {
+		}
+		complete_effect = { 
+            hidden_effect = {
+                add_command_power = -15
+            }
+        }
+		remove_effect = {
+            if = {
+                limit = {
+                    tag = GOS
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_xuhai_GOS
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_xuhai_GOS
+                        value = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    tag = STG
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_xuhai_STG
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_xuhai_STG
+                        value = 1
+                    }
+                }
+            }
+		}
+    }
+    lianghuaizhengduo_wanbei = {
+		icon = GFX_decision_border_war
+		allowed = {
+
+		}
+        available = {
+            OR ={
+                tag = STG
+                tag = GOS
+            }
+            hidden_trigger = {
+                OR = {
+                    tag = STG
+                    AND = {
+                        tag = GOS
+                        OR = {
+                            check_variable = { zhengduo_xuhai_GOS > zhengduo_xuhai_STG }
+                            check_variable = { zhengduo_wanzhong_GOS > zhengduo_wanzhong_STG }
+                            check_variable = { zhengduo_xinyang_GOS > zhengduo_xinyang_STG }
+                        }
+                    }
+                }
+            }
+		}
+		fire_only_once = no
+
+		state_target = yes
+		custom_cost_text = CP_15_zhengduo_wanbei
+		custom_cost_trigger = {
+			NOT = { command_power < 15 }
+		}
+
+		days_remove = 15
+		ai_will_do = { base = 50 }
+		priority = 100
+		state_target = yes
+
+		targets = { 810 }
+		cancel_trigger = {
+		}
+		complete_effect = { 
+            hidden_effect = {
+                add_command_power = -15
+            }
+        }
+		remove_effect = {
+            if = {
+                limit = {
+                    tag = GOS
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_wanbei_GOS
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_wanbei_GOS
+                        value = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    tag = STG
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_wanbei_STG
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_wanbei_STG
+                        value = 1
+                    }
+                }
+            }
+		}
+    }
+    lianghuaizhengduo_huaian = {
+		icon = GFX_decision_border_war
+		allowed = {
+
+		}
+        available = {
+            OR = {
+                tag = GOS
+                tag = STG
+            }
+            hidden_trigger = {
+                OR = {
+                   tag = GOS
+                    AND = {
+                        tag = STG
+                        OR = {
+                            check_variable = { zhengduo_xuhai_GOS < zhengduo_xuhai_STG }
+                            check_variable = { zhengduo_wanzhong_GOS < zhengduo_wanzhong_STG }
+                        }
+                    }
+                }
+            }
+		}
+		fire_only_once = no
+
+		state_target = yes
+		custom_cost_text = CP_15_zhengduo_huaian
+		custom_cost_trigger = {
+			NOT = { command_power < 15 }
+		}
+
+		days_remove = 15
+		ai_will_do = { base = 50 }
+		priority = 100
+		state_target = yes
+
+		targets = { 598 }
+		cancel_trigger = {
+		}
+		complete_effect = { 
+            hidden_effect = {
+                add_command_power = -15
+            }
+        }
+		remove_effect = {
+            if = {
+                limit = {
+                    tag = GOS
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_huaian_GOS
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_huaian_GOS
+                        value = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    tag = STG
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_huaian_STG
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_huaian_STG
+                        value = 1
+                    }
+                }
+            }
+		}
+    }
+    lianghuaizhengduo_wanzhong = {
+		icon = GFX_decision_border_war
+		allowed = {
+
+		}
+        available = {
+            OR ={
+                tag = GOS
+                tag = STG
+            }
+            hidden_trigger = {
+                OR = {
+                    tag = GOS
+                    AND = {
+                        tag = STG
+                        OR = {
+                            check_variable = { zhengduo_wanbei_GOS > zhengduo_wanbei_STG }
+                            check_variable = { zhengduo_xinyang_GOS > zhengduo_xinyang_STG }
+                            check_variable = { zhengduo_huaian_GOS > zhengduo_huaian_STG }
+                        }
+                    }
+                }
+            }
+		}
+		fire_only_once = no
+
+		state_target = yes
+		custom_cost_text = CP_15_zhengduo_wanzhong
+		custom_cost_trigger = {
+			NOT = { command_power < 15 }
+		}
+
+		days_remove = 15
+		ai_will_do = { base = 50 }
+		priority = 100
+		state_target = yes
+
+		targets = { 606 }
+		cancel_trigger = {
+		}
+		complete_effect = { 
+            hidden_effect = {
+                add_command_power = -15
+            }
+        }
+		remove_effect = {
+            if = {
+                limit = {
+                    tag = GOS
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_wanzhong_GOS
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_wanzhong_GOS
+                        value = 1
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    tag = STG
+                }
+                GOS = {
+			        add_to_variable = {
+                        var = zhengduo_wanzhong_STG
+                        value = 1
+                    }
+                }
+                STG = {
+			        add_to_variable = {
+                        var = zhengduo_wanzhong_STG
+                        value = 1
+                    }
+                }
+            }
+		}
+    }
+    lianghuaizhengduo_GOS_zhihuidian = {
+		icon = GFX_decision_border_war
+		allowed = {
+            tag = GOS
+		}
+        available = {
+
+		}
+		fire_only_once = no
+
+        cost = 15
+
+		days_remove = 15
+		ai_will_do = { base = 100 }
+		priority = 20
+
+		cancel_trigger = {
+		}
+
+		remove_effect = {
+            add_command_power = 30
+		}
+    }
+    lianghuaizhengduo_STG_zhihuidian = {
+		icon = GFX_decision_border_war
+		allowed = {
+            tag = STG
+		}
+        available = {
+
+		}
+		fire_only_once = no
+
+        cost = 15
+
+		days_remove = 20
+		ai_will_do = { base = 100 }
+		priority = 20
+
+		cancel_trigger = {
+		}
+
+		remove_effect = {
+            add_command_power = 30
+		}
+    }
+    lianghuaizhengduo_daojishi = {
+		icon = GFX_decision_border_war
+		fire_only_once = yes
+        activation = { has_global_flag = flag_lianghuaizhengduo }
+        available = {
+            always = no
+        }
+		days_mission_timeout = 100
+		remove_effect = {
+            country_event = { id = zhengduo.2 } 
+		}
+    }
+}

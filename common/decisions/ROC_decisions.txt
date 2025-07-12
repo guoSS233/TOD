@@ -135,6 +135,16 @@ ROC_balance_of_power_category = {  #权力斗争决议
 		   }
 	   }	
 	#决议	
+	ROC_decision_bop_jingjidahui = {
+		icon = GFX_decision_generic_political_address
+        activation = { tag = ROC has_completed_focus = gaizaojingjidezhunbei }
+		available = { hidden_trigger = { always = no } }
+		days_mission_timeout = 1080
+        fire_only_once = no
+        timeout_effect = { 
+            country_event = { id = ROC_pingheng.9999 } 
+        }
+	}
 		ROC_decision_bop_left_fcsyqy = {	#扶持私营企业
 		   icon = GFX_decision_generic_decision		
 		   cost = 30	
@@ -157,31 +167,31 @@ ROC_balance_of_power_category = {  #权力斗争决议
 				   value = -0.07
 			   }
 		   }
-	   }
-	   ROC_decision_bop_left_jqmysc = {	#加强民生产业促进会技术分享
-		   icon = GFX_decision_generic_decision		
-		   cost = 30	
-		   fire_only_once = no		
-		   days_remove = 30
-		   days_re_enable = 60	
-		   ai_will_do = {
-			   factor = 0			
-		   }
-		   available = {
-		   }	
-		   complete_effect = {  	
-		   }
-		   modifier = {
-			   political_power_cost = 0.5
-			   production_factory_max_efficiency_factor = 0.05   #生产效率上限
-			  }
-		   remove_effect = {
-			   add_power_balance_value = {
-				   id = ROC_power_balance
-				   value = -0.05
+	    }
+	    ROC_decision_bop_left_jqmysc = {	#加强民生产业促进会技术分享
+		    icon = GFX_decision_generic_decision		
+		    cost = 30	
+		    fire_only_once = no		
+		    days_remove = 30
+		    days_re_enable = 60	
+		    ai_will_do = {
+		 	    factor = 0			
+		    }
+		    available = {
+		    }	
+		    complete_effect = {  	
+		    }
+		    modifier = {
+			    political_power_cost = 0.5
+			    production_factory_max_efficiency_factor = 0.05   #生产效率上限
 			   }
-		   }
-	   }
+		    remove_effect = {
+			    add_power_balance_value = {
+				    id = ROC_power_balance
+				    value = -0.05
+			    }
+		    }
+		}
 	   ROC_decision_bop_left_clgq = {	#推动处理冗余国企
 		   icon = GFX_decision_generic_decision		
 		   cost = 50	
@@ -959,7 +969,7 @@ ROC_focus_quanguogeming = {#全国革命
 		ai_will_do = {
 			factor = 500	
 			modifier = {
-				factor = -500
+				factor = 0
 				has_war = yes
 			}		
 	    }
@@ -969,7 +979,7 @@ ROC_focus_quanguogeming = {#全国革命
 			NOT = { has_war_with = GOS}
 		}
 		remove_effect = {
-			declare_war_on = { target = GOS type = take_state_focus }
+			declare_war_on = { target = GOS type = annex_everything }
 		}
 	}
 	ROC_decision_geming_xibei = {#对西北宣战
@@ -980,7 +990,7 @@ ROC_focus_quanguogeming = {#全国革命
 		ai_will_do = {
 			factor = 500	
 			modifier = {
-				factor = -500
+				factor = 0
 				has_war = yes
 			}			
 	    }
@@ -990,7 +1000,7 @@ ROC_focus_quanguogeming = {#全国革命
 			NOT = { has_war_with = XBJ}
 		}
 		remove_effect = {
-			declare_war_on = { target = XBJ type = take_state_focus }
+			declare_war_on = { target = XBJ type = annex_everything }
 		}
 	}
 	ROC_decision_geming_shuntian = {#对顺天宣战
@@ -1001,7 +1011,7 @@ ROC_focus_quanguogeming = {#全国革命
 		ai_will_do = {
 			factor = 500	
 			modifier = {
-				factor = -500
+				factor = 0
 				has_war = yes
 			}			
 	    }
@@ -1011,7 +1021,7 @@ ROC_focus_quanguogeming = {#全国革命
 			NOT = { has_war_with = STG }
 		}
 		remove_effect = {
-			declare_war_on = { target = STG type = take_state_focus }
+			declare_war_on = { target = STG type = annex_everything }
 		}
 	}
 	ROC_decision_geming_dongbei = {#对东北宣战
@@ -1022,7 +1032,7 @@ ROC_focus_quanguogeming = {#全国革命
 		ai_will_do = {
 			factor = 500	
 			modifier = {
-				factor = -500
+				factor = 0
 				has_war = yes
 			}			
 	    }
@@ -1040,8 +1050,8 @@ ROC_focus_quanguogeming = {#全国革命
 			}
 		}
 		remove_effect = {
-			declare_war_on = { target = GPS type = take_state_focus }
-			declare_war_on = { target = SRC type = take_state_focus }
+			declare_war_on = { target = GPS type = annex_everything }
+			declare_war_on = { target = SRC type = annex_everything }
 		}
 	}
 	ROC_decision_geming_xinan = {#对西南宣战
@@ -1052,7 +1062,7 @@ ROC_focus_quanguogeming = {#全国革命
 		ai_will_do = {
 			factor = 500	
 			modifier = {
-				factor = -500
+				factor = 0
 				has_war = yes
 			}				
 	    }
@@ -1062,7 +1072,7 @@ ROC_focus_quanguogeming = {#全国革命
 			NOT = { has_war_with = XIN }
 		}
 		remove_effect = {
-			declare_war_on = { target = XIN type = take_state_focus }
+			declare_war_on = { target = XIN type = annex_everything }
 		}
 	}
 	ROC_decision_geming_bashu = {#对川藏宣战
@@ -1073,7 +1083,7 @@ ROC_focus_quanguogeming = {#全国革命
 		ai_will_do = {
 			factor = 500	
 			modifier = {
-				factor = -500
+				factor = 0
 				has_war = yes
 			}				
 	    }
@@ -1083,7 +1093,7 @@ ROC_focus_quanguogeming = {#全国革命
 			NOT = { has_war_with = SIC }
 		}
 		remove_effect = {
-			declare_war_on = { target = SIC type = take_state_focus }
+			declare_war_on = { target = SIC type = annex_everything }
 		}
 	}
 	ROC_decision_geming_menggu = {#对漠北宣战
@@ -1094,7 +1104,7 @@ ROC_focus_quanguogeming = {#全国革命
 		ai_will_do = {
 			factor = 500	
 			modifier = {
-				factor = -500
+				factor = 0
 				has_war = yes
 			}				
 	    }
@@ -1104,7 +1114,7 @@ ROC_focus_quanguogeming = {#全国革命
 			NOT = { has_war_with = MOB }
 		}
 		remove_effect = {
-			declare_war_on = { target = MOB type = take_state_focus }
+			declare_war_on = { target = MOB type = annex_everything }
 		}
 	}
 }
@@ -1387,6 +1397,920 @@ ROC_focus_junshixunlian = {
 				type = support_genius
 				is_female = yes
 			}
+		}
+	}
+}
+
+ROC_focus_sanpai = {#革命委员会
+	ROC_decision_zuopai = {#左派激进化
+		icon = GFX_decision_hol_radio_oranje
+		activation = { 
+			tag = ROC
+			has_completed_focus = gemingweiyuanhui
+			NOT = {has_completed_focus = lunliuzuozhuang}
+			NOT = {has_completed_focus = jingchenghezuo}
+			NOT = {has_completed_focus = jixugeming}
+		}
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = no
+		days_mission_timeout = ROC_zuopai_time_var
+        timeout_effect = { 
+            if = {
+				limit = {
+					has_completed_focus = gemingweiyuanhui
+					NOT = {has_completed_focus = zuoyilianmeng}
+				}
+				complete_national_focus = zuoyilianmeng
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = zuoyilianmeng
+					NOT = {has_completed_focus = lianluogemingyoudang}
+				}
+				complete_national_focus = lianluogemingyoudang
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = lianluogemingyoudang
+					NOT = {has_completed_focus = tuijinsuoyouzhigeming}
+				}
+				complete_national_focus = tuijinsuoyouzhigeming
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinsuoyouzhigeming
+					NOT = {has_completed_focus = jiakuaigongsiheyingjincheng}
+					NOT = {has_completed_focus = tudigaigejijinhua}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = tudigaigejijinhua
+					} 
+					50 = {  #倾向
+						complete_national_focus = jiakuaigongsiheyingjincheng
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinsuoyouzhigeming
+					has_completed_focus = jiakuaigongsiheyingjincheng
+					NOT = {has_completed_focus = tudigaigejijinhua}
+					NOT = {has_completed_focus = qianghuagonghuigemingxing}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = tudigaigejijinhua
+					} 
+					50 = {  #倾向
+						complete_national_focus = qianghuagonghuigemingxing
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinsuoyouzhigeming
+					has_completed_focus = qianghuagonghuigemingxing
+					NOT = {has_completed_focus = tudigaigejijinhua}
+					NOT = {has_completed_focus = queligongyouzhijingjizhutidiwei}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = tudigaigejijinhua
+					} 
+					50 = {  #倾向
+						complete_national_focus = queligongyouzhijingjizhutidiwei
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinsuoyouzhigeming
+					has_completed_focus = queligongyouzhijingjizhutidiwei
+					NOT = {has_completed_focus = tudigaigejijinhua}
+				}
+				complete_national_focus = tudigaigejijinhua
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tudigaigejijinhua
+					has_completed_focus = queligongyouzhijingjizhutidiwei
+					NOT = {has_completed_focus = weichinonghuiwuzhuang}
+				}
+				complete_national_focus = weichinonghuiwuzhuang
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = weichinonghuiwuzhuang
+					has_completed_focus = queligongyouzhijingjizhutidiwei
+					NOT = {has_completed_focus = kuodanongcunhezuosheguimo}
+				}
+				complete_national_focus = kuodanongcunhezuosheguimo
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinsuoyouzhigeming
+					has_completed_focus = tudigaigejijinhua
+					NOT = {has_completed_focus = jiakuaigongsiheyingjincheng}
+					NOT = {has_completed_focus = weichinonghuiwuzhuang}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = weichinonghuiwuzhuang
+					} 
+					50 = {  #倾向
+						complete_national_focus = jiakuaigongsiheyingjincheng
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tudigaigejijinhua
+					has_completed_focus = jiakuaigongsiheyingjincheng
+					NOT = {has_completed_focus = weichinonghuiwuzhuang}
+					NOT = {has_completed_focus = qianghuagonghuigemingxing}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = weichinonghuiwuzhuang
+					} 
+					50 = {  #倾向
+						complete_national_focus = qianghuagonghuigemingxing
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tudigaigejijinhua
+					has_completed_focus = qianghuagonghuigemingxing
+					NOT = {has_completed_focus = weichinonghuiwuzhuang}
+					NOT = {has_completed_focus = queligongyouzhijingjizhutidiwei}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = weichinonghuiwuzhuang
+					} 
+					50 = {  #倾向
+						complete_national_focus = queligongyouzhijingjizhutidiwei
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinsuoyouzhigeming
+					has_completed_focus = weichinonghuiwuzhuang
+					NOT = {has_completed_focus = jiakuaigongsiheyingjincheng}
+					NOT = {has_completed_focus = kuodanongcunhezuosheguimo}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = kuodanongcunhezuosheguimo
+					} 
+					50 = {  #倾向
+						complete_national_focus = jiakuaigongsiheyingjincheng
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = weichinonghuiwuzhuang
+					has_completed_focus = jiakuaigongsiheyingjincheng
+					NOT = {has_completed_focus = kuodanongcunhezuosheguimo}
+					NOT = {has_completed_focus = qianghuagonghuigemingxing}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = kuodanongcunhezuosheguimo
+					} 
+					50 = {  #倾向
+						complete_national_focus = qianghuagonghuigemingxing
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = weichinonghuiwuzhuang
+					has_completed_focus = qianghuagonghuigemingxing
+					NOT = {has_completed_focus = kuodanongcunhezuosheguimo}
+					NOT = {has_completed_focus = queligongyouzhijingjizhutidiwei}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = kuodanongcunhezuosheguimo
+					} 
+					50 = {  #倾向
+						complete_national_focus = queligongyouzhijingjizhutidiwei
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinsuoyouzhigeming
+					has_completed_focus = kuodanongcunhezuosheguimo
+					NOT = {has_completed_focus = jiakuaigongsiheyingjincheng}
+				}
+				complete_national_focus = jiakuaigongsiheyingjincheng
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jiakuaigongsiheyingjincheng
+					has_completed_focus = kuodanongcunhezuosheguimo
+					NOT = {has_completed_focus = qianghuagonghuigemingxing}
+				}
+				complete_national_focus = qianghuagonghuigemingxing
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = kuodanongcunhezuosheguimo
+					has_completed_focus = qianghuagonghuigemingxing
+					NOT = {has_completed_focus = queligongyouzhijingjizhutidiwei}
+				}
+				complete_national_focus = queligongyouzhijingjizhutidiwei
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = kuodanongcunhezuosheguimo
+					has_completed_focus = queligongyouzhijingjizhutidiwei
+					NOT = {has_completed_focus = gemingjijinhua}
+				}
+				complete_national_focus = gemingjijinhua
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = gemingjijinhua
+					NOT = {has_completed_focus = youxiangongnongquanyi}
+				}
+				complete_national_focus = youxiangongnongquanyi
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = youxiangongnongquanyi
+					NOT = {has_completed_focus = zhengduogeminglingdaoquan}
+					NOT = {has_completed_focus = xianqililunlunzhan}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = zhengduogeminglingdaoquan
+					} 
+					50 = {  #倾向
+						complete_national_focus = xianqililunlunzhan
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = youxiangongnongquanyi
+					has_completed_focus = zhengduogeminglingdaoquan
+					NOT = {has_completed_focus = xianqililunlunzhan}
+				}
+				complete_national_focus = xianqililunlunzhan
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = youxiangongnongquanyi
+					has_completed_focus = xianqililunlunzhan
+					NOT = {has_completed_focus = zhengduogeminglingdaoquan}
+				}
+				complete_national_focus = zhengduogeminglingdaoquan
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = zhengduogeminglingdaoquan
+					has_completed_focus = xianqililunlunzhan
+					NOT = {has_completed_focus = dajixiuzhengfenzi}
+				}
+				complete_national_focus = dajixiuzhengfenzi
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = dajixiuzhengfenzi
+					NOT = {has_completed_focus = jixugeming}
+				}
+				complete_national_focus = jixugeming
+			}
+        }
+	}
+	ROC_decision_youpai = {#右派激进化
+		icon = GFX_decision_hol_radio_oranje
+		activation = { 
+			tag = ROC
+			has_completed_focus = gemingweiyuanhui
+			NOT = {has_completed_focus = lunliuzuozhuang}
+			NOT = {has_completed_focus = jingchenghezuo}
+			NOT = {has_completed_focus = jixugeming}
+		}
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = no
+		days_mission_timeout = ROC_youpai_time_var
+        timeout_effect = { 
+            if = {
+				limit = {
+					has_completed_focus = gemingweiyuanhui
+					NOT = {has_completed_focus = youyilianmeng}
+				}
+				complete_national_focus = youyilianmeng
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = youyilianmeng
+					NOT = {has_completed_focus = ziyoudatongmeng}
+				}
+				complete_national_focus = ziyoudatongmeng
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = ziyoudatongmeng
+					NOT = {has_completed_focus = jingjihuanjingfanglue}
+				}
+				complete_national_focus = jingjihuanjingfanglue
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = yaoqiubaozhangminqiquanyi}
+					NOT = {has_completed_focus = huanhexiangcundouzheng}
+					has_completed_focus = jingjihuanjingfanglue
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = yaoqiubaozhangminqiquanyi
+					} 
+					50 = {  #倾向
+						complete_national_focus = huanhexiangcundouzheng
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = jianadaqiyejiaruhui}
+					NOT = {has_completed_focus = huanhexiangcundouzheng}
+					has_completed_focus = yaoqiubaozhangminqiquanyi
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = jianadaqiyejiaruhui
+					} 
+					50 = {  #倾向
+						complete_national_focus = huanhexiangcundouzheng
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = tiyihuifuguangjiaosuo}
+					NOT = {has_completed_focus = huanhexiangcundouzheng}
+					has_completed_focus = jingjihuanjingfanglue
+					has_completed_focus = jianadaqiyejiaruhui
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = tiyihuifuguangjiaosuo
+					} 
+					50 = {  #倾向
+						complete_national_focus = huanhexiangcundouzheng
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = huanhexiangcundouzheng}
+					has_completed_focus = jingjihuanjingfanglue
+					has_completed_focus = tiyihuifuguangjiaosuo
+				}
+				complete_national_focus = huanhexiangcundouzheng
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = tuidongnongcunjingjihuazhuanxiang}
+					has_completed_focus = huanhexiangcundouzheng
+					has_completed_focus = tiyihuifuguangjiaosuo
+				}
+				complete_national_focus = tuidongnongcunjingjihuazhuanxiang
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = tudiliuzhuanziyouhua}
+					has_completed_focus = tuidongnongcunjingjihuazhuanxiang
+					has_completed_focus = tiyihuifuguangjiaosuo
+				}
+				complete_national_focus = tudiliuzhuanziyouhua
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = yaoqiubaozhangminqiquanyi}
+					NOT = {has_completed_focus = tuidongnongcunjingjihuazhuanxiang}
+					has_completed_focus = huanhexiangcundouzheng
+					has_completed_focus = jingjihuanjingfanglue
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = yaoqiubaozhangminqiquanyi
+					} 
+					50 = {  #倾向
+						complete_national_focus = tuidongnongcunjingjihuazhuanxiang
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = jianadaqiyejiaruhui}
+					NOT = {has_completed_focus = tuidongnongcunjingjihuazhuanxiang}
+					has_completed_focus = huanhexiangcundouzheng
+					has_completed_focus = yaoqiubaozhangminqiquanyi
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = jianadaqiyejiaruhui
+					} 
+					50 = {  #倾向
+						complete_national_focus = tuidongnongcunjingjihuazhuanxiang
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = tiyihuifuguangjiaosuo}
+					NOT = {has_completed_focus = tuidongnongcunjingjihuazhuanxiang}
+					has_completed_focus = huanhexiangcundouzheng
+					has_completed_focus = jianadaqiyejiaruhui
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = tiyihuifuguangjiaosuo
+					} 
+					50 = {  #倾向
+						complete_national_focus = tuidongnongcunjingjihuazhuanxiang
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = yaoqiubaozhangminqiquanyi}
+					NOT = {has_completed_focus = tudiliuzhuanziyouhua}
+					has_completed_focus = tuidongnongcunjingjihuazhuanxiang
+					has_completed_focus = jingjihuanjingfanglue
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = yaoqiubaozhangminqiquanyi
+					} 
+					50 = {  #倾向
+						complete_national_focus = tudiliuzhuanziyouhua
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = jianadaqiyejiaruhui}
+					NOT = {has_completed_focus = tudiliuzhuanziyouhua}
+					has_completed_focus = tuidongnongcunjingjihuazhuanxiang
+					has_completed_focus = yaoqiubaozhangminqiquanyi
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = jianadaqiyejiaruhui
+					} 
+					50 = {  #倾向
+						complete_national_focus = tudiliuzhuanziyouhua
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = tiyihuifuguangjiaosuo}
+					NOT = {has_completed_focus = tudiliuzhuanziyouhua}
+					has_completed_focus = tuidongnongcunjingjihuazhuanxiang
+					has_completed_focus = jianadaqiyejiaruhui
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = tiyihuifuguangjiaosuo
+					} 
+					50 = {  #倾向
+						complete_national_focus = tudiliuzhuanziyouhua
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = yaoqiubaozhangminqiquanyi}
+					has_completed_focus = tudiliuzhuanziyouhua
+					has_completed_focus = jingjihuanjingfanglue
+				}
+				complete_national_focus = yaoqiubaozhangminqiquanyi
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = jianadaqiyejiaruhui}
+					has_completed_focus = tudiliuzhuanziyouhua
+					has_completed_focus = yaoqiubaozhangminqiquanyi
+				}
+				complete_national_focus = jianadaqiyejiaruhui
+			}
+			else_if = {
+				limit = {
+					NOT = {has_completed_focus = tiyihuifuguangjiaosuo}
+					has_completed_focus = tudiliuzhuanziyouhua
+					has_completed_focus = jianadaqiyejiaruhui
+				}
+				complete_national_focus = tiyihuifuguangjiaosuo
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tiyihuifuguangjiaosuo
+					has_completed_focus = tudiliuzhuanziyouhua
+					NOT = {has_completed_focus = gemingziyouhua}
+				}
+				complete_national_focus = gemingziyouhua
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = gemingziyouhua
+					NOT = {has_completed_focus = xuanyangzhengzhiminzhu}
+				}
+				complete_national_focus = xuanyangzhengzhiminzhu
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = xuanyangzhengzhiminzhu
+					NOT = {has_completed_focus = yaoqiusuxingxianzheng}
+					NOT = {has_completed_focus = fangkuanzudangshenhe}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = yaoqiusuxingxianzheng
+					} 
+					50 = {  #倾向
+						complete_national_focus = fangkuanzudangshenhe
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = xuanyangzhengzhiminzhu
+					has_completed_focus = fangkuanzudangshenhe
+					NOT = {has_completed_focus = yaoqiusuxingxianzheng}
+				}
+				complete_national_focus = yaoqiusuxingxianzheng
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = xuanyangzhengzhiminzhu
+					has_completed_focus = yaoqiusuxingxianzheng
+					NOT = {has_completed_focus = fangkuanzudangshenhe}
+				}
+				complete_national_focus = fangkuanzudangshenhe
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = fangkuanzudangshenhe
+					has_completed_focus = yaoqiusuxingxianzheng
+					NOT = {has_completed_focus = zhiyidatonghui}
+				}
+				complete_national_focus = zhiyidatonghui
+			}
+			else_if = {
+				limit = {
+					has_completed_focus =zhiyidatonghui
+					NOT = {has_completed_focus = lunliuzuozhuang}
+				}
+				complete_national_focus = lunliuzuozhuang
+			}
+        }
+	}
+	ROC_decision_zhongpai = {#中道大联合
+		icon = GFX_decision_hol_radio_oranje
+		activation = { 
+			tag = ROC
+			has_completed_focus = gemingweiyuanhui
+			NOT = {has_completed_focus = lunliuzuozhuang}
+			NOT = {has_completed_focus = jingchenghezuo}
+			NOT = {has_completed_focus = jixugeming}
+		}
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = no
+		days_mission_timeout = ROC_zhongpai_time_var
+        timeout_effect = { 
+            if = {
+				limit = {
+					has_completed_focus = gemingweiyuanhui
+					NOT = {has_completed_focus = gemingtongyizhanxian}
+				}
+				complete_national_focus = gemingtongyizhanxian
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = gemingtongyizhanxian
+					NOT = {has_completed_focus = qianghuazhengzhituanjie}
+				}
+				complete_national_focus = qianghuazhengzhituanjie
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = qianghuazhengzhituanjie
+					NOT = {has_completed_focus = jijicanzhengyizheng}
+				}
+				complete_national_focus = jijicanzhengyizheng
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jijicanzhengyizheng
+					NOT = {has_completed_focus = xiezhugongyegaizao}
+					NOT = {has_completed_focus = xiezhunongyegaizao}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = xiezhugongyegaizao
+					} 
+					50 = {  #倾向
+						complete_national_focus = xiezhunongyegaizao
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jijicanzhengyizheng
+					has_completed_focus = xiezhugongyegaizao
+					NOT = {has_completed_focus = xiezhunongyegaizao}
+				}
+				complete_national_focus = xiezhunongyegaizao
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jijicanzhengyizheng
+					has_completed_focus = xiezhunongyegaizao
+					NOT = {has_completed_focus = xiezhugongyegaizao}
+				}
+				complete_national_focus = xiezhugongyegaizao
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = xiezhugongyegaizao
+					has_completed_focus = xiezhunongyegaizao
+					NOT = {has_completed_focus = luoshixinjingjifa}
+				}
+				complete_national_focus = luoshixinjingjifa
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = luoshixinjingjifa
+					NOT = {has_completed_focus = zhichisansanzhizhengfu}
+				}
+				complete_national_focus = zhichisansanzhizhengfu
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = zhichisansanzhizhengfu
+					NOT = {has_completed_focus = peihekaizhanqunzhongyundong}
+					NOT = {has_completed_focus = jicengjibuhezuo}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = peihekaizhanqunzhongyundong
+					} 
+					50 = {  #倾向
+						complete_national_focus = jicengjibuhezuo
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = zhichisansanzhizhengfu
+					has_completed_focus = peihekaizhanqunzhongyundong
+					NOT = {has_completed_focus = qianghuahezuoxuanchuan}
+					NOT = {has_completed_focus = jicengjibuhezuo}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = qianghuahezuoxuanchuan
+					} 
+					50 = {  #倾向
+						complete_national_focus = jicengjibuhezuo
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = zhichisansanzhizhengfu
+					has_completed_focus = qianghuahezuoxuanchuan
+					NOT = {has_completed_focus = yantaogeminglilun}
+					NOT = {has_completed_focus = jicengjibuhezuo}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = yantaogeminglilun
+					} 
+					50 = {  #倾向
+						complete_national_focus = jicengjibuhezuo
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = zhichisansanzhizhengfu
+					has_completed_focus = yantaogeminglilun
+					NOT = {has_completed_focus = jicengjibuhezuo}
+				}
+				complete_national_focus = jicengjibuhezuo
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jicengjibuhezuo
+					has_completed_focus = yantaogeminglilun
+					NOT = {has_completed_focus = tuijinkuadanghezuo}
+				}
+				complete_national_focus = tuijinkuadanghezuo
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinkuadanghezuo
+					has_completed_focus = yantaogeminglilun
+					NOT = {has_completed_focus = yazhifenliezhuyi}
+				}
+				complete_national_focus = yazhifenliezhuyi
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jicengjibuhezuo
+					has_completed_focus = zhichisansanzhizhengfu
+					NOT = {has_completed_focus = peihekaizhanqunzhongyundong}
+					NOT = {has_completed_focus = tuijinkuadanghezuo}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = peihekaizhanqunzhongyundong
+					} 
+					50 = {  #倾向
+						complete_national_focus = tuijinkuadanghezuo
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jicengjibuhezuo
+					has_completed_focus = peihekaizhanqunzhongyundong
+					NOT = {has_completed_focus = qianghuahezuoxuanchuan}
+					NOT = {has_completed_focus = tuijinkuadanghezuo}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = qianghuahezuoxuanchuan
+					} 
+					50 = {  #倾向
+						complete_national_focus = tuijinkuadanghezuo
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = jicengjibuhezuo
+					has_completed_focus = qianghuahezuoxuanchuan
+					NOT = {has_completed_focus = yantaogeminglilun}
+					NOT = {has_completed_focus = tuijinkuadanghezuo}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = yantaogeminglilun
+					} 
+					50 = {  #倾向
+						complete_national_focus = tuijinkuadanghezuo
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinkuadanghezuo
+					has_completed_focus = zhichisansanzhizhengfu
+					NOT = {has_completed_focus = peihekaizhanqunzhongyundong}
+					NOT = {has_completed_focus = yazhifenliezhuyi}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = peihekaizhanqunzhongyundong
+					} 
+					50 = {  #倾向
+						complete_national_focus = yazhifenliezhuyi
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinkuadanghezuo
+					has_completed_focus = peihekaizhanqunzhongyundong
+					NOT = {has_completed_focus = qianghuahezuoxuanchuan}
+					NOT = {has_completed_focus = yazhifenliezhuyi}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = qianghuahezuoxuanchuan
+					} 
+					50 = {  #倾向
+						complete_national_focus = yazhifenliezhuyi
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = tuijinkuadanghezuo
+					has_completed_focus = qianghuahezuoxuanchuan
+					NOT = {has_completed_focus = yantaogeminglilun}
+					NOT = {has_completed_focus = yazhifenliezhuyi}
+				}
+				random_list = { 
+					50 = {  #倾向
+						complete_national_focus = yantaogeminglilun
+					} 
+					50 = {  #倾向
+						complete_national_focus = yazhifenliezhuyi
+					} 
+				}
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = yazhifenliezhuyi
+					has_completed_focus = zhichisansanzhizhengfu
+					NOT = {has_completed_focus = peihekaizhanqunzhongyundong}
+				}
+				complete_national_focus = peihekaizhanqunzhongyundong
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = yazhifenliezhuyi
+					has_completed_focus = peihekaizhanqunzhongyundong
+					NOT = {has_completed_focus = qianghuahezuoxuanchuan}
+				}
+				complete_national_focus = qianghuahezuoxuanchuan
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = yazhifenliezhuyi
+					has_completed_focus = qianghuahezuoxuanchuan
+					NOT = {has_completed_focus = yantaogeminglilun}
+				}
+				complete_national_focus = yantaogeminglilun
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = yazhifenliezhuyi
+					has_completed_focus = yantaogeminglilun
+					NOT = {has_completed_focus = yongbaogemingweiyuanhuizhengzhi}
+				}
+				complete_national_focus = yongbaogemingweiyuanhuizhengzhi
+			}
+			else_if = {
+				limit = {
+					has_completed_focus = yongbaogemingweiyuanhuizhengzhi
+					NOT = {has_completed_focus = jingchenghezuo}
+				}
+				complete_national_focus = jingchenghezuo
+			}
+        }
+	}
+	ROC_decision_zuoxiantuoxie = {#对左派妥协
+		icon = generic_civil_support	
+		cost = ROC_var_PP_yanchang
+		days_remove = ROC_var_time_yanchang
+		days_re_enable = 60
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 75		
+	    }
+		visible = {
+			has_completed_focus = huisheyuzhengfu
+		}
+	    complete_effect = {  	
+			add_days_mission_timeout = {
+				mission = ROC_decision_zuopai
+				days = ROC_var_zuo_yanchang
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		remove_effect = {
+		}
+	}
+	ROC_decision_youxiantuoxie = {#对右派妥协
+		icon = generic_civil_support	
+		cost = ROC_var_PP_yanchang
+		days_remove = ROC_var_time_yanchang
+		days_re_enable = 60
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 75		
+	    }
+		visible = {
+			has_completed_focus = huisheyuzhengfu
+		}
+	    complete_effect = {  	
+			add_days_mission_timeout = {
+				mission = ROC_decision_zuopai
+				days = ROC_var_you_yanchang
+			}
+		}
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+		remove_effect = {
 		}
 	}
 }
