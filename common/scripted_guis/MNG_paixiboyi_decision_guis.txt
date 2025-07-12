@@ -1,0 +1,58 @@
+scripted_gui = {
+	MNG_paixiboyi_button = {
+		context_type = player_context
+		parent_window_token = politics_tab
+		window_name = "MNG_paixiboyi_bg"
+		visible = {
+			original_tag = MNG
+		}
+		effects = {
+			MNG_paixiboyi_button_click = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = MNG_paixiboyi_GUI_open 
+						}
+					}
+					set_country_flag = MNG_paixiboyi_GUI_open
+				}
+				else_if = {
+					limit = {
+						has_country_flag = MNG_paixiboyi_GUI_open 
+					}
+					clr_country_flag = MNG_paixiboyi_GUI_open 
+				}
+			}
+		}
+	}
+	MNG_paixiboyi_GUI_window = {
+		context_type = player_context
+		window_name = "MNG_paixiboyi_GUI_window"
+		visible = {
+			has_country_flag = MNG_paixiboyi_GUI_open 
+			original_tag = MNG
+		}
+		properties = {
+			party_leader_portrait = {
+				image = "[MNG_party_leader_portrait]"
+			}
+		}
+		effects = {
+			MNG_party_1_click = {
+				set_variable = {MNG_party_num = 3}
+			}
+			MNG_party_2_click = {
+				set_variable = {MNG_party_num = 1}
+			}
+			MNG_party_3_click = {
+				set_variable = {MNG_party_num = 0}
+			}
+			MNG_party_4_click = {
+				set_variable = {MNG_party_num = 2}
+			}
+			MNG_party_5_click = {
+				set_variable = {MNG_party_num = 4}
+			}
+		}
+	}
+}
