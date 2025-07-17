@@ -423,3 +423,78 @@ country_event = {
 		promote_character = GER_Otto_Strasser
 	}
 }
+#莱茵联邦公投
+news_event = { 
+	id = TODgermany.1001
+	title = TODgermany.1001.t
+	desc =TODgermany.1001.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		trigger = {NOT = {tag = GER}}
+		name = TODgermany.1001.a
+	}
+	option = { 
+		trigger = {tag = GER}
+		name = TODgermany.1001.b
+		annex_country = { target = RIN transfer_troops = yes }
+	}
+}
+#进攻巴伐利亚+奥地利
+news_event = { 
+	id = TODgermany.1002
+	title = TODgermany.1002.t
+	desc =TODgermany.1002.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = { 
+		trigger = {NOT = {tag = GER}}
+		name = TODgermany.1002.a
+	}
+	option = { 
+		trigger = {tag = GER}
+		name = TODgermany.1002.b
+		declare_war_on = { target = BAV type = annex_everything }
+		declare_war_on = { target = AUS type = annex_everything }
+	}
+}
+#对法宣战
+news_event = { 
+	id = TODgermany.1003
+	title = TODgermany.1003.t
+	desc =TODgermany.1003.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	mean_time_to_happen = { days = 30 }
+	trigger = {
+		NOT = {
+			country_exists = aus
+			country_exists = BAV
+			GER = { 
+				has_war_with = FRA 
+			}
+			has_global_flag = defa_kaizhan
+		}
+		country_exists = FRA
+		
+	}
+	immediate = { set_global_flag = defa_kaizhan }
+	option = { 
+		trigger = {NOT = {tag = GER}}
+		name = TODgermany.1003.a
+	}
+	option = { 
+		trigger = {tag = GER}
+		name = TODgermany.1003.b
+		declare_war_on = { target = FRA type = annex_everything }
+	}
+}
