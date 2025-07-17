@@ -2,11 +2,11 @@ GRE_saipulusi_categories = {
 	GRE_kaishijingong = {
 		icon = ger_military_buildup
 		
+		
 		visible = {
 			NOT = {
 				has_global_flag = saipulusizhengduan
-				183 = { is_controlled_by = GRE }
-				183 = { is_controlled_by = TUR }
+				has_global_flag = saipulusizhengduanjieshu
 			}
 		}
 		ai_will_do = {
@@ -314,8 +314,8 @@ GRE_saipulusi_categories = {
 			NOT = {
 				has_country_flag = GRE_nikexiyaxingdong
 			}
-			check_variable = { var = global.lanaka value = -1 compare = less_than }
-			check_variable = { var = global.teluoduosi value = -1 compare = less_than }
+			check_variable = { var = global.lanaka value = 0 compare = less_than }
+			check_variable = { var = global.teluoduosi value = 0 compare = less_than }
 			has_equipment = {
 				infantry_equipment > 49
 			}
@@ -365,8 +365,8 @@ GRE_saipulusi_categories = {
 				has_country_flag = GRE_nikexiyaxingdong
 			}
 			has_manpower > 100
-			check_variable = { var = global.lanaka value = -1 compare = less_than }
-			check_variable = { var = global.teluoduosi value = -1 compare = less_than }
+			check_variable = { var = global.lanaka value = 0 compare = less_than }
+			check_variable = { var = global.teluoduosi value = 0 compare = less_than }
 			has_equipment = {
 				infantry_equipment > 99
 			}
@@ -458,8 +458,8 @@ GRE_saipulusi_categories = {
 			has_equipment = {
 				infantry_equipment > 49
 			}
-			check_variable = { var = global.lanaka value = 1 compare = greater_than }
-			check_variable = { var = global.teluoduosi value = 1 compare = greater_than }
+			check_variable = { var = global.lanaka value = 0 compare = greater_than }
+			check_variable = { var = global.teluoduosi value = 0 compare = greater_than }
 		}
 		
 		days_remove = 30
@@ -511,8 +511,8 @@ GRE_saipulusi_categories = {
 			has_equipment = {
 				infantry_equipment > 99
 			}
-			check_variable = { var = global.lanaka value = 1 compare = greater_than }
-			check_variable = { var = global.teluoduosi value = 1 compare = greater_than }
+			check_variable = { var = global.lanaka value = 0 compare = greater_than }
+			check_variable = { var = global.teluoduosi value = 0 compare = greater_than }
 		}
 		days_remove = 30
 
