@@ -1,0 +1,66 @@
+capital = 802
+
+oob = "KOR_1936"
+
+set_politics = {
+	ruling_party = council_socialism
+	last_election = "1912.6.15"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	national_corporatism = 0
+	sacred_revivalism = 1
+	leader_despotism = 1
+	authoritarian_oligarchy = 5
+	conservative_democracy = 5
+	liberal_democracy = 16
+	consociationalism = 4
+	social_democrat = 40
+	agroindustrial_socialism = 5
+	moderate_socialism = 18
+	council_socialism = 4
+	vanguard_socialism = 1
+}
+
+recruit_character = ROK_Li_Donghui
+recruit_character = ROK_Chaoxianzongnongxie
+recruit_character = ROK_Piao_Yongxian
+recruit_character = ROK_Jin_Hengji
+recruit_character = ROK_Cao_Fengyan
+recruit_character = ROK_Lyu_Yunheng
+recruit_character = ROK_Jin_JIu
+recruit_character = ROK_An_Changhao
+recruit_character = ROK_Jin_Guizhi
+recruit_character = ROK_gemingjunguantuan
+recruit_character = ROK_Li_Fanshi
+recruit_character = ROK_An_Haoxiang
+
+add_ideas = {
+	ROK_Republic_flag
+	ROK_Revolutionary_army
+	ROK_United_revolution
+
+	AthCfc_type
+}
+
+add_ideas = {#开局法律
+	export_focus
+	volunteer_only
+	war_economy
+}
+
+add_ideas = {#内阁
+	ROK_idea_An_Changhao
+	ROK_idea_Jin_JIu
+	ROK_idea_Cao_Fengyan
+	ROK_idea_Lyu_Yunheng
+}
+
+#稳定、战支
+set_stability = 0.70
+set_war_support = 0.75
+
+#科研槽
+set_research_slots = 3
