@@ -1,9 +1,10 @@
 autonomy_state = {
 	id = tod_ming_tongzhidusi
 
+	default = yes
 	is_puppet = yes
 
-	min_freedom_level = 0.50
+	min_freedom_level = 0.0
 
 	manpower_influence = 0.5
 
@@ -59,14 +60,14 @@ autonomy_state = {
 	can_take_level = {
 		custom_trigger_tooltip = {
 			tooltip = can_raise_autonomy_level
-			has_country_flag = KR_can_raise_autonomy_level
+			always = no
 		}
 	}
 
 	can_lose_level = {
 		custom_trigger_tooltip = {
 			tooltip = can_lower_autonomy_level
-			always = no #has_country_flag = KR_can_lower_autonomy_level
+			always = no 
 		}
 	}
 }

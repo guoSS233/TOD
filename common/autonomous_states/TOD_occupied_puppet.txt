@@ -1,12 +1,12 @@
 autonomy_state = {
-	id = tod_ming_zhishudusi
+	id = tod_occupied_puppet
 
 	default = yes
 	is_puppet = yes
 
 	min_freedom_level = 0.0
 
-	manpower_influence = 0.5
+	manpower_influence = 0.9
 
 	rule = {
 		can_not_declare_war = yes
@@ -38,37 +38,14 @@ autonomy_state = {
 	}
 
 	allowed = {
-		NOT = {
-			AND = {
-				OR = {
-					tag = FNG
-					is_in_array = { global.asian_economic_sphere = ROOT }
-				}
-				overlord = { tag = JAP }
-			}
-			AND = {
-				OR = {
-					tag = GEA
-					tag = MAF
-					tag = NMB
-				}
-				overlord = { tag = GER }
-			}
-	    }
 	}
 
 	can_take_level = {
-		custom_trigger_tooltip = {
-			tooltip = can_raise_autonomy_level
-			always = no
-		}
+
 	}
 
 	can_lose_level = {
-		custom_trigger_tooltip = {
-			tooltip = can_lower_autonomy_level
-			always = no #has_country_flag = KR_can_lower_autonomy_level
-		}
+
 	}
 }
 
