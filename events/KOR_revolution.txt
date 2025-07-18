@@ -1,0 +1,58 @@
+add_namespace = KOR_rev
+
+country_event = {
+	id = KOR_rev.1
+	title = KOR_rev.1.t
+	desc = KOR_rev.1.d
+	picture = GFX_report_event_generic_revolution
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = KOR_rev.1.a  # 镇压革命
+		ai_chance = { factor = 0.6 }
+		add_stability = -0.1
+		add_war_support = -0.1
+	}
+
+	option = {
+		name = KOR_rev.1.b  # 朝鲜革命军独立
+		ai_chance = { factor = 0.4 }
+
+		# 第一步：释放国家
+		release = ROK
+
+		# 第二步：设置ROK属性
+		ROK = {
+			set_capital = 802
+			add_state_core = 802
+
+
+			set_politics = {
+				ruling_party = council_socialism
+				elections_allowed = no
+			}
+
+			recruit_character = ROK_Li_Donghui
+			set_country_flag = ROK_spawned_by_KOR
+		}
+
+		# 第三步：引发战争（ROK向KOR开战）
+		ROK = {
+			declare_war_on = {
+				target = KOR
+				type = civil_war
+			}
+		}
+
+		# KOR添加宣称
+		KOR = {
+			add_state_claim = 802
+
+		}
+	}
+	trigger = {
+		tag = KOR
+		date > 1936.1.2
+	}
+}

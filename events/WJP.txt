@@ -1,0 +1,33 @@
+add_namespace = WJPevent
+#大选
+country_event = {
+	id = WJPevent.1
+	title = WJPevent.1.t
+	desc =WJPevent.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = WJP }
+	
+	option = { 
+		name = WJPevent.1.a
+	}
+}
+#宣战
+country_event = {
+	id = WJPevent.101
+	title = WJPevent.101.t
+	desc =WJPevent.101.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = EDO }
+	
+	option = { 
+		name = WJPevent.101.a
+	}
+}

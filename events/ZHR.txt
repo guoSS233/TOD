@@ -1,0 +1,72 @@
+add_namespace = zhourao
+#新几内亚冲突
+news_event = {
+	id = zhourao.1001
+	title = zhourao.1001.t
+	picture = GFX_report_event_chinese_soldiers_fighting
+	desc = zhourao.1001.d
+    major = yes
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+        trigger = {
+            NOT = {tag = ZHR}
+            NOT = {tag = LAF}
+        }
+        name = zhourao.1001.a
+    }
+	option = {
+        trigger = {
+            tag = ZHR
+        }
+        name = zhourao.1001.b
+        954 = { set_demilitarized_zone = yes }
+        669 = { set_demilitarized_zone = yes }
+        523 = { set_demilitarized_zone = yes }
+        953 = { set_demilitarized_zone = yes }
+        737 = { set_demilitarized_zone = yes }
+    }
+	option = {
+        trigger = {
+            tag = LAF
+        }
+        name = zhourao.1001.c
+        954 = { set_demilitarized_zone = yes }
+        669 = { set_demilitarized_zone = yes }
+        523 = { set_demilitarized_zone = yes }
+        953 = { set_demilitarized_zone = yes }
+        737 = { set_demilitarized_zone = yes }
+    }
+}
+#兰周冲突
+news_event = {
+	id = zhourao.1002
+	title = zhourao.1002.t
+	picture = GFX_report_event_chinese_soldiers_fighting
+	desc = zhourao.1002.d
+    major = yes
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+        trigger = {
+            NOT = {tag = ZHR}
+            NOT = {tag = LAF}
+        }
+        name = zhourao.1002.a
+    }
+	option = {
+        trigger = {
+            tag = ZHR
+        }
+        name = zhourao.1002.b
+    }
+	option = {
+        trigger = {
+            tag = LAF
+        }
+        name = zhourao.1002.c
+        declare_war_on = { target = ZHR type = take_claimed_state }
+    }
+}

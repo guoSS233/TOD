@@ -877,9 +877,12 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	
 	fire_only_once = yes
-	is_triggered_only = yes
 
-	trigger = { tag = GPS }
+	trigger = { 
+		date > 1937.10.10
+		tag = GPS
+	 }
+	
 	
 	option = { 
 		name = GPSevents.36.a
