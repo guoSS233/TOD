@@ -458,7 +458,7 @@ ideas = {
 	TOD_minister_head = { ### 政府首脑 ###
         GOS_zjj = {#张静江
 			allowed = { original_tag = GOS }
-			available = { }
+            available = { always = no }
 			cancel_if_invalid = no
 			traits = {
 				TOD_minister_head
@@ -467,7 +467,7 @@ ideas = {
 		}
         GOS_gtq = {#郭泰祺
             allowed = { original_tag = GOS }
-            available = { }
+            available = { always = no }
             cancel_if_invalid = no
             traits = {
                 TOD_minister_head
@@ -476,7 +476,7 @@ ideas = {
         }
         GOS_cgp = {#陈光甫
             allowed = { original_tag = GOS }
-            available = { }
+            available = { always = no }
             cancel_if_invalid = no
             traits = {
                 TOD_minister_head
@@ -485,7 +485,7 @@ ideas = {
         }
         GOS_lzc = {#李烛尘
             allowed = { original_tag = GOS }
-            available = { }
+            available = { always = no }
             cancel_if_invalid = no
             traits = {
                 TOD_minister_head
@@ -494,7 +494,7 @@ ideas = {
         }
 		GOS_zrc = {#章荣初
             allowed = { original_tag = GOS }
-            available = { }
+            available = { always = no }
             cancel_if_invalid = no
             traits = {
                 TOD_minister_head
@@ -503,7 +503,7 @@ ideas = {
         }
         GOS_lyz = {#柳亚子
             allowed = { original_tag = GOS }
-            available = { }
+            available = { always = no }
             cancel_if_invalid = no
             traits = {
                 TOD_minister_head
@@ -519,6 +519,7 @@ ideas = {
             traits = {
                 TOD_foreign_minister
                 GOS_traits_jzfdyr
+
             }
         }
         GOS_txs = {#陶希圣
@@ -528,6 +529,7 @@ ideas = {
             traits = {
                 TOD_foreign_minister
                 GOS_traits_ylzzj
+
             }
         }
         GOS_gwj = {#顾维钧
@@ -537,6 +539,7 @@ ideas = {
             traits = {
                 TOD_foreign_minister
                 GOS_traits_cps
+
             }
         }
 		
@@ -549,6 +552,7 @@ ideas = {
             traits = {
                 TOD_economy_minister
                 GOS_traits_nfdcf
+
             }
         }
         GOS_zfh = {#周佛海
@@ -558,6 +562,7 @@ ideas = {
             traits = {
                 TOD_economy_minister
                 GOS_traits_dtdpt
+
             }
         }
         GOS_wyz = {#虞洽卿
@@ -567,6 +572,7 @@ ideas = {
             traits = {
                 TOD_economy_minister
                 GOS_traits_cf
+
             }
         }
         GOS_hjw = {#胡厥文
@@ -576,6 +582,7 @@ ideas = {
             traits = {
                 TOD_economy_minister
                 GOS_traits_dtdhsr
+
             }
         }
         GOS_qcz = {#钱昌照
@@ -585,6 +592,7 @@ ideas = {
             traits = {
                 TOD_economy_minister
                 GOS_traits_jjbs
+
             }
         }
     }
@@ -596,6 +604,7 @@ ideas = {
             traits = {
                 TOD_security_minister
                 GOS_traits_fdxgz
+
             }
         }
         # GOS_hzh = {#贺衷寒
@@ -614,6 +623,7 @@ ideas = {
             traits = {
                 TOD_security_minister
                 GOS_traits_hb
+
             }
         }
         GOS_hkz = {#华克之
@@ -623,7 +633,16 @@ ideas = {
             traits = {
                 TOD_security_minister
                 GOS_traits_tshw
+
             }
+			on_add = {
+				set_country_flag = GOS_hkz_flag
+				GOS_scripted_effects_tzqw_js = yes
+			}
+			on_remove = {
+				clr_country_flag = GOS_hkz_flag
+				GOS_scripted_effects_tzqw_js = yes
+			}
         }
 		GOS_zzz = {#张治中
             allowed = { original_tag = GOS }
@@ -632,11 +651,8 @@ ideas = {
             traits = {
                 TOD_security_minister
                 GOS_traits_dtdmy
+
             }
         }
-
     }
-
-
-
 }
