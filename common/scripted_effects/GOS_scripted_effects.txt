@@ -144,6 +144,18 @@
 			var = GOS_VAR_tzqw_jdt
 			value = 100
 		}
+		if = {
+			limit = {
+				has_country_flag = GOS_hkz_flag
+				check_variable = {
+					GOS_VAR_tzqw < 0.95 
+				}
+			}
+			add_to_variable = {
+				var = GOS_VAR_tzqw
+				value = 0.05
+			}
+		}
 	 #法案计算	
 	  #法案扣除的稳定度计算
 		set_variable = { #天子权威
