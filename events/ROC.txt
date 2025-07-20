@@ -1254,8 +1254,20 @@ country_event = {
 		tag = ROC
 		date > 1937.11.5
 	}
+
 	option = {
 		name = ROC_start.10.a 
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = MNG_nongminyundongbeidaji
+				}
+			}
+			transfer_state = 822
+			add_state_core = 822
+			transfer_state = 815
+			add_state_core = 815
+		}
 	}
 }
 #十一、李总督井冈山尽忠
@@ -1283,10 +1295,11 @@ country_event = {
 			set_demilitarized_zone = no
 		}
 		hidden_effect = {
-			ROC_characters_huananjiaofusi = {
-				
-			}
+
 		}
+		retire_character = ROC_characters_lizhun
+
+		ROC_characters_huananjiaofusi = { set_nationality = ROC }
 		promote_character = {
 			character = ROC_characters_huananjiaofusi
 			ideology = leader_despotism_subtype

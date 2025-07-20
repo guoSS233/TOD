@@ -770,6 +770,7 @@ country_event = {
 		hidden_effect = {
 			GPS = {
 				load_oob = "GPS_1937"
+				inherit_technology = MNG
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
@@ -826,6 +827,7 @@ country_event = {
 		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
 		hidden_effect = {
 			GPS = {
+				inherit_technology = MNG
 				load_oob = "GPS_1937"
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
@@ -978,6 +980,7 @@ country_event = {
 		XBJ = {change_tag_from = ROOT}
 		XBJ = {
 			hidden_effect = {
+				inherit_technology = MNG
 				add_state_core = 744
 				transfer_state = 744
 				add_state_core = 618
@@ -1040,7 +1043,7 @@ country_event = {
 				transfer_state = 1129
 				transfer_state = 604
 				add_state_core = 604
-				add_state_core = 1253
+				transfer_state = 1253
 				add_state_core = 1253
 				set_capital = {state = 744 }
 				load_oob = XBJ_1937
@@ -1058,6 +1061,7 @@ country_event = {
 		name = mingcivwar.78.b
 		XBJ = {
 			hidden_effect = {
+				inherit_technology = MNG
 				add_state_core = 744
 				transfer_state = 744
 				add_state_core = 618
@@ -1147,6 +1151,7 @@ country_event = {
 		name = mingcivwar.79.a
 		GOS = {
 			hidden_effect = {
+				inherit_technology = MNG
 				add_state_core = 613
 				transfer_state = 613
 				add_state_core = 808
@@ -1207,6 +1212,7 @@ country_event = {
 		GOS = {change_tag_from = ROOT}
 		GOS = {
 			hidden_effect = {
+				inherit_technology = MNG
 				add_state_core = 613
 				transfer_state = 613
 				add_state_core = 808
@@ -1274,9 +1280,15 @@ country_event = {
 	option = { 
 		name = mingcivwar.80.a
 		MNG_release_XIN = yes
-		XIN = { hidden_effect = { load_oob = "XIN_1937" } }
+		XIN = { 
+			hidden_effect = { 
+				inherit_technology = MNG
+				load_oob = "XIN_1937" 
+			} 
+		}
 		SIC = {
 			hidden_effect = {
+				inherit_technology = MNG
 				add_state_core = 751
 				transfer_state = 751
 				add_state_core = 1107
@@ -1318,9 +1330,15 @@ country_event = {
 		name = mingcivwar.80.b
 		XIN = {change_tag_from = ROOT}
 		MNG_release_XIN = yes
-		XIN = { hidden_effect = { load_oob = "XIN_1937" } }
+		XIN = { 
+			hidden_effect = { 
+				inherit_technology = MNG
+				load_oob = "XIN_1937" 
+			} 
+		}
 		SIC = {
 			hidden_effect = {
+				inherit_technology = MNG
 				add_state_core = 751
 				transfer_state = 751
 				add_state_core = 1107
@@ -1362,9 +1380,15 @@ country_event = {
 		name = mingcivwar.80.c
 		SIC = {change_tag_from = ROOT}
 		MNG_release_XIN = yes
-		XIN = { hidden_effect = { load_oob = "XIN_1937" } }
+		XIN = { 
+			hidden_effect = { 
+				load_oob = "XIN_1937"
+				inherit_technology = MNG
+			} 
+		}
 		SIC = {
 			hidden_effect = {
+				inherit_technology = MNG
 				add_state_core = 751
 				transfer_state = 751
 				add_state_core = 1107
@@ -1415,12 +1439,22 @@ country_event = {
 		name = mingcivwar.81.a
 		MOB = {change_tag_from = ROOT}
 		MNG_release_MOB = yes
-		hidden = { MOB = { load_oob = "MOB_1937" } }
+		hidden = { 
+			MOB = { 
+				load_oob = "MOB_1937" 
+				inherit_technology = MNG
+			} 
+		}
 	}
 	option = { 
 		name = mingcivwar.81.b
 		MNG_release_MOB = yes
-		hidden = { MOB = { load_oob = "MOB_1937" } }
+		hidden = { 
+			MOB = { 
+				load_oob = "MOB_1937" 
+				inherit_technology = MNG
+			} 
+		}
 	}
 }
 #海外自治 1937.8.27
@@ -1435,6 +1469,7 @@ country_event = {
 		hidden_effect = {
 			LSM = {
 				load_oob = "LSM_1937"
+				inherit_technology = MNG
 				add_state_core = 623
 				transfer_state = 623
 				add_state_core = 327
@@ -1454,6 +1489,7 @@ country_event = {
 			}
 			MLJ = {
 				load_oob = "MLJ_1937"
+				inherit_technology = MNG
 				add_state_core = 1186
 				transfer_state = 1186
 				add_state_core = 1198
@@ -1470,6 +1506,7 @@ country_event = {
 				transfer_state = 1241
 			}
 			HWH = {
+				inherit_technology = MNG
 				add_state_core = 826
 				transfer_state = 826
 				add_state_core = 827
@@ -1555,6 +1592,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			STG = {
+				inherit_technology = MNG
 				add_state_core = 608
 				transfer_state = 608
 				change_tag_from = ROOT
@@ -1562,17 +1600,17 @@ country_event = {
 					id = mingcivwar.83
 				}
 			}
+			every_other_country = {
+				limit = {
+					is_in_faction_with = FROM
+					is_subject = no
+				}
+				leave_faction = yes
+			}
 		}
 	}
 	option = { 
 		name = mingcivwar.83.a
-		every_other_country = {
-			limit = {
-				is_in_faction_with = FROM
-				is_subject = no
-			}
-			leave_faction = yes
-		}
 		MNG_release_STG = yes
 		hidden_effect = {
 			load_oob = "STG_1937"
