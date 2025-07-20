@@ -73,11 +73,6 @@ declare_war_on = {
 		type = civil_war
 	}
 
-declare_war_on = {
-		target = MEX
-		type = civil_war
-	}
-
 set_politics = {
 	ruling_party = liberal_democracy
 	last_election = "1888.6.15"
@@ -86,9 +81,7 @@ set_politics = {
 }
 
 set_popularities = {
-	liberal_democracy = 60
-	conservative_democracy = 20
-	reformism = 20
+	liberal_democracy = 100
 }
 
 add_ideas = {
@@ -97,29 +90,5 @@ add_ideas = {
 	USM_command_in_chaos
 	extensive_conscription
 }
-
-create_country_leader = {
-	name = "Adolfo de la Huerta"
-	desc = "POLITICS_ADOLFO_HUERTA_DESC"
-	picture = "Portrait_USM_Adolfo_Huerta.png"
-	expire = "1965.1.1"
-	ideology = liberal_democracy_subtype
-}
-
-create_country_leader = {
-	name = "MÁlvaro Obregón"
-	desc = "POLITICS_MALVARO_OBREGON_DESC"
-	picture = "Portrait_USM_MÁlvaro_Obregón.png"
-	expire = "1965.1.1"
-	ideology = conservative_democracy_subtype
-}
-
-create_country_leader = {
-	name = "Lázaro Cárdenas"
-	desc = "POLITICS_LAZARO_CARDENAS_DESC"
-	picture = "Portrait_USM_Lázaro_Cárdenas.png"
-	expire = "1965.1.1"
-	ideology = reformism_subtype
-}
-
+recruit_character = USM_Adolfo_Huerta
 country_event = { id = usm.1 hours = 2 } #introduction

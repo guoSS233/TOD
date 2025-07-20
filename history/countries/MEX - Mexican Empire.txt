@@ -64,11 +64,6 @@ declare_war_on = {
 	}
 
 declare_war_on = {
-		target = MES
-		type = civil_war
-	}
-
-declare_war_on = {
 		target = CRI
 		type = civil_war
 	}
@@ -87,10 +82,7 @@ set_politics = {
 }
 
 set_popularities = {
-	authoritarian_oligarchy = 40
-	conservative_democracy = 25
-	liberal_democracy = 25
-	reformism = 10
+	authoritarian_oligarchy = 100
 }
 
 add_ideas = {
@@ -109,107 +101,7 @@ add_ideas = {
 	
 }
 
-create_country_leader = {
-	name = "玛丽亚·德·伊图比尔德"
-	desc = "POLITICS_MARIA_ITURBIDE_DESC"
-	picture = "Portrait_MEX_María_Iturbide.tga"
-	expire = "1965.1.1"
-	ideology = authoritarian_oligarchy_subtype
-}
-create_country_leader = {
-	name = "玛丽亚·德·伊图比尔德"
-	desc = "POLITICS_MARIA_ITURBIDE_DESC"
-	picture = "Portrait_MEX_María_Iturbide.tga"
-	expire = "1965.1.1"
-	ideology = conservative_democracy_subtype
-}
-create_country_leader = {
-	name = "玛丽亚·德·伊图比尔德"
-	desc = "POLITICS_MARIA_ITURBIDE_DESC"
-	picture = "Portrait_MEX_María_Iturbide.tga"
-	expire = "1965.1.1"
-	ideology = liberal_democracy_subtype
-}
-create_country_leader = {
-	name = "玛丽亚·德·伊图比尔德"
-	desc = "POLITICS_MARIA_ITURBIDE_DESC"
-	picture = "Portrait_MEX_María_Iturbide.tga"
-	expire = "1965.1.1"
-	ideology = reformism_subtype
-}
-create_field_marshal = {
-	name = "贝尔纳多·雷耶斯"
-	picture = "Portrait_MEX_Bernardo_Reyes.tga"
-	traits = { politically_connected old_guard defensive_doctrine inflexible_strategist}
-	skill = 4
-	attack_skill = 4
-	defense_skill = 4
-	planning_skill = 4
-	logistics_skill = 4
-}
-create_corps_commander = {
-	name = "潘乔·维亚"
-	picture = "Portrait_MEX_Pancho_Villa.tga"
-	traits = { infantry_officer organizer }
-	skill = 4
-	attack_skill = 5
-	defense_skill = 3
-	planning_skill = 3
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "费利佩·安格莱斯·拉米雷斯"
-	picture = "Portrait_MEX_Felipe_Ángeles_Ramírez.tga"
-	traits = { artillery_officer trait_engineer trickster}
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 2
-	logistics_skill = 3
-}
-create_corps_commander = {
-	name = "曼努埃尔·蒙德拉贡"
-	picture = "Portrait_MEX_Manuel_Mondragón.tga"
-	traits = { career_officer Commando }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	planning_skill = 1
-	logistics_skill = 4
-}
-
-create_corps_commander = {
-	name = "麦地那·巴伦"
-	picture = "Portrait_MEX_Medina_Barron.tga"
-	traits = { trait_reckless }
-	skill = 1
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-}
-create_corps_commander = {
-	name = "弗朗西斯科·杰尔曼·斯洛克姆"
-	picture = "Portrait_MEX_Francisco_Jermain_Slocum.tga"
-	traits = { cavalry_officer }
-	skill = 1
-	attack_skill = 1
-	defense_skill = 1
-	planning_skill = 1
-	logistics_skill = 1
-}
-
-create_navy_leader = {
-	name = "曼努埃尔·阿祖泰"
-	picture = "Portrait_MEX_Manuel_Azueta.tga"
-	traits = { blockade_runner old_guard_navy }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 2
-	maneuvering_skill = 2
-	coordination_skill = 2
-}
-
+recruit_character = MEX_Maria_Iturbide
 
 country_event = { id = mex.1 hours = 2 } #introduction
 

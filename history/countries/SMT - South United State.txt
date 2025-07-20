@@ -3,29 +3,14 @@ capital = 362
 oob = "empty"
 
 set_politics = {
-	ruling_party = despotism
+	ruling_party = leader_despotism
 	last_election = "1934.6.15"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	national_corporatism = 12
-	despotism = 1
-	authoritarian_oligarchy = 19
-	conservative_democracy = 0
-	liberal_democracy = 48
-	reformism = 6
-	socialism = 14
-	radicalism = 0
-}
-
-create_country_leader = {
-	name = "Omar Nelson Bradley"
-	desc = "POLITICS_BRADLEY_DESC"
-	picture = "Portrait_SMT_Omar_Nelson_Bradley.png"
-	expire = "1965.1.1"
-	ideology = leader_despotism_subtype
+	leader_despotism = 100
 }
 
 add_ideas = {
@@ -33,3 +18,6 @@ add_ideas = {
 	SMT_eroded_economy
 	SMT_second_wave_of_conservative_democracy
 }
+
+recruit_character = SMT_Omar_Nelson_Bradley
+

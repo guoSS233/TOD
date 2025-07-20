@@ -30,11 +30,6 @@ declare_war_on = {
 	}
 
 declare_war_on = {
-		target = MES
-		type = civil_war
-	}
-
-declare_war_on = {
 		target = MEX
 		type = civil_war
 	}
@@ -79,9 +74,7 @@ set_politics = {
 }
 
 set_popularities = {
-	sacred_revivalism = 70
-	conservative_democracy = 20
-	leader_despotism = 10
+	sacred_revivalism = 100
 }
 
 add_ideas = {
@@ -90,20 +83,6 @@ add_ideas = {
 	CRI_extreme_religion
 }
 
-create_country_leader = {
-	name = "Father Juárez"
-	desc = "POLITICS_FATHER_JUAREZ_DESC"
-	picture = "Portrait_CRI_Father_Juárez.png"
-	expire = "1965.1.1"
-	ideology = national_corporatism_subtype
-}
-
-create_country_leader = {
-	name = "Enrique Gorostieta"
-	desc = "POLITICS_ENRIQUE_GOROSTIETA_DESC"
-	picture = "Portrait_CRI_Enrique_Gorostieta.png"
-	expire = "1965.1.1"
-	ideology = conservative_democracy_subtype
-}
+recruit_character = CRI_Father_Juarez
 
 country_event = { id = cri.1 hours = 2 } #introduction
