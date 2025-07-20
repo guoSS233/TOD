@@ -86,7 +86,134 @@ on_actions = {
 					add_to_variable = { VAR_GOS_dth_sl = 0.5  }
 				}
 			}
+			GOS = { #刘峙
+				if = {
+					limit = {
+						has_idea = GOS_lz
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_jd_zcd = 0.003  }
+				}
+			}
+			GOS = { #陶希圣
+				if = {
+					limit = {
+						has_idea = GOS_txs
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_dth_sl = 0.3  }
+				}
+			}
+			GOS = { #顾维钧
+				if = {
+					limit = {
+						has_idea = GOS_gwj
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_gxx_sl = 0.7  }
+				}
+			}
+			GOS = { #钱永铭
+				if = {
+					limit = {
+						has_idea = GOS_qym
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_gxx_sl = 0.8  }
+				}
+			}
+			GOS = { #周佛海
+				if = {
+					limit = {
+						has_idea = GOS_zfh
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_gxx_zcd = 0.004  }
+					add_to_variable = { VAR_GOS_dth_zcd = -0.003  }
+				}
+			}
+			GOS = { #虞洽卿
+				if = {
+					limit = {
+						has_idea = GOS_wyz
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_gxx_zcd = 0.003  }
+				}
+			}
+			GOS = { #胡厥文
+				if = {
+					limit = {
+						has_idea = GOS_hjw
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_dth_zcd = 0.005  }
+					add_to_variable = { VAR_GOS_dth_sl = 0.3  }
+				}
+			}
+			GOS = { #钱昌照
+				if = {
+					limit = {
+						has_idea = GOS_qcz
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_dth_zcd = 0.003  }
+					add_to_variable = { VAR_GOS_gxx_zcd = 0.002  }
+				}
+			}
+			GOS = { #赵秉钧
+				if = {
+					limit = {
+						has_idea = GOS_zbj
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_jd_zcd = 0.005  }
+					add_to_variable = { VAR_GOS_dth_zcd = -0.002  }
+				}
+			}
+			GOS = { #张治中
+				if = {
+					limit = {
+						has_idea = GOS_zzz
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_dth_zcd = 0.004  }
+				}
+			}
+			GOS = { #杜月笙
+				if = {
+					limit = {
+						has_idea = GOS_dys
+						has_country_flag = FLAG_GOS_decision_tzngpx_unlocked 
+					}
+					add_to_variable = { VAR_GOS_gxx_sl = 0.4  }
+				}
+			}
 			GOS_scripted_effects_tzqw_js = yes
+		}
+	}
+	on_daily_GOS = {
+		effect = {
+			GOS = {
+				country_event = { id = zhengduo.1}
+				country_event = { id = GOS_focus.2}
+				if = {
+					limit = {
+						has_war_with = ROC
+					}
+					country_event = { id = GOS_focus.1}
+				}
+			}
+			# if = {
+			# 	limit = {
+			# 		NOT = {
+			# 			has_idea = GOS_hkz
+			# 		}
+			# 		has_country_flag = GOS_hkz_flag
+			# 	}
+			# 	clr_country_flag = GOS_hkz_flag
+			# 	GOS_scripted_effects_tzqw_js = yes
+			# }
 		}
 	}
 }

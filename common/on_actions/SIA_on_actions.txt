@@ -10,6 +10,16 @@ on_actions = {
 				}	
 				VAR_SIA_lujunzhangkongdu_clamp = yes
 			}
+			SIA = {
+				if = {
+					limit = {
+						date > 1937.1.1
+					}
+					country_event = {
+						id = SIA_event.3
+					}
+				}
+			}
 		}
 	}
 	on_startup = {
