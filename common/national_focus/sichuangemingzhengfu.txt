@@ -231,12 +231,28 @@ focus_tree = {
 		
 		cost = 5
 		
-		ai_will_do = {factor = 10}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				every_state = {
+					limit = {is_core_of = SIC}
+					is_core_of = SCG
+				}
+				factor = 10
+			}
+		}
 		available = {}
 		
 		completion_reward = { 
 			custom_effect_tooltip = SCG.tt.1
 			hidden_effect = {
+				every_state = {
+					limit = { 
+						is_core_of = SIC 
+						NOT = { is_controlled_by = SIC}
+					}
+					set_state_controller_to = SCG
+				}
 				if = {
 					limit = { 832 = {is_core_of = SCG}}
 					load_oob = SCG_qiyi_832
