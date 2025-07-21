@@ -116,66 +116,6 @@ recruit_character = MNG_Tongchangonghuizhongyang_2
 country_lock_all_division_template = yes
 
 # DIPLOMACY
-if = {
-	limit = {
-		OR = {
-			has_dlc = "Together for Victory"
-			has_dlc = "Man the Guns"
-		}
-	}
-	set_autonomy = {
-		target = EXN
-		autonomous_state = tod_ming_haiwaidusi
-		freedom_level = 0
-	}
-	set_autonomy = {
-		target = MEA
-		autonomous_state = tod_ming_haiwaidusi
-		freedom_level = 0
-	}
-	set_autonomy = {
-		target = ZHR
-		autonomous_state = tod_ming_tongzhidusi
-		freedom_level = 0
-	}
-	set_autonomy = {
-		target = EZO
-		autonomous_state = tod_ming_tongzhidusi
-		freedom_level = 0
-	}
-	set_autonomy = {
-		target = BNG
-		autonomous_state = tod_ming_tongzhidusi
-		freedom_level = 0
-	}
-	set_autonomy = {
-		target = BRM
-		autonomous_state = tod_occupied_puppet
-		freedom_level = 0
-	}
-	set_autonomy = {
-		target = KAZ
-		autonomous_state = tod_ming_zhishudusi
-		freedom_level = 0
-	}
-	set_autonomy = {
-		target = DAW
-		autonomous_state = tod_ming_zhishudusi
-		freedom_level = 0
-	}
-	else = {
-		puppet = ZHR
-		puppet = LAF
-		puppet = BNG
-		puppet = EZO
-		puppet = EXN
-		puppet = MEA
-		puppet = BRM
-		puppet = KAZ
-		puppet = DAW
-	}
-}
-
 
 create_faction = "天朝体系"
 add_to_faction = MNG
