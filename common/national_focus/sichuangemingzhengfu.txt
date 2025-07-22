@@ -230,7 +230,18 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		cost = 5
-		
+		select_effect = {
+			every_country = {
+				if = {
+					limit = { 
+						any_state = { is_core_of = SIC } 
+						NOT = { tag = SIC }
+						NOT = { tag = SCG }
+					}
+					country_event = { id = TODSIC.1002 }
+				}
+			}
+		}
 		ai_will_do = {
 			factor = 0
 			modifier = {
@@ -238,7 +249,7 @@ focus_tree = {
 					limit = {is_core_of = SIC}
 					is_core_of = SCG
 				}
-				factor = 10
+				factor = 100
 			}
 		}
 		available = {}
@@ -252,6 +263,14 @@ focus_tree = {
 						NOT = { is_controlled_by = SIC}
 					}
 					set_state_controller_to = SCG
+				}
+				every_country = {
+					limit = { 
+						any_state = { is_core_of = SIC } 
+						NOT = { tag = SIC }
+						NOT = { tag = SCG }
+					}
+					country_event = { id = TODSIC.1003 }
 				}
 				if = {
 					limit = { 832 = {is_core_of = SCG}}

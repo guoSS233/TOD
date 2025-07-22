@@ -255,15 +255,19 @@ focus_tree = {
 		available = { }
 
 		completion_reward = {
-			retire_ideology_leader = vanguard_socialism
-			retire_ideology_leader = council_socialism
+			#retire_ideology_leader = vanguard_socialism
+			#retire_ideology_leader = council_socialism
+			retire_country_leader = yes
 			promote_character = {
 				character = SRC_ren_fuchen
-				ideology = council_socialism
+				ideology = vanguard_socialism_subtype
 			}
+			set_country_flag = SRC_zhongyangdida
 			remove_ideas = SRC_buwangkulaojichou
 			remove_ideas = SRC_qiyireqing
-			promote_character = SRC_zhongyangzhixingweiyuanhui
+			#promote_character = SRC_zhongyangzhixingweiyuanhui
+			load_focus_tree = SRC_UN_focus
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 }
