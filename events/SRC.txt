@@ -233,28 +233,61 @@ country_event = {
 	option = { 
 		name = SRCevents.8.a
 		trigger = {
-			check_variable = { SRC_xianfeng > SRC_wenhe }
-			check_variable = { SRC_xianfeng > SRC_weiyuan }
+			check_variable = { SRC_xianfeng < SRC_wenhe }
+			check_variable = { SRC_weiyuan < SRC_wenhe }
 		}
-		create_country_leader = SRC_chen_duxiu
+		retire_country_leader = yes
+		SRC_chen_duxiu = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					ideology = moderate_socialism_subtype
+					expire = "1965.1.1.1"
+					traits = {}
+				}
+			}
+		}
+		complete_national_focus = SRC_chenduxiuzhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
 		name = SRCevents.8.b
 		trigger = {
-			check_variable = { SRC_weiyuan > SRC_xianfeng }
-			check_variable = { SRC_weiyuan > SRC_wenhe }
+			check_variable = { SRC_xianfeng > SRC_wenhe }
+			check_variable = { SRC_xianfeng > SRC_weiyuan }
 		}
-		create_country_leader = SRC_ren_fuchen
+		retire_country_leader = yes
+		SRC_ren_fuchen = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					ideology = vanguard_socialism_subtype
+					expire = "1965.1.1.1"
+					traits = {}
+				}
+			}
+		}
+		complete_national_focus = SRC_renfuchenzhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
 		trigger = {
-			check_variable = { SRC_xianfeng < SRC_wenhe }
-			check_variable = { SRC_weiyuan < SRC_wenhe }
+			check_variable = { SRC_weiyuan > SRC_xianfeng }
+			check_variable = { SRC_weiyuan > SRC_wenhe }
 		}
 		name = SRCevents.8.c
-		create_country_leader = SRC_li_dazhao
+		retire_country_leader = yes
+		SRC_li_dazhao = {
+			add_country_leader_role = {
+				promote_leader = yes
+				country_leader = {
+					ideology = council_socialism_subtype
+					expire = "1965.1.1.1"
+					traits = {}
+				}
+			}
+		}
+		complete_national_focus = SRC_lidazhaozhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 }
