@@ -670,3 +670,31 @@ country_event = {
 		war_support_factor = 0.05
 	}
 }
+#空军联合研发
+country_event = {
+	id = TODhungary.34
+	title = TODhungary.34.t
+	desc =TODhungary.34.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = TODhungary.34.a
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 1
+			category = air_equipment
+		}
+		HUN = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = air_equipment
+			}
+		}
+	}
+	option = { 
+		name = TODhungary.34.b
+	}
+}
