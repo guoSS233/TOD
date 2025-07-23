@@ -1337,6 +1337,38 @@ characters={
 		}		
 	}
 
+	HUN_miklos_horthy = {
+		name = HUN_miklos_horthy
+
+		portraits = {
+			navy = { #Can become Navy leader and therefore navy advisor
+				large = "GFX_Portrait_hungary_miklos_horthy_admiral"
+				small = "GFX_idea_HUN_miklos_horthy_admiral"
+			}
+		}
+		navy_leader = {
+			traits = { gunnery_expert navy_media_personality superior_tactician }
+			skill = 3
+			legacy_id = 556 #Navy Miklos
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 4
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = HUN_miklos_horthy
+			allowed = { original_tag = HUN }
+			available = { }
+
+			traits = { navy_chief_reform_2 }
+
+			cost = 100
+
+			ai_will_do = { factor = 2 }
+
+		}
+	}
 	
 
 	# Illusive Gentleman auto-generated
