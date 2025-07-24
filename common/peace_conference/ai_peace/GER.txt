@@ -1,0 +1,24 @@
+# Scripted AI desire for peace actions.
+# See documentation.info file for more detailed scripting information.
+
+peace_ai_desires = {
+    # Germany Wants old German territories
+    GER_old_claims_take_states = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                tag = ROOT
+            }
+            FROM.FROM.FROM = {
+                OR = {
+                    is_core_of = AUS
+                    is_core_of = BAV
+                }
+            }
+            ROOT = { 
+                original_tag = GER
+            }
+        }
+        ai_desire = 150
+    }
+}
