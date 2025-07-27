@@ -975,7 +975,6 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.78.a
-		XBJ = {change_tag_from = ROOT}
 		XBJ = {
 			hidden_effect = {
 				add_state_core = 744
@@ -1040,7 +1039,7 @@ country_event = {
 				transfer_state = 1129
 				transfer_state = 604
 				add_state_core = 604
-				add_state_core = 1253
+				transfer_state = 1253
 				add_state_core = 1253
 				set_capital = {state = 744 }
 				load_oob = XBJ_1937
@@ -1053,6 +1052,7 @@ country_event = {
 				}
 			}
 		}
+		XBJ = {change_tag_from = ROOT}
 	}
 	option = { 
 		name = mingcivwar.78.b
