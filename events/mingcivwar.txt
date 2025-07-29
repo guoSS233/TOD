@@ -766,6 +766,13 @@ country_event = {
 				target = GPS
 				autonomy_state = tod_ming_tongzhidusi
 			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = GPS
+					stockpile_ratio = 0.15
+				}
+			}
+
 		}
 		hidden_effect = {
 			GPS = {
@@ -802,6 +809,7 @@ country_event = {
 					leader_despotism = 5
 					national_corporatism = 5
 				}
+				inherit_technology = MNG
 			}
 		}
 	}
@@ -816,6 +824,12 @@ country_event = {
 			set_autonomy = {
 				target = GPS
 				autonomy_state = tod_ming_tongzhidusi
+			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = GPS
+					stockpile_ratio = 0.15
+				}
 			}
 		}
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
@@ -859,6 +873,7 @@ country_event = {
 					leader_despotism = 5
 					national_corporatism = 5
 				}
+				inherit_technology = MNG
 			}
 		}
 	}
@@ -871,6 +886,7 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	picture = GFX_report_event_chinese_soldiers_fighting
+
 	option = { 
 		name = mingcivwar.77.a
 		complete_national_focus = MNG_soubudatonghui
@@ -879,6 +895,12 @@ country_event = {
 				target = ROC
 				autonomy_state = tod_ming_tongzhidusi
 			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = ROC
+					stockpile_ratio = 0.2
+				}
+			}
 		}
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
@@ -886,6 +908,16 @@ country_event = {
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
 		MNG_release_ROC = yes
+		hidden_effect = {
+			ROC = {
+				add_state_core = 821
+				transfer_state = 821
+			}
+			ROC = {
+				add_state_core = 1194
+				transfer_state = 1194
+			}
+		}
 		ROC = {
 			hidden_effect = {
 				set_cosmetic_tag = huananzhaofusi
@@ -911,6 +943,8 @@ country_event = {
 					sacred_revivalism = 0
 					national_corporatism = 5
 				}
+
+				inherit_technology = MNG
 			}
 		}
 	}
@@ -925,6 +959,12 @@ country_event = {
 			set_autonomy = {
 				target = ROC
 				autonomy_state = tod_ming_tongzhidusi
+			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = ROC
+					stockpile_ratio = 0.2
+				}
 			}
 		}
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
@@ -961,6 +1001,17 @@ country_event = {
 					sacred_revivalism = 0
 					national_corporatism = 5
 				}
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				add_state_core = 821
+				transfer_state = 821
+			}
+			ROC = {
+				add_state_core = 1194
+				transfer_state = 1194
 			}
 		}
 	}
@@ -1050,9 +1101,19 @@ country_event = {
 					transfer_state = 1211
 					add_state_core = 1211
 				}
+
+				inherit_technology = MNG
 			}
 		}
 		XBJ = {change_tag_from = ROOT}
+		MNG = {
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = XBJ
+					stockpile_ratio = 0.3
+				}
+			}
+		}
 	}
 	option = { 
 		name = mingcivwar.78.b
@@ -1131,6 +1192,15 @@ country_event = {
 					transfer_state = 1211
 					add_state_core = 1211
 				}
+				inherit_technology = MNG
+			}
+		}
+		MNG = {
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = XBJ
+					stockpile_ratio = 0.3
+				}
 			}
 		}
 	}
@@ -1199,6 +1269,15 @@ country_event = {
 				transfer_state=811
 				set_capital = { state = 613 }
 				load_oob = GOS_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			MNG = {
+				transfer_units_fraction= {
+					target = GOS
+					stockpile_ratio = 0.3
+				}
 			}
 		}
 	}
@@ -1259,6 +1338,15 @@ country_event = {
 				transfer_state=811
 				set_capital = { state = 613 }
 				load_oob = GOS_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			MNG = {
+				transfer_units_fraction= {
+					target = GOS
+					stockpile_ratio = 0.3
+				}
 			}
 		}
 	}
@@ -1274,7 +1362,12 @@ country_event = {
 	option = { 
 		name = mingcivwar.80.a
 		MNG_release_XIN = yes
-		XIN = { hidden_effect = { load_oob = "XIN_1937" } }
+		XIN = { 
+			hidden_effect = { 
+				load_oob = "XIN_1937" 
+				inherit_technology = MNG
+			} 
+		}
 		SIC = {
 			hidden_effect = {
 				add_state_core = 751
@@ -1311,6 +1404,28 @@ country_event = {
 				transfer_state = 1254
 				set_capital = { state = 831 }
 				load_oob = SIC_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				XIN = {
+					add_state_core = 821
+					transfer_state = 821
+					add_state_core = 1194
+					transfer_state = 1194
+				}
+
+			}
+			MNG = {
+				transfer_units_fraction= {
+					target = XIN
+					stockpile_ratio = 0.2
+				}
+				transfer_units_fraction= {
+					target = SIC
+					stockpile_ratio = 0.25
+				}
 			}
 		}
 	}
@@ -1318,7 +1433,16 @@ country_event = {
 		name = mingcivwar.80.b
 		XIN = {change_tag_from = ROOT}
 		MNG_release_XIN = yes
-		XIN = { hidden_effect = { load_oob = "XIN_1937" } }
+		XIN = { 
+			hidden_effect = { 
+				load_oob = "XIN_1937" 
+				transfer_units_fraction= {
+					target = MNG
+					stockpile_ratio = 0.2
+				}
+				inherit_technology = MNG
+			} 
+		}
 		SIC = {
 			hidden_effect = {
 				add_state_core = 751
@@ -1355,6 +1479,31 @@ country_event = {
 				transfer_state = 1254
 				set_capital = { state = 831 }
 				load_oob = SIC_1937
+				transfer_units_fraction= {
+					target = MNG
+					stockpile_ratio = 0.25
+				}
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				XIN = {
+					add_state_core = 821
+					transfer_state = 821
+					add_state_core = 1194
+					transfer_state = 1194
+				}
+			MNG = {
+				transfer_units_fraction= {
+					target = XIN
+					stockpile_ratio = 0.2
+				}
+				transfer_units_fraction= {
+					target = SIC
+					stockpile_ratio = 0.25
+				}
+			}
 			}
 		}
 	}
@@ -1362,7 +1511,16 @@ country_event = {
 		name = mingcivwar.80.c
 		SIC = {change_tag_from = ROOT}
 		MNG_release_XIN = yes
-		XIN = { hidden_effect = { load_oob = "XIN_1937" } }
+		XIN = { 
+			hidden_effect = { 
+				load_oob = "XIN_1937" 
+				transfer_units_fraction= {
+					target = MNG
+					stockpile_ratio = 0.2
+				}
+				inherit_technology = MNG
+			} 
+		}
 		SIC = {
 			hidden_effect = {
 				add_state_core = 751
@@ -1399,6 +1557,31 @@ country_event = {
 				transfer_state = 1254
 				set_capital = { state = 831 }
 				load_oob = SIC_1937
+				transfer_units_fraction= {
+					target = MNG
+					stockpile_ratio = 0.25
+				}
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				XIN = {
+					add_state_core = 821
+					transfer_state = 821
+					add_state_core = 1194
+					transfer_state = 1194
+				}
+			MNG = {
+				transfer_units_fraction= {
+					target = XIN
+					stockpile_ratio = 0.2
+				}
+				transfer_units_fraction= {
+					target = SIC
+					stockpile_ratio = 0.25
+				}
+			}
 			}
 		}
 	}
@@ -1415,12 +1598,34 @@ country_event = {
 		name = mingcivwar.81.a
 		MOB = {change_tag_from = ROOT}
 		MNG_release_MOB = yes
-		hidden = { MOB = { load_oob = "MOB_1937" } }
+		hidden = { 
+			MOB = { 
+				load_oob = "MOB_1937" 
+				inherit_technology = MNG
+			} 
+			MNG = {
+				transfer_units_fraction= {
+					target = MOB
+					stockpile_ratio = 0.15
+				}
+			}
+		}
 	}
 	option = { 
 		name = mingcivwar.81.b
 		MNG_release_MOB = yes
-		hidden = { MOB = { load_oob = "MOB_1937" } }
+		hidden = { 
+			MOB = { 
+				load_oob = "MOB_1937" 
+				inherit_technology = MNG
+			} 
+			MNG = {
+				transfer_units_fraction= {
+					target = MNG
+					stockpile_ratio = 0.15
+				}
+			}
+		}
 	}
 }
 #海外自治 1937.8.27
@@ -1451,6 +1656,7 @@ country_event = {
 				transfer_state = 628
 				add_state_core = 626
 				transfer_state = 626
+				inherit_technology = MNG
 			}
 			MLJ = {
 				load_oob = "MLJ_1937"
@@ -1468,6 +1674,7 @@ country_event = {
 				transfer_state = 819
 				add_state_core = 1241
 				transfer_state = 1241
+				inherit_technology = MNG
 			}
 			HWH = {
 				add_state_core = 826
@@ -1528,6 +1735,21 @@ country_event = {
 				transfer_state = 647
 				add_state_core = 727
 				transfer_state = 727
+				inherit_technology = MNG
+			}
+			MNG = {
+				transfer_units_fraction= {
+					target = LSM
+					stockpile_ratio = 0.10
+				}
+				transfer_units_fraction= {
+					target = MLJ
+					stockpile_ratio = 0.10
+				}
+				transfer_units_fraction= {
+					target = HWH
+					stockpile_ratio = 0.10
+				}
 			}
 		}
 	}
@@ -1555,6 +1777,12 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			dismantle_faction = yes
+			MNG = {
+				transfer_units_fraction= {
+					target = STG
+					stockpile_ratio = 1
+				}
+			}
 		}
 	}
 	option = { 
@@ -1570,6 +1798,7 @@ country_event = {
 		MNG_release_STG = yes
 		hidden_effect = {
 			load_oob = "STG_1937"
+			inherit_technology = MNG
 		}
 	}
 }
