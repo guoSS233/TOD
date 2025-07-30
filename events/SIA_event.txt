@@ -80,7 +80,14 @@ country_event = {   #内战事件
 		ROS = {
 			declare_war_on = { target = SIA type = annex_everything }
 		}
-
+		SIA = {
+			transfer_units_fraction= {
+				target = ROS
+				stockpile_ratio = 1
+				army_ratio = 0.5
+				air_ratio = 1
+			}
+		}
 	}
 		
 	option = {
@@ -90,6 +97,14 @@ country_event = {   #内战事件
 		country_event = { id = SIA_event.4 days = 30}
 		ROS = {
 			declare_war_on = { target = SIA type = annex_everything }
+		}
+		SIA = {
+			transfer_units_fraction= {
+				target = ROS
+				stockpile_ratio = 1
+				army_ratio = 0.5
+				air_ratio = 1
+			}
 		}
 	}
 
@@ -137,6 +152,36 @@ country_event = {   #高棉起义
 			1195 = {
 				set_demilitarized_zone = yes
 			}
+			CAM = {
+				division_template = {
+					name = "高棉复国军"   
+					regiments = {
+						infantry = { x = 0 y = 0 } 
+						infantry = { x = 0 y = 1 } 
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+				741 = {
+					create_unit = {
+						division = "name = \"高棉复国军第一师\" division_template = \"高棉复国军\" start_experience_factor = 1.0"
+						prioritize_location = 12191
+						owner = CAM
+					}
+					create_unit = {
+						division = "name = \"高棉复国军第二师\" division_template = \"高棉复国军\" start_experience_factor = 1.0"
+						prioritize_location = 12191
+						owner = CAM
+					}
+					create_unit = {
+						division = "name = \"高棉复国军第三师\" division_template = \"高棉复国军\" start_experience_factor = 1.0"
+						prioritize_location = 12191
+						owner = CAM
+					}
+				}
+			}
 		}
 	}
 		
@@ -172,6 +217,36 @@ country_event = {   #高棉起义
 			}
 			1195 = {
 				set_demilitarized_zone = yes
+			}
+			CAM = {
+				division_template = {
+					name = "高棉复国军"   
+					regiments = {
+						infantry = { x = 0 y = 0 } 
+						infantry = { x = 0 y = 1 } 
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+				741 = {
+					create_unit = {
+						division = "name = \"高棉复国军第一师\" division_template = \"高棉复国军\" start_experience_factor = 1.0"
+						prioritize_location = 12191
+						owner = CAM
+					}
+					create_unit = {
+						division = "name = \"高棉复国军第二师\" division_template = \"高棉复国军\" start_experience_factor = 1.0"
+						prioritize_location = 12191
+						owner = CAM
+					}
+					create_unit = {
+						division = "name = \"高棉复国军第三师\" division_template = \"高棉复国军\" start_experience_factor = 1.0"
+						prioritize_location = 12191
+						owner = CAM
+					}
+				}
 			}
 		}
 	}
