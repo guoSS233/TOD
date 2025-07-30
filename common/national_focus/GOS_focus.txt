@@ -2136,11 +2136,28 @@ focus_tree = {
 			NOT = { 
 				country_exists = ROC 
 				country_exists = STG
-				country_exists = XBJ
+				OR = {
+					country_exists = XBJ
+					XBJ = {
+						is_subject_of = GOS
+					}
+				}
+
 			}
 		}
 		completion_reward = {	
-
+			every_country = {
+				limit = {
+					OR = {
+						tag = MOB
+						tag = XIN
+						tag = SIC
+						tag = GPS
+					}
+				}
+				country_event = { id = GOS_focus.999 }
+			}
+			set_country_flag = GOS_flag_decision_zhaolingtianxia_unlock
 		}
 	}
 }
