@@ -198,29 +198,27 @@ characters = {
 				small="gfx/GOS/ideas/GOS_ctk.png"
 			}
 		}
-		advisor = {
-			#陆军部长
-			slot = army_chief
+		corps_commander = {
+			traits = { naval_invader commando }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 3
+		}
+		advisor = { #总司令
+			slot = high_command
+			idea_token = GOS_ctk
 			ledger = army
-			idea_token = gos_ctk
 			allowed = {
 				original_tag = GOS
 			}
-			traits = { army_chief_offensive_2 }
+			traits = { navy_amphibious_assault_2 }
 			cost = 150
 			ai_will_do = {
 				factor = 1
 			}
 		}
-		field_marshal = {
-			traits = { war_hero brilliant_strategist trickster }
-			skill = 4
-			attack_skill = 5
-			defense_skill = 3
-			planning_skill = 2
-			logistics_skill = 3
-		}
-
 	}
 	GOS_lz = { #刘峙
 		name = GOS_lz
@@ -344,38 +342,6 @@ characters = {
 			}
 		}
 	}
-
-	GOS_zzx = { #朱执信
-		name = GOS_zzx
-		portraits = {
-			army = {
-				large = "gfx/leaders/GOS/GOS_zzx.png"
-				small="gfx/GOS/ideas/GOS_zzx.png"
-			}
-		}
-		advisor = {
-			#陆军部长
-			slot = army_chief
-			ledger = army
-			idea_token = GOS_zzx
-			allowed = {
-				original_tag = GOS
-			}
-			traits = { army_chief_reform_2 }
-			cost = 150
-			ai_will_do = {
-				factor = 1
-			}
-		}
-		corps_commander = {
-			traits = { trait_cautious commando  }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 2
-			planning_skill = 4
-			logistics_skill = 1
-		}
-	}
 	GOS_cyb = { #曹亚伯
 		name = GOS_cyb
 		portraits = {
@@ -436,6 +402,50 @@ characters = {
 			}
 		}
 	}
+	GOS_zzx = { #朱执信
+		name = GOS_zzx
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_zzx.png"
+				small="gfx/GOS/ideas/GOS_zzx.png"
+			}
+		}
+		advisor = {
+			#陆军部长
+			slot = army_chief
+			ledger = army
+            idea_token = GOS_zzx
+			traits = { army_chief_reform_2 }
+			cost = 150
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander = {
+			traits = { trait_cautious commando  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 1
+		}
+	}
+	GOS_cgy = { #陈光远
+		name = GOS_cgy
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_cgy.png"
+			}
+		}
+		corps_commander = {
+			traits = { trait_cautious commando  }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 1
+		}
+	}
 	GOS_llj = { #李烈钧
 		name = GOS_llj
 		portraits = {
@@ -444,26 +454,27 @@ characters = {
 				small="gfx/GOS/ideas/GOS_llj.png"
 			}
 		}
-		corps_commander = {
-			traits = { naval_invader commando }
-			skill = 3
-			attack_skill = 3
-			defense_skill = 3
-			planning_skill = 1
-			logistics_skill = 3
-		}
-		advisor = { #总司令
-			slot = high_command
-			idea_token = GOS_llj
+		advisor = {
+			#陆军部长
+			slot = army_chief
 			ledger = army
+			idea_token = GOS_llj
 			allowed = {
 				original_tag = GOS
 			}
-			traits = { navy_amphibious_assault_2 }
+			traits = { army_chief_offensive_2 }
 			cost = 150
 			ai_will_do = {
 				factor = 1
 			}
+		}
+		field_marshal = {
+			traits = { war_hero brilliant_strategist trickster }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
 		}
 	}
 	GOS_hyq = { #何应钦
@@ -525,23 +536,6 @@ characters = {
 			}
 		}
 	}
-	GOS_jjg = { #蒋经国
-		name = GOS_jjg 
-		portraits = {
-			army = {
-				large = "gfx/leaders/GOS/GOS_jjg.png"
-				small="gfx/GOS/ideas/GOS_jjg.png"
-			}
-		}
-		corps_commander = {
-			traits = { brilliant_strategist armor_officer }
-			skill = 2
-			attack_skill = 3
-			defense_skill = 1
-			planning_skill = 1
-			logistics_skill = 2
-		}
-	}
 	GOS_sxl = { #宋希濂
 		name = GOS_sxl
 		portraits = {
@@ -552,7 +546,7 @@ characters = {
 		}
 		advisor = {
 			#陆军部长
-			slot = army_chief
+			slot = high_command
 			ledger = army
 			idea_token = GOS_sxl
 			allowed = {
@@ -749,7 +743,7 @@ characters = {
 		}
 		advisor = {
 			#陆军部长
-			slot = army_chief
+			slot = high_command
 			ledger = army
 			idea_token = GOS_slr
 			allowed = {
@@ -782,27 +776,29 @@ characters = {
 				small="gfx/GOS/ideas/GOS_cqm.png"
 			}
 		}
-		corps_commander = {
-			traits = { inflexible_strategist }
-			skill = 2
-			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 3
-			logistics_skill = 1
-		}
-		advisor = { #总司令
-			slot = high_command
-			idea_token = GOS_cqm
+		advisor = {
+			#陆军部长
+			slot = army_chief
 			ledger = army
 			allowed = {
 				original_tag = GOS
 			}
-			traits = { army_concealment_2 }
+			idea_token = GOS_cqm
+			traits = { army_chief_reform_2 }
 			cost = 150
 			ai_will_do = {
 				factor = 1
 			}
 		}
+		corps_commander = {
+			traits = { trait_cautious commando  }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 1
+		}
+
 	}
 	GOS_cgs = { #蔡公时
 		name = GOS_cgs
@@ -967,6 +963,40 @@ characters = {
 		}
 		corps_commander = {
 			traits = { skilled_staffer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	GOS_sl_1 = { #斯烈
+		name = GOS_sl_1
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_sl_1.png"
+				small="gfx/GOS/ideas/GOS_sl_1.png"
+			}
+		}
+		corps_commander = {
+			traits = { skilled_staffer career_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	GOS_sl_2 = { #斯励
+		name = GOS_sl_2
+		portraits = {
+			army = {
+				large = "gfx/leaders/GOS/GOS_sl_2.png"
+				small="gfx/GOS/ideas/GOS_sl_2.png"
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist infantry_officer }
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1

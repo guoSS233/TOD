@@ -10,15 +10,6 @@ country_event = {
 
     option = {
         name = KOR_rev.1.a  # 镇压革命
-        ai_chance = { factor = 0.6 }
-        add_stability = -0.1
-        add_war_support = -0.1
-    }
-
-    option = {
-        name = KOR_rev.1.b  # 朝鲜革命军独立
-        ai_chance = { factor = 0.4 }
-
         ROK = {
             transfer_state = 799  # 将 庆尚 省份移交给 ROK
             add_state_core = 799  # 设置 庆尚 为 ROK 的核心
@@ -26,21 +17,31 @@ country_event = {
             add_state_core = 802  # 设置 清津 为 ROK 的核心
             transfer_state = 803  # 将 咸镜 省份移交给 ROK
             add_state_core = 803  # 设置 咸镜 为 ROK 的核心
-
         }
-
-        
-        ROK = {change_tag_from = ROOT}
-
-
         ROK = {
             declare_war_on = {
                 target = KOR
                 type = civil_war
             }
         }
+    }
 
-
-
+    option = {
+        name = KOR_rev.1.b  # 朝鲜革命军独立
+        ROK = {
+            transfer_state = 799  # 将 庆尚 省份移交给 ROK
+            add_state_core = 799  # 设置 庆尚 为 ROK 的核心
+            transfer_state = 802  # 将 清津 省份移交给 ROK
+            add_state_core = 802  # 设置 清津 为 ROK 的核心
+            transfer_state = 803  # 将 咸镜 省份移交给 ROK
+            add_state_core = 803  # 设置 咸镜 为 ROK 的核心
+        }
+        ROK = {change_tag_from = ROOT}
+        ROK = {
+            declare_war_on = {
+                target = KOR
+                type = civil_war
+            }
+        }
     }
 }

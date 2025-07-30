@@ -197,7 +197,30 @@ country_event = {
 		name = GOS_focus.10.a 
 	}
 }
+country_event = { 
+	id = GOS_focus.999
+	title = GOS_focus.999.t
+	desc = GOS_focus.999.d
 
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = GOS
+	}
+	option = {
+		name = GOS_focus.999.a 
+		GOS = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = tod_ming_zhishudusi
+			}
+		}
+	}
+	option = {
+		name = GOS_focus.999.b 
+	}
+}
 
 
 
