@@ -1,0 +1,97 @@
+### 拔擢按钮及相关效果
+zijinxi_up = {
+	add_to_variable = { MNG_zijinxi = 7 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_up_selected_zijinxi
+	custom_effect_tooltip = MNG_party_up_zijinxi_click_tooltip
+}
+wubeixi_up = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	add_to_variable = { MNG_wubeixi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_up_selected
+	custom_effect_tooltip = MNG_party_up_click_tooltip
+}
+guanxuexi_up = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	add_to_variable = { MNG_guanxuexi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_up_selected
+	custom_effect_tooltip = MNG_party_up_click_tooltip
+}
+jiaotongxi_up = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	add_to_variable = { MNG_jiaotongxi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_up_selected
+	custom_effect_tooltip = MNG_party_up_click_tooltip
+}
+qinzhengxi_up = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	add_to_variable = { MNG_qinzhengxi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_up_selected
+	custom_effect_tooltip = MNG_party_up_click_tooltip
+}
+MNG_party_up_click_effect = {
+	if = { limit = { check_variable = { MNG_party_num = 0 } }
+		zijinxi_up = yes
+	}
+	else_if = { limit = { check_variable = { MNG_party_num = 1 } }
+		wubeixi_up = yes
+	}
+	else_if = { limit = { check_variable = { MNG_party_num = 2 } }
+		guanxuexi_up = yes
+	}
+	else_if = { limit = { check_variable = { MNG_party_num = 3 } }
+		jiaotongxi_up = yes
+	}
+	else_if = { limit = { check_variable = { MNG_party_num = 4 } }
+		qinzhengxi_up = yes
+	}
+}
+
+### 贬谪按钮及相关效果
+wubeixi_down = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	subtract_from_variable = { MNG_wubeixi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_down_selected
+	custom_effect_tooltip = MNG_party_down_click_tooltip
+}
+guanxuexi_down = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	subtract_from_variable = { MNG_guanxuexi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_down_selected
+	custom_effect_tooltip = MNG_party_down_click_tooltip
+}
+jiaotongxi_down = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	subtract_from_variable = { MNG_jiaotongxi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_down_selected
+	custom_effect_tooltip = MNG_party_down_click_tooltip
+}
+qinzhengxi_down = {
+	subtract_from_variable = { MNG_zijinxi = 2 }
+	subtract_from_variable = { MNG_qinzhengxi = 5 }
+	add_political_power = MNG_boyidianshu_fu
+	set_country_flag = party_down_selected
+	custom_effect_tooltip = MNG_party_down_click_tooltip
+}
+
+MNG_party_down_click_effect = {
+	if = { limit = { check_variable = { MNG_party_num = 1 } }
+		wubeixi_down = yes
+	}
+	else_if = { limit = { check_variable = { MNG_party_num = 2 } }
+		guanxuexi_down = yes
+	}
+	else_if = { limit = { check_variable = { MNG_party_num = 3 } }
+		jiaotongxi_down = yes
+	}
+	else_if = { limit = { check_variable = { MNG_party_num = 4 } }
+		qinzhengxi_down = yes
+	}
+}

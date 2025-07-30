@@ -60,6 +60,7 @@ on_actions = {
 				limit = { check_variable = { MNG_boyishijian_3 > 0 } } 
 				add_to_variable = { MNG_boyishijian_3 = -1 } 
 			}
+
 		}
 	}
 	on_monthly_MNG = {
@@ -68,11 +69,21 @@ on_actions = {
 				limit = { has_idea = MNG_wubeixijingsheng } 
 				add_to_variable = { MNG_wubeixi = 3 } 
 			}
-		}
-		effect = {
 			if = { 
 				limit = { has_idea = MNG_zijinxijingsheng } 
 				add_to_variable = { MNG_zijinxi = 2 } 
+			}
+			if = {
+				limit = { has_country_flag = party_up_selected }
+				clr_country_flag = party_up_selected
+			}			
+			if = {
+				limit = { has_country_flag = party_up_selected_zijinxi }
+				clr_country_flag = party_up_selected_zijinxi
+			}
+			if = {
+				limit = { has_country_flag = party_down_selected }
+				clr_country_flag = party_down_selected
 			}
 		}
 	}

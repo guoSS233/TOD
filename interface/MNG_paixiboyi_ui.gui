@@ -197,8 +197,8 @@ guiTypes = {
 			position = { x = 50 y = 468 }
 			pdx_tooltip = "MNG_party_leader_tt"
 			pdx_tooltip_delayed = "MNG_party_leader_tt_desc"
-
 		}
+		
 		instantTextBoxType = {
 			name = "party_leader_name"
 			font = "loadscreen_header"
@@ -233,393 +233,423 @@ guiTypes = {
 				maxWidth = 550
 			}	
 		}
-
+		iconType = {
+			name = "party_mid"
+			scale = 0.95
+			position = { x = 1005 y = 490 }
+		}
+		buttonType = {
+			name = "MNG_party_up"
+			quadTextureSprite = "GFX_MNG_party_up"
+			centerPosition = yes
+			scale = 1
+			position = { x = 1100 y = 495 }
+			rotation = 0
+			pdx_tooltip = "MNG_party_up_btn_tt"
+		}
+		buttonType = {
+			name = "MNG_party_down"
+			quadTextureSprite = "GFX_MNG_party_down"
+			centerPosition = yes
+			scale = 1
+			position = { x = 1100 y = 650 }
+			rotation = 0
+			pdx_tooltip = "MNG_party_down_btn_tt"
+		}
+		buttonType = {
+			name = "close_button"
+			position = { x = 1257 y = 2 }
+			quadTextureSprite ="GFX_closebutton"
+			shortcut = "ESCAPE"
+			clicksound = click_close
+			pdx_tooltip = "CLOSE"
+		}
 	}
 
-	containerWindowType = {
-		#党派
+	# containerWindowType = {
+	# 	#党派
 
 
-		iconType = {
-			name = "MNG_party_2"
-			quadTextureSprite = "GFX_MNG_party_2"
-			centerPosition = yes
-			scale = 0.7
-			position = { x =260  y = 900 }
-			alwaystransparent = yes
-			rotation = 0
-		}
+	# 	iconType = {
+	# 		name = "MNG_party_2"
+	# 		quadTextureSprite = "GFX_MNG_party_2"
+	# 		centerPosition = yes
+	# 		scale = 0.7
+	# 		position = { x =260  y = 900 }
+	# 		alwaystransparent = yes
+	# 		rotation = 0
+	# 	}
 
-		iconType = {
-			name = "MNG_party_3"
-			quadTextureSprite = "GFX_MNG_party_3"
-			centerPosition = yes
-			scale = 0.7
-			position = { x =260  y = 1200 }
-			alwaystransparent = yes
-			rotation = 0
-		}
+	# 	iconType = {
+	# 		name = "MNG_party_3"
+	# 		quadTextureSprite = "GFX_MNG_party_3"
+	# 		centerPosition = yes
+	# 		scale = 0.7
+	# 		position = { x =260  y = 1200 }
+	# 		alwaystransparent = yes
+	# 		rotation = 0
+	# 	}
 
-		iconType = {
-			name = "MNG_party_4"
-			quadTextureSprite = "GFX_MNG_party_4"
-			centerPosition = yes
-			scale = 0.7
-			position = { x =260  y = 1500 }
-			alwaystransparent = yes
-			rotation = 0
-		}
-		iconType = {
-			name = "MNG_party_5"
-			quadTextureSprite = "GFX_MNG_party_5"
-			centerPosition = yes
-			scale = 0.7
-			position = { x =260  y = 1800 }
-			alwaystransparent = yes
-			rotation = 0
-		}
-
-
-
-		instantTextBoxType = {
-			name = "MNG_party_2_name_title"
-			position = { x =210  y = 848 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_name_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_2_name"
-			position = { x = 318 y = 848 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_2_name_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_2_power_title"
-			position = { x = 210 y = 883 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_power_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_2_power"
-			position = { x = 318 y = 875 }
-			size = { width = 200 height= 100% }
-			font = "hoi_36header"
-			text = "MNG_party_2_power_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_2_leader_title"
-			position = { x = 210 y = 918 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_leader_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_2_leader"
-			position = { x =318  y = 918 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_2_leader_text"
-			format = center
-			maxWidth = 120
-			pdx_tooltip = "MNG_party_2_leader_tt"
-		}
-		iconType = {
-			name = "MNG_party_2_modifier_1"
-			position = { x = 213 y =953 }
-			quadTextureSprite = "GFX_MNG_party_2_modifier_1"
-			pdx_tooltip = "MNG_party_2_modifier_1_tt"
-			pdx_tooltip_delayed = "MNG_party_2_modifier_1_desc"
-		}
-		iconType = {
-			name = "MNG_party_2_modifier_2"
-			position = { x = 268 y =953 }
-			quadTextureSprite = "GFX_MNG_party_2_modifier_2"
-			pdx_tooltip = "MNG_party_2_modifier_2_tt"
-			pdx_tooltip_delayed = "MNG_party_2_modifier_2_desc"
-		}
-		iconType = {
-			name = "MNG_party_2_modifier_3"
-			position = { x = 323 y =953 }
-			quadTextureSprite = "GFX_MNG_party_2_modifier_3"
-			pdx_tooltip = "MNG_party_2_modifier_3_tt"
-			pdx_tooltip_delayed = "MNG_party_2_modifier_3_desc"
-		}
-		iconType = {
-			name = "MNG_party_2_modifier_4"
-			position = { x = 378 y =953 }
-			quadTextureSprite = "GFX_MNG_party_2_modifier_4"
-			pdx_tooltip = "MNG_party_2_modifier_4_tt"
-			pdx_tooltip_delayed = "MNG_party_2_modifier_4_desc"
-		}
+	# 	iconType = {
+	# 		name = "MNG_party_4"
+	# 		quadTextureSprite = "GFX_MNG_party_4"
+	# 		centerPosition = yes
+	# 		scale = 0.7
+	# 		position = { x =260  y = 1500 }
+	# 		alwaystransparent = yes
+	# 		rotation = 0
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_5"
+	# 		quadTextureSprite = "GFX_MNG_party_5"
+	# 		centerPosition = yes
+	# 		scale = 0.7
+	# 		position = { x =260  y = 1800 }
+	# 		alwaystransparent = yes
+	# 		rotation = 0
+	# 	}
 
 
-		
-		instantTextBoxType = {
-			name = "MNG_party_3_name_title"
-			position = { x = 210 y = 1148 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_name_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_3_name"
-			position = { x = 318 y = 1148 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_3_name_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_3_power_title"
-			position = { x = 210 y = 1183 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_power_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_3_power"
-			position = { x = 318 y = 1175 }
-			size = { width = 200 height= 100% }
-			font = "hoi_36header"
-			text = "MNG_party_3_power_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_3_leader_title"
-			position = { x = 210 y = 1218 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_leader_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_3_leader"
-			position = { x = 318 y =1218 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_3_leader_text"
-			format = center
-			maxWidth = 120
-		}
-		iconType = {
-			name = "MNG_party_3_modifier_1"
-			position = { x = 213 y =1253 }
-			quadTextureSprite = "GFX_MNG_party_3_modifier_1"
-			pdx_tooltip = "MNG_party_3_modifier_1_tt"
-			pdx_tooltip_delayed = "MNG_party_3_modifier_1_desc"
-		}
-		iconType = {
-			name = "MNG_party_3_modifier_2"
-			position = { x = 268 y =1253 }
-			quadTextureSprite = "GFX_MNG_party_3_modifier_2"
-			pdx_tooltip = "MNG_party_3_modifier_2_tt"
-			pdx_tooltip_delayed = "MNG_party_3_modifier_2_desc"
-		}
-		iconType = {
-			name = "MNG_party_3_modifier_3"
-			position = { x = 323 y =1253 }
-			quadTextureSprite = "GFX_MNG_party_3_modifier_3"
-			pdx_tooltip = "MNG_party_3_modifier_3_tt"
-			pdx_tooltip_delayed = "MNG_party_3_modifier_3_desc"
-		}
-		iconType = {
-			name = "MNG_party_3_modifier_4"
-			position = { x = 378 y =1253 }
-			quadTextureSprite = "GFX_MNG_party_3_modifier_4"
-			pdx_tooltip = "MNG_party_3_modifier_4_tt"
-			pdx_tooltip_delayed = "MNG_party_3_modifier_4_desc"
-		}
 
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_2_name_title"
+	# 		position = { x =210  y = 848 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_name_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_2_name"
+	# 		position = { x = 318 y = 848 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_2_name_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_2_power_title"
+	# 		position = { x = 210 y = 883 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_power_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_2_power"
+	# 		position = { x = 318 y = 875 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_36header"
+	# 		text = "MNG_party_2_power_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_2_leader_title"
+	# 		position = { x = 210 y = 918 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_leader_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_2_leader"
+	# 		position = { x =318  y = 918 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_2_leader_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 		pdx_tooltip = "MNG_party_2_leader_tt"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_2_modifier_1"
+	# 		position = { x = 213 y =953 }
+	# 		quadTextureSprite = "GFX_MNG_party_2_modifier_1"
+	# 		pdx_tooltip = "MNG_party_2_modifier_1_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_2_modifier_1_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_2_modifier_2"
+	# 		position = { x = 268 y =953 }
+	# 		quadTextureSprite = "GFX_MNG_party_2_modifier_2"
+	# 		pdx_tooltip = "MNG_party_2_modifier_2_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_2_modifier_2_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_2_modifier_3"
+	# 		position = { x = 323 y =953 }
+	# 		quadTextureSprite = "GFX_MNG_party_2_modifier_3"
+	# 		pdx_tooltip = "MNG_party_2_modifier_3_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_2_modifier_3_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_2_modifier_4"
+	# 		position = { x = 378 y =953 }
+	# 		quadTextureSprite = "GFX_MNG_party_2_modifier_4"
+	# 		pdx_tooltip = "MNG_party_2_modifier_4_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_2_modifier_4_desc"
+	# 	}
 
 
 		
-		instantTextBoxType = {
-			name = "MNG_party_4_name_title"
-			position = { x = 210 y = 1448 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_name_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_4_name"
-			position = { x = 318 y = 1448 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_4_name_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_4_power_title"
-			position = { x = 210 y = 1483 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_power_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_4_power"
-			position = { x = 318 y = 1475 }
-			size = { width = 200 height= 100% }
-			font = "hoi_36header"
-			text = "MNG_party_4_power_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_4_leader_title"
-			position = { x = 210 y = 1518 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_leader_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_4_leader"
-			position = { x = 318 y = 1518 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_4_leader_text"
-			format = center
-			maxWidth = 120
-		}
-		iconType = {
-			name = "MNG_party_4_modifier_1"
-			position = { x = 213 y =1553 }
-			quadTextureSprite = "GFX_MNG_party_4_modifier_1"
-			pdx_tooltip = "MNG_party_4_modifier_1_tt"
-			pdx_tooltip_delayed = "MNG_party_4_modifier_1_desc"
-		}
-		iconType = {
-			name = "MNG_party_4_modifier_2"
-			position = { x = 268 y =1553 }
-			quadTextureSprite = "GFX_MNG_party_4_modifier_2"
-			pdx_tooltip = "MNG_party_4_modifier_2_tt"
-			pdx_tooltip_delayed = "MNG_party_4_modifier_2_desc"
-		}
-		iconType = {
-			name = "MNG_party_4_modifier_3"
-			position = { x = 323 y =1553 }
-			quadTextureSprite = "GFX_MNG_party_4_modifier_3"
-			pdx_tooltip = "MNG_party_4_modifier_3_tt"
-			pdx_tooltip_delayed = "MNG_party_4_modifier_3_desc"
-		}
-		iconType = {
-			name = "MNG_party_4_modifier_4"
-			position = { x = 378 y =1553 }
-			quadTextureSprite = "GFX_MNG_party_4_modifier_4"
-			pdx_tooltip = "MNG_party_4_modifier_4_tt"
-			pdx_tooltip_delayed = "MNG_party_4_modifier_4_desc"
-		}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_3_name_title"
+	# 		position = { x = 210 y = 1148 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_name_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_3_name"
+	# 		position = { x = 318 y = 1148 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_3_name_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_3_power_title"
+	# 		position = { x = 210 y = 1183 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_power_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_3_power"
+	# 		position = { x = 318 y = 1175 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_36header"
+	# 		text = "MNG_party_3_power_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_3_leader_title"
+	# 		position = { x = 210 y = 1218 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_leader_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_3_leader"
+	# 		position = { x = 318 y =1218 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_3_leader_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_3_modifier_1"
+	# 		position = { x = 213 y =1253 }
+	# 		quadTextureSprite = "GFX_MNG_party_3_modifier_1"
+	# 		pdx_tooltip = "MNG_party_3_modifier_1_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_3_modifier_1_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_3_modifier_2"
+	# 		position = { x = 268 y =1253 }
+	# 		quadTextureSprite = "GFX_MNG_party_3_modifier_2"
+	# 		pdx_tooltip = "MNG_party_3_modifier_2_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_3_modifier_2_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_3_modifier_3"
+	# 		position = { x = 323 y =1253 }
+	# 		quadTextureSprite = "GFX_MNG_party_3_modifier_3"
+	# 		pdx_tooltip = "MNG_party_3_modifier_3_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_3_modifier_3_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_3_modifier_4"
+	# 		position = { x = 378 y =1253 }
+	# 		quadTextureSprite = "GFX_MNG_party_3_modifier_4"
+	# 		pdx_tooltip = "MNG_party_3_modifier_4_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_3_modifier_4_desc"
+	# 	}
+
+
+
+		
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_4_name_title"
+	# 		position = { x = 210 y = 1448 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_name_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_4_name"
+	# 		position = { x = 318 y = 1448 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_4_name_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_4_power_title"
+	# 		position = { x = 210 y = 1483 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_power_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_4_power"
+	# 		position = { x = 318 y = 1475 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_36header"
+	# 		text = "MNG_party_4_power_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_4_leader_title"
+	# 		position = { x = 210 y = 1518 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_leader_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_4_leader"
+	# 		position = { x = 318 y = 1518 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_4_leader_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_4_modifier_1"
+	# 		position = { x = 213 y =1553 }
+	# 		quadTextureSprite = "GFX_MNG_party_4_modifier_1"
+	# 		pdx_tooltip = "MNG_party_4_modifier_1_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_4_modifier_1_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_4_modifier_2"
+	# 		position = { x = 268 y =1553 }
+	# 		quadTextureSprite = "GFX_MNG_party_4_modifier_2"
+	# 		pdx_tooltip = "MNG_party_4_modifier_2_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_4_modifier_2_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_4_modifier_3"
+	# 		position = { x = 323 y =1553 }
+	# 		quadTextureSprite = "GFX_MNG_party_4_modifier_3"
+	# 		pdx_tooltip = "MNG_party_4_modifier_3_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_4_modifier_3_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_4_modifier_4"
+	# 		position = { x = 378 y =1553 }
+	# 		quadTextureSprite = "GFX_MNG_party_4_modifier_4"
+	# 		pdx_tooltip = "MNG_party_4_modifier_4_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_4_modifier_4_desc"
+	# 	}
 		
 
 
-		instantTextBoxType = {
-			name = "MNG_party_5_name_title"
-			position = { x = 210 y = 1748 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_name_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_5_name"
-			position = { x = 318 y = 1748 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_5_name_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_5_power_title"
-			position = { x = 210 y = 1783 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_power_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_5_power"
-			position = { x = 318 y = 1775 }
-			size = { width = 200 height= 100% }
-			font = "hoi_36header"
-			text = "MNG_party_5_power_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_5_leader_title"
-			position = { x = 210 y = 1818 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_leader_title_text"
-			format = center
-			maxWidth = 120
-		}
-		instantTextBoxType = {
-			name = "MNG_party_5_leader"
-			position = { x = 318 y = 1818 }
-			size = { width = 200 height= 100% }
-			font = "hoi_20bs"
-			text = "MNG_party_5_leader_text"
-			format = center
-			maxWidth = 120
-		}
-		iconType = {
-			name = "MNG_party_5_modifier_1"
-			position = { x = 213 y =1853 }
-			quadTextureSprite = "GFX_MNG_party_5_modifier_1"
-			pdx_tooltip = "MNG_party_5_modifier_1_tt"
-			pdx_tooltip_delayed = "MNG_party_5_modifier_1_desc"
-		}
-		iconType = {
-			name = "MNG_party_5_modifier_2"
-			position = { x = 268 y =1853 }
-			quadTextureSprite = "GFX_MNG_party_5_modifier_2"
-			pdx_tooltip = "MNG_party_5_modifier_2_tt"
-			pdx_tooltip_delayed = "MNG_party_5_modifier_2_desc"
-		}
-		iconType = {
-			name = "MNG_party_5_modifier_3"
-			position = { x = 323 y =1853 }
-			quadTextureSprite = "GFX_MNG_party_5_modifier_3"
-			pdx_tooltip = "MNG_party_5_modifier_3_tt"
-			pdx_tooltip_delayed = "MNG_party_5_modifier_3_desc"
-		}
-		iconType = {
-			name = "MNG_party_5_modifier_4"
-			position = { x = 378 y =1853 }
-			quadTextureSprite = "GFX_MNG_party_5_modifier_4"
-			pdx_tooltip = "MNG_party_5_modifier_4_tt"
-			pdx_tooltip_delayed = "MNG_party_5_modifier_4_desc"
-		}
-	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_5_name_title"
+	# 		position = { x = 210 y = 1748 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_name_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_5_name"
+	# 		position = { x = 318 y = 1748 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_5_name_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_5_power_title"
+	# 		position = { x = 210 y = 1783 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_power_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_5_power"
+	# 		position = { x = 318 y = 1775 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_36header"
+	# 		text = "MNG_party_5_power_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_5_leader_title"
+	# 		position = { x = 210 y = 1818 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_leader_title_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	instantTextBoxType = {
+	# 		name = "MNG_party_5_leader"
+	# 		position = { x = 318 y = 1818 }
+	# 		size = { width = 200 height= 100% }
+	# 		font = "hoi_20bs"
+	# 		text = "MNG_party_5_leader_text"
+	# 		format = center
+	# 		maxWidth = 120
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_5_modifier_1"
+	# 		position = { x = 213 y =1853 }
+	# 		quadTextureSprite = "GFX_MNG_party_5_modifier_1"
+	# 		pdx_tooltip = "MNG_party_5_modifier_1_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_5_modifier_1_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_5_modifier_2"
+	# 		position = { x = 268 y =1853 }
+	# 		quadTextureSprite = "GFX_MNG_party_5_modifier_2"
+	# 		pdx_tooltip = "MNG_party_5_modifier_2_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_5_modifier_2_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_5_modifier_3"
+	# 		position = { x = 323 y =1853 }
+	# 		quadTextureSprite = "GFX_MNG_party_5_modifier_3"
+	# 		pdx_tooltip = "MNG_party_5_modifier_3_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_5_modifier_3_desc"
+	# 	}
+	# 	iconType = {
+	# 		name = "MNG_party_5_modifier_4"
+	# 		position = { x = 378 y =1853 }
+	# 		quadTextureSprite = "GFX_MNG_party_5_modifier_4"
+	# 		pdx_tooltip = "MNG_party_5_modifier_4_tt"
+	# 		pdx_tooltip_delayed = "MNG_party_5_modifier_4_desc"
+	# 	}
+	# }
 
 }
