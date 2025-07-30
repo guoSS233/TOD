@@ -1,0 +1,721 @@
+﻿##### Division Templates #####
+division_template = {#九步（一铲一炮)
+	name = "Division d'Infanterie"		
+	division_names_group = FRA_INF_01
+	# Represents: Division d'Infanterie (Series A and B), Div. d'Inf. de Forteresse
+	# Difference is their equipment
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 } 	# Heavy Arty Regiment had 2x 155mm battalions
+		engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {#九步（一炮）
+	name = "Division Coloniale"		
+	division_names_group = FRA_COL_01
+	# Represents: Div. d'Inf. Coloniale, Div. d'Inf. Nord-Africaine
+	# Difference from DI is their equipment
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 } 	# Heavy Arty Regiment had 2x 155mm battalions
+	}
+}
+division_template = {#九摩（一炮一铲一摩侦）
+	name = "Division d'Infanterie Motorisée"	# Division d'Infanterie Motorisée
+	division_names_group = FRA_MOT_01
+
+	regiments = {
+		motorized = { x = 0 y = 0 }
+		motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+		motorized = { x = 2 y = 2 }
+	}
+	support = {
+		mot_recon = { x = 0 y = 0 }      # Recon Group consisted of 26 ACs + motorcycles
+		artillery = { x = 0 y = 1 }  # Heavy Arty Regiment had 1x 155mm, 1x 105mm battalions
+		engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {#十二山地
+	name = "Division d'Infanterie Alpine"	# Division d'Infanterie Alpine
+	division_names_group = FRA_MNT_01
+	# Note: trimmed to 3x Rgts w/ arty bn added, 1939
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }	# Regular mountain infantry (Infanterie Alpine)
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }	
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+		mountaineers = { x = 2 y = 0 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers = { x = 2 y = 1 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers = { x = 2 y = 2 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers = { x = 3 y = 0 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers = { x = 3 y = 1 }	# Chasseurs Alpins (HOI3 elites)
+		mountaineers = { x = 3 y = 2 }	# Chasseurs Alpins (HOI3 elites)
+	}
+}
+division_template = {#四骑（一侦）
+	name = "Division de Cavalerie" 	# Division de Cavalerie
+	division_names_group = FRA_CAV_01
+	# Note: Transformed to DLC, DLM divisions, 1936-39 
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }      # Recon Group consisted of 64 ACs/scout cars
+	}
+}
+division_template = {四摩二轻坦（一摩侦一铲）
+	name = "Division Légère Mécanique" 		# Division Légère Mécanique
+	division_names_group = FRA_MEC_01
+
+	regiments = {
+		light_armor = { x = 0 y = 0 }		# Bn. of Hotchkiss, then Souma (Med.) tanks
+		light_armor = { x = 0 y = 1 }		# Bn. of Hotchkiss tanks
+		motorized = { x = 1 y = 0 }			# Brigade of 2x Rgts., 2 Bns. each (later 1 Rgt. of 3x Bns.)
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+		motorized = { x = 1 y = 3 }
+	}
+	support = {
+		mot_recon = { x = 0 y = 0 }      # Recon Group consisted of 42 ACs + motorcycles
+		engineer = { x = 0 y = 1 }
+	}
+}
+division_template = {#四轻坦
+	name = "Brigade de Chars de Combat" 	# Brigade de Chars de Combat, independent armor brigades of 2x Rgts., 2 Bns. each
+	division_names_group = FRA_ARM_01
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+division_template = {#六步
+	name = "Brigade Coloniale"			# Represents: 2xRgt colonial forces and , usually with old equipment
+	division_names_group = FRA_COL_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	priority = 0
+}
+
+##### OOB #####
+units = {
+	##### 装甲军团 四轻坦师#####
+	division= {	
+		name = "第一装甲师"
+		location = 11506
+		division_template = "Brigade de Chars de Combat" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+		force_equipment_variants = { gw_tank_equipment = { owner = "FRA" } }
+	}
+	division= {	
+		name = "第二装甲师"
+		location = 9523
+		division_template = "Brigade de Chars de Combat" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+		force_equipment_variants = { gw_tank_equipment = { owner = "FRA" } }
+	}
+	division= {	
+		name = "第三装甲师"
+		location = 11518
+		division_template = "Brigade de Chars de Combat" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+		force_equipment_variants = { gw_tank_equipment = { owner = "FRA" } }
+	}
+	division= {	
+		name = "第四装甲师"
+		location = 11506
+		division_template = "Brigade de Chars de Combat" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+		force_equipment_variants = { gw_tank_equipment = { owner = "FRA" } }
+	}
+	division= {	
+		name = "第五装甲师"
+		location = 516
+		division_template = "Brigade de Chars de Combat" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+		force_equipment_variants = { gw_tank_equipment = { owner = "FRA" } }
+	}
+	division= {	
+		name = "第六装甲师"
+		location = 11531
+		division_template = "Brigade de Chars de Combat" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+		force_equipment_variants = { gw_tank_equipment = { owner = "FRA" } }
+	}
+	##### 北非驻守军团 六个六步师#####
+	division= {	
+		name = "阿尔及尔第一步兵师"
+		location = 7132
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "阿尔及尔第二步兵师"
+		location = 7132
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "阿尔及尔第三步兵师"
+		location = 1145
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "阿尔及尔第四步兵师"
+		location = 1145
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "阿尔及尔第五步兵师"
+		location = 12051
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "阿尔及尔第六步兵师"
+		location = 12051
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	##### 北法兰西驻守军团 五个六步师#####
+	division= {	
+		name = "第31步兵师"
+		location = 11548
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第32步兵师"
+		location = 11420
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第33步兵师"
+		location = 11563
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第34步兵师"
+		location = 120355251
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第35步兵师"
+		location = 11465
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	##### 南法兰西驻守军团 五个六步师#####
+	division= {	
+		name = "第36步兵师"
+		location = 6657
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第37步兵师"
+		location = 9737
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第38步兵师"
+		location = 9853
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第39步兵师"
+		location = 6766
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第40步兵师"
+		location = 9909
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	##### 东部驻守军团 五个六步师#####
+	division= {	
+		name = "第41步兵师"
+		location = 678
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第42步兵师"
+		location = 9503
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第43步兵师"
+		location = 6469
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第44步兵师"
+		location = 11531
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第45步兵师"
+		location = 587
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	##### 比利时驻守军团 四个六步师#####
+	division= {	
+		name = "第46步兵师"
+		location = 11519
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第47步兵师"
+		location = 6583
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第48步兵师"
+		location = 4598
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第49步兵师"
+		location = 516
+		division_template = "Brigade Coloniale" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	#####东部兵团 九步（一铲一炮）#####
+	division= {	
+		name = "第1步兵师"
+		location = 516
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第2步兵师"
+		location = 11519
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第3步兵师"
+		location = 587
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第4步兵师"
+		location = 6469
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第5步兵师"
+		location = 11531
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第6步兵师"
+		location = 11531
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第7步兵师"
+		location = 9503
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第8步兵师"
+		location = 678
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第9步兵师"
+		location = 11531
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第10步兵师"
+		location = 516
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	#####北法驻守兵团 九步（一铲一炮）#####
+	division= {	
+		name = "第11步兵师"
+		location = 11483
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第12步兵师"
+		location = 11483
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第13步兵师"
+		location = 575
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第14步兵师"
+		location = 11548
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第15步兵师"
+		location = 11548
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第16步兵师"
+		location = 11563
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第17步兵师"
+		location = 9495
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第18步兵师"
+		location = 6536
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第19步兵师"
+		location = 3552
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第20步兵师"
+		location = 11465
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	#####南法兰西驻守军团 九步（一铲一炮）#####
+	division= {	
+		name = "第21步兵师"
+		location = 6657
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第22步兵师"
+		location = 9737
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第23步兵师"
+		location = 3671
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第24步兵师"
+		location = 651
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第25步兵师"
+		location = 620
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第26步兵师"
+		location = 6766
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第27步兵师"
+		location = 9853
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第28步兵师"
+		location = 9898
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第29步兵师"
+		location = 11834
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第30步兵师"
+		location = 9909
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	#####摩托化兵团 九摩（一炮一铲一摩侦）#####
+	division= {	
+		name = "第1机动师"
+		location = 11506
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第2机动师"
+		location = 9523
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第3机动师"
+		location = 11518
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第4机动师"
+		location = 7132
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第5机动师"
+		location = 9909
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第6机动师"
+		location = 6613
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第7机动师"
+		location = 3594
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第8机动师"
+		location = 9434
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第9机动师"
+		location = 11548
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第10机动师"
+		location = 6583
+		division_template = "Division d'Infanterie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	#####骑兵师 四骑（一侦）#####
+	division= {	
+		name = "第1骑兵师"
+		location = 6583
+		division_template = "Division de Cavalerie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第2骑兵师"
+		location = 6583
+		division_template = "Division de Cavalerie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第3骑兵师"
+		location = 778
+		division_template = "Division de Cavalerie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第4骑兵师"
+		location = 3594
+		division_template = "Division de Cavalerie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第5骑兵师"
+		location = 6613
+		division_template = "Division de Cavalerie" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	#####山地师 十二山地#####
+	division= {	
+		name = "第山地师"
+		location = 6766
+		division_template = "Division d'Infanterie Alpine" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第2山地师"
+		location = 6766
+		division_template = "Division d'Infanterie Alpine" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第3山地师"
+		location = 9882
+		division_template = "Division d'Infanterie Alpine" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第4山地师"
+		location = 743
+		division_template = "Division d'Infanterie Alpine" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.95
+	}
+}
+###################

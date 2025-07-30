@@ -1,0 +1,368 @@
+﻿division_template = {#九步（一侦）
+	name = "Dywizja Piechoty"		
+	division_names_group = POL_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+	}
+}
+division_template = {#九山（一侦）
+	name = "Dywizja Piechoty Górskiej"
+	division_names_group = POL_MNT_01
+
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }	
+		mountaineers = { x = 1 y = 0 }
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+		mountaineers = { x = 2 y = 0 }	
+		mountaineers = { x = 2 y = 1 }	
+		mountaineers = { x = 2 y = 2 }	
+	}
+	support = {
+        recon = { x = 0 y = 0 }
+	}
+}
+division_template = {#三骑（一侦）
+	name = "Brygada Kawalerii" 
+	division_names_group = POL_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }     
+	}
+}
+
+
+units = {
+	### 南部山地师 ###	
+	division= {	
+		name = "第21山地师"
+		location = 11411
+		division_template = "Dywizja Piechoty Górskiej" 		#  
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.95
+	}
+	division= {	
+		name = "第22山地师"
+		location = 442
+		division_template = "Dywizja Piechoty Górskiej" 		#  
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.95
+	}
+	#####东部驻守军团 九步#####
+	division= {	
+		name = "第1步兵师"
+		location = 3288
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第2步兵师"
+		location = 3254
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第3步兵师"
+		location = 11479
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第4步兵师"
+		location = 11411
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第5步兵师"
+		location = 6557
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第6步兵师"
+		location = 406
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第7步兵师"
+		location = 560
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第8步兵师"
+		location = 9304
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第9步兵师"
+		location = 11479
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第10步兵师"
+		location = 3393
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第11步兵师"
+		location = 11399
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第12步兵师"
+		location = 3320
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第13步兵师"
+		location = 6296
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第14步兵师"
+		location = 6314
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	#####西部兵团 就步）#####
+	division= {	
+		name = "第15步兵师"
+		location = 3544
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第16步兵师"
+		location = 3230
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第17步兵师"
+		location = 9508
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第18步兵师"
+		location = 11430
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第19步兵师"
+		location = 442
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第20步兵师"
+		location = 9427
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第21步兵师"
+		location = 442
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第22步兵师"
+		location = 3458
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第23步兵师"
+		location = 9483
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第24步兵师"
+		location = 6314
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第25步兵师"
+		location = 3544
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第26步兵师"
+		location = 9508
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第27步兵师"
+		location = 11430
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	
+	division= {	
+		name = "第28步兵师"
+		location = 9427
+		division_template = "Dywizja Piechoty" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	#####东部驻守军团 三骑（一侦）#####
+	
+	division= {	
+		name = "第2骑兵师"
+		location = 442
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {
+		name = "第1骑兵师"
+		location = 3392
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第3骑兵师"
+		location = 9508
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第4骑兵师"
+		location = 3230
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第5骑兵师"
+		location = 3544
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第6骑兵师"
+		location = 6314
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第7骑兵师"
+		location = 9483
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第8骑兵师"
+		location = 6296
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第9骑兵师"
+		location = 3393
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+	division= {	
+		name = "第10骑兵师"
+		location = 11479
+		division_template = "Brygada Kawalerii" 		#  
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.7
+	}
+}
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = POL
+		}
+		requested_factories = 2
+		progress = 0.20
+		efficiency = 100
+		industrial_manufacturer = mio:POL_fb_organization
+	}
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = POL
+		}
+		requested_factories = 1
+		progress = 0.20
+		efficiency = 100
+	}
+}

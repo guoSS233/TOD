@@ -22,6 +22,24 @@ defined_text = {
 	}
 }
 defined_text = {
+    name = MNG_party_mid
+	text = {
+		trigger = { check_variable = { MNG_party_num = 0 }}
+		localization_key = GFX_MNG_party_mid_zijinxi
+	}
+	text = {
+		trigger = {
+			or = {
+				check_variable = { MNG_party_num = 1 }
+				check_variable = { MNG_party_num = 2 }
+				check_variable = { MNG_party_num = 3 }
+				check_variable = { MNG_party_num = 4 }
+			}
+		}
+		localization_key = GFX_MNG_party_mid_normal
+	}
+}
+defined_text = {
     name = MNG_party_leader_name_text
 	text = {
 		trigger = { check_variable = { MNG_party_num = 0 }}
@@ -89,4 +107,89 @@ defined_text = {
 		trigger = { check_variable = { MNG_party_num = 4 }}
 		localization_key = MNG_party_5_desc
 	}
+}
+defined_text = {
+    name = MNG_party_name_text
+	text = {
+		trigger = { check_variable = { MNG_party_num = 0 }}
+		localization_key = MNG_party_3_name_text
+	}
+	text = {
+		trigger = { check_variable = { MNG_party_num = 1 }}
+		localization_key = MNG_party_2_name_text
+	}
+	text = {
+		trigger = { check_variable = { MNG_party_num = 2 }}
+		localization_key = MNG_party_4_name_text
+	}
+	text = {
+		trigger = { check_variable = { MNG_party_num = 3 }}
+		localization_key = MNG_party_1_name_text
+	}
+	text = {
+		trigger = { check_variable = { MNG_party_num = 4 }}
+		localization_key = MNG_party_5_name_text
+	}
+}
+defined_text = {
+    name = MNG_party_up_zijinxi_only
+	text = {
+		trigger = { check_variable = { MNG_party_num = 0 }}
+		localization_key = MNG_party_up_zijinxi_yes
+	}
+	text = {
+		trigger = { 
+			OR = {
+			    check_variable = { MNG_party_num = 1 }
+				check_variable = { MNG_party_num = 2 }
+				check_variable = { MNG_party_num = 3 }
+				check_variable = { MNG_party_num = 4 }
+			}
+
+		}
+		localization_key = MNG_party_up_zijinxi_no
+	}
+	# text = {
+	# 	trigger = { check_variable = { MNG_party_num = 2 }}
+	# 	localization_key = MNG_party_4_name_text
+	# }
+	# text = {
+	# 	trigger = { check_variable = { MNG_party_num = 3 }}
+	# 	localization_key = MNG_party_1_name_text
+	# }
+	# text = {
+	# 	trigger = { check_variable = { MNG_party_num = 4 }}
+	# 	localization_key = MNG_party_5_name_text
+	# }
+}
+defined_text = {
+    name = MNG_party_down_zijinxi_only
+	text = {
+		trigger = { check_variable = { MNG_party_num = 0 }}
+		localization_key = MNG_party_down_zijinxi_yes
+	}
+	text = {
+		trigger = { 
+			OR = {
+			    check_variable = { MNG_party_num = 1 }
+				check_variable = { MNG_party_num = 2 }
+				check_variable = { MNG_party_num = 3 }
+				check_variable = { MNG_party_num = 4 }
+			}
+
+		}
+		localization_key = MNG_party_down_zijinxi_no
+	}
+	# text = {
+	# 	trigger = { check_variable = { MNG_party_num = 2 }}
+	# 	localization_key = MNG_party_4_name_text
+	# }
+	# text = {
+	# 	trigger = { check_variable = { MNG_party_num = 3 }}
+	# 	localization_key = MNG_party_1_name_text
+	# }
+	# text = {
+	# 	trigger = { check_variable = { MNG_party_num = 4 }}
+	# 	localization_key = MNG_party_5_name_text
+	# }
 }
