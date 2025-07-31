@@ -255,16 +255,16 @@ focus_tree = {
 		y = 5
 		relative_position_id = SRC_Liaodong_special_committee
 		cost = 1
-		available = { NOT = {country_exists = GPS} }
+		available = { NOT = { country_exists = GPS} }
 
 		completion_reward = {
 			#retire_ideology_leader = vanguard_socialism
 			#retire_ideology_leader = council_socialism
 			#retire_country_leader = yes
-			promote_character = {
-				character = SRC_ren_fuchen
-				ideology = vanguard_socialism_subtype
-			}
+			#promote_character = {
+			#	character = SRC_ren_fuchen
+			#	ideology = vanguard_socialism_subtype
+			#}
 			set_country_flag = SRC_zhongyangdida
 			remove_ideas = SRC_buwangkulaojichou
 			remove_ideas = SRC_qiyireqing
@@ -297,7 +297,7 @@ focus_tree={
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		allow_branch = {if = { has_country_flag = SRC_zhongyangdida }}
+		allow_branch = { has_country_flag = SRC_zhongyangdida }
 		select_effect = {country_event = { id = SRCevents.3 days = 1 }}
 		x = 19
 		y = 0
@@ -320,9 +320,14 @@ focus_tree={
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		allow_branch = {if = { has_country_leader = SRC_ren_fuchen }}
+		allow_branch = {
+			has_country_leader = {
+				character = SRC_ren_fuchen
+				ruling_only = yes
+			}
+		}
 		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
-		x = 9
+		x = 19
 		y = 1
 		
 		ai_will_do = {factor = 10}
@@ -339,7 +344,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_renfuchenzhuxi}
-		x = 7
+		x = 17
 		y = 2
 		cost = 5
 		
@@ -362,7 +367,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_zhongyangjihuaweiyuanhui}
-		x = 7
+		x = 17
 		y = 3
 		cost = 5
 		
@@ -382,7 +387,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_gongyeguoyouhua}
-		x = 7
+		x = 17
 		y = 4
 		cost = 5
 		
@@ -402,7 +407,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_nongyejitihua}
-		x = 7
+		x = 17
 		y = 5
 		cost = 5
 		
@@ -423,7 +428,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_renfuchenzhuxi}
-		x = 9
+		x = 19
 		y = 2
 		cost = 5
 		
@@ -443,7 +448,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_jianchilingdaoquan}
-		x = 9
+		x = 19
 		y = 3
 		cost = 5
 		
@@ -461,7 +466,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_fanyundong}
-		x = 9
+		x = 19
 		y = 4
 		cost = 5
 		
@@ -481,7 +486,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_gongxieshidaxue}
-		x = 9
+		x = 19
 		y = 5
 		cost = 5
 		
@@ -499,7 +504,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_renfuchenzhuxi}
-		x = 11
+		x = 21
 		y = 2
 		cost = 5
 		
@@ -517,7 +522,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_dongbeirenmindaxue}
-		x = 11
+		x = 21
 		y = 3
 		cost = 5
 		
@@ -541,7 +546,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_dongbeigeminggezhiyuan}
-		x = 11
+		x = 21
 		y = 4
 		cost = 5
 		
@@ -559,7 +564,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_jianjuefanduigerenchongbai}
-		x = 11
+		x = 21
 		y = 5
 		cost = 5
 		
@@ -582,7 +587,7 @@ focus_tree={
 		prerequisite = {focus = SRC_yiwujihua}
 		prerequisite = {focus = SRC_qunzhong}
 		prerequisite = {focus = SRC_xinwenhuayundong}
-		x = 9
+		x = 19
 		y = 6
 		cost = 5
 		
@@ -602,7 +607,12 @@ focus_tree={
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		allow_branch = {if = { has_country_leader = SRC_li_dazhao }}
+		allow_branch = {
+			has_country_leader = {
+				character = SRC_li_dazhao
+				ruling_only = yes
+			}
+		}
 		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
 		x = 19
 		y = 1
@@ -878,9 +888,14 @@ focus_tree={
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		allow_branch = {if = { has_country_leader = SRC_chen_duxiu }}
+		allow_branch = {
+			has_country_leader = {
+				character = SRC_chen_duxiu
+				ruling_only = yes
+			}
+		}
 		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
-		x = 29
+		x = 19
 		y = 1
 		
 		ai_will_do = {factor = 10}
@@ -897,7 +912,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_chenduxiuzhuxi}
-		x = 27
+		x = 17
 		y = 2
 		cost = 5
 		
@@ -918,7 +933,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_xueshuwenhuageminghua}
-		x = 27
+		x = 17
 		y = 3
 		cost = 5
 		
@@ -939,7 +954,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_dongbeilaodongdaxue}
-		x = 27
+		x = 17
 		y = 4
 		cost = 5
 		
@@ -959,7 +974,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_qianghuaqingniangongzuo}
-		x = 27
+		x = 17
 		y = 5
 		cost = 5
 		
@@ -979,7 +994,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_chenduxiuzhuxi}
-		x = 29
+		x = 19
 		y = 2
 		cost = 5
 		
@@ -997,7 +1012,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_gemingtongyizhanxian}
-		x = 29
+		x = 19
 		y = 3
 		cost = 5
 		
@@ -1017,7 +1032,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_goujianfanditongmeng}
-		x = 29
+		x = 19
 		y = 4
 		cost = 5
 		
@@ -1035,7 +1050,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_gaizaozichanjieji}
-		x = 29
+		x = 19
 		y = 5
 		cost = 5
 		
@@ -1055,7 +1070,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_chenduxiuzhuxi}
-		x = 31
+		x = 21
 		y = 2
 		cost = 5
 		
@@ -1076,7 +1091,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_guojiagaigeweiyuanhui}
-		x = 31
+		x = 21
 		y = 3
 		cost = 5
 		
@@ -1096,7 +1111,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_guojiagaigeweiyuanhui}
-		x = 31
+		x = 21
 		y = 4
 		cost = 5
 		
@@ -1116,7 +1131,7 @@ focus_tree={
 		continue_if_invalid = no
 		available_if_capitulated = no
 		prerequisite = {focus = SRC_guojiagaigeweiyuanhui}
-		x = 31
+		x = 21
 		y = 5
 		cost = 5
 		
@@ -1138,7 +1153,7 @@ focus_tree={
 		prerequisite = {focus = SRC_shehuizhuyijiebanren}
 		prerequisite = {focus = SRC_tieguodundae}
 		prerequisite = {focus = SRC_datongshijieguodu}
-		x = 29
+		x = 19
 		y = 6
 		cost = 5
 		

@@ -172,7 +172,10 @@ focus_tree = {
 	focus = {
 		id = GPS_tanyaqiyi
 		icon = GFX_GPS_tanyaqiyi
-		allow_branch = { country_exists = SRC }
+		allow_branch = { 
+			has_country_flag = GPS_liaoyangqiyi 
+			NOT = { has_country_flag = GPS_pingluanshengli }
+		}
 		x = 7
 		y = 1
 		
@@ -1308,6 +1311,7 @@ focus_tree = {
 		allow_branch = {
 			has_country_flag = GPS_liaoyangqiyi
 			NOT = {country_exists = SRC }
+			has_country_flag = GPS_pingluanshengli
 		}
 		x = 15
 		y = 1
