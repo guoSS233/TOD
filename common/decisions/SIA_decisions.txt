@@ -252,3 +252,51 @@ SIA_decision_l_3_drdxd = {  #敌人的行动
 		}
 	}
 }
+
+SIA_decision_CAM = {  
+	SIA_decision_CAM_1 = {
+		priority = 105
+		name = SIA_decision_CAM_1
+		icon = eng_trade_unions_support
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = yes
+		cancel_trigger = {
+			OR = {
+				857 = {
+					NOT = {
+						is_controlled_by = CAM 
+					}
+				}
+			}
+		}
+		activation = { 
+			AND = {
+				OR = {
+					tag = CAM
+					tag = ROS
+					tag = SIA
+				}
+				857 = {
+					is_controlled_by = CAM 
+				}
+				CAM = {
+					OR = {
+						has_war_with = ROS
+						has_war_with = SIA
+					}
+				}
+			}
+		}
+		days_mission_timeout = 50
+		timeout_effect = {
+			CAM = {
+				white_peace = SIA
+				white_peace = ROS
+			}
+			857 = {
+				transfer_state_to = CAM
+			}
+			set_global_flag = flag_sam_sia_duli
+		}
+	}
+}
