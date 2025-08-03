@@ -1577,10 +1577,22 @@ GOS_decision_l_4_jsjy = {  #军事决议
 		fire_only_once = yes				
 		visible = {
 			has_country_flag  = GOS_flag_decision_zhaolingtianxia_unlock
-			country_exists = SIC
-			NOT = {
-				MOB = {
-					is_subject_of = SIC
+			OR = {
+				AND = {
+					country_exists = SIC
+					NOT = {
+						MOB = {
+							is_subject_of = SIC
+						}
+					}	
+				}
+				AND = {
+					country_exists = SCG
+					NOT = {
+						MOB = {
+							is_subject_of = SCG
+						}
+					}	
 				}
 			}
 		}	
@@ -1596,6 +1608,10 @@ GOS_decision_l_4_jsjy = {  #军事决议
 		remove_effect = {	
 			declare_war_on = { 
 				target = SIC
+				type = annex_everything
+			}
+			declare_war_on = { 
+				target = SCG
 				type = annex_everything
 			}
 		}	
