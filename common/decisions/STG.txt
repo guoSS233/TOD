@@ -794,11 +794,13 @@ STG_jingnan = {
 		
 		visible = {country_exists = ROC}
 		allowed = { tag = STG } 
-		available = { }
+		available = {is_neighbor_of = ROC}
 		cost = 15 
 		ai_will_do = {
 			base = 0
 			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = ROC
 				country_exists = ROC
 				has_war = yes
 				factor = 20
@@ -820,11 +822,13 @@ STG_jingnan = {
 		
 		visible = {country_exists = SRC}
 		allowed = { tag = STG } 
-		available = { }
+		available = {is_neighbor_of = SRC }
 		cost = 15 
 		ai_will_do = {
 			base = 0
 			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = SRC
 				country_exists = SRC
 				has_war = yes
 				factor = 20
@@ -846,11 +850,13 @@ STG_jingnan = {
 		
 		visible = {country_exists = SCG}
 		allowed = { tag = STG } 
-		available = { }
+		available = {is_neighbor_of = SCG}
 		cost = 15 
 		ai_will_do = {
 			base = 0
 			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = SCG
 				country_exists = SCG
 				has_war = yes
 				factor = 20
