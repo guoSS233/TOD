@@ -112,7 +112,16 @@ ROC_gemingfeixingyanjiusuo_organization = {#革命飞行研究所
 	icon = GFX_idea_ROC_gemingfeixingyanjiusuo_organization
 	allowed = {	
         tag = ROC
-		has_country_flag = guangzhouqiyi_flag
+
+	}
+	available = {
+		FROM = {
+			OR = {
+				has_government = moderate_socialism
+				has_government = social_democrat
+				has_government = liberal_democracy
+			}
+		}
 	}
 }
 
