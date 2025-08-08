@@ -5,18 +5,51 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/XBJ/Portrait_XBJ_Zhu_Juanshen.dds"
+				small = "gfx/leaders/XBJ/XBJ_qingwang.png"
 			}
 			civilian = {
 				large = "gfx/leaders/XBJ/Portrait_XBJ_Zhu_Juanshen.dds"
 			}
 		}
+        advisor = {
+            #总司令
+            slot = high_command
+            ledger = army
+            idea_token = XBJ_Zhu_Juanshen
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_infantry_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        advisor = {
+            #总司令
+            slot = army_chief
+            ledger = army
+            idea_token = XBJ_Zhu_Juanshen
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_chief_organizational_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+        }
 		field_marshal={
 			traits= { war_hero politically_connected old_guard inflexible_strategist career_officer trait_cautious skilled_staffer }
 			skill = 4
 			attack_skill = 2
-			defense_skill = 2
-			planning_skill = 1
-			logistics_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
 		}
 		country_leader = {
 			ideology = authoritarian_oligarchy_subtype
@@ -31,16 +64,33 @@ characters = {
 		portraits={
 			army = {   #担任将领（海军陆军）时的头像
 				large="gfx/leaders/XBJ/Portrait_XBJ_Wei_Lihuang.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_weilihuang.png"
 			}
 		}
+        advisor = {
+            #总司令
+            slot = high_command
+            ledger = army
+            idea_token = XBJ_Wei_Lihuang
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_commando_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+        }
 		corps_commander = {
 			traits = { ranger war_hero organizer }
 			#以下与旧版将领一样
 			skill = 4
-			attack_skill = 2
-			defense_skill = 1
-			planning_skill = 2
-			logistics_skill = 2
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
 		}
 	}
 	XBJ_Ji_Hongchang = {
@@ -49,16 +99,33 @@ characters = {
 		portraits={
 			army = {   #担任将领（海军陆军）时的头像
 				large="gfx/leaders/XBJ/Portrait_XBJ_Ji_Hongchang.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/xbj_jihongchang.png" #不写路径，直接写GFX文件里面的图片名字也可以
 			}
 		}
+        advisor = {
+            #总司令
+            slot = army_chief
+            ledger = army
+            idea_token = XBJ_Ji_Hongchang
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_entrenchment_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+        }
 		field_marshal = {
 			traits = { war_hero adaptable trait_cautious career_officer }
 			#以下与旧版将领一样
 			skill = 4
-			attack_skill = 2
+			attack_skill = 4
 			defense_skill = 2
 			planning_skill = 3
-			logistics_skill = 2
+			logistics_skill = 4
 			legacy_id=-1
 		}
 	}
@@ -98,6 +165,7 @@ characters = {
 		portraits = {
 			army = {
 				large = "gfx/leaders/XBJ/Portrait_XBJ_Jiang_Baili.png"
+				small = "gfx/leaders/XBJ/XBJ_jiangbaili.png"
 			}
 			civilian = {
 				large = "gfx/leaders/XBJ/Portrait_XBJ_Jiang_Bailixizhuang.dds"
@@ -109,14 +177,30 @@ characters = {
 			expire = "1965.1.1.1"
 			id = -1
 		}
+        advisor = {
+            #总司令
+            slot = army_chief
+            ledger = army
+            idea_token = XBJ_Jiang_Baili
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_chief_offensive_3
+            }
+            cost = 200
+            ai_will_do = {
+                factor = 1
+            }
+        }
 		field_marshal = {
 			traits = { trickster politically_connected career_officer skilled_staffer brilliant_strategist harsh_leader }
 			#以下与旧版将领一样
 			skill = 4
-			attack_skill = 2
+			attack_skill = 5
 			defense_skill = 2
-			planning_skill = 2
-			logistics_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
 		}
 	}
 	XBJ_Ma_Hongbing = {
@@ -229,8 +313,25 @@ characters = {
 		portraits={
 			army = {   #担任将领（海军陆军）时的头像
 				large="gfx/leaders/XBJ/Portrait_XBJ_Jiang_Dingwen.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_jiangbingwen.png" #不写路径，直接写GFX文件里面的图片名字也可以
 			}
 		}
+        advisor = {
+            #总司令
+            slot = high_command
+            ledger = army
+            idea_token = XBJ_Jiang_Dingwen
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_artillery_2
+            }
+            cost = 200
+            ai_will_do = {
+                factor = 1
+            }
+        }
 		corps_commander = {
 			traits = { skilled_staffer career_officer politically_connected }
 			#以下与旧版将领一样
@@ -238,7 +339,7 @@ characters = {
 			attack_skill = 2
 			defense_skill = 3
 			planning_skill = 2
-			logistics_skill = 2
+			logistics_skill = 3
 		}
 	}
 	XBJ_Cheng_Xixian = {
@@ -252,10 +353,10 @@ characters = {
 			traits = { infantry_officer career_officer trait_reckless }
 			#以下与旧版将领一样
 			skill = 2
-			attack_skill = 1
+			attack_skill = 2
 			defense_skill = 2
 			planning_skill = 1
-			logistics_skill = 1
+			logistics_skill = 2
 		}
 	}
 	XBJ_Gao_Jun = {
@@ -271,7 +372,7 @@ characters = {
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
-			planning_skill = 2
+			planning_skill =1
 			logistics_skill = 1
 		}
 	}
@@ -287,7 +388,7 @@ characters = {
 			#以下与旧版将领一样
 			skill = 2
 			attack_skill = 2
-			defense_skill = 1
+			defense_skill = 2
 			planning_skill = 2
 			logistics_skill = 1
 		}
@@ -305,7 +406,7 @@ characters = {
 			skill = 2
 			attack_skill = 2
 			defense_skill = 1
-			planning_skill = 1
+			planning_skill = 2
 			logistics_skill = 2
 		}
 	}
@@ -321,8 +422,8 @@ characters = {
 			#以下与旧版将领一样
 			skill = 1
 			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 2
+			defense_skill = 1
+			planning_skill = 1
 			logistics_skill = 1
 		}
 	}
@@ -338,23 +439,23 @@ characters = {
 			#以下与旧版将领一样
 			skill = 1
 			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 2
+			defense_skill = 1
+			planning_skill = 1
 			logistics_skill = 1
 		}
 	}
-	XBJ_Han_Fuju = {
-		name = XBJ_Han_Fuju
+	XBJ_sunlianzhong = {
+		name = XBJ_sunlianzhong
 		portraits={
 			army = {   #担任将领（海军陆军）时的头像
-				large="gfx/leaders/XBJ/Portrait_XBJ_Han_Fuju.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				large="gfx/leaders/XBJ/XBJ_sunlianzhong.png" #不写路径，直接写GFX文件里面的图片名字也可以
 			}
 		}
 		corps_commander = {
 			traits = { trait_cautious trait_engineer }
 			#以下与旧版将领一样
 			skill = 1
-			attack_skill = 2
+			attack_skill = 1
 			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
@@ -374,7 +475,7 @@ characters = {
 			attack_skill = 1
 			defense_skill = 1
 			planning_skill = 1
-			logistics_skill = 2
+			logistics_skill = 1
 		}
 	}
 	XBJ_Ma_Buqing = {
@@ -390,7 +491,7 @@ characters = {
 			skill = 1
 			attack_skill = 1
 			defense_skill = 1
-			planning_skill = 2
+			planning_skill = 1
 			logistics_skill = 1
 		}
 	}
@@ -399,17 +500,35 @@ characters = {
 		portraits={
 			army = {   #担任将领（海军陆军）时的头像
 				large="gfx/leaders/XBJ/Portrait_XBJ_Ma_Fuxiang.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_mafuxiang.png" #不写路径，直接写GFX文件里面的图片名字也可以
 			}
 		}
+        advisor = {
+            #总司令
+            slot = high_command
+            ledger = army
+            idea_token = XBJ_Ma_Fuxiang
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_cavalry_1
+            }
+            cost = 200
+            ai_will_do = {
+                factor = 1
+            }
+        }
 		corps_commander = {
 			traits = { trait_cautious organizer politically_connected }
 			#以下与旧版将领一样
 			skill = 1
 			attack_skill = 1
-			defense_skill = 2
+			defense_skill = 1
 			planning_skill = 1
 			logistics_skill = 1
 		}
+
 	}
 	XBJ_Ma_Hongkui = {
 		name = XBJ_Ma_Hongkui
@@ -423,9 +542,9 @@ characters = {
 			#以下与旧版将领一样
 			skill = 1
 			attack_skill = 1
-			defense_skill = 2
+			defense_skill = 1
 			planning_skill = 1
-			logistics_skill = 2
+			logistics_skill = 1
 		}
 	}
 	XBJ_Sun_Yuanliang = {
@@ -442,7 +561,7 @@ characters = {
 			attack_skill = 1
 			defense_skill = 2
 			planning_skill = 3
-			logistics_skill = 2
+			logistics_skill = 1
 		}
 	}
 	XBJ_Wen_Chenglie = {
@@ -457,7 +576,7 @@ characters = {
 			#以下与旧版将领一样
 			skill = 2
 			attack_skill = 2
-			defense_skill = 2
+			defense_skill = 3
 			planning_skill = 1
 			logistics_skill = 1
 		}
@@ -473,9 +592,9 @@ characters = {
 			traits = { organizer career_officer media_personality politically_connected }
 			#以下与旧版将领一样
 			skill = 3
-			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
 			logistics_skill = 2
 		}
 	}
@@ -492,7 +611,7 @@ characters = {
 			skill = 2
 			attack_skill = 2
 			defense_skill = 1
-			planning_skill = 1
+			planning_skill = 2
 			logistics_skill = 2
 		}
 	}
@@ -525,8 +644,8 @@ characters = {
 			#以下与旧版将领一样
 			skill = 1
 			attack_skill = 1
-			defense_skill = 2
-			planning_skill = 2
+			defense_skill = 1
+			planning_skill = 1
 			logistics_skill = 1
 		}
 	}
@@ -547,21 +666,67 @@ characters = {
 			logistics_skill = 3
 		}
 	}
-	XBJ_Liu_Zhongming = {
-		name = XBJ_Liu_Zhongming
+	XBJ_Chen_jinkui = {
+		name = XBJ_Chen_jinkui
 		portraits={
 			army = {   #担任将领（海军陆军）时的头像
-				large="gfx/leaders/XBJ/Portrait_XBJ_Liu_Zhongming.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				large="gfx/leaders/XBJ/Portrait_XBJ_Chen_jinkui.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_chenjinkui.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+			navy_leader = {
+				traits = {
+					gentlemanly
+					naval_lineage
+					gunnery_expert
+					ironside
+					battleship_adherent
+				}
+				skill = 4
+				attack_skill =5
+				defense_skill = 2
+				planning_skill = 4
+				logistics_skill = 1
+			}
+			advisor = {
+				#海军部长
+				slot = navy_chief
+				ledger = navy
+				idea_token = XBJ_Chen_jinkui
+				allowed = {
+					original_tag = XBJ
+				}
+				traits = {
+					navy_chief_naval_aviation_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1
+				}
 			}
 		}
-		navy_leader = {
-			traits = { inshore_fighter }
-			#以下与旧版将领一样
-			skill = 1
-			attack_skill = 1
-			defense_skill = 2
-			maneuvering_skill = 1
-			coordination_skill = 1
+	}
+	XBJ_feng_zhaoquan = {
+		name = XBJ_feng_zhaoquan
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				small="gfx/leaders/XBJ/XBJ_fengzhaoquan.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+			advisor = {
+				#海军部长
+				slot = air_chief
+				ledger = air
+				idea_token = XBJ_feng_zhaoquan
+				allowed = {
+					original_tag = XBJ
+				}
+				traits = {
+					air_chief_ground_support_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1
+				}
+			}
 		}
 	}
 }
