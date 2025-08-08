@@ -807,15 +807,14 @@ ideas = {
             picture = XBJ_Rong_Shi
             allowed = { original_tag = XBJ }
             research_bonus = {
-                electronics = 0.05
+                electronics = 0.1
             }
             available = {
                 controls_state = 1116 #汉中
             }
             modifier = {
                 land_reinforce_rate = 0.03
-                production_speed_radar_station_factor = 0.25
-                production_factory_efficiency_gain_factor = 0.1
+                coordination_bonus = 0.03
             }
             traits = { Electronics_concern }#电子企业
             ai_will_do = {
@@ -828,10 +827,11 @@ ideas = {
             available = {
                 controls_state = 756 #河西
             }
+            research_bonus = {
+                industry = 0.1
+            }
             modifier = {
-                industrial_capacity_factory = 0.1 #工厂产出
-                min_export = 0.05
-                local_resources_factor = 0.05
+                local_resources_factor = 0.1
             }
             traits = { industrial_concern }#工业企业
             ai_will_do = {
@@ -842,14 +842,13 @@ ideas = {
             picture = XBJ_Ru_Yi
             allowed = { original_tag = XBJ }
             research_bonus = {
-                industry = 0.05
-                electronics = 0.15
+                industry = 0.1
             }
             available = {
                 controls_state = 1128 #焉耆
             }
             modifier = {
-                production_factory_max_efficiency_factor = 0.1
+                production_factory_max_efficiency_factor = 0.05
             }
             traits = { industrial_concern }#工业企业
             ai_will_do = {
@@ -859,15 +858,12 @@ ideas = {
         Sheng_De = {#圣德工业技术大学-高校
             picture = XBJ_Sheng_De
             allowed = { original_tag = XBJ }
-            research_bonus = {
-                industry = 0.15
-            }
             available = {
                 controls_state = 744 #关中
             }
             modifier = {
-                production_factory_max_efficiency_factor = 0.05
-                local_building_slots_factor = 0.05
+                research_speed_factor = 0.05
+                local_building_slots_factor = 0.1
             }
             traits = { university }#高校
             ai_will_do = {
@@ -877,16 +873,13 @@ ideas = {
         Zheng_Dao = {#真道高校协作体-高校
             picture = XBJ_Zheng_Dao
             allowed = { original_tag = XBJ }
-            research_bonus = {
-                industry = 0.15
-            }
             available = {
                 controls_state = 744 #关中
                 has_completed_focus = XBJ_yuqiuzhendao
             }
             modifier = {
+                research_speed_factor = 0.05
                 production_speed_buildings_factor = 0.1
-                production_speed_infrastructure_factor = 0.1
             }
             traits = { university }#高校
             ai_will_do = {
@@ -897,14 +890,13 @@ ideas = {
             picture = XBJ_Gan_Su
             allowed = { original_tag = XBJ }
             research_bonus = {
-                industry = 0.05
-                synth_resources = 0.15
+                synth_resources = 0.10
             }
             available = {
                 controls_state = 1113 #玉门
             }
             modifier = {
-                PRODUCTION_OIL_FACTOR = 0.05
+                PRODUCTION_OIL_FACTOR = 0.1
                 FUEL_GAIN_FACTOR_FROM_STATES = 0.1
             }
             traits = { refinery_concern }#精炼企业
