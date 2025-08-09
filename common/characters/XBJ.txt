@@ -327,7 +327,7 @@ characters = {
             traits = {
                 army_artillery_2
             }
-            cost = 200
+            cost = 100
             ai_will_do = {
                 factor = 1
             }
@@ -514,7 +514,7 @@ characters = {
             traits = {
                 army_cavalry_1
             }
-            cost = 200
+            cost = 50
             ai_will_do = {
                 factor = 1
             }
@@ -603,17 +603,34 @@ characters = {
 		portraits={
 			army = {   #担任将领（海军陆军）时的头像
 				large="gfx/leaders/XBJ/Portrait_XBJ_Zhang_Fenghui.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_Zhang_Fenghui.png" #不写路径，直接写GFX文件里面的图片名字也可以
 			}
 		}
 		corps_commander = {
 			traits = { armor_officer career_officer desert_fox }
 			#以下与旧版将领一样
-			skill = 2
-			attack_skill = 2
-			defense_skill = 1
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
 			planning_skill = 2
-			logistics_skill = 2
+			logistics_skill = 3
 		}
+        advisor = {
+            #总司令
+            slot = high_command
+            ledger = army
+            idea_token = XBJ_Wei_Lihuang
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_armored_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+        }
 	}
 	XBJ_Zhang_Weixi = {
 		name = XBJ_Zhang_Weixi
@@ -673,35 +690,35 @@ characters = {
 				large="gfx/leaders/XBJ/Portrait_XBJ_Chen_jinkui.png" #不写路径，直接写GFX文件里面的图片名字也可以
 				small="gfx/leaders/XBJ/XBJ_chenjinkui.png" #不写路径，直接写GFX文件里面的图片名字也可以
 			}
-			navy_leader = {
-				traits = {
-					gentlemanly
-					naval_lineage
-					gunnery_expert
-					ironside
-					battleship_adherent
-				}
-				skill = 4
-				attack_skill =5
-				defense_skill = 2
-				planning_skill = 4
-				logistics_skill = 1
+		}
+		navy_leader = {
+			traits = {
+				gentlemanly
+				naval_lineage
+				gunnery_expert
+				ironside
+				battleship_adherent
 			}
-			advisor = {
-				#海军部长
-				slot = navy_chief
-				ledger = navy
-				idea_token = XBJ_Chen_jinkui
-				allowed = {
-					original_tag = XBJ
-				}
-				traits = {
-					navy_chief_naval_aviation_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1
-				}
+			skill = 4
+			attack_skill =5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 1
+		}
+		advisor = {
+			#海军部长
+			slot = navy_chief
+			ledger = navy
+			idea_token = XBJ_Chen_jinkui
+			allowed = {
+				tag = XBJ
+			}
+			traits = {
+				navy_chief_naval_aviation_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
 			}
 		}
 	}
@@ -711,22 +728,240 @@ characters = {
 			army = {   #担任将领（海军陆军）时的头像
 				small="gfx/leaders/XBJ/XBJ_fengzhaoquan.png" #不写路径，直接写GFX文件里面的图片名字也可以
 			}
-			advisor = {
-				#海军部长
-				slot = air_chief
-				ledger = air
-				idea_token = XBJ_feng_zhaoquan
-				allowed = {
-					original_tag = XBJ
-				}
-				traits = {
-					air_chief_ground_support_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1
-				}
+		}
+		advisor = {
+			#海军部长
+			slot = air_chief
+			ledger = air
+			idea_token = XBJ_feng_zhaoquan
+			allowed = {
+				original_tag = XBJ
 			}
+			traits = {
+				air_chief_ground_support_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	XBJ_Shi_Jingting = {
+		name = XBJ_Shi_Jingting
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Shi_Jingting.png"
+				small="gfx/leaders/XBJ/XBJ_Shi_Jingting.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer }
+			#以下与旧版将领一样
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+            slot = theorist
+            ledger = army
+            idea_token = XBJ_Shi_Jingting
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                superior_firepower_expert
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
+		}
+	}
+	XBJ_Zhang_Zhijiang = {
+		name = XBJ_Zhang_Zhijiang
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Zhang_Zhijiang.png"
+				small="gfx/leaders/XBJ/XBJ_Zhang_Zhijiang.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer }
+			#以下与旧版将领一样
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+            slot = theorist
+            ledger = army
+            idea_token = XBJ_Zhang_Zhijiang
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                mobile_warfare_expert
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
+		}
+	}
+	XBJ_Li_Mingzhong = {
+		name = XBJ_Li_Mingzhong
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Li_Mingzhong.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_Li_Mingzhong.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+        navy_leader = {
+            traits = {
+                career_officer
+                seawolf
+            }
+            skill = 2
+            attack_skill =2
+            defense_skill = 1
+            planning_skill = 3
+            logistics_skill = 1
+        }
+		advisor = {
+            slot = theorist
+            ledger = navy
+            idea_token = XBJ_Zhang_Zhijiang
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                naval_theorist
+            }
+            cost = 150
+            ai_will_do = {
+                factor = 1
+            }
+		}
+	}
+	XBJ_Liu_Yufen = {
+		name = XBJ_Liu_Yufen
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Liu_Yufen.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_Liu_Yufen.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+		advisor = {
+            slot = high_command
+            ledger = air
+            idea_token = XBJ_Liu_Yufen
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                air_close_air_support_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+		}
+	}
+	XBJ_Song_Zheyuan = {
+		name = XBJ_Song_Zheyuan
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Song_Zheyuan.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_Song_Zheyuan.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+		advisor = {
+            slot = high_command
+            ledger = army
+            idea_token = XBJ_Song_Zheyuan
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                army_regrouping_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+		}
+		corps_commander = {
+			traits = { infantry_officer career_officer trait_engineer }
+			#以下与旧版将领一样
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}
+	XBJ_Lu_Zhonglin = {
+		name = XBJ_Lu_Zhonglin
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Lu_Zhonglin.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_Lu_Zhonglin.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+		advisor = {
+            slot = theorist
+            ledger = air
+            idea_token = XBJ_Lu_Zhonglin
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                air_warfare_theorist
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
+		}
+	}
+	XBJ_Shen_Jinchen = {
+		name = XBJ_Shen_Jinchen
+		portraits={
+			army = {   #担任将领（海军陆军）时的头像
+				large="gfx/leaders/XBJ/Portrait_XBJ_Shen_Jinchen.png" #不写路径，直接写GFX文件里面的图片名字也可以
+				small="gfx/leaders/XBJ/XBJ_Shen_Jinchen.png" #不写路径，直接写GFX文件里面的图片名字也可以
+			}
+		}
+        navy_leader = {
+            traits = {
+                bold
+                ironside
+                big_guns_expert
+            }
+            skill = 3
+            attack_skill =4
+            defense_skill = 2
+            planning_skill = 2
+            logistics_skill = 2
+        }
+		advisor = {
+            slot = high_command
+            ledger = navy
+            idea_token = XBJ_Shen_Jinchen
+            allowed = {
+                original_tag = XBJ
+            }
+            traits = {
+                navy_screen_2
+            }
+            cost = 100
+            ai_will_do = {
+                factor = 1
+            }
 		}
 	}
 }
