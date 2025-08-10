@@ -1,7 +1,104 @@
-on_actions = {
-	on_daily = {
-		effect = {
-			PER = {country_event = { id = PER_event.1 } }
-		}
-	}
+add_namespace = PER_event
+
+country_event = {
+    id = PER_event.1
+	title = PER_event.1.t
+	desc = PER_event.1.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+       date > 1936.2.1
+    }
+
+    option = {
+        name = PER_event.1.a
+        set_global_flag = global_flag_PER_IRQ_war
+        start_border_war = {
+            change_state_after_war = no
+            attacker = {
+                state = 413
+                num_provinces = 2
+                on_win = PER_event.2
+				on_lose = PER_event.3
+            }
+
+            defender = {
+                state = 1070
+                num_provinces = 2
+                on_lose = PER_event.4
+                on_win = PER_event.5
+            }
+        }
+    }
+
+}
+country_event = {
+    id = PER_event.2
+	title = PER_event.2.t
+	desc = PER_event.2.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    option = {
+        name = PER_event.2.a
+        declare_war_on = { target = IRQ type = puppet_wargoal_focus }
+        add_war_support = 0.1
+    }
+
+}
+country_event = {
+    id = PER_event.3
+	title = PER_event.3.t
+	desc = PER_event.3.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    option = {
+        name = PER_event.3.a
+        add_war_support = -0.1
+    }
+
+}
+country_event = {
+    id = PER_event.4
+	title = PER_event.4.t
+	desc = PER_event.4.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    option = {
+        name = PER_event.4.a
+        add_war_support = -0.1
+    }
+}
+country_event = {
+    id = PER_event.5
+	title = PER_event.5.t
+	desc = PER_event.5.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    option = {
+        name = PER_event.5.a
+        add_war_support = 0.1
+    }
+}
+country_event = {
+    id = PER_event.6
+	title = PER_event.6.t
+	desc = PER_event.6.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    option = {
+        name = PER_event.6.a
+        declare_war_on = { target = IRQ type = puppet_wargoal_focus }
+    }
 }
