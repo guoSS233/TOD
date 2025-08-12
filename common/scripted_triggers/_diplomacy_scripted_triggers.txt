@@ -23,4 +23,21 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 			always = no
 		}
 	}
+	else_if = {
+		limit = {
+			NOT = { has_global_flag = PER_IRQ_war_end }
+			OR = {
+				ROOT = {
+					tag = PER
+				}
+				FROM = {
+					tag = PER
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = PER_IRQ_NOT_WAR
+			always = no
+		}
+	}
 }
