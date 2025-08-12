@@ -1,0 +1,20 @@
+DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
+	if = { 
+		limit = {
+			NOT = { has_global_flag = ETH_war_end }
+			OR = {
+				ROOT = {
+					tag = IEA
+				}
+				FROM = {
+					tag = IEA
+				}
+			}
+			
+		}
+		custom_trigger_tooltip = {
+			tooltip = ETH_NOT_ITA
+			always = no
+		}
+	}
+}
