@@ -66,3 +66,30 @@ SIA_decision_l_3_drdxd = {	#敌人的行动
 	
 	priority = 90
 }
+
+SIA_decision_CAM = {
+	icon = generic_political_actions	
+	picture = GFX_decision_cat_generic_mefo_bills	
+	
+	available = { 
+		857 = {
+			is_controlled_by = CAM 
+		}
+		CAM = {
+			OR = {
+				has_war_with = ROS
+				has_war_with = SIA
+			}
+		}
+		OR = {
+			tag = ROS
+			tag = CAM
+			tag = SIA
+		}
+	    #has_completed_focus = xxx
+    }	
+	
+	priority = 10
+}
+
+

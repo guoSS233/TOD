@@ -1790,9 +1790,14 @@ XBJ_difangjunfa = {
 		available = { 			
 			any_owned_state = {
 				is_controlled_by = XBJ
-				any_neighbor_state = {
-					is_controlled_by = SIC
-				} 
+				OR = {
+					any_neighbor_state = {
+						is_controlled_by = SIC
+					} 
+					any_neighbor_state = {
+						is_controlled_by = SCG
+					} 
+				}
 			}
 		}
 		cost = 30
@@ -1804,6 +1809,7 @@ XBJ_difangjunfa = {
 		}
 		remove_effect = { 
 			SIC = { country_event = { id = xbj_bianjing.9 }}
+			SCG = { country_event = { id = xbj_bianjing.9 }}
 		}
 	}
 	XBJ_zuihoutongdieMOB = {

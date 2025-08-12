@@ -69,7 +69,7 @@ ROC_feicaihangxingqizhizaojituan_organization = {#飞彩航行器制造集团
 	
 	add_trait = {
 		token = USA_mio_trait_outsourced_engines
-		name = USA_mio_trait_outsourced_engines
+		name = ROC_mio_xianjinfadngji
 		icon = GFX_generic_mio_trait_icon_air_agility
 		special_trait_background = yes
 		
@@ -112,7 +112,16 @@ ROC_gemingfeixingyanjiusuo_organization = {#革命飞行研究所
 	icon = GFX_idea_ROC_gemingfeixingyanjiusuo_organization
 	allowed = {	
         tag = ROC
-		has_country_flag = guangzhouqiyi_flag
+
+	}
+	available = {
+		FROM = {
+			OR = {
+				has_government = moderate_socialism
+				has_government = social_democrat
+				has_government = liberal_democracy
+			}
+		}
 	}
 }
 
@@ -141,7 +150,7 @@ ROC_langshengzhizaojituan_organization = {#浪升制造集团
 
 	add_trait = { 
 		token = USA_mio_trait_arsenal_of_democracy
-		name = USA_mio_trait_arsenal_of_democracy
+		name = ROC_mio_shengchanreqing
 		icon = GFX_generic_mio_department_icon_tank_medium_tank_line_efficiency
 		special_trait_background = yes
 
@@ -221,6 +230,7 @@ ROC_haitianhuoqizhizaosuo_organization = {#海天火器制造所
 	allowed = {	 
 		tag = ROC
 	}
+
 }
 
 ROC_wuyangcheliangzhizaochang_organization = {#五羊车辆制造厂
@@ -252,6 +262,7 @@ ROC_changlingjunjixiuzaoju_organization = {#长岭军机修造局
 	allowed = {	 
 		tag = ROC
 	}
+
 }
 
 ROC_longdeyuanyangjixiejituan_organization = {#龙德远洋机械集团
@@ -276,7 +287,7 @@ ROC_longdeyuanyangjixiejituan_organization = {#龙德远洋机械集团
 
 	add_trait = { 
 		token = USA_mio_trait_naval_station_norfolk
-		name = USA_mio_trait_naval_station_norfolk
+		name = ROC_mio_quanzhouzaochuanchang
 		icon = GFX_generic_mio_trait_icon_naval_range
 		special_trait_background = yes
 
@@ -316,7 +327,7 @@ ROC_huananxinghezaochuanchang_organization = {#华南兴和造船厂
 
 	add_trait = { 
 		token = USA_mio_trait_north_carolina_shipbuilding_company
-		name = USA_mio_trait_north_carolina_shipbuilding_company
+		name = ROC_mio_guangzhouzaochuanchang
 		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
 		special_trait_background = yes
 
@@ -344,7 +355,7 @@ ROC_fuzhouchuanzhengju_organization = {#福州船政局
 
 	add_trait = { 
 		token = USA_mio_trait_gould_centrifugal_pump
-		name = USA_mio_trait_gould_centrifugal_pump
+		name = ROC_mio_jingyinfadongji
 		icon = GFX_generic_mio_trait_icon_sub_visibility
 		special_trait_background = yes
 

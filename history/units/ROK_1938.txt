@@ -1,0 +1,317 @@
+division_template = {
+	name = "起义军"	#步兵师
+	division_names_group = KOR_INF_01
+	regiments = {
+		infantry = {
+			x = 0
+			y = 0
+		}
+		infantry = {
+			x = 0
+			y = 1
+		}
+		infantry = {
+			x = 0
+			y = 2
+		}
+		infantry = {
+			x = 1
+			y = 0
+		}
+		infantry = {
+			x = 1
+			y = 1
+		}
+		infantry = {
+			x = 1
+			y = 2
+		}
+		infantry = {
+			x = 2
+			y = 0
+		}
+		infantry = {
+			x = 2
+			y = 1
+		}
+		infantry = {
+			x = 2
+			y = 2
+		}
+		infantry = {
+			x = 3
+			y = 0
+		}
+		infantry = {
+			x = 3
+			y = 1
+		}
+		infantry = {
+			x = 3
+			y = 2
+		}
+	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+		engineer = {
+			x = 0
+			y = 1
+		}
+	}
+}
+
+division_template = {
+	name = "义军"	#步兵师
+	division_names_group = KOR_INF_02
+	regiments = {
+		infantry = {
+			x = 0
+			y = 0
+		}
+		infantry = {
+			x = 0
+			y = 1
+		}
+		infantry = {
+			x = 1
+			y = 0
+		}
+		infantry = {
+			x = 1
+			y = 1
+		}
+		infantry = {
+			x = 2
+			y = 0
+		}
+		infantry = {
+			x = 2
+			y = 1
+		}
+	}
+	support = {
+		artillery = {
+			x = 0
+			y = 0
+		}
+		engineer = {
+			x = 0
+			y = 1
+		}
+	}
+}
+
+division_template = {
+	name = "骑兵师"	#骑兵师
+	division_names_group = KOR_CAV_01
+	regiments = {
+		cavalry = {
+			x = 0
+			y = 0
+		}
+		cavalry = {
+			x = 0
+			y = 1
+		}
+		cavalry = {
+			x = 1
+			y = 0
+		}
+		cavalry = {
+			x = 1
+			y = 1
+		}
+		cavalry = {
+			x = 2
+			y = 0
+		}
+		cavalry = {
+			x = 2
+			y = 1
+		}
+	}
+	support = {
+		recon = {
+			x = 0
+			y = 0
+		}
+	}
+}
+
+division_template = {
+	name = "摩托化旅"	#摩托旅
+	division_names_group = KOR_MOT_01
+	regiments = {
+		motorized = {
+			x = 0
+			y = 0
+		}
+		motorized = {
+			x = 0
+			y = 1
+		}
+		motorized = {
+			x = 0
+			y = 2
+		}
+		motorized = {
+			x = 1
+			y = 2
+		}
+		motorized = {
+			x = 1
+			y = 3
+		}
+		motorized = {
+			x = 1
+			y = 2
+		}
+	}
+}
+
+units = {
+	#汉阳#
+	division = {
+		name = "起义第一军"
+		location = 6928
+		division_template = "起义军"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#汉阳#
+	division = {
+		name = "起义第三军"
+		location = 6928
+		division_template = "起义军"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#平壤#
+	division = {
+		name = "起义第二军"
+		location = 6928
+		division_template = "起义军"
+		start_experience_factor = 0.6
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#釜山#
+	division = {
+		name = "第1步兵师"
+		location = 6928
+		division_template = "步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#釜山#
+	division = {
+		name = "第2步兵师"
+		location = 6928
+		division_template = "义军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#釜山#
+	division = {
+		name = "第3步兵师"
+		location = 6928
+		division_template = "义军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#光州#
+	division = {
+		name = "第4步兵师"
+		location = 6928
+		division_template = "义军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#光州#
+	division = {
+		name = "第5步兵师"
+		location = 10110
+		division_template = "义军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#光州#
+	division = {
+		name = "第6步兵师"
+		location = 10110
+		division_template = "义军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#清津#
+	division = {
+		name = "第1骑兵师"
+		location = 12060
+		division_template = "骑兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#清津#
+	division = {
+		name = "第2骑兵师"
+		location = 12060
+		division_template = "骑兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#全州#
+	division = {
+		name = "第3骑兵师"
+		location = 12060
+		division_template = "骑兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
+units = {
+	#全州#
+	division = {
+		name = "第3骑兵师"
+		location = 12060
+		division_template = "骑兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1
+	}
+}
+
