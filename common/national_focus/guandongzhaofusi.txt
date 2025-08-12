@@ -234,6 +234,7 @@ focus_tree = {
 			add_stability = 0.1
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
 			country_event = { id = GPSevents.22 }
+			custom_effect_tooltip = GPS_quelitangdudushiquan_xiaoguo
 		}
 	}
 	#压制地方山头
@@ -256,6 +257,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
 			country_event = { id = GPSevents.23 }
+			custom_effect_tooltip = GPS_yazhidifangshantou_xiaoguo
 		}
 	}
 	#分化当地将领
@@ -278,6 +280,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
 			country_event = { id = GPSevents.24 }
+			custom_effect_tooltip = GPS_fenhuadangdijiangling_xiaoguo
 		}
 	}
 	#强化都督府指挥权
@@ -298,6 +301,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_to_variable = { GPS_diguogongyexinzang_zuzhidu = 0.05 }
+			custom_effect_tooltip = GPS_qianghuazhihuiquan_xiaoguo
 		}
 	}
 	#军令再统合
@@ -322,6 +326,7 @@ focus_tree = {
 			remove_dynamic_modifier = { modifier = GPS_fengyupiaodang }
 			add_dynamic_modifier = { modifier = GPS_kaifuyitongsansi }
 			add_to_variable = { GPS_kaifuyitongsansi_fangyu = 0.1 }
+			custom_effect_tooltip = GPS_junlingzaitonghe_xiaoguo
 		}
 	}
 	#政令归一
@@ -392,6 +397,7 @@ focus_tree = {
 			add_to_variable = { GPS_kaifuyitongsansi_xiaofeiping = -0.15 }
 			add_stability = -0.05
 			country_event = { id = GPSevents.27 }
+			custom_effect_tooltip = GPS_jiesangongxie_xiaoguo
 		}
 	}
 	#生产军事化
@@ -414,6 +420,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { GPS_kaifuyitongsansi_buqiang = -0.15 }
 			add_stability = -0.05
+			custom_effect_tooltip = GPS_shengchanjunshihua_xiaoguo
 		}
 	}
 	#东北安民令
@@ -436,6 +443,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { GPS_kaifuyitongsansi_zhengzhidian = 0.15 }
 			country_event = { id = GPSevents.28 }
+			custom_effect_tooltip = GPS_dongbeianminling_xiaoguo
 		}
 	}
 	#追剿赤匪
@@ -462,6 +470,7 @@ focus_tree = {
 				add_research_slot = 1
 			}
 			country_event = { id = GPSevents.29 }
+			custom_effect_tooltip = GPS_zhuijiaochifei_xiaoguo
 		}
 	}
 	#攻势受挫
@@ -540,6 +549,7 @@ focus_tree = {
 			country_event = { id = GPSevents.16 }
 			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.15 }
 			add_to_variable = { GPS_fengyupiaodang_zhengzhidian = -0.1 }
+			custom_effect_tooltip = GPS_jiakongtangdudu_xiaoguo
 		}
 	}
 	#将领集体领导
@@ -565,6 +575,7 @@ focus_tree = {
 			add_to_variable = { GPS_fengyupiaodang_qianhaosudu = 0.2}
 			add_to_variable = { GPS_fengyupiaodang_qianhao = 0.05 }
 			add_to_variable = { GPS_diguogongyexinzang_zuzhidu = 0.05 }
+			custom_effect_tooltip = GPS_jianglingjitilingdao_xiaoguo
 		}
 	}
 	#民用工厂军用化
@@ -587,6 +598,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_fengyupiaodang_chanchu = 0.1 }
 			add_war_support = -0.1
+			custom_effect_tooltip = GPS_minyonggongchangjunyonghua_xiaoguo
 		}
 	}
 	#扩大武器产能
@@ -609,6 +621,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_fengyupiaodang_chanchu = 0.1 }
 			add_to_variable = { GPS_fengyupiaodang_zhengzhidian = -0.15 }
+			custom_effect_tooltip = GPS_kuodawuqichanneng_xiaoguo
 		}
 	}
 	#紧急生产法案
@@ -631,6 +644,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_fengyupiaodang_xiaolv = 0.1 }
 			add_war_support = -0.1
+			custom_effect_tooltip = GPS_jinjishengchanfaan_xiaoguo
 		}
 	}
 	#加固速江防线
@@ -653,6 +667,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_fengzhaojiaofei_fangyu = 0.1 }
 			add_to_variable = { GPS_fengzhaojiaofei_yaosai = 0.15 }
+			custom_effect_tooltip = GPS_jiagusujiangfangxian_xiaoguo
 		}
 	}
 	#动员预备役
@@ -675,6 +690,7 @@ focus_tree = {
 		completion_reward = { 
 			add_war_support = -0.1
 			add_to_variable = { conscription_factor = 0.2 }
+			custom_effect_tooltip = GPS_dongyuanyubeiyi_xiaoguo
 		}
 	}
 	#寻求海外支援
@@ -726,6 +742,7 @@ focus_tree = {
 				remove_dynamic_modifier = { modifier = GPS_fengyupiaodang }
 				add_ideas = GPS_junzhengtuanjie
 			}
+			custom_effect_tooltip = GPS_fangshouyibo_xiaoguo
 		}
 	}
 	#宣告平乱胜利
@@ -802,6 +819,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
 			add_to_variable = { GPS_zhanhouchongjian_jungong = 0.1 }
+			custom_effect_tooltip = GPS_goujianxingongxie_xiaoguo
 		}
 	}
 	#工人保障方案
@@ -868,6 +886,7 @@ focus_tree = {
 			add_to_variable = { GPS_laodongzhengce_chanchu = 0.05 }
 			add_to_variable = { GPS_laodongzhengce_xiaofeiping = 0.1 }
 			country_event = { id = GPSevents.33 }
+			custom_effect_tooltip = GPS_wenqingmomo_xiaoguo
 		}
 	}
 	#强化劳动纪律
@@ -893,6 +912,7 @@ focus_tree = {
 			add_stability = -0.05
 			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
 			add_to_variable = { GPS_zhanhouchongjian_jianzao = 0.1 }
+			custom_effect_tooltip = GPS_qianghualaodongjilv_xiaoguo
 		}
 	}
 	#产能第一
@@ -961,6 +981,7 @@ focus_tree = {
 			add_to_variable = { GPS_junshiguanli_xiaofeiping = -0.1 }
 			add_to_variable = { GPS_junshiguanli_zhengzhi = -0.1 }
 			country_event = { id = GPSevents.33 }
+			custom_effect_tooltip = GPS_zhongquanchuji_xiaoguo
 		}
 	}
 	#修复工厂
@@ -984,6 +1005,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
 			add_to_variable = { GPS_zhanhouchongjian_mingong = 0.1 }
+			custom_effect_tooltip = GPS_xiufugongchang_xiaoguo
 		}
 	}
 	#完善基建
@@ -1007,6 +1029,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_zhanhouchongjian_shijian = 180 }
 			add_to_variable = { GPS_zhanhouchongjian_jijian = 0.1 }
+			custom_effect_tooltip = GPS_wanshanjijian_xiaoguo
 		}
 	}
 	#镇压破坏运动
@@ -1055,6 +1078,7 @@ focus_tree = {
 			remove_ideas = GPS_zhengyaluandang
 			add_dynamic_modifier = { modifier = GPS_kanluantizhi }
 			add_to_variable = { GPS_kanluantizhi_dangpai = 0.2 }
+			custom_effect_tooltip = GPS_goujiankanluantizhi_xiaoguo
 		}
 	}
 	#加速军事研究
@@ -1077,6 +1101,7 @@ focus_tree = {
 		
 		completion_reward = { 
 			add_to_variable = { GPS_kanluantizhi_yanjiu = 0.1 }
+			custom_effect_tooltip = GPS_jiasujunshiyanjiu_xiaoguo
 		}
 	}
 	#选择未来战法
@@ -1142,7 +1167,8 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { add_stability = 0.1
+		completion_reward = {
+			add_stability = 0.1
 		}
 	}
 	#会见武备系官僚
@@ -1189,6 +1215,7 @@ focus_tree = {
 		
 		completion_reward = { 
 			add_to_variable = { GPS_diguogongyexinzang_gongye = 0.1 }
+			custom_effect_tooltip = GPS_baozhangguoqiliyi_xiaoguo
 		}
 	}
 	#密会交通系
@@ -1210,7 +1237,8 @@ focus_tree = {
 		
 		available = {}
 		
-		completion_reward = { add_war_support = 0.1
+		completion_reward = {
+			add_war_support = 0.1
 		}
 	}
 	#赋予国铁特权
@@ -1234,6 +1262,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { GPS_diguogongyexinzang_ziyuan = 0.1 }
 			add_to_variable = { GPS_diguogongyexinzang_buji = 0.1 }
+			custom_effect_tooltip = GPS_fuyuguotietequan_xiaoguo
 		}
 	}
 	#加紧关内联络
@@ -1257,6 +1286,7 @@ focus_tree = {
 		
 		completion_reward = { 
 			add_to_variable = { GPS_diguogongyexinzang_chanchu = 0.05 }
+			custom_effect_tooltip = GPS_jiajinguanneilianluo_xiaoguo
 		}
 	}
 	#形成统制经济
@@ -1302,6 +1332,7 @@ focus_tree = {
 		
 		completion_reward = { 
 			add_to_variable = { GPS_tongzhijingji_shangxian = 0.1 }
+			custom_effect_tooltip = GPS_sheizhuchenfu_xiaoguo
 		}
 	}
 	#介入周边局势
