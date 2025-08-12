@@ -14,8 +14,10 @@ STG_difangjunfa = {
 		targets = { state = 831 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.42 }
+			set_country_flag = STG_lianxisichuan
 		}
 	}
 	#联系漠北
@@ -32,8 +34,10 @@ STG_difangjunfa = {
 		targets = { state = 330 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.47 }
+			set_country_flag = STG_lianximobei
 		}
 	}
 	#联系西南
@@ -50,8 +54,10 @@ STG_difangjunfa = {
 		targets = { state = 325 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.51 }
+			set_country_flag = STG_lianxixinan
 		}
 	}
 	#联系七省
@@ -86,8 +92,10 @@ STG_difangjunfa = {
 		targets = { state = 328 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.59 }
+			set_country_flag = STG_lianxiguandong
 		}
 	}
 	#施压四川
@@ -96,7 +104,7 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = SIC}
 		allowed = { tag = STG } 
-		available = { }
+		available = { has_country_flag = STG_lianxisichuan }
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -104,6 +112,7 @@ STG_difangjunfa = {
 		targets = { state = 831 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.63 }
 		}
@@ -114,7 +123,7 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = MOB}
 		allowed = { tag = STG } 
-		available = { }
+		available = { has_country_flag = STG_lianximobei }
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -122,6 +131,7 @@ STG_difangjunfa = {
 		targets = { state = 330 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.67 }
 		}
@@ -132,7 +142,7 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = XIN}
 		allowed = { tag = STG } 
-		available = { }
+		available = { has_country_flag = STG_lianxixinan }
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -140,6 +150,7 @@ STG_difangjunfa = {
 		targets = { state = 325 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.71 }
 		}
@@ -150,7 +161,7 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = GPS}
 		allowed = { tag = STG } 
-		available = { }
+		available = { has_country_flag = STG_lianxiguandong }
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -158,6 +169,7 @@ STG_difangjunfa = {
 		targets = { state = 328 }
 		days_remove = 30
 		fire_only_once = yes
+		ai_will_do = { base = 10 }
 		remove_effect = { 
 			country_event = { id = TOD_STG.75 }
 		}
@@ -180,6 +192,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 1116 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			1116 = {
@@ -206,6 +219,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 622 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			622 = {
@@ -232,6 +246,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 744 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			744 = {
@@ -258,6 +273,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 842 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			842 = {
@@ -284,6 +300,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 753 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			753 = {
@@ -310,6 +327,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 283 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			283 = {
@@ -336,6 +354,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 843 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			843 = {
@@ -362,6 +381,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 1210 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			1210 = {
@@ -388,6 +408,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 754 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			754 = {
@@ -414,6 +435,7 @@ STG_zhankaihuizhan = {
 		targets = { state = 756 }
 		days_remove = 30
 		days_re_enable = 30
+		ai_will_do = { base = 10 }
 		
 		complete_effect = { 
  			756 = {
@@ -438,6 +460,7 @@ STG_zhigaohuangquan = {
 		}
         cost = 10
 		modifier = { }
+		ai_will_do = { base = 10 }
 		days_remove =  14
 		complete_effect = {
 			add_stability = -0.02
@@ -454,6 +477,7 @@ STG_zhigaohuangquan = {
 		}
         cost = 10
 		modifier = { }
+		ai_will_do = { base = 10 }
 		days_remove =  14
 		complete_effect = {
 			add_stability = -0.02
@@ -468,6 +492,7 @@ STG_zhigaohuangquan = {
 		visible = { has_completed_focus = STG_tiaozhengzhengfujigou }
         cost = 100
 		modifier = { civilian_factory_use = 3}
+		ai_will_do = { base = 10 }
 		days_remove =  60
 		complete_effect = {
 			add_ideas = MNG_zhurongkun_jingji
@@ -480,6 +505,7 @@ STG_zhigaohuangquan = {
 		visible = { has_completed_focus = STG_tiaozhengzhengfujigou }
         cost = 200
 		days_remove =  60
+		ai_will_do = { base = 10 }
 		complete_effect = {
 			add_ideas = MNG_zhurongkun_neizheng
 		}
@@ -499,6 +525,7 @@ STG_zhigaohuangquan = {
 		custom_cost_text = navy_xp_more_than_10
         cost = 300
 		days_remove =  60
+		ai_will_do = { base = 10 }
 		complete_effect = {
 			hidden_effect = {
 				army_experience = -10
@@ -518,6 +545,7 @@ STG_wubeihuiyi = {
 		icon = ger_military_buildup
 		fire_only_once = yes  
 		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
+		ai_will_do = { base = 10 }
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
 		remove_effect = {
 			add_tech_bonus = {
@@ -537,6 +565,7 @@ STG_wubeihuiyi = {
 		fire_only_once = yes  
 		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
 		modifier = {local_resources_factor = 0.01}
+		ai_will_do = { base = 10 }
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
 		remove_effect = {
 			clr_country_flag = STG_wubeihuiyi_jinxing
@@ -563,6 +592,7 @@ STG_wubeihuiyi = {
 		icon = ger_military_buildup
 		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		ai_will_do = { base = 10 }
 		remove_effect = {
 			clr_country_flag = STG_wubeihuiyi_jinxing
 			random_owned_controlled_state = {
@@ -584,6 +614,7 @@ STG_wubeihuiyi = {
 		icon = ger_military_buildup
 		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
+		ai_will_do = { base = 10 }
 		remove_effect = {
 			clr_country_flag = STG_wubeihuiyi_jinxing
 			random_owned_controlled_state = {
@@ -607,6 +638,7 @@ STG_wubeihuiyi = {
 			NOT = {has_country_flag = STG_wubeihuiyi_jinxing}
 			has_tech = radio_detection
 		}
+		ai_will_do = { base = 10 }
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
 		remove_effect = {
 			clr_country_flag = STG_wubeihuiyi_jinxing
@@ -631,6 +663,7 @@ STG_wubeihuiyi = {
 		modifier = {consumer_goods_factor = -0.1}
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
 		remove_effect = {clr_country_flag = STG_wubeihuiyi_jinxing}
+		ai_will_do = { base = 10 }
 		visible = {}
         cost = 100
 		days_remove =  180
@@ -646,6 +679,7 @@ STG_wubeihuiyi = {
 		}
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
 		remove_effect = {clr_country_flag = STG_wubeihuiyi_jinxing}
+		ai_will_do = { base = 10 }
 		visible = {}
         cost = 100
 		days_remove =  180
@@ -664,6 +698,7 @@ STG_zhengdunzhilijunqu = {
 			add_to_variable = { STG_jingying_zuzhiduhuifu = 0.15 }
 			set_country_flag = STG_zhengdunzhilijunqu_1
 		}
+		ai_will_do = { base = 10 }
         cost = 50
 		days_remove =  60
 	}
@@ -676,6 +711,7 @@ STG_zhengdunzhilijunqu = {
 			has_equipment = { support_equipment > 99 }
 			command_power > 49
 		}
+		ai_will_do = { base = 10 }
 		complete_effect = { 
 			set_country_flag = STG_zhengdunzhilijunqu_1 
 			add_equipment_to_stockpile = {
@@ -705,6 +741,7 @@ STG_zhengdunzhilijunqu = {
 				has_tech = defence_in_depth
 			}
 		}
+		ai_will_do = { base = 10 }
 		remove_effect = {
 			add_to_variable = { STG_jingying_zuzhiduhuifu = 0.15 }
 			set_country_flag = STG_zhengdunzhilijunqu_3
@@ -750,5 +787,89 @@ STG_jingnan = {
 			country_event = { id = TOD_STG.3 }
             declare_war_on = { target = XBJ type = annex_everything }
         }
+	}
+	#共和军开战
+	STG_gonghejunkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = ROC}
+		allowed = { tag = STG } 
+		available = {is_neighbor_of = ROC}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = ROC
+				country_exists = ROC
+				has_war = yes
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 592 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = XBJ type = annex_everything }
+		}
+	}
+	#东北红军开战
+	STG_dongbeihongjunkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = SRC}
+		allowed = { tag = STG } 
+		available = {is_neighbor_of = SRC }
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = SRC
+				country_exists = SRC
+				has_war = yes
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 846 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = SRC type = annex_everything }
+		}
+	}
+	#四川红军开战
+	STG_sichuanhongkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = SCG}
+		allowed = { tag = STG } 
+		available = {is_neighbor_of = SCG}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = SCG
+				country_exists = SCG
+				has_war = yes
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 831 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = SCG type = annex_everything }
+		}
 	}
 }

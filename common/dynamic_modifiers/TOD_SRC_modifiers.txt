@@ -19,11 +19,11 @@ SRC_jihuashengchan = {
 	consumer_goods_factor = SRC_jihuashengchan_xiaofeiping
 }
 #党的领导
-SRC_jihuashengchan = {
+SRC_dangdelingdao = {
 	enable = { always = yes }
-	icon = SRC_jihuashengchan
+	icon = SRC_dangdelingdao
 	MODIFIER_STABILITY_POPULARITY_FACTOR = 0.5
-	political_power_factor = SRC_jihuashengchan_zhengzhidianshu
+	political_power_factor = SRC_dangdelingdao_zhengzhidianshu
 }
 #人民民主
 SRC_renminminzhu = {
@@ -66,12 +66,119 @@ SRC_gemingtongmeng = {
 #改革委
 SRC_gaigewei = {
 	enable = { always = yes }
-	icon = SRC_gemingtongmeng
+	icon = SRC_gaigewei
 	industry_repair_factor = 0.1
 	consumer_goods_factor = -0.1
 	production_factory_max_efficiency_factor = 0.1
 	MODIFIER_CONVERSION_COST_CIV_TO_MIL_FACTOR = SRC_gaigewei_minzhuanjun
 	local_building_slots_factor = SRC_gaigewei_diqugongye
 }
+
+#红军
+SRC_hongjun = {
+	enable = { always = yes }
+	icon = SRC_hongjun
+	army_core_attack_factor = SRC_hongjun_hexingongji
+	army_core_defence_factor = SRC_hongjun_hexinfangyu
+	army_defence_factor = SRC_hongjun_fangyu
+	army_org_factor = SRC_hongjun_zuzhidu
+	army_morale_factor = SRC_hongjun_huifu
+	dig_in_speed_factor = SRC_hongjun_qianhaosudu
+	max_dig_in_factor = SRC_hongjun_qianhao
+	attrition = SRC_hongjun_sunhao
+	initiative_factor = SRC_hongjun_zhudong
+	coordination_bonus = SRC_hongjun_xietongxie
+	ARMY_STRENGTH = SRC_hongjun_HP
+	TERRAIN_PENALTY_REDUCTION = SRC_hongjun_dixingchengfa
+	max_planning_factor = SRC_hongjun_jihuashangxianjiacheng
+	planning_speed = SRC_hongjun_jihuasudu
+	max_planning = SRC_hongjun_jihuashangxian
+	breakthrough_factor = SRC_hongjun_tupo
+}
+#革命军事理论建设——逐渐成形
+SRC_gemingjunshiweiyuanhui_3 = {
+	enable = { always = yes }
+	icon = SRC_gemingjunshiweiyuanhui_1
+	war_support_factor = 0.05
+	max_command_power = -15
+	supply_node_range = SRC_gemingjunshiweiyuanhui_bujifanwei
+	equipment_bonus = {
+		infantry_equipment = {
+			build_cost_ic = SRC_gemingjunshiweiyuanhui_buqianghuafei
+			instant = yes
+		}
+	}
+	research_speed_factor = SRC_gemingjunshiweiyuanhui_yanjiu
+	unit_infantry_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_medium_armor_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_artillery_brigade_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+}
+#革命军事理论建设——基本完善
+SRC_gemingjunshiweiyuanhui_4 = {
+	enable = { always = yes }
+	icon = SRC_gemingjunshiweiyuanhui_1
+	war_support_factor = 0.05
+	supply_node_range = SRC_gemingjunshiweiyuanhui_bujifanwei
+	equipment_bonus = {
+		infantry_equipment = {
+			build_cost_ic = SRC_gemingjunshiweiyuanhui_buqianghuafei
+			instant = yes
+		}
+	}
+	research_speed_factor = SRC_gemingjunshiweiyuanhui_yanjiu
+	unit_infantry_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_medium_armor_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_artillery_brigade_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_artillery_brigade_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	conscription_factor = SRC_gemingjunshiweiyuanhui_shiyirenkouxishu
+	TERRAIN_PENALTY_REDUCTION = SRC_gemingjunshiweiyuanhui_dixingchengfa
+	org_loss_when_moving = SRC_gemingjunshiweiyuanhui_yidongzuzhidu
+	army_org_factor = SRC_gemingjunshiweiyuanhui_zuzhidu
+	breakthrough_factor = SRC_gemingjunshiweiyuanhui_tupo
+}
+#中华革命军事理论
+SRC_gemingjunshiweiyuanhui_5 = {
+	enable = { always = yes }
+	icon = SRC_gemingjunshiweiyuanhui_1
+	war_support_factor = 0.05
+	supply_node_range = SRC_gemingjunshiweiyuanhui_bujifanwei
+	equipment_bonus = {
+		infantry_equipment = {
+			build_cost_ic = SRC_gemingjunshiweiyuanhui_buqianghuafei
+			instant = yes
+		}
+	}
+	research_speed_factor = SRC_gemingjunshiweiyuanhui_yanjiu
+	unit_infantry_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_medium_armor_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_artillery_brigade_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	unit_artillery_brigade_design_cost_factor = SRC_gemingjunshiweiyuanhui_danweihuafei
+	conscription_factor = SRC_gemingjunshiweiyuanhui_shiyirenkouxishu
+	TERRAIN_PENALTY_REDUCTION = SRC_gemingjunshiweiyuanhui_dixingchengfa
+	org_loss_when_moving = SRC_gemingjunshiweiyuanhui_yidongzuzhidu
+	army_org_factor = SRC_gemingjunshiweiyuanhui_zuzhidu
+	breakthrough_factor = SRC_gemingjunshiweiyuanhui_tupo
+	army_attack_factor = 0.1
+}
+#红空军
+SRC_hongkongjun = {
+	enable = { always = yes }
+	icon = SRC_hongkongjun
+	XP_GAIN_AIR = 0.1
+	AIR_SUPERIORITY_EFFICIENCY = SRC_hongkongjun_duoquzhikong
+	AIR_INTERCEPTION_DETECT_FACTOR = SRC_hongkongjun_jiejizhence
+	air_superiority = SRC_hongkongjun_kongyou
+}
+#红海军
+SRC_honghaijun = {
+	enable = { always = yes }
+	icon = SRC_honghaijun
+	NAVAL_CRITICAL_RECEIVE_CHANCE_FACTOR = -0.1
+	MISSION_CONVOY_ESCORT_EFFICIENCY = SRC_honghaijun_huhangxiaolv
+	NAVAL_COORDINATION = SRC_honghaijun_xietong
+}
+
+
+
 
 

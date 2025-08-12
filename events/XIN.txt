@@ -13,12 +13,14 @@ country_event = {
 	
 	option = { 
 		name = TOD_XIN.101.a
+		ai_chance = { factor = 80 }
         XIN = { set_country_flag = XIN_dali-laxutongche }
         custom_effect_tooltip = BRN_jiashenkongzhi
 	}
 	option = { 
+		ai_chance = { factor = 20 }
 		name = TOD_XIN.101.b
-		declare_war_on = { target = WJP type = puppet_wargoal_focus }
+		XIN = {declare_war_on = { target = BRM type = puppet_wargoal_focus }}
 	}
 }
 country_event = {
@@ -50,12 +52,14 @@ country_event = {
 	
 	option = { 
 		name = TOD_XIN.103.a
+		ai_chance = { factor = 80 }
         XIN = { set_country_flag = XIN_laxu-mandeletongche }
         custom_effect_tooltip = BRN_jiashenkongzhi
 	}
 	option = { 
 		name = TOD_XIN.103.b
-		declare_war_on = { target = WJP type = puppet_wargoal_focus }
+		ai_chance = { factor = 20 }
+		XIN = {declare_war_on = { target = BRM type = puppet_wargoal_focus }}
 	}
 }
 country_event = {
@@ -87,12 +91,14 @@ country_event = {
 	
 	option = { 
 		name = TOD_XIN.105.a
+		ai_chance = { factor = 80 }
         XIN = { set_country_flag = XIN_mandele-binmanatongche }
         custom_effect_tooltip = BRN_jiashenkongzhi
 	}
 	option = { 
 		name = TOD_XIN.105.b
-        
+		ai_chance = { factor = 20 }
+		XIN = {declare_war_on = { target = BRM type = puppet_wargoal_focus }}
 	}
 }
 country_event = {
@@ -124,12 +130,14 @@ country_event = {
 	
 	option = { 
 		name = TOD_XIN.107.a
+		ai_chance = { factor = 80 }
         XIN = { set_country_flag = XIN_binmana-dongxutongche }
         custom_effect_tooltip = BRN_jiashenkongzhi
 	}
 	option = { 
 		name = TOD_XIN.107.b
-		declare_war_on = { target = WJP type = puppet_wargoal_focus }
+		ai_chance = { factor = 20 }
+		XIN = {declare_war_on = { target = BRM type = puppet_wargoal_focus }}
 	}
 }
 country_event = {
@@ -163,16 +171,30 @@ country_event = {
 		name = TOD_XIN.109.a
         XIN = { 
             set_country_flag = XIN_dongxu-yangguangtongche 
-            
             set_autonomy = {
                 target = BRM
                 autonomy_state = autonomy_puppet
             }
         }
-	}
-	option = { 
-		name = TOD_XIN.109.b
+		hidden_effect = {
+			set_politics = {
+				ruling_party = authoritarian_oligarchy
+				last_election = "1936.1.1"
+				election_frequency = 48
+				elections_allowed = no
+			}	
 
+			set_popularities = {
+				national_corporatism = 2
+				leader_despotism = 23
+				authoritarian_oligarchy = 32
+				conservative_democracy = 20
+				liberal_democracy = 8
+				moderate_socialism = 8
+				social_democrat = 3
+				vanguard_socialism = 4
+			}
+		}
 	}
 }
 country_event = {

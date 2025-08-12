@@ -233,61 +233,81 @@ country_event = {
 	option = { 
 		name = SRCevents.8.a
 		trigger = {
-			check_variable = { SRC_xianfeng < SRC_wenhe }
-			check_variable = { SRC_weiyuan < SRC_wenhe }
+			OR = {
+				check_variable = { SRC_xianfeng < SRC_wenhe }
+				check_variable = { SRC_xianfeng = SRC_wenhe }
+			}
+			OR = {
+				check_variable = { SRC_weiyuan < SRC_wenhe }
+				check_variable = { SRC_weiyuan = SRC_wenhe }
+			}
 		}
 		retire_country_leader = yes
+		set_politics = { ruling_party = moderate_socialism }
+		complete_national_focus = SRC_chenduxiuzhuxi
 		SRC_chen_duxiu = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					ideology = moderate_socialism_subtype
+					ideology = moderate_socialism
 					expire = "1965.1.1.1"
 					traits = {}
 				}
 			}
 		}
-		complete_national_focus = SRC_chenduxiuzhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
 		name = SRCevents.8.b
 		trigger = {
-			check_variable = { SRC_xianfeng > SRC_wenhe }
-			check_variable = { SRC_xianfeng > SRC_weiyuan }
+			OR = {
+				check_variable = { SRC_xianfeng > SRC_wenhe }
+				check_variable = { SRC_xianfeng = SRC_wenhe }
+			}
+			OR = {
+				check_variable = { SRC_xianfeng > SRC_weiyuan }
+				check_variable = { SRC_xianfeng = SRC_weiyuan }
+			}
 		}
 		retire_country_leader = yes
+		complete_national_focus = SRC_renfuchenzhuxi
 		SRC_ren_fuchen = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					ideology = vanguard_socialism_subtype
+					ideology = vanguard_socialism
 					expire = "1965.1.1.1"
 					traits = {}
 				}
 			}
 		}
-		complete_national_focus = SRC_renfuchenzhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
 		trigger = {
-			check_variable = { SRC_weiyuan > SRC_xianfeng }
-			check_variable = { SRC_weiyuan > SRC_wenhe }
+			OR = {
+				check_variable = { SRC_weiyuan > SRC_wenhe }
+				check_variable = { SRC_weiyuan = SRC_wenhe }
+			}
+			OR = {
+				check_variable = { SRC_weiyuan > SRC_xianfeng }
+				check_variable = { SRC_weiyuan = SRC_xianfeng }
+			}
 		}
 		name = SRCevents.8.c
 		retire_country_leader = yes
+		set_politics = { ruling_party = council_socialism }
+		complete_national_focus = SRC_lidazhaozhuxi
 		SRC_li_dazhao = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					ideology = council_socialism_subtype
+					ideology = council_socialism
 					expire = "1965.1.1.1"
 					traits = {}
 				}
 			}
 		}
-		complete_national_focus = SRC_lidazhaozhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 }

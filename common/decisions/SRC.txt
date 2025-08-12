@@ -20,3 +20,234 @@ SRC_baoweigongrenzhengquan_categories = {
 		}
 	}
 }
+#军事建设
+SRC_junshijianshe_catagories = {
+	#人民战争
+	SRC_renminzhanzheng = {
+
+		allowed = { tag = SRC } 
+		available = { has_idea = extensive_conscription }
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_renminzhanzheng_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_renminzhanzheng_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_shiyirenkouxishu = 0.1 }
+			set_country_flag = SRC_renminzhanzheng_wancheng
+		}
+	}
+	#运动战
+	SRC_yundongzhan = {
+
+		allowed = { tag = SRC } 
+		available = { has_tech = tech_recon3 }
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_yundongzhan_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_yundongzhang_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_dixingchengfa = 0.05 }
+			set_country_flag = SRC_yundongzhan_wancheng
+		}
+	}
+	#步坦协同
+	SRC_butanxietong = {
+
+		allowed = { tag = SRC } 
+		available = {
+			OR = {
+				has_tech = improved_medium_tank_chassis
+				has_tech = improved_heavy_tank_chassis
+			}
+
+		}
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_butanxietong_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_butanxietong_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_yidongzuzhidu = -0.2 }
+			set_country_flag =SRC_butanxietong_wancheng
+		}
+	}
+	#三三制
+	SRC_sansanzhi = {
+
+		allowed = { tag = SRC } 
+		available = {
+			OR = {
+				has_tech = defence_in_depth
+				has_tech = mobile_defence
+			}
+		}
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_sansanzhi_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_sansanzhi_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_zuzhidu = 0.05 }
+			set_country_flag = SRC_sansanzhi_wancheng
+		}
+	}
+	#大纵深作战理论
+	SRC_dazongshen = {
+
+		allowed = { tag = SRC } 
+		available = {
+			OR = {
+				has_tech = deep_operations
+				has_tech = mechanised_offensive
+			}
+		}
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_dazongshen_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_dazongshen_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_tupo = 0.05 }
+			set_country_flag = SRC_dazongshen_wancheng
+		}
+	}
+	#人民战争
+	SRC_renminzhanzheng = {
+
+		allowed = { tag = SRC } 
+		available = { 
+			has_country_flag = SRC_renminzhanzheng_wancheng
+			has_country_flag = SRC_yundongzhan_wancheng
+			has_country_flag = SRC_butanxietong_wancheng
+			has_country_flag = SRC_sansanzhi_wancheng
+			has_country_flag = SRC_dazongshen_wancheng
+		 }
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_renminzhanzheng_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			remove_dynamic_modifier = { modifier = SRC_gemingjunshiweiyuanhui_4}
+			add_dynamic_modifier = { modifier = SRC_gemingjunshiweiyuanhui_5 }
+		}
+	}
+}
+#宣战
+SRC_xuanzhan_catagories = {
+	#向七省联合宣战
+	SRC_qishenkaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { 
+			is_neighbor_of = GOS
+		 }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = GOS type = annex_everything }
+		}
+	}
+	#广州共和军
+	SRC_guangzhoukaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { 
+			is_neighbor_of = ROC
+		 }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = ROC type = annex_everything }
+		}
+	}
+	#西南都督府宣战
+	SRC_xinankaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { 
+			is_neighbor_of = XIN
+		 }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = XINN type = annex_everything }
+		}
+	}
+	#四川宣战
+	SRC_sichuankaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { 
+			is_neighbor_of = SIC
+		 }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = SIC type = annex_everything }
+		}
+	}
+}
