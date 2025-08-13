@@ -296,6 +296,7 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = SRC_buwangkulaojichou
 			remove_ideas = SRC_qiyireqing
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	#任辅臣主席
@@ -1179,7 +1180,7 @@ focus_tree = {
 		y = 0
 		cost = 5
 		bypass = { country_exists = GPS }
-		allow_branch = { has_country_flag = SRC_zhongyangdida }
+		allow_branch = { has_completed_focus = SRC_dongbeigemingdahuizhaokai }
 		ai_will_do = {factor = 10}
 		available = {}
 		
@@ -2186,7 +2187,7 @@ focus_tree = {
 		cost = 1
 		ai_will_do = {factor = 10}
 		available = {}
-		allow_branch = { has_country_flag = SRC_zhongyangdida }
+		allow_branch = { has_completed_focus = SRC_dongbeigemingdahuizhaokai }
 		
 		completion_reward = {
 			add_political_power = 50
