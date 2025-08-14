@@ -2265,13 +2265,18 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			controller = { 
-				ROOT = {
-					declare_war_on = {
-						target = PREV
-						type = annex_everything
-						generator = { 608 }
-					}
+			if = {
+				limit = { XBJ = { controls_state = 608} }
+				declare_war_on = {
+  					target = XBJ
+    				type = annex_everything
+				}
+			}
+			if = {
+				limit = { STG = { controls_state = 608} }
+				declare_war_on = {
+  					target = STG
+    				type = annex_everything
 				}
 			}
 		}
