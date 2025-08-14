@@ -2265,20 +2265,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			if = {
-				limit = { XBJ = { controls_state = 608} }
-				declare_war_on = {
-  					target = XBJ
-    				type = annex_everything
-				}
-			}
-			if = {
-				limit = { STG = { controls_state = 608} }
-				declare_war_on = {
-  					target = STG
-    				type = annex_everything
-				}
-			}
+			unlock_decision_category_tooltip = SRC_xuanzhan_catagories
 		}
 	}
 	#召开统一大会
@@ -2326,7 +2313,10 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			unlock_decision_category_tooltip = SRC_xuanzhan_catagories
+			unlock_decision_tooltip = SRC_guangzhoukaizhan
+			unlock_decision_tooltip = SRC_guangzhoukaizhan
+			unlock_decision_tooltip = SRC_xinankaizhan
+			unlock_decision_tooltip = SRC_sichuankaizhan
 		}
 	}
 
