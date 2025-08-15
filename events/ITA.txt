@@ -1,0 +1,105 @@
+add_namespace = TODItaly
+#意大利跑路
+country_event = { 
+	id = TODItaly.1
+	title = TODItaly.1.t
+	desc =TODItaly.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag =  ITA
+		has_war_with = GER
+        OR = {
+            2 = { is_controlled_by = GER }
+            2 = { is_controlled_by = ENG }
+        }
+		surrender_progress > 0.7
+
+	}
+	
+	option = { # 成为德国傀儡
+		name = TODItaly.1.a
+		trigger = { is_ai = no }
+		set_country_flag = become_deguokuilei
+		GER = { country_event = TODItaly.14 }
+		custom_effect_tooltip = TODItaly.1_tt
+	}
+	option = { # 流亡北非
+		name = TODItaly.1.b
+		ai_chance = {
+			factor = 100
+		}
+		GER = { country_event = TODItaly.14 }
+		custom_effect_tooltip = TODItaly.1.b_tt
+		set_country_flag = GER_dont_seize_gold_reserves_flag #Can't allow Germany to seize out gold reserves just yet
+	}
+}
+#意大利被傀儡
+country_event = {
+	id = TODItaly.14
+	title = TODItaly.14.t
+	desc = TODItaly.14.d
+	picture = GFX_report_event_german_parade_paris
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TODItaly.14.a
+		ai_chance = {
+			factor = 50
+		}
+		 ITA = { set_cosmetic_tag =  ITA_liuwang }
+
+		 ITA = {
+			set_capital = { state = 448 }
+
+			hidden_effect = { }
+			start_civil_war = {
+				ideology = council_socialism
+				size = 0.9
+				capital = 16
+				states = all
+                states_filter = {
+                    is_core_of =  ITA
+                }
+			}
+		}
+		random_other_country = {
+			limit = { original_tag =  ITA has_government = council_socialism }
+			ROOT = { puppet = PREV }
+			set_capital = { state = 2 }
+			set_politics = {
+				ruling_party = council_socialism
+				elections_allowed = no
+			}
+			set_popularities = {
+				council_socialism = 100
+			}
+			ITA = {
+				set_nationality = {
+					target_country = PREV
+					character = ITA_Palmiro_Togliatti
+				}
+			}
+
+			add_country_leader_role = {
+				character = ITA_Palmiro_Togliatti
+				country_leader = {
+					ideology = council_socialism_subtype 
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes 
+			}
+
+			if = {
+				limit = {  ITA = { has_country_flag = become_deguokuilei } }
+				change_tag_from =  ITA
+			}
+		}
+	}
+
+}

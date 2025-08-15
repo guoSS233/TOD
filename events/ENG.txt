@@ -1,0 +1,18 @@
+add_namespace = TODengland
+#英国对法宣战
+country_event = { 
+	id = TODengland.1
+	title = TODengland.1.t
+	desc =TODengland.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ENG}
+	
+	option = { 
+		name = TODengland.1.a
+		declare_war_on = { target = FRA type = annex_everything }
+	}
+}

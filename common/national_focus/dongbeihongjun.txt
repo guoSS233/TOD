@@ -296,6 +296,7 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = SRC_buwangkulaojichou
 			remove_ideas = SRC_qiyireqing
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 	#任辅臣主席
@@ -1179,6 +1180,7 @@ focus_tree = {
 		y = 0
 		cost = 5
 		bypass = { country_exists = GPS }
+		allow_branch = { has_completed_focus = SRC_dongbeigemingdahuizhaokai }
 		ai_will_do = {factor = 10}
 		available = {}
 		
@@ -1219,8 +1221,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 25
-		y = 3
+		x = 26
+		y = 2
 		cost = 5
 		prerequisite = {focus = SRC_qianghuajunduisixiangjianshe}
 		mutually_exclusive = {focus = SRC_yilaizhiyejunguan}
@@ -1240,8 +1242,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 24
-		y = 4
+		x = 26
+		y = 3
 		cost = 5
 		prerequisite = {focus = SRC_lizugongrenjiuchadui}
 		ai_will_do = {factor = 10}
@@ -1260,8 +1262,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 23
-		y = 5
+		x = 25
+		y = 4
 		cost = 5
 		prerequisite = {focus = SRC_shelizhengwei}
 		mutually_exclusive = { focus = SRC_quelidangweizhi }
@@ -1281,8 +1283,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 23
-		y = 6
+		x = 25
+		y = 5
 		cost = 5
 		prerequisite = {focus = SRC_fuquanshibingweiyuanhui}
 		ai_will_do = {factor = 10}
@@ -1308,8 +1310,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 25
-		y = 5
+		x = 27
+		y = 4
 		cost = 5
 		prerequisite = {focus = SRC_shelizhengwei}
 		mutually_exclusive = { focus = SRC_fuquanshibingweiyuanhui }
@@ -1329,8 +1331,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 25
-		y = 6
+		x = 27
+		y = 5
 		cost = 5
 		prerequisite = {focus = SRC_quelidangweizhi}
 		ai_will_do = {factor = 10}
@@ -1349,8 +1351,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 24
-		y = 7
+		x = 26
+		y = 6
 		cost = 5
 		prerequisite = {focus = SRC_qianghuajunshiminzhu}
 		prerequisite = {focus = SRC_zhibujianzailianshang}
@@ -1370,8 +1372,8 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 24
-		y = 8
+		x = 26
+		y = 7
 		cost = 5
 		prerequisite = {focus = SRC_guanbingyilvpingdeng}
 		ai_will_do = {factor = 10}
@@ -1390,10 +1392,10 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 27
+		x = 29
 		y = 2
 		cost = 5
-		prerequisite = {focus = SRC_guanbingyilvpingdeng}
+		prerequisite = {focus = SRC_qianghuajunduisixiangjianshe}
 		mutually_exclusive = {focus = SRC_lizugongrenjiuchadui}
 		ai_will_do = {factor = 10}
 		available = {}
@@ -1411,7 +1413,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 27
+		x = 29
 		y = 3
 		cost = 5
 		prerequisite = {focus = SRC_yilaizhiyejunguan}
@@ -1433,7 +1435,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 27
+		x = 29
 		y = 4
 		cost = 5
 		prerequisite = {focus = SRC_junshiyizhangzhi}
@@ -1453,7 +1455,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 27
+		x = 29
 		y = 5
 		cost = 5
 		prerequisite = {focus = SRC_gemingjunguanruhui}
@@ -1473,7 +1475,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 27
+		x = 29
 		y = 6
 		cost = 5
 		prerequisite = {focus = SRC_qianghuajunweilingdao}
@@ -1493,10 +1495,10 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 27
+		x = 29
 		y = 7
 		cost = 5
-		prerequisite = {focus = SRC_qianghuajunweilingdao}
+		prerequisite = {focus = SRC_quelijunxianzhi}
 		ai_will_do = {factor = 10}
 		available = {}
 		
@@ -1518,7 +1520,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 31
+		x = 33
 		y = 1
 		cost = 5
 		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
@@ -1544,7 +1546,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 31
+		x = 33
 		y = 2
 		cost = 5
 		prerequisite = {focus = SRC_jianligemingjunshixueyuan}
@@ -1564,7 +1566,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 31
+		x = 33
 		y = 3
 		cost = 5
 		prerequisite = {focus = SRC_junshililungexin}
@@ -1695,7 +1697,7 @@ focus_tree = {
 		x = 35
 		y = 5
 		cost = 5
-		prerequisite = {focus = SRC_shengchanyanjiugexin}
+		prerequisite = {focus = SRC_kuodahuopaochanye}
 		ai_will_do = {factor = 10}
 		available = {}
 		
@@ -1810,7 +1812,7 @@ focus_tree = {
 		x = 37
 		y = 4
 		cost = 5
-		prerequisite = {focus = SRC_jieshoujichangyufeiji}
+		prerequisite = {focus = SRC_xinageminghangkongdui}
 		ai_will_do = {factor = 10}
 		available = {}
 		
@@ -2185,6 +2187,7 @@ focus_tree = {
 		cost = 1
 		ai_will_do = {factor = 10}
 		available = {}
+		allow_branch = { has_completed_focus = SRC_dongbeigemingdahuizhaokai }
 		
 		completion_reward = {
 			add_political_power = 50
@@ -2198,7 +2201,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 13
+		x = 11
 		y = 1
 		cost = 5
 		prerequisite = {focus = SRC_fangyantianxia}
@@ -2217,7 +2220,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 15
+		x = 13
 		y = 1
 		cost = 5
 		prerequisite = {focus = SRC_fangyantianxia}
@@ -2236,7 +2239,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 17
+		x = 15
 		y = 1
 		cost = 5
 		prerequisite = {focus = SRC_fangyantianxia}
@@ -2254,7 +2257,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 15
+		x = 13
 		y = 2
 		cost = 5
 		prerequisite = {focus = SRC_lianluoguanneigemingzhe}
@@ -2262,15 +2265,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			controller = { 
-				ROOT = {
-					declare_war_on = {
-						target = PREV
-						type = annex_everything
-						generator = { 608 }
-					}
-				}
-			}
+			unlock_decision_category_tooltip = SRC_xuanzhan_catagories
 		}
 	}
 	#召开统一大会
@@ -2281,7 +2276,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 14
+		x = 12
 		y = 3
 		cost = 5
 		mutually_exclusive = {focus = SRC_gemingjinxindaodi}
@@ -2309,7 +2304,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 15
+		x = 14
 		y = 3
 		cost = 5
 		mutually_exclusive = {focus = SRC_zhaokaitongyidahui}
@@ -2318,7 +2313,10 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			unlock_decision_category_tooltip = SRC_xuanzhan
+			unlock_decision_tooltip = SRC_guangzhoukaizhan
+			unlock_decision_tooltip = SRC_guangzhoukaizhan
+			unlock_decision_tooltip = SRC_xinankaizhan
+			unlock_decision_tooltip = SRC_sichuankaizhan
 		}
 	}
 
