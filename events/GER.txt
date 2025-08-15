@@ -474,7 +474,7 @@ news_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	
 	major = yes
-	mean_time_to_happen = { days = 30 }
+	mean_time_to_happen = { days = 120 }
 	trigger = {
 		NOT = {
 			country_exists = aus
@@ -487,7 +487,10 @@ news_event = {
 		country_exists = FRA
 		
 	}
-	immediate = { set_global_flag = defa_kaizhan }
+	immediate = { 
+		set_global_flag = defa_kaizhan 
+		ENG = {country_event = { id = TODengland.1 days = 30 }}
+	}
 	option = { 
 		trigger = {NOT = {tag = GER}}
 		name = TODgermany.1003.a

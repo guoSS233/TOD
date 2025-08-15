@@ -1,0 +1,166 @@
+add_namespace = TODfrance
+#法国跑路
+country_event = { 
+	id = TODfrance.1
+	title = TODfrance.1.t
+	desc =TODfrance.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = FRA
+		has_war_with = GER
+        OR = {
+            16 = { is_controlled_by = GER }
+            16 = { is_controlled_by = ENG }
+        }
+		surrender_progress > 0.8
+
+	}
+	
+	option = { # 成为德国傀儡
+		name = TODfrance.1.a
+		trigger = { is_ai = no }
+		set_country_flag = become_deguokuilei
+		GER = { country_event = TODfrance.14 }
+		custom_effect_tooltip = TODfrance.1_tt
+	}
+	option = { # 流亡北非
+		name = TODfrance.1.b
+		ai_chance = {
+			factor = 100
+		}
+		set_global_flag = fall_of_france
+		save_global_event_target_as = free_france
+		GER = { country_event = TODfrance.14 }
+		custom_effect_tooltip = TODfrance.1.b_tt
+	}
+}
+#法国被傀儡
+country_event = {
+	id = TODfrance.14
+	title = TODfrance.14.t
+	desc = TODfrance.14.d
+	picture = GFX_report_event_german_parade_paris
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TODfrance.14.a
+		ai_chance = {
+			factor = 50
+		}
+		FRA = { set_cosmetic_tag = FRA_liuwang }
+		if = {
+			limit = { 42 = { owner = { original_tag = FRA } } }
+			set_state_controller = 42
+            add_state_core = 42
+		}
+		if = {
+			limit = { 51 = { owner = { original_tag = FRA } } }
+			set_state_controller = 51
+            add_state_core = 51
+		}
+		if = {
+			limit = { 960 = { owner = { original_tag = FRA } } }
+			set_state_controller = 960
+            add_state_core = 960
+		}
+		if = {
+			limit = { 961 = { owner = { original_tag = FRA } } }
+			set_state_controller = 961
+            add_state_core = 961
+		}
+		if = {
+			limit = { 942 = { owner = { original_tag = FRA } } }
+			set_state_controller = 942
+            add_state_core = 942
+		}
+		if = {
+			limit = { 8 = { owner = { original_tag = FRA } } }
+			set_state_controller = 8
+            add_state_core = 8
+		}
+		if = {
+			limit = { 1144 = { owner = { original_tag = FRA } } }
+			set_state_controller = 1144
+            add_state_core = 1144
+		}
+		if = {
+			limit = { 28 = { owner = { original_tag = FRA } } }
+			set_state_controller = 28
+            add_state_core = 28
+		}
+		if = {
+			limit = { 1076 = { owner = { original_tag = FRA } } }
+			set_state_controller = 1076
+            add_state_core = 1076
+		}
+		if = {
+			limit = { 6 = { owner = { original_tag = FRA } } }
+			HOL = {set_state_controller = 6}
+            HOL = {add_state_core = 6}
+		}
+		if = {
+			limit = { 1140 = { owner = { original_tag = FRA } } }
+			HOL = {set_state_controller = 1140}
+            HOL = {add_state_core = 1140}
+		}
+		if = {
+			limit = { 34 = { owner = { original_tag = FRA } } }
+			HOL = {set_state_controller = 34}
+            HOL = {add_state_core = 34}
+		}
+
+		FRA = {
+			set_capital = { state = 459 }
+
+			hidden_effect = { }
+			start_civil_war = {
+				ideology = vanguard_socialism
+				size = 0.9
+				capital = 16
+				states = all
+                states_filter = {
+                    is_core_of = FRA
+                }
+			}
+		}
+		random_other_country = {
+			limit = { original_tag = FRA has_government = vanguard_socialism }
+			ROOT = { puppet = PREV }
+			set_capital = { state = 16 }
+			set_politics = {
+				ruling_party = vanguard_socialism
+				elections_allowed = no
+			}
+			set_popularities = {
+				vanguard_socialism = 100
+			}
+			FRA = {
+				set_nationality = {
+					target_country = PREV
+					character = FRA_Cachin_Marcel
+				}
+			}
+
+			add_country_leader_role = {
+				character = FRA_Cachin_Marcel
+				country_leader = {
+					ideology = vanguard_socialism_subtype 
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes 
+			}
+
+			if = {
+				limit = { FRA = { has_country_flag = become_deguokuilei } }
+				change_tag_from = FRA
+			}
+		}
+	}
+
+}

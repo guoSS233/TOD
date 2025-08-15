@@ -104,9 +104,7 @@ focus_tree = {
 		x = 28
 		y = 3
 
-		select_effect = { 
-			country_event = { id = TOD_STG.3 }
-		}
+		select_effect = {  }
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -2472,7 +2470,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {has_completed_focus = STG_shuntianjinjidahui}
 		
 		completion_reward = {
 			army_experience = 25
@@ -3001,7 +2999,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {always = no}
 		
 		completion_reward = {
 		}
