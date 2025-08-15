@@ -15,6 +15,9 @@ country_event = {
     option = {
         name = ETH_event.1.a
         set_global_flag = global_flag_IEA_ETH_war
+        ITA = {
+            set_autonomy = { target = IEA autonomy_state = autonomy_free }
+        }
         declare_war_on = { target = ETH type = annex_everything }
     }
 }
@@ -41,7 +44,146 @@ country_event = {
 
     option = {
         name = ETH_event.2.a
+        MNG = {
+            set_autonomy = { target = MEA autonomy_state = autonomy_free }
+        }
         set_global_flag = global_flag_IEA_ETH_war
         declare_war_on = { target = IEA type = annex_everything }
+    }
+}
+
+country_event = {
+    id = ETH_event.3
+	title = ETH_event.3.t
+	desc = ETH_event.3.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        ETH = {
+            surrender_progress > 80
+        }
+        original_tag = IEA
+    }
+
+    option = {
+        name = ETH_event.3.a
+        IEA = {
+            annex_country = {
+                target = ETH
+            }
+        }
+        set_country_flag = IEA_win_ETH_flag
+    }
+}
+
+country_event = {
+    id = ETH_event.4
+	title = ETH_event.4.t
+	desc = ETH_event.4.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        MEA = {
+            surrender_progress > 80
+        }
+        original_tag = IEA
+    }
+
+    option = {
+        name = ETH_event.4.a
+        set_country_flag = IEA_win_MEA_flag
+        white_peace = MEA
+    }
+}
+
+country_event = {
+    id = ETH_event.5
+	title = ETH_event.5.t
+	desc = ETH_event.5.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        IEA = {
+            surrender_progress > 80
+        }
+        original_tag = MEA
+    }
+
+    option = {
+        name = ETH_event.5.a
+        set_country_flag = MEA_win_IEA_flag
+        white_peace = IEA
+        ETH = {
+           white_peace = IEA 
+        }
+    }
+}
+
+country_event = {
+    id = ETH_event.6
+	title = ETH_event.6.t
+	desc = ETH_event.6.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            AND = {
+                has_country_flag = IEA_win_MEA_flag
+                has_country_flag = IEA_win_ETH_flag
+            }
+            has_country_flag = MEA_win_IEA_flag
+        }
+        original_tag = IEA
+    }
+
+    option = {
+        name = ETH_event.6.a
+        ITA = {
+            set_autonomy = {
+                target = IEA
+                autonomous_state = autonomy_puppet
+                freedom_level = 0.2
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ETH_event.7
+	title = ETH_event.7.t
+	desc = ETH_event.7.d
+
+    fire_only_once = yes
+	is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            AND = {
+                has_country_flag = IEA_win_MEA_flag
+                has_country_flag = IEA_win_ETH_flag
+            }
+            has_country_flag = MEA_win_IEA_flag
+        }
+        original_tag = MEA
+    }
+
+    option = {
+        name = ETH_event.7.a
+        MNG = {
+            set_autonomy = {
+                target = MEA
+                autonomous_state = tod_ming_haiwaidusi
+                freedom_level = 0
+            }
+        }
+        add_to_faction = ETH
     }
 }

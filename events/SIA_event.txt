@@ -55,23 +55,7 @@ country_event = {   #内战事件
 	}
 	immediate = {
 		hidden_effect = {
-			741 = {
-				set_demilitarized_zone = yes
-			}
-			858 = {
-				set_demilitarized_zone = yes
-			}
-			670 = {
-				set_demilitarized_zone = yes
-			}
-			1195 = {
-				set_demilitarized_zone = yes
-			}
-			SIA = {
-				leave_faction = MNG
-			}
 		}
-		
 	}
 	option = {
 		name = SIA_event.3.a		
@@ -80,6 +64,8 @@ country_event = {   #内战事件
 		ROS = {
 			declare_war_on = { target = SIA type = annex_everything }
 		}
+		set_autonomy = { target = LAN autonomy_state = autonomy_free }
+		leave_faction = yes
 		SIA = {
 			transfer_units_fraction= {
 				target = ROS
@@ -97,6 +83,10 @@ country_event = {   #内战事件
 		country_event = { id = SIA_event.4 days = 30}
 		ROS = {
 			declare_war_on = { target = SIA type = annex_everything }
+		}
+		SIA = {
+			set_autonomy = { target = LAN autonomy_state = autonomy_free }
+			leave_faction = yes
 		}
 		SIA = {
 			transfer_units_fraction= {
@@ -122,9 +112,6 @@ country_event = {   #高棉起义
 	}
 	option = {
 		name = SIA_event.4.a		
-		741 = {
-			set_demilitarized_zone = yes
-		}
 		741 = { 
 			add_core_of = CAM    #添加核心
 			remove_core_of = SIA	#移除核心
@@ -140,9 +127,6 @@ country_event = {   #高棉起义
 			declare_war_on = { target = ROS type = take_state }
 		}
 		hidden_effect = {
-			741 = {
-				set_demilitarized_zone = yes
-			}
 			858 = {
 				set_demilitarized_zone = yes
 			}
@@ -187,9 +171,6 @@ country_event = {   #高棉起义
 		
 	option = {
 		name = SIA_event.4.b
-		741 = {
-			set_demilitarized_zone = yes
-		}
 		741 = { 
 			add_core_of = CAM    
 			remove_core_of = SIA
@@ -206,9 +187,6 @@ country_event = {   #高棉起义
 			declare_war_on = { target = ROS type = take_state }
 		}
 		hidden_effect = {
-			741 = {
-				set_demilitarized_zone = yes
-			}
 			858 = {
 				set_demilitarized_zone = yes
 			}
