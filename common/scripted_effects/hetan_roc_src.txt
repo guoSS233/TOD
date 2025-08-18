@@ -1,0 +1,537 @@
+ROC_SRC_hetan_scripted_effects = {
+    set_variable = { ROC_SRC_hetan_zhengzhi = num_owned_states }
+    multiply_variable = { 
+        var = ROC_SRC_hetan_zhengzhi
+        value = 2
+    }
+    set_variable = { ROC_SRC_hetan_jingji_min = num_of_civilian_factories }
+    set_variable = { ROC_SRC_hetan_jingji_jun = num_of_military_factories }
+    set_variable = { ROC_SRC_hetan_jingji_chuan = num_of_naval_factories }
+    set_variable = { ROC_SRC_hetan_junshi = num_divisions }
+    #最大180
+    if = {
+        limit = {
+            check_variable = { ROC_SRC_hetan_junshi > 180 }
+        }
+        set_variable = { ROC_SRC_hetan_junshi = 180 }
+    }
+    #按照军事议案来
+    if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_8
+        }
+        set_variable = { ROC_SRC_hetan_junshi = 160 }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_7
+        }
+        set_variable = { ROC_SRC_hetan_junshi = 140 }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_5
+        }
+        set_variable = { ROC_SRC_hetan_junshi = 110 }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_4
+        }
+        set_variable = { ROC_SRC_hetan_junshi = 80 }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_3
+        }
+        set_variable = { ROC_SRC_hetan_junshi = 60 }
+    }
+    #按照政治议案来
+    if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_zhengzhi_zhizheng_1
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 1.1
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_zhengzhi_zhizheng_2
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 1.05
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_zhengzhi_zhizheng_3
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = stability
+        }
+    }
+    #按照政治地方议案来
+    if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_zhengzhi_difang_2m
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 0.9
+        }
+        add_to_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 10
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_zhengzhi_difang_1_2_y
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 0.8
+        }
+        add_to_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 20
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_zhengzhi_difang_3_5_y
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 0.7
+        }
+        add_to_variable = {
+            var = ROC_SRC_hetan_zhengzhi
+            value = 30
+        }
+    }
+    #按照军事政治化议案来
+    if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_guojiahua
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 0.9
+        }
+        add_to_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 11
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 0.8
+        }
+        add_to_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 22
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_junshishouce
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 0.7
+        }
+        add_to_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 33
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_junshi_zizhuhua
+        }
+        multiply_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 0.6
+        }
+        add_to_variable = {
+            var = ROC_SRC_hetan_junshi
+            value = 44
+        }
+    }
+    #按照经济所有制议案来
+    set_variable = { ROC_SRC_hetan_jingji_suoyouzhi_factor = 1 }
+    if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+        }
+        set_variable = { ROC_SRC_hetan_jingji_suoyouzhi_factor = 0.9 }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+        }
+        set_variable = { ROC_SRC_hetan_jingji_suoyouzhi_factor = 0.7 }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+        }
+        set_variable = { ROC_SRC_hetan_jingji_suoyouzhi_factor = 1.2 }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+        }
+        set_variable = { ROC_SRC_hetan_jingji_suoyouzhi_factor = 1.5 }
+    }
+    set_variable = { ROC_SRC_hetan_jingji_suoyouzhi_factor_stability = stability }
+    add_to_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_stability
+        value = -1
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_stability
+        value = -1
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_stability
+        value = ROC_SRC_hetan_jingji_suoyouzhi_factor
+    }
+    add_to_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_stability
+        value = -1
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_stability
+        value = -1
+    }
+    set_variable = { ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport = war_support }
+    add_to_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport
+        value = -1
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport
+        value = -1
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport
+        value = ROC_SRC_hetan_jingji_suoyouzhi_factor
+    }
+    add_to_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport
+        value = -1
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport
+        value = -1
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_min
+        value = ROC_SRC_hetan_jingji_suoyouzhi_factor_stability
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_jun
+        value = ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport
+    }
+    multiply_variable = {
+        var = ROC_SRC_hetan_jingji_chuan
+        value = ROC_SRC_hetan_jingji_suoyouzhi_factor_war_surpport
+    }
+    set_variable = { ROC_SRC_hetan_jingji = ROC_SRC_hetan_jingji_min }
+    add_to_variable = {
+        var = ROC_SRC_hetan_jingji
+        value = ROC_SRC_hetan_jingji_jun
+    }
+    add_to_variable = {
+        var = ROC_SRC_hetan_jingji
+        value = ROC_SRC_hetan_jingji_chuan
+    }
+    #按照手段来
+    if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_shouduan_shumai
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_government = liberal_democracy
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 30
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = social_democrat
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 10
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = moderate_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = -10
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = council_socialism
+                    has_government = vanguard_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = -20
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_shouduan_fugongyisi
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_government = liberal_democracy
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 10
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = social_democrat
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 30
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = moderate_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 30
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = council_socialism
+                    has_government = vanguard_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 10
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_government = liberal_democracy
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = -10
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = social_democrat
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 10
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = moderate_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 10
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = council_socialism
+                    has_government = vanguard_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 30
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            has_country_flag = country_flag_ROC_SRC_hetan_jingji_shouduan_zhengshou
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_government = liberal_democracy
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = -30
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = social_democrat
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = -10
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = moderate_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 15
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    has_government = council_socialism
+                    has_government = vanguard_socialism
+                }
+            }
+            add_to_variable = {
+                var = ROC_SRC_hetan_jingji
+                value = 40
+            }
+        }
+    }
+    set_variable = { ROC_SRC_hetan_var = ROC_SRC_hetan_zhengzhi }
+    add_to_variable = {
+        var = ROC_SRC_hetan_var
+        value = ROC_SRC_hetan_jingji
+    }
+    add_to_variable = {
+        var = ROC_SRC_hetan_var
+        value = ROC_SRC_hetan_junshi
+    }
+    if = {
+        limit = {
+            original_tag = ROC
+        }
+        set_variable = { ROC_SRC_hetan_zhengzhi_bili = ROC.ROC_SRC_hetan_zhengzhi }
+        divide_variable = {
+            var = ROC_SRC_hetan_zhengzhi_bili
+            value = SRC.ROC_SRC_hetan_zhengzhi
+        }
+    }
+    else_if = {
+        limit = {
+            original_tag = SRC
+        }
+        set_variable = { ROC_SRC_hetan_zhengzhi_bili = SRC.ROC_SRC_hetan_zhengzhi }
+        divide_variable = {
+            var = ROC_SRC_hetan_zhengzhi_bili
+            value = ROC.ROC_SRC_hetan_zhengzhi
+        }
+    }
+    if = {
+        limit = {
+            original_tag = ROC
+        }
+        set_variable = { ROC_SRC_hetan_junshi_bili = ROC.ROC_SRC_hetan_junshi }
+        divide_variable = {
+            var = ROC_SRC_hetan_junshi_bili
+            value = SRC.ROC_SRC_hetan_junshi
+        }
+    }
+    else_if = {
+        limit = {
+            original_tag = SRC
+        }
+        set_variable = { ROC_SRC_hetan_junshi_bili = SRC.ROC_SRC_hetan_junshi }
+        divide_variable = {
+            var = ROC_SRC_hetan_junshi_bili
+            value = ROC.ROC_SRC_hetan_junshi
+        }
+    }
+    if = {
+        limit = {
+            original_tag = ROC
+        }
+        set_variable = { ROC_SRC_hetan_all_bili = ROC.ROC_SRC_hetan_var }
+        divide_variable = {
+            var = ROC_SRC_hetan_all_bili
+            value = SRC.ROC_SRC_hetan_var
+        }
+    }
+    else_if = {
+        limit = {
+            original_tag = SRC
+        }
+        set_variable = { ROC_SRC_hetan_all_bili = SRC.ROC_SRC_hetan_var }
+        divide_variable = {
+            var = ROC_SRC_hetan_all_bili
+            value = ROC.ROC_SRC_hetan_var
+        }
+    }
+    set_variable = { hetan_ROC_zhengzhi = ROC.ROC_SRC_hetan_zhengzhi }
+    set_variable = { hetan_SRC_zhengzhi = SRC.ROC_SRC_hetan_zhengzhi }
+    set_variable = { hetan_ROC_junshi = ROC.ROC_SRC_hetan_junshi }
+    set_variable = { hetan_SRC_junshi = SRC.ROC_SRC_hetan_junshi }
+    set_variable = { hetan_ROC_jingji = ROC.ROC_SRC_hetan_jingji }
+    set_variable = { hetan_SRC_jingji = SRC.ROC_SRC_hetan_jingji }
+    set_variable = { hetan_ROC_all = ROC.ROC_SRC_hetan_var }
+    set_variable = { hetan_SRC_all = SRC.ROC_SRC_hetan_var }
+}
