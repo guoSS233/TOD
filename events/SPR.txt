@@ -54,7 +54,6 @@ country_event = {
 
 		 SPR = {
 			set_capital = { state = 290 }
-
 			hidden_effect = { }
 			start_civil_war = {
 				ideology = national_corporatism
@@ -65,6 +64,7 @@ country_event = {
                     is_core_of =  SPR
                 }
 			}
+			add_ideas = FRA_yongbutouxiang
 		}
 		random_other_country = {
 			limit = { original_tag =  SPR has_government = national_corporatism }
@@ -75,11 +75,15 @@ country_event = {
 				elections_allowed = no
 			}
 
-			SPR = { #Move Petain to Vichy
+			SPR = {
 				set_nationality = {
 					target_country = PREV
 					character = SPR_Francisco_Franco
 				}
+			}
+			every_state = {
+				limit = { is_core_of = SPR }
+				set_state_controller_to = PREV
 			}
 
 			add_country_leader_role = {

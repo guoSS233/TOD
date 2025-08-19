@@ -54,68 +54,67 @@ country_event = {
 		FRA = { set_cosmetic_tag = FRA_liuwang }
 		if = {
 			limit = { 42 = { owner = { original_tag = FRA } } }
-			set_state_controller = 42
+			transfer_state = 42
             add_state_core = 42
 		}
 		if = {
 			limit = { 51 = { owner = { original_tag = FRA } } }
-			set_state_controller = 51
+			transfer_state = 51
             add_state_core = 51
 		}
 		if = {
 			limit = { 960 = { owner = { original_tag = FRA } } }
-			set_state_controller = 960
+			transfer_state = 960
             add_state_core = 960
 		}
 		if = {
 			limit = { 961 = { owner = { original_tag = FRA } } }
-			set_state_controller = 961
+			transfer_state = 961
             add_state_core = 961
 		}
 		if = {
 			limit = { 942 = { owner = { original_tag = FRA } } }
-			set_state_controller = 942
+			transfer_state = 942
             add_state_core = 942
 		}
 		if = {
 			limit = { 8 = { owner = { original_tag = FRA } } }
-			set_state_controller = 8
+			transfer_state = 8
             add_state_core = 8
 		}
 		if = {
 			limit = { 1144 = { owner = { original_tag = FRA } } }
-			set_state_controller = 1144
+			transfer_state = 1144
             add_state_core = 1144
 		}
 		if = {
 			limit = { 28 = { owner = { original_tag = FRA } } }
-			set_state_controller = 28
+			transfer_state = 28
             add_state_core = 28
 		}
 		if = {
 			limit = { 1076 = { owner = { original_tag = FRA } } }
-			set_state_controller = 1076
+			transfer_state = 1076
             add_state_core = 1076
 		}
 		if = {
 			limit = { 6 = { owner = { original_tag = FRA } } }
-			HOL = {set_state_controller = 6}
+			HOL = {transfer_state = 6}
             HOL = {add_state_core = 6}
 		}
 		if = {
 			limit = { 1140 = { owner = { original_tag = FRA } } }
-			HOL = {set_state_controller = 1140}
+			HOL = {transfer_state = 1140}
             HOL = {add_state_core = 1140}
 		}
 		if = {
 			limit = { 34 = { owner = { original_tag = FRA } } }
-			HOL = {set_state_controller = 34}
+			HOL = {transfer_state = 34}
             HOL = {add_state_core = 34}
 		}
 
 		FRA = {
 			set_capital = { state = 459 }
-
 			hidden_effect = { }
 			start_civil_war = {
 				ideology = vanguard_socialism
@@ -126,6 +125,7 @@ country_event = {
                     is_core_of = FRA
                 }
 			}
+			add_ideas = FRA_yongbutouxiang
 		}
 		random_other_country = {
 			limit = { original_tag = FRA has_government = vanguard_socialism }
@@ -137,6 +137,16 @@ country_event = {
 			}
 			set_popularities = {
 				vanguard_socialism = 100
+			}
+			every_state = {
+				limit = { 
+					is_core_of = FRA
+					NOT = {
+						is_core_of = HOL
+						is_core_of = GER
+					}
+				}
+				set_state_controller_to = PREV
 			}
 			FRA = {
 				set_nationality = {

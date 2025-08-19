@@ -488,8 +488,15 @@ news_event = {
 		
 	}
 	immediate = { 
-		set_global_flag = defa_kaizhan 
-		ENG = {country_event = { id = TODengland.1 days = 30 }}
+		hidden_effect = {
+			set_global_flag = defa_kaizhan 
+			ENG = {country_event = { id = TODengland.1 days = 30 }}
+			FRA = {
+				remove_ideas = FRA_paomopo
+				remove_ideas = FRA_shilizhe
+				remove_ideas = FRA_fubai
+			}
+		}
 	}
 	option = { 
 		trigger = {NOT = {tag = GER}}
