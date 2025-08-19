@@ -1,0 +1,18 @@
+ROC_SRC_decision_hetan = {
+	icon = ger_mefo_bills
+	#picture = GFX_decision_cat_generic_mefo_bills	
+	visible = {
+        has_global_flag = global_flag_ROC_SRC_hetan
+    }
+	allowed = { 
+        OR = {
+            original_tag = SRC
+            original_tag = ROC
+        }
+        NOT = {
+            has_global_flag = global_flag_hetan_ROC_SRC_fail
+        }
+	}	
+	scripted_gui = ROC_SRC_hetan_GUI
+	priority = 200
+}

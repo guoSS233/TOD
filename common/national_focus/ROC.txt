@@ -2683,6 +2683,9 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = tongyizhonghua
 		}
+		bypass = {
+			NOT = { country_exists = SIC }
+		}
 		x = 10
 		y = 12
 		ai_will_do = {factor = 10}
@@ -2727,6 +2730,9 @@ focus_tree = {#共和军国策
 		x = 14
 		y = 12
 		ai_will_do = {factor = 10}
+		completion_reward = {
+			country_event = ROC_SRC_hetan_event.4
+		}
 	}
 	focus = {#96、革命的同志
 		id = gemingdetongzhi
@@ -2758,7 +2764,14 @@ focus_tree = {#共和军国策
 			focus = dongbeiwenti
 		}
 		available = {
-
+			OR = {
+				country_exists = GPS
+				AND = [
+					has_global_flag = global_flag_hetan_ROC_SRC_fail
+					country_exists = SRC
+				]
+			}
+			
 		}
 		bypass = {
 			NOT = { country_exists = GPS }

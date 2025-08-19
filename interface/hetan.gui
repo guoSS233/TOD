@@ -1,0 +1,216 @@
+@POSTER_LEFT_X = 10
+@POSTER_CENTER_X = 25
+@POSTER_RIGHT_X = 40
+@POSTERS_Y_1 = 0
+@POSTERS_Y_2 = 150
+@POSTERS_Y_center = 75
+@POSTERS_X_kaitou = 10
+@POSTERS_X_ROC = 150
+@POSTERS_X_SRC = 300
+@POSTERS_Y_tag = 280
+@POSTERS_Y_junshi = 320
+@POSTERS_Y_jingji = 350
+@POSTERS_Y_zhengzhi = 380
+@POSTERS_Y_all = 420
+guiTypes = {
+
+	containerWindowType = {
+		name = "ROC_SRC_hetan_GUI"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 600 }
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_fenqi_text_GUI"
+			position = { x =150 y = 520 }
+			text = "ROC_SRC_hetan_junshi_fenqi"
+			font = "hoi_18mbs"
+			format = center
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_junshi_text_GUI"
+			position = { x =@POSTERS_X_kaitou y = @POSTERS_Y_junshi }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_junshi_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_jingji_text_GUI"
+			position = { x =@POSTERS_X_kaitou y = @POSTERS_Y_jingji }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_jingji_text"
+			format = left
+			maxHeight = 40
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_zhengzhi_text_GUI"
+			position = { x =@POSTERS_X_kaitou y = @POSTERS_Y_zhengzhi }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_zhengzhi_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_all_text_GUI"
+			position = { x =@POSTERS_X_kaitou y = @POSTERS_Y_all }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_all_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_ROC_text_GUI"
+			position = { x =@POSTERS_X_ROC y = @POSTERS_Y_tag }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_ROC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_junshi_ROC_text_GUI"
+			position = { x =@POSTERS_X_ROC y = @POSTERS_Y_junshi }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_junshi_ROC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_jingji_ROC_text_GUI"
+			position = { x =@POSTERS_X_ROC y = @POSTERS_Y_jingji }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_jingji_ROC_text"
+			format = left
+			maxHeight = 40
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_zhengzhi_ROC_text_GUI"
+			position = { x =@POSTERS_X_ROC y = @POSTERS_Y_zhengzhi }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_zhengzhi_ROC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_all_ROC_text_GUI"
+			position = { x =@POSTERS_X_ROC y = @POSTERS_Y_all }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_all_ROC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_SRC_text_GUI"
+			position = { x =@POSTERS_X_SRC y = @POSTERS_Y_tag }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_SRC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_junshi_SRC_text_GUI"
+			position = { x =@POSTERS_X_SRC y = @POSTERS_Y_junshi }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_junshi_SRC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_jingji_SRC_text_GUI"
+			position = { x =@POSTERS_X_SRC y = @POSTERS_Y_jingji }
+			text = "ROC_SRC_hetan_jingji_SRC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_zhengzhi_SRC_text_GUI"
+			position = { x =@POSTERS_X_SRC y = @POSTERS_Y_zhengzhi }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_zhengzhi_SRC_text"
+			format = left
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_all_SRC_text_GUI"
+			position = { x =@POSTERS_X_SRC y = @POSTERS_Y_all }
+			font = "hoi_18mbs"
+			text = "ROC_SRC_hetan_all_SRC_text"
+			format = left
+			maxHeight = 24
+		}
+		iconType = {
+			name ="ROC_SRC_hetan_zhengzhi_1_GUI"
+			position = { x=10 y=@POSTERS_Y_1 }
+			pdx_tooltip = ROC_SRC_hetan_zhengzhi_1_text
+		}
+		#Tooltip
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_zhengzhi_1_text_GUI"
+			position = { x=10	 y=@POSTERS_Y_1 }
+			font = "hoi_18mbs"
+			format = center
+			maxwidth = 94
+			maxHeight = 76
+			pdx_tooltip = ROC_SRC_hetan_zhengzhi_1_text_tool
+		}
+		iconType = {
+			name ="ROC_SRC_hetan_zhengzhi_2_GUI"
+			position = { x=10	 y=@POSTERS_Y_2 }
+			pdx_tooltip = ROC_SRC_hetan_zhengzhi_2_text
+		}
+		#Tooltip
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_zhengzhi_2_text_GUI"
+			position = { x=10	 y=@POSTERS_Y_2 }
+			font = "hoi_18mbs"
+			format = center
+			maxwidth = 94
+			maxHeight = 76
+			pdx_tooltip = ROC_SRC_hetan_zhengzhi_2_text_tool
+		}
+		iconType = {
+			name ="ROC_SRC_hetan_junshi_1_GUI"
+			position = { x=205	 y=@POSTERS_Y_center }
+			pdx_tooltip = ROC_SRC_hetan_junshi_1_text
+		}
+		#Tooltip
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_junshi_1_text_GUI"
+			position = { x=205	 y=@POSTERS_Y_center }
+			font = "hoi_18mbs"
+			format = center
+			maxwidth = 94
+			maxHeight = 76
+			pdx_tooltip = ROC_SRC_hetan_junshi_1_text_tool
+		}
+		iconType = {
+			name ="ROC_SRC_hetan_jingji_1_GUI"
+			position = { x=400	 y=@POSTERS_Y_1 }
+			pdx_tooltip = ROC_SRC_hetan_jingji_1_text
+		}
+		#Tooltip
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_jingji_1_text_GUI"
+			position = { x=400	 y=@POSTERS_Y_1 }
+			font = "hoi_18mbs"
+			format = center
+			maxwidth = 94
+			maxHeight = 76
+			pdx_tooltip = ROC_SRC_hetan_jingji_1_text_tool
+		}
+		iconType = {
+			name ="ROC_SRC_hetan_jingji_2_GUI"
+			position = { x=400	 y=@POSTERS_Y_2 }
+			pdx_tooltip = ROC_SRC_hetan_jingji_2_text
+		}
+		#Tooltip
+		instantTextBoxType = {
+			name ="ROC_SRC_hetan_jingji_2_text_GUI"
+			position = { x = 400 y=@POSTERS_Y_2 }
+			font = "hoi_18mbs"
+			format = center
+			maxwidth = 94
+			maxHeight = 76
+			pdx_tooltip = ROC_SRC_hetan_jingji_2_text_tool
+		}
+	}
+}
