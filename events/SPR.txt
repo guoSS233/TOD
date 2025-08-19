@@ -1,0 +1,105 @@
+add_namespace = TODspain
+#西班牙跑路
+country_event = { 
+	id = TODspain.1
+	title = TODspain.1.t
+	desc =TODspain.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag =  SPR
+		has_war_with = ENG
+        OR = {
+            41 = { is_controlled_by = GER }
+            41 = { is_controlled_by = ENG }
+        }
+		surrender_progress > 0.6
+
+	}
+	
+	option = { # 成为英国傀儡
+		name = TODspain.1.a
+		trigger = { is_ai = no }
+		set_country_flag = become_deguokuilei
+		ENG = { country_event = TODspain.14 }
+		custom_effect_tooltip = TODspain.1_tt
+	}
+	option = { # 流亡北非
+		name = TODspain.1.b
+		ai_chance = {
+			factor = 100
+		}
+		ENG = { country_event = TODspain.14 }
+		custom_effect_tooltip = TODspain.1.b_tt
+		set_country_flag = ENG_dont_seize_gold_reserves_flag #Can't allow ENGmany to seize out gold reserves just yet
+	}
+}
+#西班牙被傀儡
+country_event = {
+	id = TODspain.14
+	title = TODspain.14.t
+	desc = TODspain.14.d
+	picture = GFX_report_event_ENGman_parade_paris
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = TODspain.14.a
+		ai_chance = {
+			factor = 50
+		}
+		 SPR = { set_cosmetic_tag =  SPR_liuwang }
+
+		 SPR = {
+			set_capital = { state = 290 }
+			hidden_effect = { }
+			start_civil_war = {
+				ideology = national_corporatism
+				size = 0.9
+				capital = 174
+				states = all
+                states_filter = {
+                    is_core_of =  SPR
+                }
+			}
+			add_ideas = FRA_yongbutouxiang
+		}
+		random_other_country = {
+			limit = { original_tag =  SPR has_government = national_corporatism }
+			ROOT = { puppet = PREV }
+			set_capital = { state = 174 }
+			set_politics = {
+				ruling_party = national_corporatism
+				elections_allowed = no
+			}
+
+			SPR = {
+				set_nationality = {
+					target_country = PREV
+					character = SPR_Francisco_Franco
+				}
+			}
+			every_state = {
+				limit = { is_core_of = SPR }
+				set_state_controller_to = PREV
+			}
+
+			add_country_leader_role = {
+				character = SPR_Francisco_Franco
+				country_leader = {
+					ideology = national_corporatism_subtype 
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes 
+			}
+			if = {
+				limit = {  SPR = { has_country_flag = become_deguokuilei } }
+				change_tag_from =  SPR
+			}
+		}
+	}
+
+}
