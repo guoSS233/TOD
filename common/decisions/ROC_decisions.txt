@@ -1039,18 +1039,43 @@ ROC_focus_quanguogeming = {#全国革命
 		visible = {
 			has_completed_focus = yueguoshanhaiguan
 			OR = {
-				AND = {
-					country_exists = GPS 
-					NOT = { has_war_with = GPS }
-				}
-				AND = {
-					country_exists = ROC 
+				country_exists = GPS 
+				GPS = {
 					NOT = { has_war_with = ROC }
 				}
 			}
 		}
 		remove_effect = {
 			declare_war_on = { target = GPS type = annex_everything }
+		}
+	}
+	ROC_decision_geming_hongjun = {#对东北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}			
+	    }
+		visible = {
+			has_completed_focus = yueguoshanhaiguan
+			OR = {
+				country_exists = SRC 
+				SRC = {
+					NOT = { has_war_with = SRC }
+				}
+			}
+			OR = {
+				has_global_flag = global_flag_hetan_ROC_SRC_fail
+				has_global_flag = global_flag_ROC_SRC_hetan_lose
+			}
+		}
+		remove_effect = {
+			declare_war_on = { target = SCG type = annex_everything }
 			declare_war_on = { target = SRC type = annex_everything }
 		}
 	}
