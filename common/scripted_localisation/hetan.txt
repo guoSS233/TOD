@@ -403,3 +403,123 @@ defined_text = { #Used to change a propaganda campaign GFX, so that it looks age
 		localization_key = idea_ROC_SRC_hetan_zhengzhi_1_no_text
 	}
 }
+
+defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
+	name = GOS_XBJ_hetan_event_7_t
+	text = {
+		trigger = {
+			has_global_flag = country_flag_jiangshi
+			has_global_flag = country_flag_datonghui
+		}
+		localization_key = GOS_XBJ_hetan_event_7_t_1
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_jiangshi
+			}
+			has_global_flag = country_flag_datonghui
+		}
+		localization_key = GOS_XBJ_hetan_event_7_t_2
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_datonghui
+			}
+			has_global_flag = country_flag_jiangshi
+		}
+		localization_key = GOS_XBJ_hetan_event_7_t_3
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_datonghui
+			}
+			NOT = {
+				has_global_flag = country_flag_jiangshi
+			}
+		}
+		localization_key = GOS_XBJ_hetan_event_7_t_4
+	}
+}
+
+defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
+	name = GOS_XBJ_hetan_event_7_d
+	text = {
+		trigger = {
+			has_global_flag = country_flag_jiangshi
+			has_global_flag = country_flag_datonghui
+		}
+		localization_key = GOS_XBJ_hetan_event_7_d_1
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_jiangshi
+			}
+			has_global_flag = country_flag_datonghui
+		}
+		localization_key = GOS_XBJ_hetan_event_7_d_2
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_datonghui
+			}
+			has_global_flag = country_flag_jiangshi
+		}
+		localization_key = GOS_XBJ_hetan_event_7_d_3
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_datonghui
+			}
+			NOT = {
+				has_global_flag = country_flag_jiangshi
+			}
+		}
+		localization_key = GOS_XBJ_hetan_event_7_d_4
+	}
+}
+
+defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
+	name = GOS_XBJ_hetan_event_7_a
+	text = {
+		trigger = {
+			has_global_flag = country_flag_jiangshi
+			has_global_flag = country_flag_datonghui
+		}
+		localization_key = GOS_XBJ_hetan_event_7_a_1
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_jiangshi
+			}
+			has_global_flag = country_flag_datonghui
+		}
+		localization_key = GOS_XBJ_hetan_event_7_a_2
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_datonghui
+			}
+			has_global_flag = country_flag_jiangshi
+		}
+		localization_key = GOS_XBJ_hetan_event_7_a_3
+	}
+	text = {
+		trigger = {
+			NOT = {
+				has_global_flag = country_flag_datonghui
+			}
+			NOT = {
+				has_global_flag = country_flag_jiangshi
+			}
+		}
+		localization_key = GOS_XBJ_hetan_event_7_a_4
+	}
+}

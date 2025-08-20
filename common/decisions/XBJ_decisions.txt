@@ -2028,4 +2028,35 @@ XBJ_difangjunfa = {
 		}
 	}
 
+	XBJ_zuihoutongdieGOS = {
+		icon = ger_military_buildup
+		
+		visible = {
+			country_exists = GOS
+			OR = {
+				has_completed_focus = XBJ_suiyuanbizhu
+				has_completed_focus = XBJ_chunwangchihan
+				has_global_flag = global_flag_hetan_gos_xbj_hetan_fail
+			}
+		}
+		allowed = { tag = XBJ } 
+		available = { 			
+			any_owned_state = {
+				is_controlled_by = XBJ
+				any_neighbor_state = {
+					is_controlled_by = XIN
+				} 
+			}
+		}
+		cost = 30
+		
+		days_remove = 30
+		fire_only_once = yes
+		complete_effect = {
+
+		}
+		remove_effect = { 
+			XIN = { country_event = { id = xbj_bianjing.15 }}
+		}
+	}
 }

@@ -2716,9 +2716,6 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = tongyizhonghua
 		}
-		available = {
-			always = no
-		}
 		bypass = {
 			OR = {
 				NOT = { country_exists = SRC }
@@ -2766,10 +2763,10 @@ focus_tree = {#共和军国策
 		available = {
 			OR = {
 				country_exists = GPS
-				AND = [
+				AND = {
 					has_global_flag = global_flag_hetan_ROC_SRC_fail
 					country_exists = SRC
-				]
+				}
 			}
 			
 		}
@@ -3698,6 +3695,10 @@ focus_tree = {#华南招抚司国策
 			tag = ROC
 		}
 	}
+	default = no
+	
+
+	continuous_focus_position = { x = 2000 y = 2000 }
 	focus = {#颁布通缉令
 		id = banbutongjiling
 		icon = GFX_ROC_banbutongjiling
