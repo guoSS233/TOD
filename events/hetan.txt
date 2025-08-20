@@ -1,4 +1,5 @@
 add_namespace = ROC_SRC_hetan_event
+add_namespace = GOS_XBJ_hetan_event
 
 country_event = {
     id = ROC_SRC_hetan_event.1
@@ -2914,3 +2915,308 @@ country_event = {
         set_global_flag = global_flag_hetan_ROC_SRC_fail
     }
 }
+
+
+#谈判-西北军-提出
+country_event = {
+    id = GOS_XBJ_hetan_event.1
+    title = GOS_XBJ_hetan_event.1.t
+    desc = GOS_XBJ_hetan_event.1.d
+
+   	is_triggered_only = yes
+    
+    trigger = {
+        XBJ = {
+            controls_state = 608
+            NOT = {
+                has_war_with = GOS
+            }
+        }
+        NOT = {
+            country_exists = STG
+        }
+    }
+
+    option = {
+        name = GOS_XBJ_hetan_event.1.a
+        set_global_flag = global_flag_hetan_gos_xbj_hetan_start
+        XBJ = {
+            country_event = { id = GOS_XBJ_hetan_event.4 days = 30 }
+        }
+        GOS = {
+            country_event = { id = GOS_XBJ_hetan_event.11 }
+        }
+    }
+    option = {
+        name = GOS_XBJ_hetan_event.1.b
+        country_event = { id = GOS_XBJ_hetan_event.10 }
+    }
+}
+#谈判-七省-提出
+country_event = {
+    id = GOS_XBJ_hetan_event.2
+    title = GOS_XBJ_hetan_event.2.t
+    desc = GOS_XBJ_hetan_event.2.d
+
+   	is_triggered_only = yes
+    
+    trigger = {
+        GOS = {
+            controls_state = 608
+            NOT = {
+                has_war_with = GOS
+            }
+        }
+        NOT = {
+            country_exists = STG
+        }
+    }
+    option = {
+        name = GOS_XBJ_hetan_event.2.a
+        XBJ = {
+            country_event = { id = GOS_XBJ_hetan_event.3 }
+        }
+        set_country_flag = country_flag_GOS_XBJ_shuntian
+    }
+}
+#谈判-西北军-接受
+country_event = {
+    id = GOS_XBJ_hetan_event.3
+    title = GOS_XBJ_hetan_event.3.t
+    desc = GOS_XBJ_hetan_event.3.d
+
+   	is_triggered_only = yes
+    option = {
+        name = GOS_XBJ_hetan_event.3.a
+        set_global_flag = global_flag_hetan_gos_xbj_hetan_start
+        XBJ = {
+            country_event = { id = GOS_XBJ_hetan_event.4 days = 30 }
+        }
+        GOS = {
+            country_event = { id = GOS_XBJ_hetan_event.5 }
+        }
+    }
+}
+#谈判-西北军-要求
+country_event = {
+    id = GOS_XBJ_hetan_event.4
+    title = GOS_XBJ_hetan_event.4.t
+    desc = GOS_XBJ_hetan_event.4.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.4.a
+        GOS = {
+            country_event = { id = GOS_XBJ_hetan_event.6 }
+        }
+    }
+}
+#谈判-七省-西北军同意
+country_event = {
+    id = GOS_XBJ_hetan_event.5
+    title = GOS_XBJ_hetan_event.5.t
+    desc = GOS_XBJ_hetan_event.5.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.5.a
+    }
+}
+#谈判-七省-接受要求
+country_event = {
+    id = GOS_XBJ_hetan_event.6
+    title = GOS_XBJ_hetan_event.6.t
+    desc = GOS_XBJ_hetan_event.6.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.6.a
+        set_global_flag = country_flag_jiangshi
+        set_global_flag = country_flag_datonghui
+        XBJ = {
+            country_event = { id = GOS_XBJ_hetan_event.7 }
+        }
+    }
+    option = {
+        name = GOS_XBJ_hetan_event.6.b
+        set_global_flag = country_flag_jiangshi
+        XBJ = {
+            country_event = { id = GOS_XBJ_hetan_event.7 }
+        }
+    }
+    option = {
+        name = GOS_XBJ_hetan_event.6.c
+        set_global_flag = country_flag_datonghui
+        XBJ = {
+            country_event = { id = GOS_XBJ_hetan_event.7 }
+        }
+    }
+    option = {
+        name = GOS_XBJ_hetan_event.6.e
+        XBJ = {
+            country_event = { id = GOS_XBJ_hetan_event.7 }
+        }
+    }
+}
+#谈判-西北军—结果
+country_event = {
+    id = GOS_XBJ_hetan_event.7
+    title = GOS_XBJ_hetan_event.7.t
+    desc = GOS_XBJ_hetan_event.7.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.7.a
+        GOS = {
+            country_event = { id = GOS_XBJ_hetan_event.8 }
+        }
+        ai_chance = {
+            base = 100
+            modifier = {
+                factor = 0
+                has_global_flag = country_flag_jiangshi
+                NOT = {
+                    has_global_flag = country_flag_datonghui
+                }
+                GOS = {
+                    NOT = { has_country_flag = country_flag_GOS_XBJ_shuntian }
+                }
+            }
+            modifier = {
+                factor = 0
+                has_global_flag = country_flag_datonghui
+                NOT = {
+                    has_global_flag = country_flag_jiangshi
+                }
+                GOS = {
+                    NOT = { has_country_flag = country_flag_GOS_XBJ_shuntian }
+                }
+            }
+            modifier = {
+                factor = 0
+                NOT = {
+                    has_global_flag = country_flag_jiangshi
+                }
+                NOT = {
+                    has_global_flag = country_flag_datonghui
+                }
+            }
+        }
+    }
+    option = {
+        name = GOS_XBJ_hetan_event.7.b
+        trigger = {
+            NOT ={
+                has_global_flag = country_flag_jiangshi
+                has_global_flag = country_flag_datonghui
+            }
+        }
+        GOS = {
+            country_event = { id = GOS_XBJ_hetan_event.9 }
+        }
+        ai_chance = {
+            base = 0
+            modifier = {
+                add = 10
+                has_global_flag = country_flag_jiangshi
+                NOT = {
+                    has_global_flag = country_flag_datonghui
+                }
+                GOS = {
+                    NOT = { has_country_flag = country_flag_GOS_XBJ_shuntian }
+                }
+            }
+            modifier = {
+                add = 10
+                has_global_flag = country_flag_datonghui
+                NOT = {
+                    has_global_flag = country_flag_jiangshi
+                }
+                GOS = {
+                    NOT = { has_country_flag = country_flag_GOS_XBJ_shuntian }
+                }
+            }
+            modifier = {
+                add = 10
+                NOT = {
+                    has_global_flag = country_flag_jiangshi
+                }
+                NOT = {
+                    has_global_flag = country_flag_datonghui
+                }
+            }
+        }
+    }
+}
+#谈判-七省-西北军接受
+country_event = {
+    id = GOS_XBJ_hetan_event.8
+    title = GOS_XBJ_hetan_event.8.t
+    desc = GOS_XBJ_hetan_event.8.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.8.a
+        GOS = {
+            annex_country = XBJ
+        }
+        every_state = {
+            limit = {
+                is_core_of = XBJ
+            }
+            add_core_of = GPS
+            remove_core_of = XBJ
+        }
+        XBJ = {
+            every_unit_leader = {
+                set_nationality = ROC
+            }
+        }
+    }
+}
+#谈判-七省-西北军拒绝
+country_event = {
+    id = GOS_XBJ_hetan_event.9
+    title = GOS_XBJ_hetan_event.9.t
+    desc = GOS_XBJ_hetan_event.9.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.9.a
+        set_global_flag = global_flag_hetan_gos_xbj_hetan_fail
+    }
+}
+#谈判-七省-西北军翻脸
+country_event = {
+    id = GOS_XBJ_hetan_event.10
+    title = GOS_XBJ_hetan_event.10.t
+    desc = GOS_XBJ_hetan_event.10.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.10.a
+        set_global_flag = global_flag_hetan_gos_xbj_hetan_fail
+    }
+}
+#谈判-七省-西北军提出和谈
+country_event = {
+    id = GOS_XBJ_hetan_event.11
+    title = GOS_XBJ_hetan_event.11.t
+    desc = GOS_XBJ_hetan_event.11.d
+
+   	is_triggered_only = yes
+    
+    option = {
+        name = GOS_XBJ_hetan_event.11.a
+    }
+}
+
+
+
