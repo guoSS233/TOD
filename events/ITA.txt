@@ -7,7 +7,6 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	
 	fire_only_once = yes
-	is_triggered_only = yes
 	
 	trigger = {
 		tag =  ITA
@@ -55,7 +54,6 @@ country_event = {
 
 		 ITA = {
 			set_capital = { state = 448 }
-
 			hidden_effect = { }
 			start_civil_war = {
 				ideology = council_socialism
@@ -64,8 +62,12 @@ country_event = {
 				states = all
                 states_filter = {
                     is_core_of =  ITA
+					NOT = {
+						state = 448
+					}
                 }
 			}
+			add_ideas = FRA_yongbutouxiang
 		}
 		random_other_country = {
 			limit = { original_tag =  ITA has_government = council_socialism }
@@ -74,6 +76,13 @@ country_event = {
 			set_politics = {
 				ruling_party = council_socialism
 				elections_allowed = no
+			}
+			every_state = {
+				limit = { 
+					is_core_of = ITA 
+					NOT = {state = 448}
+				}
+				set_state_controller_to = PREV
 			}
 			set_popularities = {
 				council_socialism = 100

@@ -1,0 +1,27 @@
+peace_ai_desires = {
+    MEX_old_claims_take_states = {
+        peace_action_type = take_states
+        enable = {
+            FROM = {
+                tag = ROOT
+            }
+            FROM.FROM.FROM = {
+                OR = {
+                    is_core_of = USM
+                    is_core_of = CRI
+                    is_core_of = MEX
+                    is_core_of = MSR
+                }
+            }
+            ROOT = { 
+                OR = {
+                    tag = USM
+                    tag = CRI
+                    tag = MEX
+                    tag = MSR
+                }
+            }
+        }
+        ai_desire = 150
+    }
+}
