@@ -25,12 +25,266 @@ ideas = {
 				resistance_target = -0.2
 			}
 		}
-    }
+		GPS_wushengshubian_1 = {
+			name = GPS_wushengshubian_1
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+			}
+		}
+		GPS_wushengshubian_2 = {
+			name = GPS_wushengshubian_2
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+			}
+		}
+		GPS_wushengshubian_3 = {
+			name = GPS_wushengshubian_3
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+			}
+		}
+		GPS_mingdijingxiao_1 = {
+			name = GPS_mingdijingxiao_1
+			allowed = { tag = GPS }
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+			}
+    	}	
+		GPS_mingdijingxiao_2 = {
+			name = GPS_mingdijingxiao_2
+			allowed = { tag = GPS }
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+				experience_gain_air_factor = 0.1
+			}
+    	}	
+		GPS_mingdijingxiao_3 = {
+			name = GPS_mingdijingxiao_3
+			allowed = { tag = GPS }
+			modifier = {
+				air_ace_generation_chance_factor = 0.1
+				experience_gain_air_factor = 0.1
+				air_mission_efficiency = 0.1
+				air_cas_present_factor = 0.1
+				army_bonus_air_superiority_factor = 0.1
+			}
+    	}			
 
-	###内阁
+		GPS_shanhejieyue_1 = {
+			name = GPS_shanhejieyue_1
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_artillery_attack_factor = 0.1
+			}
+    	}			
 
+		GPS_shanhejieyue_2 = {
+			name = GPS_shanhejieyue_2
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_artillery_attack_factor = 0.1
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+    	}
 
-	
+		GPS_shanhejieyue_3 = {
+			name = GPS_shanhejieyue_3
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_artillery_attack_factor = 0.1
+				
+				experience_loss_factor = -0.2
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+    	}
+
+		GPS_shanhejieyue_4 = {
+			name = GPS_shanhejieyue_4
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_artillery_attack_factor = 0.1
+
+				experience_loss_factor = -0.2
+				air_night_penalty = -0.1
+				unit_artillery_brigade_design_cost_factor = -0.4
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+    	}
+
+		GPS_shanhejieyue_5 = {
+			name = GPS_shanhejieyue_5
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_artillery_attack_factor = 0.1
+
+				experience_loss_factor = -0.2
+				air_night_penalty = -0.1
+				unit_artillery_brigade_design_cost_factor = -0.4
+				supply_consumption_factor = -0.1
+			}
+			equipment_bonus = {
+				artillery_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+    	}
+
+		GPS_jingetiema_1 = {
+			name = GPS_jingetiema_1
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_armor_attack_factor = 0.1
+			}
+    	}
+
+		GPS_jingetiema_2 = {
+			name = GPS_jingetiema_2
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_armor_attack_factor = 0.1
+				coordination_bonus = 0.1
+			}
+    	}
+		
+		GPS_jingetiema_3 = {
+			name = GPS_jingetiema_3
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_armor_attack_factor = 0.1
+				coordination_bonus = 0.1
+				experience_gain_army_factor = 0.1
+			}
+    	}
+		GPS_jingetiema_4 = {
+			name = GPS_jingetiema_4
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_armor_attack_factor = 0.1
+				coordination_bonus = 0.1
+				experience_gain_army_factor = 0.1
+				TERRAIN_PENALTY_REDUCTION = 0.1
+
+			}
+    	}
+
+		GPS_jingetiema_5 = {
+			name = GPS_jingetiema_5
+			allowed = { tag = GPS }
+			modifier = {
+				planning_speed = 0.1
+				max_planning = 0.1
+				army_org_factor = 0.1
+				breakthrough_factor = 0.1
+				army_armor_attack_factor = 0.1
+				coordination_bonus = 0.1
+				experience_gain_army_factor = 0.1
+				TERRAIN_PENALTY_REDUCTION = 0.1
+				army_speed_factor = 0.1
+			}
+    	}
+
+		GPS_beiyangshuishi_1 = {
+			name = GPS_beiyangshuishi_1
+			allowed = { tag = GPS }
+			modifier = {
+				experience_gain_navy_factor = 0.1
+
+			}
+    	}
+
+		GPS_beiyangshuishi_2 = {
+			name = GPS_beiyangshuishi_2
+			allowed = { tag = GPS }
+			modifier = {
+				experience_gain_navy_factor = 0.1
+				air_escort_efficiency = 0.1
+			}
+    	}
+
+		GPS_beiyangshuishi_3 = {
+			name = GPS_beiyangshuishi_3
+			allowed = { tag = GPS }
+			modifier = {
+				experience_gain_navy_factor = 0.1
+				air_escort_efficiency = 0.1
+				repair_speed_factor = 0.25
+			}
+    	}	
+		GPS_beiyangshuishi_4 = {
+			name = GPS_beiyangshuishi_4
+			allowed = { tag = GPS }
+			modifier = {
+				experience_gain_navy_factor = 0.1
+				air_escort_efficiency = 0.1
+				repair_speed_factor = 0.25
+				navy_capital_ship_attack_factor = 0.1
+				naval_speed_factor = 0.1
+			}
+    	}			
+	}
+
+	###内阁	
 	TOD_minister_head = { 
 		GPS_zheng_xiaodan = {
 			allowed = { tag = GPS }
@@ -184,12 +438,14 @@ ideas = {
 			}
 		}
 	}
-
     industrial_concern = { #工业
         GPS_guotie = {#国家铁路总局
             picture = GPS_guotie
             allowed = {
-				original_tag = GPS
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
 			}
             available = {
 			}
@@ -209,9 +465,13 @@ ideas = {
         GPS_changbaikuangwuju = {#长白矿务局
             picture = GPS_changbaikuangwuju
             allowed = {
-				original_tag = GPS
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
 			}
             available = {
+				controls_state = 848
 			}
             traits = {
 				industrial_concern
@@ -226,12 +486,16 @@ ideas = {
 				factor = 10
 			}
         }
-        GPS_guandongligongdaxue = {#关东理工大学
+        GPS_guandongligongdaxue = {#关东大学
             picture = GPS_guandongligongdaxue
             allowed = {
-				original_tag = GPS
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
 			}
             available = {
+				controls_state = 845
 			}
             traits = {
 				university
@@ -250,7 +514,10 @@ ideas = {
         GPS_damingdianlidianqijituan = {#大明电力电气集团
             picture = GPS_damingdianlidianqijituan
             allowed = {
-				original_tag = GPS
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
 			}
             available = {
 			}
@@ -270,7 +537,10 @@ ideas = {
         GPS_dongbeigongyejituan = {#东北工业集团
             picture = GPS_dongbeigongyejituan
             allowed = {
-				original_tag = GPS
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
 			}
 			available = {
 			}
@@ -293,5 +563,53 @@ ideas = {
 				factor = 10
 			}
         }
+		GPS_xingyekuangwujituan = {#兴业矿物集团
+            picture = GPS_xingyekuangwujituan
+            allowed = {
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
+			}
+            available = {
+				controls_state = 610
+			}
+            traits = {
+				industrial_concern
+			}
+            research_bonus = {
+                construction_tech = 0.1
+			}
+            modifier = {
+				production_lack_of_resource_penalty_factor = -0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+		}
+		GPS_jilindaxue = {
+            picture = GPS_jilindaxue
+            allowed = {
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
+			}
+            available = {
+				controls_state = 328
+			}
+            traits = {
+				industrial_concern
+			}
+            research_bonus = {
+                construction_tech = 0.1
+			}
+            modifier = {
+				research_speed_factor = 0.1
+			}
+            ai_will_do = {
+				factor = 10
+			}
+		}
 	}
 }
