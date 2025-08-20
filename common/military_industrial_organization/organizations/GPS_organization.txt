@@ -3,7 +3,15 @@ GPS_shenyangxinzhifadongjichang = {#‌沈阳新制发动机厂
 	icon = GFX_idea_GPS_shenyangxinzhifadongjichang
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 846
+		}
 	}
 }
 
@@ -12,7 +20,15 @@ GPS_liaodonghuopaochang = {#辽东火炮厂
 	icon = GFX_idea_GPS_liaodonghuopaochang
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 845
+		}
 	}
 }
 
@@ -21,7 +37,15 @@ GPS_jilinjunxuzongju = {#吉林军需总局
 	icon = GFX_idea_GPS_jilinjunxuzongju
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 847
+		}
 	}
 }
 
@@ -30,16 +54,32 @@ GPS_liaoyangwubeishejisuo = {#辽阳武备设计所
 	icon = GFX_idea_GPS_liaoyangwubeishejisuo
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 845
+		}
 	}
 }
 
 GPS_guandonglianhejidongcheliangjituan = {#关东联合机动车辆集团
-	include = generic_medium_tank_organization
+	include = generic_mobile_tank_organization
 	icon = GFX_idea_GPS_guandonglianhejidongcheliangjituan
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 845
+		}
 	}
 }
 
@@ -48,7 +88,15 @@ GPS_jinzhouzaochuanchang = {#金州造船厂
 	icon = GFX_idea_GPS_jinzhouzaochuanchang
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 745
+		}
 	}
 }
 
@@ -57,16 +105,32 @@ GPS_yingkoulunchuanzhaoshangjun = {#营口轮船招商局
 	icon = GFX_idea_GPS_yingkoulunchuanzhaoshangjun
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 845
+		}
 	}
 }
 
 GPS_zhendongchuanxiezongju = {#镇东船械总局
 	include = generic_escort_ship_organization
 	icon = GFX_idea_GPS_zhendongchuanxiezongju
-	
+
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 408
+		}
 	}
 }
 
@@ -75,7 +139,15 @@ GPS_longjiangnongyonghangkongqizongchang = {#龙江农用航空器总厂
 	icon = GFX_idea_GPS_longjiangnongyonghangkongqizongchang
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 714
+		}
 	}
 }
 
@@ -84,10 +156,49 @@ GPS_shenyangfeijizhizaochang = {#沈阳飞机制造厂
 	icon = GFX_idea_GPS_shenyangfeijizhizaochang
 	
 	allowed = {
-		tag = GPS
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 846
+		}
 	}
 }
 
+GPS_dongbeinongkenjituan = {#东北农垦集团
+	include = generic_medium_tank_organization 
+	icon = GFX_idea_GPS_dongbeinongkenjituan
+	
+	allowed = {
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 849
+		}
+	}
+}
 
-
+GPS_longjiangzhonggong = {#龙江重工
+	include = generic_artillery_organization
+	icon = GFX_idea_GPS_longjiangzhonggong
+	
+	allowed = {
+		OR = {
+			tag = GPS
+			tag = SRC
+		}
+	}
+	available = {
+		owner = { 
+			controls_state = 714
+		}
+	}
+}
 
