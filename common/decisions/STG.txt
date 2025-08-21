@@ -104,7 +104,10 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = SIC}
 		allowed = { tag = STG } 
-		available = { has_country_flag = STG_lianxisichuan }
+		available = { 
+			has_country_flag = STG_lianxisichuan
+			NOT = {country_exists = XBJ}
+		}
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -123,7 +126,10 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = MOB}
 		allowed = { tag = STG } 
-		available = { has_country_flag = STG_lianximobei }
+		available = { 
+			has_country_flag = STG_lianximobei 
+			NOT = {country_exists = XBJ}
+		}
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -142,7 +148,10 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = XIN}
 		allowed = { tag = STG } 
-		available = { has_country_flag = STG_lianxixinan }
+		available = { 
+			has_country_flag = STG_lianxixinan
+			NOT = {country_exists = XBJ}
+		}
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -161,7 +170,10 @@ STG_difangjunfa = {
 		
 		visible = {country_exists = GPS}
 		allowed = { tag = STG } 
-		available = { has_country_flag = STG_lianxiguandong }
+		available = {
+			has_country_flag = STG_lianxiguandong
+			NOT = {country_exists = XBJ}
+		}
 		cost = 15 
 		on_map_mode = map_and_decisions_view
 		
@@ -465,6 +477,7 @@ STG_zhigaohuangquan = {
 		complete_effect = {
 			add_stability = -0.02
 			add_popularity = { ideology = authoritarian_oligarchy popularity = -0.05 }
+			country_event = {id = TOD_STG.94}
 		}
 	}
 	#集中指挥权力
@@ -483,6 +496,7 @@ STG_zhigaohuangquan = {
 			add_stability = -0.02
 			add_popularity = { ideology = authoritarian_oligarchy popularity = -0.03 }
 			add_popularity = { ideology = national_corporatism popularity = -0.02 }
+			country_event = {id = TOD_STG.95}
 		}
 	}
 	#执行陛下的战争经济学
@@ -496,6 +510,7 @@ STG_zhigaohuangquan = {
 		days_remove =  60
 		complete_effect = {
 			add_ideas = MNG_zhurongkun_jingji
+			country_event = {id = TOD_STG.105}
 		}
 	}
 	#忠诚的内阁
@@ -508,6 +523,7 @@ STG_zhigaohuangquan = {
 		ai_will_do = { base = 10 }
 		complete_effect = {
 			add_ideas = MNG_zhurongkun_neizheng
+			country_event = {id = TOD_STG.104}
 		}
 	}
 	#无可质疑的三军统帅
@@ -535,6 +551,7 @@ STG_zhigaohuangquan = {
 			add_ideas = STG_zhu_rongkun
 			add_ideas = STG_zhu_rongkun_kongjun
 			add_ideas = STG_zhu_rongkun_haijun
+			country_event = {id = TOD_STG.106}
 		}
 	}
 }
@@ -794,7 +811,10 @@ STG_jingnan = {
 		
 		visible = {country_exists = ROC}
 		allowed = { tag = STG } 
-		available = {is_neighbor_of = ROC}
+		available = {
+			NOT = {country_exists = XBJ}
+			is_neighbor_of = ROC
+		}
 		cost = 15 
 		ai_will_do = {
 			base = 0
@@ -802,7 +822,7 @@ STG_jingnan = {
 				NOT = {country_exists = XBJ}
 				is_neighbor_of = ROC
 				country_exists = ROC
-				has_war = yes
+				NOT= {has_war = yes}
 				factor = 20
 			}
 		}
@@ -812,7 +832,7 @@ STG_jingnan = {
 		targets = { state = 592 }
 		days_remove = 30
 		fire_only_once = yes
-		remove_effect = { 
+		remove_effect = {
             declare_war_on = { target = XBJ type = annex_everything }
 		}
 	}
@@ -822,7 +842,10 @@ STG_jingnan = {
 		
 		visible = {country_exists = SRC}
 		allowed = { tag = STG } 
-		available = {is_neighbor_of = SRC }
+		available = {
+			NOT = {country_exists = XBJ}
+			is_neighbor_of = SRC
+		}
 		cost = 15 
 		ai_will_do = {
 			base = 0
@@ -830,7 +853,7 @@ STG_jingnan = {
 				NOT = {country_exists = XBJ}
 				is_neighbor_of = SRC
 				country_exists = SRC
-				has_war = yes
+				NOT= {has_war = yes}
 				factor = 20
 			}
 		}
@@ -850,7 +873,10 @@ STG_jingnan = {
 		
 		visible = {country_exists = SCG}
 		allowed = { tag = STG } 
-		available = {is_neighbor_of = SCG}
+		available = {
+			NOT = {country_exists = XBJ}
+			is_neighbor_of = SCG
+		}
 		cost = 15 
 		ai_will_do = {
 			base = 0
@@ -858,7 +884,38 @@ STG_jingnan = {
 				NOT = {country_exists = XBJ}
 				is_neighbor_of = SCG
 				country_exists = SCG
-				has_war = yes
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 831 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = SCG type = annex_everything }
+		}
+	}
+	#向七省宣战
+	STG_sichuanhongkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GOS}
+		allowed = { tag = STG } 
+		available = {
+			NOT = {country_exists = XBJ}
+			is_neighbor_of = GOS
+		}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = SCG
+				country_exists = SCG
+				NOT= {has_war = yes}
 				factor = 20
 			}
 		}
@@ -873,4 +930,3 @@ STG_jingnan = {
 		}
 	}
 }
-
