@@ -572,6 +572,7 @@ STG_wubeihuiyi = {
 				technology = industry
 			}
 			clr_country_flag = STG_wubeihuiyi_jinxing
+			country_event = {id = TOD_STG.166}
 		}
         cost = 100
 		days_remove =  180
@@ -598,7 +599,7 @@ STG_wubeihuiyi = {
 				type = support_equipment
 				amount = 500
 			}
-
+			country_event = {id = TOD_STG.167}
 		}
 		visible = {}
         cost = 200
@@ -620,6 +621,7 @@ STG_wubeihuiyi = {
 				}
 				add_extra_state_shared_building_slots = 2
 			}
+			country_event = {id = TOD_STG.168}
 		}
 		visible = {}
         cost = 200
@@ -642,6 +644,7 @@ STG_wubeihuiyi = {
 				}
 				add_extra_state_shared_building_slots = 2
 			}
+			country_event = {id = TOD_STG.169}
 		}
 		visible = {}
         cost = 200
@@ -667,6 +670,7 @@ STG_wubeihuiyi = {
 				}
 				add_extra_state_shared_building_slots = 2
 			}
+			country_event = {id = TOD_STG.170}
 		}
 		visible = {}
         cost = 200
@@ -679,7 +683,10 @@ STG_wubeihuiyi = {
 		available = {NOT = {has_country_flag = STG_wubeihuiyi_jinxing}}
 		modifier = {consumer_goods_factor = -0.1}
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
-		remove_effect = {clr_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {
+			clr_country_flag = STG_wubeihuiyi_jinxing
+			country_event = {id = TOD_STG.171}
+		}
 		ai_will_do = { base = 10 }
 		visible = {}
         cost = 100
@@ -695,7 +702,10 @@ STG_wubeihuiyi = {
 			stability_weekly = -0.001
 		}
 		complete_effect = {set_country_flag = STG_wubeihuiyi_jinxing}
-		remove_effect = {clr_country_flag = STG_wubeihuiyi_jinxing}
+		remove_effect = {
+			clr_country_flag = STG_wubeihuiyi_jinxing
+			country_event = {id = TOD_STG.172}
+		}
 		ai_will_do = { base = 10 }
 		visible = {}
         cost = 100
@@ -833,7 +843,7 @@ STG_jingnan = {
 		days_remove = 30
 		fire_only_once = yes
 		remove_effect = {
-            declare_war_on = { target = XBJ type = annex_everything }
+            declare_war_on = { target = ROC type = annex_everything }
 		}
 	}
 	#东北红军开战
@@ -868,7 +878,7 @@ STG_jingnan = {
 		}
 	}
 	#四川红军开战
-	STG_sichuanhongkaizhan= {
+	STG_sichuanhongjunkaizhan= {
 		icon = ger_military_buildup
 		
 		visible = {country_exists = SCG}
@@ -876,37 +886,6 @@ STG_jingnan = {
 		available = {
 			NOT = {country_exists = XBJ}
 			is_neighbor_of = SCG
-		}
-		cost = 15 
-		ai_will_do = {
-			base = 0
-			modifier = {
-				NOT = {country_exists = XBJ}
-				is_neighbor_of = SCG
-				country_exists = SCG
-				NOT= {has_war = yes}
-				factor = 20
-			}
-		}
-		on_map_mode = map_and_decisions_view
-		
-		state_target = yes
-		targets = { state = 831 }
-		days_remove = 30
-		fire_only_once = yes
-		remove_effect = { 
-            declare_war_on = { target = SCG type = annex_everything }
-		}
-	}
-	#向七省宣战
-	STG_sichuanhongkaizhan= {
-		icon = ger_military_buildup
-		
-		visible = {country_exists = GOS}
-		allowed = { tag = STG } 
-		available = {
-			NOT = {country_exists = XBJ}
-			is_neighbor_of = GOS
 		}
 		cost = 15 
 		ai_will_do = {
