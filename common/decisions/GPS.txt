@@ -11,3 +11,267 @@ GPS_text_categories = {
         }
     }
 }
+GPS_balance_of_power_category = {
+        #默许劫掠
+        GPS_moxujielue = {
+		    icon = GFX_decision_generic_decision		
+		    cost = 50	
+		    fire_only_once = yes
+		    days_remove = 90
+		    ai_will_do = {
+			   factor = 10			
+		    }
+		    available = {  }
+		    modifier = {
+			   consumer_goods_factor = -0.10
+			}
+		    complete_effect = {
+                add_war_support = -0.05
+		    }
+		    remove_effect = {
+                add_power_balance_value = {
+				   id = GPS_power_balance
+				   value = 0.05
+			    }
+		   }
+	    }
+        #启用少壮派军官
+        GPS_qiyongshaozhuangpaijunguan = {
+		    icon = GFX_decision_generic_decision		
+		    cost = 50	
+		    days_remove = 0
+            days_re_enable = 120
+		    ai_will_do = {
+			    factor = 10	
+		    }
+		    available = {  }
+		    modifier = { }
+		    complete_effect = { }
+		    remove_effect = {
+                add_power_balance_value = {
+				   id = GPS_power_balance
+				   value = 0.05
+			    }
+                army_experience = 25
+		    }
+	   }
+        #强调对大帅的忠诚
+        GPS_qiyongshaozhuangpaijunguan = {
+		    icon = GFX_decision_generic_decision		
+		    cost = 50	
+	    	custom_cost_trigger = {
+                has_army_experience > GPS_lujunjingyan
+		    }
+		    custom_cost_text = GPS_lujunjingyan_huafei
+		    days_remove = 0
+            days_re_enable = 120
+		    ai_will_do = {
+			    factor = 10			
+		    }
+		    available = { }
+            visible = { check_variable = { GPS_lujunjingyan < 150 }  }
+		    modifier = { 
+                add_power_balance_value = {
+				   id = GPS_power_balance
+				   value = -0.0002
+			    }
+            }
+		    complete_effect = {hidden_effect = {army_experience = GPS_lujunjingyanhuafei}}
+		    remove_effect = {
+                add_to_variable = { GPS_lujunjingyan = 30 }
+                add_to_variable = { GPS_lujunjingyanhuafei = -30 }
+		    }
+	   }
+}
+GPS_xuanzhan = {
+	#西北开战
+	GPS_xibeijunkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = XBJ}
+		allowed = { tag = GPS } 
+		available = {is_neighbor_of = XBJ}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_neighbor_of = XBJ
+				country_exists = XBJ
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 744 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = {
+            declare_war_on = { target = XBJ type = annex_everything }
+		}
+	}
+	#顺天开战
+	GPS_shuntiankaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = STG}
+		allowed = { tag = GPS } 
+		available = {is_neighbor_of = STG}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_neighbor_of = ROC
+				country_exists = ROC
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 608 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = {
+            declare_war_on = { target = STG type = annex_everything }
+		}
+	}
+    
+	#共和军开战
+	GPS_gonghejunkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = ROC}
+		allowed = { tag = GPS } 
+		available = {is_neighbor_of = ROC}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_neighbor_of = ROC
+				country_exists = ROC
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 592 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = {
+            declare_war_on = { target = ROC type = annex_everything }
+		}
+	}
+	#四川开战
+	GPS_sichuankaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = SIC}
+		allowed = { tag = GPS } 
+		available = {is_neighbor_of = SIC}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_neighbor_of = SIC
+				country_exists = SIC
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 831 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = SIC type = annex_everything }
+		}
+	}
+	#四川红军开战
+	GPS_sichuanhongjunkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = SCG}
+		allowed = { tag = GPS } 
+		available = {is_neighbor_of = SCG}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_neighbor_of = SCG
+				country_exists = SCG
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 831 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = SCG type = annex_everything }
+		}
+	}
+	#西南开战
+	GPS_xinankaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = XIN}
+		allowed = { tag = GPS } 
+		available = {is_neighbor_of = XIN}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_neighbor_of = XIN
+				country_exists = XIN
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 325 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = XIN type = annex_everything }
+		}
+	}
+	#向七省宣战
+	GPS_qishenkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GOS}
+		allowed = { tag = GPS } 
+		available = {is_neighbor_of = GOS}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				is_neighbor_of = GOS
+				country_exists = GOS
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 613 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = { 
+            declare_war_on = { target = GOS type = annex_everything }
+		}
+	}
+}

@@ -1,0 +1,185 @@
+
+GPS_power_balance = {
+	initial_value = 0.35
+	left_side = GPS_left_side	
+	right_side = GPS_right_side	
+	decision_category = GPS_balance_of_power_category
+
+	### 军中形势稳定
+	range = {
+		id = GPS_balance_range
+		min = -0.05
+		max = 0.05
+		modifier = {
+            stability_factor = 0.05
+            war_support_factor = 0.05
+		}
+		on_activate = { }
+		on_deactivate = { }
+	}
+	### 令出帅府
+	side = {
+		id = GPS_left_side	
+		icon = GFX_bop_GPS_left_side  #图标
+
+		range = {
+			id = GPS_left_low_control_range
+			min = -0.15
+			max = -0.05
+			modifier = {
+                political_power_gain = 0.1
+                command_power_gain = 0.1
+		        land_doctrine_cost_factor = 0.025
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+	    ### 将从中御
+		range = {
+			id = GPS_left_medium_control_range
+			min = -0.5
+			max = -0.15
+			modifier = {
+                add_power_balance_value = {
+				   id = GPS_power_balance
+				   value = 0.005
+			    }
+                political_power_gain = 0.2
+                command_power_gain = 0.2
+		        land_doctrine_cost_factor = 0.05
+                UNIT_LEADER_SKILL_BONUS_FACTOR = 0.075
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+        ### 辽东虎帅
+		range = {
+			id = GPS_left_high_control_range
+			min = -0.99
+			max = -0.5
+			modifier = {
+                add_power_balance_value = {
+				   id = GPS_power_balance
+				   value = 0.01
+			    }
+                political_power_gain = 0.35
+                command_power_gain = 0.35
+		        land_doctrine_cost_factor = 0.1
+                UNIT_LEADER_SKILL_BONUS_FACTOR = 0.1
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+        ### 
+		range = {
+			id = GPS_left_total_control_range
+			min = -1
+			max = -0.99
+			modifier = { }
+			on_activate = {
+				set_power_balance_gfx = { #图标换成亮的
+					id = GPS_power_balance
+					side = GPS_left_side
+					gfx = GFX_bop_GPS_improved_left_side
+				}
+                add_ideas = GPS_liaodonghushuai
+                add_stability = 0.2
+                remove_power_balance = { id = GPS_power_balance }
+                
+			}
+			on_deactivate = {
+				set_power_balance_gfx = {  #图标换回去
+					id = GPS_power_balance
+					side = GPS_left_side
+					gfx = GFX_bop_GPS_left_side
+				}
+			}
+		}
+	}
+    #右
+	side = {
+		id = GPS_right_side	
+		icon = GFX_bop_GPS_right_side
+
+	    ### 呼朋唤友
+		range = {
+			id = GPS_right_low_control_range
+			min = 0.05
+			max = 0.15
+			modifier = {
+                army_org_factor = 0.05
+                conscription = 0.001
+	            supply_consumption_factor = 0.025
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+        #封官许愿
+		range = {
+			id = GPS_right_medium_control_range
+			min = 0.15
+			max = 0.5
+			modifier = {
+                add_power_balance_value = {
+				   id = GPS_power_balance
+				   value = -0.01
+			    }
+                consumer_goods_factor = 0.1
+                army_org_factor = 0.1
+                conscription = 0.005
+                breakthrough_factor = 0.05
+	            supply_consumption_factor = 0.05
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+        #
+		range = {
+			id = GPS_right_high_control_range
+			min = 0.5
+			max = 0.99
+			modifier = {
+                add_power_balance_value = {
+				   id = GPS_power_balance
+				   value = -0.02
+			    }
+                consumer_goods_factor = 0.15
+                army_org_factor = 0.15
+                breakthrough_factor = 0.1
+	            supply_consumption_factor = 0.1
+                if = {
+                    limit = { has_idea = tot_economic_mobilisation }
+                    conscription = 0.03
+                }
+			}
+			on_activate = { }
+			on_deactivate = { }
+		}
+        #
+		range = {
+			id = GPS_right_total_control_range
+			min = 0.99
+			max = 1
+			modifier = { }
+			on_activate = {
+				set_power_balance_gfx = { #图标换成亮的
+					id = GPS_power_balance
+					side = GPS_right_side
+					gfx = GFX_bop_GPS_improved_right_side
+				}
+                country_event = { id = GPSevents.35 } 
+                remove_power_balance = { id = GPS_power_balance }
+			}
+			on_deactivate = {
+				set_power_balance_gfx = {  #图标换回去
+					id = GPS_power_balance
+					side = GPS_right_side
+					gfx = GFX_bop_GPS_right_side
+				}
+			}
+		}
+	}
+
+	
+}
+

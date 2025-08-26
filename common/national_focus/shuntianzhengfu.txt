@@ -613,9 +613,6 @@ focus_tree = {
 		available_if_capitulated = no
 		select_effect = { 
 			country_event = { id = TOD_STG.7 }
-			country_event = { id = TOD_STG.8 days = 10 }
-			country_event = { id = TOD_STG.9 days = 20 }
-			country_event = { id = TOD_STG.10 days = 30 }
 		}
 		
 		cost = 5
@@ -623,7 +620,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { country_event = { id = TOD_STG.11 }}
+		completion_reward = {}
 	}
 	#武备崛起
 	focus = {
@@ -672,6 +669,7 @@ focus_tree = {
 				add_country_leader_trait = tiexuewanghou
 			}
 			custom_effect_tooltip = STG_xujunlilun_xiaoguo
+			country_event = {id = TOD_STG.147}
 		}
 	}
 	#挑选合作者
@@ -692,7 +690,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 100 }
+		completion_reward = { 
+			add_political_power = 100
+			country_event = {id = TOD_STG.149}
+		}
 	}
 	#武备独大
 	focus = {
@@ -717,6 +718,7 @@ focus_tree = {
 			add_to_variable = { STG_tongzhizhidao_wending = -0.05 }
 			add_to_variable = { STG_tongzhizhidao_jianzao = 0.05 }
 			custom_effect_tooltip = STG_wubeiduda_xiaoguo
+			country_event = {id = TOD_STG.151}
 		}
 	}
 	#重启咨政院
@@ -740,6 +742,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1
 			add_war_support = 0.15
+			country_event = {id = TOD_STG.153}
 		}
 	}
 	#确立议会政治
@@ -761,6 +764,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			country_event = {id = TOD_STG.154}
 		}
 	}
 	#勋贵经济特权
@@ -786,6 +790,7 @@ focus_tree = {
 			add_to_variable = { STG_tongzhizhidao_jianzao = 0.1 }
 			add_to_variable = { STG_tongzhizhidao_chanchu = 0.1 }
 			custom_effect_tooltip = STG_xunguijinjitequan_xiaoguo
+			country_event = {id = TOD_STG.155}
 		}
 	}
 	#提拔一心会
@@ -811,6 +816,7 @@ focus_tree = {
 			add_to_variable = { STG_zhongyongkejia_zengyuan = 0.06}
 			add_to_variable = { STG_zhongyongkejia_sudu = 0.1 }
 			custom_effect_tooltip = STG_tibayixinhui_xiaoguo
+			country_event = {id = TOD_STG.156}
 		}
 	}
 	#新旧合作
@@ -836,6 +842,7 @@ focus_tree = {
 			add_to_variable = { STG_tongzhizhidao_xiaofei = 0.05 }
 			add_to_variable = { STG_tongzhizhidao_zengzhang = 0.15 }
 			custom_effect_tooltip = STG_xinjiuhezuo_xiaoguo
+			country_event = {id = TOD_STG.158}
 		}
 	}
 	#明升暗降
@@ -860,6 +867,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { STG_tongzhizhidao_xiaofei = -0.05 }
 			custom_effect_tooltip = STG_mingshenganjiang_xiaoguo
+			country_event = {id = TOD_STG.159}
 		}
 	}
 	#新枢密院
@@ -883,6 +891,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { STG_zhongyongkejia_jungong = 0.2 }
 			custom_effect_tooltip = STG_xinshumiyuan_xiaoguo
+			country_event = {id = TOD_STG.160}
 		}
 	}
 	#提拔经济官僚
@@ -906,6 +915,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { STG_tongzhizhidao_minggong = 0.1 }
 			custom_effect_tooltip = STG_tibajingjiguanliao_xiaoguo
+			country_event = {id = TOD_STG.161}
 		}
 	}
 	#地方政企关系
@@ -930,6 +940,7 @@ focus_tree = {
 			add_to_variable = { STG_tongzhizhidao_jijian = 0.1 }
 			add_to_variable = { STG_tongzhizhidao_tielu = 0.1 }
 			custom_effect_tooltip = STG_difangzhengqiguanxi_xiaoguo
+			country_event = {id = TOD_STG.162}
 		}
 	}
 	#国企垄断特许法
@@ -954,6 +965,7 @@ focus_tree = {
 			add_to_variable = { STG_tongzhizhidao_keyan = -0.05 }
 			add_to_variable = { STG_tongzhizhidao_chanchu = 0.1 }
 			custom_effect_tooltip = STG_guoqilongduantexufa_xiaoguo
+			country_event = {id = TOD_STG.163}
 		}
 	}
 	#深化调任机制
@@ -980,6 +992,7 @@ focus_tree = {
 			add_to_variable = { STG_tongzhizhidao_maoyi = -0.25 }
 			add_to_variable = { STG_tongzhizhidao_jingji = -0.25 }
 			custom_effect_tooltip = STG_shenhuadiaorenjizhi_xiaoguo
+			country_event = {id = TOD_STG.164}
 		}
 	}
 	#颁布新宪法
@@ -1005,6 +1018,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.2
 			unlock_decision_category_tooltip = STG_wubeihuiyi
+			country_event = {id = TOD_STG.165}
 		}
 	}
 	#“民治”社会
@@ -1028,6 +1042,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { STG_tongzhizhidao_zhengzhi = 0.1 }
 			custom_effect_tooltip = STG_minzhishehui_xiaoguo
+			country_event = {id = TOD_STG.173}
 		}
 	}
 	#强化中央集权
@@ -1051,6 +1066,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1
 			add_war_support = 0.15
+			country_event = {id = TOD_STG.174}
 		}
 	}
 	#内阁机关化
@@ -1072,6 +1088,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			country_event = {id = TOD_STG.175}
 		}
 	}
 	#宣传“民德”
@@ -1095,6 +1112,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { STG_tongzhizhidao_dangpaiwending = 0.2 }
 			custom_effect_tooltip = STG_xuanchuanminde_xiaoguo
+			country_event = {id = TOD_STG.176}
 		}
 	}
 	#改革宪兵机构
@@ -1119,6 +1137,7 @@ focus_tree = {
 			set_technology = { tech_military_police2 = 1 }
 			add_to_variable = { STG_zhongyongkejia_dikang = -0.1 }
 			custom_effect_tooltip = STG_gaigexianbingjigou_xiaoguo
+			country_event = {id = TOD_STG.177}
 		}
 	}
 	#加强爱国教育
@@ -1143,6 +1162,7 @@ focus_tree = {
 			add_to_variable = { STG_zhongyongkejia_dikang = -0.1 }
 			add_to_variable = { STG_zhongyongkejia_zhudong = 0.05 }
 			custom_effect_tooltip = STG_jiaqiangaiguojiaoyu_xiaoguo
+			country_event = {id = TOD_STG.178}
 		}
 	}
 	#改善“民生”
@@ -1172,6 +1192,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			country_event = {id = TOD_STG.179}
 		}
 	}
 	#出台反罢工法
@@ -1196,6 +1217,7 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = -0.1
 			manpower = -10000
+			country_event = {id = TOD_STG.180}
 		}
 	}
 	#维护经济秩序
@@ -1218,6 +1240,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_political_power = 50
+			country_event = {id = TOD_STG.181}
 		}
 	}
 	#君宪治国
@@ -1243,6 +1266,7 @@ focus_tree = {
 		completion_reward = {
 			remove_country_leader_trait = tiexuewanghou
 			add_country_leader_trait = bugandehuaping
+			country_event = {id = TOD_STG.183}
 		}
 	}
 	#圣心独断
@@ -1267,6 +1291,7 @@ focus_tree = {
 		
 		completion_reward = {
 			unlock_decision_category_tooltip = STG_zhigaohuangquan
+			country_event = {id = TOD_STG.93}
 		}
 	}
 	#弥合派系矛盾
@@ -1287,7 +1312,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { remove_dynamic_modifier = { modifier = STG_junzhengjituan }}
+		completion_reward = { 
+			remove_dynamic_modifier = { modifier = STG_junzhengjituan }
+			country_event = {id = TOD_STG.96}
+		}
 	}
 	#分化武备系
 	focus = {
@@ -1312,6 +1340,7 @@ focus_tree = {
 			add_to_variable = { STG_qiangangduduan_wending = 0.05 }
 			add_to_variable = { STG_qiangangduduan_zhengzhi = 0.1 }
 			custom_effect_tooltip = STG_fenhuawubeixi_xiaoguo
+			country_event = {id = TOD_STG.97}
 		}
 	}
 	#联络宪政会
@@ -1336,6 +1365,7 @@ focus_tree = {
 			add_political_power = 50
 			add_stability = 0.1
 			add_war_support = 0.1
+			country_event = {id = TOD_STG.100}
 		}
 	}
 	#任命经济官僚
@@ -1360,6 +1390,7 @@ focus_tree = {
 			add_to_variable = { STG_qiangangduduan_xiaofei = -0.1 }
 			add_to_variable = { STG_qiangangduduan_zengzhang = 0.05 }
 			custom_effect_tooltip = STG_renmingjingjiguanliao_xiaoguo
+			country_event = {id = TOD_STG.101}
 		}
 	}
 	#处理异见者
@@ -1384,6 +1415,7 @@ focus_tree = {
 			add_to_variable = { STG_qiangangduduan_zhichi = 0.05 }
 			add_to_variable = { STG_qiangangduduan_renkou = -0.1 }
 			custom_effect_tooltip = STG_chuliyijianzhe_xiaoguo
+			country_event = {id = TOD_STG.102}
 		}
 	}
 	#调整政府机构
@@ -1406,6 +1438,7 @@ focus_tree = {
 		
 		completion_reward = {
 			unlock_decision_category_tooltip = STG_tiaozhengzhengfujigou_xiaoguo
+			country_event = {id = TOD_STG.103}
 		}
 	}
 	#确保勋贵利益
@@ -1431,6 +1464,7 @@ focus_tree = {
 			add_to_variable = { STG_jueduizhichi_wending = 0.05 }
 			add_to_variable = { STG_jueduizhichi_zuzhi = 0.03 }
 			custom_effect_tooltip = STG_quebaoxunguiliyi_xiaoguo
+			country_event = {id = TOD_STG.107}
 		}
 	}
 	#提拔一心会
@@ -1455,6 +1489,7 @@ focus_tree = {
 			add_to_variable = { STG_jueduizhichi_buji = 0.05 }
 			add_to_variable = { STG_jueduizhichi_gongji = 0.1 }
 			custom_effect_tooltip = STG_tibayixin_xiaoguo
+			country_event = {id = TOD_STG.109}
 		}
 	}
 	#培养天子嫡系
@@ -1478,6 +1513,7 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 100
 			add_stability = 0.1
+			country_event = {id = TOD_STG.110}
 		}
 	}
 	#组建新紫禁系
@@ -1500,6 +1536,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_country_leader_trait = zhigaolingxiu
+			country_event = {id = TOD_STG.111}
 		}
 	}
 	#改组咨政院
@@ -1524,6 +1561,7 @@ focus_tree = {
 			add_to_variable = { STG_jueduizhichi_zhengzhidian = 0.1 }
 			add_to_variable = { STG_jueduizhichi_zhihuidian = 20 }
 			custom_effect_tooltip = STG_gaizuzizhengyuan_xiaoguo
+			country_event = {id = TOD_STG.112}
 		}
 	}
 	#摆脱派系桎梏
@@ -1548,6 +1586,7 @@ focus_tree = {
 		completion_reward = {
 			remove_country_leader_trait = STG_traits_txwh
 			add_country_leader_trait = hongwuzhizhi
+			country_event = {id = TOD_STG.114}
 		}
 	}
 	#继承统制经济
@@ -1572,6 +1611,7 @@ focus_tree = {
 			add_to_variable = { STG_qiangangduduan_minggong = 0.1 }
 			add_to_variable = { STG_qiangangduduan_buji = 0.2 }
 			custom_effect_tooltip = STG_jichengtongzhijingji_xiaoguo
+			country_event = {id = TOD_STG.116}
 		}
 	}
 	#成立经委会
@@ -1608,6 +1648,7 @@ focus_tree = {
 			}
 			add_to_variable = { STG_qiangangduduan_xiaofei = -0.05 }
 			custom_effect_tooltip = STG_chenglijingweihui_xiaoguo
+			country_event = {id = TOD_STG.117}
 		}
 	}
 	#强化工商“合作”
@@ -1641,6 +1682,7 @@ focus_tree = {
 				uses = 1
 				category = electronics
 			}
+			country_event = {id = TOD_STG.118}
 		}
 	}
 	#设立经济专员
@@ -1664,6 +1706,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { STG_qiangangduduan_ziyuan = 0.1 }
 			custom_effect_tooltip = STG_shelijingjizhuanyuan_xiaoguo
+			country_event = {id = TOD_STG.119}
 		}
 	}
 	#落实工作制
@@ -1689,6 +1732,7 @@ focus_tree = {
 			add_to_variable = { STG_qiangangduduan_zengzhang = 0.1 }
 			add_to_variable = { STG_qiangangduduan_shangxian = 0.1 }
 			custom_effect_tooltip = STG_luoshigongzuozhi_xiaoguo
+			country_event = {id = TOD_STG.129}
 		}
 	}
 	#皇命与宪法
@@ -1713,6 +1757,7 @@ focus_tree = {
 			add_to_variable = { STG_jueduizhichi_wending = 0.05 }
 			add_to_variable = { STG_jueduizhichi_zuzhi = 0.03 }
 			custom_effect_tooltip = STG_huangmingyuxianfa_xiaoguo
+			country_event = {id = TOD_STG.133}
 		}
 	}
 	#粉碎“民主”限制
@@ -1737,6 +1782,7 @@ focus_tree = {
 			add_popularity = { ideology = conservative_democracy popularity = -0.05 }
 			add_to_variable = { STG_jueduizhichi_zhanzhengzhichi = 0.3 }
 			custom_effect_tooltip = STG_fensuiminzhuxianzhi_xiaoguo
+			country_event = {id = TOD_STG.135}
 		}
 	}
 	#现代君主制
@@ -1761,6 +1807,7 @@ focus_tree = {
 			add_to_variable = { STG_jueduizhichi_hexin = 0.05 }
 			add_to_variable = { STG_jueduizhichi_dongyuan = 0.4 }
 			custom_effect_tooltip = STG_xiandaijunzhuzhi_xiaoguo
+			country_event = {id = TOD_STG.137}
 		}
 	}
 	#福利政策
@@ -1786,6 +1833,7 @@ focus_tree = {
 			add_to_variable = { STG_rendeshizheng_xiaofei = -0.05 }
 			add_to_variable = { STG_rendeshizheng_dangpaiwending = 0.05 }
 			custom_effect_tooltip = STG_fulizhengce_xiaoguo
+			country_event = {id = TOD_STG.142}
 		}
 	}
 	#民心所向
@@ -1810,6 +1858,7 @@ focus_tree = {
 			add_offsite_building = { type = industrial_complex level = 2 }
 			add_to_variable = { STG_rendeshizheng_dangpaiwending = 0.05 }
 			custom_effect_tooltip = STG_minxinsuoxiang_xiaoguo
+			country_event = {id = TOD_STG.144}
 		}
 	}
 	#受命于天既寿永昌
@@ -1835,6 +1884,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_country_leader_trait = daminhuangdi
+			country_event = {id = TOD_STG.146}
 		}
 	}
 	#勋贵掌权
