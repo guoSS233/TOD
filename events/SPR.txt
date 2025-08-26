@@ -50,11 +50,25 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
-		 SPR = { set_cosmetic_tag =  SPR_liuwang }
+		every_country = {
+			limit = {
+				OR = {
+					tag = SPR
+					is_puppet_of = SPR
+				}
+			}
+			every_country = {
+				limit = {
+					has_war_with = PREV
+				}
+				white_peace = PREV
+			}
+		}
+		SPR = { set_cosmetic_tag =  SPR_liuwang }
 
-		 SPR = {
+		SPR = {
 			set_capital = { state = 290 }
-			hidden_effect = { }
+			hidden_effect = {leave_faction = yes }
 			start_civil_war = {
 				ideology = national_corporatism
 				size = 0.9
@@ -63,9 +77,11 @@ country_event = {
                 states_filter = {
                     is_core_of =  SPR
 					NOT = {
-						state = 699
-						state = 783
-						state = 290
+						OR = {
+							state = 699
+							state = 783
+							state = 290
+						}
 					}
                 }
 			}
@@ -80,16 +96,29 @@ country_event = {
 				elections_allowed = no
 			}
 
+			every_state = {
+				limit = {
+					is_core_of = SPR
+					NOT = {
+						OR = {
+							state = 699
+							state = 783
+							state = 290
+						}
+					}
+				}
+				set_state_controller_to = PREV
+			}
 			SPR = {
 				set_nationality = {
 					target_country = PREV
 					character = SPR_Francisco_Franco
 				}
 			}
-			every_state = {
-				limit = { is_core_of = SPR }
-				set_state_controller_to = PREV
-			}
+			
+			699 = { set_state_owner_to = SPR }
+			783 = { set_state_owner_to = SPR }
+			290 = { set_state_owner_to = SPR }
 
 			add_country_leader_role = {
 				character = SPR_Francisco_Franco
@@ -103,6 +132,20 @@ country_event = {
 			if = {
 				limit = {  SPR = { has_country_flag = become_deguokuilei } }
 				change_tag_from =  SPR
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = SPR
+					is_puppet_of = SPR
+				}
+			}
+			every_country = {
+				limit = {
+					has_war_with = PREV
+				}
+				white_peace = PREV
 			}
 		}
 	}
