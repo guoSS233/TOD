@@ -1677,6 +1677,36 @@ GOS_decision_l_4_jsjy = {  #军事决议
 			}
 		}	
 	}
+	GOS_decision_jsjy_zhaoling_SRC = { #北伐
+		icon = GFX_decision_ger_mefo_bills		
+		#cost = 30
+		days_remove = 0
+		fire_only_once = yes				
+		visible = {
+			has_country_flag  = GOS_flag_decision_zhaolingtianxia_unlock
+			country_exists = SRC
+			NOT = {
+				MOB = {
+					is_subject_of = SRC
+				}
+			}
+		}	
+		available = {		
+		}			
+		ai_will_do = {
+			base = 0.02		
+		}
+		complete_effect = {  			
+		}	
+		modifier = {
+	   	}
+		remove_effect = {	
+			declare_war_on = { 
+				target = SRC
+				type = annex_everything
+			}
+		}	
+	}
 	GOS_decision_jsgg_1 = { #军事改革-第一阶段
 		icon = GFX_decision_ger_mefo_bills		
 		#cost = 30
