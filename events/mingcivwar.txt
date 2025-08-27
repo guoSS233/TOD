@@ -808,7 +808,10 @@ country_event = {
 					leader_despotism = 5
 					national_corporatism = 5
 				}
-				inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
+				load_oob = GPS_NAVAL
 			}
 		}
 	}
@@ -873,6 +876,10 @@ country_event = {
 					national_corporatism = 5
 				}
 				inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
+				load_oob = GPS_NAVAL
 			}
 		}
 	}
@@ -942,7 +949,9 @@ country_event = {
 					sacred_revivalism = 0
 					national_corporatism = 5
 				}
-
+				transfer_navy = {
+					target = MNG
+				}
 				inherit_technology = MNG
 			}
 		}
@@ -1001,6 +1010,9 @@ country_event = {
 					national_corporatism = 5
 				}
 				inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
 			}
 		}
 		hidden_effect = {
@@ -1278,6 +1290,11 @@ country_event = {
 					stockpile_ratio = 0.22
 				}
 			}
+			GOS = {
+				transfer_navy = {
+					target = MNG
+				}
+			}
 		}
 	}
 	option = { 
@@ -1345,6 +1362,11 @@ country_event = {
 				transfer_units_fraction= {
 					target = GOS
 					stockpile_ratio = 0.22
+				}
+			}
+			GOS = {
+				transfer_navy = {
+					target = MNG
 				}
 			}
 		}
@@ -1646,6 +1668,9 @@ country_event = {
 				add_state_core = 626
 				transfer_state = 626
 				inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
 			}
 			MLJ = {
 				load_oob = "MLJ_1937"
@@ -1664,6 +1689,9 @@ country_event = {
 				add_state_core = 1241
 				transfer_state = 1241
 				inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
 			}
 			HWH = {
 				add_state_core = 826
@@ -1725,6 +1753,10 @@ country_event = {
 				add_state_core = 727
 				transfer_state = 727
 				inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
+				
 			}
 			MNG = {
 				transfer_units_fraction= {
@@ -1788,6 +1820,14 @@ country_event = {
 		hidden_effect = {
 			load_oob = "STG_1937"
 			inherit_technology = MNG
+		}
+		hidden_effect = {
+			STG = {
+				transfer_navy = {
+					target = MNG
+				}
+			}
+			load_oob = STG_NAVAL
 		}
 	}
 }
