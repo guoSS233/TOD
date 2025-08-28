@@ -2924,7 +2924,7 @@ country_event = {
     desc = GOS_XBJ_hetan_event.1.d
 
    	is_triggered_only = yes
-    
+    fire_only_once = yes
     trigger = {
         XBJ = {
             controls_state = 608
@@ -2959,12 +2959,12 @@ country_event = {
     desc = GOS_XBJ_hetan_event.2.d
 
    	is_triggered_only = yes
-    
+    fire_only_once = yes
     trigger = {
         GOS = {
             controls_state = 608
             NOT = {
-                has_war_with = GOS
+                has_war_with = XBJ
             }
         }
         NOT = {
@@ -2984,7 +2984,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.3
     title = GOS_XBJ_hetan_event.3.t
     desc = GOS_XBJ_hetan_event.3.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     option = {
         name = GOS_XBJ_hetan_event.3.a
@@ -3002,7 +3002,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.4
     title = GOS_XBJ_hetan_event.4.t
     desc = GOS_XBJ_hetan_event.4.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
@@ -3017,7 +3017,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.5
     title = GOS_XBJ_hetan_event.5.t
     desc = GOS_XBJ_hetan_event.5.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
@@ -3029,7 +3029,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.6
     title = GOS_XBJ_hetan_event.6.t
     desc = GOS_XBJ_hetan_event.6.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
@@ -3066,7 +3066,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.7
     title = GOS_XBJ_hetan_event.7.t
     desc = GOS_XBJ_hetan_event.7.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
@@ -3157,24 +3157,26 @@ country_event = {
     id = GOS_XBJ_hetan_event.8
     title = GOS_XBJ_hetan_event.8.t
     desc = GOS_XBJ_hetan_event.8.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
         name = GOS_XBJ_hetan_event.8.a
         GOS = {
-            annex_country = XBJ
+            annex_country = {
+                target = XBJ
+            }
         }
         every_state = {
             limit = {
                 is_core_of = XBJ
             }
-            add_core_of = GPS
+            add_core_of = GOS
             remove_core_of = XBJ
         }
         XBJ = {
             every_unit_leader = {
-                set_nationality = ROC
+                set_nationality = GOS
             }
         }
     }
@@ -3184,7 +3186,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.9
     title = GOS_XBJ_hetan_event.9.t
     desc = GOS_XBJ_hetan_event.9.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
@@ -3197,7 +3199,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.10
     title = GOS_XBJ_hetan_event.10.t
     desc = GOS_XBJ_hetan_event.10.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
@@ -3210,7 +3212,7 @@ country_event = {
     id = GOS_XBJ_hetan_event.11
     title = GOS_XBJ_hetan_event.11.t
     desc = GOS_XBJ_hetan_event.11.d
-
+    fire_only_once = yes
    	is_triggered_only = yes
     
     option = {
