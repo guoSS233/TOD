@@ -213,6 +213,30 @@ focus_tree = {
 			war_support_factor = 0.1
 		}
 	}
+	#确立汤都督实权
+	focus = {
+		id = GPS_quelitangdudushiquan
+		icon = GFX_GPS_quelitangdudushiquan
+		prerequisite = { focus = GPS_gongqushenyang}
+		x = 5
+		y = 3
+		
+		ai_will_do = {factor = 10}
+		cost = 5
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		available = {}
+		
+		completion_reward = { 
+			add_stability = 0.1
+			add_to_variable = { GPS_diguogongyexinzang_xiaofeiping = -0.1 }
+			country_event = { id = GPSevents.22 }
+			custom_effect_tooltip = GPS_quelitangdudushiquan_xiaoguo
+		}
+	}
 	#压制地方山头
 	focus = {
 		id = GPS_yazhidifangshantou
