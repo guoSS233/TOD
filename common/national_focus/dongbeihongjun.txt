@@ -25,7 +25,7 @@ focus_tree = {
 
 		available = { }
 
-		completion_reward = { }
+		completion_reward = { SRC = {country_event = { id = SRCevents.11 days = 1 } } }
 	}
 	#占领关键点
 	focus = {
@@ -110,6 +110,7 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 50
+			SRC = {country_event = { id = SRCevents.12 } } 
 		}
 	}
 	#敌后宣传成果
@@ -143,6 +144,7 @@ focus_tree = {
 			army_experience = 15
 			air_experience = 15
 			navy_experience = 15
+			SRC = {country_event = { id = SRCevents.13 } } 
 		}
 	}
 	#巩固临时行政体系
@@ -159,6 +161,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_stability = 0.1
+			SRC = {country_event = { id = SRCevents.10 } } 
 		}
 	}
 	#建立军管委员会
@@ -245,6 +248,7 @@ focus_tree = {
 		completion_reward = {
 			remove_dynamic_modifier = { modifier = SRC_siliedeshehui }
 			add_research_slot = 1
+			SRC = {country_event = { id = SRCevents.14 } } 
 		}
 	}
 	#同产工会中央回归
@@ -267,6 +271,7 @@ focus_tree = {
 			#	character = SRC_ren_fuchen
 			#	ideology = vanguard_socialism_subtype
 			#}
+			SRC = {country_event = { id = SRCevents.15 } } 
 			set_country_flag = SRC_zhongyangdida
 			remove_ideas = SRC_buwangkulaojichou
 			remove_ideas = SRC_qiyireqing
@@ -344,6 +349,7 @@ focus_tree = {
 			add_to_variable = { SRC_jihuashengchan_gongchangchanchu = 0.05 }
 			add_to_variable = { SRC_jihuashengchan_xiaofeiping = -0.1 }
 			custom_effect_tooltip = SRC_zhongyangjihuaweiyuanhui_xiaoguo
+			SRC = {country_event = { id = SRCevents.17 } } 
 		}
 	}
 	#工业国有化
@@ -365,6 +371,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { SRC_jihuashengchan_jianzaosudu = 0.1 }
 			custom_effect_tooltip = SRC_gongyeguoyouhua_xiaoguo
+		SRC = {country_event = { id = SRCevents.1181 } } 
 		}
 	}
 	#农业集体化
@@ -386,6 +393,7 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { SRC_jihuashengchan_xiaofeiping = -0.1 }
 			custom_effect_tooltip = SRC_nongyejitihua_xiaoguo
+			SRC = {country_event = { id = SRCevents.19 } } 
 		}
 	}
 	#一五计划
@@ -407,6 +415,7 @@ focus_tree = {
 		completion_reward = {
 			remove_dynamic_modifier = { modifier = SRC_jihuashengchan }
 			add_ideas = SRC_yiwu
+			SRC = {country_event = { id = SRCevents.20 } } 
 		}
 	}
 	#坚持领导权
@@ -445,7 +454,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_popularity = { ideology = vanguard_socialism popularity = 0.2 } }
+		completion_reward = { 
+			add_popularity = { ideology = vanguard_socialism popularity = 0.2 }
+			SRC = {country_event = { id = SRCevents.21 } } 
+		}
 	}
 	#工协是大学
 	focus = {
@@ -466,6 +478,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_dangdelingdao_zhengzhidianshu = 0.15 }
 			custom_effect_tooltip = SRC_gongxieshidaxue_xiaoguo
+			SRC = {country_event = { id = SRCevents.22 } } 
 		}
 	}
 	#从群众中来到群众中去
@@ -484,7 +497,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {add_war_support = 0.1}
+		completion_reward = {
+			add_war_support = 0.1
+			SRC = {country_event = { id = SRCevents.23 } } 
+		}
 	}
 	#东北人民大学
 	focus = {
@@ -545,7 +561,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_ideas = SRC_wuchanjiejiminzhu }
+		completion_reward = {
+			add_ideas = SRC_wuchanjiejiminzhu
+			SRC = {country_event = { id = SRCevents.24 } } 
+		}
 	}
 	#同产主义新文化运动
 	focus = {
@@ -565,6 +584,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_stability = 0.1
+			SRC = {country_event = { id = SRCevents.25 } } 
 		}
 	}
 	#红星照耀东方
@@ -588,6 +608,7 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = SRC_wuchanjiejiminzhu
 			add_ideas = SRC_zhaoyaodongfang
+			SRC = {country_event = { id = SRCevents.26 } } 
 		}
 	}
 	#李大钊主席
