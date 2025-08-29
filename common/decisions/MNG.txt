@@ -626,32 +626,17 @@ MNG_chongjiandaming_categories = {
     MNG_chongjiandaming_decision = {
 		icon = ger_military_buildup
         available = {
-			NOT = {
-                country_exists = SIC
-                country_exists = SRC
-                country_exists = SCG
-                country_exists = GPS
-                country_exists = XIN
-            }
-            OR = {
-                AND = {
+            all_other_country = {
+                limit {
+                    is_ming_tag = yes
                     NOT = {
-                        country_exists = STG
-                        country_exists = XBJ
+                        tag = MNG
+                        tag = LSM
+                        tag = HWH
+                        tag = MLJ
                     }
                 }
-                AND = {
-                    NOT = {
-                        country_exists = GOS
-                        country_exists = XBJ
-                    }
-                }
-                AND = {
-                    NOT = {
-                        country_exists = STG
-                        country_exists = GOS
-                    }
-                }
+                is_puppet_of = ROOT
             }
 		}
 		fire_only_once = yes
@@ -660,6 +645,44 @@ MNG_chongjiandaming_categories = {
 		}
 		cost = 0
 		days_remove = 0
-		complete_effect = { set_cosmetic_tag = MNG }
+		complete_effect = {
+            if = {
+                limit = { tag = STG }
+                set_cosmetic_tag = MNG 
+                country_event = { id = mingcivwar.1001 }
+            }
+            if = {
+                limit = { tag = GOS }
+                set_cosmetic_tag = MNG 
+                country_event = { id = mingcivwar.1002 }
+            }
+            if = {
+                limit = { tag = XBJ }
+                set_cosmetic_tag = MNG 
+                country_event = { id = mingcivwar.1003 }
+            }
+            if = {
+                limit = {
+                    OR = {
+                        tag = SCG
+                        tag = SRC
+                    }
+                }
+                set_cosmetic_tag = SRC_tongyi
+                country_event = { id = mingcivwar.1002 }
+            }
+            if = {
+                limit = { tag = ROC }
+                set_cosmetic_tag = ROC_tongyi
+                country_event = { id = mingcivwar.1003 }
+            }
+            every_other_country = {
+                limit = {
+                    is_puppet_of = ROOT
+                    is_ming_tag = yes
+                }
+                ROOT = {annex_country = { target = PREV transfer_troops = no }}
+            }
+        }
     }
 }

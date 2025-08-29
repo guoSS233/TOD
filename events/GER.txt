@@ -467,26 +467,45 @@ news_event = {
 	}
 }
 #对法宣战
-news_event = { 
-	id = TODgermany.1003
-	title = TODgermany.1003.t
-	desc =TODgermany.1003.d
-	picture = GFX_report_event_chinese_soldiers_fighting
+news_event = {
+
+	id = news.1003
+	hidden = yes
 	
-	major = yes
-	mean_time_to_happen = { days = 120 }
+	fire_only_once = yes
+	
 	trigger = {
 		NOT = {
-			country_exists = aus
+			country_exists = AUS
 			country_exists = BAV
-			GER = { 
-				has_war_with = FRA 
-			}
+			GER = {has_war_with = FRA}
 			has_global_flag = defa_kaizhan
 		}
 		country_exists = FRA
-		
 	}
+
+
+	mean_time_to_happen = {
+		days = 120
+	}
+	
+	immediate = {
+		GER = {news_event = { id = TODgermany.1004 days = 120 }}
+	}
+	
+	option = {
+		name = news.1004.a
+	}
+}
+news_event = {
+	id = TODgermany.1004
+	title = TODgermany.1004.t
+	desc =TODgermany.1004.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	is_triggered_only = yes
+
 	immediate = { 
 		hidden_effect = {
 			set_global_flag = defa_kaizhan 
@@ -500,11 +519,14 @@ news_event = {
 	}
 	option = { 
 		trigger = {NOT = {tag = GER}}
-		name = TODgermany.1003.a
+		name = TODgermany.1004.a
 	}
 	option = { 
 		trigger = {tag = GER}
-		name = TODgermany.1003.b
+		name = TODgermany.1004.b
 		declare_war_on = { target = FRA type = annex_everything }
 	}
 }
+
+
+

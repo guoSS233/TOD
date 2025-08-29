@@ -51,6 +51,22 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+				NOT = {
+					OR = {
+						tag = ITA
+						tag = SPR
+						is_puppet_of = ITA
+						is_puppet_of = SPR
+					}
+				}
+			}
+			every_country = {
+				white_peace = PREV
+			}
+		}
 		FRA = { set_cosmetic_tag = FRA_liuwang }
 		if = {
 			limit = { 42 = { owner = { original_tag = FRA } } }
@@ -115,7 +131,7 @@ country_event = {
 
 		FRA = {
 			set_capital = { state = 459 }
-			hidden_effect = { }
+			hidden_effect = {dismantle_faction = yes }
 			start_civil_war = {
 				ideology = vanguard_socialism
 				size = 0.9
@@ -124,6 +140,24 @@ country_event = {
                 states_filter = {
                     is_core_of = FRA
 					NOT = {
+						OR = {
+							is_core_of = HOL
+							is_core_of = GER
+							state = 1079
+							state = 1077
+							state = 1078
+							state = 1080
+							state = 459
+							state = 513
+							state = 460
+						}
+					}
+                }
+			}
+			add_ideas = FRA_yongbutouxiang
+			every_state = {
+				limit = { 
+					OR = {
 						state = 1079
 						state = 1077
 						state = 1078
@@ -132,9 +166,9 @@ country_event = {
 						state = 513
 						state = 460
 					}
-                }
+				}
+				set_state_controller_to = FRA
 			}
-			add_ideas = FRA_yongbutouxiang
 		}
 		random_other_country = {
 			limit = { original_tag = FRA has_government = vanguard_socialism }
@@ -151,8 +185,17 @@ country_event = {
 				limit = { 
 					is_core_of = FRA
 					NOT = {
-						is_core_of = HOL
-						is_core_of = GER
+						OR = {
+							is_core_of = HOL
+							is_core_of = GER
+							state = 1079
+							state = 1077
+							state = 1078
+							state = 1080
+							state = 459
+							state = 513
+							state = 460
+						}
 					}
 				}
 				set_state_controller_to = PREV
@@ -163,6 +206,13 @@ country_event = {
 					character = FRA_Cachin_Marcel
 				}
 			}
+			1079 = { set_state_owner_to = FRA }
+			1078 = { set_state_owner_to = FRA }
+			1077 = { set_state_owner_to = FRA }
+			1080 = { set_state_owner_to = FRA }
+			459 = { set_state_owner_to = FRA }
+			513 = { set_state_owner_to = FRA }
+			460 = { set_state_owner_to = FRA }
 
 			add_country_leader_role = {
 				character = FRA_Cachin_Marcel
@@ -177,6 +227,22 @@ country_event = {
 			if = {
 				limit = { FRA = { has_country_flag = become_deguokuilei } }
 				change_tag_from = FRA
+			}
+		}
+		every_country = {
+			limit = {
+				has_war_with = ROOT
+				NOT = {
+					OR = {
+						tag = ITA
+						tag = SPR
+						is_puppet_of = ITA
+						is_puppet_of = SPR
+					}
+				}
+			}
+			every_country = {
+				white_peace = PREV
 			}
 		}
 	}

@@ -281,6 +281,7 @@ country_event = {
 				}
 			}
 		}
+		SRC = {country_event = { id = SRCevents.16 } } 
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
@@ -311,3 +312,312 @@ country_event = {
 		mark_focus_tree_layout_dirty = yes
 	}
 }
+#怒在烧
+country_event = {
+	id = SRCevents.9
+	title = SRCevents.9.t
+	desc =SRCevents.9.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.9.a
+		GPS = {
+			every_owned_state = {
+				damage_building = {
+					type = supply_node
+					damage = 0.8
+				}
+				damage_building = {
+					type = rail_way
+					damage = 0.8
+				}
+			}
+		}
+	}
+}
+#接管（1）
+country_event = {
+	id = SRCevents.10
+	title = SRCevents.10.t
+	desc =SRCevents.10.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.10.a
+		SRC = {country_event = { id = SRCevents.11 } } 
+	}
+}
+#接管（2）
+country_event = {
+	id = SRCevents.11
+	title = SRCevents.11.t
+	desc =SRCevents.11.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.11.a
+	}
+}
+#争吵
+country_event = {
+	id = SRCevents.12
+	title = SRCevents.12.t
+	desc =SRCevents.12.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.12.a
+	}
+}
+#这是什么鸟？
+country_event = {
+	id = SRCevents.13
+	title = SRCevents.13.t
+	desc =SRCevents.13.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.13.a
+	}
+}
+#成立辽东特委
+country_event = {
+	id = SRCevents.14
+	title = SRCevents.14.t
+	desc =SRCevents.14.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.14.a
+	}
+}
+#同产工会中央到了
+country_event = {
+	id = SRCevents.15
+	title = SRCevents.15.t
+	desc =SRCevents.15.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.15.a
+	}
+}
+#任辅臣当选主席
+country_event = {
+	id = SRCevents.16
+	title = SRCevents.16.t
+	desc =SRCevents.16.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.16.a
+	}
+}
+#大学生当官
+country_event = {
+	id = SRCevents.17
+	title = SRCevents.17.t
+	desc =SRCevents.17.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.17.a
+	}
+}
+#老熟人
+country_event = {
+	id = SRCevents.18
+	title = SRCevents.18.t
+	desc =SRCevents.18.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.18.a
+	}
+}
+#梁老汉的哲学
+country_event = {
+	id = SRCevents.19
+	title = SRCevents.19.t
+	desc =SRCevents.19.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.19.a
+	}
+}
+#第一个五年计划
+country_event = {
+	id = SRCevents.20
+	title = SRCevents.20.t
+	desc =SRCevents.20.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.20.a
+	}
+}
+#风气糜烂？(1)
+country_event = {
+	id = SRCevents.21
+	title = SRCevents.21.t
+	desc =SRCevents.21.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.21.a
+	}
+}
+#风气糜烂？(2)
+country_event = {
+	id = SRCevents.22
+	title = SRCevents.22.t
+	desc =SRCevents.22.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.22.a
+	}
+}
+#风气糜烂？我看好得很！(3)
+country_event = {
+	id = SRCevents.23
+	title = SRCevents.23.t
+	desc =SRCevents.23.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.23.a
+	}
+}
+#个人崇拜是个什么东西？
+country_event = {
+	id = SRCevents.24
+	title = SRCevents.24.t
+	desc =SRCevents.24.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.24.a
+	}
+}
+#文学再革命纲领
+country_event = {
+	id = SRCevents.25
+	title = SRCevents.25.t
+	desc =SRCevents.25.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.25.a
+	}
+}
+#一位普通记者的回忆
+country_event = {
+	id = SRCevents.26
+	title = SRCevents.26.t
+	desc =SRCevents.26.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.26.a
+	}
+}
+
+
+
+
+
+
+
+

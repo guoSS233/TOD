@@ -37,10 +37,12 @@ MNG_chongjiandaming_categories = {
 	icon = gre_faction_management
 
     allowed = { 
-        OR = {
-            tag = STG
-            tag = GOS
-            tag = XBJ
+        is_ming_tag = yes
+        NOT = {
+            tag = MNG
+            tag = LSM
+            tag = HWH
+            tag = MLJ
         }
      }
 }

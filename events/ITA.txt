@@ -50,11 +50,25 @@ country_event = {
 		ai_chance = {
 			factor = 50
 		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = ITA
+					is_puppet_of = ITA
+				}
+			}
+			every_country = {
+				limit = {
+					has_war_with = PREV
+				}
+				white_peace = PREV
+			}
+		}
 		 ITA = { set_cosmetic_tag =  ITA_liuwang }
 
 		 ITA = {
 			set_capital = { state = 448 }
-			hidden_effect = { }
+			hidden_effect = {leave_faction = yes }
 			start_civil_war = {
 				ideology = council_socialism
 				size = 0.9
@@ -63,15 +77,18 @@ country_event = {
                 states_filter = {
                     is_core_of =  ITA
 					NOT = {
-						state = 448
-						state = 1083
-						state = 449
-						state = 450
-						state = 451
-						state = 663
-						state = 1084
-						state = 662
-						state = 661
+						OR = {
+							state = 448
+							state = 1083
+							state = 449
+							state = 450
+							state = 451
+							state = 663
+							state = 1084
+							state = 662
+							state = 661
+							state = 273
+						}
 					}
                 }
 			}
@@ -88,7 +105,20 @@ country_event = {
 			every_state = {
 				limit = { 
 					is_core_of = ITA 
-					NOT = {state = 448}
+					NOT = {
+						OR = {
+							state = 448
+							state = 1083
+							state = 449
+							state = 450
+							state = 451
+							state = 663
+							state = 1084
+							state = 662
+							state = 661
+							state = 273
+						}
+					}
 				}
 				set_state_controller_to = PREV
 			}
@@ -101,7 +131,16 @@ country_event = {
 					character = ITA_Palmiro_Togliatti
 				}
 			}
-
+			448 = {set_state_owner_to = ITA}
+			1083 = {set_state_owner_to = ITA}
+			449 = {set_state_owner_to = ITA}
+			450 = {set_state_owner_to = ITA}
+			451 = {set_state_owner_to = ITA}
+			663 = {set_state_owner_to = ITA}
+			1084 = {set_state_owner_to = ITA}
+			662 = {set_state_owner_to = ITA}
+			661 = {set_state_owner_to = ITA}
+			273 = {set_state_owner_to = ITA}
 			add_country_leader_role = {
 				character = ITA_Palmiro_Togliatti
 				country_leader = {
@@ -115,6 +154,20 @@ country_event = {
 			if = {
 				limit = {  ITA = { has_country_flag = become_deguokuilei } }
 				change_tag_from =  ITA
+			}
+		}
+		every_country = {
+			limit = {
+				OR = {
+					tag = ITA
+					is_puppet_of = ITA
+				}
+			}
+			every_country = {
+				limit = {
+					has_war_with = PREV
+				}
+				white_peace = PREV
 			}
 		}
 	}
