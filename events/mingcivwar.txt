@@ -867,10 +867,7 @@ country_event = {
 					leader_despotism = 5
 					national_corporatism = 5
 				}
-				transfer_navy = {
-					target = MNG
-				}
-				load_oob = GPS_NAVAL
+				inherit_technology = MNG
 			}
 		}
 	}
@@ -935,10 +932,6 @@ country_event = {
 					national_corporatism = 5
 				}
 				inherit_technology = MNG
-				transfer_navy = {
-					target = MNG
-				}
-				load_oob = GPS_NAVAL
 			}
 		}
 	}
@@ -1008,9 +1001,7 @@ country_event = {
 					sacred_revivalism = 0
 					national_corporatism = 5
 				}
-				transfer_navy = {
-					target = MNG
-				}
+
 				inherit_technology = MNG
 			}
 		}
@@ -1069,9 +1060,6 @@ country_event = {
 					national_corporatism = 5
 				}
 				inherit_technology = MNG
-				transfer_navy = {
-					target = MNG
-				}
 			}
 		}
 		hidden_effect = {
@@ -1462,11 +1450,6 @@ country_event = {
 				# retire_character = MNG_2_qxs
 				# retire_character = MNG_2_zzy
 			}
-			GOS = {
-				transfer_navy = {
-					target = MNG
-				}
-			}
 			MNG = {country_event = { id = mingcivwar.80 days = 1 } }
 		}
 	}
@@ -1605,11 +1588,6 @@ country_event = {
 					retire_character = MNG_2_raohuaiwen
 					# retire_character = MNG_2_qxs
 					# retire_character = MNG_2_zzy
-				}
-			}
-			GOS = {
-				transfer_navy = {
-					target = MNG
 				}
 			}
 			MNG = {country_event = { id = mingcivwar.80 days = 1 } }
@@ -1974,9 +1952,6 @@ country_event = {
 				add_state_core = 626
 				transfer_state = 626
 				inherit_technology = MNG
-				transfer_navy = {
-					target = MNG
-				}
 			}
 			MLJ = {
 				load_oob = "MLJ_1937"
@@ -1995,9 +1970,6 @@ country_event = {
 				add_state_core = 1241
 				transfer_state = 1241
 				inherit_technology = MNG
-				transfer_navy = {
-					target = MNG
-				}
 			}
 			HWH = {
 				add_state_core = 826
@@ -2059,10 +2031,6 @@ country_event = {
 				add_state_core = 727
 				transfer_state = 727
 				inherit_technology = MNG
-				transfer_navy = {
-					target = MNG
-				}
-				load_oob = HWH_NAVAL
 			}
 			MNG = {
 				transfer_units_fraction= {
@@ -2178,14 +2146,6 @@ country_event = {
 			load_oob = "STG_1937"
 			inherit_technology = MNG
 		}
-		hidden_effect = {
-			STG = {
-				transfer_navy = {
-					target = MNG
-				}
-			}
-			load_oob = STG_NAVAL
-		}
 	}
 }
 #东延铁路通车
@@ -2223,7 +2183,7 @@ news_event = {
 	}
 	option = {name = mingcivwar.666.a}
 }
-#大明统一
+西北统一
 news_event = {
 	id = mingcivwar.1001
 	title = mingcivwar.1001.t
@@ -2235,7 +2195,7 @@ news_event = {
 	is_triggered_only = yes
 	option = {name = mingcivwar.1001.a}
 }
-#红军统一
+#七省统一
 news_event = {
 	id = mingcivwar.1002
 	title = mingcivwar.1002.t
@@ -2247,7 +2207,7 @@ news_event = {
 	is_triggered_only = yes
 	option = {name = mingcivwar.1002.a}
 }
-#共和军统一
+#顺天统一
 news_event = {
 	id = mingcivwar.1003
 	title = mingcivwar.1003.t
@@ -2258,6 +2218,30 @@ news_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {name = mingcivwar.1003.a}
+}
+#红军统一
+news_event = {
+	id = mingcivwar.1004
+	title = mingcivwar.1004.t
+	desc = mingcivwar.1004.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {name = mingcivwar.1004.a}
+}
+#共和军统一
+news_event = {
+	id = mingcivwar.1005
+	title = mingcivwar.1005.t
+	desc = mingcivwar.1005.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {name = mingcivwar.1005.a}
 }
 
 
