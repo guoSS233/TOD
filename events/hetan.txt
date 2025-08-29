@@ -3163,13 +3163,15 @@ country_event = {
     option = {
         name = GOS_XBJ_hetan_event.8.a
         GOS = {
-            annex_country = XBJ
+            annex_country = {
+                target = XBJ
+            }
         }
         every_state = {
             limit = {
                 is_core_of = XBJ
             }
-            add_core_of = GPS
+            add_core_of = GOS
             remove_core_of = XBJ
         }
         XBJ = {
