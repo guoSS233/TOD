@@ -2276,10 +2276,9 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 12
+		x = 13
 		y = 3
 		cost = 5
-		mutually_exclusive = {focus = SRC_gemingjinxindaodi}
 		prerequisite = {focus = SRC_huishiruguan}
 		ai_will_do = {factor = 10}
 		available = { 
@@ -2293,19 +2292,19 @@ focus_tree = {
 		}
 		
 		completion_reward = {
-
+			country_event = { id = ROC_SRC_hetan_event.2 }
 		}
 	}
 	#革命进行到底
 	focus = {
 		id = SRC_gemingjinxindaodi
 		icon = GFX_SRC_gemingjinxindaodi
-
+		prerequisite = {focus = SRC_zhaokaitongyidahui}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		x = 14
-		y = 3
+		x = 13
+		y = 4
 		cost = 5
 		mutually_exclusive = {focus = SRC_zhaokaitongyidahui}
 		prerequisite = {focus = SRC_huishiruguan}
@@ -2313,7 +2312,6 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			unlock_decision_tooltip = SRC_guangzhoukaizhan
 			unlock_decision_tooltip = SRC_guangzhoukaizhan
 			unlock_decision_tooltip = SRC_xinankaizhan
 			unlock_decision_tooltip = SRC_sichuankaizhan
