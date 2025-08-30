@@ -85,174 +85,174 @@ MNG_text_categories = {
 }
 #派系博弈
 MNG_paixiboyi_categories = {
-    #扶持紫禁系
-	MNG_fuchizijinxi = {
-		icon = ger_military_buildup
-		days_remove = 7
-		days_re_enable = MNG_boyishijian_1
-        cost = MNG_boyidianshu
-		remove_effect = { add_to_variable = { MNG_zijinxi = 7 } }
-	}
-    #扶持武备系
-	MNG_fuchiwubeixi = {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-            check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_wubeixi = 5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #打击武备系
-	MNG_dajiwubeixi= {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-             check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_wubeixi = -5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #扶持管学系
-	MNG_fuchiguanxuexi = {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-             check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_guanxuexi = 5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #打击管学系
-	MNG_dajiguanxuexi= {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-            check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_guanxuexi= -5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #扶持清政系
-	MNG_fuchiqingzhengxi = {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-            check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_qingzhengxi = 5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #打击清政系
-	MNG_dajiqingzhengxi= {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-            check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_qingzhengxi = -5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #扶持交通系
-	MNG_fuchijiaotongxi = {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-            check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_jiaotongxi = 5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
-    #打击交通系
-	MNG_dajiqingzhengxi= {
-		icon = ger_military_buildup
-		custom_cost_trigger = {
-            check_variable = { MNG_zijinxi > 59}  
-            check_variable = { MNG_boyishijian_3 = 0 }
-            has_political_power > 15
-		}
-		custom_cost_text = MNG_zijinxi_dayu_60
-		days_remove = 7
-		days_re_enable = 0
-		complete_effect = { 
-            add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
-        }
-		remove_effect = {
-            hidden_effect = { add_political_power = -15}
-            add_to_variable = { MNG_jiaotongxi = -5 } 
-            add_to_variable = { MNG_zijinxi = -2 }
-        }
-	}
+#     #扶持紫禁系
+# 	MNG_fuchizijinxi = {
+# 		icon = ger_military_buildup
+# 		days_remove = 7
+# 		days_re_enable = MNG_boyishijian_1
+#         cost = MNG_boyidianshu
+# 		remove_effect = { add_to_variable = { MNG_zijinxi = 7 } }
+# 	}
+#     #扶持武备系
+# 	MNG_fuchiwubeixi = {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#             check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_wubeixi = 5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
+#     #打击武备系
+# 	MNG_dajiwubeixi= {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#              check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_wubeixi = -5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
+#     #扶持管学系
+# 	MNG_fuchiguanxuexi = {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#              check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_guanxuexi = 5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
+#     #打击管学系
+# 	MNG_dajiguanxuexi= {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#             check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_guanxuexi= -5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
+#     #扶持清政系
+# 	MNG_fuchiqingzhengxi = {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#             check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_qingzhengxi = 5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
+#     #打击清政系
+# 	MNG_dajiqingzhengxi= {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#             check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_qingzhengxi = -5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
+#     #扶持交通系
+# 	MNG_fuchijiaotongxi = {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#             check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_jiaotongxi = 5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
+#     #打击交通系
+# 	MNG_dajiqingzhengxi= {
+# 		icon = ger_military_buildup
+# 		custom_cost_trigger = {
+#             check_variable = { MNG_zijinxi > 59}  
+#             check_variable = { MNG_boyishijian_3 = 0 }
+#             has_political_power > 15
+# 		}
+# 		custom_cost_text = MNG_zijinxi_dayu_60
+# 		days_remove = 7
+# 		days_re_enable = 0
+# 		complete_effect = { 
+#             add_to_variable = { MNG_boyishijian_3 = MNG_boyishijian_2 }
+#         }
+# 		remove_effect = {
+#             hidden_effect = { add_political_power = -15}
+#             add_to_variable = { MNG_jiaotongxi = -5 } 
+#             add_to_variable = { MNG_zijinxi = -2 }
+#         }
+# 	}
     #干扰东延铁路
 	MNG_ganraodongyantielu = {
 		icon = ger_military_buildup

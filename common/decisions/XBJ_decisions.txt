@@ -1,7 +1,38 @@
 ### 西北军决议 ###
 XBJ_officers_and_landlords = {
 	#军官团和地主支持度
-	XBJ_seek_officer_support = {
+	# XBJ_seek_officer_support = {
+	# 	allowed = {
+	# 		tag = XBJ
+	# 	}
+	# 	visible = {
+	# 		always = yes
+	# 	}
+	# 	available = {
+	# 		has_political_power > 49
+	# 	}
+	# 	cost = 50
+	# 	#days_re_enable = 30
+	# 	complete_effect = {
+	# 		set_temp_variable = {
+	# 			change_XBJ_officers_influence_by = 5
+	# 		}
+	# 		set_temp_variable = {
+	# 			change_XBJ_officers_support_by = 5
+	# 		}
+	# 		set_temp_variable = {
+	# 			change_XBJ_landlords_influence_by = 5
+	# 		}
+	# 		set_temp_variable = {
+	# 			change_XBJ_landlords_support_by = 5
+	# 		}
+	# 		XBJ_officers_update = yes
+	# 		XBJ_landlords_update = yes
+	# 	}
+	# }
+	# 提升军官待遇 — 增强军官支持与影响，但略微削弱地主支持（用于拉拢军心）
+	XBJ_promote_officers = {
+		icon = GFX_decision_SOV_place_hq
 		allowed = {
 			tag = XBJ
 		}
@@ -9,24 +40,198 @@ XBJ_officers_and_landlords = {
 			always = yes
 		}
 		available = {
-			has_political_power > 49
+			has_political_power > 24
 		}
-		cost = 50
-		#days_re_enable = 30
+		cost = 25
+		complete_effect = {
+			# 军官团增加支持和影响
+			set_temp_variable = {
+				change_XBJ_officers_support_by = 4
+			}
+			set_temp_variable = {
+				change_XBJ_officers_influence_by = 3
+			}
+			# 作为交换，部分地主不满
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -2
+			}
+			# 刷新 UI
+			XBJ_officers_update = yes
+			XBJ_landlords_update = yes
+			add_political_power = 0
+		}
+	}
+	# 农村赈济计划 — 提升社群团结与农民支持，代价为少量政治资源与短期稳定损失
+	XBJ_rural_relief = {
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 14
+		}
+		cost = 15
+		days_remove = 14
+		remove_effect = {
+			set_temp_variable = {
+				change_XBJ_shequn_tuanjiedu_by = 6
+			}
+			set_temp_variable = {
+				change_XBJ_shequn_zhichidu_by = 4
+			}
+			# 赈济短期内消耗稳定
+			add_stability = -0.02
+			XBJ_tuanjie_update = yes
+		}
+	}
+	# 边疆动员 — 增强军心与战争动员能力，代价是社会紧张与少量物资消耗
+	XBJ_frontier_mobilize = {
+		icon = GFX_decision_ger_military_buildup
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 19
+		}
+		cost = 20
 		complete_effect = {
 			set_temp_variable = {
-				change_XBJ_officers_influence_by = 5
+				change_XBJ_officers_support_by = 3
 			}
 			set_temp_variable = {
-				change_XBJ_officers_support_by = 5
+				change_XBJ_officers_influence_by = 2
 			}
 			set_temp_variable = {
-				change_XBJ_landlords_influence_by = 5
+				change_XBJ_landlords_support_by = -1
 			}
-			set_temp_variable = {
-				change_XBJ_landlords_support_by = 5
+			add_war_support = 0.03
+			# 增加少量军需器材储备
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 50
 			}
 			XBJ_officers_update = yes
+			XBJ_landlords_update = yes
+		}
+	}
+	# 宣传与文化整合 — 提高稳定并减少民族/地区摩擦（有小幅长期效果）
+	XBJ_propaganda_push = {
+		icon = GFX_decision_generic_protection
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 9
+		}
+		cost = 10
+		fire_only_once = yes
+		days_remove = 30
+		remove_effect = {
+			add_stability = 0.03
+			add_dynamic_modifier = {
+				modifier = XBJ_propaganda_dm
+				days = 120
+			}
+			# 宣传倾向于削弱部分地主保守性，但温和
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -1
+			}
+			XBJ_landlords_update = yes
+		}
+	}
+	# 机密清洗（秘密整肃）— 代价高但可快速集中权力（可触发事件/降低某些派系支持）
+	XBJ_secret_purge = {
+		icon = GFX_decision_SOV_place_hq
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 39
+		}
+		cost = 40
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			# 清洗会短期提高政权稳定与政治资源，但会使两个主要派系支持下降
+			add_stability = 0.05
+			add_political_power = 150
+			set_temp_variable = {
+				change_XBJ_officers_support_by = -4
+			}
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -4
+			}
+			XBJ_officers_update = yes
+			XBJ_landlords_update = yes
+		}
+	}
+	# 投资工坊与改良手工业 — 长期提高研究/生产，短期消耗政治资源
+	XBJ_industrial_investment = {
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = {
+			tag = XBJ
+		}
+		visible = {
+			always = yes
+		}
+		available = {
+			has_political_power > 29
+		}
+		cost = 30
+		fire_only_once = yes
+		days_remove = 90
+		remove_effect = {
+			# 投资回报：研究速度和政治收益提升（长期），但削弱部分地主短期支持
+			add_dynamic_modifier = {
+				modifier = XBJ_industry_boost_dm
+				days = 365
+			}
+			add_political_power = 200
+			set_temp_variable = {
+				change_XBJ_landlords_support_by = -3
+			}
+			XBJ_landlords_update = yes
+		}
+	}
+	# 赐予乡绅特权 — 通过授券与名号安抚地主，提升其支持与影响
+	XBJ_reward_landlords = {
+		icon = GFX_decision_generic_protection
+		allowed = { tag = XBJ }
+		visible = { always = yes }
+		available = { has_political_power > 19 }
+		cost = 20
+		complete_effect = {
+			set_temp_variable = { change_XBJ_landlords_support_by = 5 }
+			set_temp_variable = { change_XBJ_landlords_influence_by = 3 }
+			# 刷新 UI
+			XBJ_landlords_update = yes
+		}
+	}
+
+	# 赋税宽免 — 临时减轻地租与税负，以换取地方精英的协助
+	XBJ_tax_relief_landlords = {
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = { tag = XBJ }
+		visible = { always = yes }
+		available = { has_political_power > 14 }
+		cost = 15
+		days_remove = 60
+		remove_effect = {
+			# 临时提升地主支持
+			set_temp_variable = { change_XBJ_landlords_support_by = 3 }
+			# 刷新 UI
 			XBJ_landlords_update = yes
 		}
 	}
@@ -34,25 +239,76 @@ XBJ_officers_and_landlords = {
 
 XBJ_shequn_tuanjie = {
 	#社群团结
-	XBJ_seek_officer_support1 = {
-		allowed = {
-			tag = XBJ
+	# XBJ_seek_officer_support1 = {
+	# 	allowed = {
+	# 		tag = XBJ
+	# 	}
+	# 	visible = {
+	# 		always = yes
+	# 	}
+	# 	available = {
+	# 		has_political_power > 0
+	# 	}
+	# 	cost = 1
+	# 	#days_re_enable = 30
+	# 	complete_effect = {
+	# 		set_temp_variable = {
+	# 			change_XBJ_shequn_tuanjiedu_by = 5
+	# 		}
+	# 		set_temp_variable = {
+	# 			change_XBJ_shequn_zhichidu_by = 5
+	# 		}
+	# 		XBJ_tuanjie_update = yes
+	# 	}
+	# }
+
+	# 社群教化 — 建立乡学与职业训练，长期提升社群进步与团结
+	XBJ_shequn_education = {
+		icon = GFX_decision_SOV_place_hq
+		allowed = { tag = XBJ }
+		visible = { always = yes }
+		available = { has_political_power > 19 }
+		cost = 20
+		fire_only_once = yes
+		days_remove = 60
+		remove_effect = {
+			# 提升进步程度与团结，增加政权在地方的支持
+			set_temp_variable = { change_XBJ_shequn_jinbudu_by = 5 }
+			set_temp_variable = { change_XBJ_shequn_tuanjiedu_by = 3 }
+			set_temp_variable = { change_XBJ_shequn_zhichidu_by = 2 }
+			add_to_variable = { XBJ_jinbudu_speed = 0.001 }
+			XBJ_tuanjie_update = yes
 		}
-		visible = {
-			always = yes
+	}
+
+	# 互助会 — 组织地方互助与小额赈济，短期提高稳定与团结
+	XBJ_shequn_mutual_aid = {
+		icon = GFX_decision_eng_trade_unions_demand
+		allowed = { tag = XBJ }
+		visible = { always = yes }
+		available = { has_political_power > 14 }
+		cost = 15
+		days_remove = 30
+		remove_effect = {
+			set_temp_variable = { change_XBJ_shequn_tuanjiedu_by = 4 }
+			set_temp_variable = { change_XBJ_shequn_zhichidu_by = 3 }
+			add_stability = 0.02
+			add_dynamic_modifier = { modifier = XBJ_propaganda_dm days = 60 }
+			XBJ_tuanjie_update = yes
 		}
-		available = {
-			has_political_power > 0
-		}
-		cost = 1
-		#days_re_enable = 30
+	}
+
+	# 庙会与文化节 — 通过节庆增进接触与认同，快速安抚民心
+	XBJ_shequn_festival = {
+		icon = GFX_decision_generic_protection
+		allowed = { tag = XBJ }
+		visible = { always = yes }
+		available = { has_political_power > 9 }
+		cost = 10
 		complete_effect = {
-			set_temp_variable = {
-				change_XBJ_shequn_tuanjiedu_by = 5
-			}
-			set_temp_variable = {
-				change_XBJ_shequn_zhichidu_by = 5
-			}
+			set_temp_variable = { change_XBJ_shequn_tuanjiedu_by = 2 }
+			set_temp_variable = { change_XBJ_shequn_zhichidu_by = 1 }
+			add_stability = 0.01
 			XBJ_tuanjie_update = yes
 		}
 	}
@@ -1337,7 +1593,7 @@ XBJ_guangshi_jiaohua = {
 		}
 	}
 	XBJ_guangshi_jiaohua_1 = {
-	    #推广新式教育
+		#推广新式教育
 		icon = GFX_decision_SOV_place_hq
 		allowed = {
 			tag = XBJ
@@ -1375,7 +1631,7 @@ XBJ_guangshi_jiaohua = {
 		}
 	}
 	XBJ_guangshi_jiaohua_2 = {
-	    #世俗化运动
+		#世俗化运动
 		icon = GFX_decision_SOV_place_hq
 		allowed = {
 			tag = XBJ
@@ -1411,9 +1667,9 @@ XBJ_guangshi_jiaohua = {
 		cost = 50
 	}
 	#世俗化运动 70日 PP-50 民工-3人力-1000
-#效果：民族支持度-0.5%每周，持续140日；民族进步程度增长乘数*1.1
+	#效果：民族支持度-0.5%每周，持续140日；民族进步程度增长乘数*1.1
 	XBJ_guangshi_jiaohua_3 = {
-	    #宣传三化主义
+		#宣传三化主义
 		icon = GFX_decision_SOV_place_hq
 		allowed = {
 			tag = XBJ
@@ -1440,9 +1696,9 @@ XBJ_guangshi_jiaohua = {
 		cost = 50
 	}
 	#宣传三化主义 70日 PP-50 指挥点数-20
-#效果：地主支持度+0.5%每周，持续140日；政治点数获取+5%
+	#效果：地主支持度+0.5%每周，持续140日；政治点数获取+5%
 	XBJ_guangshi_jiaohua_4 = {
-	    #铲除落后习俗
+		#铲除落后习俗
 		icon = GFX_decision_SOV_place_hq
 		allowed = {
 			tag = XBJ
@@ -1488,36 +1744,42 @@ XBJ_guangshi_jiaohua = {
 		}
 	}
 	#铲除落后习俗 70日 PP-50  步兵装备-1000
-#效果：民族支持度-0.5%每周，持续140日；
-#民族进步程度增长乘数*1.1；民族团结度+0.5%每周，持续140日
-#削弱民族熔炉DEBUFF
+	#效果：民族支持度-0.5%每周，持续140日；
+	#民族进步程度增长乘数*1.1；民族团结度+0.5%每周，持续140日
+	#削弱民族熔炉DEBUFF
 }
 
 XBJ_difangjunfa = {
 	#向SIC施压
 	XBJ_ganyugejuSIC = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = SIC
 			has_completed_focus = XBJ_shanfengdianhuo
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = SIC
-				} 
+				}
 			}
-			has_equipment = { infantry_equipment > 999 }
+			has_equipment = {
+				infantry_equipment > 999
+			}
 		}
 		cost = 50
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+				producer = XBJ
+			}
 			hidden_effect = {
 				SIC = {
 					random_owned_controlled_state = {
@@ -1527,7 +1789,9 @@ XBJ_difangjunfa = {
 								is_fully_controlled_by = XBJ
 							}
 						}
-						set_variable = { XBJ.defender_state_vs_SIC = THIS }
+						set_variable = {
+							XBJ.defender_state_vs_SIC = THIS
+						}
 						set_state_flag = XBJ_SIC_bianjing_state_flag
 					}
 				}
@@ -1540,11 +1804,13 @@ XBJ_difangjunfa = {
 						}
 					}
 					set_state_flag = XBJ_SIC_bianjing_state_flag
-					set_variable = { XBJ.attacker_state_vs_SIC = THIS }
+					set_variable = {
+						XBJ.attacker_state_vs_SIC = THIS
+					}
 				}
 			}
 		}
-		remove_effect = { 
+		remove_effect = {
 			start_border_war = {
 				change_state_after_war = no
 				attacker = {
@@ -1554,7 +1820,6 @@ XBJ_difangjunfa = {
 					on_lose = xbj_bianjing.2
 					on_cancel = xbj_bianjing.2
 				}
-
 				defender = {
 					state = var:defender_state_vs_SIC
 					num_provinces = 2
@@ -1567,27 +1832,33 @@ XBJ_difangjunfa = {
 	}
 	XBJ_ganyugejuMOB = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = MOB
 			has_completed_focus = XBJ_shanfengdianhuo
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = MOB
-				} 
+				}
 			}
-			has_equipment = { infantry_equipment > 999 }
+			has_equipment = {
+				infantry_equipment > 999
+			}
 		}
 		cost = 50
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+				producer = XBJ
+			}
 			hidden_effect = {
 				MOB = {
 					random_owned_controlled_state = {
@@ -1597,7 +1868,9 @@ XBJ_difangjunfa = {
 								is_fully_controlled_by = XBJ
 							}
 						}
-						set_variable = { XBJ.defender_state_vs_MOB = THIS }
+						set_variable = {
+							XBJ.defender_state_vs_MOB = THIS
+						}
 						set_state_flag = XBJ_MOB_bianjing_state_flag
 					}
 				}
@@ -1610,11 +1883,13 @@ XBJ_difangjunfa = {
 						}
 					}
 					set_state_flag = XBJ_MOB_bianjing_state_flag
-					set_variable = { XBJ.attacker_state_vs_MOB = THIS }
+					set_variable = {
+						XBJ.attacker_state_vs_MOB = THIS
+					}
 				}
 			}
 		}
-		remove_effect = { 
+		remove_effect = {
 			start_border_war = {
 				change_state_after_war = no
 				attacker = {
@@ -1624,7 +1899,6 @@ XBJ_difangjunfa = {
 					on_lose = xbj_bianjing.4
 					on_cancel = xbj_bianjing.4
 				}
-
 				defender = {
 					state = var:defender_state_vs_MOB
 					num_provinces = 2
@@ -1637,27 +1911,33 @@ XBJ_difangjunfa = {
 	}
 	XBJ_ganyugejuGPS = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = GPS
 			has_completed_focus = XBJ_shanfengdianhuo
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = GPS
-				} 
+				}
 			}
-			has_equipment = { infantry_equipment > 999 }
+			has_equipment = {
+				infantry_equipment > 999
+			}
 		}
 		cost = 50
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+				producer = XBJ
+			}
 			hidden_effect = {
 				GPS = {
 					random_owned_controlled_state = {
@@ -1667,7 +1947,9 @@ XBJ_difangjunfa = {
 								is_fully_controlled_by = XBJ
 							}
 						}
-						set_variable = { XBJ.defender_state_vs_GPS = THIS }
+						set_variable = {
+							XBJ.defender_state_vs_GPS = THIS
+						}
 						set_state_flag = XBJ_GPS_bianjing_state_flag
 					}
 				}
@@ -1680,11 +1962,13 @@ XBJ_difangjunfa = {
 						}
 					}
 					set_state_flag = XBJ_GPS_bianjing_state_flag
-					set_variable = { XBJ.attacker_state_vs_GPS = THIS }
+					set_variable = {
+						XBJ.attacker_state_vs_GPS = THIS
+					}
 				}
 			}
 		}
-		remove_effect = { 
+		remove_effect = {
 			start_border_war = {
 				change_state_after_war = no
 				attacker = {
@@ -1694,7 +1978,6 @@ XBJ_difangjunfa = {
 					on_lose = xbj_bianjing.6
 					on_cancel = xbj_bianjing.6
 				}
-
 				defender = {
 					state = var:defender_state_vs_GPS
 					num_provinces = 2
@@ -1707,27 +1990,33 @@ XBJ_difangjunfa = {
 	}
 	XBJ_ganyugejuXIN = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = XIN
 			has_completed_focus = XBJ_shanfengdianhuo
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = XIN
-				} 
+				}
 			}
-			has_equipment = { infantry_equipment > 999 }
+			has_equipment = {
+				infantry_equipment > 999
+			}
 		}
 		cost = 50
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-			add_equipment_to_stockpile = { type = infantry_equipment amount = -1000 producer = XBJ }
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -1000
+				producer = XBJ
+			}
 			hidden_effect = {
 				XIN = {
 					random_owned_controlled_state = {
@@ -1737,7 +2026,9 @@ XBJ_difangjunfa = {
 								is_fully_controlled_by = XBJ
 							}
 						}
-						set_variable = { XBJ.defender_state_vs_XIN = THIS }
+						set_variable = {
+							XBJ.defender_state_vs_XIN = THIS
+						}
 						set_state_flag = XBJ_XIN_bianjing_state_flag
 					}
 				}
@@ -1750,11 +2041,13 @@ XBJ_difangjunfa = {
 						}
 					}
 					set_state_flag = XBJ_XIN_bianjing_state_flag
-					set_variable = { XBJ.attacker_state_vs_XIN = THIS }
+					set_variable = {
+						XBJ.attacker_state_vs_XIN = THIS
+					}
 				}
 			}
 		}
-		remove_effect = { 
+		remove_effect = {
 			start_border_war = {
 				change_state_after_war = no
 				attacker = {
@@ -1764,7 +2057,6 @@ XBJ_difangjunfa = {
 					on_lose = xbj_bianjing.8
 					on_cancel = xbj_bianjing.8
 				}
-
 				defender = {
 					state = var:defender_state_vs_XIN
 					num_provinces = 2
@@ -1775,46 +2067,51 @@ XBJ_difangjunfa = {
 			}
 		}
 	}
-
 	XBJ_zuihoutongdieSIC = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = SIC
 			OR = {
 				has_completed_focus = XBJ_suiyuanbizhu
 				has_completed_focus = XBJ_chunwangchihan
 			}
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				OR = {
 					any_neighbor_state = {
 						is_controlled_by = SIC
-					} 
+					}
 					any_neighbor_state = {
 						is_controlled_by = SCG
-					} 
+					}
 				}
 			}
 		}
 		cost = 30
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-
 		}
-		remove_effect = { 
-			SIC = { country_event = { id = xbj_bianjing.9 }}
-			SCG = { country_event = { id = xbj_bianjing.9 }}
+		remove_effect = {
+			SIC = {
+				country_event = {
+					id = xbj_bianjing.9
+				}
+			}
+			SCG = {
+				country_event = {
+					id = xbj_bianjing.9
+				}
+			}
 		}
 	}
 	XBJ_zuihoutongdieMOB = {
 		icon = ger_military_buildup
-		
 		visible = {
 			country_exists = MOB
 			OR = {
@@ -1822,29 +2119,32 @@ XBJ_difangjunfa = {
 				has_completed_focus = XBJ_chunwangchihan
 			}
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = MOB
-				} 
+				}
 			}
 		}
 		cost = 30
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-
 		}
-		remove_effect = { 
-			MOB = { country_event = { id = xbj_bianjing.11 }}
+		remove_effect = {
+			MOB = {
+				country_event = {
+					id = xbj_bianjing.11
+				}
+			}
 		}
 	}
 	XBJ_zuihoutongdieGPS = {
 		icon = ger_military_buildup
-		
 		visible = {
 			country_exists = GPS
 			OR = {
@@ -1852,29 +2152,32 @@ XBJ_difangjunfa = {
 				has_completed_focus = XBJ_chunwangchihan
 			}
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = GPS
-				} 
+				}
 			}
 		}
 		cost = 30
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-
 		}
-		remove_effect = { 
-			GPS = { country_event = { id = xbj_bianjing.13 }}
+		remove_effect = {
+			GPS = {
+				country_event = {
+					id = xbj_bianjing.13
+				}
+			}
 		}
 	}
 	XBJ_zuihoutongdieXIN = {
 		icon = ger_military_buildup
-		
 		visible = {
 			country_exists = XIN
 			OR = {
@@ -1882,53 +2185,56 @@ XBJ_difangjunfa = {
 				has_completed_focus = XBJ_chunwangchihan
 			}
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = XIN
-				} 
+				}
 			}
 		}
 		cost = 30
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-
 		}
-		remove_effect = { 
-			XIN = { country_event = { id = xbj_bianjing.15 }}
+		remove_effect = {
+			XIN = {
+				country_event = {
+					id = xbj_bianjing.15
+				}
+			}
 		}
 	}
-
 	XBJ_shihaoSIC = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = SIC
 			has_completed_focus = XBJ_mulinyouhao
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = SIC
-				} 
+				}
 			}
 		}
 		cost = 20
-		
 		days_remove = 90
 		fire_only_once = yes
 		complete_effect = {
 		}
 		modifier = {
 			civilian_factory_use = 3
-	   	}
-		remove_effect = { 
+		}
+		remove_effect = {
 			SIC = {
 				set_country_flag = XBJ_bianjing_shihao_flag
 			}
@@ -1936,30 +2242,30 @@ XBJ_difangjunfa = {
 	}
 	XBJ_shihaoMOB = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = MOB
 			has_completed_focus = XBJ_mulinyouhao
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = MOB
-				} 
+				}
 			}
 		}
 		cost = 20
-		
 		days_remove = 90
 		fire_only_once = yes
 		complete_effect = {
 		}
 		modifier = {
 			civilian_factory_use = 3
-	   	}
-		remove_effect = { 
+		}
+		remove_effect = {
 			MOB = {
 				set_country_flag = XBJ_bianjing_shihao_flag
 			}
@@ -1967,30 +2273,30 @@ XBJ_difangjunfa = {
 	}
 	XBJ_shihaoGPS = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = GPS
 			has_completed_focus = XBJ_mulinyouhao
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = GPS
-				} 
+				}
 			}
 		}
 		cost = 20
-		
 		days_remove = 90
 		fire_only_once = yes
 		complete_effect = {
 		}
 		modifier = {
 			civilian_factory_use = 3
-	   	}
-		remove_effect = { 
+		}
+		remove_effect = {
 			GPS = {
 				set_country_flag = XBJ_bianjing_shihao_flag
 			}
@@ -1998,39 +2304,37 @@ XBJ_difangjunfa = {
 	}
 	XBJ_shihaoXIN = {
 		icon = ger_military_buildup
-		
-		visible = { 
+		visible = {
 			country_exists = XIN
 			has_completed_focus = XBJ_mulinyouhao
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = XIN
-				} 
+				}
 			}
 		}
 		cost = 20
-		
 		days_remove = 90
 		fire_only_once = yes
 		complete_effect = {
 		}
 		modifier = {
 			civilian_factory_use = 3
-	   	}
-		remove_effect = { 
+		}
+		remove_effect = {
 			XIN = {
 				set_country_flag = XBJ_bianjing_shihao_flag
 			}
 		}
 	}
-
 	XBJ_zuihoutongdieGOS = {
 		icon = ger_military_buildup
-		
 		visible = {
 			country_exists = GOS
 			OR = {
@@ -2039,24 +2343,28 @@ XBJ_difangjunfa = {
 				has_global_flag = global_flag_hetan_gos_xbj_hetan_fail
 			}
 		}
-		allowed = { tag = XBJ } 
-		available = { 			
+		allowed = {
+			tag = XBJ
+		}
+		available = {
 			any_owned_state = {
 				is_controlled_by = XBJ
 				any_neighbor_state = {
 					is_controlled_by = XIN
-				} 
+				}
 			}
 		}
 		cost = 30
-		
 		days_remove = 30
 		fire_only_once = yes
 		complete_effect = {
-
 		}
-		remove_effect = { 
-			XIN = { country_event = { id = xbj_bianjing.15 }}
+		remove_effect = {
+			XIN = {
+				country_event = {
+					id = xbj_bianjing.15
+				}
+			}
 		}
 	}
 }

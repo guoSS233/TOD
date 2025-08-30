@@ -87,14 +87,14 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = XBJ_chuanxitianxia
-		text = XBJ_chuanxitianxia
-		icon = GFX_chuanxitianxia
-		cost = 0
-		x = 29
-		y = 0
-	}
+	# focus = {
+	# 	id = XBJ_chuanxitianxia
+	# 	text = XBJ_chuanxitianxia
+	# 	icon = GFX_chuanxitianxia
+	# 	cost = 0
+	# 	x = 29
+	# 	y = 0
+	# }
 	focus = {#舞棍弄棒
 		id = XBJ_wugunnongbang
 		text = XBJ_wugunnongbang
@@ -300,7 +300,7 @@ focus_tree = {
 			focus = XBJ_qutuxixin
 		}
 		available = {
-			has_country_flag = FLAG_XBJ_neizhan
+			# has_country_flag = FLAG_XBJ_neizhan
 		}
 		completion_reward = {
 			add_stability = 0.05
@@ -319,6 +319,9 @@ focus_tree = {
 			focus = XBJ_wugunnongbang
 			focus = XBJ_jiezeeryu
 		}
+		completion_reward = {
+			add_stability = 0.05
+		}
 		x = 7
 		y = 2
 	}
@@ -329,6 +332,9 @@ focus_tree = {
 		cost = 4
 		prerequisite = {
 			focus = XBJ_zhoujingmuxun
+		}
+		completion_reward = {
+			add_political_power = 50
 		}
 		x = 5
 		y = 3
@@ -347,7 +353,7 @@ focus_tree = {
 			add_ideas = XBJ_idea_xibeijundudufu_1
 		}
 	}
-	focus = {
+	focus = {#恩威并施
 		id = XBJ_enweibingshi
 		text = XBJ_enweibingshi
 		icon = GFX_enweibingshi
@@ -357,6 +363,25 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = XBJ_kongtouzhipiao
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 50
+				if = {
+					limit = {
+						has_completed_focus = XBJ_jinzhongshanqun
+					}
+					swap_ideas = {
+						remove_idea = XBJ_Multinational_Melting_Pot_2
+						add_idea = XBJ_Multinational_Melting_Pot_3
+					}
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = XBJ_Multinational_Melting_Pot_1
+						add_idea = XBJ_Multinational_Melting_Pot_2
+					}
+				}
 		}
 		x = 6
 		y = 5
@@ -376,7 +401,10 @@ focus_tree = {
 			focus = XBJ_huayiyuzhi
 		}
 		available = {
-			has_country_flag = FLAG_XBJ_dongluan_pingxi
+			has_country_flag = FLAG_XBJ_decision_guangshi_jiaohua_4
+		}
+		available = {
+			# has_country_flag = FLAG_XBJ_dongluan_pingxi
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -400,6 +428,18 @@ focus_tree = {
 		}
 		mutually_exclusive = {
 			focus = XBJ_tongpaolianjin
+		}
+		available = {
+			has_country_flag = FLAG_XBJ_decision_guangshi_jiaohua_4
+		}
+		available = {
+			# has_country_flag = FLAG_XBJ_dongluan_pingxi
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBJ_Multinational_Melting_Pot_4
+				add_idea = XBJ_Multinational_Melting_Pot_5
+			}
 		}
 		x = 6
 		y = 6
@@ -825,40 +865,40 @@ focus_tree = {
 			}
 		}
 	}
-	focus = {
-		id = XBJ_busuzhike
-		text = XBJ_busuzhike
-		icon = GFX_busuzhike
-		cost = 0
-		prerequisite = {
-			focus = XBJ_chuanxitianxia
-		}
-		x = 27
-		y = 1
-	}
-	focus = {
-		id = XBJ_piananyiyu
-		text = XBJ_piananyiyu
-		icon = GFX_piananyiyu
-		cost = 0
-		prerequisite = {
-			focus = XBJ_chuanxitianxia
-		}
-		x = 31
-		y = 1
-	}
-	focus = {
-		id = XBJ_tianzhuguozei
-		text = XBJ_tianzhuguozei
-		icon = GFX_tianzhuguozei
-		cost = 0
-		prerequisite = {
-			focus = XBJ_busuzhike
-			focus = XBJ_piananyiyu
-		}
-		x = 27
-		y = 2
-	}
+	# focus = {
+	# 	id = XBJ_busuzhike
+	# 	text = XBJ_busuzhike
+	# 	icon = GFX_busuzhike
+	# 	cost = 0
+	# 	prerequisite = {
+	# 		focus = XBJ_chuanxitianxia
+	# 	}
+	# 	x = 27
+	# 	y = 1
+	# }
+	# focus = {
+	# 	id = XBJ_piananyiyu
+	# 	text = XBJ_piananyiyu
+	# 	icon = GFX_piananyiyu
+	# 	cost = 0
+	# 	prerequisite = {
+	# 		focus = XBJ_chuanxitianxia
+	# 	}
+	# 	x = 31
+	# 	y = 1
+	# }
+	# focus = {
+	# 	id = XBJ_tianzhuguozei
+	# 	text = XBJ_tianzhuguozei
+	# 	icon = GFX_tianzhuguozei
+	# 	cost = 0
+	# 	prerequisite = {
+	# 		focus = XBJ_busuzhike
+	# 		focus = XBJ_piananyiyu
+	# 	}
+	# 	x = 27
+	# 	y = 2
+	# }
 	focus = { #摘山煮海
 		id = XBJ_zhaishanzhuhai
 		text = XBJ_zhaishanzhuhai
@@ -872,7 +912,7 @@ focus_tree = {
 		}
 		available = {
 			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_6
-			has_country_flag = FLAG_XBJ_neizhan
+			# has_country_flag = FLAG_XBJ_neizhan
 		}
 		completion_reward = {
 			swap_ideas = {
@@ -915,13 +955,19 @@ focus_tree = {
 		x = 1
 		y = 7
 	}
-	focus = {
+	focus = {#神州舜尧
 		id = XBJ_shenzhoushunyao
 		text = XBJ_shenzhoushunyao
 		icon = GFX_shenzhoushunyao
 		cost = 10
 		prerequisite = {
 			focus = XBJ_tongpaolianjin
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBJ_Multinational_Melting_Pot_5
+				add_idea = XBJ_xibei_zhuxia
+			}
 		}
 		x = 4
 		y = 7
@@ -933,6 +979,12 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = XBJ_huayiyuzhi
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = XBJ_Multinational_Melting_Pot_5
+				add_idea = XBJ_huayi_yijia
+			}
 		}
 		x = 6
 		y = 7
@@ -1123,17 +1175,17 @@ focus_tree = {
 			custom_effect_tooltip = XBJ_tongchoudikai_tt
 		}
 	}
-	focus = {
-		id = XBJ_zhechongzunzu
-		text = XBJ_zhechongzunzu
-		icon = GFX_zhechongzunzu
-		cost = 0
-		prerequisite = {
-			focus = XBJ_piananyiyu
-		}
-		x = 31
-		y = 2
-	}
+	# focus = {
+	# 	id = XBJ_zhechongzunzu
+	# 	text = XBJ_zhechongzunzu
+	# 	icon = GFX_zhechongzunzu
+	# 	cost = 0
+	# 	prerequisite = {
+	# 		focus = XBJ_piananyiyu
+	# 	}
+	# 	x = 31
+	# 	y = 2
+	# }
 	focus = {#进种善群
 		id = XBJ_jinzhongshanqun
 		text = XBJ_jinzhongshanqun
