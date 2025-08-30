@@ -135,16 +135,30 @@ ROC_balance_of_power_category = {  #权力斗争决议
 		   }
 	   }	
 	#决议	
-	ROC_decision_bop_jingjidahui = {
-		icon = GFX_decision_generic_political_address
-        activation = { tag = ROC has_completed_focus = gaizaojingjidezhunbei }
-		available = { hidden_trigger = { always = no } }
-		days_mission_timeout = 1080
-        fire_only_once = no
-        timeout_effect = { 
-            country_event = { id = ROC_pingheng.9999 } 
-        }
-	}
+		ROC_decision_bop_jingjidahui = {
+			icon = GFX_decision_generic_political_address
+			activation = { tag = ROC has_completed_focus = gaizaojingjidezhunbei }
+			available = { hidden_trigger = { always = no } }
+			days_mission_timeout = 1080
+			fire_only_once = no
+			timeout_effect = { 
+					 
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = country_flag_jingjidahui_1
+						}
+					}
+					country_event = { id = ROC_pingheng.9998 } 
+				}
+				else_if = {
+					limit = {
+						has_country_flag = country_flag_jingjidahui_1
+					}
+					country_event = { id = ROC_pingheng.9999 } 
+				}
+			}
+		}
 		ROC_decision_bop_left_fcsyqy = {	#扶持私营企业
 		   icon = GFX_decision_generic_decision		
 		   cost = 30	
