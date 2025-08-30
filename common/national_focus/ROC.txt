@@ -2716,6 +2716,14 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = tongyizhonghua
 		}
+		available = {
+			NOT = {
+				country_exists = STG
+			}
+			NOT = {
+				country_exists = XBJ
+			}
+		}
 		bypass = {
 			OR = {
 				NOT = { country_exists = SRC }
