@@ -388,6 +388,15 @@ country_event = {
 			transfer_state = 716
 			transfer_state = 845
 			transfer_state = 745
+			inherit_technology = GPS
+		}
+		GPS = {
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = SRC
+					stockpile_ratio = 0.7
+				}
+			}
 		}
 		GPS = { complete_national_focus = GPS_gongshishoucuo}
 		SRC = { complete_national_focus = SRC_no_longer_a_slave}
