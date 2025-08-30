@@ -538,6 +538,7 @@ country_event = {
 		set_variable = {
 			VAR_ROC_jianshe_days_factor = 1
 		}
+		country_event = { id = ROC_pingheng.9997 }
 	}
 }
 #农业改革方案
@@ -1597,6 +1598,617 @@ country_event = {
 	option = {
 		name = ROC_pingheng.1004.b
 		add_stability = -0.05
+	}
+}
+#经济部长
+country_event = { 
+	id = ROC_pingheng.9997
+	title = ROC_pingheng.9997.t
+	desc = ROC_pingheng.9997.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.9997.a 
+		add_ideas = ROC_idea_YuShude
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.b 
+		add_ideas = ROC_idea_YanYangchu
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.c 
+		add_ideas = ROC_idea_ChenZanxian
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.e
+		add_ideas = ROC_idea_RuanXiaoxian
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.f
+		add_ideas = ROC_idea_XiaoZheng
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
+	}
+}
+#经济部长
+country_event = { 
+	id = ROC_pingheng.9998
+	title = ROC_pingheng.9998.t
+	desc = ROC_pingheng.9998.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	immediate = {
+		set_country_flag = country_flag_jingjidahui_1
+	}
+	option = {
+		name = ROC_pingheng.9998.a 
+		add_ideas = ROC_idea_YuShude
+		trigger = {
+			NOT ={has_idea = ROC_idea_YuShude}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.b 
+		add_ideas = ROC_idea_YanYangchu
+		NOT ={has_idea = ROC_idea_YanYangchu}
+		trigger = {
+			NOT ={has_idea = ROC_idea_YanYangchu}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.c 
+		add_ideas = ROC_idea_ChenZanxian
+		trigger = {
+			NOT ={has_idea = ROC_idea_ChenZanxian}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.k 
+		add_ideas = ROC_idea_RuanXiaoxian
+		trigger = {
+			NOT ={has_idea = ROC_idea_RuanXiaoxian}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.e 
+		add_ideas = ROC_idea_XiaoZheng
+		trigger = {
+			NOT ={has_idea = ROC_idea_XiaoZheng}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.f 
+		add_ideas = ROC_idea_YuShude
+		trigger = {
+			has_idea = ROC_idea_YuShude
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.g 
+		add_ideas = ROC_idea_YanYangchu
+		NOT ={has_idea = ROC_idea_YanYangchu}
+		trigger = {
+			has_idea = ROC_idea_YanYangchu
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.h 
+		add_ideas = ROC_idea_ChenZanxian
+		trigger = {
+			has_idea = ROC_idea_ChenZanxian
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.i 
+		add_ideas = ROC_idea_RuanXiaoxian
+		trigger = {
+			has_idea = ROC_idea_RuanXiaoxian
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.j 
+		add_ideas = ROC_idea_XiaoZheng
+		trigger = {
+			has_idea = ROC_idea_XiaoZheng
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
 	}
 }
 #经济部长
