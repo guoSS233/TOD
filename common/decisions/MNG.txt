@@ -626,17 +626,46 @@ MNG_chongjiandaming_categories = {
     MNG_chongjiandaming_decision = {
 		icon = ger_military_buildup
         available = {
-            all_other_country = {
-                limit {
-                    is_ming_tag = yes
-                    NOT = {
-                        tag = MNG
-                        tag = LSM
-                        tag = HWH
-                        tag = MLJ
-                    }
-                }
-                is_puppet_of = ROOT
+            OR = {
+                tag = STG
+                NOT = {country_exists = STG}
+                STG = {is_puppet_of = ROOT}
+            }
+            OR = {
+                tag = XBJ
+                NOT = {country_exists = XBJ}
+                XBJ = {is_puppet_of = ROOT}
+            }
+            OR = {
+                tag = GOS
+                NOT = {country_exists = GOS}
+                GOS = {is_puppet_of = ROOT}
+            }
+            OR = {
+                tag = SRC
+                NOT = {country_exists = SRC}
+                SRC = {is_puppet_of = ROOT}
+            }
+            OR = {
+                tag = ROC
+                NOT = {country_exists = ROC}
+                ROC = {is_puppet_of = ROOT}
+            }
+            OR = {
+                NOT = {country_exists = MOB}
+                MOB = {is_puppet_of = ROOT}
+            }
+            OR = {
+                NOT = {country_exists = SCG}
+                SCG = {is_puppet_of = ROOT}
+            }
+            OR = {
+                NOT = {country_exists = GPS}
+                GPS = {is_puppet_of = ROOT}
+            }
+            OR = {
+                NOT = {country_exists = SIC}
+                SIC = {is_puppet_of = ROOT}
             }
 		}
 		fire_only_once = yes
