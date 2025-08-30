@@ -2799,6 +2799,9 @@ country_event = {
                 annex_country = {
                     target = SRC
                 }
+                annex_country = {
+                    target = SCG
+                }
             }
             every_state = {
                 limit = {
@@ -2807,7 +2810,19 @@ country_event = {
                 add_core_of = ROC
                 remove_core_of = SRC
             }
+            every_state = {
+                limit = {
+                    is_core_of = SCG
+                }
+                add_core_of = ROC
+                remove_core_of = SCG
+            }
             SRC = {
+                every_unit_leader = {
+                    set_nationality = ROC
+                }
+            }
+            SCG = {
                 every_unit_leader = {
                     set_nationality = ROC
                 }
@@ -2823,6 +2838,9 @@ country_event = {
                 annex_country = {
                     target = ROC
                 }
+                annex_country = {
+                    target = SCG
+                }
             }
             every_state = {
                 limit = {
@@ -2831,7 +2849,19 @@ country_event = {
                 add_core_of = SRC
                 remove_core_of = ROC
             }
+            every_state = {
+                limit = {
+                    is_core_of = SCG
+                }
+                add_core_of = SRC
+                remove_core_of = SCG
+            }
             ROC = {
+                every_unit_leader = {
+                    set_nationality = SRC
+                }
+            }
+            SCG = {
                 every_unit_leader = {
                     set_nationality = SRC
                 }
