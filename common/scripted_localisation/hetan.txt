@@ -1,35 +1,226 @@
 defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
 	name = ROCSRCHETANZHENGZHII
 	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+		}
+		localization_key = "GFX_hetan_zhengzhi_1_zhudao"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+		}
+		localization_key = "GFX_hetan_zhengzhi_1_hezuo"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+		}
 		localization_key = "GFX_goal_unknown"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_1_lose
+		}
+		localization_key = "GFX_hetan_lose"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_1_lose
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+				}
+			}
+		}
+		localization_key = "GFX_hetan_no"
 	}
 }
 
 defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
 	name = ROCSRCHETANZHENGZHIII
 	text = {
-		localization_key = "GFX_goal_unknown"
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_zizhi
+		}
+		localization_key = "GFX_hetan_zhengzhi_zizhi"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+		}
+		localization_key = "GFX_hetan_zhengzhi_difang_zhongyang"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_2_lose
+		}
+		localization_key = "GFX_hetan_lose"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_33
+		}
+		localization_key = "GFX_hetan_zhengzhi_difang_33"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_2_lose
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_zizhi
+					has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_33
+				}
+			}
+		}
+		localization_key = "GFX_hetan_no"
 	}
 }
 
 defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
 	name = ROCSRCHETANJUNSHI
 	text = {
-		localization_key = "GFX_goal_unknown"
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_junshi_guojiahua
+		}
+		localization_key = "GFX_hetan_junshi_guojiahua"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+		}
+		localization_key = "GFX_hetan_junshi_zhengzhiweiyuan"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_junshi_junshishouce
+		}
+		localization_key = "GFX_hetan_junshi_junshishouce"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_junshi_zizhuhua
+		}
+		localization_key = "GFX_hetan_junshi_zizhuhua"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_junshi_2_lose
+		}
+		localization_key = "GFX_hetan_lose"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = idea_ROC_SRC_hetan_junshi_zizhuhua
+					has_idea = idea_ROC_SRC_hetan_junshi_junshishouce
+					has_idea = idea_ROC_SRC_hetan_junshi_2_lose
+					has_idea = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+					has_idea = idea_ROC_SRC_hetan_junshi_guojiahua
+				}
+			}
+		}
+		localization_key = "GFX_hetan_no"
 	}
 }
 
 defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
 	name = ROCSRCHETANJINGJII
 	text = {
-		localization_key = "GFX_goal_unknown"
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+		}
+		localization_key = "GFX_hetan_jingji_suoyouzhi_changqi"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+		}
+		localization_key = "GFX_hetan_lose"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+		}
+		localization_key = "GFX_hetan_jingji_suoyouzhi_baoliu"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+		}
+		localization_key = "GFX_hetan_jingji_suoyouzhi_guodu"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+		}
+		localization_key = "GFX_hetan_jingji_suoyouzhi_jiasu"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+					has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+					has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+					has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+					has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+				}
+			}
+		}
+		localization_key = "GFX_hetan_no"
 	}
 }
 
 defined_text = { #Used to change a propaganda campaign GFX, so that it looks aged.
 	name = ROCSRCHETANJINGJIII
 	text = {
-		localization_key = "GFX_goal_unknown"
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+		}
+		localization_key = "GFX_hetan_jingji_shouduan_shumai_1"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+		}
+		localization_key = "GFX_hetan_jingji_shouduan_fugongyisi_1"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+		}
+		localization_key = "GFX_hetan_jingji_shouduan_qiangzhihebing_1"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+		}
+		localization_key = "GFX_hetan_jingji_shouduan_zhengshou_1"
+	}
+	text = {
+		trigger = {
+			has_idea = idea_ROC_SRC_hetan_jingji_shouduan_lose
+		}
+		localization_key = "GFX_hetan_lose"
+	}
+	text = {
+		trigger = {
+			NOT = {
+				OR = {
+					has_idea = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+					has_idea = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+					has_idea = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+					has_idea = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+					has_idea = idea_ROC_SRC_hetan_jingji_shouduan_lose
+				}
+			}
+		}
+		localization_key = "GFX_hetan_no"
 	}
 }
 
