@@ -65,6 +65,9 @@ on_actions = {
                         }
                     }
                     add_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
                 }
                 else_if = {
                     limit = {
@@ -74,6 +77,9 @@ on_actions = {
                         }
                     }
                     add_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
                 }
                 else_if = {
                     limit = {
@@ -84,6 +90,20 @@ on_actions = {
                     }
                     add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                }
+                else_if = {
+                    limit = {
+                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_33
+                        NOT = {
+                            has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        }
+                    }
+                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
                 }
 
                 if = {
