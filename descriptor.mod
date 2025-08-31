@@ -1,10 +1,10 @@
-version="0.0.3"
+version="0.0.1"
 tags={
 	"Alternative History"
 	"National Focuses"
 }
-name="TOD_亢龙有悔"
-supported_version="1.15.*"
+name="亢龙有悔 The Overladen Dragon"
+supported_version="1.16.*"
 replace_path="common/national_focus"
 replace_path="common/autonomous_states"
 replace_path="common/ideas"
