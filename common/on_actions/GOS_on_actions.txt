@@ -204,6 +204,21 @@ on_actions = {
 					country_event = { id = GOS_focus.1}
 				}
 			}
+			if = {
+				limit = {
+					592 = {
+						is_controlled_by = ROC
+					}
+					592 = {
+						is_controlled_by = GOS
+					}
+				}
+				592 = {
+					add_dynamic_modifier = {
+						modifier = dynamic_modifier_guangzhouhuizhan
+					}
+				}
+			}
 			# if = {
 			# 	limit = {
 			# 		NOT = {

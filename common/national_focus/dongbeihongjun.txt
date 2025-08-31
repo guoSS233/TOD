@@ -632,7 +632,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {}
+		completion_reward = {SRC = {country_event = { id = SRCevents.35}}}
 	}
 	#东北高校自治会
 	focus = {
@@ -650,7 +650,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {add_ides = SRC_xueshuminzhu}
+		completion_reward = {
+			add_ides = SRC_xueshuminzhu
+			SRC = {country_event = { id = SRCevents.36}}
+		}
 	}
 	#东北格致院委员会
 	focus = {
@@ -686,7 +689,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {add_stability = 0.1}
+		completion_reward = {
+			add_stability = 0.1
+			SRC = {country_event = { id = SRCevents.37}}
+		}
 	}
 	#建立基层工农民主机制
 	focus = {
@@ -743,7 +749,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_popularity = { ideology = council_socialism popularity = 0.1 } }
+		completion_reward = {
+			add_popularity = { ideology = council_socialism popularity = 0.1 }
+			SRC = {country_event = { id = SRCevents.38}}
+		}
 	}
 	#政治大民主
 	focus = {
@@ -786,6 +795,7 @@ focus_tree = {
 			add_to_variable = { SRC_renminminzhu_gongyeqiye = -0.5 }
 			add_to_variable = { SRC_renminminzhu_zhanzhengzhichi = 0.1 }
 			custom_effect_tooltip = SRC_qunzhongzhijiejiandu_xiaoguo
+			SRC = {country_event = { id = SRCevents.39}}
 		}
 	}
 	#国家经济委员会
@@ -807,6 +817,7 @@ focus_tree = {
 		completion_reward = { 
 			remove_ideas = SRC_gongrenhuchangreqing
 			add_dynamic_modifier = { modifier = SRC_jingweihui }
+			SRC = {country_event = { id = SRCevents.40}}
 		}
 	}
 	#关系再平衡
@@ -870,6 +881,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_jingweihui_gongchangchanchu = 0.1 }
 			custom_effect_tooltip = SRC_zhaokaijingweidahui_xiaoguo
+			SRC = {country_event = { id = SRCevents.41}}
 		}
 	}
 	#赤旗指引未来
@@ -893,6 +905,7 @@ focus_tree = {
 		completion_reward = {
 			remove_dynamic_modifier = { modifier = SRC_renminminzhu }
 			add_ideas = SRC_chiqizhiyin
+			SRC = {country_event = { id = SRCevents.42}}
 		}
 	}
 	#陈独秀主席
@@ -916,7 +929,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {}
+		completion_reward = {SRC = {country_event = { id = SRCevents.27}}}
 	}
 	#学术，文化革命化
 	focus = {
@@ -981,6 +994,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_gemingwenhua_wendingdu = 0.1 }
 			custom_effect_tooltip = SRC_qianghuaqingniangongzuo_xiaoguo
+			SRC = {country_event = { id = SRCevents.28}}
 		}
 	}
 	#社会主义接班人
@@ -1002,6 +1016,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_gemingwenhua_zhengzhidianshu = 0.1 }
 			custom_effect_tooltip = SRC_shehuizhuyijiebanren_xiaoguo
+			SRC = {country_event = { id = SRCevents.29}}
 		}
 	}
 	#革命统一战线
@@ -1020,7 +1035,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {add_dynamic_modifier = { modifier = SRC_gemingtongmeng}}
+		completion_reward = {
+			add_dynamic_modifier = { modifier = SRC_gemingtongmeng}
+			SRC = {country_event = { id = SRCevents.30}}
+		}
 	}
 	#构建反帝同盟
 	focus = {
@@ -1059,7 +1077,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_popularity = { ideology = moderate_socialism popularity = 0.1 } }
+		completion_reward = {
+			add_popularity = { ideology = moderate_socialism popularity = 0.1 }
+			SRC = {country_event = { id = SRCevents.31}}
+		}
 	}
 	#逐步向大同世界过度
 	focus = {
@@ -1122,6 +1143,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_gaigewei_jichusheshi = 0.1 }
 			custom_effect_tooltip = SRC_shumaiqiye_xiaoguo
+			SRC = {country_event = { id = SRCevents.32}}
 		}
 	}
 	#土地改革
@@ -1164,6 +1186,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_gaigewei_minzhuanjun = -0.2 }
 			custom_effect_tooltip = SRC_tieguodundae_xiaoguo
+			SRC = {country_event = { id = SRCevents.33}}
 		}
 	}
 	#朱门换新天
@@ -1187,6 +1210,7 @@ focus_tree = {
 		completion_reward = {
 			remove_dynamic_modifier = { modifier = SRC_gemingwenhua }
 			add_ideas = SRC_zhumen
+			SRC = {country_event = { id = SRCevents.34}}
 		}
 	}
 	#中华工农红军
@@ -2335,6 +2359,5 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_sichuankaizhan
 		}
 	}
-
 
 }
