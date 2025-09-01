@@ -1,871 +1,319 @@
-add_namespace = SRCevents
-#辽西起义胜利
-country_event = {
-	id = SRCevents.1
-	title = SRCevents.1.t
-	desc =SRCevents.1.d
-	picture = GFX_report_event_chinese_soldiers_fighting
+SRC_baoweigongrenzhengquan_categories = {
 	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.1.a
-		715 = {
-			create_unit = {
-				division = "name = \"乙种第5步兵师\" division_template = \"革命乙种步兵师\" start_experience_factor = 0.2"
-				prioritize_location = 1508
-				owner = SRC
-			}
-			create_unit = {
-				division = "name = \"辽西第1步兵旅\" division_template = \"民兵旅\" start_experience_factor = 0.2"
-				prioritize_location = 1508
-				owner = SRC
-			}
-			create_unit = {
-				division = "name = \"第6骑行旅\" division_template = \"革命骑兵旅\" start_experience_factor = 0.2"
-				prioritize_location = 1508
-				owner = SRC
-			}
+	SRC_baoweigongrenzhengquan = {
+
+		allowed = { tag = SRC } 
+		available = { NOT = { country_exists = GPS } }
+		activation = {
+			has_completed_focus = SRC_workers_pickets
+            country_exists = GPS
 		}
-		1218 = {
-			create_unit = {
-				division = "name = \"甲种第4步兵师\" division_template = \"革命甲种步兵师\" start_experience_factor = 0.2"
-				prioritize_location = 1499
-				owner = SRC
-			}
-			create_unit = {
-				division = "name = \"辽西第2步兵旅\" division_template = \"民兵旅\" start_experience_factor = 0.2"
-				prioritize_location = 1499
-				owner = SRC
-			}
-			create_unit = {
-				division = "name = \"辽西第3步兵旅\" division_template = \"民兵旅\" start_experience_factor = 0.2"
-				prioritize_location = 1499
-				owner = SRC
-			}
-			create_unit = {
-				division = "name = \"第7骑行旅\" division_template = \"革命骑兵旅\" start_experience_factor = 0.2"
-				prioritize_location = 1499
-				owner = SRC
-			}
-		}
-		610 = {
-			create_unit = {
-				division = "name = \"乙种第6步兵师\" division_template = \"革命乙种步兵师\" start_experience_factor = 0.2"
-				prioritize_location = 10499
-				owner = SRC
-			}
-			create_unit = {
-				division = "name = \"辽西第4步兵旅\" division_template = \"民兵旅\" start_experience_factor = 0.2"
-				prioritize_location = 10499
-				owner = SRC
-			}
-			create_unit = {
-				division = "name = \"第8骑行旅\" division_template = \"革命骑兵旅\" start_experience_factor = 0.2"
-				prioritize_location = 10499
-				owner = SRC
-			}
+		is_good = yes
+		days_mission_timeout = 30
+		days_re_enable = 0
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+		        type = infantry_equipment
+		        amount = 500
+	        }
 		}
 	}
 }
-#辽西起义失败
-country_event = {
-	id = SRCevents.2
-	title = SRCevents.2.t
-	desc =SRCevents.2.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.2.a
-		add_stability = -0.01
+#军事建设
+SRC_junshijianshe_catagories = {
+	#人民战争
+	SRC_renminzhanzheng = {
+
+		allowed = { tag = SRC } 
+		available = { has_idea = extensive_conscription }
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_renminzhanzheng_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_renminzhanzheng_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_shiyirenkouxishu = 0.1 }
+			set_country_flag = SRC_renminzhanzheng_wancheng
+		}
 	}
-}
-#革命大会召开
-country_event = {
-	id = SRCevents.3
-	title = SRCevents.3.t
-	desc =SRCevents.3.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.3.a
-        add_political_power = 30
-		SRC = {country_event = { id = SRCevents.4 days = 1 } } 
+	#运动战
+	SRC_yundongzhan = {
+
+		allowed = { tag = SRC } 
+		available = { has_tech = tech_recon3 }
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_yundongzhan_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_yundongzhang_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_dixingchengfa = 0.05 }
+			set_country_flag = SRC_yundongzhan_wancheng
+		}
 	}
-}
-#基层组织议题：
-country_event = {
-	id = SRCevents.4
-	title = SRCevents.4.t
-	desc =SRCevents.4.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.4.a
-        add_to_variable = { SRC_xianfeng = 1 } 
-		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.4.b
-        add_to_variable = { SRC_weiyuan = 1 } 
-		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.4.c
-        add_to_variable = { SRC_wenhe = 1 } 
-		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
-	}
-}
-#经济模式议题：
-country_event = {
-	id = SRCevents.5
-	title = SRCevents.5.t
-	desc =SRCevents.5.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.5.a
-        add_to_variable = { SRC_xianfeng = 1 } 
-		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.5.b
-        add_to_variable = { SRC_weiyuan = 1 } 
-		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.5.c
-        add_to_variable = { SRC_wenhe = 1 } 
-		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
-	}
-}
-#政府权力结构议题
-country_event = {
-	id = SRCevents.6
-	title = SRCevents.6.t
-	desc =SRCevents.6.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.6.a
-        add_to_variable = { SRC_xianfeng = 1 } 
-		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.6.b
-        add_to_variable = { SRC_weiyuan = 1 } 
-		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.6.c
-        add_to_variable = { SRC_wenhe = 1 } 
-		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
-	}
-}
-#军事体系议题
-country_event = {
-	id = SRCevents.7
-	title = SRCevents.7.t
-	desc =SRCevents.7.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.7.a
-        add_to_variable = { SRC_xianfeng = 1 } 
-		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.7.b
-        add_to_variable = { SRC_weiyuan = 1 } 
-		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
-	}
-	option = { 
-		name = SRCevents.7.c
-        add_to_variable = { SRC_wenhe = 1 } 
-		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
-	}
-}
-#大会闭幕
-country_event = {
-	id = SRCevents.8
-	title = SRCevents.8.t
-	desc =SRCevents.8.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.8.a
-		trigger = {
+	#步坦协同
+	SRC_butanxietong = {
+
+		allowed = { tag = SRC } 
+		available = {
 			OR = {
-				check_variable = { SRC_xianfeng < SRC_wenhe }
-				check_variable = { SRC_xianfeng = SRC_wenhe }
+				has_tech = improved_medium_tank_chassis
+				has_tech = improved_heavy_tank_chassis
 			}
+
+		}
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_butanxietong_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = SRC_butanxietong_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_yidongzuzhidu = -0.2 }
+			set_country_flag =SRC_butanxietong_wancheng
+		}
+	}
+	#三三制
+	SRC_sansanzhi = {
+
+		allowed = { tag = SRC } 
+		available = {
 			OR = {
-				check_variable = { SRC_weiyuan < SRC_wenhe }
-				check_variable = { SRC_weiyuan = SRC_wenhe }
+				has_tech = defence_in_depth
+				has_tech = mobile_defence
 			}
 		}
-		retire_country_leader = yes
-		set_politics = { ruling_party = moderate_socialism }
-		complete_national_focus = SRC_chenduxiuzhuxi
-		SRC_chen_duxiu = {
-			add_country_leader_role = {
-				promote_leader = yes
-				country_leader = {
-					ideology = moderate_socialism
-					expire = "1965.1.1.1"
-					traits = {}
-				}
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_sansanzhi_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
 			}
 		}
-		mark_focus_tree_layout_dirty = yes
+		remove_effect = {
+			custom_effect_tooltip = SRC_sansanzhi_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_zuzhidu = 0.05 }
+			set_country_flag = SRC_sansanzhi_wancheng
+		}
 	}
-	option = { 
-		name = SRCevents.8.b
-		trigger = {
+	#大纵深作战理论
+	SRC_dazongshen = {
+
+		allowed = { tag = SRC } 
+		available = {
 			OR = {
-				check_variable = { SRC_xianfeng > SRC_wenhe }
-				check_variable = { SRC_xianfeng = SRC_wenhe }
-			}
-			OR = {
-				check_variable = { SRC_xianfeng > SRC_weiyuan }
-				check_variable = { SRC_xianfeng = SRC_weiyuan }
+				has_tech = deep_operations
+				has_tech = mechanised_offensive
 			}
 		}
-		retire_country_leader = yes
-		complete_national_focus = SRC_renfuchenzhuxi
-		SRC_ren_fuchen = {
-			add_country_leader_role = {
-				promote_leader = yes
-				country_leader = {
-					ideology = vanguard_socialism
-					expire = "1965.1.1.1"
-					traits = {}
-				}
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_dazongshen_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
 			}
 		}
-		SRC = {country_event = { id = SRCevents.16 } } 
-		mark_focus_tree_layout_dirty = yes
+		remove_effect = {
+			custom_effect_tooltip = SRC_dazongshen_xiaoguo
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_tupo = 0.05 }
+			set_country_flag = SRC_dazongshen_wancheng
+		}
 	}
-	option = { 
-		trigger = {
-			OR = {
-				check_variable = { SRC_weiyuan > SRC_wenhe }
-				check_variable = { SRC_weiyuan = SRC_wenhe }
-			}
-			OR = {
-				check_variable = { SRC_weiyuan > SRC_xianfeng }
-				check_variable = { SRC_weiyuan = SRC_xianfeng }
+	#人民战争
+	SRC_renminzhanzheng = {
+
+		allowed = { tag = SRC } 
+		available = { 
+			has_country_flag = SRC_renminzhanzheng_wancheng
+			has_country_flag = SRC_yundongzhan_wancheng
+			has_country_flag = SRC_butanxietong_wancheng
+			has_country_flag = SRC_sansanzhi_wancheng
+			has_country_flag = SRC_dazongshen_wancheng
+		 }
+		days_remove = 30
+		custom_cost_trigger = {
+            has_political_power > 50
+            has_army_experience > 25
+		}
+        fire_only_once = yes
+		custom_cost_text = SRC_renminzhanzheng_huafei
+        complete_effect = { 
+			hidden_effect = {
+				add_political_power = -50
+				army_experience = -25
 			}
 		}
-		name = SRCevents.8.c
-		retire_country_leader = yes
-		set_politics = { ruling_party = council_socialism }
-		complete_national_focus = SRC_lidazhaozhuxi
-		SRC_li_dazhao = {
-			add_country_leader_role = {
-				promote_leader = yes
-				country_leader = {
-					ideology = council_socialism
-					expire = "1965.1.1.1"
-					traits = {}
-				}
-			}
-		}
-		mark_focus_tree_layout_dirty = yes
-	}
-}
-#怒在烧
-country_event = {
-	id = SRCevents.9
-	title = SRCevents.9.t
-	desc =SRCevents.9.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.9.a
-		GPS = {
-			every_owned_state = {
-				damage_building = {
-					type = supply_node
-					damage = 0.8
-				}
-				damage_building = {
-					type = rail_way
-					damage = 0.8
-				}
-			}
+		remove_effect = {
+			remove_dynamic_modifier = { modifier = SRC_gemingjunshiweiyuanhui_4}
+			add_dynamic_modifier = { modifier = SRC_gemingjunshiweiyuanhui_5 }
 		}
 	}
 }
-#接管（1）
-country_event = {
-	id = SRCevents.10
-	title = SRCevents.10.t
-	desc =SRCevents.10.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.10.a
-		SRC = {country_event = { id = SRCevents.11 } } 
+#宣战
+SRC_xuanzhan_catagories = {
+	#向顺天宣战
+	SRC_shuntiankaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = STG }
+		visible = { has_completed_focus = SRC_huishiruguan }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = STG type = annex_everything }
+		}
 	}
-}
-#接管（2）
-country_event = {
-	id = SRCevents.11
-	title = SRCevents.11.t
-	desc =SRCevents.11.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.11.a
+	#向西北军宣战
+	SRC_xiebikaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = XBJ }
+		visible = { has_completed_focus = SRC_huishiruguan }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = XBJ type = annex_everything }
+		}
 	}
-}
-#争吵
-country_event = {
-	id = SRCevents.12
-	title = SRCevents.12.t
-	desc =SRCevents.12.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.12.a
+	#向七省联合宣战
+	SRC_qishenkaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = GOS }
+		visible = { has_completed_focus = SRC_huishiruguan }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = GOS type = annex_everything }
+		}
 	}
-}
-#这是什么鸟？
-country_event = {
-	id = SRCevents.13
-	title = SRCevents.13.t
-	desc =SRCevents.13.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.13.a
+	#广州共和军
+	SRC_guangzhoukaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = ROC }
+		visible = { has_completed_focus = SRC_gemingjinxindaodi }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = ROC type = annex_everything }
+		}
 	}
-}
-#成立辽东特委
-country_event = {
-	id = SRCevents.14
-	title = SRCevents.14.t
-	desc =SRCevents.14.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.14.a
+	#西南都督府宣战
+	SRC_xinankaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = XIN }
+		visible = { has_completed_focus = SRC_gemingjinxindaodi }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = XIN type = annex_everything }
+		}
 	}
-}
-#同产工会中央到了
-country_event = {
-	id = SRCevents.15
-	title = SRCevents.15.t
-	desc =SRCevents.15.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.15.a
+	#四川宣战
+	SRC_sichuankaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = SIC }
+		visible = { has_completed_focus = SRC_gemingjinxindaodi }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = SIC type = annex_everything }
+		}
 	}
-}
-#任辅臣当选主席
-country_event = {
-	id = SRCevents.16
-	title = SRCevents.16.t
-	desc =SRCevents.16.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.16.a
+	#岭北宣战
+	SRC_lingbeikaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = MOB }
+		visible = { has_completed_focus = SRC_gemingjinxindaodi }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = MOB type = annex_everything }
+		}
 	}
-}
-#大学生当官
-country_event = {
-	id = SRCevents.17
-	title = SRCevents.17.t
-	desc =SRCevents.17.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.17.a
-	}
-}
-#老熟人
-country_event = {
-	id = SRCevents.18
-	title = SRCevents.18.t
-	desc =SRCevents.18.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.18.a
-	}
-}
-#梁老汉的哲学
-country_event = {
-	id = SRCevents.19
-	title = SRCevents.19.t
-	desc =SRCevents.19.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.19.a
-	}
-}
-#第一个五年计划
-country_event = {
-	id = SRCevents.20
-	title = SRCevents.20.t
-	desc =SRCevents.20.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.20.a
-	}
-}
-#风气糜烂？(1)
-country_event = {
-	id = SRCevents.21
-	title = SRCevents.21.t
-	desc =SRCevents.21.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.21.a
-	}
-}
-#风气糜烂？(2)
-country_event = {
-	id = SRCevents.22
-	title = SRCevents.22.t
-	desc =SRCevents.22.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.22.a
-	}
-}
-#风气糜烂？我看好得很！(3)
-country_event = {
-	id = SRCevents.23
-	title = SRCevents.23.t
-	desc =SRCevents.23.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.23.a
-	}
-}
-#个人崇拜是个什么东西？
-country_event = {
-	id = SRCevents.24
-	title = SRCevents.24.t
-	desc =SRCevents.24.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.24.a
-	}
-}
-#文学再革命纲领
-country_event = {
-	id = SRCevents.25
-	title = SRCevents.25.t
-	desc =SRCevents.25.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.25.a
-	}
-}
-#一位普通记者的回忆
-country_event = {
-	id = SRCevents.26
-	title = SRCevents.26.t
-	desc =SRCevents.26.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.26.a
-	}
-}
-#陈独秀同志担任主席
-country_event = {
-	id = SRCevents.27
-	title = SRCevents.27.t
-	desc =SRCevents.27.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.27.a
-	}
-}
-#大小姐，别把鞋子弄脏啦！
-country_event = {
-	id = SRCevents.28
-	title = SRCevents.28.t
-	desc =SRCevents.28.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.28.a
-	}
-}
-#同产主义青年团的新同志
-country_event = {
-	id = SRCevents.29
-	title = SRCevents.29.t
-	desc =SRCevents.29.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.29.a
-	}
-}
-#老学究的宣言
-country_event = {
-	id = SRCevents.30
-	title = SRCevents.30.t
-	desc =SRCevents.30.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.30.a
-	}
-}
-#一个手艺人的独白
-country_event = {
-	id = SRCevents.31
-	title = SRCevents.31.t
-	desc =SRCevents.31.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.31.a
-	}
-}
-#我没什么怕的啦！
-country_event = {
-	id = SRCevents.32
-	title = SRCevents.32.t
-	desc =SRCevents.32.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.32.a
-	}
-}
-#同产主义是一锅炖鹅的好菜
-country_event = {
-	id = SRCevents.33
-	title = SRCevents.33.t
-	desc =SRCevents.33.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.33.a
-	}
-}
-#朱门再换新天
-country_event = {
-	id = SRCevents.34
-	title = SRCevents.34.t
-	desc =SRCevents.34.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.34.a
-	}
-}
-#李大钊同志担任主席
-country_event = {
-	id = SRCevents.35
-	title = SRCevents.35.t
-	desc =SRCevents.35.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.35.a
-	}
-}
-#自由的辩论
-country_event = {
-	id = SRCevents.36
-	title = SRCevents.36.t
-	desc =SRCevents.36.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.36.a
-	}
-}
-#我才不要和他结婚嘞！
-country_event = {
-	id = SRCevents.37
-	title = SRCevents.37.t
-	desc =SRCevents.37.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.37.a
-	}
-}
-# 人民的声音
-country_event = {
-	id = SRCevents.38
-	title = SRCevents.38.t
-	desc =SRCevents.38.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.38.a
-	}
-}
-#回乡杂记.....?
-country_event = {
-	id = SRCevents.39
-	title = SRCevents.39.t
-	desc =SRCevents.39.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.39.a
-	}
-}
-#《关于成立国家经济委员会的决议》节选
-country_event = {
-	id = SRCevents.40
-	title = SRCevents.40.t
-	desc =SRCevents.40.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.40.a
-	}
-}
-#头版头条
-country_event = {
-	id = SRCevents.41
-	title = SRCevents.41.t
-	desc =SRCevents.41.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.41.a
-	}
-}
-# 赤旗指引未来
-country_event = {
-	id = SRCevents.42
-	title = SRCevents.42.t
-	desc =SRCevents.42.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-	trigger = {tag = SRC}
-	
-	option = { 
-		name = SRCevents.42.a
+	#合并四川红军
+	SRC_SCGkaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = SCG }
+		visible = { country_exists = SCG }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			annex_country = {
+				target = SCG
+			}
+            every_state = {
+                limit = {
+                    is_core_of = SCG
+                }
+                add_core_of = SRC
+                remove_core_of = SCG
+            }
+            SCG = {
+                every_unit_leader = {
+                    set_nationality = SRC
+                }
+            }
+		}
 	}
 }
