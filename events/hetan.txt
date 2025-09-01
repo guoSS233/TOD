@@ -2789,10 +2789,8 @@ country_event = {
     option = {
         name = ROC_SRC_hetan_event.22.a
         if = {
-            limit = {
-                ROC = {
-                    has_country_flag = country_flag_ROC_SRC_hetan_zhu_country
-                }
+            limit = { 
+                check_variable = { ROC.ROC_SRC_hetan_var > SRC.ROC_SRC_hetan_var }
             }
             ROC = {
                 complete_national_focus = gemingdetongzhi
@@ -2829,9 +2827,10 @@ country_event = {
             }
         }
         else_if = {
-            limit = {
-                SRC = {
-                    has_country_flag = country_flag_ROC_SRC_hetan_zhu_country
+            limit = { 
+                OR = {
+                    check_variable = { ROC.ROC_SRC_hetan_var < SRC.ROC_SRC_hetan_var }
+                    check_variable = { ROC.ROC_SRC_hetan_var = SRC.ROC_SRC_hetan_var }
                 }
             }
             SRC = {
