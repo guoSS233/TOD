@@ -26,9 +26,9 @@ jiaotongxi_up = {
 	set_country_flag = party_up_selected
 	custom_effect_tooltip = MNG_party_up_click_tooltip
 }
-qinzhengxi_up = {
+qingzhengxi_up = {
 	subtract_from_variable = { MNG_zijinxi = 2 }
-	add_to_variable = { MNG_qinzhengxi = 5 }
+	add_to_variable = { MNG_qingzhengxi = 5 }
 	add_political_power = MNG_boyidianshu_fu
 	set_country_flag = party_up_selected
 	custom_effect_tooltip = MNG_party_up_click_tooltip
@@ -47,7 +47,7 @@ MNG_party_up_click_effect = {
 		jiaotongxi_up = yes
 	}
 	else_if = { limit = { check_variable = { MNG_party_num = 4 } }
-		qinzhengxi_up = yes
+		qingzhengxi_up = yes
 	}
 }
 
@@ -73,9 +73,9 @@ jiaotongxi_down = {
 	set_country_flag = party_down_selected
 	custom_effect_tooltip = MNG_party_down_click_tooltip
 }
-qinzhengxi_down = {
+qingzhengxi_down = {
 	subtract_from_variable = { MNG_zijinxi = 2 }
-	subtract_from_variable = { MNG_qinzhengxi = 5 }
+	subtract_from_variable = { MNG_qingzhengxi = 5 }
 	add_political_power = MNG_boyidianshu_fu
 	set_country_flag = party_down_selected
 	custom_effect_tooltip = MNG_party_down_click_tooltip
@@ -92,6 +92,6 @@ MNG_party_down_click_effect = {
 		jiaotongxi_down = yes
 	}
 	else_if = { limit = { check_variable = { MNG_party_num = 4 } }
-		qinzhengxi_down = yes
+		qingzhengxi_down = yes
 	}
 }
