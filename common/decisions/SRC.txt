@@ -257,7 +257,7 @@ SRC_xuanzhan_catagories = {
         fire_only_once = yes
 		cost = 50
 		remove_effect = {
-			declare_war_on = { target = XINN type = annex_everything }
+			declare_war_on = { target = XIN type = annex_everything }
 		}
 	}
 	#四川宣战
@@ -272,6 +272,48 @@ SRC_xuanzhan_catagories = {
 		cost = 50
 		remove_effect = {
 			declare_war_on = { target = SIC type = annex_everything }
+		}
+	}
+	#岭北宣战
+	SRC_lingbeikaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = MOB }
+		visible = { has_completed_focus = SRC_gemingjinxindaodi }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			declare_war_on = { target = MOB type = annex_everything }
+		}
+	}
+	#合并四川红军
+	SRC_SCGkaizhan = {
+
+		allowed = { tag = SRC } 
+		available = { is_neighbor_of = SCG }
+		visible = { country_exists = SCG }
+		ai_will_do = { base = 10 }
+		days_remove = 30
+        fire_only_once = yes
+		cost = 50
+		remove_effect = {
+			annex_country = {
+				target = SCG
+			}
+            every_state = {
+                limit = {
+                    is_core_of = SCG
+                }
+                add_core_of = SRC
+                remove_core_of = SCG
+            }
+            SCG = {
+                every_unit_leader = {
+                    set_nationality = SRC
+                }
+            }
 		}
 	}
 }
