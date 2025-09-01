@@ -807,6 +807,7 @@ country_event = {
 			retire_character = MNG_1_wu_yuanwu
 			retire_character = MNG_1_ying_zuoqian
 			retire_character = MNG_1_sun_liechen
+
 		}
 	}
 	option = { 
@@ -835,6 +836,12 @@ country_event = {
 					keep_unit_leaders_trigger = {
 						has_trait = MNG_damingjungguan
 					}
+				}
+				GPS = {
+					transfer_navy = {
+						target = MNG
+					}
+					load_oob = "GPS_NAVAL"
 				}
 			}
 		}
@@ -899,6 +906,12 @@ country_event = {
 					keep_unit_leaders_trigger = {
 						has_trait = MNG_damingjungguan
 					}
+				}
+				GPS = {
+					transfer_navy = {
+						target = MNG
+					}
+					load_oob = "GPS_NAVAL"
 				}
 			}
 		}
@@ -976,6 +989,11 @@ country_event = {
 						has_trait = MNG_damingjungguan
 					}
 				}
+				ROC = {
+					transfer_navy = {
+						target = MNG
+					}
+				}
 			}
 		}
 		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
@@ -1045,6 +1063,11 @@ country_event = {
 					}
 					keep_unit_leaders_trigger = {
 						has_trait = MNG_damingjungguan
+					}
+				}
+				ROC = {
+					transfer_navy = {
+						target = MNG
 					}
 				}
 			}
@@ -1493,6 +1516,12 @@ country_event = {
 				# retire_character = MNG_2_zzy
 			}
 			MNG = {country_event = { id = mingcivwar.80 days = 1 } }
+			GOS = {
+				transfer_navy = {
+					target = MNG
+				}
+				load_oob = "GOS_NAVAL"
+			}
 		}
 	}
 	option = { 
@@ -1639,6 +1668,12 @@ country_event = {
 				}
 			}
 			MNG = {country_event = { id = mingcivwar.80 days = 1 } }
+			GOS = {
+				transfer_navy = {
+					target = MNG
+				}
+				load_oob = "GOS_NAVAL"
+			}
 		}
 	}
 }
@@ -2138,6 +2173,7 @@ country_event = {
 					keep_unit_leaders_trigger = {
 						has_trait = MNG_damingjungguan
 					}
+
 				}
 				transfer_units_fraction= {
 					target = MLJ
@@ -2158,6 +2194,22 @@ country_event = {
 					keep_unit_leaders_trigger = {
 						has_trait = MNG_damingjungguan
 					}
+				}
+			}
+			LSM = {
+				transfer_navy = {
+					target = MNG
+				}
+			}
+			HWH = {
+				transfer_navy = {
+					target = MNG
+				}
+				load_oob = "HWH_NAVAL"
+			}
+			MLJ = {
+				transfer_navy = {
+					target = MNG
 				}
 			}
 			MNG = {country_event = { id = mingcivwar.83 days = 1 } }
@@ -2247,7 +2299,8 @@ country_event = {
 				retire_character = MNG_3_zunhuangrangyishe
 				retire_character = MNG_3_cai_yuanpei
 				retire_character = MNG_3_ge_gongzhen
-				retire_character = MNG_3_zhao_shiyan }
+				retire_character = MNG_3_zhao_shiyan 
+			}
 		}
 	}
 	option = { 
@@ -2260,6 +2313,10 @@ country_event = {
 				id = mingcivwar.83
 			}
 			inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
+				load_oob = "STG_NAVAL"
 		}
 		MNG_release_STG = yes
 		hidden_effect = {
