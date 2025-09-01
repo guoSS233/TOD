@@ -1,613 +1,676 @@
 on_actions = {
 	on_daily = {
 		effect = {
-            SRC = {
-                if = {
-                    limit = {
-                        check_variable = { hetan_ROC_SRC_var_fenqi >4 }
+            if = {
+                limit = {
+                    NOT = {
+                        has_global_flag = global_flag_hetan_ROC_SRC_fail
                     }
-                    country_event = { id = ROC_SRC_hetan_event.8888 }
                 }
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_zhudao
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                SRC = {
+                    if = {
+                        limit = {
+                            check_variable = { hetan_ROC_SRC_var_fenqi >4 }
                         }
+                        country_event = { id = ROC_SRC_hetan_event.8888 }
                     }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_zhudao
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_hezuo
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_lose
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_zizhi
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_33
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_guojiahua
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_guojiahua
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_2_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_2_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_junshishouce
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_junshishouce
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_zizhuhua
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_zizhuhua
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                    }
+                }
+                ROC = {
+                    if = {
+                        limit = {
+                            check_variable = { hetan_ROC_SRC_var_fenqi >4 }
+                        }
+                        country_event = { id = ROC_SRC_hetan_event.8888 }
+                    }
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_zhudao
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_hezuo
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_lose
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
+                        remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_zizhi
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_33
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                        remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_guojiahua
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_guojiahua
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_2_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_2_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_junshishouce
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_junshishouce
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_junshi_zizhuhua
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_junshi_zizhuhua
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
+                        remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
+                    }
+
+                    if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_lose
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                    }
+                    else_if = {
+                        limit = {
+                            has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                            NOT = {
+                                has_idea = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                            }
+                        }
+                        add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
+                        remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
+                    }
+
+                }
+            }
+            if = {
+                limit = {
+                    has_global_flag = global_flag_hetan_ROC_SRC_fail
+                }
+                SRC = {
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
                     remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_hezuo
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_lose
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_zizhi
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_33
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_guojiahua
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_guojiahua
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
                     remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
                     remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
                     remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
                     remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_2_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_2_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_junshishouce
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_junshishouce
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_zizhuhua
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_zizhuhua
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
                 }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                }
-            }
-            ROC = {
-                if = {
-                    limit = {
-                        check_variable = { hetan_ROC_SRC_var_fenqi >4 }
-                    }
-                    country_event = { id = ROC_SRC_hetan_event.8888 }
-                }
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_zhudao
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
+                ROC = {
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_zhudao
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
                     remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_hezuo
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_1_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_1_lose
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_zhudao
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_hezuo
-                    remove_ideas =idea_ROC_SRC_hetan_zhengzhi_1_jingxuan
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_zizhi
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
+                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
                     remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_2_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_zhengzhi_difang_33
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_33
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_difang_zhongyang
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_zizhi
-                    remove_ideas = idea_ROC_SRC_hetan_zhengzhi_2_lose
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_guojiahua
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_guojiahua
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
+                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
                     remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
                     remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
                     remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
                     remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_2_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_2_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_junshishouce
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_junshishouce
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_junshi_zizhuhua
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_junshi_zizhuhua
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_junshi_zizhuhua
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_junshishouce
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_2_lose
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_zhengzhiweiyuan
-                    remove_ideas = idea_ROC_SRC_hetan_junshi_guojiahua
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
+                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
                     remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_jiasu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_guodu
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_changqi
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_suoyouzhi_baoliu
-                }
-
-                if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
+                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
                     remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
                 }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_lose
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                }
-                else_if = {
-                    limit = {
-                        has_global_flag = global_flag_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                        NOT = {
-                            has_idea = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                        }
-                    }
-                    add_ideas = idea_ROC_SRC_hetan_jingji_shouduan_zhengshou_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_qiangzhihebing_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_shumai_1
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_lose
-                    remove_ideas = idea_ROC_SRC_hetan_jingji_shouduan_fugongyisi_1
-                }
-
             }
+
             GOS = {
                 country_event = { id = GOS_XBJ_hetan_event.2 }
             }
