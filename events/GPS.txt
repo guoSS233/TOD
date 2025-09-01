@@ -13,6 +13,11 @@ country_event = {
 	
 	option = { 
 		name = GPSevents.1.a
+		hidden_effect = {
+			every_unit_leader = {
+				add_unit_leader_trait = MNG_damingjungguan
+			}
+		}
 	}
 }
 #颁布紧急戒严令
@@ -265,7 +270,21 @@ country_event = {
 				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种战车师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种战车师" }
+				inherit_technology = GPS
 			}
+			GPS ={
+				hidden_effect = {
+				transfer_units_fraction= {
+					target = SRC
+					stockpile_ratio = 0.7
+					navy_ratio = 0
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+			}
+			}
+
 		}
 	}
 	option = { 
@@ -311,6 +330,19 @@ country_event = {
 				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种战车师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种战车师" }
+				inherit_technology = GPS
+			}
+			GPS = {
+				hidden_effect = {
+					transfer_units_fraction= {
+						target = SRC
+						stockpile_ratio = 0.7
+						navy_ratio = 0
+						keep_unit_leaders_trigger = {
+							has_trait = MNG_damingjungguan
+						}
+					}
+				}
 			}
 		}
 	}
@@ -343,6 +375,10 @@ country_event = {
 				transfer_units_fraction= {
 					target = SRC
 					stockpile_ratio = 0.7
+					navy_ratio = 0
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
 				}
 			}
 		}
@@ -395,6 +431,10 @@ country_event = {
 				transfer_units_fraction= {
 					target = SRC
 					stockpile_ratio = 0.7
+					navy_ratio = 0
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
 				}
 			}
 		}
