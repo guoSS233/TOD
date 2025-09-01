@@ -4,7 +4,6 @@ tags={
 	"National Focuses"
 }
 name="亢龙有悔 The Overladen Dragon"
-supported_version="1.16.*"
 replace_path="common/national_focus"
 replace_path="common/autonomous_states"
 replace_path="common/ideas"
@@ -34,5 +33,6 @@ replace_path="localisation"
 replace_path="gfx/leaders"
 replace_path="gfx/loadingscreen"
 picture="thumbnail.png"
-path="mod/TOD"
-
+supported_version="1.16.*"
+path="C:/Users/23874/Documents/Paradox Interactive/Hearts of Iron IV/mod/TOD"
+remote_file_id="3559616343"
