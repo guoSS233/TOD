@@ -8,6 +8,7 @@ SRC_baoweigongrenzhengquan_categories = {
 			has_completed_focus = SRC_workers_pickets
             country_exists = GPS
 		}
+		ai_will_do = { base = 100 }
 		is_good = yes
 		days_mission_timeout = 30
 		days_re_enable = 0
@@ -32,6 +33,7 @@ SRC_junshijianshe_catagories = {
             has_political_power > 50
             has_army_experience > 25
 		}
+		ai_will_do = { base = 10 }
         fire_only_once = yes
 		custom_cost_text = SRC_renminzhanzheng_huafei
         complete_effect = { 
@@ -56,6 +58,7 @@ SRC_junshijianshe_catagories = {
             has_political_power > 50
             has_army_experience > 25
 		}
+		ai_will_do = { base = 10 }
         fire_only_once = yes
 		custom_cost_text = SRC_yundongzhan_huafei
         complete_effect = { 
@@ -86,6 +89,7 @@ SRC_junshijianshe_catagories = {
             has_political_power > 50
             has_army_experience > 25
 		}
+		ai_will_do = { base = 10 }
         fire_only_once = yes
 		custom_cost_text = SRC_butanxietong_huafei
         complete_effect = { 
@@ -110,6 +114,7 @@ SRC_junshijianshe_catagories = {
 				has_tech = mobile_defence
 			}
 		}
+		ai_will_do = { base = 10 }
 		days_remove = 30
 		custom_cost_trigger = {
             has_political_power > 50
@@ -139,6 +144,7 @@ SRC_junshijianshe_catagories = {
 				has_tech = mechanised_offensive
 			}
 		}
+		ai_will_do = { base = 10 }
 		days_remove = 30
 		custom_cost_trigger = {
             has_political_power > 50
@@ -169,6 +175,7 @@ SRC_junshijianshe_catagories = {
 			has_country_flag = SRC_sansanzhi_wancheng
 			has_country_flag = SRC_dazongshen_wancheng
 		 }
+		ai_will_do = { base = 10 }
 		days_remove = 30
 		custom_cost_trigger = {
             has_political_power > 50
@@ -236,7 +243,13 @@ SRC_xuanzhan_catagories = {
 	SRC_guangzhoukaizhan = {
 
 		allowed = { tag = SRC } 
-		available = { is_neighbor_of = ROC }
+		available = {
+			is_neighbor_of = ROC
+			OR = {
+				NOT = { has_global_flag = global_flag_ROC_SRC_hetan }
+				has_global_flag = global_flag_hetan_ROC_SRC_fail
+			}
+		}
 		visible = { has_completed_focus = SRC_gemingjinxindaodi }
 		ai_will_do = { base = 10 }
 		days_remove = 30
@@ -294,7 +307,7 @@ SRC_xuanzhan_catagories = {
 		allowed = { tag = SRC } 
 		available = { is_neighbor_of = SCG }
 		visible = { country_exists = SCG }
-		ai_will_do = { base = 10 }
+		ai_will_do = { base = 100 }
 		days_remove = 30
         fire_only_once = yes
 		cost = 50
@@ -317,3 +330,4 @@ SRC_xuanzhan_catagories = {
 		}
 	}
 }
+
