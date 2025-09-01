@@ -280,6 +280,7 @@ MNG_paixiboyi_categories = {
             country_event = { id = mingcivwar.85 } 
             add_to_variable = { MNG_jiaotongxi = 5 }
             set_country_flag = MNG_dongyantieluyitongche
+            custom_effect_tooltip = MNG_dongyantielutongche_xiaoguo
         }
 	}
 }
@@ -294,6 +295,7 @@ MNG_jinyiweizaixingdong_categories = {
             check_variable = { MNG_zijinxi > 69}  
             check_variable = { MNG_wubeixi < 36}
 		}
+		ai_will_do = { base = 10 }
 		custom_cost_text = MNG_zijinxi_dayu_70_MNG_wubeixi_xiaoyu_35
 		days_remove = 7
         fire_only_once = yes
@@ -301,6 +303,7 @@ MNG_jinyiweizaixingdong_categories = {
             hidden_effect = { political_power_cost = 120 }
             add_to_variable = { MNG_wubeixi = -10 } 
             add_to_variable = { MNG_zijinxi = -7 }
+            custom_effect_tooltip = MNG_chanchuwubeixi_xiaoguo
             set_country_flag = MNG_wubeixibeichanchu
         }
 	}
@@ -316,6 +319,7 @@ MNG_jinyiweizaixingdong_categories = {
             check_variable = { MNG_zijinxi > 64}  
             check_variable = { MNG_guanxuexi < 21}
 		}
+		ai_will_do = { base = 10 }
 		custom_cost_text = MNG_zijinxi_dayu_65_MNG_guanxuexi_xiaoyu_20
 		days_remove = 7
         fire_only_once = yes
@@ -323,6 +327,7 @@ MNG_jinyiweizaixingdong_categories = {
             hidden_effect = { political_power_cost = 120}
             add_to_variable = { MNG_guanxuexi = -10 } 
             add_to_variable = { MNG_zijinxi = -7 }
+            custom_effect_tooltip = MNG_zhongchuangguanxuexi_xiaoguo
             set_country_flag = MNG_zhongchuangguanxuexi
         }
 	}
@@ -335,6 +340,7 @@ MNG_jinyiweizaixingdong_categories = {
             has_army_experience > 14
             has_political_power > 99
 		}
+		ai_will_do = { base = 10 }
 		custom_cost_text = MNG_zijinxi_dayu_65
 		days_remove = 7
         fire_only_once = yes
@@ -345,7 +351,8 @@ MNG_jinyiweizaixingdong_categories = {
             }
             add_to_variable = { MNG_zijinxi = -5 }
             set_country_flag = MNG_nongminyundongbeidaji
-	    set_global_flag = MNG_nongminyundongbeidaji
+	        set_global_flag = MNG_nongminyundongbeidaji
+            custom_effect_tooltip = MNG_dajinongminyundong_xiaoguo
         }
 	}
     #镇压工人运动
@@ -357,6 +364,7 @@ MNG_jinyiweizaixingdong_categories = {
             has_army_experience > 14
             has_political_power > 99
 		}
+		ai_will_do = { base = 10 }
 		custom_cost_text = MNG_zijinxi_dayu_65
 		days_remove = 7
         fire_only_once = yes
@@ -367,6 +375,7 @@ MNG_jinyiweizaixingdong_categories = {
             }
             add_to_variable = { MNG_zijinxi = -5 }
             GPS = {set_country_flag = MNG_gongrenyundongbeizhenya}
+            custom_effect_tooltip = MNG_zhenyagongrenyundong_xiaoguo
         }
 	}
 }
@@ -383,7 +392,8 @@ MNG_jingjijianshe_categories = {
 		days_remove = 60
         days_re_enable = 180
         
-        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		ai_will_do = { base = 10 }
+        complete_effect = {}
 		remove_effect = {
             hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_jiaotongxi = 6 }
@@ -404,6 +414,7 @@ MNG_jingjijianshe_categories = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = MNG_fuchixibeijungong_xiaoguo
         }
 	}
     #扶持西南军工
@@ -416,7 +427,8 @@ MNG_jingjijianshe_categories = {
 		custom_cost_text = MNG_qingzhengxi_dayu_35
 		days_remove = 60
         days_re_enable = 180
-        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		ai_will_do = { base = 10 }
+        complete_effect = {}
 		remove_effect = {
             hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_qingzhengxi = 6 }
@@ -436,6 +448,7 @@ MNG_jingjijianshe_categories = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = MNG_fuchixinanjungong_xiaoguo
         }
 	}
     #振兴华北国企
@@ -448,7 +461,8 @@ MNG_jingjijianshe_categories = {
 		custom_cost_text = MNG_wubeixi_dayu_50
 		days_remove = 60
         days_re_enable = 180
-        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		ai_will_do = { base = 10 }
+        complete_effect = {}
 		remove_effect = {
             hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_wubeixi = 6 }
@@ -470,6 +484,7 @@ MNG_jingjijianshe_categories = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = MNG_zhenxinghuabeiguoqi_xiaoguo
         }
 	}
     #促进华东民营
@@ -482,7 +497,8 @@ MNG_jingjijianshe_categories = {
 		custom_cost_text = MNG_guanxuexi_dayu_40
 		days_remove = 60
         days_re_enable = 180
-        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		ai_will_do = { base = 10 }
+        complete_effect = {}
 		remove_effect = {
             hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_guanxuexi = 6 }
@@ -503,6 +519,7 @@ MNG_jingjijianshe_categories = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = MNG_cujinhuadongminying_xiaoguo
         }
 	}
     #促进华南民营
@@ -515,7 +532,8 @@ MNG_jingjijianshe_categories = {
 		custom_cost_text = MNG_guanxuexi_dayu_40
 		days_remove = 60
         days_re_enable = 180
-        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		ai_will_do = { base = 10 }
+        complete_effect = {}
 		remove_effect = {
             hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_guanxuexi = 3 }
@@ -538,6 +556,7 @@ MNG_jingjijianshe_categories = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = MNG_cujinhuananminying_xiaoguo
         }
 	}
     #恢复东北产能
@@ -552,7 +571,8 @@ MNG_jingjijianshe_categories = {
 		custom_cost_text = MNG_wubeixi_dayu_50_MNG_zijinxi_dayu_65
 		days_remove = 60
         days_re_enable = 180
-        complete_effect = { set_country_flag = MNG_gongyejianshe }
+		ai_will_do = { base = 10 }
+        complete_effect = {}
 		remove_effect = {
             hidden_effect = {political_power_cost = 50 }
             add_to_variable = { MNG_wubeixi = 3 }
@@ -575,6 +595,7 @@ MNG_jingjijianshe_categories = {
                     instant_build = yes
                 }
             }
+            custom_effect_tooltip = MNG_huifudongbeichanneng_xiaoguo
         }
 	}
 }
