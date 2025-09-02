@@ -456,6 +456,9 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = { 
+			hidden_effect = {
+				news_event = { id = mingcivwar.53 } 
+			}
 			add_political_power = 50
 			add_to_variable = { MNG_zijinxi = -3 }
 			add_to_variable = { MNG_wubeixi = -3 }
@@ -464,9 +467,6 @@ focus_tree = {
 			add_to_variable = { MNG_jiaotongxi = -3 }
 			add_to_variable = { MNG_zhengxuexi = -3 }
 			custom_effect_tooltip = MNG_diaochasheanguanyuan_xiaoguo
-		}
-		hidden_effect = {
-			news_event = { id = mingcivwar.53 } 
 		}
 	}
 	#斩尽杀绝
@@ -795,7 +795,7 @@ focus_tree = {
 	focus = {
 		id = MNG_caitairongruo
 		icon = GFX_MNG_caitairongruo
-		prerequisite = {focus = MNG_zhengjunchiwu}
+		prerequisite = {focus = MNG_youbeiwuhuan}
 		allow_branch = {if = {has_country_flag = MNG_taisunjiwei}}
 		x = 9
 		y = 4
