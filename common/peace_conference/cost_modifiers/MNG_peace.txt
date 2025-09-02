@@ -1,0 +1,21 @@
+# Scripted cost modifiers for peace actions.
+# See documentation.info file for more detailed scripting information.
+
+peace_action_modifiers = {
+    generic_is_core = {
+        category = is_core
+        peace_action_type = take_states
+
+        enable = {
+            FROM.FROM.FROM = {
+                is_core_of = MNG
+            }
+            ROOT = {
+                is_ming_tag = yes
+            }
+			ROOT.FROM = { tag = ROOT }
+        }
+
+        cost_multiplier = 0.25 # Reduced by ~75%
+    }
+}
