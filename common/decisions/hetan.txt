@@ -186,6 +186,11 @@ ROC_SRC_decision_hetan = {
 	}
 	ROC_SRC_decision_hetan_1 = {
 		icon = GFX_decision_generic_political_address
+		visible = {
+			NOT = {
+				has_global_flag = global_flag_hetan_ROC_SRC_fail
+			}
+		}
 		available = { always = no }
 		ai_will_do = {
 			base = 0
