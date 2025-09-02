@@ -41,3 +41,46 @@ DIPLOMACY_CALL_ALLY_ENABLE_TRIGGER = {
 		}
 	}
 }
+
+DIPLOMACY_JOIN_ALLY_ENABLE_TRIGGER = {
+	if = { 
+		limit = {
+			NOT = { has_global_flag = ETH_war_end }
+			OR = {
+				ROOT = {
+					tag = IEA
+				}
+				FROM = {
+					tag = IEA
+				}
+				ROOT = {
+					tag = MEA
+				}
+				FROM = {
+					tag = MEA
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = ETH_NOT_ITA_MNG
+			always = no
+		}
+	}
+	else_if = {
+		limit = {
+			NOT = { has_global_flag = PER_IRQ_war_end }
+			OR = {
+				ROOT = {
+					tag = PER
+				}
+				FROM = {
+					tag = PER
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = PER_IRQ_NOT_WAR
+			always = no
+		}
+	}
+}
