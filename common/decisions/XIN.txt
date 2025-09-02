@@ -71,3 +71,40 @@ XIN_dianmiantielu = {
         }
 	}
 }
+#滇缅开战决议
+XIN_BRM_war = {
+    XIN_dianmianzhanzheng = {
+        conquer_berlin = {
+            allowed = { tag = XIN }
+            available = { BRM ={surrender_progress > 0.4} }
+            activation = { has_war_with = BRM }
+            is_good = yes
+            days_mission_timeout = 365
+            timeout_effect = {
+                white_peace = BRM
+            }
+            complete_effect = {
+                set_autonomy = {
+                    target = BRM
+                    autonomy_state = autonomy_puppet
+	            }
+            }
+        }
+    }
+   BRM_dianmianzhanzheng = {
+        conquer_berlin = {
+            allowed = { tag = BRM }
+            available = { XIN = {surrender_progress > 0.6} }
+            activation = { has_war_with = XIN }
+            is_good = yes
+            days_mission_timeout = 365
+            timeout_effect = {
+                white_peace = XIN
+            }
+            complete_effect = {
+                white_peace = XIN
+            }
+        }
+    }
+
+}

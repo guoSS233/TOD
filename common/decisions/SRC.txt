@@ -13,7 +13,7 @@ SRC_baoweigongrenzhengquan_categories = {
 		days_mission_timeout = 30
 		days_re_enable = 0
 		
-		remove_effect = {
+		timeout_effect = {
 			add_equipment_to_stockpile = {
 		        type = infantry_equipment
 		        amount = 500
@@ -60,7 +60,7 @@ SRC_junshijianshe_catagories = {
 		}
 		ai_will_do = { base = 10 }
         fire_only_once = yes
-		custom_cost_text = SRC_yundongzhan_huafei
+		custom_cost_text = SRC_renminzhanzheng_huafei
         complete_effect = { 
 			hidden_effect = {
 				add_political_power = -50
@@ -91,7 +91,7 @@ SRC_junshijianshe_catagories = {
 		}
 		ai_will_do = { base = 10 }
         fire_only_once = yes
-		custom_cost_text = SRC_butanxietong_huafei
+		custom_cost_text = SRC_renminzhanzheng_huafei
         complete_effect = { 
 			hidden_effect = {
 				add_political_power = -50
@@ -121,7 +121,7 @@ SRC_junshijianshe_catagories = {
             has_army_experience > 25
 		}
         fire_only_once = yes
-		custom_cost_text = SRC_sansanzhi_huafei
+		custom_cost_text = SRC_renminzhanzheng_huafei
         complete_effect = { 
 			hidden_effect = {
 				add_political_power = -50
@@ -151,7 +151,7 @@ SRC_junshijianshe_catagories = {
             has_army_experience > 25
 		}
         fire_only_once = yes
-		custom_cost_text = SRC_dazongshen_huafei
+		custom_cost_text = SRC_renminzhanzheng_huafei
         complete_effect = { 
 			hidden_effect = {
 				add_political_power = -50
@@ -164,8 +164,8 @@ SRC_junshijianshe_catagories = {
 			set_country_flag = SRC_dazongshen_wancheng
 		}
 	}
-	#人民战争
-	SRC_renminzhanzheng = {
+	#中华革命军事理论
+	SRC_zhonghuagemingjunshililun = {
 
 		allowed = { tag = SRC } 
 		available = { 
