@@ -93,7 +93,7 @@ focus_tree = {
 			recruit_character = SRC_xu_xiangqian
 			recruit_character = SRC_zhu_rui
 			recruit_character = SRC_wang_yongqing
-			recruit_character = SRC_wang_minjing\
+			recruit_character = SRC_wang_minjing
 			hidden_effect = {
 				SRC = {
 					SRC_yang_jingyu = { set_nationality = SRC }
@@ -2033,10 +2033,15 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			SRC = {
-				SRC_sa_shijun = { set_nationality = SRC }
-				SRC_deng_zhaoxiang = { set_nationality = SRC }
+			recruit_character = SRC_sa_shijun
+			recruit_character = SRC_deng_zhaoxiang
+			hidden_effect = {
+				SRC = {
+					SRC_sa_shijun = { set_nationality = SRC }
+					SRC_deng_zhaoxiang = { set_nationality = SRC }
+				}
 			}
+			
 		}
 	}
 	#保证国际补给线
