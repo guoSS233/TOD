@@ -490,7 +490,6 @@ ROC_focus_gonggubianjie = {#巩固边界
 			NOT = {
 				has_country_flag = ROC_decision_bubing_10
 			}
-
 		}
 		complete_effect = {  	
 
@@ -592,7 +591,7 @@ ROC_focus_gonggubianjie = {#巩固边界
 			}
 			592 = {
 				create_unit = {
-					division = "name = \"步兵师第%1师\" division_template = \"步兵师\" start_experience_factor = 1.0"
+					division = "name = \"步兵师第%1师\" division_template = \"步兵师\" start_experience_factor = 0.2"
 					prioritize_location = 1047
 					owner = ROC
 				}
@@ -703,8 +702,7 @@ ROC_focus_gonggubianjie = {#巩固边界
 		targeted_modifier = {
 			tag = GOS
 			#战斗修正种类
-			attack_bonus_against = 0.2
-			defense_bonus_against = 0.2
+			attack_bonus_against = 0.1
 		}
 		complete_effect = {
 		}
@@ -880,14 +878,12 @@ ROC_focus_beifa = {#北伐
 		targeted_modifier = {
 			tag = STG
 			#战斗修正种类
-			attack_bonus_against = 0.2
-			defense_bonus_against = 0.2
+			attack_bonus_against = 0.1
 		}
 		targeted_modifier = {
 			tag = XBJ
 			#战斗修正种类
-			attack_bonus_against = 0.2
-			defense_bonus_against = 0.2
+			attack_bonus_against = 0.1
 		}
 		complete_effect = {
 		}
