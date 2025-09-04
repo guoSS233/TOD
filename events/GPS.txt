@@ -142,11 +142,13 @@ country_event = {
 	
 	trigger = {tag = GPS}
 	
-	option = { 
+	option = {
+		ai_chance = { base = 10 }
 		name = GPSevents.7.a
         add_to_variable = { GPS_bai = 1 } 
 	}
-	option = { 
+	option = {
+		ai_chance = { base = 10 }
 		name = GPSevents.7.b
         add_to_variable = { GPS_sheng = 1 } 
 	}
@@ -163,11 +165,13 @@ country_event = {
 	
 	trigger = {tag = GPS}
 	
-	option = { 
+	option = {
+		ai_chance = { base = 10 }
 		name = GPSevents.8.a
         add_to_variable = { GPS_bai = 1 } 
 	}
-	option = { 
+	option = {
+		ai_chance = { base = 10 }
 		name = GPSevents.8.b
         add_to_variable = { GPS_sheng = 1 } 
 	}
@@ -185,6 +189,7 @@ country_event = {
 	trigger = {tag = GPS}
 	
 	option = { 
+		ai_chance = { base = 10 }
 		name = GPSevents.9.a
         if = {
 			limit = {check_variable = { GPS_sheng > GPS_bai}}
@@ -200,6 +205,7 @@ country_event = {
 		}
 	}
 	option = { 
+		ai_chance = { base = 10 }
 		name = GPSevents.9.b
         if = {
 			limit = {check_variable = { GPS_sheng > GPS_bai}}
@@ -228,6 +234,7 @@ country_event = {
 	trigger = {tag = GPS}
 	
 	option = { 
+		ai_chance = { base = 10 }
 		name = GPSevents.10.a
 		SRC = {
 			transfer_state = 1218
@@ -288,6 +295,7 @@ country_event = {
 		}
 	}
 	option = { 
+		ai_chance = { base = 10 }
 		name = GPSevents.10.b
 		SRC = {
 			transfer_state = 1218
@@ -360,6 +368,7 @@ country_event = {
 	trigger = {tag = GPS}
 
 	option = { 
+		ai_chance = { base = 10 }
 		name = GPSevents.11.a
 		GPS = { complete_national_focus = GPS_gongshishoucuo}
 		SRC = { complete_national_focus = SRC_no_longer_a_slave}
@@ -418,6 +427,7 @@ country_event = {
 		}
 	}
 	option = { 
+		ai_chance = { base = 10 }
 		name = GPSevents.11.b
 		SRC = {
 			transfer_state = 846

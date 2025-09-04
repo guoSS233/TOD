@@ -120,16 +120,19 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.4.a
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_xianfeng = 1 } 
 		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
 	}
 	option = { 
 		name = SRCevents.4.b
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_weiyuan = 1 } 
 		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
 	}
 	option = { 
 		name = SRCevents.4.c
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_wenhe = 1 } 
 		SRC = {country_event = { id = SRCevents.5 days = 1 } } 
 	}
@@ -148,16 +151,19 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.5.a
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_xianfeng = 1 } 
 		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
 	}
 	option = { 
 		name = SRCevents.5.b
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_weiyuan = 1 } 
 		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
 	}
 	option = { 
 		name = SRCevents.5.c
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_wenhe = 1 } 
 		SRC = {country_event = { id = SRCevents.6 days = 1 } } 
 	}
@@ -176,16 +182,19 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.6.a
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_xianfeng = 1 } 
 		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
 	}
 	option = { 
 		name = SRCevents.6.b
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_weiyuan = 1 } 
 		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
 	}
 	option = { 
 		name = SRCevents.6.c
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_wenhe = 1 } 
 		SRC = {country_event = { id = SRCevents.7 days = 1 } } 
 	}
@@ -204,15 +213,18 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.7.a
+		ai_chance = { base = 10 }
         add_to_variable = { SRC_xianfeng = 1 } 
 		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
 	}
 	option = { 
+		ai_chance = { base = 10 }
 		name = SRCevents.7.b
         add_to_variable = { SRC_weiyuan = 1 } 
 		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
 	}
 	option = { 
+		ai_chance = { base = 10 }
 		name = SRCevents.7.c
         add_to_variable = { SRC_wenhe = 1 } 
 		SRC = {country_event = { id = SRCevents.8 days = 1 } } 
@@ -231,6 +243,7 @@ country_event = {
 	trigger = {tag = SRC}
 	
 	option = { 
+		ai_chance = { base = 10 }
 		name = SRCevents.8.a
 		trigger = {
 			OR = {
@@ -259,6 +272,7 @@ country_event = {
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
+		ai_chance = { base = 10 }
 		name = SRCevents.8.b
 		trigger = {
 			OR = {
@@ -287,6 +301,7 @@ country_event = {
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
+		ai_chance = { base = 10 }
 		trigger = {
 			OR = {
 				check_variable = { SRC_weiyuan > SRC_wenhe }
