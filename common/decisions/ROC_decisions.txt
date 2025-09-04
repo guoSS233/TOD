@@ -1152,6 +1152,45 @@ ROC_focus_quanguogeming = {#全国革命
 			declare_war_on = { target = MOB type = annex_everything }
 		}
 	}
+	ROC_decision_geming_SCG = {#对漠北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}				
+	    }
+		visible = {
+			has_completed_focus = bashuzhiguo
+			country_exists = SCG 
+			NOT = {
+				country_exists = SRC
+			}
+			is_neighbor_of = SCG
+			NOT = { has_war_with = SCG }
+		}
+		remove_effect = {
+			annex_country = {
+				target = SCG
+			}
+            every_state = {
+                limit = {
+                    is_core_of = SCG
+                }
+                add_core_of = ROC
+                remove_core_of = SCG
+            }
+            SCG = {
+                every_unit_leader = {
+                    set_nationality = ROC
+                }
+            }
+		}
+	}
 }
 
 ROC_focus_quanguogeming = {#经济建设
