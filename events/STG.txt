@@ -3003,7 +3003,7 @@ country_event = {
 		name = TOD_STG.174.a
 	}
 }
-#宣传民德
+#内阁实权
 country_event = {
 	id = TOD_STG.175
 	title = TOD_STG.175.t
@@ -3019,7 +3019,7 @@ country_event = {
 		name = TOD_STG.175.a
 	}
 }
-#改革宪兵机构
+#宣传民德
 country_event = {
 	id = TOD_STG.176
 	title = TOD_STG.176.t
@@ -3035,7 +3035,7 @@ country_event = {
 		name = TOD_STG.176.a
 	}
 }
-#加强爱国教育
+#改革宪兵机构
 country_event = {
 	id = TOD_STG.177
 	title = TOD_STG.177.t
@@ -3051,7 +3051,7 @@ country_event = {
 		name = TOD_STG.177.a
 	}
 }
-#改善民生
+#加强爱国教育
 country_event = {
 	id = TOD_STG.178
 	title = TOD_STG.178.t
@@ -3064,7 +3064,23 @@ country_event = {
 	trigger = { tag = STG }
 	
 	option = {
-		name = TOD_STG.178.a
+		name = TOD_STG.78.a
+	}
+}
+#改善民生
+country_event = {
+	id = TOD_STG.179
+	title = TOD_STG.179.t
+	desc =TOD_STG.179.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = {
+		name = TOD_STG.179.a
 	}
 }
 #出台反罢工法
@@ -3130,6 +3146,55 @@ country_event = {
 	
 	option = {
 		name = TOD_STG.183.a
+	}
+}
+#巫马案（一）
+country_event = {
+	id = TOD_STG.184
+	title = TOD_STG.184.t
+	desc =TOD_STG.184.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = {
+		name = TOD_STG.184.a
+		country_event = { id = TOD_STG.185 }
+	}
+}
+#巫马案（二）
+country_event = {
+	id = TOD_STG.185
+	title = TOD_STG.185.t
+	desc =TOD_STG.185.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = {
+		name = TOD_STG.185.a
+	}
+}
+#粉墨春秋
+country_event = {
+	id = TOD_STG.186
+	title = TOD_STG.186.t
+	desc =TOD_STG.186.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = {
+		name = TOD_STG.186.a
 	}
 }
 

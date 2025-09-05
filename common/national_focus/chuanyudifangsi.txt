@@ -519,7 +519,7 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { declare_war_on = { target = XIN type = annex_everything } }
+		completion_reward = { create_wargoal = { target = XIN type = annex_everything } }
 	}
 	#智取荆州
 	focus = {
@@ -586,7 +586,7 @@ focus_tree = {
 	focus = {
 		id = SIC_duiwaijiaoliu
 		icon = GFX_SIC_duiwaijiaoliu
-		x = 12
+		x = 11
 		y = 1
 		
 		cancel_if_invalid = yes
@@ -596,8 +596,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { 
-			always = no
+		available = {
 			has_completed_focus = SIC_zhaojigefang 
 		}
 		
@@ -608,7 +607,7 @@ focus_tree = {
 		id = SIC_chulihuangshi
 		icon = GFX_SIC_chulihuangshi
 		prerequisite = { focus = SIC_duiwaijiaoliu }
-		x = 10
+		x = 8
 		y = 2
 		
 		cancel_if_invalid = yes
@@ -620,13 +619,56 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { }
 	}
 	#拥护共和
 	focus = {
 		id = SIC_yonghugonghe
 		icon = GFX_SIC_yonghugonghe
 		prerequisite = { focus = SIC_chulihuangshi }
+		mutually_exclusive = { focus = SIC_huangdiwansui }
+		x = 6
+		y = 3
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {always = no}
+		
+		completion_reward = { 
+			add_timed_idea = {idea = SIC_cangtianyisi days = 90 }
+			add_opinion_modifier = {
+				target = STG
+				modifier = SIC_chulihuangshi
+			}
+			add_opinion_modifier = {
+				target = GOS
+				modifier = SIC_chulihuangshi
+			}
+			add_opinion_modifier = {
+				target = XBJ
+				modifier = SIC_chulihuangshi
+			}
+			add_opinion_modifier = {
+				target = SRC
+				modifier = SIC_yonghugonghe
+			}
+			add_opinion_modifier = {
+				target = ROC
+				modifier = SIC_yonghugonghe
+			}
+		}
+	}
+	#皇帝万岁
+	focus = {
+		id = SIC_huangdiwansui
+		icon = GFX_SIC_huangdiwansui
+		prerequisite = { focus = SIC_chulihuangshi }
+		mutually_exclusive = { focus = SIC_yonghugonghe }
 		x = 8
 		y = 3
 		
@@ -637,28 +679,31 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {always = no}
 		
-		completion_reward = { add_timed_idea = {idea = SIC_cangtianyisi days = 90 }	 }
-	}
-	#皇帝万岁
-	focus = {
-		id = SIC_huangdiwansui
-		icon = GFX_SIC_huangdiwansui
-		prerequisite = { focus = SIC_chulihuangshi }
-		x = 10
-		y = 3
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { add_timed_idea = {idea = SIC_tianyoudaming days = 90 } }
+		completion_reward = { 
+			add_timed_idea = {idea = SIC_tianyoudaming days = 90 } 
+			add_opinion_modifier = {
+				target = STG
+				modifier = SIC_yonghudaming
+			}
+			add_opinion_modifier = {
+				target = GOS
+				modifier = SIC_yonghudaming
+			}
+			add_opinion_modifier = {
+				target = XBJ
+				modifier = SIC_yonghudaming
+			}
+			add_opinion_modifier = {
+				target = SRC
+				modifier = SIC_fandongpai
+			}
+			add_opinion_modifier = {
+				target = ROC
+				modifier = SIC_fandongpai
+			}
+		}
 	}
 	#稳固乌斯藏
 	focus = {
@@ -692,12 +737,12 @@ focus_tree = {
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 5
+		cost = 0
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = {}
 	}
 	#孙刘同盟
 	focus = {
@@ -714,9 +759,20 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			has_opinion = { 
+				target = GOS
+				value > 59 
+			}  
+		}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			diplomatic_relation = {
+				country = GOS
+				relation = non_aggression_pact
+				active = yes
+			}
+		 }
 	}
 	#西南互保
 	focus = {
@@ -733,9 +789,27 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			has_opinion = { 
+				target = XIN
+				value > 59 
+			}  
+		}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = { 
+			diplomatic_relation = {
+				country = XIN
+				relation = guarantee
+				active = yes
+			}
+			XIN = {
+				diplomatic_relation = {
+					country = SIC
+					relation = guarantee
+					active = yes
+				}
+			}
+		 }
 	}
 	#南北互不冲突条约
 	focus = {
@@ -752,9 +826,20 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			has_opinion = { 
+				target = XBJ
+				value > 59 
+			}  
+		}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = {
+			diplomatic_relation = {
+				country = XBJ
+				relation = non_aggression_pact
+				active = yes
+			}
+		 }
 	}
 	#维持教育运行
 	focus = {
