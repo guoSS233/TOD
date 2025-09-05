@@ -3132,9 +3132,55 @@ country_event = {
 		name = TOD_STG.183.a
 	}
 }
-
-
-
+#巫马案（一）
+country_event = {
+	id = TOD_STG.184
+	title = TOD_STG.184.t
+	desc =TOD_STG.184.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = {
+		name = TOD_STG.184.a
+		country_event = { id = TOD_STG.185 }
+	}
+}
+#巫马案（二）
+country_event = {
+	id = TOD_STG.185
+	title = TOD_STG.185.t
+	desc =TOD_STG.185.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = {
+		name = TOD_STG.185.a
+	}
+}
+#粉墨春秋
+country_event = {
+	id = TOD_STG.186
+	title = TOD_STG.186.t
+	desc =TOD_STG.186.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = { tag = STG }
+	
+	option = {
+		name = TOD_STG.186.a
+	}
+}
 
 
 
