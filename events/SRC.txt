@@ -613,6 +613,7 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.25.a
+		hidden_effect = { country_event = { id = SRCevents.43 days = 60} }
 	}
 }
 #一位普通记者的回忆
@@ -871,7 +872,7 @@ country_event = {
 		name = SRCevents.41.a
 	}
 }
-# 赤旗指引未来
+#赤旗指引未来
 country_event = {
 	id = SRCevents.42
 	title = SRCevents.42.t
@@ -887,3 +888,20 @@ country_event = {
 		name = SRCevents.42.a
 	}
 }
+#猴戏热潮
+country_event = {
+	id = SRCevents.43
+	title = SRCevents.43.t
+	desc =SRCevents.43.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = SRC}
+	
+	option = { 
+		name = SRCevents.43.a
+	}
+}
+
