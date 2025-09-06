@@ -1719,7 +1719,7 @@ GOS_decision_l_4_jsjy = {  #军事决议
 		available = {		
 		}	
 		custom_cost_trigger = {
-			has_army_experience > 99
+			has_army_experience > 99.99
 		}		
 		custom_cost_text = GOS_cost_xp_army_100		
 		ai_will_do = {
@@ -1739,7 +1739,7 @@ GOS_decision_l_4_jsjy = {  #军事决议
 					add_idea = GOS_idea_jnmj_jia_5			
 				}
 			}
-			add_to_variable = { GOS_VAR_jnmj_army_org_base = 0.02.1  }	
+			add_to_variable = { GOS_VAR_jnmj_army_org_factor = 0.1  }	
 			set_country_flag = FLAG_GOS_decision_jsgg_2_unlocked
 		}	
 	}
@@ -1774,7 +1774,7 @@ GOS_decision_l_4_jsjy = {  #军事决议
 					add_idea = GOS_idea_jnmj_jia_7			
 				}
 			}
-			add_to_variable = { GOS_VAR_jnmj_army_defence_base = 0.02.1  }	
+			add_to_variable = { GOS_VAR_jnmj_army_defence_factor = 0.1  }	
 			set_country_flag = FLAG_GOS_decision_jsgg_3_unlocked
 		}	
 	}
@@ -1809,7 +1809,7 @@ GOS_decision_l_4_jsjy = {  #军事决议
 					add_idea = GOS_idea_jnmj_jia_6			
 				}
 			}
-			add_to_variable = { GOS_VAR_jnmj_army_attack_base = 0.02.1  }	
+			add_to_variable = { GOS_VAR_jnmj_army_attack_factor = 0.1  }	
 		}	
 	}
 	GOS_decision_zzyj_ghj = { #对共和军的作战研究
@@ -1820,6 +1820,7 @@ GOS_decision_l_4_jsjy = {  #军事决议
 		fire_only_once = no				
 		visible = {
 			has_country_flag  = FLAG_GOS_decision_zzyj_ghj_unlocked
+			country_exists = ROC
 		}	
 		available = {		
 		}	
@@ -1839,7 +1840,7 @@ GOS_decision_l_4_jsjy = {  #军事决议
 	   	}
 		targeted_modifier = {
 			tag = ROC
-			#attack_bonus_against = 0.1  #攻击修正
+			attack_bonus_against = 0.1  #攻击修正
 			defense_bonus_against = 0.1  #防御修正
 		}
 		remove_effect = {	
