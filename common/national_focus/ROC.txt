@@ -1,948 +1,469 @@
-focus_tree = {#共和军国策
-	id = ROC_gonghe
-	country = {
-		factor = 0
-		# modifier = {
-		# 	add = 10
-		# 	tag = ROC
-		# }
+add_namespace = ROC_focus
+add_namespace = ROC_start
+add_namespace = ROC_datong
+add_namespace = ROC_pingheng
+
+#海军部的争论！
+country_event = { 
+	id = ROC_focus.1
+	title = ROC_focus.1.t
+	desc = ROC_focus.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.1.a #战列舰
+        add_tech_bonus = {
+            bonus = 1.0
+            uses = 1
+            category = bb_tech
+        }
+        swap_ideas = {
+            add_idea = ROC_idea_nanyangzhijian_1
+            remove_idea = ROC_idea_nanyangzhijian
+        }
 	}
-	default = no
-	focus = {#1、广州起义
-		id = guangzhouqiyi
-		icon = GFX_ROC_guangzhouqiyi
-		cost = 0.00
-		x = 15
-		y = 0
-		available = {always = no}
-		ai_will_do = {factor = 0}
+    option = {
+		name = ROC_focus.1.b #航母
+        add_tech_bonus = {
+            bonus = 1.0
+            uses = 1
+            category = cv_tech
+        }
+        swap_ideas = {
+            add_idea = ROC_idea_nanyangzhijian_2
+            remove_idea = ROC_idea_nanyangzhijian
+        }
 	}
-	focus = {#38、组建共和武装
-		id = zujiangonghewuzhuang
-		icon = GFX_ROC_zujiangonghewuzhuang
-		cost = 1.00
-		x = 34
-		y = 0
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 1000
-				date > 1938.3.1
-			}
-		}
-		completion_reward = {
-			country_event = ROC_focus.2
-		}
+}
+#共和武装
+country_event = { 
+	id = ROC_focus.2
+	title = ROC_focus.2.t
+	desc = ROC_focus.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.2.a 
+        army_experience = 30
 	}
-	focus = {#76、策动南洋舰队参与革命
-		id = cedongnanyangjianduicanyugeming
-		icon = GFX_ROC_cedongnanyangjianduicanyugeming
-		cost = 0
-		x = 50
-		y = 0
-		available = {always = no}
-		ai_will_do = {factor = 0}
+}
+#改革前景
+country_event = { 
+	id = ROC_focus.3
+	title = ROC_focus.3.t
+	desc = ROC_focus.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.3.a 
+		ROC = {country_event = { id = ROC_focus.23 }}
 	}
-	focus = {#89、颁布共和临时宪法
-		id = banbugonghelinshixianfa
-		icon = GFX_ROC_banbugonghelinshixianfa
-		cost = 0
-		x = 14
-		y = 10
-		ai_will_do = {factor = 10}
-		available = {
-			any_country = {
-				OR = {
-					AND = {
-						tag = ROC
-						controls_state = 613
-					}
-					AND = {
-						controls_state = 613
-						OR = {
-							is_in_faction_with = ROC
-							is_subject_of = ROC
-						}
-					}
-				}
-			}
-		}
-		completion_reward = {
-			country_event = ROC_focus.13
-		}
+}
+#集约化经营
+country_event = { 
+	id = ROC_focus.4
+	title = ROC_focus.4.t
+	desc = ROC_focus.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.4.a 
+		country_event = { days = 7 id = ROC_focus.24 }
 	}
-	focus = {#2、改造经济的准备
-		id = gaizaojingjidezhunbei
-		icon = GFX_ROC_gaizaojingjidezhunbei
-		cost = 2.00
-		prerequisite = {
-			focus = guangzhouqiyi
-		}
-		available = {always = no}
-		x = 6
-		y = 1
-		ai_will_do = {factor = 50}
-		completion_reward = {	
-			add_political_power = 75
-		}
+}
+#土地改革
+country_event = { 
+	id = ROC_focus.5
+	title = ROC_focus.5.t
+	desc = ROC_focus.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.5.a 
+		country_event = { days = 7 id = ROC_focus.28 }
 	}
-	focus = {#3、伟大实践的开始
-		id = weidashijiandekaishi
-		icon = GFX_ROC_weidashijiandekaishi
-		cost = 3.00
-		prerequisite = {
-			focus = gaizaojingjidezhunbei
-		}
-		x = 6
-		y = 2
-		ai_will_do = {factor = 50}
-		completion_reward = {	
-			add_stability = 0.1
-		}
+}
+#联合商会
+country_event = { 
+	id = ROC_focus.6
+	title = ROC_focus.6.t
+	desc = ROC_focus.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.6.a 
 	}
-	focus = {#4、土地改革
-		id = tudigaige
-		icon = GFX_ROC_tudigaige
-		cost = 5.00
-		prerequisite = {
-			focus = weidashijiandekaishi
-		}
-		x = 2
-		y = 3
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			custom_effect_tooltip = ROC_custom_tudigaige
-			set_variable = {
-				ROC_VAR_nongcun_days_base = 90
-			}
-			set_variable = {
-				ROC_VAR_nongcun_pp_base = 30
-			}
-			swap_ideas = {
-				add_idea = ROC_idea_meihuazhihai_1
-				remove_idea = ROC_idea_meihuazhihai
-			}
-			592 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			ROC_scripted_effects_jianshe = yes
-		}
+}
+#节制资本
+country_event = { 
+	id = ROC_focus.7
+	title = ROC_focus.7.t
+	desc = ROC_focus.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.7.a 
 	}
-	focus = {#5、商会农场改制
-		id = shanghuinongchanggaizhi
-		icon = GFX_ROC_shanghuinongchanggaizhi
-		cost = 5.00
-		prerequisite = {
-			focus = tudigaige
-		}
-		mutually_exclusive = {
-			focus = luoshipingjundiquan
-		}
-		x = 1
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_popularity = { ideology = liberal_democracy popularity = 0.04 }
-			country_event = ROC_focus.4
-		}
+}
+#委员会政治
+country_event = { 
+	id = ROC_focus.8
+	title = ROC_focus.8.t
+	desc = ROC_focus.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.8.a 
+		complete_national_focus = guangzhougemingweiyuanhui
 	}
-	focus = {#7、落实平均地权
-		id = luoshipingjundiquan
-		icon = GFX_ROC_luoshipingjundiquan
-		cost = 5.00
-		prerequisite = {
-			focus = tudigaige
-		}
-		mutually_exclusive = {
-			focus = shanghuinongchanggaizhi
-		}
-		x = 3
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_popularity = { ideology = agroindustrial_socialism popularity = 0.03 }
-			country_event = ROC_focus.5
-		}
+}
+#会政关系再讨论
+country_event = { 
+	id = ROC_focus.9
+	title = ROC_focus.9.t
+	desc = ROC_focus.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.9.a 
+		country_event = { days = 15 id = ROC_focus.33 }
 	}
-	focus = {#10、整合优秀知识分子
-		id = zhengheyouxiuzhishifenzi
-		icon = GFX_ROC_zhengheyouxiuzhishifenzi
-		cost = 5.00
-		prerequisite = {
-			focus = weidashijiandekaishi
-		}
-		x = 6
-		y = 3
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_research_slot = 1
-		}
+}
+#省议院会议
+country_event = { 
+	id = ROC_focus.10
+	title = ROC_focus.10.t
+	desc = ROC_focus.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.10.a 
 	}
-	focus = {#11、鼓励学术自由
-		id = gulixueshuziyou
-		icon = GFX_ROC_gulixueshuziyou
-		cost = 5.00
-		prerequisite = {
-			focus = zhengheyouxiuzhishifenzi
-		}
-		x = 6
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_11
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_10
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_11
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_10
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_21
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_20
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_21
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_20
-				}
-			}
-		}
+}
+#县委会工作
+country_event = { 
+	id = ROC_focus.11
+	title = ROC_focus.11.t
+	desc = ROC_focus.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.11.a
+		country_event = { id = ROC_focus.35 } 
 	}
-	focus = {#13、接管官营工厂
-		id = jieguanguanyinggongcheng
-		icon = GFX_ROC_jieguanguanyinggongcheng
-		cost = 5.00
-		prerequisite = {
-			focus = weidashijiandekaishi
-		}
-		x = 10
-		y = 3
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_offsite_building = { type = arms_factory level = 3 }
-			set_variable = {
-				ROC_VAR_chengshi_days_base = 120
-			}
-			set_variable = {
-				ROC_VAR_chengshi_minsheng_pp_base = 40
-			}
-			set_variable = {
-				ROC_VAR_chengshi_junshi_pp_base = 30
-			}
-			custom_effect_tooltip = ROC_custom_jieguanguanyinggongcheng
-			ROC_scripted_effects_jianshe = yes
-		}
+}
+#革命三段论
+country_event = { 
+	id = ROC_focus.12
+	title = ROC_focus.12.t
+	desc = ROC_focus.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.12.a 
 	}
-	focus = {#14、联合商会势力
-		id = lianheshanghuishili
-		icon = GFX_ROC_lianheshanghuishili
-		cost = 5.00
-		prerequisite = {
-			focus = jieguanguanyinggongcheng
-		}
-		mutually_exclusive = {
-			focus = shijianjiezhiziben
-		}
-		x = 9
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_stability = 0.1
-			every_state = {
-				limit = {
-					OR = {
-						state = 591 #海南
-						state = 592 #广州
-						state = 729 #香江
-						state = 1115 #粤中
-						state = 817 #粤北
-						state = 593 #粤东
-						state = 1114 #潮汕
-						state = 728 #粤西
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			country_event = ROC_focus.6
+}
+#临时制宪会议
+country_event = { 
+	id = ROC_focus.13
+	title = ROC_focus.13.t
+	desc = ROC_focus.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.13.a 
+	}
+}
+#大同会紧急全会
+country_event = { 
+	id = ROC_focus.14
+	title = ROC_focus.14.t
+	desc = ROC_focus.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.14.a 
+		country_event = { id = ROC_datong.1 }
+		country_event = { days = 20 id = ROC_datong.2 }
+		add_political_power = 25
+	}
+	option = {
+		name = ROC_focus.14.b
+		country_event = { days = 20 id = ROC_datong.2 }
+	}
+}
+#大同会国际会议
+country_event = { 
+	id = ROC_focus.15
+	title = ROC_focus.15.t
+	desc = ROC_focus.15.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.15.a 
+		country_event = { days = 2 id = ROC_datong.3 }
+	}
+}
+#来自周饶的支持
+country_event = { 
+	id = ROC_focus.16
+	title = ROC_focus.16.t
+	desc = ROC_focus.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.16.a 
+	}
+}
+#规模初成的组织
+country_event = { 
+	id = ROC_focus.17
+	title = ROC_focus.17.t
+	desc = ROC_focus.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.17.a 
+        add_ideas = ROC_idea_guimochuchengdezuzhi
+	}
+}
+#大同主义再思考
+country_event = { 
+	id = ROC_focus.18
+	title = ROC_focus.18.t
+	desc = ROC_focus.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.18.a 
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.15
 		}
 	}
-	focus = {#15、扩大“民促会”范围
-		id = kuodamincuhuifanwei
-		icon = GFX_ROC_kuodamincuhuifanwei
-		cost = 6.00
-		prerequisite = {
-			focus = lianheshanghuishili
-		}
-		x = 9
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 50
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.15
+	option = {
+		name = ROC_focus.18.b 
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.15
+				}
 			}
-			country_event = { id = ROC_focus.32 }
-		}
-	}
-	focus = {#14、践行节制资本
-		id = shijianjiezhiziben
-		icon = GFX_ROC_shijianjiezhiziben
-		cost = 5.00
-		prerequisite = {
-			focus = jieguanguanyinggongcheng
-		}
-		mutually_exclusive = {
-			focus = lianheshanghuishili
-		}
-		x = 11
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_stability = 0.05
-			add_offsite_building = { type = industrial_complex level = 2 }
-			country_event = ROC_focus.7
-		}
-	}
-	focus = {#15、强化工会权力
-		id = qianghuagonghuiquanli
-		icon = GFX_ROC_qianghuagonghuiquanli
-		cost = 6.00
-		prerequisite = {
-			focus = shijianjiezhiziben
-		}
-		x = 11
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 50
 			add_power_balance_value = {
 				id = ROC_power_balance
 				value = 0.15
 			}
 		}
-	}
-	focus = {#16、落实四时辰工作制度
-		id = luoshisishichengongzuozhi
-		icon = GFX_ROC_luoshisishichengongzuozhi
-		cost = 6.00
-		prerequisite = {
-			focus = qianghuagonghuiquanli
-			focus = kuodamincuhuifanwei
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.15
+				}
+			}
+			add_power_balance_value = {
+				id = ROC_power_balance
+				value = -0.15
+			}
 		}
-		x = 10
-		y = 6
-		ai_will_do = {factor = 10}
-		completion_reward = {	
+	}
+	option = {
+		name = ROC_focus.18.c 
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.15
+		}
+	}
+}
+#利用名单
+country_event = { 
+	id = ROC_focus.19
+	title = ROC_focus.19.t
+	desc = ROC_focus.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {tag = ROC}
+	option = {
+		name = ROC_focus.19.a 
+		country_event = { id = ROC_focus.36 }
+	}
+}
+#解放应天
+country_event = { 
+	id = ROC_focus.20
+	title = ROC_focus.20.t
+	desc = ROC_focus.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		NOT = { country_exists = GOS }
+	}
+	option = {
+		name = ROC_focus.20.a 
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						has_war_with = XBJ
+					}
+					NOT = {
+						has_war_with = STG
+					}
+				}
+				has_dynamic_modifier = ROC_dynamic_modifiers_nanguozhengfa
+			}
+			remove_dynamic_modifier = {
+				modifier = ROC_dynamic_modifiers_nanguozhengfa
+			}
+			clr_country_flag = ROC_decision_fangyu
+		}
+		if = {
+			limit = {
+				has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+			}
 			swap_ideas = {
-				add_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
-				remove_idea = ROC_idea_minzhongduidatonglixiangrenkedu_A
+				remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
+				add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
 			}
-			set_variable = {
-				ROC_VAR_chengshi_days_base = 60
+		}
+		else_if ={
+			limit = {
+				has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
 			}
-			set_variable = {
-				ROC_VAR_chengshi_minsheng_pp_base = 20
+			swap_ideas = {
+				remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
+				add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
 			}
-			set_variable = {
-				ROC_VAR_chengshi_junshi_pp_base = 15
+		}
+		else_if ={
+			limit = {
+				has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
 			}
-			custom_effect_tooltip = ROC_custom_luoshisishichengongzuozhi
-			ROC_scripted_effects_jianshe = yes
+			swap_ideas = {
+				remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
+				add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_10
+			}
+		}
+		else_if ={
+			limit = {
+				has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_11
+			}
+			swap_ideas = {
+				remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_11
+				add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_11
+			}
+		}
+		else_if ={
+			limit = {
+				has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
+			}
+			swap_ideas = {
+				remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
+				add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_20
+			}
+		}
+		else_if ={
+			limit = {
+				has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_21
+			}
+			swap_ideas = {
+				remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_21
+				add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_21
+			}
+		}
+		swap_ideas = {
+			remove_idea = ROC_idea_datongdangdequanwei
+			add_idea = ROC_idea_datongdangdequanwei_1
+		}
+		clr_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
+	}
+}
+#兴师北伐
+country_event = { 
+	id = ROC_focus.21
+	title = ROC_focus.21.t
+	desc = ROC_focus.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		OR = {
+			has_war_with = XBJ
+			has_war_with = STG
 		}
 	}
-	focus = {#18、广州革命委员会
-		id = guangzhougemingweiyuanhui
-		icon = GFX_ROC_guangzhougemingweiyuanhui
-		cost = 5.00
-		prerequisite = {
-			focus = guangzhouqiyi
-		}
-		available = {always = no}
-		x = 15
-		y = 1
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 50
-			mark_focus_tree_layout_dirty = yes
-			set_variable = {
-				ROC_var_zuo_yanchang_base = 15
+	option = {
+		name = ROC_focus.21.a 
+		set_country_flag = FLAG_ROC_decision_beifa_unlocked
+		if = {
+			limit = {
+				NOT = { has_dynamic_modifier = 	ROC_dynamic_modifiers_nanguozhengfa }
 			}
-			set_variable = {
-				ROC_var_you_yanchang_base = 15
-			}
-			set_variable = {
-				ROC_var_PP_yanchang_base = 50
-			}
-			set_variable = {
-				ROC_var_time_yanchang_base = 120
-			}
-			set_variable = {
-				ROC_shengyihui_var = 0
-			}
-			set_variable = {
-				ROC_jijicanzhnegyizheng_var = 0
-			}
-			set_variable = {
-				ROC_qianghuatuanjie_var = 0
-			}
-			set_variable = {
-				ROC_xianjiminzhu_var = 0
-			}
-			ROC_scripted_effects_yanchang = yes
-			complete_national_focus = gemingweiyuanhui
-		}
-	}
-	focus = {#19、会社与政府
-		id = huisheyuzhengfu
-		icon = GFX_ROC_huisheyuzhengfu
-		cost = 5.00
-		prerequisite = {
-			focus = guangzhougemingweiyuanhui
-		}
-		x = 15
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 50
-			country_event = ROC_focus.9
-			add_days_mission_timeout = {
-				mission = ROC_decision_zuopai
-				days = 15
-			}
-			add_days_mission_timeout = {
-				mission = ROC_decision_youpai
-				days = 15
-			}
-		}
-	}
-	focus = {#20、扩张省议会权力
-		id = kuozhangshengyihuiquanli
-		icon = GFX_ROC_kuozhangshengyihuiquanli
-		cost = 5.00
-		prerequisite = {
-			focus = huisheyuzhengfu
-		}
-		mutually_exclusive = {
-			focus = qianghuaxianjiminzhu
-		}
-		x = 14
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			country_event = ROC_focus.10
-			set_variable = {
-				ROC_shengyihui_var = 10
-			}
-			ROC_scripted_effects_yanchang = yes
-			custom_effect_tooltip = ROC_tooltip_yanchang_shengyihui
-		}
-	}
-	focus = {#21、再议央地关系
-		id = zaiyiyangdiguanxi
-		icon = GFX_ROC_zaiyiyangdiguanxi
-		cost = 5.00
-		prerequisite = {
-			focus = kuozhangshengyihuiquanli
-		}
-		x = 14
-		y = 6
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_11
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_11
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_10
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_10
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
-				}
-			}
-		}
-	}
-	focus = {#22、强化县级民主
-		id = qianghuaxianjiminzhu
-		icon = GFX_ROC_qianghuaxianjiminzhu
-		cost = 5.00
-		prerequisite = {
-			focus = huisheyuzhengfu
-		}
-		mutually_exclusive = {
-			focus = kuozhangshengyihuiquanli
-		}
-		x = 16
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			country_event = ROC_focus.11
-			set_variable = {
-				ROC_xianjiminzhu_var = -30
-			}
-			ROC_scripted_effects_yanchang = yes
-			custom_effect_tooltip = ROC_tooltip_yanchang_xianji
-		}
-	}
-	focus = {#23、中央集权制政府
-		id = zhongyangjiquanzhizhengfu
-		icon = GFX_ROC_zhongyangjiquanzhizhengfu
-		cost = 5.00
-		prerequisite = {
-			focus = qianghuaxianjiminzhu
-		}
-		x = 16
-		y = 6
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_21
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_1
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_21
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_1
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_20
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A_20
-					remove_idea = ROC_idea_zhonghuagonghezhenyingdebaolei_A
-				}
-			}
-		}
-	}
-	focus = {#24、军政、训政与宪政
-		id = junzhengxunzhengyuxianzheng
-		icon = GFX_ROC_junzhengxunzhengyuxianzheng
-		cost = 5.00
-		prerequisite = {
-			focus = zaiyiyangdiguanxi
-			focus = zhongyangjiquanzhizhengfu
-		}
-		x = 15
-		y = 8
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 50
-			country_event = ROC_focus.12
-		}
-	}
-	focus = {#90、统一中华
-		id = tongyizhonghua
-		icon = GFX_ROC_tongyizhonghua
-		cost = 2.00
-		prerequisite = {
-			focus = banbugonghelinshixianfa
-		}
-		x = 14
-		y = 11
-		ai_will_do = {factor = 10}
-	}
-	focus = {#93、击碎玉玺
-		id = jisuiyuxi
-		icon = GFX_ROC_jisuiyuxi
-		cost = 3.00
-		prerequisite = {
-			focus = tongyizhonghua
-		}
-		bypass = {
-			NOT = { country_exists = STG }
-		}	
-		x = 18
-		y = 12
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			custom_effect_tooltip = ROC_custom_jisuiyuxi
-		}
-	}
-	focus = {#94、西北攻伐
-		id = xibeigongfa
-		icon = GFX_ROC_xibeigongfa
-		cost = 3.00
-		prerequisite = {
-			focus = jisuiyuxi
-		}
-		bypass = {
-			NOT = { country_exists = XBJ }
-		}	
-		x = 18
-		y = 14
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			custom_effect_tooltip = ROC_custom_xibeigongfa
-		}
-	}
-	focus = {#25、大同会紧急全会
-		id = zhaokaidatonghuijinjiquanhui
-		icon = GFX_ROC_zhaokaidatonghuijinjiquanhui
-		cost = 3.00
-		cancelable = no
-		prerequisite = {
-			focus = guangzhouqiyi
-		}
-		x = 22
-		y = 1
-		ai_will_do = {factor = 30}
-		select_effect = {
-			country_event = ROC_focus.14
-		}
-		completion_reward = {	
-			add_political_power = 50
-		}
-	}
-	focus = {#26、召开大同会国际会议
-		id = zhaokaidatpnghuiguojihuiyi
-		icon = GFX_ROC_zhaokaidatpnghuiguojihuiyi
-		cost = 3.00
-		prerequisite = {
-			focus = zhaokaidatonghuijinjiquanhui
-		}
-		x = 20
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			country_event = ROC_focus.15
-		}
-	}
-	focus = {#27、来自周饶的支持
-		id = laizizhouraodezhichi
-		icon = GFX_ROC_laizizhouraodezhichi
-		cost = 3.00
-		prerequisite = {
-			focus = zhaokaidatpnghuiguojihuiyi
-		}
-		x = 20
-		y = 3
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			division_template = {
-				name = "精锐山地师"   
-				is_locked = yes
-				division_names_group = ROC_MNT_01
-				regiments = {
-					mountaineers = { x = 0 y = 0 } 
-					mountaineers = { x = 0 y = 1 } 
-					mountaineers = { x = 0 y = 2 }
-					mountaineers = { x = 1 y = 0 }
-					mountaineers = { x = 1 y = 1 }
-					mountaineers = { x = 1 y = 2 }
-					mountaineers = { x = 2 y = 0 }
-					mountaineers = { x = 2 y = 1 }
-					mountaineers = { x = 2 y = 2 }
-					artillery_brigade = { x = 3 y = 0 }
-					artillery_brigade = { x = 3 y = 1 }
-					artillery_brigade = { x = 3 y = 2 }
-				}
-			}
-			592 = {
-				create_unit = {
-					division = "name = \"山地步兵第一师\" division_template = \"精锐山地师\" start_experience_factor = 1.0"
-					prioritize_location = 1047
-					owner = ROC
-				}
-				create_unit = {
-					division = "name = \"山地步兵第二师\" division_template = \"精锐山地师\" start_experience_factor = 1.0"
-					prioritize_location = 1047
-					owner = ROC
-				}
-				create_unit = {
-					division = "name = \"山地步兵第三师\" division_template = \"精锐山地师\" start_experience_factor = 1.0"
-					prioritize_location = 1047
-					owner = ROC
-				}
-				create_unit = {
-					division = "name = \"山地步兵第四师\" division_template = \"精锐山地师\" start_experience_factor = 1.0"
-					prioritize_location = 1047
-					owner = ROC
-				}
-			}
-			country_event = ROC_focus.16
-		}
-	}
-	focus = {#28、与炎州方面展开合作
-		id = yuyanzhoufangmianzhankaihezuo
-		icon = GFX_ROC_yuyanzhoufangmianzhankaihezuo
-		cost = 6.00
-		prerequisite = {
-			focus = laizizhouraodezhichi
-		}
-		x = 20
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 6000
-				producer = YZR
-			}	
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 1500
-				producer = YZR
-			}	
-		}
-	}
-	focus = {#29、支援吕宋革命委员会
-		id = zhichilvsonggemingweiyuanhui
-		icon = GFX_ROC_zhichilvsonggemingweiyuanhui
-		cost = 3.00
-		prerequisite = {
-			focus = zhaokaidatonghuijinjiquanhui
-		}
-		x = 22
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 50
-			add_popularity = { ideology = moderate_socialism popularity = 0.02 }
-		}
-	}
-	focus = {#30、支持大同党四川支部
-		id = zhichidatongdangsichuanzhibu
-		icon = GFX_ROC_zhichidatongdangsichuanzhibu
-		cost = 3.00
-		prerequisite = {
-			focus = zhichilvsonggemingweiyuanhui
-		}
-		x = 22
-		y = 3
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 25
-		}
-	}
-	focus = {#31、联络满剌加支部
-		id = lianluomanlejiazhibu
-		icon = GFX_ROC_lianluomanlejiazhibu
-		cost = 3.00
-		prerequisite = {
-			focus = zhichidatongdangsichuanzhibu
-		}
-		x = 22
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 15
-		}
-	}
-	focus = {#32、联络长江临时委员会左派
-		id = lianluochangjianglinshiweiyuanhuizuopai
-		icon = GFX_ROC_lianluochangjianglinshiweiyuanhuizuopai
-		cost = 5.00
-		prerequisite = {
-			focus = zhaokaidatonghuijinjiquanhui
-		}
-		x = 24
-		y = 2
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 1000
-				date > 1938.3.1
-			}
-		}
-		completion_reward = {	
-			add_political_power = 35
-			hidden_effect = {
-				GOS = {
-					delete_unit_template_and_units = {division_template = "昌德卌四年型华南省军步兵师"}
-					delete_unit_template_and_units = {division_template = "昌德卌四年型华南乙种步兵师"}
-				}
-				load_oob = "ROC_qiyi"
-			}
-			custom_effect_tooltip = ROC_tooltip_lianluoqishengzuopai
-		}
-	}
-	focus = {#33、联络长江临时委员会右派
-		id = lianluochangjianglinshiweiyuanhuiyoupai
-		icon = GFX_ROC_lianluochangjianglinshiweiyuanhuiyoupai
-		cost = 5.00
-		prerequisite = {
-			focus = lianluochangjianglinshiweiyuanhuizuopai
-		}
-		x = 24
-		y = 3
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 1000
-				date > 1938.3.1
-			}
-		}
-		completion_reward = {	
-			add_political_power = 35
-		}
-	}
-	focus = {#34、联络西南的共和派
-		id = lianluoxinangonghepai
-		icon = GFX_ROC_lianluoxinangonghepai
-		cost = 5.00
-		prerequisite = {
-			focus = lianluochangjianglinshiweiyuanhuiyoupai
-		}
-		x = 24
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_political_power = 35
-		}
-	}
-	focus = {#35、重组基层党支部
-		id = chongzujicengdangzibu
-		icon = GFX_ROC_chongzujicengdangzibu
-		cost = 6.00
-		prerequisite = {
-			focus = lianluomanlejiazhibu
-		}
-		prerequisite = {
-			focus = lianluoxinangonghepai
-		}
-		prerequisite = {
-			focus = yuyanzhoufangmianzhankaihezuo
-		}
-		x = 22
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			country_event = ROC_focus.17
-		}
-	}
-	focus = {#39、新军事委员
-		id = xinjunshiweiyuanhui
-		icon = GFX_ROC_xinjunshiweiyuanhui
-		cost = 3.00
-		prerequisite = {
-			focus = zujiangonghewuzhuang
-		}
-		x = 28
-		y = 1
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 1000
-				date > 1938.3.1
-			}
-		}
-		completion_reward = {	
-			set_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
-			custom_effect_tooltip = ROC_custom_xinjunshiweiyuanhui
-		}
-	}
-	focus = {#40、针对性战术研讨
-		id = zhenduixingzhanshuyantao
-		icon = GFX_ROC_zhenduixingzhanshuyantao
-		cost = 5.00
-		prerequisite = {
-			focus = xinjunshiweiyuanhui
-		}
-		x = 28
-		y = 2
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 1000
-				date > 1938.3.1
-			}
-		}
-		completion_reward = {	
-			army_experience = 100
 			add_dynamic_modifier = {
 				modifier = ROC_dynamic_modifiers_nanguozhengfa
 			}
-			custom_effect_tooltip = ROC_custom_zhenduixingzhanshuyantao
 			set_variable = {#速度
 				ROC_VAR_nanguo_speed_factor = 0
 			}
@@ -954,2911 +475,3674 @@ focus_tree = {#共和军国策
 			}
 			ROC_scripted_effects_gonggubianjie = yes
 		}
-	}
-	focus = {#41、发动敌后激进大同党人
-		id = fadondihoujijindatongdangren
-		icon = GFX_ROC_fadondihoujijindatongdangren
-		cost = 5.00
-		prerequisite = {
-			focus = zhenduixingzhanshuyantao
-		}
-		x = 28
-		y = 3
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 1000
-				date > 1938.3.1
-			}
-		}
-		completion_reward = {	
-			custom_effect_tooltip = ROC_custom_fadondihoujijindatongdangren
-		}
-	}
-	focus = {#42、革命之火燃遍东南
-		id = gemingzhihuoranbiandongnan
-		icon = GFX_ROC_gemingzhihuoranbiandongnan
-		cost = 3.00
-		prerequisite = {
-			focus = lianluochangjianglinshiweiyuanhuiyoupai
-		}
-		prerequisite = {
-			focus = fadondihoujijindatongdangren
-		}
-		x = 28
-		y = 4
-		ai_will_do = {
-			factor = 10
-			modifier = {
-				factor = 1000
-				date > 1938.3.1
-			}
-		}
-		completion_reward = {	
-			add_war_support = 0.05
-			custom_effect_tooltip = ROC_custom_gemingzhihuoranbiandongnan
-		}
-	}
-	focus = {#43、招降明廷叛军
-		id = zhaoxiangmingtingpanjun
-		icon = GFX_ROC_zhaoxiangmingtingpanjun
-		cost = 5.00
-		prerequisite = {
-			focus = zujiangonghewuzhuang
-		}
-		x = 33
-		y = 1
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_10_00
-					remove_idea = ROC_idea_gonghejun
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_00_10
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_10_10
-					remove_idea = ROC_idea_gonghejun_00_10
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_00_11
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_10_11
-					remove_idea = ROC_idea_gonghejun_00_11
-				}
-			}
-		}
-	}
-	focus = {#44、旧军队再教育
-		id = jiujunduizaijiaoyu
-		icon = GFX_ROC_jiujunduizaijiaoyu
-		cost = 5.00
-		prerequisite = {
-			focus = zhaoxiangmingtingpanjun
-		}
-		x = 33
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_10_00
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_11_00
-					remove_idea = ROC_idea_gonghejun_10_00
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_10_10
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_11_10
-					remove_idea = ROC_idea_gonghejun_10_10
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_10_11
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_11_11
-					remove_idea = ROC_idea_gonghejun_10_11
-				}
-			}
-			else = {
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_01_00
-					remove_idea = ROC_idea_gonghejun
-				}
-			}
-			country_event = ROC_focus.19
-		}
-	}
-	focus = {#45、建立军队党代表制度
-		id = jianlidangdaibiaozhidu
-		icon = GFX_ROC_jianlidangdaibiaozhidu
-		cost = 6.00
-		prerequisite = {
-			focus = jiujunduizaijiaoyu
-		}
-		x = 33
-		y = 3
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_ideas = ROC_idea_dangdaibiaozhizhu
-		}
-	}
-	focus = {#46、改编农会部队
-		id = gaibiannonghuibudui
-		icon = GFX_ROC_gaibiannonghuibudui
-		cost = 5.00
-		prerequisite = {
-			focus = zujiangonghewuzhuang
-		}
-		x = 35
-		y = 1
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_00_10
-					remove_idea = ROC_idea_gonghejun
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_10_00
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_10_10
-					remove_idea = ROC_idea_gonghejun_10_00
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_11_00
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_11_10
-					remove_idea = ROC_idea_gonghejun_11_00
-				}
-			}
-		}
-	}
-	focus = {#47、吸收工人武装
-		id = xishougongrenwuzhuang
-		icon = GFX_ROC_xishougongrenwuzhuang
-		cost = 5.00
-		prerequisite = {
-			focus = gaibiannonghuibudui
-		}
-		x = 35
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			swap_ideas = {
-				add_idea = ROC_idea_weigongheerzhan_1
-				remove_idea = ROC_idea_weigongheerzhan
-			}
-		}
-	}
-	focus = {#48、加强军事训练
-		id = jiaqiangjunshixunlian
-		icon = GFX_ROC_jiaqiangjunshixunlian
-		cost = 5.00
-		prerequisite = {
-			focus = xishougongrenwuzhuang
-		}
-		x = 35
-		y = 3
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_00_10
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_00_11
-					remove_idea = ROC_idea_gonghejun_00_10
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_10_10
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_10_11
-					remove_idea = ROC_idea_gonghejun_10_10
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_11_10
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_11_11
-					remove_idea = ROC_idea_gonghejun_11_10
-				}
-			}
-			else = {
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_00_01
-					remove_idea = ROC_idea_gonghejun
-				}
-			}
-			if = {
-				limit = {
-					has_idea = volunteer_only
-				}
-				swap_ideas = {
-					remove_idea = volunteer_only
-					add_idea = limited_conscription
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = limited_conscription
-				}
-				swap_ideas = {
-					remove_idea = limited_conscription
-					add_idea = extensive_conscription
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = extensive_conscription
-				}
-				swap_ideas = {
-					remove_idea = extensive_conscription
-					add_idea = service_by_requirement
-				}
-			}
-		}
-	}
-	focus = {#49、共和军正规化
-		id = gonghejunzhengguihua
-		icon = GFX_ROC_gonghejunzhengguihua
-		cost = 8.00
-		prerequisite = {
-			focus = jiaqiangjunshixunlian
-		}
-		prerequisite = {
-			focus = jianlidangdaibiaozhidu
-		}
-		x = 34
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghejun_11_11
-				}	
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_1
-					remove_idea = ROC_idea_gonghejun_11_11
-				}
-			}
-			else = {
-				swap_ideas = {
-					add_idea = ROC_idea_gonghejun_1_1
-					remove_idea = ROC_idea_gonghejun
-				}
-			}
-		}
-	}
-	focus = {#50、火力覆盖
-		id = zhangshaozengdehuopaolinian
-		icon = GFX_ROC_zhangshaozengdehuopaolinian
-		cost = 5.00
-		prerequisite = {
-			focus = gonghejunzhengguihua
-		}
-		x = 30
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_ideas = ROC_idea_huolifugai
-		}
-	}
-	focus = {#60、步兵作战
-		id = dengkengdebubingzuozhanlilun
-		icon = GFX_ROC_dengkengdebubingzuozhanlilun
-		cost = 5.00
-		prerequisite = {
-			focus = gonghejunzhengguihua
-		}
-		x = 38
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 2
-				category = support_tech
-			}
-		}
-	}
-	focus = {#61、丘陵适应训练
-		id = qiulingshiyingxunlian
-		icon = GFX_ROC_qiulingshiyingxunlian
-		cost = 5.00
-		prerequisite = {
-			focus = dengkengdebubingzuozhanlilun
-		}
-		x = 38
-		y = 6
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_ideas = ROC_idea_bubingzuozhan
-		}
-	}
-	focus = {#62、步兵武器更新
-		id = bubingwuqigengxin
-		icon = GFX_ROC_bubingwuqigengxin
-		cost = 5.00
-		prerequisite = {
-			focus = qiulingshiyingxunlian
-		}
-		x = 38
-		y = 7
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-			}
-		}
-	}
-	focus = {#63、强化特种作战
-		id = qianghuatezhongzuozhan
-		icon = GFX_ROC_qianghuatezhongzuozhan
-		cost = 5.00
-		prerequisite = {
-			focus = bubingwuqigengxin
-		}
-		mutually_exclusive = {
-			focus = xiandaihuadesanbingzuozhanlinian
-		}
-		x = 37
-		y = 8
-		ai_will_do = {factor = 10}
-		available = {
-			has_army_experience > 24.99
-			has_army_manpower = { size > 150000 }
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ROC_idea_bubingzuozhan
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_bubingzuozhan_1
-					remove_idea = ROC_idea_bubingzuozhan
-			}
-			}
-			else = {
-				add_ideas = ROC_idea_bubingzuozhan_1
-			}
-			custom_effect_tooltip = ROC_custom_qianghuatezhongzuozhan
-		}
-	}
-	focus = {#64、现代化的散兵作战理念
-		id = xiandaihuadesanbingzuozhanlinian
-		icon = GFX_ROC_xiandaihuadesanbingzuozhanlinian
-		cost = 5.00
-		prerequisite = {
-			focus = bubingwuqigengxin
-		}
-		mutually_exclusive = {
-			focus = qianghuatezhongzuozhan
-		}
-		x = 39
-		y = 8
-		ai_will_do = {factor = 10}
-		available = {
-			has_army_experience > 24.99
-			has_army_manpower = { size > 150000 }
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ROC_idea_bubingzuozhan
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_bubingzuozhan_2
-					remove_idea = ROC_idea_bubingzuozhan
-			}
-			}
-			else = {
-				add_ideas = ROC_idea_bubingzuozhan_2
-			}
-			custom_effect_tooltip = ROC_custom_xiandaihuadesanbingzuozhanlinian
-		}
-	}
-	focus = {#65、青年飞行员委员会
-		id = qingnianfeixingyuanweiyuanhui
-		icon = GFX_ROC_qingnianfeixingyuanweiyuanhui
-		cost = 1.00
-		prerequisite = {
-			focus = zujiangonghewuzhuang
-		}
-		x = 43
-		y = 1
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			air_experience = 50
-			add_ideas = ROC_idea_gonghechuying
-			custom_effect_tooltip = ROC_custom_qingnianfeixingyuanweiyuanhui
-		}
-	}
-	focus = {#66、考察旧军官
-		id = kaochajiujunguan
-		icon = GFX_ROC_kaochajiujunguan
-		cost = 5.00
-		prerequisite = {
-			focus = qingnianfeixingyuanweiyuanhui
-		}
-		mutually_exclusive = {
-			focus = tibagemingganbu
-		}
-		x = 42
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_stability = 0.05
-			swap_ideas = {
-				remove_idea = ROC_idea_gonghechuying
-				add_idea = ROC_idea_gonghechuying_1
-			}
-		}
-	}
-	focus = {#67、提拔革命干部
-		id = tibagemingganbu
-		icon = GFX_ROC_tibagemingganbu
-		cost = 5.00
-		prerequisite = {
-			focus = qingnianfeixingyuanweiyuanhui
-		}
-		mutually_exclusive = {
-			focus = kaochajiujunguan
-		}
-		x = 44
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_stability = -0.05
-			add_war_support = 0.1
-			swap_ideas = {
-				remove_idea = ROC_idea_gonghechuying
-				add_idea = ROC_idea_gonghechuying_2
-			}
-		}
-	}
-	focus = {#68、扩大航校招生
-		id = kuodahangxiaozhaosheng
-		icon = GFX_ROC_kuodahangxiaozhaosheng
-		cost = 5.00
-		prerequisite = {
-			focus = tibagemingganbu
-			focus = kaochajiujunguan
-		}
-		x = 43
-		y = 3
-		ai_will_do = {factor = 10}
-		available = {
-			AND = {
-				has_deployed_air_force_size = {
-					size > 199
-					type = fighter
-				}
-				has_deployed_air_force_size = {
-					size > 49
-					type = cas
-				}
-			}
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_1
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_11
-					remove_idea = ROC_idea_gonghechuying_1
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_2
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_21
-					remove_idea = ROC_idea_gonghechuying_2
-				}
-			}
-			else = {
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_01
-					remove_idea = ROC_idea_gonghechuying
-				}
-			}
-			add_ace = {
-				name = "乐"
-				surname = "以琴"
-				type = fighter_genius
-				is_female = yes
-			}
-			add_ace = {
-				name = "陈"
-				surname = "怀民"
-				type = bomber_unique
-				is_female = yes
-			}
-			add_ace = {
-				name = "丁"
-				surname = "纪徐"
-				type = support_genius
-				is_female = yes
-			}
-			add_ace = {
-				name = "唐"
-				surname = "铎"
-				type = fighter_genius
-				is_female = yes
-			}
-			add_ace = {
-				name = "陈"
-				surname = "卓林"
-				type = fighter_genius
-				is_female = yes
-			}
-		}
-	}
-	focus = {#69、成立航校专家组
-		id = chenglihangxiaozhuanjiazu
-		icon = GFX_ROC_chenglihangxiaozhuanjiazu
-		cost = 5.00
-		prerequisite = {
-			focus = kuodahangxiaozhaosheng
-		}
-		x = 42
-		y = 4
-		available = {
-			has_deployed_air_force_size = {
-				size > 399
-			}
-		}
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = air_doctrine
-			}
-		}
-	}
-	focus = {#72、扩建机场
-		id = kuojianjichang
-		icon = GFX_ROC_kuojianjichang
-		cost = 5.00
-		prerequisite = {
-			focus = kuodahangxiaozhaosheng
-		}
-		x = 44
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			592 = {
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes 
-					# province = 小地块代码
-				}
-			}
-			813 = {
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes 
-					# province = 小地块代码
-				}
-			}
-		}
-	}
-	focus = {#73、航空器监造处
-		id = hangtianqijianzaochu
-		icon = GFX_ROC_hangtianqijianzaochu
-		cost = 5.00
-		prerequisite = {
-			focus = kuojianjichang
-		}
-		x = 44
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			air_experience = 50
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_11
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_112
-					remove_idea = ROC_idea_gonghechuying_11
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_21
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_212
-					remove_idea = ROC_idea_gonghechuying_21
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_211
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_2A
-					remove_idea = ROC_idea_gonghechuying_211
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_111
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_1A
-					remove_idea = ROC_idea_gonghechuying_111
-				}
-			}
-			else = {
-				add_ideas = ROC_idea_gonghechuying_1A
-			}
-		}
-	}
-	focus = {#74、空中后勤线
-		id = kongzhonghouqinxian
-		icon = GFX_ROC_kongzhonghouqinxian
-		cost = 6.00
-		prerequisite = {
-			focus = hangtianqijianzaochu
-		}
-		x = 44
-		y = 6
-		ai_will_do = {factor = 10}
-		available = {
-			has_tech = tech_logistics_company
-		}
-		completion_reward = {	
-			add_equipment_to_stockpile = {
-				type = transport_plane_equipment
-				amount = 150
-				producer = ROC
-			}
-		}
-	}
-	focus = {#77、整编革命海军
-		id = zhengbiangeminghaijun
-		icon = GFX_ROC_zhengbiangeminghaijun
-		cost = 5.00
-		prerequisite = {
-			focus = cedongnanyangjianduicanyugeming
-		}
-		x = 50
-		y = 1
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_ideas = ROC_idea_nanyangzhijian
-		}
-	}
-	focus = {#78、革命海军的发展方向
-		id = geminghaijundefazhanfangxiang
-		icon = GFX_ROC_geminghaijundefazhanfangxiang
-		cost = 5.00
-		prerequisite = {
-			focus = zhengbiangeminghaijun
-		}
-		x = 50
-		y = 2
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			country_event = ROC_focus.1
-		}
-	}
-	focus = {#79、海航理论
-		id = linjianzhangdehaihanglilun
-		icon = GFX_ROC_linjianzhangdehaihanglilun
-		cost = 5.00
-		prerequisite = {
-			focus = geminghaijundefazhanfangxiang
-		}
-		mutually_exclusive = {
-			focus = yangshuzhuangdejujiangouxiang
-		}
-		x = 48
-		y = 3
-		ai_will_do = {factor = 10}
-		available = {
-			has_navy_experience > 24.99
-			has_idea = ROC_idea_nanyangzhijian_2
-			OR = {
-				has_tech = early_ship_hull_carrier
-				has_tech = air_torpedoe_1
-			}
-		}
-		completion_reward = {
-			navy_experience = -25
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.25
-				uses = 2
-				category = cat_base_strike
-			}
-			swap_ideas = {
-				remove_idea = ROC_idea_nanyangzhijian_2
-				add_idea = ROC_idea_nanyangzhijian_21
-			}
-		}
-	}
-	focus = {#6、国营农场与农业工会
-		id = guoyingnongcyunongyegonghui
-		icon = GFX_ROC_guoyingnongcyunongyegonghui
-		cost = 5.00
-		prerequisite = {
-			focus = shanghuinongchanggaizhi
-		}
-		x = 1
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_political_power = 50
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.1
-			}
-		}
-	}
-	focus = {#8、推动农业合作社发展
-		id = tuidongnongyehezuoshefazhan
-		icon = GFX_ROC_tuidongnongyehezuoshefazhan
-		cost = 5.00
-		prerequisite = {
-			focus = luoshipingjundiquan
-		}
-		x = 3
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_popularity = { ideology = moderate_socialism popularity = 0.03 }
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.1
-			}
-		}
-	}
-	focus = {#9、推动乡村建设运动
-		id = tuidongxiangcunjiansheyundong
-		icon = GFX_ROC_tuidongxiangcunjiansheyundong
-		cost = 6.00
-		prerequisite = {
-			focus = tuidongnongyehezuoshefazhan
-			focus = guoyingnongcyunongyegonghui
-		}
-		x = 2
-		y = 6
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			custom_effect_tooltip = ROC_custom_tuidongxiangcunjiansheyundong
-			set_variable = {
-				ROC_VAR_nongcun_days_base = 80
-			}
-			set_variable = {
-				ROC_VAR_nongcun_pp_base = 15
-			}
-			ROC_scripted_effects_jianshe = yes
-			swap_ideas = {
-				add_idea = ROC_idea_meihuazhihai_2
-				remove_idea = ROC_idea_meihuazhihai_1
-			}
-		}
-	}
-	focus = {#12、扩建广州大学
-		id = kuojianguangzhoudaxue
-		icon = GFX_ROC_kuojianguangzhoudaxue
-		cost = 6.00
-		prerequisite = {
-			focus = tuidongxiangcunjiansheyundong
-		}
-		prerequisite = {
-			focus = gulixueshuziyou
-		}
-		prerequisite = {
-			focus = luoshisishichengongzuozhi
-		}
-		x = 6
-		y = 7
-		ai_will_do = {factor = 10}
-		available = {
-			num_of_factories > 70
-		}
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-	focus = {#17、华夏发展方略()
-		id = huaxiafazhanzhanlue
-		icon = GFX_ROC_huaxiafazhanzhanlue
-		cost = 10.00
-		prerequisite = {
-			focus = kuojianguangzhoudaxue
-		}
-		available = {
-			591 = {
-				custom_trigger_tooltip = {
-					tooltip = ROC_nongcunjianshe
-				}
-				hidden_trigger = {
-					has_state_flag = ROC_nongcunjianshe
-				}
-			}
-			817 = {
-				custom_trigger_tooltip = {
-					tooltip = ROC_nongcunjianshe
-				}
-				hidden_trigger = {
-					has_state_flag = ROC_nongcunjianshe
-				}
-			}
-			595 = {
-				custom_trigger_tooltip = {
-					tooltip = ROC_nongcunjianshe
-				}
-				hidden_trigger = {
-					has_state_flag = ROC_nongcunjianshe
-				}
-			}
-			592 = {
-				custom_trigger_tooltip = {
-					tooltip = ROC_minshengjianshe
-				}
-				hidden_trigger = {
-					has_state_flag = ROC_minshengjianshe
-				}
-			}
-			729 = {
-				custom_trigger_tooltip = {
-					tooltip = ROC_minshengjianshe
-				}
-				hidden_trigger = {
-					has_state_flag = ROC_minshengjianshe
-				}
-			}
-			326 = {
-				custom_trigger_tooltip = {
-					tooltip = ROC_minshengjianshe
-				}
-				hidden_trigger = {
-					has_state_flag = ROC_minshengjianshe
-				}
-			}
-		}
-		x = 6
-		y = 9
-		ai_will_do = {factor = 50}
-		completion_reward = {
-			every_state = {
-				limit = {
-					OR = {
-						state = 592
-						state = 613
-						state = 608
-						state = 620
-						state = 744
-						state = 831
-						state = 845
-						state = 1118
-						state = 325
-					}
-					is_owned_and_controlled_by = ROC
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	focus = {#36、大同主义再思考
-		id = datongzhuyizaisikao
-		icon = GFX_ROC_datongzhuyizaisikao
-		cost = 3.00
-		prerequisite = {
-			focus = chongzujicengdangzibu
-		}
-		x = 22
-		y = 6
-		ai_will_do = {factor = 10}
-		available = {
-			NOT = {
-				country_exists = XBJ
-			}
-			NOT = {
-				country_exists = STG
-			}
-		}
-		completion_reward = {
-			country_event = ROC_focus.18
-		}
-	}
-	focus = {#37、第三届大同会全会
-		id = disanjiedatonghuiquanhui
-		icon = GFX_ROC_disanjiedatonghuiquanhui
-		cost = 5.00
-		prerequisite = {
-			focus = datongzhuyizaisikao
-		}
-		x = 22
-		y = 7
-		available = {
-			has_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
-		}
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			country_event = { id = ROC_focus.38 }
-			swap_ideas = {
-				add_idea = ROC_idea_minzhongduidatonglixiangrenkedu_C
-				remove_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
-			}
-		}
-	}
-	focus = {
-		id = jingtingbindegouxiang
-		icon = GFX_ROC_jingtingbindegouxiang
-		cost = 10.00
-		prerequisite = {
-			focus = disanjiedatonghuiquanhui
-		}
-		mutually_exclusive = {
-			focus = sunwendexinnian
-			focus = zhangtaiyandezhuiqiu
-		}
-		x = 19
-		y = 8
-
-	}
-	focus = {
-		id = sunwendexinnian
-		icon = GFX_ROC_sunwendexinnian
-		cost = 10.00
-		prerequisite = {
-			focus = disanjiedatonghuiquanhui
-		}
-		mutually_exclusive = {
-			focus = zhangtaiyandezhuiqiu
-			focus = jingtingbindegouxiang
-		}
-		x = 22
-		y = 8
-
-	}
-	focus = {
-		id = zhangtaiyandezhuiqiu
-		icon = GFX_ROC_zhangtaiyandezhuiqiu
-		cost = 10.00
-		prerequisite = {
-			focus = disanjiedatonghuiquanhui
-		}
-		mutually_exclusive = {
-			focus = sunwendexinnian
-			focus = jingtingbindegouxiang
-		}
-		x = 25
-		y = 8
-
-	}
-	focus = {#51、轻量化炮兵理论
-		id = qinglianghuapaobing
-		icon = GFX_ROC_qinglianghuapaobing
-		cost = 5.00
-		prerequisite = {
-			focus = zhangshaozengdehuopaolinian
-		}
-		x = 30
-		y = 6
-		ai_will_do = {factor = 10}
-		available = {
-			has_army_experience > 25
-			arms_factory > 24
-		}
-		completion_reward = {
-			# add_ideas = ROC_idea_huolifugai_1
-			if = {
-				limit = {
-					has_idea = ROC_idea_huolifugai
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_huolifugai_1
-					remove_idea = ROC_idea_huolifugai
-			}
-			}
-			else = {
-				add_ideas = ROC_idea_huolifugai_1
-			}
-		}
-	}
-	focus = {#52、火炮技术革新
-		id = huopaojishugexin
-		icon = GFX_ROC_huopaojishugexin
-		cost = 5.00
-		prerequisite = {
-			focus = qinglianghuapaobing
-		}
-		x = 30
-		y = 7
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 1
-				category = artillery
-			}
-		}
-	}
-	focus = {#53、远距离火力压制
-		id = yuanjulihuoliyazhi
-		icon = GFX_ROC_yuanjulihuoliyazhi
-		cost = 5.00
-		prerequisite = {
-			focus = huopaojishugexin
-		}
-		ai_will_do = {factor = 10}
-		mutually_exclusive = {
-			focus = jizhidehuoli
-		}
-		x = 29
-		y = 8
-		available = {
-			has_army_experience > 50
-			arms_factory > 29
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ROC_idea_huolifugai_1
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_huolifugai_1_1
-					remove_idea = ROC_idea_huolifugai_1
-			}
-			}
-			else = {
-				add_ideas = ROC_idea_huolifugai_1_1
-			}
-			custom_effect_tooltip = ROC_custom_yuanjulihuoliyazhi
-		}
-	}
-	focus = {#54、极致的火力
-		id = jizhidehuoli
-		icon = GFX_ROC_jizhidehuoli
-		cost = 5.00
-		prerequisite = {
-			focus = huopaojishugexin
-		}
-		mutually_exclusive = {
-			focus = yuanjulihuoliyazhi
-		}
-		x = 31
-		y = 8
-		available = {
-			has_army_experience > 50
-			arms_factory > 29
-		}
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ROC_idea_huolifugai_1
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_huolifugai_1_2
-					remove_idea = ROC_idea_huolifugai_1
-			}
-			}
-			else = {
-				add_ideas = ROC_idea_huolifugai_1_2
-			}
-			custom_effect_tooltip = ROC_custom_jizhidehuoli
-		}
-	}
-	focus = {#55、装甲理论
-		id = jiangxianyundezhuangjialilun
-		icon = GFX_ROC_jiangxianyundezhuangjialilun
-		cost = 5.00
-		prerequisite = {
-			focus = qinglianghuapaobing
-		}
-		prerequisite = {
-			focus = qiulingshiyingxunlian
-		}
-		x = 34
-		y = 7
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			create_equipment_variant = {
-				name = "甲式轻型战车"
-				type = light_tank_chassis_1
-				parent_version = 0
-				modules = {
-					main_armament_slot = tank_heavy_machine_gun#炮
-					turret_type_slot = tank_light_one_man_tank_turret#塔
-					suspension_type_slot = tank_bogie_suspension#悬挂
-					armor_type_slot = tank_riveted_armor#甲
-					engine_type_slot = tank_gasoline_engine#发动机
-					special_type_slot_1 = additional_machine_guns#额外部件
-				}
-				upgrades = {
-				}
-				icon = "GFX_GER_basic_medium_tank_medium"
-			}
-			create_equipment_variant = {
-				name = "甲式中型战车"
-				type = medium_tank_chassis_0
-				parent_version = 0
-				modules = {
-					main_armament_slot = tank_small_cannon#炮
-					turret_type_slot = tank_medium_three_man_tank_turret#塔
-					suspension_type_slot = tank_bogie_suspension#悬挂
-					armor_type_slot = tank_riveted_armor#甲
-					engine_type_slot = tank_gasoline_engine#发动机
-					special_type_slot_1 = secondary_turret_hmg#额外部件
-				}
-				upgrades = {
-				}
-				icon = "GFX_GER_basic_medium_tank_medium"
-			}
-			add_equipment_to_stockpile = { 
-				type = light_tank_chassis_1
-				variant_name = "甲式轻型战车"
-				amount = 50
-				producer = ROC
-			}
-			add_equipment_to_stockpile = { 
-				type = medium_tank_chassis_0
-				variant_name = "甲式中型战车"
-				amount = 50
-				producer = ROC
-			}
-			custom_effect_tooltip = ROC_custom_jiangxianyundezhuangjialilun
-		}
-	}
-	focus = {#56、组建新式装甲部队
-		id = zujianxinshizhuangjia
-		icon = GFX_ROC_zujianxinshizhuangjia
-		cost = 5.00
-		prerequisite = {
-			focus = jiangxianyundezhuangjialilun
-		}
-		x = 34
-		y = 8
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			swap_ideas = {
-				add_idea = ROC_idea_gonghejun_2
-				remove_idea = ROC_idea_gonghejun_1
-			}
-			division_template = {
-				name = "装甲师"   
-				is_locked = yes
-				division_names_group = ROC_TAN_01
-				regiments = {
-					motorized = { x = 0 y = 0 } 
-					motorized = { x = 0 y = 1 } 
-					motorized = { x = 0 y = 2 }
-					motorized = { x = 1 y = 0 }
-					motorized = { x = 1 y = 1 }
-					motorized = { x = 1 y = 2 }
-					medium_armor = { x = 2 y = 0 }
-					medium_armor = { x = 2 y = 1 }
-					medium_armor = { x = 2 y = 2 }
-					medium_armor = { x = 2 y = 3 }
-				}
-				support = {
-					recon = { x = 0 y = 0 }
-					engineer = { x = 0 y = 1 }
-					maintenance_company = { x = 0 y = 2 }
-				}
-
-			}
-			592 = {
-				create_unit = {
-					division = "name = \"装甲第一师\" division_template = \"装甲师\" start_experience_factor = 1.0"
-					prioritize_location = 1047
-					owner = ROC
-				}
-				create_unit = {
-					division = "name = \"装甲第二师\" division_template = \"装甲师\" start_experience_factor = 1.0"
-					prioritize_location = 1047
-					owner = ROC
-				}
-			}
-		}
-	}
-	focus = {#57、装甲技术研究
-		id = zhuangjiajishuyanjiu
-		icon = GFX_ROC_zhuangjiajishuyanjiu
-		cost = 5.00
-		prerequisite = {
-			focus = zujianxinshizhuangjia
-		}
-		x = 34
-		y = 9
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = armor
-			}
-		}
-	}
-	focus = {#58、快速突进
-		id = kuaisutujin
-		icon = GFX_ROC_kuaisutujin
-		cost = 5.00
-		prerequisite = {
-			focus = zhuangjiajishuyanjiu
-		}
-		mutually_exclusive = {
-			focus = zhengmianxiangdi
-		}
-		x = 33
-		y = 10
-		ai_will_do = {factor = 10}
-		available = {
-			has_tech = improved_medium_tank_chassis
-		}
-		completion_reward = {	
-			swap_ideas = {
-				add_idea = ROC_idea_gonghejun_2_1
-				remove_idea = ROC_idea_gonghejun_2
-			}
-		}
-	}
-	focus = {#59、正面向敌
-		id = zhengmianxiangdi
-		icon = GFX_ROC_zhengmianxiangdi
-		cost = 5.00
-		prerequisite = {
-			focus = zhuangjiajishuyanjiu
-		}
-		mutually_exclusive = {
-			focus = kuaisutujin
-		}
-		x = 35
-		y = 10
-		ai_will_do = {factor = 10}
-		available = {
-			has_tech = improved_medium_tank_chassis
-		}
-		completion_reward = {	
-			swap_ideas = {
-				add_idea = ROC_idea_gonghejun_2_2
-				remove_idea = ROC_idea_gonghejun_2
-			}
-		}
-	}
-	focus = {#70、培训试飞员
-		id = peixunshifeiyuan
-		icon = GFX_ROC_peixunshifeiyuan
-		cost = 5.00
-		prerequisite = {
-			focus = chenglihangxiaozhuanjiazu
-		}
-		x = 42
-		y = 5
-		ai_will_do = {factor = 10}
-		completion_reward = {	
-			add_tech_bonus = {
-				bonus = 1
-				uses = 1
-				category = light_air
-			}
-			add_tech_bonus = {
-				bonus = 1
-				uses = 1
-				category = medium_air
-			}
-		}
-	}
-	focus = {#71、空军大中队演习
-		id = kongjundazhongduiyanxi
-		icon = GFX_ROC_kongjundazhongduiyanxi
-		cost = 6.00
-		prerequisite = {
-			focus = peixunshifeiyuan
-		}
-		x = 42
-		y = 6
-		ai_will_do = {factor = 10}
-		available = {
-			has_deployed_air_force_size = {
-				size > 799
-			}
-		}
-		completion_reward = {	
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_11
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_111
-					remove_idea = ROC_idea_gonghechuying_11
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_21
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_211
-					remove_idea = ROC_idea_gonghechuying_21
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_212
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_2A
-					remove_idea = ROC_idea_gonghechuying_212
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_112
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_1A
-					remove_idea = ROC_idea_gonghechuying_112
-				}
-			}
-			else = {
-				add_ideas = ROC_idea_gonghechuying_1A
-			}
-		}
-	}
-	focus = {#75、海陆皆在我们天空之下
-		id = hailujiezaiwomentiankongzhixia
-		icon = GFX_ROC_hailujiezaiwomentiankongzhixia
-		cost = 6.00
-		prerequisite = {
-			focus = kongzhonghouqinxian
-		}
-		prerequisite = {
-			focus = kongjundazhongduiyanxi
-		}
-		x = 43
-		y = 7
-		ai_will_do = {factor = 10}
-		available = {
-			has_air_experience >119.99
-		}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_1A
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_1B
-					remove_idea = ROC_idea_gonghechuying_1A
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_gonghechuying_2A
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_gonghechuying_2B
-					remove_idea = ROC_idea_gonghechuying_2A
-				}
-			}
-			else = {
-				add_ideas = ROC_idea_gonghechuying_2B
-			}
-			custom_effect_tooltip = ROC_custom_hailujiezaiwomentiankongzhixia
-		}
-	}
-	focus = {#80、海军作战模式革新
-		id = haijunzuozhanmoshigexin
-		icon = GFX_ROC_haijunzuozhanmoshigexin
-		cost = 5.00
-		prerequisite = {
-			focus = linjianzhangdehaihanglilun
-		}
-		x = 48
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_base_strike
-			}
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = cv_tech
-			}
-		}
-	}
-	focus = {#81、海军航空大发展
-		id = haijunhangkonmgdafazhan
-		icon = GFX_ROC_haijunhangkonmgdafazhan
-		cost = 5.00
-		prerequisite = {
-			focus = haijunzuozhanmoshigexin
-		}
-		x = 48
-		y = 5
-		ai_will_do = {factor = 10}
-		available = {
-			has_navy_size = { 
-				size > 0 # Use < or >
-				unit = carrier# optional
-			}
-		}
-		completion_reward = {
-			swap_ideas = {
-				add_idea = ROC_idea_nanyangzhijian_22
-				remove_idea = ROC_idea_nanyangzhijian_21
-			}
-			custom_effect_tooltip = ROC_custom_haijunhangkonmgdafazhan
-		}
-	}
-	focus = {#82、升级“天级”航母
-		id = shengjitianjihangmu
-		icon = GFX_ROC_shengjitianjihangmu
-		cost = 5.00
-		prerequisite = {
-			focus = haijunhangkonmgdafazhan
-		}
-		x = 48
-		y = 6
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			create_equipment_variant = {
-				name = "天级"
-				type = ship_hull_carrier_2
-				name_group = ROC_CV_TIAN
-				parent_version = 0
-				allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-				modules = {
-					fixed_ship_deck_slot_1 = ship_deck_space
-					fixed_ship_deck_slot_2 = ship_deck_space
-					fixed_ship_anti_air_slot = ship_anti_air_2
-					fixed_ship_radar_slot = empty
-					fixed_ship_engine_slot = carrier_ship_engine_2
-					fixed_ship_secondaries_slot = dp_ship_secondaries_1
-					front_1_custom_slot = ship_deck_space
-					mid_1_custom_slot = ship_deck_space
-				}
-			}
-			add_equipment_production = {
-				equipment = {
-					type = ship_hull_carrier_2
-					creator = "ROC" 
-					version_name = "天级"
-				}
-				name = "天同" 
-				requested_factories = 1
-				progress = 0.75
-				amount = 1
-			}
-		}
-	}
-	focus = {#83、巨舰构想
-		id = yangshuzhuangdejujiangouxiang
-		icon = GFX_ROC_yangshuzhuangdejujiangouxiang
-		cost = 5.00
-		prerequisite = {
-			focus = geminghaijundefazhanfangxiang
-		}
-		mutually_exclusive = {
-			focus = linjianzhangdehaihanglilun
-		}
-		x = 52
-		y = 3
-		ai_will_do = {factor = 10}
-		available = {
-			has_navy_experience > 24.99
-			has_idea = ROC_idea_nanyangzhijian_1
-			OR = {
-				has_tech = basic_ship_hull_heavy
-				has_tech = basic_heavy_battery
-			}
-		}
-		completion_reward = {
-			navy_experience = -25
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.25
-				uses = 2
-				category = cat_fleet_in_being
-			}
-			swap_ideas = {
-				remove_idea = ROC_idea_nanyangzhijian_1
-				add_idea = ROC_idea_nanyangzhijian_11
-			}
-		}
-	}
-	focus = {#84、尊重世界大战的经验
-		id = zunzhongshijiedazhanjingyan
-		icon = GFX_ROC_zunzhongshijiedazhanjingyan
-		cost = 5.00
-		prerequisite = {
-			focus = yangshuzhuangdejujiangouxiang
-		}
-		x = 52
-		y = 4
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = cat_fleet_in_being
-			}
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = bb_tech
-			}
-		}
-	}
-	focus = {#85、大炮与巨舰
-		id = dajianyujupao
-		icon = GFX_ROC_dajianyujupao
-		cost = 5.00
-		prerequisite = {
-			focus = zunzhongshijiedazhanjingyan
-		}
-		x = 52
-		y = 5
-		ai_will_do = {factor = 10}
-		available = {
-			OR = {
-				has_navy_size = { 
-					size > 4 # Use < or >
-					unit = battleship# optional
-				}
-				has_navy_size = { 
-					size > 7 # Use < or >
-					unit = heavy_cruiser# optional
-				}
-			}
-		}
-		completion_reward = {
-			swap_ideas = {
-				add_idea = ROC_idea_nanyangzhijian_12
-				remove_idea = ROC_idea_nanyangzhijian_11
-			}
-		}
-	}
-	focus = {#86、设计新“山级”战列舰
-		id = shejixinshanjizhanliejian
-		icon = GFX_ROC_shejixinshanjizhanliejian
-		cost = 5.00
-		prerequisite = {
-			focus = dajianyujupao
-		}
-		x = 52
-		y = 6
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			create_equipment_variant = {
-				name = "山级二型"
-				type = ship_hull_heavy_3
-				name_group = ROC_BB_SHAN
-				parent_version = 0
-				allow_without_tech = yes #Makes no difference since focus requires appropriate tech (above), but it improves tooltip
-				modules = {
-					fixed_ship_battery_slot = ship_heavy_battery_3
-					fixed_ship_anti_air_slot = ship_anti_air_1
-					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-					fixed_ship_radar_slot = empty
-					fixed_ship_engine_slot = heavy_ship_engine_2
-					fixed_ship_secondaries_slot = dp_ship_secondaries_2
-					fixed_ship_armor_slot = ship_armor_bb_2
-					front_1_custom_slot = ship_heavy_battery_3
-					mid_1_custom_slot = empty
-					mid_2_custom_slot = dp_ship_secondaries_2
-					mid_3_custom_slot = empty
-					rear_1_custom_slot = ship_airplane_launcher_1
-				}
-			}
-			add_equipment_production = {
-				equipment = {
-					type = ship_hull_heavy_3
-					creator = "ROC" 
-					version_name = "山级"
-				}
-				name = "罗浮" 
-				requested_factories = 1
-				progress = 0.75
-				amount = 1
-			}
-		}
-	}
-	focus = {#87、扩建海军基地
-		id = kuojianhaijunjidi
-		icon = GFX_ROC_kuojianhaijunjidi
-		cost = 5.00
-		prerequisite = {
-			focus = shejixinshanjizhanliejian
-			focus = shengjitianjihangmu
-		}
-		x = 50
-		y = 7
-		ai_will_do = {factor = 10}
-		available = {
-			592 = {
-				dockyard > 3
-			}
-		}
-		completion_reward = {
-			592 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-			if = {
-				limit = {
-					has_idea = ROC_idea_nanyangzhijian_12
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_nanyangzhijian_13
-					remove_idea = ROC_idea_nanyangzhijian_12
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = ROC_idea_nanyangzhijian_22
-				}
-				swap_ideas = {
-					add_idea = ROC_idea_nanyangzhijian_23
-					remove_idea = ROC_idea_nanyangzhijian_22
-				}
-			}
-			custom_effect_tooltip = ROC_custom_kuojianhaijunjidi
-		}
-	}
-	focus = {#88、大同革命之花开遍四海
-		id = datonggemingzhihuakaibiansihai
-		icon = GFX_ROC_datonggemingzhihuakaibiansihai
-		cost = 5.00
-		prerequisite = {
-			focus = kuojianhaijunjidi
-		}
-		x = 50
-		y = 8
-		ai_will_do = {factor = 10}
-		available = {
-			has_navy_experience >99.99
-		}
-		completion_reward = {
-			navy_experience = -100
-			every_navy_leader = {
-				add_attack = 1
-				add_defense = 1
-				add_planning = 1
-				add_logistics = 1
-			}
-		}
-	}
-	focus = {#91、巴蜀之国
-		id = bashuzhiguo
-		icon = GFX_ROC_bashuzhiguo
-		cost = 3.00
-		prerequisite = {
-			focus = tongyizhonghua
-		}
-		bypass = {
-			NOT = { country_exists = SIC }
-		}
-		x = 10
-		y = 12
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_political_power = 30
-			custom_effect_tooltip = ROC_custom_bashuzhiguo
-		}
-	}
-	focus = {#92、横扫西南
-		id = hengsaoxinan
-		icon = GFX_ROC_hengsaoxinan
-		cost = 3.00
-		prerequisite = {
-			focus = bashuzhiguo
-		}
-		x = 10
-		y = 14
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_political_power = 30
-			custom_effect_tooltip = ROC_custom_hengsaoxinan
-		}
-	}
-	focus = {#95、东北问题
-		id = dongbeiwenti
-		icon = GFX_ROC_dongbeiwenti
-		cost = 3
-		prerequisite = {
-			focus = tongyizhonghua
-		}
-		available = {
-			NOT = {
-				country_exists = STG
-			}
-			NOT = {
-				country_exists = XBJ
-			}
-		}
-		bypass = {
-			OR = {
-				NOT = { country_exists = SRC }
-				SRC = {
-					is_in_faction_with = FROM
-				}
-			}
-		}	
-		x = 14
-		y = 12
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			country_event = ROC_SRC_hetan_event.4
-		}
-	}
-	focus = {#96、革命的同志
-		id = gemingdetongzhi
-		icon = GFX_ROC_gemingdetongzhi
-		cost = 3.00
-		prerequisite = {
-			focus = dongbeiwenti
-		}
-		available = {
-			
-		}
-		bypass = {
-			NOT = { country_exists = GPS }
-			NOT = { country_exists = SRC }
-		}
-		ai_will_do = {factor = 10}
-		mutually_exclusive = {
-			focus = yueguoshanhaiguan
-		}
-		x = 13
-		y = 13
-
-	}
-	focus = {#97、越过山海关
-		id = yueguoshanhaiguan
-		icon = GFX_ROC_yueguoshanhaiguan
-		cost = 2.00
-		prerequisite = {
-			focus = dongbeiwenti
-		}
-		available = {
-			OR = {
-				country_exists = GPS
-				AND = {
-					has_global_flag = global_flag_hetan_ROC_SRC_fail
-					country_exists = SRC
-				}
-			}
-			
-		}
-		bypass = {
-			NOT = { country_exists = GPS }
-			NOT = { country_exists = SRC }
-		}	
-		mutually_exclusive = {
-			focus = gemingdetongzhi
-		}
-		x = 15
-		y = 13
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			custom_effect_tooltip = ROC_custom_yueguoshanhaiguan
-		}
-	}
-	focus = {#98、解放漠北
-		id = jiefangmobei
-		icon = GFX_ROC_jiefangmobei
-		cost = 3.00
-		prerequisite = {
-			focus = yueguoshanhaiguan
-			focus = gemingdetongzhi
-		}
-		bypass = {
-			NOT = { country_exists = BOC }
-		}	
-		x = 14
-		y = 14
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			custom_effect_tooltip = ROC_custom_jiefangmobei
-		}
-	}
-	focus = {#99、中华永远共和！
-		id = zhonghuayongyuangonghe
-		icon = GFX_ROC_zhonghuayongyuangonghe
-		cost = 3.00
-		prerequisite = {
-			focus = hengsaoxinan
-		}
-		prerequisite = {
-			focus = jiefangmobei
-		}
-		prerequisite = {
-			focus = xibeigongfa
-		}
-		x = 14
-		y = 15
-
-	}
-	#三派国策
-	focus = {#革命委员会
-		id = gemingweiyuanhui
-		icon = GFX_goal_gemingweiyuanhui
-		cost = 10
-		x = 50
-		y = 10
-		available = {always = no}
-		allow_branch = {has_completed_focus = guangzhougemingweiyuanhui}
-		completion_reward = {
-			set_variable = {
-				ROC_VAR_youyi_base = 0
-			}
-			set_variable = {
-				ROC_VAR_zuoyi_base = 0
-			}
-			#决议时间
-			set_variable = {
-				ROC_sanpai_time_base_var = 50
-			}
-			set_variable = {
-				ROC_sanpai_time_war_var = 0
-			}
-			set_variable = {
-				ROC_sanpai_time_minister_zuo_var = 0
-			}
-			set_variable = {
-				ROC_sanpai_time_minister_zhong_var = 0
-			}
-			set_variable = {
-				ROC_sanpai_time_minister_you_var = 0
-			}
-			set_variable = {
-				ROC_sanpai_time_bop_zuo_var = 0
-			}
-			set_variable = {
-				ROC_sanpai_time_bop_you_var = 0
-			}
-    		ROC_scripted_effects_sanpai_time = yes
-			ROC_scripted_effects_youyi = yes
-			ROC_scripted_effects_zuoyi = yes
-			add_ideas = ROC_idea_jijindu
-		}
-	}
-	focus = {#右翼联盟
-		id = youyilianmeng
-		icon = GFX_goal_youyilianmeng
-		cost = 10
-		x = 46
-		y = 11
-		prerequisite = {
-			focus = gemingweiyuanhui
-		}
-		available = {always = no}
-		completion_reward = {
-			add_dynamic_modifier = { modifier = ROC_dynamic_modifier_youyibuman }
-			country_event = { id = ROC_pingheng.42 }
-		}
-	}
-	focus = {#自由大同盟
-		id = ziyoudatongmeng
-		icon = GFX_goal_ziyoudatongmeng
-		cost = 10
-		x = 46
-		y = 12
-		available = {always = no}
-		prerequisite = {
-			focus = youyilianmeng
-		}
-		completion_reward = {
-			add_political_power = 25
-			add_popularity = { ideology = liberal_democracy popularity = 0.05 }
-			country_event = { id = ROC_pingheng.43 }
-		}
-	}
-	focus = {#经济缓进方略
-		id = jingjihuanjingfanglue
-		icon = GFX_goal_jingjihuanjingfanglue
-		cost = 10
-		x = 46
-		y = 13
-		available = {always = no}
-		prerequisite = {
-			focus = ziyoudatongmeng
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.1
-			}
-		}
-	}
-	focus = {#要求保障民企利益
-		id = yaoqiubaozhangminqiquanyi
-		icon = GFX_goal_yaoqiubaozhangminqiquanyi
-		cost = 10
-		x = 45
-		y = 14
-		available = {always = no}
-		prerequisite = {
-			focus = jingjihuanjingfanglue
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.2
-			}
-		}
-	}
-	focus = {#缓和乡村斗争
-		id = huanhexiangcundouzheng
-		icon = GFX_goal_huanhexiangcundouzheng
-		cost = 10
-		x = 47
-		y = 14
-		available = {always = no}
-		prerequisite = {
-			focus = jingjihuanjingfanglue
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.5
-			}
-		}
-	}
-	focus = {#推动农会经济化转向
-		id = tuidongnongcunjingjihuazhuanxiang
-		icon = GFX_goal_tuidongnongcunjingjihuazhuanxiang
-		cost = 10
-		x = 47
-		y = 15
-		available = {always = no}
-		prerequisite = {
-			focus = huanhexiangcundouzheng
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.6
-			}
-		}
-	}
-	focus = {#提案土地流转权
-		id = tudiliuzhuanziyouhua
-		icon = GFX_goal_tudiliuzhuanziyouhua
-		cost = 10
-		x = 47
-		y = 16
-		available = {always = no}
-		prerequisite = {
-			focus = tuidongnongcunjingjihuazhuanxiang
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.44
-			}
-		}
-	}
-	focus = {#革命统一战线
-		id = gemingtongyizhanxian
-		icon = GFX_goal_gemingtongyizhanxian
-		cost = 10
-		x = 50
-		y = 11
-		available = {always = no}
-		prerequisite = {
-			focus = gemingweiyuanhui
-		}
-		completion_reward = {
-			add_manpower = 10000
-			country_event = {
-				id = ROC_pingheng.47
-			}
-		}
-	}
-	focus = {#强化政治团结
-		id = qianghuazhengzhituanjie
-		icon = GFX_goal_qianghuazhengzhituanjie
-		cost = 10
-		x = 50
-		y = 12
-		available = {always = no}
-		prerequisite = {
-			focus = gemingtongyizhanxian
-		}
-		completion_reward = {
-			set_variable = {
-				ROC_qianghuatuanjie_var = -10
-			}
-			ROC_scripted_effects_yanchang = yes
-			custom_effect_tooltip = ROC_tooltip_yanchang_qianghuazhengzhituanjie
-			country_event = {
-				id = ROC_pingheng.28
-			}
-		}
-	}
-	focus = {#积极参政议政
-		id = jijicanzhengyizheng
-		icon = GFX_goal_jijicanzhengyizheng
-		cost = 10
-		x = 50
-		y = 13
-		available = {always = no}
-		prerequisite = {
-			focus = qianghuazhengzhituanjie
-		}
-		completion_reward = {
-			set_variable = {
-				ROC_jijicanzhnegyizheng_var = 10
-			}
-			ROC_scripted_effects_yanchang = yes
-			country_event = {
-				id = ROC_pingheng.29
-			}
-			custom_effect_tooltip = ROC_tooltip_yanchang_jijicanzhengyizheng
-		}
-	}
-	focus = {#协助工业改造
-		id = xiezhugongyegaizao
-		icon = GFX_goal_xiezhugongyegaizao
-		cost = 10
-		x = 49
-		y = 14
-		available = {always = no}
-		prerequisite = {
-			focus = jijicanzhengyizheng
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = industry
-			}
-			country_event = {
-				id = ROC_pingheng.30
-			}
-		}
-	}
-	focus = {#协助农业改造
-		id = xiezhunongyegaizao
-		icon = GFX_goal_xiezhunongyegaizao
-		cost = 10
-		x = 51
-		y = 14
-		available = {always = no}
-		prerequisite = {
-			focus = jijicanzhengyizheng
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1
-				uses = 2
-				category = construction_tech
-			}
-			country_event = {
-				id = ROC_pingheng.31
-			}
-		}
-	}
-	focus = {#落实新经济法
-		id = luoshixinjingjifa
-		icon = GFX_goal_luoshixinjingjifa
-		cost = 10
-		x = 50
-		y = 15
-		available = {always = no}
-		prerequisite = {
-			focus = xiezhunongyegaizao
-		}
-		prerequisite = {
-			focus = xiezhugongyegaizao
-		}
-		completion_reward = {
-			add_to_variable = {
-        	    var = ROC_VAR_youyi_base
-        	    value = -0.05
-			}
-			add_to_variable = {
-        	    var = ROC_VAR_zuoyi_base
-        	    value = -0.05
-			}
-			custom_effect_tooltip = ROC_tooltip_jijin_xinjingjifa
-			country_event = {
-				id = ROC_pingheng.32
-			}
-		}
-	}
-	focus = {#支持三三制政府
-		id = zhichisansanzhizhengfu
-		icon = GFX_goal_zhichisansanzhizhengfu
-		cost = 10
-		x = 50
-		y = 16
-		available = {always = no}
-		prerequisite = {
-			focus = luoshixinjingjifa
-		}
-		completion_reward = {
-			set_variable = {
-				ROC_sanpai_time_base_var = 60
-			}
-			add_days_mission_timeout = {
-				mission = ROC_decision_zuopai
-				days = 10
-			}
-			add_days_mission_timeout = {
-				mission = ROC_decision_youpai
-				days = 10
-			}
-			add_days_mission_timeout = {
-				mission = ROC_decision_zhongpai
-				days = 10
-			}
-			country_event = {
-				id = ROC_pingheng.33
-			}
-		}
-	}
-	focus = {#基层支部合作
-		id = jicengjibuhezuo
-		icon = GFX_goal_jicengjibuhezuo
-		cost = 10
-		x = 51
-		y = 17
-		available = {always = no}
-		prerequisite = {
-			focus = zhichisansanzhizhengfu
-		}
-		completion_reward = {
-			add_war_support = 0.05
-			country_event = {
-				id = ROC_pingheng.34
-			}
-		}
-	}
-	focus = {#推进跨党工作
-		id = tuijinkuadanghezuo
-		icon = GFX_goal_tuijinkuadanghezuo
-		cost = 10
-		x = 51
-		y = 18
-		available = {always = no}
-		prerequisite = {
-			focus = jicengjibuhezuo
-		}
-		completion_reward = {
-			add_political_power = 100
-			country_event = {
-				id = ROC_pingheng.35
-			}
-		}
-	}
-	focus = {#压制分裂主义
-		id = yazhifenliezhuyi
-		icon = GFX_goal_yazhifenliezhuyi
-		cost = 10
-		x = 51
-		y = 19
-		available = {always = no}
-		prerequisite = {
-			focus = tuijinkuadanghezuo
-		}
-		completion_reward = {
-			add_popularity = {
-				ideology = social_democrat 
-				popularity = 0.05
-			}
-			country_event = {
-				id = ROC_pingheng.36
-			}
-		}
-	}
-	focus = {#左翼联盟
-		id = zuoyilianmeng
-		icon = GFX_goal_zuoyilianmeng
-		cost = 10
-		x = 54
-		y = 11
-		available = {always = no}
-		prerequisite = {
-			focus = gemingweiyuanhui
-		}
-		completion_reward = {
-			add_dynamic_modifier = { modifier = ROC_dynamic_modifier_zuoyibuman }
-			country_event = {
-				id = ROC_pingheng.49
-			}
-		}
-	}
-	focus = {#联络革命友党
-		id = lianluogemingyoudang
-		icon = GFX_goal_lianluogemingyoudang
-		cost = 10
-		x = 54
-		y = 12
-		available = {always = no}
-		prerequisite = {
-			focus = zuoyilianmeng
-		}
-		completion_reward = {
-			add_political_power = 25
-			add_popularity = { ideology = moderate_socialism popularity = 0.05 }
-			country_event = {
-				id = ROC_pingheng.50
-			}
-		}
-	}
-	focus = {#推进所有制革命
-		id = tuijinsuoyouzhigeming
-		icon = GFX_goal_tuijinsuoyouzhigeming
-		cost = 10
-		x = 54
-		y = 13
-		available = {always = no}
-		prerequisite = {
-			focus = lianluogemingyoudang
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.14
-			}
-		}
-	}
-	focus = {#加快公私合营进程
-		id = jiakuaigongsiheyingjincheng
-		icon = GFX_goal_jiakuaigongsiheyingjincheng
-		cost = 10
-		x = 53
-		y = 14
-		available = {always = no}
-		prerequisite = {
-			focus = tuijinsuoyouzhigeming
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.51
-			}
-		}
-	}
-	focus = {#接纳大企业家入会
-		id = jianadaqiyejiaruhui
-		icon = GFX_goal_jianadaqiyejiaruhui
-		cost = 10
-		x = 45
-		y = 15
-		available = {always = no}
-		prerequisite = {
-			focus = yaoqiubaozhangminqiquanyi
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.3
-			}
-		}
-	}
-	focus = {#提议恢复广交所
-		id = tiyihuifuguangjiaosuo
-		icon = GFX_goal_tiyihuifuguangjiaosuo
-		cost = 10
-		x = 45
-		y = 16
-		available = {always = no}
-		prerequisite = {
-			focus = jianadaqiyejiaruhui
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.4
-			}
-		}
-	}
-	focus = {#革命自由化
-		id = gemingziyouhua
-		icon = GFX_goal_gemingziyouhua
-		cost = 10
-		x = 46
-		y = 17
-		available = {always = no}
-		prerequisite = {
-			focus = tiyihuifuguangjiaosuo
-		}
-		prerequisite = {
-			focus = tudiliuzhuanziyouhua
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.8
-			}
-		}
-	}
-	focus = {#宣扬“政治民主”
-		id = xuanyangzhengzhiminzhu
-		icon = GFX_goal_xuanyangzhengzhiminzhu
-		cost = 10
-		x = 46
-		y = 18
-		available = {always = no}
-		prerequisite = {
-			focus = gemingziyouhua
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.9
-			}
-		}
-	}
-	focus = {#要求速行宪政
-		id = yaoqiusuxingxianzheng
-		icon = GFX_goal_yaoqiusuxingxianzheng
-		cost = 10
-		x = 45
-		y = 19
-		available = {always = no}
-		prerequisite = {
-			focus = xuanyangzhengzhiminzhu
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.10
-			}
-		}
-	}
-	focus = {#放宽组党审核
-		id = fangkuanzudangshenhe
-		icon = GFX_goal_fangkuanzudangshenhe
-		cost = 10
-		x = 47
-		y = 19
-		available = {always = no}
-		prerequisite = {
-			focus = xuanyangzhengzhiminzhu
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.11
-			}
-		}
-	}
-	focus = {#质疑大同会地位
-		id = zhiyidatonghui
-		icon = GFX_goal_zhiyidatonghui
-		cost = 10
-		x = 46
-		y = 20
-		available = {always = no}
-		prerequisite = {
-			focus = fangkuanzudangshenhe
-		}
-		prerequisite = {
-			focus = yaoqiusuxingxianzheng
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.12
-			}
-		}
-	}
-	focus = {#轮流坐庄
-		id = lunliuzuozhuang
-		icon = GFX_goal_lunliuzuozhuang
-		cost = 10
-		x = 46
-		y = 21
-		available = {always = no}
-		prerequisite = {
-			focus = zhiyidatonghui
-		}
-		mutually_exclusive = {
-			focus = jixugeming
-		}
-		mutually_exclusive = {
-			focus = jingchenghezuo
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.13
-			}
-		}
-	}
-	focus = {#配合开展群众运动
-		id = peihekaizhanqunzhongyundong
-		icon = GFX_goal_peihekaizhanqunzhongyundong
-		cost = 10
-		x = 49
-		y = 17
-		available = {always = no}
-		prerequisite = {
-			focus = zhichisansanzhizhengfu
-		}
-		completion_reward = {
-			add_political_power = 100
-			country_event = {
-				id = ROC_pingheng.48
-			}
-		}
-	}
-	focus = {#强化合作宣传
-		id = qianghuahezuoxuanchuan
-		icon = GFX_goal_qianghuahezuoxuanchuan
-		cost = 10
-		x = 49
-		y = 18
-		available = {always = no}
-		prerequisite = {
-			focus = peihekaizhanqunzhongyundong
-		}
-		completion_reward = {
-			add_stability = 0.05
-			country_event = {
-				id = ROC_pingheng.38
-			}
-		}
-	}
-	focus = {#研讨革命理论
-		id = yantaogeminglilun
-		icon = GFX_goal_yantaogeminglilun
-		cost = 10
-		x = 49
-		y = 19
-		available = {always = no}
-		prerequisite = {
-			focus = qianghuahezuoxuanchuan
-		}
-		completion_reward = {
-			add_to_variable = {
-        	    var = ROC_VAR_youyi_base
-        	    value = -0.05
-			}
-			add_to_variable = {
-        	    var = ROC_VAR_zuoyi_base
-        	    value = -0.05
-			}
-			country_event = {
-				id = ROC_pingheng.39
-			}
-			custom_effect_tooltip = ROC_tooltip_jijin_yantaogeminglilun
-		}
-	}
-	focus = {#拥抱革命委员会政治
-		id = yongbaogemingweiyuanhuizhengzhi
-		icon = GFX_goal_yongbaogemingweiyuanhuizhengzhi
-		cost = 10
-		x = 50
-		y = 20
-		available = {always = no}
-		prerequisite = {
-			focus = yantaogeminglilun
-		}
-		prerequisite = {
-			focus = yazhifenliezhuyi
-		}
-		completion_reward = {
-			add_to_variable = {
-        	    var = ROC_VAR_youyi_base
-        	    value = -0.2
-			}
-			add_to_variable = {
-        	    var = ROC_VAR_zuoyi_base
-        	    value = -0.2
-			}
-			country_event = {
-				id = ROC_pingheng.40
-			}
-			custom_effect_tooltip = ROC_tooltip_jijin_yongbaoweiyuanhui
-		}
-	}
-	focus = {#精诚合作!
-		id = jingchenghezuo
-		icon = GFX_goal_jingchenghezuo
-		cost = 10
-		x = 50
-		y = 21
-		available = {always = no}
-		prerequisite = {
-			focus = yongbaogemingweiyuanhuizhengzhi
-		}
-		mutually_exclusive = {
-			focus = jixugeming
-		}
-		mutually_exclusive = {
-			focus = lunliuzuozhuang
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.41
-			}
-		}
-	}
-	focus = {#强化工会革命性
-		id = qianghuagonghuigemingxing
-		icon = GFX_goal_qianghuagonghuigemingxing
-		cost = 10
-		x = 53
-		y = 15
-		available = {always = no}
-		prerequisite = {
-			focus = jiakuaigongsiheyingjincheng
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.16
-			}
-		}
-	}
-	focus = {#确立公有制经济主体地位
-		id = queligongyouzhijingjizhutidiwei
-		icon = GFX_goal_queligongyouzhijingjizhutidiwei
-		cost = 10
-		x = 53
-		y = 16
-		available = {always = no}
-		prerequisite = {
-			focus = qianghuagonghuigemingxing
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.17
-			}
-		}
-	}
-	focus = {#土地改革激进化
-		id = tudigaigejijinhua
-		icon = GFX_goal_tudigaigejijinhua
-		cost = 10
-		x = 55
-		y = 14
-		available = {always = no}
-		prerequisite = {
-			focus = tuijinsuoyouzhigeming
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.18
-			}
-		}
-	}
-	focus = {#维持农会武装
-		id = weichinonghuiwuzhuang
-		icon = GFX_goal_weichinonghuiwuzhuang
-		cost = 10
-		x = 55
-		y = 15
-		available = {always = no}
-		prerequisite = {
-			focus = tudigaigejijinhua
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.19
-			}
-		}
-	}
-	focus = {#扩大农村合作社规模
-		id = kuodanongcunhezuosheguimo
-		icon = GFX_goal_kuodanongcunhezuosheguimo
-		cost = 10
-		x = 55
-		y = 16
-		available = {always = no}
-		prerequisite = {
-			focus = weichinonghuiwuzhuang
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.20
-			}
-		}
-	}
-	focus = {#革命激进化
-		id = gemingjijinhua
-		icon = GFX_goal_gemingjijinhua
-		cost = 10
-		x = 54
-		y = 17
-		available = {always = no}
-		prerequisite = {
-			focus = kuodanongcunhezuosheguimo
-		}
-		prerequisite = {
-			focus = queligongyouzhijingjizhutidiwei
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.21
-			}
-		}
-	}
-	focus = {#优先工农权益
-		id = youxiangongnongquanyi
-		icon = GFX_goal_youxiangongnongquanyi
-		cost = 10
-		x = 54
-		y = 18
-		available = {always = no}
-		prerequisite = {
-			focus = gemingjijinhua
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.22
-			}
-		}
-	}
-	focus = {#争夺革命领导权
-		id = zhengduogeminglingdaoquan
-		icon = GFX_goal_zhengduogeminglingdaoquan
-		cost = 10
-		x = 53
-		y = 19
-		available = {always = no}
-		prerequisite = {
-			focus = youxiangongnongquanyi
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.23
-			}
-		}
-	}
-	focus = {#掀起理论论战
-		id = xianqililunlunzhan
-		icon = GFX_goal_xianqililunlunzhan
-		cost = 10
-		x = 55
-		y = 19
-		available = {always = no}
-		prerequisite = {
-			focus = youxiangongnongquanyi
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.24
-			}
-		}
-	}
-	focus = {#打击修正分子
-		id = dajixiuzhengfenzi
-		icon = GFX_goal_dajixiuzhengfenzi
-		cost = 10
-		x = 54
-		y = 20
-		available = {always = no}
-		prerequisite = {
-			focus = zhengduogeminglingdaoquan
-		}
-		prerequisite = {
-			focus = xianqililunlunzhan
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.25
-			}
-		}
-	}
-	focus = {#继续革命
-		id = jixugeming
-		icon = GFX_goal_jixugeming
-		cost = 10
-		x = 54
-		y = 21
-		available = {always = no}
-		prerequisite = {
-			focus = dajixiuzhengfenzi
-		}
-		mutually_exclusive = {
-			focus = lunliuzuozhuang
-		}
-		mutually_exclusive = {
-			focus = jingchenghezuo
-		}
-		completion_reward = {
-			country_event = {
-				id = ROC_pingheng.26
-			}
-		}
+		custom_effect_tooltip = ROC_custom_beifa
 	}
 }
+#解放顺天
+country_event = { 
+	id = ROC_focus.22
+	title = ROC_focus.22.t
+	desc = ROC_focus.22.d
 
-focus_tree = {#华南招抚司国策
-	id = ROC
-	country = {
-		factor = 0
-		modifier = {
-			add = 10
-			tag = ROC
-		}
-	}
-	default = no
+	fire_only_once = yes
+	is_triggered_only = yes
 	
+	trigger = {
+		tag = ROC
+		has_country_flag = FLAG_ROC_decision_beifa_unlocked
+		NOT = { country_exists = XBJ }
+		NOT = { country_exists = STG }
+	}
+	option = {
+		name = ROC_focus.22.a 
+		clr_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						has_war_with = GOS
+					}
+				}
+			}
+			remove_dynamic_modifier = {
+				modifier = ROC_dynamic_modifiers_nanguozhengfa
+			}
+			clr_country_flag = ROC_decision_fangyu
+		}
+	}
+}
+#改革前景（2）
+country_event = { 
+	id = ROC_focus.23
+	title = ROC_focus.23.t
+	desc = ROC_focus.23.d
 
-	continuous_focus_position = { x = 2000 y = 2000 }
-	focus = {#颁布通缉令
-		id = banbutongjiling
-		icon = GFX_ROC_banbutongjiling
-		cost = 5
-		x = 15
-		y = 0
-		ai_will_do = {factor = 10}
-		completion_reward = {
-			add_stability = 0.03
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.23.a 
+		complete_national_focus = gaizaojingjidezhunbei
+		set_power_balance = {
+			id = ROC_power_balance
+			left_side = ROC_left_side
+			right_side = ROC_right_side
+			set_default = yes 
+		}
+		set_variable = {
+			VAR_ROC_jianshe_pp_factor = 1
+		}
+		set_variable = {
+			VAR_ROC_jianshe_days_factor = 1
+		}
+		country_event = { id = ROC_pingheng.9997 }
+	}
+}
+#农业改革方案
+country_event = { 
+	id = ROC_focus.24
+	title = ROC_focus.24.t
+	desc = ROC_focus.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.24.a 
+		country_event = { days = 15 id = ROC_focus.25 }
+	}
+}
+#大同会农场改制干部日记（1）
+country_event = { 
+	id = ROC_focus.25
+	title = ROC_focus.25.t
+	desc = ROC_focus.25.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.25.a 
+		country_event = { days = 15 id = ROC_focus.26 }
+	}
+}
+#大同会农场改制干部日记（2）
+country_event = { 
+	id = ROC_focus.26
+	title = ROC_focus.26.t
+	desc = ROC_focus.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.26.a 
+		country_event = { days = 30 id = ROC_focus.27 }
+	}
+}
+#大同会农场改制干部日记（3）
+country_event = { 
+	id = ROC_focus.27
+	title = ROC_focus.27.t
+	desc = ROC_focus.27.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.27.a 
+		add_political_power = 20
+	}
+}
+#土地改革—合作化农业改革方案
+country_event = { 
+	id = ROC_focus.28
+	title = ROC_focus.28.t
+	desc = ROC_focus.28.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.28.a 
+		country_event = { days = 15 id = ROC_focus.29 }
+	}
+}
+#农会干部日记：土地改革与农业合作化进程（一）
+country_event = { 
+	id = ROC_focus.29
+	title = ROC_focus.29.t
+	desc = ROC_focus.29.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.29.a 
+		country_event = { days = 15 id = ROC_focus.30 }
+	}
+}
+#农会干部日记：土地改革与农业合作化进程（二）
+country_event = { 
+	id = ROC_focus.30
+	title = ROC_focus.30.t
+	desc = ROC_focus.30.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.30.a 
+		country_event = { days = 30 id = ROC_focus.31 }
+	}
+}
+#农会干部日记：土地改革与农业合作化进程（三）
+country_event = { 
+	id = ROC_focus.31
+	title = ROC_focus.31.t
+	desc = ROC_focus.31.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.31.a 
+		add_political_power = 20
+	}
+}
+#扩大“民生产业促进会”范围
+country_event = { 
+	id = ROC_focus.32
+	title = ROC_focus.32.t
+	desc = ROC_focus.32.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.32.a 
+	}
+}
+#革命政府公务员选拔条例（1)
+country_event = { 
+	id = ROC_focus.33
+	title = ROC_focus.33.t
+	desc = ROC_focus.33.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.33.a 
+		country_event = { id = ROC_focus.34 }
+	}
+}
+#革命政府公务员选拔条例（1)
+country_event = { 
+	id = ROC_focus.34
+	title = ROC_focus.34.t
+	desc = ROC_focus.34.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.34.a 
+	}
+}
+#县委员会工作报告（2）
+country_event = { 
+	id = ROC_focus.35
+	title = ROC_focus.35.t
+	desc = ROC_focus.35.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.35.a 
+	}
+}
+#旧军队再教育
+country_event = { 
+	id = ROC_focus.36
+	title = ROC_focus.36.t
+	desc = ROC_focus.36.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.36.a 
+	}
+}
+#南洋舰队的联络
+country_event = { 
+	id = ROC_focus.37
+	title = ROC_focus.37.t
+	desc = ROC_focus.37.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.37.a 
+		complete_national_focus = cedongnanyangjianduicanyugeming
+		# load_oob = ROC_NAVAL
+	}
+}
+#第三届大同会全会
+country_event = { 
+	id = ROC_focus.38
+	title = ROC_focus.38.t
+	desc = ROC_focus.38.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_focus.38.a 
+		set_politics = {
+			ruling_party = moderate_socialism
+			elections_allowed = no
+		}
+		add_ideas = {
+			ROC_idea_YangMingzhai
+			ROC_idea_ZhangBoling
+			ROC_idea_RuanXiaoxian
+			ROC_idea_ZhangShenchuan
+		}
+		trigger = {
+			power_balance_value = {
+				id = ROC_power_balance
+				value > 0.33
+			}
 		}
 	}
-	focus = {#针对性搜捕
-		id = zhenduixingsoubu
-		icon = GFX_ROC_zhenduixingsoubu
-		cost = 5
-		x = 15
-		y = 1
-		ai_will_do = {factor = 10}
-		prerequisite = {
-			focus = banbutongjiling
+	option = {
+		name = ROC_focus.38.b 
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = no
 		}
-		completion_reward = {
-			add_manpower = -1000
-			add_ideas = ROC_idea_huanandasoubu
-			swap_ideas = {
-				add_idea = ROC_Unsettled_Republicians
-				remove_idea = MNG_Unsettled_Republicians
-			}
+		add_ideas = {
+			# ROC_idea_TanPingshan
+			ROC_idea_ChenYouren
+			ROC_idea_LiuErsong
+			ROC_idea_YuShude
 		}
-	}
-	focus = {#压制抗议学生
-		id = yazhikangyixuesheng
-		icon = GFX_ROC_yazhikangyixuesheng
-		cost = 5
-		x = 17
-		y = 2
-		ai_will_do = {factor = 10}
-		prerequisite = {
-			focus = zhenduixingsoubu
+		add_country_leader_trait = {
+			ideology = social_democrat
+			trait = ROC_traits_datongzhuyijianxingzhe
 		}
-		completion_reward = {
-			add_stability = 0.02
-			swap_ideas = {
-				add_idea = ROC_idea_huanandasoubu_1
-				remove_idea = ROC_idea_huanandasoubu
-			}
-		}
-	}
-	focus = {#打击农会暴徒
-		id = dajinonghuibaotu
-		icon = GFX_ROC_dajinonghuibaotu
-		cost = 5
-		x = 15
-		y = 2
-		ai_will_do = {factor = 10}
-		prerequisite = {
-			focus = zhenduixingsoubu
-		}
-		completion_reward = {
-			add_manpower = -10000
-			add_popularity = { ideology = agroindustrial_socialism popularity = -0.02 }
-			if = {
-				limit = {
-					has_idea = ROC_Unsettled_Republicians
-				}
-				swap_ideas = {
-					add_idea = ROC_Unsettled_Republicians_2
-					remove_idea = ROC_Unsettled_Republicians
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value >0
 				}
 			}
-			else = {
-				swap_ideas = {
-					add_idea = ROC_Unsettled_Republicians_3
-					remove_idea = ROC_Unsettled_Republicians_1
+			add_ideas = {
+				ROC_idea_TanPingshan
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value <0.001
+				}
+			}
+			add_ideas = {
+				ROC_idea_Xuqian
+			}
+		}
+		trigger = {
+			AND = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value >-0.34
 				}
 			}
 		}
 	}
-	focus = {#保证工厂生产
-		id = baozhenggongchangshengchan
-		icon = GFX_ROC_baozhenggongchangshengchan
-		cost = 5
-		x = 13
-		y = 2
-		ai_will_do = {factor = 10}
-		prerequisite = {
-			focus = zhenduixingsoubu
+	option = {
+		name = ROC_focus.38.c 
+		set_politics = {
+			ruling_party = liberal_democracy
+			elections_allowed = no
 		}
-		completion_reward = {
-			if = {
-				limit = {
-					has_idea = ROC_Unsettled_Republicians
-				}
-				swap_ideas = {
-					add_idea = ROC_Unsettled_Republicians_1
-					remove_idea = ROC_Unsettled_Republicians
-				}
-			}
-			else = {
-				swap_ideas = {
-					add_idea = ROC_Unsettled_Republicians_3
-					remove_idea = ROC_Unsettled_Republicians_2
-				}
-			}
+		add_ideas = {
+			ROC_idea_TaoXingzhi
+			ROC_idea_ChuFucheng
+			ROC_idea_XiaoZheng
+			ROC_idea_DaiLi
 		}
-	}
-	focus = {#开展舆论宣传
-		id = kaizhanyulunxuanchuan
-		icon = GFX_ROC_kaizhanyulunxuanchuan
-		cost = 5
-		x = 15
-		y = 3
-		ai_will_do = {factor = 10}
-		prerequisite = {
-			focus = baozhenggongchangshengchan
-		}
-		prerequisite = {
-			focus = dajinonghuibaotu
-		}
-		prerequisite = {
-			focus = yazhikangyixuesheng
-		}
-		completion_reward = {
-			swap_ideas = {
-				add_idea = ROC_Unsettled_Republicians_4
-				remove_idea = ROC_Unsettled_Republicians_3
-			}
-		}
-	}
-	focus = {#筹备军事戒严
-		id = choubeijunshijieyan
-		icon = GFX_ROC_choubeijunshijieyan
-		cost = 5
-		x = 15
-		y = 4
-		ai_will_do = {factor = 10}
-		prerequisite = {
-			focus = kaizhanyulunxuanchuan
-		}
-		completion_reward = {
-			swap_ideas = {
-				add_idea = ROC_Unsettled_Republicians_5
-				remove_idea = ROC_Unsettled_Republicians_4
+		trigger = {
+			power_balance_value = {
+				id = ROC_power_balance
+				value < -0.33
 			}
 		}
 	}
 }
+
+
+
+#一、黄埔之夜
+country_event = { 
+	id = ROC_start.1
+	title = ROC_start.1.t
+	desc = ROC_start.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.8.21
+	}
+	option = {
+		name = ROC_start.1.a 
+		every_state = {
+			limit = {
+				is_owned_and_controlled_by = ROC
+			}
+			set_demilitarized_zone = yes
+		}
+		delete_unit = {}
+	}
+}
+#二、广州兴师
+country_event = { 
+	id = ROC_start.2
+	title = ROC_start.2.t
+	desc = ROC_start.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.8.29
+	}
+	option = {
+		name = ROC_start.2.a 
+		add_political_power = 15
+		complete_national_focus = guangzhouqiyi
+		country_event = { id = ROC_focus.37 }
+		set_country_flag = guangzhouqiyi_flag
+		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
+		592 = {
+			set_demilitarized_zone = no
+		}			
+		add_ideas = {#内阁
+			ROC_idea_DongBiwu
+			ROC_idea_WangZhengting
+			ROC_idea_YuShude
+			ROC_idea_FangShengdong
+		}
+		add_ideas = {#国家精神
+			ROC_idea_zhonghuagonghezhenyingdebaolei
+			ROC_idea_gonghejun
+			ROC_idea_meihuazhihai
+			ROC_idea_zhudatonghuizhizongzhu
+			ROC_idea_weigongheerzhan
+			ROC_idea_minzhongduidatonglixiangrenkedu_A
+			ROC_idea_datongdangdequanwei
+		}
+		set_cosmetic_tag = gonghejun
+		load_focus_tree = ROC_gonghe
+		hidden_effect = {
+			set_politics = {
+				ruling_party =  social_democrat
+				last_election = "1936.1.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			set_popularities = {
+					##先锋
+					vanguard_socialism = 1
+					##委员会
+					council_socialism = 4
+					##温和
+					moderate_socialism = 18
+					##工农
+					agroindustrial_socialism = 5
+					##社民
+					social_democrat = 40
+					##调和民主
+					consociationalism = 4
+					##自由民
+					liberal_democracy = 16
+					##保保
+					conservative_democracy = 5
+					##寡头专制
+					authoritarian_oligarchy = 5
+					##领袖意识
+					leader_despotism = 1
+					##神圣复兴
+					sacred_revivalism = 1
+					##国家法团主义
+					national_corporatism = 0
+			}
+			remove_ideas = {
+				MNG_Unsettled_Republicians
+				ROC_Unsettled_Republicians
+				ROC_Unsettled_Republicians_1
+				ROC_Unsettled_Republicians_2
+				ROC_Unsettled_Republicians_3
+				ROC_Unsettled_Republicians_4
+				ROC_Unsettled_Republicians_5
+				ROC_idea_huanandasoubu
+				ROC_idea_huanandasoubu_1
+			}
+			ROC = {
+				ROC_zhangxiaozhun = { set_nationality = ROC }
+				ROC_zhangshaozeng = { set_nationality = ROC }
+				ROC_dengkeng = { set_nationality = ROC }
+				ROC_lijishen = { set_nationality = ROC }
+				ROC_chenmingshu = { set_nationality = ROC }
+				ROC_yuzuobai = { set_nationality = ROC }
+				ROC_dengyanda = { set_nationality = ROC }
+				ROC_xueyue = { set_nationality = ROC }
+				ROC_limingrui = { set_nationality = ROC }
+				ROC_jiangxianyun = { set_nationality = ROC }
+				ROC_helong = { set_nationality = ROC }
+				ROC_zhangfakui = { set_nationality = ROC }
+				ROC_chengeng = { set_nationality = ROC }
+				ROC_zhoushidi = { set_nationality = ROC }
+				ROC_ludeming = { set_nationality = ROC }
+				ROC_wangerzhuo = { set_nationality = ROC }
+				ROC_wangyaowu = { set_nationality = ROC }
+				ROC_lizhangda = { set_nationality = ROC }
+				ROC_jinfozhuang = { set_nationality = ROC }
+				ROC_guanlinzheng = { set_nationality = ROC }
+				ROC_xujishen = { set_nationality = ROC }
+				ROC_duyuming = { set_nationality = ROC }
+				ROC_zhuyunqing = { set_nationality = ROC }
+				ROC_huangqixiang = { set_nationality = ROC }
+				ROC_caoyuan = { set_nationality = ROC }
+				ROC_huangzaixin = { set_nationality = ROC }
+				ROC_xuguangda = { set_nationality = ROC }
+				ROC_liuchouxi = { set_nationality = ROC }
+				ROC_duandechang = { set_nationality = ROC }
+				ROC_caishenxi = { set_nationality = ROC }
+				ROC_linjianzhang = { set_nationality = ROC }
+				ROC_chengbiguang = { set_nationality = ROC }
+				ROC_yangshuzhuang = { set_nationality = ROC }
+				ROC_chenshaokuan = { set_nationality = ROC }
+				ROC_chence = { set_nationality = ROC }
+				ROC_lizhilong = { set_nationality = ROC }
+				ROC_duxigui = { set_nationality = ROC }
+				ROC_chenjiliang = { set_nationality = ROC }
+				ROC_linzun = { set_nationality = ROC }
+				ROC_zhaosheng = { set_nationality = ROC }
+				ROC_tangrongbing = { set_nationality = ROC }
+				ROC_wuzhixin = { set_nationality = ROC }
+				ROC_lishijia = { set_nationality = ROC }
+				ROC_xufengzao = { set_nationality = ROC }
+				ROC_caozhongyuan = { set_nationality = ROC }
+				ROC_anjiaju = { set_nationality = ROC }
+				ROC_wangganchang = { set_nationality = ROC }
+				ROC_fengru = { set_nationality = ROC }
+				ROC_wuyouxun = { set_nationality = ROC }
+				#部长，理论家
+				ROC_yangxianyi = { set_nationality = ROC }
+				ROC_huangguangrui = { set_nationality = ROC }
+				ROC_wangbi = { set_nationality = ROC }
+				ROC_changqiankun = { set_nationality = ROC }
+				ROC_liufuji = { set_nationality = ROC }
+			}	
+			GOS = {
+				GOS_zzx = { set_nationality = ROC }
+			}
+		}
+		country_event = { id = ROC_focus.23 days = 30}
+		country_event = { id = ROC_focus.8 days = 60}
+	}
+}
+#三、黄埔誓师
+country_event = { 
+	id = ROC_start.3
+	title = ROC_start.3.t
+	desc = ROC_start.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.8.30
+	}
+	option = {
+		name = ROC_start.3.a 
+	}
+}
+#四、李准肇庆树大旗
+country_event = { 
+	id = ROC_start.4
+	title = ROC_start.4.t
+	desc = ROC_start.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.9.3
+	}
+	option = {
+		name = ROC_start.4.a 
+	}
+}
+#五、李总督兵败佛冈县
+country_event = { 
+	id = ROC_start.5
+	title = ROC_start.5.t
+	desc = ROC_start.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.9.20
+	}
+	option = {
+		name = ROC_start.5.a 
+		add_army_experience = 15
+		every_state = {
+			limit = {
+				OR = {
+					state = 1115
+					state = 729
+					state = 728
+					state = 818
+					state = 599
+					state = 817
+					state = 591
+					state = 594
+				}
+			}
+			set_demilitarized_zone = no
+		}
+	}
+}
+#六、宝安港党人施连环计
+country_event = { 
+	id = ROC_start.6
+	title = ROC_start.6.t
+	desc = ROC_start.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.9.30
+	}
+	option = {
+		name = ROC_start.6.a 
+		every_state = {
+			limit = {
+				OR = {
+					state = 593
+					state = 326
+				}
+			}
+			set_demilitarized_zone = no
+		}
+	}
+}
+#七、厦门港总督坐艄
+# country_event = { 
+# 	id = ROC_start.7
+# 	title = ROC_start.7.t
+# 	desc = ROC_start.7.d
+
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+	
+# 	trigger = {
+# 		tag = ROC
+# 		date > 1937.10.5
+# 	}
+# 	option = {
+# 		name = ROC_start.7.a 
+# 		every_state = {
+# 			limit = {
+# 				OR = {
+# 					state = 1114
+# 					state = 814
+# 					state = 595
+# 					state = 813
+# 				}
+# 			}
+# 			set_demilitarized_zone = no
+# 		}
+# 	}
+# }
+#八、李总督淡水城被捕【新闻】
+# country_event = { 
+# 	id = ROC_start.8
+# 	title = ROC_start.8.t
+# 	desc = ROC_start.8.d
+
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+	
+# 	trigger = {
+# 		tag = ROC
+# 		date > 1937.9.21
+# 	}
+# 	option = {
+# 		name = ROC_start.8.a 
+# 		every_state = {
+# 			limit = {
+# 				OR = {
+# 					state = 1117
+# 					state = 524
+# 				}
+# 			}
+# 			set_demilitarized_zone = no
+# 		}
+# 	}
+# }
+#九、中务局追逃火车站【新闻】
+country_event = { 
+	id = ROC_start.9
+	title = ROC_start.9.t
+	desc = ROC_start.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.10.5
+	}
+	option = {
+		name = ROC_start.9.a 
+		every_state = {
+			limit = {
+				OR = {
+					state = 1114
+					state = 814
+					state = 595
+					state = 813
+					state = 1117
+					state = 524
+				}
+			}
+			set_demilitarized_zone = no
+		}
+		load_oob = "ROC_gonghe_1937"
+		hidden_effect = {
+				delete_unit_template_and_units = { division_template = "昌德卌四年型近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型卫戍步兵旅" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌八年实验机动步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型山地步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型海军陆战队师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型近卫战车师" }
+		}
+	}
+}
+#十、赣州城农协出击
+country_event = { 
+	id = ROC_start.10
+	title = ROC_start.10.t
+	desc = ROC_start.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.11.5
+	}
+
+	option = {
+		name = ROC_start.10.a 
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = MNG_nongminyundongbeidaji
+				}
+			}
+			transfer_state = 822
+			add_state_core = 822
+			transfer_state = 815
+			add_state_core = 815
+		}
+	}
+}
+#十一、李总督井冈山尽忠
+country_event = { 
+	id = ROC_start.11
+	title = ROC_start.11.t
+	desc = ROC_start.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		tag = ROC
+		date > 1937.11.20
+	}
+	option = {
+		name = ROC_start.11.a 
+		every_state = {
+			limit = {
+				AND = {
+					is_owned_and_controlled_by = ROC
+					is_demilitarized_zone = yes
+				}
+			}
+			set_demilitarized_zone = no
+		}
+		hidden_effect = {
+
+		}
+		retire_character = ROC_characters_lizhun
+
+		ROC_characters_huananjiaofusi = { set_nationality = ROC }
+		promote_character = {
+			character = ROC_characters_huananjiaofusi
+			ideology = leader_despotism_subtype
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+#大同会本土大区情况
+country_event = { 
+	id = ROC_datong.1
+	title = ROC_datong.1.t
+	desc = ROC_datong.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = ROC_datong.1.a 
+		add_political_power = 25
+	}
+}
+#会议召开
+country_event = { 
+	id = ROC_datong.2
+	title = ROC_datong.2.t
+	desc = ROC_datong.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_datong.2.a 
+		add_stability = 0.02
+	}
+}
+#北美大区呼吁关注北美革命
+country_event = { 
+	id = ROC_datong.3
+	title = ROC_datong.3.t
+	desc = ROC_datong.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_datong.3.a 
+		country_event = { days = 2 id = ROC_datong.4 }
+	}
+}
+#天竺大区希望大同国际支援武装革命
+country_event = { 
+	id = ROC_datong.4
+	title = ROC_datong.4.t
+	desc = ROC_datong.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		trigger = {
+			has_equipment = { infantry_equipment > 1999 }
+		}
+		name = ROC_datong.4.a 
+		send_equipment = { target = BNG type = infantry_equipment amount = 2000 }
+		country_event = { days = 2 id = ROC_datong.5 }
+	}
+	option = {
+		name = ROC_datong.4.b
+		country_event = { days = 2 id = ROC_datong.5 }
+	}
+}
+#南美大区强调当地革命的独特性
+country_event = { 
+	id = ROC_datong.5
+	title = ROC_datong.5.t
+	desc = ROC_datong.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_datong.5.a 
+		country_event = { days = 2 id = ROC_datong.6 }
+	}
+}
+#南洋大区聚焦兰芳革命
+country_event = { 
+	id = ROC_datong.6
+	title = ROC_datong.6.t
+	desc = ROC_datong.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_datong.6.a 
+		country_event = { days = 2 id = ROC_datong.7 }
+	}
+}
+#中南大区与王室合作
+country_event = { 
+	id = ROC_datong.7
+	title = ROC_datong.7.t
+	desc = ROC_datong.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_datong.7.a 
+		country_event = { days = 2 id = ROC_datong.8 }
+	}
+}
+#东洋大区再燃革命烽火（1）
+country_event = { 
+	id = ROC_datong.8
+	title = ROC_datong.8.t
+	desc = ROC_datong.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_datong.8.a 
+		country_event = { id = ROC_datong.9 }
+	}
+}
+#东洋大区再燃革命烽火（2）
+country_event = { 
+	id = ROC_datong.9
+	title = ROC_datong.9.t
+	desc = ROC_datong.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_datong.9.a 
+	}
+}
+
+
+
+#谭平山
+country_event = { 
+	id = ROC_pingheng.1001
+	title = ROC_pingheng.1001.t
+	desc = ROC_pingheng.1001.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+		has_completed_focus = guangzhouqiyi
+		NOT = {has_country_flag = ROC_pingheng_economy_minister}
+		NOT = {has_country_flag = ROC_pingheng_end}
+		power_balance_value = {
+			id = ROC_power_balance
+			value < 0.5
+		}
+		power_balance_value = {
+			id = ROC_power_balance
+			value > 0
+		}
+		NOT = {has_idea = ROC_idea_TanPingshan}
+	}
+	immediate = {
+		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
+	}
+	option = {
+		name = ROC_pingheng.1001.a 
+		add_ideas = ROC_idea_TanPingshan
+	}
+	option = {
+		name = ROC_pingheng.1001.b
+		add_stability = -0.05
+	}
+}
+#董必武
+country_event = { 
+	id = ROC_pingheng.1002
+	title = ROC_pingheng.1002.t
+	desc = ROC_pingheng.1002.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		has_completed_focus = guangzhouqiyi
+		NOT = {has_country_flag = ROC_pingheng_economy_minister}
+		NOT = {has_country_flag = ROC_pingheng_end}
+		tag = ROC
+		power_balance_value = {
+			id = ROC_power_balance
+			value > 0.499
+		}
+		NOT = {has_idea = ROC_idea_DongBiwu}
+	}
+	immediate = {
+		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
+	}
+	option = {
+		name = ROC_pingheng.1002.a 
+		add_ideas = ROC_idea_DongBiwu
+	}
+	option = {
+		name = ROC_pingheng.1002.b
+		add_stability = -0.05
+	}
+}
+#徐谦
+country_event = { 
+	id = ROC_pingheng.1003
+	title = ROC_pingheng.1003.t
+	desc = ROC_pingheng.1003.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		has_completed_focus = guangzhouqiyi
+		NOT = {has_country_flag = ROC_pingheng_economy_minister}
+		NOT = {has_country_flag = ROC_pingheng_end}
+		tag = ROC
+		power_balance_value = {
+			id = ROC_power_balance
+			value < 0
+		}
+		power_balance_value = {
+			id = ROC_power_balance
+			value > -0.5
+		}
+		NOT = {has_idea = ROC_idea_Xuqian}
+	}
+	immediate = {
+		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
+	}
+	option = {
+		name = ROC_pingheng.1003.a 
+		add_ideas = ROC_idea_Xuqian
+	}
+	option = {
+		name = ROC_pingheng.1003.b
+		add_stability = -0.05
+	}
+}
+#黄炎培
+country_event = { 
+	id = ROC_pingheng.1004
+	title = ROC_pingheng.1004.t
+	desc = ROC_pingheng.1004.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		has_completed_focus = guangzhouqiyi
+		NOT = {has_country_flag = ROC_pingheng_economy_minister}
+		NOT = {has_country_flag = ROC_pingheng_end}
+		tag = ROC
+		power_balance_value = {
+			id = ROC_power_balance
+			value < -0.499
+		}
+		NOT = {has_idea = ROC_idea_HuangYanpei}
+	}
+	immediate = {
+		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
+	}
+	option = {
+		name = ROC_pingheng.1004.a 
+		add_ideas = ROC_idea_HuangYanpei
+	}
+	option = {
+		name = ROC_pingheng.1004.b
+		add_stability = -0.05
+	}
+}
+#经济部长
+country_event = { 
+	id = ROC_pingheng.9997
+	title = ROC_pingheng.9997.t
+	desc = ROC_pingheng.9997.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.9997.a 
+		add_ideas = ROC_idea_YuShude
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.b 
+		add_ideas = ROC_idea_YanYangchu
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.c 
+		add_ideas = ROC_idea_ChenZanxian
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.e
+		add_ideas = ROC_idea_RuanXiaoxian
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9997.f
+		add_ideas = ROC_idea_XiaoZheng
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
+	}
+}
+#经济部长
+country_event = { 
+	id = ROC_pingheng.9998
+	title = ROC_pingheng.9998.t
+	desc = ROC_pingheng.9998.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	immediate = {
+		set_country_flag = country_flag_jingjidahui_1
+	}
+	option = {
+		name = ROC_pingheng.9998.a 
+		add_ideas = ROC_idea_YuShude
+		trigger = {
+			NOT ={has_idea = ROC_idea_YuShude}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.b 
+		add_ideas = ROC_idea_YanYangchu
+		NOT ={has_idea = ROC_idea_YanYangchu}
+		trigger = {
+			NOT ={has_idea = ROC_idea_YanYangchu}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.c 
+		add_ideas = ROC_idea_ChenZanxian
+		trigger = {
+			NOT ={has_idea = ROC_idea_ChenZanxian}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.k 
+		add_ideas = ROC_idea_RuanXiaoxian
+		trigger = {
+			NOT ={has_idea = ROC_idea_RuanXiaoxian}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.e 
+		add_ideas = ROC_idea_XiaoZheng
+		trigger = {
+			NOT ={has_idea = ROC_idea_XiaoZheng}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.f 
+		add_ideas = ROC_idea_YuShude
+		trigger = {
+			has_idea = ROC_idea_YuShude
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.g 
+		add_ideas = ROC_idea_YanYangchu
+		NOT ={has_idea = ROC_idea_YanYangchu}
+		trigger = {
+			has_idea = ROC_idea_YanYangchu
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.h 
+		add_ideas = ROC_idea_ChenZanxian
+		trigger = {
+			has_idea = ROC_idea_ChenZanxian
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.i 
+		add_ideas = ROC_idea_RuanXiaoxian
+		trigger = {
+			has_idea = ROC_idea_RuanXiaoxian
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9998.j 
+		add_ideas = ROC_idea_XiaoZheng
+		trigger = {
+			has_idea = ROC_idea_XiaoZheng
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
+	}
+}
+#经济部长
+country_event = { 
+	id = ROC_pingheng.9999
+	title = ROC_pingheng.9999.t
+	desc = ROC_pingheng.9999.d
+
+	fire_only_once = no
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.9999.a 
+		add_ideas = ROC_idea_YuShude
+		trigger = {
+			NOT ={has_idea = ROC_idea_YuShude}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.b 
+		add_ideas = ROC_idea_YanYangchu
+		NOT ={has_idea = ROC_idea_YanYangchu}
+		trigger = {
+			NOT ={has_idea = ROC_idea_YanYangchu}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.c 
+		add_ideas = ROC_idea_ChenZanxian
+		trigger = {
+			NOT ={has_idea = ROC_idea_ChenZanxian}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.k 
+		add_ideas = ROC_idea_RuanXiaoxian
+		trigger = {
+			NOT ={has_idea = ROC_idea_RuanXiaoxian}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.e 
+		add_ideas = ROC_idea_XiaoZheng
+		trigger = {
+			NOT ={has_idea = ROC_idea_XiaoZheng}
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.f 
+		add_ideas = ROC_idea_YuShude
+		trigger = {
+			has_idea = ROC_idea_YuShude
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.34
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.339
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.g 
+		add_ideas = ROC_idea_YanYangchu
+		NOT ={has_idea = ROC_idea_YanYangchu}
+		trigger = {
+			has_idea = ROC_idea_YanYangchu
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.h 
+		add_ideas = ROC_idea_ChenZanxian
+		trigger = {
+			has_idea = ROC_idea_ChenZanxian
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.1
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.i 
+		add_ideas = ROC_idea_RuanXiaoxian
+		trigger = {
+			has_idea = ROC_idea_RuanXiaoxian
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value > 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = 0.08
+			}
+		}
+	}
+	option = {
+		name = ROC_pingheng.9999.j 
+		add_ideas = ROC_idea_XiaoZheng
+		trigger = {
+			has_idea = ROC_idea_XiaoZheng
+		}
+		if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value < -0.339
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.02
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.34
+				}
+				power_balance_value = {
+					id = ROC_power_balance
+					value < 0
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.05
+			}
+		}
+		else_if = {
+			limit = {
+				power_balance_value = {
+					id = ROC_power_balance
+					value > -0.001
+				}
+			}
+			add_power_balance_value = {
+			    id = ROC_power_balance
+			    value = -0.1
+			}
+		}
+	}
+}
+#经济缓进方略
+country_event = { 
+	id = ROC_pingheng.1
+	title = ROC_pingheng.1.t
+	desc = ROC_pingheng.1.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.1.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_1
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_1
+	}
+	option = {
+		name = ROC_pingheng.1.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#要求保障民企利益
+country_event = { 
+	id = ROC_pingheng.2
+	title = ROC_pingheng.2.t
+	desc = ROC_pingheng.2.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.2.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_2
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_2
+	}
+	option = {
+		name = ROC_pingheng.2.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#接纳大企业家入会
+country_event = { 
+	id = ROC_pingheng.3
+	title = ROC_pingheng.3.t
+	desc = ROC_pingheng.3.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.3.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_3
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_3
+	}
+	option = {
+		name = ROC_pingheng.3.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#提议恢复广交所
+country_event = { 
+	id = ROC_pingheng.4
+	title = ROC_pingheng.4.t
+	desc = ROC_pingheng.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.4.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_4
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_4
+	}
+	option = {
+		name = ROC_pingheng.4.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#缓和乡村斗争
+country_event = { 
+	id = ROC_pingheng.5
+	title = ROC_pingheng.5.t
+	desc = ROC_pingheng.5.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.5.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_5
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_5
+	}
+	option = {
+		name = ROC_pingheng.5.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#推动农会经济化转向
+country_event = { 
+	id = ROC_pingheng.6
+	title = ROC_pingheng.6.t
+	desc = ROC_pingheng.6.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.6.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_6
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_6
+	}
+	option = {
+		name = ROC_pingheng.6.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#提案土地流转权
+country_event = { 
+	id = ROC_pingheng.7
+	title = ROC_pingheng.7.t
+	desc = ROC_pingheng.7.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.7.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_7
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = -0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_7
+	}
+	option = {
+		name = ROC_pingheng.7.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#革命自由化
+country_event = { 
+	id = ROC_pingheng.8
+	title = ROC_pingheng.8.t
+	desc = ROC_pingheng.8.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.8.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_8
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_8
+	}
+	option = {
+		name = ROC_pingheng.8.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#宣扬“政治民主”
+country_event = { 
+	id = ROC_pingheng.9
+	title = ROC_pingheng.9.t
+	desc = ROC_pingheng.9.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.9.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#要求速行宪政
+country_event = { 
+	id = ROC_pingheng.10
+	title = ROC_pingheng.10.t
+	desc = ROC_pingheng.10.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.10.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_10
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_10
+	}
+	option = {
+		name = ROC_pingheng.10.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#放宽组党审核
+country_event = { 
+	id = ROC_pingheng.11
+	title = ROC_pingheng.11.t
+	desc = ROC_pingheng.11.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.11.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_11
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_11
+	}
+	option = {
+		name = ROC_pingheng.11.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#质疑大同会地位
+country_event = { 
+	id = ROC_pingheng.12
+	title = ROC_pingheng.12.t
+	desc = ROC_pingheng.12.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.12.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_zuo_12
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_you_12
+	}
+	option = {
+		name = ROC_pingheng.12.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#轮流坐庄
+country_event = { 
+	id = ROC_pingheng.13
+	title = ROC_pingheng.13.t
+	desc = ROC_pingheng.13.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.13.b 
+		country_event = { id = ROC_pingheng.45 days = 5 }
+	}
+}
+#推进所有制革命
+country_event = { 
+	id = ROC_pingheng.14
+	title = ROC_pingheng.14.t
+	desc = ROC_pingheng.14.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.14.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_1
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_1
+	}
+	option = {
+		name = ROC_pingheng.14.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#加快公私合营进程
+country_event = { 
+	id = ROC_pingheng.15
+	title = ROC_pingheng.15.t
+	desc = ROC_pingheng.15.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.15.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_2
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_2
+	}
+	option = {
+		name = ROC_pingheng.15.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#强化工会革命性
+country_event = { 
+	id = ROC_pingheng.16
+	title = ROC_pingheng.16.t
+	desc = ROC_pingheng.16.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.16.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_3
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_3
+	}
+	option = {
+		name = ROC_pingheng.16.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#确立公有制经济主体地位
+country_event = { 
+	id = ROC_pingheng.17
+	title = ROC_pingheng.17.t
+	desc = ROC_pingheng.17.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.17.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_4
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_4
+	}
+	option = {
+		name = ROC_pingheng.17.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#土地改革激进化
+country_event = { 
+	id = ROC_pingheng.18
+	title = ROC_pingheng.18.t
+	desc = ROC_pingheng.18.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.18.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_5
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_5
+	}
+	option = {
+		name = ROC_pingheng.18.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#维持农会武装
+country_event = { 
+	id = ROC_pingheng.19
+	title = ROC_pingheng.19.t
+	desc = ROC_pingheng.19.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.19.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_6
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_6
+	}
+	option = {
+		name = ROC_pingheng.19.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#扩大农村合作社规模
+country_event = { 
+	id = ROC_pingheng.20
+	title = ROC_pingheng.20.t
+	desc = ROC_pingheng.20.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.20.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_7
+			}
+		}
+		add_power_balance_value = {
+			id = ROC_power_balance
+			value = 0.05
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_7
+	}
+	option = {
+		name = ROC_pingheng.20.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#革命激进化
+country_event = { 
+	id = ROC_pingheng.21
+	title = ROC_pingheng.21.t
+	desc = ROC_pingheng.21.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.21.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_8
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_8
+	}
+	option = {
+		name = ROC_pingheng.21.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#优先工农权益
+country_event = { 
+	id = ROC_pingheng.22
+	title = ROC_pingheng.22.t
+	desc = ROC_pingheng.22.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.22.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_9
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_9
+	}
+	option = {
+		name = ROC_pingheng.22.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#争夺革命领导权
+country_event = { 
+	id = ROC_pingheng.23
+	title = ROC_pingheng.23.t
+	desc = ROC_pingheng.23.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.23.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_10
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_10
+	}
+	option = {
+		name = ROC_pingheng.23.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#掀起理论论战
+country_event = { 
+	id = ROC_pingheng.24
+	title = ROC_pingheng.24.t
+	desc = ROC_pingheng.24.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.24.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_11
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_11
+	}
+	option = {
+		name = ROC_pingheng.24.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+	}
+}
+#打击修正分子
+country_event = { 
+	id = ROC_pingheng.25
+	title = ROC_pingheng.25.t
+	desc = ROC_pingheng.25.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.25.a 
+		trigger = {
+			NOT = {
+				has_country_flag = ROC_flag_sanpai_you_12
+			}
+		}
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = -0.05
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		set_country_flag = ROC_flag_sanpai_zuo_12
+		country_event = {
+			id = ROC_pingheng.52
+		}
+	}
+	option = {
+		name = ROC_pingheng.25.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 0.08
+		}
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		country_event = {
+			id = ROC_pingheng.53
+		}
+	}
+}
+#继续革命
+country_event = { 
+	id = ROC_pingheng.26
+	title = ROC_pingheng.26.t
+	desc = ROC_pingheng.26.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.26.b 
+		add_to_variable = {
+            var = ROC_VAR_zuoyi_base
+            value = 1
+		}
+		add_political_power = -200
+		add_war_support = -0.15
+	    ROC_scripted_effects_youyi = yes
+        ROC_scripted_effects_zuoyi = yes
+		country_event = {
+			id = ROC_pingheng.54
+			days = 10
+		}
+	}
+}
+#革命统一战线
+country_event = { 
+	id = ROC_pingheng.27
+	title = ROC_pingheng.27.t
+	desc = ROC_pingheng.27.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.27.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#强化政治团结
+country_event = { 
+	id = ROC_pingheng.28
+	title = ROC_pingheng.28.t
+	desc = ROC_pingheng.28.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.28.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#积极参政议政
+country_event = { 
+	id = ROC_pingheng.29
+	title = ROC_pingheng.29.t
+	desc = ROC_pingheng.29.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.29.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#协助工业改造
+country_event = { 
+	id = ROC_pingheng.30
+	title = ROC_pingheng.30.t
+	desc = ROC_pingheng.30.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.30.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#协助农业改造
+country_event = { 
+	id = ROC_pingheng.31
+	title = ROC_pingheng.31.t
+	desc = ROC_pingheng.31.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.31.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#落实新经济法
+country_event = { 
+	id = ROC_pingheng.32
+	title = ROC_pingheng.32.t
+	desc = ROC_pingheng.32.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.32.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#支持三三制政府
+country_event = { 
+	id = ROC_pingheng.33
+	title = ROC_pingheng.33.t
+	desc = ROC_pingheng.33.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.33.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#基层支部合作
+country_event = { 
+	id = ROC_pingheng.34
+	title = ROC_pingheng.34.t
+	desc = ROC_pingheng.34.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.34.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#推进跨党工作
+country_event = { 
+	id = ROC_pingheng.35
+	title = ROC_pingheng.35.t
+	desc = ROC_pingheng.35.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.35.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#压制分裂主义
+country_event = { 
+	id = ROC_pingheng.36
+	title = ROC_pingheng.36.t
+	desc = ROC_pingheng.36.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.36.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#配合开展群众运动
+country_event = { 
+	id = ROC_pingheng.37
+	title = ROC_pingheng.37.t
+	desc = ROC_pingheng.37.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.37.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#强化合作宣传
+country_event = { 
+	id = ROC_pingheng.38
+	title = ROC_pingheng.38.t
+	desc = ROC_pingheng.38.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.38.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#研讨革命理论
+country_event = { 
+	id = ROC_pingheng.39
+	title = ROC_pingheng.39.t
+	desc = ROC_pingheng.39.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.39.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#研讨革命理论
+country_event = { 
+	id = ROC_pingheng.40
+	title = ROC_pingheng.40.t
+	desc = ROC_pingheng.40.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.40.b 
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.02
+		}
+	}
+}
+#研讨革命理论
+country_event = { 
+	id = ROC_pingheng.41
+	title = ROC_pingheng.41.t
+	desc = ROC_pingheng.41.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.41.a
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.1
+		}
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = -0.1
+		}
+	}
+}
+country_event = { 
+	id = ROC_pingheng.42
+	title = ROC_pingheng.42.t
+	desc = ROC_pingheng.42.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.42.b
+		add_stability = 0.05
+	}
+}
+country_event = { 
+	id = ROC_pingheng.43
+	title = ROC_pingheng.43.t
+	desc = ROC_pingheng.43.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.43.b 
+
+	}
+}
+country_event = { 
+	id = ROC_pingheng.44
+	title = ROC_pingheng.44.t
+	desc = ROC_pingheng.44.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.44.a
+		country_event = { id = ROC_pingheng.7 days = 5 }
+	}
+}
+country_event = { 
+	id = ROC_pingheng.45
+	title = ROC_pingheng.45.t
+	desc = ROC_pingheng.45.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.45.a
+		country_event = { id = ROC_pingheng.46 days = 10 }
+	}
+	option = {
+		name = ROC_pingheng.45.b
+		country_event = { id = ROC_pingheng.46 days = 10 }
+	}
+}
+country_event = { 
+	id = ROC_pingheng.46
+	title = ROC_pingheng.46.t
+	desc = ROC_pingheng.46.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.46.a
+		add_political_power = -200
+		add_stability = -0.15
+		add_to_variable = {
+            var = ROC_VAR_youyi_base
+            value = 1
+		}
+	}
+}
+country_event = { 
+	id = ROC_pingheng.47
+	title = ROC_pingheng.47.t
+	desc = ROC_pingheng.47.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.47.a
+		country_event = {
+			id = ROC_pingheng.27
+		}
+	}
+}
+country_event = { 
+	id = ROC_pingheng.48
+	title = ROC_pingheng.48.t
+	desc = ROC_pingheng.48.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.48.a
+		country_event = {
+			id = ROC_pingheng.37
+		}
+	}
+}
+country_event = { 
+	id = ROC_pingheng.49
+	title = ROC_pingheng.49.t
+	desc = ROC_pingheng.49.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.49.a
+		add_war_support = 0.05
+	}
+}
+country_event = { 
+	id = ROC_pingheng.50
+	title = ROC_pingheng.50.t
+	desc = ROC_pingheng.50.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.50.a
+		add_political_power = 50
+	}
+}
+country_event = { 
+	id = ROC_pingheng.51
+	title = ROC_pingheng.51.t
+	desc = ROC_pingheng.51.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.51.a
+		country_event = { id = ROC_pingheng.15 }
+	}
+}
+country_event = { 
+	id = ROC_pingheng.52
+	title = ROC_pingheng.52.t
+	desc = ROC_pingheng.52.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.52.a
+	}
+}
+country_event = { 
+	id = ROC_pingheng.53
+	title = ROC_pingheng.53.t
+	desc = ROC_pingheng.53.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.53.a
+	}
+}
+country_event = { 
+	id = ROC_pingheng.54
+	title = ROC_pingheng.54.t
+	desc = ROC_pingheng.54.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = ROC
+	}
+	option = {
+		name = ROC_pingheng.54.a
+	}
+}
+# country_event = { 
+# 	id = ROC_pingheng.9888
+# 	title = ROC_pingheng.9888.t
+# 	desc = ROC_pingheng.9888.d
+
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		tag = ROC
+# 	}
+# 	option = {
+# 		name = ROC_pingheng.9888.a 
+# 		add_stability = ROC_VAR_youyi_base
+# 	}
+# }
