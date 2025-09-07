@@ -914,4 +914,35 @@ STG_jingnan = {
             declare_war_on = { target = SCG type = annex_everything }
 		}
 	}
+	#七省开战
+	STG_qishengkaizhan= {
+		icon = ger_military_buildup
+		
+		visible = {country_exists = GOS}
+		allowed = { tag = STG } 
+		available = {
+			NOT = {country_exists = XBJ}
+			is_neighbor_of = GOS
+		}
+		cost = 15 
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {country_exists = XBJ}
+				is_neighbor_of = GOS
+				country_exists = GOS
+				NOT= {has_war = yes}
+				factor = 20
+			}
+		}
+		on_map_mode = map_and_decisions_view
+		
+		state_target = yes
+		targets = { state = 613 }
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = {
+            declare_war_on = { target = GOS type = annex_everything }
+		}
+	}
 }
