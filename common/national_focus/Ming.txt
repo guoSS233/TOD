@@ -17,6 +17,10 @@ focus_tree = {
 		id = MNG_chengqianbihou
 		icon = GFX_MNG_chengqianbihou
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		
 		x = 13
 		y = 1
@@ -41,6 +45,9 @@ focus_tree = {
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 10
 		y = 2
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
 		available = { always = no }
 		cost = 10
 		ai_will_do = {
@@ -64,6 +71,10 @@ focus_tree = {
 		x = 10
 		y = 3
 		cost = 5
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		ai_will_do = {
 			factor = 100
 		}
@@ -78,7 +89,10 @@ focus_tree = {
 	focus = { #艨艟御日
 		id = MNG_mengchongyuri
 		icon = GFX_MNG_mengchongyuri
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_ziligengsheng}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 7
@@ -96,7 +110,10 @@ focus_tree = {
 	focus = { #翩其反矣
 		id = MNG_pianqifanyi
 		icon = GFX_MNG_pianqifanyi
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_ziligengsheng}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 9
@@ -115,7 +132,10 @@ focus_tree = {
 	focus = { #四牡暌暌
 		id = MNG_sidukuikui
 		icon = GFX_MNG_sidukuikui
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_ziligengsheng}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 11
@@ -132,7 +152,10 @@ focus_tree = {
 	focus = { #骖鸾驭鹤
 		id = MNG_canluanyuhe
 		icon = GFX_MNG_canluanyuhe
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_ziligengsheng	}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 13
@@ -155,6 +178,10 @@ focus_tree = {
 		x = 16
 		y = 2
 		cost = 3
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_chengqianbihou}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		ai_will_do = {
@@ -168,7 +195,10 @@ focus_tree = {
 	focus = { #斩钉截铁
 		id = MNG_zhandingjietie
 		icon = GFX_MNG_zhandingjietie
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_minyilaozhi}
 		available = { always = no }
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
@@ -187,7 +217,10 @@ focus_tree = {
 	focus = { #仁至义尽
 		id = MNG_renzhiyijin
 		icon = GFX_MNG_renzhiyijin
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_zhandingjietie}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
@@ -205,7 +238,10 @@ focus_tree = {
 	focus = { #杀鸡儆猴
 		id = MNG_shajijinghou
 		icon = GFX_MNG_shajijinghou
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_renzhiyijin}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
@@ -228,7 +264,10 @@ focus_tree = {
 	focus = {
 		id = MNG_zhengdunguanchang
 		icon = GFX_MNG_zhengdunguanchang
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_shajijinghou}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
@@ -248,7 +287,10 @@ focus_tree = {
 	focus = {
 		id = MNG_chizhuwufu
 		icon = GFX_MNG_chizhuwufu
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_zhengdunguanchang}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 17
@@ -266,7 +308,10 @@ focus_tree = {
 	focus = { #楚弓复得
 		id = MNG_chugongfude
 		icon = GFX_MNG_chugongfude
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_zhandingjietie}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 15
@@ -292,7 +337,10 @@ focus_tree = {
 	focus = { #委信心腹
 		id = MNG_weixinxinfu
 		icon = GFX_MNG_weixinxinfu
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_chugongfude}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 15
@@ -308,7 +356,10 @@ focus_tree = {
 	focus = { #倾心秦淮
 		id = MNG_qingxinqinhuai
 		icon = GFX_MNG_qingxinqinhuai
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_weixinxinfu}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 15
@@ -334,7 +385,10 @@ focus_tree = {
 	focus = {
 		id = MNG_zhengqingrenhe
 		icon = GFX_MNG_zhengqingrenhe
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taiziyuci} } }
 		prerequisite = {focus = MNG_qingxinqinhuai}
 		allow_branch = {if = {NOT = { has_country_flag = MNG_taiziyuci }}}
 		x = 15
@@ -357,6 +411,10 @@ focus_tree = {
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		x = 7
 		y = 1
 		cost = 5
@@ -378,7 +436,10 @@ focus_tree = {
 	focus = {
 		id = MNG_diaochataiziyuci
 		icon = GFX_MNG_diaochataiziyuci
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_qidongjieyan}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
@@ -399,7 +460,10 @@ focus_tree = {
 	focus = {
 		id = MNG_qingjiaotongchangonghui
 		icon = GFX_MNG_qingjiaotongchangonghui
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_diaochataiziyuci}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
@@ -423,7 +487,10 @@ focus_tree = {
 	focus = {
 		id = MNG_soubudatonghui
 		icon = GFX_MNG_soubudatonghui
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_qingjiaotongchangonghui}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
@@ -445,7 +512,10 @@ focus_tree = {
 	focus = {
 		id = MNG_diaochasheanguanyuan
 		icon = GFX_MNG_diaochasheanguanyuan
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_diaochataiziyuci}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
@@ -473,7 +543,10 @@ focus_tree = {
 	focus = {
 		id = MNG_zhanjinshajue
 		icon = GFX_MNG_zhanjinshajue
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_diaochasheanguanyuan}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
@@ -513,6 +586,10 @@ focus_tree = {
 		icon = GFX_MNG_quanguodasoubu
 		x = 7
 		y = 5
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_kaolvjichengren}
 		prerequisite = {focus = MNG_zhanjinshajue}
 		prerequisite = {focus = MNG_soubudatonghui}
@@ -534,7 +611,10 @@ focus_tree = {
 	focus = {
 		id = MNG_zhengdunguanyuan
 		icon = GFX_MNG_zhengdunguanyuan
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_quanguodasoubu}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
@@ -558,7 +638,10 @@ focus_tree = {
 	focus = {
 		id = MNG_anfuminxin
 		icon = GFX_MNG_anfuminxin
-
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		available = { hidden_trigger = { NOT = { has_country_flag = MNG_taisunjiwei} } }
 		prerequisite = {focus = MNG_zhengdunguanyuan}
 		allow_branch = {if = {has_country_flag = MNG_taiziyuci}}
 		allow_branch = {if = { NOT = { has_country_flag = MNG_taisunjiwei}}}
