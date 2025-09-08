@@ -698,3 +698,51 @@ country_event = {
 		name = TODhungary.34.b
 	}
 }
+#建立东墙
+news_event = {
+	id = TODhungary.35
+	title = TODhungary.35.t
+	desc =TODhungary.35.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = { 
+		trigger = {
+			OR = {
+				tag = HUN
+				has_opinion = { 
+					target = HUN
+					value > 29
+				}  
+			}
+		}
+		name = TODhungary.35.a
+		
+	}
+	option = { 
+		trigger = {
+			AND = {
+				OR = {
+					tag = UKR
+					is_neighbor_of = HUN
+				}
+				has_opinion = { 
+					target = HUN
+					value < 30
+				}  
+			}
+		}
+		name = TODhungary.35.b
+	}
+	option = {
+		trigger = {
+			NOT = {
+				tag = HUN
+				is_neighbor_of = HUN
+				tag = UKR
+			}
+		}
+		name = TODhungary.35.c
+	}
+}
