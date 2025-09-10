@@ -83,33 +83,26 @@ country_event = {
 		set_global_flag = saipulusizhengduanjieshu
 		183 = {	set_demilitarized_zone = no }
 		hidden_effect = { 
-			 GRE = { country_event = { id = balkancivwar.1004 days = 10 }}
+			 GRE = { country_event = { id = balkancivwar.1003 days = 10 }}
 		}
 	}
 }
-###新闻事件 news 
+#希腊宣布封锁塞浦路斯
 news_event = {
 	id = balkancivwar.1001
 	title = balkancivwar.1001.t
-	picture = GFX_balkancivwar
+	picture = GFX_news_event_panay_incident
 	desc = balkancivwar.1001.d
 	
 	major = yes
 	is_triggered_only = yes
+	
 	option = {
-		trigger = {
-			tag = GRE
-			932 = { is_controlled_by = TUR }
-		}
+		trigger = {tag = GRE}
 		name = balkancivwar.1001.a
-		GRE = { declare_war_on = { target = TUR type = take_claimed_state } }
 	}
 	option = {
-		trigger = {
-			tag = TUR
-			932 = { is_controlled_by = GRE }
-		}
-		TUR = { declare_war_on = { target = GRE type = take_claimed_state }}
+		trigger = {tag = TUR}
 		name = balkancivwar.1001.b
 	}
 	option = {
@@ -120,20 +113,6 @@ news_event = {
 			}
 		}
 		name = balkancivwar.1001.c
-	}
-	option = {
-		trigger = {
-			tag = GRE
-			932 = { is_controlled_by = GRE }
-		}
-		name = balkancivwar.1001.e
-	}
-	option = {
-		trigger = {
-			tag = TUR
-			932 = { is_controlled_by = TUR }
-		}
-		name = balkancivwar.1001.f
 	}
 }
 #土耳其占领君士坦丁
@@ -148,42 +127,41 @@ country_event = {
 	option = {
 		name = balkancivwar.1002.a
 		annex_country = { target = COE }
-		hidden_effect = {GRE = { news_event = { id = balkancivwar.1001 days = 4 }}}
+		hidden_effect = {GRE = { news_event = { id = balkancivwar.1004 days = 4 }}}
 	}
 }
 #希腊占领君士坦丁
 country_event = {
-	id = balkancivwar.1004
-	title = balkancivwar.1004.t
+	id = balkancivwar.1003
+	title = balkancivwar.1003.t
 	picture = GFX_Constantinople
-	desc = balkancivwar.1004.d
+	desc = balkancivwar.1003.d
 	
 	fire_only_once = yes
 	is_triggered_only = yes
 	option = {
 		name = balkancivwar.1004.a
 		annex_country = { target = COE }
-		hidden_effect = {TUR = { news_event = { id = balkancivwar.1001 days = 4 }}}
+		hidden_effect = {TUR = { news_event = { id = balkancivwar.1005 days = 4 }}}
 	}
 }
-#希腊宣布封锁塞浦路斯
+###希腊-土耳其战争 
 news_event = {
-	id = balkancivwar.1003
-	title = balkancivwar.1003.t
-	picture = GFX_news_event_panay_incident
-	desc = balkancivwar.1003.d
+	id = balkancivwar.1004
+	title = balkancivwar.1004.t
+	picture = GFX_balkancivwar
+	desc = balkancivwar.1004.d
 	
 	major = yes
-	fire_only_once = yes
 	is_triggered_only = yes
-	
 	option = {
-		trigger = {tag = GRE}
-		name = balkancivwar.1003.a
+		trigger = { tag = GRE }
+		name = balkancivwar.1004.a
+		GRE = { declare_war_on = { target = TUR type = take_claimed_state } }
 	}
 	option = {
-		trigger = {tag = TUR}
-		name = balkancivwar.1003.b
+		trigger = { tag = TUR }
+		name = balkancivwar.1004.b
 	}
 	option = {
 		trigger = {
@@ -192,7 +170,34 @@ news_event = {
 				tag = GRE
 			}
 		}
-		name = balkancivwar.1003.c
+		name = balkancivwar.1004.c
 	}
 }
-
+###土耳其-希腊战争
+news_event = {
+	id = balkancivwar.1005
+	title = balkancivwar.1005.t
+	picture = GFX_balkancivwar
+	desc = balkancivwar.1005.d
+	
+	major = yes
+	is_triggered_only = yes
+	option = {
+		trigger = { tag = GRE }
+		name = balkancivwar.1005.a
+	}
+	option = {
+		trigger = { tag = TUR }
+		TUR = { declare_war_on = { target = GRE type = take_claimed_state }}
+		name = balkancivwar.1005.b
+	}
+	option = {
+		trigger = {
+			NOT = {
+				tag = TUR
+				tag = GRE
+			}
+		}
+		name = balkancivwar.1005.c
+	}
+}
