@@ -1115,3 +1115,100 @@ news_event = {
 		}
 	}
 }
+
+#卓别林
+news_event = {
+	id = mingnews.3
+	title = mingnews.3.t
+	desc = mingnews.3.d
+	picture = GFX_dengding
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { #明帝国以外
+		name = mingnews.3.a
+
+		trigger = {
+			NOT = { tag = MNG }
+		}
+
+	}
+	option = { #明帝国自己
+		name = mingnews.3.b
+
+		trigger = {
+			tag = MNG
+		}
+		add_popularity = { ideology = agroindustrial_socialism popularity = 0.01 }
+		827 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+#卓别林
+news_event = {
+	id = mingnews.4
+	title = mingnews.4.t
+	desc = mingnews.4.d
+	picture = GFX_dengding
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { #明东非
+		name = mingnews.4.a
+		trigger = {
+			tag = MEA
+		}
+	}
+	option = { #意大利和意东非
+		name = mingnews.4.b
+		trigger = {
+			OR = {
+				tag = IEA
+				tag = ITA
+			}
+		}
+	}
+	option = { #埃塞
+		name = mingnews.4.c
+		trigger = {
+			tag = ETH
+		}
+	}
+	option = { #明
+		name = mingnews.4.e
+		trigger = {
+			tag = MNG
+		}
+	}
+	option = { #明
+		name = mingnews.4.f
+		trigger = {
+			NOT = {
+				tag = MNG
+			}
+			NOT = {
+				tag = ITA
+			}
+			NOT = {
+				tag = IEA
+			}
+			NOT = {
+				tag = ETH
+			}
+			NOT = {
+				tag = MEA
+			}
+		}
+	}
+
+}
