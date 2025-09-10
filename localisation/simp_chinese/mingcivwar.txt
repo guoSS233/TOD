@@ -1,0 +1,2425 @@
+
+add_namespace = mingcivwar
+#中传邸报上的争论 1936.1.8
+country_event = {
+	id = mingcivwar.21
+	title = mingcivwar.21.t
+	desc = mingcivwar.21.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { name = mingcivwar.21.a}
+}
+#御前会议1 1936.2.8
+country_event = {
+	id = mingcivwar.22
+	title = mingcivwar.22.t
+	desc = mingcivwar.22.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.22.a
+		country_event = { id = mingcivwar.23 }
+	}
+}
+#御前会议2
+country_event = {
+	id = mingcivwar.23
+	title = mingcivwar.23.t
+	desc = mingcivwar.23.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.23.a
+		country_event = { id = mingcivwar.24 }
+	}
+}
+#御前会议3
+country_event = {
+	id = mingcivwar.24
+	title = mingcivwar.24.t
+	desc = mingcivwar.24.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.24.a
+		country_event = { id = mingcivwar.25 }
+		add_to_variable = { MNG_wubeixi = 20}
+		add_to_variable = { MNG_zijinxi = -10 }
+		custom_effect_tooltip = mingcivwar.24.xiaoguo
+		complete_national_focus = MNG_zaisiyurong
+	}
+}
+#家宴之后
+country_event = {
+	id = mingcivwar.25
+	title = mingcivwar.25.t
+	desc = mingcivwar.25.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.25.a 
+		add_political_power = 15	
+	}
+}
+#顺天日报 1936.2.15
+news_event = {
+	id = mingcivwar.26
+	title = mingcivwar.26.t
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	desc = {text = mingcivwar.26.d}
+	trigger = {tag = MNG}
+	option = {name = mingcivwar.26.a}
+}
+#锦衣卫的报告 1936.4.1
+country_event = {
+	id = mingcivwar.27
+	title = mingcivwar.27.t
+	desc = mingcivwar.27.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.27.a 
+		complete_national_focus = MNG_zhandingjietie
+	}
+}
+
+###太子出巡
+#东巡出发 1936.6.1
+country_event = {
+	id = mingcivwar.28
+	title = mingcivwar.28.t
+	desc = mingcivwar.28.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 	name = mingcivwar.28.a }
+}
+#天津卫 1936.6.2
+country_event = {
+	id = mingcivwar.29
+	title = mingcivwar.29.t
+	desc = mingcivwar.29.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = {  name = mingcivwar.29.a }
+}
+#辽阳工业区 1936.6.12
+country_event = {
+	id = mingcivwar.30
+	title = mingcivwar.30.t
+	desc = mingcivwar.30.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.30.a
+		add_to_variable = { MNG_wubeixi = 3}
+	}
+}
+#镇东府刺杀 1936.6.30
+country_event = {
+	id = mingcivwar.31
+	title = mingcivwar.31.t
+	desc = mingcivwar.31.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.31.a }
+}
+#霞仪开展大规模清洗活动 1936.7.10
+country_event = {
+	id = mingcivwar.32
+	title = mingcivwar.32.t
+	desc = mingcivwar.32.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.32.a }
+}
+#南巡出发 1936.9.1
+country_event = {
+	id = mingcivwar.33
+	title = mingcivwar.33.t
+	desc = mingcivwar.33.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.33.a 
+		add_to_variable = { MNG_zijinxi = 5}
+		custom_effect_tooltip = mingcivwar.33.xiaoguo
+	}
+}
+#正定（石家庄）1936.9.13
+country_event = {
+	id = mingcivwar.34
+	title = mingcivwar.34.t
+	desc = mingcivwar.34.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.34.a 
+		add_to_variable = { MNG_wubeixi = 2}
+		custom_effect_tooltip = mingcivwar.34.xiaoguo.a
+	}
+	option = { 
+		name = mingcivwar.34.b 
+		add_to_variable = { MNG_zijinxi = 2}
+		custom_effect_tooltip = mingcivwar.34.xiaoguo.b
+	}
+}
+#曲阜 1936.9.21
+country_event = {
+	id = mingcivwar.35
+	title = mingcivwar.35.t
+	desc = mingcivwar.35.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.35.a 
+		add_stability = 0.01
+	}
+}
+#徐州请愿 1936.9.28
+country_event = {
+	id = mingcivwar.36
+	title = mingcivwar.36.t
+	desc = mingcivwar.36.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.36.a 
+		add_to_variable = { MNG_zijinxi = -1}
+		add_to_variable = { MNG_wubeixi = 2}
+		custom_effect_tooltip = mingcivwar.36.xiaoguo.a
+	}
+}
+#凤阳祭祖 1936.10.2
+country_event = {
+	id = mingcivwar.37
+	title = mingcivwar.37.t
+	desc = mingcivwar.37.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.37.a 
+		add_stability = 0.02
+	}
+}
+#应天巡礼 1936.10.11
+country_event = {
+	id = mingcivwar.38
+	title = mingcivwar.38.t
+	desc = mingcivwar.38.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.38.a }
+}
+#太仓演讲 1936.10.17
+country_event = {
+	id = mingcivwar.39
+	title = mingcivwar.39.t
+	desc = mingcivwar.39.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.39.a 
+		add_to_variable = { MNG_guanxuexi = 1}
+		custom_effect_tooltip = mingcivwar.39.xiaoguo.a
+	}
+}
+#杭州故事 1936.10.24
+country_event = {
+	id = mingcivwar.40
+	title = mingcivwar.40.t
+	desc = mingcivwar.40.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.40.a 
+		add_to_variable = { MNG_zhengxuexi = 1}
+		custom_effect_tooltip = mingcivwar.40.xiaoguo.a
+	}
+}
+#泉州老将 1936.11.4
+country_event = {
+	id = mingcivwar.41
+	title = mingcivwar.41.t
+	desc = mingcivwar.41.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.41.a 
+		navy_experience = 10
+	}
+}
+#广交所 1936.11.13
+country_event = {
+	id = mingcivwar.42
+	title = mingcivwar.42.t
+	desc = mingcivwar.42.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.42.a 
+		add_to_variable = { MNG_guanxuexi = 1}
+		custom_effect_tooltip = mingcivwar.39.xiaoguo.a
+	}
+}
+#武汉三镇 1936.11.23
+country_event = {
+	id = mingcivwar.43
+	title = mingcivwar.43.t
+	desc = mingcivwar.43.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.43.a }
+}
+#四川饥荒 1936.12.2
+country_event = {
+	id = mingcivwar.44
+	title = mingcivwar.44.t
+	desc = mingcivwar.44.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.44.a }
+}
+#西安视察 1936.12.12
+country_event = {
+	id = mingcivwar.45
+	title = mingcivwar.45.t
+	desc = mingcivwar.45.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.45.a 
+		add_to_variable = { MNG_jiaotongxi = 3}
+		custom_effect_tooltip = mingcivwar.45.xiaoguo.a
+	}
+}
+#太子遇刺 1936.12.20
+country_event = {
+	id = mingcivwar.46
+	title = mingcivwar.46.t
+	desc = mingcivwar.46.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.46.a 
+		set_country_flag = MNG_taiziyuci
+		custom_effect_tooltip = mingcivwar.46.xiaoguo.a
+		country_event = { id = mingcivwar.47 }
+		add_to_variable = { MNG_zijinxi = -7}
+		add_stability = -0.15
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+###
+#搜捕通知 1936.12.20
+country_event = {
+	id = mingcivwar.47
+	title = mingcivwar.47.t
+	desc = mingcivwar.47.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.47.a
+		complete_national_focus = MNG_qidongjieyan
+	}
+}
+#锦衣卫审讯报告
+country_event = {
+	id = mingcivwar.48
+	title = mingcivwar.48.t
+	desc = mingcivwar.48.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.48.a }
+	option = { 
+		name = mingcivwar.48.b
+		country_event = { id = mingcivwar.49 }
+	}
+	option = { 
+		name = mingcivwar.48.c
+		country_event = { id = mingcivwar.50 }
+	}
+}
+#职员审讯记录
+country_event = {
+	id = mingcivwar.49
+	title = mingcivwar.49.t
+	desc = mingcivwar.49.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.49.a }
+	option = { 
+		name = mingcivwar.49.b
+		country_event = { id = mingcivwar.52 }
+	}
+}
+#局长审讯记录
+country_event = {
+	id = mingcivwar.50
+	title = mingcivwar.50.t
+	desc = mingcivwar.50.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.50.a }
+	option = { 
+		name = mingcivwar.50.b
+		country_event = { id = mingcivwar.51 }
+	}
+}
+#职员审讯记录
+country_event = {
+	id = mingcivwar.51
+	title = mingcivwar.51.t
+	desc = mingcivwar.51.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.51.a }
+}
+#局长审讯记录
+country_event = {
+	id = mingcivwar.52
+	title = mingcivwar.52.t
+	desc = mingcivwar.52.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.52.a }
+}
+#转载纽约时报
+news_event = {
+	id = mingcivwar.53
+	title = mingcivwar.53.t
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	desc = {text = mingcivwar.53.d}
+	option = {
+		name = mingcivwar.53.a
+		add_to_variable = { MNG_zijinxi = -5}
+		custom_effect_tooltip = mingcivwar.53.xiaoguo.a
+	}
+}
+#老陈的故事1
+country_event = {
+	id = mingcivwar.54
+	title = mingcivwar.54.t
+	desc = mingcivwar.54.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.54.a
+		country_event = { id = mingcivwar.55 }
+	}
+}
+#老陈的故事2
+country_event = {
+	id = mingcivwar.55
+	title = mingcivwar.55.t
+	desc = mingcivwar.55.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.55.a
+		country_event = { id = mingcivwar.56 }
+	}
+}
+#老陈的故事3
+country_event = {
+	id = mingcivwar.56
+	title = mingcivwar.56.t
+	desc = mingcivwar.56.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.56.a 
+		add_to_variable = { MNG_wubeixi = -5}
+		custom_effect_tooltip = mingcivwar.56.xiaoguo.a
+	}
+}
+#太孙监国 1937.3.1
+country_event = {
+	id = mingcivwar.57
+	title = mingcivwar.57.t
+	desc = mingcivwar.57.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.57.a 
+		complete_national_focus = MNG_kaolvjichengren
+		retire_country_leader = yes
+		promote_character = { 
+			character = MNG_characters_zxz
+			ideology = authoritarian_oligarchy
+		}
+		add_to_variable = { MNG_guanxuexi = 1}
+		custom_effect_tooltip = mingcivwar.57.xiaoguo.a
+	}
+	option = { 
+		name = mingcivwar.57.b 
+		complete_national_focus = MNG_kaolvjichengren
+		retire_country_leader = yes
+		promote_character = { 
+			character = MNG_characters_zxz
+			ideology = authoritarian_oligarchy
+		}
+		add_to_variable = { MNG_zijinxi = 1}
+		custom_effect_tooltip = mingcivwar.57.xiaoguo.a
+	}
+}
+#改革启动 1937.3.15
+country_event = {
+	id = mingcivwar.58
+	title = mingcivwar.58.t
+	desc = mingcivwar.58.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.58.a 
+		complete_national_focus = MNG_bingzhengjianguo
+		set_country_flag = MNG_taisunjiwei
+		mark_focus_tree_layout_dirty = yes
+		add_political_power = 30
+	}
+}
+#咨议院会议上的争论
+country_event = {
+	id = mingcivwar.59
+	title = mingcivwar.59.t
+	desc = mingcivwar.59.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.59.a 
+		add_to_variable = { MNG_qingzhengxi = 5}
+		add_to_variable = { MNG_zijinxi = -3}
+		custom_effect_tooltip = mingcivwar.59.xiaoguo.a
+	}
+}
+#顺天府实业局通知
+country_event = {
+	id = mingcivwar.60
+	title = mingcivwar.60.t
+	desc = mingcivwar.60.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.60.a 
+		add_to_variable = { MNG_guanxuexi = 2 }
+		custom_effect_tooltip = mingcivwar.60.xiaoguo.a
+	}
+	option = { 
+		name = mingcivwar.60.b 
+		add_to_variable = { MNG_wubeixi = -3}
+		custom_effect_tooltip = mingcivwar.60.xiaoguo.b
+	}
+}
+#天朝经济周报
+country_event = {
+	id = mingcivwar.61
+	title = mingcivwar.61.t
+	desc = mingcivwar.61.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.61.a 
+		add_to_variable = { MNG_guanxuexi = 2}
+		custom_effect_tooltip = mingcivwar.60.xiaoguo.a
+	}
+}
+#昌德皇帝驾崩1937.7.19
+country_event = {
+	id = mingcivwar.62
+	title = mingcivwar.62.t
+	desc = mingcivwar.62.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.62.a 
+		add_political_power = -30
+		add_to_variable = { MNG_zijinxi = -10}
+		custom_effect_tooltip = mingcivwar.62.xiaoguo.a
+	}
+}
+#出镇西北，筹备换防 1937.7.19
+country_event = {
+	id = mingcivwar.63
+	title = mingcivwar.63.t
+	desc = mingcivwar.63.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.63.a 
+		complete_national_focus = MNG_youbeiwuhuan
+	}
+}
+#卫国公府中的争论
+country_event = {
+	id = mingcivwar.64
+	title = mingcivwar.64.t
+	desc = mingcivwar.64.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { name = mingcivwar.64.a }
+}
+#皇陵兵变系列事件
+#贼喊抓贼 1937.8.18
+country_event = {
+	id = mingcivwar.65
+	title = mingcivwar.65.t
+	desc = mingcivwar.65.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.65.a 
+		delete_unit = {}
+	}
+}
+#少帝赴皇陵 1937.8.21
+country_event = {
+	id = mingcivwar.66
+	title = mingcivwar.66.t
+	desc = mingcivwar.66.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.66.a
+		country_event = { id = mingcivwar.67 }
+		add_to_variable = { MNG_zijinxi = 5}
+		custom_effect_tooltip = mingcivwar.66.xiaoguo.a
+	}
+}
+#深夜惊梦 1937.8.21
+country_event = {
+	id = mingcivwar.67
+	title = mingcivwar.67.t
+	desc = mingcivwar.67.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.67.a
+		country_event = { id = mingcivwar.68 }
+	}
+}
+#瞒天过海 1937.8.21
+country_event = {
+	id = mingcivwar.68
+	title = mingcivwar.68.t
+	desc = mingcivwar.68.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.68.a
+		country_event = { id = mingcivwar.69 }
+		add_to_variable = { MNG_wubeixi = 2}
+		custom_effect_tooltip = mingcivwar.68.xiaoguo.a
+	}
+}
+#皇陵兵变过程
+#勋贵，祭肉，雨
+country_event = {
+	id = mingcivwar.69
+	title = mingcivwar.69.t
+	desc = mingcivwar.69.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.69.a
+		country_event = { id = mingcivwar.70 }
+	}
+}
+#顺天的雨
+country_event = {
+	id = mingcivwar.70
+	title = mingcivwar.70.t
+	desc = mingcivwar.70.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.70.a
+		country_event = { id = mingcivwar.71 }
+	}
+}
+#白陵蓝调
+country_event = {
+	id = mingcivwar.71
+	title = mingcivwar.71.t
+	desc = mingcivwar.71.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.71.a
+		country_event = { id = mingcivwar.72 }
+	}
+}
+#水晶
+country_event = {
+	id = mingcivwar.72
+	title = mingcivwar.72.t
+	desc = mingcivwar.72.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	#option = { name = mingcivwar.72.a }
+	#option = { name = mingcivwar.72.b }
+	option = { 
+		name = mingcivwar.72.c
+		country_event = { id = mingcivwar.73 }
+	}
+}
+#抉择
+country_event = {
+	id = mingcivwar.73
+	title = mingcivwar.73.t
+	desc = mingcivwar.73.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	#option = { name = mingcivwar.73.a }
+	option = { 
+		name = mingcivwar.73.b
+		country_event = { id = mingcivwar.74 }
+	}
+}
+#抵达 1937.8.21
+country_event = {
+	id = mingcivwar.74
+	title = mingcivwar.74.t
+	desc = mingcivwar.74.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.74.a
+		country_event = { id = mingcivwar.75 }
+	}
+}
+#忠义
+country_event = {
+	id = mingcivwar.75
+	title = mingcivwar.75.t
+	desc = mingcivwar.75.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = {
+		name = mingcivwar.75.a
+		MNG = {country_event = { id = mingcivwar.78 days = 1 } }
+	}
+	option = {
+		name = mingcivwar.75.b
+		MNG = {country_event = { id = mingcivwar.78 days = 1 } }
+	}
+}
+#大明分裂
+#设立关东招抚司 1937.1.1
+country_event = {
+	id = mingcivwar.76
+	title = mingcivwar.76.t
+	desc = mingcivwar.76.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	immediate = { 
+		hidden_effect = {
+			GPS = {country_event = { id = GPSevents.6 days = 232 } }   #1937.8.31
+			GPS = {country_event = { id = GPSevents.7 days = 236 } }   #1937.9.4
+			GPS = {country_event = { id = GPSevents.8 days = 247 } }   #1937.9.15
+			GPS = {country_event = { id = GPSevents.9 days = 252 } }   #1937.9.20	
+			GPS = {country_event = { id = GPSevents.35 days = 277 } }   #1937.10.15	
+			retire_character = MNG_1_yu_zhishan
+			retire_character = MNG_1_lian_chengji
+			retire_character = MNG_1_yang_yuting
+			retire_character = MNG_1_chen_duxiu
+			retire_character = MNG_1_du_jiceng
+			retire_character = MNG_1_li_dazhao
+			retire_character = MNG_1_ma_zhanshan
+			retire_character = MNG_1_wu_junsheng
+			retire_character = MNG_1_zhang_zuoxiang
+			retire_character = MNG_1_wei_yisan
+			retire_character = MNG_1_meng_enyuan
+			retire_character = MNG_1_yu_zheng
+			retire_character = MNG_1_shan_duowen
+			retire_character = MNG_1_ying_detian
+			retire_character = MNG_1_sun_mingjiu
+			retire_character = MNG_1_shen_honglie
+			retire_character = MNG_1_chang_yinghuai
+			retire_character = MNG_1_xu_lanzhou
+			retire_character = MNG_1_yu_xuezhong
+			retire_character = MNG_1_wang_yizhe
+			retire_character = MNG_1_zhang_haipeng
+			retire_character = MNG_1_he_zhuguo
+			retire_character = MNG_1_wang_shuchang
+			retire_character = MNG_1_xing_shilian
+			retire_character = MNG_1_miao_jianqiu
+			retire_character = MNG_1_bao_wenyue
+			retire_character = MNG_1_zhou_zuohua
+			retire_character = MNG_1_wen_shude
+			retire_character = MNG_1_wan_fulin
+			retire_character = MNG_1_wu_yuanwu
+			retire_character = MNG_1_ying_zuoqian
+			retire_character = MNG_1_sun_liechen
+
+		}
+	}
+	option = { 
+		name = mingcivwar.76.a
+		MNG_release_GPS = yes
+		MNG_release_SRC = yes
+		complete_national_focus = MNG_qingjiaotongchangonghui
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+		MNG = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = tod_ming_tongzhidusi
+			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = GPS
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				GPS = {
+					transfer_navy = {
+						target = MNG
+					}
+					# load_oob = "GPS_NAVAL"
+				}
+			}
+		}
+		hidden_effect = {
+			GPS = {
+				load_oob = "GPS_1937"
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+				set_politics = {
+					ruling_party = authoritarian_oligarchy
+					last_election = "1935.3.14"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				
+				set_popularities = {
+					vanguard_socialism =10
+					council_socialism = 5
+					moderate_socialism = 5
+					agroindustrial_socialism = 5
+					social_democrat = 5
+					liberal_democracy = 0
+					conservative_democracy = 0
+					consociationalism = 0
+					sacred_revivalism = 0
+					authoritarian_oligarchy = 60
+					leader_despotism = 5
+					national_corporatism = 5
+				}
+				inherit_technology = MNG
+			}
+		}
+	}
+	option = { 
+		MNG = { complete_national_focus = MNG_qingjiaotongchangonghui }
+		name = mingcivwar.76.b
+		MNG_release_GPS = yes
+		MNG_release_SRC = yes
+		GPS = {change_tag_from = ROOT}
+		MNG_release_GPS = yes
+		MNG = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = tod_ming_tongzhidusi
+			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = GPS
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				GPS = {
+					transfer_navy = {
+						target = MNG
+					}
+					# load_oob = "GPS_NAVAL"
+				}
+			}
+		}
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+		hidden_effect = {
+			GPS = {
+				load_oob = "GPS_1937"
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+				set_politics = {
+					ruling_party = authoritarian_oligarchy
+					last_election = "1935.3.14"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				
+				set_popularities = {
+					vanguard_socialism =10
+					council_socialism = 5
+					moderate_socialism = 5
+					agroindustrial_socialism = 5
+					social_democrat = 5
+					liberal_democracy = 0
+					conservative_democracy = 0
+					consociationalism = 0
+					sacred_revivalism = 0
+					authoritarian_oligarchy = 60
+					leader_despotism = 5
+					national_corporatism = 5
+				}
+				inherit_technology = MNG
+			}
+		}
+	}
+}
+#设立华南招抚司(大同会) 1937.2.1
+country_event = {
+	id = mingcivwar.77
+	title = mingcivwar.77.t
+	desc = mingcivwar.77.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	option = { 
+		name = mingcivwar.77.a
+		complete_national_focus = MNG_soubudatonghui
+		MNG = {
+			set_autonomy = {
+				target = ROC
+				autonomy_state = tod_ming_tongzhidusi
+			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = ROC
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				ROC = {
+					transfer_navy = {
+						target = MNG
+					}
+				}
+			}
+		}
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
+		MNG_release_ROC = yes
+		hidden_effect = {
+			ROC = {
+				add_state_core = 821
+				transfer_state = 821
+			}
+			ROC = {
+				add_state_core = 1194
+				transfer_state = 1194
+			}
+		}
+		ROC = {
+			hidden_effect = {
+				set_cosmetic_tag = huananzhaofusi
+				load_oob = "ROC_1937"
+				set_politics = {
+					ruling_party =  leader_despotism
+					last_election = "1936.1.1"
+					election_frequency = 48
+					elections_allowed = no
+				}
+			
+				set_popularities = {
+					vanguard_socialism = 0
+					council_socialism = 2
+					moderate_socialism = 5
+					agroindustrial_socialism = 8
+					social_democrat = 10
+					consociationalism = 15
+					liberal_democracy = 5
+					conservative_democracy = 5
+					authoritarian_oligarchy = 0
+					leader_despotism = 45
+					sacred_revivalism = 0
+					national_corporatism = 5
+				}
+
+				inherit_technology = MNG
+			}
+		}
+	}
+	option = { 
+		name = mingcivwar.77.b
+		ROC = {change_tag_from = ROOT}
+		MNG_release_ROC = yes
+		MNG = {
+			complete_national_focus = MNG_soubudatonghui
+		}
+		MNG = {
+			set_autonomy = {
+				target = ROC
+				autonomy_state = tod_ming_tongzhidusi
+			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = ROC
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				ROC = {
+					transfer_navy = {
+						target = MNG
+					}
+				}
+			}
+		}
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
+		ROC = {
+			hidden_effect = {
+				set_cosmetic_tag = huananzhaofusi
+				load_oob = "ROC_1937"
+				set_politics = {
+					ruling_party =  leader_despotism
+					last_election = "1936.1.1"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
+				set_popularities = {
+					vanguard_socialism = 0
+					council_socialism = 2
+					moderate_socialism = 5
+					agroindustrial_socialism = 8
+					social_democrat = 10
+					consociationalism = 15
+					liberal_democracy = 5
+					conservative_democracy = 5
+					authoritarian_oligarchy = 0
+					leader_despotism = 45
+					sacred_revivalism = 0
+					national_corporatism = 5
+				}
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				add_state_core = 821
+				transfer_state = 821
+			}
+			ROC = {
+				add_state_core = 1194
+				transfer_state = 1194
+			}
+		}
+	}
+}
+#西北都督府成立 1937.8.22
+country_event = {
+	id = mingcivwar.78
+	title = mingcivwar.78.t
+	desc = mingcivwar.78.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.78.a
+		XBJ = {
+			hidden_effect = {
+				add_state_core = 744
+				transfer_state = 744
+				add_state_core = 618
+				transfer_state = 618
+				add_state_core = 760
+				transfer_state = 760
+				add_state_core = 1193
+				transfer_state = 1193
+				add_state_core = 844
+				transfer_state = 844
+				add_state_core = 1128
+				transfer_state = 1128
+				add_state_core = 759
+				transfer_state = 759
+				add_state_core = 1130
+				transfer_state = 1130
+				add_state_core = 617
+				transfer_state = 617
+				add_state_core = 434
+				transfer_state = 434
+				add_state_core = 732
+				transfer_state = 732
+				add_state_core = 1209
+				transfer_state = 1209
+				add_state_core = 1113
+				transfer_state = 1113
+				add_state_core = 756
+				transfer_state = 756
+				add_state_core = 881
+				transfer_state = 881
+				add_state_core = 616
+				transfer_state = 616
+				add_state_core = 843
+				transfer_state = 843
+				add_state_core = 754
+				transfer_state = 754
+				add_state_core = 755
+				transfer_state = 755
+				add_state_core = 1210
+				transfer_state = 1210
+				add_state_core = 283
+				transfer_state = 283
+				add_state_core = 753
+				transfer_state = 753
+				add_state_core = 1116
+				transfer_state = 1116
+				add_state_core = 842
+				transfer_state = 842
+				add_state_core = 621
+				transfer_state = 621
+				add_state_core = 746
+				transfer_state = 746
+				add_state_core = 622
+				transfer_state = 622
+				add_state_core = 619
+				transfer_state = 619
+				add_state_core = 287
+				transfer_state = 287
+				add_state_core = 1129
+				transfer_state = 1129
+				transfer_state = 604
+				add_state_core = 604
+				transfer_state = 1253
+				add_state_core = 1253
+				set_capital = {state = 744 }
+				load_oob = XBJ_1937
+				if = {
+					limit = {
+						MNG = { has_country_flag = MNG_dongyantieluyitongche }
+					}
+					transfer_state = 1211
+					add_state_core = 1211
+				}
+
+				inherit_technology = MNG
+			}
+		}
+		XBJ = {change_tag_from = ROOT}
+		hidden_effect = {
+			MNG = {
+				transfer_units_fraction= {
+					target = XBJ
+					stockpile_ratio = 0.2
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				retire_character = MNG_4_Zhu_Juanshen
+				retire_character = MNG_4_Fan_Jingsheng
+				retire_character = MNG_4_Jin_Shuren
+				retire_character = MNG_4_Jiang_Baili
+				retire_character = MNG_4_Ma_Hongbing
+				retire_character = MNG_4_Zhu_Ruichi
+				retire_character = MNG_4_Ehmetjan_Qasim
+				retire_character = MNG_4_Chen_Cheng
+				retire_character = MNG_4_Zunun_Taipov
+				retire_character = MNG_4_Du_Qianxue
+				retire_character = MNG_4_Fan_Yaonan
+				retire_character = MNG_4_Jiang_Dingwen
+				retire_character = MNG_4_Cheng_Xixian
+				retire_character = MNG_4_Gao_Jun
+				retire_character = MNG_4_Ge_Jinzhang
+				retire_character = MNG_4_Guo_Jiqiao
+				retire_character = MNG_4_Guo_Jian
+				retire_character = MNG_4_Guo_Zhigang
+				retire_character = MNG_4_sunlianzhong
+				retire_character = MNG_4_Jing_Wumu
+				retire_character = MNG_4_Ma_Buqing
+				retire_character = MNG_4_Ma_Fuxiang
+				retire_character = MNG_4_Ma_Hongkui
+				retire_character = MNG_4_Sun_Yuanliang
+				retire_character = MNG_4_Wen_Chenglie
+				retire_character = MNG_4_Yang_Hucheng
+				retire_character = MNG_4_Zhang_Fenghui
+				retire_character = MNG_4_Zhang_Weixi
+				retire_character = MNG_4_Zhao_Xipin
+				retire_character = MNG_4_Zhao_Zhangcheng
+				retire_character = MNG_4_Wei_Lihuang
+				retire_character = MNG_4_Ji_Hongchang
+				retire_character = MNG_4_Chen_jinkui
+				retire_character = MNG_4_feng_zhaoquan
+				retire_character = MNG_4_Shi_Jingting
+				retire_character = MNG_4_Zhang_Zhijiang
+				retire_character = MNG_4_Li_Mingzhong
+				retire_character = MNG_4_Liu_Yufen
+				retire_character = MNG_4_Song_Zheyuan
+				retire_character = MNG_4_Lu_Zhonglin
+				retire_character = MNG_4_Shen_Jinchen
+			}
+			MNG = {country_event = { id = mingcivwar.79 days = 2 } }
+		}
+	}
+	option = { 
+		name = mingcivwar.78.b
+		XBJ = {
+			hidden_effect = {
+				add_state_core = 744
+				transfer_state = 744
+				add_state_core = 618
+				transfer_state = 618
+				add_state_core = 760
+				transfer_state = 760
+				add_state_core = 1193
+				transfer_state = 1193
+				add_state_core = 844
+				transfer_state = 844
+				add_state_core = 1128
+				transfer_state = 1128
+				add_state_core = 759
+				transfer_state = 759
+				add_state_core = 1130
+				transfer_state = 1130
+				add_state_core = 617
+				transfer_state = 617
+				add_state_core = 434
+				transfer_state = 434
+				add_state_core = 732
+				transfer_state = 732
+				add_state_core = 1209
+				transfer_state = 1209
+				add_state_core = 1113
+				transfer_state = 1113
+				add_state_core = 756
+				transfer_state = 756
+				add_state_core = 881
+				transfer_state = 881
+				add_state_core = 616
+				transfer_state = 616
+				add_state_core = 843
+				transfer_state = 843
+				add_state_core = 754
+				transfer_state = 754
+				add_state_core = 755
+				transfer_state = 755
+				add_state_core = 1210
+				transfer_state = 1210
+				add_state_core = 283
+				transfer_state = 283
+				add_state_core = 753
+				transfer_state = 753
+				add_state_core = 1116
+				transfer_state = 1116
+				add_state_core = 842
+				transfer_state = 842
+				add_state_core = 621
+				transfer_state = 621
+				add_state_core = 746
+				transfer_state = 746
+				add_state_core = 622
+				transfer_state = 622
+				add_state_core = 619
+				transfer_state = 619
+				add_state_core = 287
+				transfer_state = 287
+				add_state_core = 1129
+				transfer_state = 1129
+				transfer_state = 604
+				add_state_core = 604
+				transfer_state = 1253
+				add_state_core = 1253
+				set_capital = { state = 744 }
+				load_oob = XBJ_1937
+				if = {
+					limit = {
+						MNG = { has_country_flag = MNG_dongyantieluyitongche }
+					}
+					transfer_state = 1211
+					add_state_core = 1211
+				}
+				inherit_technology = MNG
+			}
+		}
+		MNG = {
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = XBJ
+					stockpile_ratio = 0.2
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				MNG = {country_event = { id = mingcivwar.79 days = 2 } }
+			}
+		}
+	}
+}
+#七省联合自保 1937.8.24
+country_event = {
+	id = mingcivwar.79
+	title = mingcivwar.79.t
+	desc = mingcivwar.79.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.79.a
+		GOS = {
+			hidden_effect = {
+				add_state_core = 613
+				transfer_state = 613
+				add_state_core = 808
+				transfer_state = 808
+				add_state_core = 824
+				transfer_state = 824
+				add_state_core = 1109
+				transfer_state = 1109
+				add_state_core = 823
+				transfer_state = 823
+				add_state_core = 606
+				transfer_state = 606
+				add_state_core = 825
+				transfer_state = 825
+				add_state_core = 749
+				transfer_state = 749
+				add_state_core = 620
+				transfer_state = 620
+				add_state_core = 1132
+				transfer_state = 1132
+				add_state_core = 602
+				transfer_state = 602
+				add_state_core = 596
+				transfer_state = 596
+				add_state_core = 1119
+				transfer_state = 1119
+				add_state_core = 750
+				transfer_state = 750
+				add_state_core = 822
+				transfer_state = 822
+				add_state_core = 806
+				transfer_state = 806
+				add_state_core = 807
+				transfer_state = 807
+				add_state_core = 1108
+				transfer_state = 1108
+				add_state_core = 598
+				transfer_state = 598
+				add_state_core = 600
+				transfer_state = 600
+				add_state_core = 816
+				transfer_state = 816
+				add_state_core = 1110
+				transfer_state = 1110
+				add_state_core = 815
+				transfer_state = 815
+				add_state_core = 812
+				transfer_state = 812
+				add_state_core = 811
+				transfer_state=811
+				set_capital = { state = 613 }
+				load_oob = GOS_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			MNG = {
+				transfer_units_fraction= {
+					target = GOS
+					stockpile_ratio = 0.22
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+			#领导人
+				retire_character = MNG_2_characters_wwkx
+				retire_character = MNG_2_characters_zxz
+				retire_character = MNG_2_characters_yk
+				retire_character = MNG_2_characters_wsh
+				retire_character = MNG_2_characters_zzd
+				retire_character = MNG_2_characters_xbh
+				retire_character = MNG_2_characters_lyz
+				retire_character = MNG_2_characters_hjw
+				retire_character = MNG_2_characters_qym
+				retire_character = MNG_2_characters_scz
+				retire_character = MNG_2_characters_zyx
+				retire_character = MNG_2_characters_zbj
+			#将领	
+				retire_character = MNG_2_ctk
+				retire_character = MNG_2_scz
+				retire_character = MNG_2_lz
+				retire_character = MNG_2_lg
+				retire_character = MNG_2_hj
+				retire_character = MNG_2_jyw
+				retire_character = MNG_2_zzx
+				retire_character = MNG_2_zzx
+				retire_character = MNG_2_cyb
+				retire_character = MNG_2_gzt
+				retire_character = MNG_2_llj
+				retire_character = MNG_2_hyq
+				retire_character = MNG_2_xyn
+				retire_character = MNG_2_sxl 
+				retire_character = MNG_2_qdj
+				retire_character = MNG_2_zzw 
+				retire_character = MNG_2_zzz
+				retire_character = MNG_2_lky
+				retire_character = MNG_2_lk
+				retire_character = MNG_2_xsl
+				retire_character = MNG_2_qqq
+				retire_character = MNG_2_xkx
+				retire_character = MNG_2_slr
+				retire_character = MNG_2_cqm
+				retire_character = MNG_2_cgs
+				retire_character = MNG_2_xsh
+				retire_character = MNG_2_hcj
+				retire_character = MNG_2_xyq
+				retire_character = MNG_2_lyx 
+				retire_character = MNG_2_dal
+				retire_character = MNG_2_hkz
+				retire_character = MNG_2_zxb
+				retire_character = MNG_2_fanhanjie
+				retire_character = MNG_2_huzongnan
+				retire_character = MNG_2_yjs
+				retire_character = MNG_2_hw
+				retire_character = MNG_2_cgy
+				retire_character = MNG_2_sl_2
+				retire_character = MNG_2_sl_1
+			#部长，理论家
+				retire_character = MNG_2_wurenli
+				retire_character = MNG_2_guiyongqing
+				retire_character = MNG_2_xhs
+				retire_character = MNG_2_zzr
+				retire_character = MNG_2_wlz
+				retire_character = MNG_2_chence
+				retire_character = MNG_2_lingxiao
+				retire_character = MNG_2_ouyangge
+				retire_character = MNG_2_xiasunpeng
+				retire_character = MNG_2_ganlianao
+				retire_character = MNG_2_liuyonggao
+				retire_character = MNG_2_chenganqing
+				retire_character = MNG_2_chenzhaoqiang
+				retire_character = MNG_2_raohuaiwen
+				# retire_character = MNG_2_qxs
+				# retire_character = MNG_2_zzy
+			}
+			MNG = {country_event = { id = mingcivwar.80 days = 1 } }
+			GOS = {
+				transfer_navy = {
+					target = MNG
+				}
+				# load_oob = "GOS_NAVAL"
+			}
+		}
+	}
+	option = { 
+		name = mingcivwar.79.b
+		GOS = {change_tag_from = ROOT}
+		GOS = {
+			hidden_effect = {
+				add_state_core = 613
+				transfer_state = 613
+				add_state_core = 808
+				transfer_state = 808
+				add_state_core = 824
+				transfer_state = 824
+				add_state_core = 1109
+				transfer_state = 1109
+				add_state_core = 823
+				transfer_state = 823
+				add_state_core = 606
+				transfer_state = 606
+				add_state_core = 825
+				transfer_state = 825
+				add_state_core = 749
+				transfer_state = 749
+				add_state_core = 620
+				transfer_state = 620
+				add_state_core = 1132
+				transfer_state = 1132
+				add_state_core = 602
+				transfer_state = 602
+				add_state_core = 596
+				transfer_state = 596
+				add_state_core = 1119
+				transfer_state = 1119
+				add_state_core = 750
+				transfer_state = 750
+				add_state_core = 822
+				transfer_state = 822
+				add_state_core = 806
+				transfer_state = 806
+				add_state_core = 807
+				transfer_state = 807
+				add_state_core = 1108
+				transfer_state = 1108
+				add_state_core = 598
+				transfer_state = 598
+				add_state_core = 600
+				transfer_state = 600
+				add_state_core = 816
+				transfer_state = 816
+				add_state_core = 1110
+				transfer_state = 1110
+				add_state_core = 815
+				transfer_state = 815
+				add_state_core = 812
+				transfer_state = 812
+				add_state_core = 811
+				transfer_state=811
+				set_capital = { state = 613 }
+				load_oob = GOS_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			MNG = {
+				transfer_units_fraction= {
+					target = GOS
+					stockpile_ratio = 0.22
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				#领导人
+					retire_character = MNG_2_characters_wwkx
+					retire_character = MNG_2_characters_zxz
+					retire_character = MNG_2_characters_yk
+					retire_character = MNG_2_characters_wsh
+					retire_character = MNG_2_characters_zzd
+					retire_character = MNG_2_characters_xbh
+					retire_character = MNG_2_characters_lyz
+					retire_character = MNG_2_characters_hjw
+					retire_character = MNG_2_characters_qym
+					retire_character = MNG_2_characters_scz
+					retire_character = MNG_2_characters_zyx
+					retire_character = MNG_2_characters_zbj
+				#将领	
+					retire_character = MNG_2_ctk
+					retire_character = MNG_2_scz
+					retire_character = MNG_2_lz
+					retire_character = MNG_2_lg
+					retire_character = MNG_2_hj
+					retire_character = MNG_2_jyw
+					retire_character = MNG_2_zzx
+					retire_character = MNG_2_zzx
+					retire_character = MNG_2_cyb
+					retire_character = MNG_2_gzt
+					retire_character = MNG_2_llj
+					retire_character = MNG_2_hyq
+					retire_character = MNG_2_xyn
+					retire_character = MNG_2_sxl 
+					retire_character = MNG_2_qdj
+					retire_character = MNG_2_zzw 
+					retire_character = MNG_2_zzz
+					retire_character = MNG_2_lky
+					retire_character = MNG_2_lk
+					retire_character = MNG_2_xsl
+					retire_character = MNG_2_qqq
+					retire_character = MNG_2_xkx
+					retire_character = MNG_2_slr
+					retire_character = MNG_2_cqm
+					retire_character = MNG_2_cgs
+					retire_character = MNG_2_xsh
+					retire_character = MNG_2_hcj
+					retire_character = MNG_2_xyq
+					retire_character = MNG_2_lyx 
+					retire_character = MNG_2_dal
+					retire_character = MNG_2_hkz
+					retire_character = MNG_2_zxb
+					retire_character = MNG_2_fanhanjie
+					retire_character = MNG_2_huzongnan
+					retire_character = MNG_2_yjs
+					retire_character = MNG_2_hw
+					retire_character = MNG_2_cgy
+					retire_character = MNG_2_sl_2
+					retire_character = MNG_2_sl_1
+				#部长，理论家
+					retire_character = MNG_2_wurenli
+					retire_character = MNG_2_guiyongqing
+					retire_character = MNG_2_xhs
+					retire_character = MNG_2_zzr
+					retire_character = MNG_2_wlz
+					retire_character = MNG_2_chence
+					retire_character = MNG_2_lingxiao
+					retire_character = MNG_2_ouyangge
+					retire_character = MNG_2_xiasunpeng
+					retire_character = MNG_2_ganlianao
+					retire_character = MNG_2_liuyonggao
+					retire_character = MNG_2_chenganqing
+					retire_character = MNG_2_chenzhaoqiang
+					retire_character = MNG_2_raohuaiwen
+					# retire_character = MNG_2_qxs
+					# retire_character = MNG_2_zzy
+				}
+			}
+			MNG = {country_event = { id = mingcivwar.80 days = 1 } }
+			GOS = {
+				transfer_navy = {
+					target = MNG
+				}
+				# load_oob = "GOS_NAVAL"
+			}
+		}
+	}
+}
+#西南变局 1936.8.25
+country_event = {
+	id = mingcivwar.80
+	title = mingcivwar.80.t
+	desc = mingcivwar.80.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.80.a
+		MNG_release_XIN = yes
+		XIN = { 
+			hidden_effect = { 
+				load_oob = "XIN_1937" 
+				inherit_technology = MNG
+			} 
+		}
+		XIN = {country_event = { id = TOD_XIN.102 days = 10 } }
+		SIC = {
+			hidden_effect = {
+        		inherit_technology = MNG
+				add_state_core = 751
+				transfer_state = 751
+				add_state_core = 1107
+				transfer_state = 1107
+				add_state_core = 752
+				transfer_state = 752
+				add_state_core = 605
+				transfer_state = 605
+				add_state_core = 830
+				transfer_state = 830
+				add_state_core = 832
+				transfer_state = 832
+				add_state_core = 831
+				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
+				add_state_core = 1254
+				transfer_state = 1254
+				set_capital = { state = 831 }
+				load_oob = SIC_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				XIN = {
+					add_state_core = 821
+					transfer_state = 821
+					add_state_core = 1194
+					transfer_state = 1194
+				}
+
+			}
+			MNG = {
+				transfer_units_fraction= {
+					target = XIN
+					stockpile_ratio = 0.11
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				transfer_units_fraction= {
+					target = SIC
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				retire_character = MNG_5_He_Guoguang
+				retire_character = MNG_5_Zhang_lan
+				retire_character = MNG_5_Zeng_Qi
+				retire_character = MNG_5_Yang_Sen
+				retire_character = MNG_5_Yin_Changheng
+				retire_character = MNG_5_Xiong_Kewu
+				retire_character = MNG_5_Wang_Youmu
+				retire_character = MNG_5_wang_zanxu
+				retire_character = MNG_5_wang_lingji
+				retire_character = MNG_5_liu_chengxun
+				retire_character = MNG_5_lai_xinghui
+				retire_character = MNG_5_deng_xihou
+				retire_character = MNG_5_wang_mingzhang
+				retire_character = MNG_5_dan_yixin
+				retire_character = MNG_5_liu_cunhou
+				retire_character = MNG_5_lv_chao
+				retire_character = MNG_5_li_jiayu
+				retire_character = MNG_5_rao_guohua
+				retire_character = MNG_5_guo_xunqi
+			}
+			MNG = {country_event = { id = mingcivwar.81 days = 1 } }
+		}
+	}
+	option = { 
+		name = mingcivwar.80.b
+		XIN = {change_tag_from = ROOT}
+		MNG_release_XIN = yes
+		XIN = { 
+			hidden_effect = { 
+				load_oob = "XIN_1937" 
+				inherit_technology = MNG
+			} 
+		}
+		XIN = {country_event = { id = TOD_XIN.102 days = 10 } }
+		SIC = {
+			hidden_effect = {
+        		inherit_technology = MNG
+				add_state_core = 751
+				transfer_state = 751
+				add_state_core = 1107
+				transfer_state = 1107
+				add_state_core = 752
+				transfer_state = 752
+				add_state_core = 605
+				transfer_state = 605
+				add_state_core = 830
+				transfer_state = 830
+				add_state_core = 832
+				transfer_state = 832
+				add_state_core = 831
+				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
+				add_state_core = 1254
+				transfer_state = 1254
+				set_capital = { state = 831 }
+				load_oob = SIC_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				XIN = {
+					add_state_core = 821
+					transfer_state = 821
+					add_state_core = 1194
+					transfer_state = 1194
+				}
+				MNG = {
+					transfer_units_fraction= {
+						target = XIN
+						stockpile_ratio = 0.11
+						keep_unit_leaders = {
+							
+						}
+						keep_unit_leaders_trigger = {
+							has_trait = MNG_damingjungguan
+						}
+					}
+					transfer_units_fraction= {
+						target = SIC
+						stockpile_ratio = 0.15
+						keep_unit_leaders = {
+							
+						}
+						keep_unit_leaders_trigger = {
+							has_trait = MNG_damingjungguan
+						}
+					}
+					retire_character = MNG_5_He_Guoguang
+					retire_character = MNG_5_Zhang_lan
+					retire_character = MNG_5_Zeng_Qi
+					retire_character = MNG_5_Yang_Sen
+					retire_character = MNG_5_Yin_Changheng
+					retire_character = MNG_5_Xiong_Kewu
+					retire_character = MNG_5_Wang_Youmu
+					retire_character = MNG_5_wang_zanxu
+					retire_character = MNG_5_wang_lingji
+					retire_character = MNG_5_liu_chengxun
+					retire_character = MNG_5_lai_xinghui
+					retire_character = MNG_5_deng_xihou
+					retire_character = MNG_5_wang_mingzhang
+					retire_character = MNG_5_dan_yixin
+					retire_character = MNG_5_liu_cunhou
+					retire_character = MNG_5_lv_chao
+					retire_character = MNG_5_li_jiayu
+					retire_character = MNG_5_rao_guohua
+					retire_character = MNG_5_guo_xunqi
+				}
+			}
+			MNG = {country_event = { id = mingcivwar.81 days = 1 } }
+		}
+	}
+	option = { 
+		name = mingcivwar.80.c
+		SIC = {change_tag_from = ROOT}
+		MNG_release_XIN = yes
+		XIN = { 
+			hidden_effect = { 
+				load_oob = "XIN_1937" 
+				inherit_technology = MNG
+			} 
+		}
+		XIN = {country_event = { id = TOD_XIN.102 days = 10 } }
+		SIC = {
+			hidden_effect = {
+        		inherit_technology = MNG
+				add_state_core = 751
+				transfer_state = 751
+				add_state_core = 1107
+				transfer_state = 1107
+				add_state_core = 752
+				transfer_state = 752
+				add_state_core = 605
+				transfer_state = 605
+				add_state_core = 830
+				transfer_state = 830
+				add_state_core = 832
+				transfer_state = 832
+				add_state_core = 831
+				transfer_state = 831
+				add_state_core = 1219
+				transfer_state = 1219
+				add_state_core = 601
+				transfer_state = 601
+				add_state_core = 1106
+				transfer_state = 1106
+				add_state_core = 757
+				transfer_state = 757
+				add_state_core = 322
+				transfer_state = 322
+				add_state_core = 1127
+				transfer_state = 1127
+				add_state_core = 758
+				transfer_state = 758
+				add_state_core = 787
+				transfer_state = 787
+				add_state_core = 1254
+				transfer_state = 1254
+				set_capital = { state = 831 }
+				load_oob = SIC_1937
+				inherit_technology = MNG
+			}
+		}
+		hidden_effect = {
+			ROC = {
+				XIN = {
+					add_state_core = 821
+					transfer_state = 821
+					add_state_core = 1194
+					transfer_state = 1194
+				}
+			}
+			MNG = {
+				transfer_units_fraction= {
+					target = XIN
+					stockpile_ratio = 0.11
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				transfer_units_fraction= {
+					target = SIC
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				retire_character = MNG_5_He_Guoguang
+				retire_character = MNG_5_Zhang_lan
+				retire_character = MNG_5_Zeng_Qi
+				retire_character = MNG_5_Yang_Sen
+				retire_character = MNG_5_Yin_Changheng
+				retire_character = MNG_5_Xiong_Kewu
+				retire_character = MNG_5_Wang_Youmu
+				retire_character = MNG_5_wang_zanxu
+				retire_character = MNG_5_wang_lingji
+				retire_character = MNG_5_liu_chengxun
+				retire_character = MNG_5_lai_xinghui
+				retire_character = MNG_5_deng_xihou
+				retire_character = MNG_5_wang_mingzhang
+				retire_character = MNG_5_dan_yixin
+				retire_character = MNG_5_liu_cunhou
+				retire_character = MNG_5_lv_chao
+				retire_character = MNG_5_li_jiayu
+				retire_character = MNG_5_rao_guohua
+				retire_character = MNG_5_guo_xunqi
+			}
+			MNG = {country_event = { id = mingcivwar.81 days = 1 } }
+		}
+	}
+}
+#漠北中立 1937.8.26
+country_event = {
+	id = mingcivwar.81
+	title = mingcivwar.81.t
+	desc = mingcivwar.81.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.81.a
+		MOB = {change_tag_from = ROOT}
+		MNG_release_MOB = yes
+		hidden_effect = { 
+			MOB = { 
+				load_oob = "MOB_1937" 
+				inherit_technology = MNG
+			} 
+			MNG = {
+				transfer_units_fraction= {
+					target = MOB
+					stockpile_ratio = 0.07
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+			}
+			MNG = {country_event = { id = mingcivwar.82 days = 1} }
+		}
+	}
+	option = { 
+		name = mingcivwar.81.b
+		MNG_release_MOB = yes
+		hidden_effect = { 
+			MOB = { 
+				load_oob = "MOB_1937" 
+				inherit_technology = MNG
+			} 
+			MNG = {
+				transfer_units_fraction= {
+					target = MOB
+					stockpile_ratio = 0.07
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+			}
+			MNG = {country_event = { id = mingcivwar.82 days = 1} }
+		}
+	}
+}
+#海外自治 1937.8.27
+country_event = {
+	id = mingcivwar.82
+	title = mingcivwar.82.t
+	desc = mingcivwar.82.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	immediate = {
+		hidden_effect = {
+			LSM = {
+				load_oob = "LSM_1937"
+				add_state_core = 623
+				transfer_state = 623
+				add_state_core = 327
+				transfer_state = 327
+				add_state_core = 1201
+				transfer_state = 1201
+				add_state_core = 624
+				transfer_state = 624
+				add_state_core = 1202
+				transfer_state = 1202
+				add_state_core = 625
+				transfer_state = 625
+				add_state_core = 628
+				transfer_state = 628
+				add_state_core = 626
+				transfer_state = 626
+				inherit_technology = MNG
+			}
+			MLJ = {
+				load_oob = "MLJ_1937"
+				add_state_core = 1186
+				transfer_state = 1186
+				add_state_core = 1198
+				transfer_state = 1198
+				add_state_core = 336
+				transfer_state = 336
+				add_state_core = 1199
+				transfer_state = 1199
+				add_state_core = 1200
+				transfer_state = 1200
+				add_state_core = 819
+				transfer_state = 819
+				add_state_core = 1241
+				transfer_state = 1241
+				inherit_technology = MNG
+			}
+			HWH = {
+				add_state_core = 826
+				transfer_state = 826
+				add_state_core = 827
+				transfer_state = 827
+				add_state_core = 855
+				transfer_state = 855
+				add_state_core = 733
+				transfer_state = 733
+				add_state_core = 712
+				transfer_state = 712
+				add_state_core = 711
+				transfer_state = 711
+				add_state_core = 708
+				transfer_state = 708
+				add_state_core = 710
+				transfer_state = 710
+				add_state_core = 707
+				transfer_state = 707
+				add_state_core = 645
+				transfer_state = 645
+				add_state_core = 648
+				transfer_state = 648
+				add_state_core = 646
+				transfer_state = 646
+				add_state_core = 631
+				transfer_state = 631
+				add_state_core = 630
+				transfer_state = 630
+				add_state_core = 650
+				transfer_state = 650
+				add_state_core = 270
+				transfer_state = 270
+				add_state_core = 641
+				transfer_state = 641
+				add_state_core = 726
+				transfer_state = 726
+				add_state_core = 636
+				transfer_state = 636
+				add_state_core = 642
+				transfer_state = 642
+				add_state_core = 643
+				transfer_state = 643
+				add_state_core = 639
+				transfer_state = 639
+				add_state_core = 633
+				transfer_state = 633
+				add_state_core = 638
+				transfer_state = 638
+				add_state_core = 632
+				transfer_state = 632
+				add_state_core = 684
+				transfer_state = 684
+				add_state_core = 634
+				transfer_state = 634
+				add_state_core = 647
+				transfer_state = 647
+				add_state_core = 727
+				transfer_state = 727
+				inherit_technology = MNG
+			}
+			MNG = {
+				transfer_units_fraction= {
+					target = LSM
+					stockpile_ratio = 0.10
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+
+				}
+				transfer_units_fraction= {
+					target = MLJ
+					stockpile_ratio = 0.10
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				transfer_units_fraction= {
+					target = HWH
+					stockpile_ratio = 0.10
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+			}
+			LSM = {
+				transfer_navy = {
+					target = MNG
+				}
+			}
+			HWH = {
+				transfer_navy = {
+					target = MNG
+				}
+				# load_oob = "HWH_NAVAL"
+			}
+			MLJ = {
+				transfer_navy = {
+					target = MNG
+				}
+			}
+			MNG = {country_event = { id = mingcivwar.83 days = 1 } }
+		}
+	}
+	option = { 
+		name = mingcivwar.82.a
+	}
+	option = { 
+		name = mingcivwar.82.b
+	}
+	option = { 
+		name = mingcivwar.82.c
+	}
+	option = { 
+		name = mingcivwar.82.d
+	}
+}
+#新皇登基 1937.8.28
+country_event = {
+	id = mingcivwar.83
+	title = mingcivwar.83.t
+	desc = mingcivwar.83.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	immediate = {
+		hidden_effect = {
+			dismantle_faction = yes
+			MNG = {
+				transfer_units_fraction= {
+					target = STG
+					stockpile_ratio = 0.25
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				retire_character = MNG_3_zhu_rongkun
+				retire_character = MNG_3_zhu_rongkun_kongjun
+				retire_character = MNG_3_zhu_rongkun_haijun
+				retire_character = MNG_3_yi_xinhui
+				retire_character = MNG_3_wang_yongjiang
+				retire_character = MNG_3_zhu_qichen
+				retire_character = MNG_3_liang_ruhao
+				retire_character = MNG_3_chen_yilong
+				retire_character = MNG_3_bai_lang
+				retire_character = MNG_3_zhou_enlai
+				retire_character = MNG_3_sun_chuanfang
+				retire_character = MNG_3_yan_xishan
+				retire_character = MNG_3_wang_shizheng
+				retire_character = MNG_3_duan_qirui
+				retire_character = MNG_3_feng_guozhang
+				retire_character = MNG_3_qing_guoyong
+				retire_character = MNG_3_li_ruyan
+				retire_character = MNG_3_bao_bingcheng
+				retire_character = MNG_3_cai_tinggan
+				retire_character = MNG_3_qu_tongfeng
+				retire_character = MNG_3_li_yuanhong
+				retire_character = MNG_3_yuan_keding
+				retire_character = MNG_3_cai_chengxun
+				retire_character = MNG_3_cao_kun
+				retire_character = MNG_3_feng_yong
+				retire_character = MNG_3_li_chun
+				retire_character = MNG_3_shang_zheng
+				retire_character = MNG_3_jiang_dengxuan
+				retire_character = MNG_3_zhou_fengqi
+				retire_character = MNG_3_han_fuqu
+				retire_character = MNG_3_shangguan_yunxiang
+				retire_character = MNG_3_zhou_yingren
+				retire_character = MNG_3_chen_tiaoyuan
+				retire_character = MNG_3_shi_yousan
+				retire_character = MNG_3_sun_dianying
+				retire_character = MNG_3_lu_xiangting
+				retire_character = MNG_3_wang_jingguo
+				retire_character = MNG_3_cao_shijie
+				retire_character = MNG_3_li_fuying
+				retire_character = MNG_3_li_jinglin
+				retire_character = MNG_3_qing_dechun
+				retire_character = MNG_3_li_xianzhou
+				retire_character = MNG_3_wang_zhanyuan
+				retire_character = MNG_3_wu_mingling
+				retire_character = MNG_3_tang_xiangming
+				retire_character = MNG_3_qi_kuiyuan
+				retire_character = MNG_3_zunhuangrangyishe
+				retire_character = MNG_3_cai_yuanpei
+				retire_character = MNG_3_ge_gongzhen
+				retire_character = MNG_3_zhao_shiyan 
+			}
+		}
+	}
+	option = { 
+		name = mingcivwar.83.a
+		STG = {
+			add_state_core = 608
+			transfer_state = 608
+			country_event = {
+				id = mingcivwar.83
+			}
+			inherit_technology = MNG
+				transfer_navy = {
+					target = MNG
+				}
+				# load_oob = "STG_NAVAL"
+		}
+		MNG_release_STG = yes
+		hidden_effect = {
+			load_oob = "STG_1937"
+		}
+		STG = {
+			change_tag_from = ROOT
+		}
+	}
+}
+#东延铁路通车
+country_event = {
+	id = mingcivwar.85
+	title = mingcivwar.85.t
+	desc = mingcivwar.85.d
+	fire_only_once = yes
+	is_triggered_only = yes
+	picture = GFX_report_event_chinese_soldiers_fighting
+	option = { 
+		name = mingcivwar.85.a
+		hidden_effect = { set_country_flag = MNG_dongyantielutongche }
+	}
+}
+
+
+
+
+###新闻事件 news 
+
+news_event = {
+	id = mingcivwar.666
+	title = mingcivwar.666.t
+	picture = GFX_report_event_chinese_soldiers_fighting 
+	desc = {text = mingcivwar.666.d}
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {days = 0}
+	trigger = {
+		tag = MNG
+		date > 1936.12.05
+	}
+	option = {name = mingcivwar.666.a}
+}
+#西北统一
+news_event = {
+	id = mingcivwar.1001
+	title = mingcivwar.1001.t
+	desc = mingcivwar.1001.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {name = mingcivwar.1001.a}
+}
+#七省统一
+news_event = {
+	id = mingcivwar.1002
+	title = mingcivwar.1002.t
+	desc = mingcivwar.1002.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {name = mingcivwar.1002.a}
+}
+#顺天统一
+news_event = {
+	id = mingcivwar.1003
+	title = mingcivwar.1003.t
+	desc = mingcivwar.1003.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {name = mingcivwar.1003.a}
+}
+#红军统一
+news_event = {
+	id = mingcivwar.1004
+	title = mingcivwar.1004.t
+	desc = mingcivwar.1004.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {name = mingcivwar.1004.a}
+}
+#共和军统一
+news_event = {
+	id = mingcivwar.1005
+	title = mingcivwar.1005.t
+	desc = mingcivwar.1005.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {name = mingcivwar.1005.a}
+}
+
+
