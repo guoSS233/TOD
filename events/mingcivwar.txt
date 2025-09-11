@@ -848,6 +848,7 @@ country_event = {
 		hidden_effect = {
 			GPS = {
 				load_oob = "GPS_1937"
+				load_oob = "GPS_air"
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
@@ -924,6 +925,7 @@ country_event = {
 		hidden_effect = {
 			GPS = {
 				load_oob = "GPS_1937"
+				load_oob = "GPS_air"
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
 				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
@@ -1198,7 +1200,8 @@ country_event = {
 				transfer_state = 1253
 				add_state_core = 1253
 				set_capital = {state = 744 }
-				load_oob = XBJ_1937
+				load_oob = "XBJ_1937"
+				load_oob = "XBJ_air"
 				if = {
 					limit = {
 						MNG = { has_country_flag = MNG_dongyantieluyitongche }
@@ -1337,7 +1340,8 @@ country_event = {
 				transfer_state = 1253
 				add_state_core = 1253
 				set_capital = { state = 744 }
-				load_oob = XBJ_1937
+				load_oob = "XBJ_1937"
+				load_oob = "XBJ_air"
 				if = {
 					limit = {
 						MNG = { has_country_flag = MNG_dongyantieluyitongche }
@@ -1426,9 +1430,10 @@ country_event = {
 				add_state_core = 812
 				transfer_state = 812
 				add_state_core = 811
-				transfer_state=811
+				transfer_state = 811
 				set_capital = { state = 613 }
-				load_oob = GOS_1937
+				load_oob = "GOS_1937"
+				load_oob = "GOS_air"
 				inherit_technology = MNG
 			}
 		}
@@ -1580,7 +1585,8 @@ country_event = {
 				add_state_core = 811
 				transfer_state=811
 				set_capital = { state = 613 }
-				load_oob = GOS_1937
+				load_oob = "GOS_1937"
+				load_oob = "GOS_air"
 				inherit_technology = MNG
 			}
 		}
@@ -1691,6 +1697,7 @@ country_event = {
 		XIN = { 
 			hidden_effect = { 
 				load_oob = "XIN_1937" 
+				load_oob = "XIN_air" 
 				inherit_technology = MNG
 			} 
 		}
@@ -1731,7 +1738,8 @@ country_event = {
 				add_state_core = 1254
 				transfer_state = 1254
 				set_capital = { state = 831 }
-				load_oob = SIC_1937
+				load_oob = "SIC_1937"
+				load_oob = "SIC_air"
 				inherit_technology = MNG
 			}
 		}
@@ -1796,6 +1804,7 @@ country_event = {
 		XIN = { 
 			hidden_effect = { 
 				load_oob = "XIN_1937" 
+				load_oob = "XIN_air" 
 				inherit_technology = MNG
 			} 
 		}
@@ -1836,7 +1845,8 @@ country_event = {
 				add_state_core = 1254
 				transfer_state = 1254
 				set_capital = { state = 831 }
-				load_oob = SIC_1937
+				load_oob = "SIC_1937"
+				load_oob = "SIC_air"
 				inherit_technology = MNG
 			}
 		}
@@ -1848,47 +1858,47 @@ country_event = {
 					add_state_core = 1194
 					transfer_state = 1194
 				}
-				MNG = {
-					transfer_units_fraction= {
-						target = XIN
-						stockpile_ratio = 0.11
-						keep_unit_leaders = {
-							
-						}
-						keep_unit_leaders_trigger = {
-							has_trait = MNG_damingjungguan
-						}
+			}
+			MNG = {
+				transfer_units_fraction= {
+					target = XIN
+					stockpile_ratio = 0.11
+					keep_unit_leaders = {
+						
 					}
-					transfer_units_fraction= {
-						target = SIC
-						stockpile_ratio = 0.15
-						keep_unit_leaders = {
-							
-						}
-						keep_unit_leaders_trigger = {
-							has_trait = MNG_damingjungguan
-						}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
 					}
-					retire_character = MNG_5_He_Guoguang
-					retire_character = MNG_5_Zhang_lan
-					retire_character = MNG_5_Zeng_Qi
-					retire_character = MNG_5_Yang_Sen
-					retire_character = MNG_5_Yin_Changheng
-					retire_character = MNG_5_Xiong_Kewu
-					retire_character = MNG_5_Wang_Youmu
-					retire_character = MNG_5_wang_zanxu
-					retire_character = MNG_5_wang_lingji
-					retire_character = MNG_5_liu_chengxun
-					retire_character = MNG_5_lai_xinghui
-					retire_character = MNG_5_deng_xihou
-					retire_character = MNG_5_wang_mingzhang
-					retire_character = MNG_5_dan_yixin
-					retire_character = MNG_5_liu_cunhou
-					retire_character = MNG_5_lv_chao
-					retire_character = MNG_5_li_jiayu
-					retire_character = MNG_5_rao_guohua
-					retire_character = MNG_5_guo_xunqi
 				}
+				transfer_units_fraction= {
+					target = SIC
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				retire_character = MNG_5_He_Guoguang
+				retire_character = MNG_5_Zhang_lan
+				retire_character = MNG_5_Zeng_Qi
+				retire_character = MNG_5_Yang_Sen
+				retire_character = MNG_5_Yin_Changheng
+				retire_character = MNG_5_Xiong_Kewu
+				retire_character = MNG_5_Wang_Youmu
+				retire_character = MNG_5_wang_zanxu
+				retire_character = MNG_5_wang_lingji
+				retire_character = MNG_5_liu_chengxun
+				retire_character = MNG_5_lai_xinghui
+				retire_character = MNG_5_deng_xihou
+				retire_character = MNG_5_wang_mingzhang
+				retire_character = MNG_5_dan_yixin
+				retire_character = MNG_5_liu_cunhou
+				retire_character = MNG_5_lv_chao
+				retire_character = MNG_5_li_jiayu
+				retire_character = MNG_5_rao_guohua
+				retire_character = MNG_5_guo_xunqi
 			}
 			MNG = {country_event = { id = mingcivwar.81 days = 1 } }
 		}
@@ -1900,6 +1910,7 @@ country_event = {
 		XIN = { 
 			hidden_effect = { 
 				load_oob = "XIN_1937" 
+				load_oob = "XIN_air" 
 				inherit_technology = MNG
 			} 
 		}
@@ -1940,7 +1951,8 @@ country_event = {
 				add_state_core = 1254
 				transfer_state = 1254
 				set_capital = { state = 831 }
-				load_oob = SIC_1937
+				load_oob = "SIC_1937"
+				load_oob = "SIC_air"
 				inherit_technology = MNG
 			}
 		}
@@ -2013,6 +2025,7 @@ country_event = {
 		hidden_effect = { 
 			MOB = { 
 				load_oob = "MOB_1937" 
+				load_oob = "MOB_air" 
 				inherit_technology = MNG
 			} 
 			MNG = {
@@ -2036,6 +2049,7 @@ country_event = {
 		hidden_effect = { 
 			MOB = { 
 				load_oob = "MOB_1937" 
+				load_oob = "MOB_air" 
 				inherit_technology = MNG
 			} 
 			MNG = {
@@ -2320,6 +2334,7 @@ country_event = {
 		MNG_release_STG = yes
 		hidden_effect = {
 			load_oob = "STG_1937"
+			load_oob = "STG_air"
 		}
 		STG = {
 			change_tag_from = ROOT
