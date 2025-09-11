@@ -6,10 +6,9 @@ oob = "MNG_1936"
 
 if = {
 	limit = { has_dlc = "Man the Guns" }
-	set_naval_oob = "MNG_Naval_mtg"
-	else = { set_naval_oob = "MNG_Naval_legacy" }
+	# set_naval_oob = "MNG_Naval_mtg"
+	# else = { set_naval_oob = "MNG_Naval_legacy" }
 }
-
 1193 = { add_dynamic_modifier = { modifier = asian_heart } }
 1128 = { add_dynamic_modifier = { modifier = Fuyu_rare_earth_group } }
 617 = { add_dynamic_modifier = { modifier = Yuanye_Oilfield } }
@@ -642,6 +641,8 @@ if = {
 		iw_small_airframe = 1
 		iw_medium_airframe = 1
 		iw_large_airframe = 1
+		air_torpedoe_1 = 1#空射鱼雷
+		bba_early_transport_plane = 1#运输机
 	}
 }
 
@@ -672,8 +673,6 @@ set_technology = {
 	tech_mountaineers = 1
 	electronic_mechanical_engineering = 1
 	radio = 1
-	early_transport_plane = 1#运输机
-	air_torpedoe_1 = #空射鱼雷
 }
 
 if = {
@@ -873,9 +872,8 @@ if = {
 
 
 ### 飞机 ###这是好的
-
 create_equipment_variant = {
-	name = "西安造 昌德卌二年式 关陇航空动力 “精卫” 试制双翼陆战"
+	name = "昌德卌二年式 “精卫” 双翼陆战"
 	type = small_plane_airframe_0
 	modules = {
 		fixed_main_weapon_slot = light_mg_4x
@@ -886,7 +884,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "西安造 昌德卌三年式 关陇航空动力 “金鸾” 单翼轻型陆爆"
+	name = "昌德卌三年式 “金鸾” 单翼轻型陆爆"
 	type = small_plane_cas_airframe_0
 	modules = {
 		fixed_main_weapon_slot = bomb_locks
@@ -898,7 +896,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "西安造 昌德卌四年式 关陇航空动力 “梼杌” 单翼舰战"
+	name = "昌德卌四年式 “梼杌” 单翼舰战"
 	type = cv_small_plane_airframe_0
 	modules = {
 		fixed_main_weapon_slot = light_mg_2x
@@ -909,7 +907,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "西安造 昌德卌五年式 关陇航空动力 “螭吻” 单翼舰爆"
+	name = "昌德卌五年式 “螭吻” 单翼舰爆"
 	type =cv_small_plane_cas_airframe_0
 	modules = {
 		fixed_main_weapon_slot = bomb_locks
@@ -920,7 +918,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "西安造 昌德卌二年式 关陇航空动力 “獬豸” 双翼舰攻改乙"
+	name = "昌德卌二年式 “獬豸” 双翼舰攻"
 	type = cv_small_plane_naval_bomber_airframe_0
 	modules = {
 		fixed_main_weapon_slot = torpedo_mounting
@@ -931,7 +929,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "“穷奇”轻战甲型"
+	name = "昌德卌四年式 “穷奇” 轻战甲型"
 	type = small_plane_airframe_1
 	modules = {
 		fixed_main_weapon_slot = light_mg_2x
@@ -942,7 +940,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "战略轰炸机"
+	name = "昌德卌四年式 “白鵺” 重型爆轰"
 	type = large_plane_airframe_0
 	modules = {
 		fixed_main_weapon_slot = large_bomb_bay
@@ -956,7 +954,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "“狍鸮” 陆爆甲型"
+	name = "昌德卌四年式 “狍鸮” 陆爆甲型"
 	type = medium_plane_airframe_1
 	modules = {
 		fixed_main_weapon_slot = medium_bomb_bay
@@ -969,7 +967,7 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "兰州造 昌德卌四年式 天山-黄河航空机械 “金鸾” 试制双翼陆爆"
+	name = "昌德卌四年式 “金鸾” 双翼陆爆"
 	type = medium_plane_airframe_0
 	modules = {
 		fixed_main_weapon_slot = medium_bomb_bay
@@ -983,13 +981,24 @@ create_equipment_variant = {
 }
 
 create_equipment_variant = {
-	name = "基础舰载战斗机"
+	name = "昌德卌四年式 “句芒” 双翼舰战"
 	type = cv_small_plane_airframe_1
 	modules = {
 		fixed_main_weapon_slot = light_mg_4x
 		fixed_auxiliary_weapon_slot_1 = empty
 		engine_type_slot = engine_1_2x
 		special_type_slot_1 = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "昌德卌六年式 “鲲鹏” 双翼舰攻"
+	type = medium_plane_airframe_0
+	modules = {
+		fixed_main_weapon_slot = torpedo_mounting
+		fixed_auxiliary_weapon_slot_1 = empty
+		engine_type_slot = engine_1_1x
+		special_type_slot_1 = lmg_defense_turret
 	}
 }
 
@@ -1373,3 +1382,7 @@ if = {
 		obsolete = yes
 	}
 }
+
+
+
+set_air_oob = "MNG_air"
