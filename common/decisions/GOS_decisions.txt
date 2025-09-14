@@ -1080,7 +1080,7 @@ GOS_decision_l_3_fn = {  #法案
 					add_idea = GOS_idea_zyyfn_rq_jia			
 				}
 			}
-			add_to_variable = { GOS_VAR_zyyfn_war_support_base = 0.02.1  }
+			add_to_variable = { GOS_VAR_zyyfn_war_support_base = 0.1  }
 			custom_effect_tooltip = GOS_tooltip_decision_fn_rq	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
@@ -1282,7 +1282,7 @@ GOS_decision_l_3_fn = {  #法案
 					add_idea = GOS_idea_zyyfn_df_jia			
 				}
 			}
-			add_to_variable = { GOS_VAR_zyyfn_conscription_base = 0.02.2  }
+			add_to_variable = { GOS_VAR_zyyfn_conscription_base = 0.2  }
 			#custom_effect_tooltip = GOS_tooltip_decision_fn_df	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
@@ -1331,7 +1331,7 @@ GOS_decision_l_3_fn = {  #法案
 					add_idea = GOS_idea_zyyfn_tz_jia			
 				}
 			}
-			add_to_variable = { GOS_VAR_zyyfn_stability_base = 0.02.1  }
+			add_to_variable = { GOS_VAR_zyyfn_stability_base = 0.1  }
 			#custom_effect_tooltip = GOS_tooltip_decision_fn_tz	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
@@ -1380,7 +1380,7 @@ GOS_decision_l_3_fn = {  #法案
 					add_idea = GOS_idea_zyyfn_my_jia			
 				}
 			}
-			add_to_variable = { GOS_VAR_zyyfn_trade_opinion_base = 0.02.2  }
+			add_to_variable = { GOS_VAR_zyyfn_trade_opinion_base = 0.2  }
 			#custom_effect_tooltip = GOS_tooltip_decision_fn_my	
 			add_stability = GOS_VAR_fnkc_wdd
 		}	
@@ -1447,6 +1447,19 @@ GOS_decision_l_3_fn = {  #法案
 				check_variable = {
 					GOS_VAR_ngpx_fn_dg_dqzc > GOS_VAR_ngpx_zg_sl2
 				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = GOS_tooltip_fn_dgxf_all
+				has_country_flag = FLAG_GOS_decision_fn_ql_complete
+				has_country_flag = FLAG_GOS_decision_fn_js_complete
+				has_country_flag = FLAG_GOS_decision_fn_jj_complete
+				has_country_flag = FLAG_GOS_decision_fn_my_complete
+				has_country_flag = FLAG_GOS_decision_fn_tz_complete
+				has_country_flag = FLAG_GOS_decision_fn_df_complete
+				has_country_flag = FLAG_GOS_decision_fn_rq_complete
+				has_country_flag = FLAG_GOS_decision_fn_cc_complete
+				has_country_flag = FLAG_GOS_decision_fn_jy_complete
+
 			}
 		}					
 		ai_will_do = {
