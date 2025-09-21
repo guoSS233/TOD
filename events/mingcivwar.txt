@@ -815,12 +815,6 @@ country_event = {
 		MNG_release_GPS = yes
 		MNG_release_SRC = yes
 		complete_national_focus = MNG_qingjiaotongchangonghui
-		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
-		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
 		MNG = {
 			set_autonomy = {
 				target = GPS
@@ -846,6 +840,12 @@ country_event = {
 			}
 		}
 		hidden_effect = {
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
 			GPS = {
 				load_oob = "GPS_1937"
 				load_oob = "GPS_air"
@@ -916,13 +916,13 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
 		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
 		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
-		hidden_effect = {
 			GPS = {
 				load_oob = "GPS_1937"
 				load_oob = "GPS_air"
@@ -998,13 +998,13 @@ country_event = {
 				}
 			}
 		}
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
 		MNG_release_ROC = yes
 		hidden_effect = {
+			delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+			delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+			delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+			delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+			delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
 			ROC = {
 				add_state_core = 821
 				transfer_state = 821
@@ -1057,6 +1057,11 @@ country_event = {
 				autonomy_state = tod_ming_tongzhidusi
 			}
 			hidden_effect = {
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
 				transfer_units_fraction= {
 					target = ROC
 					stockpile_ratio = 0.15
@@ -1074,11 +1079,7 @@ country_event = {
 				}
 			}
 		}
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
-		delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
+
 		ROC = {
 			hidden_effect = {
 				set_cosmetic_tag = huananzhaofusi
@@ -2436,5 +2437,6 @@ news_event = {
 	is_triggered_only = yes
 	option = {name = mingcivwar.1005.a}
 }
+
 
 
