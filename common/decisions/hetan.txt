@@ -132,6 +132,7 @@ ROC_SRC_decision_hetan = {
         fire_only_once = yes
         timeout_effect = { 
 			country_event = { id = ROC_SRC_hetan_event.22 }
+			set_global_flag = global_flag_hetan_ROC_SRC_win
 			if = {
 				limit = { 
 					check_variable = { ROC.ROC_SRC_hetan_var > SRC.ROC_SRC_hetan_var }
@@ -164,6 +165,9 @@ ROC_SRC_decision_hetan = {
 		visible = {
 			NOT = {
 				has_global_flag = global_flag_hetan_ROC_SRC_fail
+			}
+			NOT = {
+				has_global_flag = global_flag_hetan_ROC_SRC_win
 			}
 		}
 		available = {  }
