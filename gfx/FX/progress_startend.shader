@@ -96,7 +96,8 @@ PixelShader =
 			vUVStop.y +=  1.f/3.f;
 			vUVStop.x += 1.f - CurrentState;
 			
-			if( v.vTexCoord0.x <= CurrentState ) {
+			if( v.vTexCoord0.x <= CurrentState )
+			{
 				float4 vStartColor = tex2D( TextureOne, vUVStart );
 				float4 vMiddleColor = tex2D( TextureOne, vUVMiddle );
 				float4 vStopColor = tex2D( TextureOne, vUVStop );

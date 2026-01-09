@@ -87,12 +87,10 @@ PixelShader =
 		
 		float4 main( VS_OUTPUT v ) : PDX_COLOR
 		{
-			if( (v.vTexCoord0.x > CurrentState) || ( CurrentState == 0.01 ) ) {
-				return tex2D( TextureTwo, v.vTexCoord0.xy );
-			}
-			else {
+			if( v.vTexCoord0.x <= CurrentState )
 				return tex2D( TextureOne, v.vTexCoord0.xy );
-			}
+			else
+				return tex2D( TextureTwo, v.vTexCoord0.xy );
 		}
 		
 	]]

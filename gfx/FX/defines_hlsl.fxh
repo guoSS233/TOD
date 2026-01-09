@@ -1,6 +1,7 @@
 #define PDX_DIRECTX_9
 
 #define mod( X, Y ) ( X % Y )
+#define fmod( X, Y ) mod( X, Y )
 
 float fmod_loop( float x, float y )
 {

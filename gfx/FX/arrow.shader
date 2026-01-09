@@ -184,10 +184,16 @@ BlendState BlendState
 	DestBlend = "INV_SRC_ALPHA"
 }
 
+DepthStencilState NoDepthStencilState
+{
+	DepthEnable = no
+	StencilEnable = no
+}
 
 Effect ArrowEffect
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
+	DepthStencilState = "NoDepthStencilState"
 }
 

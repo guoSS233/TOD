@@ -97,11 +97,13 @@ DepthStencilState DepthStencilState
 	DepthEnable = no
 	DepthWriteMask = "depth_write_all"
 	DepthFunction = "comparison_less_equal"
-	StencilEnable = no
+	StencilEnable = yes
 	FrontStencilFailOp = "stencil_op_keep"
 	FrontStencilDepthFailOp = "stencil_op_keep"
-	FrontStencilPassOp = "stencil_op_incr"
-	FrontStencilFunc = "comparison_equal"
+	FrontStencilPassOp = "stencil_op_keep"
+	FrontStencilFunc = "comparison_not_equal"
+	StencilRef = 4
+	StencilReadMask = 4
 }
 
 
@@ -109,5 +111,6 @@ Effect mapname
 {
 	VertexShader = "VertexShader"
 	PixelShader = "PixelShader"
+	DepthStencilState = "DepthStencilState"
 }
 

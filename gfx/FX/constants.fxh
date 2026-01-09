@@ -170,8 +170,8 @@ static const float  FOW_CAMERA_MAX				= 500;
 static const float  SHADOW_WEIGHT_TERRAIN    	= 0.7f;
 static const float  SHADOW_WEIGHT_MAP    		= 0.7f;
 static const float  SHADOW_WEIGHT_BORDER   		= 0.7f;
-static const float  SHADOW_WEIGHT_WATER   		= 0.1f;
-static const float  SHADOW_WEIGHT_RIVER   		= 0.1f;
+static const float  SHADOW_WEIGHT_WATER   		= 0.5f;
+static const float  SHADOW_WEIGHT_RIVER   		= 0.4f;
 static const float  SHADOW_WEIGHT_TREE   		= 0.7f;
 
 // LIGHT_SHADOW_DIRECTION_X = -8.0				defines.lua   (reload defines)
@@ -192,22 +192,22 @@ static const float  SHADOW_WEIGHT_TREE   		= 0.7f;
 // ------------------    GRADIENT BORDERS   ---------------------
 // --------------------------------------------------------------
 
-static const float GB_CAM_MIN = 5.0f;//默认100f
-static const float GB_CAM_MAX = 100.0f;//默认350f，与上一条共同划定了镜头采用远镜头样式（或者说远景边框）的区间，只要min和max都调的够低，那么镜头就要拉的非常非常近才会切换为近景镜头
-static const float GB_CAM_MAX_FILLING_CLAMP = 1.0f; // 在0-1之间取，决定了近距离镜头和远距离镜头的分界，也就是下面的GB_OPACITY_NEAR和GB_OPACITY_FAR的分界，0的时候全是近距离镜头的样式，越大则需要放大地图越多才会变成近距离镜头。
-static const float GB_THRESHOLD = 0.05f; // 插值时间
+static const float GB_CAM_MIN = 100.0f;
+static const float GB_CAM_MAX = 350.0f;
+static const float GB_CAM_MAX_FILLING_CLAMP = 0.8f; // 0 to 1 value for clamping the fill when camera is at max distance
+static const float GB_THRESHOLD = 0.05f; // interpolation time
 static const float GB_THRESHOLD2 = 0.25f; // interpolation time
 //static const float3 GB_OUTLINE_COLOR = float3( 0.0f, 0.0f, 0.0f );
 static const float GB_OUTLINE_CUTOFF_SEA = 0.990f; // Magic number to balance cutoff on edges without neighbor (over Sea)
-static const float GB_OPACITY_NEAR = 1.0f; // ##镜头在近处的时候国家颜色的不透明度，越低越透明，越高越深色甚至会过曝
-static const float GB_OPACITY_FAR = 1.0f;  // ##镜头在远处的时候国家颜色的不透明度，越低越透明，越高越深色甚至会过曝。例子：FPS MAP里面该项是1.0f,原版是0.85f，这也是为什么fps map在远距离的时候国家颜色会更深
+static const float GB_OPACITY_NEAR = 1.0f; // Transparency when camera is near
+static const float GB_OPACITY_FAR = 0.85f;  // Transparency when camera is far
 static const float BORDER_NIGHT_DESATURATION_MAX = 0.2f; // how much border colors can get desaturated at night. 1.0f is full grey
-static const float BORDER_FOW_REMOVAL_FACTOR = 0.8f; // 国家边界上移除的战场雾气，1.0f就是没有雾气（低于-0.8会崩溃）（测试了一下没太看出来有啥区别，估计可以不管）
-static const float BORDER_LIGHT_REMOVAL_FACTOR = 0.8f; // 国家边界上移除的光亮，1.0f就是没有光。也就是说越大，边界的光越多（实测后发现还和全局光相关，如果调高的话低地（比如峡谷和海岸）的亮度就会上升，如果调低了话高低（比如山脉）的亮度就会上升）（调成0.1就会有类似冷战地图的效果）。！！！绝对不能调1.5以上！！！电脑会崩溃！！！
-static const float GB_STRENGTH_CH1 = 0.9; //底层颜色的不透明度（和BORDER_LIGHT_REMOVAL_FACTOR类似，基础是1）
-static const float GB_STRENGTH_CH2 = 0.5; // 顶层颜色的不透明度（有点像是全局光的感觉，越高光线越暗）（该选项还会和GB_OPACITY_FAR相关联。在GB_OPACITY_FAR高数值的情况下同等数值的GB_STRENGTH_CH2会更深）
-static const float GB_FIRST_LAYER_PRIORITY = 0.4; // 当第一层/第二层（上述的两个GB_STRENGTH）在同一像素上处于活动状态时，第一层/第二层的优先级（没调明白，看上去没大效果）
-static const float BORDER_MAP_TILE = 18000.0f;//没测试出来有啥用
+static const float BORDER_FOW_REMOVAL_FACTOR = .8f; // How much of the FOW that is removed from the borders. 1.0f is no FOW
+static const float BORDER_LIGHT_REMOVAL_FACTOR = 0.8f; // How much of the light calculations that are removed from the borders. 1.0f is no light
+static const float GB_STRENGTH_CH1 = 1.0; // Opacity of bottom layer
+static const float GB_STRENGTH_CH2 = 1.0; // Opacity of top layer
+static const float GB_FIRST_LAYER_PRIORITY = 0.4; // Priority for first/second layer when both are active at the same pixel
+static const float BORDER_MAP_TILE = 18000.0f;
 
 // --------------------------------------------------------------
 // ------------------    SECONDARY COLOR MAP   ------------------

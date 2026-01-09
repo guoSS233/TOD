@@ -84,13 +84,32 @@ PixelShader =
 
 	MainCode PixelTexture
 	[[
-
+		
 		float4 main( VS_OUTPUT v ) : PDX_COLOR
 		{
-			if( (v.vTexCoord0.x < 1.f - CurrentState) || ( CurrentState == 0.01 ) )
-				return tex2D( TextureTwo, v.vTexCoord0.xy );
+			float2 vUVStart = v.vTexCoord0.xy;
+			vUVStart.y /= 3.f;
+			vUVStart.y += 1.f / 3.f;
+			float2 vUVMiddle = vUVStart;
+			vUVMiddle.y += 1.f/3.f;
+			float2 vUVStop = vUVMiddle;
+			vUVStop.y +=  1.f/3.f;
+			vUVStop.x += 1.f - CurrentState;
+			
+			if( v.vTexCoord0.x >= 1.f - CurrentState )
+			{
+				float4 vStartColor = tex2D( TextureOne, vUVStart );
+				float4 vMiddleColor = tex2D( TextureOne, vUVMiddle );
+				float4 vStopColor = tex2D( TextureOne, vUVStop );
+				
+				float vStartAlpha = vStartColor.a;
+				float4 vColor = lerp( vMiddleColor, vStartColor, vStartAlpha );
+				vColor = lerp( vColor, vStopColor, vStopColor.a );
+				vColor.a = vMiddleColor.a;
+				return vColor;
+			}
 			else
-				return tex2D( TextureOne, v.vTexCoord0.xy );
+				return tex2D( TextureTwo, v.vTexCoord0.xy );
 		}
 		
 	]]

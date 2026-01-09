@@ -3,7 +3,21 @@ equipments = {
 	ship_hull_heavy = {
 		year = 1922
 
-		can_be_produced = {}
+		can_be_produced = {
+			if = {
+				limit = {
+					has_dlc = "Arms Against Tyranny"
+				}
+				NOT = {
+					has_idea = BUL_army_restrictions_aat
+				}
+			}
+			else = {
+				NOT = {
+					has_idea = BUL_army_restrictions
+				}
+			}
+		}
 
 		is_archetype = yes
 		is_buildable = no
@@ -128,7 +142,7 @@ equipments = {
 
 		manpower = 4000
 
-		naval_supremacy_factor = 2.6
+		naval_dominance_factor = 300
 		naval_weather_penalty_factor = 1 #this value gets -1 before its used so 1.5 will increase the effects of weather penalties by 0.5. this is base value is required for MIO stat modifiers
 		#MIO stat modifers will factory by the unmodified stat value so here a 0.5 mio stat modifier would make this ships naval_weather_penalty_factor stat 1.5.
 		# change this from 1 at your own risk
@@ -181,7 +195,7 @@ equipments = {
 			rear_1_custom_slot = empty
 		}
 		naval_range = 2250
-		
+		naval_dominance_factor = 240
 		max_strength = 300
 		naval_speed = 18
 		fuel_consumption = 67
@@ -279,7 +293,7 @@ equipments = {
 		}
 
 		naval_range = 3000
-		
+		naval_dominance_factor = 300
 		max_strength = 350
 		reliability = 0.80
 		fuel_consumption = 67
@@ -338,7 +352,7 @@ equipments = {
 			fixed_ship_engine_slot = heavy_ship_engine_2
 		}
 		naval_range = 3500
-		
+		naval_dominance_factor = 350
 		max_strength = 370
 		reliability = 0.85
 		fuel_consumption = 67
@@ -408,7 +422,7 @@ equipments = {
 		max_strength = 400
 		reliability = 0.9
 		fuel_consumption = 67
-		
+		naval_dominance_factor = 375
 		build_cost_ic = 3200
 		resources = {
 			#oil = 1
@@ -471,7 +485,7 @@ equipments = {
 			rear_1_custom_slot = empty
 		}
 		naval_range = 4500
-		
+		naval_dominance_factor = 400
 		max_strength = 450
 		naval_speed = 26
 		fuel_consumption = 67
@@ -543,7 +557,7 @@ equipments = {
 			rear_1_custom_slot = empty
 		}
 		naval_range = 5000
-		
+		naval_dominance_factor = 450
 		max_strength = 500
 		naval_speed = 30
 		fuel_consumption = 80
@@ -648,6 +662,7 @@ equipments = {
 		fuel_consumption = 75
 		reliability = 0.80
 		build_cost_ic = 5500
+		naval_dominance_factor = 400
 		resources = {
 			steel = 1
 			chromium = 1
@@ -1286,6 +1301,7 @@ equipments = {
 		visual_level = 1
 		archetype = ship_hull_heavy
 		model = ship_hull_modern_super_battleship
+		parent = battleship_4
 			upgrades = {
 			ship_reliability_upgrade
 			ship_engine_upgrade
