@@ -1,0 +1,25 @@
+faction_manifest_tianchaotixi = {
+	name = tianchaotixi_goal_name
+	description = tianchaotixi_goal_desc
+	is_manifest = yes
+	ratio_progress = {
+		total_amount = 50
+		completed_amount_collection = collection:country_in_tianchao_faction
+			
+		scale = {
+			stability_factor = 0.20
+			production_speed_buildings_factor = 0.15
+		}
+		
+		progress_sections = {
+			manifest_fulfilled = {
+				min = 0.75
+	
+				modifier = { 
+                    research_speed_factor = 0.1
+                    command_power_gain_mult = 0.25
+				}
+			}
+		}
+	}
+}
