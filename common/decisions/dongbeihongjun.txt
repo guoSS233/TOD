@@ -1,0 +1,2383 @@
+
+focus_tree = {
+	id = SRC_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SRC
+		}
+	}
+
+	#起来，不愿做奴隶的人们
+	focus = {
+		id = SRC_no_longer_a_slave
+		icon = GFX_SRC_wuzhuangqilai
+		
+		allow_branch = {
+			NOT = {has_country_flag = SRC_zhongyangdida}
+		}
+		x = 5
+		y = 0
+		cost = 1
+
+		available = { }
+
+		completion_reward = { SRC = {country_event = { id = SRCevents.10 days = 1 } } }
+	}
+	#占领关键点
+	focus = {
+		id = SRC_capture_key_points
+		icon = GFX_SRC_shouwohuongzhang
+		prerequisite = { focus = SRC_no_longer_a_slave }
+
+		x = 0
+		y = 1
+		relative_position_id = SRC_no_longer_a_slave
+		cost = 2
+		available = { }
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_offsite_building = { type = arms_factory level = 1 }
+		}
+	}
+	#成立辽东特委
+	focus = {
+		id = SRC_Liaodong_special_committee
+		icon = GFX_SRC_liaodongteweichengli
+		prerequisite = { focus = SRC_capture_key_points }
+
+		x = 0
+		y = 1
+		relative_position_id = SRC_capture_key_points
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	#动员工人纠察队
+	focus = {
+		id = SRC_workers_pickets
+		icon = GFX_SRC_dongyuangongrenminbing
+		prerequisite = { focus = SRC_Liaodong_special_committee }
+
+		x = -3
+		y = 1
+		relative_position_id = SRC_Liaodong_special_committee
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			unlock_decision_category_tooltip = SRC_baoweigongrenzhengquan_categories
+		}
+	}
+	#提拔革命将领
+	focus = {
+		id = SRC_promote_military_officers
+		icon = GFX_SRC_chenglizhongguogongnonghongjun
+		prerequisite = { focus = SRC_workers_pickets }
+
+		x = -1
+		y = 1
+		relative_position_id = SRC_workers_pickets
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			recruit_character = SRC_yang_jingyu
+			recruit_character = SRC_xu_xiangqian
+			recruit_character = SRC_zhu_rui
+			recruit_character = SRC_wang_yongqing
+			recruit_character = SRC_wang_minjing
+			hidden_effect = {
+				SRC = {
+					SRC_yang_jingyu = { set_nationality = SRC }
+					SRC_xu_xiangqian = { set_nationality = SRC }
+					SRC_zhu_rui = { set_nationality = SRC }
+					SRC_wang_yongqing = { set_nationality = SRC }
+					SRC_wang_minjing = { set_nationality = SRC }
+				}
+			}
+		}
+	}
+	#交流战斗经验
+	focus = {
+		id = SRC_exchange_combat_experience
+		icon = GFX_SRC_gongnonggemingjunshiweiyuanhui
+		prerequisite = { focus = SRC_workers_pickets }
+
+		x = 1
+		y = 1
+		relative_position_id = SRC_workers_pickets
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			army_experience = 50
+			SRC = {country_event = { id = SRCevents.12 } } 
+		}
+	}
+	#敌后宣传成果
+	focus = {
+		id = SRC_publicity_campaigne_outcome
+		icon = GFX_SRC_zhengbiantouchengbudui
+		prerequisite = { focus = SRC_promote_military_officers }
+		prerequisite = { focus = SRC_exchange_combat_experience }
+
+		x = 1
+		y = 1
+		relative_position_id = SRC_promote_military_officers
+		cost = 5
+		available = { }
+
+		completion_reward = { load_oob = "SRC_toucheng" }
+	}
+	#向红军的未来眺望
+	focus = {
+		id = SRC_look_forward_to_the_future
+		icon = GFX_SRC_shiwanjingqizhanyanluo
+		prerequisite = { focus = SRC_publicity_campaigne_outcome }
+
+		x = 0
+		y = 1
+		relative_position_id = SRC_publicity_campaigne_outcome
+		cost = 8
+		available = { }
+
+		completion_reward = {
+			army_experience = 15
+			air_experience = 15
+			navy_experience = 15
+			SRC = {country_event = { id = SRCevents.13 } } 
+		}
+	}
+	#巩固临时行政体系
+	focus = {
+		id = SRC_strengthen_the_system
+		icon = GFX_SRC_dongbeilinshigemingzhengfu
+		prerequisite = { focus = SRC_Liaodong_special_committee }
+
+		x = 3
+		y = 1
+		relative_position_id = SRC_Liaodong_special_committee
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			add_stability = 0.1
+			SRC = {country_event = { id = SRCevents.10 } } 
+		}
+	}
+	#建立军管委员会
+	focus = {
+		id = SRC_military_management
+		icon = GFX_SRC_linshijunguanweiyuanhui
+		prerequisite = { focus = SRC_strengthen_the_system }
+
+		x = -1
+		y = 1
+		relative_position_id = SRC_strengthen_the_system
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+	#优先加强军备生产
+	focus = {
+		id = SRC_weapons_first
+		icon = GFX_SRC_junshiyouxian
+		prerequisite = { focus = SRC_military_management }
+
+		x = 0
+		y = 1
+		relative_position_id = SRC_military_management
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			add_to_variable = { SRC_siliedeshehui_gongchangchanchu = 0.1 } 
+			custom_effect_tooltip = SRC_weapons_first_xiaoguo
+		}
+	}
+	#建立工厂委员会
+	focus = {
+		id = SRC_work_committee
+		icon = GFX_SRC_zujiangongchangweiyuanhui
+		prerequisite = { focus = SRC_strengthen_the_system }
+
+		x = 1
+		y = 1
+		relative_position_id = SRC_strengthen_the_system
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			add_to_variable = { SRC_siliedeshehui_gongchangxiaolv = 0.05 }
+			add_to_variable = { SRC_siliedeshehui_gongchangzengzhang = 0.05 }
+			custom_effect_tooltip = SRC_work_committee_xiaoguo
+		}
+	}
+	#新秩序
+	focus = {
+		id = SRC_tno
+		icon = GFX_SRC_huifugongchangshengchan
+		prerequisite = { focus = SRC_work_committee }
+
+		x = 0
+		y = 1
+		relative_position_id = SRC_work_committee
+		cost = 5
+		available = { }
+
+		completion_reward = {
+			add_to_variable = { SRC_siliedeshehui_wendingdu = 0.15 } 
+			custom_effect_tooltip = SRC_tno_xiaoguo
+		}
+	}
+	#筹备东北革命政府
+	focus = {
+		id = SRC_prepare_government
+		icon = GFX_SRC_liaodongteweichengli
+		prerequisite = { focus = SRC_weapons_first }
+		prerequisite = { focus = SRC_tno }
+
+		x = 1
+		y = 1
+		relative_position_id = SRC_weapons_first
+		cost = 6
+		available = { }
+
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_siliedeshehui }
+			add_research_slot = 1
+			SRC = {country_event = { id = SRCevents.14 } } 
+		}
+	}
+	#同产工会中央回归
+	focus = {
+		id = SRC_comrades_return
+		icon = GFX_SRC_tongchangonghuizhongyangdida
+		prerequisite = { focus = SRC_Liaodong_special_committee }
+
+		x = 0
+		y = 5
+		relative_position_id = SRC_Liaodong_special_committee
+		cost = 1
+		available = { NOT = { country_exists = GPS} }
+
+		completion_reward = {
+			#retire_ideology_leader = vanguard_socialism
+			#retire_ideology_leader = council_socialism
+			#retire_country_leader = yes
+			#promote_character = {
+			#	character = SRC_ren_fuchen
+			#	ideology = vanguard_socialism_subtype
+			#}
+			SRC = {country_event = { id = SRCevents.15 } } 
+			set_country_flag = SRC_zhongyangdida
+			remove_ideas = SRC_buwangkulaojichou
+			remove_ideas = SRC_qiyireqing
+			#promote_character = SRC_zhongyangzhixingweiyuanhui
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+
+	#东北革命大会召开
+	focus = {
+		id = SRC_dongbeigemingdahuizhaokai
+		icon = GFX_SRC_tongchangonghuizhongyangdida
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = { has_country_flag = SRC_zhongyangdida }
+		select_effect = {country_event = { id = SRCevents.3 days = 1 }}
+		x = 19
+		y = 0
+		
+		cost = 4
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_buwangkulaojichou
+			remove_ideas = SRC_qiyireqing
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	#任辅臣主席
+	focus = {
+		id = SRC_renfuchenzhuxi
+		icon = GFX_SRC_renfuchenzhuxi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {
+			has_country_leader = {
+				character = SRC_ren_fuchen
+				ruling_only = yes
+			}
+		}
+		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
+		x = 19
+		y = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {}
+	}
+	#中央计划委员会
+	focus = {
+		id = SRC_zhongyangjihuaweiyuanhui
+		icon = GFX_SRC_zhongyangjihuaweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renfuchenzhuxi}
+		x = 17
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_gongrenhuchangreqing
+			add_dynamic_modifier = { modifier = SRC_jihuashengchan }
+			add_to_variable = { SRC_jihuashengchan_gongchangchanchu = 0.05 }
+			add_to_variable = { SRC_jihuashengchan_xiaofeiping = -0.1 }
+			custom_effect_tooltip = SRC_zhongyangjihuaweiyuanhui_xiaoguo
+			SRC = {country_event = { id = SRCevents.17 } } 
+		}
+	}
+	#工业国有化
+	focus = {
+		id = SRC_gongyeguoyouhua
+		icon = GFX_SRC_gongyeguoyouhua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_zhongyangjihuaweiyuanhui}
+		x = 17
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SRC_jihuashengchan_jianzaosudu = 0.1 }
+			custom_effect_tooltip = SRC_gongyeguoyouhua_xiaoguo
+			SRC = {country_event = { id = SRCevents.18 } } 
+		}
+	}
+	#农业集体化
+	focus = {
+		id = SRC_nongyejitihua
+		icon = GFX_SRC_nongyejitihua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gongyeguoyouhua}
+		x = 17
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_to_variable = { SRC_jihuashengchan_xiaofeiping = -0.1 }
+			custom_effect_tooltip = SRC_nongyejitihua_xiaoguo
+			SRC = {country_event = { id = SRCevents.19 } } 
+		}
+	}
+	#一五计划
+	focus = {
+		id = SRC_yiwujihua
+		icon = GFX_SRC_yiwujihua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_nongyejitihua}
+		x = 17
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_jihuashengchan }
+			add_ideas = SRC_yiwu
+			SRC = {country_event = { id = SRCevents.20 } } 
+		}
+	}
+	#坚持领导权
+	focus = {
+		id = SRC_jianchilingdaoquan
+		icon = GFX_SRC_jianchilingdaoquan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renfuchenzhuxi}
+		x = 19
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_dynamic_modifier = { modifier = SRC_dangdelingdao }
+		}
+	}
+	#整风运动
+	focus = {
+		id = SRC_zhengfengyundong
+		icon = GFX_SRC_zhengfengyundong
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_jianchilingdaoquan}
+		x = 19
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_popularity = { ideology = vanguard_socialism popularity = 0.2 }
+			SRC = {country_event = { id = SRCevents.21 } } 
+		}
+	}
+	#工协是大学
+	focus = {
+		id = SRC_gongxieshidaxue
+		icon = GFX_SRC_gongxieshidaxue
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_zhengfengyundong}
+		x = 19
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_dangdelingdao_zhengzhidianshu = 0.15 }
+			custom_effect_tooltip = SRC_gongxieshidaxue_xiaoguo
+			SRC = {country_event = { id = SRCevents.22 } } 
+		}
+	}
+	#从群众中来到群众中去
+	focus = {
+		id = SRC_qunzhong
+		icon = GFX_SRC_qunzhong
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gongxieshidaxue}
+		x = 19
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_war_support = 0.1
+			SRC = {country_event = { id = SRCevents.23 } } 
+		}
+	}
+	#东北人民大学
+	focus = {
+		id = SRC_dongbeirenmindaxue
+		icon = GFX_SRC_dongbeirenmindaxue
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renfuchenzhuxi}
+		x = 21
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_research_slot = 1 }
+	}
+	#东北革命格致校
+	focus = {
+		id = SRC_dongbeigeminggezhiyuan
+		icon = GFX_SRC_dongbeigeminggezhiyuan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeirenmindaxue}
+		x = 21
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SRC_dongbeigeminggezhiyuan
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	#坚决反对个人崇拜
+	focus = {
+		id = SRC_jianjuefanduigerenchongbai
+		icon = GFX_SRC_jianjuefanduigerenchongbai
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeigeminggezhiyuan}
+		x = 21
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_ideas = SRC_wuchanjiejiminzhu
+			SRC = {country_event = { id = SRCevents.24 } } 
+		}
+	}
+	#同产主义新文化运动
+	focus = {
+		id = SRC_xinwenhuayundong
+		icon = GFX_SRC_xinwenhuayundong
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_jianjuefanduigerenchongbai}
+		x = 21
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_stability = 0.1
+			SRC = {country_event = { id = SRCevents.25 } } 
+		}
+	}
+	#红星照耀东方
+	focus = {
+		id = SRC_hongxingzhaoyaodongfang
+		icon = GFX_SRC_hongxingzhaoyaodongfang
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_yiwujihua}
+		prerequisite = {focus = SRC_qunzhong}
+		prerequisite = {focus = SRC_xinwenhuayundong}
+		x = 19
+		y = 6
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_wuchanjiejiminzhu
+			add_ideas = SRC_zhaoyaodongfang
+			SRC = {country_event = { id = SRCevents.26 } } 
+		}
+	}
+	#李大钊主席
+	focus = {
+		id = SRC_lidazhaozhuxi
+		icon = GFX_SRC_lidazhaozhuxi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {
+			has_country_leader = {
+				character = SRC_li_dazhao
+				ruling_only = yes
+			}
+		}
+		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
+		x = 19
+		y = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {SRC = {country_event = { id = SRCevents.35}}}
+	}
+	#东北高校自治会
+	focus = {
+		id = SRC_dongbeigaoxiaozizhihui
+		icon = GFX_SRC_dongbeigaoxiaozizhihui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_lidazhaozhuxi}
+		x = 17
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_ideas = SRC_xueshuminzhu
+			SRC = {country_event = { id = SRCevents.36}}
+		}
+	}
+	#东北格致院委员会
+	focus = {
+		id = SRC_dongbeigezhiyuanweiyuanhui
+		icon = GFX_SRC_dongbeigezhiyuanweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeigaoxiaozizhihui}
+		x = 17
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_research_slot = 1}
+	}
+	#新文化思潮
+	focus = {
+		id = SRC_xinwenhuasichao
+		icon = GFX_SRC_xinwenhuasichao
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeigaoxiaozizhihui}
+		x = 17
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_stability = 0.1
+			SRC = {country_event = { id = SRCevents.37}}
+		}
+	}
+	#建立基层工农民主机制
+	focus = {
+		id = SRC_jicengminzhu
+		icon = GFX_SRC_jicengminzhu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_xinwenhuasichao}
+		x = 17
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_xueshuminzhu
+			add_ideas = SRC_xinwenhua
+		}
+	}
+	#革命委员会
+	focus = {
+		id = SRC_gemingweiyuanhui
+		icon = GFX_SRC_gemingweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_lidazhaozhuxi}
+		x = 19
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {add_ideas = SRC_gemingzhengfu}
+	}
+	#赋权人民代表大会
+	focus = {
+		id = SRC_renmindaibiaodahui
+		icon = GFX_SRC_renmindaibiaodahui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gemingweiyuanhui}
+		x = 19
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_popularity = { ideology = council_socialism popularity = 0.1 }
+			SRC = {country_event = { id = SRCevents.38}}
+		}
+	}
+	#政治大民主
+	focus = {
+		id = SRC_zhengzhidaminzhu
+		icon = GFX_SRC_zhengzhidaminzhu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_renmindaibiaodahui}
+		x = 19
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = SRC_gemingzhengfu
+			add_dynamic_modifier = { modifier = SRC_renminminzhu }
+		}
+	}
+	#群众直接监督
+	focus = {
+		id = SRC_qunzhongzhijiejiandu
+		icon = GFX_SRC_qunzhongzhijiejiandu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_zhengzhidaminzhu}
+		x = 19
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_renminminzhu_gongyeqiye = -0.5 }
+			add_to_variable = { SRC_renminminzhu_zhanzhengzhichi = 0.1 }
+			custom_effect_tooltip = SRC_qunzhongzhijiejiandu_xiaoguo
+			SRC = {country_event = { id = SRCevents.39}}
+		}
+	}
+	#国家经济委员会
+	focus = {
+		id = SRC_guojiajingjiweiyuanhui
+		icon = GFX_SRC_guojiajingjiweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_lidazhaozhuxi}
+		x = 21
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			remove_ideas = SRC_gongrenhuchangreqing
+			add_dynamic_modifier = { modifier = SRC_jingweihui }
+			SRC = {country_event = { id = SRCevents.40}}
+		}
+	}
+	#关系再平衡
+	focus = {
+		id = SRC_guanxizaipingheng
+		icon = GFX_SRC_guanxizaipingheng
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guojiajingjiweiyuanhui}
+		x = 21
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_jingweihui_gongchangzengzhang = 0.1 }
+			custom_effect_tooltip = SRC_guanxizaipingheng_xiaoguo
+		}
+	}
+	#农业合作化
+	focus = {
+		id = SRC_nongyehezuohua
+		icon = GFX_SRC_nongyehezuohua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guanxizaipingheng}
+		x = 21
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_jingweihui_xiaofeiping = -0.2 }
+			custom_effect_tooltip = SRC_nongyehezuohua_xiaoguo
+		}
+	}
+	#召开经委大会
+	focus = {
+		id = SRC_zhaokaijingweidahui
+		icon = GFX_SRC_zhaokaijingweidahui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_nongyehezuohua}
+		x = 21
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_jingweihui_gongchangchanchu = 0.1 }
+			custom_effect_tooltip = SRC_zhaokaijingweidahui_xiaoguo
+			SRC = {country_event = { id = SRCevents.41}}
+		}
+	}
+	#赤旗指引未来
+	focus = {
+		id = SRC_chiqizhiyinweilai
+		icon = GFX_SRC_chiqizhiyinweilai
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_jicengminzhu}
+		prerequisite = {focus = SRC_qunzhongzhijiejiandu}
+		prerequisite = {focus = SRC_zhaokaijingweidahui}
+		x = 19
+		y = 6
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_renminminzhu }
+			add_ideas = SRC_chiqizhiyin
+			SRC = {country_event = { id = SRCevents.42}}
+		}
+	}
+	#陈独秀主席
+	focus = {
+		id = SRC_chenduxiuzhuxi
+		icon = GFX_SRC_chenduxiuzhuxi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		allow_branch = {
+			has_country_leader = {
+				character = SRC_chen_duxiu
+				ruling_only = yes
+			}
+		}
+		prerequisite = {focus = SRC_dongbeigemingdahuizhaokai}
+		x = 19
+		y = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {SRC = {country_event = { id = SRCevents.27}}}
+	}
+	#学术，文化革命化
+	focus = {
+		id = SRC_xueshuwenhuageminghua
+		icon = GFX_SRC_xueshuwenhuageminghua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_chenduxiuzhuxi}
+		x = 17
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_dynamic_modifier = { modifier = SRC_gemingwenhua }
+			add_to_variable = { SRC_gemingwenhua_keyan = 0.1 }
+			custom_effect_tooltip = SRC_xueshuwenhuageminghua_xiaoguo
+		}
+	}
+	#东北劳动大学
+	focus = {
+		id = SRC_dongbeilaodongdaxue
+		icon = GFX_SRC_dongbeilaodongdaxue
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_xueshuwenhuageminghua}
+		x = 17
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingwenhua_keyan = 0.1 }
+			add_to_variable = { SRC_gemingwenhua_gongchangxiaolv = 0.1 }
+			custom_effect_tooltip = SRC_dongbeilaodongdaxue_xiaoguo
+		}
+	}
+	#强化青年工作
+	focus = {
+		id = SRC_qianghuaqingniangongzuo
+		icon = GFX_SRC_qianghuaqingniangongzuo
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_dongbeilaodongdaxue}
+		x = 17
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingwenhua_wendingdu = 0.1 }
+			custom_effect_tooltip = SRC_qianghuaqingniangongzuo_xiaoguo
+			SRC = {country_event = { id = SRCevents.28}}
+		}
+	}
+	#社会主义接班人
+	focus = {
+		id = SRC_shehuizhuyijiebanren
+		icon = GFX_SRC_shehuizhuyijiebanren
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_qianghuaqingniangongzuo}
+		x = 17
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingwenhua_zhengzhidianshu = 0.1 }
+			custom_effect_tooltip = SRC_shehuizhuyijiebanren_xiaoguo
+			SRC = {country_event = { id = SRCevents.29}}
+		}
+	}
+	#革命统一战线
+	focus = {
+		id = SRC_gemingtongyizhanxian
+		icon = GFX_SRC_gemingtongyizhanxian
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_chenduxiuzhuxi}
+		x = 19
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_dynamic_modifier = { modifier = SRC_gemingtongmeng}
+			SRC = {country_event = { id = SRCevents.30}}
+		}
+	}
+	#构建反帝同盟
+	focus = {
+		id = SRC_goujianfanditongmeng
+		icon = GFX_SRC_goujianfanditongmeng
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gemingtongyizhanxian}
+		x = 19
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingtongmeng_faan = -0.33 }
+			custom_effect_tooltip = SRC_goujianfanditongmeng_xiaoguo
+		}
+	}
+	#改造资产阶级
+	focus = {
+		id = SRC_gaizaozichanjieji
+		icon = GFX_SRC_gaizaozichanjieji
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_goujianfanditongmeng}
+		x = 19
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_popularity = { ideology = moderate_socialism popularity = 0.1 }
+			SRC = {country_event = { id = SRCevents.31}}
+		}
+	}
+	#逐步向大同世界过度
+	focus = {
+		id = SRC_datongshijieguodu
+		icon = GFX_SRC_dagtonshijieguodu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_gaizaozichanjieji}
+		x = 19
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingtongmeng_shuncong = 0.001 }
+			custom_effect_tooltip = SRC_datongshijieguodu_xiaoguo
+		}
+	}
+	#国家改革委员会
+	focus = {
+		id = SRC_guojiagaigeweiyuanhui
+		icon = GFX_SRC_guojiagaigeweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_chenduxiuzhuxi}
+		x = 21
+		y = 2
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_gongrenhuchangreqing
+			add_dynamic_modifier = { modifier = SRC_gaigewei }
+		}
+	}
+	#赎买企业
+	focus = {
+		id = SRC_shumaiqiye
+		icon = GFX_SRC_shumaiqiye
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_guojiagaigeweiyuanhui}
+		x = 21
+		y = 3
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_jichusheshi = 0.1 }
+			custom_effect_tooltip = SRC_shumaiqiye_xiaoguo
+			SRC = {country_event = { id = SRCevents.32}}
+		}
+	}
+	#土地改革
+	focus = {
+		id = SRC_tudigaige
+		icon = GFX_SRC_tudigaige
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_shumaiqiye}
+		x = 21
+		y = 4
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_diqugongye = 0.1}
+			custom_effect_tooltip = SRC_tudigaige_xiaoguo
+		}
+	}
+	#铁锅炖大鹅
+	focus = {
+		id = SRC_tieguodundae
+		icon = GFX_SRC_tieguodundae
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_tudigaige}
+		x = 21
+		y = 5
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_minzhuanjun = -0.2 }
+			custom_effect_tooltip = SRC_tieguodundae_xiaoguo
+			SRC = {country_event = { id = SRCevents.33}}
+		}
+	}
+	#朱门换新天
+	focus = {
+		id = SRC_zhumenhuanxintian
+		icon = GFX_SRC_zhumenhuanxintian
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		prerequisite = {focus = SRC_shehuizhuyijiebanren}
+		prerequisite = {focus = SRC_tieguodundae}
+		prerequisite = {focus = SRC_datongshijieguodu}
+		x = 19
+		y = 6
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SRC_gemingwenhua }
+			add_ideas = SRC_zhumen
+			SRC = {country_event = { id = SRCevents.34}}
+		}
+	}
+	#中华工农红军
+	focus = {
+		id = SRC_zhonghuagongnonghongjun
+		icon = GFX_SRC_zhonghuagongnonghongjun
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 33
+		y = 0
+		cost = 5
+		bypass = { country_exists = GPS }
+		allow_branch = { has_completed_focus = SRC_dongbeigemingdahuizhaokai }
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_political_power = 15
+		}
+	}
+	#强化军队思想建设
+	focus = {
+		id = SRC_qianghuajunduisixiangjianshe
+		icon = GFX_SRC_qianghuajunduisixiangjianshe
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 28
+		y = 1
+		cost = 5
+		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_gemingchiweidui
+			add_dynamic_modifier = { modifier = SRC_hongjun }
+			add_to_variable = { SRC_hongjun_zuzhidu = -0.1 }
+			add_to_variable = { SRC_hongjun_huifu = 0.05 }
+			add_to_variable = { SRC_hongjun_qianhaosudu = 0.4 }
+			add_to_variable = { SRC_hongjun_qianhao = 0.2 }
+			custom_effect_tooltip = SRC_qianghuajunduisixiangjianshe_xiaoguo
+		}
+	}
+	#立足工人纠察队
+	focus = {
+		id = SRC_lizugongrenjiuchadui
+		icon = GFX_SRC_lizugongrenjiuchadui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 26
+		y = 2
+		cost = 5
+		prerequisite = {focus = SRC_qianghuajunduisixiangjianshe}
+		mutually_exclusive = {focus = SRC_yilaizhiyejunguan}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_huifu = 0.1 }
+			custom_effect_tooltip = SRC_lizugongrenjiuchadui_xiaoguo
+		}
+	}
+	#设立政委
+	focus = {
+		id = SRC_shelizhengwei
+		icon = GFX_SRC_shelizhengwei
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 26
+		y = 3
+		cost = 5
+		prerequisite = {focus = SRC_lizugongrenjiuchadui}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_zuzhidu = 0.1 }
+			custom_effect_tooltip = SRC_shelizhengwei_xiaoguo
+		}
+	}
+	#赋权士兵委员会
+	focus = {
+		id = SRC_fuquanshibingweiyuanhui
+		icon = GFX_SRC_fuquanshibingweiyuanhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 25
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_shelizhengwei}
+		mutually_exclusive = { focus = SRC_quelidangweizhi }
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_sunhao = -0.1 }
+			custom_effect_tooltip = SRC_fuquanshibingweiyuanhui_xiaoguo
+		}
+	}
+	#强化军事民主
+	focus = {
+		id = SRC_qianghuajunshiminzhu
+		icon = GFX_SRC_qianghuajunshiminzhu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 25
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_fuquanshibingweiyuanhui}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_zhudong = 0.02 }
+			custom_effect_tooltip = SRC_qianghuajunshiminzhu_xiaoguo
+			add_tech_bonus = {
+				name = SRC_qianghuajunshiminzhu
+				bonus = 0.5
+				uses = 1
+				category = cat_mass_assault
+				category = cat_mobile_warfare
+			}
+		}
+	}
+	#确立党委制
+	focus = {
+		id = SRC_quelidangweizhi
+		icon = GFX_SRC_quelidangweizhi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 27
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_shelizhengwei}
+		mutually_exclusive = { focus = SRC_fuquanshibingweiyuanhui }
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_fangyu = 0.1 }
+			custom_effect_tooltip = SRC_quelidangweizhi_xiaoguo
+		}
+	}
+	#支部建在连上
+	focus = {
+		id = SRC_zhibujianzailianshang
+		icon = GFX_SRC_zhibujianzailianshang
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 27
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_quelidangweizhi}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_xietongxie = 0.1 }
+			custom_effect_tooltip = SRC_zhibujianzailianshang_xiaoguo
+		}
+	}
+	#官兵一律平等
+	focus = {
+		id = SRC_guanbingyilvpingdeng
+		icon = GFX_SRC_guanbingyilvpingdeng
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 26
+		y = 6
+		cost = 5
+		prerequisite = {focus = SRC_qianghuajunshiminzhu focus = SRC_zhibujianzailianshang}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_HP = 0.1 }
+			custom_effect_tooltip = SRC_guanbingyilvpingdeng_xiaoguo
+		}
+	}
+	#革命军，新作风
+	focus = {
+		id = SRC_gemingjunxinzuofeng
+		icon = GFX_SRC_gemingjunxinzuofeng
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 26
+		y = 7
+		cost = 5
+		prerequisite = {focus = SRC_guanbingyilvpingdeng}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_dixingchengfa = 0.1 }
+			custom_effect_tooltip = SRC_gemingjunxinzuofeng_xiaoguo
+		}
+	}
+	#依赖职业军官
+	focus = {
+		id = SRC_yilaizhiyejunguan
+		icon = GFX_SRC_yilaizhiyejunguan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 29
+		y = 2
+		cost = 5
+		prerequisite = {focus = SRC_qianghuajunduisixiangjianshe}
+		mutually_exclusive = {focus = SRC_lizugongrenjiuchadui}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_jihuashangxianjiacheng = 0.2 }
+			custom_effect_tooltip = SRC_yilaizhiyejunguan_xiaoguo
+		}
+	}
+	#军事一长制
+	focus = {
+		id = SRC_junshiyizhangzhi
+		icon = GFX_SRC_junshiyizhangzhi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 29
+		y = 3
+		cost = 5
+		prerequisite = {focus = SRC_yilaizhiyejunguan}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			every_army_leader = {
+				add_attack = 1
+				add_defense = 1
+			}
+		}
+	}
+	#革命军官入会
+	focus = {
+		id = SRC_gemingjunguanruhui
+		icon = GFX_SRC_gemingjunguanruhui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 29
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_junshiyizhangzhi}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_jihuasudu = 0.2 }
+			custom_effect_tooltip = SRC_gemingjunguanruhui_xiaoguo
+		}
+	}
+	#强化军委领导
+	focus = {
+		id = SRC_qianghuajunweilingdao
+		icon = GFX_SRC_qianghuajunweilingdao
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 29
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_gemingjunguanruhui}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_jihuashangxian = 0.2 }
+			custom_effect_tooltip = SRC_qianghuajunweilingdao_xiaoguo
+		}
+	}
+	#确立军衔制
+	focus = {
+		id = SRC_quelijunxianzhi
+		icon = GFX_SRC_quelijunxianzhi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 29
+		y = 6
+		cost = 5
+		prerequisite = {focus = SRC_qianghuajunweilingdao}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongjun_tupo = 0.1 }
+			custom_effect_tooltip = SRC_quelijunxianzhi_xiaoguo
+		}
+	}
+	#武装力量正规化
+	focus = {
+		id = SRC_wuzhuangliliangzhengguihua
+		icon = GFX_SRC_wuzhuangliliangzhengguihua
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 29
+		y = 7
+		cost = 5
+		prerequisite = {focus = SRC_quelijunxianzhi}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gaigewei_minzhuanjun = -0.2 }
+			custom_effect_tooltip = SRC_wuzhuangliliangzhengguihua_xiaoguo
+			hidden_effect = {
+				set_technology = { masterful_blitz = 1 popup = no }
+			}
+			custom_effect_tooltip = SOV_the_glory_of_the_red_army_masterful_blitz_tactic_tt
+
+		}
+	}
+	#建立革命军事学院
+	focus = {
+		id = SRC_jianligemingjunshixueyuan
+		icon = GFX_SRC_jianligemingjunshixueyuan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 33
+		y = 1
+		cost = 5
+		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {	
+				name = SRC_jianligemingjunshixueyuan
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+			remove_ideas = SRC_gemingjunshiweiyuanhui_1
+			add_ideas = SRC_gemingjunshiweiyuanhui_2
+		}
+	}
+	#军事理论革新
+	focus = {
+		id = SRC_junshililungexin
+		icon = GFX_SRC_junshililungexin
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 33
+		y = 2
+		cost = 5
+		prerequisite = {focus = SRC_jianligemingjunshixueyuan}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_ideas = SRC_gemingjunshiweiyuanhui_2
+			add_dynamic_modifier = {modifier = SRC_gemingjunshiweiyuanhui_3 } 
+		}
+	}
+	#红军后勤部
+	focus = {
+		id = SRC_hongjunhouqinbu
+		icon = GFX_SRC_hongjunhouqinbu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 33
+		y = 3
+		cost = 5
+		prerequisite = {focus = SRC_junshililungexin}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SRC_hongjunhouqinbu
+				bonus = 1
+				uses = 1
+				category = logistics_tech
+			}
+		}
+	}
+	#构建补给网络
+	focus = {
+		id = SRC_goujianbujiwangluo
+		icon = GFX_SRC_goujianbujiwangluo
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 31
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_hongjunhouqinbu}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_bujifanwei = 0.2 }
+			custom_effect_tooltip = SRC_goujianbujiwangluo_xiaoguo
+		}
+	}
+	#完善生产体系
+	focus = {
+		id = SRC_wanshanshengchantixi
+		icon = GFX_SRC_wanshanshengchantixi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 31
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_goujianbujiwangluo}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_buqianghuafei = -0.1 }
+			custom_effect_tooltip = SRC_wanshanshengchantixi_xiaoguo
+		}
+	}
+	#生产研究革新
+	focus = {
+		id = SRC_shengchanyanjiugexin
+		icon = GFX_SRC_shengchanyanjiugexin
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 33
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_hongjunhouqinbu}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_yanjiu = 0.05 }
+			custom_effect_tooltip = SRC_shengchanyanjiugexin_xiaoguo
+		}
+	}
+	#实验新式编制
+	focus = {
+		id = SRC_shiyanxinshibianzhi
+		icon = GFX_SRC_shiyanxinshibianzhi
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 33
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_shengchanyanjiugexin}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_gemingjunshiweiyuanhui_danweihuafei = -0.5 }
+			custom_effect_tooltip = SRC_shiyanxinshibianzhi_xiaoguo
+		}
+	}
+	#扩大火炮产业
+	focus = {
+		id = SRC_kuodahuopaochanye
+		icon = GFX_SRC_kuodahuopaochanye
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 35
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_hongjunhouqinbu}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SRC_kuodahuopaochanye
+				bonus = 1
+				uses = 2
+				category = artillery
+			}
+		}
+	}
+	#强化装甲研究
+	focus = {
+		id = SRC_qianghuazhuangjiayanjiu
+		icon = GFX_SRC_qianghuazhuangjiayanjiu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 35
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_kuodahuopaochanye}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SRC_kuodahuopaochanye
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	#现代革命军队
+	focus = {
+		id = SRC_xiandaigemingjundui
+		icon = GFX_SRC_xiandaigemingjundui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 33
+		y = 6
+		cost = 5
+		prerequisite = {focus = SRC_wanshanshengchantixi}
+		prerequisite = {focus = SRC_shiyanxinshibianzhi}
+		prerequisite = {focus = SRC_qianghuazhuangjiayanjiu}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = {modifier = SRC_gemingjunshiweiyuanhui_3 }
+			add_dynamic_modifier = {modifier = SRC_gemingjunshiweiyuanhui_4 }
+			unlock_decision_category_tooltip = SRC_junshijianshe_catagories
+		}
+	}
+	#成立革命空军
+	focus = {
+		id = SRC_chengligemingkongjun
+		icon = GFX_SRC_chengligemingkongjun
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 37
+		y = 1
+		cost = 5
+		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_dynamic_modifier = {modifier = SRC_hongkongjun}
+			add_doctrine_cost_reduction = {	
+				name = SRC_chengligemingkongjun
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	#接收机场与飞机
+	focus = {
+		id = SRC_jieshoujichangyufeiji
+		icon = GFX_SRC_jieshoujichangyufeiji
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 37
+		y = 2
+		cost = 5
+		prerequisite = {focus = SRC_chengligemingkongjun}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe_0
+				amount = 200
+				variant_name =  "西安造 昌德卌二年式 关陇航空动力 “精卫” 双翼陆战改甲"
+			}
+		}
+	}
+	#吸纳革命航空队
+	focus = {
+		id = SRC_xinageminghangkongdui
+		icon = GFX_SRC_xinageminghangkongdui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 37
+		y = 3
+		cost = 5
+		prerequisite = {focus = SRC_jieshoujichangyufeiji}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			air_experience = 20
+			add_to_variable = { SRC_hongkongjun_duoquzhikong = 0.1 }
+			custom_effect_tooltip = SRC_xinageminghangkongdui_xiaoguo
+		}
+	}
+	#捍卫天空
+	focus = {
+		id = SRC_hanweitiankong
+		icon = GFX_SRC_hanweitiankong
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 37
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_xinageminghangkongdui}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongkongjun_jiejizhence = 0.1 }
+			custom_effect_tooltip = SRC_hanweitiankong_xiaoguo
+		}
+	}
+	#建立辽阳航校
+	focus = {
+		id = SRC_jianliliaoyanghangxiao
+		icon = GFX_SRC_jianliliaoyanghangxiao
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 37
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_hanweitiankong}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {	
+				name = SRC_jianliliaoyanghangxiao
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	#成立东北空天大学
+	focus = {
+		id = SRC_chenglidongbeikongtiandaxue
+		icon = GFX_SRC_chenglidongbeikongtiandaxue
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 37
+		y = 6
+		cost = 5
+		prerequisite = {focus = SRC_jianliliaoyanghangxiao}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {	
+				name = SRC_jianliliaoyanghangxiao
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+	#长空翱翔
+	focus = {
+		id = SRC_changkongaoxiang
+		icon = GFX_SRC_changkongaoxiang
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 37
+		y = 7
+		cost = 5
+		prerequisite = {focus = SRC_chenglidongbeikongtiandaxue}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_hongkongjun_kongyou = 0.1 }
+			custom_effect_tooltip = SRC_changkongaoxiang_xiaoguo
+		}
+	}
+	#成立红海军
+	focus = {
+		id = SRC_chenglihonghaijun
+		icon = GFX_SRC_chenglihonghaijun
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 40
+		y = 1
+		cost = 5
+		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			navy_experience = 20
+			add_tech_bonus = {
+				name = SRC_chenglihonghaijun
+				bonus = 1
+				uses = 2
+				category = dd_tech
+			}
+			add_dynamic_modifier = {modifier = SRC_honghaijun}
+			845 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#接收舰艇
+	focus = {
+		id = SRC_jieshoujianting
+		icon = GFX_SRC_jieshoujianting
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 40
+		y = 2
+		cost = 5
+		prerequisite = {focus = SRC_chenglihonghaijun}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+		}
+	}
+	#改编北洋舰队士官
+	focus = {
+		id = SRC_gaibianbeiyangjianduishiguan
+		icon = GFX_SRC_gaibianbeiyangjianduishiguan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 39
+		y = 3
+		cost = 5
+		prerequisite = {focus = SRC_jieshoujianting}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			SRC = {
+				GPS_shen_honglie = { set_nationality = SRC }
+				GPS_wen_shude = { set_nationality = SRC }
+				GPS_shan_duowen = { set_nationality = SRC }
+			}
+		}
+	}
+	#引入大同会海军人才
+	focus = {
+		id = SRC_yinrudatonghuihaijunrencai
+		icon = GFX_SRC_yinrudatonghuihaijunrencai
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 41
+		y = 3
+		cost = 5
+		prerequisite = {focus = SRC_jieshoujianting}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			recruit_character = SRC_sa_shijun
+			recruit_character = SRC_deng_zhaoxiang
+			hidden_effect = {
+				SRC = {
+					SRC_sa_shijun = { set_nationality = SRC }
+					SRC_deng_zhaoxiang = { set_nationality = SRC }
+				}
+			}
+			
+		}
+	}
+	#保证国际补给线
+	focus = {
+		id = SRC_baozhengguojibujixian
+		icon = GFX_SRC_baozhengguojibujixian
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 40
+		y = 4
+		cost = 5
+		prerequisite = {focus = SRC_gaibianbeiyangjianduishiguan}
+		prerequisite = {focus = SRC_yinrudatonghuihaijunrencai}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_honghaijun_huhangxiaolv = 0.1 }
+			custom_effect_tooltip = SRC_baozhengguojibujixian_xiaoguo
+		}
+	}
+	#成立海军学校
+	focus = {
+		id = SRC_chenglihaijunxuexiao
+		icon = GFX_SRC_chenglihaijunxuexiao
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 40
+		y = 5
+		cost = 5
+		prerequisite = {focus = SRC_baozhengguojibujixian}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {	
+				name = SRC_jianliliaoyanghangxiao
+				cost_reduction = 0.5
+				uses = 1
+				category = navy_doctrine
+			}
+		}
+	}
+	#设立海军研究所
+	focus = {
+		id = SRC_shelihaijunyanjiusuo
+		icon = GFX_SRC_shelihaijunyanjiusuo
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 40
+		y = 6
+		cost = 5
+		prerequisite = {focus = SRC_chenglihaijunxuexiao}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SRC_shelihaijunyanjiusuo
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				name = SRC_shelihaijunyanjiusuo
+				bonus = 1
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+	#强化舰船研究
+	focus = {
+		id = SRC_qianghuajianchuanyanjiu
+		icon = GFX_SRC_qianghuajianchuanyanjiu
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 39
+		y = 7
+		cost = 5
+		prerequisite = {focus = SRC_shelihaijunyanjiusuo}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				name = SRC_shelihaijunyanjiusuo
+				bonus = 1
+				uses = 1
+				category = bc_tech
+			}
+			add_tech_bonus = {
+				name = SRC_shelihaijunyanjiusuo
+				bonus = 1
+				uses = 1
+				category = cv_tech
+			}
+		}
+	}
+	#扩建大连港口
+	focus = {
+		id = SRC_kuojiandaliangangkou
+		icon = GFX_SRC_kuojiandaliangangkou
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 39
+		y = 8
+		cost = 5
+		prerequisite = {focus = SRC_qianghuajianchuanyanjiu}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			745 = {
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#海军理论革新
+	focus = {
+		id = SRC_haijunlilungexin
+		icon = GFX_SRC_haijunlilungexin
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 41
+		y = 7
+		cost = 5
+		prerequisite = {focus = SRC_shelihaijunyanjiusuo}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {	
+				name = SRC_haijunlilungexin
+				cost_reduction = 0.5
+				uses = 2
+				category = navy_doctrine
+			}
+		}
+	}
+	#发展海军人才
+	focus = {
+		id = SRC_fazhanhaijunrencai
+		icon = GFX_SRC_fazhanhaijunrencai
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 41
+		y = 8
+		cost = 5
+		prerequisite = {focus = SRC_haijunlilungexin}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+		}
+	}
+	#掀起赤色浪潮
+	focus = {
+		id = SRC_xianqichiselangchao
+		icon = GFX_SRC_xianqichiselangchao
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 40
+		y = 9
+		cost = 5
+		prerequisite = {focus = SRC_kuojiandaliangangkou}
+		prerequisite = {focus = SRC_fazhanhaijunrencai}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_to_variable = { SRC_honghaijun_xietong = 0.1 }
+			custom_effect_tooltip = SRC_xianqichiselangchao_xiaoguo
+		}
+	}
+	#放眼天下
+	focus = {
+		id = SRC_fangyantianxia
+		icon = GFX_SRC_fangyantianxia
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 13
+		y = 0
+		cost = 1
+		ai_will_do = {factor = 10}
+		available = {}
+		allow_branch = { has_completed_focus = SRC_dongbeigemingdahuizhaokai }
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	#与第三国际加强合作
+	focus = {
+		id = SRC_yudisanguojijiaqianghezuo
+		icon = GFX_SRC_yudisanguojijiaqianghezuo
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 11
+		y = 1
+		cost = 5
+		prerequisite = {focus = SRC_fangyantianxia}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			
+		}
+	}
+	#联络关内革命者
+	focus = {
+		id = SRC_lianluoguanneigemingzhe
+		icon = GFX_SRC_lianluoguanneigemingzhe
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 13
+		y = 1
+		cost = 5
+		prerequisite = {focus = SRC_fangyantianxia}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			unlock_decision_category_tooltip = SRC_lianxigeming
+		}
+	}
+	#支援东洋革命
+	focus = {
+		id = SRC_zhiyuandongyanggeming
+		icon = GFX_SRC_zhiyuandongyanggeming
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 15
+		y = 1
+		cost = 5
+		prerequisite = {focus = SRC_fangyantianxia}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {	
+		}
+	}
+	#挥师入关
+	focus = {
+		id = SRC_huishiruguan
+		icon = GFX_SRC_huishiruguan
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 13
+		y = 2
+		cost = 5
+		prerequisite = {focus = SRC_lianluoguanneigemingzhe}
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			unlock_decision_category_tooltip = SRC_xuanzhan_catagories
+		}
+	}
+	#召开统一大会
+	focus = {
+		id = SRC_zhaokaitongyidahui
+		icon = GFX_SRC_zhaokaitongyidahui
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 13
+		y = 3
+		cost = 5
+		prerequisite = {focus = SRC_huishiruguan}
+		ai_will_do = {factor = 10}
+		available = { 
+			OR = {
+				has_full_control_of_state = 608
+			}
+			NOT = {
+				country_exists = XBJ
+				country_exists = STG
+			}
+		}
+		
+		completion_reward = {
+			country_event = { id = ROC_SRC_hetan_event.2 }
+		}
+	}
+	#革命进行到底
+	focus = {
+		id = SRC_gemingjinxindaodi
+		icon = GFX_SRC_gemingjinxindaodi
+		prerequisite = {focus = SRC_zhaokaitongyidahui}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		x = 13
+		y = 4
+		cost = 5
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			unlock_decision_tooltip = SRC_guangzhoukaizhan
+			unlock_decision_tooltip = SRC_xinankaizhan
+			unlock_decision_tooltip = SRC_sichuankaizhan
+		}
+	}
+
+
+}
