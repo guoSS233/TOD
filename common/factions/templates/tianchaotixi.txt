@@ -13,10 +13,14 @@ faction_template_tianchao = {
 	}
 
 	default_rules = {
-		joining_rule_china_only
-		joining_rule_non_fascist
-		change_leader_rule_manpower
-		dismissal_rule_offensive_war
+		call_to_war_rule_faction_leader_only
+		change_leader_rule_never
+		dismissal_rule_ideology_not_baoshou
+		goals_only_faction_leader
+		government_in_exile_allowed
+		joining_rule_non_jiduan
+		manpower_contribution_high
+		war_declaration_rule_faction_leader_only
 	}
 
 	icon = GFX_faction_logo_chinese_united_front

@@ -1,0 +1,429 @@
+##########################################################################################
+
+### ###  ###  ##  #    ##   ##  #   #     ###   ##   ## ### ###      ###  #  # #   ###  ## 
+ #  #  # #   #  # #   #  # #     # #      #  # #  # #   #   #  #     #  # #  # #   #   #   
+ #  #  # ##  #  # #   #  # # ##   #       ###  ####  #  ##  #  #     ###  #  # #   ##   #  
+ #  #  # #   #  # #   #  # #  #   #       #  # #  #   # #   #  #     #  # #  # #   #     # 
+### ###  ###  ##  ###  ##   ##    #       ###  #  # ##  ### ###      #  #  ##  ### ### ## 
+
+########################################################################################## 
+
+joining_rule_non_jiduanyouyi = {
+	type = joining_rules
+	available = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+			}
+		}
+	}
+}
+
+joining_rule_non_democratic = {
+	type = joining_rules
+	available = {
+		NOT = { 
+			OR ={
+				has_government = social_democrat
+				has_government = liberal_democracy
+				has_government = consociationalism
+				has_government = conservative_democracy
+			}
+		 }
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = { 
+			OR ={
+				has_government = social_democrat
+				has_government = liberal_democracy
+				has_government = consociationalism
+				has_government = conservative_democracy
+			}
+		}
+	}
+}
+
+joining_rule_non_communist = {
+	type = joining_rules
+	available = {
+		NOT = {
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = {
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+			}
+		}
+	}
+}
+
+joining_rule_jiduanyouyi_only = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		OR = {
+			has_government = sacred_revivalism
+			has_government = national_corporatism
+		}
+	}
+	trigger = {
+		OR = {
+			has_government = sacred_revivalism
+			has_government = national_corporatism
+		}
+	}
+}
+
+joining_rule_communist_only = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+		}
+	}
+	trigger = {
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+		}
+	}
+}
+
+joining_rule_democratic_only = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		OR = {
+			has_government = social_democrat
+			has_government = liberal_democracy
+			has_government = consociationalism
+			has_government = conservative_democracy
+		}
+	}
+	trigger = {
+		OR = {
+			has_government = social_democrat
+			has_government = liberal_democracy
+			has_government = consociationalism
+			has_government = conservative_democracy
+		}
+	}
+}
+
+joining_rule_non_weiquan = {
+	type = joining_rules
+	available = {
+		NOT = { 
+			OR = {
+				has_government = leader_despotism
+				has_government = authoritarian_oligarchy
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = { 
+			OR = {
+				has_government = leader_despotism
+				has_government = authoritarian_oligarchy
+			}
+		}
+	}
+}
+
+joining_rule_weiquan_only = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		OR = {
+			has_government = leader_despotism
+			has_government = authoritarian_oligarchy
+		}
+	}
+	trigger = {
+		OR = {
+			has_government = leader_despotism
+			has_government = authoritarian_oligarchy
+		}
+	}
+}
+
+joining_rule_non_zuoyi = {
+	type = joining_rules
+	available = {
+		NOT = { 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+				has_government = social_democrat
+				has_government = liberal_democracy
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = { 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+				has_government = social_democrat
+				has_government = liberal_democracy
+			}
+		}
+	}
+}
+
+joining_rule_zuoyi_only = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+			has_government = social_democrat
+			has_government = liberal_democracy
+		}
+	}
+	trigger = {
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+			has_government = social_democrat
+			has_government = liberal_democracy
+		}
+	}
+}
+
+joining_rule_non_youyi = {
+	type = joining_rules
+	available = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+				has_government = authoritarian_oligarchy
+				has_government = leader_despotism	
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+				has_government = authoritarian_oligarchy
+				has_government = leader_despotism	
+			}
+		}
+	}
+}
+
+joining_rule_youyi_only = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		OR = {
+			has_government = sacred_revivalism
+			has_government = national_corporatism
+			has_government = authoritarian_oligarchy
+			has_government = leader_despotism	
+		}
+	}
+	trigger = {
+		OR = {
+			has_government = sacred_revivalism
+			has_government = national_corporatism
+			has_government = authoritarian_oligarchy
+			has_government = leader_despotism	
+		}
+	}
+}
+
+joining_rule_non_baoshou = {
+	type = joining_rules
+	available = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+				has_government = authoritarian_oligarchy
+				has_government = leader_despotism	
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+				has_government = authoritarian_oligarchy
+				has_government = leader_despotism	
+			}
+		}
+	}
+}
+
+joining_rule_baoshou_only = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	available = {
+		OR = {
+			has_government = consociationalism
+			has_government = conservative_democracy
+			has_government = authoritarian_oligarchy
+			has_government = leader_despotism	
+		}
+	}
+	trigger = {
+		OR = {
+			has_government = consociationalism
+			has_government = conservative_democracy
+			has_government = authoritarian_oligarchy
+			has_government = leader_despotism	
+		}
+	}
+}
+
+joining_rule_non_jiduan = {
+	type = joining_rules
+	available = {
+		NOT = { 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism	
+				has_government = sacred_revivalism
+				has_government = national_corporatism	
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		NOT = { 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism	
+				has_government = sacred_revivalism
+				has_government = national_corporatism	
+			}
+		}
+	}
+}
+
+#######################################################
+
+#   #  ##  ###      ###  ### #    ##  ### ###  ##  #  #     
+#   # #  # #  #     #  # #   #   #  #  #   #  #  # ## #     
+# # # #### ###      ###  ##  #   ####  #   #  #  # # ##     
+# # # #  # #  #     #  # #   #   #  #  #   #  #  # #  #     
+ # #  #  # #  #     #  # ### ### #  #  #  ###  ##  #  #
+
+ ######################################################     
+
+
+joining_rule_has_no_war = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		has_war = no
+	}
+	modifier = {
+		improve_relations_maintain_cost_factor = -0.1
+	}
+}
+
+joining_rule_has_no_offensive_war = {
+	type = joining_rules
+	ai_will_do = {
+		base = 0
+	}
+	trigger = {
+		has_offensive_war = no
+	}
+	modifier = {
+		defensive_war_stability_factor = 0.15
+	}
+}
+
+########################################################
+
+ ##  ###  ##   ##  ###   ##  ###  #  # ###  ##   ##  #   
+#    #   #  # #    #  # #  # #  # #  #  #  #  # #  # #   
+# ## ##  #  # # ## ###  #### ###  ####  #  #    #### #   
+#  # #   #  # #  # #  # #  # #    #  #  #  #  # #  # #   
+ ##  ###  ##   ##  #  # #  # #    #  # ###  ##  #  # ###
+
+######################################################## 
