@@ -49,64 +49,361 @@ dismissal_rule_offensive_war = {
 
 dismissal_rule_ideology_not_democratic = {
 	type = dismissal_rules
-	visible = { has_government = democratic }
+	available = { 
+		OR ={
+			has_government = social_democrat
+			has_government = liberal_democracy
+			has_government = consociationalism
+			has_government = conservative_democracy
+		}
+	 }
 	ai_will_do = {
 		base = 0
 	}
 
 	dismiss_member_trigger = {
 		NOT = {
-			has_government = democratic 
+			OR ={
+				has_government = social_democrat
+				has_government = liberal_democracy
+				has_government = consociationalism
+				has_government = conservative_democracy
+			}
 		}
 	}
 }
 
 dismissal_rule_ideology_not_communism = {
 	type = dismissal_rules
-	visible = { has_government = communism }
+	available = { 
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+		}
+	 }
 	ai_will_do = {
 		base = 0
 	}
 
 	dismiss_member_trigger = {
 		NOT = {
-			has_government = communism 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+			}
 		}
 	}
 }
 
 dismissal_rule_ideology_communist = {
 	type = dismissal_rules
-	visible = { NOT = { has_government = communism } }
+	available = { 
+		NOT = { 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+			}
+		}
+	 }
 	ai_will_do = {
 		base = 0
 	}
 
 	dismiss_member_trigger = {
-		has_government = communism
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+		}
 	}
 }
 
-dismissal_rule_ideology_fascist = {
+dismissal_rule_ideology_jiduanyouyi = {
 	type = dismissal_rules
-	visible = { NOT = { has_government = fascism } }
+	available = { 
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+			}
+		 } 
+	}
 	ai_will_do = {
 		base = 0
 	}
 
 	dismiss_member_trigger = {
-		has_government = fascism
+		OR = {
+			has_government = sacred_revivalism
+			has_government = national_corporatism
+		}
 	}
 }
 
 dismissal_rule_ideology_democratic = {
 	type = dismissal_rules
-	visible = { NOT = { has_government = democratic } }
+	available = { 
+		NOT = { 
+			OR ={
+				has_government = social_democrat
+				has_government = liberal_democracy
+				has_government = consociationalism
+				has_government = conservative_democracy
+			}
+		} 
+	}
 	ai_will_do = {
 		base = 0
 	}
 
 	dismiss_member_trigger = {
-		has_government = democratic
+		OR ={
+			has_government = social_democrat
+			has_government = liberal_democracy
+			has_government = consociationalism
+			has_government = conservative_democracy
+		}
 	}
 }
+
+dismissal_rule_ideology_not_jiduanyouyi = {
+	type = dismissal_rules
+	available = { 
+		OR = {
+			has_government = sacred_revivalism
+			has_government = national_corporatism
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+			}
+		} 
+	}
+}
+
+dismissal_rule_ideology_weiquan = {
+	type = dismissal_rules
+	available = { 
+		NOT = { 
+			OR = {
+				has_government = leader_despotism
+				has_government = authoritarian_oligarchy
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		OR = {
+			has_government = leader_despotism
+			has_government = authoritarian_oligarchy
+		}
+	}
+}
+
+dismissal_rule_ideology_not_weiquan = {
+	type = dismissal_rules
+	available = { 
+		OR = {
+			has_government = leader_despotism
+			has_government = authoritarian_oligarchy
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = { 
+			OR = {
+				has_government = leader_despotism
+				has_government = authoritarian_oligarchy
+			}
+		} 
+	}
+}
+
+dismissal_rule_ideology_zuoyi = {
+	type = dismissal_rules
+	available = { 
+		NOT = { 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+				has_government = social_democrat
+				has_government = liberal_democracy
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+			has_government = social_democrat
+			has_government = liberal_democracy
+		}
+	}
+}
+
+dismissal_rule_ideology_not_zuoyi = {
+	type = dismissal_rules
+	available = { 
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism
+			has_government = social_democrat
+			has_government = liberal_democracy
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = {
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism
+				has_government = social_democrat
+				has_government = liberal_democracy
+			}
+		}
+	}
+}
+
+dismissal_rule_ideology_not_baoshou = {
+	type = dismissal_rules
+	available = { 
+		OR = {
+			has_government = consociationalism
+			has_government = conservative_democracy
+			has_government = authoritarian_oligarchy
+			has_government = leader_despotism			
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = { 
+			OR = {
+				has_government = consociationalism
+				has_government = conservative_democracy
+				has_government = authoritarian_oligarchy
+				has_government = leader_despotism	
+			}
+		} 
+	}
+}
+
+dismissal_rule_ideology_baoshou = {
+	type = dismissal_rules
+	available = { 
+		NOT = { 
+			OR = {
+				has_government = consociationalism
+				has_government = conservative_democracy
+				has_government = authoritarian_oligarchy
+				has_government = leader_despotism	
+			}
+		} 
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		OR = {
+			has_government = consociationalism
+			has_government = conservative_democracy
+			has_government = authoritarian_oligarchy
+			has_government = leader_despotism			
+		}
+	}
+}
+
+dismissal_rule_ideology_not_jiduan = {
+	type = dismissal_rules
+	available = { 
+		NOT = { 
+			OR = {
+				has_government = vanguard_socialism
+				has_government = council_socialism
+				has_government = moderate_socialism
+				has_government = agroindustrial_socialism	
+				has_government = sacred_revivalism
+				has_government = national_corporatism	
+			}
+		} 
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		OR = {
+			has_government = vanguard_socialism
+			has_government = council_socialism
+			has_government = moderate_socialism
+			has_government = agroindustrial_socialism	
+			has_government = sacred_revivalism
+			has_government = national_corporatism	
+		}
+	}
+}
+
+dismissal_rule_ideology_not_youyi = {
+	type = dismissal_rules
+	available = { 
+		OR = {
+			has_government = sacred_revivalism
+			has_government = national_corporatism
+			has_government = authoritarian_oligarchy
+			has_government = leader_despotism			
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+
+	dismiss_member_trigger = {
+		NOT = { 
+			OR = {
+				has_government = sacred_revivalism
+				has_government = national_corporatism
+				has_government = authoritarian_oligarchy
+				has_government = leader_despotism		
+			}
+		} 
+	}
+}
+
