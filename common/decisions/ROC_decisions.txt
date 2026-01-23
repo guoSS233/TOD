@@ -694,6 +694,7 @@ ROC_focus_gonggubianjie = {#巩固边界
 	    }
 		visible = {
 			has_completed_focus = fadondihoujijindatongdangren
+			country_exists = GOS
 		}
 		available = {
 		}
@@ -869,7 +870,10 @@ ROC_focus_beifa = {#北伐
 			factor = 100			
 	    }
 		visible = {
-
+			OR = {
+				country_exists = STG
+				country_exists = XBJ
+			}
 		}
 		available = {
 		}

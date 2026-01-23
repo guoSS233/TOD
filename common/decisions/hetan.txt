@@ -200,3 +200,38 @@ ROC_SRC_decision_hetan = {
 		}	
 	}
 }
+
+ROC_SRC_deciosion_hetan_start_ca = {
+	ROC_SRC_decision_hetan_start = {
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				has_completed_focus = dongbeiwenti
+				has_completed_focus = SRC_zhaokaitongyidahui
+			}
+			NOT = {
+				has_global_flag = global_flag_hetan_ROC_SRC_started
+			}
+		}
+		ai_will_do = {
+			factor = 500	
+	    }
+		cost = 10
+		fire_only_once = yes
+		remove_effect = {
+			set_global_flag = global_flag_hetan_ROC_SRC_started
+			if  = {
+				limit = { tag = ROC }
+				ROC = {
+					country_event = { id = ROC_SRC_hetan_event.4 }
+				}
+			}
+			else_if = {
+				limit = { tag = SRC }
+				SRC = {
+					country_event = { id = ROC_SRC_hetan_event.2 }
+				}
+			}
+		}
+	}
+}
