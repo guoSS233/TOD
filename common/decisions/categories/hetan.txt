@@ -16,3 +16,19 @@ ROC_SRC_decision_hetan = {
 	scripted_gui = ROC_SRC_hetan_GUI
 	priority = 200
 }
+
+ROC_SRC_deciosion_hetan_start_ca = {
+	visible = {
+        OR = {
+            tag = SRC
+            tag = ROC
+        }
+    }
+    allowed = {
+        OR = {
+            tag = SRC
+            tag = ROC
+        }
+    }
+	priority = 500
+}
