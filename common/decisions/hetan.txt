@@ -27,7 +27,7 @@ ROC_SRC_decision_hetan = {
 			NOT = {
 				has_global_flag = global_flag_hetan_ROC_SRC_fail
 			}
-		 }
+		}
 		available = {
 			has_global_flag = global_flag_hetan_ROC_SRC_fail
 		}
@@ -35,6 +35,7 @@ ROC_SRC_decision_hetan = {
 			NOT = {
 				has_global_flag = global_flag_hetan_ROC_SRC_fail
 			}
+			has_global_flag = global_flag_ROC_SRC_hetan
 		}
 		days_mission_timeout = 15
         fire_only_once = yes
@@ -206,8 +207,14 @@ ROC_SRC_deciosion_hetan_start_ca = {
 		icon = GFX_decision_generic_political_address
 		visible = {
 			OR = {
-				has_completed_focus = dongbeiwenti
-				has_completed_focus = SRC_zhaokaitongyidahui
+				AND = {
+					tag = ROC
+					has_completed_focus = dongbeiwenti
+				}
+				AND = {
+					tag = SRC
+					has_completed_focus = SRC_zhaokaitongyidahui
+				}
 			}
 			NOT = {
 				has_global_flag = global_flag_hetan_ROC_SRC_started
