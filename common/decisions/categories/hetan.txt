@@ -3,6 +3,9 @@ ROC_SRC_decision_hetan = {
 	#picture = GFX_decision_cat_generic_mefo_bills	
 	visible = {
         has_global_flag = global_flag_ROC_SRC_hetan
+        NOT = {
+            has_global_flag = global_flag_hetan_ROC_SRC_started
+        }
     }
 	allowed = { 
         OR = {
