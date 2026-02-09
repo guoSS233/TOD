@@ -4,16 +4,13 @@ ROC_SRC_decision_hetan = {
 	visible = {
         has_global_flag = global_flag_ROC_SRC_hetan
         NOT = {
-            has_global_flag = global_flag_hetan_ROC_SRC_started
+            has_global_flag = global_flag_hetan_ROC_SRC_fail
         }
     }
 	allowed = { 
         OR = {
             original_tag = SRC
             original_tag = ROC
-        }
-        NOT = {
-            has_global_flag = global_flag_hetan_ROC_SRC_fail
         }
 	}	
 	scripted_gui = ROC_SRC_hetan_GUI
