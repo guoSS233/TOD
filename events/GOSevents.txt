@@ -29,6 +29,7 @@ country_event = {
 	option = {
 		name = GOS_focus.1.a 
 		complete_national_focus = GOS_focus_213
+
 	}
 }
 
@@ -44,8 +45,17 @@ country_event = {
 		tag = GOS
 		date > 1937.9.27
 	}
+	immediate = {
+		hidden_effect = {
+			country_event = {
+				id = GOS_focus.3
+				days = 35
+			}
+		}
+	}
 	option = {
 		name = GOS_focus.2.a 
+		set_cosmetic_tag = GOS_yingtian_tag
 		complete_national_focus = GOS_focus_0
 		add_dynamic_modifier = {
 			modifier = GOS_dynamic_modifiers_tzqw
@@ -55,23 +65,23 @@ country_event = {
 		add_ideas = GOS_idea_ngjsbd
 
 		set_variable = { #大同会势力
-			VAR_GOS_dth_sl = 100
+			VAR_GOS_dth_sl = 0
 		}
 		set_variable = { #管学系势力
-			VAR_GOS_gxx_sl = 120
+			VAR_GOS_gxx_sl = 300
 		}
 		set_variable = { #军队势力
 			VAR_GOS_jd_sl = 100
 		}
 
 		set_variable = { #大同会支持度
-			VAR_GOS_dth_zcd = 0.10
+			VAR_GOS_dth_zcd = 0
 		}
 		set_variable = { #管学系支持度
-			VAR_GOS_gxx_zcd = 0.60
+			VAR_GOS_gxx_zcd = 0.80
 		}
 		set_variable = { #军队支持度
-			VAR_GOS_jd_zcd = 0.10
+			VAR_GOS_jd_zcd = 0.50
 		}
 
 		GOS_scripted_effects_tzqw_js = yes
@@ -91,6 +101,23 @@ country_event = {
 	}
 	option = {
 		name = GOS_focus.3.a 
+		complete_national_focus = GOS_focus_1
+		custom_effect_tooltip = GOS_tooltip_dth_sl_100_add
+		custom_effect_tooltip = GOS_tooltip_dth_zcd_02_add
+		custom_effect_tooltip = GOS_tooltip_gxx_zcd_02_subtract
+		custom_effect_tooltip = GOS_tooltip_jd_zcd_02_subtract
+		add_to_variable = { 
+			VAR_GOS_dth_sl = 100
+		}
+		add_to_variable = { 
+			VAR_GOS_dth_zcd = 0.2
+		}
+		add_to_variable = { 
+			VAR_GOS_gxx_zcd = -0.2
+		}
+		add_to_variable = { 
+			VAR_GOS_jd_zcd = -0.2
+		}
 	}
 }
 country_event = { 
@@ -106,6 +133,10 @@ country_event = {
 	}
 	option = {
 		name = GOS_focus.4.a 
+		add_to_variable = { 
+			VAR_GOS_jd_sl = 20
+		}
+		custom_effect_tooltip = GOS_tooltip_jd_sl_20_add
 	}
 }
 country_event = { 
@@ -121,6 +152,18 @@ country_event = {
 	}
 	option = {
 		name = GOS_focus.5.a 
+		custom_effect_tooltip = GOS_tooltip_dth_sl_5_add
+		custom_effect_tooltip = GOS_tooltip_gxx_sl_5_add
+		custom_effect_tooltip = GOS_tooltip_dth_zcd_002_add
+		add_to_variable = { 
+			VAR_GOS_dth_sl = 5
+		}
+		add_to_variable = { 
+			VAR_GOS_gxx_sl = 5
+		}
+		add_to_variable = { 
+			VAR_GOS_dth_zcd = 0.02
+		}
 	}
 }
 country_event = { 
@@ -136,6 +179,7 @@ country_event = {
 	}
 	option = {
 		name = GOS_focus.6.a 
+		
 	}
 }
 country_event = { 

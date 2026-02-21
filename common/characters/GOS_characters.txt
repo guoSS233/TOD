@@ -125,11 +125,6 @@ characters = {
 	GOS_characters_scz={		#施承志 
 		name = GOS_characters_scz 
 		
-		portraits={
-			civilian={
-				large = "gfx/leaders/GOS/GOS_characters_scz.png"
-			}
-		}
 		portraits = {
 			army = {
 				large = "gfx/leaders/GOS/GOS_characters_scz.png"
@@ -144,12 +139,6 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 2
 		}
-		country_leader = {
-			#desc = GOS_characters_scz_desc_leader
-			ideology = authoritarian_oligarchy_subtype
-			#traits = { GOS_traits_qlws }
-			expire = "2000.1.1.1"
-		}
 	}
 	GOS_characters_xsz={		#徐绍桢 
 		name = GOS_characters_xsz 
@@ -157,12 +146,6 @@ characters = {
 		portraits={
 			civilian={
 				large = "gfx/leaders/GOS/GOS_characters_xsz.png"
-			}
-		}
-		portraits = {
-			army = {
-				large = "gfx/leaders/GOS/GOS_characters_xsz.png"
-				# small="gfx/GOS/ideas/GOS_characters_xsz.png"
 			}
 		}
 		field_marshal = {
@@ -173,22 +156,34 @@ characters = {
 			planning_skill = 2
 			logistics_skill = 2
 		}
-	}
-	GOS_characters_zyx={		#朱煜勋 
-		name = GOS_characters_zyx 
-		
-		portraits={
-			civilian={
-				large = "gfx/leaders/GOS/GOS_characters_zyx.png"
-			}
+		country_leader = {
+			#desc = GOS_characters_scz_desc_leader
+			ideology = authoritarian_oligarchy_subtype
+			#traits = { GOS_traits_qlws }
+			expire = "2000.1.1.1"
 		}
 		country_leader = {
-			#desc = GOS_characters_zyx_desc_leader
+			#desc = GOS_characters_scz_desc_leader
 			ideology = leader_despotism_subtype
 			#traits = { GOS_traits_qlws }
 			expire = "2000.1.1.1"
 		}
 	}
+	# GOS_characters_zyx={		#朱煜勋 
+	# 	name = GOS_characters_zyx 
+		
+	# 	portraits={
+	# 		civilian={
+	# 			large = "gfx/leaders/GOS/GOS_characters_zyx.png"
+	# 		}
+	# 	}
+	# 	country_leader = {
+	# 		#desc = GOS_characters_zyx_desc_leader
+	# 		ideology = leader_despotism_subtype
+	# 		#traits = { GOS_traits_qlws }
+	# 		expire = "2000.1.1.1"
+	# 	}
+	# }
 	GOS_characters_zbj={		#赵秉钧 
 		name = GOS_characters_zbj 
 		
@@ -210,7 +205,21 @@ characters = {
 			expire = "2000.1.1.1"
 		}
 	}
-
+	GOS_characters_huangmingjunguohui={		# 
+		name = GOS_characters_huangmingjunguohui 
+		
+		portraits={
+			civilian={
+				# large = "gfx/leaders/GOS/GOS_characters_zyx.png"
+			}
+		}
+		country_leader = {
+			#desc = GOS_characters_zyx_desc_leader
+			ideology = leader_despotism_subtype
+			#traits = { GOS_traits_qlws }
+			expire = "2000.1.1.1"
+		}
+	}
 
 #将领/顾问
 	GOS_ctk = { #蔡廷锴

@@ -42,6 +42,7 @@ focus_tree = {
 			factor = 25
 		}
 		available = {
+			always = no
 		}
 		completion_reward = {	
 			add_political_power = 100
@@ -333,6 +334,7 @@ focus_tree = {
 			country_event = {
 				id = GOS_focus.13
 			}
+			unlock_decision_tooltip = GOS_decision_jjms_jichujianshe
 		}
 	}
 	focus = { #船舶制造
@@ -442,6 +444,9 @@ focus_tree = {
 		completion_reward = {	
 			custom_effect_tooltip = GOS_tooltip_foc_zykc
 			set_country_flag = FLAG_GOS_decision_zykc_unlocked
+			set_variable = { #资源产量
+				VAR_GOS_jjms_xs_ziyuan = 0.2
+			}
 			country_event = {
 				id = GOS_focus.17
 			}
@@ -857,9 +862,11 @@ focus_tree = {
 			add_tech_bonus = {
 				name = marine_tech
 				bonus = 1
-				uses = 2
+				uses = 1
 				category = marine_tech
 			}
+
+			add_potential_special_forces_tree = yes
 		}
 
 	}
@@ -1457,6 +1464,7 @@ focus_tree = {
 		available = {
 		}
 		completion_reward = {	
+			add_potential_special_forces_tree = yes
 			add_tech_bonus = {
 				name = support_tech
 				bonus = 1

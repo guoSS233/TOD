@@ -74,7 +74,11 @@ ideas = {
         GOS_idea_zyyfn_dgxf_jia = { #帝国宪法		
 			modifier = {
 				compliance_growth = 0.2
-                surrender_limit = 0.1
+			}
+		}
+        GOS_idea_zyyfn_js_jia = { #军事法案		
+			modifier = {
+				army_strength_factor = 0.1
 			}
 		}
 
@@ -524,7 +528,9 @@ ideas = {
         }
         GOS_txs = {#陶希圣
             allowed = { original_tag = GOS }
-            available = { }
+            available = { 
+				has_completed_focus = GOS_focus_1
+			}
             cancel_if_invalid = no
             traits = {
                 TOD_foreign_minister
@@ -577,7 +583,9 @@ ideas = {
         }
         GOS_hjw = {#胡厥文
             allowed = { original_tag = GOS }
-            available = { }
+            available = { 
+				has_completed_focus = GOS_focus_1
+			}
             cancel_if_invalid = no
             traits = {
                 TOD_economy_minister
@@ -587,7 +595,9 @@ ideas = {
         }
         GOS_qcz = {#钱昌照
             allowed = { original_tag = GOS }
-            available = { }
+            available = { 
+				has_completed_focus = GOS_focus_1
+			}
             cancel_if_invalid = no
             traits = {
                 TOD_economy_minister
@@ -628,7 +638,7 @@ ideas = {
         }
         GOS_hkz = {#华克之
             allowed = { original_tag = GOS }
-            available = { }
+            available = { has_completed_focus = GOS_focus_0 }
             cancel_if_invalid = no
             traits = {
                 TOD_security_minister
@@ -646,7 +656,9 @@ ideas = {
         }
 		GOS_zzz = {#张治中
             allowed = { original_tag = GOS }
-            available = { }
+            available = { 
+				has_completed_focus = GOS_focus_1
+			}
             cancel_if_invalid = no
             traits = {
                 TOD_security_minister

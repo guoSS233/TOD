@@ -31,6 +31,7 @@ ROC_focus_gonggubianjie = {
 	icon = generic_mountain_fortification
 	visible = {
 		has_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
+		country_exists = GOS
 	}
 	allowed = {
 		original_tag = ROC
@@ -42,6 +43,10 @@ ROC_focus_beifa = {
 	icon = ger_military_buildup
 	visible = {
 		has_country_flag = FLAG_ROC_decision_beifa_unlocked
+		OR = {
+			country_exists = STG
+			country_exists = XBJ
+		}
 	}
 	allowed = {
 		original_tag = ROC

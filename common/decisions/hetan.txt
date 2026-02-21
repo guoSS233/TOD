@@ -27,7 +27,7 @@ ROC_SRC_decision_hetan = {
 			NOT = {
 				has_global_flag = global_flag_hetan_ROC_SRC_fail
 			}
-		 }
+		}
 		available = {
 			has_global_flag = global_flag_hetan_ROC_SRC_fail
 		}
@@ -35,6 +35,7 @@ ROC_SRC_decision_hetan = {
 			NOT = {
 				has_global_flag = global_flag_hetan_ROC_SRC_fail
 			}
+			has_global_flag = global_flag_ROC_SRC_hetan
 		}
 		days_mission_timeout = 15
         fire_only_once = yes
@@ -187,9 +188,6 @@ ROC_SRC_decision_hetan = {
 	ROC_SRC_decision_hetan_1 = {
 		icon = GFX_decision_generic_political_address
 		visible = {
-			NOT = {
-				has_global_flag = global_flag_hetan_ROC_SRC_fail
-			}
 		}
 		available = { always = no }
 		ai_will_do = {
@@ -198,5 +196,46 @@ ROC_SRC_decision_hetan = {
         fire_only_once = yes
 		complete_effect = {  
 		}	
+	}
+}
+
+ROC_SRC_deciosion_hetan_start_ca = {
+	ROC_SRC_decision_hetan_start = {
+		icon = GFX_decision_generic_political_address
+		visible = {
+			OR = {
+				AND = {
+					tag = ROC
+					has_completed_focus = dongbeiwenti
+				}
+				AND = {
+					tag = SRC
+					has_completed_focus = SRC_zhaokaitongyidahui
+				}
+			}
+			NOT = {
+				has_global_flag = global_flag_hetan_ROC_SRC_started
+			}
+		}
+		ai_will_do = {
+			factor = 500	
+	    }
+		cost = 10
+		fire_only_once = yes
+		remove_effect = {
+			set_global_flag = global_flag_hetan_ROC_SRC_started
+			if  = {
+				limit = { tag = ROC }
+				ROC = {
+					country_event = { id = ROC_SRC_hetan_event.4 }
+				}
+			}
+			else_if = {
+				limit = { tag = SRC }
+				SRC = {
+					country_event = { id = ROC_SRC_hetan_event.2 }
+				}
+			}
+		}
 	}
 }
