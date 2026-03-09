@@ -50,15 +50,12 @@ focus_tree = {
 #		}
 #	}
 
-	#稳定川内局势
+	#稳定局势
 	focus = {
 		id = SIC_wendingchuanneijushi
 		icon = GFX_SIC_wendingchuanneijushi
 		x = 25
 		y = 1
-		ai_will_do = {
-			factor = 10
-		}
 
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -69,64 +66,21 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = {
 			add_stability = 0.1
 			add_war_support = 0.1
             add_to_variable = {SIC.minzhong = -10}
 			custom_effect_tooltip = SIC_wendingchuanneijushi_xiaoguo
-		 }
-	}
-	#召集各方商讨
-	focus = {
-		id = SIC_zhaojigefang
-		icon = GFX_SIC_zhaojigefang
-		prerequisite = { focus = SIC_wendingchuanneijushi}
-		x = 25
-		y = 2
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		select_effect = {country_event = { id = TODSIC.1 days = 7}}
-		
-		completion_reward = { 
-			add_political_power = 50
-			mark_focus_tree_layout_dirty = yes 
 		}
 	}
-	#保持中立
+	#恢复经济
 	focus = {
-		id = SIC_baochizhongli
-		icon = GFX_SIC_baochizhongli
-		prerequisite = { focus = SIC_zhaojigefang }
-		mutually_exclusive = { focus = SIC_zunwangtaojian }
-		x = 22
-		y = 3
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 0
-		
-		ai_will_do = {factor = 10}
-		available = { has_country_flag = SIC_baochizhongli }
-		
-		completion_reward = { news_event = chinese_events_sic.1 }
-	}
-	#重振商业
-	focus = {
-		id = SIC_chongzhenshangye
-		icon = GFX_SIC_chongzhenshangye
-		prerequisite = { focus = SIC_baochizhongli }
+		id = SIC_huifujingji
+		icon = GFX_SIC_huifugongye
 		x = 20
-		y = 4
-		
+		y = 2
+		prerequisite = { focus = SIC_wendingchuanneijushi}
+		mutually_exclusive = { focus = SIC_baozhengjungong }
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -136,21 +90,20 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
-			add_timed_idea = { idea = SIC_huifushangye days = 365 }  
+		completion_reward = {
+			add_dynamic_modifier = { modifier = SIC_huifujingji }
             add_to_variable = {SIC.minzhong = -10}
             add_to_variable = {SIC.gongye = -5}
-			custom_effect_tooltip = SIC_chongzhenshangye_xiaoguo
+			custom_effect_tooltip = SIC_huifujingji_xiaoguo
 		}
 	}
-	#恢复工业
+	#补贴企业
 	focus = {
-		id = SIC_huifugongye
-		icon = GFX_SIC_huifugongye
-		prerequisite = { focus = SIC_baochizhongli }
-		x = 22
-		y = 4
-		
+		id = SIC_butieqiye
+		icon = GFX_SIC_qishuhu
+		x = 18
+		y = 3
+		prerequisite = { focus = SIC_huifujingji}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -160,8 +113,294 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
-			831 = {
+		completion_reward = {
+            add_to_variable = {SIC_huifujingji_xiaofei = 0.02}
+            add_to_variable = {SIC_huifujingji_chanchu = 0.1}
+			custom_effect_tooltip = SIC_butieqiye_xiaoguo
+		}
+	}
+	#保障农业
+	focus = {
+		id = SIC_baozhangnongye
+		icon = GFX_SIC_wendingnongye
+		x = 18
+		y = 4
+		prerequisite = { focus = SIC_butieqiye}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+            add_to_variable = {SIC_huifujingji_xiaofei = 0.05}
+            add_to_variable = {SIC_huifujingji_chanchu = 0.1}
+			custom_effect_tooltip = SIC_baozhangnongye_xiaoguo
+		}
+	}
+	#发行交子
+	focus = {
+		id = SIC_faxingjiaozi
+		icon = GFX_SIC_faxingjiaozi
+		x = 20
+		y = 3
+		prerequisite = { focus = SIC_huifujingji}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+            add_to_variable = {SIC_huifujingji_xiaofei = -0.05}
+			custom_effect_tooltip = SIC_faxingjiaozi_xiaoguo
+		}
+	}
+	#开放市场
+	focus = {
+		id = SIC_kaifangshichang
+		icon = GFX_SIC_zhengdunjunbei
+		x = 20
+		y = 4
+		prerequisite = { focus = SIC_faxingjiaozi}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+            add_to_variable = {SIC_huifujingji_xiaofei = 0.05}
+            add_to_variable = {SIC_huifujingji_zengzhang = 0.05}
+            add_to_variable = {SIC_huifujingji_shangxian = 0.05}
+            add_to_variable = {SIC_huifujingji_chanchu = 0.05}
+			custom_effect_tooltip = SIC_kaifangshichang_xiaoguo
+		}
+	}
+	#天府之治
+	focus = {
+		id = SIC_tianfuzhizhi
+		icon = SIC_tianfuzhizhi
+		x = 20
+		y = 5
+		prerequisite = { focus = SIC_kaifangshichang}
+		prerequisite = { focus = SIC_baozhangnongye}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = { modifier = SIC_huifujingji }
+			add_ideas = SIC_chongjiantianfu
+		}
+	}
+	#保证军工
+	focus = {
+		id = SIC_baozhengjungong
+		icon = GFX_SIC_zhuanxiangjungong
+		x = 30
+		y = 2
+		prerequisite = { focus = SIC_wendingchuanneijushi}
+		mutually_exclusive = { focus = SIC_huifujingji }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_dynamic_modifier = { modifier = SIC_junshigongye }
+            add_to_variable = {SIC.minzhong = -5}
+            add_to_variable = {SIC.gongye = -10}
+			custom_effect_tooltip = SIC_baozhengjungong_xiaoguo
+		}
+	}
+	#政府订单
+	focus = {
+		id = SIC_zhengfudingdan
+		icon = GFX_SIC_xinanhubao
+		x = 30
+		y = 3
+		prerequisite = { focus = SIC_baozhengjungong}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+            add_to_variable = {SIC_huifujingji_xiaofei = 0.05}
+            add_to_variable = {SIC_huifujingji_chanchu = 0.10}
+			custom_effect_tooltip = SIC_zhengfudingdan_xiaoguo
+		}
+	}
+	#配给制度
+	focus = {
+		id = SIC_peijizhidu
+		icon = GFX_SIC_wendingchuanneijushi
+		x = 30
+		y = 4
+		prerequisite = { focus = SIC_zhengfudingdan}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+            add_to_variable = {SIC_huifujingji_xiaofei = -0.03}
+            add_to_variable = {SIC_huifujingji_chanchu = 0.05}
+			custom_effect_tooltip = SIC_peijizhidu_xiaoguo
+		}
+	}
+	#价格管控
+	focus = {
+		id = SIC_jiageguankong
+		icon = GFX_SIC_jingjidongyuan
+		x = 32
+		y = 3
+		prerequisite = { focus = SIC_baozhengjungong}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+            add_to_variable = {SIC_huifujingji_xiaofei = -0.10}
+			custom_effect_tooltip = SIC_zhengfudingdan_xiaoguo
+		}
+	}
+	#战时经济
+	focus = {
+		id = SIC_zhanshijingji
+		icon = GFX_SIC_wushiyuren
+		x = 32
+		y = 4
+		prerequisite = { focus = SIC_jiageguankong}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_idea = war_economy }
+					NOT = { has_idea = tot_economic_mobilisation }
+				}
+				add_ideas = war_economy
+			}
+			random_controlled_state = {
+				limit = {
+					arms_factory > 1
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#川渝屹立
+	focus = {
+		id = SIC_chuanyuyili
+		icon = GFX_SIC_chuanyuyili
+		x = 30
+		y = 5
+		prerequisite = { focus = SIC_zhanshijingji}
+		prerequisite = { focus = SIC_peijizhidu}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			remove_dynamic_modifier = {modifier = SIC_junshigongye}
+			add_ideas = SIC_jingggongyushu
+		}
+	}
+	#重建产业链
+	focus = {
+		id = SIC_chongjianchanyelian
+		icon = GFX_SIC_chongzhenshangye
+		x = 25
+		y = 3
+		prerequisite = { focus = SIC_wendingchuanneijushi}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_stability = 0.1
+            add_to_variable = {SIC.gongye = -10}
+			custom_effect_tooltip = SIC_chongjianchanyelian_xiaoguo
+		}
+	}
+	#稳定盐业生产
+	focus = {
+		id = SIC_wendingyanyeshengchan
+		icon = GFX_SIC_wendingyanyeshengchan
+		x = 22
+		y = 4
+		prerequisite = { focus = SIC_chongjianchanyelian}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = { 751 = { is_owned_and_controlled_by = ROOT }}
+		
+		completion_reward = {
+			751 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -169,106 +408,15 @@ focus_tree = {
 					instant_build = yes
 				}
 			} 
-            add_to_variable = {SIC.gongchang = 2}
-            add_to_variable = {SIC.gongye = -10}
-			unlock_decision_tooltip = SIC_chongjianchanyelian
-			custom_effect_tooltip = SIC_huifugongye_xiaoguo
 		}
 	}
-	#稳定农业
+	#发展制糖业
 	focus = {
-		id = SIC_wendingnongye
-		icon = GFX_SIC_wendingnongye
-		prerequisite = { focus = SIC_baochizhongli }
-		x = 24
-		y = 4
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { 
-            add_to_variable = {SIC.minzhong = -10}
-			add_stability = 0.1 
-			custom_effect_tooltip = SIC_wendingnongye_xiaoguo
-		}
-	}
-	#整顿军备
-	focus = {
-		id = SIC_zhengdunjunbei
-		icon = GFX_SIC_zhengdunjunbei
-		prerequisite = { focus = SIC_chongzhenshangye }
-		prerequisite = { focus = SIC_huifugongye }
-		x = 21
-		y = 5
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 10
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { 
-			add_timed_idea = { idea = SIC_junduichongjain days = 180 } 
-            add_to_variable = {SIC.gongye = -10}
-			custom_effect_tooltip = SIC_zhengdunjunbei_xiaoguo
-		}
-	}
-	#组织防御
-	focus = {
-		id = SIC_zuzhifangyu
-		icon = GFX_SIC_zuzhifangyu
-		prerequisite = { focus = SIC_huifugongye }
-		prerequisite = { focus = SIC_wendingnongye }
-		x = 23
-		y = 5
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 10
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { add_timed_idea = { idea = SIC_jianzaofangxian days = 180 } }
-	}
-	#其恕乎
-	focus = {
-		id = SIC_qishuhu
-		icon = GFX_SIC_qishuhu
-		prerequisite = { focus = SIC_zhengdunjunbei  focus = SIC_zuzhifangyu }
-		x = 20
-		y = 6
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { add_ideas = SIC_yidebaoyuan }
-	}
-	#己所不欲
-	focus = {
-		id = SIC_jisuobuyu
-		icon = GFX_SIC_jisuobuyu
-		prerequisite = { focus = SIC_zhengdunjunbei  focus = SIC_zuzhifangyu }
+		id = SIC_fazhanzhitangye
+		icon = GFX_SIC_fazhanzhitangye
 		x = 22
-		y = 6
-		
+		y = 5
+		prerequisite = { focus = SIC_wendingyanyeshengchan}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -276,164 +424,350 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { 831 = { is_owned_and_controlled_by = ROOT }}
 		
-		completion_reward = { add_stability = 0.2 }
-	}
-	#勿施于人
-	focus = {
-		id = SIC_wushiyuren
-		icon = GFX_SIC_wushiyuren
-		prerequisite = { focus = SIC_zhengdunjunbei  focus = SIC_zuzhifangyu }
-		x = 24
-		y = 6
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { add_war_support = 0.2 }
-	}
-	#中华一统
-	focus = {
-		id = SIC_zhonghuayitong
-		icon = GFX_SIC_zhonghuayitong
-		prerequisite = { focus = SIC_qishuhu }
-		prerequisite = { focus = SIC_jisuobuyu }
-		prerequisite = { focus = SIC_wushiyuren }
-		x = 22
-		y = 7
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { add_political_power = 150 }
-	}
-	#尊王讨奸
-	focus = {
-		id = SIC_zunwangtaojian
-		icon = GFX_SIC_zunwangtaojian
-		prerequisite = { focus = SIC_zhaojigefang }
-		mutually_exclusive = { focus = SIC_baochizhongli }
-		x = 28
-		y = 3
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 0
-		
-		ai_will_do = {factor = 10}
-		available = { has_country_flag = SIC_zunwangtaojian }
-		
-		completion_reward = { news_event = chinese_events_sic.2 }
-	}
-	#镇压骚乱
-	focus = {
-		id = SIC_zhenyasaoluan
-		icon = GFX_SIC_zhenyasaoluan
-		prerequisite = { focus = SIC_zunwangtaojian }
-		x = 26
-		y = 4
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { 
-			add_stability = 0.1
-			add_to_variable = { SIC.minzhong = -10 }
-			custom_effect_tooltip = SIC_zhenyasaoluan_xiaoguo
-		 }
-	}
-	#紧急动员
-	focus = {
-		id = SIC_jingjidongyuan
-		icon = GFX_SIC_jingjidongyuan
-		prerequisite = { focus = SIC_zunwangtaojian }
-		x = 28
-		y = 4
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { 
-			add_timed_idea = {idea = SIC_dongyuanqinwang days = 180 } 
-			add_ideas = extensive_conscription
-		}
-	}
-	#转向军工
-	focus = {
-		id = SIC_zhuanxiangjungong
-		icon = GFX_SIC_zhuanxiangjungong
-		prerequisite = { focus = SIC_zunwangtaojian }
-		x = 30
-		y = 4
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { 
-			add_ideas = war_economy
-			830 = {
+		completion_reward = {
+			831 = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
-					type = arms_factory
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
-				remove_building = {
-					type = industrial_complex
-					level = 2
+			}
+            add_to_variable = {SIC.minzhong = -10}
+			custom_effect_tooltip = SIC_fazhanzhitangye_xiaoguo
+		}
+	}
+	#扩大川渝铁路
+	focus = {
+		id = SIC_kuodachengyutielu
+		icon = GFX_SIC_kuodachengyutielu
+		x = 24
+		y = 4
+		prerequisite = { focus = SIC_chongjianchanyelian}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {
+			830 = { is_owned_and_controlled_by = ROOT }
+			831 = { is_owned_and_controlled_by = ROOT }
+		}
+		
+		completion_reward = {
+			830 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
-			} 
+			}
+			831 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			build_railway = {
+			    level = 1
+			    start_province = 4925
+			    target_province = 6999
+			}
+		}
+	}
+	#完善基础设施
+	focus = {
+		id = SIC_wanshanjichusheshi
+		icon = GFX_SIC_wanshanjichusheshi
+		x = 24
+		y = 5
+		prerequisite = { focus = SIC_kuodachengyutielu}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			751 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			832 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1219 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			605 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			1107 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+            add_to_variable = {SIC.minzhong = -10}
+			custom_effect_tooltip = SIC_wanshanjichusheshi_xiaoguo
+		}
+	}
+	#维持教育运行
+	focus = {
+		id = SIC_weichijiaoyu
+		icon = GFX_SIC_tourujiaoyu
+		x = 26
+		y = 4
+		prerequisite = { focus = SIC_chongjianchanyelian}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_timed_idea = {idea = SIC_wendingjiaoyu days = 180 } }
+	}
+	#扩建大学
+	focus = {
+		id = SIC_kuojiandaxue
+		icon = GFX_SIC_kuojiandaxue
+		x = 26
+		y = 5
+		prerequisite = { focus = SIC_weichijiaoyu}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { add_research_slot = 1 }
+	}
+	#扩建威远煤矿
+	focus = {
+		id = SIC_kuojianweiyuanmeikuang
+		icon = GFX_SIC_kuojianweiyuanmeikuang
+		x = 28
+		y = 4
+		prerequisite = { focus = SIC_chongjianchanyelian}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			831 = {
+				add_resource = {
+					type = coal
+					amount = 24
+				}
+			}
+		}
+	}
+	#天然气代替能源
+	focus = {
+		id = SIC_tianranqidaitinengyuan
+		icon = GFX_SIC_tianranqidaitinengyuan
+		x = 28
+		y = 5
+		prerequisite = { focus = SIC_chongjianchanyelian}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			751 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	#拥立正统
+	focus = {
+		id = SIC_yonglizhengtong
+		icon = GFX_SIC_yonglizhengtong
+		x = 47
+		y = 1
+		mutually_exclusive = { focus = SIC_zanshibaochizhongli}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { news_event = chinese_events_sic.2 }
+	}
+	#确保军队忠诚
+	focus = {
+		id = SIC_quebaojunduizhongcheng
+		icon = GFX_SIC_quebaojunduizhongcheng
+		x = 49
+		y = 2
+		
+		prerequisite = { focus = SIC_yonglizhengtong focus = SIC_zanshibaochizhongli}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_war_support = 0.2
+			country_lock_all_division_template = no
+		}
+	}
+	#尊皇讨奸
+	focus = {
+		id = SIC_zunhuangtaojian
+		icon = GFX_SIC_zunwangtaojian
+		x = 45
+		y = 3
+		
+		prerequisite = { focus = SIC_yonglizhengtong}
+		prerequisite = { focus = SIC_quebaojunduizhongcheng}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { 
+			add_ideas = SIC_weiguojingzhong
+		}
+	}
+	#新任都督
+	focus = {
+		id = SIC_xinrendudu
+		icon = GFX_SIC_xinrendudu
+		x = 48
+		y = 4
+		
+		prerequisite = { focus = SIC_zunhuangtaojian}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 5
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			if = {
+				limit = { SIC_Yang_Sen = { is_corps_commander = yes } }
+				SIC_Yang_Sen = { promote_leader = yes }
+			}
+			else = {
+				random_army_leader = {
+					limit = {
+						is_corps_commander = yes
+						NOT = { is_character = SIC_wang_lingji }
+						NOT = { is_character = SIC_deng_xihou }
+					}
+					promote_leader = yes
+				}
+			}
+			if = {
+				limit = { SIC_wang_lingji = { is_corps_commander = yes } }
+				SIC_wang_lingji = { promote_leader = yes }
+			}
+			else = {
+				random_army_leader = {
+					limit = {
+						is_corps_commander = yes
+						NOT = { is_character = SIC_Yang_Sen }
+						NOT = { is_character = SIC_deng_xihou }
+					}
+					promote_leader = yes
+				}
+			}
+			if = {
+				limit = { SIC_deng_xihou = { is_corps_commander = yes } }
+				SIC_deng_xihou = { promote_leader = yes }
+			}
+			else = {
+				random_army_leader = {
+					limit = {
+						is_corps_commander = yes
+						NOT = { is_character = SIC_Yang_Sen }
+						NOT = { is_character = SIC_wang_lingji }
+					}
+					promote_leader = yes
+				}
+			}
 		}
 	}
 	#奉天子
 	focus = {
 		id = SIC_fengtianzi
 		icon = GFX_SIC_fengtianzi
-		prerequisite = { focus = SIC_zhenyasaoluan  focus = SIC_jingjidongyuan }
-		x = 27
-		y = 5
-		
+		x = 42
+		y = 4
+		prerequisite = { focus = SIC_zunhuangtaojian}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
 		cost = 5
 		
-		bypass = {
-			NOT = { country_exists = STG }
-		}
 		ai_will_do = {factor = 10}
 		available = {}
 		
@@ -445,71 +779,13 @@ focus_tree = {
 			}
 		 }
 	}
-	#以讨不臣
-	focus = {
-		id = SIC_yitaobuchen
-		icon = GFX_SIC_yitaobuchen
-		prerequisite = { focus = SIC_zhuanxiangjungong  focus = SIC_jingjidongyuan }
-		x = 29
-		y = 5
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		bypass = {
-			NOT = { country_exists = XBJ }
-		}
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { 
-			add_war_support = 0.1
-			declare_war_on = { target = XBJ type = annex_everything }
-		 }
-	}
-	#六出祁山
-	focus = {
-		id = SIC_liuchuqishan
-		icon = GFX_SIC_liuchuqishan
-		prerequisite = { focus = SIC_fengtianzi }
-		prerequisite = { focus = SIC_yitaobuchen }
-		x = 26
-		y = 6
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		bypass = {
-			NOT = { country_exists = XBJ }
-		}
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { 
-			add_timed_idea = {
-				idea = SIC_chuqibuyi
-				days = 60
-			}
-		 }
-	}
 	#深入不毛
 	focus = {
 		id = SIC_shenrubumao
 		icon = GFX_SIC_shenrubumao
-		prerequisite = { focus = SIC_fengtianzi }
-		prerequisite = { focus = SIC_yitaobuchen }
-		x = 28
-		y = 6
-		bypass = {
-			NOT = { country_exists = XIN }
-		}
-		
+		x = 44
+		y = 4
+		prerequisite = { focus = SIC_zunhuangtaojian}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -521,56 +797,13 @@ focus_tree = {
 		
 		completion_reward = { create_wargoal = { target = XIN type = annex_everything } }
 	}
-	#智取荆州
+	#以讨不臣
 	focus = {
-		id = SIC_zhiqujingzhou
-		icon = GFX_SIC_zhiqujingzhou
-		prerequisite = { focus = SIC_fengtianzi }
-		prerequisite = { focus = SIC_yitaobuchen }
-		x = 30
-		y = 6
-		bypass = {
-			NOT = { country_exists = GOS }
-		}
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = { has_war =  GOS }
-		
-		completion_reward = { 
-			start_border_war = {
-				change_state_after_war = no
-				attacker = {
-					state = 605
-					num_provinces = 4
-					on_win = TODSIC.4
-					on_lose = TODSIC.5
-					on_cancel = TODSIC.6
-				}
-				
-				defender = {
-					state = 825
-					num_provinces = 4
-					on_win = TODSIC.7
-					on_lose = TODSIC.8
-					on_cancel = TODSIC.6
-				}
-			}
-	}
-	}
-	#拥立正统
-	focus = {
-		id = SIC_yonglizhengtong
-		icon = GFX_SIC_yonglizhengtong
-		prerequisite = { focus = SIC_liuchuqishan  focus = SIC_shenrubumao focus = SIC_zhiqujingzhou }
-		x = 28
-		y = 7
-		
+		id = SIC_yitaobuchen
+		icon = GFX_SIC_yitaobuchen
+		x = 46
+		y = 4
+		prerequisite = { focus = SIC_zunhuangtaojian}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -580,98 +813,20 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
-	}
-	#对外交流
-	focus = {
-		id = SIC_duiwaijiaoliu
-		icon = GFX_SIC_duiwaijiaoliu
-		x = 11
-		y = 1
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {
-			has_completed_focus = SIC_zhaojigefang 
-		}
-		
-		completion_reward = { add_political_power = 150 }
-	}
-	#处理皇室
-	focus = {
-		id = SIC_chulihuangshi
-		icon = GFX_SIC_chulihuangshi
-		prerequisite = { focus = SIC_duiwaijiaoliu }
-		x = 8
-		y = 2
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {}
-		
-		completion_reward = { }
-	}
-	#拥护共和
-	focus = {
-		id = SIC_yonghugonghe
-		icon = GFX_SIC_yonghugonghe
-		prerequisite = { focus = SIC_chulihuangshi }
-		mutually_exclusive = { focus = SIC_huangdiwansui }
-		x = 6
-		y = 3
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {always = no}
-		
 		completion_reward = { 
-			add_timed_idea = {idea = SIC_cangtianyisi days = 90 }
-			add_opinion_modifier = {
-				target = STG
-				modifier = SIC_chulihuangshi
-			}
-			add_opinion_modifier = {
-				target = GOS
-				modifier = SIC_chulihuangshi
-			}
-			add_opinion_modifier = {
-				target = XBJ
-				modifier = SIC_chulihuangshi
-			}
-			add_opinion_modifier = {
-				target = SRC
-				modifier = SIC_yonghugonghe
-			}
-			add_opinion_modifier = {
-				target = ROC
-				modifier = SIC_yonghugonghe
-			}
-		}
+			add_war_support = 0.1
+			declare_war_on = { target = XBJ type = annex_everything }
+		 }
 	}
-	#皇帝万岁
+	#与顺天谈判
 	focus = {
-		id = SIC_huangdiwansui
+		id = SIC_yushuntiantanpan
 		icon = GFX_SIC_huangdiwansui
-		prerequisite = { focus = SIC_chulihuangshi }
-		mutually_exclusive = { focus = SIC_yonghugonghe }
-		x = 8
-		y = 3
-		
+		x = 45
+		y = 5
+		prerequisite = { focus = SIC_fengtianzi}
+		prerequisite = { focus = SIC_shenrubumao}
+		prerequisite = { focus = SIC_yitaobuchen}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -679,41 +834,63 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {always = no}
+		available = {
+			NOT = {
+				country_exists = XBJ
+			}
+			is_neighbor_of = STG
+		}
 		
-		completion_reward = { 
-			add_timed_idea = {idea = SIC_tianyoudaming days = 90 } 
-			add_opinion_modifier = {
-				target = STG
-				modifier = SIC_yonghudaming
-			}
-			add_opinion_modifier = {
-				target = GOS
-				modifier = SIC_yonghudaming
-			}
-			add_opinion_modifier = {
-				target = XBJ
-				modifier = SIC_yonghudaming
-			}
-			add_opinion_modifier = {
-				target = SRC
-				modifier = SIC_fandongpai
-			}
-			add_opinion_modifier = {
-				target = ROC
-				modifier = SIC_fandongpai
-			}
+		completion_reward = {STG = { country_event = { id = TODSIC.10} }}
+	}
+	#暂时保持中立
+	focus = {
+		id = SIC_zanshibaochizhongli
+		icon = GFX_SIC_baochizhongli
+		x = 51
+		y = 1
+		mutually_exclusive = { focus = SIC_yonglizhengtong }
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 1
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = { news_event = chinese_events_sic.1 }
+	}
+	#四川防务会议
+	focus = {
+		id = SIC_sichuanfangwuhuiyi
+		icon = GFX_SIC_sichuanfangwuhuiyi
+		x = 53
+		y = 3
+		
+		prerequisite = { focus = SIC_zanshibaochizhongli}
+		prerequisite = { focus = SIC_quebaojunduizhongcheng}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		
+		cost = 28
+		
+		ai_will_do = {factor = 10}
+		available = {}
+		
+		completion_reward = {
+			add_ideas = SIC_fangwuhuiyi
 		}
 	}
-	#稳固乌斯藏
+	#省军化改革
 	focus = {
-		id = SIC_wenguwusizang
-		icon = GFX_SIC_wenguwusizang
-		prerequisite = { focus = SIC_duiwaijiaoliu }
-		allow_branch = {always = no}
-		x = 12
-		y = 2
+		id = SIC_shengjunhuagaige
+		icon = GFX_SIC_shengjunhuagaige
+		x = 50
+		y = 4
 		
+		prerequisite = { focus = SIC_sichuanfangwuhuiyi}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -723,35 +900,38 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_political_power = 150 }
+		completion_reward = {
+			add_war_support = 0.1
+			remove_ideas = SIC_hunluandejundui
+		}
 	}
-	#周围的态度
+	#组建川渝防线
 	focus = {
-		id = SIC_zhouweidetaidu
-		icon = GFX_SIC_zhouweidetaidu
-		prerequisite = { focus = SIC_duiwaijiaoliu }
-		x = 14
-		y = 2
+		id = SIC_zujianchuanyufangxian
+		icon = GFX_SIC_zuzhifangyu
+		x = 52
+		y = 4
 		
+		prerequisite = { focus = SIC_sichuanfangwuhuiyi}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
 		
-		cost = 0
+		cost = 5
 		
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {}
+		completion_reward = {add_timed_idea = { idea = SIC_jianzaofangxian days = 360 } }
 	}
-	#孙刘同盟
+	#南北互不侵犯
 	focus = {
-		id = SIC_sunliutongmeng
-		icon = GFX_SIC_sunliutongmeng
-		prerequisite = { focus = SIC_zhouweidetaidu }
-		x = 12
-		y = 3
+		id = SIC_nanbeihubuqinfan
+		icon = GFX_SIC_nanbeihubuqinfan
+		x = 54
+		y = 4
 		
+		prerequisite = { focus = SIC_sichuanfangwuhuiyi}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -759,79 +939,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {
-			has_opinion = { 
-				target = GOS
-				value > 59 
-			}  
-		}
-		
-		completion_reward = { 
-			diplomatic_relation = {
-				country = GOS
-				relation = non_aggression_pact
-				active = yes
-			}
-		 }
-	}
-	#西南互保
-	focus = {
-		id = SIC_xinanhubao
-		icon = GFX_SIC_xinanhubao
-		prerequisite = { focus = SIC_zhouweidetaidu }
-		x = 14
-		y = 3
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {
-			has_opinion = { 
-				target = XIN
-				value > 59 
-			}  
-		}
-		
-		completion_reward = { 
-			diplomatic_relation = {
-				country = XIN
-				relation = guarantee
-				active = yes
-			}
-			XIN = {
-				diplomatic_relation = {
-					country = SIC
-					relation = guarantee
-					active = yes
-				}
-			}
-		 }
-	}
-	#南北互不冲突条约
-	focus = {
-		id = SIC_nanbeiNAP
-		icon = GFX_SIC_nanbeiNAP
-		prerequisite = { focus = SIC_zhouweidetaidu }
-		x = 16
-		y = 3
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = {
-			has_opinion = { 
-				target = XBJ
-				value > 59 
-			}  
-		}
+		available = {}
 		
 		completion_reward = {
 			diplomatic_relation = {
@@ -841,13 +949,14 @@ focus_tree = {
 			}
 		 }
 	}
-	#维持教育运行
+	#孙刘同盟
 	focus = {
-		id = SIC_weichijiaoyu
-		icon = GFX_SIC_tourujiaoyu
-		x = 18
-		y = 1
+		id = SIC_sunliutongmeng
+		icon = GFX_SIC_sunliutongmeng
+		x = 56
+		y = 4
 		
+		prerequisite = { focus = SIC_sichuanfangwuhuiyi}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -855,18 +964,26 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { has_completed_focus = SIC_zhaojigefang }
+		available = {}
 		
-		completion_reward = { add_timed_idea = {idea = SIC_wendingjiaoyu days = 180 } }
+		completion_reward = { 
+			diplomatic_relation = {
+				country = GOS
+				relation = non_aggression_pact
+				active = yes
+			}
+		 }
 	}
-	#推行义务教育
+	#逐鹿中原
 	focus = {
-		id = SIC_tuixingyiwujiaoyu
-		icon = GFX_SIC_tuixingyiwujiaoyu
-		prerequisite = { focus = SIC_weichijiaoyu }
-		x = 18
-		y = 2
+		id = SIC_zhuluzhongyuan
+		icon = GFX_SIC_duiwaijiaoliu
+		x = 53
+		y = 5
 		
+		prerequisite = { focus = SIC_zujianchuanyufangxian}
+		prerequisite = { focus = SIC_nanbeihubuqinfan}
+		prerequisite = { focus = SIC_sunliutongmeng}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -874,36 +991,24 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { num_of_civilian_factories > 30 }
+		available = {}
 		
-		completion_reward = { add_research_slot = 1 }
-	}
-	#扩建大学
-	focus = {
-		id = SIC_kuojiandaxue
-		icon = GFX_SIC_kuojiandaxue
-		prerequisite = { focus = SIC_tuixingyiwujiaoyu }
-		x = 18
-		y = 3
-		
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		
-		cost = 5
-		
-		ai_will_do = {factor = 10}
-		available = { num_of_civilian_factories > 80 }
-		
-		completion_reward = { add_research_slot = 1 }
+		completion_reward = {
+			create_wargoal = { target = GOS type = annex_everything }
+			create_wargoal = { target = ROC type = annex_everything }
+			create_wargoal = { target = XBJ type = annex_everything }
+			create_wargoal = { target = STG type = annex_everything }
+			create_wargoal = { target = XIN type = annex_everything }
+			create_wargoal = { target = GPS type = annex_everything }
+			create_wargoal = { target = SRC type = annex_everything }
+		}
 	}
 	#扩大昭武军校
 	focus = {
 		id = SIC_kuodajunxiao
 		icon = GFX_SIC_kuodajunxiao
-		allow_branch = {has_completed_focus = SIC_zhaojigefang}
-		x = 48
-		y = 1
+		x = 49
+		y = 5
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -912,7 +1017,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { has_completed_focus = SIC_zhaojigefang }
+		prerequisite = { focus = SIC_xinrendudu focus = SIC_shengjunhuagaige}
 		
 		completion_reward = { 
 			add_dynamic_modifier = { modifier = SIC_zhaowujunxiao }
@@ -924,9 +1029,8 @@ focus_tree = {
 		id = SIC_zengjiajunxiaosheng
 		icon = GFX_SIC_zengjiajunxiaosheng
 		prerequisite = { focus = SIC_kuodajunxiao }
-		mutually_exclusive = { focus = SIC_junguansucheng }
-		x = 47
-		y = 2
+		x = 48
+		y = 6
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -942,14 +1046,13 @@ focus_tree = {
 			custom_effect_tooltip = SIC_zengjiajunxiaosheng_xiaoguo
 		}
 	}
-	#军官速成
+	#提拔青年军官
 	focus = {
-		id = SIC_junguansucheng
+		id = SIC_tibaqingnianjunguan
 		icon = GFX_SIC_junguansucheng
 		prerequisite = { focus = SIC_kuodajunxiao }
-		mutually_exclusive = { focus = SIC_zengjiajunxiaosheng }
-		x = 49
-		y = 2
+		x = 50
+		y = 6
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -970,8 +1073,8 @@ focus_tree = {
 		id = SIC_jingruizuozhan
 		icon = GFX_SIC_jingruizuozhan
 		prerequisite = { focus = SIC_zengjiajunxiaosheng }
-		x = 46
-		y = 3
+		x = 47
+		y = 7
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -992,9 +1095,9 @@ focus_tree = {
 	focus = {
 		id = SIC_kuodabuduiguimo
 		icon = GFX_SIC_kuodabuduiguimo
-		prerequisite = { focus = SIC_zengjiajunxiaosheng focus = SIC_junguansucheng }
-		x = 48
-		y = 3
+		prerequisite = { focus = SIC_zengjiajunxiaosheng focus = SIC_tibaqingnianjunguan }
+		x = 49
+		y = 7
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1014,9 +1117,9 @@ focus_tree = {
 	focus = {
 		id = SIC_chelunzhanshu
 		icon = GFX_SIC_chelunzhanshu
-		prerequisite = { focus = SIC_junguansucheng }
-		x = 50
-		y = 3
+		prerequisite = { focus = SIC_tibaqingnianjunguan }
+		x = 51
+		y = 7
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1039,8 +1142,8 @@ focus_tree = {
 		icon = GFX_SIC_teshudixingzuozhan
 		prerequisite = { focus = SIC_jingruizuozhan }
 		prerequisite = { focus = SIC_kuodabuduiguimo }
-		x = 47
-		y = 4
+		x = 48
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1065,8 +1168,8 @@ focus_tree = {
 		icon = GFX_SIC_gansidui
 		prerequisite = { focus = SIC_kuodabuduiguimo }
 		prerequisite = { focus = SIC_chelunzhanshu }
-		x = 49
-		y = 4
+		x = 50
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1089,8 +1192,8 @@ focus_tree = {
 		id = SIC_zhancheqianjin
 		icon = GFX_SIC_zhancheqianjin
 		prerequisite = { focus = SIC_kuodajunxiao }
-		x = 42
-		y = 2
+		x = 43
+		y = 6
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1099,7 +1202,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { has_completed_focus = SIC_zhaojigefang }
+		available = { }
 		
 		completion_reward = { 
 			add_tech_bonus = {
@@ -1116,8 +1219,8 @@ focus_tree = {
 		icon = GFX_SIC_bubingyanhu
 		prerequisite = { focus = SIC_zhancheqianjin }
 		mutually_exclusive = { focus = SIC_huopaozhiyuan }
-		x = 41
-		y = 3
+		x = 42
+		y = 7
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1146,8 +1249,8 @@ focus_tree = {
 		id = SIC_tieniuliuma
 		icon = GFX_SIC_tieniuliuma
 		prerequisite = { focus = SIC_bubingyanhu }
-		x = 40
-		y = 4
+		x = 41
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1176,8 +1279,8 @@ focus_tree = {
 		id = SIC_butanxietong
 		icon = GFX_SIC_butanxietong
 		prerequisite = { focus = SIC_bubingyanhu focus = SIC_huopaozhiyuan }
-		x = 42
-		y = 4
+		x = 43
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1203,8 +1306,8 @@ focus_tree = {
 		icon = GFX_SIC_huopaozhiyuan
 		prerequisite = { focus = SIC_zhancheqianjin }
 		mutually_exclusive = { focus = SIC_bubingyanhu }
-		x = 43
-		y = 3
+		x = 44
+		y = 7
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1228,8 +1331,8 @@ focus_tree = {
 		id = SIC_yidongbaolei
 		icon = GFX_SIC_yidongbaolei
 		prerequisite = { focus = SIC_huopaozhiyuan }
-		x = 44
-		y = 4
+		x = 45
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1253,8 +1356,8 @@ focus_tree = {
 		id = SIC_zhanjifeixiang
 		icon = GFX_SIC_zhanjifeixiang
 		prerequisite = { focus = SIC_kuodajunxiao }
-		x = 54
-		y = 2
+		x = 55
+		y = 6
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1263,7 +1366,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = { has_completed_focus = SIC_zhaojigefang }
+		available = { }
 		
 		completion_reward = { 
 			air_experience = 50
@@ -1276,8 +1379,8 @@ focus_tree = {
 		icon = GFX_SIC_pohuaihouqin
 		prerequisite = { focus = SIC_zhanjifeixiang }
 		mutually_exclusive = = { focus = SIC_shashangdijun }
-		x = 53
-		y = 3
+		x = 54
+		y = 7
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1298,8 +1401,8 @@ focus_tree = {
 		id = SIC_daguimohongzha
 		icon = GFX_SIC_daguimohongzha
 		prerequisite = { focus = SIC_pohuaihouqin }
-		x = 52
-		y = 4
+		x = 55
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1321,8 +1424,8 @@ focus_tree = {
 		icon = GFX_SIC_shashangdijun
 		prerequisite = { focus = SIC_zhanjifeixiang }
 		mutually_exclusive = = { focus = SIC_pohuaihouqin }
-		x = 55
-		y = 3
+		x = 56
+		y = 7
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1343,8 +1446,8 @@ focus_tree = {
 		id = SIC_yanhubudui
 		icon = GFX_SIC_yanhubudui
 		prerequisite = { focus = SIC_shashangdijun }
-		x = 56
-		y = 4
+		x = 57
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1365,8 +1468,8 @@ focus_tree = {
 		id = SIC_duoquzhikongquan
 		icon = GFX_SIC_duoquzhikongquan
 		prerequisite = { focus = SIC_shashangdijun focus = SIC_pohuaihouqin }
-		x = 54
-		y = 4
+		x = 55
+		y = 8
 		
 		cancel_if_invalid = yes
 		continue_if_invalid = no
@@ -1382,4 +1485,6 @@ focus_tree = {
 			custom_effect_tooltip = SIC_duoquzhikongquan_xiaoguo
 		}
 	}
+
+
 }
