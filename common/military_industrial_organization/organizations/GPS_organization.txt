@@ -1,7 +1,5 @@
 GPS_shenyangxinzhifadongjichang = {#‌沈阳新制发动机厂
-	include = generic_motorized_mechanized_organization
 	icon = GFX_idea_GPS_shenyangxinzhifadongjichang
-	
 	allowed = {
 		OR = {
 			tag = GPS
@@ -13,10 +11,377 @@ GPS_shenyangxinzhifadongjichang = {#‌沈阳新制发动机厂
 			controls_state = 846
 		}
 	}
+	equipment_type = {
+		motorized_equipment
+		mechanized_equipment
+		motorized_rocket_equipment
+	}
+	
+	research_categories = {
+		mio_cat_tech_all_motorized_mechanized
+	}
+
+	tree_header_text = {
+		text = mio_header_shenyangxinzhifadongjichang_yinqing
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_shenyangxinzhifadongjichang_cheshen
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_shenyangxinzhifadongjichang_dipan
+		x = 7
+	}
+	
+	initial_trait = {
+		name = GPS_mio_kacheshejishang
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_fengtianshi_huayouqi
+		name = GPS_mio_trait_fengtianshi_huayouqi
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=0 y=0 }
+		mutually_exclusive = { GPS_mio_trait_jianyi_youxiang }
+		equipment_bonus = {
+			fuel_consumption = -0.05
+			maximum_speed = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jianyi_youxiang
+		name = GPS_mio_trait_jianyi_youxiang
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=2 y=0 }
+		mutually_exclusive = { GPS_mio_trait_fengtianshi_huayouqi }
+		equipment_bonus = {
+			fuel_consumption = 0.05
+			build_cost_ic = -0.025
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_tuding_huosai
+		name = GPS_mio_trait_tuding_huosai
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jianyi_youxiang
+		mutually_exclusive = { GPS_mio_trait_dongbei_lengqi_qidong }
+		all_parents = { GPS_mio_trait_jianyi_youxiang }
+
+		equipment_bonus = {
+			breakthrough = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_lengqi_qidong
+		name = GPS_mio_trait_dongbei_lengqi_qidong
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_fengtianshi_huayouqi
+		mutually_exclusive = { GPS_mio_trait_tuding_huosai }
+		all_parents = { GPS_mio_trait_fengtianshi_huayouqi }
+
+		equipment_bonus = {
+			reliability = 0.06
+			fuel_consumption = -0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_gaoniuju_fadongji
+		name = GPS_mio_trait_gaoniuju_fadongji
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_lengqi_qidong
+		mutually_exclusive = { GPS_mio_trait_pingtoushi_fadongji }
+
+		all_parents = { GPS_mio_trait_dongbei_lengqi_qidong }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			breakthrough = 0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_pingtoushi_fadongji
+		name = GPS_mio_trait_pingtoushi_fadongji
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_tuding_huosai
+		mutually_exclusive = { GPS_mio_trait_gaoniuju_fadongji }
+		all_parents = { GPS_mio_trait_tuding_huosai }
+
+		equipment_bonus = {
+			maximum_speed = 0.8
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_biaozhunhua_quzhouxian
+		name = GPS_mio_trait_biaozhunhua_quzhouxian
+		icon = GFX_generic_mio_department_icon_motorized_production
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_gaoniuju_fadongji
+
+		any_parent = { GPS_mio_trait_gaoniuju_fadongji GPS_mio_trait_pingtoushi_fadongji }
+
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_chongya_liangchan_cheshen
+		name = GPS_mio_trait_chongya_liangchan_cheshen
+		icon = GFX_generic_mio_department_icon_motorized_production
+
+		position = { x=5 y=0 }
+		mutually_exclusive = { GPS_mio_trait_chongya_jiahou_cheshen }
+		equipment_bonus = {
+			build_cost_ic = -0.04
+			reliability = -0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_chongya_jiahou_cheshen
+		name = GPS_mio_trait_chongya_jiahou_cheshen
+		icon = GFX_generic_mio_department_icon_motorized_production
+
+		position = { x=3 y=0 }
+		mutually_exclusive = { GPS_mio_trait_chongya_liangchan_cheshen }
+
+		equipment_bonus = {
+			hardness = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_gangzhi_jiashi_shi
+		name = GPS_mio_trait_gangzhi_jiashi_shi
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_chongya_jiahou_cheshen
+		mutually_exclusive = { GPS_mio_trait_quanfengbi_huoxiang }
+		all_parents = { GPS_mio_trait_chongya_jiahou_cheshen }
+
+		equipment_bonus = {
+			defense = 0.04
+			hardness = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_quanfengbi_huoxiang
+		name = GPS_mio_trait_quanfengbi_huoxiang
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_chongya_liangchan_cheshen
+		mutually_exclusive = { GPS_mio_trait_gangzhi_jiashi_shi }
+		all_parents = { GPS_mio_trait_chongya_liangchan_cheshen }
+
+		equipment_bonus = {
+			breakthrough = 0.03
+			reliability = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_bubing_zhuangzai_cang
+		name = GPS_mio_trait_bubing_zhuangzai_cang
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_gangzhi_jiashi_shi
+		mutually_exclusive = { GPS_mio_trait_gaolanban_cang }
+		all_parents = { GPS_mio_trait_gangzhi_jiashi_shi }
+
+		equipment_bonus = {
+			defense = 0.05
+			reliability = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_gaolanban_cang
+		name = GPS_mio_trait_gaolanban_cang
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_quanfengbi_huoxiang
+		mutually_exclusive = { GPS_mio_trait_bubing_zhuangzai_cang }
+		all_parents = { GPS_mio_trait_quanfengbi_huoxiang }
+
+		equipment_bonus = {
+			reliability = 0.07
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_chezai_paijipao
+		name = GPS_mio_trait_chezai_paijipao
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_bubing_zhuangzai_cang
+
+		any_parent = { GPS_mio_trait_gaolanban_cang GPS_mio_trait_bubing_zhuangzai_cang }
+
+		equipment_bonus = {
+			soft_attack = 0.06
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_banlvdai_shiyan
+		name = GPS_mio_trait_banlvdai_shiyan
+		icon = GFX_generic_mio_department_icon_mechanized_hull
+
+		position = { x=6 y=0 }
+
+		limit_to_equipment_type = { mechanized_equipment }
+		mutually_exclusive = { GPS_mio_trait_duoluntai_sheji }
+		equipment_bonus = {
+			maximum_speed = 0.03
+			reliability = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_duoluntai_sheji
+		name = GPS_mio_trait_jiadachelun
+		icon = GFX_generic_mio_department_icon_mechanized_hull
+
+		position = { x=8 y=0 }
+
+		limit_to_equipment_type = { mechanized_equipment }
+		mutually_exclusive = { GPS_mio_trait_banlvdai_shiyan }
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_mifeng_chuandongxiang
+		name = GPS_mio_trait_mifeng_chuandongxiang
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_banlvdai_shiyan
+		mutually_exclusive = { GPS_mio_trait_duodangwei_fendongxiang }
+		all_parents = { GPS_mio_trait_banlvdai_shiyan }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			reliability = 0.06
+			fuel_consumption = -0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_duodangwei_fendongxiang
+		name = GPS_mio_trait_duodangwei_fendongxiang
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_duoluntai_sheji
+		mutually_exclusive = { GPS_mio_trait_mifeng_chuandongxiang }
+		all_parents = { GPS_mio_trait_duoluntai_sheji }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jiagu_xuanjia
+		name = GPS_mio_trait_jiagu_xuanjia
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_mifeng_chuandongxiang
+		mutually_exclusive = { GPS_mio_trait_sanzhou_dipan }
+		all_parents = { GPS_mio_trait_mifeng_chuandongxiang }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			breakthrough = 0.04
+			defense = 0.04
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_sanzhou_dipan
+		name = GPS_mio_trait_sanzhou_dipan
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_duodangwei_fendongxiang
+		mutually_exclusive = { GPS_mio_trait_jiagu_xuanjia }
+		all_parents = { GPS_mio_trait_duodangwei_fendongxiang }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			breakthrough = 0.08
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhuangjia_fengbi_cheshen
+		name = GPS_mio_trait_zhuangjia_fengbi_cheshen
+		icon = GFX_generic_mio_trait_icon_hardness
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_jiagu_xuanjia
+
+		any_parent = { GPS_mio_trait_jiagu_xuanjia GPS_mio_trait_sanzhou_dipan }
+
+		limit_to_equipment_type = { mechanized_equipment }
+
+		equipment_bonus = {
+			armor_value = 0.05
+			hardness = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoshen_liushuixian
+		name = GPS_mio_trait_liaoshen_liushuixian
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_chezai_paijipao
+
+		any_parent = { GPS_mio_trait_biaozhunhua_quzhouxian GPS_mio_trait_chezai_paijipao GPS_mio_trait_zhuangjia_fengbi_cheshen }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+		
+	}
+
+
 }
 
+
+
+######################
 GPS_liaodonghuopaochang = {#辽东火炮厂
-	include = generic_artillery_organization
 	icon = GFX_idea_GPS_liaodonghuopaochang
 	
 	allowed = {
@@ -30,10 +395,319 @@ GPS_liaodonghuopaochang = {#辽东火炮厂
 			controls_state = 845
 		}
 	}
+
+	equipment_type = {
+		artillery_equipment
+		anti_tank_equipment
+		anti_air_equipment
+		rocket_artillery_equipment
+	}
+
+	research_categories = {
+		mio_cat_all_artillery_equipment
+	}
+
+	tree_header_text = {
+		text = mio_header_liaodonghuopaochang_paoshen
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_liaodonghuopaochang_danyao
+		x = 5
+	}
+
+	tree_header_text = {
+		text = mio_header_liaodonghuopaochang_zhuanyonghua
+		x = 8
+	}
+
+	initial_trait = {
+		name = GPS_mio_huopao_shejishang
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_qingliang_paoche
+		name = GPS_mio_trait_liaodong_qingliang_paoche
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=0 y=0 }
+
+		mutually_exclusive = { GPS_mio_trait_liaodong_wending_paotai }
+
+		equipment_bonus = {
+			breakthrough = 0.05
+			build_cost_ic = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_wending_paotai
+		name = GPS_mio_trait_liaodong_wending_paotai
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_liaodong_qingliang_paoche
+
+		mutually_exclusive = { GPS_mio_trait_liaodong_qingliang_paoche }
+
+		equipment_bonus = {
+			defense = 0.06
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_yeyashi_houtui
+		name = GPS_mio_trait_liaodong_yeyashi_houtui
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_qingliang_paoche
+
+		any_parent = {
+			GPS_mio_trait_liaodong_qingliang_paoche
+			GPS_mio_trait_liaodong_wending_paotai
+		}
+
+		equipment_bonus = {
+			reliability = 0.06
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_biaozhunhua_paoshen
+		name = GPS_mio_trait_liaodong_biaozhunhua_paoshen
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_yeyashi_houtui
+
+		all_parents = { GPS_mio_trait_liaodong_yeyashi_houtui }
+
+		equipment_bonus = {
+			defense = 0.08
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_changshen_guanzao
+		name = GPS_mio_trait_liaodong_changshen_guanzao
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=5 y=0 }
+
+		limit_to_equipment_type = {
+			artillery_equipment
+			anti_tank_equipment
+			anti_air_equipment
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.05
+			hard_attack = 0.05
+			air_attack = 0.05
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_gaobaozha_danyao
+		name = GPS_mio_trait_liaodong_gaobaozha_danyao
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_changshen_guanzao
+
+		all_parents = { GPS_mio_trait_liaodong_changshen_guanzao }
+
+		limit_to_equipment_type = {
+			artillery_equipment
+			rocket_artillery_equipment
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.08
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {#at
+		token = GPS_mio_trait_liaodong_chuantou_dantou
+		name = GPS_mio_trait_liaodong_chuantou_dantou
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_gaobaozha_danyao
+
+		all_parents = { GPS_mio_trait_liaodong_gaobaozha_danyao }
+
+		mutually_exclusive = { GPS_mio_trait_liaodong_sanlie_fangkongdan GPS_mio_trait_liaodong_huojian_daogui }
+
+		limit_to_equipment_type = { anti_tank_equipment }
+
+		equipment_bonus = {
+			ap_attack = 0.08
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {#aa
+		token = GPS_mio_trait_liaodong_sanlie_fangkongdan
+		name = GPS_mio_trait_liaodong_sanlie_fangkongdan
+		icon = GFX_generic_mio_department_icon_anti_air
+
+		position = { x=1 y=0 }
+		relative_position_id = GPS_mio_trait_liaodong_chuantou_dantou
+
+		all_parents = { GPS_mio_trait_liaodong_gaobaozha_danyao }
+
+		mutually_exclusive = { GPS_mio_trait_liaodong_chuantou_dantou GPS_mio_trait_liaodong_huojian_daogui }
+
+		limit_to_equipment_type = { anti_air_equipment }
+
+		equipment_bonus = {
+			air_attack = 0.08
+			reliability = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_huojian_daogui
+		name = GPS_mio_trait_liaodong_huojian_daogui
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=1 y=0 }
+		relative_position_id = GPS_mio_trait_liaodong_sanlie_fangkongdan
+
+		all_parents = { GPS_mio_trait_liaodong_gaobaozha_danyao }
+
+		mutually_exclusive = { GPS_mio_trait_liaodong_chuantou_dantou GPS_mio_trait_liaodong_sanlie_fangkongdan }
+
+		limit_to_equipment_type = { rocket_artillery_equipment artillery_equipment }
+
+		equipment_bonus = {
+			soft_attack = 0.08
+			breakthrough = 0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_dakoujing_huopao
+		name = GPS_mio_trait_liaodong_dakoujing_huopao
+		icon = GFX_generic_mio_department_icon_artillery
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_sanlie_fangkongdan
+
+		any_parent = {
+			GPS_mio_trait_liaodong_chuantou_dantou
+			GPS_mio_trait_liaodong_sanlie_fangkongdan
+			GPS_mio_trait_liaodong_huojian_daogui
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.08
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_jingjian_gongxu
+		name = GPS_mio_trait_liaodong_jingjian_gongxu
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_biaozhunhua_paoshen
+
+		all_parents = { GPS_mio_trait_liaodong_biaozhunhua_paoshen }
+
+		equipment_bonus = {
+			breakthrough = 0.07
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaodong_qianxian_xiuli
+		name = GPS_mio_trait_liaodong_qianxian_xiuli
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_jingjian_gongxu
+
+		all_parents = { GPS_mio_trait_liaodong_jingjian_gongxu }
+
+		equipment_bonus = {
+			reliability = 0.06
+			build_cost_ic = -0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaodong_zijin_paoguan
+		name = GPS_mio_trait_liaodong_zijin_paoguan
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaodong_dakoujing_huopao
+
+		all_parents = { GPS_mio_trait_liaodong_dakoujing_huopao }
+
+		equipment_bonus = {
+			reliability = 0.05
+			build_cost_ic = -0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaodong_baozha_chengxing
+		name = GPS_mio_trait_liaodong_baozha_chengxing
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=7 y=0 }
+
+		limit_to_equipment_type = { anti_tank_equipment }
+
+		equipment_bonus = {
+			hard_attack = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaodong_gaoping_liangyong
+		name = GPS_mio_trait_liaodong_gaoping_liangyong
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=8 y=0 }
+
+		limit_to_equipment_type = { anti_air_equipment }
+
+		equipment_bonus = {
+			hard_attack = 0.15
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaodong_banzidong_zhuangtian
+		name = GPS_mio_trait_liaodong_banzidong_zhuangtian
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=9 y=0 }
+
+		limit_to_equipment_type = {
+			artillery_equipment
+			rocket_artillery_equipment
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.1
+		}
+	}
 }
 
 GPS_jilinjunxuzongju = {#吉林军需总局
-	include = generic_infantry_equipment_organization
 	icon = GFX_idea_GPS_jilinjunxuzongju
 	
 	allowed = {
@@ -47,10 +721,279 @@ GPS_jilinjunxuzongju = {#吉林军需总局
 			controls_state = 847
 		}
 	}
+
+	equipment_type = {
+		infantry_equipment
+		support_equipment
+	}
+
+	research_categories = {
+		infantry_weapons
+	}
+
+	tree_header_text = {
+		text = mio_header_jilinjunxuzongju_qiangxie
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_jilinjunxuzongju_shengchan
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_jilinjunxuzongju_fanzhuangjia
+		x = 8
+	}
+
+	initial_trait = {
+		name = GPS_mio_bubingchongshejishang
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.07
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_biaochi_zhaomen
+		name = GPS_mio_trait_jilin_biaochi_zhaomen
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=1 y=0 }
+
+		equipment_bonus = {
+			defense = 0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_jiaqiang_qiangtuo
+		name = GPS_mio_trait_jilin_jiaqiang_qiangtuo
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_biaochi_zhaomen
+
+		all_parents = { GPS_mio_trait_jilin_biaochi_zhaomen }
+
+		equipment_bonus = {
+			reliability = 0.04
+			soft_attack = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_kehuan_danjia
+		name = GPS_mio_trait_jilin_kehuan_danjia
+		icon = GFX_generic_mio_department_icon_infantry_line_efficiency
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_jiaqiang_qiangtuo
+
+		all_parents = { GPS_mio_trait_jilin_jiaqiang_qiangtuo }
+
+		mutually_exclusive = { GPS_mio_trait_jilin_banzidong_shiyan }
+
+		equipment_bonus = {
+			build_cost_ic = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_banzidong_shiyan
+		name = GPS_mio_trait_jilin_banzidong_shiyan
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_jilin_kehuan_danjia
+
+		all_parents = { GPS_mio_trait_jilin_jiaqiang_qiangtuo }
+
+		mutually_exclusive = { GPS_mio_trait_jilin_kehuan_danjia }
+
+		equipment_bonus = {
+			soft_attack = 0.04
+			breakthrough = 0.03
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_banji_qingjiqiang
+		name = GPS_mio_trait_jilin_banji_qingjiqiang
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_kehuan_danjia
+
+		any_parent = {
+			GPS_mio_trait_jilin_kehuan_danjia
+			GPS_mio_trait_jilin_banzidong_shiyan
+		}
+
+		equipment_bonus = {
+			breakthrough = 0.06
+			soft_attack = 0.03
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_gangcai_jinglian
+		name = GPS_mio_trait_jilin_gangcai_jinglian
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			reliability = -0.03
+			build_cost_ic = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_qiangguan_tongyihua
+		name = GPS_mio_trait_jilin_qiangguan_tongyihua
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_gangcai_jinglian
+
+		all_parents = { GPS_mio_trait_jilin_gangcai_jinglian }
+
+		equipment_bonus = {
+			reliability = -0.05
+			soft_attack = 0.07
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_lingjian_huhuan
+		name = GPS_mio_trait_jilin_lingjian_huhuan
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_qiangguan_tongyihua
+
+		all_parents = { GPS_mio_trait_jilin_qiangguan_tongyihua }
+		equipment_bonus = {
+			build_cost_ic = -0.02
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_qianxian_baoyangbao
+		name = GPS_mio_trait_jilin_qianxian_baoyangbao
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_lingjian_huhuan
+
+		all_parents = { GPS_mio_trait_jilin_lingjian_huhuan }
+
+		equipment_bonus = {
+			reliability = 0.05
+			defense = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_chuantou_danyao
+		name = GPS_mio_trait_jilin_chuantou_danyao
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=8 y=0 }
+
+		equipment_bonus = {
+			ap_attack = 0.25
+			hard_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_fantanqiang_fujian
+		name = GPS_mio_trait_jilin_fantanqiang_fujian
+		icon = GFX_generic_mio_trait_icon_breakthrough
+
+		position = { x=-1 y=2 }
+		relative_position_id = GPS_mio_trait_jilin_chuantou_danyao
+
+		all_parents = { GPS_mio_trait_jilin_chuantou_danyao }
+
+		mutually_exclusive = { GPS_mio_trait_jilin_fanghu_huochongqi }
+
+		equipment_bonus = {
+			ap_attack = 0.15
+			hard_attack = 0.08
+			build_cost_ic = 0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_fanghu_huochongqi
+		name = GPS_mio_trait_jilin_fanghu_huochongqi
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_jilin_fantanqiang_fujian
+
+		all_parents = { GPS_mio_trait_jilin_chuantou_danyao }
+
+		mutually_exclusive = { GPS_mio_trait_jilin_fantanqiang_fujian }
+
+		equipment_bonus = {
+			defense = 0.04
+			breakthrough = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_fanzhuangjia_gongbingju
+		name = GPS_mio_trait_jilin_fanzhuangjia_gongbingju
+		icon = GFX_generic_mio_department_icon_infantry_quality
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_fantanqiang_fujian
+
+		any_parent = {
+			GPS_mio_trait_jilin_fantanqiang_fujian
+			GPS_mio_trait_jilin_fanghu_huochongqi
+		}
+
+		equipment_bonus = {
+			defense = 0.04
+			hard_attack = 0.08
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jilin_junxu_tixi
+		name = GPS_mio_trait_jilin_junxu_tixi
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=3 y=1 }
+		relative_position_id = GPS_mio_trait_jilin_banji_qingjiqiang
+
+		any_parent = {
+			GPS_mio_trait_jilin_banji_qingjiqiang
+			GPS_mio_trait_jilin_qianxian_baoyangbao
+			GPS_mio_trait_jilin_fanzhuangjia_gongbingju
+		}
+
+		equipment_bonus = {
+			hard_attack = 0.08
+			soft_attack = 0.08
+		}
+	}
 }
 
 GPS_liaoyangwubeishejisuo = {#辽阳武备设计所
-	include = generic_infantry_tank_organization
 	icon = GFX_idea_GPS_liaoyangwubeishejisuo
 	
 	allowed = {
@@ -64,10 +1007,246 @@ GPS_liaoyangwubeishejisuo = {#辽阳武备设计所
 			controls_state = 845
 		}
 	}
+
+	equipment_type = { armor }
+
+	research_categories = {
+		mio_cat_tech_all_armor_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_liaoyangwubeishejisuo_dipan
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_liaoyangwubeishejisuo_huoli
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_liaoyangwubeishejisuo_yangche
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_liaoyangwubeishejisuo
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_design_team_assign_cost = -0.5
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_dipan_fangan
+		name = GPS_mio_trait_liaoyang_dipan_fangan
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+
+		position = { x=1 y=0 }
+
+		equipment_bonus = {
+			reliability = 0.05
+			maximum_speed = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_kuanshi_lvddai
+		name = GPS_mio_trait_liaoyang_kuanshi_lvddai
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaoyang_dipan_fangan
+
+		all_parents = { GPS_mio_trait_liaoyang_dipan_fangan }
+
+		equipment_bonus = {
+			reliability = 0.05
+			breakthrough = 0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_fadongji_ceshi
+		name = GPS_mio_trait_liaoyang_fadongji_ceshi
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaoyang_kuanshi_lvddai
+
+		all_parents = { GPS_mio_trait_liaoyang_kuanshi_lvddai }
+
+		equipment_bonus = {
+			maximum_speed = 0.06
+			fuel_consumption = -0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaoyang_neizhi_fuzhonglun
+		name = GPS_mio_trait_liaoyang_neizhi_fuzhonglun
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+
+		position = { x=0 y=2 }
+		relative_position_id = GPS_mio_trait_liaoyang_fadongji_ceshi
+
+		all_parents = { GPS_mio_trait_liaoyang_fadongji_ceshi }
+
+		equipment_bonus = {
+			breakthrough = 0.1
+			defense = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaoyang_changshen_paota
+		name = GPS_mio_trait_liaoyang_changshen_paota
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			reliability = -0.05
+			soft_attack = 0.07
+			hard_attack = 0.07
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_zhiyuan_huopao
+		name = GPS_mio_trait_liaoyang_zhiyuan_huopao
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_liaoyang_changshen_paota
+
+		all_parents = { GPS_mio_trait_liaoyang_changshen_paota }
+
+		mutually_exclusive = { GPS_mio_trait_liaoyang_chuantou_paodan }
+
+		equipment_bonus = {
+			soft_attack = 0.1
+			breakthrough = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_chuantou_paodan
+		name = GPS_mio_trait_liaoyang_chuantou_paodan
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_liaoyang_zhiyuan_huopao
+
+		all_parents = { GPS_mio_trait_liaoyang_changshen_paota }
+
+		mutually_exclusive = { GPS_mio_trait_liaoyang_zhiyuan_huopao }
+
+		equipment_bonus = {
+			ap_attack = 0.06
+			hard_attack = 0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_banzidong_zhuangdan
+		name = GPS_mio_trait_liaoyang_banzidong_zhuangdan
+		icon = GFX_generic_mio_trait_icon_hard_attack
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_liaoyang_chuantou_paodan
+
+		any_parent = { GPS_mio_trait_liaoyang_chuantou_paodan GPS_mio_trait_liaoyang_zhiyuan_huopao }
+
+		mutually_exclusive = { GPS_mio_trait_liaoyang_zhiyuan_huopao }
+
+		equipment_bonus = {
+			reliability = -0.05
+			soft_attack = 0.08
+			hard_attack = 0.08
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_zhuangjia_qingxie
+		name = GPS_mio_trait_liaoyang_zhuangjia_qingxie
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x=7 y=0 }
+
+		equipment_bonus = {
+			armor_value = 0.08
+			defense = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_chengyuan_buju
+		name = GPS_mio_trait_liaoyang_chengyuan_buju
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaoyang_zhuangjia_qingxie
+
+		all_parents = { GPS_mio_trait_liaoyang_zhuangjia_qingxie }
+
+		equipment_bonus = {
+			defense = 0.06
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_liaoyang_yangche_shizhi
+		name = GPS_mio_trait_liaoyang_yangche_shizhi
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_liaoyang_chengyuan_buju
+
+		all_parents = { GPS_mio_trait_liaoyang_chengyuan_buju }
+
+		equipment_bonus = {
+			hardness = 0.05
+			reliability = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaoyang_fujia_zhuangjia
+		name = GPS_mio_trait_liaoyang_fujia_zhuangjia
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x=0 y=2 }
+		relative_position_id = GPS_mio_trait_liaoyang_yangche_shizhi
+
+		all_parents = { GPS_mio_trait_liaoyang_yangche_shizhi }
+
+		equipment_bonus = {
+			hardness = 0.05
+			armor_value = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_liaoyang_wubei_lanben
+		name = GPS_mio_trait_liaoyang_wubei_lanben
+		icon = GFX_generic_mio_department_icon_tank_general_quality
+
+		position = { x=3 y=2 }
+		relative_position_id = GPS_mio_trait_liaoyang_fadongji_ceshi
+
+		any_parent = {
+			GPS_mio_trait_liaoyang_fadongji_ceshi
+			GPS_mio_trait_liaoyang_banzidong_zhuangdan
+			GPS_mio_trait_liaoyang_yangche_shizhi
+		}
+
+		equipment_bonus = {
+			soft_attack = 0.15
+			breakthrough = 0.05
+		}
+	}
 }
 
 GPS_guandonglianhejidongcheliangjituan = {#关东联合机动车辆集团
-	include = generic_mobile_tank_organization
 	icon = GFX_idea_GPS_guandonglianhejidongcheliangjituan
 	
 	allowed = {
@@ -78,13 +1257,311 @@ GPS_guandonglianhejidongcheliangjituan = {#关东联合机动车辆集团
 	}
 	available = {
 		owner = { 
-			controls_state = 845
+			controls_state = 849
+		}
+	}
+
+	equipment_type = {
+		mio_cat_eq_all_medium_tank
+	}
+
+	research_categories = {
+		mio_cat_tech_medium_armor_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_dongbeinongkenjituan_chassis
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_dongbeinongkenjituan_zhizao
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_dongbeinongkenjituan_gongying
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_dongbeinongkenjituan
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_dongbei_tuolaji_dipan
+		name = GPS_mio_trait_dongbei_tuolaji_dipan
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=0 }
+		mutually_exclusive = { GPS_mio_trait_dongbei_hungejiegou_dipan }
+		production_bonus = {
+			production_cost_factor = -0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_hungejiegou_dipan
+		name = GPS_mio_trait_dongbei_hungejiegou_dipan
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=2 y=0 }
+		mutually_exclusive = { GPS_mio_trait_dongbei_tuolaji_dipan }
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_nongji_gongzhuang
+		name = GPS_mio_trait_dongbei_nongji_gongzhuang
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_tuolaji_dipan
+
+		all_parents = { GPS_mio_trait_dongbei_tuolaji_dipan }
+
+		production_bonus = {
+			production_resource_need_factor = -0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_zhuanyehua_shebei
+		name = GPS_mio_trait_dongbei_zhuanyehua_shebei
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_hungejiegou_dipan
+
+		all_parents = { GPS_mio_trait_dongbei_hungejiegou_dipan }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05 
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_dipan_liushuixian
+		name = GPS_mio_trait_dongbei_dipan_liushuixian
+		icon = GFX_generic_mio_department_icon_tank_general_production
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_nongji_gongzhuang
+
+		all_parents = { GPS_mio_trait_dongbei_nongji_gongzhuang }
+
+		production_bonus = {
+			production_conversion_speed_factor = 0.15
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_shengchan_gexin
+		name = GPS_mio_trait_dongbei_shengchan_gexin
+		icon = GFX_generic_mio_department_icon_tank_general_production
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_zhuanyehua_shebei
+
+		all_parents = { GPS_mio_trait_dongbei_zhuanyehua_shebei }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05 
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_yanjiu_jingfei
+		name = GPS_mio_trait_dongbei_yanjiu_jingfei
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_dipan_liushuixian
+
+		any_parent = { GPS_mio_trait_dongbei_shengchan_gexin GPS_mio_trait_dongbei_dipan_liushuixian }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1 
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_biaozhun_lingjian
+		name = GPS_mio_trait_dongbei_biaozhun_lingjian
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=3 y=0 }
+		mutually_exclusive = { GPS_mio_trait_dongbei_xinshi_jichuang }
+		production_bonus = {
+			production_resource_penalty_factor = -0.2
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_xinshi_jichuang
+		name = GPS_mio_trait_dongbei_xinshi_jichuang
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=5 y=0 }
+		mutually_exclusive = { GPS_mio_trait_dongbei_biaozhun_lingjian }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_jiagong_banci
+		name = GPS_mio_trait_dongbei_jiagong_banci
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_biaozhun_lingjian
+
+		all_parents = { GPS_mio_trait_dongbei_biaozhun_lingjian }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_wuzhi_jili
+		name = GPS_mio_trait_dongbei_wuzhi_jili
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_xinshi_jichuang
+
+		all_parents = { GPS_mio_trait_dongbei_xinshi_jichuang }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+			production_cost_factor = +0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_shangxiayou_jiehe
+		name = GPS_mio_trait_dongbei_shangxiayou_jiehe
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_jiagong_banci
+
+		all_parents = { GPS_mio_trait_dongbei_jiagong_banci }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_zhijian_gongxu
+		name = GPS_mio_trait_dongbei_zhijian_gongxu
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_wuzhi_jili
+
+		all_parents = { GPS_mio_trait_dongbei_wuzhi_jili }
+
+		production_bonus = {
+			production_efficiency_gain_factor = -0.05
+			production_resource_need_factor = -0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_junmin_liangyong
+		name = GPS_mio_trait_dongbei_junmin_liangyong
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_zhijian_gongxu
+
+		any_parent = { GPS_mio_trait_dongbei_zhijian_gongxu GPS_mio_trait_dongbei_shangxiayou_jiehe }
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_kenqu_gangcai
+		name = GPS_mio_trait_dongbei_kenqu_gangcai
+		icon = GFX_generic_mio_trait_icon_resources
+
+		position = { x=7 y=0 }
+
+		production_bonus = {
+			production_resource_need_factor = -0.05
+			production_cost_factor = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_dongbei_tielu_zhuanyun
+		name = GPS_mio_trait_dongbei_tielu_zhuanyun
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_kenqu_gangcai
+
+		all_parents = { GPS_mio_trait_dongbei_kenqu_gangcai }
+
+		production_bonus = {
+			production_capacity_factor = 0.04
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_dongbei_jiti_dingdan
+		name = GPS_mio_trait_dongbei_jiti_dingdan
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_tielu_zhuanyun
+
+		all_parents = { GPS_mio_trait_dongbei_tielu_zhuanyun }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_dongbei_zhengfu_caihou
+		name = GPS_mio_trait_dongbei_zhengfu_caihou
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_dongbei_jiti_dingdan
+
+		all_parents = { GPS_mio_trait_dongbei_jiti_dingdan }
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.3
+			military_industrial_organization_size_up_requirement = -0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_dongbei_nongken_tixi
+		name = GPS_mio_trait_dongbei_nongken_tixi
+		icon = GFX_generic_mio_department_icon_tank_general_production
+
+		position = { x=4 y=4 }
+
+		any_parent = {
+			GPS_mio_trait_dongbei_zhengfu_caihou
+			GPS_mio_trait_dongbei_junmin_liangyong
+			GPS_mio_trait_dongbei_yanjiu_jingfei
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.04
+			production_efficiency_gain_factor = 0.04
+			production_efficiency_cap_factor = 0.04
+			production_capacity_factor = 0.04
 		}
 	}
 }
 
 GPS_jinzhouzaochuanchang = {#金州造船厂
-	include = generic_submarine_organization
 	icon = GFX_idea_GPS_jinzhouzaochuanchang
 	
 	allowed = {
@@ -98,10 +1575,285 @@ GPS_jinzhouzaochuanchang = {#金州造船厂
 			controls_state = 745
 		}
 	}
+
+	equipment_type = {
+		ship_hull_submarine
+	}
+
+	research_categories = {
+		mio_cat_tech_all_submarine_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_jinzhouzaochuanchang_qianhang
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_jinzhouzaochuanchang_yulei
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_jinzhouzaochuanchang_chuantai
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_jinzhouzaochuanchang
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			sub_visibility = -0.04
+			naval_range = 0.1
+		}
+		production_bonus = {
+			production_resource_need_factor  = -0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jinzhou_qianshui_chuanti
+		name = GPS_mio_trait_jinzhou_qianshui_chuanti
+		icon = GFX_generic_mio_trait_icon_sub_visibility
+
+		position = { x=0 y=0 }
+		mutually_exclusive = { GPS_mio_trait_jinzhou_dianchi_cang }
+		equipment_bonus = {
+			sub_visibility = -0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jinzhou_dianchi_cang
+		name = GPS_mio_trait_jinzhou_dianchi_cang
+		icon = GFX_generic_mio_trait_icon_naval_range
+
+		position = { x=2 y=0 }
+		mutually_exclusive = { GPS_mio_trait_jinzhou_qianshui_chuanti }
+		equipment_bonus = {
+			naval_range = 0.05
+			fuel_consumption = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jinzhou_jingyin_dianji
+		name = GPS_mio_trait_jinzhou_jingyin_dianji
+		icon = GFX_generic_mio_department_icon_ship_submarine_survivability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_qianshui_chuanti
+
+		all_parents = { GPS_mio_trait_jinzhou_qianshui_chuanti }
+
+		equipment_bonus = {
+			sub_visibility = -0.05
+			naval_speed = -0.01
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_chaiyou_yinqing
+		name = GPS_mio_trait_jinzhou_chaiyou_yinqing
+		icon = GFX_generic_mio_department_icon_ship_submarine_survivability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_dianchi_cang
+
+		all_parents = { GPS_mio_trait_jinzhou_dianchi_cang }
+
+		equipment_bonus = {
+			naval_speed = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_shuang_keti
+		name = GPS_mio_trait_jinzhou_shuang_keti
+		icon = GFX_generic_mio_department_icon_ship_submarine_survivability
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_chaiyou_yinqing
+
+		any_parent = { GPS_mio_trait_jinzhou_chaiyou_yinqing GPS_mio_trait_jinzhou_jingyin_dianji }
+
+		equipment_bonus = {
+			naval_speed = 0.02
+			max_strength = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jinzhou_yulei_guance
+		name = GPS_mio_trait_jinzhou_yulei_guance
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			torpedo_attack = 0.06
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jinzhou_kuaisu_zhuangtian
+		name = GPS_mio_trait_jinzhou_kuaisu_zhuangtian
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_yulei_guance
+
+		all_parents = { GPS_mio_trait_jinzhou_yulei_guance }
+
+		equipment_bonus = {
+			torpedo_attack = 0.05
+			reliability = -0.01
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_jinzhou_gaorongliang_bulei
+		name = GPS_mio_trait_jinzhou_gaorongliang_bulei
+		icon = GFX_generic_mio_trait_icon_mines
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_kuaisu_zhuangtian
+
+		all_parents = { GPS_mio_trait_jinzhou_kuaisu_zhuangtian }
+
+		visible = {
+			has_dlc = "Man the Guns"
+		}
+
+		equipment_bonus = {
+			mines_planting = 0.08
+			torpedo_attack = 0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_xianjin_shengna
+		name = GPS_mio_trait_jinzhou_xianjin_shengna
+		icon = GFX_generic_mio_trait_icon_mines
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_gaorongliang_bulei
+
+		all_parents = { GPS_mio_trait_jinzhou_gaorongliang_bulei GPS_mio_trait_jinzhou_shuang_keti }
+
+		visible = {
+			has_dlc = "Man the Guns"
+		}
+
+		equipment_bonus = {
+			surface_detection = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_chuanwu_yuzhi
+		name = GPS_mio_trait_jinzhou_chuanwu_yuzhi
+		icon = GFX_generic_mio_department_icon_ship_submarine_production
+
+		position = { x=6 y=0 }
+
+		production_bonus = {
+			production_cost_factor = -0.03
+			production_capacity_factor = 0.04
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_fenduanjianzao
+		name = GPS_mio_trait_jinzhou_fenduanjianzao
+		icon = GFX_generic_mio_department_icon_ship_general_production
+
+		position = { x=8 y=0 }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_yalichuanti_biaozhunhua
+		name = GPS_mio_trait_jinzhou_yalichuanti_biaozhunhua
+		icon = GFX_generic_mio_department_icon_ship_submarine_production
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_chuanwu_yuzhi
+
+		all_parents = { GPS_mio_trait_jinzhou_chuanwu_yuzhi }
+
+		production_bonus = {
+			production_capacity_factor = 0.07
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_gangcai_gongying
+		name = GPS_mio_trait_jinzhou_gangcai_gongying
+		icon = GFX_generic_mio_department_icon_ship_submarine_production
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_fenduanjianzao
+
+		all_parents = { GPS_mio_trait_jinzhou_fenduanjianzao }
+
+		production_bonus = {
+			production_cost_factor  = -0.07
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_lingjian_huhuan
+		name = GPS_mio_trait_jinzhou_lingjian_huhuan
+		icon = GFX_generic_mio_department_icon_ship_general_production
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_yalichuanti_biaozhunhua
+
+		all_parents = { GPS_mio_trait_jinzhou_yalichuanti_biaozhunhua GPS_mio_trait_jinzhou_gangcai_gongying }
+		production_bonus = {
+			production_conversion_speed_factor = 0.10
+			production_efficiency_cap_factor = 0.04
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_sheji_shuliang
+		name = GPS_mio_trait_jinzhou_sheji_shuliang
+		icon = GFX_generic_mio_department_icon_ship_general_production
+
+		position = { x=-2 y=1 }
+		relative_position_id = GPS_mio_trait_jinzhou_lingjian_huhuan
+
+		all_parents = { GPS_mio_trait_jinzhou_lingjian_huhuan  GPS_mio_trait_jinzhou_gaorongliang_bulei }
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+		production_bonus = {
+			production_cost_factor  = -0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_jinzhou_bohai_qianting_tixi
+		name = GPS_mio_trait_jinzhou_bohai_qianting_tixi
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=4 y=4 }
+
+		all_parents = {
+			GPS_mio_trait_jinzhou_sheji_shuliang
+			GPS_mio_trait_jinzhou_xianjin_shengna
+		}
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+		equipment_bonus = {
+			sub_visibility = -0.02
+			torpedo_attack = 0.08
+		}
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
 }
 
 GPS_yingkoulunchuanzhaoshangjun = {#营口轮船招商局
-	include = generic_raider_ship_organization
 	icon = GFX_idea_GPS_yingkoulunchuanzhaoshangjun
 	
 	allowed = {
@@ -115,10 +1867,280 @@ GPS_yingkoulunchuanzhaoshangjun = {#营口轮船招商局
 			controls_state = 845
 		}
 	}
+
+	equipment_type = {
+		carrier
+		convoy
+	}
+
+	research_categories = {
+		mio_cat_tech_all_carrier_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_yingkoulunchuanzhaoshangjun_yuanyang
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_yingkoulunchuanzhaoshangjun_xiji
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_yingkoulunchuanzhaoshangjun_gaizhuang
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_yingkoulunchuanzhaoshangjun
+
+		production_bonus = {
+			production_capacity_factor  = 0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_yingkou_yuanyang_youcang
+		name = GPS_mio_trait_yingkou_yuanyang_youcang
+		icon = GFX_generic_mio_department_icon_ship_general_engine
+
+		position = { x=1 y=0 }
+
+		equipment_bonus = {
+			naval_range = 0.06
+			fuel_consumption = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_rencai_yinjin
+		name = GPS_mio_trait_yingkou_rencai_yinjin
+		icon = GFX_generic_mio_department_icon_ship_general_engine
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_yuanyang_youcang
+		limit_to_equipment_type = {
+			convoy
+		}
+		all_parents = { GPS_mio_trait_yingkou_yuanyang_youcang }
+		equipment_bonus = {
+			build_cost_ic = -0.1
+		}
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_gailiang_yinqing
+		name = GPS_mio_trait_yingkou_gailiang_yinqing
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_rencai_yinjin
+		limit_to_equipment_type = {
+			convoy
+		}
+		all_parents = { GPS_mio_trait_yingkou_rencai_yinjin }
+		equipment_bonus = {
+			naval_speed = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_jingji_hangsu
+		name = GPS_mio_trait_yingkou_jingji_hangsu
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_yuanyang_youcang
+
+		all_parents = { GPS_mio_trait_yingkou_yuanyang_youcang }
+
+		equipment_bonus = {
+			naval_range = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_haishang_buji
+		name = GPS_mio_trait_yingkou_haishang_buji
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_jingji_hangsu
+
+		all_parents = { GPS_mio_trait_yingkou_jingji_hangsu }
+
+		equipment_bonus = {
+			naval_range = 0.05
+			reliability = 0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_qingzhuang_shangzhen
+		name = GPS_mio_trait_yingkou_qingzhuang_shangzhen
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_haishang_buji
+
+		all_parents = { GPS_mio_trait_yingkou_haishang_buji }
+
+		equipment_bonus = {
+			naval_speed = 0.05
+			max_strength = -0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_gaosu_xiji
+		name = GPS_mio_trait_yingkou_gaosu_xiji
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			reliability = -0.05
+			build_cost_ic = -0.075
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_yingkou_diwei_lunkuo
+		name = GPS_mio_trait_yingkou_diwei_lunkuo
+		icon = GFX_generic_mio_trait_icon_surface_visibility
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_gaosu_xiji
+
+		all_parents = { GPS_mio_trait_yingkou_gaosu_xiji }
+
+		equipment_bonus = {
+			surface_visibility = -0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_yingkou_yulei_qianxi
+		name = GPS_mio_trait_yingkou_yulei_qianxi
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_diwei_lunkuo
+
+		all_parents = { GPS_mio_trait_yingkou_diwei_lunkuo }
+
+		equipment_bonus = {
+			anti_air_attack = 0.15
+			lg_attack = 0.15
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_jiegou_pinjing
+		name = GPS_mio_trait_yingkou_jiegou_pinjing
+		icon = GFX_generic_mio_department_icon_ship_general_production
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_yulei_qianxi
+
+		all_parents = { GPS_mio_trait_yingkou_yulei_qianxi }
+
+		equipment_bonus = {
+			fuel_consumption = 0.1
+			build_cost_ic = -0.075
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_lunchuan_gaizhuang
+		name = GPS_mio_trait_yingkou_lunchuan_gaizhuang
+		icon = GFX_generic_mio_department_icon_ship_general_conversion
+
+		position = { x=7 y=0 }
+
+		production_bonus = {
+			production_conversion_speed_factor = 0.15
+			production_cost_factor = -0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_yingkou_jiagu_chuanti
+		name = GPS_mio_trait_yingkou_jiagu_chuanti
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_lunchuan_gaizhuang
+
+		all_parents = { GPS_mio_trait_yingkou_lunchuan_gaizhuang }
+		limit_to_equipment_type = {
+			convoy
+		}
+		equipment_bonus = {
+			max_strength = 0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_yingkou_kuoda_shengchan
+		name = GPS_mio_trait_yingkou_kuoda_shengchan
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_jiagu_chuanti
+
+		all_parents = { GPS_mio_trait_yingkou_jiagu_chuanti }
+		limit_to_equipment_type = {
+			convoy
+		}
+		production_bonus = {
+			production_cost_factor = -0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_yingkou_shangchuan_goujian
+		name = GPS_mio_trait_yingkou_shangchuan_goujian
+		icon = GFX_generic_mio_department_icon_ship_general_production
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_lunchuan_gaizhuang
+
+		all_parents = { GPS_mio_trait_yingkou_lunchuan_gaizhuang }
+
+		equipment_bonus = {
+			max_strength = -0.02
+		}
+		production_bonus = {
+			production_capacity_factor = 0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_yingkou_kuaiche_chuantai
+		name = GPS_mio_trait_yingkou_kuaiche_chuantai
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_shangchuan_goujian
+
+		all_parents = { GPS_mio_trait_yingkou_shangchuan_goujian }
+
+		production_bonus = {
+			production_resource_need_factor  = -0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_yingkou_lutian_tingfang
+		name = GPS_mio_trait_yingkou_lutian_tingfang
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_yingkou_kuaiche_chuantai
+
+		all_parents = { GPS_mio_trait_yingkou_kuaiche_chuantai }
+
+		production_bonus = {
+			production_resource_need_factor  = -0.1
+		}
+	}
 }
 
 GPS_zhendongchuanxiezongju = {#镇东船械总局
-	include = generic_escort_ship_organization
 	icon = GFX_idea_GPS_zhendongchuanxiezongju
 
 	allowed = {
@@ -132,10 +2154,268 @@ GPS_zhendongchuanxiezongju = {#镇东船械总局
 			controls_state = 408
 		}
 	}
+
+	equipment_type = {
+		screen_ship
+	}
+	research_categories = {
+		mio_cat_tech_all_screen_ship_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_zhendongchuanxiezongju_tance
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_zhendongchuanxiezongju_fangkong
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_zhendongchuanxiezongju_qingpao
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_zhendongchuanxiezongju
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.05
+		}
+		equipment_bonus = {
+			sub_detection = 0.03
+			anti_air_attack = 0.02
+			lg_attack = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_shengna_sousuo
+		name = GPS_mio_trait_zhendong_shengna_sousuo
+		icon = GFX_generic_mio_trait_icon_surface_detection
+
+		position = { x=1 y=0 }
+
+		equipment_bonus = {
+			sub_detection = 0.05
+			surface_detection = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_shuitingqi_zhenlie
+		name = GPS_mio_trait_zhendong_shuitingqi_zhenlie
+		icon = GFX_generic_mio_trait_icon_sub_attack
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_shengna_sousuo
+
+		all_parents = { GPS_mio_trait_zhendong_shengna_sousuo }
+
+		equipment_bonus = {
+			sub_detection = 0.06
+			sub_attack = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_saolei_qiju
+		name = GPS_mio_trait_zhendong_saolei_qiju
+		icon = GFX_generic_mio_trait_icon_mines
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_shuitingqi_zhenlie
+
+		all_parents = { GPS_mio_trait_zhendong_shuitingqi_zhenlie }
+
+		equipment_bonus = {
+			mines_sweeping = 0.08
+			sub_detection = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_zhendong_jiada_leicang
+		name = GPS_mio_trait_zhendong_jiada_leicang
+		icon = GFX_generic_mio_trait_icon_mines
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_saolei_qiju
+
+		all_parents = { GPS_mio_trait_zhendong_saolei_qiju }
+
+		equipment_bonus = {
+			mines_planting = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_zhendong_leida_shaojie
+		name = GPS_mio_trait_zhendong_leida_shaojie
+		icon = GFX_generic_mio_trait_icon_surface_detection
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_shengna_sousuo
+
+		all_parents = { GPS_mio_trait_zhendong_shengna_sousuo }
+
+		equipment_bonus = {
+			surface_detection = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_zhendong_huoli_fenpei
+		name = GPS_mio_trait_zhendong_huoli_fenpei
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_leida_shaojie
+
+		all_parents = { GPS_mio_trait_zhendong_leida_shaojie }
+
+		equipment_bonus = {
+			surface_detection = 0.1
+		}
+	}
+
+
+	trait = {
+		token = GPS_mio_trait_zhendong_gaoshe_paowei
+		name = GPS_mio_trait_zhendong_gaoshe_paowei
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			anti_air_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_fangkong_huokong
+		name = GPS_mio_trait_zhendong_fangkong_huokong
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_offense
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_gaoshe_paowei
+
+		all_parents = { GPS_mio_trait_zhendong_gaoshe_paowei }
+
+		equipment_bonus = {
+			anti_air_attack = 0.04
+			reliability = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_duoyong_paotai
+		name = GPS_mio_trait_zhendong_duoyong_paotai
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_fangkong_huokong
+
+		all_parents = { GPS_mio_trait_zhendong_fangkong_huokong }
+
+		equipment_bonus = {
+			anti_air_attack = 0.04
+			lg_attack = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_jindui_fangkong
+		name = GPS_mio_trait_zhendong_jindui_fangkong
+		icon = GFX_generic_mio_department_icon_ship_general_offense
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_zhendong_duoyong_paotai
+
+		all_parents = { GPS_mio_trait_zhendong_duoyong_paotai GPS_mio_trait_zhendong_huoli_fenpei }
+
+		equipment_bonus = {
+			anti_air_attack = 0.06
+			max_strength = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_qingpao_paoshuan
+		name = GPS_mio_trait_zhendong_qingpao_paoshuan
+		icon = GFX_generic_mio_trait_icon_lg_attack
+
+		position = { x=6 y=0 }
+
+		equipment_bonus = {
+			lg_attack = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_zhendong_xuanzhuan_yuleiguan
+		name = GPS_mio_trait_zhendong_xuanzhuan_yuleiguan
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=8 y=0 }
+
+		equipment_bonus = {
+			torpedo_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_kuaisu_zhuangtian
+		name = GPS_mio_trait_zhendong_kuaisu_zhuangtian
+		icon = GFX_generic_mio_trait_icon_lg_attack
+
+		position = { x=6 y=2 }
+
+		equipment_bonus = {
+			lg_attack = 0.08
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_diandong_yulei
+		name = GPS_mio_trait_zhendong_diandong_yulei
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=8 y=2 }
+
+		equipment_bonus = {
+			torpedo_attack = 0.03
+			reliability = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_shengzhidao_yulei
+		name = GPS_mio_trait_zhendong_shengzhidao_yulei
+		icon = GFX_generic_mio_trait_icon_torpedo_attack
+
+		position = { x=8 y=4 }
+
+		equipment_bonus = {
+			torpedo_attack = 0.05
+
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_zhendong_qingxing_chuantai
+		name = GPS_mio_trait_zhendong_qingxing_chuantai
+		icon = GFX_generic_mio_department_icon_ship_screen_ship_production
+
+		position = { x=6 y=4 }
+
+		equipment_bonus = {
+			lg_attack = 0.03
+			reliability = 0.02
+		}
+		production_bonus = {
+			production_capacity_factor = 0.04
+		}
+	}
 }
 
 GPS_longjiangnongyonghangkongqizongchang = {#龙江农用航空器总厂
-	include = generic_cas_aircraft_organization
 	icon = GFX_idea_GPS_longjiangnongyonghangkongqizongchang
 	
 	allowed = {
@@ -149,10 +2429,398 @@ GPS_longjiangnongyonghangkongqizongchang = {#龙江农用航空器总厂
 			controls_state = 714
 		}
 	}
+
+	equipment_type = {
+		small_plane_cas_airframe
+		cv_small_plane_cas_airframe
+		small_plane_naval_bomber_airframe
+		cv_small_plane_naval_bomber_airframe
+		medium_plane_airframe
+	}
+
+	research_categories = {
+		mio_cat_all_cas_and_modules
+		mio_cat_all_naval_bomber_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_longjiangnongyonghangkongqizongchang_shengchan
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_longjiangnongyonghangkongqizongchang_dikong
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_longjiangnongyonghangkongqizongchang_wubei
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_longjiangnongyonghangkongqizongchang
+
+		equipment_bonus = {
+			air_ground_attack = 0.03
+			air_range = 0.02
+			maximum_speed = -0.02
+		}
+		production_bonus = {
+			production_cost_factor = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_nongji_jijia
+		name = GPS_mio_trait_longjiang_nongji_jijia
+		icon = GFX_generic_mio_department_icon_plane_cas_line_efficiency
+
+		position = { x=1 y=0 }
+
+		equipment_bonus = {
+			build_cost_ic = -0.03
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_muji_gongzhuang
+		name = GPS_mio_trait_longjiang_muji_gongzhuang
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_nongji_jijia
+
+		all_parents = { GPS_mio_trait_longjiang_nongji_jijia }
+
+		mutually_exclusive = { GPS_mio_trait_longjiang_jinshu_jijia }
+
+		production_bonus = {
+			production_capacity_factor = 0.06
+			production_efficiency_cap_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_jinshu_jijia
+		name = GPS_mio_trait_longjiang_jinshu_jijia
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_longjiang_muji_gongzhuang
+
+		all_parents = { GPS_mio_trait_longjiang_nongji_jijia }
+
+		mutually_exclusive = { GPS_mio_trait_longjiang_muji_gongzhuang }
+
+		equipment_bonus = {
+			reliability = 0.05
+			air_defence = 0.05
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_liangchan_banci
+		name = GPS_mio_trait_longjiang_liangchan_banci
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_muji_gongzhuang
+
+		all_parents = { GPS_mio_trait_longjiang_muji_gongzhuang }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_cost_factor = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_qianxian_xiubu
+		name = GPS_mio_trait_longjiang_qianxian_xiubu
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_jinshu_jijia
+
+		all_parents = { GPS_mio_trait_longjiang_jinshu_jijia }
+
+		equipment_bonus = {
+			air_range = 0.08
+			air_defence = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_jianhua_hangdian
+		name = GPS_mio_trait_longjiang_jianhua_hangdian
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=1 y=2 }
+		relative_position_id = GPS_mio_trait_longjiang_muji_gongzhuang
+
+		any_parent = { GPS_mio_trait_longjiang_liangchan_banci GPS_mio_trait_longjiang_qianxian_xiubu }
+
+		equipment_bonus = {
+			air_range = -0.02
+			reliability = -0.01
+		}
+		production_bonus = {
+			production_cost_factor = -0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_dikong_jiegou
+		name = GPS_mio_trait_longjiang_dikong_jiegou
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			air_defence = 0.05
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_jiagu_qianliang
+		name = GPS_mio_trait_longjiang_jiagu_qianliang
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_dikong_jiegou
+
+		all_parents = { GPS_mio_trait_longjiang_dikong_jiegou }
+
+		mutually_exclusive = { GPS_mio_trait_longjiang_qingkuai_caozong }
+
+		equipment_bonus = {
+			air_defence = 0.04
+			air_ground_attack = 0.02
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_qingkuai_caozong
+		name = GPS_mio_trait_longjiang_qingkuai_caozong
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_longjiang_jiagu_qianliang
+
+		all_parents = { GPS_mio_trait_longjiang_dikong_jiegou }
+
+		mutually_exclusive = { GPS_mio_trait_longjiang_jiagu_qianliang }
+
+		equipment_bonus = {
+			air_agility = 0.05
+			air_defence = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_zhuangjia_baohu
+		name = GPS_mio_trait_longjiang_zhuangjia_baohu
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_jiagu_qianliang
+
+		all_parents = { GPS_mio_trait_longjiang_jiagu_qianliang }
+
+		equipment_bonus = {
+			air_defence = 0.06
+			maximum_speed = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_lingmin_duochong
+		name = GPS_mio_trait_longjiang_lingmin_duochong
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_qingkuai_caozong
+
+		all_parents = { GPS_mio_trait_longjiang_qingkuai_caozong }
+
+		equipment_bonus = {
+			air_agility = 0.06
+			air_defence = -0.01
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_jindi_sazhi
+		name = GPS_mio_trait_longjiang_jindi_sazhi
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=1 y=2 }
+		relative_position_id = GPS_mio_trait_longjiang_jiagu_qianliang
+
+		any_parent = { GPS_mio_trait_longjiang_zhuangjia_baohu GPS_mio_trait_longjiang_lingmin_duochong }
+
+		equipment_bonus = {
+			air_agility = 0.04
+			air_defence = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_guadai_jia
+		name = GPS_mio_trait_longjiang_guadai_jia
+		icon = GFX_generic_mio_trait_icon_air_ground_attack
+
+		position = { x=7 y=0 }
+
+		equipment_bonus = {
+			air_ground_attack = 0.05
+			build_cost_ic = 0.02
+			naval_strike_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_xiaokoujing_huopao
+		name = GPS_mio_trait_longjiang_xiaokoujing_huopao
+		icon = GFX_generic_mio_department_icon_plane_cas_combat
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_guadai_jia
+
+		all_parents = { GPS_mio_trait_longjiang_guadai_jia }
+
+		mutually_exclusive = { GPS_mio_trait_longjiang_xiaoxing_zhadancang }
+
+		equipment_bonus = {
+			air_attack = 0.04
+			air_ground_attack = 0.03
+			naval_strike_attack = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_xiaoxing_zhadancang
+		name = GPS_mio_trait_longjiang_xiaoxing_zhadancang
+		icon = GFX_generic_mio_trait_icon_air_ground_attack
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_longjiang_xiaokoujing_huopao
+
+		all_parents = { GPS_mio_trait_longjiang_guadai_jia }
+
+		mutually_exclusive = { GPS_mio_trait_longjiang_xiaokoujing_huopao }
+
+		equipment_bonus = {
+			air_ground_attack = 0.06
+			air_range = -0.02
+			naval_strike_attack = 0.06
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_paodan_saoshe
+		name = GPS_mio_trait_longjiang_paodan_saoshe
+		icon = GFX_generic_mio_department_icon_plane_cas_combat
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_xiaokoujing_huopao
+
+		all_parents = { GPS_mio_trait_longjiang_xiaokoujing_huopao }
+
+		equipment_bonus = {
+			air_attack = 0.03
+			air_ground_attack = 0.04
+			naval_strike_attack = 0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_jizhong_toudan
+		name = GPS_mio_trait_longjiang_jizhong_toudan
+		icon = GFX_generic_mio_trait_icon_air_ground_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_xiaoxing_zhadancang
+
+		all_parents = { GPS_mio_trait_longjiang_xiaoxing_zhadancang }
+
+		equipment_bonus = {
+			air_ground_attack = 0.07
+			air_agility = -0.02
+			naval_strike_attack = 0.07
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_huojian_daogui
+		name = GPS_mio_trait_longjiang_huojian_daogui
+		icon = GFX_generic_mio_department_icon_plane_cas_combat
+
+		position = { x=0 y=2 }
+		relative_position_id = GPS_mio_trait_longjiang_xiaokoujing_huopao
+
+		any_parent = { GPS_mio_trait_longjiang_paodan_saoshe GPS_mio_trait_longjiang_jizhong_toudan }
+
+		equipment_bonus = {
+			air_ground_attack = 0.07
+			air_agility = -0.02
+			naval_strike_attack = 0.07
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_qingxing_zhayaojia
+		name = GPS_mio_trait_longjiang_qingxing_zhayaojia
+		icon = GFX_generic_mio_trait_icon_air_ground_attack
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_longjiang_huojian_daogui
+
+		any_parent = { GPS_mio_trait_longjiang_paodan_saoshe GPS_mio_trait_longjiang_jizhong_toudan }
+
+		equipment_bonus = {
+			air_ground_attack = 0.05
+			air_range = 0.03
+			naval_strike_attack = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_nonghang_gongji_tixi
+		name = GPS_mio_trait_longjiang_nonghang_gongji_tixi
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=4 y=4 }
+
+
+		all_parents = {
+			GPS_mio_trait_longjiang_jianhua_hangdian
+			GPS_mio_trait_longjiang_jindi_sazhi
+		}
+		any_parent = { GPS_mio_trait_longjiang_huojian_daogui GPS_mio_trait_longjiang_qingxing_zhayaojia }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.03
+			military_industrial_organization_funds_gain = 0.05
+		}
+		equipment_bonus = {
+			air_ground_attack = 0.03
+			air_defence = 0.03
+			reliability = 0.03
+		}
+		production_bonus = {
+			production_capacity_factor = 0.04
+		}
+	}
 }
 
 GPS_shenyangfeijizhizaochang = {#沈阳飞机制造厂
-	include = generic_multi_role_aircraft_organization
 	icon = GFX_idea_GPS_shenyangfeijizhizaochang
 	
 	allowed = {
@@ -166,10 +2834,362 @@ GPS_shenyangfeijizhizaochang = {#沈阳飞机制造厂
 			controls_state = 846
 		}
 	}
+
+	equipment_type = {
+		small_plane_airframe
+		cv_small_plane_airframe
+
+	}
+
+	research_categories = {
+		mio_cat_all_light_fighter_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_shenyangfeijizhizaochang_liangchan
+		x = 1
+	}
+	tree_header_text = {
+		text = mio_header_shenyangfeijizhizaochang_jiti
+		x = 4
+	}
+	tree_header_text = {
+		text = mio_header_shenyangfeijizhizaochang_wubei
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_shenyangfeijizhizaochang
+
+		equipment_bonus = {
+			air_attack = 0.08
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_jigong_gongzhuang
+		name = GPS_mio_trait_shenyang_jigong_gongzhuang
+		icon = GFX_generic_mio_department_icon_plane_fighter_line_efficiency
+
+		position = { x=1 y=0 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_cost_factor = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_jingmi_zhuangpei
+		name = GPS_mio_trait_shenyang_jingmi_zhuangpei
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_jigong_gongzhuang
+
+		all_parents = { GPS_mio_trait_shenyang_jigong_gongzhuang }
+
+		mutually_exclusive = { GPS_mio_trait_shenyang_fenduan_liushuixian }
+
+		equipment_bonus = {
+			reliability = 0.04
+			air_defence = 0.02
+		}
+		production_bonus = {
+			production_efficiency_cap_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_fenduan_liushuixian
+		name = GPS_mio_trait_shenyang_fenduan_liushuixian
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_shenyang_jingmi_zhuangpei
+
+		all_parents = { GPS_mio_trait_shenyang_jigong_gongzhuang }
+
+		mutually_exclusive = { GPS_mio_trait_shenyang_jingmi_zhuangpei }
+
+		equipment_bonus = {
+			reliability = -0.02
+		}
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_cost_factor = -0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_dianhan_taiwei
+		name = GPS_mio_trait_shenyang_dianhan_taiwei
+		icon = GFX_generic_mio_trait_icon_build_cost_ic
+
+		position = { x=1 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_jingmi_zhuangpei
+
+		any_parent = { GPS_mio_trait_shenyang_jingmi_zhuangpei GPS_mio_trait_shenyang_fenduan_liushuixian }
+
+		equipment_bonus = {
+			build_cost_ic = -0.02
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_lingjian_bianhao
+		name = GPS_mio_trait_shenyang_lingjian_bianhao
+		icon = GFX_generic_mio_department_icon_plane_general_production
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_dianhan_taiwei
+
+		all_parents = { GPS_mio_trait_shenyang_dianhan_taiwei }
+
+		production_bonus = {
+			production_capacity_factor = 0.04
+			production_efficiency_cap_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_zhanchang_fanxiu
+		name = GPS_mio_trait_shenyang_zhanchang_fanxiu
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_lingjian_bianhao
+
+		all_parents = { GPS_mio_trait_shenyang_lingjian_bianhao }
+
+		equipment_bonus = {
+			reliability = 0.05
+			air_defence = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_fengdong_xiuzheng
+		name = GPS_mio_trait_shenyang_fengdong_xiuzheng
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			air_agility = 0.04
+			maximum_speed = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_gaokong_zengya
+		name = GPS_mio_trait_shenyang_gaokong_zengya
+		icon = GFX_generic_mio_department_icon_plane_fighter_engine
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_fengdong_xiuzheng
+
+		all_parents = { GPS_mio_trait_shenyang_fengdong_xiuzheng }
+
+		mutually_exclusive = { GPS_mio_trait_shenyang_diyouyi_jichang }
+
+		equipment_bonus = {
+			maximum_speed = 0.06
+			air_attack = 0.03
+			fuel_consumption = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_diyouyi_jichang
+		name = GPS_mio_trait_shenyang_diyouyi_jichang
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_shenyang_gaokong_zengya
+
+		all_parents = { GPS_mio_trait_shenyang_fengdong_xiuzheng }
+
+		mutually_exclusive = { GPS_mio_trait_shenyang_gaokong_zengya }
+
+		equipment_bonus = {
+			air_agility = 0.07
+			air_range = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_quanshu_jichang
+		name = GPS_mio_trait_shenyang_quanshu_jichang
+		icon = GFX_generic_mio_trait_icon_defense
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_gaokong_zengya
+
+		any_parent = { GPS_mio_trait_shenyang_gaokong_zengya GPS_mio_trait_shenyang_diyouyi_jichang }
+
+		equipment_bonus = {
+			air_defence = 0.05
+			reliability = 0.04
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_daikou_jiansu
+		name = GPS_mio_trait_shenyang_daikou_jiansu
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_diyouyi_jichang
+
+		any_parent = { GPS_mio_trait_shenyang_gaokong_zengya GPS_mio_trait_shenyang_diyouyi_jichang }
+
+		equipment_bonus = {
+			air_agility = 0.04
+			air_defence = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_mianshi_youxiang
+		name = GPS_mio_trait_shenyang_mianshi_youxiang
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_quanshu_jichang
+
+		any_parent = { GPS_mio_trait_shenyang_quanshu_jichang GPS_mio_trait_shenyang_daikou_jiansu }
+
+		equipment_bonus = {
+			air_range = 0.05
+			fuel_consumption = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_lianghao_fadongji_shiyan
+		name = GPS_mio_trait_shenyang_lianghao_fadongji_shiyan
+		icon = GFX_generic_mio_trait_icon_maximum_speed
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_shenyang_mianshi_youxiang
+
+		any_parent = { GPS_mio_trait_shenyang_quanshu_jichang GPS_mio_trait_shenyang_daikou_jiansu }
+
+		equipment_bonus = {
+			maximum_speed = 0.05
+			reliability = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_yiti_huopaojia
+		name = GPS_mio_trait_shenyang_yiti_huopaojia
+		icon = GFX_generic_mio_department_icon_plane_fighter_combat
+
+		position = { x=7 y=0 }
+
+		equipment_bonus = {
+			air_attack = 0.05
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_jizhong_jipao
+		name = GPS_mio_trait_shenyang_jizhong_jipao
+		icon = GFX_generic_mio_trait_icon_anti_air_attack
+
+		position = { x=-1 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_yiti_huopaojia
+
+		all_parents = { GPS_mio_trait_shenyang_yiti_huopaojia }
+
+		mutually_exclusive = { GPS_mio_trait_shenyang_kongkong_huojian }
+
+		equipment_bonus = {
+			air_attack = 0.08
+			air_agility = -0.02
+			build_cost_ic = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_kongkong_huojian
+		name = GPS_mio_trait_shenyang_kongkong_huojian
+		icon = GFX_generic_mio_department_icon_plane_general_combat
+
+		position = { x=2 y=0 }
+		relative_position_id = GPS_mio_trait_shenyang_jizhong_jipao
+
+		all_parents = { GPS_mio_trait_shenyang_yiti_huopaojia }
+
+		mutually_exclusive = { GPS_mio_trait_shenyang_jizhong_jipao }
+
+		equipment_bonus = {
+			air_attack = 0.05
+			maximum_speed = -0.01
+			build_cost_ic = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_danyao_songdan
+		name = GPS_mio_trait_shenyang_danyao_songdan
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_jizhong_jipao
+
+		all_parents = { GPS_mio_trait_shenyang_jizhong_jipao }
+
+		equipment_bonus = {
+			air_attack = 0.04
+			reliability = 0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_leida_jieji
+		name = GPS_mio_trait_shenyang_leida_jieji
+		icon = GFX_generic_mio_trait_icon_surface_detection
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_shenyang_kongkong_huojian
+
+		all_parents = { GPS_mio_trait_shenyang_kongkong_huojian }
+
+		equipment_bonus = {
+			air_attack = 0.03
+			air_range = 0.03
+			surface_detection = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_shenyang_zhandou_fengdui_tiaojiao
+		name = GPS_mio_trait_shenyang_zhandou_fengdui_tiaojiao
+		icon = GFX_generic_mio_trait_icon_air_agility
+
+		position = { x=1 y=2 }
+		relative_position_id = GPS_mio_trait_shenyang_jizhong_jipao
+
+		any_parent = { GPS_mio_trait_shenyang_danyao_songdan GPS_mio_trait_shenyang_leida_jieji }
+
+		equipment_bonus = {
+			air_attack = 0.04
+			air_agility = 0.04
+		}
+	}
 }
 
+
+
 GPS_dongbeinongkenjituan = {#东北农垦集团
-	include = generic_medium_tank_organization 
 	icon = GFX_idea_GPS_dongbeinongkenjituan
 	
 	allowed = {
@@ -183,10 +3203,235 @@ GPS_dongbeinongkenjituan = {#东北农垦集团
 			controls_state = 849
 		}
 	}
+	equipment_type = { armor }
+
+	research_categories = {
+		mio_cat_tech_all_armor_and_modules
+	}
+
+	tree_header_text = {
+		text = mio_header_guandonglianhejidongcheliangjituan_dipan
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_guandonglianhejidongcheliangjituan_cheti
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_guandonglianhejidongcheliangjituan_zhuangpei
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_guandonglianhejidongcheliangjituan
+
+		equipment_bonus = {
+			hardness = -0.03
+			armor_value = -0.05
+			build_cost_ic = -0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_guandong_jianhua_dipan
+		name = GPS_mio_trait_guandong_jianhua_dipan
+		icon = GFX_generic_mio_department_icon_tank_general_engine
+
+		position = { x=1 y=0 }
+
+		equipment_bonus = {
+			reliability = -0.05
+			build_cost_ic = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_guandong_tongyong_xuanjia
+		name = GPS_mio_trait_guandong_tongyong_xuanjia
+		icon = GFX_generic_mio_department_icon_tank_general_line_efficiency
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_jianhua_dipan
+
+		all_parents = { GPS_mio_trait_guandong_jianhua_dipan }
+
+		equipment_bonus = {
+			defense = -0.03
+			build_cost_ic = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_guandong_yinqing_tongyihua
+		name = GPS_mio_trait_guandong_yinqing_tongyihua
+		icon = GFX_generic_mio_trait_icon_fuel_consumption
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_tongyong_xuanjia
+
+		all_parents = { GPS_mio_trait_guandong_tongyong_xuanjia }
+
+		equipment_bonus = {
+			maximum_speed = -0.02
+			fuel_consumption = 0.04
+			build_cost_ic = -0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_guandong_zhuangjia_jianyi
+		name = GPS_mio_trait_guandong_zhuangjia_jianyi
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_yinqing_tongyihua
+
+		all_parents = { GPS_mio_trait_guandong_yinqing_tongyihua }
+
+		equipment_bonus = {
+			armor_value = -0.02
+			build_cost_ic = -0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_guandong_pingzhi_cheti
+		name = GPS_mio_trait_guandong_pingzhi_cheti
+		icon = GFX_generic_mio_trait_icon_ap_attack
+
+		position = { x=4 y=0 }
+
+		equipment_bonus = {
+			hard_attack = -0.05
+			build_cost_ic = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_guandong_chongya_gongyi
+		name = GPS_mio_trait_guandong_chongya_gongyi
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_pingzhi_cheti
+
+		all_parents = { GPS_mio_trait_guandong_pingzhi_cheti }
+
+		equipment_bonus = {
+			soft_attack = -0.03
+			build_cost_ic = -0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_guandong_jianhua_paota
+		name = GPS_mio_trait_guandong_jianhua_paota
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_chongya_gongyi
+
+		all_parents = { GPS_mio_trait_guandong_chongya_gongyi }
+
+		equipment_bonus = {
+			breakthrough = -0.03
+			build_cost_ic = -0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_guandong_tongyong_zhandoubu
+		name = GPS_mio_trait_guandong_tongyong_zhandoubu
+		icon = GFX_generic_mio_trait_icon_soft_attack
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_jianhua_paota
+
+		all_parents = { GPS_mio_trait_guandong_jianhua_paota }
+
+		equipment_bonus = {
+			ap_attack = -0.05
+			build_cost_ic = -0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_guandong_zongzhuang_liushuixian
+		name = GPS_mio_trait_guandong_zongzhuang_liushuixian
+		icon = GFX_generic_mio_department_icon_tank_general_production
+
+		position = { x=7 y=0 }
+
+		organization_modifier = {
+			military_industrial_organization_design_team_assign_cost = -0.250
+			military_industrial_organization_research_bonus = 0.1
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_guandong_lingjian_huhuan
+		name = GPS_mio_trait_guandong_lingjian_huhuan
+		icon = GFX_generic_mio_department_icon_tank_general_quality
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_zongzhuang_liushuixian
+
+		all_parents = { GPS_mio_trait_guandong_zongzhuang_liushuixian }
+
+		organization_modifier = {
+			military_industrial_organization_size_up_requirement = -0.15
+			military_industrial_organization_funds_gain = 0.10
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_guandong_zhanche_peitao
+		name = GPS_mio_trait_guandong_zhanche_peitao
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_lingjian_huhuan
+
+		all_parents = { GPS_mio_trait_guandong_lingjian_huhuan }
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.1
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_guandong_tiba_jishuyuan
+		name = GPS_mio_trait_guandong_tiba_jishuyuan
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_guandong_zhanche_peitao
+
+		all_parents = { GPS_mio_trait_guandong_zhanche_peitao }
+
+		organization_modifier = {
+			military_industrial_organization_funds_gain = 0.1
+			military_industrial_organization_size_up_requirement = -0.15
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_guandong_liangchan_lanben
+		name = GPS_mio_trait_guandong_liangchan_lanben
+		icon = GFX_generic_mio_department_icon_tank_general_technology
+
+		position = { x=3 y=2 }
+		relative_position_id = GPS_mio_trait_guandong_yinqing_tongyihua
+
+		all_parents = {
+			GPS_mio_trait_guandong_tiba_jishuyuan
+			GPS_mio_trait_guandong_tongyong_zhandoubu
+			GPS_mio_trait_guandong_zhuangjia_jianyi
+		}
+
+		equipment_bonus = {
+			build_cost_ic = -0.05
+		}
+	}
 }
 
 GPS_longjiangzhonggong = {#龙江重工
-	include = generic_artillery_organization
 	icon = GFX_idea_GPS_longjiangzhonggong
 	
 	allowed = {
@@ -200,5 +3445,253 @@ GPS_longjiangzhonggong = {#龙江重工
 			controls_state = 714
 		}
 	}
+
+	equipment_type = {
+		artillery_equipment
+		anti_tank_equipment
+		anti_air_equipment
+		rocket_artillery_equipment
+	}
+
+	research_categories = {
+		mio_cat_all_artillery_equipment
+	}
+
+	tree_header_text = {
+		text = mio_header_longjiangzhonggong_zhizao
+		x = 1
+	}
+
+	tree_header_text = {
+		text = mio_header_longjiangzhonggong_gongxu
+		x = 4
+	}
+
+	tree_header_text = {
+		text = mio_header_longjiangzhonggong_gongying
+		x = 7
+	}
+
+	initial_trait = {
+		name = GPS_mio_longjiangzhonggong
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.03
+		}
+
+		production_bonus = {
+			production_cost_factor = -0.08
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_zhugang_jichu
+		name = GPS_mio_trait_longjiang_zhugang_jichu
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=1 y=0 }
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+			production_resource_need_factor = -0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_paoguan_cucaichengxing
+		name = GPS_mio_trait_longjiang_paoguan_cucaichengxing
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_zhugang_jichu
+
+		all_parents = { GPS_mio_trait_longjiang_zhugang_jichu }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.05
+			production_cost_factor = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_jiagong_jiajv
+		name = GPS_mio_trait_longjiang_jiagong_jiajv
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_paoguan_cucaichengxing
+
+		all_parents = { GPS_mio_trait_longjiang_paoguan_cucaichengxing }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.04
+			production_capacity_factor = 0.03
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_longjiang_xianjin_jichuang
+		name = GPS_mio_trait_longjiang_xianjin_jichuang
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_jiagong_jiajv
+
+		all_parents = { GPS_mio_trait_longjiang_jiagong_jiajv }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+			production_efficiency_gain_factor = 0.07
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_longjiang_gongxu_biaozhun
+		name = GPS_mio_trait_longjiang_gongxu_biaozhun
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=4 y=0 }
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.06
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_lingjian_huhuan
+		name = GPS_mio_trait_longjiang_lingjian_huhuan
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_gongxu_biaozhun
+
+		all_parents = { GPS_mio_trait_longjiang_gongxu_biaozhun }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.05
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_zhijian_liucheng
+		name = GPS_mio_trait_longjiang_zhijian_liucheng
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_lingjian_huhuan
+
+		all_parents = { GPS_mio_trait_longjiang_lingjian_huhuan }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.02
+		}
+
+		production_bonus = {
+			production_efficiency_gain_factor = 0.03
+			production_cost_factor = -0.02
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_longjiang_liushuixian_zuzhuang
+		name = GPS_mio_trait_longjiang_liushuixian_zuzhuang
+		icon = GFX_generic_mio_trait_icon_reliability
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_zhijian_liucheng
+
+		all_parents = { GPS_mio_trait_longjiang_zhijian_liucheng }
+
+		production_bonus = {
+			production_cost_factor = -0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_longjiang_songhua_tielu
+		name = GPS_mio_trait_longjiang_songhua_tielu
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=7 y=0 }
+
+		production_bonus = {
+			production_capacity_factor = 0.04
+			production_efficiency_gain_factor = 0.03
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_kucun_peitao
+		name = GPS_mio_trait_longjiang_kucun_peitao
+		icon = GFX_generic_mio_trait_icon_production_capacity
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_songhua_tielu
+
+		all_parents = { GPS_mio_trait_longjiang_songhua_tielu }
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.04
+			production_cost_factor = -0.02
+		}
+	}
+
+	trait = {
+		token = GPS_mio_trait_longjiang_dingdan_tongchou
+		name = GPS_mio_trait_longjiang_dingdan_tongchou
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_kucun_peitao
+
+		all_parents = { GPS_mio_trait_longjiang_kucun_peitao }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.02
+		}
+
+		production_bonus = {
+			production_capacity_factor = 0.05
+		}
+	}
+	trait = {
+		token = GPS_mio_trait_longjiang_jiada_yanjiu
+		name = GPS_mio_trait_longjiang_jiada_yanjiu
+		icon = GFX_generic_mio_trait_icon_efficiency_gain
+
+		position = { x=0 y=1 }
+		relative_position_id = GPS_mio_trait_longjiang_dingdan_tongchou
+
+		all_parents = { GPS_mio_trait_longjiang_dingdan_tongchou }
+
+		organization_modifier = {
+			military_industrial_organization_research_bonus = 0.1
+			military_industrial_organization_funds_gain = 0.10
+		}
+
+
+	}
+	trait = {
+		token = GPS_mio_trait_longjiang_zhonggong_tixi
+		name = GPS_mio_trait_longjiang_zhonggong_tixi
+		icon = GFX_generic_mio_department_icon_facilities
+
+		position = { x=4 y=4 }
+
+		any_parent = {
+			GPS_mio_trait_longjiang_xianjin_jichuang
+			GPS_mio_trait_longjiang_liushuixian_zuzhuang
+			GPS_mio_trait_longjiang_jiada_yanjiu
+		}
+
+		production_bonus = {
+			production_efficiency_cap_factor = 0.1
+			production_capacity_factor = 0.1
+		}
+	}
 }
+
+
+
+
+
+
+
+
 
