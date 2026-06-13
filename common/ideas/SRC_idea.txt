@@ -144,6 +144,103 @@ ideas = {
 			 }
 		}
 	}
+	academy_spirit ={
+		SRC_red_cadre_school_spirit = {
+			ledger = army
+			visible = {
+				tag = SRC
+				has_military_academy = yes
+			}
+			available = {
+				has_military_academy = yes
+			}
+			modifier = {
+				experience_gain_factor = 0.1
+				army_morale_factor = 0.1
+				coordination_bonus = 0.05
+			}
+			ai_will_do = {
+				base = 1
+
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = { has_dlc = "No Step Back" }
+						NOT = { tag = SRC }
+					}
+				}
+
+				modifier = {
+					factor = 4
+					tag = SRC
+				}
+			}
+		}
+
+	}
+	division_command_spirit = {
+		SRC_frontline_party_branch_spirit = {
+			ledger = army
+			visible = {
+				tag = SRC
+			}
+			available = {
+				has_military_academy = yes
+			}
+			modifier = {
+				army_morale_factor = 0.05
+				land_reinforce_rate = 0.02
+				initiative_factor = 0.03
+			}
+			ai_will_do = {
+				base = 1
+
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = { has_dlc = "No Step Back" }
+						NOT = { tag = SRC }
+					}
+				}
+
+				modifier = {
+					factor = 4
+					tag = SRC
+				}
+			}
+		}
+	}
+	army_spirit = {
+		SRC_people_war_spirit = {
+			ledger = army
+			visible = {
+				tag = SRC
+			}
+			available = {
+				has_military_academy = yes
+			}
+			modifier = {
+				supply_consumption_factor = -0.05
+				initiative_factor = 0.05
+			}
+			ai_will_do = {
+				base = 1
+
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = { has_dlc = "No Step Back" }
+						NOT = { tag = SRC }
+					}
+				}
+
+				modifier = {
+					factor = 4
+					tag = SRC
+				}
+			}
+		}
+	}
 	#顾问#
 	TOD_minister_head = { 
 		SRC_deng_zhongxia = {
