@@ -1,0 +1,437 @@
+src_red_army_organization = {
+    track = infantry
+    name = SUBDOCTRINE_SRC_RED_ARMY_ORGANIZATION
+    description = SUBDOCTRINE_SRC_RED_ARMY_ORGANIZATION_DESC
+    icon = GFX_doctrine_SRC_revolutionary_army_construction_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    available = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+    visible = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+
+    ai_will_do = {
+        base = 1
+        modifier = {
+            factor = 95
+            original_tag = SRC
+        }
+    }
+
+    enable_tactic = tactic_delay
+
+    category_all_infantry = {
+        max_organisation = 5
+        supply_consumption = -0.03
+        defense = 0.05
+    }
+
+    rewards = {
+        src_workers_picket_cadres = {
+            category_all_infantry = {
+                max_organisation = 5
+                default_morale = 0.10
+            }
+            experience_loss_factor = -0.03
+        }
+        src_company_political_groups = {
+            training_time_army_factor = -0.05
+            unit_infantry_design_cost_factor = -0.10
+            category_all_infantry = {
+                max_organisation = 5
+            }
+        }
+        src_red_cadre_school = {
+            command_power_gain = 0.015
+            land_reinforce_rate = 0.01
+            category_all_infantry = {
+                breakthrough = 0.10
+            }
+        }
+        src_reorganized_defectors = {
+            army_leader_cost_factor = -0.10
+            experience_loss_factor = -0.05
+            category_all_infantry = {
+                default_morale = 0.15
+            }
+        }
+        src_regular_red_army_tables = {
+            land_night_attack = 0.2
+            category_all_infantry = {
+                soft_attack = 0.10
+                defense = 0.10
+            }
+        }
+    }
+}
+src_revolutionary_maneuver = {
+    track = operations
+    name = SUBDOCTRINE_SRC_REVOLUTIONARY_MANEUVER
+    description = SUBDOCTRINE_SRC_REVOLUTIONARY_MANEUVER_DESC
+    icon = GFX_doctrine_SRC_operational_command_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    available = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+
+    visible = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+
+    ai_will_do = {
+        base = 1
+        modifier = {
+            factor = 95
+            original_tag = SRC
+        }
+    }
+    
+    enable_tactic = tactic_elastic_defense
+
+    category_army = {
+        max_organisation = 5
+        default_morale = 0.10
+        max_strength = 0.10
+    }
+    category_all_infantry = {
+        defense = 0.05
+    }
+    
+    rewards = {
+        src_political_commissar_system = {
+            army_morale = 0.10
+            category_all_infantry = {
+                max_organisation = 5
+            }
+        }
+
+        src_soldier_political_education = {
+            experience_loss_factor = -0.05
+            category_all_infantry = {
+                default_morale = 0.10
+                defense = 0.05
+            }
+        }
+
+        src_basic_cadre_training = {
+            command_power_gain = 0.015
+            category_all_infantry = {
+                max_organisation = 5
+            }
+        }
+
+        src_standardized_company_tables = {
+            training_time_army_factor = -0.05
+            category_all_infantry = {
+                breakthrough = 0.10
+            }
+        }
+
+        src_regular_red_army_system = {
+            land_reinforce_rate = 0.02
+            category_all_infantry = {
+                soft_attack = 0.10
+                defense = 0.10
+                breakthrough = 0.10
+            }
+        }
+    }
+}
+src_people_arsenal_support = {
+    track = combat_support
+    name = SUBDOCTRINE_SRC_PEOPLE_ARSENAL_SUPPORT
+    description = SUBDOCTRINE_SRC_PEOPLE_ARSENAL_SUPPORT_DESC
+    icon = GFX_doctrine_SRC_people_arsenal_support_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    available = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+    visible = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+
+    ai_will_do = {
+        base = 1
+        modifier = {
+            factor = 95
+            original_tag = SRC
+        }
+    }
+
+    enable_tactic = tactic_overwhelming_fire
+
+    category_support_battalions = {
+        max_organisation = 5
+    }
+    category_line_artillery = {
+        max_organisation = 5
+        soft_attack = 0.1
+        supply_consumption = -0.03
+    }
+    rewards = {
+        src_factory_repair_shops = {
+            attrition = -0.05
+            maintenance_company = {
+                max_organisation = 10
+                reliability = 0.05
+                battalion_mult = {
+                    category = category_all_armor
+                    defense = 0.1
+                    breakthrough = 0.1
+                }
+            }
+            category_support_battalions = {
+                reliability = 0.05
+            }
+        }
+        src_improvised_demolition_teams = {
+            engineer = {
+                fort = {
+                    attack = 0.10
+                }
+                river = {
+                    attack = 0.05
+                }
+                urban = {
+                    attack = 0.10
+                }
+                battalion_mult = {
+                    category = category_all_infantry
+                    breakthrough = 0.1
+                }
+            }
+            assault_engineer = {
+                fort = {
+                    attack = 0.10
+                }
+                river = {
+                    attack = 0.05
+                }
+                urban = {
+                    attack = 0.10
+                }
+                battalion_mult = {
+                    category = category_all_armor
+                    maximum_speed = 0.1
+                }
+            }
+            armored_engineer = {
+                fort = {
+                    attack = 0.10
+                }
+                river = {
+                    attack = 0.05
+                }
+                urban = {
+                    attack = 0.10
+                }
+                battalion_mult = {
+                    category = category_all_armor
+                    entrenchment = 0.05  
+                    ap_attack = 0.10
+                }
+            }
+        }
+        src_captured_gun_groups = {
+            artillery_brigade = {
+                soft_attack = 0.15
+                supply_consumption = -0.03
+            }
+            category_support_artillery = {
+                max_organisation = 5
+                soft_attack = 0.10
+            }
+        }
+        src_battlefield_evacuation_stations = {
+            field_hospital = {
+                casualty_trickleback = 0.15
+                experience_loss_factor = -0.15
+            }
+            logistics_company = {
+                max_organisation = 5
+                supply_consumption = -0.10
+            }
+        }
+        src_military_controlled_production = {
+            supply_consumption_factor = -0.1
+            category_support_battalions = {
+                max_organisation = 5
+                soft_attack = 0.05
+            }
+            category_line_artillery = {
+                soft_attack = 0.05
+                defense = 0.05
+            }
+            engineer = {
+                mountain = {
+                    movement = 0.05
+                    defence = 0.05
+                }
+                marsh = {
+                    movement = 0.05
+                }
+                battalion_mult = {
+                    category = category_all_infantry
+                    defense = 0.05
+                    add = yes
+                }
+            }
+        }
+    }
+}
+
+src_red_mobile_columns = {
+    track = armor
+    name = SUBDOCTRINE_SRC_RED_MOBILE_COLUMNS
+    description = SUBDOCTRINE_SRC_RED_MOBILE_COLUMNS_DESC
+    icon = GFX_doctrine_SRC_armored_assault_medium
+
+    xp_cost = 100
+    xp_type = army
+
+    available = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+    visible = {
+        OR = {
+            tag = SRC
+            original_tag = SRC
+        }
+    }
+
+    ai_will_do = {
+        base = 1
+        modifier = {
+            factor = 95
+            original_tag = SRC
+        }
+    }
+
+    enable_tactic = tactic_unexpected_thrust
+
+    category_all_armor = {
+        max_organisation = 5
+        breakthrough = 0.10
+        reliability = 0.05
+        supply_consumption = -0.05
+    }
+    motorized = {
+        maximum_speed = 0.05
+        default_morale = 0.10
+    }
+    mechanized ={
+        maximum_speed = 0.05
+        default_morale = 0.10
+    }
+    rewards = {
+        src_reconnaissance_cavalry = {
+            category_all_armor = {
+                reliability = 0.10
+                max_organisation = 3
+                initiative = 0.01
+            }
+        }
+        src_captured_vehicle_workshops = {
+            armored_car = {
+                maximum_speed = 0.05
+                breakthrough = 0.10
+                max_organisation = 5
+            }
+            light_armor = {
+                maximum_speed = 0.05
+                breakthrough = 0.10
+                max_organisation = 5
+            }
+            light_tank_recon = {
+                recon = 0.25
+                battalion_mult = {
+                    category = category_all_armor
+                    soft_attack = 0.05
+                }
+            }
+        }
+        src_fast_penetration_groups = {
+            category_all_armor = {
+                soft_attack = 0.10
+                breakthrough = 0.10
+            }
+            category_all_infantry = {
+                breakthrough = 0.05
+            }
+        }
+        src_armored_infantry_detachments = {
+            category_all_armor = {
+                maximum_speed = 0.05
+                default_morale = 0.20
+                supply_consumption = -0.05
+            }
+            org_loss_when_moving = -0.10
+        }
+        src_red_mobile_column = {
+            category_all_armor = {
+                max_organisation = 5
+                breakthrough = 0.15
+                soft_attack = 0.10
+                hard_attack = 0.10
+            }
+            light_flame_tank = {
+                breakthrough = 0.10
+                soft_attack = 0.10
+                battalion_mult = {
+                    category = category_all_armor
+                    entrenchment = 0.05
+                    add = yes
+                }
+            }
+            medium_flame_tank = {
+                breakthrough = 0.10
+                soft_attack = 0.10
+                battalion_mult = {
+                    category = category_all_armor
+                    entrenchment = 0.05
+                    add = yes
+                }
+            }
+            heavy_flame_tank = {
+                breakthrough = 0.10
+                soft_attack = 0.10
+                battalion_mult = {
+                    category = category_all_armor
+                    entrenchment = 0.05
+                    add = yes
+                }
+            }
+        }
+    }
+}
