@@ -1,0 +1,79 @@
+add_namespace = Finland
+
+#大北方战争 1937.10
+country_event = {
+	id = Finland.1
+	title = Finland.1.t
+	desc = Finland.1.d
+	
+	fire_only_once = yes
+	trigger = {
+		date > 1937.9.30
+		tag = FIN
+	}
+	
+	option = {
+		name = Finland.1.a 
+		declare_war_on = { target = SWE type = annex_everything }
+	}
+}
+
+#芬兰胜利
+country_event = {
+	id = Finland.2
+	title = Finland.2.t
+	desc = Finland.2.d
+	picture = GFX_report_event_generic_run_on_the_banks
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = FIN
+		NOT = {country_exists = SWE}
+	}
+
+	option = {
+		name = Finland.2.a
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = NOR
+					is_core_of = SWE
+				}
+			}
+			add_core_of = FIN
+		}
+		annex_country = { target = NOR }
+		set_cosmetic_tag = FIN_USSR
+	}
+}
+
+#芬兰胜利
+country_event = {
+	id = Finland.3
+	title = Finland.3.t
+	desc = Finland.3.d
+	picture = GFX_report_event_generic_run_on_the_banks
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = SWE
+		NOT = {country_exists = FIN}
+	}
+
+	option = {
+		name = Finland.3.a
+		every_state = {
+			limit = {
+				OR = {
+					is_core_of = NOR
+					is_core_of = FIN
+				}
+			}
+			add_core_of = SWE
+		}
+		annex_country = { target = NOR }
+	}
+}
+
