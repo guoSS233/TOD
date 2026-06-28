@@ -281,16 +281,16 @@ country_event = {
 			}
 			GPS ={
 				hidden_effect = {
-				transfer_units_fraction= {
-					target = SRC
-					stockpile_ratio = 0.7
-					navy_ratio = 0
-					air_ratio = 0.3
-					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+					transfer_units_fraction = {
+						target = SRC
+						stockpile_ratio = 0.7
+						navy_ratio = 0
+						air_ratio = 0.3
+						keep_unit_leaders_trigger = {
+							has_trait = MNG_damingjungguan
+						}
 					}
 				}
-			}
 			}
 
 		}
@@ -343,15 +343,15 @@ country_event = {
 			}
 			GPS = {
 				hidden_effect = {
-				transfer_units_fraction= {
-					target = SRC
-					stockpile_ratio = 0.7
-					navy_ratio = 0
-					air_ratio = 0.3
-					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+					transfer_units_fraction = {
+						target = SRC
+						stockpile_ratio = 0.7
+						navy_ratio = 0
+						air_ratio = 0.3
+						keep_unit_leaders_trigger = {
+							has_trait = MNG_damingjungguan
+						}
 					}
-				}
 				}
 			}
 		}
@@ -383,7 +383,7 @@ country_event = {
 		}
 		GPS = {
 			hidden_effect = {
-				transfer_units_fraction= {
+				transfer_units_fraction = {
 					target = SRC
 					stockpile_ratio = 0.7
 					navy_ratio = 0
@@ -441,7 +441,7 @@ country_event = {
 		}
 		GPS = {
 			hidden_effect = {
-				transfer_units_fraction= {
+				transfer_units_fraction = {
 					target = SRC
 					stockpile_ratio = 0.7
 					navy_ratio = 0
@@ -631,22 +631,6 @@ country_event = {
 	}
 	option = { 
 		name = GPSevents.17.b
-	}
-}
-#维护大明海外利益
-country_event = {
-	id = GPSevents.18
-	title = GPSevents.18.t
-	desc =GPSevents.18.d
-	picture = GFX_report_event_chinese_soldiers_fighting
-	
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	trigger = {tag = GPS}
-	
-	option = { 
-		name = GPSevents.18.a
 	}
 }
 #维护大明海外利益
