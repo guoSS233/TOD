@@ -171,7 +171,7 @@ country_event = {
 country_event = {
 	id = britain.8
 	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.8 FROM = [From.GetName]" }
-	title = text = britain.8.t
+	title = britain.8.t
 	desc = {
 		text = britain.8.d.su
 		trigger = { has_country_flag = ENG_Assassin_success }
@@ -524,10 +524,10 @@ country_event = {
 country_event = {
 	id = britain.22
 	immediate = { log = "[GetDateText]: [Root.GetName]: event britain.22 FROM = [From.GetName]" }
-	title = text = britain.22.t
+	title = britain.22.t
 	desc = {#领导者不是乔伊斯，成功
 		text = britain.22.d.su
-		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+		trigger = {NOT = {has_country_flag = ENG_pm_joyce }}
 	}
 	desc = {#领导者是乔伊斯，失败
 		text = britain.22.d.fa
@@ -539,7 +539,7 @@ country_event = {
 
 	option = { #早知今日，何必当初？
 		name = britain.22.a
-		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+		trigger = {NOT = {has_country_flag = ENG_pm_joyce }}
 		9392 = { set_demilitarized_zone = no }
 	}
 	option = { #敬酒不吃吃罚酒！
@@ -557,7 +557,7 @@ country_event = {
 	title = text = britain.23.t
 	desc = {#如果发生过卡尔顿山的日落/劝降 30%可能选择此文本,否则60
 		text = britain.23.d.su
-		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+		trigger = {NOT = {has_country_flag = ENG_pm_joyce }}
 	}
 	desc = {#领导者是乔伊斯，失败
 		text = britain.23.d.fa
@@ -569,7 +569,7 @@ country_event = {
 
 	option = { #早知今日，何必当初？
 		name = britain.22.a
-		trigger = NOT = {has_country_flag = ENG_pm_joyce }
+		trigger = {NOT = {has_country_flag = ENG_pm_joyce }}
 		9392 = { set_demilitarized_zone = no }
 	}
 	option = { #敬酒不吃吃罚酒！
