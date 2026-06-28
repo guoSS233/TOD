@@ -1,0 +1,391 @@
+add_namespace = TODSIC
+add_namespace = chinese_events_sic
+#发生甚么事了？
+country_event = {
+	id = TODSIC.1
+	title = TODSIC.1.t
+	desc = TODSIC.1.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.1.a
+		country_event = { id = TODSIC.2 days = 7}
+	}
+}
+#总结目前状况
+country_event = {
+	id = TODSIC.2
+	title = TODSIC.2.t
+	desc = TODSIC.2.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.2.a
+		country_event = { id = TODSIC.3 days = 7}
+	}
+}
+#抉择时刻
+country_event = {
+	id = TODSIC.3
+	title = TODSIC.3.t
+	desc = TODSIC.3.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.3.a
+		set_country_flag = SIC_baochizhongli
+		complete_national_focus = SIC_baochizhongli
+	}
+	option = {
+		name = TODSIC.3.b
+		set_country_flag = SIC_zunwangtaojian
+		complete_national_focus = SIC_zunwangtaojian
+	}
+}
+#四川宣布中立
+news_event = {
+	id = chinese_events_sic.1
+	title = chinese_events_sic.1.t
+	picture = GFX_report_event_chinese_soldiers_fighting
+	desc = {text = chinese_events_sic.1.d}
+
+    trigger = {
+        tag = SIC
+		tag = ROC
+		tag = XIN
+		tag = XBJ
+		tag = STG
+		tag = MOB
+		tag = SRC
+		tag = GOS
+		tag = GPS
+    }
+
+	option = {name = chinese_events_sic.1.a}
+}
+#四川宣布勤王
+news_event = {
+	id = chinese_events_sic.2
+	title = chinese_events_sic.2.t
+	picture = GFX_report_event_chinese_soldiers_fighting
+	desc = {text = chinese_events_sic.2.d}
+
+    trigger = {
+        tag = SIC
+		tag = ROC
+		tag = XIN
+		tag = XBJ
+		tag = STG
+		tag = MOB
+		tag = SRC
+		tag = GOS
+		tag = GPS
+    }
+
+	option = {name = chinese_events_sic.2.a}
+}
+#拿下荆州
+country_event = {
+	id = TODSIC.4
+	title = TODSIC.4.t
+	desc = TODSIC.4.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.4.a
+		transfer_state = 825
+		transfer_state = 750
+	}
+}
+#没能拿下荆州
+country_event = {
+	id = TODSIC.5
+	title = TODSIC.5.t
+	desc = TODSIC.5.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.5.a 
+		add_war_support = -0.1
+	}
+}
+#战局僵持
+country_event = {
+	id = TODSIC.6
+	title = TODSIC.6.t
+	desc = TODSIC.6.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.6.a 
+		transfer_state = 825
+	}
+}
+#防守胜利
+country_event = {
+	id = TODSIC.7
+	title = TODSIC.7.t
+	desc = TODSIC.7.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.7.a 
+	}
+}
+#防守失败
+country_event = {
+	id = TODSIC.8
+	title = TODSIC.8.t
+	desc = TODSIC.8.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.8.a 
+	}
+}
+#与顺天谈判
+country_event = {
+	id = TODSIC.10
+	title = TODSIC.10.t
+	desc = TODSIC.10.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.10.a 
+		SIC = {country_event = { id = TODSIC.11}}
+	}
+	option = { 
+		name = TODSIC.10.b
+		SIC = {country_event = { id = TODSIC.12}}
+		create_wargoal = { target = SIC type = annex_everything }
+	}
+}
+#顺天同意
+country_event = {
+	id = TODSIC.11
+	title = TODSIC.11.t
+	desc = TODSIC.11.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.11.a 
+		SIC = { 
+			set_autonomy = {
+				target = SIC
+				autonomy_state = autonomy_puppet
+			}
+		}
+	}
+}
+#顺天否决
+country_event = {
+	id = TODSIC.12
+	title = TODSIC.12.t
+	desc = TODSIC.12.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.12.a 
+		create_wargoal = { target = STG type = annex_everything }
+	}
+}
+#成都爆发革命
+country_event = {
+	id = TODSIC.1001
+	title = TODSIC.1001.t
+	desc = TODSIC.1001.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = { declare_war_on = { target = SCG type = annex_everything } }
+	option = {
+		name = TODSIC.1001.a
+		SCG = { change_tag_from = ROOT }
+	}
+	option = { name = TODSIC.1001.b  }
+}
+#四川的不满情绪
+country_event = {
+	id = TODSIC.1002
+	title = TODSIC.1002.t
+	desc = TODSIC.1002.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.1002.a
+		if = {
+			limit = {
+				NOT = {has_war_with = SIC}
+			}
+			random_owned_state = {
+				limit = { 
+					is_core_of = SIC 
+					industrial_complex > 2
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = -2
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = TODSIC.1002.b
+	}
+}
+#四川起义
+country_event = {
+	id = TODSIC.1003
+	title = TODSIC.1003.t
+	desc = TODSIC.1003.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.1003.a
+	}
+}
+#革命成功
+country_event = {
+	id = TODSIC.1005
+	title = TODSIC.1005.t
+	desc = TODSIC.1005.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	trigger = {	
+		tag = SCG
+		controls_state = 751
+		controls_state = 832
+		controls_state = 605
+		controls_state = 830
+		controls_state = 752
+		controls_state = 1219
+		controls_state = 1107
+		controls_state = 601
+		controls_state = 1106
+		controls_state = 1254
+		controls_state = 757
+		controls_state = 322
+		controls_state = 1127
+		controls_state = 758
+		controls_state = 787
+		
+		NOT = { 
+			country_exists = SIC 
+		}
+	}
+	option = {
+		name = TODSIC.1005.a
+		set_country_flag = SCG_gemingchenggong
+		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = SCG_gemingchenggong
+		add_dynamic_modifier = { modifier = SCG_neizhanhoudetudi }
+		set_variable = { SCG_neizhanhoudetudi_gongchangchanchu = -0.5 }
+		set_variable = { SCG_neizhanhoudetudi_xiaofeiping = 0.5 }
+		set_variable = { SCG_neizhanhoudetudi_diqugongye = -0.2 }
+		set_variable = { SCG_neizhanhoudetudi_keyan = -0.2 }
+		set_variable = { SCG_neizhanhoudetudi_jianzaosudu = -0.2 }
+		set_variable = { SCG_neizhanhoudetudi_zhaomu = -0.5 }
+		set_variable = { SCG_neizhanhoudetudi_gaizhuang = -0.2 }
+		set_variable = { SCG_neizhanhoudetudi_zuidashengchan = -0.1 }
+		set_variable = { SCG_neizhanhoudetudi_shengchanzengzhang = -0.25 }
+		set_variable = { SCG_neizhanhoudetudi_sunhao = 0.2 }
+		
+	}
+}
+#组建联合政府
+country_event = {
+	id = TODSIC.1006
+	title = TODSIC.1006.t
+	desc = TODSIC.1006.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.1006.a
+		add_stability = 0.1
+	}
+}
+#组建工会
+country_event = {
+	id = TODSIC.1007
+	title = TODSIC.1007.t
+	desc = TODSIC.1007.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = TODSIC.1007.a
+		add_ideas = SCG_gonghui
+	}
+}
+
+#与顺天谈判
+country_event = {
+	id = TODSIC.10
+	title = TODSIC.10.t
+	desc = TODSIC.10.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		ai_chance = { factor = 50 }
+		name = TODSIC.10.a 
+		STG = { country_event = { id = TODSIC.11} }
+	}
+	option = { 
+		ai_chance = { factor = 50 }
+		name = TODSIC.10.b
+		STG = { country_event = { id = TODSIC.12} }
+	}
+}
+#谈判成功
+country_event = {
+	id = TODSIC.11
+	title = TODSIC.11.t
+	desc = TODSIC.11.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.11.a 
+		STG = {
+			set_autonomy = {
+				target = SIC
+				autonomy_state = autonomy_dominion
+			}
+		}
+	}
+}
+#谈判失败
+country_event = {
+	id = TODSIC.12
+	title = TODSIC.12.t
+	desc = TODSIC.12.d
+	picture = GFX_tao_lun_jun_shi
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = TODSIC.12.a 
+		create_wargoal = { target = STG type = annex_everything }
+	}
+}
