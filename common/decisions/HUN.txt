@@ -55,7 +55,7 @@ HUN_gyorjihuajueyi = {
 		}
 	}
 	#投资其他地区
-	HUN_touziduonaohe = {
+	HUN_touziqitadiqu = {
 		icon = ger_military_buildup
 		
 		visible = {
@@ -213,12 +213,14 @@ HUN_jiejueshaominwentijueyi = {
 		modifier = {consumer_goods_factor = 0.05}
 		visible = {
 			NOT = {
-				every_owned_state = {
-					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }}
-					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }}
-					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }}
-					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }}
-					NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }}
+				HUN = {
+					every_owned_state = {
+						NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }}
+						NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }}
+						NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }}
+						NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }}
+						NOT = {	has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }}
+					}
 				}
 			}
 			has_completed_focus = HUN_peizhiqinxiongshili
@@ -304,7 +306,7 @@ HUN_jiejueshaominwentijueyi = {
 							remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
 							add_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
 						}
-						else = {limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }}}
+						else_if = {limit = {has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }}}
 					}
 				}
 			}
@@ -328,8 +330,8 @@ HUN_jiejueshaominwentijueyi = {
 			random_owned_state = {
 				limit = { is_core_of = HUN }
 				add_manpower = -3000
-				add_equipment_to_stockpile = { type = motorized_equipment amount = -50 producer = HUN }
             }
+			add_equipment_to_stockpile = { type = motorized_equipment amount = -50 producer = HUN }
         }
 		remove_effect = {
 			custom_effect_tooltip = HUN.jueyi.2
@@ -343,26 +345,26 @@ HUN_jiejueshaominwentijueyi = {
 						NOT = { has_state_flag = HUN_2jiyimin }
 						NOT = { has_state_flag = HUN_3jiyimin }
 					}
-					add_state_flag = HUN_1jiyimin
+					set_state_flag = HUN_1jiyimin
 				}
 				if = {
 					limit = { 
 						NOT = { has_state_flag = HUN_3jiyimin }
 						has_state_flag = HUN_1jiyimin 
 					}
-					add_state_flag = HUN_2jiyimin
+					set_state_flag = HUN_2jiyimin
 				}
 				if = {
 					limit = { 
 						has_state_flag = HUN_2jiyimin 
 					}
-					add_state_flag = HUN_3jiyimin
+					set_state_flag = HUN_3jiyimin
 					add_core_of = HUN
 					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng }
 				}
 				add_manpower = 3000
-				add_equipment_to_stockpile = { type = motorized_equipment amount = 50 producer = HUN }
 			}
+			add_equipment_to_stockpile = { type = motorized_equipment amount = 50 producer = HUN }
         }
         cost = 50
 		days_remove =  30

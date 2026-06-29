@@ -1,16 +1,3 @@
-GPS_text_categories = {
-    GPS_SRC = {
-        icon = ger_military_buildup
-        fire_only_once = yes
-        complete_effect = { 
-            GPS = {
-                country_event = {
-                    ID = mngtext.5
-                }        
-            }
-        }
-    }
-}
 GPS_balance_of_power_category = {
         #默许劫掠
         GPS_moxujielue = {
@@ -70,14 +57,20 @@ GPS_balance_of_power_category = {
 		    }
 		    available = { }
             visible = { check_variable = { GPS_lujunjingyan < 150 }  }
-		    modifier = { 
-                add_power_balance_value = {
-				   id = GPS_power_balance
-				   value = -0.0002
+		    complete_effect = {
+				hidden_effect = {army_experience = GPS_lujunjingyanhuafei}
+				
+                add_power_balance_modifier = {
+				  	id = GPS_power_balance
+  					modifier = GPS_duidashuaidezhongcheng
 			    }
-            }
-		    complete_effect = {hidden_effect = {army_experience = GPS_lujunjingyanhuafei}}
+			}
 		    remove_effect = {
+				
+                remove_power_balance_modifier = {
+					id = GPS_power_balance
+ 					modifier = GPS_duidashuaidezhongcheng
+			    }
                 add_to_variable = { GPS_lujunjingyan = 30 }
                 add_to_variable = { GPS_lujunjingyanhuafei = -30 }
 		    }
