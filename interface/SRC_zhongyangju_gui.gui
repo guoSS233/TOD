@@ -1,0 +1,994 @@
+guiTypes = {
+    containerWindowType = {
+        name = "SRC_zhongyangju_entry_bg"
+        position = { x = 338 y = 66 }
+        size = { width = 150 height = 36 }
+        moveable = no
+        clipping = no
+
+        buttonType = {
+            name = "SRC_zhongyangju_entry_button"
+            quadTextureSprite = "GFX_button_123x34"
+            position = { x = 0 y = 0 }
+            pdx_tooltip = "SRC_zhongyangju_button_tt"
+        }
+
+        instantTextBoxType = {
+            name = "SRC_zhongyangju_entry_button_text"
+            position = { x = 0 y = 5 }
+            font = "hoi_20bs"
+            text = "SRC_unified_gui_entry"
+            format = center
+            maxWidth = 150
+            maxHeight = 24
+            alwaystransparent = yes
+        }
+    }
+
+    containerWindowType = {
+        name = "SRC_zhongyangju_main_window"
+        position = { x = 12 y = 50 }
+        size = { width = 1440 height = 710 }
+        moveable = yes
+        clipping = no
+
+        background = {
+            name = "zhongyangju_bg"
+            quadTextureSprite = "GFX_tiled_window_thin_border"
+        }
+
+        buttonType = {
+            name = "src_close_button"
+            position = { x = 1408 y = 6 }
+            quadTextureSprite = "GFX_closebutton"
+            clicksound = click_close
+            pdx_tooltip = "CLOSE"
+        }
+
+        instantTextBoxType = {
+            name = "zhongyangju_title"
+            position = { x = 0 y = 14 }
+            font = "hoi_20bs"
+            text = "SRC_unified_gui_title"
+            format = center
+            maxWidth = 1440
+            maxHeight = 30
+        }
+
+        instantTextBoxType = {
+            name = "zhongyangju_subtitle"
+            position = { x = 20 y = 42 }
+            font = "hoi_20bs"
+            text = "SRC_unified_gui_subtitle"
+            format = center
+            maxWidth = 1400
+            maxHeight = 30
+        }
+
+        containerWindowType = {
+            name = "src_unified_sidebar"
+            position = { x = 10 y = 82 }
+            size = { width = 58 height = 600 }
+
+            background = {
+                name = "src_unified_sidebar_bg"
+                quadTextureSprite = "GFX_tiled_window_thin_border"
+            }
+
+            containerWindowType = {
+                name = "src_unified_tab_power_highlight"
+                position = { x = -1 y = 8 }
+                size = { width = 60 height = 250 }
+
+                background = {
+                    name = "src_unified_tab_power_highlight_bg"
+                    quadTextureSprite = "GFX_tiled_window_thin_border"
+                }
+            }
+
+            buttonType = {
+                name = "src_unified_tab_power_button"
+                quadTextureSprite = "GFX_tiled_window_transparent"
+                position = { x = 0 y = 8 }
+                size = { x = 58 y = 250 }
+                pdx_tooltip = "SRC_unified_tab_power_tt"
+            }
+
+            instantTextBoxType = {
+                name = "src_unified_tab_power_text"
+                position = { x = 14 y = 46 }
+                font = "hoi_20bs"
+                text = "SRC_unified_tab_power"
+                format = center
+                maxWidth = 28
+                maxHeight = 180
+                alwaystransparent = yes
+            }
+
+            containerWindowType = {
+                name = "src_unified_tab_bureau_highlight"
+                position = { x = -1 y = 306 }
+                size = { width = 60 height = 250 }
+
+                background = {
+                    name = "src_unified_tab_bureau_highlight_bg"
+                    quadTextureSprite = "GFX_tiled_window_thin_border"
+                }
+            }
+
+            buttonType = {
+                name = "src_unified_tab_bureau_button"
+                quadTextureSprite = "GFX_tiled_window_transparent"
+                position = { x = 0 y = 306 }
+                size = { x = 58 y = 250 }
+                pdx_tooltip = "SRC_unified_tab_bureau_tt"
+            }
+
+            instantTextBoxType = {
+                name = "src_unified_tab_bureau_text"
+                position = { x = 14 y = 352 }
+                font = "hoi_20bs"
+                text = "SRC_unified_tab_bureau"
+                format = center
+                maxWidth = 28
+                maxHeight = 180
+                alwaystransparent = yes
+            }
+        }
+
+        containerWindowType = {
+            name = "src_unified_power_page"
+            position = { x = 76 y = 82 }
+            size = { width = 1328 height = 600 }
+
+            instantTextBoxType = {
+                name = "src_power_title"
+                position = { x = 0 y = 4 }
+                font = "hoi_36header"
+                text = "SRC_power_struggle_title"
+                format = center
+                maxWidth = 1220
+                maxHeight = 40
+            }
+
+            instantTextBoxType = {
+                name = "src_power_subtitle"
+                position = { x = 40 y = 44 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_subtitle"
+                format = center
+                maxWidth = 1140
+                maxHeight = 28
+            }
+
+            containerWindowType = {
+                name = "src_power_ren_card"
+                position = { x = 770 y = 24 }
+                size = { width = 366 height = 102 }
+
+                background = { name = "ren_card_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+                iconType = { name = "src_power_ren_portrait" spriteType = "GFX_SRC_power_struggle_portrait_ren" position = { x = 12 y = 12 } scale = 0.30 }
+                instantTextBoxType = { name = "src_power_ren_name" position = { x = 90 y = 12 } font = "hoi_20bs" text = "SRC_power_struggle_ren_name" format = left maxWidth = 250 maxHeight = 24 }
+                instantTextBoxType = { name = "src_power_ren_person" position = { x = 90 y = 36 } font = "hoi_18" text = "SRC_power_struggle_ren_person" format = left maxWidth = 250 maxHeight = 18 }
+                instantTextBoxType = { name = "src_power_ren_route" position = { x = 90 y = 54 } font = "hoi_18" text = "SRC_power_struggle_ren_route" format = left maxWidth = 250 maxHeight = 20 }
+                instantTextBoxType = { name = "src_power_ren_score" position = { x = 90 y = 76 } font = "hoi_20bs" text = "SRC_power_struggle_score_ren" format = left maxWidth = 250 maxHeight = 24 }
+                buttonType = { name = "src_power_select_ren" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 0 y = 0 } size = { x = 366 y = 102 } pdx_tooltip = "SRC_power_struggle_ren_tt" pdx_tooltip_delayed = "SRC_power_struggle_ren_tt_delayed" }
+            }
+
+            containerWindowType = {
+                name = "src_power_li_card"
+                position = { x = 770 y = 138 }
+                size = { width = 366 height = 102 }
+
+                background = { name = "li_card_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+                iconType = { name = "src_power_li_portrait" spriteType = "GFX_SRC_power_struggle_portrait_li" position = { x = 12 y = 12 } scale = 0.30 }
+                instantTextBoxType = { name = "src_power_li_name" position = { x = 90 y = 12 } font = "hoi_20bs" text = "SRC_power_struggle_li_name" format = left maxWidth = 250 maxHeight = 24 }
+                instantTextBoxType = { name = "src_power_li_person" position = { x = 90 y = 36 } font = "hoi_18" text = "SRC_power_struggle_li_person" format = left maxWidth = 250 maxHeight = 18 }
+                instantTextBoxType = { name = "src_power_li_route" position = { x = 90 y = 54 } font = "hoi_18" text = "SRC_power_struggle_li_route" format = left maxWidth = 250 maxHeight = 20 }
+                instantTextBoxType = { name = "src_power_li_score" position = { x = 90 y = 76 } font = "hoi_20bs" text = "SRC_power_struggle_score_li" format = left maxWidth = 250 maxHeight = 24 }
+                buttonType = { name = "src_power_select_li" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 0 y = 0 } size = { x = 366 y = 102 } pdx_tooltip = "SRC_power_struggle_li_tt" pdx_tooltip_delayed = "SRC_power_struggle_li_tt_delayed" }
+            }
+
+            containerWindowType = {
+                name = "src_power_chen_card"
+                position = { x = 770 y = 252 }
+                size = { width = 366 height = 102 }
+
+                background = { name = "chen_card_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+                iconType = { name = "src_power_chen_portrait" spriteType = "GFX_SRC_power_struggle_portrait_chen" position = { x = 12 y = 12 } scale = 0.30 }
+                instantTextBoxType = { name = "src_power_chen_name" position = { x = 90 y = 12 } font = "hoi_20bs" text = "SRC_power_struggle_chen_name" format = left maxWidth = 250 maxHeight = 24 }
+                instantTextBoxType = { name = "src_power_chen_person" position = { x = 90 y = 36 } font = "hoi_18" text = "SRC_power_struggle_chen_person" format = left maxWidth = 250 maxHeight = 18 }
+                instantTextBoxType = { name = "src_power_chen_route" position = { x = 90 y = 54 } font = "hoi_18" text = "SRC_power_struggle_chen_route" format = left maxWidth = 250 maxHeight = 20 }
+                instantTextBoxType = { name = "src_power_chen_score" position = { x = 90 y = 76 } font = "hoi_20bs" text = "SRC_power_struggle_score_chen" format = left maxWidth = 250 maxHeight = 24 }
+                buttonType = { name = "src_power_select_chen" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 0 y = 0 } size = { x = 366 y = 102 } pdx_tooltip = "SRC_power_struggle_chen_tt" pdx_tooltip_delayed = "SRC_power_struggle_chen_tt_delayed" }
+            }
+
+            iconType = { name = "src_power_ren_selected_marker" spriteType = "GFX_SRC_power_struggle_triangle_marker" position = { x = 746 y = 50 } scale = 0.70 }
+            iconType = { name = "src_power_li_selected_marker" spriteType = "GFX_SRC_power_struggle_triangle_marker" position = { x = 746 y = 164 } scale = 0.70 }
+            iconType = { name = "src_power_chen_selected_marker" spriteType = "GFX_SRC_power_struggle_triangle_marker" position = { x = 746 y = 278 } scale = 0.70 }
+
+            containerWindowType = {
+                name = "src_power_detail_panel"
+                position = { x = 24 y = 24 }
+                size = { width = 540 height = 524 }
+
+                background = { name = "detail_bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+                iconType = { name = "src_power_triangle_bg" spriteType = "GFX_SRC_power_struggle_triangle_bg" position = { x = 20 y = 42 } }
+                iconType = { name = "src_power_marker" spriteType = "GFX_SRC_power_struggle_triangle_marker" position = { x = 0 y = 0 } }
+
+                containerWindowType = {
+                    name = "src_power_focus_summary"
+                    position = { x = 18 y = 12 }
+                    size = { width = 194 height = 176 }
+                    background = { name = "focus_summary_bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+                    instantTextBoxType = { name = "src_power_advantage_text" position = { x = 10 y = 10 } font = "hoi_20bs" text = "SRC_power_struggle_advantage" format = center maxWidth = 174 maxHeight = 42 alwaystransparent = yes }
+                    instantTextBoxType = { name = "src_power_selected_name" position = { x = 10 y = 54 } font = "hoi_20bs" text = "SRC_power_struggle_selected_name_dynamic" format = center maxWidth = 174 maxHeight = 24 alwaystransparent = yes }
+                    instantTextBoxType = { name = "src_power_selected_route" position = { x = 12 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_selected_route_dynamic" format = center maxWidth = 170 maxHeight = 42 alwaystransparent = yes }
+                    instantTextBoxType = { name = "src_power_selected_desc" position = { x = 12 y = 126 } font = "hoi_18" text = "SRC_power_struggle_selected_desc_dynamic" format = center maxWidth = 170 maxHeight = 44 alwaystransparent = yes }
+                }
+
+                instantTextBoxType = { name = "src_power_triangle_li_label" position = { x = 195 y = 12 } font = "hoi_20bs" text = "SRC_power_struggle_li_name" format = center maxWidth = 150 maxHeight = 24 alwaystransparent = yes }
+                instantTextBoxType = { name = "src_power_triangle_ren_label" position = { x = 24 y = 482 } font = "hoi_20bs" text = "SRC_power_struggle_ren_name" format = left maxWidth = 150 maxHeight = 24 alwaystransparent = yes }
+                instantTextBoxType = { name = "src_power_triangle_chen_label" position = { x = 390 y = 482 } font = "hoi_20bs" text = "SRC_power_struggle_chen_name" format = right maxWidth = 140 maxHeight = 24 alwaystransparent = yes }
+            }
+
+            containerWindowType = {
+                name = "src_power_action_panel"
+                position = { x = 770 y = 380 }
+                size = { width = 366 height = 174 }
+
+                background = { name = "action_bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+                instantTextBoxType = { name = "src_power_action_title" position = { x = 0 y = 12 } font = "hoi_20bs" text = "SRC_power_struggle_action_title" format = center maxWidth = 366 maxHeight = 28 }
+                instantTextBoxType = { name = "src_power_action_hint" position = { x = 22 y = 38 } font = "hoi_20bs" text = "SRC_power_struggle_action_hint" format = center maxWidth = 322 maxHeight = 44 }
+                buttonType = { name = "src_power_org_button" quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe" position = { x = 28 y = 86 } pdx_tooltip = "SRC_power_struggle_org_tt" }
+                instantTextBoxType = { name = "src_power_org_text" position = { x = 28 y = 92 } font = "hoi_20bs" text = "SRC_power_struggle_org" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+                buttonType = { name = "src_power_propaganda_button" quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe" position = { x = 214 y = 86 } pdx_tooltip = "SRC_power_struggle_propaganda_tt" }
+                instantTextBoxType = { name = "src_power_propaganda_text" position = { x = 214 y = 92 } font = "hoi_20bs" text = "SRC_power_struggle_propaganda" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+                buttonType = { name = "src_power_cadre_button" quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe" position = { x = 28 y = 130 } pdx_tooltip = "SRC_power_struggle_cadre_tt" }
+                instantTextBoxType = { name = "src_power_cadre_text" position = { x = 28 y = 136 } font = "hoi_20bs" text = "SRC_power_struggle_cadre" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+                buttonType = { name = "src_power_suppress_button" quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe" position = { x = 214 y = 130 } pdx_tooltip = "SRC_power_struggle_suppress_tt" }
+                instantTextBoxType = { name = "src_power_suppress_text" position = { x = 214 y = 136 } font = "hoi_20bs" text = "SRC_power_struggle_suppress" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+                instantTextBoxType = { name = "src_power_decided_text" position = { x = 22 y = 86 } font = "hoi_20bs" text = "SRC_power_struggle_decided" format = center maxWidth = 322 maxHeight = 74 }
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_panel"
+                position = { x = 1144 y = 24 }
+                size = { width = 204 height = 524 }
+
+                background = { name = "psc_panel_bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+                instantTextBoxType = { name = "src_power_psc_title" position = { x = 0 y = 12 } font = "hoi_20bs" text = "SRC_power_struggle_psc_title" format = center maxWidth = 204 maxHeight = 28 }
+                instantTextBoxType = { name = "src_power_psc_hint" position = { x = 14 y = 38 } font = "hoi_20bs" text = "SRC_power_struggle_psc_hint" format = center maxWidth = 176 maxHeight = 44 }
+                containerWindowType = { name = "src_power_psc_slot_1" position = { x = 16 y = 90 } size = { width = 82 height = 102 } background = { name = "psc_slot_1_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" } iconType = { name = "src_power_psc_slot_1_placeholder" spriteType = "GFX_SRC_power_psc_placeholder" position = { x = 10 y = 4 } scale = 0.36 } instantTextBoxType = { name = "src_power_psc_slot_1_name" position = { x = 0 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_psc_slot_1" format = center maxWidth = 82 maxHeight = 18 alwaystransparent = yes } }
+                containerWindowType = { name = "src_power_psc_slot_2" position = { x = 106 y = 90 } size = { width = 82 height = 102 } background = { name = "psc_slot_2_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" } iconType = { name = "src_power_psc_slot_2_placeholder" spriteType = "GFX_SRC_power_psc_placeholder" position = { x = 10 y = 4 } scale = 0.36 } instantTextBoxType = { name = "src_power_psc_slot_2_name" position = { x = 0 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_psc_slot_2" format = center maxWidth = 82 maxHeight = 18 alwaystransparent = yes } }
+                containerWindowType = { name = "src_power_psc_slot_3" position = { x = 16 y = 194 } size = { width = 82 height = 102 } background = { name = "psc_slot_3_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" } iconType = { name = "src_power_psc_slot_3_placeholder" spriteType = "GFX_SRC_power_psc_placeholder" position = { x = 10 y = 4 } scale = 0.36 } instantTextBoxType = { name = "src_power_psc_slot_3_name" position = { x = 0 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_psc_slot_3" format = center maxWidth = 82 maxHeight = 18 alwaystransparent = yes } }
+                containerWindowType = { name = "src_power_psc_slot_4" position = { x = 106 y = 194 } size = { width = 82 height = 102 } background = { name = "psc_slot_4_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" } iconType = { name = "src_power_psc_slot_4_placeholder" spriteType = "GFX_SRC_power_psc_placeholder" position = { x = 10 y = 4 } scale = 0.36 } instantTextBoxType = { name = "src_power_psc_slot_4_name" position = { x = 0 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_psc_slot_4" format = center maxWidth = 82 maxHeight = 18 alwaystransparent = yes } }
+                containerWindowType = { name = "src_power_psc_slot_5" position = { x = 16 y = 298 } size = { width = 82 height = 102 } background = { name = "psc_slot_5_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" } iconType = { name = "src_power_psc_slot_5_placeholder" spriteType = "GFX_SRC_power_psc_placeholder" position = { x = 10 y = 4 } scale = 0.36 } instantTextBoxType = { name = "src_power_psc_slot_5_name" position = { x = 0 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_psc_slot_5" format = center maxWidth = 82 maxHeight = 18 alwaystransparent = yes } }
+                containerWindowType = { name = "src_power_psc_slot_6" position = { x = 106 y = 298 } size = { width = 82 height = 102 } background = { name = "psc_slot_6_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" } iconType = { name = "src_power_psc_slot_6_placeholder" spriteType = "GFX_SRC_power_psc_placeholder" position = { x = 10 y = 4 } scale = 0.36 } instantTextBoxType = { name = "src_power_psc_slot_6_name" position = { x = 0 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_psc_slot_6" format = center maxWidth = 82 maxHeight = 18 alwaystransparent = yes } }
+                containerWindowType = { name = "src_power_psc_slot_7" position = { x = 61 y = 402 } size = { width = 82 height = 102 } background = { name = "psc_slot_7_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" } iconType = { name = "src_power_psc_slot_7_placeholder" spriteType = "GFX_SRC_power_psc_placeholder" position = { x = 10 y = 4 } scale = 0.36 } instantTextBoxType = { name = "src_power_psc_slot_7_name" position = { x = 0 y = 82 } font = "hoi_20bs" text = "SRC_power_struggle_psc_slot_7" format = center maxWidth = 82 maxHeight = 18 alwaystransparent = yes } }
+            }
+        }
+
+        containerWindowType = {
+            name = "src_unified_bureau_page"
+            position = { x = 76 y = 82 }
+            size = { width = 1328 height = 600 }
+
+            containerWindowType = {
+            name = "tab_sidebar"
+            position = { x = 0 y = 0 }
+            size = { width = 122 height = 600 }
+
+            background = {
+                name = "tab_sidebar_bg"
+                quadTextureSprite = "GFX_tiled_window_thin_border"
+            }
+
+            containerWindowType = {
+                name = "tab_huabei_highlight"
+                position = { x = -1 y = 7 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_huabei" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 8 } }
+            instantTextBoxType = { name = "tab_btn_huabei_text" position = { x = 0 y = 14 } font = "hoi_20bs" text = "SRC_tab_huabei" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+
+            containerWindowType = {
+                name = "tab_dongbei_highlight"
+                position = { x = -1 y = 72 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_dongbei" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 73 } }
+            instantTextBoxType = { name = "tab_btn_dongbei_text" position = { x = 0 y = 79 } font = "hoi_20bs" text = "SRC_tab_dongbei" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+
+            containerWindowType = {
+                name = "tab_dongnan_highlight"
+                position = { x = -1 y = 137 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_dongnan" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 138 } }
+            instantTextBoxType = { name = "tab_btn_dongnan_text" position = { x = 0 y = 144 } font = "hoi_20bs" text = "SRC_tab_dongnan" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+
+            containerWindowType = {
+                name = "tab_zhongnan_highlight"
+                position = { x = -1 y = 202 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_zhongnan" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 203 } }
+            instantTextBoxType = { name = "tab_btn_zhongnan_text" position = { x = 0 y = 209 } font = "hoi_20bs" text = "SRC_tab_zhongnan" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+
+            containerWindowType = {
+                name = "tab_xinan_highlight"
+                position = { x = -1 y = 267 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_xinan" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 268 } }
+            instantTextBoxType = { name = "tab_btn_xinan_text" position = { x = 0 y = 274 } font = "hoi_20bs" text = "SRC_tab_xinan" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+
+            containerWindowType = {
+                name = "tab_xibei_highlight"
+                position = { x = -1 y = 332 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_xibei" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 333 } }
+            instantTextBoxType = { name = "tab_btn_xibei_text" position = { x = 0 y = 339 } font = "hoi_20bs" text = "SRC_tab_xibei" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+
+            containerWindowType = {
+                name = "tab_mobei_highlight"
+                position = { x = -1 y = 397 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_mobei" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 398 } }
+            instantTextBoxType = { name = "tab_btn_mobei_text" position = { x = 0 y = 404 } font = "hoi_20bs" text = "SRC_tab_mobei" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+
+            containerWindowType = {
+                name = "tab_xiyu_highlight"
+                position = { x = -1 y = 462 }
+                size = { width = 125 height = 36 }
+                background = { name = "bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+            }
+            buttonType = { name = "tab_btn_xiyu" quadTextureSprite = "GFX_button_123x34" position = { x = 0 y = 463 } }
+            instantTextBoxType = { name = "tab_btn_xiyu_text" position = { x = 0 y = 469 } font = "hoi_20bs" text = "SRC_tab_xiyu" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+        }
+
+        containerWindowType = {
+            name = "bureau_panel"
+            position = { x = 132 y = 0 }
+            size = { width = 1196 height = 600 }
+
+            background = {
+                name = "panel_bg"
+                quadTextureSprite = "GFX_tiled_window_thin_border"
+            }
+
+            instantTextBoxType = {
+                name = "bureau_title_text"
+                position = { x = 0 y = 18 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_dynamic_title"
+                format = center
+                maxWidth = 1196
+                maxHeight = 24
+            }
+
+            containerWindowType = {
+                name = "bureau_map"
+                position = { x = 18 y = 52 }
+                size = { width = 560 height = 300 }
+
+                background = {
+                    name = "bureau_map_border"
+                    quadTextureSprite = "GFX_tiled_window_thin_border"
+                }
+
+                iconType = {
+                    name = "bureau_map_base"
+                    spriteType = "GFX_SRC_region_map_base"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_huabei"
+                    spriteType = "GFX_SRC_region_established_huabei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_dongbei"
+                    spriteType = "GFX_SRC_region_established_dongbei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_dongnan"
+                    spriteType = "GFX_SRC_region_established_dongnan"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_zhongnan"
+                    spriteType = "GFX_SRC_region_established_zhongnan"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_xinan"
+                    spriteType = "GFX_SRC_region_established_xinan"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_xibei"
+                    spriteType = "GFX_SRC_region_established_xibei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_mobei"
+                    spriteType = "GFX_SRC_region_established_mobei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_established_xiyu"
+                    spriteType = "GFX_SRC_region_established_xiyu"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_huabei"
+                    spriteType = "GFX_SRC_region_map_huabei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_dongbei"
+                    spriteType = "GFX_SRC_region_map_dongbei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_dongnan"
+                    spriteType = "GFX_SRC_region_map_dongnan"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_zhongnan"
+                    spriteType = "GFX_SRC_region_map_zhongnan"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_xinan"
+                    spriteType = "GFX_SRC_region_map_xinan"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_xibei"
+                    spriteType = "GFX_SRC_region_map_xibei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_mobei"
+                    spriteType = "GFX_SRC_region_map_mobei"
+                    position = { x = 0 y = 0 }
+                }
+                iconType = {
+                    name = "map_overlay_xiyu"
+                    spriteType = "GFX_SRC_region_map_xiyu"
+                    position = { x = 0 y = 0 }
+                }
+
+                buttonType = {
+                    name = "map_btn_huabei"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_huabei"
+                    position = { x = 234 y = 102 }
+                    pdx_tooltip = "SRC_map_tab_huabei_tt"
+                }
+                buttonType = {
+                    name = "map_btn_dongbei"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_dongbei"
+                    position = { x = 262 y = 7 }
+                    pdx_tooltip = "SRC_map_tab_dongbei_tt"
+                }
+                buttonType = {
+                    name = "map_btn_dongnan"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_dongnan"
+                    position = { x = 251 y = 150 }
+                    pdx_tooltip = "SRC_map_tab_dongnan_tt"
+                }
+                buttonType = {
+                    name = "map_btn_zhongnan"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_zhongnan"
+                    position = { x = 200 y = 163 }
+                    pdx_tooltip = "SRC_map_tab_zhongnan_tt"
+                }
+                buttonType = {
+                    name = "map_btn_xinan"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_xinan"
+                    position = { x = 31 y = 142 }
+                    pdx_tooltip = "SRC_map_tab_xinan_tt"
+                }
+                buttonType = {
+                    name = "map_btn_xibei"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_xibei"
+                    position = { x = 114 y = 92 }
+                    pdx_tooltip = "SRC_map_tab_xibei_tt"
+                }
+                buttonType = {
+                    name = "map_btn_mobei"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_mobei"
+                    position = { x = 89 y = 23 }
+                    pdx_tooltip = "SRC_map_tab_mobei_tt"
+                }
+                buttonType = {
+                    name = "map_btn_xiyu"
+                    quadTextureSprite = "GFX_SRC_region_hotspot_xiyu"
+                    position = { x = 11 y = 72 }
+                    pdx_tooltip = "SRC_map_tab_xiyu_tt"
+                }
+            }
+
+            containerWindowType = {
+                name = "bureau_cadre_panel"
+                position = { x = 630 y = 52 }
+                size = { width = 530 height = 156 }
+
+                background = {
+                    name = "bureau_cadre_bg"
+                    quadTextureSprite = "GFX_tiled_window_thin_border"
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_cadre_title"
+                    position = { x = 0 y = 10 }
+                    font = "hoi_20bs"
+                    text = "SRC_zhongyangju_cadre_title"
+                    format = center
+                    maxWidth = 530
+                    maxHeight = 20
+                    alwaystransparent = yes
+                }
+
+                iconType = {
+                    name = "bureau_cadre_portrait"
+                    spriteType = "GFX_leader_unknown"
+                    position = { x = 20 y = 42 }
+                    scale = 0.56
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_cadre_name"
+                    position = { x = 112 y = 44 }
+                    font = "hoi_20bs"
+                    text = "SRC_zhongyangju_cadre_name"
+                    format = left
+                    maxWidth = 270
+                    maxHeight = 22
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_cadre_route"
+                    position = { x = 112 y = 70 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_cadre_route"
+                    format = left
+                    maxWidth = 270
+                    maxHeight = 40
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_cadre_term"
+                    position = { x = 112 y = 114 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_cadre_term"
+                    format = left
+                    maxWidth = 270
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+
+                buttonType = {
+                    name = "bureau_change_cadre_button"
+                    quadTextureSprite = "GFX_button_221x34"
+                    position = { x = 304 y = 108 }
+                    pdx_tooltip = "SRC_zhongyangju_change_cadre_tt"
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_change_cadre_text"
+                    position = { x = 304 y = 114 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_change_cadre"
+                    format = center
+                    maxWidth = 221
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "bureau_situation_panel"
+                position = { x = 630 y = 222 }
+                size = { width = 530 height = 352 }
+
+                background = {
+                    name = "bureau_situation_bg"
+                    quadTextureSprite = "GFX_tiled_window_thin_border"
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_situation_title"
+                    position = { x = 0 y = 10 }
+                    font = "hoi_20bs"
+                    text = "SRC_zhongyangju_situation_title"
+                    format = center
+                    maxWidth = 530
+                    maxHeight = 20
+                    alwaystransparent = yes
+                }
+
+                buttonType = {
+                    name = "bureau_situation_info_button"
+                    quadTextureSprite = "GFX_tiled_window_transparent"
+                    position = { x = 498 y = 8 }
+                    size = { x = 20 y = 20 }
+                    pdx_tooltip = "SRC_zhongyangju_situation_info_tt"
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_situation_info_text"
+                    position = { x = 498 y = 8 }
+                    font = "hoi_20bs"
+                    text = "SRC_zhongyangju_situation_info"
+                    format = center
+                    maxWidth = 20
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_dominant_route_text"
+                    position = { x = 20 y = 38 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_dominant_route"
+                    format = center
+                    maxWidth = 490
+                    maxHeight = 42
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_influence_title"
+                    position = { x = 20 y = 84 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_influence_title"
+                    format = center
+                    maxWidth = 490
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+
+                containerWindowType = {
+                    name = "bureau_influence_pie_chart"
+                    position = { x = 215 y = 108 }
+                    size = { width = 100 height = 100 }
+
+                    iconType = {
+                        name = "bureau_pie_ren"
+                        quadTextureSprite = "GFX_SRC_bureau_pie_ren"
+                        position = { x = 0 y = 0 }
+                    }
+
+                    iconType = {
+                        name = "bureau_pie_li"
+                        quadTextureSprite = "GFX_SRC_bureau_pie_li"
+                        position = { x = 0 y = 0 }
+                    }
+
+                    iconType = {
+                        name = "bureau_pie_chen"
+                        quadTextureSprite = "GFX_SRC_bureau_pie_chen"
+                        position = { x = 0 y = 0 }
+                    }
+
+                    iconType = {
+                        name = "bureau_pie_overlay"
+                        quadTextureSprite = "GFX_SRC_bureau_pie_overlay"
+                        position = { x = 0 y = 0 }
+                    }
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_influence_numbers"
+                    position = { x = 20 y = 214 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_influence_numbers"
+                    format = center
+                    maxWidth = 490
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_support_title"
+                    position = { x = 20 y = 234 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_support_title"
+                    format = center
+                    maxWidth = 490
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_support_ren"
+                    position = { x = 20 y = 256 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_support_ren"
+                    format = left
+                    maxWidth = 490
+                    maxHeight = 16
+                    alwaystransparent = yes
+                }
+
+                iconType = {
+                    name = "bureau_support_ren_bar"
+                    spriteType = "GFX_SRC_bureau_supportbar_ren"
+                    position = { x = 138 y = 256 }
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_support_li"
+                    position = { x = 20 y = 282 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_support_li"
+                    format = left
+                    maxWidth = 490
+                    maxHeight = 16
+                    alwaystransparent = yes
+                }
+
+                iconType = {
+                    name = "bureau_support_li_bar"
+                    spriteType = "GFX_SRC_bureau_supportbar_li"
+                    position = { x = 138 y = 282 }
+                }
+
+                instantTextBoxType = {
+                    name = "bureau_support_chen"
+                    position = { x = 20 y = 308 }
+                    font = "hoi_18"
+                    text = "SRC_zhongyangju_support_chen"
+                    format = left
+                    maxWidth = 490
+                    maxHeight = 16
+                    alwaystransparent = yes
+                }
+
+                iconType = {
+                    name = "bureau_support_chen_bar"
+                    spriteType = "GFX_SRC_bureau_supportbar_chen"
+                    position = { x = 138 y = 308 }
+                }
+            }
+
+            instantTextBoxType = {
+                name = "bureau_map_hint"
+                position = { x = 18 y = 356 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_map_hint"
+                format = center
+                maxWidth = 520
+                maxHeight = 20
+            }
+
+            instantTextBoxType = {
+                name = "bureau_scope_text"
+                position = { x = 24 y = 382 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_dynamic_scope"
+                format = center
+                maxWidth = 506
+                maxHeight = 56
+            }
+
+            instantTextBoxType = {
+                name = "bureau_status_text"
+                position = { x = 18 y = 440 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_dynamic_status"
+                format = center
+                maxWidth = 520
+                maxHeight = 28
+            }
+
+            buttonType = {
+                name = "bureau_establish_button"
+                quadTextureSprite = "GFX_button_123x34"
+                position = { x = 216 y = 476 }
+                pdx_tooltip = "SRC_zhongyangju_dynamic_button_tt"
+            }
+
+            instantTextBoxType = {
+                name = "bureau_button_text"
+                position = { x = 216 y = 482 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_dynamic_button_text"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            instantTextBoxType = {
+                name = "mobei_activity_title"
+                position = { x = 0 y = 474 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_activity_title"
+                format = center
+                maxWidth = 1196
+                maxHeight = 24
+            }
+
+            buttonType = {
+                name = "mobei_activity_worker_button"
+                quadTextureSprite = "GFX_button_123x34"
+                position = { x = 24 y = 512 }
+                pdx_tooltip = "SRC_mobei_activity_worker_tt"
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_worker_text"
+                position = { x = 24 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_mobei_activity_worker"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_worker_cooldown_text"
+                position = { x = 24 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_activity_cooldown"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "mobei_activity_underground_button"
+                quadTextureSprite = "GFX_button_123x34"
+                position = { x = 166 y = 512 }
+                pdx_tooltip = "SRC_mobei_activity_underground_tt"
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_underground_text"
+                position = { x = 166 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_mobei_activity_underground"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_underground_cooldown_text"
+                position = { x = 166 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_activity_cooldown"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "mobei_activity_revgov_button"
+                quadTextureSprite = "GFX_button_123x34"
+                position = { x = 308 y = 512 }
+                pdx_tooltip = "SRC_mobei_activity_revgov_tt"
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_revgov_text"
+                position = { x = 308 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_mobei_activity_revgov"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_revgov_cooldown_text"
+                position = { x = 308 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_activity_cooldown"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "mobei_activity_peasant_button"
+                quadTextureSprite = "GFX_button_123x34"
+                position = { x = 450 y = 512 }
+                pdx_tooltip = "SRC_mobei_activity_peasant_tt"
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_peasant_text"
+                position = { x = 450 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_mobei_activity_peasant"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_peasant_cooldown_text"
+                position = { x = 450 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_activity_cooldown"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "mobei_activity_student_button"
+                quadTextureSprite = "GFX_button_123x34"
+                position = { x = 592 y = 512 }
+                pdx_tooltip = "SRC_mobei_activity_student_tt"
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_student_text"
+                position = { x = 592 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_mobei_activity_student"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_student_cooldown_text"
+                position = { x = 592 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_activity_cooldown"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "mobei_activity_business_button"
+                quadTextureSprite = "GFX_button_123x34"
+                position = { x = 734 y = 512 }
+                pdx_tooltip = "SRC_mobei_activity_business_tt"
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_business_text"
+                position = { x = 734 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_mobei_activity_business"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "mobei_activity_business_cooldown_text"
+                position = { x = 734 y = 518 }
+                font = "hoi_20bs"
+                text = "SRC_zhongyangju_activity_cooldown"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+        }
+        }
+    }
+}
