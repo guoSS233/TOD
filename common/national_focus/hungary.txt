@@ -873,7 +873,7 @@ focus_tree = {
 		ai_will_do = {base = 10}
 		available = { 
 			has_equipment = { motorized_equipment > 1499 } 
-			NOT = { has = HUN_fuzhunongye }
+			NOT = { has_idea = HUN_fuzhunongye }
 		}
 		
 		completion_reward = {
@@ -1656,7 +1656,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {base = 10}
-		available = { NOT = {has = HUN_tudiqingcha }}
+		available = { NOT = {has_idea = HUN_tudiqingcha }}
 		
 		completion_reward = { add_ideas = HUN_tudigaige }
 	}
@@ -1810,7 +1810,7 @@ focus_tree = {
 			custom_effect_tooltip = HUN.6.tt
 			hidden_effect = {
 				if = {
-					limit = { has = HUN_buchangsiluofake }
+					limit = { has_idea = HUN_buchangsiluofake }
 					989 = { add_core_of = HUN }
 					71 = { add_core_of = HUN }
 					73 = { add_core_of = HUN }
@@ -1818,7 +1818,7 @@ focus_tree = {
 					664 = { add_core_of = HUN }
 				}
 				if = {
-					limit = { NOT = {has = HUN_buchangluomaniya }}
+					limit = { NOT = {has_idea = HUN_buchangluomaniya }}
 					ROM = {
 						set_state_owner = 84	
 						set_state_owner = 83	
@@ -1826,13 +1826,13 @@ focus_tree = {
 					}
 				}
 				if = {
-					limit = { has = HUN_buchangluomaniya }
+					limit = { has_idea = HUN_buchangluomaniya }
 					84 = { add_core_of = HUN }
 					83 = { add_core_of = HUN }
 					82 = { add_core_of = HUN }
 				}
 				if = {
-					limit = { NOT = {has = HUN_buchangmoerduowa }}
+					limit = { NOT = {has_idea = HUN_buchangmoerduowa }}
 					MOL = {
 						set_state_owner = 79	
 						set_state_owner = 979	
@@ -1841,7 +1841,7 @@ focus_tree = {
 					}
 				}
 				if = {
-					limit = { has = HUN_buchangmoerduowa }
+					limit = { has_idea = HUN_buchangmoerduowa }
 					79 = { add_core_of = HUN }
 					979 = { add_core_of = HUN }
 					956 = { add_core_of = HUN }
@@ -2829,7 +2829,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = { 
-			add_dynamic_modifier = HUN_chongfandayang
+			add_dynamic_modifier = { modifier = HUN_chongfandayang}
 		 }
 	}
 	#招募海军人员
@@ -3436,7 +3436,7 @@ focus_tree = {
 		
 		ai_will_do = {
 			base = 10
-			modifier = {modifier = {add = 20}}
+			modifier = {add = 20}
 		}
 		available = {}
 		
@@ -3452,12 +3452,14 @@ focus_tree = {
 				leave_faction = yes
 				HUN = { add_to_faction = PREV }
 			}
-			UKR = {
+			if = {
 				limit = {
-					has_opinion = { 
-						target = HUN
-						value > 30
-					}  
+					UKR = {
+						has_opinion = { 
+							target = HUN
+							value > 30
+						} 
+					}
 				}
 				HUN = { add_to_faction = UKR }
 			}
