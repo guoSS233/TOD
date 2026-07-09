@@ -1,0 +1,293 @@
+scripted_gui = {
+    SRC_power_struggle_entry_button = {
+        context_type = player_context
+        parent_window_token = politics_tab
+        window_name = "SRC_power_struggle_entry_bg"
+
+        visible = {
+            always = no
+        }
+
+        effects = {
+            SRC_power_struggle_entry_button_click = {
+                if = {
+                    limit = { NOT = { has_country_flag = SRC_power_struggle_gui_open } }
+                    set_country_flag = SRC_power_struggle_gui_open
+                    if = {
+                        limit = {
+                            NOT = { check_variable = { SRC_power_tangle_x > 0 } }
+                        }
+                        SRC_power_struggle_normalize_balance = yes
+                    }
+                    else = {
+                        SRC_power_struggle_calc_tangle_xy = yes
+                    }
+                    if = {
+                        limit = {
+                            NOT = { has_country_flag = SRC_power_struggle_selected_ren }
+                            NOT = { has_country_flag = SRC_power_struggle_selected_li }
+                            NOT = { has_country_flag = SRC_power_struggle_selected_chen }
+                        }
+                        SRC_power_struggle_select_ren = yes
+                    }
+                }
+                else = {
+                    clr_country_flag = SRC_power_struggle_gui_open
+                }
+            }
+        }
+    }
+
+    SRC_power_struggle_window = {
+        context_type = player_context
+        window_name = "SRC_power_struggle_main_window"
+        dirty = SRC_power_struggle_gui_dirty
+
+        visible = {
+            always = no
+        }
+
+        properties = {
+            src_power_marker = {
+                x = SRC_power_tangle_x
+                y = SRC_power_tangle_y
+            }
+        }
+
+        effects = {
+            src_power_close_button_click = {
+                clr_country_flag = SRC_power_struggle_gui_open
+            }
+
+            src_power_select_ren_click = {
+                SRC_power_struggle_select_ren = yes
+            }
+            src_power_select_li_click = {
+                SRC_power_struggle_select_li = yes
+            }
+            src_power_select_chen_click = {
+                SRC_power_struggle_select_chen = yes
+            }
+
+            src_power_org_button_click = {
+                if = {
+                    limit = {
+                        NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                        NOT = {
+                            OR = {
+                                has_completed_focus = SRC_renfuchenzhuxi
+                                has_completed_focus = SRC_lidazhaozhuxi
+                                has_completed_focus = SRC_chenduxiuzhuxi
+                            }
+                        }
+                        has_political_power > 24
+                    }
+                    add_political_power = -25
+                    SRC_power_struggle_add_selected_support = yes
+                    set_country_flag = {
+                        flag = SRC_power_struggle_action_cd
+                        days = 14
+                        value = 1
+                    }
+                }
+            }
+
+            src_power_propaganda_button_click = {
+                if = {
+                    limit = {
+                        NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                        NOT = {
+                            OR = {
+                                has_completed_focus = SRC_renfuchenzhuxi
+                                has_completed_focus = SRC_lidazhaozhuxi
+                                has_completed_focus = SRC_chenduxiuzhuxi
+                            }
+                        }
+                        has_political_power > 34
+                    }
+                    add_political_power = -35
+                    add_stability = -0.01
+                    SRC_power_struggle_add_selected_support = yes
+                    set_country_flag = {
+                        flag = SRC_power_struggle_action_cd
+                        days = 14
+                        value = 1
+                    }
+                }
+            }
+
+            src_power_cadre_button_click = {
+                if = {
+                    limit = {
+                        NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                        NOT = {
+                            OR = {
+                                has_completed_focus = SRC_renfuchenzhuxi
+                                has_completed_focus = SRC_lidazhaozhuxi
+                                has_completed_focus = SRC_chenduxiuzhuxi
+                            }
+                        }
+                        command_power > 14.99
+                    }
+                    add_command_power = -15
+                    SRC_power_struggle_add_selected_major_support = yes
+                    set_country_flag = {
+                        flag = SRC_power_struggle_action_cd
+                        days = 21
+                        value = 1
+                    }
+                }
+            }
+
+            src_power_suppress_button_click = {
+                if = {
+                    limit = {
+                        NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                        NOT = {
+                            OR = {
+                                has_completed_focus = SRC_renfuchenzhuxi
+                                has_completed_focus = SRC_lidazhaozhuxi
+                                has_completed_focus = SRC_chenduxiuzhuxi
+                            }
+                        }
+                        has_political_power > 44
+                    }
+                    add_political_power = -45
+                    add_stability = -0.02
+                    SRC_power_struggle_suppress_selected_rivals = yes
+                    set_country_flag = {
+                        flag = SRC_power_struggle_action_cd
+                        days = 21
+                        value = 1
+                    }
+                }
+            }
+        }
+
+        triggers = {
+            src_power_ren_selected_marker_visible = { has_country_flag = SRC_power_struggle_selected_ren }
+            src_power_li_selected_marker_visible = { has_country_flag = SRC_power_struggle_selected_li }
+            src_power_chen_selected_marker_visible = { has_country_flag = SRC_power_struggle_selected_chen }
+
+            src_power_org_button_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+            src_power_org_text_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+            src_power_propaganda_button_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+            src_power_propaganda_text_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+            src_power_cadre_button_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+            src_power_cadre_text_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+            src_power_suppress_button_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+            src_power_suppress_text_visible = {
+                NOT = {
+                    OR = {
+                        has_completed_focus = SRC_renfuchenzhuxi
+                        has_completed_focus = SRC_lidazhaozhuxi
+                        has_completed_focus = SRC_chenduxiuzhuxi
+                    }
+                }
+            }
+
+            src_power_decided_text_visible = {
+                OR = {
+                    has_completed_focus = SRC_renfuchenzhuxi
+                    has_completed_focus = SRC_lidazhaozhuxi
+                    has_completed_focus = SRC_chenduxiuzhuxi
+                }
+            }
+
+            src_power_psc_slot_1_placeholder_visible = {
+                NOT = { has_country_flag = SRC_power_psc_slot_1_assigned }
+            }
+            src_power_psc_slot_2_placeholder_visible = {
+                NOT = { has_country_flag = SRC_power_psc_slot_2_assigned }
+            }
+            src_power_psc_slot_3_placeholder_visible = {
+                NOT = { has_country_flag = SRC_power_psc_slot_3_assigned }
+            }
+            src_power_psc_slot_4_placeholder_visible = {
+                NOT = { has_country_flag = SRC_power_psc_slot_4_assigned }
+            }
+            src_power_psc_slot_5_placeholder_visible = {
+                NOT = { has_country_flag = SRC_power_psc_slot_5_assigned }
+            }
+            src_power_psc_slot_6_placeholder_visible = {
+                NOT = { has_country_flag = SRC_power_psc_slot_6_assigned }
+            }
+            src_power_psc_slot_7_placeholder_visible = {
+                NOT = { has_country_flag = SRC_power_psc_slot_7_assigned }
+            }
+
+            src_power_org_button_click_enabled = {
+                NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                has_political_power > 24
+            }
+            src_power_propaganda_button_click_enabled = {
+                NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                has_political_power > 34
+            }
+            src_power_cadre_button_click_enabled = {
+                NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                command_power > 14.99
+            }
+            src_power_suppress_button_click_enabled = {
+                NOT = { has_country_flag = SRC_power_struggle_action_cd }
+                has_political_power > 44
+            }
+        }
+    }
+}

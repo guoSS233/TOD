@@ -1,0 +1,178 @@
+add_namespace = SRC_debug
+
+country_event = {
+    id = SRC_debug.1
+    title = SRC_debug.1.t
+    desc = SRC_debug.1.d
+    is_triggered_only = yes
+
+    option = {
+        name = SRC_debug.1.a
+        if = {
+            limit = { country_exists = SRC }
+            SRC = {
+                complete_national_focus = SRC_lianluoguanneigemingzhe
+                add_political_power = 300
+                clr_country_flag = SRC_huabeizhongyangju_established
+                clr_country_flag = SRC_huabeizhongyangju_active
+                set_country_flag = SRC_zhongyangju_gui_open
+            }
+        }
+    }
+
+    option = {
+        name = SRC_debug.1.b
+        if = {
+            limit = { country_exists = SRC }
+            SRC = {
+                complete_national_focus = SRC_lianluoguanneigemingzhe
+                add_political_power = 300
+                set_country_flag = SRC_huabeizhongyangju_established
+                set_country_flag = SRC_huabeizhongyangju_active
+                set_country_flag = SRC_zhongyangju_gui_open
+                if = {
+                    limit = { has_idea = SRC_huabeizhongyangju_idea }
+                    remove_ideas = SRC_huabeizhongyangju_idea
+                }
+                add_ideas = SRC_huabeizhongyangju_idea
+            }
+        }
+    }
+
+    option = {
+        name = SRC_debug.1.c
+    }
+}
+
+country_event = {
+    id = SRC_debug.2
+    title = SRC_debug.2.t
+    desc = SRC_debug.2.d
+    is_triggered_only = yes
+
+    option = {
+        name = SRC_debug.2.a
+        if = {
+            limit = { country_exists = MNG }
+            MNG = {
+                MNG_release_SRC = yes
+            }
+        }
+        if = {
+            limit = { country_exists = SRC }
+            SRC = {
+                complete_national_focus = SRC_lianluoguanneigemingzhe
+                add_political_power = 300
+                set_country_flag = SRC_zhongyangju_gui_open
+            }
+        }
+    }
+
+    option = {
+        name = SRC_debug.2.b
+        if = {
+            limit = { country_exists = SRC }
+            SRC = {
+                change_tag_from = ROOT
+            }
+        }
+    }
+
+    option = {
+        name = SRC_debug.2.c
+    }
+}
+
+country_event = {
+    id = 991001
+    title = SRC_debug.2.t
+    desc = SRC_debug.2.d
+    is_triggered_only = yes
+
+    option = {
+        name = SRC_debug.2.a
+        if = {
+            limit = { country_exists = MNG }
+            MNG = { MNG_release_SRC = yes }
+        }
+        hidden_effect = {
+            if = {
+                limit = { country_exists = SRC }
+                SRC = { country_event = { id = SRC_debug.3 days = 1 } }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = SRC_debug.3
+    title = SRC_debug.3.t
+    desc = SRC_debug.3.d
+    is_triggered_only = yes
+
+    option = {
+        name = SRC_debug.3.a
+        complete_national_focus = SRC_lianluoguanneigemingzhe
+        add_political_power = 300
+        set_country_flag = SRC_zhongyangju_gui_open
+    }
+}
+
+country_event = {
+    id = SRC_debug.4
+    title = SRC_debug.4.t
+    desc = SRC_debug.4.d
+    is_triggered_only = yes
+
+    option = {
+        name = SRC_debug.4.a
+        add_political_power = 300
+        add_command_power = 50
+        set_country_flag = SRC_power_struggle_test
+        set_country_flag = SRC_power_struggle_gui_open
+        clr_country_flag = SRC_power_struggle_action_cd
+        SRC_power_struggle_select_ren = yes
+        SRC_power_struggle_init_balance = yes
+    }
+}
+
+country_event = {
+    id = SRC_debug.5
+    title = SRC_debug.5.t
+    desc = SRC_debug.5.d
+    is_triggered_only = yes
+
+    option = {
+        name = SRC_debug.5.a
+
+        if = {
+            limit = {
+                NOT = { country_exists = SRC }
+                country_exists = MNG
+            }
+            MNG = { MNG_release_SRC = yes }
+        }
+
+        hidden_effect = {
+            if = {
+                limit = { country_exists = SRC }
+                SRC = {
+                    complete_national_focus = SRC_lianluoguanneigemingzhe
+                    add_political_power = 300
+                    add_command_power = 50
+                    set_country_flag = SRC_power_struggle_test
+                    set_country_flag = SRC_power_struggle_gui_open
+                    clr_country_flag = SRC_power_struggle_action_cd
+                    SRC_power_struggle_select_ren = yes
+                    SRC_power_struggle_init_balance = yes
+                    add_to_variable = { SRC_power_struggle_gui_dirty = 0.01 }
+                    change_tag_from = ROOT
+                }
+            }
+        }
+    }
+
+    option = {
+        name = SRC_debug.5.b
+    }
+}

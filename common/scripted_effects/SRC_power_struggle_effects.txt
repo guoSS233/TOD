@@ -1,0 +1,254 @@
+SRC_power_struggle_init_balance = {
+    set_variable = { SRC_xianfeng = 1 }
+    set_variable = { SRC_weiyuan = 1 }
+    set_variable = { SRC_wenhe = 1 }
+    SRC_power_struggle_init_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+}
+
+SRC_power_struggle_init_central_satisfaction = {
+    if = {
+        limit = { NOT = { check_variable = { SRC_central_support_ren > 0 } } }
+        set_variable = { SRC_central_support_ren = 50 }
+    }
+    if = {
+        limit = { NOT = { check_variable = { SRC_central_support_li > 0 } } }
+        set_variable = { SRC_central_support_li = 50 }
+    }
+    if = {
+        limit = { NOT = { check_variable = { SRC_central_support_chen > 0 } } }
+        set_variable = { SRC_central_support_chen = 50 }
+    }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+}
+
+SRC_power_struggle_normalize_central_satisfaction = {
+    clamp_variable = { var = SRC_central_support_ren min = 0 max = 100 }
+    clamp_variable = { var = SRC_central_support_li min = 0 max = 100 }
+    clamp_variable = { var = SRC_central_support_chen min = 0 max = 100 }
+    add_to_variable = { SRC_power_struggle_gui_dirty = 0.01 }
+}
+
+SRC_power_struggle_normalize_balance = {
+    clamp_variable = { var = SRC_xianfeng min = 0 max = 100 }
+    clamp_variable = { var = SRC_weiyuan min = 0 max = 100 }
+    clamp_variable = { var = SRC_wenhe min = 0 max = 100 }
+
+    set_temp_variable = { SRC_power_total = SRC_xianfeng }
+    add_to_temp_variable = { SRC_power_total = SRC_weiyuan }
+    add_to_temp_variable = { SRC_power_total = SRC_wenhe }
+
+    if = {
+        limit = { check_variable = { SRC_power_total < 0.01 } }
+        set_variable = { SRC_xianfeng = 1 }
+        set_variable = { SRC_weiyuan = 1 }
+        set_variable = { SRC_wenhe = 1 }
+        set_temp_variable = { SRC_power_total = 3 }
+    }
+
+    divide_variable = { SRC_xianfeng = SRC_power_total }
+    multiply_variable = { SRC_xianfeng = 100 }
+    divide_variable = { SRC_weiyuan = SRC_power_total }
+    multiply_variable = { SRC_weiyuan = 100 }
+    divide_variable = { SRC_wenhe = SRC_power_total }
+    multiply_variable = { SRC_wenhe = 100 }
+
+    SRC_power_struggle_calc_tangle_xy = yes
+}
+
+SRC_power_struggle_calc_tangle_xy = {
+    set_temp_variable = { SRC_power_total = SRC_xianfeng }
+    add_to_temp_variable = { SRC_power_total = SRC_weiyuan }
+    add_to_temp_variable = { SRC_power_total = SRC_wenhe }
+
+    if = {
+        limit = { check_variable = { SRC_power_total < 0.01 } }
+        set_temp_variable = { SRC_power_total = 100 }
+        set_variable = { SRC_xianfeng = 33.333 }
+        set_variable = { SRC_weiyuan = 33.333 }
+        set_variable = { SRC_wenhe = 33.334 }
+    }
+
+    # Triangle marker top-left inside src_power_detail_panel.
+    # The triangle art is placed at 20,42; coordinates below offset the
+    # 24x24 marker so the pin center sits on each triangle vertex.
+    # Ren:   63,418
+    # Li:   258,54
+    # Chen: 453,418
+    # Values are barycentric weights and are normalized by SRC_power_total.
+    set_variable = { SRC_power_tangle_x = SRC_xianfeng }
+    multiply_variable = { SRC_power_tangle_x = 63 }
+    set_temp_variable = { SRC_power_li_x = SRC_weiyuan }
+    multiply_temp_variable = { SRC_power_li_x = 258 }
+    add_to_variable = { SRC_power_tangle_x = SRC_power_li_x }
+    set_temp_variable = { SRC_power_chen_x = SRC_wenhe }
+    multiply_temp_variable = { SRC_power_chen_x = 453 }
+    add_to_variable = { SRC_power_tangle_x = SRC_power_chen_x }
+    divide_variable = { SRC_power_tangle_x = SRC_power_total }
+
+    set_variable = { SRC_power_tangle_y = SRC_xianfeng }
+    multiply_variable = { SRC_power_tangle_y = 418 }
+    set_temp_variable = { SRC_power_li_y = SRC_weiyuan }
+    multiply_temp_variable = { SRC_power_li_y = 54 }
+    add_to_variable = { SRC_power_tangle_y = SRC_power_li_y }
+    set_temp_variable = { SRC_power_chen_y = SRC_wenhe }
+    multiply_temp_variable = { SRC_power_chen_y = 418 }
+    add_to_variable = { SRC_power_tangle_y = SRC_power_chen_y }
+    divide_variable = { SRC_power_tangle_y = SRC_power_total }
+
+    add_to_variable = { SRC_power_struggle_gui_dirty = 0.01 }
+}
+
+SRC_power_struggle_refresh_psc_gui = {
+    add_to_variable = { SRC_power_struggle_gui_dirty = 0.01 }
+}
+
+SRC_power_struggle_select_ren = {
+    set_country_flag = SRC_power_struggle_selected_ren
+    clr_country_flag = SRC_power_struggle_selected_li
+    clr_country_flag = SRC_power_struggle_selected_chen
+    SRC_power_struggle_refresh_psc_gui = yes
+}
+
+SRC_power_struggle_select_li = {
+    clr_country_flag = SRC_power_struggle_selected_ren
+    set_country_flag = SRC_power_struggle_selected_li
+    clr_country_flag = SRC_power_struggle_selected_chen
+    SRC_power_struggle_refresh_psc_gui = yes
+}
+
+SRC_power_struggle_select_chen = {
+    clr_country_flag = SRC_power_struggle_selected_ren
+    clr_country_flag = SRC_power_struggle_selected_li
+    set_country_flag = SRC_power_struggle_selected_chen
+    SRC_power_struggle_refresh_psc_gui = yes
+}
+
+SRC_power_struggle_add_selected_support = {
+    if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_ren }
+        add_to_variable = { SRC_xianfeng = 4 }
+        subtract_from_variable = { SRC_weiyuan = 2 }
+        subtract_from_variable = { SRC_wenhe = 2 }
+        add_to_variable = { SRC_central_support_ren = 6 }
+        subtract_from_variable = { SRC_central_support_li = 3 }
+        subtract_from_variable = { SRC_central_support_chen = 3 }
+    }
+    else_if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_li }
+        subtract_from_variable = { SRC_xianfeng = 2 }
+        add_to_variable = { SRC_weiyuan = 4 }
+        subtract_from_variable = { SRC_wenhe = 2 }
+        subtract_from_variable = { SRC_central_support_ren = 3 }
+        add_to_variable = { SRC_central_support_li = 6 }
+        subtract_from_variable = { SRC_central_support_chen = 3 }
+    }
+    else_if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_chen }
+        subtract_from_variable = { SRC_xianfeng = 2 }
+        subtract_from_variable = { SRC_weiyuan = 2 }
+        add_to_variable = { SRC_wenhe = 4 }
+        subtract_from_variable = { SRC_central_support_ren = 3 }
+        subtract_from_variable = { SRC_central_support_li = 3 }
+        add_to_variable = { SRC_central_support_chen = 6 }
+    }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+}
+
+SRC_power_struggle_add_selected_major_support = {
+    if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_ren }
+        add_to_variable = { SRC_xianfeng = 8 }
+        subtract_from_variable = { SRC_weiyuan = 4 }
+        subtract_from_variable = { SRC_wenhe = 4 }
+        add_to_variable = { SRC_central_support_ren = 12 }
+        subtract_from_variable = { SRC_central_support_li = 6 }
+        subtract_from_variable = { SRC_central_support_chen = 6 }
+    }
+    else_if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_li }
+        subtract_from_variable = { SRC_xianfeng = 4 }
+        add_to_variable = { SRC_weiyuan = 8 }
+        subtract_from_variable = { SRC_wenhe = 4 }
+        subtract_from_variable = { SRC_central_support_ren = 6 }
+        add_to_variable = { SRC_central_support_li = 12 }
+        subtract_from_variable = { SRC_central_support_chen = 6 }
+    }
+    else_if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_chen }
+        subtract_from_variable = { SRC_xianfeng = 4 }
+        subtract_from_variable = { SRC_weiyuan = 4 }
+        add_to_variable = { SRC_wenhe = 8 }
+        subtract_from_variable = { SRC_central_support_ren = 6 }
+        subtract_from_variable = { SRC_central_support_li = 6 }
+        add_to_variable = { SRC_central_support_chen = 12 }
+    }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+}
+
+SRC_power_struggle_suppress_selected_rivals = {
+    if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_ren }
+        add_to_variable = { SRC_xianfeng = 6 }
+        subtract_from_variable = { SRC_weiyuan = 3 }
+        subtract_from_variable = { SRC_wenhe = 3 }
+        add_to_variable = { SRC_central_support_ren = 8 }
+        subtract_from_variable = { SRC_central_support_li = 8 }
+        subtract_from_variable = { SRC_central_support_chen = 8 }
+    }
+    else_if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_li }
+        subtract_from_variable = { SRC_xianfeng = 3 }
+        add_to_variable = { SRC_weiyuan = 6 }
+        subtract_from_variable = { SRC_wenhe = 3 }
+        subtract_from_variable = { SRC_central_support_ren = 8 }
+        add_to_variable = { SRC_central_support_li = 8 }
+        subtract_from_variable = { SRC_central_support_chen = 8 }
+    }
+    else_if = {
+        limit = { has_country_flag = SRC_power_struggle_selected_chen }
+        subtract_from_variable = { SRC_xianfeng = 3 }
+        subtract_from_variable = { SRC_weiyuan = 3 }
+        add_to_variable = { SRC_wenhe = 6 }
+        subtract_from_variable = { SRC_central_support_ren = 8 }
+        subtract_from_variable = { SRC_central_support_li = 8 }
+        add_to_variable = { SRC_central_support_chen = 8 }
+    }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+}
+
+SRC_power_struggle_add_ren_support = {
+    add_to_variable = { SRC_xianfeng = 4 }
+    subtract_from_variable = { SRC_weiyuan = 2 }
+    subtract_from_variable = { SRC_wenhe = 2 }
+    add_to_variable = { SRC_central_support_ren = 6 }
+    subtract_from_variable = { SRC_central_support_li = 3 }
+    subtract_from_variable = { SRC_central_support_chen = 3 }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+}
+
+SRC_power_struggle_add_li_support = {
+    subtract_from_variable = { SRC_xianfeng = 2 }
+    add_to_variable = { SRC_weiyuan = 4 }
+    subtract_from_variable = { SRC_wenhe = 2 }
+    subtract_from_variable = { SRC_central_support_ren = 3 }
+    add_to_variable = { SRC_central_support_li = 6 }
+    subtract_from_variable = { SRC_central_support_chen = 3 }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+}
+
+SRC_power_struggle_add_chen_support = {
+    subtract_from_variable = { SRC_xianfeng = 2 }
+    subtract_from_variable = { SRC_weiyuan = 2 }
+    add_to_variable = { SRC_wenhe = 4 }
+    subtract_from_variable = { SRC_central_support_ren = 3 }
+    subtract_from_variable = { SRC_central_support_li = 3 }
+    add_to_variable = { SRC_central_support_chen = 6 }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+}

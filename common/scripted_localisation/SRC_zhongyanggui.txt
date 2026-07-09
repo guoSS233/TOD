@@ -1,0 +1,214 @@
+﻿defined_text = {
+    name = SRC_current_bureau_title
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei } localization_key = SRC_huabei_title }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_dongbei_title }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan } localization_key = SRC_dongnan_title }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan } localization_key = SRC_zhongnan_title }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan } localization_key = SRC_xinan_title }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei } localization_key = SRC_xibei_title }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei } localization_key = SRC_mobei_title }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu } localization_key = SRC_xiyu_title }
+    text = { localization_key = SRC_huabei_title }
+}
+
+defined_text = {
+    name = SRC_current_bureau_scope
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei } localization_key = SRC_huabei_scope_desc }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_dongbei_scope_desc }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan } localization_key = SRC_dongnan_scope_desc }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan } localization_key = SRC_zhongnan_scope_desc }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan } localization_key = SRC_xinan_scope_desc }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei } localization_key = SRC_xibei_scope_desc }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei } localization_key = SRC_mobei_scope_desc }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu } localization_key = SRC_xiyu_scope_desc }
+    text = { localization_key = SRC_huabei_scope_desc }
+}
+
+defined_text = {
+    name = SRC_current_bureau_status
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_status_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei has_country_flag = SRC_huabeizhongyangju_active } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei has_country_flag = SRC_huabeizhongyangju_established NOT = { has_country_flag = SRC_huabeizhongyangju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei has_country_flag = SRC_dongbeiju_established NOT = { has_country_flag = SRC_dongbeiju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_status_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan has_country_flag = SRC_dongnanju_active } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan has_country_flag = SRC_dongnanju_established NOT = { has_country_flag = SRC_dongnanju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_status_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan has_country_flag = SRC_zhongnanju_active } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan has_country_flag = SRC_zhongnanju_established NOT = { has_country_flag = SRC_zhongnanju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_status_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan has_country_flag = SRC_xinanju_active } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan has_country_flag = SRC_xinanju_established NOT = { has_country_flag = SRC_xinanju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_status_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei has_country_flag = SRC_xibeiju_active } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei has_country_flag = SRC_xibeiju_established NOT = { has_country_flag = SRC_xibeiju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_status_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei has_country_flag = SRC_mobeiju_active } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei has_country_flag = SRC_mobeiju_established NOT = { has_country_flag = SRC_mobeiju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_status_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu has_country_flag = SRC_xiyuju_active } localization_key = SRC_zhongyangju_status_active }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu has_country_flag = SRC_xiyuju_established NOT = { has_country_flag = SRC_xiyuju_active } } localization_key = SRC_zhongyangju_status_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu } localization_key = SRC_zhongyangju_status_not_established }
+
+    text = { localization_key = SRC_zhongyangju_status_not_established }
+}
+
+defined_text = {
+    name = SRC_current_bureau_button
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei has_country_flag = SRC_huabeizhongyangju_active } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei has_country_flag = SRC_huabeizhongyangju_established NOT = { has_country_flag = SRC_huabeizhongyangju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei } localization_key = SRC_huabei_button_establish }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei has_country_flag = SRC_dongbeiju_established NOT = { has_country_flag = SRC_dongbeiju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_dongbei_button_establish }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan has_country_flag = SRC_dongnanju_active } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan has_country_flag = SRC_dongnanju_established NOT = { has_country_flag = SRC_dongnanju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan } localization_key = SRC_dongnan_button_establish }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan has_country_flag = SRC_zhongnanju_active } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan has_country_flag = SRC_zhongnanju_established NOT = { has_country_flag = SRC_zhongnanju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan } localization_key = SRC_zhongnan_button_establish }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan has_country_flag = SRC_xinanju_active } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan has_country_flag = SRC_xinanju_established NOT = { has_country_flag = SRC_xinanju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan } localization_key = SRC_xinan_button_establish }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei has_country_flag = SRC_xibeiju_active } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei has_country_flag = SRC_xibeiju_established NOT = { has_country_flag = SRC_xibeiju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei } localization_key = SRC_xibei_button_establish }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei has_country_flag = SRC_mobeiju_active } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei has_country_flag = SRC_mobeiju_established NOT = { has_country_flag = SRC_mobeiju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei } localization_key = SRC_mobei_button_establish }
+
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu has_country_flag = SRC_xiyuju_active } localization_key = SRC_zhongyangju_button_built }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu has_country_flag = SRC_xiyuju_established NOT = { has_country_flag = SRC_xiyuju_active } } localization_key = SRC_huabei_button_building }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu } localization_key = SRC_xiyu_button_establish }
+
+    text = { localization_key = SRC_huabei_button_establish }
+}
+
+defined_text = {
+    name = SRC_current_bureau_dominant_route
+    text = { trigger = { check_variable = { SRC_current_bureau_dominant_route_id = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { check_variable = { SRC_current_bureau_dominant_route_id = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { localization_key = SRC_power_struggle_chen_name }
+}
+
+defined_text = {
+    name = SRC_current_bureau_tooltip
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei has_country_flag = SRC_huabeizhongyangju_active } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei has_country_flag = SRC_huabeizhongyangju_established NOT = { has_country_flag = SRC_huabeizhongyangju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei } localization_key = SRC_huabei_button_tt_delayed }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei has_country_flag = SRC_dongbeiju_established NOT = { has_country_flag = SRC_dongbeiju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei } localization_key = SRC_dongbei_button_tt_delayed }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan has_country_flag = SRC_dongnanju_active } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan has_country_flag = SRC_dongnanju_established NOT = { has_country_flag = SRC_dongnanju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan } localization_key = SRC_dongnan_button_tt_delayed }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan has_country_flag = SRC_zhongnanju_active } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan has_country_flag = SRC_zhongnanju_established NOT = { has_country_flag = SRC_zhongnanju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan } localization_key = SRC_zhongnan_button_tt_delayed }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan has_country_flag = SRC_xinanju_active } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan has_country_flag = SRC_xinanju_established NOT = { has_country_flag = SRC_xinanju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan } localization_key = SRC_xinan_button_tt_delayed }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei has_country_flag = SRC_xibeiju_active } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei has_country_flag = SRC_xibeiju_established NOT = { has_country_flag = SRC_xibeiju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei } localization_key = SRC_xibei_button_tt_delayed }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei has_country_flag = SRC_mobeiju_active } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei has_country_flag = SRC_mobeiju_established NOT = { has_country_flag = SRC_mobeiju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei } localization_key = SRC_mobei_button_tt_delayed }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu NOT = { SRC_other_bureaus_unlocked = yes } } localization_key = SRC_zhongyangju_button_locked_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu has_country_flag = SRC_xiyuju_active } localization_key = SRC_zhongyangju_button_built_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu has_country_flag = SRC_xiyuju_established NOT = { has_country_flag = SRC_xiyuju_active } } localization_key = SRC_zhongyangju_button_building_tt }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu } localization_key = SRC_xiyu_button_tt_delayed }
+    text = { localization_key = SRC_huabei_button_tt_delayed }
+}
+
+defined_text = {
+    name = SRC_current_bureau_cadre_name
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei check_variable = { SRC_huabei_cadre_id = 1 } } localization_key = SRC_cadre_huabei_lipeiyuan }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei check_variable = { SRC_huabei_cadre_id = 2 } } localization_key = SRC_cadre_huabei_dengfa }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei check_variable = { SRC_huabei_cadre_id = 3 } } localization_key = SRC_cadre_huabei_heshuheng }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei check_variable = { SRC_dongbei_cadre_id = 1 } } localization_key = SRC_cadre_dongbei_qianwangchao }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei check_variable = { SRC_dongbei_cadre_id = 2 } } localization_key = SRC_cadre_dongbei_dengzhongxia }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei check_variable = { SRC_dongbei_cadre_id = 3 } } localization_key = SRC_cadre_dongbei_hemengxiong }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan check_variable = { SRC_dongnan_cadre_id = 1 } } localization_key = SRC_cadre_dongnan_fujingyang }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan check_variable = { SRC_dongnan_cadre_id = 2 } } localization_key = SRC_cadre_dongnan_wangjinmei }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan check_variable = { SRC_dongnan_cadre_id = 3 } } localization_key = SRC_cadre_dongnan_tanghongjing }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan check_variable = { SRC_zhongnan_cadre_id = 1 } } localization_key = SRC_cadre_zhongnan_yufangzhou }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan check_variable = { SRC_zhongnan_cadre_id = 2 } } localization_key = SRC_cadre_zhongnan_zhangtailei }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan check_variable = { SRC_zhongnan_cadre_id = 3 } } localization_key = SRC_cadre_zhongnan_dengenming }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan check_variable = { SRC_xinan_cadre_id = 1 } } localization_key = SRC_cadre_xinan_wangligong }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan check_variable = { SRC_xinan_cadre_id = 2 } } localization_key = SRC_cadre_xinan_xinpeiyuan }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan check_variable = { SRC_xinan_cadre_id = 3 } } localization_key = SRC_cadre_xinan_houlijian }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei check_variable = { SRC_xibei_cadre_id = 1 } } localization_key = SRC_cadre_xibei_xiejuezai }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei check_variable = { SRC_xibei_cadre_id = 2 } } localization_key = SRC_cadre_xibei_zhaowuchen }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei check_variable = { SRC_xibei_cadre_id = 3 } } localization_key = SRC_cadre_xibei_denghegao }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei check_variable = { SRC_mobei_cadre_id = 1 } } localization_key = SRC_cadre_mobei_weichangkui }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei check_variable = { SRC_mobei_cadre_id = 2 } } localization_key = SRC_cadre_mobei_yangsong }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei check_variable = { SRC_mobei_cadre_id = 3 } } localization_key = SRC_cadre_mobei_dengfa }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu check_variable = { SRC_xiyu_cadre_id = 1 } } localization_key = SRC_cadre_xiyu_fujingyang }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu check_variable = { SRC_xiyu_cadre_id = 2 } } localization_key = SRC_cadre_xiyu_wangjinmei }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu check_variable = { SRC_xiyu_cadre_id = 3 } } localization_key = SRC_cadre_xiyu_heshuheng }
+    text = { localization_key = SRC_cadre_huabei_lipeiyuan }
+}
+
+defined_text = {
+    name = SRC_current_bureau_cadre_route
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei check_variable = { SRC_huabei_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei check_variable = { SRC_huabei_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_huabei check_variable = { SRC_huabei_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei check_variable = { SRC_dongbei_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei check_variable = { SRC_dongbei_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongbei check_variable = { SRC_dongbei_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan check_variable = { SRC_dongnan_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan check_variable = { SRC_dongnan_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_dongnan check_variable = { SRC_dongnan_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan check_variable = { SRC_zhongnan_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan check_variable = { SRC_zhongnan_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_zhongnan check_variable = { SRC_zhongnan_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan check_variable = { SRC_xinan_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan check_variable = { SRC_xinan_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xinan check_variable = { SRC_xinan_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei check_variable = { SRC_xibei_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei check_variable = { SRC_xibei_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xibei check_variable = { SRC_xibei_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei check_variable = { SRC_mobei_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei check_variable = { SRC_mobei_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_mobei check_variable = { SRC_mobei_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu check_variable = { SRC_xiyu_cadre_route = 1 } } localization_key = SRC_power_struggle_ren_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu check_variable = { SRC_xiyu_cadre_route = 2 } } localization_key = SRC_power_struggle_li_name }
+    text = { trigger = { has_country_flag = SRC_zhongyangju_tab_xiyu check_variable = { SRC_xiyu_cadre_route = 3 } } localization_key = SRC_power_struggle_chen_name }
+    text = { localization_key = SRC_power_struggle_li_name }
+}

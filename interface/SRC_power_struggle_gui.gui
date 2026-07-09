@@ -1,0 +1,712 @@
+guiTypes = {
+    containerWindowType = {
+        name = "SRC_power_struggle_entry_bg"
+        position = { x = 338 y = 104 }
+        size = { width = 150 height = 36 }
+        moveable = no
+        clipping = no
+
+        buttonType = {
+            name = "SRC_power_struggle_entry_button"
+            quadTextureSprite = "GFX_SRC_power_struggle_entry_button_safe"
+            position = { x = 0 y = 0 }
+            pdx_tooltip = "SRC_power_struggle_entry_tt"
+        }
+
+        iconType = {
+            name = "SRC_power_struggle_entry_icon"
+            spriteType = "GFX_SRC_power_struggle_icon"
+            position = { x = 4 y = 4 }
+            scale = 0.20
+        }
+
+        instantTextBoxType = {
+            name = "SRC_power_struggle_entry_text"
+            position = { x = 26 y = 5 }
+            font = "hoi_20bs"
+            text = "SRC_power_struggle_entry"
+            format = center
+            maxWidth = 118
+            maxHeight = 24
+            alwaystransparent = yes
+        }
+    }
+
+    containerWindowType = {
+        name = "SRC_power_struggle_main_window"
+        position = { x = 80 y = 80 }
+        size = { width = 1220 height = 650 }
+        moveable = yes
+        clipping = no
+
+        background = {
+            name = "power_bg"
+            quadTextureSprite = "GFX_SRC_power_struggle_bg"
+        }
+
+        buttonType = {
+            name = "src_power_close_button"
+            position = { x = 1188 y = 6 }
+            quadTextureSprite = "GFX_closebutton"
+            shortcut = "ESCAPE"
+            clicksound = click_close
+            pdx_tooltip = "CLOSE"
+        }
+
+        instantTextBoxType = {
+            name = "src_power_title"
+            position = { x = 0 y = 14 }
+            font = "hoi_36header"
+            text = "SRC_power_struggle_title"
+            format = center
+            maxWidth = 1220
+            maxHeight = 40
+        }
+
+        instantTextBoxType = {
+            name = "src_power_subtitle"
+            position = { x = 40 y = 54 }
+            font = "hoi_20bs"
+            text = "SRC_power_struggle_subtitle"
+            format = center
+            maxWidth = 1140
+            maxHeight = 28
+        }
+
+        containerWindowType = {
+            name = "src_power_ren_card"
+            position = { x = 590 y = 96 }
+            size = { width = 366 height = 102 }
+
+            background = {
+                name = "ren_card_bg"
+                quadTextureSprite = "GFX_tiled_plain_bg"
+            }
+
+            iconType = {
+                name = "src_power_ren_portrait"
+                spriteType = "GFX_SRC_power_struggle_portrait_ren"
+                position = { x = 12 y = 12 }
+                scale = 0.30
+            }
+
+            instantTextBoxType = {
+                name = "src_power_ren_name"
+                position = { x = 90 y = 12 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_ren_name"
+                format = left
+                maxWidth = 250
+                maxHeight = 24
+            }
+
+            instantTextBoxType = {
+                name = "src_power_ren_person"
+                position = { x = 90 y = 36 }
+                font = "hoi_18"
+                text = "SRC_power_struggle_ren_person"
+                format = left
+                maxWidth = 250
+                maxHeight = 18
+            }
+
+            instantTextBoxType = {
+                name = "src_power_ren_route"
+                position = { x = 90 y = 54 }
+                font = "hoi_18"
+                text = "SRC_power_struggle_ren_route"
+                format = left
+                maxWidth = 250
+                maxHeight = 20
+            }
+
+            instantTextBoxType = {
+                name = "src_power_ren_score"
+                position = { x = 90 y = 76 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_score_ren"
+                format = left
+                maxWidth = 250
+                maxHeight = 24
+            }
+
+            buttonType = {
+                name = "src_power_select_ren"
+                quadTextureSprite = "GFX_tiled_window_transparent"
+                position = { x = 0 y = 0 }
+                size = { x = 366 y = 102 }
+                pdx_tooltip = "SRC_power_struggle_ren_tt"
+                pdx_tooltip_delayed = "SRC_power_struggle_ren_tt_delayed"
+            }
+
+        }
+
+        containerWindowType = {
+            name = "src_power_li_card"
+            position = { x = 590 y = 210 }
+            size = { width = 366 height = 102 }
+
+            background = {
+                name = "li_card_bg"
+                quadTextureSprite = "GFX_tiled_plain_bg"
+            }
+
+            iconType = {
+                name = "src_power_li_portrait"
+                spriteType = "GFX_SRC_power_struggle_portrait_li"
+                position = { x = 12 y = 12 }
+                scale = 0.30
+            }
+
+            instantTextBoxType = {
+                name = "src_power_li_name"
+                position = { x = 90 y = 12 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_li_name"
+                format = left
+                maxWidth = 250
+                maxHeight = 24
+            }
+
+            instantTextBoxType = {
+                name = "src_power_li_person"
+                position = { x = 90 y = 36 }
+                font = "hoi_18"
+                text = "SRC_power_struggle_li_person"
+                format = left
+                maxWidth = 250
+                maxHeight = 18
+            }
+
+            instantTextBoxType = {
+                name = "src_power_li_route"
+                position = { x = 90 y = 54 }
+                font = "hoi_18"
+                text = "SRC_power_struggle_li_route"
+                format = left
+                maxWidth = 250
+                maxHeight = 20
+            }
+
+            instantTextBoxType = {
+                name = "src_power_li_score"
+                position = { x = 90 y = 76 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_score_li"
+                format = left
+                maxWidth = 250
+                maxHeight = 24
+            }
+
+            buttonType = {
+                name = "src_power_select_li"
+                quadTextureSprite = "GFX_tiled_window_transparent"
+                position = { x = 0 y = 0 }
+                size = { x = 366 y = 102 }
+                pdx_tooltip = "SRC_power_struggle_li_tt"
+                pdx_tooltip_delayed = "SRC_power_struggle_li_tt_delayed"
+            }
+
+        }
+
+        containerWindowType = {
+            name = "src_power_chen_card"
+            position = { x = 590 y = 324 }
+            size = { width = 366 height = 102 }
+
+            background = {
+                name = "chen_card_bg"
+                quadTextureSprite = "GFX_tiled_plain_bg"
+            }
+
+            iconType = {
+                name = "src_power_chen_portrait"
+                spriteType = "GFX_SRC_power_struggle_portrait_chen"
+                position = { x = 12 y = 12 }
+                scale = 0.30
+            }
+
+            instantTextBoxType = {
+                name = "src_power_chen_name"
+                position = { x = 90 y = 12 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_chen_name"
+                format = left
+                maxWidth = 250
+                maxHeight = 24
+            }
+
+            instantTextBoxType = {
+                name = "src_power_chen_person"
+                position = { x = 90 y = 36 }
+                font = "hoi_18"
+                text = "SRC_power_struggle_chen_person"
+                format = left
+                maxWidth = 250
+                maxHeight = 18
+            }
+
+            instantTextBoxType = {
+                name = "src_power_chen_route"
+                position = { x = 90 y = 54 }
+                font = "hoi_18"
+                text = "SRC_power_struggle_chen_route"
+                format = left
+                maxWidth = 250
+                maxHeight = 20
+            }
+
+            instantTextBoxType = {
+                name = "src_power_chen_score"
+                position = { x = 90 y = 76 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_score_chen"
+                format = left
+                maxWidth = 250
+                maxHeight = 24
+            }
+
+            buttonType = {
+                name = "src_power_select_chen"
+                quadTextureSprite = "GFX_tiled_window_transparent"
+                position = { x = 0 y = 0 }
+                size = { x = 366 y = 102 }
+                pdx_tooltip = "SRC_power_struggle_chen_tt"
+                pdx_tooltip_delayed = "SRC_power_struggle_chen_tt_delayed"
+            }
+
+        }
+
+        iconType = {
+            name = "src_power_ren_selected_marker"
+            spriteType = "GFX_SRC_power_struggle_triangle_marker"
+            position = { x = 566 y = 122 }
+            scale = 0.70
+        }
+
+        iconType = {
+            name = "src_power_li_selected_marker"
+            spriteType = "GFX_SRC_power_struggle_triangle_marker"
+            position = { x = 566 y = 236 }
+            scale = 0.70
+        }
+
+        iconType = {
+            name = "src_power_chen_selected_marker"
+            spriteType = "GFX_SRC_power_struggle_triangle_marker"
+            position = { x = 566 y = 350 }
+            scale = 0.70
+        }
+
+        containerWindowType = {
+            name = "src_power_detail_panel"
+            position = { x = 24 y = 96 }
+            size = { width = 540 height = 524 }
+
+            background = {
+                name = "detail_bg"
+                quadTextureSprite = "GFX_tiled_window_thin_border"
+            }
+
+            iconType = {
+                name = "src_power_triangle_bg"
+                spriteType = "GFX_SRC_power_struggle_triangle_bg"
+                position = { x = 20 y = 42 }
+            }
+
+            iconType = {
+                name = "src_power_marker"
+                spriteType = "GFX_SRC_power_struggle_triangle_marker"
+                position = { x = 0 y = 0 }
+            }
+
+            containerWindowType = {
+                name = "src_power_focus_summary"
+                position = { x = 18 y = 12 }
+                size = { width = 194 height = 176 }
+
+                background = {
+                    name = "focus_summary_bg"
+                    quadTextureSprite = "GFX_tiled_window_thin_border"
+                }
+
+                instantTextBoxType = {
+                    name = "src_power_advantage_text"
+                    position = { x = 10 y = 10 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_advantage"
+                    format = center
+                    maxWidth = 174
+                    maxHeight = 42
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "src_power_selected_name"
+                    position = { x = 10 y = 54 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_selected_name_dynamic"
+                    format = center
+                    maxWidth = 174
+                    maxHeight = 24
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "src_power_selected_route"
+                    position = { x = 12 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_selected_route_dynamic"
+                    format = center
+                    maxWidth = 170
+                    maxHeight = 42
+                    alwaystransparent = yes
+                }
+
+                instantTextBoxType = {
+                    name = "src_power_selected_desc"
+                    position = { x = 12 y = 126 }
+                    font = "hoi_18"
+                    text = "SRC_power_struggle_selected_desc_dynamic"
+                    format = center
+                    maxWidth = 170
+                    maxHeight = 44
+                    alwaystransparent = yes
+                }
+            }
+
+            instantTextBoxType = {
+                name = "src_power_triangle_li_label"
+                position = { x = 195 y = 12 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_li_name"
+                format = center
+                maxWidth = 150
+                maxHeight = 24
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "src_power_triangle_ren_label"
+                position = { x = 24 y = 482 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_ren_name"
+                format = left
+                maxWidth = 150
+                maxHeight = 24
+                alwaystransparent = yes
+            }
+            instantTextBoxType = {
+                name = "src_power_triangle_chen_label"
+                position = { x = 390 y = 482 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_chen_name"
+                format = right
+                maxWidth = 140
+                maxHeight = 24
+                alwaystransparent = yes
+            }
+
+        }
+
+        containerWindowType = {
+            name = "src_power_action_panel"
+            position = { x = 590 y = 446 }
+            size = { width = 366 height = 174 }
+
+            background = {
+                name = "action_bg"
+                quadTextureSprite = "GFX_tiled_window_thin_border"
+            }
+
+            instantTextBoxType = {
+                name = "src_power_action_title"
+                position = { x = 0 y = 12 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_action_title"
+                format = center
+                maxWidth = 366
+                maxHeight = 28
+            }
+
+            instantTextBoxType = {
+                name = "src_power_action_hint"
+                position = { x = 22 y = 38 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_action_hint"
+                format = center
+                maxWidth = 322
+                maxHeight = 44
+            }
+
+            buttonType = {
+                name = "src_power_org_button"
+                quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe"
+                position = { x = 28 y = 86 }
+                pdx_tooltip = "SRC_power_struggle_org_tt"
+            }
+            instantTextBoxType = {
+                name = "src_power_org_text"
+                position = { x = 28 y = 92 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_org"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "src_power_propaganda_button"
+                quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe"
+                position = { x = 214 y = 86 }
+                pdx_tooltip = "SRC_power_struggle_propaganda_tt"
+            }
+            instantTextBoxType = {
+                name = "src_power_propaganda_text"
+                position = { x = 214 y = 92 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_propaganda"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "src_power_cadre_button"
+                quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe"
+                position = { x = 28 y = 130 }
+                pdx_tooltip = "SRC_power_struggle_cadre_tt"
+            }
+            instantTextBoxType = {
+                name = "src_power_cadre_text"
+                position = { x = 28 y = 136 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_cadre"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            buttonType = {
+                name = "src_power_suppress_button"
+                quadTextureSprite = "GFX_SRC_power_struggle_action_button_safe"
+                position = { x = 214 y = 130 }
+                pdx_tooltip = "SRC_power_struggle_suppress_tt"
+            }
+            instantTextBoxType = {
+                name = "src_power_suppress_text"
+                position = { x = 214 y = 136 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_suppress"
+                format = center
+                maxWidth = 123
+                maxHeight = 20
+                alwaystransparent = yes
+            }
+
+            instantTextBoxType = {
+                name = "src_power_decided_text"
+                position = { x = 22 y = 86 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_decided"
+                format = center
+                maxWidth = 322
+                maxHeight = 74
+            }
+        }
+
+        containerWindowType = {
+            name = "src_power_psc_panel"
+            position = { x = 986 y = 96 }
+            size = { width = 204 height = 524 }
+
+            background = {
+                name = "psc_panel_bg"
+                quadTextureSprite = "GFX_tiled_window_thin_border"
+            }
+
+            instantTextBoxType = {
+                name = "src_power_psc_title"
+                position = { x = 0 y = 12 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_psc_title"
+                format = center
+                maxWidth = 204
+                maxHeight = 28
+            }
+
+            instantTextBoxType = {
+                name = "src_power_psc_hint"
+                position = { x = 14 y = 38 }
+                font = "hoi_20bs"
+                text = "SRC_power_struggle_psc_hint"
+                format = center
+                maxWidth = 176
+                maxHeight = 44
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_slot_1"
+                position = { x = 16 y = 90 }
+                size = { width = 82 height = 102 }
+                background = { name = "psc_slot_1_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" }
+                iconType = {
+                    name = "src_power_psc_slot_1_placeholder"
+                    spriteType = "GFX_SRC_power_psc_placeholder"
+                    position = { x = 10 y = 4 }
+                    scale = 0.36
+                }
+                instantTextBoxType = {
+                    name = "src_power_psc_slot_1_name"
+                    position = { x = 0 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_psc_slot_1"
+                    format = center
+                    maxWidth = 82
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_slot_2"
+                position = { x = 106 y = 90 }
+                size = { width = 82 height = 102 }
+                background = { name = "psc_slot_2_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" }
+                iconType = {
+                    name = "src_power_psc_slot_2_placeholder"
+                    spriteType = "GFX_SRC_power_psc_placeholder"
+                    position = { x = 10 y = 4 }
+                    scale = 0.36
+                }
+                instantTextBoxType = {
+                    name = "src_power_psc_slot_2_name"
+                    position = { x = 0 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_psc_slot_2"
+                    format = center
+                    maxWidth = 82
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_slot_3"
+                position = { x = 16 y = 194 }
+                size = { width = 82 height = 102 }
+                background = { name = "psc_slot_3_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" }
+                iconType = {
+                    name = "src_power_psc_slot_3_placeholder"
+                    spriteType = "GFX_SRC_power_psc_placeholder"
+                    position = { x = 10 y = 4 }
+                    scale = 0.36
+                }
+                instantTextBoxType = {
+                    name = "src_power_psc_slot_3_name"
+                    position = { x = 0 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_psc_slot_3"
+                    format = center
+                    maxWidth = 82
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_slot_4"
+                position = { x = 106 y = 194 }
+                size = { width = 82 height = 102 }
+                background = { name = "psc_slot_4_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" }
+                iconType = {
+                    name = "src_power_psc_slot_4_placeholder"
+                    spriteType = "GFX_SRC_power_psc_placeholder"
+                    position = { x = 10 y = 4 }
+                    scale = 0.36
+                }
+                instantTextBoxType = {
+                    name = "src_power_psc_slot_4_name"
+                    position = { x = 0 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_psc_slot_4"
+                    format = center
+                    maxWidth = 82
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_slot_5"
+                position = { x = 16 y = 298 }
+                size = { width = 82 height = 102 }
+                background = { name = "psc_slot_5_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" }
+                iconType = {
+                    name = "src_power_psc_slot_5_placeholder"
+                    spriteType = "GFX_SRC_power_psc_placeholder"
+                    position = { x = 10 y = 4 }
+                    scale = 0.36
+                }
+                instantTextBoxType = {
+                    name = "src_power_psc_slot_5_name"
+                    position = { x = 0 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_psc_slot_5"
+                    format = center
+                    maxWidth = 82
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_slot_6"
+                position = { x = 106 y = 298 }
+                size = { width = 82 height = 102 }
+                background = { name = "psc_slot_6_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" }
+                iconType = {
+                    name = "src_power_psc_slot_6_placeholder"
+                    spriteType = "GFX_SRC_power_psc_placeholder"
+                    position = { x = 10 y = 4 }
+                    scale = 0.36
+                }
+                instantTextBoxType = {
+                    name = "src_power_psc_slot_6_name"
+                    position = { x = 0 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_psc_slot_6"
+                    format = center
+                    maxWidth = 82
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "src_power_psc_slot_7"
+                position = { x = 61 y = 402 }
+                size = { width = 82 height = 102 }
+                background = { name = "psc_slot_7_bg" quadTextureSprite = "GFX_SRC_power_psc_slot_bg" }
+                iconType = {
+                    name = "src_power_psc_slot_7_placeholder"
+                    spriteType = "GFX_SRC_power_psc_placeholder"
+                    position = { x = 10 y = 4 }
+                    scale = 0.36
+                }
+                instantTextBoxType = {
+                    name = "src_power_psc_slot_7_name"
+                    position = { x = 0 y = 82 }
+                    font = "hoi_20bs"
+                    text = "SRC_power_struggle_psc_slot_7"
+                    format = center
+                    maxWidth = 82
+                    maxHeight = 18
+                    alwaystransparent = yes
+                }
+            }
+        }
+    }
+}

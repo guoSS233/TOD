@@ -1,0 +1,386 @@
+﻿add_namespace = SRC_zhongyangju
+
+# 华北局建立联络
+country_event = {
+	id = SRC_zhongyangju.1
+	title = SRC_zhongyangju.1.t
+	desc = SRC_zhongyangju.1.d
+	picture = GFX_SRC_lianluo_huabei
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.1.a
+		set_country_flag = SRC_huabeizhongyangju_active
+		add_ideas = SRC_huabeizhongyangju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_huabei_influence_to_central = yes
+		add_political_power = 25
+	}
+}
+
+# 东北局建立联络
+country_event = {
+	id = SRC_zhongyangju.2
+	title = SRC_zhongyangju.2.t
+	desc = SRC_zhongyangju.2.d
+	picture = GFX_SRC_lianluo_dongbei
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.2.a
+		set_country_flag = SRC_dongbeiju_active
+		add_ideas = SRC_dongbeiju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_dongbei_influence_to_central = yes
+		add_political_power = 15
+	}
+}
+
+# 东南局建立联络
+country_event = {
+	id = SRC_zhongyangju.3
+	title = SRC_zhongyangju.3.t
+	desc = SRC_zhongyangju.3.d
+	picture = GFX_SRC_lianluo_dongnan
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.3.a
+		set_country_flag = SRC_dongnanju_active
+		add_ideas = SRC_dongnanju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_dongnan_influence_to_central = yes
+		add_political_power = 15
+	}
+}
+
+# 中南局建立联络
+country_event = {
+	id = SRC_zhongyangju.4
+	title = SRC_zhongyangju.4.t
+	desc = SRC_zhongyangju.4.d
+	picture = GFX_SRC_lianluo_zhongnan
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.4.a
+		set_country_flag = SRC_zhongnanju_active
+		add_ideas = SRC_zhongnanju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_zhongnan_influence_to_central = yes
+		add_political_power = 15
+	}
+}
+
+# 西南局建立联络
+country_event = {
+	id = SRC_zhongyangju.5
+	title = SRC_zhongyangju.5.t
+	desc = SRC_zhongyangju.5.d
+	picture = GFX_SRC_lianluo_xinan
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.5.a
+		set_country_flag = SRC_xinanju_active
+		add_ideas = SRC_xinanju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_xinan_influence_to_central = yes
+		add_political_power = 15
+	}
+}
+
+# 西北局建立联络
+country_event = {
+	id = SRC_zhongyangju.6
+	title = SRC_zhongyangju.6.t
+	desc = SRC_zhongyangju.6.d
+	picture = GFX_SRC_lianluo_xibei
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.6.a
+		set_country_flag = SRC_xibeiju_active
+		add_ideas = SRC_xibeiju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_xibei_influence_to_central = yes
+		add_political_power = 15
+	}
+}
+
+# 漠北局建立联络
+country_event = {
+	id = SRC_zhongyangju.7
+	title = SRC_zhongyangju.7.t
+	desc = SRC_zhongyangju.7.d
+	picture = GFX_SRC_lianluo_mobei
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.7.a
+		set_country_flag = SRC_mobeiju_active
+		add_ideas = SRC_mobeiju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_mobei_influence_to_central = yes
+		add_political_power = 15
+	}
+}
+
+# 西域局建立联络
+country_event = {
+	id = SRC_zhongyangju.8
+	title = SRC_zhongyangju.8.t
+	desc = SRC_zhongyangju.8.d
+	picture = GFX_SRC_lianluo_xibei
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.8.a
+		set_country_flag = SRC_xiyuju_active
+		add_ideas = SRC_xiyuju_idea
+		SRC_initialize_bureau_balance_values = yes
+		SRC_register_xiyu_influence_to_central = yes
+		add_political_power = 15
+	}
+}
+
+# 华北局更换干部
+country_event = {
+	id = SRC_zhongyangju.101
+	title = SRC_zhongyangju.101.t
+	desc = SRC_zhongyangju.101.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.101.a
+		set_variable = { SRC_huabei_cadre_id = 1 }
+		set_variable = { SRC_huabei_cadre_route = 2 }
+		set_variable = { SRC_huabei_cadre_term = 274 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+	option = {
+		name = SRC_zhongyangju.101.b
+		set_variable = { SRC_huabei_cadre_id = 2 }
+		set_variable = { SRC_huabei_cadre_route = 1 }
+		set_variable = { SRC_huabei_cadre_term = 300 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+	option = {
+		name = SRC_zhongyangju.101.c
+		set_variable = { SRC_huabei_cadre_id = 3 }
+		set_variable = { SRC_huabei_cadre_route = 3 }
+		set_variable = { SRC_huabei_cadre_term = 288 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+}
+
+# 东北局更换干部
+country_event = {
+	id = SRC_zhongyangju.102
+	title = SRC_zhongyangju.102.t
+	desc = SRC_zhongyangju.102.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.102.a
+		set_variable = { SRC_dongbei_cadre_id = 1 }
+		set_variable = { SRC_dongbei_cadre_route = 1 }
+		set_variable = { SRC_dongbei_cadre_term = 320 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+	option = {
+		name = SRC_zhongyangju.102.b
+		set_variable = { SRC_dongbei_cadre_id = 2 }
+		set_variable = { SRC_dongbei_cadre_route = 2 }
+		set_variable = { SRC_dongbei_cadre_term = 296 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+	option = {
+		name = SRC_zhongyangju.102.c
+		set_variable = { SRC_dongbei_cadre_id = 3 }
+		set_variable = { SRC_dongbei_cadre_route = 3 }
+		set_variable = { SRC_dongbei_cadre_term = 282 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+}
+
+# 东南局更换干部
+country_event = {
+	id = SRC_zhongyangju.103
+	title = SRC_zhongyangju.103.t
+	desc = SRC_zhongyangju.103.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.103.a
+		set_variable = { SRC_dongnan_cadre_id = 1 }
+		set_variable = { SRC_dongnan_cadre_route = 2 }
+		set_variable = { SRC_dongnan_cadre_term = 300 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+	option = {
+		name = SRC_zhongyangju.103.b
+		set_variable = { SRC_dongnan_cadre_id = 2 }
+		set_variable = { SRC_dongnan_cadre_route = 1 }
+		set_variable = { SRC_dongnan_cadre_term = 286 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+	option = {
+		name = SRC_zhongyangju.103.c
+		set_variable = { SRC_dongnan_cadre_id = 3 }
+		set_variable = { SRC_dongnan_cadre_route = 3 }
+		set_variable = { SRC_dongnan_cadre_term = 272 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+}
+
+# 中南局更换干部
+country_event = {
+	id = SRC_zhongyangju.104
+	title = SRC_zhongyangju.104.t
+	desc = SRC_zhongyangju.104.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.104.a
+		set_variable = { SRC_zhongnan_cadre_id = 1 }
+		set_variable = { SRC_zhongnan_cadre_route = 2 }
+		set_variable = { SRC_zhongnan_cadre_term = 288 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+	option = {
+		name = SRC_zhongyangju.104.b
+		set_variable = { SRC_zhongnan_cadre_id = 2 }
+		set_variable = { SRC_zhongnan_cadre_route = 1 }
+		set_variable = { SRC_zhongnan_cadre_term = 274 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+	option = {
+		name = SRC_zhongyangju.104.c
+		set_variable = { SRC_zhongnan_cadre_id = 3 }
+		set_variable = { SRC_zhongnan_cadre_route = 3 }
+		set_variable = { SRC_zhongnan_cadre_term = 266 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+}
+
+# 西南局更换干部
+country_event = {
+	id = SRC_zhongyangju.105
+	title = SRC_zhongyangju.105.t
+	desc = SRC_zhongyangju.105.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.105.a
+		set_variable = { SRC_xinan_cadre_id = 1 }
+		set_variable = { SRC_xinan_cadre_route = 3 }
+		set_variable = { SRC_xinan_cadre_term = 302 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+	option = {
+		name = SRC_zhongyangju.105.b
+		set_variable = { SRC_xinan_cadre_id = 2 }
+		set_variable = { SRC_xinan_cadre_route = 2 }
+		set_variable = { SRC_xinan_cadre_term = 276 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+	option = {
+		name = SRC_zhongyangju.105.c
+		set_variable = { SRC_xinan_cadre_id = 3 }
+		set_variable = { SRC_xinan_cadre_route = 1 }
+		set_variable = { SRC_xinan_cadre_term = 290 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+}
+
+# 西北局更换干部
+country_event = {
+	id = SRC_zhongyangju.106
+	title = SRC_zhongyangju.106.t
+	desc = SRC_zhongyangju.106.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.106.a
+		set_variable = { SRC_xibei_cadre_id = 1 }
+		set_variable = { SRC_xibei_cadre_route = 1 }
+		set_variable = { SRC_xibei_cadre_term = 296 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+	option = {
+		name = SRC_zhongyangju.106.b
+		set_variable = { SRC_xibei_cadre_id = 2 }
+		set_variable = { SRC_xibei_cadre_route = 3 }
+		set_variable = { SRC_xibei_cadre_term = 282 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+	option = {
+		name = SRC_zhongyangju.106.c
+		set_variable = { SRC_xibei_cadre_id = 3 }
+		set_variable = { SRC_xibei_cadre_route = 2 }
+		set_variable = { SRC_xibei_cadre_term = 270 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+}
+
+# 漠北局更换干部
+country_event = {
+	id = SRC_zhongyangju.107
+	title = SRC_zhongyangju.107.t
+	desc = SRC_zhongyangju.107.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.107.a
+		set_variable = { SRC_mobei_cadre_id = 1 }
+		set_variable = { SRC_mobei_cadre_route = 1 }
+		set_variable = { SRC_mobei_cadre_term = 312 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+	option = {
+		name = SRC_zhongyangju.107.b
+		set_variable = { SRC_mobei_cadre_id = 2 }
+		set_variable = { SRC_mobei_cadre_route = 2 }
+		set_variable = { SRC_mobei_cadre_term = 284 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+	option = {
+		name = SRC_zhongyangju.107.c
+		set_variable = { SRC_mobei_cadre_id = 3 }
+		set_variable = { SRC_mobei_cadre_route = 3 }
+		set_variable = { SRC_mobei_cadre_term = 268 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+}
+
+# 西域局更换干部
+country_event = {
+	id = SRC_zhongyangju.108
+	title = SRC_zhongyangju.108.t
+	desc = SRC_zhongyangju.108.d
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_zhongyangju.108.a
+		set_variable = { SRC_xiyu_cadre_id = 1 }
+		set_variable = { SRC_xiyu_cadre_route = 2 }
+		set_variable = { SRC_xiyu_cadre_term = 286 }
+		SRC_shift_selected_bureau_toward_li = yes
+	}
+	option = {
+		name = SRC_zhongyangju.108.b
+		set_variable = { SRC_xiyu_cadre_id = 2 }
+		set_variable = { SRC_xiyu_cadre_route = 1 }
+		set_variable = { SRC_xiyu_cadre_term = 270 }
+		SRC_shift_selected_bureau_toward_ren = yes
+	}
+	option = {
+		name = SRC_zhongyangju.108.c
+		set_variable = { SRC_xiyu_cadre_id = 3 }
+		set_variable = { SRC_xiyu_cadre_route = 3 }
+		set_variable = { SRC_xiyu_cadre_term = 260 }
+		SRC_shift_selected_bureau_toward_chen = yes
+	}
+}
+

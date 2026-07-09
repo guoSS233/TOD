@@ -1,0 +1,104 @@
+defined_text = {
+    name = SRC_power_struggle_selected_portrait
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_ren }
+        localization_key = GFX_SRC_power_struggle_portrait_ren
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_li }
+        localization_key = GFX_SRC_power_struggle_portrait_li
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_chen }
+        localization_key = GFX_SRC_power_struggle_portrait_chen
+    }
+}
+
+defined_text = {
+    name = SRC_power_struggle_selected_name
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_ren }
+        localization_key = SRC_power_struggle_ren_name
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_li }
+        localization_key = SRC_power_struggle_li_name
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_chen }
+        localization_key = SRC_power_struggle_chen_name
+    }
+}
+
+defined_text = {
+    name = SRC_power_struggle_selected_route
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_ren }
+        localization_key = SRC_power_struggle_ren_route
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_li }
+        localization_key = SRC_power_struggle_li_route
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_chen }
+        localization_key = SRC_power_struggle_chen_route
+    }
+}
+
+defined_text = {
+    name = SRC_power_struggle_selected_desc
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_ren }
+        localization_key = SRC_power_struggle_ren_desc
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_li }
+        localization_key = SRC_power_struggle_li_desc
+    }
+    text = {
+        trigger = { has_country_flag = SRC_power_struggle_selected_chen }
+        localization_key = SRC_power_struggle_chen_desc
+    }
+}
+
+defined_text = {
+    name = SRC_power_struggle_current_advantage
+    text = {
+        trigger = { has_completed_focus = SRC_renfuchenzhuxi }
+        localization_key = SRC_power_struggle_advantage_ren_final
+    }
+    text = {
+        trigger = { has_completed_focus = SRC_lidazhaozhuxi }
+        localization_key = SRC_power_struggle_advantage_li_final
+    }
+    text = {
+        trigger = { has_completed_focus = SRC_chenduxiuzhuxi }
+        localization_key = SRC_power_struggle_advantage_chen_final
+    }
+    text = {
+        trigger = {
+            check_variable = { SRC_xianfeng > SRC_weiyuan }
+            check_variable = { SRC_xianfeng > SRC_wenhe }
+        }
+        localization_key = SRC_power_struggle_advantage_ren
+    }
+    text = {
+        trigger = {
+            check_variable = { SRC_weiyuan > SRC_xianfeng }
+            check_variable = { SRC_weiyuan > SRC_wenhe }
+        }
+        localization_key = SRC_power_struggle_advantage_li
+    }
+    text = {
+        trigger = {
+            check_variable = { SRC_wenhe > SRC_xianfeng }
+            check_variable = { SRC_wenhe > SRC_weiyuan }
+        }
+        localization_key = SRC_power_struggle_advantage_chen
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = SRC_power_struggle_advantage_tie
+    }
+}

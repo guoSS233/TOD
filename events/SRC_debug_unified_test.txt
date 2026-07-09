@@ -1,0 +1,99 @@
+add_namespace = SRC_debug_unified
+
+country_event = {
+    id = SRC_debug_unified.1
+    title = SRC_debug_unified.1.t
+    desc = SRC_debug_unified.1.d
+    is_triggered_only = yes
+
+    option = {
+        name = SRC_debug_unified.1.a
+
+        if = {
+            limit = {
+                NOT = { country_exists = SRC }
+                country_exists = MNG
+            }
+            MNG = { MNG_release_SRC = yes }
+        }
+
+        hidden_effect = {
+            if = {
+                limit = { country_exists = SRC }
+                SRC = {
+                    add_political_power = 150
+                    add_command_power = 30
+                    clr_country_flag = SRC_power_struggle_test
+                    clr_country_flag = SRC_power_struggle_gui_open
+                    clr_country_flag = SRC_unified_gui_open
+                    clr_country_flag = SRC_zhongyangju_tab_huabei
+                    set_country_flag = SRC_zhongyangju_tab_dongbei
+                    clr_country_flag = SRC_zhongyangju_tab_dongnan
+                    clr_country_flag = SRC_zhongyangju_tab_zhongnan
+                    clr_country_flag = SRC_zhongyangju_tab_xinan
+                    clr_country_flag = SRC_zhongyangju_tab_xibei
+                    clr_country_flag = SRC_zhongyangju_tab_mobei
+                    clr_country_flag = SRC_zhongyangju_tab_xiyu
+                    set_variable = { SRC_unified_tab_frame_power = 1 }
+                    set_variable = { SRC_unified_tab_frame_bureau = 2 }
+                    SRC_ensure_dongbei_bureau_bootstrap = yes
+                    SRC_initialize_bureau_cadres = yes
+                    SRC_initialize_bureau_balance_values = yes
+                    SRC_power_struggle_init_central_satisfaction = yes
+                    SRC_refresh_selected_bureau_display = yes
+                    set_country_flag = SRC_unified_gui_open
+                    add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+                    change_tag_from = ROOT
+                }
+            }
+        }
+    }
+
+    option = {
+        name = SRC_debug_unified.1.b
+
+        if = {
+            limit = {
+                NOT = { country_exists = SRC }
+                country_exists = MNG
+            }
+            MNG = { MNG_release_SRC = yes }
+        }
+
+        hidden_effect = {
+            if = {
+                limit = { country_exists = SRC }
+                SRC = {
+                    add_political_power = 250
+                    add_command_power = 50
+                    clr_country_flag = SRC_power_struggle_test
+                    clr_country_flag = SRC_power_struggle_gui_open
+                    clr_country_flag = SRC_unified_gui_open
+                    set_country_flag = SRC_zhongyangdida
+                    clr_country_flag = SRC_zhongyangju_tab_huabei
+                    set_country_flag = SRC_zhongyangju_tab_dongbei
+                    clr_country_flag = SRC_zhongyangju_tab_dongnan
+                    clr_country_flag = SRC_zhongyangju_tab_zhongnan
+                    clr_country_flag = SRC_zhongyangju_tab_xinan
+                    clr_country_flag = SRC_zhongyangju_tab_xibei
+                    clr_country_flag = SRC_zhongyangju_tab_mobei
+                    clr_country_flag = SRC_zhongyangju_tab_xiyu
+                    set_variable = { SRC_unified_tab_frame_power = 2 }
+                    set_variable = { SRC_unified_tab_frame_bureau = 1 }
+                    SRC_ensure_dongbei_bureau_bootstrap = yes
+                    SRC_initialize_bureau_cadres = yes
+                    SRC_initialize_bureau_balance_values = yes
+                    SRC_power_struggle_select_ren = yes
+                    SRC_power_struggle_init_balance = yes
+                    set_country_flag = SRC_unified_gui_open
+                    add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+                    change_tag_from = ROOT
+                }
+            }
+        }
+    }
+
+    option = {
+        name = SRC_debug_unified.1.c
+    }
+}

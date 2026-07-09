@@ -1,4 +1,4 @@
-SRC_baoweigongrenzhengquan_categories = {
+﻿SRC_baoweigongrenzhengquan_categories = {
 	icon = gre_faction_management
 	
 	allowed = {
@@ -8,7 +8,7 @@ SRC_baoweigongrenzhengquan_categories = {
 		has_completed_focus = SRC_workers_pickets
 	}
 }
-#军事建设
+#鍐涗簨寤鸿
 SRC_junshijianshe_catagories = {
 	icon = gre_faction_management
 	
@@ -19,7 +19,7 @@ SRC_junshijianshe_catagories = {
 		has_completed_focus = SRC_xiandaigemingjundui
 	}
 }
-#宣战
+#瀹ｆ垬
 SRC_xuanzhan_catagories = {
 	icon = gre_faction_management
 	
@@ -29,4 +29,19 @@ SRC_xuanzhan_catagories = {
 	visible = {	
 		has_completed_focus = SRC_huishiruguan
 	}
+}
+
+#鍚勫湴涓ぎ灞€娲诲姩
+SRC_lianxigeming = {
+	icon = generic_communism
+	
+	allowed = {
+		tag = SRC
+	}
+	visible = {
+		has_completed_focus = SRC_lianluoguanneigemingzhe
+	}
+	priority = 100
+	
+	# 鍏宠仈GUI绐楀彛锛堢ǔ瀹氭祴璇曪級
 }
