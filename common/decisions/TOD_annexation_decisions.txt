@@ -1,0 +1,28 @@
+TOD_annexation_decisions = {
+	TOD_release_burma_as_puppet = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = yes
+
+		visible = {
+			NOT = { tag = BRM }
+			NOT = { country_exists = BRM }
+			288 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		available = {
+			NOT = { has_war = yes }
+			NOT = { tag = BRM }
+			NOT = { country_exists = BRM }
+			288 = { is_owned_and_controlled_by = ROOT }
+		}
+
+		complete_effect = {
+			release_puppet = BRM
+			set_autonomy = {
+				target = BRM
+				autonomy_state = autonomy_puppet
+			}
+		}
+	}
+}
