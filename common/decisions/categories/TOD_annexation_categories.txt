@@ -1,0 +1,14 @@
+TOD_annexation_decisions = {
+	priority = 80
+	icon = generic_political_discourse
+
+	allowed = {
+		always = yes
+	}
+
+	visible = {
+		NOT = { tag = BRM }
+		NOT = { country_exists = BRM }
+		288 = { is_owned_and_controlled_by = ROOT }
+	}
+}
