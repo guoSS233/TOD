@@ -27,8 +27,6 @@ SRC_WIN_GPS = {
 			add_state_core = 1126 #雅鲁
 			add_state_core = 714 #龙江
 
-			#set_cosmetic_tag = CSA_ACW
-
 			add_ideas = {
 				#
 			}
@@ -128,7 +126,7 @@ MNG_release_GPS = {#明释放GPS
 
 
 
-			#set_cosmetic_tag = CSA_ACW
+			set_cosmetic_tag = GPS_ming
 
 			add_ideas = {
 				#
@@ -256,6 +254,8 @@ GPS_release_SRC = {#GPS释放SRC
 			add_claim_by = SRC
 		}
 
+		SRC = { set_research_slots = 3 }
+
 		#every_unit_leader = {#转移将领，需要在将领中带有id，只在被转移国有档案
 		#	limit = {
 		#		OR = {
@@ -320,6 +320,8 @@ MNG_release_SRC = {#MNG释放SRC
 				to_state_array = owned_controlled_states
 			}
 		}
+
+		SRC = { set_research_slots = 3 }
 
 		#every_state = {#加宣称用，在此用不到
 		#	limit = {
@@ -546,6 +548,7 @@ MNG_release_ROC = {#MNG释放ROC大同党
 			add_state_core = 591
 			add_state_core = 818
 			add_state_core = 594
+			set_cosmetic_tag = ROC_ming
 			add_ideas = {
 				#
 			}
