@@ -1,0 +1,25 @@
+﻿on_actions = {
+	on_daily = {
+		effect = {
+			COL = {
+				if = {
+					limit = {
+						has_country_flag = TOD_COL_bogota_talks_completed
+						NOT = { has_country_flag = TOD_COL_east_colombia_returned }
+						country_exists = VEN
+					}
+					VEN = { set_cosmetic_tag = VEN_east_colombia_transition_government }
+					set_autonomy = {
+						target = VEN
+						autonomy_state = autonomy_puppet
+					}
+				}
+				country_event = { id = TOD_COL.1 }
+				country_event = { id = TOD_COL.3 }
+				country_event = { id = TOD_COL.4 }
+				country_event = { id = TOD_COL.5 }
+				country_event = { id = TOD_COL.6 }
+			}
+		}
+	}
+}

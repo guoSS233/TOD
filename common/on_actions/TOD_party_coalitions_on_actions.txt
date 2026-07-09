@@ -1,0 +1,10 @@
+﻿on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = { TOD_has_any_coalition_partner = yes }
+				TOD_recalculate_coalition_pp_gain = yes
+			}
+		}
+	}
+}
