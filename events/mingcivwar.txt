@@ -1016,7 +1016,7 @@ country_event = {
 		}
 		ROC = {
 			hidden_effect = {
-				set_cosmetic_tag = huananzhaofusi
+				set_cosmetic_tag = ROC_ming
 				load_oob = "ROC_1937"
 				set_politics = {
 					ruling_party =  leader_despotism
@@ -1082,7 +1082,7 @@ country_event = {
 
 		ROC = {
 			hidden_effect = {
-				set_cosmetic_tag = huananzhaofusi
+				set_cosmetic_tag = ROC_ming
 				load_oob = "ROC_1937"
 				set_politics = {
 					ruling_party =  leader_despotism
@@ -1134,6 +1134,16 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	option = { 
 		name = mingcivwar.78.a
+		hidden_effect = {
+			if = {
+				limit = { country_exists = GPS }
+				GPS = { set_cosmetic_tag = GPS }
+			}
+			if = {
+				limit = { country_exists = ROC }
+				ROC = { set_cosmetic_tag = huananzhaofusi }
+			}
+		}
 		XBJ = {
 			hidden_effect = {
 				add_state_core = 744
@@ -1274,6 +1284,16 @@ country_event = {
 	}
 	option = { 
 		name = mingcivwar.78.b
+		hidden_effect = {
+			if = {
+				limit = { country_exists = GPS }
+				GPS = { set_cosmetic_tag = GPS }
+			}
+			if = {
+				limit = { country_exists = ROC }
+				ROC = { set_cosmetic_tag = huananzhaofusi }
+			}
+		}
 		XBJ = {
 			hidden_effect = {
 				add_state_core = 744
