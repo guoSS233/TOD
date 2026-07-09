@@ -1,0 +1,53 @@
+ideas = {
+	country = {
+		PAR_red_blue_conflict = {
+			picture = ZHR_torn_national_economy
+			modifier = {
+				stability_factor = -0.05
+				political_power_gain = -0.10
+			}
+		}
+
+		PAR_blue_party_victory = {
+			picture = ZHR_freedom_of_public_opinion
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		PAR_red_party_victory = {
+			picture = ZHR_autonomous_domination_country
+			modifier = {
+				war_support_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		PAR_aging_king = {
+			picture = ZHR_fragile_natural_environment
+			modifier = {
+				stability_factor = -0.03
+				political_power_gain = -0.05
+			}
+		}
+	}
+
+	TOD_minister_head = {
+		PAR_Eusebio_Ayala_Bordenave = {
+			picture = PAR_Eusebio_Ayala_Bordenave
+			allowed = { original_tag = PAR }
+			available = { always = no }
+			cancel_if_invalid = no
+			traits = { TOD_minister_head }
+		}
+
+		PAR_Rafael_Franco_Ojeda = {
+			picture = PAR_Rafael_Franco_Ojeda
+			allowed = { original_tag = PAR }
+			available = { always = no }
+			cancel_if_invalid = no
+			traits = { TOD_minister_head }
+		}
+	}
+}
