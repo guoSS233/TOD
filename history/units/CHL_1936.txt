@@ -1,0 +1,195 @@
+division_template = {
+	name = "骑行步兵师"	#骑兵师
+	division_names_group = CHL_CAV_01
+	regiments = {
+		cavalry = { x = 0 y = 0}
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0}
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0}
+		cavalry = { x = 2 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+		recon = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "昌德卌四年型近卫步兵师"	#步兵师
+	division_names_group = CHL_INF_GAD
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0}
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0}
+		artillery_brigade = { x = 3 y = 1 }
+		artillery_brigade = { x = 3 y = 2 }
+	}
+	support = {
+		engineer = { x = 0 y = 0}
+		artillery = { x = 0 y = 1 }
+		recon = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "昌德卌四年型甲种步兵师"	#步兵师
+	division_names_group = CHL_INF_01
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0}
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0}
+	}
+	support = {
+		engineer = { x = 0 y = 0}
+	}
+}
+
+division_template = {
+	name = "昌德卌四年型乙种步兵师"	#步兵师
+	division_names_group = CHL_INF_02
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0}
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+	}
+}
+
+division_template = {
+	name = "昌德卌四年型省军步兵师"	#步兵师
+	division_names_group = CHL_INF_SHE
+	regiments = {
+		infantry = { x = 0 y = 0}
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0}
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "昌德卌五年型山地步兵师"	#山地师
+	division_names_group = CHL_MNT_01
+	regiments = {
+		mountaineers = { x = 0 y = 0}
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+		mountaineers = { x = 0 y = 3}
+		mountaineers = { x = 1 y = 0}
+		mountaineers = { x = 1 y = 1 }
+		mountaineers = { x = 1 y = 2 }
+		mountaineers = { x = 1 y = 3}
+	}
+	support = {
+		artillery = { x = 0 y = 0}
+		recon = { x = 0 y = 1 }
+		engineer = { x = 0 y = 2 }
+	}
+}
+
+units = {
+	#梅岭#
+	division = {
+		name = "南道山甲种第1步兵师"
+		location = 650
+		division_template = "昌德卌四年型甲种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#浪城#
+	division = {
+		name = "南道山甲种第2步兵师"
+		location = 5191
+		division_template = "昌德卌四年型甲种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#石港#
+	division = {
+		name = "南道山乙种第1步兵师"
+		location = 5169
+		division_template = "昌德卌四年型乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#南番#
+	division = {
+		name = "南道山乙种第2步兵师"
+		location = 8229
+		division_template = "昌德卌四年型乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#宗曲#
+	division = {
+		name = "南道山乙种第3步兵师"
+		location = 5201
+		division_template = "昌德卌四年型乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#凤港#
+	division = {
+		name = "南道山省军第1步兵师"
+		location = 12349
+		division_template = "昌德卌四年型省军步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#海角#
+	division = {
+		name = "南道山省军第2步兵师"
+		location = 11009
+		division_template = "昌德卌四年型省军步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#定临#
+	division = {
+		name = "南道山省军第3步兵师"
+		location = 12994
+		division_template = "昌德卌四年型省军步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#北境#
+	division = {
+		name = "南道山第1山地步兵师"
+		location = 5228
+		division_template = "昌德卌五年型山地步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	#南境#
+	division = {
+		name = "南道山第2山地步兵师"
+		location = 2169
+		division_template = "昌德卌五年型山地步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}
