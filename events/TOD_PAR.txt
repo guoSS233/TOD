@@ -1,0 +1,153 @@
+add_namespace = TOD_PAR #巴拉圭相关事件
+
+# 王国政府大选
+country_event = {
+	id = TOD_PAR.1
+	title = TOD_PAR.1.t
+	desc = TOD_PAR.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = PAR
+		date > 1936.10.14
+		NOT = { has_country_flag = TOD_PAR_election_finished }
+	}
+
+	option = {
+		name = TOD_PAR.1.a
+		set_country_flag = TOD_PAR_election_finished
+		set_country_flag = TOD_PAR_blue_party_won
+		remove_ideas = PAR_red_blue_conflict
+		remove_ideas = PAR_Rafael_Franco_Ojeda
+		add_ideas = PAR_blue_party_victory
+		add_ideas = PAR_Eusebio_Ayala_Bordenave
+		add_political_power = 75
+		add_stability = 0.05
+	}
+
+	option = {
+		name = TOD_PAR.1.b
+		set_country_flag = TOD_PAR_election_finished
+		set_country_flag = TOD_PAR_red_party_won
+		remove_ideas = PAR_red_blue_conflict
+		remove_ideas = PAR_Eusebio_Ayala_Bordenave
+		add_ideas = PAR_red_party_victory
+		add_ideas = PAR_Rafael_Franco_Ojeda
+		add_political_power = 75
+		add_war_support = 0.03
+	}
+}
+
+# 佩洛斯三世去世
+country_event = {
+	id = TOD_PAR.2
+	title = TOD_PAR.2.t
+	desc = TOD_PAR.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = PAR
+		date > 1938.10.5
+		NOT = { has_country_flag = TOD_PAR_pelos_iii_dead }
+	}
+
+	option = {
+		name = TOD_PAR.2.a
+		set_country_flag = TOD_PAR_pelos_iii_dead
+		remove_ideas = PAR_aging_king
+		retire_country_leader = yes
+		recruit_character = PAR_Pelos_IV
+		promote_character = PAR_Pelos_IV
+		add_stability = -0.02
+	}
+}
+
+# 种植园丑闻
+country_event = {
+	id = TOD_PAR.3
+	title = TOD_PAR.3.t
+	desc = TOD_PAR.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = PAR
+		date > 1938.2.23
+		NOT = { has_country_flag = TOD_PAR_plantation_scandal_started }
+	}
+
+	option = {
+		name = TOD_PAR.3.a
+		set_country_flag = TOD_PAR_plantation_scandal_started
+		add_political_power = -25
+		add_stability = -0.03
+		country_event = { id = TOD_PAR.4 days = 15 }
+	}
+}
+
+# 巴拉圭针对公司调查
+country_event = {
+	id = TOD_PAR.4
+	title = TOD_PAR.4.t
+	desc = TOD_PAR.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = PAR
+		has_country_flag = TOD_PAR_plantation_scandal_started
+		NOT = { has_country_flag = TOD_PAR_company_investigation_finished }
+	}
+
+	option = {
+		name = TOD_PAR.4.a
+		set_country_flag = TOD_PAR_company_investigation_finished
+		add_political_power = 25
+		add_stability = 0.04
+	}
+}
+# 泛道山协约成立通知
+country_event = {
+	id = TOD_PAR.100
+	title = TOD_PAR.100.t
+	desc = TOD_PAR.100.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = PAR
+		has_global_flag = TOD_nanmei_pandoushan_pact_signed
+	}
+
+	option = {
+		name = TOD_PAR.100.a
+		set_country_flag = TOD_PAR_pandoushan_pact_joined
+		if = {
+			limit = {
+				is_in_faction = yes
+				NOT = { is_in_faction_with = CHL }
+			}
+			leave_faction = yes
+		}
+		if = {
+			limit = {
+				country_exists = CHL
+				CHL = { is_in_faction = yes }
+				NOT = { is_in_faction_with = CHL }
+			}
+			CHL = { add_to_faction = PAR }
+		}
+	}
+}

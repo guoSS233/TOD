@@ -1,0 +1,191 @@
+add_namespace = TOD_COL #大哥伦比亚相关事件
+
+# 大哥伦比亚-法兰西谈判
+country_event = {
+	id = TOD_COL.1
+	title = TOD_COL.1.t
+	desc = TOD_COL.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = COL
+		date > 1936.5.1
+		NOT = { has_country_flag = TOD_COL_france_negotiation_started }
+	}
+
+	option = {
+		name = TOD_COL.1.a
+		set_country_flag = TOD_COL_france_negotiation_started
+		country_event = { id = TOD_COL.2 days = 1 }
+	}
+}
+
+# 波哥大会谈
+country_event = {
+	id = TOD_COL.2
+	title = TOD_COL.2.t
+	desc = TOD_COL.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = COL
+		has_country_flag = TOD_COL_france_negotiation_started
+		NOT = { has_country_flag = TOD_COL_bogota_talks_completed }
+	}
+
+	option = {
+		name = TOD_COL.2.a
+		set_country_flag = TOD_COL_bogota_talks_completed
+		if = {
+			limit = { country_exists = VEN }
+			VEN = {
+				set_cosmetic_tag = VEN_east_colombia_transition_government
+				add_stability = 0.05
+			}
+			set_autonomy = {
+				target = VEN
+				autonomy_state = autonomy_puppet
+			}
+		}
+	}
+}
+
+# 东哥伦比亚公投
+country_event = {
+	id = TOD_COL.3
+	title = TOD_COL.3.t
+	desc = TOD_COL.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = COL
+		date > 1936.9.15
+		has_country_flag = TOD_COL_bogota_talks_completed
+		country_exists = VEN
+		NOT = { has_country_flag = TOD_COL_east_colombia_returned }
+	}
+
+	option = {
+		name = TOD_COL.3.a
+		set_country_flag = TOD_COL_east_colombia_returned
+		307 = { add_core_of = COL }
+		488 = { add_core_of = COL }
+		489 = { add_core_of = COL }
+		annex_country = { target = VEN transfer_troops = no }
+	}
+}
+
+# 波帕扬会议
+country_event = {
+	id = TOD_COL.4
+	title = TOD_COL.4.t
+	desc = TOD_COL.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = COL
+		date > 1939.12.24
+		has_country_flag = TOD_COL_east_colombia_returned
+		NOT = { has_country_flag = TOD_COL_popayan_accord_signed }
+	}
+
+	option = {
+		name = TOD_COL.4.a
+		set_country_flag = TOD_COL_popayan_accord_signed
+		set_global_flag = TOD_nanmei_revenge_alliance_created
+		set_rule = { can_create_factions = yes }
+		if = {
+			limit = { NOT = { is_in_faction = yes } }
+			create_faction = revenge_alliance
+		}
+		if = {
+			limit = { country_exists = BRA }
+			add_to_faction = BRA
+			BRA = {
+				set_country_flag = TOD_BRA_popayan_accord_signed
+				country_event = { id = TOD_BRA.2003 days = 2 }
+			}
+		}
+	}
+}
+
+# 哥伦比亚-巴西对南华自由邦宣战
+country_event = {
+	id = TOD_COL.5
+	title = TOD_COL.5.t
+	desc = TOD_COL.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = COL
+		date > 1940.2.13
+		has_country_flag = TOD_COL_popayan_accord_signed
+		country_exists = GYA
+		NOT = { has_country_flag = TOD_COL_war_against_gya_started }
+	}
+
+	option = {
+		name = TOD_COL.5.a
+		set_country_flag = TOD_COL_war_against_gya_started
+		set_global_flag = TOD_nanmei_revenge_alliance_war_started
+		declare_war_on = { target = GYA type = annex_everything }
+		if = {
+			limit = {
+				country_exists = BRA
+				BRA = { NOT = { has_war_with = GYA } }
+			}
+			BRA = {
+				set_country_flag = TOD_BRA_war_against_gya_started
+				country_event = { id = TOD_BRA.2004 days = 2 }
+				declare_war_on = { target = GYA type = annex_everything }
+			}
+		}
+	}
+}
+
+# 哥伦比亚炮击厄瓜多尔地区
+country_event = {
+	id = TOD_COL.6
+	title = TOD_COL.6.t
+	desc = TOD_COL.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = COL
+		date > 1940.3.1
+		has_country_flag = TOD_COL_war_against_gya_started
+		NOT = { has_country_flag = TOD_COL_ecuador_shelling_ordered }
+	}
+
+	option = {
+		name = TOD_COL.6.a
+		set_country_flag = TOD_COL_ecuador_shelling_ordered
+		set_global_flag = TOD_nanmei_ecuador_shelling
+		add_war_support = 0.05
+		if = {
+			limit = { country_exists = UPB }
+			UPB = {
+				set_country_flag = TOD_UPB_shelled_by_colombia
+				country_event = { id = TOD_UPB.3 days = 2 }
+			}
+		}
+	}
+}

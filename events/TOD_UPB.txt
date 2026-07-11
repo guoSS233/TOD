@@ -1,0 +1,118 @@
+add_namespace = TOD_UPB #四方王国相关事件
+
+# 国王与内阁发生重大分歧
+country_event = {
+	id = TOD_UPB.1
+	title = TOD_UPB.1.t
+	desc = TOD_UPB.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = UPB
+		date > 1937.5.1
+		NOT = { has_country_flag = TOD_UPB_king_cabinet_conflict_started }
+	}
+
+	option = {
+		name = TOD_UPB.1.a
+		set_country_flag = TOD_UPB_king_cabinet_conflict_started
+		remove_ideas = UPB_backward_reform
+		add_ideas = UPB_emerging_reform
+		add_political_power = -25
+		add_stability = -0.03
+		country_event = { id = TOD_UPB.2 days = 40 }
+	}
+}
+
+# 国王的权力
+country_event = {
+	id = TOD_UPB.2
+	title = TOD_UPB.2.t
+	desc = TOD_UPB.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = UPB
+		date > 1937.6.10
+		has_country_flag = TOD_UPB_king_cabinet_conflict_started
+		NOT = { has_country_flag = TOD_UPB_cabinet_dissolved }
+	}
+
+	option = {
+		name = TOD_UPB.2.a
+		set_country_flag = TOD_UPB_cabinet_dissolved
+		remove_ideas = UPB_questioned_king
+		add_political_power = 50
+		add_stability = 0.04
+	}
+}
+
+# 哥伦比亚炮击厄瓜多尔地区（四方王国视角）
+country_event = {
+	id = TOD_UPB.3
+	title = TOD_UPB.3.t
+	desc = TOD_UPB.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = UPB
+		date > 1940.3.3
+		OR = {
+			has_country_flag = TOD_UPB_shelled_by_colombia
+			has_global_flag = TOD_nanmei_ecuador_shelling
+		}
+		NOT = { has_country_flag = TOD_UPB_shelling_response_issued }
+	}
+
+	option = {
+		name = TOD_UPB.3.a
+		set_country_flag = TOD_UPB_shelling_response_issued
+		set_global_flag = TOD_nanmei_pandoushan_revenge_war_signal
+		add_war_support = 0.08
+		add_stability = -0.03
+	}
+}
+# 泛道山协约成立通知
+country_event = {
+	id = TOD_UPB.100
+	title = TOD_UPB.100.t
+	desc = TOD_UPB.100.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = UPB
+		has_global_flag = TOD_nanmei_pandoushan_pact_signed
+	}
+
+	option = {
+		name = TOD_UPB.100.a
+		set_country_flag = TOD_UPB_pandoushan_pact_joined
+		if = {
+			limit = {
+				is_in_faction = yes
+				NOT = { is_in_faction_with = CHL }
+			}
+			leave_faction = yes
+		}
+		if = {
+			limit = {
+				country_exists = CHL
+				CHL = { is_in_faction = yes }
+				NOT = { is_in_faction_with = CHL }
+			}
+			CHL = { add_to_faction = UPB }
+		}
+	}
+}

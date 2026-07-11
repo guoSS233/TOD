@@ -1,0 +1,230 @@
+add_namespace = TOD_CHL #南道山相关事件
+
+# 刺杀事件
+country_event = {
+	id = TOD_CHL.1
+	title = TOD_CHL.1.t
+	desc = TOD_CHL.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CHL
+		date > 1937.10.9
+		NOT = { has_country_flag = TOD_CHL_assassination_attempted }
+	}
+
+	option = {
+		name = TOD_CHL.1.a
+		set_country_flag = TOD_CHL_assassination_attempted
+		add_stability = -0.02
+		country_event = { id = TOD_CHL.2 days = 1 }
+	}
+}
+
+# 总统没有受伤
+country_event = {
+	id = TOD_CHL.2
+	title = TOD_CHL.2.t
+	desc = TOD_CHL.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CHL
+		has_country_flag = TOD_CHL_assassination_attempted
+		NOT = { has_country_flag = TOD_CHL_wu_panzhao_safe }
+	}
+
+	option = {
+		name = TOD_CHL.2.a
+		set_country_flag = TOD_CHL_wu_panzhao_safe
+		add_stability = 0.03
+		add_political_power = 25
+		country_event = { id = TOD_CHL.3 days = 35 }
+	}
+}
+
+# 武盘照总统开始他的第三个任期
+country_event = {
+	id = TOD_CHL.3
+	title = TOD_CHL.3.t
+	desc = TOD_CHL.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CHL
+		date > 1937.11.14
+		has_country_flag = TOD_CHL_wu_panzhao_safe
+		NOT = { has_country_flag = TOD_CHL_third_term_started }
+	}
+
+	option = {
+		name = TOD_CHL.3.a
+		set_country_flag = TOD_CHL_third_term_started
+		add_political_power = 75
+		add_stability = 0.04
+	}
+}
+
+# 种植园丑闻
+country_event = {
+	id = TOD_CHL.4
+	title = TOD_CHL.4.t
+	desc = TOD_CHL.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CHL
+		date > 1938.12.31
+		NOT = { has_country_flag = TOD_CHL_plantation_scandal_started }
+	}
+
+	option = {
+		name = TOD_CHL.4.a
+		set_country_flag = TOD_CHL_plantation_scandal_started
+		add_political_power = -25
+		add_stability = -0.03
+		country_event = { id = TOD_CHL.5 days = 15 }
+	}
+}
+
+# 针对公司调查
+country_event = {
+	id = TOD_CHL.5
+	title = TOD_CHL.5.t
+	desc = TOD_CHL.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CHL
+		has_country_flag = TOD_CHL_plantation_scandal_started
+		NOT = { has_country_flag = TOD_CHL_company_investigation_finished }
+	}
+
+	option = {
+		name = TOD_CHL.5.a
+		set_country_flag = TOD_CHL_company_investigation_finished
+		remove_ideas = CHL_mingdao_company
+		add_political_power = 50
+		add_stability = 0.05
+	}
+}
+# 泛道山协约成立
+country_event = {
+	id = TOD_CHL.100
+	title = TOD_CHL.100.t
+	desc = TOD_CHL.100.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CHL
+		date > 1938.6.11
+		country_exists = UPB
+		country_exists = PAR
+		NOT = { has_country_flag = TOD_CHL_pandoushan_pact_signed }
+	}
+
+	option = {
+		name = TOD_CHL.100.a
+		set_country_flag = TOD_CHL_pandoushan_pact_signed
+		set_global_flag = TOD_nanmei_pandoushan_pact_signed
+		if = {
+			limit = { is_in_faction = yes }
+			leave_faction = yes
+		}
+		create_faction = pandoushan_pact
+		if = {
+			limit = { country_exists = UPB }
+			UPB = { country_event = { id = TOD_UPB.100 days = 1 } }
+		}
+		if = {
+			limit = { country_exists = PAR }
+			PAR = { country_event = { id = TOD_PAR.100 days = 1 } }
+		}
+	}
+}
+# 泛道山协约对复仇同盟宣战
+country_event = {
+	id = TOD_CHL.101
+	title = TOD_CHL.101.t
+	desc = TOD_CHL.101.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = CHL
+		date > 1940.3.4
+		has_country_flag = TOD_CHL_pandoushan_pact_signed
+		has_global_flag = TOD_nanmei_pandoushan_revenge_war_signal
+		OR = {
+			AND = { country_exists = BRA NOT = { has_war_with = BRA } }
+			AND = { country_exists = COL NOT = { has_war_with = COL } }
+		}
+		NOT = { has_country_flag = TOD_CHL_pandoushan_revenge_war_started }
+	}
+
+	option = {
+		name = TOD_CHL.101.a
+		set_country_flag = TOD_CHL_pandoushan_revenge_war_started
+		set_global_flag = TOD_nanmei_pandoushan_revenge_war_started
+		add_war_support = 0.10
+		add_stability = -0.03
+		if = {
+			limit = { country_exists = BRA NOT = { has_war_with = BRA } }
+			declare_war_on = { target = BRA type = annex_everything }
+		}
+		if = {
+			limit = { country_exists = COL NOT = { has_war_with = COL } }
+			declare_war_on = { target = COL type = annex_everything }
+		}
+		if = {
+			limit = { country_exists = UPB }
+			UPB = {
+				set_country_flag = TOD_UPB_pandoushan_revenge_war_started
+				add_war_support = 0.05
+				if = {
+					limit = { is_in_faction_with = CHL country_exists = BRA NOT = { has_war_with = BRA } }
+					declare_war_on = { target = BRA type = annex_everything }
+				}
+				if = {
+					limit = { is_in_faction_with = CHL country_exists = COL NOT = { has_war_with = COL } }
+					declare_war_on = { target = COL type = annex_everything }
+				}
+			}
+		}
+		if = {
+			limit = { country_exists = PAR }
+			PAR = {
+				set_country_flag = TOD_PAR_pandoushan_revenge_war_started
+				add_war_support = 0.05
+				if = {
+					limit = { is_in_faction_with = CHL country_exists = BRA NOT = { has_war_with = BRA } }
+					declare_war_on = { target = BRA type = annex_everything }
+				}
+				if = {
+					limit = { is_in_faction_with = CHL country_exists = COL NOT = { has_war_with = COL } }
+					declare_war_on = { target = COL type = annex_everything }
+				}
+			}
+		}
+	}
+}

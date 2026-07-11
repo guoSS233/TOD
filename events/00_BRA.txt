@@ -320,3 +320,154 @@ country_event = {
 		#
 	}
 }
+# 纳塔尔共产主义企图
+country_event = {
+	id = TOD_BRA.2001
+	title = TOD_BRA.2001.t
+	desc = TOD_BRA.2001.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BRA
+		date > 1937.11.22
+		NOT = { has_country_flag = TOD_BRA_natal_uprising_started }
+	}
+
+	option = {
+		name = TOD_BRA.2001.a
+		set_country_flag = TOD_BRA_natal_uprising_started
+		add_political_power = -25
+		add_stability = -0.03
+		country_event = { id = TOD_BRA.2002 days = 1 }
+	}
+}
+
+# 纳塔尔共产主义企图2
+country_event = {
+	id = TOD_BRA.2002
+	title = TOD_BRA.2002.t
+	desc = TOD_BRA.2002.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BRA
+		has_country_flag = TOD_BRA_natal_uprising_started
+		NOT = { has_country_flag = TOD_BRA_natal_uprising_suppressed }
+	}
+
+	option = {
+		name = TOD_BRA.2002.a
+		set_country_flag = TOD_BRA_natal_uprising_suppressed
+		add_political_power = -25
+		add_stability = 0.03
+		add_war_support = 0.02
+		add_popularity = {
+			ideology = vanguard_socialism
+			popularity = -0.03
+		}
+		add_popularity = {
+			ideology = council_socialism
+			popularity = -0.02
+		}
+	}
+}
+
+# 波帕扬会议（巴西视角）
+country_event = {
+	id = TOD_BRA.2003
+	title = TOD_BRA.2003.t
+	desc = TOD_BRA.2003.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BRA
+		date > 1939.12.26
+		country_exists = COL
+		OR = {
+			has_country_flag = TOD_BRA_popayan_accord_signed
+			COL = { has_country_flag = TOD_COL_east_colombia_returned }
+		}
+		NOT = { has_country_flag = TOD_BRA_popayan_conference_seen }
+	}
+
+	option = {
+		name = TOD_BRA.2003.a
+		set_country_flag = TOD_BRA_popayan_conference_seen
+		set_country_flag = TOD_BRA_popayan_accord_signed
+		set_global_flag = TOD_nanmei_revenge_alliance_created
+		set_rule = { can_create_factions = yes }
+		if = {
+			limit = {
+				NOT = { is_in_faction = yes }
+				COL = { NOT = { is_in_faction = yes } }
+			}
+			create_faction = revenge_alliance
+			add_to_faction = COL
+		}
+		if = {
+			limit = {
+				NOT = { is_in_faction = yes }
+				COL = { is_in_faction = yes }
+			}
+			COL = { add_to_faction = BRA }
+		}
+		if = {
+			limit = {
+				is_in_faction = yes
+				COL = { NOT = { is_in_faction = yes } }
+			}
+			add_to_faction = COL
+		}
+		COL = { set_country_flag = TOD_COL_popayan_accord_signed }
+		country_event = { id = TOD_BRA.2004 days = 51 }
+	}
+}
+
+# 巴西对南华自由邦宣战
+country_event = {
+	id = TOD_BRA.2004
+	title = TOD_BRA.2004.t
+	desc = TOD_BRA.2004.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BRA
+		date > 1940.2.15
+		has_country_flag = TOD_BRA_popayan_accord_signed
+		country_exists = GYA
+		NOT = { has_country_flag = TOD_BRA_war_against_gya_event_seen }
+	}
+
+	option = {
+		name = TOD_BRA.2004.a
+		set_country_flag = TOD_BRA_war_against_gya_event_seen
+		set_country_flag = TOD_BRA_war_against_gya_started
+		set_global_flag = TOD_nanmei_revenge_alliance_war_started
+		if = {
+			limit = { NOT = { has_war_with = GYA } }
+			declare_war_on = { target = GYA type = annex_everything }
+		}
+		if = {
+			limit = {
+				country_exists = COL
+				COL = { NOT = { has_war_with = GYA } }
+			}
+			COL = {
+				set_country_flag = TOD_COL_war_against_gya_started
+				declare_war_on = { target = GYA type = annex_everything }
+			}
+		}
+	}
+}
