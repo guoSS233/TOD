@@ -1,4 +1,4 @@
-﻿SRC_baoweigongrenzhengquan_categories = {
+SRC_baoweigongrenzhengquan_categories = {
 	
 	SRC_baoweigongrenzhengquan = {
 
@@ -22,11 +22,11 @@
 	}
 }
 
-#鍚勫湴涓ぎ灞€娲诲姩
+#各地中央局活动
 SRC_lianxigeming = {
 	allowed = { always = no }
 
-	#寤虹珛鍗庡寳涓ぎ灞€锛堟檵鍐€椴佽鲍锛?
+	#建立华北局（晋冀鲁豫）
 	SRC_jianlihuabeizhongyangju = {
 		icon = generic_communism
 		
@@ -38,24 +38,24 @@ SRC_lianxigeming = {
 		available = {
 			country_exists = STG
 			OR = {
-				# 娌冲寳+椤哄ぉ搴滐紙鍐€涓€佸唨鍗椼€佸鍖栥€佸唨鍖椼€佸唨涓溿€侀『澶╋級
+				# 河北+顺天府（冀中、冀南、宣化、冀北、冀东、顺天）
 				1111 = { is_controlled_by = STG }
 				614 = { is_controlled_by = STG }
 				611 = { is_controlled_by = STG }
 				839 = { is_controlled_by = STG }
 				609 = { is_controlled_by = STG }
 				608 = { is_controlled_by = STG }
-				# 灞辫タ锛堟檵瑗裤€佹檵涓€佹檵鍗椼€侀泚鍖楋級
+				# 山西（晋西、晋中、晋南、雁北）
 				1131 = { is_controlled_by = STG }
 				615 = { is_controlled_by = STG }
 				841 = { is_controlled_by = STG }
 				840 = { is_controlled_by = STG }
-				# 灞变笢锛堥瞾瑗裤€佽兌涓溿€侀瞾鍖椼€侀瞾鍗楋級
+				# 山东（鲁西、胶东、鲁北、鲁南）
 				597 = { is_controlled_by = STG }
 				743 = { is_controlled_by = STG }
 				838 = { is_controlled_by = STG }
 				837 = { is_controlled_by = STG }
-				# 娌冲崡锛堣鲍鍖椼€佽鲍涓溿€佹渤娲涖€佽鲍瑗裤€佽鲍鍗椼€佷俊闃筹級
+				# 河南（豫北、豫东、河洛、豫西、豫南、信阳）
 				836 = { is_controlled_by = STG }
 				607 = { is_controlled_by = STG }
 				1118 = { is_controlled_by = STG }
@@ -67,24 +67,24 @@ SRC_lianxigeming = {
 		
 		highlight_states = {
 			highlight_state_targets = {
-				# 娌冲寳+椤哄ぉ搴?
+				# 河北+顺天府
 				state = 1111
 				state = 614
 				state = 611
 				state = 839
 				state = 609
 				state = 608
-				# 灞辫タ
+				# 山西
 				state = 1131
 				state = 615
 				state = 841
 				state = 840
-				# 灞变笢
+				# 山东
 				state = 597
 				state = 743
 				state = 838
 				state = 837
-				# 娌冲崡
+				# 河南
 				state = 836
 				state = 607
 				state = 1118
@@ -104,24 +104,24 @@ SRC_lianxigeming = {
 				random_state = {
 					limit = {
 						OR = {
-							# 娌冲寳+椤哄ぉ搴?
+							# 河北+顺天府
 							state = 1111
 							state = 614
 							state = 611
 							state = 839
 							state = 609
 							state = 608
-							# 灞辫タ
+							# 山西
 							state = 1131
 							state = 615
 							state = 841
 							state = 840
-							# 灞变笢
+							# 山东
 							state = 597
 							state = 743
 							state = 838
 							state = 837
-							# 娌冲崡
+							# 河南
 							state = 836
 							state = 607
 							state = 1118
@@ -485,7 +485,7 @@ SRC_lianxigeming = {
 }
 #军事建设
 SRC_junshijianshe_catagories = {
-	#浜烘皯鎴樹簤
+	#人民战争
 	SRC_renminzhanzheng = {
 
 		allowed = { tag = SRC } 
@@ -510,7 +510,7 @@ SRC_junshijianshe_catagories = {
 			set_country_flag = SRC_renminzhanzheng_wancheng
 		}
 	}
-	#杩愬姩鎴?
+	#运动战
 	SRC_yundongzhan = {
 
 		allowed = { tag = SRC } 
@@ -535,7 +535,7 @@ SRC_junshijianshe_catagories = {
 			set_country_flag = SRC_yundongzhan_wancheng
 		}
 	}
-	#姝ュ潶鍗忓悓
+	#步坦协同
 	SRC_butanxietong = {
 
 		allowed = { tag = SRC } 
@@ -566,7 +566,7 @@ SRC_junshijianshe_catagories = {
 			set_country_flag =SRC_butanxietong_wancheng
 		}
 	}
-	#涓変笁鍒?
+	#三三制
 	SRC_sansanzhi = {
 
 		allowed = { tag = SRC } 
@@ -595,7 +595,7 @@ SRC_junshijianshe_catagories = {
 			set_country_flag = SRC_sansanzhi_wancheng
 		}
 	}
-	#澶х旱娣变綔鎴樼悊璁?
+	#大纵深作战理论
 	SRC_dazongshen = {
 
 		allowed = { tag = SRC } 
@@ -624,7 +624,7 @@ SRC_junshijianshe_catagories = {
 			set_country_flag = SRC_dazongshen_wancheng
 		}
 	}
-	#涓崕闈╁懡鍐涗簨鐞嗚
+	#中华革命军事理论
 	SRC_zhonghuagemingjunshililun = {
 
 		allowed = { tag = SRC } 
@@ -655,9 +655,9 @@ SRC_junshijianshe_catagories = {
 		}
 	}
 }
-#瀹ｆ垬
+#宣战
 SRC_xuanzhan_catagories = {
-	#鍚戦『澶╁鎴?
+	#向顺天宣战
 	SRC_shuntiankaizhan = {
 
 		allowed = { tag = SRC } 
@@ -671,7 +671,7 @@ SRC_xuanzhan_catagories = {
 			declare_war_on = { target = STG type = annex_everything }
 		}
 	}
-	#鍚戣タ鍖楀啗瀹ｆ垬
+	#向西北军宣战
 	SRC_xiebikaizhan = {
 
 		allowed = { tag = SRC } 
@@ -685,7 +685,7 @@ SRC_xuanzhan_catagories = {
 			declare_war_on = { target = XBJ type = annex_everything }
 		}
 	}
-	#鍚戜竷鐪佽仈鍚堝鎴?
+	#向七省联合宣战
 	SRC_qishenkaizhan = {
 
 		allowed = { tag = SRC } 
@@ -699,7 +699,7 @@ SRC_xuanzhan_catagories = {
 			declare_war_on = { target = GOS type = annex_everything }
 		}
 	}
-	#骞垮窞鍏卞拰鍐?
+	#广州共和军
 	SRC_guangzhoukaizhan = {
 
 		allowed = { tag = SRC } 
@@ -719,7 +719,7 @@ SRC_xuanzhan_catagories = {
 			declare_war_on = { target = ROC type = annex_everything }
 		}
 	}
-	#瑗垮崡閮界潱搴滃鎴?
+	#向西南都督府宣战
 	SRC_xinankaizhan = {
 
 		allowed = { tag = SRC } 
@@ -733,7 +733,7 @@ SRC_xuanzhan_catagories = {
 			declare_war_on = { target = XIN type = annex_everything }
 		}
 	}
-	#鍥涘窛瀹ｆ垬
+	#四川宣战
 	SRC_sichuankaizhan = {
 
 		allowed = { tag = SRC } 
@@ -747,7 +747,7 @@ SRC_xuanzhan_catagories = {
 			declare_war_on = { target = SIC type = annex_everything }
 		}
 	}
-	#宀寳瀹ｆ垬
+	#岭北宣战
 	SRC_lingbeikaizhan = {
 
 		allowed = { tag = SRC } 
@@ -761,7 +761,7 @@ SRC_xuanzhan_catagories = {
 			declare_war_on = { target = MOB type = annex_everything }
 		}
 	}
-	#鍚堝苟鍥涘窛绾㈠啗
+	#合并四川红军
 	SRC_SCGkaizhan = {
 
 		allowed = { tag = SRC } 

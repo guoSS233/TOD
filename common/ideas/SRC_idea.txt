@@ -32,10 +32,21 @@ ideas = {
 			}
 		}
 	    SRC_gemingjunshiweiyuanhui_2 = {
-		    picture = GFX_idea_SRC_gemingjunshiweiyuanhui_1
+		    picture = GFX_idea_SRC_gemingjunshiweiyuanhui_2
 			modifier = {
 				war_support_factor = 0.05
 				max_command_power = -15
+			}
+		}
+	    SRC_gemingjunshiweiyuanhui_buqianghuafei = {
+		    picture = GFX_idea_SRC_gemingjunshiweiyuanhui_3
+			allowed = { always = no }
+			removal_cost = -1
+			equipment_bonus = {
+				infantry_equipment = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
 			}
 		}
 	    SRC_gongrenhuchangreqing = {
@@ -90,19 +101,19 @@ ideas = {
 		}
 		SRC_wuchanjiejiminzhu = {
 			picture = GFX_idea_SRC_wuchanjiejiminzhu
-			modifier = { MODIFIER_COMPLIANCE_GROWTH = 0.01 }
+			modifier = { compliance_growth = 0.01 }
 		}
 		SRC_wuchanjiejiwenhua = {
 			picture = GFX_idea_SRC_wuchanjiejiwenhua
 			modifier = {
-				MODIFIER_COMPLIANCE_GAIN_ADD = 0.01
+				compliance_gain = 0.01
 				stability_factor = 0.1
 			}
 		}
 		SRC_hongxingzhaoyaodongfang = {
 			picture = GFX_idea_SRC_hongxingzhaoyaodongfang
 			modifier = {
-				MODIFIER_COMPLIANCE_GROWTH = 0.01
+				compliance_growth = 0.01
 				stability_factor = 0.1
 				army_attack_factor = 0.075
 			}
@@ -120,13 +131,13 @@ ideas = {
 		}
 		SRC_gemingzhengfu = {
 			picture = GFX_idea_SRC_gemingzhengfu
-			modifier = { MODIFIER_STABILITY_WAR_FACTOR = -0.5 }
+			modifier = { war_stability_factor = -0.5 }
 		}
 		SRC_chiqizhiyinweilai = {
 			picture = GFX_idea_SRC_chiqizhiyinweilai
 			modifier = { 
-				MODIFIER_STABILITY_WAR_FACTOR = -0.5
-				MODIFIER_COMPLIANCE_GROWTH = 0.25
+				war_stability_factor = -0.5
+				compliance_growth = 0.25
 				industrial_concern_cost_factor = -0.5
 				war_support_factor = 0.1
 				consumer_goods_factor = -0.1
@@ -138,106 +149,10 @@ ideas = {
 				industry_repair_factor = 0.1
 				consumer_goods_factor = -0.2
 				production_factory_max_efficiency_factor = 0.1
-				MODIFIER_CONVERSION_COST_CIV_TO_MIL_FACTOR = -0.2
+				conversion_cost_civ_to_mil_factor = -0.2
 				local_building_slots_factor = 0.1
 				research_speed_factor = 0.05
 			 }
-		}
-	}
-	academy_spirit ={
-		SRC_red_cadre_school_spirit = {
-			ledger = army
-			visible = {
-				tag = SRC
-				has_military_academy = yes
-			}
-			available = {
-				has_military_academy = yes 	
-			}
-			modifier = {
-				experience_gain_factor = 0.1
-				army_morale_factor = 0.1
-				coordination_bonus = 0.05
-			}
-			ai_will_do = {
-				base = 1
-
-				modifier = {
-					factor = 0
-					OR = {
-						NOT = { has_dlc = "No Step Back" }
-						NOT = { tag = SRC }
-					}
-				}
-
-				modifier = {
-					factor = 4
-					tag = SRC
-				}
-			}
-		}
-
-	}
-	division_command_spirit = {
-		SRC_frontline_party_branch_spirit = {
-			ledger = army
-			visible = {
-				tag = SRC
-			}
-			available = {
-				has_military_academy = yes 
-			}
-			modifier = {
-				army_morale_factor = 0.05
-				army_org_factor = 0.1
-			}
-			ai_will_do = {
-				base = 1
-
-				modifier = {
-					factor = 0
-					OR = {
-						NOT = { has_dlc = "No Step Back" }
-						NOT = { tag = SRC }
-					}
-				}
-
-				modifier = {
-					factor = 4
-					tag = SRC
-				}
-			}
-		}
-	}
-	army_spirit = {
-		SRC_people_war_spirit = {
-			ledger = army
-			visible = {
-				tag = SRC
-			}
-			available = {
-				has_military_academy = yes 
-			}
-			modifier = {
-				supply_consumption_factor = -0.05
-				initiative_factor = 0.05
-			}
-			ai_will_do = {
-				base = 1
-
-				modifier = {
-					factor = 0
-					OR = {
-						NOT = { has_dlc = "No Step Back" }
-						NOT = { tag = SRC }
-					}
-				}
-
-				modifier = {
-					factor = 4
-					tag = SRC
-				}
-			}
 		}
 	}
 	#顾问#
@@ -467,3 +382,4 @@ ideas = {
 	}
 }
 
+#华北中央局精神

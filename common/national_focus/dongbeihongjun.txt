@@ -202,8 +202,7 @@ focus_tree = {
 		available = { }
 
 		completion_reward = {
-			add_to_variable = { SRC_siliedeshehui_gongchangxiaolv = 0.05 }
-			add_to_variable = { SRC_siliedeshehui_gongchangzengzhang = 0.05 }
+			add_to_variable = { SRC_siliedeshehui_gongchangchanchu = 0.1 } 
 			custom_effect_tooltip = SRC_weapons_first_xiaoguo
 		}
 	}
@@ -220,7 +219,8 @@ focus_tree = {
 		available = { }
 
 		completion_reward = {
-			add_to_variable = { SRC_siliedeshehui_gongchangchanchu = 0.1 } 
+			add_to_variable = { SRC_siliedeshehui_gongchangxiaolv = 0.05 }
+			add_to_variable = { SRC_siliedeshehui_gongchangzengzhang = 0.05 }
 			custom_effect_tooltip = SRC_work_committee_xiaoguo
 		}
 	}
@@ -913,7 +913,7 @@ focus_tree = {
 		
 		completion_reward = {
 			remove_dynamic_modifier = { modifier = SRC_renminminzhu }
-			add_ideas = SRC_chiqizhiyin
+			add_ideas = SRC_chiqizhiyinweilai
 			SRC = {country_event = { id = SRCevents.42}}
 		}
 	}
@@ -1218,7 +1218,7 @@ focus_tree = {
 		
 		completion_reward = {
 			remove_dynamic_modifier = { modifier = SRC_gemingwenhua }
-			add_ideas = SRC_zhumen
+			add_ideas = SRC_zhumenhuanxintian
 			SRC = {country_event = { id = SRCevents.34}}
 		}
 	}
@@ -1558,10 +1558,9 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_gaigewei_minzhuanjun = -0.2 }
 			custom_effect_tooltip = SRC_wuzhuangliliangzhengguihua_xiaoguo
-			hidden_effect = {
-				set_technology = { masterful_blitz = 1 popup = no }
-			}
-			custom_effect_tooltip = SOV_the_glory_of_the_red_army_masterful_blitz_tactic_tt
+			add_to_variable = { SRC_hongjun_yezhan = 0.1 }
+			hidden_effect = { set_sub_doctrine = armored_infantry_support }
+			custom_effect_tooltip = SRC_wuzhuangliliangzhengguihua_blitz_xiaoguo
 
 		}
 	}
@@ -1671,7 +1670,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			add_to_variable = { SRC_gemingjunshiweiyuanhui_buqianghuafei = -0.1 }
+			add_ideas = SRC_gemingjunshiweiyuanhui_buqianghuafei
 			custom_effect_tooltip = SRC_wanshanshengchantixi_xiaoguo
 		}
 	}

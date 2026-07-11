@@ -1133,3 +1133,52 @@ SRC_activity_student_movement_effect = {
 SRC_activity_business_movement_effect = {
     add_timed_idea = { idea = SRC_activity_business_movement_buff days = 120 }
 }
+
+SRC_open_unified_gui_power_page = {
+    set_country_flag = SRC_unified_gui_open
+    SRC_ensure_dongbei_bureau_bootstrap = yes
+    SRC_initialize_bureau_cadres = yes
+    SRC_power_struggle_init_central_satisfaction = yes
+    if = {
+        limit = { NOT = { check_variable = { SRC_power_tangle_x > 0 } } }
+        SRC_power_struggle_normalize_balance = yes
+    }
+    else = {
+        SRC_power_struggle_calc_tangle_xy = yes
+    }
+    if = {
+        limit = {
+            NOT = { has_country_flag = SRC_power_struggle_selected_ren }
+            NOT = { has_country_flag = SRC_power_struggle_selected_li }
+            NOT = { has_country_flag = SRC_power_struggle_selected_chen }
+        }
+        SRC_power_struggle_select_ren = yes
+    }
+    set_variable = { SRC_unified_tab_frame_power = 2 }
+    set_variable = { SRC_unified_tab_frame_bureau = 1 }
+    add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+}
+
+SRC_open_unified_gui_bureau_page = {
+    set_country_flag = SRC_unified_gui_open
+    SRC_ensure_dongbei_bureau_bootstrap = yes
+    SRC_initialize_bureau_cadres = yes
+    SRC_power_struggle_init_central_satisfaction = yes
+    if = {
+        limit = {
+            NOT = { has_country_flag = SRC_zhongyangju_tab_huabei }
+            NOT = { has_country_flag = SRC_zhongyangju_tab_dongbei }
+            NOT = { has_country_flag = SRC_zhongyangju_tab_dongnan }
+            NOT = { has_country_flag = SRC_zhongyangju_tab_zhongnan }
+            NOT = { has_country_flag = SRC_zhongyangju_tab_xinan }
+            NOT = { has_country_flag = SRC_zhongyangju_tab_xibei }
+            NOT = { has_country_flag = SRC_zhongyangju_tab_mobei }
+            NOT = { has_country_flag = SRC_zhongyangju_tab_xiyu }
+        }
+        set_country_flag = SRC_zhongyangju_tab_dongbei
+    }
+    SRC_refresh_selected_bureau_display = yes
+    set_variable = { SRC_unified_tab_frame_power = 1 }
+    set_variable = { SRC_unified_tab_frame_bureau = 2 }
+    add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+}

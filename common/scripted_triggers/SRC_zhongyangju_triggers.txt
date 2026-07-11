@@ -151,3 +151,105 @@ SRC_other_bureaus_unlocked = {
 SRC_central_bureau_contact_established = {
     has_country_flag = SRC_zhongyangdida
 }
+
+SRC_central_route_pending = {
+    SRC_central_bureau_contact_established = yes
+    NOT = { SRC_has_any_chairman_route = yes }
+}
+
+SRC_power_struggle_action_available = {
+    SRC_central_route_pending = yes
+    NOT = { has_country_flag = SRC_power_struggle_action_cd }
+    OR = {
+        has_political_power > 24
+        command_power > 14.99
+    }
+}
+
+SRC_any_bureau_activity_available = {
+    SRC_has_any_chairman_route = yes
+    OR = {
+        AND = {
+            has_political_power > 74
+            OR = {
+                AND = { has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_huabei_activity_worker_cd } }
+                AND = { has_country_flag = SRC_dongbeiju_active NOT = { has_country_flag = SRC_dongbei_activity_worker_cd } }
+                AND = { has_country_flag = SRC_dongnanju_active NOT = { has_country_flag = SRC_dongnan_activity_worker_cd } }
+                AND = { has_country_flag = SRC_zhongnanju_active NOT = { has_country_flag = SRC_zhongnan_activity_worker_cd } }
+                AND = { has_country_flag = SRC_xinanju_active NOT = { has_country_flag = SRC_xinan_activity_worker_cd } }
+                AND = { has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xibei_activity_worker_cd } }
+                AND = { has_country_flag = SRC_mobeiju_active NOT = { has_country_flag = SRC_mobei_activity_worker_cd } }
+                AND = { has_country_flag = SRC_xiyuju_active NOT = { has_country_flag = SRC_xiyu_activity_worker_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_huabei_activity_business_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_dongbeiju_active NOT = { has_country_flag = SRC_dongbei_activity_business_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_dongnanju_active NOT = { has_country_flag = SRC_dongnan_activity_business_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_zhongnanju_active NOT = { has_country_flag = SRC_zhongnan_activity_business_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_xinanju_active NOT = { has_country_flag = SRC_xinan_activity_business_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xibei_activity_business_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_mobeiju_active NOT = { has_country_flag = SRC_mobei_activity_business_cd } }
+                AND = { SRC_has_business_activity_route = yes has_country_flag = SRC_xiyuju_active NOT = { has_country_flag = SRC_xiyu_activity_business_cd } }
+            }
+        }
+        AND = {
+            has_political_power > 59
+            OR = {
+                AND = { has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_huabei_activity_underground_cd } }
+                AND = { has_country_flag = SRC_dongbeiju_active NOT = { has_country_flag = SRC_dongbei_activity_underground_cd } }
+                AND = { has_country_flag = SRC_dongnanju_active NOT = { has_country_flag = SRC_dongnan_activity_underground_cd } }
+                AND = { has_country_flag = SRC_zhongnanju_active NOT = { has_country_flag = SRC_zhongnan_activity_underground_cd } }
+                AND = { has_country_flag = SRC_xinanju_active NOT = { has_country_flag = SRC_xinan_activity_underground_cd } }
+                AND = { has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xibei_activity_underground_cd } }
+                AND = { has_country_flag = SRC_mobeiju_active NOT = { has_country_flag = SRC_mobei_activity_underground_cd } }
+                AND = { has_country_flag = SRC_xiyuju_active NOT = { has_country_flag = SRC_xiyu_activity_underground_cd } }
+            }
+        }
+        AND = {
+            has_political_power > 69
+            OR = {
+                AND = { has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_huabei_activity_peasant_cd } }
+                AND = { has_country_flag = SRC_dongbeiju_active NOT = { has_country_flag = SRC_dongbei_activity_peasant_cd } }
+                AND = { has_country_flag = SRC_dongnanju_active NOT = { has_country_flag = SRC_dongnan_activity_peasant_cd } }
+                AND = { has_country_flag = SRC_zhongnanju_active NOT = { has_country_flag = SRC_zhongnan_activity_peasant_cd } }
+                AND = { has_country_flag = SRC_xinanju_active NOT = { has_country_flag = SRC_xinan_activity_peasant_cd } }
+                AND = { has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xibei_activity_peasant_cd } }
+                AND = { has_country_flag = SRC_mobeiju_active NOT = { has_country_flag = SRC_mobei_activity_peasant_cd } }
+                AND = { has_country_flag = SRC_xiyuju_active NOT = { has_country_flag = SRC_xiyu_activity_peasant_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_huabei_activity_student_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_dongbeiju_active NOT = { has_country_flag = SRC_dongbei_activity_student_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_dongnanju_active NOT = { has_country_flag = SRC_dongnan_activity_student_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_zhongnanju_active NOT = { has_country_flag = SRC_zhongnan_activity_student_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_xinanju_active NOT = { has_country_flag = SRC_xinan_activity_student_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xibei_activity_student_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_mobeiju_active NOT = { has_country_flag = SRC_mobei_activity_student_cd } }
+                AND = { SRC_has_student_activity_route = yes has_country_flag = SRC_xiyuju_active NOT = { has_country_flag = SRC_xiyu_activity_student_cd } }
+            }
+        }
+        AND = {
+            has_political_power > 79
+            OR = {
+                AND = { has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_huabei_activity_revgov_cd } }
+                AND = { has_country_flag = SRC_dongbeiju_active NOT = { has_country_flag = SRC_dongbei_activity_revgov_cd } }
+                AND = { has_country_flag = SRC_dongnanju_active NOT = { has_country_flag = SRC_dongnan_activity_revgov_cd } }
+                AND = { has_country_flag = SRC_zhongnanju_active NOT = { has_country_flag = SRC_zhongnan_activity_revgov_cd } }
+                AND = { has_country_flag = SRC_xinanju_active NOT = { has_country_flag = SRC_xinan_activity_revgov_cd } }
+                AND = { has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xibei_activity_revgov_cd } }
+                AND = { has_country_flag = SRC_mobeiju_active NOT = { has_country_flag = SRC_mobei_activity_revgov_cd } }
+                AND = { has_country_flag = SRC_xiyuju_active NOT = { has_country_flag = SRC_xiyu_activity_revgov_cd } }
+            }
+        }
+    }
+}
+
+SRC_any_bureau_establish_available = {
+    has_political_power > 49
+    OR = {
+        AND = { SRC_other_bureaus_unlocked = yes NOT = { has_country_flag = SRC_huabeizhongyangju_established } }
+        AND = { has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_dongbeiju_established } }
+        AND = { SRC_other_bureaus_unlocked = yes has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_dongnanju_established } }
+        AND = { SRC_other_bureaus_unlocked = yes has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_zhongnanju_established } }
+        AND = { SRC_other_bureaus_unlocked = yes has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_xinanju_established } }
+        AND = { SRC_other_bureaus_unlocked = yes has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_xibeiju_established } }
+        AND = { SRC_other_bureaus_unlocked = yes has_country_flag = SRC_huabeizhongyangju_active NOT = { has_country_flag = SRC_mobeiju_established } }
+        AND = { SRC_other_bureaus_unlocked = yes has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xiyuju_established } }
+    }
+}

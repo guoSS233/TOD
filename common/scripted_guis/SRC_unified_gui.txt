@@ -53,6 +53,74 @@ scripted_gui = {
         }
     }
 
+    SRC_alert_bureau_activity = {
+        context_type = player_context
+        parent_window_token = politics_tab
+        window_name = "SRC_alert_bureau_activity_window"
+
+        visible = {
+            tag = SRC
+            SRC_any_bureau_activity_available = yes
+        }
+
+        effects = {
+            SRC_alert_bureau_activity_button_click = {
+                SRC_open_unified_gui_bureau_page = yes
+            }
+        }
+    }
+
+    SRC_alert_power_action = {
+        context_type = player_context
+        parent_window_token = politics_tab
+        window_name = "SRC_alert_power_action_window"
+
+        visible = {
+            tag = SRC
+            SRC_power_struggle_action_available = yes
+        }
+
+        effects = {
+            SRC_alert_power_action_button_click = {
+                SRC_open_unified_gui_power_page = yes
+            }
+        }
+    }
+
+    SRC_alert_new_bureau = {
+        context_type = player_context
+        parent_window_token = politics_tab
+        window_name = "SRC_alert_new_bureau_window"
+
+        visible = {
+            tag = SRC
+            SRC_any_bureau_establish_available = yes
+        }
+
+        effects = {
+            SRC_alert_new_bureau_button_click = {
+                SRC_open_unified_gui_bureau_page = yes
+            }
+        }
+    }
+
+    SRC_alert_route_pending = {
+        context_type = player_context
+        parent_window_token = politics_tab
+        window_name = "SRC_alert_route_pending_window"
+
+        visible = {
+            tag = SRC
+            SRC_central_route_pending = yes
+        }
+
+        effects = {
+            SRC_alert_route_pending_button_click = {
+                SRC_open_unified_gui_power_page = yes
+            }
+        }
+    }
+
     SRC_unified_shell = {
         context_type = player_context
         window_name = "SRC_unified_main_window"
