@@ -135,7 +135,12 @@ focus_tree = {
 		cost = 5
 		available = { }
 
-		completion_reward = { load_oob = "SRC_toucheng" }
+		completion_reward = {
+			custom_effect_tooltip = SRC_publicity_campaigne_outcome_effect_tt
+			hidden_effect = {
+				load_oob = "SRC_toucheng"
+			}
+		}
 	}
 	#向红军的未来眺望
 	focus = {
@@ -280,8 +285,10 @@ focus_tree = {
 			#	character = SRC_ren_fuchen
 			#	ideology = vanguard_socialism_subtype
 			#}
-			SRC = {country_event = { id = SRCevents.15 } } 
+			SRC = {country_event = { id = SRCevents.15 } }
 			set_country_flag = SRC_zhongyangdida
+			add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+			add_to_variable = { SRC_power_struggle_gui_dirty = 0.01 }
 			remove_ideas = SRC_buwangkulaojichou
 			remove_ideas = SRC_qiyireqing
 			#promote_character = SRC_zhongyangzhixingweiyuanhui

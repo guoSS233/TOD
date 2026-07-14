@@ -1134,6 +1134,293 @@ SRC_activity_business_movement_effect = {
     add_timed_idea = { idea = SRC_activity_business_movement_buff days = 120 }
 }
 
+SRC_dongbei_activity_sabotage_gps_effect = {
+    add_timed_idea = { idea = SRC_activity_worker_movement_buff days = 75 }
+    if = {
+        limit = { country_exists = GPS }
+        GPS = {
+            random_owned_controlled_state = {
+                damage_building = { type = infrastructure damage = 2 }
+                damage_building = { type = arms_factory damage = 1 }
+            }
+            add_timed_idea = { idea = SRC_activity_enemy_disruption_strong days = 60 }
+            add_stability = -0.02
+        }
+    }
+}
+
+SRC_dongbei_activity_raise_recruits_effect = {
+    add_manpower = 80000
+    army_experience = 5
+    add_timed_idea = { idea = SRC_activity_underground_network_buff days = 75 }
+}
+
+SRC_dongbei_activity_arsenal_raid_effect = {
+    add_equipment_to_stockpile = { type = infantry_equipment amount = 700 }
+    add_equipment_to_stockpile = { type = artillery_equipment amount = 24 }
+    add_equipment_to_stockpile = { type = support_equipment amount = 120 }
+    if = {
+        limit = { country_exists = GPS }
+        GPS = {
+            add_timed_idea = { idea = SRC_activity_enemy_disruption_medium days = 45 }
+        }
+    }
+}
+
+SRC_dongbei_activity_rural_guerrillas_effect = {
+    add_manpower = 50000
+    army_experience = 10
+    SRC_unlock_guerrilla_template_effect = yes
+    add_timed_idea = { idea = SRC_activity_peasant_movement_buff days = 90 }
+    if = {
+        limit = { country_exists = GPS }
+        GPS = {
+            add_timed_idea = { idea = SRC_activity_enemy_underground_disruption days = 60 }
+        }
+    }
+}
+
+SRC_dongbei_activity_youth_propaganda_effect = {
+    add_manpower = 30000
+    add_political_power = 25
+    add_timed_idea = { idea = SRC_activity_student_movement_buff days = 75 }
+}
+
+SRC_dongbei_activity_infiltrate_gps_effect = {
+    add_command_power = 20
+    add_timed_idea = { idea = SRC_activity_business_movement_buff days = 60 }
+    if = {
+        limit = { country_exists = GPS }
+        GPS = {
+            add_timed_idea = { idea = SRC_activity_enemy_underground_disruption days = 75 }
+            add_stability = -0.01
+        }
+    }
+}
+
+SRC_selected_bureau_worker_activity_effect = {
+    if = {
+        limit = { has_country_flag = SRC_zhongyangju_tab_dongbei }
+        SRC_dongbei_activity_sabotage_gps_effect = yes
+    }
+    else = {
+        SRC_activity_worker_movement_effect = yes
+    }
+}
+
+SRC_selected_bureau_underground_activity_effect = {
+    if = {
+        limit = { has_country_flag = SRC_zhongyangju_tab_dongbei }
+        SRC_dongbei_activity_raise_recruits_effect = yes
+    }
+    else = {
+        SRC_activity_underground_network_effect = yes
+    }
+}
+
+SRC_selected_bureau_revgov_activity_effect = {
+    if = {
+        limit = { has_country_flag = SRC_zhongyangju_tab_dongbei }
+        SRC_dongbei_activity_arsenal_raid_effect = yes
+    }
+    else = {
+        SRC_activity_revolutionary_government_effect = yes
+    }
+}
+
+SRC_selected_bureau_peasant_activity_effect = {
+    if = {
+        limit = { has_country_flag = SRC_zhongyangju_tab_dongbei }
+        SRC_dongbei_activity_rural_guerrillas_effect = yes
+    }
+    else = {
+        SRC_activity_peasant_movement_effect = yes
+    }
+}
+
+SRC_selected_bureau_student_activity_effect = {
+    if = {
+        limit = { has_country_flag = SRC_zhongyangju_tab_dongbei }
+        SRC_dongbei_activity_youth_propaganda_effect = yes
+    }
+    else = {
+        SRC_activity_student_movement_effect = yes
+    }
+}
+
+SRC_selected_bureau_business_activity_effect = {
+    if = {
+        limit = { has_country_flag = SRC_zhongyangju_tab_dongbei }
+        SRC_dongbei_activity_infiltrate_gps_effect = yes
+    }
+    else = {
+        SRC_activity_business_movement_effect = yes
+    }
+}
+
+SRC_dongbei_front_damage_selected_state_infrastructure = {
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_328 } 328 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_408 } 408 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_409 } 409 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_560 } 560 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_561 } 561 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_610 } 610 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_657 } 657 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_714 } 714 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_715 } 715 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_716 } 716 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_717 } 717 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_745 } 745 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_761 } 761 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_845 } 845 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_846 } 846 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_847 } 847 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_848 } 848 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_849 } 849 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_850 } 850 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_1112 } 1112 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_1123 } 1123 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_1126 } 1126 = { damage_building = { type = infrastructure damage = 1 } } }
+    if = { limit = { has_country_flag = SRC_dongbei_front_selected_1218 } 1218 = { damage_building = { type = infrastructure damage = 1 } } }
+}
+
+SRC_dongbei_front_damage_selected_state_arsenal = {
+    SRC_dongbei_front_damage_selected_state_infrastructure = yes
+    if = { limit = { SRC_dongbei_front_selected_industrial = yes } add_equipment_to_stockpile = { type = infantry_equipment amount = 450 } }
+    if = { limit = { SRC_dongbei_front_selected_rail = yes } add_equipment_to_stockpile = { type = support_equipment amount = 80 } }
+    if = { limit = { SRC_dongbei_front_selected_border = yes } add_equipment_to_stockpile = { type = artillery_equipment amount = 16 } }
+}
+
+SRC_dongbei_front_apply_gps_pressure = {
+    if = {
+        limit = { country_exists = GPS }
+        GPS = {
+            add_timed_idea = { idea = SRC_activity_enemy_underground_disruption days = 45 }
+        }
+    }
+}
+
+SRC_dongbei_front_worker_action_effect = {
+    if = {
+        limit = { SRC_dongbei_front_selected_state_src = yes }
+        add_timed_idea = { idea = SRC_activity_worker_movement_buff days = 45 }
+        add_command_power = 10
+        if = { limit = { SRC_dongbei_front_selected_rail = yes } army_experience = 3 }
+    }
+    else_if = {
+        limit = { SRC_dongbei_front_selected_state_gps = yes }
+        SRC_dongbei_front_damage_selected_state_infrastructure = yes
+        if = {
+            limit = { country_exists = GPS }
+            GPS = { add_timed_idea = { idea = SRC_activity_enemy_disruption_medium days = 45 } }
+        }
+    }
+    else = {
+        add_timed_idea = { idea = SRC_activity_worker_movement_buff days = 30 }
+        army_experience = 5
+        SRC_dongbei_front_apply_gps_pressure = yes
+    }
+}
+
+SRC_dongbei_front_underground_action_effect = {
+    if = {
+        limit = { SRC_dongbei_front_selected_state_src = yes }
+        add_manpower = 25000
+        if = { limit = { SRC_dongbei_front_selected_border = yes } add_manpower = 15000 }
+        add_timed_idea = { idea = SRC_activity_underground_network_buff days = 45 }
+    }
+    else_if = {
+        limit = { SRC_dongbei_front_selected_state_gps = yes }
+        add_command_power = 15
+        SRC_dongbei_front_apply_gps_pressure = yes
+    }
+    else = {
+        add_manpower = 20000
+        army_experience = 5
+        add_timed_idea = { idea = SRC_activity_underground_network_buff days = 30 }
+    }
+}
+
+SRC_dongbei_front_revgov_action_effect = {
+    if = {
+        limit = { SRC_dongbei_front_selected_state_src = yes }
+        add_equipment_to_stockpile = { type = infantry_equipment amount = 500 }
+        if = { limit = { SRC_dongbei_front_selected_industrial = yes } add_equipment_to_stockpile = { type = artillery_equipment amount = 20 } }
+        if = { limit = { SRC_dongbei_front_selected_border = yes } add_equipment_to_stockpile = { type = support_equipment amount = 100 } }
+    }
+    else_if = {
+        limit = { SRC_dongbei_front_selected_state_gps = yes }
+        SRC_dongbei_front_damage_selected_state_arsenal = yes
+        SRC_dongbei_front_apply_gps_pressure = yes
+    }
+    else = {
+        SRC_dongbei_front_damage_selected_state_arsenal = yes
+        army_experience = 5
+    }
+}
+
+SRC_dongbei_front_peasant_action_effect = {
+    if = {
+        limit = { SRC_dongbei_front_selected_state_src = yes }
+        add_manpower = 30000
+        army_experience = 5
+        SRC_unlock_guerrilla_template_effect = yes
+        if = { limit = { SRC_dongbei_front_selected_border = yes } army_experience = 5 }
+    }
+    else_if = {
+        limit = { SRC_dongbei_front_selected_state_gps = yes }
+        add_manpower = 20000
+        army_experience = 8
+        SRC_unlock_guerrilla_template_effect = yes
+        SRC_dongbei_front_apply_gps_pressure = yes
+    }
+    else = {
+        add_timed_idea = { idea = SRC_activity_peasant_movement_buff days = 45 }
+        army_experience = 10
+        SRC_unlock_guerrilla_template_effect = yes
+    }
+}
+
+SRC_dongbei_front_student_action_effect = {
+    if = {
+        limit = { SRC_dongbei_front_selected_state_src = yes }
+        add_political_power = 20
+        if = { limit = { SRC_dongbei_front_selected_industrial = yes } add_timed_idea = { idea = SRC_activity_student_movement_buff days = 45 } }
+    }
+    else_if = {
+        limit = { SRC_dongbei_front_selected_state_gps = yes }
+        add_political_power = 10
+        SRC_dongbei_front_apply_gps_pressure = yes
+    }
+    else = {
+        add_political_power = 15
+        add_timed_idea = { idea = SRC_activity_student_movement_buff days = 30 }
+    }
+}
+
+SRC_dongbei_front_business_action_effect = {
+    if = {
+        limit = { SRC_dongbei_front_selected_state_src = yes }
+        add_command_power = 15
+        add_equipment_to_stockpile = { type = support_equipment amount = 120 }
+        if = { limit = { SRC_dongbei_front_selected_rail = yes } add_equipment_to_stockpile = { type = infantry_equipment amount = 300 } }
+    }
+    else_if = {
+        limit = { SRC_dongbei_front_selected_state_gps = yes }
+        add_command_power = 20
+        if = {
+            limit = { country_exists = GPS }
+            GPS = { add_stability = -0.01 }
+        }
+        SRC_dongbei_front_apply_gps_pressure = yes
+    }
+    else = {
+        add_command_power = 10
+        add_equipment_to_stockpile = { type = support_equipment amount = 80 }
+        SRC_dongbei_front_apply_gps_pressure = yes
+    }
+}
+
 SRC_open_unified_gui_power_page = {
     set_country_flag = SRC_unified_gui_open
     SRC_ensure_dongbei_bureau_bootstrap = yes
@@ -1178,7 +1465,185 @@ SRC_open_unified_gui_bureau_page = {
         set_country_flag = SRC_zhongyangju_tab_dongbei
     }
     SRC_refresh_selected_bureau_display = yes
+    clr_country_flag = SRC_dongbei_front_page_front
+    clr_country_flag = SRC_dongbei_front_page_front_v2
+    set_variable = { SRC_dongbei_front_page_frame = 1 }
+    SRC_dongbei_front_select_default = yes
     set_variable = { SRC_unified_tab_frame_power = 1 }
     set_variable = { SRC_unified_tab_frame_bureau = 2 }
     add_to_variable = { SRC_unified_gui_dirty = 0.01 }
 }
+
+SRC_dongbei_front_refresh_scores = {
+    set_variable = { SRC_dongbei_front_src_score = 0 }
+    set_variable = { SRC_dongbei_front_gps_score = 0 }
+    set_variable = { SRC_dongbei_front_contested_score = 0 }
+    if = { limit = { SRC_dongbei_front_state_328_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_328_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_408_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_408_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_409_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_409_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_560_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_560_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_561_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_561_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_610_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_610_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_657_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_657_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_714_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_714_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_715_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_715_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_716_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_716_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_717_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_717_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_745_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_745_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_761_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_761_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_845_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_845_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_846_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_846_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_847_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_847_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_848_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_848_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_849_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_849_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_850_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_850_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_1112_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_1112_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_1123_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_1123_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_1126_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_1126_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+    if = { limit = { SRC_dongbei_front_state_1218_src = yes } add_to_variable = { SRC_dongbei_front_src_score = 1 } }
+    else_if = { limit = { SRC_dongbei_front_state_1218_gps = yes } add_to_variable = { SRC_dongbei_front_gps_score = 1 } }
+    else = { add_to_variable = { SRC_dongbei_front_src_score = 0.5 } add_to_variable = { SRC_dongbei_front_gps_score = 0.5 } add_to_variable = { SRC_dongbei_front_contested_score = 1 } }
+
+    set_variable = { SRC_dongbei_front_src_percent = SRC_dongbei_front_src_score }
+    divide_variable = { SRC_dongbei_front_src_percent = 23 }
+    multiply_variable = { SRC_dongbei_front_src_percent = 100 }
+    set_variable = { SRC_dongbei_front_gps_percent = SRC_dongbei_front_gps_score }
+    divide_variable = { SRC_dongbei_front_gps_percent = 23 }
+    multiply_variable = { SRC_dongbei_front_gps_percent = 100 }
+    set_variable = { SRC_dongbei_front_bar_frame = SRC_dongbei_front_src_percent }
+    clamp_variable = { var = SRC_dongbei_front_bar_frame min = 0 max = 100 }
+    add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+}
+
+SRC_dongbei_front_clear_selected_state = {
+    clr_country_flag = SRC_dongbei_front_selected_328
+    clr_country_flag = SRC_dongbei_front_selected_408
+    clr_country_flag = SRC_dongbei_front_selected_409
+    clr_country_flag = SRC_dongbei_front_selected_560
+    clr_country_flag = SRC_dongbei_front_selected_561
+    clr_country_flag = SRC_dongbei_front_selected_610
+    clr_country_flag = SRC_dongbei_front_selected_657
+    clr_country_flag = SRC_dongbei_front_selected_714
+    clr_country_flag = SRC_dongbei_front_selected_715
+    clr_country_flag = SRC_dongbei_front_selected_716
+    clr_country_flag = SRC_dongbei_front_selected_717
+    clr_country_flag = SRC_dongbei_front_selected_745
+    clr_country_flag = SRC_dongbei_front_selected_761
+    clr_country_flag = SRC_dongbei_front_selected_845
+    clr_country_flag = SRC_dongbei_front_selected_846
+    clr_country_flag = SRC_dongbei_front_selected_847
+    clr_country_flag = SRC_dongbei_front_selected_848
+    clr_country_flag = SRC_dongbei_front_selected_849
+    clr_country_flag = SRC_dongbei_front_selected_850
+    clr_country_flag = SRC_dongbei_front_selected_1112
+    clr_country_flag = SRC_dongbei_front_selected_1123
+    clr_country_flag = SRC_dongbei_front_selected_1126
+    clr_country_flag = SRC_dongbei_front_selected_1218
+}
+
+SRC_dongbei_front_exit_front_page = {
+    clr_country_flag = SRC_dongbei_front_page_front
+    clr_country_flag = SRC_dongbei_front_page_front_v2
+    set_variable = { SRC_dongbei_front_page_frame = 1 }
+    SRC_refresh_selected_bureau_display = yes
+    add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+}
+
+SRC_dongbei_front_select_default = {
+    if = {
+        limit = {
+            NOT = { has_country_flag = SRC_dongbei_front_selected_328 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_408 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_409 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_560 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_561 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_610 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_657 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_714 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_715 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_716 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_717 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_745 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_761 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_845 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_846 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_847 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_848 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_849 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_850 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_1112 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_1123 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_1126 }
+            NOT = { has_country_flag = SRC_dongbei_front_selected_1218 }
+        }
+        set_country_flag = SRC_dongbei_front_selected_845
+    }
+}
+
+SRC_dongbei_front_select_328 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_328 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_408 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_408 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_409 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_409 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_560 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_560 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_561 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_561 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_610 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_610 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_657 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_657 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_714 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_714 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_715 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_715 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_716 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_716 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_717 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_717 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_745 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_745 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_761 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_761 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_845 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_845 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_846 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_846 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_847 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_847 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_848 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_848 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_849 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_849 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_850 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_850 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_1112 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_1112 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_1123 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_1123 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_1126 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_1126 SRC_dongbei_front_refresh_scores = yes }
+SRC_dongbei_front_select_1218 = { SRC_dongbei_front_clear_selected_state = yes set_country_flag = SRC_dongbei_front_selected_1218 SRC_dongbei_front_refresh_scores = yes }

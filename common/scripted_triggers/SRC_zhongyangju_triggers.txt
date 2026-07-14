@@ -253,3 +253,207 @@ SRC_any_bureau_establish_available = {
         AND = { SRC_other_bureaus_unlocked = yes has_country_flag = SRC_xibeiju_active NOT = { has_country_flag = SRC_xiyuju_established } }
     }
 }
+
+SRC_dongbei_front_visible = {
+    has_country_flag = SRC_zhongyangju_tab_dongbei
+    has_country_flag = SRC_dongbeiju_active
+    check_variable = { SRC_dongbei_front_page_frame = 2 }
+}
+
+SRC_dongbei_front_state_328_src = { 328 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_328_gps = { 328 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_328_contested = { NOT = { SRC_dongbei_front_state_328_src = yes } NOT = { SRC_dongbei_front_state_328_gps = yes } }
+SRC_dongbei_front_state_408_src = { 408 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_408_gps = { 408 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_408_contested = { NOT = { SRC_dongbei_front_state_408_src = yes } NOT = { SRC_dongbei_front_state_408_gps = yes } }
+SRC_dongbei_front_state_409_src = { 409 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_409_gps = { 409 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_409_contested = { NOT = { SRC_dongbei_front_state_409_src = yes } NOT = { SRC_dongbei_front_state_409_gps = yes } }
+SRC_dongbei_front_state_560_src = { 560 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_560_gps = { 560 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_560_contested = { NOT = { SRC_dongbei_front_state_560_src = yes } NOT = { SRC_dongbei_front_state_560_gps = yes } }
+SRC_dongbei_front_state_561_src = { 561 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_561_gps = { 561 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_561_contested = { NOT = { SRC_dongbei_front_state_561_src = yes } NOT = { SRC_dongbei_front_state_561_gps = yes } }
+SRC_dongbei_front_state_610_src = { 610 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_610_gps = { 610 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_610_contested = { NOT = { SRC_dongbei_front_state_610_src = yes } NOT = { SRC_dongbei_front_state_610_gps = yes } }
+SRC_dongbei_front_state_657_src = { 657 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_657_gps = { 657 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_657_contested = { NOT = { SRC_dongbei_front_state_657_src = yes } NOT = { SRC_dongbei_front_state_657_gps = yes } }
+SRC_dongbei_front_state_714_src = { 714 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_714_gps = { 714 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_714_contested = { NOT = { SRC_dongbei_front_state_714_src = yes } NOT = { SRC_dongbei_front_state_714_gps = yes } }
+SRC_dongbei_front_state_715_src = { 715 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_715_gps = { 715 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_715_contested = { NOT = { SRC_dongbei_front_state_715_src = yes } NOT = { SRC_dongbei_front_state_715_gps = yes } }
+SRC_dongbei_front_state_716_src = { 716 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_716_gps = { 716 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_716_contested = { NOT = { SRC_dongbei_front_state_716_src = yes } NOT = { SRC_dongbei_front_state_716_gps = yes } }
+SRC_dongbei_front_state_717_src = { 717 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_717_gps = { 717 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_717_contested = { NOT = { SRC_dongbei_front_state_717_src = yes } NOT = { SRC_dongbei_front_state_717_gps = yes } }
+SRC_dongbei_front_state_745_src = { 745 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_745_gps = { 745 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_745_contested = { NOT = { SRC_dongbei_front_state_745_src = yes } NOT = { SRC_dongbei_front_state_745_gps = yes } }
+SRC_dongbei_front_state_761_src = { 761 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_761_gps = { 761 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_761_contested = { NOT = { SRC_dongbei_front_state_761_src = yes } NOT = { SRC_dongbei_front_state_761_gps = yes } }
+SRC_dongbei_front_state_845_src = { 845 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_845_gps = { 845 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_845_contested = { NOT = { SRC_dongbei_front_state_845_src = yes } NOT = { SRC_dongbei_front_state_845_gps = yes } }
+SRC_dongbei_front_state_846_src = { 846 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_846_gps = { 846 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_846_contested = { NOT = { SRC_dongbei_front_state_846_src = yes } NOT = { SRC_dongbei_front_state_846_gps = yes } }
+SRC_dongbei_front_state_847_src = { 847 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_847_gps = { 847 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_847_contested = { NOT = { SRC_dongbei_front_state_847_src = yes } NOT = { SRC_dongbei_front_state_847_gps = yes } }
+SRC_dongbei_front_state_848_src = { 848 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_848_gps = { 848 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_848_contested = { NOT = { SRC_dongbei_front_state_848_src = yes } NOT = { SRC_dongbei_front_state_848_gps = yes } }
+SRC_dongbei_front_state_849_src = { 849 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_849_gps = { 849 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_849_contested = { NOT = { SRC_dongbei_front_state_849_src = yes } NOT = { SRC_dongbei_front_state_849_gps = yes } }
+SRC_dongbei_front_state_850_src = { 850 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_850_gps = { 850 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_850_contested = { NOT = { SRC_dongbei_front_state_850_src = yes } NOT = { SRC_dongbei_front_state_850_gps = yes } }
+SRC_dongbei_front_state_1112_src = { 1112 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_1112_gps = { 1112 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_1112_contested = { NOT = { SRC_dongbei_front_state_1112_src = yes } NOT = { SRC_dongbei_front_state_1112_gps = yes } }
+SRC_dongbei_front_state_1123_src = { 1123 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_1123_gps = { 1123 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_1123_contested = { NOT = { SRC_dongbei_front_state_1123_src = yes } NOT = { SRC_dongbei_front_state_1123_gps = yes } }
+SRC_dongbei_front_state_1126_src = { 1126 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_1126_gps = { 1126 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_1126_contested = { NOT = { SRC_dongbei_front_state_1126_src = yes } NOT = { SRC_dongbei_front_state_1126_gps = yes } }
+SRC_dongbei_front_state_1218_src = { 1218 = { is_owned_by = SRC is_controlled_by = SRC } }
+SRC_dongbei_front_state_1218_gps = { 1218 = { is_owned_by = GPS is_controlled_by = GPS } }
+SRC_dongbei_front_state_1218_contested = { NOT = { SRC_dongbei_front_state_1218_src = yes } NOT = { SRC_dongbei_front_state_1218_gps = yes } }
+
+SRC_dongbei_front_selected_any = {
+    OR = {
+        has_country_flag = SRC_dongbei_front_selected_328
+        has_country_flag = SRC_dongbei_front_selected_408
+        has_country_flag = SRC_dongbei_front_selected_409
+        has_country_flag = SRC_dongbei_front_selected_560
+        has_country_flag = SRC_dongbei_front_selected_561
+        has_country_flag = SRC_dongbei_front_selected_610
+        has_country_flag = SRC_dongbei_front_selected_657
+        has_country_flag = SRC_dongbei_front_selected_714
+        has_country_flag = SRC_dongbei_front_selected_715
+        has_country_flag = SRC_dongbei_front_selected_716
+        has_country_flag = SRC_dongbei_front_selected_717
+        has_country_flag = SRC_dongbei_front_selected_745
+        has_country_flag = SRC_dongbei_front_selected_761
+        has_country_flag = SRC_dongbei_front_selected_845
+        has_country_flag = SRC_dongbei_front_selected_846
+        has_country_flag = SRC_dongbei_front_selected_847
+        has_country_flag = SRC_dongbei_front_selected_848
+        has_country_flag = SRC_dongbei_front_selected_849
+        has_country_flag = SRC_dongbei_front_selected_850
+        has_country_flag = SRC_dongbei_front_selected_1112
+        has_country_flag = SRC_dongbei_front_selected_1123
+        has_country_flag = SRC_dongbei_front_selected_1126
+        has_country_flag = SRC_dongbei_front_selected_1218
+    }
+}
+
+SRC_dongbei_front_selected_industrial = {
+    OR = {
+        has_country_flag = SRC_dongbei_front_selected_328
+        has_country_flag = SRC_dongbei_front_selected_745
+        has_country_flag = SRC_dongbei_front_selected_845
+        has_country_flag = SRC_dongbei_front_selected_846
+        has_country_flag = SRC_dongbei_front_selected_847
+        has_country_flag = SRC_dongbei_front_selected_848
+        has_country_flag = SRC_dongbei_front_selected_849
+        has_country_flag = SRC_dongbei_front_selected_850
+    }
+}
+
+SRC_dongbei_front_selected_border = {
+    OR = {
+        has_country_flag = SRC_dongbei_front_selected_409
+        has_country_flag = SRC_dongbei_front_selected_560
+        has_country_flag = SRC_dongbei_front_selected_561
+        has_country_flag = SRC_dongbei_front_selected_657
+        has_country_flag = SRC_dongbei_front_selected_761
+        has_country_flag = SRC_dongbei_front_selected_1112
+        has_country_flag = SRC_dongbei_front_selected_1123
+        has_country_flag = SRC_dongbei_front_selected_1126
+    }
+}
+
+SRC_dongbei_front_selected_rail = {
+    OR = {
+        has_country_flag = SRC_dongbei_front_selected_408
+        has_country_flag = SRC_dongbei_front_selected_610
+        has_country_flag = SRC_dongbei_front_selected_714
+        has_country_flag = SRC_dongbei_front_selected_715
+        has_country_flag = SRC_dongbei_front_selected_716
+        has_country_flag = SRC_dongbei_front_selected_717
+        has_country_flag = SRC_dongbei_front_selected_1218
+    }
+}
+
+SRC_dongbei_front_selected_state_src = {
+    OR = {
+        AND = { has_country_flag = SRC_dongbei_front_selected_328 SRC_dongbei_front_state_328_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_408 SRC_dongbei_front_state_408_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_409 SRC_dongbei_front_state_409_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_560 SRC_dongbei_front_state_560_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_561 SRC_dongbei_front_state_561_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_610 SRC_dongbei_front_state_610_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_657 SRC_dongbei_front_state_657_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_714 SRC_dongbei_front_state_714_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_715 SRC_dongbei_front_state_715_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_716 SRC_dongbei_front_state_716_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_717 SRC_dongbei_front_state_717_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_745 SRC_dongbei_front_state_745_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_761 SRC_dongbei_front_state_761_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_845 SRC_dongbei_front_state_845_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_846 SRC_dongbei_front_state_846_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_847 SRC_dongbei_front_state_847_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_848 SRC_dongbei_front_state_848_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_849 SRC_dongbei_front_state_849_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_850 SRC_dongbei_front_state_850_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1112 SRC_dongbei_front_state_1112_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1123 SRC_dongbei_front_state_1123_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1126 SRC_dongbei_front_state_1126_src = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1218 SRC_dongbei_front_state_1218_src = yes }
+    }
+}
+
+SRC_dongbei_front_selected_state_gps = {
+    OR = {
+        AND = { has_country_flag = SRC_dongbei_front_selected_328 SRC_dongbei_front_state_328_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_408 SRC_dongbei_front_state_408_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_409 SRC_dongbei_front_state_409_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_560 SRC_dongbei_front_state_560_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_561 SRC_dongbei_front_state_561_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_610 SRC_dongbei_front_state_610_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_657 SRC_dongbei_front_state_657_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_714 SRC_dongbei_front_state_714_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_715 SRC_dongbei_front_state_715_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_716 SRC_dongbei_front_state_716_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_717 SRC_dongbei_front_state_717_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_745 SRC_dongbei_front_state_745_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_761 SRC_dongbei_front_state_761_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_845 SRC_dongbei_front_state_845_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_846 SRC_dongbei_front_state_846_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_847 SRC_dongbei_front_state_847_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_848 SRC_dongbei_front_state_848_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_849 SRC_dongbei_front_state_849_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_850 SRC_dongbei_front_state_850_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1112 SRC_dongbei_front_state_1112_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1123 SRC_dongbei_front_state_1123_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1126 SRC_dongbei_front_state_1126_gps = yes }
+        AND = { has_country_flag = SRC_dongbei_front_selected_1218 SRC_dongbei_front_state_1218_gps = yes }
+    }
+}
+
+SRC_dongbei_front_selected_state_contested = {
+    SRC_dongbei_front_selected_any = yes
+    NOT = { SRC_dongbei_front_selected_state_src = yes }
+    NOT = { SRC_dongbei_front_selected_state_gps = yes }
+}

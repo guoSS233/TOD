@@ -54,6 +54,7 @@ scripted_gui = {
                         limit = {
                             OR = {
                                 has_country_flag = SRC_zhongyangdida
+                                has_completed_focus = SRC_comrades_return
                                 has_country_flag = SRC_power_struggle_test
                             }
                         }
@@ -575,12 +576,12 @@ scripted_gui = {
                     limit = {
                         SRC_selected_bureau_active = yes
                         SRC_selected_bureau_worker_ready = yes
-                        SRC_has_any_chairman_route = yes
+                        SRC_selected_bureau_has_basic_activity_set = yes
                         has_political_power > 74
                     }
                     add_political_power = -75
                     SRC_set_selected_bureau_worker_cd = yes
-                    SRC_activity_worker_movement_effect = yes
+                    SRC_selected_bureau_worker_activity_effect = yes
                 }
             }
             mobei_activity_underground_button_click = {
@@ -588,12 +589,12 @@ scripted_gui = {
                     limit = {
                         SRC_selected_bureau_active = yes
                         SRC_selected_bureau_underground_ready = yes
-                        SRC_has_any_chairman_route = yes
+                        SRC_selected_bureau_has_basic_activity_set = yes
                         has_political_power > 59
                     }
                     add_political_power = -60
                     SRC_set_selected_bureau_underground_cd = yes
-                    SRC_activity_underground_network_effect = yes
+                    SRC_selected_bureau_underground_activity_effect = yes
                 }
             }
             mobei_activity_revgov_button_click = {
@@ -601,12 +602,12 @@ scripted_gui = {
                     limit = {
                         SRC_selected_bureau_active = yes
                         SRC_selected_bureau_revgov_ready = yes
-                        SRC_has_any_chairman_route = yes
+                        SRC_selected_bureau_has_basic_activity_set = yes
                         has_political_power > 79
                     }
                     add_political_power = -80
                     SRC_set_selected_bureau_revgov_cd = yes
-                    SRC_activity_revolutionary_government_effect = yes
+                    SRC_selected_bureau_revgov_activity_effect = yes
                 }
             }
             mobei_activity_peasant_button_click = {
@@ -614,12 +615,12 @@ scripted_gui = {
                     limit = {
                         SRC_selected_bureau_active = yes
                         SRC_selected_bureau_peasant_ready = yes
-                        SRC_has_any_chairman_route = yes
+                        SRC_selected_bureau_has_basic_activity_set = yes
                         has_political_power > 69
                     }
                     add_political_power = -70
                     SRC_set_selected_bureau_peasant_cd = yes
-                    SRC_activity_peasant_movement_effect = yes
+                    SRC_selected_bureau_peasant_activity_effect = yes
                 }
             }
             mobei_activity_student_button_click = {
@@ -632,7 +633,7 @@ scripted_gui = {
                     }
                     add_political_power = -70
                     SRC_set_selected_bureau_student_cd = yes
-                    SRC_activity_student_movement_effect = yes
+                    SRC_selected_bureau_student_activity_effect = yes
                 }
             }
             mobei_activity_business_button_click = {
@@ -645,7 +646,7 @@ scripted_gui = {
                     }
                     add_political_power = -75
                     SRC_set_selected_bureau_business_cd = yes
-                    SRC_activity_business_movement_effect = yes
+                    SRC_selected_bureau_business_activity_effect = yes
                 }
             }
         }
@@ -922,25 +923,25 @@ scripted_gui = {
             mobei_activity_worker_button_click_enabled = {
                 SRC_selected_bureau_active = yes
                 SRC_selected_bureau_worker_ready = yes
-                SRC_has_any_chairman_route = yes
+                SRC_selected_bureau_has_basic_activity_set = yes
                 has_political_power > 74
             }
             mobei_activity_underground_button_click_enabled = {
                 SRC_selected_bureau_active = yes
                 SRC_selected_bureau_underground_ready = yes
-                SRC_has_any_chairman_route = yes
+                SRC_selected_bureau_has_basic_activity_set = yes
                 has_political_power > 59
             }
             mobei_activity_revgov_button_click_enabled = {
                 SRC_selected_bureau_active = yes
                 SRC_selected_bureau_revgov_ready = yes
-                SRC_has_any_chairman_route = yes
+                SRC_selected_bureau_has_basic_activity_set = yes
                 has_political_power > 79
             }
             mobei_activity_peasant_button_click_enabled = {
                 SRC_selected_bureau_active = yes
                 SRC_selected_bureau_peasant_ready = yes
-                SRC_has_any_chairman_route = yes
+                SRC_selected_bureau_has_basic_activity_set = yes
                 has_political_power > 69
             }
             mobei_activity_student_button_click_enabled = {
