@@ -1,0 +1,72 @@
+##### Division Templates #####
+division_template = {
+	name = "加拿大步兵师"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "加拿大骑兵师"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "第一加拿大步兵师"
+		location = 1341
+		division_template = "加拿大步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第二加拿大步兵师"
+		location = 605
+		division_template = "加拿大步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第三加拿大步兵师"
+		location = 983
+		division_template = "加拿大步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第四加拿大步兵师"
+		location = 7758
+		division_template = "加拿大步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "加拿大骑兵师"
+		location = 1341
+		division_template = "加拿大骑兵师"
+		start_experience_factor = 0.55
+		start_equipment_factor = 1
+	}
+}

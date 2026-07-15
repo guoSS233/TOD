@@ -1,0 +1,122 @@
+##### 极北编制，参考大明甲种/乙种步兵与骑行步兵编制 #####
+division_template = {
+	name = "极北甲种步兵师"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "极北乙种步兵师"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "极北省军步兵旅"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+	}
+}
+
+division_template = {
+	name = "极北骑行步兵师"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "极北甲种第1步兵师"
+		location = 1135
+		division_template = "极北甲种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "极北乙种第1步兵师"
+		location = 1135
+		division_template = "极北乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "极北乙种第2步兵师"
+		location = 3606
+		division_template = "极北乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "极北省军第1步兵旅"
+		location = 7869
+		division_template = "极北省军步兵旅"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "极北省军第2步兵旅"
+		location = 917
+		division_template = "极北省军步兵旅"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "极北骑行第1步兵师"
+		location = 10679
+		division_template = "极北骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "极北骑行第2步兵师"
+		location = 7891
+		division_template = "极北骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "极北骑行第3步兵师"
+		location = 1411
+		division_template = "极北骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+}

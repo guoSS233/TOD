@@ -1,0 +1,94 @@
+##### Division Templates #####
+division_template = {
+	name = "南方步兵师"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "南方国民警卫师"
+	regiments = {
+		militia = { x = 0 y = 0 }
+		militia = { x = 0 y = 1 }
+		militia = { x = 0 y = 2 }
+		militia = { x = 1 y = 0 }
+		militia = { x = 1 y = 1 }
+		militia = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "南方骑兵师"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "第一弗吉尼亚步兵师"
+		location = 788
+		division_template = "南方步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第二北卡罗来纳步兵师"
+		location = 1019
+		division_template = "南方步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第三南卡罗来纳步兵师"
+		location = 913
+		division_template = "南方步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第四佛罗里达步兵师"
+		location = 866
+		division_template = "南方步兵师"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第一南方国民警卫师"
+		location = 788
+		division_template = "南方国民警卫师"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第二南方国民警卫师"
+		location = 866
+		division_template = "南方国民警卫师"
+		start_experience_factor = 0.15
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "南方骑兵师"
+		location = 865
+		division_template = "南方骑兵师"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1
+	}
+}

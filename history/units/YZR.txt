@@ -74,11 +74,64 @@ division_template = {
 	}
 }
 
+division_template = {
+	name = "炎州甲种步兵师"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		artillery_brigade = { x = 3 y = 0 }
+	}
+	support = {
+		engineer = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "炎州乙种步兵师"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "炎州骑行步兵师"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 2 y = 0 }
+		cavalry = { x = 2 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		recon = { x = 0 y = 1 }
+	}
+}
+
 ###### OOB ######
 units = {
 	####### CONUS Theater #######
 	### 正规师 ###
-	division = {			
+	division = {
 		division_name = {
 			is_name_ordered = yes
 			name_order = 1
@@ -243,6 +296,27 @@ units = {
 		start_equipment_factor = 0.8
 
 	}
+	division = {
+		name = "炎州甲种第1步兵师"
+		location = 9671
+		division_template = "炎州甲种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "炎州乙种第1步兵师"
+		location = 9814
+		division_template = "炎州乙种步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
+	division = {
+		name = "炎州骑行第1步兵师"
+		location = 505
+		division_template = "炎州骑行步兵师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 1.0
+	}
 	}
 	
 air_wings = {
@@ -264,3 +338,4 @@ air_wings = {
 			amount = 18
 		}
 	}
+}

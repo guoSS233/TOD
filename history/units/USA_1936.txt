@@ -1,0 +1,151 @@
+##### Division Templates #####
+division_template = {
+	name = "美国步兵师"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "美国骑兵师"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+	support = {
+		recon = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "美国装甲师"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		motorized = { x = 2 y = 0 }
+		motorized = { x = 2 y = 1 }
+	}
+	support = {
+		mot_recon = { x = 0 y = 0 }
+		engineer = { x = 0 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "第一马里兰步兵师"
+		location = 3957
+		division_template = "美国步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第二俄亥俄步兵师"
+		location = 659
+		division_template = "美国步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第三纽约步兵师"
+		location = 859
+		division_template = "美国步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第四密歇根步兵师"
+		location = 691
+		division_template = "美国步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第五印第安纳步兵师"
+		location = 870
+		division_template = "美国步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第六安大略步兵师"
+		location = 722
+		division_template = "美国步兵师"
+		start_experience_factor = 0.35
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第一美国骑兵师"
+		location = 3957
+		division_template = "美国骑兵师"
+		start_experience_factor = 0.55
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第二美国骑兵师"
+		location = 859
+		division_template = "美国骑兵师"
+		start_experience_factor = 0.55
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第一美国装甲师"
+		location = 659
+		division_template = "美国装甲师"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.85
+	}
+	division = {
+		name = "第七美国步兵师"
+		location = 3957
+		division_template = "美国步兵师"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第八美国步兵师"
+		location = 659
+		division_template = "美国步兵师"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第九美国步兵师"
+		location = 691
+		division_template = "美国步兵师"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第十美国步兵师"
+		location = 870
+		division_template = "美国步兵师"
+		start_experience_factor = 0.25
+		start_equipment_factor = 1
+	}
+	division = {
+		name = "第三美国骑兵师"
+		location = 722
+		division_template = "美国骑兵师"
+		start_experience_factor = 0.45
+		start_equipment_factor = 1
+	}
+}
