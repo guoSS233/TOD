@@ -13,8 +13,14 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_marshall_inaugurated
-		USA = { set_country_flag = TOD_NA_marshall_inaugurated }
+		hidden_effect = {
+			set_global_flag = TOD_NA_marshall_inaugurated
+			USA = {
+				set_country_flag = TOD_NA_marshall_inaugurated
+				retire_country_leader = yes
+				promote_character = USA_George_Catlett_Marshall
+			}
+		}
 	}
 	
 	option = {
@@ -38,20 +44,22 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_new_orleans_crash
-		FRL = {
-			set_country_flag = TOD_NA_new_orleans_crash
-			add_stability = -0.15
-			add_political_power = -50
-			if = {
-				limit = { has_idea = FRL_economic_crisis }
-				swap_ideas = {
-					remove_idea = FRL_economic_crisis
-					add_idea = FRL_economic_crisis_1
+		hidden_effect = {
+			set_global_flag = TOD_NA_new_orleans_crash
+			FRL = {
+				set_country_flag = TOD_NA_new_orleans_crash
+				add_stability = -0.15
+				add_political_power = -50
+				if = {
+					limit = { has_idea = FRL_economic_crisis }
+					swap_ideas = {
+						remove_idea = FRL_economic_crisis
+						add_idea = FRL_economic_crisis_1
+					}
 				}
-			}
-			else = {
-				add_ideas = FRL_economic_crisis_1
+				else = {
+					add_ideas = FRL_economic_crisis_1
+				}
 			}
 		}
 	}
@@ -104,9 +112,11 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		random_list = {
-			50 = { news_event = { id = north_america.3 } }
-			50 = { news_event = { id = north_america.4 } }
+		hidden_effect = {
+			random_list = {
+				50 = { news_event = { id = north_america.3 } }
+				50 = { news_event = { id = north_america.4 } }
+			}
 		}
 	}
 	
@@ -124,11 +134,13 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_intervention_plan_failed
-		FRL = {
-			set_country_flag = TOD_NA_FRL_intervention_plan_failed
-			add_stability = -0.10
-			add_war_support = -0.05
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_intervention_plan_failed
+			FRL = {
+				set_country_flag = TOD_NA_FRL_intervention_plan_failed
+				add_stability = -0.10
+				add_war_support = -0.05
+			}
 		}
 	}
 	
@@ -153,11 +165,13 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_austerity_plan_failed
-		FRL = {
-			set_country_flag = TOD_NA_FRL_austerity_plan_failed
-			add_stability = -0.10
-			add_war_support = -0.05
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_austerity_plan_failed
+			FRL = {
+				set_country_flag = TOD_NA_FRL_austerity_plan_failed
+				add_stability = -0.10
+				add_war_support = -0.05
+			}
 		}
 	}
 	
@@ -182,11 +196,13 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_caretaker_government
-		FRL = {
-			set_country_flag = TOD_NA_FRL_caretaker_government
-			add_stability = -0.05
-			add_political_power = 25
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_caretaker_government
+			FRL = {
+				set_country_flag = TOD_NA_FRL_caretaker_government
+				add_stability = -0.05
+				add_political_power = 25
+			}
 		}
 	}
 	
@@ -211,29 +227,31 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_USA_controls_south
-		USA = {
-			set_country_flag = TOD_NA_USA_controls_south
-			add_political_power = 75
-			add_war_support = 0.05
-			if = {
-				limit = { country_exists = SMT }
-				annex_country = { target = SMT transfer_troops = yes }
+		hidden_effect = {
+			set_global_flag = TOD_NA_USA_controls_south
+			USA = {
+				set_country_flag = TOD_NA_USA_controls_south
+				add_political_power = 75
+				add_war_support = 0.05
+				if = {
+					limit = { country_exists = SMT }
+					annex_country = { target = SMT transfer_troops = yes }
+				}
+				add_state_core = 362
+				add_state_core = 363
+				add_state_core = 364
+				add_state_core = 365
+				add_state_core = 366
+				add_state_core = 368
+				add_state_core = 369
+				transfer_state = 908
+				add_state_core = 908
 			}
-			add_state_core = 362
-			add_state_core = 363
-			add_state_core = 364
-			add_state_core = 365
-			add_state_core = 366
-			add_state_core = 368
-			add_state_core = 369
-			transfer_state = 908
-			add_state_core = 908
-		}
-		FRL = {
-			set_country_flag = TOD_NA_miami_withdrawal
-			add_stability = -0.05
-			add_war_support = 0.05
+			FRL = {
+				set_country_flag = TOD_NA_miami_withdrawal
+				add_stability = -0.05
+				add_war_support = 0.05
+			}
 		}
 	}
 	
@@ -267,16 +285,18 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_integralist_coup_failed
-		FRL = {
-			set_country_flag = TOD_NA_FRL_integralist_coup_failed
-			add_stability = 0.03
-			add_popularity = {
-				ideology = national_corporatism
-				popularity = -0.03
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_integralist_coup_failed
+			FRL = {
+				set_country_flag = TOD_NA_FRL_integralist_coup_failed
+				add_stability = 0.03
+				add_popularity = {
+					ideology = national_corporatism
+					popularity = -0.03
+				}
 			}
+			UTA = { set_country_flag = TOD_NA_john_smith_fled_to_utah }
 		}
-		UTA = { set_country_flag = TOD_NA_john_smith_fled_to_utah }
 	}
 	
 	option = {
@@ -300,31 +320,33 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_people_front_wins
-		FRL = {
-			set_country_flag = TOD_NA_FRL_people_front_wins
-			retire_country_leader = yes
-			set_politics = {
-				ruling_party = social_democrat
-				elections_allowed = no
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_people_front_wins
+			FRL = {
+				set_country_flag = TOD_NA_FRL_people_front_wins
+				retire_country_leader = yes
+				set_politics = {
+					ruling_party = social_democrat
+					elections_allowed = no
+				}
+				set_popularities = {
+					national_corporatism = 1
+					sacred_revivalism = 1
+					leader_despotism = 2
+					authoritarian_oligarchy = 5
+					conservative_democracy = 12
+					liberal_democracy = 10
+					consociationalism = 7
+					social_democrat = 40
+					agroindustrial_socialism = 2
+					moderate_socialism = 0
+					council_socialism = 20
+					vanguard_socialism = 0
+				}
+				promote_character = FRL_Robert_La_Follette
+				add_political_power = 100
+				add_stability = 0.05
 			}
-			set_popularities = {
-				national_corporatism = 1
-				sacred_revivalism = 1
-				leader_despotism = 2
-				authoritarian_oligarchy = 5
-				conservative_democracy = 12
-				liberal_democracy = 10
-				consociationalism = 7
-				social_democrat = 40
-				agroindustrial_socialism = 2
-				moderate_socialism = 0
-				council_socialism = 20
-				vanguard_socialism = 0
-			}
-			promote_character = FRL_Robert_La_Follette
-			add_political_power = 100
-			add_stability = 0.05
 		}
 	}
 	
@@ -358,18 +380,20 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_atlantic_alliance_formed
-		ENG = {
-			create_faction = TOD_NA_ATLANTIC_ALLIANCE
-			add_to_faction = USA
-		}
-		USA = {
-			set_country_flag = TOD_NA_atlantic_alliance_formed
-			add_war_support = 0.05
-		}
-		ENG = {
-			set_country_flag = TOD_NA_atlantic_alliance_formed
-			add_war_support = 0.05
+		hidden_effect = {
+			set_global_flag = TOD_NA_atlantic_alliance_formed
+			ENG = {
+				create_faction = TOD_NA_ATLANTIC_ALLIANCE
+				add_to_faction = USA
+			}
+			USA = {
+				set_country_flag = TOD_NA_atlantic_alliance_formed
+				add_war_support = 0.05
+			}
+			ENG = {
+				set_country_flag = TOD_NA_atlantic_alliance_formed
+				add_war_support = 0.05
+			}
 		}
 	}
 	
@@ -384,10 +408,12 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		random_list = {
-			60 = { FRL = { news_event = { id = north_america.10 } } }
-			30 = { FRL = { news_event = { id = north_america.11 } } }
-			10 = { FRL = { news_event = { id = north_america.12 } } }
+		hidden_effect = {
+			random_list = {
+				60 = { FRL = { news_event = { id = north_america.10 } } }
+				30 = { FRL = { news_event = { id = north_america.11 } } }
+				10 = { FRL = { news_event = { id = north_america.12 } } }
+			}
 		}
 	}
 	
@@ -405,14 +431,16 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_france_alliance
-		FRL = {
-			set_country_flag = TOD_NA_FRL_france_alliance
-			add_war_support = 0.05
-		}
-		FRA = {
-			add_to_faction = FRL
-			set_country_flag = TOD_NA_FRL_france_alliance
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_france_alliance
+			FRL = {
+				set_country_flag = TOD_NA_FRL_france_alliance
+				add_war_support = 0.05
+			}
+			FRA = {
+				add_to_faction = FRL
+				set_country_flag = TOD_NA_FRL_france_alliance
+			}
 		}
 	}
 	
@@ -430,14 +458,36 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_germany_alliance
-		FRL = {
-			set_country_flag = TOD_NA_FRL_germany_alliance
-			add_war_support = 0.05
-		}
-		GER = {
-			add_to_faction = FRL
-			set_country_flag = TOD_NA_FRL_germany_alliance
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_germany_alliance
+			FRL = {
+				set_country_flag = TOD_NA_FRL_germany_alliance
+				retire_country_leader = yes
+				set_politics = {
+					ruling_party = council_socialism
+					elections_allowed = no
+				}
+				set_popularities = {
+					national_corporatism = 1
+					sacred_revivalism = 1
+					leader_despotism = 2
+					authoritarian_oligarchy = 5
+					conservative_democracy = 12
+					liberal_democracy = 10
+					consociationalism = 7
+					social_democrat = 20
+					agroindustrial_socialism = 2
+					moderate_socialism = 0
+					council_socialism = 40
+					vanguard_socialism = 0
+				}
+				promote_character = FRL_Alfred_Wagenknecht
+				add_war_support = 0.05
+			}
+			GER = {
+				add_to_faction = FRL
+				set_country_flag = TOD_NA_FRL_germany_alliance
+			}
 		}
 	}
 	
@@ -455,11 +505,13 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_FRL_independent_course
-		FRL = {
-			set_country_flag = TOD_NA_FRL_independent_course
-			add_war_support = 0.10
-			add_stability = -0.03
+		hidden_effect = {
+			set_global_flag = TOD_NA_FRL_independent_course
+			FRL = {
+				set_country_flag = TOD_NA_FRL_independent_course
+				add_war_support = 0.10
+				add_stability = -0.03
+			}
 		}
 	}
 	
@@ -474,12 +526,14 @@ country_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		if = {
-			limit = { has_global_flag = TOD_NA_FRL_independent_course }
-			FRL = { news_event = { id = north_america.13 } }
-		}
-		else = {
-			set_global_flag = TOD_NA_sixth_north_american_war_deferred
+		hidden_effect = {
+			if = {
+				limit = { has_global_flag = TOD_NA_FRL_independent_course }
+				FRL = { news_event = { id = north_america.13 } }
+			}
+			else = {
+				set_global_flag = TOD_NA_sixth_north_american_war_deferred
+			}
 		}
 	}
 	
@@ -497,17 +551,19 @@ news_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		set_global_flag = TOD_NA_sixth_north_american_war
-		FRL = {
-			set_country_flag = TOD_NA_sixth_north_american_war
-			add_war_support = 0.15
+		hidden_effect = {
+			set_global_flag = TOD_NA_sixth_north_american_war
+			FRL = {
+				set_country_flag = TOD_NA_sixth_north_american_war
+				add_war_support = 0.15
+			}
+			USA = {
+				set_country_flag = TOD_NA_sixth_north_american_war
+				declare_war_on = { target = FRL type = annex_everything }
+			}
+			UTA = { set_country_flag = TOD_NA_sixth_north_american_war }
+			CRF = { country_event = { id = north_america.50 days = 3 } }
 		}
-		USA = {
-			set_country_flag = TOD_NA_sixth_north_american_war
-			declare_war_on = { target = FRL type = annex_everything }
-		}
-		UTA = { set_country_flag = TOD_NA_sixth_north_american_war }
-		CRF = { country_event = { id = north_america.50 days = 3 } }
 	}
 	
 	option = {
@@ -549,13 +605,17 @@ country_event = {
 	option = {
 		name = north_america.50.a
 		ai_chance = { factor = 50 }
-		set_country_flag = TOD_NA_CRF_supports_FRL
-		add_war_support = 0.05
+		hidden_effect = {
+			set_country_flag = TOD_NA_CRF_supports_FRL
+			add_war_support = 0.05
+		}
 	}
 	option = {
 		name = north_america.50.b
 		ai_chance = { factor = 50 }
-		set_country_flag = TOD_NA_CRF_supports_USA
-		add_war_support = 0.05
+		hidden_effect = {
+			set_country_flag = TOD_NA_CRF_supports_USA
+			add_war_support = 0.05
+		}
 	}
 }
