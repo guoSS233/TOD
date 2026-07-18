@@ -197,28 +197,28 @@ peace_ai_desires = {
         ai_desire = -75
     }
 
-    # Countries the ai should be more unlikely to release in a peace deal
-    unlikely_countries = {
-        peace_action_type = liberate
-        enable = {
-            FROM = {
-                is_unlikely_country_tag = yes
-            }
-        }
-        ai_desire = -85  # 85 percent lower desire
-    }
+### 	# Countries the ai should be more unlikely to release in a peace deal
+### 	unlikely_countries = {
+### 		peace_action_type = liberate
+### 		enable = {
+### 			FROM = {
+### 				is_unlikely_country_tag = yes
+### 			}
+### 		}
+### 		ai_desire = -85  # 85 percent lower desire
+### 	}
 
 
-    # Countries the ai should be more unlikely to puppet in a peace deal
-    unlikely_countries = {
-        peace_action_type = puppet
-        enable = {
-            FROM = {
-                is_unlikely_country_tag = yes
-            }
-        }
-        ai_desire = -50  # 50 percent lower desire (slightly more keen to puppet than to liberate)
-    }
+### 	# Countries the ai should be more unlikely to puppet in a peace deal
+### 	unlikely_countries = {
+### 		peace_action_type = puppet
+### 		enable = {
+### 			FROM = {
+### 				is_unlikely_country_tag = yes
+### 			}
+### 		}
+### 		ai_desire = -50  # 50 percent lower desire (slightly more keen to puppet than to liberate)
+### 	}
 
 
     # Breakaway countries in the Soviet Civil war don't want to liberate stuff
@@ -648,20 +648,20 @@ peace_ai_desires = {
     }
 
 
-    dont_take_states_for_wrong_ideology_allies = {
-        peace_action_type = take_states
-        enable = {
-            ROOT = {
-                NOT = {
-                    tag = ROOT.FROM
-                }
-            }
-            ROOT.FROM = {
-                NOT = { has_same_ideology = yes }
-            }
-        }
-        ai_desire = -20
-    }
+### 	dont_take_states_for_wrong_ideology_allies = {
+### 		peace_action_type = take_states
+### 		enable = {
+### 			ROOT = {
+### 				NOT = {
+### 					tag = ROOT.FROM
+### 				}
+### 			}
+### 			ROOT.FROM = {
+### 				NOT = { has_same_ideology = yes }
+### 			}
+### 		}
+### 		ai_desire = -20
+### 	}
 
 
     fascism_take_states_germany_sov = {
@@ -897,25 +897,25 @@ peace_ai_desires = {
         ai_desire = 30
     }
 
-    dont_liberate_if_we_could_puppet_or_owner_is_our_ideology = {
-        peace_action_type = liberate
-        enable = {
-            ROOT.FROM.FROM.FROM = {
-                any_country_with_core = {
-                    OR = {
-                        pc_is_puppeted_by = ROOT
-                        pc_is_forced_government_by = ROOT
-                        AND = {
-                            country_exists = THIS #Ie - has provinces already and isn't a new creation
-                            has_same_ideology = yes
-                        }
-                        is_in_faction_with = ROOT
-                    }
-                }
-            }
-        }
-        ai_desire = -30
-    }
+### 	dont_liberate_if_we_could_puppet_or_owner_is_our_ideology = {
+### 		peace_action_type = liberate
+### 		enable = {
+### 			ROOT.FROM.FROM.FROM = {
+### 				any_country_with_core = {
+### 					OR = {
+### 						pc_is_puppeted_by = ROOT
+### 						pc_is_forced_government_by = ROOT
+### 						AND = {
+### 							country_exists = THIS #Ie - has provinces already and isn't a new creation
+### 							has_same_ideology = yes
+### 						}
+### 						is_in_faction_with = ROOT
+### 					}
+### 				}
+### 			}
+### 		}
+### 		ai_desire = -30
+### 	}
 
     dont_do_other_things_if_we_should_liberate = {
         peace_action_type = { take_states puppet force_government }

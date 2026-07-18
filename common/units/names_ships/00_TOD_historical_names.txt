@@ -1,0 +1,301 @@
+##### SUPPLEMENTAL HISTORICAL SHIP NAMES #####
+### This file provides fallback _HISTORICAL name groups for countries ###
+### whose base-game ship name files may not be inherited properly. ###
+
+### ENGLAND ###
+ENG_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	prefix = "HMS "
+	fallback_name = "Destroyer %d"
+	unique = { "Gallant" "Garland" "Gipsy" "Glowworm" "Grafton" "Grenade" "Grenville" "Greyhound" "Griffin" "Hardy" "Hasty" "Havock" "Hereward" "Hero" "Hostile" "Hotspur" "Hunter" "Hyperion" "Jervis" "Jackal" "Jaguar" "Kelly" "Laforey" "Lance" "Lively" "Onslow" "Offa" "Onslaught" "Saumarez" "Savage" "Scorpion" "Scourge" "Amazon" "Ambuscade" "Acasta" "Achates" "Ardent" "Duncan" "Daring" }
+}
+ENG_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	prefix = "HMS "
+	fallback_name = "Light Cruiser %d"
+	unique = { "Amphion" "Apollo" "Penelope" "Aurora" "Southampton" "Birmingham" "Glasgow" "Newcastle" "Sheffield" "Gloucester" "Liverpool" "Manchester" "Edinburgh" "Belfast" "Fiji" "Kenya" "Nigeria" "Mauritius" "Trinidad" "Gambia" "Jamaica" "Bermuda" "Ceylon" "Newfoundland" "Uganda" "Swiftsure" "Minotaur" "Superb" "Danae" "Dauntless" "Dragon" "Delhi" "Emerald" "Enterprise" }
+}
+ENG_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	prefix = "HMS "
+	fallback_name = "Heavy Cruiser %d"
+	unique = { "Hawkins" "Frobisher" "Effingham" "Cumberland" "Berwick" "Cornwall" "Suffolk" "Kent" "London" "Devonshire" "Shropshire" "Sussex" "Norfolk" "Dorsetshire" "York" "Exeter" }
+}
+ENG_MINELAYERS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_MINELAYERS
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser ship_hull_light destroyer }
+	prefix = "HMS "
+	fallback_name = "Miner %d"
+	unique = { "Plover" "Abdiel" "Latona" "Manxman" "Welshman" "Apollo" "Ariadne" "Adventure" "Linnet" "Redstart" "Ringdove" }
+}
+ENG_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	prefix = "HMS "
+	fallback_name = "Battleship %d"
+	unique = { "King George V" "Prince of Wales" "Duke of York" "Anson" "Howe" "Lion" "Temeraire" "Conqueror" "Thunderer" "Vanguard" "Queen Elizabeth" "Warspite" "Valiant" "Barham" "Malaya" "Revenge" "Resolution" "Royal Oak" "Royal Sovereign" "Ramillies" "Nelson" "Rodney" }
+}
+ENG_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	prefix = "HMS "
+	fallback_name = "Battlecruiser %d"
+	unique = { "Anson" "Howe" "Resistance" "Incomparable" "Invincible" "Inflexible" "Indomitable" "Indefatigable" "Princess Royal" "Queen Mary" "Tiger" "Renown" "Repulse" "Courageous" "Glorious" "Furious" "Hood" }
+}
+ENG_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	prefix = "HMS "
+	fallback_name = "Carrier %d"
+	unique = { "Ark Royal" "Illustrious" "Formidable" "Victorious" "Indomitable" "Implacable" "Indefatigable" "Audacious" "Malta" "Gibraltar" "Africa" "Glorious" "Courageous" "Furious" "Eagle" "Centaur" "Albion" "Bulwark" "Leviathan" }
+}
+ENG_CVL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CVL
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	prefix = "HMS "
+	fallback_name = "Carrier %d"
+	unique = { "Unicorn" "Colossus" "Venerable" "Vengeance" "Glory" "Pioneer" "Ocean" "Perseus" "Theseus" "Triumph" "Warrior" "Magnificent" "Powerful" "Terrible" "Majestic" "Hercules" "Leviathan" "Argus" "Hermes" }
+}
+ENG_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+	for_countries = { ENG }
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	prefix = "HMS "
+	fallback_name = "Submarine %d"
+	unique = { "Swordfish" "Sturgeon" "Seahorse" "Starfish" "Thames" "Severn" "Clyde" "Sealion" "Shark" "Snapper" "Salmon" "Seawolf" "Spearfish" "Sunfish" "Sterlet" "Porpoise" "Grampus" "Narwhal" "Rorqual" "Cachalot" "Seal" "Triton" "Undine" "Unity" "Ursula" "Taku" "Tarpon" "Thistle" "Tigris" }
+}
+
+### FINLAND ###
+FIN_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+	for_countries = { FIN }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	fallback_name = "Hävittäjä %d"
+	unique = { "Hämeenmaa" "Matti Kurki" "Uusimaa" "Karjala" "Turunmaa" "Sisu" "Hurja" "Isku" "Syöksy" "Nuoli" "Vinha" "Raju" "Vasama" "Vihuri" "Viima" }
+}
+FIN_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+	for_countries = { FIN }
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	fallback_name = "Kevyt Risteilijä %d"
+	unique = { "Joukahainen" "Tapio" "Lemminkäinen" "Helsinki" "Rauma" "Turku" "Kemi" "Maarianhamina" "Vaasa" "Viipuri" "Kotka" "Oulu" "Väinämöinen" "Ilmarinen" }
+}
+FIN_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+	for_countries = { FIN }
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	fallback_name = "Taistelulaiva %d"
+	unique = { "Uusimaa" "Karjala" "Pohjanmaa" "Rauma" "Turku" "Viipuri" "Pietarsaari" "Vaasa" "Oulu" "Aura" "Kemi" "Tampere" }
+}
+FIN_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+	for_countries = { FIN }
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	fallback_name = "Sukellusvene %d"
+	unique = { "Vetehinen" "Vesihiisi" "Iku-Turso" "Vesikko" }
+}
+
+### GERMANY ###
+GER_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+	for_countries = { GER }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	fallback_name = "Z %d"
+	ordered = {
+		1 = {"Z1 Leberecht Maass"} 2 = {"Z2 Georg Thiele"} 3 = {"Z3 Max Schultz"} 4 = {"Z4 Richard Beitzen"} 5 = {"Z5 Paul Jacobi"} 6 = {"Z6 Theodor Riedel"} 7 = {"Z7 Hermann Schoemann"} 8 = {"Z8 Bruno Heinemann"} 9 = {"Z9 Wolfgang Zenker"} 10 = {"Z10 Hans Lody"} 11 = {"Z11 Bernd von Arnim"} 12 = {"Z12 Erich Giese"} 13 = {"Z13 Erich Koellner"} 14 = {"Z14 Friedrich Ihn"} 15 = {"Z15 Erich Steinbrinck"} 16 = {"Z16 Friedrich Eckholdt"} 17 = {"Z17 Diether von Roeder"} 18 = {"Z18 Hans Lüdemann"} 19 = {"Z19 Hermann Kühne"} 20 = {"Z20 Karl Galster"} 21 = {"Z21 Wilhelm Heidkamp"} 22 = {"Z22 Anton Schmidt"}
+	}
+}
+GER_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+	for_countries = { GER }
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	fallback_name = "Leichter Kreuzer %d"
+	ordered = { 1 = {"Emden"} 2 = {"Königsberg"} 3 = {"Karlsruhe"} 4 = {"Köln"} 5 = {"Leipzig"} 6 = {"Nürnberg"} 7 = {"München"} 8 = {"Berlin"} 9 = {"Hamburg"} 10 = {"Stuttgart"} }
+}
+GER_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+	for_countries = { GER }
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	fallback_name = "Schwerer Kreuzer %d"
+	ordered = { 1 = {"Admiral Hipper"} 2 = {"Blücher"} 3 = {"Prinz Eugen"} 4 = {"Seydlitz"} 5 = {"Lützow"} 6 = {"Admiral Scheer"} 7 = {"Roon"} 8 = {"York"} }
+}
+GER_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+	for_countries = { GER }
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	fallback_name = "Schlachtschiff %d"
+	ordered = { 1 = {"Scharnhorst"} 2 = {"Gneisenau"} 3 = {"Bismarck"} 4 = {"Tirpitz"} 5 = {"Hutten"} 6 = {"Berlichingen"} }
+}
+GER_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+	for_countries = { GER }
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	fallback_name = "Schlachtkreuzer %d"
+	ordered = { 3 = {"Württemberg"} 4 = {"Sachsen"} 5 = {"Baden"} 6 = {"Bayern"} 7 = {"Thüringen"} 8 = {"Kurhessen"} 9 = {"Hannover"} 10 = {"Brandenburg"} 11 = {"Preussen"} }
+}
+GER_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+	for_countries = { GER }
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	fallback_name = "Träger %d"
+	ordered = { 1 = {"Graf Zeppelin"} 2 = {"Strasser"} 3 = {"Parseval"} 4 = {"Lehmann"} 5 = {"Fritzsche"} }
+}
+GER_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+	for_countries = { GER }
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	fallback_name = "U-%d"
+	ordered = { 27 = {"U-27"} }
+}
+
+### ITALY ###
+ITA_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+	for_countries = { ITA }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	prefix = "RCT "
+	fallback_name = "Cacciatorpediniere %d"
+	unique = { "Spica" "Astore" "Perseo" "Sirio" "Sagittario" "Vega" "Aldebaran" "Andromeda" "Altair" "Climene" "Centauro" "Castore" "Cigno" "Alfredo Oriani" "Vittorio Alfieri" "Giosuè Carducci" "Vincenzo Gioberti" "Camicia Nera" "Alpino" "Artigliere" "Ascari" "Aviere" "Bersagliere" "Carabiniere" "Corazziere" "Fuciliere" "Geniere" "Granatiere" "Lanciere" }
+}
+ITA_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+	for_countries = { ITA }
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	prefix = "RI "
+	fallback_name = "Incrociatore leggero %d"
+	unique = { "Emanuele Filiberto Duca d'Aosta" "Eugenio di Savoia" "Duca degli Abruzzi" "Giuseppe Garibaldi" "Attilio Regolo" "Scipione Africano" "Giulio Germanico" "Pompeo Magno" "Alberto da Giussano" "Alberico da Barbiano" "Bartolomeo Colleoni" "Giovanni dalle Bande Nere" "Luigi Cadorna" "Armando Diaz" "Raimondo Montecuccoli" "Muzio Attendolo" }
+}
+ITA_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+	for_countries = { ITA }
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	prefix = "RI "
+	fallback_name = "Incrociatore pesante %d"
+	unique = { "Trento" "Trieste" "Zara" "Fiume" "Gorizia" "Pola" "Bolzano" "San Giorgio" }
+}
+ITA_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+	for_countries = { ITA }
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	prefix = "RN "
+	fallback_name = "Corazzata %d"
+	unique = { "Conte di Cavour" "Giulio Cesare" "Littorio" "Vittorio Veneto" "Roma" "Caio Duilio" "Andrea Doria" "Impero" "Dante Alighieri" "Regina Elena" "Vittorio Emanuele" }
+}
+ITA_CV_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CARRIERS
+	for_countries = { ITA }
+	type = ship
+	ship_types = { ship_hull_carrier carrier }
+	prefix = "RN "
+	fallback_name = "Portaerei %d"
+	unique = { "Aquila" "Sparviero" "Falco" "Nibbio" "Grifone" "Astore" "Europa" "Giuseppe Miraglia" }
+}
+ITA_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+	for_countries = { ITA }
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	prefix = "RSmg "
+	fallback_name = "Sommergibile %d"
+	unique = { "Glauco" "Otaria" "Pietro Calvi" "Giuseppe Finzi" "Enrico Tazzoli" "Argo" "Velella" "Ambra" "Berillo" "Corallo" "Diaspro" "Gemma" "Iride" "Malachite" "Onice" "Perla" "Turchese" "Adua" "Alagi" "Marcello" "Dandolo" "Veniero" "Barbarigo" "Emo" "Morosini" }
+}
+
+### SWEDEN ###
+SWE_DD_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+	for_countries = { SWE }
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+	prefix = "HMS "
+	fallback_name = "Jagare %d"
+	unique = { "Göteborg" "Stockholm" "Malmö" "Karlskrona" "Gävle" "Norrköping" "Visby" "Sundsvall" "Hälsingborg" "Kalmar" "Mode" "Magne" "Mjölner" "Munin" "Öland" "Uppland" "Halland" "Småland" "Wrangel" "Wachtmeister" }
+}
+SWE_CL_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CL
+	for_countries = { SWE }
+	type = ship
+	ship_types = { ship_hull_cruiser light_cruiser }
+	prefix = "HMS "
+	fallback_name = "Lätt Kryssare %d"
+	unique = { "Gotland" "Fylgia" "Klas Horn" "Klas Uggla" "Psilander" "Göta Lejon" "Tre Kronor" "Klas Fleming" "Kalmar" "Västervik" "Gävle" "Malmö" "Halmstad" "Karlskrona" "Sundsvall" }
+}
+SWE_CA_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_CA
+	for_countries = { SWE }
+	type = ship
+	ship_types = { ship_hull_cruiser heavy_cruiser }
+	prefix = "HMS "
+	fallback_name = "Tung Kryssare %d"
+	unique = { "Dristigheten" "Sverige" "Drottning Victoria" "Gustav V" "Äran" "Tapperheten" "Wasa" "Manligheten" "Oscar II" "Klas Fleming" "Hans Wachtmeister" "Tre Kronor" "Älvsnabben" "Starkodder" "Styrbiörn" "Gotland" "Svealand" "Götaland" "Norrland" }
+}
+SWE_BB_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BB
+	for_countries = { SWE }
+	type = ship
+	ship_types = { ship_hull_heavy battleship }
+	prefix = "HMS "
+	fallback_name = "Slagskepp %d"
+	unique = { "Stockholm" "Karl XIV Johann" "Gustav II Adolf" "Karl XII" "Karl XI" "Gustav III" }
+}
+SWE_BC_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_BC
+	for_countries = { SWE }
+	type = ship
+	ship_types = { ship_hull_heavy battle_cruiser }
+	prefix = "HMS "
+	fallback_name = "Stridsskepp %d"
+	unique = { "Gustav II Adolf" "Karl XII" "Karl XI" "Gustav III" "Gustav Vasa" }
+}
+SWE_SS_HISTORICAL = {
+	name = NAME_THEME_HISTORICAL_SUBMARINES
+	for_countries = { SWE }
+	type = ship
+	ship_types = { ship_hull_submarine submarine }
+	prefix = "HMS "
+	fallback_name = "Ubåt %d"
+	unique = { "Hajen" "Sälen" "Valrossen" "Bävern" "Illern" "Uttern" "Valen" "Draken" "Gripen" "Ulven" "Delfinen" "Nordkaparen" "Springaren" "Sjölejonet" "Sjöbjörnen" "Sjöhunden" }
+}
+
+SWE_BB_MYTHOLOGY = {
+	name = NAME_THEME_MYTHOLOGY
+	for_countries = { SWE }
+	type = ship
+	prefix = "HMS "
+	fallback_name = "Slagskepp %d"
+	unique = { "Oden" "Thor" "Niord" "Svea" "Göta" "Thule" "Ragnar" "Sigurd" "Vidar" "Hugin" "Munin" "Mode" "Magne" "Mjölner" "Asgard" "Midgard" "Valhalla" "Yggdrasil" "Bifrost" "Fenrir" "Jormungandr" "Heimdall" "Balder" "Frej" "Freja" "Loke" }
+}

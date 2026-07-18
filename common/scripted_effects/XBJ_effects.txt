@@ -635,17 +635,7 @@ XBJ_update_backward_region = {
             }
             has_idea = XBJ_Backward_Region_1
         }
-        add_ideas = {
-            id = XBJ_Backward_Region_1
-            modifier = {
-                research_speed_factor = -0.1
-                production_factory_efficiency_gain_factor = -0.1
-                production_factory_max_efficiency_factor = -0.1
-                production_speed_buildings_factor = -0.1
-                local_resources_factor = -0.1
-                industry_repair_factor = -0.1
-            }
-        }
+	        add_ideas = XBJ_Backward_Region_1
     }
     else_if = {
         limit = {
@@ -656,30 +646,6 @@ XBJ_update_backward_region = {
             }
             has_idea = XBJ_Backward_Region_1
         }
-        add_ideas = {
-            id = XBJ_Backward_Region_1
-            modifier = {
-                research_speed_factor = -0.15
-                production_factory_efficiency_gain_factor = -0.15
-                production_factory_max_efficiency_factor = -0.15
-                production_speed_buildings_factor = -0.15
-                local_resources_factor = -0.15
-                industry_repair_factor = -0.15
-            }
-        }
-    }
-    else_if = {
-        limit = {
-            check_variable = {
-                var = XBJ_shequn_jinbudu
-                value = 15
-                compare = greater_than_or_equals
-            }
-            has_idea = XBJ_Backward_Region_1
-        }
-        add_idea = {
-            id = XBJ_Backward_Region_1
-
-        }
-    }
+	        add_ideas = XBJ_Backward_Region_1
+	    }
 }

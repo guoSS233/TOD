@@ -15,9 +15,17 @@ HUN_guojiagongzuojihuajueyi = {
 }
 
 HUN_jiejueshaominwentijueyi = {
-    icon = gre_faction_management
-	allowed = {
-		tag = HUN 
+	    icon = gre_faction_management
+		allowed = {
+			tag = HUN 
+		}
+		visible = { has_completed_focus = HUN_bubujuebu }
 	}
-	visible = { has_completed_focus = HUN_bubujuebu }
-}
+
+	HUN_fazhanchanye = {
+	    icon = gre_faction_management
+		allowed = {
+			tag = HUN 
+		}
+		visible = { has_completed_focus = HUN_fazhandangdichanye }
+	}

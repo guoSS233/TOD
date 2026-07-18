@@ -1,19 +1,18 @@
-﻿
+
 focus_tree = {
 	id = Italian_focus
 	
 	country = {
 		factor = 0
-		if = {
-			limit = {
+		modifier = {
+				add = 100
+			
+		limit = {
 				tag = ITA
 				has_civil_war = yes	
 				leader_despotism > 0.5	
 			}
-			modifier = {
-				add = 100
-			}
-		}
+	}
 	}
 	
 	default = no

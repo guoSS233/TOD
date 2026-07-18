@@ -1,0 +1,16 @@
+### FRL state triggers ###
+
+is_mainland_america = {
+	is_on_continent = north_america
+	NOT = { is_considered_island_state = yes }
+}
+
+is_metropolis_state = {
+	OR = {
+		state_population > 2000000
+		AND = {
+			has_building = industrial_complex
+			industrial_complex > 2
+		}
+	}
+}

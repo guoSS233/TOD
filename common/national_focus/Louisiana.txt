@@ -64,7 +64,6 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_conservative_win"
 			add_political_power = 100
-			remove_ideas = 
 			add_popularity = {
 				ideology = conservative_democracy
 				popularity = 0.20
@@ -145,8 +144,8 @@ focus_tree = {
 	focus = {
 		id = FRL_consociationalism_get_their_place
 		icon = GFX_focus_generic_treaty
-		available = {
-			POL_king_karol = yes
+		### available = {
+		### 		POL_king_karol = yes
 		}
 		prerequisite = {
 			focus = FRL_what_how
@@ -570,7 +569,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_victory_in_the_civil_war"
 			if = {
-				limit = { has_government = paternal_autocrat }
+				limit = { has_government = authoritarian_oligarchy }
 				country_event = { id = ustates.116 days = 1 }
 			}
 			else = {
@@ -622,9 +621,9 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_restore_legitimacy"
 			add_political_power = 100
 			add_stability = 0.10
-			increase_ruling_party_popularity_by_5 = yes
-		}
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
+				### add_popularity = { ideology = ruling amount = 5 }
+			}
+			search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY }
 	}
 
 	focus = {# Bill of Rights
@@ -642,11 +641,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_bill_of_rights"
-			FRL_increase_recovery = yes
+				FRL_increase_recovery = yes
+			}
 		}
-	}
-
-	focus = {# American Values
+	
+		focus = {# American Values
 		id = FRL_american_values1
 		icon = GFX_goal_generic_positive_trade_relations_gold
 		cost = 6
@@ -683,8 +682,8 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_defend_democracy"
-			FRL_increase_recovery = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_defend_democracy"
+				FRL_increase_recovery = yes
 		}
 	}
 
@@ -705,8 +704,8 @@ focus_tree = {
 			factor = 100
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_land_of_the_free"
-			FRL_increase_recovery = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_land_of_the_free"
+				FRL_increase_recovery = yes
 		}
 	}
 
@@ -793,8 +792,8 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_for_the_people"
 			add_political_power = 100
-			set_temp_variable = { ideology_change_var = 0.08 }
-			change_ruling_party_popularity = yes
+				set_temp_variable = { ideology_change_var = 0.08 }
+				### add_popularity = { ideology = ruling amount = 10 }
 		}
 	}
 
@@ -838,8 +837,8 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_ensure_political_stability"
-			FRL_increase_recovery = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_ensure_political_stability"
+				FRL_increase_recovery = yes
 		}
 	}
 
@@ -881,8 +880,8 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_civil_liberties"
-			increase_ruling_party_popularity_by_5 = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_civil_liberties"
+				### add_popularity = { ideology = ruling amount = 5 }
 			add_war_support = 0.05
 		}
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT }
@@ -998,12 +997,12 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_business_subsidies"
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
-					industrial_complex > 0
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+industrial_complex > 0
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1012,12 +1011,12 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
-					industrial_complex > 0
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+industrial_complex > 0
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1026,12 +1025,12 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
-					industrial_complex > 0
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+industrial_complex > 0
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1118,8 +1117,8 @@ focus_tree = {
 			factor = 40
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_american_industry"
-			FRL_decrease_economic_depression = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_american_industry"
+				FRL_decrease_economic_depression = yes
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1140,11 +1139,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_economic_investments"
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1153,11 +1152,11 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1166,11 +1165,11 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = industrial_complex size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -1199,12 +1198,12 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_maritime_industry"
 			random_owned_controlled_state = {
 				prioritize = { 362 }
-				limit = {
-					is_mainland_america = yes
-					is_coastal = yes
-					free_building_slots = { building = dockyard size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					is_coastal = yes
+free_building_slots = { building = dockyard size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -1214,12 +1213,12 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 359 }
-				limit = {
-					is_mainland_america = yes
-					is_coastal = yes
-					free_building_slots = { building = dockyard size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					is_coastal = yes
+free_building_slots = { building = dockyard size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -1229,12 +1228,12 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 360 }
-				limit = {
-					is_mainland_america = yes
-					is_coastal = yes
-					free_building_slots = { building = dockyard size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					is_coastal = yes
+free_building_slots = { building = dockyard size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -1244,12 +1243,12 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 375 }
-				limit = {
-					is_mainland_america = yes
-					is_coastal = yes
-					free_building_slots = { building = dockyard size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					is_coastal = yes
+free_building_slots = { building = dockyard size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -1259,12 +1258,12 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 833 }
-				limit = {
-					is_mainland_america = yes
-					is_coastal = yes
-					free_building_slots = { building = dockyard size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					is_coastal = yes
+free_building_slots = { building = dockyard size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -1293,11 +1292,11 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_aviation_industry"
 			random_owned_controlled_state = {
 				prioritize = { 384 }
-				limit = {
-					is_mainland_america = yes
-					air_base < 10
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					air_base < 10
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = air_base
@@ -1307,11 +1306,11 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 381 }
-				limit = {
-					is_mainland_america = yes
-					air_base < 10
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					air_base < 10
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = air_base
@@ -1321,11 +1320,11 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 362 }
-				limit = {
-					is_mainland_america = yes
-					air_base < 10
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					air_base < 10
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = air_base
@@ -1335,11 +1334,11 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 363 }
-				limit = {
-					is_mainland_america = yes
-					air_base < 10
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					air_base < 10
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = air_base
@@ -1349,11 +1348,11 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 375 }
-				limit = {
-					is_mainland_america = yes
-					air_base < 10
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					air_base < 10
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = air_base
@@ -1363,11 +1362,11 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 833 }
-				limit = {
-					is_mainland_america = yes
-					air_base < 10
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					air_base < 10
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = air_base
@@ -1377,11 +1376,11 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 374 }
-				limit = {
-					is_mainland_america = yes
-					air_base < 10
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					air_base < 10
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = air_base
@@ -1446,10 +1445,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_rebuild_railroads"
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1457,10 +1456,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1468,10 +1467,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1479,10 +1478,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1490,10 +1489,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1520,10 +1519,10 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_rebuild_the_roads"
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1531,10 +1530,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1542,10 +1541,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1553,10 +1552,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1564,10 +1563,10 @@ focus_tree = {
 				}
 			}
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = infrastructure size > 0 }
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = infrastructure size > 0 }
+}
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -1645,8 +1644,8 @@ focus_tree = {
 			factor = 40
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_farming_subsidies"
-			FRL_decrease_economic_depression = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_farming_subsidies"
+				FRL_decrease_economic_depression = yes
 		}
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 	}
@@ -1736,8 +1735,8 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_loyal_officers"
-			FRL_increase_recovery = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_loyal_officers"
+				FRL_increase_recovery = yes
 		}
 	}
 
@@ -1755,8 +1754,8 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_the_american_legion"
-			FRL_increase_recovery = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_the_american_legion"
+				FRL_increase_recovery = yes
 		}
 	}
 
@@ -1814,8 +1813,8 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_americanism"
-			FRL_increase_recovery = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_americanism"
+				FRL_increase_recovery = yes
 		}
 	}
 
@@ -1924,9 +1923,9 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_control_congress"
-			add_political_power = 100
-			increase_ruling_party_popularity_by_5 = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_control_congress"
+				add_political_power = 100
+				### add_popularity = { ideology = ruling amount = 5 }
 		}
 		search_filters = { FOCUS_FILTER_POLITICAL }
 	}
@@ -1951,8 +1950,8 @@ focus_tree = {
 			factor = 50
 		}
 		completion_reward = {
-			log = "[GetDateText]: [Root.GetName]: Focus FRL_loyalty_to_macarthur"
-			FRL_increase_recovery = yes
+				log = "[GetDateText]: [Root.GetName]: Focus FRL_loyalty_to_macarthur"
+				FRL_increase_recovery = yes
 		}
 	}
 
@@ -2252,11 +2251,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_defense_contractors"
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = arms_factory size > 0 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = arms_factory size > 0 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = arms_factory
@@ -2721,8 +2720,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_gi_bill"
-			add_ideas = FRL_gi_bill_idea
-			increase_ruling_party_popularity_by_5 = yes
+				add_ideas = FRL_gi_bill_idea
+				### add_popularity = { ideology = ruling amount = 5 }
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
 	}
@@ -2746,11 +2745,11 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_fighter_development"
-			add_tech_bonus = {
-				name = FRL_fighter_development
-				bonus = 1
-				uses = 1
-				category = fighter_techs
+			### 	add_tech_bonus = {
+			### 		name = FRL_fighter_development
+			### 		bonus = 1
+			### 		uses = 1
+			### 		category = fighter_techs
 			}
 		}
 		search_filters = { FOCUS_FILTER_RESEARCH }
@@ -3498,11 +3497,11 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_new_tank_assemblies"
 			random_owned_controlled_state = {
-				limit = {
-					is_mainland_america = yes
-					free_building_slots = { building = arms_factory size > 1 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+free_building_slots = { building = arms_factory size > 1 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -3948,8 +3947,8 @@ focus_tree = {
 				name = FRL_grand_navy
 				bonus = 0.5
 				uses = 2
-				category = ca_tech
-				category = cl_tech
+					category = ca_tech
+					### category = cl_tech
 			}
 			add_doctrine_cost_reduction = {
 				name = FRL_grand_navy
@@ -3989,11 +3988,11 @@ focus_tree = {
 			navy_experience = 25
 			if = {
 				limit = { has_dlc = "Man the Guns" }
-				add_tech_bonus = {
-					name = FRL_battleships
-					bonus = 0.5
-					uses = 2
-					category = cat_gunnery
+				### 	add_tech_bonus = {
+				### 		name = FRL_battleships
+				### 		bonus = 0.5
+				### 		uses = 2
+				### 		category = cat_gunnery
 				}
 			}
 			add_tech_bonus = {
@@ -4214,12 +4213,12 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus FRL_expand_dockyards"
 			random_owned_controlled_state = {
 				prioritize = { 361 }
-				limit = {
-					is_mainland_america = yes
-					is_coastal = yes
-					free_building_slots = { building = dockyard size > 1 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					is_coastal = yes
+free_building_slots = { building = dockyard size > 1 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -4229,12 +4228,12 @@ focus_tree = {
 			}
 			random_owned_controlled_state = {
 				prioritize = { 362 }
-				limit = {
-					is_mainland_america = yes
-					is_coastal = yes
-					free_building_slots = { building = dockyard size > 1 include_locked = yes }
-					is_metropolis_state = no
-				}
+### 				limit = {
+is_mainland_america = yes
+### 					is_coastal = yes
+free_building_slots = { building = dockyard size > 1 include_locked = yes }
+is_metropolis_state = no
+}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = dockyard
@@ -4274,11 +4273,11 @@ focus_tree = {
 			navy_experience = 10
 			if = {
 				limit = { has_dlc = "Man the Guns" }
-				add_tech_bonus = {
-					name = FRL_submarines
-					bonus = 0.5
-					uses = 2
-					category = cat_torpedo
+				### 	add_tech_bonus = {
+				### 		name = FRL_submarines
+				### 		bonus = 0.5
+				### 		uses = 2
+				### 		category = cat_torpedo
 				}
 				add_tech_bonus = {
 					name = FRL_submarines
@@ -4327,12 +4326,12 @@ focus_tree = {
 			navy_experience = 20
 			if = {
 				limit = { has_dlc = "Man the Guns" }
-				add_tech_bonus = {
-					name = FRL_battle_cruisers
-					bonus = 0.5
-					uses = 2
-					category = cat_gunnery
-					category = cat_targeting
+				### 	add_tech_bonus = {
+				### 		name = FRL_battle_cruisers
+				### 		bonus = 0.5
+				### 		uses = 2
+				### 		category = cat_gunnery
+				### 		category = cat_targeting
 				}
 				add_tech_bonus = {
 					name = FRL_battle_cruisers
@@ -4388,19 +4387,19 @@ focus_tree = {
 					category = asw_tech
 					category = cat_anti_air
 				}
-				add_tech_bonus = {
-					name = FRL_light_cruisers
-					bonus = 0.75
-					uses = 1
-					category = cl_tech
+				### 	add_tech_bonus = {
+				### 		name = FRL_light_cruisers
+				### 		bonus = 0.75
+				### 		uses = 1
+				### 		category = cl_tech
 				}
 			}
 			else = {
-				add_tech_bonus = {
-					name = FRL_light_cruisers
-					bonus = 1
-					uses = 1
-					category = cl_tech
+				### 	add_tech_bonus = {
+				### 		name = FRL_light_cruisers
+				### 		bonus = 1
+				### 		uses = 1
+				### 		category = cl_tech
 				}
 			}
 		}
@@ -4499,12 +4498,11 @@ focus_tree = {
 			show_unit_leaders_tooltip = FRL_charles_maynard_cooke_jr
 			show_unit_leaders_tooltip = FRL_alfred_melville_pride
 			show_unit_leaders_tooltip = FRL_daniel_edward_barbey
-			hidden_effect = {
-				XXA = {
-					FRL_charles_maynard_cooke_jr = { set_nationality = ROOT }
-					FRL_alfred_melville_pride = { set_nationality = ROOT }
-					FRL_daniel_edward_barbey = { set_nationality = ROOT }
-				}
+			### 	hidden_effect = {
+			### 			FRL_charles_maynard_cooke_jr = { set_nationality = ROOT }
+			### 			FRL_alfred_melville_pride = { set_nationality = ROOT }
+			### 			FRL_daniel_edward_barbey = { set_nationality = ROOT }
+			}
 			}
 		}
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY_BONUS }
@@ -4745,7 +4743,6 @@ focus_tree = {
 		}
 		search_filters = { FOCUS_FILTER_NAVY_XP FOCUS_FILTER_NAVY_BONUS }
 	}
-}
 
 ### 路易斯安那国策树 - 自由政治线 ###
 focus_tree = {

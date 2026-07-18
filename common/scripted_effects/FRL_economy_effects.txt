@@ -1,0 +1,29 @@
+### FRL economic recovery scripted effects ###
+
+FRL_increase_recovery = {
+	if = {
+		limit = { has_idea = FRL_economic_crisis_1 }
+		swap_ideas = {
+			remove_idea = FRL_economic_crisis_1
+			add_idea = FRL_economic_crisis
+		}
+	}
+	else_if = {
+		limit = { has_idea = FRL_economic_crisis }
+		remove_ideas = FRL_economic_crisis
+	}
+}
+
+FRL_decrease_economic_depression = {
+	if = {
+		limit = { has_idea = FRL_economic_crisis }
+		remove_ideas = FRL_economic_crisis
+	}
+	else_if = {
+		limit = { has_idea = FRL_economic_crisis_1 }
+		swap_ideas = {
+			remove_idea = FRL_economic_crisis_1
+			add_idea = FRL_economic_crisis
+		}
+	}
+}

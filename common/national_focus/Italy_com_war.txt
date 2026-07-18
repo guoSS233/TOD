@@ -1,17 +1,15 @@
-﻿
+
 focus_tree = {
 	id = Italian_focus
 	
 	country = {
 		factor = 0
-		if = {
+		modifier = {
+			add = 100
 			limit = {
 				tag = ITA
-				has_civil_war = yes	
-				vanguard_socialism > 0.5	
-			}
-			modifier = {
-				add = 100
+				has_civil_war = yes
+				vanguard_socialism > 0.5
 			}
 		}
 	}

@@ -331,4 +331,78 @@ ideologies = {
 		ai_neutral = yes
 		can_be_boosted = no
 	}
+
+	# VANILLA COMPATIBILITY - hidden ideologies for drift/acceptance modifiers
+	democratic = {
+		types = {
+			democratic_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_DEMOCRATIC_1"
+			"FACTION_NAME_DEMOCRATIC_2"
+		}
+		color = { 0 100 200 }
+		rules = {
+			can_force_government = no
+			can_puppet = no
+			can_join_factions = no
+			can_send_volunteers = no
+		}
+		ai_neutral = yes
+		can_be_boosted = no
+	}
+	fascism = {
+		types = {
+			fascism_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_FASCISM_1"
+			"FACTION_NAME_FASCISM_2"
+		}
+		color = { 80 40 20 }
+		rules = {
+			can_force_government = no
+			can_puppet = no
+			can_join_factions = no
+			can_send_volunteers = no
+		}
+		ai_neutral = yes
+		can_be_boosted = no
+	}
+	communism = {
+		types = {
+			communism_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_COMMUNISM_1"
+			"FACTION_NAME_COMMUNISM_2"
+		}
+		color = { 200 0 0 }
+		rules = {
+			can_force_government = no
+			can_puppet = no
+			can_join_factions = no
+			can_send_volunteers = no
+		}
+		ai_neutral = yes
+		can_be_boosted = no
+	}
+	neutrality = {
+		types = {
+			neutrality_subtype = {}
+		}
+		dynamic_faction_names = {
+			"FACTION_NAME_NEUTRALITY_1"
+			"FACTION_NAME_NEUTRALITY_2"
+		}
+		color = { 180 180 180 }
+		rules = {
+			can_force_government = no
+			can_puppet = no
+			can_join_factions = no
+			can_send_volunteers = no
+		}
+		ai_neutral = yes
+		can_be_boosted = no
+	}
 }

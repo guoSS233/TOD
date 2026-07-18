@@ -420,29 +420,32 @@ HUN_jiejueshaominwentijueyi = {
 		available = { has_equipment = { infantry_equipment > 1499 }  }
 		remove_effect = { load_oob = "HUN_moerduowa"}
         cost = 50
-		days_remove =  60
-	}
-	#发展当地产业
-	HUN_fazhandangdichanye = {
-		icon = ger_military_buildup
-		visible = {
-			any_owned_state = { has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng} }
-			any_owned_state = { is_core_of = HUN }
-			has_completed_focus = HUN_fazhandangdichanye
+			days_remove =  60
 		}
-        cost = 100
-		modifier = {civilian_factory_use = 10}
-		days_remove =  60
-		days_re_enable = 30
-		complete_effect = {
-			random_owned_controlled_state = {
-				limit = {has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng}}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
+	}
+	#发展产业
+	HUN_fazhanchanye = {
+		#发展当地产业
+		HUN_fazhandangdichanye = {
+			icon = ger_military_buildup
+			visible = {
+				any_owned_state = { has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng} }
+				any_owned_state = { is_core_of = HUN }
+				has_completed_focus = HUN_fazhandangdichanye
+			}
+	        cost = 100
+			modifier = {civilian_factory_use = 10}
+			days_remove =  60
+			days_re_enable = 30
+			complete_effect = {
+				random_owned_controlled_state = {
+					limit = {has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng}}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
 			}
 		}
 	}
-}

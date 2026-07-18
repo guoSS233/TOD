@@ -261,44 +261,44 @@ leader_traits = {
 		parent = organizer
 	}
 
-	offensive_doctrine = {
-		type = field_marshal
-		gain_xp = {
-			always = no # not gainable
-		}
-		cost = 1000
-		field_marshal_modifier = {
-			org_loss_when_moving = -0.30
-		}
-
-		attack_skill = 1
-
-		ai_will_do = {
-			factor = 1
-		}
-		trait_type = assignable_trait
-		mutually_exclusive = defensive_doctrine
-		gui_row = 5
-
-	}
-
-	defensive_doctrine = {
-		type = field_marshal
-		gain_xp = {
-			always = no # not gainable
-		}
-		cost = 1000
-		field_marshal_modifier = {
-			max_dig_in_factor = 0.30
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-		trait_type = assignable_trait
-		mutually_exclusive = offensive_doctrine
-		gui_row = 6
-	}
+###	offensive_doctrine = {
+###		type = field_marshal
+###		gain_xp = {
+###			always = no # not gainable
+###		}
+###		cost = 1000
+###		field_marshal_modifier = {
+###			org_loss_when_moving = -0.30
+###		}
+###
+###		attack_skill = 1
+###
+###		ai_will_do = {
+###			factor = 1
+###		}
+###		trait_type = assignable_trait
+###		mutually_exclusive = defensive_doctrine
+###		gui_row = 5
+###
+###	}
+###
+###	defensive_doctrine = {
+###		type = field_marshal
+###		gain_xp = {
+###			always = no # not gainable
+###		}
+###		cost = 1000
+###		field_marshal_modifier = {
+###			max_dig_in_factor = 0.30
+###		}
+###
+###		ai_will_do = {
+###			factor = 1
+###		}
+###		trait_type = assignable_trait
+###		mutually_exclusive = offensive_doctrine
+###		gui_row = 6
+###	}
 
 	fast_planner = {
 		type = field_marshal
