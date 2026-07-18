@@ -135,6 +135,7 @@ MNG_release_GPS = {#明释放GPS
 
 
 		MNG = {
+			GPS = { transfer_technology = yes }
 			set_country_flag = forget_north_east
 
 			#if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
@@ -213,6 +214,7 @@ GPS_release_SRC = {#GPS释放SRC
 
 		GPS = {
 			#if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
+			SRC = { transfer_technology = yes }
 			#		limit = { has_template = "Loyalist Militia" }
 			#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
 			#	}
@@ -294,6 +296,7 @@ MNG_release_SRC = {#MNG释放SRC
 		MNG = {
 			#if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
 			#		limit = { has_template = "Loyalist Militia" }
+			SRC = { transfer_technology = yes }
 			#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
 			#	}
 			#if = {#增加oob用
@@ -382,6 +385,7 @@ MNG_release_XIN = {#MNG释放XIN西南军
 			#if = {#删除某种模板部队用，会一起删除模板，同理可增加oob
 			#		limit = { has_template = "Loyalist Militia" }
 			#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
+			XIN = { transfer_technology = yes }
 			#	}
 			#if = {#增加oob用
 			#		limit = {
@@ -468,6 +472,7 @@ MNG_release_MOB = {#MNG释放MOB岭北都司
 			#		limit = { has_template = "Loyalist Militia" }
 			#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
 			#	}
+			MOB = { transfer_technology = yes }
 			#if = {#增加oob用
 			#		limit = {
 			#			OR = {
@@ -555,6 +560,7 @@ MNG_release_ROC = {#MNG释放ROC大同党
 			#		delete_unit_template_and_units = { division_template = "Loyalist Militia" }
 			#	}
 			#if = {#增加oob用
+			ROC = { transfer_technology = yes }
 			#		limit = {
 			#			OR = {
 			#				has_country_flag =
@@ -644,6 +650,7 @@ MNG_release_STG = {#MNG释放STG顺天政府
 			#	}
 
 		}
+			STG = { transfer_technology = yes }
 
 		#########从下开始为不需要tag即可运行的部分#########
 		every_owned_state = {#转移州控制权
