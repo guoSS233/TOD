@@ -1,0 +1,529 @@
+# Vanilla compatibility effects ported from ITA_scripted_effects.txt.
+
+ITA_add_advanced_heavy_tank_templates = {
+	#P43 (Heavy Tank)
+	create_equipment_variant = {
+		name = "P43"
+		type = heavy_tank_chassis_3
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon_2
+			turret_type_slot = tank_heavy_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 8
+			tank_nsb_armor_upgrade = 10
+		}
+		icon = "GFX_ITA_advanced_heavy_tank_medium"
+	}
+}
+
+ITA_add_advanced_medium_tank_templates = {
+	#SEMOVENTE da 75/46 (Medium AT)
+	create_equipment_variant = {
+		name = "Semovente da 75/46"
+		type = medium_tank_destroyer_chassis_3
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 7
+		}
+		icon = "GFX_ITA_advanced_medium_art_medium"
+	}
+
+	#SEMOVENTE DA 149/40 (Medium SPG)
+	create_equipment_variant = {
+		name = "Semovente da 149/40"
+		type = medium_tank_artillery_chassis_3
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_howitzer
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 5
+			tank_nsb_armor_upgrade = 1
+		}
+		icon = "GFX_ITA_improved_heavy_art_medium"
+	}
+
+	#M16/43 Sahariano (Medium Tank)
+	create_equipment_variant = {
+		name = "M16/43"
+		type = medium_tank_chassis_3
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_cannon
+			turret_type_slot = tank_medium_two_man_tank_turret
+			suspension_type_slot = tank_torsion_bar_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 6
+			tank_nsb_armor_upgrade = 3
+		}
+		icon = "GFX_ITA_improved_medium_tank_medium"
+		model = ITA_medium_armor_1_entity
+	}
+}
+
+ITA_add_basic_light_flamethrower_template = {
+	if = {
+		limit = {
+			has_dlc = "Gotterdammerung"
+		}
+		create_equipment_variant = {
+			name = "L3 Lf"
+			type = light_tank_flame_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 1
+				tank_nsb_armor_upgrade = 1
+			}
+			icon = "GFX_ITA_light_flame_tank_medium"
+			model = ITA_light_flame_tank_entity
+		}
+	}
+	else = {
+		create_equipment_variant = {
+			name = "L3 Lf"
+			type = light_tank_flame_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = flamethrower
+				turret_type_slot = tank_light_fixed_superstructure_turret
+				suspension_type_slot = tank_bogie_suspension
+				armor_type_slot = tank_riveted_armor
+				engine_type_slot = tank_gasoline_engine
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 1
+				tank_nsb_armor_upgrade = 1
+			}
+			icon = "GFX_ITA_basic_light_tank_medium"
+		}
+	}
+}
+
+ITA_add_hand_of_god_sh_tank_template_and_production = {
+	#SH template
+	create_equipment_variant = {
+		name = "The Hand of God"
+		type = super_heavy_tank_artillery_chassis_1
+		parent_version = 0
+		modules = {
+			turret_type_slot = tank_super_heavy_three_man_tank_turret
+			main_armament_slot = tank_rocket_launcher_2
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = armor_skirts
+			special_type_slot_2 = secondary_turret_small_cannon
+			special_type_slot_3 = secondary_turret_small_cannon
+			special_type_slot_4 = extra_ammo_storage
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 10
+			tank_nsb_armor_upgrade = 6
+		}
+		icon = "GFX_ITA_super_heavy_tank_medium"
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = super_heavy_tank_artillery_chassis_1
+			creator = "ITA"
+			version_name = "The Hand of God"
+		}
+
+		requested_factories = 1
+		progress = 0.6
+		efficiency = 50
+	}
+}
+
+ITA_add_il_duce_sh_tank_template_and_production = {
+	#SH template
+	create_equipment_variant = {
+		name = "Il Duce"
+		type = super_heavy_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_super_heavy_cannon
+			turret_type_slot = tank_super_heavy_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = armor_skirts
+			special_type_slot_2 = secondary_turret_small_cannon
+			special_type_slot_3 = secondary_turret_small_cannon
+			special_type_slot_4 = tank_radio_2
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 16
+			tank_nsb_armor_upgrade = 6
+		}
+		icon = "GFX_ITA_super_heavy_tank_medium"
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = super_heavy_tank_chassis_1
+			creator = "ITA"
+			version_name = "Il Duce"
+		}
+
+		requested_factories = 1
+		progress = 0.6
+		efficiency = 50
+	}
+}
+
+ITA_add_improved_heavy_tank_templates = {
+	#P26/40 (Heavy tank)
+	create_equipment_variant = {
+		name = "P26/40"
+		type = heavy_tank_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_heavy_cannon
+			turret_type_slot = tank_heavy_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 6
+			tank_nsb_armor_upgrade = 6
+		}
+		icon = "GFX_ITA_improved_heavy_tank_medium"
+	}
+}
+
+ITA_add_improved_light_tank_templates = {
+	#L6/40
+	create_equipment_variant = {
+		name = "L6/40"
+		type = light_tank_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_auto_cannon
+			turret_type_slot = tank_light_one_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 4
+		}
+		icon = "GFX_ITA_improved_light_tank_medium"
+	}
+
+	#L40 da 47/32
+	create_equipment_variant = {
+		name = "Semovente L40 da 47/32"
+		type = light_tank_destroyer_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_cannon
+			turret_type_slot = tank_light_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 2
+			tank_nsb_armor_upgrade = 4
+		}
+	}
+}
+
+ITA_add_improved_medium_tank_templates = {
+	#M14/41
+	create_equipment_variant = {
+		name = "M14/41"
+		type = medium_tank_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_cannon
+			turret_type_slot = tank_medium_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_diesel_engine
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 3
+			tank_nsb_armor_upgrade = 3
+		}
+		icon = "GFX_ITA_basic_medium_tank_medium"
+	}
+	#M15/42
+	create_equipment_variant = {
+		name = "M15/42"
+		type = medium_tank_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_cannon_2
+			turret_type_slot = tank_medium_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = additional_machine_guns
+			special_type_slot_2 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 5
+		}
+		icon = "GFX_ITA_basic_medium_tank_medium"
+	}
+
+	#SEMOVENTE da 75/34 (SPG-AT)
+	create_equipment_variant = {
+		name = "Semovente da 75/34"
+		type = medium_tank_destroyer_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_high_velocity_cannon
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 4
+		}
+		icon = "GFX_ITA_improved_medium_td_medium"
+	}
+
+	#SEMOVENTE da 105/25 (SPG)
+	create_equipment_variant = {
+		name = "Semovente da 105/25"
+		type = medium_tank_artillery_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_medium_howitzer_2
+			turret_type_slot = tank_medium_fixed_superstructure_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = tank_radio_1
+			special_type_slot_2 = additional_machine_guns
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 6
+		}
+		icon = "GFX_ITA_advanced_medium_art_medium"
+	}
+
+	#SEMOVENTE da 20/70 Quadruplo (AA)
+	create_equipment_variant = {
+		name = "Semovente da 20/70 Quadruplo"
+		type = medium_tank_aa_chassis_2
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_anti_air_cannon
+			turret_type_slot = tank_medium_two_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_riveted_armor
+			engine_type_slot = tank_gasoline_engine
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 4
+			tank_nsb_armor_upgrade = 4
+		}
+		icon = "GFX_ITA_advanced_medium_spaa_medium"
+	}
+}
+
+ITA_add_king_vittorio_emanuele_back_as_idea = { #After having removed him
+	if = {
+		limit = {
+			has_completed_focus = ITA_the_new_emperor_of_ethiopia
+			ITA_vittorio_emanuele_iii = { has_character_flag = ITA_king_of_albania_flag }
+		}
+		add_ideas = vittorio_emanuele_albania_ethiopia
+
+	}
+	else_if = {
+		limit = {
+			ITA_vittorio_emanuele_iii = { has_character_flag = ITA_king_of_albania_flag }
+		}
+		add_ideas = vittorio_emanuele_king_of_albania
+	}
+	else_if = {
+		limit = {
+			has_completed_focus = ITA_the_new_emperor_of_ethiopia
+		}
+		add_ideas = vittorio_emanuele_emperor_of_ethiopia
+	}
+	else = {
+		add_ideas = vittorio_emanuele
+	}
+	if = {
+		limit = {
+			has_country_flag = ITA_deposed_the_king
+		}
+		clr_country_flag = ITA_deposed_the_king
+	}
+}
+
+ITA_add_modern_musculus_sh_tank_template_and_production = {
+	#SH template
+	create_equipment_variant = {
+		name = "Cataphract Mortis"
+		type = super_heavy_tank_chassis_1
+		parent_version = 0
+		modules = {
+			main_armament_slot = tank_super_heavy_cannon
+			turret_type_slot = tank_super_heavy_three_man_tank_turret
+			suspension_type_slot = tank_bogie_suspension
+			armor_type_slot = tank_welded_armor
+			engine_type_slot = tank_gasoline_engine
+			special_type_slot_1 = armor_skirts
+			special_type_slot_2 = secondary_turret_small_cannon
+			special_type_slot_3 = additional_machine_guns
+			special_type_slot_4 = wet_ammo_storage
+		}
+		upgrades = {
+			tank_nsb_engine_upgrade = 16
+			tank_nsb_armor_upgrade = 12
+		}
+		icon = "GFX_ITA_super_heavy_tank_medium"
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = super_heavy_tank_chassis_1
+			creator = "ITA"
+			version_name = "Caesar"
+		}
+
+		requested_factories = 1
+		progress = 0.6
+		efficiency = 50
+	}
+}
+
+ITA_grand_council = {
+		set_character_flag = ITA_cw_character_fascist_side_flag
+	}
+
+ITA_promote_umberto_to_country_leader = {
+	if = {
+		limit = {
+			ITA_prince_umberto = {
+				can_be_country_leader = yes
+			}
+		}
+		if = {
+			limit = {
+				ITA_prince_umberto = {
+					has_ideology_group = neutrality
+				}
+			}
+			ITA_prince_umberto = { promote_character = { ideology = despotism } }
+		}
+		else_if = {
+			limit = {
+				ITA_prince_umberto = {
+					has_ideology_group = democratic
+				}
+			}
+			ITA_prince_umberto = { promote_character = { ideology = conservatism } }
+		}
+	}
+	else_if = {
+		limit = {
+			has_completed_focus = ITA_democratic_king
+		}
+		add_country_leader_role = {
+			character =  ITA_prince_umberto
+			promote_leader = yes
+			country_leader = {
+				ideology = conservatism
+				traits = { inexperienced_monarch eager_commander }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+		}
+		add_country_leader_role = { #Add the Non-Aligned role too, but without promoting
+			character =  ITA_prince_umberto
+			country_leader = {
+				ideology = despotism
+				traits = { inexperienced_monarch eager_commander }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+		}
+		set_character_name = {
+			character = ITA_prince_umberto
+			name = ITA_prince_umberto_king
+		}
+		#BoP
+		set_power_balance = {
+			id = ITA_power_balance
+			right_side = ITA_king_umberto_side
+		}
+	}
+	else = {
+		add_country_leader_role = {
+			character =  ITA_prince_umberto
+			promote_leader = yes
+			country_leader = {
+				ideology = despotism
+				traits = { inexperienced_monarch eager_commander }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+		}
+		set_character_name = {
+			character = ITA_prince_umberto
+			name = ITA_prince_umberto_king
+		}
+		#BoP
+		set_power_balance = {
+			id = ITA_power_balance
+			right_side = ITA_king_umberto_side
+		}
+
+	}
+
+	if = {
+		limit = {
+			has_character = ITA_vittorio_emanuele_iii
+		}
+		retire_character = ITA_vittorio_emanuele_iii
+	}
+}

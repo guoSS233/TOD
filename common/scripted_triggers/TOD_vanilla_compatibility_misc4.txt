@@ -1,0 +1,20 @@
+# Vanilla compatibility definitions ported from NORDIC_scripted_triggers.txt.
+
+NORDIC_basic_joint_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = NORDIC_is_joint_focus_member_TT
+		is_in_faction = yes  
+		OR = {
+			has_country_flag = NORDIC_council_leader
+			has_country_flag = NORDIC_union_leader
+			has_country_flag = NORDIC_league_leader
+			AND = {
+				has_variable = global.NORDIC_alliance_leader
+				NORDIC_is_nordic = yes
+				is_subject = no  
+				is_in_faction_with = var:global.NORDIC_alliance_leader 
+			}	
+		}
+	}
+	
+}

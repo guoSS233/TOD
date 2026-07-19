@@ -1,0 +1,474 @@
+# Vanilla compatibility effects ported from JAP_scripted_effects.txt.
+
+JAP_big_army_faction_gain = {
+	if = {
+		limit = {
+			check_variable = { JAP_army_faction_influence_level < JAP_tier_4_minimum_limit }
+		}
+		if = { #Army WILL level up
+			limit = {
+				JAP_army_faction_is_tier_1 = yes
+			}
+			custom_effect_tooltip = JAP_big_army_faction_gain_tt
+			JAP_army_faction_goes_up_from_tier_1_to_tier_2 = yes
+		}
+		else_if = {
+			limit = {
+				JAP_army_faction_is_tier_2 = yes
+			}
+			if = { #Army WON'T level up
+				limit = {
+					check_variable = { JAP_army_faction_influence_level < JAP_tier_2_to_tier_3_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_army_faction_gain_tt
+			}
+			else = { #Army WILL level up
+
+				custom_effect_tooltip = JAP_big_army_faction_gain_tt
+				JAP_army_faction_goes_up_from_tier_2_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				JAP_army_faction_is_tier_3 = yes
+			}
+			if = { #Army WON'T level up
+				limit = {
+					check_variable = { JAP_army_faction_influence_level < JAP_tier_3_to_tier_4_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_army_faction_gain_tt
+			}
+			else = { #Army WILL level up
+				custom_effect_tooltip = JAP_big_army_faction_gain_tt
+				JAP_army_faction_goes_up_from_tier_3_to_tier_4 = yes
+			}
+		}
+		add_to_variable = { JAP_army_faction_influence_level = JAP_big_influence_point }
+	}
+}
+
+JAP_big_army_faction_loss = {
+	if = {
+		limit = {
+			check_variable = { JAP_army_faction_influence_level > JAP_tier_1_gate }
+		}
+		if = {
+			limit = {
+				JAP_army_faction_is_tier_4 = yes
+			}
+			if = { #Army WON'T level down
+				limit = {
+					check_variable = { JAP_army_faction_influence_level > JAP_maximum_faction_level_check }
+				}
+				custom_effect_tooltip = JAP_big_army_faction_loss_tt
+			}
+			else = { #Army WILL level down
+				custom_effect_tooltip = JAP_big_army_faction_loss_tt
+				JAP_army_faction_goes_down_from_tier_4_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				JAP_army_faction_is_tier_3 = yes
+			}
+			if = { #Army WON'T level down
+				limit = {
+					check_variable = { JAP_army_faction_influence_level > JAP_tier_3_to_tier_2_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_army_faction_loss_tt
+			}
+			else = { #Army WILL level down
+				custom_effect_tooltip = JAP_big_army_faction_loss_tt
+				JAP_army_faction_goes_down_from_tier_3_to_tier_2 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				JAP_army_faction_is_tier_2 = yes
+			}
+			if = { #Army WON'T level down
+				limit = {
+					check_variable = { JAP_army_faction_influence_level > JAP_tier_2_to_tier_1_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_army_faction_loss_tt
+			}
+			else = { #Army WILL level down
+				custom_effect_tooltip = JAP_big_army_faction_loss_tt
+				JAP_army_faction_goes_down_from_tier_2_to_tier_1 = yes
+			}
+		}
+		else = { #Army Faction is already at rock bottom and can't go lower than this
+			custom_effect_tooltip = JAP_big_army_faction_loss_tt
+		}
+		subtract_from_variable = { JAP_army_faction_influence_level = JAP_big_influence_point }
+	}
+	else_if = { #Army Faction is already at rock bottom and can't go lower than this
+		limit = {
+			check_variable = { JAP_army_faction_influence_level > JAP_tier_1_minimum_limit }
+		}
+		custom_effect_tooltip = JAP_small_army_faction_loss_tt
+		subtract_from_variable = { JAP_army_faction_influence_level = JAP_small_influence_point }
+	}
+}
+
+JAP_big_government_faction_gain = {
+	if = {
+		limit = {
+			check_variable = { JAP_government_faction_influence_level < JAP_tier_4_minimum_limit }
+		}
+		if = {
+			limit = {
+				has_idea = JAP_government_faction_tier_1
+			}
+			if = { #Government WON'T level up
+				limit = {
+					check_variable = { JAP_government_faction_influence_level < JAP_tier_1_to_tier_2_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_government_faction_gain_tt
+			}
+			else = { #Government WILL level up
+				custom_effect_tooltip = JAP_big_government_faction_gain_tt
+				JAP_government_faction_goes_up_from_tier_1_to_tier_2 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_government_faction_tier_2
+			}
+			if = { #Government WON'T level up
+				limit = {
+					check_variable = { JAP_government_faction_influence_level < JAP_tier_2_to_tier_3_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_government_faction_gain_tt
+			}
+			else = { #Government WILL level up
+				custom_effect_tooltip = JAP_big_government_faction_gain_tt
+
+				JAP_government_faction_goes_up_from_tier_2_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_government_faction_tier_3
+			}
+			if = { #Government WON'T level up
+				limit = {
+					check_variable = { JAP_government_faction_influence_level < JAP_tier_3_to_tier_4_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_government_faction_gain_tt
+			}
+			else = { #Government WILL level up
+				custom_effect_tooltip = JAP_big_government_faction_gain_tt
+				
+				JAP_government_faction_goes_up_from_tier_3_to_tier_4 = yes
+			}
+		}
+		add_to_variable = { JAP_government_faction_influence_level = JAP_big_influence_point }
+	}
+}
+
+JAP_big_government_faction_loss = {
+	if = {
+		limit = {
+			check_variable = { JAP_government_faction_influence_level > JAP_minimum_faction_level  }
+		}
+		if = {
+			limit = {
+				has_idea = JAP_government_faction_tier_4
+			}
+			if = { #Government WON'T level down
+				limit = {
+					check_variable = { JAP_government_faction_influence_level > JAP_maximum_faction_level_check  }
+				}
+				custom_effect_tooltip = JAP_big_government_faction_loss_tt
+			}
+			else = { #Government WILL level down
+				custom_effect_tooltip = JAP_big_government_faction_loss_tt
+
+				JAP_government_faction_goes_down_from_tier_4_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_government_faction_tier_3
+			}
+			if = { #Government WON'T level down
+				limit = {
+					check_variable = { JAP_government_faction_influence_level > JAP_tier_3_to_tier_2_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_government_faction_loss_tt
+			}
+			else = { #Government WILL level down
+				custom_effect_tooltip = JAP_big_government_faction_loss_tt
+				
+				JAP_government_faction_goes_down_from_tier_3_to_tier_2 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_government_faction_tier_2
+			}
+			if = { #Government WON'T level down
+				limit = {
+					check_variable = { JAP_government_faction_influence_level > JAP_tier_2_to_tier_1_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_government_faction_loss_tt
+			}
+			else = { #Government WILL level down
+				custom_effect_tooltip = JAP_big_government_faction_loss_tt
+				
+
+				JAP_government_faction_goes_down_from_tier_2_to_tier_1 = yes
+			}
+		}
+		else = { #Government Faction is already at rock bottom and can't go lower than this
+			custom_effect_tooltip = JAP_big_government_faction_loss_tt
+		}
+		subtract_from_variable = { JAP_government_faction_influence_level = JAP_big_influence_point }
+	}
+	else_if = { #Government Faction is already at rock bottom and can't go lower than this
+		limit = {
+			check_variable = { JAP_government_faction_influence_level > JAP_tier_1_minimum_limit }
+		}
+		custom_effect_tooltip = JAP_small_government_faction_loss_tt
+		subtract_from_variable = { JAP_government_faction_influence_level = JAP_small_influence_point }
+	}
+}
+
+JAP_big_naval_faction_gain = {
+	if = {
+		limit = {
+			check_variable = { JAP_naval_faction_influence_level < JAP_tier_4_minimum_limit }
+		}
+		if = { #Navy WILL level up
+			limit = {
+				JAP_naval_faction_is_tier_1 = yes
+			}
+			custom_effect_tooltip = JAP_big_naval_faction_gain_tt
+			JAP_naval_faction_goes_up_from_tier_1_to_tier_2 = yes
+		}
+		else_if = {
+			limit = {
+				JAP_naval_faction_is_tier_2 = yes
+			}
+			if = { #Navy WON'T level up
+				limit = {
+					check_variable = { JAP_naval_faction_influence_level < JAP_tier_2_to_tier_3_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_naval_faction_gain_tt
+			}
+			else = { #Navy WILL level up
+				custom_effect_tooltip = JAP_big_naval_faction_gain_tt
+
+				JAP_naval_faction_goes_up_from_tier_2_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				JAP_naval_faction_is_tier_3 = yes
+			}
+			if = { #Navy WON'T level up
+				limit = {
+					check_variable = { JAP_naval_faction_influence_level < JAP_tier_3_to_tier_4_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_naval_faction_gain_tt
+			}
+			else = { #Navy WILL level up
+				custom_effect_tooltip = JAP_big_naval_faction_gain_tt
+				JAP_naval_faction_goes_up_from_tier_3_to_tier_4 = yes
+			}
+		}
+		add_to_variable = { JAP_naval_faction_influence_level = JAP_big_influence_point }
+	}
+}
+
+JAP_big_naval_faction_loss = {
+	if = {
+		limit = {
+			check_variable = { JAP_naval_faction_influence_level > JAP_tier_1_gate }
+		}
+		if = {
+			limit = {
+				JAP_naval_faction_is_tier_4 = yes
+			}
+			if = { #Navy WON'T level down
+				limit = {
+					check_variable = { JAP_naval_faction_influence_level > JAP_maximum_faction_level_check }
+				}
+				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
+			}
+			else = { #Navy WILL level down
+				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
+
+				JAP_naval_faction_goes_down_from_tier_4_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				JAP_naval_faction_is_tier_3 = yes
+			}
+			if = { #Navy WON'T level down
+				limit = {
+					check_variable = { JAP_naval_faction_influence_level > JAP_tier_3_to_tier_2_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
+			}
+			else = { #Navy WILL level down
+				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
+				
+				JAP_naval_faction_goes_down_from_tier_3_to_tier_2 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				JAP_naval_faction_is_tier_2 = yes
+			}
+			if = { #Navy WON'T level down
+				limit = {
+					check_variable = { JAP_naval_faction_influence_level > JAP_tier_2_to_tier_1_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
+			}
+			else = { #Navy WILL level down
+				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
+				
+				JAP_naval_faction_goes_down_from_tier_2_to_tier_1 = yes
+			}
+		}
+		else = { #Navy Faction is already at rock bottom and can't go lower than this
+			custom_effect_tooltip = JAP_big_naval_faction_loss_tt
+		}
+		subtract_from_variable = { JAP_naval_faction_influence_level = JAP_big_influence_point }
+	}
+	else_if = { #Navy Faction is already at rock bottom and can't go lower than this
+		limit = {
+			check_variable = { JAP_naval_faction_influence_level > JAP_tier_1_minimum_limit }
+		}
+		custom_effect_tooltip = JAP_small_naval_faction_loss_tt
+		subtract_from_variable = { JAP_naval_faction_influence_level = JAP_small_influence_point }
+	}
+}
+
+JAP_big_zaibatsu_faction_gain = {
+	if = {
+		limit = {
+			check_variable = { JAP_zaibatsu_faction_influence_level < JAP_tier_4_minimum_limit }
+		}
+		if = {
+			limit = {
+				has_idea = JAP_zaibatsu_faction_tier_1
+			}
+			if = { #Zaibatsu WON'T level up
+				limit = {
+					check_variable = { JAP_zaibatsu_faction_influence_level < JAP_tier_1_to_tier_2_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
+			}
+			else = { #Zaibatsu WILL level up
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
+
+				JAP_zaibatsu_faction_goes_up_from_tier_1_to_tier_2 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_zaibatsu_faction_tier_2
+			}
+			if = { #Zaibatsu WON'T level up
+				limit = {
+					check_variable = { JAP_zaibatsu_faction_influence_level < JAP_tier_2_to_tier_3_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
+			}
+			else = { #Zaibatsu WILL level up
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
+
+				JAP_zaibatsu_faction_goes_up_from_tier_2_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_zaibatsu_faction_tier_3
+			}
+			if = { #Zaibatsu WON'T level up
+				limit = {
+					check_variable = { JAP_zaibatsu_faction_influence_level < JAP_tier_3_to_tier_4_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
+			}
+			else = { #Zaibatsu WILL level up
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
+				
+				JAP_zaibatsu_faction_goes_up_from_tier_3_to_tier_4 = yes
+			}
+		}
+		add_to_variable = { JAP_zaibatsu_faction_influence_level = JAP_big_influence_point }
+	}
+}
+
+JAP_big_zaibatsu_faction_loss = {
+	if = {
+		limit = {
+			check_variable = { JAP_zaibatsu_faction_influence_level > JAP_minimum_faction_level  }
+		}
+		if = {
+			limit = {
+				has_idea = JAP_zaibatsu_faction_tier_4
+			}
+			if = { #Zaibatsu WON'T level down
+				limit = {
+					check_variable = { JAP_zaibatsu_faction_influence_level > JAP_maximum_faction_level_check  }
+				}
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
+			}
+			else = { #Zaibatsu WILL level down
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
+
+				JAP_zaibatsu_faction_goes_down_from_tier_4_to_tier_3 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_zaibatsu_faction_tier_3
+			}
+			if = { #Zaibatsu WON'T level down
+				limit = {
+					check_variable = { JAP_zaibatsu_faction_influence_level > JAP_tier_3_to_tier_2_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
+			}
+			else = { #Zaibatsu WILL level down
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
+				
+				JAP_zaibatsu_faction_goes_down_from_tier_3_to_tier_2 = yes
+			}
+		}
+		else_if = {
+			limit = {
+				has_idea = JAP_zaibatsu_faction_tier_2
+			}
+			if = { #Zaibatsu WON'T level down
+				limit = {
+					check_variable = { JAP_zaibatsu_faction_influence_level > JAP_tier_2_to_tier_1_big_gate }
+				}
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
+			}
+			else = { #Zaibatsu WILL level down
+				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
+				
+				JAP_zaibatsu_faction_goes_down_from_tier_2_to_tier_1 = yes
+			}
+		}
+		else = { #Zaibatsu Faction is already at rock bottom and can't go lower than this
+			custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
+		}
+		subtract_from_variable = { JAP_zaibatsu_faction_influence_level = JAP_big_influence_point }
+	}
+	else_if = { #Zaibatsu Faction is already at rock bottom and can't go lower than this
+		limit = {
+			check_variable = { JAP_zaibatsu_faction_influence_level > JAP_tier_1_minimum_limit }
+		}
+		custom_effect_tooltip = JAP_small_zaibatsu_faction_loss_tt
+		subtract_from_variable = { JAP_zaibatsu_faction_influence_level = JAP_small_influence_point }
+	}
+}

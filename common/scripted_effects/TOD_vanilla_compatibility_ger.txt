@@ -1,0 +1,19 @@
+# Vanilla compatibility effects ported from GER_scripted_effects.txt.
+
+GER_amerika_bomber_focke_wulf_completion_MIO_effects = { #SCOPE IS MIO
+	add_mio_research_bonus = 0.15 #After project completion, MIO research goes back to normal #WARNING! Any change in this bonus needs to be applied on the penalty applied in the event GOT_GER_amerikabomber.01 
+	complete_mio_trait = GER_mio_trait_amerikabomber_learnings
+}
+
+GER_amerika_bomber_focke_wulf_completion_SP_effects = { #SCOPE IS GER
+	add_equipment_bonus = {
+		name = GER_amerikabomber_focke_wulf_name
+		bonus = {
+			strat_bomber_intercontinental_equipment_1 = {
+				maximum_speed = 0.1
+				build_cost_ic = 0.05
+				instant = yes
+			}
+		}
+	}
+}

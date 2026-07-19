@@ -1,0 +1,45 @@
+# Vanilla compatibility effects ported from AST_scripted_effects.txt.
+
+AST_votes_change_effect = {
+
+	set_variable = {
+		var = AST_uap_votes_change_var
+		value = AST_uap_votes_daily_var
+	}
+
+	subtract_from_variable = {
+		var = AST_uap_votes_change_var
+		value = AST_alp_votes_daily_var 
+	}
+
+	set_variable = {
+		var = AST_alp_votes_change_var
+		value = AST_alp_votes_daily_var
+	}
+
+	subtract_from_variable = {
+		var = AST_alp_votes_change_var
+		value = AST_uap_votes_daily_var 
+	}
+
+	set_variable = {
+		var = AST_uap_votes_daily_impact_var
+		value = AST_uap_votes_daily_var
+	}
+
+	multiply_variable = {
+		var = AST_uap_votes_daily_impact_var
+		value = -1
+	}
+
+	set_variable = {
+		var = AST_alp_votes_daily_impact_var
+		value = AST_alp_votes_daily_var
+	}
+
+	multiply_variable = {
+		var = AST_alp_votes_daily_impact_var
+		value = -1
+	}
+	
+}
