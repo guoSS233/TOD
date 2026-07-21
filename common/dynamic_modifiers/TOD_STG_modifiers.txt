@@ -142,18 +142,19 @@ STG_xinshumiyuan = {
 	NO_SUPPLY_GRACE = STG_xinshumiyuan_xiedaibuji
 	POCKET_PENALTY = STG_xinshumiyuan_baoweichengfa
 	special_forces_cap = STG_xinshumiyuan_tezhongbudui
-	NAVAL_INVASION_PREPARATION_SPEED = STG_xinshumiyuan_ruqing
-	equipment_bonus = {
-		support_equipment = {
-			build_cost_ic = STG_xinshumiyuan_zhiyuanzhuangbei
-			instant = yes
-		}
-	}
+	### NAVAL_INVASION_PREPARATION_SPEED = STG_xinshumiyuan_ruqing # invalid legacy spelling
+	naval_invasion_prep_speed = STG_xinshumiyuan_ruqing
+	### equipment_bonus = {
+	### 	support_equipment = {
+	### 		build_cost_ic = STG_xinshumiyuan_zhiyuanzhuangbei
+	### 		instant = yes
+	### 	} # equipment_bonus is not a dynamic-modifier key
+	### }
 	army_artillery_attack_factor = STG_xinshumiyuan_huopaoshanghai
 	army_armor_speed_factor = STG_xinshumiyuan_zhuangjiasudu
 	COMBAT_WIDTH_FACTOR = STG_xinshumiyuan_zhanchangkuandu
-	EQUIPMENT_CONVERSION_IC_COST_FACTOR = STG_xinshumiyuan_zhuangjiagaizhuang
-	unit_modular_medium_armor_design_cost_factor = STG_xinshumiyuan_zhuangjiapeijian
+	### EQUIPMENT_CONVERSION_IC_COST_FACTOR = STG_xinshumiyuan_zhuangjiagaizhuang # unavailable modifier kept for reference
+	### unit_modular_medium_armor_design_cost_factor = STG_xinshumiyuan_zhuangjiapeijian # unavailable modifier kept for reference
 	military_industrial_organization_funds_gain = STG_xinshumiyuan_jungongguimo
 }
 #帝国军工总署

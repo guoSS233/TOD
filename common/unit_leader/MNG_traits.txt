@@ -2,7 +2,10 @@ leader_traits = {
 
      #大明军官
 	MNG_damingjungguan = { 
-        random = no
+		### random = no # 旧版字段；用新式权重明确禁止随机获得
+		type = all
+		trait_type = personality_trait
+		new_commander_weight = { factor = 0 }
 	}
 
 }

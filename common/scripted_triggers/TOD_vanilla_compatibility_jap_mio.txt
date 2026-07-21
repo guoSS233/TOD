@@ -1,0 +1,11 @@
+# Targeted vanilla trigger required by restored JAP MIO definitions.
+
+JAP_zaibatsu_faction_is_at_least_influential = {
+	custom_trigger_tooltip = {
+		tooltip = JAP_zaibatsu_faction_is_at_least_influential_tt
+		OR = {
+			has_idea = JAP_zaibatsu_faction_tier_3
+			has_idea = JAP_zaibatsu_faction_tier_4
+		}
+	}
+}

@@ -569,7 +569,7 @@ STG_wubeihuiyi = {
 				bonus = 1.0
 				uses = 2
 				category = industry
-				technology = industry
+				name = industry
 			}
 			clr_country_flag = STG_wubeihuiyi_jinxing
 			country_event = {id = TOD_STG.166}
@@ -759,15 +759,15 @@ STG_zhengdunzhilijunqu = {
 	STG_zujianzhanluezhiyuanbudui= {
 		icon = ger_military_buildup
 		fire_only_once = yes  
-		available = { 
-			has_country_flag = STG_zhengdunzhilijunqu_2 
-			OR = {
-				has_tech = elastic_defence
-				has_tech = mobile_defence
-				has_tech = prepared_defense
-				has_tech = defence_in_depth
+		available = {
+			has_country_flag = STG_zhengdunzhilijunqu_2
+				OR = {
+					has_doctrine = new_mobile_warfare
+					has_doctrine = superior_firepower
+					has_doctrine = grand_battleplan
+					has_doctrine = mass_assault
+				}
 			}
-		}
 		ai_will_do = { base = 10 }
 		remove_effect = {
 			add_to_variable = { STG_jingying_zuzhiduhuifu = 0.15 }

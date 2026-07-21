@@ -71,7 +71,8 @@ ITA_power_balance = {
 								ruling_only = yes
 							}
 						}
-						NOT = { has_completed_focus = ITA_crush_opposition }
+						### NOT = { has_completed_focus = ITA_crush_opposition } # vanilla focus tree is not loaded
+						always = yes
 					}
 					hidden_effect = {
 						country_event = BBA_italy_council_deposes_duce.1
@@ -94,7 +95,8 @@ ITA_power_balance = {
 			on_activate = {
 				if = {
 					limit = {
-						NOT = { has_completed_focus = ITA_crush_opposition }
+						### NOT = { has_completed_focus = ITA_crush_opposition } # vanilla focus tree is not loaded
+						always = yes
 					}
 					hidden_effect = {
 						country_event = BBA_italy_civil_war.1
@@ -434,7 +436,8 @@ ITA_power_balance = {
 					}
 					if = {
 						limit = {
-							has_completed_focus = ITA_christian_democracy
+								### has_completed_focus = ITA_christian_democracy # vanilla focus tree is not loaded
+								always = no
 						}
 						promote_character = {
 							character = ITA_alcide_de_gasperi
@@ -443,7 +446,8 @@ ITA_power_balance = {
 					}
 					else_if = {
 						limit = {
-							has_completed_focus = ITA_democratic_king
+								### has_completed_focus = ITA_democratic_king # vanilla focus tree is not loaded
+								always = no
 						}
 						promote_character = {
 							character = ITA_vittorio_emanuele_iii
@@ -456,11 +460,11 @@ ITA_power_balance = {
 							ideology = neutrality
 						}
 					}
-					hidden_effect = {
-						ITA_grand_council = {
-							set_character_name = ITA_grand_council
-						}
-					}
+					### hidden_effect = {
+					### 	ITA_grand_council = {
+					### 		set_character_name = ITA_grand_council
+					### 	}
+					### } # character ID is not defined by this mod
 				}
 			}
 			on_deactivate = {
@@ -578,11 +582,11 @@ ITA_power_balance = {
 						ideology = neutrality
 					}
 				}
-				hidden_effect = {
-					ITA_grand_council = {
-						set_character_name = ITA_grand_council
-					}
-				}
+				### hidden_effect = {
+				### 	ITA_grand_council = {
+				### 		set_character_name = ITA_grand_council
+				### 	}
+				### } # character ID is not defined by this mod
 			}
 			on_deactivate = {
 				

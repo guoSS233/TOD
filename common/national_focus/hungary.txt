@@ -2555,9 +2555,10 @@ focus_tree = {
 				ahead_reduction = 2
 				bonus = 1.0
 				uses = 1
-				technology = light_armor
-				technology = medium_armor
-				technology = heavy_armor
+				category = armor
+				### technology = light_armor # division type/category name, not a technology ID; armor category preserves the intended broad armor bonus
+				### technology = medium_armor # division type/category name, not a technology ID
+				### technology = heavy_armor # division type/category name, not a technology ID
 			}
 		 }
 	}
@@ -2916,7 +2917,7 @@ focus_tree = {
 		
 		completion_reward = {
 			hidden_effect = { HUN_miklos_horthy = {set_nationality = HUN}}
-			recruit_character = HUN_miklos_horthy
+			### recruit_character = HUN_miklos_horthy # recruit_character 仅允许用于 history/game；历史已预招募，国策用 add_naval_commander_role 恢复
 			add_naval_commander_role = {
 				character = HUN_miklos_horthy
 				traits = { gunnery_expert navy_media_personality superior_tactician }

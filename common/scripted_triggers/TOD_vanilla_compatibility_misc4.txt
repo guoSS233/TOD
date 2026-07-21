@@ -18,3 +18,15 @@ NORDIC_basic_joint_trigger = {
 	}
 	
 }
+
+# Minimal helper retained from the vanilla Nordic trigger file. The base
+# scripted_triggers path is replaced by this mod.
+NORDIC_is_nordic = {
+	OR = {
+		original_tag = SWE
+		original_tag = NOR
+		original_tag = FIN
+		original_tag = DEN
+		original_tag = ICE
+	}
+}

@@ -521,7 +521,8 @@ if = {
 			fixed_ship_engine_slot = cruiser_ship_engine_1
 			fixed_ship_secondaries_slot = empty
 			fixed_ship_armor_slot = ship_armor_cruiser_1
-			front_1_custom_slot = ship_torpedo_1
+			### front_1_custom_slot = ship_torpedo_1 # ship_hull_cruiser_1 没有 front_1_custom_slot
+			### rear_1_custom_slot = ship_torpedo_1 # 舰尾自选装备1槽位不能安装鱼雷发射器类模块；保留原配置供后续调整
 			mid_1_custom_slot = ship_torpedo_1
 			mid_2_custom_slot =  ship_torpedo_1
 		}
@@ -923,5 +924,3 @@ create_equipment_variant = {
 	}
 	icon = "GFX_GER_tactical_bomber1_medium"
 }
-
-

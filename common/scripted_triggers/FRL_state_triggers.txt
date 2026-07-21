@@ -2,15 +2,17 @@
 
 is_mainland_america = {
 	is_on_continent = north_america
-	NOT = { is_considered_island_state = yes }
+	### NOT = { is_considered_island_state = yes } # removed trigger name kept for reference
+	NOT = { is_island_state = yes }
 }
 
 is_metropolis_state = {
 	OR = {
 		state_population > 2000000
-		AND = {
-			has_building = industrial_complex
-			industrial_complex > 2
-		}
+		### AND = {
+		### 	has_building = industrial_complex
+		### 	industrial_complex > 2
+		### } # has_building is not a state trigger; value check below is equivalent
+		industrial_complex > 2
 	}
 }

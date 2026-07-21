@@ -431,7 +431,7 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 						}
 					}
 				}
-				set_state_category = two
+			FROM = { set_state_category = two }
 			}
 			if = {
 				limit = {
@@ -442,7 +442,7 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 						}
 					}
 				}
-				set_state_category = three
+			FROM = { set_state_category = three }
 			}
 			if = {
 				limit = {
@@ -452,7 +452,7 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 						}
 					}
 				}
-				set_state_category = four
+			FROM = { set_state_category = four }
 			}
 			if = {
 				limit = {
@@ -463,7 +463,7 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 						}
 					}
 				}
-				set_state_category = five
+			FROM = { set_state_category = five }
 			}
 			if = {
 				limit = {
@@ -474,7 +474,7 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 						}
 					}
 				}
-				set_state_category = six
+			FROM = { set_state_category = six }
 			}
 		}
 	}
@@ -536,7 +536,7 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 				add_building_construction = {
 					type = dockyard
 					level = 1
-					instant_build = yes 
+					instant_build = yes
 				}
 				add_extra_state_shared_building_slots = 1
 			}
@@ -655,7 +655,7 @@ GOS_decision_l_1_jjms = {  #紧急经济模式
 				remove_building = {
 					type = industrial_complex
 					level = 1
-					instant_build = yes 
+					### instant_build = yes # remove_building does not accept construction options
 				}				
 				add_building_construction = {
 					type = arms_factory
@@ -904,7 +904,8 @@ GOS_decision_l_2_tzngpx = {  #天子内阁派系
 		complete_effect = {  		
 		}	
 		modifier = {
-			consumer_goods_base = 0.10
+			### consumer_goods_base = 0.10 # invalid legacy modifier spelling
+			consumer_goods_factor = 0.10
 			army_defence_factor = 0.1
 	   	}
 		remove_effect = {
@@ -931,7 +932,8 @@ GOS_decision_l_2_tzngpx = {  #天子内阁派系
 			
 		}	
 		modifier = {
-			consumer_goods_base = 0.10	
+			### consumer_goods_base = 0.10 # invalid legacy modifier spelling
+			consumer_goods_factor = 0.10
 			production_speed_buildings_factor = 0.10  #建造速度
 	   	}
 		remove_effect = {
@@ -958,7 +960,8 @@ GOS_decision_l_2_tzngpx = {  #天子内阁派系
 			
 		}	
 		modifier = {
-			consumer_goods_base = 0.10	
+			### consumer_goods_base = 0.10 # invalid legacy modifier spelling
+			consumer_goods_factor = 0.10
 			production_factory_max_efficiency_factor = 0.05	
 	   	}
 		remove_effect = {
@@ -1060,7 +1063,8 @@ GOS_decision_l_2_tzngpx = {  #天子内阁派系
 		complete_effect = {  		
 		}	
 		modifier = {
-			army_attack_base = 0.05
+			### army_attack_base = 0.05 # invalid legacy modifier spelling
+			army_attack_factor = 0.05
 	   	}
 		remove_effect = {
 
@@ -1558,7 +1562,10 @@ GOS_decision_l_3_fn = {  #法案
 		} 
 		complete_effect = {  	
 			set_country_flag = FLAG_GOS_decision_fn_js_complete
-			GOS_scz = {
+			### GOS_scz = { # old character ID kept for reference
+			### 	remove_unit_leader_role = yes
+			### }
+			GOS_characters_scz = {
 				remove_unit_leader_role = yes
 			}
 			custom_effect_tooltip = GOS_tooltip_decision_fn_js	
@@ -2093,7 +2100,8 @@ GOS_decision_l_4_jsjy = {  #军事决议
 			}			
 		}	
 		modifier = {
-			dig_in_speed_base = 0.2
+			### dig_in_speed_base = 0.2 # invalid legacy modifier spelling
+			dig_in_speed_factor = 0.2
 	   	}
 		remove_effect = {	
 		}	
@@ -2152,7 +2160,8 @@ GOS_decision_l_4_jsjy = {  #军事决议
 			}			
 		}	
 		modifier = {
-			army_org_base = 0.1
+			### army_org_base = 0.1 # invalid legacy modifier spelling
+			army_org_factor = 0.1
 	   	}
 		remove_effect = {	
 		}	
@@ -2271,7 +2280,8 @@ GOS_decision_l_4_jsjy = {  #军事决议
 			add_war_support = -0.2
 		}	
 		modifier = {
-			army_attack_base = 0.2
+			### army_attack_base = 0.2 # invalid legacy modifier spelling
+			army_attack_factor = 0.2
 	   	}
 		remove_effect = {	
 		}	

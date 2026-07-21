@@ -6,14 +6,17 @@ HABSBURG_is_a_habsburg_viable_nation = {
 		AND = {
 			original_tag = AUS
 			OR = {
-				has_completed_focus = AUS_demand_hungarian_submission
-				has_completed_focus = AUS_the_danubian_federation
+				### has_completed_focus = AUS_demand_hungarian_submission # vanilla focus tree is not loaded
+				always = no
+				### has_completed_focus = AUS_the_danubian_federation # vanilla focus tree is not loaded
+				always = no
 				is_subject_of = HUN
 				AND = {
 					is_in_faction_with = HUN
 					HUN = { 
 						is_faction_leader = yes
-						has_completed_focus = wuw_HUN_a_danubian_federation
+						### has_completed_focus = wuw_HUN_a_danubian_federation # vanilla focus tree is not loaded
+						always = no
 					}	
 				}
 			}

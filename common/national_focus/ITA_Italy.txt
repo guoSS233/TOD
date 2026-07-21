@@ -87,7 +87,8 @@ focus_tree = {
 		
 		ai_will_do = {factor = 90}
 		available = {
-			has_political_power = 150	
+			### has_political_power = 150	 # invalid equality form; keep as reference
+			has_political_power > 149
 		}
 		
 		completion_reward = {}
@@ -550,6 +551,8 @@ focus_tree = {
 		completion_reward = {
 			117 = {
 ### 				limit = {  # limit is trigger, not effect
+				if = {
+					limit = {
 					free_building_slots = {
 						building = arms_factory
 						size > 1
@@ -561,10 +564,13 @@ focus_tree = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
+				}
 				}
 			}
 			156 = {
 ### 				limit = {  # limit is trigger, not effect
+				if = {
+					limit = {
 					free_building_slots = {
 						building = arms_factory
 						size > 1
@@ -576,6 +582,7 @@ focus_tree = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
+				}
 				}
 		}
 		}
@@ -601,6 +608,8 @@ focus_tree = {
 		completion_reward = {
 			117 = {
 ### 				limit = {  # limit is trigger, not effect
+				if = {
+					limit = {
 					free_building_slots = {
 						building = arms_factory
 						size > 1
@@ -612,10 +621,13 @@ focus_tree = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
+				}
 				}
 			}
 			156 = {
 ### 				limit = {  # limit is trigger, not effect
+				if = {
+					limit = {
 					free_building_slots = {
 						building = arms_factory
 						size > 1
@@ -627,6 +639,7 @@ focus_tree = {
 					type = arms_factory
 					level = 1
 					instant_build = yes
+				}
 				}
 		}
 	}

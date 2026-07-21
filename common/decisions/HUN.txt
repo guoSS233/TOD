@@ -35,7 +35,7 @@ HUN_gyorjihuajueyi = {
 		visible = {
 			any_owned_state = {
 				has_state_flag = HUN_duonaoheliuyu
-				num_of_factories < 10		
+				### num_of_factories < 10 # country trigger is invalid in state scope
 			}
 			has_completed_focus = HUN_touziduonaohejingjidai
 		}
@@ -63,7 +63,7 @@ HUN_gyorjihuajueyi = {
 				NOT = { has_state_flag = HUN_duonaoheliuyu }
 				is_core_of = HUN
 				NOT = { has_dynamic_modifier = HUN_shaoshuminzufenzheng }
-				num_of_factories < 10	
+				### num_of_factories < 10 # country trigger is invalid in state scope
 				infrastructure > 2			
 			}
 			has_completed_focus = HUN_daidongqitadiqu

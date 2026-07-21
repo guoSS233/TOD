@@ -1,0 +1,52 @@
+ideas = {
+	country = {
+		# These small compatibility definitions replace IDs used by loaded base scripts.
+		idea_CHI_central_government_integration_pressure = {
+			picture = ast_classify_aliens
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			modifier = {
+				autonomy_gain = -2
+			}
+		}
+
+		deterrence = {
+			allowed = { always = no }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				production_speed_bunker_factor = 0.2
+				production_speed_coastal_bunker_factor = 0.2
+				production_speed_anti_air_building_factor = 0.2
+				production_speed_arms_factory_factor = 0.2
+				bunker_max_level_terrain_limit = 1
+			}
+		}
+
+		special_project_consumer_costs_high = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_industrial_concern_1
+			modifier = { consumer_goods_factor = 0.1 }
+		}
+
+		special_project_consumer_costs_medium = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_industrial_concern_1
+			modifier = { consumer_goods_factor = 0.05 }
+		}
+
+		special_project_consumer_costs_low = {
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			removal_cost = -1
+			picture = generic_industrial_concern_1
+			modifier = { consumer_goods_factor = 0.025 }
+		}
+	}
+}

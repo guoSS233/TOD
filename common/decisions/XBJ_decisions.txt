@@ -325,7 +325,7 @@ XBJ_quanmian_jieguan = {
 		visible = {
 			always = yes
 		}
-		available = yes
+		available = { always = yes }
 		fire_only_once = yes
 		days_remove = 60
 		remove_effect = {
@@ -462,7 +462,7 @@ XBJ_kaiyuan_jieliu = {
 		visible = {
 			always = yes
 		}
-		available = yes
+		available = { always = yes }
 		fire_only_once = yes
 		days_remove = 5
 		remove_effect = {
@@ -541,11 +541,11 @@ XBJ_kaiyuan_jieliu = {
 		fire_only_once = yes
 		days_remove = 30
 		modifier = {
-			political_power_cost = 0.2
+			### political_power_cost = 0.2 # invalid decision modifier
 		}
 		remove_effect = {
 			add_political_power = 200
-			political_power_cost = 0.2
+			### political_power_cost = 0.2 # invalid effect
 		}
 	}
 	XBJ_kaiyuan_jieliu_4 = {
@@ -888,7 +888,7 @@ XBJ_jiyi_gaijin = {
 			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_4
 			has_country_flag = FLAG_XBJ_decision_jiyi_gaijin_5
 		}
-		available = yes
+		available = { always = yes }
 		fire_only_once = yes
 		remove_effect = {
 			swap_ideas = {
@@ -1302,7 +1302,8 @@ XBJ_nongye_zhenxing = {
 			has_country_flag = FLAG_XBJ_decision_nongye_zhenxing_unlocked
 			has_country_flag = FLAG_XBJ_events_guanlong_yinyun_1
 			has_country_flag = FLAG_XBJ_events_guanlong_yinyun_2
-			set_country_flag = FLAG_XBJ_events_guanlong_yinyun
+			### set_country_flag = FLAG_XBJ_events_guanlong_yinyun # effect used as trigger
+			has_country_flag = FLAG_XBJ_events_guanlong_yinyun
 		}
 		available = {
 			has_political_power > 50

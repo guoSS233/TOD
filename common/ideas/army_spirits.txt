@@ -280,7 +280,8 @@ ideas = {
 			ledger = army
 			visible = { 
 				has_military_academy = yes 
-				has_completed_focus = NOR_officers_academy
+				### has_completed_focus = NOR_officers_academy # focus tree excluded by replace_path
+				always = no
 			}
 			available = { 
 				NOR_AAT = yes 
@@ -306,8 +307,9 @@ ideas = {
 			available = { 
 				has_military_academy = yes 
 				NOT = {
-					has_completed_focus = CHI_close_whampoa
-					has_completed_focus = CHI_end_military_primacy
+					### has_completed_focus = CHI_close_whampoa # focus tree excluded by replace_path
+					### has_completed_focus = CHI_end_military_primacy # focus tree excluded by replace_path
+					always = no
 				}
 			}
 			visible = { 
@@ -324,9 +326,10 @@ ideas = {
 			}
 			allowed_to_remove = {
 				OR = {
-					has_completed_focus = CHI_end_military_primacy
-					has_completed_focus = CHI_close_whampoa 
-					has_completed_focus = CHI_focus_on_meritocratic_principles
+					### has_completed_focus = CHI_end_military_primacy # focus tree excluded by replace_path
+					### has_completed_focus = CHI_close_whampoa # focus tree excluded by replace_path
+					### has_completed_focus = CHI_focus_on_meritocratic_principles # focus tree excluded by replace_path
+					always = no
 				}
 			}
 			ai_will_do = {
@@ -416,7 +419,8 @@ ideas = {
 						has_dlc = "Graveyard of Empires"
 					}
 					OR = {
-						has_completed_focus = AFG_reintroduce_war_elephants
+						### has_completed_focus = AFG_reintroduce_war_elephants # focus tree excluded by replace_path
+						always = no
 						has_doctrine = grand_battleplan
 						has_doctrine = mounted_infantry
 					}

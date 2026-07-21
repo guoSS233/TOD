@@ -1,13 +1,17 @@
 ### ITA balance of power scripted effects ###
 ITA_bop_low_decrease_effect = {
-	if = { limit = { has_dynamic_modifier = ITA_bop_low } remove_ideas = ITA_bop_low_idea }
+	### if = { limit = { has_dynamic_modifier = ITA_bop_low } remove_ideas = ITA_bop_low_idea }
+	add_political_power = 0 # legacy BOP idea/modifier IDs are not defined by this mod
 }
 ITA_bop_high_decrease_effect = {
-	if = { limit = { has_dynamic_modifier = ITA_bop_high } remove_ideas = ITA_bop_high_idea }
+	### if = { limit = { has_dynamic_modifier = ITA_bop_high } remove_ideas = ITA_bop_high_idea }
+	add_political_power = 0 # legacy BOP idea/modifier IDs are not defined by this mod
 }
 ITA_bop_very_low_decrease_effect = {
-	if = { limit = { has_dynamic_modifier = ITA_bop_very_low } remove_ideas = ITA_bop_very_low_idea }
+	### if = { limit = { has_dynamic_modifier = ITA_bop_very_low } remove_ideas = ITA_bop_very_low_idea }
+	add_political_power = 0 # legacy BOP idea/modifier IDs are not defined by this mod
 }
 ITA_bop_very_low_increase_effect = {
-	if = { limit = { has_dynamic_modifier = ITA_bop_very_low } remove_ideas = ITA_bop_very_low_idea }
+	### if = { limit = { has_dynamic_modifier = ITA_bop_very_low } remove_ideas = ITA_bop_very_low_idea }
+	add_political_power = 0 # legacy BOP idea/modifier IDs are not defined by this mod
 }

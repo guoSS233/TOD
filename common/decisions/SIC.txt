@@ -204,7 +204,10 @@ SIC_chuanneijushi_categories = {
 
 		icon = ger_military_buildup
 		
-		visible = {has_completed_focus = SIC_huifugongye}
+		visible = {
+			### has_completed_focus = SIC_huifugongye # vanilla focus tree is not loaded
+			always = no
+		}
 		available = {
 			has_political_power > 0
 			num_of_available_civilian_factories > 4

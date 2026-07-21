@@ -1,0 +1,191 @@
+# Minimal compatibility groups for base AI templates.  The mod replaces the
+# vanilla names_divisions path, so these IDs must remain available locally.
+
+GER_MOT_02 = {
+	name = "Motorized Divisions"
+	for_countries = { GER }
+	can_use = { has_government = fascism }
+	division_types = { "motorized" }
+	fallback_name = "%d. Infanterie-Division (mot)"
+	ordered = { 1 = { "%d. Infanterie-Division (mot)" } }
+}
+
+GER_MEC_01 = {
+	name = "Panzergrenadier Divisions"
+	for_countries = { GER }
+	can_use = { has_government = fascism }
+	division_types = { "mechanized" }
+	fallback_name = "%d. Panzergrenadier-Division"
+	ordered = { 1 = { "%d. Panzergrenadier-Division" } }
+}
+
+GER_GAR_01 = {
+	name = "Garrison Divisions"
+	for_countries = { GER }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "%d. Sicherungs-Division"
+	ordered = { 1 = { "%d. Sicherungs-Division" } }
+}
+
+GER_Arm_01 = {
+	name = "Panzer Divisions"
+	for_countries = { GER }
+	can_use = { has_government = fascism }
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+	fallback_name = "%d. Panzer-Division"
+	ordered = { 1 = { "%d. Panzer-Division" } }
+}
+
+HUN_INF_01 = {
+	name = "Infantry Divisions"
+	for_countries = { AUS HUN CZE }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "%d. gyaloghadosztály"
+	ordered = { 1 = { "%d. gyaloghadosztály" } }
+}
+
+HUN_INF_02 = {
+	name = "Infantry Brigades"
+	for_countries = { AUS HUN CZE }
+	can_use = { always = yes }
+	division_types = { "cavalry" }
+	fallback_name = "%d. Gyalogdandár"
+	ordered = { 1 = { "%d. Gyalogdandár" } }
+}
+
+HUN_CAV_01 = {
+	name = "Cavalry Divisions"
+	for_countries = { AUS HUN CZE }
+	can_use = { always = yes }
+	division_types = { "cavalry" }
+	fallback_name = "%d. Huszár Dandár"
+	ordered = { 1 = { "%d. Huszár Dandár" } }
+}
+
+HUN_MOT_01 = {
+	name = "Motorised Divisions"
+	for_countries = { AUS HUN CZE }
+	can_use = { always = yes }
+	division_types = { "motorized" }
+	fallback_name = "%d. Motorizált Dandár"
+	ordered = { 1 = { "%d. Motorizált Dandár" } }
+}
+
+HUN_ARM_01 = {
+	name = "Armoured Divisions"
+	for_countries = { AUS HUN CZE }
+	can_use = { always = yes }
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+	fallback_name = "%d. Páncéloshadosztály"
+	ordered = { 1 = { "%d. Páncéloshadosztály" } }
+}
+
+HUN_MEC_01 = {
+	name = "Mechanised Divisions"
+	for_countries = { AUS HUN CZE }
+	can_use = { always = yes }
+	division_types = { "mechanized" }
+	fallback_name = "%d. Páncélgránátos hadosztály"
+	ordered = { 1 = { "%d. Páncélgránátos hadosztály" } }
+}
+
+HUN_GAR_01 = {
+	name = "Garrison Divisions"
+	for_countries = { AUS HUN CZE }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "%d. tábori póthadosztály"
+	ordered = { 1 = { "%d. tábori póthadosztály" } }
+}
+
+SOV_GTC_01 = {
+	name = "Guards Tanks"
+	for_countries = { SOV }
+	can_use = { always = yes }
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+	fallback_name = "%dya Gvds. Tankovaya Korpus"
+	ordered = { 1 = { "%dya Gvds. Tankovaya Korpus" } }
+}
+
+USA_INF_01 = {
+	name = "Infantry Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "%d Infantry Division"
+	ordered = { 1 = { "%d Infantry Division" } }
+}
+
+USA_CAV_01 = {
+	name = "Cavalry Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "cavalry" }
+	fallback_name = "%d Cavalry Division"
+	ordered = { 1 = { "%d Cavalry Division" } }
+}
+
+USA_MOT_01 = {
+	name = "Motorized Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "motorized" }
+	fallback_name = "%d Motorized Division"
+	ordered = { 1 = { "%d Motorized Division" } }
+}
+
+USA_MEC_01 = {
+	name = "Mechanized Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "mechanized" }
+	fallback_name = "%d Mechanized Division"
+	ordered = { 1 = { "%d Mechanized Division" } }
+}
+
+USA_ARM_01 = {
+	name = "Armored Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "light_armor" "medium_armor" "heavy_armor" "modern_armor" }
+	fallback_name = "%d Armored Division"
+	ordered = { 1 = { "%d Armored Division" } }
+}
+
+USA_PAR_01 = {
+	name = "Airborne Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "paratrooper" }
+	fallback_name = "%d Airborne Division"
+	ordered = { 1 = { "%d Airborne Division" } }
+}
+
+USA_MAR_01 = {
+	name = "Marine Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "marine" }
+	fallback_name = "%d Marine Division"
+	ordered = { 1 = { "%d Marine Division" } }
+}
+
+USA_MNT_01 = {
+	name = "Mountain Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "mountaineers" }
+	fallback_name = "%d Mountain Division"
+	ordered = { 1 = { "%d Mountain Division" } }
+}
+
+USA_GAR_01 = {
+	name = "Garrison Division"
+	for_countries = { USA }
+	can_use = { always = yes }
+	division_types = { "infantry" }
+	fallback_name = "%d National Guard Division"
+	ordered = { 1 = { "%d National Guard Division" } }
+}

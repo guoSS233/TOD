@@ -75,11 +75,13 @@ ideas = {
     ### Stub ideas for Louisiana focus tree ###
     FRL_cointelpro_idea = {
         picture = FRL_great_depression
-        modifier = { encryption_level_factor = 0.1 decryption_level_factor = 0.1 }
+        ### modifier = { encryption_level_factor = 0.1 decryption_level_factor = 0.1 } # invalid modifier names kept for reference
+        modifier = { encryption_factor = 0.1 decryption_factor = 0.1 }
     }
     FRL_black_chamber_idea = {
         picture = FRL_great_depression
-        modifier = { decryption_level_factor = 0.15 }
+        ### modifier = { decryption_level_factor = 0.15 } # invalid modifier name kept for reference
+        modifier = { decryption_factor = 0.15 }
     }
     FRL_american_auto_industry1 = {
         picture = FRL_great_depression
@@ -91,43 +93,143 @@ ideas = {
     }
     FRL_Chaffee_plan1 = {
         picture = FRL_great_depression
-        modifier = { armor_speed_factor = 0.05 }
+        ### modifier = { armor_speed_factor = 0.05 } # invalid modifier name kept for reference
+        modifier = { army_armor_speed_factor = 0.05 }
     }
     FRL_Chaffee_plan2 = {
         picture = FRL_great_depression
-        modifier = { armor_speed_factor = 0.10 }
+        ### modifier = { armor_speed_factor = 0.10 } # invalid modifier name kept for reference
+        modifier = { army_armor_speed_factor = 0.10 }
     }
     FRL_Chaffee_plan3 = {
         picture = FRL_great_depression
-        modifier = { armor_speed_factor = 0.15 }
+        ### modifier = { armor_speed_factor = 0.15 } # invalid modifier name kept for reference
+        modifier = { army_armor_speed_factor = 0.15 }
     }
     FRL_Chaffee_plan4_light = {
         picture = FRL_great_depression
-        modifier = { light_armor_speed_factor = 0.10 }
+        ### modifier = { light_armor_speed_factor = 0.10 } # invalid modifier name kept for reference
+        modifier = { army_armor_speed_factor = 0.10 }
     }
     FRL_Chaffee_plan5_light = {
         picture = FRL_great_depression
-        modifier = { light_armor_speed_factor = 0.15 }
+        ### modifier = { light_armor_speed_factor = 0.15 } # invalid modifier name kept for reference
+        modifier = { army_armor_speed_factor = 0.15 }
     }
     FRL_Chaffee_plan4_heavy = {
         picture = FRL_great_depression
-        modifier = { heavy_armor_speed_factor = 0.10 }
+        ### modifier = { heavy_armor_speed_factor = 0.10 } # invalid modifier name kept for reference
+        modifier = { army_armor_speed_factor = 0.10 }
     }
     FRL_Chaffee_plan5_heavy = {
         picture = FRL_great_depression
-        modifier = { heavy_armor_speed_factor = 0.15 }
+        ### modifier = { heavy_armor_speed_factor = 0.15 } # invalid modifier name kept for reference
+        modifier = { army_armor_speed_factor = 0.15 }
     }
     FRL_Craig_plan1 = {
         picture = FRL_great_depression
-        modifier = { infantry_speed_factor = 0.05 }
+        ### modifier = { infantry_speed_factor = 0.05 } # invalid modifier name kept for reference
+        modifier = { army_speed_factor = 0.05 }
     }
     FRL_Craig_plan2 = {
         picture = FRL_great_depression
-        modifier = { infantry_speed_factor = 0.10 }
+        ### modifier = { infantry_speed_factor = 0.10 } # invalid modifier name kept for reference
+        modifier = { army_speed_factor = 0.10 }
     }
     FRL_Craig_plan3 = {
         picture = FRL_great_depression
-        modifier = { infantry_speed_factor = 0.15 }
+        ### modifier = { infantry_speed_factor = 0.15 } # invalid modifier name kept for reference
+        modifier = { army_speed_factor = 0.15 }
+    }
+
+    ### Restored Louisiana focus-tree idea chain; the focus file calls these IDs directly.
+    FRL_weapons_manufacturers1 = {
+        picture = FRL_great_depression
+        modifier = { production_speed_arms_factory_factor = 0.05 }
+    }
+    FRL_weapons_manufacturers2 = {
+        picture = FRL_great_depression
+        modifier = { production_speed_arms_factory_factor = 0.10 }
+    }
+    FRL_McNair_plan1 = {
+        picture = FRL_great_depression
+        modifier = { army_artillery_attack_factor = 0.05 }
+    }
+    FRL_McNair_plan2 = {
+        picture = FRL_great_depression
+        modifier = { army_artillery_attack_factor = 0.10 }
+    }
+    FRL_McNair_plan3 = {
+        picture = FRL_great_depression
+        modifier = { army_artillery_attack_factor = 0.15 }
+    }
+    FRL_McNair_plan4_AA = {
+        picture = FRL_great_depression
+        modifier = { army_artillery_attack_factor = 0.10 }
+    }
+    FRL_McNair_plan5_AA = {
+        picture = FRL_great_depression
+        modifier = { army_artillery_attack_factor = 0.15 }
+    }
+    FRL_McNair_plan4_AT = {
+        picture = FRL_great_depression
+        modifier = { army_armor_attack_factor = 0.10 }
+    }
+    FRL_McNair_plan5_AT = {
+        picture = FRL_great_depression
+        modifier = { army_armor_attack_factor = 0.15 }
+    }
+    FRL_war_department_idea = {
+        picture = FRL_great_depression
+        modifier = { army_org_factor = 0.05 }
+    }
+    FRL_defense_logistics_agency_idea = {
+        picture = FRL_great_depression
+        modifier = { supply_consumption_factor = -0.10 }
+    }
+    FRL_Expanded_FRLAC1 = {
+        picture = FRL_great_depression
+        modifier = { air_attack_factor = 0.05 air_agility_factor = 0.05 }
+    }
+    FRL_Expanded_FRLAC2 = {
+        picture = FRL_great_depression
+        modifier = { air_attack_factor = 0.10 air_agility_factor = 0.10 }
+    }
+    FRL_increased_military_spending = {
+        picture = FRL_great_depression
+        modifier = { production_speed_arms_factory_factor = 0.05 }
+    }
+    FRL_increased_military_spending2 = {
+        picture = FRL_great_depression
+        modifier = { production_speed_arms_factory_factor = 0.10 }
+    }
+    FRL_Craig_plan4 = {
+        picture = FRL_great_depression
+        modifier = { army_speed_factor = 0.20 }
+    }
+    FRL_Craig_plan5 = {
+        picture = FRL_great_depression
+        modifier = { army_speed_factor = 0.25 }
+    }
+    FRL_FRLAF_Formed1 = {
+        picture = FRL_great_depression
+        modifier = { air_attack_factor = 0.05 air_agility_factor = 0.05 }
+    }
+    FRL_FRLAF_Formed2 = {
+        picture = FRL_great_depression
+        modifier = { air_attack_factor = 0.10 air_agility_factor = 0.10 }
+    }
+    FRL_USMC_1 = {
+        picture = FRL_great_depression
+        modifier = { modifier_army_sub_unit_marine_attack_factor = 0.05 }
+    }
+    FRL_USMC_2 = {
+        picture = FRL_great_depression
+        modifier = { modifier_army_sub_unit_marine_attack_factor = 0.10 }
+    }
+    FRL_USMC_3 = {
+        picture = FRL_great_depression
+        modifier = { modifier_army_sub_unit_marine_attack_factor = 0.15 }
     }
 
     }

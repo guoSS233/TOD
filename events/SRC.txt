@@ -264,7 +264,8 @@ country_event = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					ideology = moderate_socialism
+					### ideology = moderate_socialism # 国家领导人角色必须使用具体的 subtype
+					ideology = moderate_socialism_subtype
 					expire = "1965.1.1.1"
 					traits = {}
 				}
@@ -292,7 +293,8 @@ country_event = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					ideology = vanguard_socialism
+					### ideology = vanguard_socialism # 国家领导人角色必须使用具体的 subtype
+					ideology = vanguard_socialism_subtype
 					expire = "1965.1.1.1"
 					traits = {}
 				}
@@ -322,7 +324,8 @@ country_event = {
 			add_country_leader_role = {
 				promote_leader = yes
 				country_leader = {
-					ideology = council_socialism
+					### ideology = council_socialism # 国家领导人角色必须使用具体的 subtype
+					ideology = council_socialism_subtype
 					expire = "1965.1.1.1"
 					traits = {}
 				}
@@ -913,8 +916,28 @@ country_event = {
 	is_triggered_only = yes
 	hidden = yes
 	immediate = {
-		recruit_character = SRC_sa_shijun
-		recruit_character = SRC_deng_zhaoxiang
+		### recruit_character = SRC_sa_shijun # recruit_character 仅允许用于 history/game；SRC 开局已在 history/countries/SRC - hongjun.txt 招募
+		### recruit_character = SRC_deng_zhaoxiang # recruit_character 仅允许用于 history/game；SRC 开局已在 history/countries/SRC - hongjun.txt 招募
+		add_naval_commander_role = {
+			character = SRC_sa_shijun
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
+		add_naval_commander_role = {
+			character = SRC_deng_zhaoxiang
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+			legacy_id = -1
+		}
 	}
 }
 country_event = {
@@ -922,10 +945,63 @@ country_event = {
 	is_triggered_only = yes
 	hidden = yes
 	immediate = {
-		recruit_character = SRC_yang_jingyu
-		recruit_character = SRC_xu_xiangqian
-		recruit_character = SRC_zhu_rui
-		recruit_character = SRC_wang_yongqing
-		recruit_character = SRC_wang_minjing
+		### recruit_character = SRC_yang_jingyu # recruit_character 仅允许用于 history/game；SRC 开局已在 history/countries/SRC - hongjun.txt 招募
+		### recruit_character = SRC_xu_xiangqian # recruit_character 仅允许用于 history/game；SRC 开局已在 history/countries/SRC - hongjun.txt 招募
+		### recruit_character = SRC_zhu_rui # recruit_character 仅允许用于 history/game；SRC 开局已在 history/countries/SRC - hongjun.txt 招募
+		### recruit_character = SRC_wang_yongqing # recruit_character 仅允许用于 history/game；SRC 开局已在 history/countries/SRC - hongjun.txt 招募
+		### recruit_character = SRC_wang_minjing # recruit_character 仅允许用于 history/game；SRC 开局已在 history/countries/SRC - hongjun.txt 招募
+		add_corps_commander_role = {
+			character = SRC_yang_jingyu
+			traits = { war_hero }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+			legacy_id = -1
+		}
+		add_field_marshal_role = {
+			character = SRC_xu_xiangqian
+			traits = { armor_officer brilliant_strategist }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		add_corps_commander_role = {
+			character = SRC_zhu_rui
+			traits = { brilliant_strategist }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 1
+			legacy_id = -1
+		}
+		add_corps_commander_role = {
+			character = SRC_wang_yongqing
+			traits = { politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+		add_corps_commander_role = {
+			character = SRC_wang_minjing
+			traits = { }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = -1
+		}
+		activate_advisor = SRC_yang_jingyu
+		activate_advisor = SRC_xu_xiangqian
+		activate_advisor = SRC_zhu_rui
 	}
 }

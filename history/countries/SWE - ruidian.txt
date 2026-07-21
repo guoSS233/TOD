@@ -303,7 +303,7 @@ if = {
 				fixed_ship_engine_slot = cruiser_ship_engine_1
 				fixed_ship_secondaries_slot = ship_secondaries_1
 				fixed_ship_armor_slot = ship_armor_cruiser_1
-				front_1_custom_slot = empty
+				### front_1_custom_slot = empty # ship_hull_cruiser_1 没有该槽位，保留原配置
 				mid_1_custom_slot = ship_secondaries_1
 				mid_2_custom_slot = ship_anti_air_1
 				rear_1_custom_slot = ship_medium_battery_1
@@ -427,9 +427,10 @@ if = {
 				fixed_ship_engine_slot = cruiser_ship_engine_1
 				fixed_ship_secondaries_slot = empty
 				fixed_ship_armor_slot = ship_armor_cruiser_1
-				front_1_custom_slot = ship_light_battery_1
+				### front_1_custom_slot = ship_light_battery_1 # ship_hull_cruiser_1 没有 front_1_custom_slot
 				mid_1_custom_slot = ship_torpedo_1
-				mid_2_custom_slot =  empty
+				### mid_2_custom_slot =  empty # 原可用槽位，改为承接原 front_1 的轻型火炮
+				mid_2_custom_slot = ship_light_battery_1
 				rear_1_custom_slot = ship_depth_charge_1
 			}
 		}
@@ -448,7 +449,7 @@ if = {
 				fixed_ship_engine_slot = cruiser_ship_engine_1
 				fixed_ship_secondaries_slot = empty
 				fixed_ship_armor_slot = ship_armor_cruiser_1
-				front_1_custom_slot = ship_torpedo_1
+				### front_1_custom_slot = ship_torpedo_1 # ship_hull_cruiser_1 没有该槽位，保留原配置
 				mid_1_custom_slot = ship_torpedo_1
 				mid_2_custom_slot =  ship_light_medium_battery_1
 			}
@@ -468,7 +469,7 @@ if = {
 				fixed_ship_engine_slot = cruiser_ship_engine_1
 				fixed_ship_secondaries_slot = ship_secondaries_1
 				fixed_ship_armor_slot = ship_armor_cruiser_1
-				front_1_custom_slot = empty
+				### front_1_custom_slot = empty # ship_hull_cruiser_1 没有该槽位，保留原配置
 				mid_1_custom_slot = empty
 				mid_2_custom_slot =  ship_light_battery_1
 			}

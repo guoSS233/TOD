@@ -104,7 +104,7 @@ focus_tree = {
 		x = 28
 		y = 3
 
-		select_effect = {  }
+		### select_effect = {  } # empty select effect was invalid/no-op; keep for restoration reference
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -112,7 +112,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		### available = {} # duplicate empty availability overrode always = no; keep for restoration reference
 		
 		completion_reward = {
 			country_event = {id = TOD_STG.4}
@@ -223,6 +223,7 @@ focus_tree = {
 		icon = GFX_STG_yijingzhidong
 		prerequisite = { focus = STG_xibeikanluan}
 		mutually_exclusive = { focus = STG_sugongpodi }
+		mutually_exclusive = { focus = STG_xibeikanluan }
 
 		x = 27
 		y = 4
@@ -2736,14 +2737,14 @@ focus_tree = {
 				bonus = 0.75
 				uses = 1
 				category = land_doctrine
-				technology = superior_firepower
+				### technology = superior_firepower # doctrine tree ID, not a technology ID; category above preserves the intended land-doctrine bonus
 			}
 			add_tech_bonus = {
 				name = STG_zhongshizonghenengli
 				bonus = 0.5
 				uses = 1
 				category = support_tech
-				technology = support_tech
+				### technology = support_tech # research category, not a technology ID; category above is the intended target
 			}
 		}
 	}
@@ -2817,7 +2818,7 @@ focus_tree = {
 				bonus = 1
 				uses = 4
 				category = support_tech
-				technology = support_tech
+				### technology = support_tech # research category, not a technology ID; category above is the intended target
 			}
 		}
 	}

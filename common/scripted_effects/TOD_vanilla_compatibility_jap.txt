@@ -10,7 +10,7 @@ JAP_big_army_faction_gain = {
 				JAP_army_faction_is_tier_1 = yes
 			}
 			custom_effect_tooltip = JAP_big_army_faction_gain_tt
-			JAP_army_faction_goes_up_from_tier_1_to_tier_2 = yes
+				### JAP_army_faction_goes_up_from_tier_1_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 		}
 		else_if = {
 			limit = {
@@ -25,7 +25,7 @@ JAP_big_army_faction_gain = {
 			else = { #Army WILL level up
 
 				custom_effect_tooltip = JAP_big_army_faction_gain_tt
-				JAP_army_faction_goes_up_from_tier_2_to_tier_3 = yes
+				### JAP_army_faction_goes_up_from_tier_2_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -40,7 +40,7 @@ JAP_big_army_faction_gain = {
 			}
 			else = { #Army WILL level up
 				custom_effect_tooltip = JAP_big_army_faction_gain_tt
-				JAP_army_faction_goes_up_from_tier_3_to_tier_4 = yes
+				### JAP_army_faction_goes_up_from_tier_3_to_tier_4 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		add_to_variable = { JAP_army_faction_influence_level = JAP_big_influence_point }
@@ -64,7 +64,7 @@ JAP_big_army_faction_loss = {
 			}
 			else = { #Army WILL level down
 				custom_effect_tooltip = JAP_big_army_faction_loss_tt
-				JAP_army_faction_goes_down_from_tier_4_to_tier_3 = yes
+				### JAP_army_faction_goes_down_from_tier_4_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -79,7 +79,7 @@ JAP_big_army_faction_loss = {
 			}
 			else = { #Army WILL level down
 				custom_effect_tooltip = JAP_big_army_faction_loss_tt
-				JAP_army_faction_goes_down_from_tier_3_to_tier_2 = yes
+				### JAP_army_faction_goes_down_from_tier_3_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -94,7 +94,7 @@ JAP_big_army_faction_loss = {
 			}
 			else = { #Army WILL level down
 				custom_effect_tooltip = JAP_big_army_faction_loss_tt
-				JAP_army_faction_goes_down_from_tier_2_to_tier_1 = yes
+				### JAP_army_faction_goes_down_from_tier_2_to_tier_1 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else = { #Army Faction is already at rock bottom and can't go lower than this
@@ -128,7 +128,7 @@ JAP_big_government_faction_gain = {
 			}
 			else = { #Government WILL level up
 				custom_effect_tooltip = JAP_big_government_faction_gain_tt
-				JAP_government_faction_goes_up_from_tier_1_to_tier_2 = yes
+				### JAP_government_faction_goes_up_from_tier_1_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -144,7 +144,7 @@ JAP_big_government_faction_gain = {
 			else = { #Government WILL level up
 				custom_effect_tooltip = JAP_big_government_faction_gain_tt
 
-				JAP_government_faction_goes_up_from_tier_2_to_tier_3 = yes
+				### JAP_government_faction_goes_up_from_tier_2_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -160,7 +160,7 @@ JAP_big_government_faction_gain = {
 			else = { #Government WILL level up
 				custom_effect_tooltip = JAP_big_government_faction_gain_tt
 				
-				JAP_government_faction_goes_up_from_tier_3_to_tier_4 = yes
+				### JAP_government_faction_goes_up_from_tier_3_to_tier_4 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		add_to_variable = { JAP_government_faction_influence_level = JAP_big_influence_point }
@@ -185,7 +185,7 @@ JAP_big_government_faction_loss = {
 			else = { #Government WILL level down
 				custom_effect_tooltip = JAP_big_government_faction_loss_tt
 
-				JAP_government_faction_goes_down_from_tier_4_to_tier_3 = yes
+				### JAP_government_faction_goes_down_from_tier_4_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -201,7 +201,7 @@ JAP_big_government_faction_loss = {
 			else = { #Government WILL level down
 				custom_effect_tooltip = JAP_big_government_faction_loss_tt
 				
-				JAP_government_faction_goes_down_from_tier_3_to_tier_2 = yes
+				### JAP_government_faction_goes_down_from_tier_3_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -218,7 +218,7 @@ JAP_big_government_faction_loss = {
 				custom_effect_tooltip = JAP_big_government_faction_loss_tt
 				
 
-				JAP_government_faction_goes_down_from_tier_2_to_tier_1 = yes
+				### JAP_government_faction_goes_down_from_tier_2_to_tier_1 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else = { #Government Faction is already at rock bottom and can't go lower than this
@@ -245,7 +245,7 @@ JAP_big_naval_faction_gain = {
 				JAP_naval_faction_is_tier_1 = yes
 			}
 			custom_effect_tooltip = JAP_big_naval_faction_gain_tt
-			JAP_naval_faction_goes_up_from_tier_1_to_tier_2 = yes
+				### JAP_naval_faction_goes_up_from_tier_1_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 		}
 		else_if = {
 			limit = {
@@ -260,7 +260,7 @@ JAP_big_naval_faction_gain = {
 			else = { #Navy WILL level up
 				custom_effect_tooltip = JAP_big_naval_faction_gain_tt
 
-				JAP_naval_faction_goes_up_from_tier_2_to_tier_3 = yes
+				### JAP_naval_faction_goes_up_from_tier_2_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -275,7 +275,7 @@ JAP_big_naval_faction_gain = {
 			}
 			else = { #Navy WILL level up
 				custom_effect_tooltip = JAP_big_naval_faction_gain_tt
-				JAP_naval_faction_goes_up_from_tier_3_to_tier_4 = yes
+				### JAP_naval_faction_goes_up_from_tier_3_to_tier_4 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		add_to_variable = { JAP_naval_faction_influence_level = JAP_big_influence_point }
@@ -300,7 +300,7 @@ JAP_big_naval_faction_loss = {
 			else = { #Navy WILL level down
 				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
 
-				JAP_naval_faction_goes_down_from_tier_4_to_tier_3 = yes
+				### JAP_naval_faction_goes_down_from_tier_4_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -316,7 +316,7 @@ JAP_big_naval_faction_loss = {
 			else = { #Navy WILL level down
 				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
 				
-				JAP_naval_faction_goes_down_from_tier_3_to_tier_2 = yes
+				### JAP_naval_faction_goes_down_from_tier_3_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -332,7 +332,7 @@ JAP_big_naval_faction_loss = {
 			else = { #Navy WILL level down
 				custom_effect_tooltip = JAP_big_naval_faction_loss_tt
 				
-				JAP_naval_faction_goes_down_from_tier_2_to_tier_1 = yes
+				### JAP_naval_faction_goes_down_from_tier_2_to_tier_1 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else = { #Navy Faction is already at rock bottom and can't go lower than this
@@ -367,7 +367,7 @@ JAP_big_zaibatsu_faction_gain = {
 			else = { #Zaibatsu WILL level up
 				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
 
-				JAP_zaibatsu_faction_goes_up_from_tier_1_to_tier_2 = yes
+				### JAP_zaibatsu_faction_goes_up_from_tier_1_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -383,7 +383,7 @@ JAP_big_zaibatsu_faction_gain = {
 			else = { #Zaibatsu WILL level up
 				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
 
-				JAP_zaibatsu_faction_goes_up_from_tier_2_to_tier_3 = yes
+				### JAP_zaibatsu_faction_goes_up_from_tier_2_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -399,7 +399,7 @@ JAP_big_zaibatsu_faction_gain = {
 			else = { #Zaibatsu WILL level up
 				custom_effect_tooltip = JAP_big_zaibatsu_faction_gain_tt
 				
-				JAP_zaibatsu_faction_goes_up_from_tier_3_to_tier_4 = yes
+				### JAP_zaibatsu_faction_goes_up_from_tier_3_to_tier_4 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		add_to_variable = { JAP_zaibatsu_faction_influence_level = JAP_big_influence_point }
@@ -424,7 +424,7 @@ JAP_big_zaibatsu_faction_loss = {
 			else = { #Zaibatsu WILL level down
 				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
 
-				JAP_zaibatsu_faction_goes_down_from_tier_4_to_tier_3 = yes
+				### JAP_zaibatsu_faction_goes_down_from_tier_4_to_tier_3 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -440,7 +440,7 @@ JAP_big_zaibatsu_faction_loss = {
 			else = { #Zaibatsu WILL level down
 				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
 				
-				JAP_zaibatsu_faction_goes_down_from_tier_3_to_tier_2 = yes
+				### JAP_zaibatsu_faction_goes_down_from_tier_3_to_tier_2 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else_if = {
@@ -456,7 +456,7 @@ JAP_big_zaibatsu_faction_loss = {
 			else = { #Zaibatsu WILL level down
 				custom_effect_tooltip = JAP_big_zaibatsu_faction_loss_tt
 				
-				JAP_zaibatsu_faction_goes_down_from_tier_2_to_tier_1 = yes
+				### JAP_zaibatsu_faction_goes_down_from_tier_2_to_tier_1 = yes # helper effect is not loaded by the mod's replaced scripted_effects path
 			}
 		}
 		else = { #Zaibatsu Faction is already at rock bottom and can't go lower than this

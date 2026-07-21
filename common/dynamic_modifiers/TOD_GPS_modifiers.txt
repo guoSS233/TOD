@@ -48,12 +48,12 @@ GPS_kaifuyitongsansi = {
 	army_defence_factor = GPS_kaifuyitongsansi_fangyu
 	army_core_attack_factor = GPS_kaifuyitongsansi_gongji
 	consumer_goods_factor = GPS_kaifuyitongsansi_xiaofeiping
-	equipment_bonus = {
-		infantry_equipment = {
-			build_cost_ic = GPS_kaifuyitongsansi_buqiang
-			instant = yes
-		}
-	}
+	### equipment_bonus = {
+	### 	infantry_equipment = {
+	### 		build_cost_ic = GPS_kaifuyitongsansi_buqiang
+	### 		instant = yes
+	### 	} # equipment_bonus is not a dynamic-modifier key
+	### }
 }
 #战后重建
 GPS_zhanhouchongjian = {
@@ -68,7 +68,8 @@ GPS_zhanhouchongjian = {
 GPS_kanluantizhi = {
 	icon = GFX_modifiers_GPS_kanluantizhi
 	resistance_target = -0.2
-	STABILITY_POPULARITY_FACTOR = GPS_kanluantizhi_dangpai
+	### STABILITY_POPULARITY_FACTOR = GPS_kanluantizhi_dangpai # invalid legacy spelling
+	party_popularity_stability_factor = GPS_kanluantizhi_dangpai
 	research_speed_factor = GPS_kanluantizhi_yanjiu
 
 }

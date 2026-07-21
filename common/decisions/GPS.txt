@@ -43,38 +43,38 @@ GPS_balance_of_power_category = {
 		    }
 	   }
         #强调对大帅的忠诚
-        GPS_qiyongshaozhuangpaijunguan = {
-		    icon = GFX_decision_generic_decision		
-		    cost = 50	
-	    	custom_cost_trigger = {
-                has_army_experience > GPS_lujunjingyan
-		    }
-		    custom_cost_text = GPS_lujunjingyan_huafei
-		    days_remove = 0
-            days_re_enable = 120
-		    ai_will_do = {
-			    factor = 10			
-		    }
-		    available = { }
-            visible = { check_variable = { GPS_lujunjingyan < 150 }  }
-		    complete_effect = {
-				hidden_effect = {army_experience = GPS_lujunjingyanhuafei}
-				
-                add_power_balance_modifier = {
-				  	id = GPS_power_balance
-  					modifier = GPS_duidashuaidezhongcheng
-			    }
-			}
-		    remove_effect = {
-				
-                remove_power_balance_modifier = {
-					id = GPS_power_balance
- 					modifier = GPS_duidashuaidezhongcheng
-			    }
-                add_to_variable = { GPS_lujunjingyan = 30 }
-                add_to_variable = { GPS_lujunjingyanhuafei = -30 }
-		    }
-	   }
+        ### GPS_qiyongshaozhuangpaijunguan = { # 重复决策 ID，原“强调忠诚”版本保留
+		### 	icon = GFX_decision_generic_decision		
+		### 	cost = 50	
+	### 	custom_cost_trigger = {
+                ### has_army_experience > GPS_lujunjingyan
+		### 	}
+		### 	custom_cost_text = GPS_lujunjingyan_huafei
+		### 	days_remove = 0
+            ### days_re_enable = 120
+		### 	ai_will_do = {
+			### 	factor = 10			
+		### 	}
+		### 	available = { }
+            ### visible = { check_variable = { GPS_lujunjingyan < 150 }  }
+		### 	complete_effect = {
+			### 	hidden_effect = {army_experience = GPS_lujunjingyanhuafei}
+			### 	
+                ### add_power_balance_modifier = {
+				### 	id = GPS_power_balance
+ 				### 	modifier = GPS_duidashuaidezhongcheng
+			### 	}
+		### 	}
+		### 	remove_effect = {
+			### 	
+                ### remove_power_balance_modifier = {
+				### 	id = GPS_power_balance
+ 				### 	modifier = GPS_duidashuaidezhongcheng
+			### 	}
+                ### add_to_variable = { GPS_lujunjingyan = 30 }
+                ### add_to_variable = { GPS_lujunjingyanhuafei = -30 }
+		### 	}
+	### 	}
 }
 GPS_xuanzhan = {
 	#西北开战

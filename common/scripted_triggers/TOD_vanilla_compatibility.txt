@@ -167,7 +167,8 @@ is_available_to_collaboration_government = { # occupied_countries.1 should be up
 		any_country_with_original_tag = {
 			original_tag_to_check = FROM
 			is_puppet_of = PREV # if already created one do not create another
-			has_autonomy_state = autonomy_collaboration_government
+			### has_autonomy_state = autonomy_collaboration_government # autonomy state is not loaded by this mod
+			always = no
 		}
 	}
 }
@@ -226,7 +227,8 @@ has_air_academy = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_air_academy_tt 
-			has_completed_focus = ETH_debre_zeyit_air_force_training_center
+			### has_completed_focus = ETH_debre_zeyit_air_force_training_center # vanilla focus tree is not loaded
+			always = no
 		}
 	}
 }
@@ -238,7 +240,8 @@ has_air_force_command = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_air_force_command_tt 
-			has_completed_focus = ETH_the_ethiopian_air_force
+			### has_completed_focus = ETH_the_ethiopian_air_force # vanilla focus tree is not loaded
+			always = no
 		}
 	}
 }
@@ -250,7 +253,8 @@ has_military_academy = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_military_academy_tt 
-			has_completed_focus = ETH_ecole_militaire_haile_selassie_1er
+			### has_completed_focus = ETH_ecole_militaire_haile_selassie_1er # vanilla focus tree is not loaded
+			always = no
 		}
 	}
 }
@@ -262,7 +266,8 @@ has_naval_academy = {
 		}
 		custom_trigger_tooltip = {
 			tooltip = has_naval_academy_tt 
-			has_completed_focus = ETH_asmera_naval_college
+			### has_completed_focus = ETH_asmera_naval_college # vanilla focus tree is not loaded
+			always = no
 		}
 	}
 }

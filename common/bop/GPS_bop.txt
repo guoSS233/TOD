@@ -40,14 +40,14 @@ GPS_power_balance = {
 			min = -0.5
 			max = -0.15
 			modifier = {
-                add_power_balance_value = {
-				   id = GPS_power_balance
-				   value = 0.005
-			    }
+				### add_power_balance_value = {
+				### 	id = GPS_power_balance
+				### 	value = 0.005
+				### } # effect cannot be placed inside a BOP modifier block
                 political_power_gain = 0.2
                 command_power_gain = 0.2
 		        land_doctrine_cost_factor = 0.05
-                UNIT_LEADER_SKILL_BONUS_FACTOR = 0.075
+				### UNIT_LEADER_SKILL_BONUS_FACTOR = 0.075 # invalid legacy modifier kept for reference
 			}
 			on_activate = { }
 			on_deactivate = { }
@@ -58,14 +58,14 @@ GPS_power_balance = {
 			min = -0.99
 			max = -0.5
 			modifier = {
-                add_power_balance_value = {
-				   id = GPS_power_balance
-				   value = 0.01
-			    }
+				### add_power_balance_value = {
+				### 	id = GPS_power_balance
+				### 	value = 0.01
+				### } # effect cannot be placed inside a BOP modifier block
                 political_power_gain = 0.35
                 command_power_gain = 0.35
 		        land_doctrine_cost_factor = 0.1
-                UNIT_LEADER_SKILL_BONUS_FACTOR = 0.1
+				### UNIT_LEADER_SKILL_BONUS_FACTOR = 0.1 # invalid legacy modifier kept for reference
 			}
 			on_activate = { }
 			on_deactivate = { }
@@ -120,10 +120,10 @@ GPS_power_balance = {
 			min = 0.15
 			max = 0.5
 			modifier = {
-                add_power_balance_value = {
-				   id = GPS_power_balance
-				   value = -0.01
-			    }
+				### add_power_balance_value = {
+				### 	id = GPS_power_balance
+				### 	value = -0.01
+				### } # effect cannot be placed inside a BOP modifier block
                 consumer_goods_factor = 0.1
                 army_org_factor = 0.1
                 conscription = 0.005
@@ -139,18 +139,18 @@ GPS_power_balance = {
 			min = 0.5
 			max = 0.99
 			modifier = {
-                add_power_balance_value = {
-				   id = GPS_power_balance
-				   value = -0.02
-			    }
+				### add_power_balance_value = {
+				### 	id = GPS_power_balance
+				### 	value = -0.02
+				### } # effect cannot be placed inside a BOP modifier block
                 consumer_goods_factor = 0.15
                 army_org_factor = 0.15
                 breakthrough_factor = 0.1
 	            supply_consumption_factor = 0.1
-                if = {
-                    limit = { has_idea = tot_economic_mobilisation }
-                    conscription = 0.03
-                }
+				### if = {
+				### 	limit = { has_idea = tot_economic_mobilisation }
+				### 	conscription = 0.03
+				### } # conditional effects are not valid inside BOP modifier blocks
 			}
 			on_activate = { }
 			on_deactivate = { }

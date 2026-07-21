@@ -505,6 +505,29 @@ generic_infantry_tank_organization = {
 			production_cost_factor = -0.05
 		}
 	}
+
+	trait = {
+		token = generic_mio_trait_battle_tank_specifications
+		name = generic_mio_trait_battle_tank_specifications
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+		position = { x=6 y=0 }
+		equipment_bonus = {
+			armor_value = 0.03
+			defense = 0.03
+		}
+	}
+
+	trait = {
+		token = generic_mio_trait_thick_armor
+		name = generic_mio_trait_thick_armor
+		icon = GFX_generic_mio_department_icon_tank_general_armor
+		position = { x=3 y=1 }
+		relative_position_id = generic_mio_trait_battle_tank_specifications
+		any_parent = { generic_mio_trait_battle_tank_specifications }
+		equipment_bonus = {
+			armor_value = 0.05
+		}
+	}
 }
 
 

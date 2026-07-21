@@ -24,7 +24,8 @@ SRC_baoweigongrenzhengquan_categories = {
 
 #各地中央局活动
 SRC_lianxigeming = {
-	allowed = { always = no }
+	### allowed = { always = no } # always is not accepted in this category scope
+	### allowed = { tag = SRC } # category container does not accept an allowed block
 
 	#建立华北局（晋冀鲁豫）
 	SRC_jianlihuabeizhongyangju = {

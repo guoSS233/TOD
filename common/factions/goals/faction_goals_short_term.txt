@@ -175,37 +175,26 @@ faction_goal_north_subjugated = {
 		FROM = { has_completed_focus = CHI_tour_the_north }
 	}
 	completed = {
-		NXM = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-		SHX = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-		GSM = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-		HBC = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-		XIC = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-		SND = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-
+		### 原版目标依赖已不存在的 NXM/GSM/HBC/XIC/SND 标签；保留旧完成条件，避免目标错误提前完成
+		### NXM = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		### SHX = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		### GSM = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		### HBC = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		### XIC = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		### SND = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		always = no
 	}
 	complete_effect = {
 		add_faction_power_projection = 50
@@ -470,21 +459,17 @@ faction_goal_south_subjugated = {
 		FROM = { has_completed_focus = CHI_tour_the_south }
 	}
 	completed = {
-		GDC = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-		GXC = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
-		YUN = {
-			all_core_state = {
-				is_owned_by = ROOT
-			}
-		}
+		### 原版 GDC 标签在本 MOD 中不存在；保留旧完成条件，避免目标错误提前完成
+		### GDC = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		### GXC = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		### YUN = {
+		### 	all_core_state = { is_owned_by = ROOT }
+		### }
+		always = no
 	}
 	complete_effect = {
 		add_faction_power_projection = 50

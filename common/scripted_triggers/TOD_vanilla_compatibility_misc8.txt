@@ -28,7 +28,8 @@ TUR_is_friend_for_bosphorus = { #Scripted Trigger for handling the Bosphorus acc
 		OR = { 
 			AND = { #Before Montreux Convention, everyone treated as "Friend" as long as Turkey is not at war with them and they control the Bosphorus 
 				TUR = { 
-					NOT = { has_completed_focus = TUR_the_montreux_convention }  
+					### NOT = { has_completed_focus = TUR_the_montreux_convention } # vanilla focus tree is not loaded
+					always = yes
 					controls_state = 797
 					NOT = { has_country_flag = TUR_strait_compromise_set }
 				}
@@ -62,7 +63,8 @@ TUR_is_friend_for_dardanelles = { #Scripted Trigger for handling the Dardanelles
 		OR = { 
 			AND = { #Before Montreux Convention, everyone treated as "Friend" as long as Turkey is not at war with them and they control The Dardanelles provinces
 				TUR = { 
-					NOT = { has_completed_focus = TUR_the_montreux_convention }  
+					### NOT = { has_completed_focus = TUR_the_montreux_convention } # vanilla focus tree is not loaded
+					always = yes
 					controls_province = 6864
 					controls_province = 849				
 					NOT = { has_country_flag = TUR_strait_compromise_set }
@@ -93,5 +95,30 @@ TUR_is_friend_for_dardanelles = { #Scripted Trigger for handling the Dardanelles
 				}
 			}
 		}
-	}	
+	}
+}
+
+TUR_owns_state_in_black_sea = {
+	 owns_any_state_of = {
+		341
+		211
+		77
+		46
+		766
+		192
+		197
+		196
+		200
+		137
+		227
+		218
+		234
+		233
+		826
+		231
+		354
+		355
+		356
+		347
+	}
 }

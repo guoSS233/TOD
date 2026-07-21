@@ -395,20 +395,20 @@ ideas = {
 			}
 		}
 		#土地改革
-		HUN_tudigaige = {
-			name = HUN_tudigaige
-
-			picture = HUN_fangshou
-
-			allowed = { original_tag = HUN }
-
-			removal_cost = -1
-
-			modifier = {
-				stability_factor = 0.1
-				consumer_goods_factor = -0.1
-			}
-		}
+		### HUN_tudigaige = { # 重复 idea ID，保留原防守分支版本以便后续恢复
+		### 	name = HUN_tudigaige
+	### 
+		### 	picture = HUN_fangshou
+	### 
+		### 	allowed = { original_tag = HUN }
+	### 
+		### 	removal_cost = -1
+	### 
+		### 	modifier = {
+		### 		stability_factor = 0.1
+		### 		consumer_goods_factor = -0.1
+		### 	}
+		### }
 		#帮助贫农
 		HUN_bangzhu = {
 			name = HUN_bangzhu
@@ -603,7 +603,8 @@ ideas = {
 				aircraft_manufacturer_cost_factor = -0.25
 			}
 			equipment_bonus = {
-				fighter_equipment = {
+				### fighter_equipment = { # invalid equipment enum kept for reference
+				fighter = {
 					build_cost_ic = -0.1
 					instant = yes
 				}
@@ -848,7 +849,7 @@ ideas = {
 			traits = {
 				TOD_economy_minister
 				conservative_democracy
-				eco_economic_organizer
+				economic_organizer
 			}
 		}
 		HUN_Lajos_Remenyi_Schneller = {
@@ -859,7 +860,7 @@ ideas = {
 			traits = {
 				TOD_economy_minister
 				conservative_democracy
-				eco_economic_organizer
+				economic_organizer
 			}
 		}
 		HUN_Frigyes_Koranyi = {
@@ -870,7 +871,7 @@ ideas = {
 			traits = {
 				TOD_economy_minister
 				conservative_democracy
-				eco_economic_organizer
+				economic_organizer
 			}
 		}
 	}

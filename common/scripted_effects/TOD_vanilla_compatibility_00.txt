@@ -3,11 +3,12 @@
 clear_sabotaged_resources_if_necesary = {
 	if = {
 		limit = {
-			not = {
-				has_dynamic_modifier = {
-					modifier = sabotaged_resources
-				}
-			}
+			### not = {
+			### 	has_dynamic_modifier = {
+			### 		modifier = sabotaged_resources
+			### 	}
+			### } # base modifier is unavailable under the current loaded dynamic-modifier set
+			always = yes
 		}
 
 		clear_variable = sabotaged_oil

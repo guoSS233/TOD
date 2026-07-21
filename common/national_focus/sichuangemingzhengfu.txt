@@ -246,8 +246,12 @@ focus_tree = {
 			factor = 5
 			modifier = {
 				all_state = {
-					limit = {is_core_of = SIC}
-					is_core_of = SCG
+					### limit = {is_core_of = SIC} # all_state has no limit trigger here
+					### is_core_of = SCG # represented by the implication below
+					OR = {
+						NOT = { is_core_of = SIC }
+						is_core_of = SCG
+					}
 				}
 				factor = 100
 			}
@@ -858,7 +862,8 @@ focus_tree = {
 			division_template = {
 				name = "sichuan mingbing"
 				priority = 1
-				division_names_group = SCG_INF_02
+				### division_names_group = SCG_INF_02 # 未定义；SCG 沿用四川（SIC）步兵命名组
+				division_names_group = SIC_INF_01
 				regiments = {
 					militia = { x = 0 y = 0 }
 					militia = { x = 0 y = 1 }

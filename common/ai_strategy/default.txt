@@ -160,6 +160,9 @@ default_role_ratios = {
 	enable = {
 		always = yes
 	}
+	abort = {
+		always = no
+	}
 
 	ai_strategy = {
 		type = role_ratio
@@ -725,8 +728,7 @@ dont_build_capitals_if_on_treaty = {
 		has_idea = MTG_naval_treaty_adherent
 	}
 
-	abort = {
-	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = unit_ratio
@@ -1108,6 +1110,7 @@ default_build_a_nav_facility = {
 # TODO MANU or THOMAS
 default_build_a_gun_emplacement = {
 	enable = {
+		always = yes
 	}
 	abort_when_not_enabled = yes
 	ai_strategy = {

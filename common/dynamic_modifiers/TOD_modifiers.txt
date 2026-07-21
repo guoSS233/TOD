@@ -1,9 +1,59 @@
 #少数民族纷争-完全控制
+# Base marker used by Hungary decisions; severity effects are supplied by the six level modifiers below.
+# Vanilla resistance compatibility. The base definition is unavailable in the current loaded dynamic-modifier set, but resistance_activity still calls it.
+sabotaged_resources = {
+	remove_trigger = {
+		ROOT = {
+			has_resistance = no
+		}
+	}
+	icon = GFX_modifiers_sabotaged_resource
+	temporary_state_resource_oil = sabotaged_oil
+	temporary_state_resource_aluminium = sabotaged_aluminium
+	temporary_state_resource_rubber = sabotaged_rubber
+	temporary_state_resource_tungsten = sabotaged_tungsten
+	temporary_state_resource_steel = sabotaged_steel
+	temporary_state_resource_chromium = sabotaged_chromium
+	temporary_state_resource_coal = sabotaged_coal
+}
+
+HUN_shaoshuminzufenzheng = {
+	enable = { always = yes }
+	icon = GFX_modifiers_tur_traditionalist_sedition
+	local_building_slots_factor = 0.0
+}
+
+# Austria emergency plan
+AUS_jinjijihua = {
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_industry
+	production_speed_buildings_factor = 0.10
+	production_speed_infrastructure_factor = 0.10
+}
+
+# Hungarian elite soldiers
+HUN_jingruishibing = {
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_military_plans
+	army_attack_factor = 0.10
+	army_defence_factor = 0.10
+	army_speed_factor = 0.05
+}
+
+# Hungary returns to the ocean
+HUN_chongfandayang = {
+	enable = { always = yes }
+	icon = GFX_modifiers_generic_industry
+	production_speed_dockyard_factor = 0.10
+	navy_org_factor = 0.05
+	naval_speed_factor = 0.05
+}
+
 HUN_shaoshuminzufenzheng_wanquankongzhi = {
 	enable = { always = yes }
 	icon = GFX_modifiers_tur_traditionalist_sedition
 	recruitable_population_factor = 0.0
-	recruitable_population_factor = 0.0
+	### recruitable_population_factor = 0.0 # duplicate assignment kept for reference
 	local_building_slots_factor = 0.0
 	state_resources_factor = 0.0
 	state_production_speed_buildings_factor = 0.0
@@ -14,7 +64,7 @@ HUN_shaoshuminzufenzheng_qingweisaoluan = {
 	enable = { always = yes }
 	icon = GFX_modifiers_tur_traditionalist_sedition
 	recruitable_population_factor = -0.1
-	recruitable_population_factor = -0.1
+	### recruitable_population_factor = -0.1 # duplicate assignment kept for reference
 	local_building_slots_factor = -0.1
 	state_resources_factor = -0.1
 	state_production_speed_buildings_factor = -0.1
@@ -23,9 +73,10 @@ HUN_shaoshuminzufenzheng_qingweisaoluan = {
 #民族纷争-基本可控
 HUN_shaoshuminzufenzheng_jibenkekong = {
 	enable = { always = yes }
-	icon = -0.2
+	### icon = -0.2 # invalid icon value kept for reference
+	icon = GFX_modifiers_tur_traditionalist_sedition
 	recruitable_population_factor = -0.2
-	recruitable_population_factor = -0.2
+	### recruitable_population_factor = -0.2 # duplicate assignment kept for reference
 	local_building_slots_factor = -0.2
 	state_resources_factor = -0.2
 	state_production_speed_buildings_factor = -0.2
@@ -36,7 +87,7 @@ HUN_shaoshuminzufenzheng_mianqiangkekong = {
 	enable = { always = yes }
 	icon = GFX_modifiers_tur_traditionalist_sedition
 	recruitable_population_factor = -0.3
-	recruitable_population_factor = -0.3
+	### recruitable_population_factor = -0.3 # duplicate assignment kept for reference
 	local_building_slots_factor = -0.3
 	state_resources_factor = -0.3
 	state_production_speed_buildings_factor = -0.3
@@ -47,7 +98,7 @@ HUN_shaoshuminzufenzheng_yanzhongshikong = {
 	enable = { always = yes }
 	icon = GFX_modifiers_tur_traditionalist_sedition
 	recruitable_population_factor = -0.4
-	recruitable_population_factor = -0.4
+	### recruitable_population_factor = -0.4 # duplicate assignment kept for reference
 	local_building_slots_factor = -0.4
 	state_resources_factor = -0.4
 	state_production_speed_buildings_factor = -0.4
@@ -58,7 +109,7 @@ HUN_shaoshuminzufenzheng_wufawutian = {
 	enable = { always = yes }
 	icon = GFX_modifiers_tur_traditionalist_sedition
 	recruitable_population_factor = -0.5
-	recruitable_population_factor = -0.5
+	### recruitable_population_factor = -0.5 # duplicate assignment kept for reference
 	local_building_slots_factor = -0.5
 	state_resources_factor = -0.5
 	state_production_speed_buildings_factor = -0.5

@@ -80,23 +80,28 @@ leader_traits = {
 		production_speed_air_base_factor = 0.13
 
 		equipment_bonus = {
-			fighter_equipment = {
+			### fighter_equipment = { # invalid equipment enum kept for reference
+			fighter = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			heavy_fighter_equipment = {
+			### heavy_fighter_equipment = { # invalid equipment enum kept for reference
+			heavy_fighter = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			CAS_equipment = {
+			### CAS_equipment = { # invalid equipment enum kept for reference
+			cas = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			tac_bomber_equipment = {
+			### tac_bomber_equipment = { # invalid equipment enum kept for reference
+			tactical_bomber = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			strat_bomber_equipment = {
+			### strat_bomber_equipment = { # invalid equipment enum kept for reference
+			strategic_bomber = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
@@ -203,23 +208,28 @@ leader_traits = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			fighter_equipment = {
+			### fighter_equipment = { # invalid equipment enum kept for reference
+			fighter = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			heavy_fighter_equipment = {
+			### heavy_fighter_equipment = { # invalid equipment enum kept for reference
+			heavy_fighter = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			CAS_equipment = {
+			### CAS_equipment = { # invalid equipment enum kept for reference
+			cas = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			tac_bomber_equipment = {
+			### tac_bomber_equipment = { # invalid equipment enum kept for reference
+			tactical_bomber = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
-			strat_bomber_equipment = {
+			### strat_bomber_equipment = { # invalid equipment enum kept for reference
+			strategic_bomber = {
 				build_cost_ic = -0.05
 				instant = yes
 			}
@@ -493,11 +503,13 @@ leader_traits = {
 
 	eco_air_superiority_proponent = {
 		equipment_bonus = {
-			fighter_equipment = {
+			### fighter_equipment = { # invalid equipment enum kept for reference
+			fighter = {
 				build_cost_ic = -0.02
 				instant = yes
 			}
-			heavy_fighter_equipment = {
+			### heavy_fighter_equipment = { # invalid equipment enum kept for reference
+			heavy_fighter = {
 				build_cost_ic = -0.02
 				instant = yes
 			}
@@ -508,11 +520,13 @@ leader_traits = {
 
 	eco_battlefield_support_proponent = {
 		equipment_bonus = {
-			CAS_equipment = {
+			### CAS_equipment = { # invalid equipment enum kept for reference
+			cas = {
 				build_cost_ic = -0.02
 				instant = yes
 			}
-			tac_bomber_equipment = {
+			### tac_bomber_equipment = { # invalid equipment enum kept for reference
+			tactical_bomber = {
 				build_cost_ic = -0.02
 				instant = yes
 			}
@@ -564,18 +578,20 @@ leader_traits = {
 
 	eco_naval_aviation_proponent = {
 		equipment_bonus = {
-			nav_bomber_equipment = {
+			### nav_bomber_equipment = { # invalid equipment enum kept for reference
+			naval_bomber = {
 				build_cost_ic = -0.02
 				instant = yes
 			}
-			cv_fighter_equipment = {
+			### cv_fighter_equipment = { # invalid equipment enum kept for reference
+			cv_small_plane_airframe = {
 				build_cost_ic = -0.02
 				instant = yes
 			}
-			cv_nav_bomber_equipment = {
-				build_cost_ic = -0.02
-				instant = yes
-			}
+### 			cv_nav_bomber_equipment = {
+### 				build_cost_ic = -0.02
+### 				instant = yes
+### 			}
 		}
 
 		random = no
@@ -605,7 +621,8 @@ leader_traits = {
 
 	eco_strategic_destruction_proponent = {
 		equipment_bonus = {
-			strat_bomber_equipment = {
+			### strat_bomber_equipment = { # invalid equipment enum kept for reference
+			strategic_bomber = {
 				build_cost_ic = -0.04
 				instant = yes
 			}
@@ -1233,12 +1250,15 @@ leader_traits = {
 
 	cair_air_superiority_doctrine = {
 		army_bonus_air_superiority_factor = 0.1
-		air_air_superiority_attack_factor = 0.03
-		air_air_superiority_defence_factor = 0.03
-		air_air_superiority_agility_factor = 0.03
-		air_interception_attack_factor = 0.03
-		air_interception_defence_factor = 0.03
-		air_interception_agility_factor = 0.03
+		### air_air_superiority_attack_factor = 0.03 # invalid modifier kept for reference
+		### air_air_superiority_defence_factor = 0.03 # invalid modifier kept for reference
+		### air_air_superiority_agility_factor = 0.03 # invalid modifier kept for reference
+		### air_interception_attack_factor = 0.03 # invalid modifier kept for reference
+		### air_interception_defence_factor = 0.03 # invalid modifier kept for reference
+		### air_interception_agility_factor = 0.03 # invalid modifier kept for reference
+		air_attack_factor = 0.03
+		air_defence_factor = 0.03
+		air_agility_factor = 0.03
 
 		random = no #apparently no anti air modifier lol
 	}
@@ -1254,17 +1274,23 @@ leader_traits = {
 
 	cair_battlefield_support_doctrine = {
 		air_cas_present_factor = 0.10
-		air_close_air_support_attack_factor = 0.03
-		air_close_air_support_defence_factor = 0.03
-		air_close_air_support_agility_factor = 0.03
+		### air_close_air_support_attack_factor = 0.03 # invalid modifier kept for reference
+		### air_close_air_support_defence_factor = 0.03 # invalid modifier kept for reference
+		### air_close_air_support_agility_factor = 0.03 # invalid modifier kept for reference
+		air_attack_factor = 0.03
+		air_defence_factor = 0.03
+		air_agility_factor = 0.03
 
 		random = no
 	}
 
 	cair_carpet_bombing_doctrine = {
-		air_strategic_bomber_attack_factor = 0.02
-		air_strategic_bomber_defence_factor = 0.02
-		air_strategic_bomber_agility_factor = 0.02
+		### air_strategic_bomber_attack_factor = 0.02 # invalid modifier kept for reference
+		### air_strategic_bomber_defence_factor = 0.02 # invalid modifier kept for reference
+		### air_strategic_bomber_agility_factor = 0.02 # invalid modifier kept for reference
+		air_attack_factor = 0.02
+		air_defence_factor = 0.02
+		air_agility_factor = 0.02
 		air_strategic_bomber_bombing_factor = 0.05
 		air_night_penalty = -0.1
 
@@ -1273,9 +1299,12 @@ leader_traits = {
 
 	cair_vertical_envelopment_doctrine = {
 		air_ace_generation_chance_factor = 0.1
-		air_paradrop_attack_factor = 0.02
-		air_paradrop_defence_factor = 0.05
-		air_paradrop_agility_factor = 0.05
+		### air_paradrop_attack_factor = 0.02 # invalid modifier kept for reference
+		### air_paradrop_defence_factor = 0.05 # invalid modifier kept for reference
+		### air_paradrop_agility_factor = 0.05 # invalid modifier kept for reference
+		air_attack_factor = 0.02
+		air_defence_factor = 0.05
+		air_agility_factor = 0.05
 
 		random = no
 	}
@@ -1285,12 +1314,15 @@ leader_traits = {
 	##################################
 
 	cair_the_red_baron = {
-		air_air_superiority_attack_factor = 0.06
-		air_air_superiority_defence_factor = 0.06
-		air_air_superiority_agility_factor = 0.03
-		air_interception_attack_factor = 0.06
-		air_interception_defence_factor = 0.06
-		air_interception_agility_factor = 0.03
+		### air_air_superiority_attack_factor = 0.06 # invalid modifier kept for reference
+		### air_air_superiority_defence_factor = 0.06 # invalid modifier kept for reference
+		### air_air_superiority_agility_factor = 0.03 # invalid modifier kept for reference
+		### air_interception_attack_factor = 0.06 # invalid modifier kept for reference
+		### air_interception_defence_factor = 0.06 # invalid modifier kept for reference
+		### air_interception_agility_factor = 0.03 # invalid modifier kept for reference
+		air_attack_factor = 0.06
+		air_defence_factor = 0.06
+		air_agility_factor = 0.03
 		#research air doctrines
 
 		random = no
@@ -1359,13 +1391,13 @@ leader_traits = {
 	XBJ_wukong_buru = { #无孔不入
 		AGENCY_UPGRADE_TIME = -0.1
 		operative_slot = 2
-		if = {
-			limit = { has_dlc = "La Resistance" }
-			operative_slot = 2
-			else = {
-				ENCRYPTION = 2
-				DECRYPTION = 2
-			}
-		}
+		### if = { # invalid conditional effect in leader trait; kept for reference
+		### 	limit = { has_dlc = "La Resistance" }
+		### 	operative_slot = 2
+		### 	else = {
+		### 		ENCRYPTION = 2
+		### 		DECRYPTION = 2
+		### 	}
+		### }
 	}
 }
