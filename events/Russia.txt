@@ -1,0 +1,359 @@
+add_namespace = TODRussia
+
+# 俄罗斯开局选举：1936 年 1 月底，符合流程文档中的“前两个月”。
+country_event = {
+	id = TODRussia.1
+	title = TODRussia.1.t
+	desc = TODRussia.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+
+	option = {
+		name = TODRussia.1.a
+		ai_chance = { factor = 100 }
+		set_politics = {
+			ruling_party = conservative_democracy
+			elections_allowed = yes
+		}
+		set_popularities = {
+			conservative_democracy = 55
+			liberal_democracy = 20
+			social_democrat = 15
+			leader_despotism = 10
+		}
+		set_country_flag = TOD_RUS_election_finished
+	}
+	option = {
+		name = TODRussia.1.b
+		set_politics = {
+			ruling_party = liberal_democracy
+			elections_allowed = yes
+		}
+		set_popularities = {
+			conservative_democracy = 20
+			liberal_democracy = 55
+			social_democrat = 15
+			leader_despotism = 10
+		}
+		set_country_flag = TOD_RUS_election_finished
+	}
+	option = {
+		name = TODRussia.1.c
+		set_politics = {
+			ruling_party = social_democrat
+			elections_allowed = yes
+		}
+		set_popularities = {
+			conservative_democracy = 15
+			liberal_democracy = 20
+			social_democrat = 55
+			leader_despotism = 10
+		}
+		set_country_flag = TOD_RUS_election_finished
+	}
+	option = {
+		name = TODRussia.1.e
+		set_politics = {
+			ruling_party = leader_despotism
+			elections_allowed = no
+		}
+		set_popularities = {
+			conservative_democracy = 10
+			liberal_democracy = 10
+			social_democrat = 10
+			leader_despotism = 70
+		}
+		set_country_flag = TOD_RUS_election_finished
+	}
+	option = {
+		name = TODRussia.1.f
+		set_politics = {
+			ruling_party = national_corporatism
+			elections_allowed = no
+		}
+		set_popularities = {
+			conservative_democracy = 10
+			liberal_democracy = 10
+			leader_despotism = 10
+			national_corporatism = 70
+		}
+		set_country_flag = TOD_RUS_election_finished
+	}
+	option = {
+		name = TODRussia.1.g
+		set_politics = {
+			ruling_party = vanguard_socialism
+			elections_allowed = no
+		}
+		set_popularities = {
+			conservative_democracy = 10
+			liberal_democracy = 10
+			leader_despotism = 10
+			vanguard_socialism = 70
+		}
+		set_country_flag = TOD_RUS_election_finished
+	}
+}
+
+# 1936 年春夏：整合西部及西伯利亚总督区，高加索、草原和远东留待后续阶段。
+country_event = {
+	id = TODRussia.2
+	title = TODRussia.2.t
+	desc = TODRussia.2.d
+	picture = GFX_report_event_german_parade_paris
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1936.2.28
+		has_country_flag = TOD_RUS_election_finished
+	}
+	option = {
+		name = TODRussia.2.a
+		if = {
+			limit = { country_exists = BLT }
+			annex_country = { target = BLT transfer_troops = yes }
+		}
+		if = {
+			limit = { country_exists = SIB }
+			annex_country = { target = SIB transfer_troops = yes }
+		}
+		set_country_flag = TOD_RUS_western_governorates_integrated
+	}
+}
+
+# 1937 年：大明内战结束后的远东、草原整合窗口。
+country_event = {
+	id = TODRussia.3
+	title = TODRussia.3.t
+	desc = TODRussia.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1937.2.28
+		has_country_flag = TOD_RUS_western_governorates_integrated
+	}
+	option = {
+		name = TODRussia.3.a
+		if = {
+			limit = { country_exists = FET }
+			annex_country = { target = FET transfer_troops = yes }
+		}
+		if = {
+			limit = { country_exists = KYR }
+			annex_country = { target = KYR transfer_troops = yes }
+		}
+		set_country_flag = TOD_RUS_asian_governorates_integrated
+	}
+}
+
+# 1938 年 3 月：高加索革命战争和“高加索红色阵线”。
+country_event = {
+	id = TODRussia.4
+	title = TODRussia.4.t
+	desc = TODRussia.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1938.2.28
+		has_country_flag = TOD_RUS_asian_governorates_integrated
+	}
+	option = {
+		name = TODRussia.4.a
+		if = {
+			limit = { country_exists = ARM }
+			ARM = {
+				if = {
+					limit = { is_in_faction = no }
+					create_faction = CAU_red_front
+				}
+			}
+			if = {
+				limit = { country_exists = GEO }
+				GEO = { add_to_faction = ARM }
+			}
+			if = {
+				limit = { country_exists = AZR }
+				AZR = { add_to_faction = ARM }
+			}
+		}
+		if = {
+			limit = { country_exists = CAU }
+			CAU = {
+				if = {
+					limit = { country_exists = ARM NOT = { has_war_with = ARM } }
+					declare_war_on = { target = ARM type = annex_everything }
+				}
+				if = {
+					limit = { country_exists = GEO NOT = { has_war_with = GEO } }
+					declare_war_on = { target = GEO type = annex_everything }
+				}
+				if = {
+					limit = { country_exists = AZR NOT = { has_war_with = AZR } }
+					declare_war_on = { target = AZR type = annex_everything }
+				}
+			}
+		}
+		set_country_flag = TOD_RUS_caucasus_war_started
+	}
+}
+
+# 1938 年下半年：北欧阶段结束后，帝俄发动第一次冬季战争。
+country_event = {
+	id = TODRussia.5
+	title = TODRussia.5.t
+	desc = TODRussia.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1938.8.31
+		has_country_flag = TOD_RUS_caucasus_war_started
+	}
+	option = {
+		name = TODRussia.5.a
+		if = {
+			limit = { country_exists = FIN NOT = { has_war_with = FIN } }
+			declare_war_on = { target = FIN type = annex_everything }
+		}
+		add_war_support = 0.10
+		set_country_flag = TOD_RUS_winter_war_started
+	}
+}
+
+# 1939 年春：若苏俄已建立，则在冬季战争后发动俄罗斯革命战争。
+country_event = {
+	id = TODRussia.6
+	title = TODRussia.6.t
+	desc = TODRussia.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1939.2.28
+		has_country_flag = TOD_RUS_winter_war_started
+	}
+	option = {
+		name = TODRussia.6.a
+		if = {
+			limit = { country_exists = SOV }
+			SOV = {
+				if = {
+					limit = { NOT = { has_war_with = RUS } }
+					declare_war_on = { target = RUS type = annex_everything }
+				}
+			}
+		}
+		set_country_flag = TOD_RUS_revolution_war_started
+	}
+}
+
+# 1939 年下半年：东墙战争，按流程对乌克兰、白俄罗斯、波兰和匈牙利开战。
+country_event = {
+	id = TODRussia.7
+	title = TODRussia.7.t
+	desc = TODRussia.7.d
+	picture = GFX_report_event_german_parade_paris
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1939.8.31
+		has_country_flag = TOD_RUS_winter_war_started
+	}
+	option = {
+		name = TODRussia.7.a
+		if = {
+			limit = { country_exists = UKR NOT = { has_war_with = UKR } }
+			declare_war_on = { target = UKR type = annex_everything }
+		}
+		if = {
+			limit = { country_exists = BLR NOT = { has_war_with = BLR } }
+			declare_war_on = { target = BLR type = annex_everything }
+		}
+		if = {
+			limit = { country_exists = POL NOT = { has_war_with = POL } }
+			declare_war_on = { target = POL type = annex_everything }
+		}
+		if = {
+			limit = { country_exists = HUN NOT = { has_war_with = HUN } }
+			declare_war_on = { target = HUN type = annex_everything }
+		}
+		set_country_flag = TOD_RUS_east_europe_war_started
+	}
+}
+
+# 1940 年春：帝俄中欧战争。
+country_event = {
+	id = TODRussia.8
+	title = TODRussia.8.t
+	desc = TODRussia.8.d
+	picture = GFX_report_event_german_parade_paris
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1940.2.28
+		has_country_flag = TOD_RUS_east_europe_war_started
+	}
+	option = {
+		name = TODRussia.8.a
+		if = {
+			limit = { country_exists = GER NOT = { has_war_with = GER } }
+			declare_war_on = { target = GER type = annex_everything }
+		}
+		set_country_flag = TOD_RUS_central_europe_war_started
+	}
+}
+
+# 1940 年下半年：苏俄路线支持德国并对法国开战。
+country_event = {
+	id = TODRussia.9
+	title = TODRussia.9.t
+	desc = TODRussia.9.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1940.8.31
+		has_country_flag = TOD_RUS_east_europe_war_started
+	}
+	option = {
+		name = TODRussia.9.a
+		if = {
+			limit = { country_exists = SOV }
+			SOV = {
+				if = {
+					limit = { country_exists = FRA NOT = { has_war_with = FRA } }
+					declare_war_on = { target = FRA type = annex_everything }
+				}
+			}
+		}
+		set_country_flag = TOD_RUS_soviet_central_war_started
+	}
+}
+
+# 1941 年：俄罗斯—法国战争，承接法国对德战争的结果。
+country_event = {
+	id = TODRussia.10
+	title = TODRussia.10.t
+	desc = TODRussia.10.d
+	picture = GFX_report_event_german_parade_paris
+	fire_only_once = yes
+	trigger = {
+		tag = RUS
+		date > 1941.2.28
+		OR = {
+			has_country_flag = TOD_RUS_central_europe_war_started
+			has_country_flag = TOD_RUS_soviet_central_war_started
+		}
+	}
+	option = {
+		name = TODRussia.10.a
+		if = {
+			limit = { country_exists = FRA NOT = { has_war_with = FRA } }
+			declare_war_on = { target = FRA type = annex_everything }
+		}
+		add_war_support = 0.10
+		set_country_flag = TOD_RUS_french_war_started
+	}
+}

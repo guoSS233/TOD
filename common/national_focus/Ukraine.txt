@@ -74,12 +74,12 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { }
+		completion_reward = { add_political_power = 50 }
 	}
 	#东欧的民主堡垒
 	focus = {
 		id = UKR_dongoudeminzhubaolei
-		icon = GFX_UKR_dongoudeminzhubaolei
+		icon = GFX_goal_generic_defence
 		prerequisite = { focus = UKR_daxuan } 
 		x = 10
 		y = 2
@@ -98,12 +98,15 @@ focus_tree = {
 			has_country_flag = UKR_shemin
 		}
 		
-		completion_reward = { }
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+		}
 	}
 	#继续整肃政府
 	focus = {
 		id = UKR_jixuzhengsuzhengfu
-		icon = GFX_UKR_jixuzhengsuzhengfu
+		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = UKR_dongoudeminzhubaolei } 
 		x = 10
 		y = 3
@@ -122,7 +125,7 @@ focus_tree = {
 	#发放消费券
 	focus = {
 		id = UKR_fafangxiaofeiquan
-		icon = GFX_UKR_fafangxiaofeiquan
+		icon = GFX_goal_generic_consumer_goods
 		prerequisite = { focus = UKR_jixuzhengsuzhengfu } 
 		x = 9
 		y = 4
@@ -141,7 +144,7 @@ focus_tree = {
 	#审判激进分子
 	focus = {
 		id = UKR_shenpanjijinfenzi
-		icon = GFX_UKR_shenpanjijinfenzi
+		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = UKR_jixuzhengsuzhengfu } 
 		x = 11
 		y = 4
@@ -165,7 +168,7 @@ focus_tree = {
 	#取缔非法组织
 	focus = {
 		id = UKR_qudifeifazuzhi
-		icon = GFX_UKR_qudifeifazuzhi
+		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = UKR_fafangxiaofeiquan } 
 		prerequisite = { focus = UKR_shenpanjijinfenzi } 
 		x = 10
@@ -185,7 +188,7 @@ focus_tree = {
 	#强化拉达力量
 	focus = {
 		id = UKR_qianghualadalilaing
-		icon = GFX_UKR_qianghualadalilaing
+		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = UKR_qudifeifazuzhi }
 		x = 10
 		y = 6
@@ -204,7 +207,7 @@ focus_tree = {
 	#工业整合委员会
 	focus = {
 		id = UKR_gongyezhengheweiyuanhui
-		icon = GFX_UKR_gongyezhengheweiyuanhui
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = UKR_qianghualadalilaing } 
 		x = 10
 		y = 7
@@ -223,7 +226,7 @@ focus_tree = {
 	#修改宪法
 	focus = {
 		id = UKR_xiugaixianfa
-		icon = GFX_UKR_xiugaixianfa
+		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = UKR_gongyezhengheweiyuanhui } 
 		x = 9
 		y = 8
@@ -242,7 +245,7 @@ focus_tree = {
 	#UKC广播
 	focus = {
 		id = UKR_UKCguangbo
-		icon = GFX_UKR_UKCguangbo
+		icon = GFX_goal_generic_propaganda
 		prerequisite = { focus = UKR_gongyezhengheweiyuanhui } 
 		x = 11
 		y = 8
@@ -261,7 +264,7 @@ focus_tree = {
 	#行政改革
 	focus = {
 		id = UKR_xingzhenggaige
-		icon = GFX_UKR_xingzhenggaige
+		icon = GFX_goal_generic_construction
 		prerequisite = { focus = UKR_xiugaixianfa } 
 		prerequisite = { focus = UKR_UKCguangbo } 
 		x = 10
@@ -286,7 +289,7 @@ focus_tree = {
 	#工会的合法权利
 	focus = {
 		id = UKR_gonghuidehefaquanli
-		icon = GFX_UKR_gonghuidehefaquanli
+		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = UKR_xingzhenggaige } 
 		x = 10
 		y = 10
@@ -307,7 +310,7 @@ focus_tree = {
 	#加大投资
 	focus = {
 		id = UKR_jiadatouzi
-		icon = GFX_UKR_jiadatouzi
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = UKR_gonghuidehefaquanli } 
 		x = 9
 		y = 11
@@ -326,7 +329,7 @@ focus_tree = {
 	#完善基层组织
 	focus = {
 		id = UKR_wanshanjicengzuzhi
-		icon = GFX_UKR_wanshanjicengzuzhi
+		icon = GFX_goal_generic_national_unity
 		prerequisite = { focus = UKR_gonghuidehefaquanli } 
 		x = 11
 		y = 11
@@ -350,7 +353,7 @@ focus_tree = {
 	#扩大就业工程
 	focus = {
 		id = UKR_kuodajiuyegongcheng
-		icon = GFX_UKR_kuodajiuyegongcheng
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = UKR_jiadatouzi } 
 		prerequisite = { focus = UKR_wanshanjicengzuzhi } 
 		x = 10
@@ -370,7 +373,7 @@ focus_tree = {
 	#传播普世价值
 	focus = {
 		id = UKR_chuanbopushijiazhi
-		icon = GFX_UKR_chuanbopushijiazhi
+		icon = GFX_goal_support_democracy
 		prerequisite = { focus = UKR_kuodajiuyegongcheng } 
 		x = 10
 		y = 13
@@ -408,7 +411,10 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = { always = no }
 		bypass = { has_country_flag = UKR_lingxiu }
-		completion_reward = { }
+		completion_reward = {
+			add_war_support = 0.10
+			army_experience = 10
+		}
 	}
 	#镇压异见分子
 	focus = {
@@ -615,7 +621,7 @@ focus_tree = {
 	#驱逐俄罗斯人
 	focus = {
 		id = UKR_quzhueluosiren
-		icon = GFX_UKR_quzhueluosiren
+		icon = GFX_goal_generic_major_war
 		prerequisite = { focus = UKR_jihuashishi }
 		x = 15
 		y = 10
@@ -639,7 +645,7 @@ focus_tree = {
 	#获得法国承诺
 	focus = {
 		id = UKR_huodefaguochengnuo
-		icon = GFX_UKR_huodefaguochengnuo
+		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = UKR_jihuashishi }
 		x = 17
 		y = 10
@@ -660,7 +666,7 @@ focus_tree = {
 	#东线防御工程
 	focus = {
 		id = UKR_dongxianfangyugongcheng
-		icon = GFX_UKR_dongxianfangyugongcheng
+		icon = GFX_goal_fortify_the_westwall
 		prerequisite = { focus = UKR_quzhueluosiren }
 		prerequisite = { focus = UKR_huodefaguochengnuo }
 		x = 16
@@ -675,12 +681,27 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { }
+		completion_reward = {
+			202 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+			203 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
 	}
 	#生产自主化
 	focus = {
 		id = UKR_shengchanzizhuhua
-		icon = GFX_UKR_shengchanzizhuhua
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_dongxianfangyugongcheng }
 		x = 16
 		y = 12
@@ -713,12 +734,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { } 
+		completion_reward = {
+			add_stability = 0.10
+			add_war_support = 0.10
+		}
 	}
 	#审视外交环境
 	focus = {
 		id = UKR_shenshiwaijiaohuanjing
-		icon = GFX_UKR_shenshiwaijiaohuanjing
+		icon = GFX_goal_generic_political_pressure
 		prerequisite = { focus = UKR_qiangdiaozhengzhichuantong focus = UKR_qudifeifazuzhi }
 		x = 13
 		y = 6
@@ -732,12 +756,12 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { } 
+		completion_reward = { add_political_power = 50 }
 	}
 	#深化与周边的合作
 	focus = {
 		id = UKR_shenhuahezuo
-		icon = GFX_UKR_shenhuahezuo
+		icon = GFX_goal_generic_improve_relations
 		prerequisite = { focus = UKR_shenshiwaijiaohuanjing}
 		x = 13
 		y = 7
@@ -751,12 +775,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { } 
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 10
+		}
 	}
 	#请求国际援助
 	focus = {
 		id = UKR_qingqiuguojiyuanzhu
-		icon = GFX_UKR_qingqiuguojiyuanzhu
+		icon = GFX_goal_generic_military_deal
 		prerequisite = { focus = UKR_shenhuahezuo}
 		x = 13
 		y = 8
@@ -770,12 +797,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { } 
+		completion_reward = {
+			add_manpower = 15000
+			add_political_power = 50
+		}
 	}
 	#首当其冲
 	focus = {
 		id = UKR_shoudangqichong
-		icon = GFX_UKR_shoudangqichong
+		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = UKR_qingqiuguojiyuanzhu}
 		x = 13
 		y = 9
@@ -789,12 +819,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { } 
+		completion_reward = {
+			add_war_support = 0.15
+			army_experience = 15
+		}
 	}
 	#经济复兴
 	focus = {
 		id = UKR_jingjifuxing
-		icon = GFX_UKR_jingjifuxing
+		icon = GFX_goal_generic_construction
 		x = 28
 		y = 1
 
@@ -812,7 +845,7 @@ focus_tree = {
 	#清算法国援助产业
 	focus = {
 		id = UKR_qingsuanfaguoyuanzhuchanye
-		icon = GFX_UKR_qingsuanfaguoyuanzhuchanye
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_jingjifuxing}
 		x = 28
 		y = 2
@@ -831,7 +864,7 @@ focus_tree = {
 	#扩建第聂伯河工业基地
 	focus = {
 		id = UKR_kuojiandiniebohegongyejidi
-		icon = GFX_UKR_kuojiandiniebohegongyejidi
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = UKR_qingsuanfaguoyuanzhuchanye}
 		x = 25
 		y = 3
@@ -857,7 +890,7 @@ focus_tree = {
 	#联合投资
 	focus = {
 		id = UKR_lianhetouzi
-		icon = GFX_UKR_lianhetouzi
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = UKR_kuojiandiniebohegongyejidi}
 		mutually_exclusive = { focus = UKR_xiyinwaiqijinzhu }
 		x = 23
@@ -883,7 +916,7 @@ focus_tree = {
 	#克里沃罗格重工业中心
 	focus = {
 		id = UKR_keliwoluogezhonggongyezhongxin
-		icon = GFX_UKR_keliwoluogezhonggongyezhongxin
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = UKR_lianhetouzi}
 		x = 22
 		y = 5
@@ -911,7 +944,7 @@ focus_tree = {
 	#第聂伯河水电站
 	focus = {
 		id = UKR_dinieboheshuidianzhan
-		icon = GFX_UKR_dinieboheshuidianzhan
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = UKR_keliwoluogezhonggongyezhongxin}
 		x = 22
 		y = 6
@@ -934,7 +967,7 @@ focus_tree = {
 	#功勋科学家
 	focus = {
 		id = UKR_gongxunkexuejia
-		icon = GFX_UKR_gongxunkexuejia
+		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = UKR_dinieboheshuidianzhan}
 		x = 22
 		y = 7
@@ -948,12 +981,12 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { }
+		completion_reward = { add_research_slot = 1 }
 	}
 	#我们的骄傲
 	focus = {
 		id = UKR_womendejiaoao
-		icon = GFX_UKR_womendejiaoao
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_gongxunkexuejia}
 		prerequisite = { focus = UKR_ranyouzengchanxiangmu}
 		x = 23
@@ -984,7 +1017,7 @@ focus_tree = {
 	#招募闲散人口
 	focus = {
 		id = UKR_zhaomuxiansanrenkou
-		icon = GFX_UKR_zhaomuxiansanrenkou
+		icon = GFX_goal_generic_national_unity
 		prerequisite = { focus = UKR_lianhetouzi}
 		x = 24
 		y = 5
@@ -1011,7 +1044,7 @@ focus_tree = {
 	#提高质检水平
 	focus = {
 		id = UKR_tigaozhijianshuiping
-		icon = GFX_UKR_tigaozhijianshuiping
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_zhaomuxiansanrenkou}
 		x = 24
 		y = 6
@@ -1030,7 +1063,7 @@ focus_tree = {
 	#燃油增产项目
 	focus = {
 		id = UKR_ranyouzengchanxiangmu
-		icon = GFX_UKR_ranyouzengchanxiangmu
+		icon = GFX_goal_generic_oil_refinery
 		prerequisite = { focus = UKR_tigaozhijianshuiping}
 		x = 24
 		y = 7
@@ -1049,7 +1082,7 @@ focus_tree = {
 	#吸引外企进驻
 	focus = {
 		id = UKR_xiyinwaiqijinzhu
-		icon = GFX_UKR_xiyinwaiqijinzhu
+		icon = GFX_goal_generic_trade
 		prerequisite = { focus = UKR_kuojiandiniebohegongyejidi}
 		mutually_exclusive = { focus = UKR_lianhetouzi }
 		x = 27
@@ -1069,7 +1102,7 @@ focus_tree = {
 	#瑞典轧钢技术
 	focus = {
 		id = UKR_ruidianzhagangjishu
-		icon = GFX_UKR_ruidianzhagangjishu
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_xiyinwaiqijinzhu}
 		x = 26
 		y = 5
@@ -1096,7 +1129,7 @@ focus_tree = {
 	#德国电子科技
 	focus = {
 		id = UKR_deguodedianzikeji
-		icon = GFX_UKR_deguodedianzikeji
+		icon = GFX_goal_generic_secret_weapon
 		prerequisite = { focus = UKR_ruidianzhagangjishu}
 		x = 26
 		y = 6
@@ -1136,7 +1169,7 @@ focus_tree = {
 	#匈牙利农用机械
 	focus = {
 		id = UKR_xiongyalinongyongjixie
-		icon = GFX_UKR_xiongyalinongyongjixiee
+		icon = GFX_goal_generic_construction
 		prerequisite = { focus = UKR_deguodedianzikeji}
 		x = 26
 		y = 7
@@ -1150,12 +1183,12 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { }
+		completion_reward = { add_offsite_building = { type = industrial_complex level = 1 } }
 	}
 	#新生的产品经济
 	focus = {
 		id = UKR_xinshengdechanpinjingji
-		icon = GFX_UKR_xinshengdechanpinjingji
+		icon = GFX_goal_generic_production2
 		prerequisite = { focus = UKR_xiongyalinongyongjixie}
 		prerequisite = { focus = UKR_duoyuanlianheti}
 		x = 27
@@ -1170,12 +1203,12 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { }
+		completion_reward = { add_ideas = UKR_dianlichongzu }
 	}
 	#授权代理
 	focus = {
 		id = UKR_shouquandaili
-		icon = GFX_UKR_shouquandaili
+		icon = GFX_goal_generic_trade
 		prerequisite = { focus = UKR_xiyinwaiqijinzhu} 
 		x = 28
 		y = 5
@@ -1210,7 +1243,7 @@ focus_tree = {
 	#法式兵工厂
 	focus = {
 		id = UKR_fashibinggongchag
-		icon = GFX_UKR_fashibinggongchag
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = UKR_shouquandaili} 
 		x = 28
 		y = 6
@@ -1238,7 +1271,7 @@ focus_tree = {
 	#多元联合体
 	focus = {
 		id = UKR_duoyuanlianheti
-		icon = GFX_UKR_duoyuanlianheti
+		icon = GFX_goal_generic_major_alliance
 		prerequisite = { focus = UKR_fashibinggongchag} 
 		x = 28
 		y = 7
@@ -1260,7 +1293,7 @@ focus_tree = {
 	#工业安全保障
 	focus = {
 		id = UKR_gongyeanquanbaozhang
-		icon = GFX_UKR_gongyeanquanbaozhang
+		icon = GFX_goal_generic_defence
 		prerequisite = { focus = UKR_womendejiaoao focus = UKR_xinshengdechanpinjingji} 
 		x = 25
 		y = 9
@@ -1279,7 +1312,7 @@ focus_tree = {
 	#经济作物种植区
 	focus = {
 		id = UKR_jingjizuowuzhongzhiqu
-		icon = GFX_UKR_jingjizuowuzhongzhiqu
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_qingsuanfaguoyuanzhuchanye} 
 		x = 32
 		y = 3
@@ -1320,7 +1353,7 @@ focus_tree = {
 	#国家生产指导部
 	focus = {
 		id = UKR_guojiashengchanzhidaobu
-		icon = GFX_UKR_guojiashengchanzhidaobu
+		icon = GFX_goal_generic_production2
 		prerequisite = { focus = UKR_jingjizuowuzhongzhiqu} 
 		x = 31
 		y = 4
@@ -1339,7 +1372,7 @@ focus_tree = {
 	#希望在黑土地里
 	focus = {
 		id = UKR_xiwangzaiheitudili
-		icon = GFX_UKR_xiwangzaiheitudili
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = UKR_guojiashengchanzhidaobu} 
 		x = 30
 		y = 5
@@ -1375,7 +1408,7 @@ focus_tree = {
 	#中央电子设计局
 	focus = {
 		id = UKR_zhongyangdianzishejiju
-		icon = GFX_UKR_zhongyangdianzishejiju
+		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = UKR_xiwangzaiheitudili} 
 		x = 30
 		y = 6
@@ -1401,7 +1434,7 @@ focus_tree = {
 	#轻工业现代化
 	focus = {
 		id = UKR_qinggongyexiandaihua
-		icon = GFX_UKR_qinggongyexiandaihua
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_zhongyangdianzishejiju} 
 		x = 30
 		y = 7
@@ -1427,7 +1460,7 @@ focus_tree = {
 	#基辅大学
 	focus = {
 		id = UKR_jifudaxue
-		icon = GFX_UKR_jifudaxue
+		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = UKR_guojiashengchanzhidaobu} 
 		x = 32
 		y = 5
@@ -1446,7 +1479,7 @@ focus_tree = {
 	#与巨龙的交易
 	focus = {
 		id = UKR_yujulongdejiaoyi
-		icon = GFX_UKR_yujulongdejiaoyi
+		icon = GFX_goal_generic_trade
 		prerequisite = { focus = UKR_jifudaxue} 
 		x = 32
 		y = 6
@@ -1460,12 +1493,12 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { }
+		completion_reward = { add_ideas = UKR_dianlichongzu }
 	}
 	#扩大食品出口规模
 	focus = {
 		id = UKR_kuodashipinchukouguimo
-		icon = GFX_UKR_kuodashipinchukouguimo
+		icon = GFX_goal_generic_positive_trade_relations
 		prerequisite = { focus = UKR_yujulongdejiaoyi} 
 		x = 32
 		y = 7
@@ -1487,7 +1520,7 @@ focus_tree = {
 	#专注国内运输
 	focus = {
 		id = UKR_zhuanzhuguoneiyunshu
-		icon = GFX_UKR_zhuanzhuguoneiyunshu
+		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = UKR_jingjizuowuzhongzhiqu}
 		x = 34
 		y = 4
@@ -1521,7 +1554,7 @@ focus_tree = {
 	#基辅州运输中心
 	focus = {
 		id = UKR_jifuzhouyunshuzhongxin
-		icon = GFX_UKR_jifuzhouyunshuzhongxin
+		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = UKR_jingjizuowuzhongzhiqu}
 		x = 34
 		y = 5
@@ -1545,7 +1578,7 @@ focus_tree = {
 	#乡镇作坊
 	focus = {
 		id = UKR_xiangzhenzuofang
-		icon = GFX_UKR_xiangzhenzuofang
+		icon = GFX_goal_generic_construct_civ_factory
 		prerequisite = { focus = UKR_jifuzhouyunshuzhongxin}
 		x = 34
 		y = 6
@@ -1581,7 +1614,7 @@ focus_tree = {
 	#扩大资源开采
 	focus = {
 		id = UKR_kuodaziyuankaicai
-		icon = GFX_UKR_kuodaziyuankaicai
+		icon = GFX_goal_generic_production
 		prerequisite = { focus = UKR_xiangzhenzuofang}
 		x = 34
 		y = 7
@@ -1600,7 +1633,7 @@ focus_tree = {
 	#扎波罗热研究所
 	focus = {
 		id = UKR_zhaboluoreyanjiusuo
-		icon = GFX_UKR_zhaboluoreyanjiusuo
+		icon = GFX_goal_generic_scientific_exchange
 		prerequisite = { focus = UKR_qinggongyexiandaihua}
 		prerequisite = { focus = UKR_kuodashipinchukouguimo}
 		prerequisite = { focus = UKR_kuodaziyuankaicai}
@@ -1621,7 +1654,7 @@ focus_tree = {
 	#乌东综合工业基地
 	focus = {
 		id = UKR_wudongzonghegongyejidi
-		icon = GFX_UKR_wudongzonghegongyejidi
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = { focus = UKR_gongyeanquanbaozhang}
 		prerequisite = { focus = UKR_zhaboluoreyanjiusuo}
 		x = 28
@@ -1650,7 +1683,7 @@ focus_tree = {
 	#生于微寒
 	focus = {
 		id = UKR_shengyuweihan
-		icon = GFX_UKR_shengyuweihan
+		icon = GFX_goal_generic_defence
 		x = 39
 		y = 1
 
@@ -1663,12 +1696,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_dynamic_modifier = { modifier = UKR_yeyudenongminjun }}
+		completion_reward = {
+			add_dynamic_modifier = { modifier = UKR_yeyudenongminjun }
+			custom_effect_tooltip = UKR_shengyuweihan_xiaoguo
+		}
 	}
 	#整顿军官团
 	focus = {
 		id = UKR_zhengdunjunguantuan
-		icon = GFX_UKR_zhengdunjunguantuan
+		icon = GFX_goal_generic_army_doctrines
 		x = 39
 		y = 2
 
@@ -1689,12 +1725,13 @@ focus_tree = {
 			add_to_variable = { UKR_jihuashangxian = 0.4 }
 			add_to_variable = { UKR_zhihuidianshu = 40 }
 			add_to_variable = { UKR_jihuasudu = 0.4 }
+			custom_effect_tooltip = UKR_zhengdunjunguantuan_xiaoguo
 		}
 	}
 	#提高军饷
 	focus = {
 		id = UKR_tigaojunxiang
-		icon = GFX_UKR_tigaojunxiang
+		icon = GFX_goal_generic_production
 		x = 39
 		y = 3
 
@@ -1713,12 +1750,13 @@ focus_tree = {
 			add_to_variable = { UKR_huifudu = 0.1 }
 			add_to_variable = { UKR_junshangzengjia = 0.05 }
 			add_to_variable = { UKR_zhihuidianshu = 20 }
+			custom_effect_tooltip = UKR_tigaojunxiang_xiaoguo
 		}
 	}
 	#更新轻型武器
 	focus = {
 		id = UKR_gengxinqingxingwuqi
-		icon = GFX_UKR_gengxinqingxingwuqi
+		icon = GFX_goal_generic_small_arms
 		x = 36
 		y = 4
 
@@ -1744,7 +1782,7 @@ focus_tree = {
 	#建立师属炮兵营
 	focus = {
 		id = UKR_jianlipaobingying
-		icon = GFX_UKR_jianlipaobingying
+		icon = GFX_goal_generic_army_artillery
 		x = 36
 		y = 5
 
@@ -1770,7 +1808,7 @@ focus_tree = {
 	#健全支援体系
 	focus = {
 		id = UKR_jianquanzhiyuantixi
-		icon = GFX_UKR_jianquanzhiyuantixi
+		icon = GFX_goal_generic_intelligence_exchange
 		x = 36
 		y = 6
 
@@ -1796,7 +1834,7 @@ focus_tree = {
 	#摩托化辎重部队
 	focus = {
 		id = UKR_motuohuazizhongbudui
-		icon = GFX_UKR_motuohuazizhongbudui
+		icon = GFX_goal_generic_army_motorized
 		x = 36
 		y = 7
 
@@ -1822,7 +1860,7 @@ focus_tree = {
 	#实行新的训练操典
 	focus = {
 		id = UKR_xunliancaodian
-		icon = GFX_UKR_xunliancaodian
+		icon = GFX_goal_generic_army_doctrines
 		x = 38
 		y = 4
 
@@ -1836,12 +1874,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_to_variable = { UKR_lujunjinyan = 0.03 } }
+		completion_reward = {
+			add_to_variable = { UKR_lujunjinyan = 0.03 }
+			custom_effect_tooltip = UKR_xunliancaodian_xiaoguo
+		}
 	}
 	#统一的指挥中枢
 	focus = {
 		id = UKR_zhihuizhongshu
-		icon = GFX_UKR_zhihuizhongshu
+		icon = GFX_goal_generic_position_armies
 		x = 40
 		y = 4
 
@@ -1855,12 +1896,15 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { add_to_variable = { UKR_zhihuidianshu = 40 } }
+		completion_reward = {
+			add_to_variable = { UKR_zhihuidianshu = 40 }
+			custom_effect_tooltip = UKR_zhihuizhongshu_xiaoguo
+		}
 	}
 	#落实纪律规章
 	focus = {
 		id = UKR_luoshijilvguizhang
-		icon = GFX_UKR_luoshijilvguizhang
+		icon = GFX_goal_generic_national_unity
 		x = 39
 		y = 5
 
@@ -1880,12 +1924,13 @@ focus_tree = {
 			add_dynamic_modifier = { modifier = UKR_gaigechuchengdejundui }
 			add_to_variable = { UKR_zuzhidu = 0.1 }
 			add_to_variable = { UKR_huifudu = 0.1 }
+			custom_effect_tooltip = UKR_luoshijilvguizhang_xiaoguo
 		}
 	}
 	#扩大本土培训规模
 	focus = {
 		id = UKR_kuodapeixunguimo
-		icon = GFX_UKR_kuodapeixunguimo
+		icon = GFX_goal_generic_special_forces
 		x = 38
 		y = 6
 
@@ -1902,12 +1947,13 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { UKR_jihuashangxian = 0.15 }
 			add_to_variable = { UKR_jihuasudu = 0.15 }
+			custom_effect_tooltip = UKR_kuodapeixunguimo_xiaoguo
 		}
 	}
 	#乡村地道小队
 	focus = {
 		id = UKR_xiangcundidaoxiaodui
-		icon = GFX_UKR_xiangcundidaoxiaodui
+		icon = GFX_goal_generic_defence
 		x = 40
 		y = 6
 
@@ -1924,12 +1970,13 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { UKR_qianhaosudu = 0.2 }
 			add_to_variable = { UKR_qianhao = 5 }
+			custom_effect_tooltip = UKR_xiangcundidaoxiaodui_xiaoguo
 		}
 	}
 	#树立老兵模范
 	focus = {
 		id = UKR_shulilaobingmofan
-		icon = GFX_UKR_shulilaobingmofan
+		icon = GFX_goal_generic_army_doctrines
 		x = 38
 		y = 7
 
@@ -1946,12 +1993,13 @@ focus_tree = {
 		completion_reward = { 
 			army_experience = 10
 			add_to_variable = { UKR_shibingsunshi = 0.2 }
+			custom_effect_tooltip = UKR_shulilaobingmofan_xiaoguo
 		}
 	}
 	#急行军训练
 	focus = {
 		id = UKR_jixingjunxunlian
-		icon = GFX_UKR_jixingjunxunlian
+		icon = GFX_goal_generic_army_motorized
 		x = 40
 		y = 7
 
@@ -1968,12 +2016,13 @@ focus_tree = {
 		completion_reward = { 
 			add_to_variable = { UKR_lujunsudu = 0.05 }
 			add_to_variable = { UKR_zuzhidu = 0.1 }
+			custom_effect_tooltip = UKR_jixingjunxunlian_xiaoguo
 		}
 	}
 	#保卫这片热土
 	focus = {
 		id = UKR_baoweizhepianretu
-		icon = GFX_UKR_baoweizhepianretu
+		icon = GFX_goal_generic_defence
 		x = 39
 		y = 8
 
@@ -1991,12 +2040,13 @@ focus_tree = {
 		completion_reward = { 
 			remove_dynamic_modifier = { modifier = UKR_gaigechuchengdejundui }
 			add_ideas = UKR_quanxindeguofangjun
+			custom_effect_tooltip = UKR_baoweizhepianretu_xiaoguo
 		}
 	}
 	#敖德萨军事学院
 	focus = {
 		id = UKR_aodesajunshixueyuan
-		icon = GFX_UKR_aodesajunshixueyuan
+		icon = GFX_goal_generic_army_doctrines
 		x = 42
 		y = 4
 
@@ -2022,7 +2072,7 @@ focus_tree = {
 	#战术交流会
 	focus = {
 		id = UKR_zhanshujiaoliuhui
-		icon = GFX_UKR_zhanshujiaoliuhui
+		icon = GFX_goal_generic_army_doctrines
 		x = 42
 		y = 5
 
@@ -2041,7 +2091,7 @@ focus_tree = {
 	#雷达研究所
 	focus = {
 		id = UKR_leidaynjiusuo
-		icon = GFX_UKR_leidaynjiusuo
+		icon = GFX_goal_generic_radar
 		x = 42
 		y = 6
 
@@ -2067,7 +2117,7 @@ focus_tree = {
 	#理论实战化
 	focus = {
 		id = UKR_lilunshizhanhua
-		icon = GFX_UKR_lilunshizhanhua
+		icon = GFX_goal_generic_army_doctrines
 		x = 42
 		y = 7
 

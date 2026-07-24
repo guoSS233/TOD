@@ -1,6 +1,5 @@
-﻿division_template = {
+division_template = {
 	name = "Arméfördelningen" 					#步兵师
-	division_names_group = SWE_AF_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -21,7 +20,6 @@
 
 division_template = {
 	name = "Reservfördelningen" 					#步兵师
-	division_names_group = SWE_GAR_01
 
 	regiments = {
 		infantry = { x = 0 y = 0 }
@@ -34,7 +32,6 @@ division_template = {
 }
 division_template = {
 	name = "Kavallerfördelningen" 					#骑兵师
-	division_names_group = SWE_KF_01
 
 	regiments = {
 		cavalry = { x = 0 y = 0 }
@@ -50,7 +47,6 @@ division_template = {
 }
 division_template = {
 	name = "Motoriserfördelningen" 					#摩托师
-	division_names_group = SWE_MF_01
 
 	regiments = {
 		motorized = { x = 0 y = 0 }
@@ -68,7 +64,6 @@ division_template = {
 
 division_template = {
 	name = "Pansarregemente"					#坦克师
-	division_names_group = SWE_ARM_01
 
 	regiments = {
 		light_armor = { x = 0 y = 0 }
@@ -86,7 +81,6 @@ division_template = {
 
 division_template = {
 	name = "Kustjägarfördelningen"					#海军陆战队
-	division_names_group = SWE_KJF_01
 
 	regiments = {
 		marine = { x = 0 y = 0 } 
@@ -335,7 +329,8 @@ units = {
 		location = 9147
 		division_template = "Reservfördelningen" 
 		start_experience_factor = 0.1
-	division= {	
+	}
+	division= {
 		division_name = {
 			is_name_ordered = yes
 			name_order = 7
@@ -353,8 +348,7 @@ units = {
 		division_template = "Reservfördelningen" 
 		start_experience_factor = 0.1
 	}
-	}
-	division= {	
+	division= {
 		division_name = {
 			is_name_ordered = yes
 			name_order = 1

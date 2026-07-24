@@ -130,7 +130,7 @@ focus_tree = {
 		
 		completion_reward = { 
 			add_political_power = 50
-			HUN = {country_event = { id = TODHungary.1}}
+			HUN = {country_event = { id = TODhungary.1}}
 		}
 	}
 	#右翼的行动
@@ -144,7 +144,7 @@ focus_tree = {
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
-		select_effect = {country_event = { id = TODHungary.2 days = 7}}
+		select_effect = {country_event = { id = TODhungary.2 days = 7}}
 		
 		cost = 5
 		
@@ -166,7 +166,7 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		cost = 5
-		select_effect = {country_event = { id = TODHungary.5 days = 7}}
+		select_effect = {country_event = { id = TODhungary.5 days = 7}}
 		
 		ai_will_do = {base = 10}
 		available = {}
@@ -291,7 +291,7 @@ focus_tree = {
 				limit = {check_variable = { HUN_huoshengdangpai = 8 compare = equals }}
 				set_country_flag = HUN_zuoyilianmenghuodeshengli
 			}
-			country_event = { id = TODHungary.8 }
+			country_event = { id = TODhungary.8 }
 			remove_ideas = HUN_ziyoudechunfeng
 		}
 	}
@@ -323,19 +323,19 @@ focus_tree = {
 		completion_reward = { 
 			if = {
 				limit = { has_country_flag = HUN_minzutuanjiedanghuodeshengli }
-				country_event = { id = TODHungary.9}
+				country_event = { id = TODhungary.9}
 			}
 			if = {
 				limit = { has_country_flag = HUN_baoshoudanghuodeshengli }
-				country_event = { id = TODHungary.10}
+				country_event = { id = TODhungary.10}
 			}
 			if = {
 				limit = { has_country_flag = HUN_xiaonongdanghuodeshengli }
-				country_event = { id = TODHungary.11}
+				country_event = { id = TODhungary.11}
 			}
 			if = {
 				limit = { has_country_flag = HUN_youyilianmenghuodeshengli }
-				country_event = { id = TODHungary.12}
+				country_event = { id = TODhungary.12}
 			}
 		}
 	}
@@ -352,7 +352,7 @@ focus_tree = {
 		available_if_capitulated = no
 		
 		cost = 5
-		select_effect = {country_event = { id = TODHungary.13 }}
+		select_effect = {country_event = { id = TODhungary.13 }}
 		
 		ai_will_do = {base = 10}
 		available = {}
@@ -1119,19 +1119,19 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = { has_country_flag = HUN_48danghuodeshengli }
-				country_event = { id = TODHungary.20}
+				country_event = { id = TODhungary.20}
 			}
 			if = {
 				limit = { has_country_flag = HUN_jidujiaolianmenghuodeshengli }
-				country_event = { id = TODHungary.21}
+				country_event = { id = TODhungary.21}
 			}
 			if = {
 				limit = { has_country_flag = HUN_shemindanghuodeshengli }
-				country_event = { id = TODHungary.22}
+				country_event = { id = TODhungary.22}
 			}
 			if = {
 				limit = { has_country_flag = HUN_zuoyilianmenghuodeshengli }
-				country_event = { id = TODHungary.23}
+				country_event = { id = TODhungary.23}
 			}
 		}
 	}
@@ -1984,7 +1984,9 @@ focus_tree = {
 		ai_will_do = {base = 10}
 		available = {}
 		
-		completion_reward = { country_event = {  id = TODhungary.30 } }
+		completion_reward = {
+			### country_event = { id = TODhungary.30 } # 事件仅有注释掉的本地化，没有定义
+		}
 	}
 	#坚持本国制造
 	focus = {
@@ -2026,7 +2028,9 @@ focus_tree = {
 		ai_will_do = {base = 10}
 		available = {}
 		
-		completion_reward = { country_event = {  id = TODhungary.31 }}
+		completion_reward = {
+			### country_event = { id = TODhungary.31 } # 事件仅有注释掉的本地化，没有定义
+		}
 	}
 	#联合飞机研发
 	focus = {
@@ -2190,7 +2194,9 @@ focus_tree = {
 			remove_ideas = HUN_pangdadejundui
 			add_dynamic_modifier = { modifier = HUN_jingruishibing }
 			custom_effect_tooltip = HUN_caijun
-			hidden_effect = { HUN = {country_event = { days = 60 id = HUN } } }
+							hidden_effect = {
+								### HUN = { country_event = { days = 60 id = HUN } } # HUN 不是事件 ID，原调用无法解析
+							}
 		}
 	}
 	#保持规模
@@ -3462,7 +3468,17 @@ focus_tree = {
 						} 
 					}
 				}
-				HUN = { add_to_faction = UKR }
+				UKR = { add_to_faction = HUN }
+			}
+			if = {
+				limit = {
+					country_exists = BLR
+					BLR = {
+						has_opinion = { target = HUN value > 30 }
+						NOT = { has_war_with = HUN }
+					}
+				}
+				BLR = { add_to_faction = HUN }
 			}
 			country_event = {id = TODhungary.35}
 		 }

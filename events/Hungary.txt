@@ -718,7 +718,16 @@ news_event = {
 			}
 		}
 		name = TODhungary.35.a
-		
+		if = {
+			limit = {
+				country_exists = BLR
+				BLR = {
+					NOT = { is_in_faction_with = HUN }
+					NOT = { has_war_with = HUN }
+				}
+			}
+			BLR = { add_to_faction = HUN }
+		}
 	}
 	option = { 
 		trigger = {
