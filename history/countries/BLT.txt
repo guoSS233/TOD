@@ -1,21 +1,29 @@
 ﻿capital = 12
 
-oob = "empty"
+oob = "BLT_1936"
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_naval_oob = "BLT_naval_mtg"
+	else = {
+		set_naval_oob = "BLT_naval_legacy"
+	}
+}
 
 set_politics = {
-	ruling_party = leader_despotism
+	ruling_party = authoritarian_oligarchy
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	national_corporatism = 0
+	national_corporatism = 7
 	sacred_revivalism = 0
-	leader_despotism = 73
-	authoritarian_oligarchy = 15
-	conservative_democracy = 6
-	liberal_democracy = 6
+	leader_despotism = 10
+	authoritarian_oligarchy = 83
+	conservative_democracy = 0
+	liberal_democracy = 0
 	consociationalism = 0
 	social_democrat = 0
 	agroindustrial_socialism = 0
@@ -23,4 +31,13 @@ set_popularities = {
 	council_socialism = 0
 	vanguard_socialism = 0
 }
+add_ideas = {
+	BLT_zongdufu
+	BLT_baltic_germans
+	limited_conscription
+	export_focus
+	civilian_economy
+}
 recruit_character = BLT_Bermondt_Avalov
+recruit_character = BLT_Povilas_Plechavicius
+recruit_character = BLT_Rudiger_von_der_Goltz

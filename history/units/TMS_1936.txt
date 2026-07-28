@@ -1,0 +1,41 @@
+division_template = {
+	name = "TMS_infantry"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 0 y = 4 }
+	}
+	is_locked = yes
+	force_allow_recruiting = yes
+}
+division_template = {
+	name = "TMS_cavalry"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+	}
+	is_locked = yes
+	force_allow_recruiting = yes
+}
+units = {
+division = {
+	location = 12465
+	division_template = "TMS_infantry"
+	start_experience_factor = 0.1
+}
+division = {
+	location = 12465
+	division_template = "TMS_cavalry"
+	start_experience_factor = 0.1
+}
+division = {
+	location = 12465
+	division_template = "TMS_cavalry"
+	start_experience_factor = 0.1
+}
+}
+
