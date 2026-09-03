@@ -1,0 +1,41 @@
+on_actions = {
+	on_monthly_SRC = {
+		effect = {
+			if = {
+				limit = { has_country_flag = SRC_chen_new_tax_system_enacted }
+				every_military_industrial_organization = {
+					limit = { has_mio_flag = { flag = SRC_chen_new_tax_system_production_line value > 0 } }
+					add_mio_funds = 20
+				}
+			}
+		}
+	}
+
+	# ROOT is MIO. Production-line assignment is tracked separately from research-team tasks.
+	on_mio_industrial_manufacturer_assigned = {
+		effect = {
+			set_mio_flag = { flag = SRC_chen_new_tax_system_production_line value = 1 }
+		}
+	}
+
+	on_mio_industrial_manufacturer_unassigned = {
+		effect = {
+			clr_mio_flag = SRC_chen_new_tax_system_production_line
+		}
+	}
+
+	on_mio_size_increased = {
+		effect = {
+			if = {
+				limit = { OWNER = { tag = SRC has_country_flag = SRC_ren_single_director_management_enacted } }
+				add_mio_funds = 150
+			}
+			OWNER = {
+				if = {
+					limit = { tag = SRC has_country_flag = SRC_chen_labor_remuneration_enacted }
+					add_stability = 0.01
+				}
+			}
+		}
+	}
+}
