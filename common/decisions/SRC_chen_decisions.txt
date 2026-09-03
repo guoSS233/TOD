@@ -1,0 +1,145 @@
+# 陈独秀线空壳决议：必须嵌套在决议分类内。
+SRC_chen_political_decisions = {
+
+SRC_chen_political_sansanzhi = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gemingtongyizhanxian }
+	visible = { has_completed_focus = SRC_gemingtongyizhanxian }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_antimperial_democratic_law = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_goujianfanditongmeng }
+	visible = { has_completed_focus = SRC_goujianfanditongmeng }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_revolutionary_technicians = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gaizaozichanjieji }
+	visible = { has_completed_focus = SRC_gaizaozichanjieji }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_local_participation = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_datongshijieguodu }
+	visible = { has_completed_focus = SRC_datongshijieguodu }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_local_supply_cooperatives = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_tudigaige }
+	visible = { has_completed_focus = SRC_tudigaige }
+	cost = 100
+	days_remove = 90
+	fire_only_once = yes
+	remove_effect = {
+		add_tech_bonus = {
+			name = SRC_chen_local_supply_cooperatives_industry
+			ahead_reduction = 2
+			uses = 1
+			category = industry
+		}
+	}
+}
+
+SRC_chen_new_tax_system = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui NOT = { has_country_flag = SRC_chen_new_tax_system_enacted } }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	cost = 100
+	days_remove = 75
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_chen_new_tax_system_effect_tt
+		hidden_effect = {
+			set_country_flag = SRC_chen_new_tax_system_enacted
+		}
+	}
+}
+
+SRC_chen_labor_remuneration = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui NOT = { has_country_flag = SRC_chen_labor_remuneration_enacted } }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	cost = 100
+	days_remove = 75
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_chen_labor_remuneration_effect_tt
+		hidden_effect = { set_country_flag = SRC_chen_labor_remuneration_enacted }
+	}
+}
+
+SRC_chen_industry_energy = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_transport_trade = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_five_horses = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye NOT = { has_country_flag = SRC_chen_five_horses_established } }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		add_tech_bonus = { name = SRC_chen_five_horses_industry ahead_reduction = 2 uses = 1 category = industry }
+	}
+}
+
+SRC_chen_processing_orders = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye NOT = { has_country_flag = SRC_chen_processing_orders_held } }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_chen_processing_orders_held
+		add_tech_bonus = { name = SRC_chen_processing_orders_industry bonus = 1 uses = 1 category = industry }
+	}
+}
+
+SRC_chen_light_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_regional_heavy_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_organization_talent = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_tieguodundae }
+	visible = { has_completed_focus = SRC_tieguodundae }
+	days_remove = 1
+	complete_effect = { }
+}
+}

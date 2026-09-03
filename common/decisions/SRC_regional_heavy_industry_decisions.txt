@@ -1,0 +1,56 @@
+SRC_regional_heavy_industry_decisions = {
+	SRC_expand_jilin_jiangbei_industrial_zone = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 847 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_jilin_jiangbei_industrial_zone_expanded } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 847 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } hidden_effect = { 847 = { set_state_flag = SRC_jilin_jiangbei_industrial_zone_expanded } } }
+	}
+
+	SRC_reorganize_shenyang_industrial_zone = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 846 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_shenyang_industrial_zone_reorganized } } }
+		cost = 80
+		days_remove = 30
+		remove_effect = { 846 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } add_dynamic_modifier = { modifier = SRC_shenyang_industrial_zone } } hidden_effect = { 846 = { set_state_flag = SRC_shenyang_industrial_zone_reorganized } } }
+	}
+
+	SRC_restore_jinzhou_shipyard = {
+		icon = generic_naval
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 745 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_jinzhou_shipyard_restored } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 745 = { add_dynamic_modifier = { modifier = SRC_jinzhou_shipyard } } mio:GPS_jinzhouzaochuanchang = { add_mio_funds = 1000 } hidden_effect = { 745 = { set_state_flag = SRC_jinzhou_shipyard_restored } } }
+	}
+
+	SRC_expand_longjiang_machine_factory = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_longjiang_machine_factory_expanded } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 714 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } hidden_effect = { 714 = { set_state_flag = SRC_longjiang_machine_factory_expanded } } }
+	}
+
+	SRC_coordinate_liaoyang_industry = {
+		icon = steel
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 845 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_liaoyang_industry_coordinated } } }
+		cost = 80
+		days_remove = 30
+		remove_effect = { 845 = { add_dynamic_modifier = { modifier = SRC_molten_iron_flows } } hidden_effect = { 845 = { set_state_flag = SRC_liaoyang_industry_coordinated } } }
+	}
+}

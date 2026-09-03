@@ -1,0 +1,69 @@
+SRC_transport_trade_decisions = {
+	SRC_repair_zhendong_xuanming_railway = {
+		icon = road
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 408 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_zhendong_xuanming_railway_repaired } } }
+		available = { 849 = { is_owned_by = ROOT } 714 = { is_owned_by = ROOT } 1123 = { is_owned_by = ROOT } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { build_railway = { level = 3 start_state = 408 target_state = 849 } build_railway = { level = 3 start_state = 849 target_state = 714 } build_railway = { level = 3 start_state = 714 target_state = 1123 } hidden_effect = { 408 = { set_state_flag = SRC_zhendong_xuanming_railway_repaired } } }
+	}
+
+	SRC_build_revolution_locomotive = {
+		icon = generic_motorized
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 745 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_revolution_locomotive_built } } }
+		cost = 45
+		days_remove = 30
+		remove_effect = { add_tech_bonus = { bonus = 1.0 uses = 1 category = train_tech } 745 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } hidden_effect = { 745 = { set_state_flag = SRC_revolution_locomotive_built } } }
+	}
+
+	SRC_dalian_salt_monopoly = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 745 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_dalian_salt_monopoly_established } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 745 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 745 = { set_state_flag = SRC_dalian_salt_monopoly_established } } }
+	}
+
+	SRC_xuanming_russian_trade_port = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1123 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xuanming_trade_port_established } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { 1123 = { add_dynamic_modifier = { modifier = SRC_xuanming_foreign_trade_port } } hidden_effect = { 1123 = { set_state_flag = SRC_xuanming_trade_port_established } } }
+	}
+
+	SRC_expand_zhendong_dual_use_port = {
+		icon = generic_naval
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 408 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_zhendong_dual_use_port_expanded } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 408 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = dockyard level = 2 instant_build = yes } } hidden_effect = { 408 = { set_state_flag = SRC_zhendong_dual_use_port_expanded } } }
+	}
+
+	SRC_develop_nenjiang_shipping = {
+		icon = road
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_nenjiang_shipping_developed } } }
+		available = { 850 = { is_owned_by = ROOT } 1126 = { is_owned_by = ROOT } }
+		cost = 60
+		days_remove = 30
+		remove_effect = { 714 = { add_extra_state_shared_building_slots = 1 add_dynamic_modifier = { modifier = SRC_nenjiang_shipping } } 850 = { add_extra_state_shared_building_slots = 1 add_dynamic_modifier = { modifier = SRC_nenjiang_shipping } } 1126 = { add_extra_state_shared_building_slots = 1 add_dynamic_modifier = { modifier = SRC_nenjiang_shipping } } hidden_effect = { 714 = { set_state_flag = SRC_nenjiang_shipping_developed } } }
+	}
+}

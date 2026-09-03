@@ -1,0 +1,78 @@
+SRC_industry_energy_decisions = {
+	SRC_relight_anshan_blast_furnace = {
+		icon = steel
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 845 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_anshan_blast_furnace_relit } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = steel amount = 8 state = 845 } hidden_effect = { 845 = { set_state_flag = SRC_anshan_blast_furnace_relit } } }
+	}
+
+	SRC_fushun_deep_mining = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 846 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_fushun_deep_mining_reopened } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = coal amount = 11 state = 846 } hidden_effect = { 846 = { set_state_flag = SRC_fushun_deep_mining_reopened } } }
+	}
+
+	SRC_xuanming_lignite_development = {
+		icon = generic_construction
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1123 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xuanming_lignite_developed } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = coal amount = 9 state = 1123 } hidden_effect = { 1123 = { set_state_flag = SRC_xuanming_lignite_developed } } }
+	}
+
+	SRC_complete_fengman_dam = {
+		icon = generic_construction
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 847 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_fengman_dam_completed } } }
+		cost = 60
+		days_remove = 30
+		remove_effect = { 847 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dam level = 1 instant_build = yes province = { id = 1567 } } add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 847 = { set_state_flag = SRC_fengman_dam_completed } } }
+	}
+
+	SRC_songnen_oil_exploration = {
+		icon = oil
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_songnen_oil_explored } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = oil amount = 12 state = 714 } hidden_effect = { 714 = { set_state_flag = SRC_songnen_oil_explored } } }
+	}
+
+	SRC_xihe_colored_metals_development = {
+		icon = tungsten
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1112 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xihe_colored_metals_developed } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = tungsten amount = 12 state = 1112 } hidden_effect = { 1112 = { set_state_flag = SRC_xihe_colored_metals_developed } } }
+	}
+
+	SRC_tuomu_zeya_gold_mining = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 657 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_tuomu_zeya_gold_mine_developed } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 657 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 657 = { set_state_flag = SRC_tuomu_zeya_gold_mine_developed } } }
+	}
+}

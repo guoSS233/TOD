@@ -1,0 +1,56 @@
+SRC_light_industry_decisions = {
+	SRC_restore_xishen_flour_processing = {
+		icon = generic_agriculture
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1112 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xishen_flour_processing_restored } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 1112 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 1112 = { set_state_flag = SRC_xishen_flour_processing_restored } } }
+	}
+
+	SRC_changbai_logging_administration = {
+		icon = generic_construction
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 848 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_changbai_logging_administration_established } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { 848 = { add_extra_state_shared_building_slots = 1 } hidden_effect = { 848 = { set_state_flag = SRC_changbai_logging_administration_established } } }
+	}
+
+	SRC_henggu_leather_industry = {
+		icon = generic_motorized
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 560 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_henggu_leather_industry_developed } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 560 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 560 = { set_state_flag = SRC_henggu_leather_industry_developed } } }
+	}
+
+	SRC_longjiang_beet_sugar_factory = {
+		icon = generic_agriculture
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_longjiang_beet_sugar_factory_established } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 714 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 714 = { set_state_flag = SRC_longjiang_beet_sugar_factory_established } } }
+	}
+
+	SRC_huning_qiulin_company = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 849 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_huning_qiulin_company_restored } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 849 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 849 = { set_state_flag = SRC_huning_qiulin_company_restored } } }
+	}
+}

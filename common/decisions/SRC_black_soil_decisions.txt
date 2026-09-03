@@ -1,0 +1,67 @@
+SRC_black_soil_agriculture_decisions = {
+	SRC_ren_survey_black_soil = {
+		icon = binoculars
+		state_target = yes
+		on_map_mode = map_only
+		target_array = core_states
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_black_soil_surveyed } OR = { has_state_category = wasteland has_state_category = enclave has_state_category = tiny_island has_state_category = pastoral has_state_category = rural has_state_category = town has_state_category = zero has_state_category = one has_state_category = two has_state_category = three has_state_category = four } } }
+		cost = 25
+		days_remove = 1
+		remove_effect = {
+			FROM = {
+				if = { limit = { has_state_category = wasteland } set_state_category = pastoral }
+				else_if = { limit = { has_state_category = enclave } set_state_category = pastoral }
+				else_if = { limit = { has_state_category = tiny_island } set_state_category = small_island }
+				else_if = { limit = { has_state_category = pastoral } set_state_category = rural }
+				else_if = { limit = { has_state_category = rural } set_state_category = town }
+				else_if = { limit = { has_state_category = town } set_state_category = large_town }
+				else_if = { limit = { has_state_category = zero } set_state_category = one }
+				else_if = { limit = { has_state_category = one } set_state_category = two }
+				else_if = { limit = { has_state_category = two } set_state_category = three }
+				else_if = { limit = { has_state_category = three } set_state_category = four }
+				else_if = { limit = { has_state_category = four } set_state_category = five }
+				hidden_effect = { set_state_flag = SRC_ren_black_soil_surveyed }
+			}
+		}
+	}
+	SRC_ren_songnen_irrigation = {
+		icon = road
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 state = 328 state = 849 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_songnen_irrigation_built } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_songnen_irrigation_built } } }
+	}
+	SRC_ren_full_granary_soybeans = {
+		icon = generic_motorized
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 850 state = 1126 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_full_granary_soybeans_promoted } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_full_granary_soybeans_promoted } } }
+	}
+	SRC_ren_xingan_livestock_cooperative = {
+		icon = generic_agriculture
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 761 state = 1123 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_xingan_livestock_cooperative_formed } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_xingan_livestock_cooperative_formed } } }
+	}
+	SRC_ren_xingkai_fishery_base = {
+		icon = generic_naval
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 408 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_xingkai_fishery_base_established } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_xingkai_fishery_base_established } } }
+	}
+}

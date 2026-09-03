@@ -1,0 +1,143 @@
+# 李大钊线空壳决议：必须嵌套在决议分类内。
+SRC_li_political_decisions = {
+SRC_li_destroy_feudal_clans = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gemingweiyuanhui }
+	visible = { has_completed_focus = SRC_gemingweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_bureaucratic_reform = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_renmindaibiaodahui }
+	visible = { has_completed_focus = SRC_renmindaibiaodahui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_three_level_committees = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhengzhidaminzhu }
+	visible = { has_completed_focus = SRC_zhengzhidaminzhu }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_impeachment = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_qunzhongzhijiejiandu }
+	visible = { has_completed_focus = SRC_qunzhongzhijiejiandu }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_public_private_cooperation = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiajingjiweiyuanhui hidden_trigger = { NOT = { has_country_flag = SRC_li_public_private_cooperation_enacted } } }
+	visible = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	cost = 100
+	days_remove = 90
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_li_public_private_cooperation_effect_tt
+		hidden_effect = {
+			set_country_flag = SRC_li_public_private_cooperation_enacted
+			if = { limit = { has_idea = GPS_guotie } add_stability = 0.1 set_country_flag = SRC_li_public_private_guotie_stability }
+			if = { limit = { has_idea = GPS_dongbeigongyejituan } add_stability = 0.1 set_country_flag = SRC_li_public_private_dongbei_industry_stability }
+			if = { limit = { has_idea = GPS_damingdianlidianqijituan } add_stability = 0.1 set_country_flag = SRC_li_public_private_electric_stability }
+			if = {
+				limit = { has_idea = GPS_changbaikuangwuju NOT = { has_country_flag = SRC_li_public_private_changbai_resources } }
+				add_resource = { type = steel amount = 9 state = 845 }
+				add_resource = { type = coal amount = 8 state = 845 }
+				set_country_flag = SRC_li_public_private_changbai_resources
+			}
+			if = {
+				limit = { has_idea = GPS_xingyekuangwujituan NOT = { has_country_flag = SRC_li_public_private_xingye_resources } }
+				add_resource = { type = steel amount = 9 state = 845 }
+				add_resource = { type = coal amount = 8 state = 845 }
+				set_country_flag = SRC_li_public_private_xingye_resources
+			}
+		}
+	}
+}
+SRC_li_industry_energy = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_transport_trade = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_worker_council = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guanxizaipingheng hidden_trigger = { NOT = { has_country_flag = SRC_li_worker_council_enacted } } }
+	visible = { has_completed_focus = SRC_guanxizaipingheng }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_li_worker_council_enacted
+		add_tech_bonus = { name = SRC_li_worker_council_industry ahead_reduction = 2 uses = 1 category = industry }
+	}
+}
+SRC_li_light_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guanxizaipingheng }
+	visible = { has_completed_focus = SRC_guanxizaipingheng }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_heavy_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guanxizaipingheng }
+	visible = { has_completed_focus = SRC_guanxizaipingheng }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_land_cooperatives = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_nongyehezuohua hidden_trigger = { NOT = { has_country_flag = SRC_li_land_cooperatives_enacted } } }
+	visible = { has_completed_focus = SRC_nongyehezuohua }
+	cost = 100
+	days_remove = 30
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_li_land_cooperatives_effect_tt
+		hidden_effect = { set_country_flag = SRC_li_land_cooperatives_enacted }
+	}
+}
+SRC_li_mechanized_farms = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_nongyehezuohua hidden_trigger = { NOT = { has_country_flag = SRC_li_mechanized_farms_enacted } } }
+	visible = { has_completed_focus = SRC_nongyehezuohua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_li_mechanized_farms_enacted
+		add_tech_bonus = { name = SRC_li_mechanized_farms_industry bonus = 1 uses = 1 category = industry }
+	}
+}
+SRC_li_village_mutual_aid = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_nongyehezuohua hidden_trigger = { NOT = { has_country_flag = SRC_li_village_mutual_aid_enacted } } }
+	visible = { has_completed_focus = SRC_nongyehezuohua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_li_village_mutual_aid_enacted
+		add_tech_bonus = { name = SRC_li_village_mutual_aid_construction bonus = 1 uses = 1 category = construction_tech }
+	}
+}
+SRC_li_organization_talent = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhaokaijingweidahui }
+	visible = { has_completed_focus = SRC_zhaokaijingweidahui }
+	days_remove = 1
+	complete_effect = { }
+}
+}

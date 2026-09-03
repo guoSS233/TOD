@@ -1,0 +1,50 @@
+SRC_organization_talent_decisions = {
+	SRC_establish_northeast_finance_cadre_school = {
+		icon = generic_industry
+		allowed = { tag = SRC }
+		available = {
+			has_country_flag = SRC_organization_talent_decisions_unlocked
+			NOT = { has_country_flag = SRC_northeast_finance_school_established }
+		}
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = SRC_northeast_finance_school_established
+			swap_ideas = {
+				remove_idea = GPS_guandongligongdaxue
+				add_idea = SRC_guandongligongdaxue_finance_school
+			}
+		}
+	}
+
+	SRC_recruit_ming_state_enterprise_technicians = {
+		icon = generic_industry
+		allowed = { tag = SRC }
+		available = {
+			has_country_flag = SRC_organization_talent_decisions_unlocked
+		}
+		cost = 50
+		days_remove = 60
+		fire_only_once = no
+		modifier = {
+			industrial_capacity_factory = 0.10
+			industrial_capacity_dockyard = 0.10
+		}
+	}
+
+	SRC_emergency_dispatch_labor_corps = {
+		icon = generic_industry
+		allowed = { tag = SRC }
+		available = {
+			has_country_flag = SRC_organization_talent_decisions_unlocked
+		}
+		cost = 50
+		days_remove = 60
+		fire_only_once = no
+		modifier = {
+			production_speed_buildings_factor = 0.20
+			conscription_factor = -0.005
+		}
+	}
+}

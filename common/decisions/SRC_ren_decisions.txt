@@ -1,0 +1,175 @@
+# 任辅臣线空壳决议：必须嵌套在决议分类内。
+SRC_ren_political_decisions = {
+
+SRC_ren_single_director_management = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_zhongyangjihuaweiyuanhui
+		NOT = { has_country_flag = SRC_ren_single_director_management_enacted }
+	}
+	visible = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_ren_single_director_management_effect_tt
+		hidden_effect = { set_country_flag = SRC_ren_single_director_management_enacted }
+	}
+}
+
+SRC_ren_industry_energy = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	visible = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_transport_trade = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	visible = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_heavy_industry_priority = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_gongyeguoyouhua
+		NOT = { has_country_flag = SRC_ren_heavy_industry_priority_enacted }
+	}
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		hidden_effect = { set_country_flag = SRC_ren_heavy_industry_priority_enacted }
+		add_tech_bonus = { name = SRC_ren_heavy_industry_priority_industry bonus = 1 uses = 1 category = industry }
+	}
+}
+
+SRC_ren_labor_competition = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_gongyeguoyouhua
+		NOT = { has_country_flag = SRC_ren_labor_competition_enacted }
+	}
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	cost = 100
+	days_remove = 30
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_ren_labor_competition_effect_tt
+		hidden_effect = {
+			set_country_flag = SRC_ren_labor_competition_enacted
+			if = {
+				limit = { has_idea = civilian_economy }
+				add_offsite_building = { type = industrial_complex level = 3 }
+			}
+			else_if = {
+				limit = { has_idea = low_economic_mobilisation }
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory level = 1 }
+			}
+			else_if = {
+				limit = { has_idea = partial_economic_mobilisation }
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_offsite_building = { type = arms_factory level = 2 }
+			}
+			else_if = {
+				limit = { OR = { has_idea = war_economy has_idea = tot_economic_mobilisation } }
+				add_offsite_building = { type = arms_factory level = 3 }
+			}
+		}
+	}
+}
+
+SRC_ren_light_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gongyeguoyouhua }
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_regional_heavy_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gongyeguoyouhua }
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_abolish_private_land = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_nongyejitihua
+		NOT = { has_country_flag = SRC_ren_abolish_private_land_enacted }
+	}
+	visible = { has_completed_focus = SRC_nongyejitihua }
+	cost = 100
+	days_remove = 90
+	fire_only_once = yes
+	remove_effect = {
+		hidden_effect = { set_country_flag = SRC_ren_abolish_private_land_enacted }
+		add_tech_bonus = { name = SRC_ren_abolish_private_land_construction ahead_reduction = 2 uses = 1 category = construction_tech }
+	}
+}
+
+SRC_ren_machine_tractor_stations = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_nongyejitihua
+		NOT = { has_country_flag = SRC_ren_machine_tractor_stations_enacted }
+	}
+	visible = { has_completed_focus = SRC_nongyejitihua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		hidden_effect = { set_country_flag = SRC_ren_machine_tractor_stations_enacted }
+		add_tech_bonus = { name = SRC_ren_machine_tractor_stations_industry ahead_reduction = 2 uses = 1 category = industry }
+	}
+}
+
+SRC_ren_organization_talent = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_yiwujihua }
+	visible = { has_completed_focus = SRC_yiwujihua }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_centralized_party_leadership = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_jianchilingdaoquan }
+	visible = { has_completed_focus = SRC_jianchilingdaoquan }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_anti_decentralization = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhengfengyundong }
+	visible = { has_completed_focus = SRC_zhengfengyundong }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_strict_party_life = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gongxieshidaxue }
+	visible = { has_completed_focus = SRC_gongxieshidaxue }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_supervisory_commission = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_qunzhong }
+	visible = { has_completed_focus = SRC_qunzhong }
+	days_remove = 1
+	complete_effect = { }
+}
+}
