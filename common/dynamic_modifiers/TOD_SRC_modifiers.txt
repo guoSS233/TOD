@@ -12,67 +12,182 @@ SRC_siliedeshehui = {
 SRC_jihuashengchan = {
 	enable = { always = yes }
 	icon = GFX_idea_SRC_jihuashengchan
-	industry_repair_factor = 0.1
 	production_factory_max_efficiency_factor = SRC_jihuashengchan_gongchangxiaolv
 	industrial_capacity_factory = SRC_jihuashengchan_gongchangchanchu
+	industrial_capacity_dockyard = SRC_jihuashengchan_wuchangchanchu
 	production_speed_buildings_factor = SRC_jihuashengchan_jianzaosudu
 	consumer_goods_factor = SRC_jihuashengchan_xiaofeiping
+	conversion_cost_civ_to_mil_factor = SRC_jihuashengchan_minzhuanjun
+	local_building_slots_factor = SRC_jihuashengchan_diqugongye
+	local_resources_coal_factor = SRC_jihuashengchan_meitan
 }
+
+# 地区特质：对外口岸与嫩江航运
+SRC_xuanming_foreign_trade_port = {
+	enable = { always = yes }
+	icon = GFX_modifiers_ETH_state_development
+	state_production_speed_buildings_factor = 0.1
+	local_building_slots_factor = 0.15
+}
+
+SRC_nenjiang_shipping = {
+	enable = { always = yes }
+	icon = GFX_modifiers_ETH_state_development
+	local_building_slots_factor = 0.15
+	local_resources_factor = 0.2
+}
+
+# 地区特质：特色重工业项目
+SRC_shenyang_industrial_zone = {
+	enable = { always = yes }
+	icon = GFX_modifiers_ETH_state_development
+	state_production_speed_buildings_factor = 0.2
+	local_building_slots_factor = 0.15
+}
+
+SRC_jinzhou_shipyard = {
+	enable = { always = yes }
+	icon = GFX_modifiers_ETH_state_development
+	state_production_speed_dockyard_factor = 0.25
+}
+
+SRC_molten_iron_flows = {
+	enable = { always = yes }
+	icon = GFX_modifiers_ETH_state_development
+	local_factories = 0.15
+	local_resources_factor = 0.2
+}
+
 #党的领导
 SRC_dangdelingdao = {
 	enable = { always = yes }
 	icon = GFX_idea_SRC_dangdelingdao
-	party_popularity_stability_factor = 0.5
-	political_power_factor = SRC_dangdelingdao_zhengzhidianshu
+	army_morale_factor = SRC_dangdelingdao_zuzhihuifu
+	party_popularity_stability_factor = SRC_dangdelingdao_dangpaiwending
+	production_factory_max_efficiency_factor = SRC_dangdelingdao_shengchanxiaolv
+	stability_factor = SRC_dangdelingdao_wendingdu
+	war_support_factor = SRC_dangdelingdao_zhanzhengzhichi
 }
-#人民民主
-SRC_renminminzhu = {
+
+#任辅臣线：工人民主
+SRC_gongrenminzhu = {
 	enable = { always = yes }
-	icon = GFX_idea_SRC_renminminzhu
-	war_stability_factor = -0.5 
-	compliance_growth = 0.25
-	industrial_concern_cost_factor = SRC_renminminzhu_gongyeqiye
-	war_support_factor = SRC_renminminzhu_zhanzhengzhichi
+	icon = GFX_idea_SRC_wuchanjiejiminzhu
+	conscription_factor = SRC_gongrenminzhu_shiyirenkou
+	war_support_factor = SRC_gongrenminzhu_zhanzhengzhichi
+	stability_factor = SRC_gongrenminzhu_wendingdu
+	research_speed_factor = SRC_gongrenminzhu_yanjiu
+}
+
+#任辅臣线最终国家精神
+SRC_hongxingzhaoyaodongfang = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_hongxingzhaoyaodongfang
+	conscription_factor = SRC_gongrenminzhu_shiyirenkou
+	war_support_factor = SRC_gongrenminzhu_zhanzhengzhichi
+	stability_factor = SRC_gongrenminzhu_wendingdu
+	research_speed_factor = SRC_gongrenminzhu_yanjiu
+	army_attack_factor = 0.1
+}
+# 李大钊线：学术民主
+SRC_xueshuminzhu = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_xueshuminzhu
+	research_speed_factor = SRC_xueshuminzhu_keyan
+	stability_factor = SRC_xueshuminzhu_wendingdu
+	special_project_speed_factor = SRC_xueshuminzhu_teshu
+	scientist_experience_gain_factor = SRC_xueshuminzhu_kexuejia
+	industrial_capacity_factory = SRC_xueshuminzhu_gongchangchanchu
+	industrial_capacity_dockyard = SRC_xueshuminzhu_wuchangchanchu
+}
+
+# 李大钊线：革命政府
+SRC_gemingzhengfu = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_gemingzhengfu
+	war_support_factor = SRC_gemingzhengfu_zhanzhengzhichi
+	stability_factor = SRC_gemingzhengfu_wendingdu
+	conscription_factor = SRC_gemingzhengfu_shiyirenkou
+	mobilization_speed = SRC_gemingzhengfu_dongyuan
+	military_industrial_organization_funds_gain = SRC_gemingzhengfu_zhizaoshangjingfei
+}
+
+# 李大钊线最终国家精神
+SRC_chiqizhiyinweilai = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_chiqizhiyinweilai
+	war_support_factor = SRC_gemingzhengfu_zhanzhengzhichi
+	stability_factor = SRC_gemingzhengfu_wendingdu
+	conscription_factor = SRC_gemingzhengfu_shiyirenkou
+	mobilization_speed = SRC_gemingzhengfu_dongyuan
+	military_industrial_organization_funds_gain = SRC_gemingzhengfu_zhizaoshangjingfei
+	production_factory_max_efficiency_factor = 0.1
 }
 #经委会
 SRC_jingweihui = {
 	enable = { always = yes }
 	icon = GFX_idea_SRC_jingweihui
-	industry_repair_factor = 0.1
-	production_speed_buildings_factor = 0.1
+	production_speed_buildings_factor = SRC_jingweihui_jianzaosudu
 	production_factory_efficiency_gain_factor = SRC_jingweihui_gongchangzengzhang
-	industrial_capacity_factory = SRC_jingweihui_gongchangchanchu
-	consumer_goods_factor = SRC_jingweihui_xiaofeiping
+	local_building_slots_factor = SRC_jingweihui_diqugongye
+	industrial_capacity_factory = SRC_jingweihui_minchangongchang
+	industrial_capacity_dockyard = SRC_jingweihui_wuchangchanchu
+	resource_gain_factor = SRC_jingweihui_ziyuan
+	local_resources_coal_factor = SRC_jingweihui_meitan
 }
 #革命文化
 SRC_gemingwenhua = {
 	enable = { always = yes }
 	icon = GFX_idea_SRC_gemingwenhua
 	research_speed_factor = SRC_gemingwenhua_keyan
+	research_bonus = { industry = SRC_gemingwenhua_gongye }
+	special_project_speed_factor = SRC_gemingwenhua_teshu
 	production_factory_max_efficiency_factor = SRC_gemingwenhua_gongchangxiaolv
 	stability_factor = SRC_gemingwenhua_wendingdu
+	war_support_factor = SRC_gemingwenhua_zhanzhengzhichi
 	political_power_factor = SRC_gemingwenhua_zhengzhidianshu
+	special_project_facility_supply_consumption_factor = SRC_gemingwenhua_sheshi_buji
+	production_factory_efficiency_gain_factor = SRC_gemingwenhua_shengchan_xiaolv
+	production_factory_efficiency_factor = SRC_gemingwenhua_shengchan_baochi
 }
 #革命同盟
 SRC_gemingtongmeng = {
 	enable = { always = yes }
 	icon = GFX_idea_SRC_gemingtongmeng
-	mobilization_laws_cost_factor = SRC_gemingtongmeng_faan
-	trade_laws_cost_factor = SRC_gemingtongmeng_faan
-	economy_cost_factor = SRC_gemingtongmeng_faan
-	political_power_gain = 0.1
-	compliance_growth = SRC_gemingtongmeng_shuncong
+	stability_factor = SRC_gemingtongmeng_wendingdu
+	min_export = SRC_gemingtongmeng_ziyuan
+	civilian_intel_to_others = SRC_gemingtongmeng_minzhengqingbao
+	factory_energy_consumption = SRC_gemingtongmeng_nengyuan
+	industry_free_repair_factor = SRC_gemingtongmeng_weixiu
 }
 #改革委
 SRC_gaigewei = {
 	enable = { always = yes }
 	icon = GFX_idea_SRC_gaigewei
-	industry_repair_factor = 0.1
-	consumer_goods_factor = -0.1
-	production_factory_max_efficiency_factor = 0.1
+	production_factory_start_efficiency_factor = 0.1
 	production_speed_infrastructure_factor = SRC_gaigewei_jichusheshi
+	railway_construction_speed_factor = SRC_gaigewei_tielu
 	conversion_cost_civ_to_mil_factor = SRC_gaigewei_minzhuanjun
+	conversion_cost_mil_to_civ_factor = -0.15
 	local_building_slots_factor = SRC_gaigewei_diqugongye
+	production_speed_civilian_factory_factor = SRC_gaigewei_minchangongchang
+	monthly_population = SRC_gaigewei_yue_renkou
+}
+
+# 陈独秀线末端国家精神：实际效果由动态 modifier 提供，idea 仅负责显示说明。
+SRC_zhumenhuanxintian = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_zhumenhuanxintian
+	research_speed_factor = SRC_gemingwenhua_keyan
+	research_bonus = { industry = SRC_gemingwenhua_gongye }
+	special_project_speed_factor = SRC_gemingwenhua_teshu
+	stability_factor = SRC_gemingwenhua_wendingdu
+	war_support_factor = SRC_gemingwenhua_zhanzhengzhichi
+	special_project_facility_supply_consumption_factor = SRC_gemingwenhua_sheshi_buji
+	production_factory_efficiency_gain_factor = SRC_gemingwenhua_shengchan_xiaolv
+	production_factory_efficiency_factor = SRC_gemingwenhua_shengchan_baochi
+	production_speed_industrial_complex_factor = SRC_zhumenhuanxintian_minchangongchang
+	conversion_cost_civ_to_mil_factor = SRC_zhumenhuanxintian_minzhuanjun
 }
 
 #红军
