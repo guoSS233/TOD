@@ -461,6 +461,20 @@ ideas = {
     industrial_concern = { #工业
         GPS_guotie = {#国家铁路总局
             picture = GPS_guotie
+			on_add = {
+				if = {
+					limit = { tag = SRC has_country_flag = SRC_li_public_private_cooperation_enacted NOT = { has_country_flag = SRC_li_public_private_guotie_stability } }
+					add_stability = 0.1
+					set_country_flag = SRC_li_public_private_guotie_stability
+				}
+			}
+			on_remove = {
+				if = {
+					limit = { has_country_flag = SRC_li_public_private_guotie_stability }
+					add_stability = -0.1
+					clr_country_flag = SRC_li_public_private_guotie_stability
+				}
+			}
             allowed = {
 				OR = {
 					original_tag = GPS
@@ -484,6 +498,22 @@ ideas = {
         }
         GPS_changbaikuangwuju = {#长白矿务局
             picture = GPS_changbaikuangwuju
+			on_add = {
+				if = {
+					limit = { tag = SRC has_country_flag = SRC_li_public_private_cooperation_enacted NOT = { has_country_flag = SRC_li_public_private_changbai_resources } }
+					add_resource = { type = steel amount = 9 state = 845 }
+					add_resource = { type = coal amount = 8 state = 845 }
+					set_country_flag = SRC_li_public_private_changbai_resources
+				}
+			}
+			on_remove = {
+				if = {
+					limit = { has_country_flag = SRC_li_public_private_changbai_resources }
+					add_resource = { type = steel amount = -9 state = 845 }
+					add_resource = { type = coal amount = -8 state = 845 }
+					clr_country_flag = SRC_li_public_private_changbai_resources
+				}
+			}
             allowed = {
 				OR = {
 					original_tag = GPS
@@ -516,6 +546,7 @@ ideas = {
 			}
             available = {
 				controls_state = 845
+				NOT = { has_country_flag = SRC_northeast_finance_school_established }
 			}
             traits = {
 				university
@@ -531,8 +562,48 @@ ideas = {
 				factor = 10
 			}
         }
+        SRC_guandongligongdaxue_finance_school = {#成立东北财经干部学校后的关东大学
+            picture = GPS_guandongligongdaxue
+            allowed = {
+				OR = {
+					original_tag = GPS
+					original_tag = SRC
+				}
+			}
+            available = {
+				controls_state = 845
+				has_country_flag = SRC_northeast_finance_school_established
+			}
+            traits = {
+				university
+			}
+            research_bonus = {
+
+			}
+            modifier = {
+				research_speed_factor = 0.05
+				production_factory_max_efficiency_factor = 0.10
+			}
+            ai_will_do = {
+				factor = 10
+			}
+        }
         GPS_damingdianlidianqijituan = {#大明电力电气集团
             picture = GPS_damingdianlidianqijituan
+			on_add = {
+				if = {
+					limit = { tag = SRC has_country_flag = SRC_li_public_private_cooperation_enacted NOT = { has_country_flag = SRC_li_public_private_electric_stability } }
+					add_stability = 0.1
+					set_country_flag = SRC_li_public_private_electric_stability
+				}
+			}
+			on_remove = {
+				if = {
+					limit = { has_country_flag = SRC_li_public_private_electric_stability }
+					add_stability = -0.1
+					clr_country_flag = SRC_li_public_private_electric_stability
+				}
+			}
             allowed = {
 				OR = {
 					original_tag = GPS
@@ -556,6 +627,20 @@ ideas = {
         }
         GPS_dongbeigongyejituan = {#东北工业集团
             picture = GPS_dongbeigongyejituan
+			on_add = {
+				if = {
+					limit = { tag = SRC has_country_flag = SRC_li_public_private_cooperation_enacted NOT = { has_country_flag = SRC_li_public_private_dongbei_industry_stability } }
+					add_stability = 0.1
+					set_country_flag = SRC_li_public_private_dongbei_industry_stability
+				}
+			}
+			on_remove = {
+				if = {
+					limit = { has_country_flag = SRC_li_public_private_dongbei_industry_stability }
+					add_stability = -0.1
+					clr_country_flag = SRC_li_public_private_dongbei_industry_stability
+				}
+			}
             allowed = {
 				OR = {
 					original_tag = GPS
@@ -585,6 +670,22 @@ ideas = {
         }
 		GPS_xingyekuangwujituan = {#兴业矿物集团
             picture = GPS_xingyekuangwujituan
+			on_add = {
+				if = {
+					limit = { tag = SRC has_country_flag = SRC_li_public_private_cooperation_enacted NOT = { has_country_flag = SRC_li_public_private_xingye_resources } }
+					add_resource = { type = steel amount = 9 state = 845 }
+					add_resource = { type = coal amount = 8 state = 845 }
+					set_country_flag = SRC_li_public_private_xingye_resources
+				}
+			}
+			on_remove = {
+				if = {
+					limit = { has_country_flag = SRC_li_public_private_xingye_resources }
+					add_resource = { type = steel amount = -9 state = 845 }
+					add_resource = { type = coal amount = -8 state = 845 }
+					clr_country_flag = SRC_li_public_private_xingye_resources
+				}
+			}
             allowed = {
 				OR = {
 					original_tag = GPS
