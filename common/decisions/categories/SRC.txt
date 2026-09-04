@@ -16,7 +16,10 @@ SRC_junshijianshe_catagories = {
 		tag = SRC
 	}
 	visible = {	
-		has_completed_focus = SRC_xiandaigemingjundui
+		OR = {
+			has_completed_focus = SRC_xiandaigemingjundui
+			has_completed_focus = SRC_gemingtongyizhanxian
+		}
 	}
 }
 #宣战
@@ -44,4 +47,157 @@ SRC_lianxigeming = {
 	priority = 100
 	
 	# 关联GUI窗口（稳定测试）
+}
+
+# 任辅臣线：政治、经济与农业决议
+SRC_ren_political_decisions = {
+	icon = generic_communism
+	allowed = { tag = SRC }
+	visible = { has_completed_focus = SRC_renfuchenzhuxi }
+}
+
+SRC_ren_economic_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_zhongyangjihuaweiyuanhui
+			has_completed_focus = SRC_gongyeguoyouhua
+			has_completed_focus = SRC_yiwujihua
+		}
+	}
+}
+
+SRC_ren_agriculture_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = { has_completed_focus = SRC_nongyejitihua }
+}
+
+# 三条农业路线共用的地区农业决议
+SRC_black_soil_agriculture_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_nongyejitihua
+			has_completed_focus = SRC_nongyehezuohua
+			has_completed_focus = SRC_tudigaige
+		}
+	}
+}
+
+# 三条经济路线共用的地区工矿与能源决议
+SRC_industry_energy_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_gongyeguoyouhua
+			has_completed_focus = SRC_guojiajingjiweiyuanhui
+			has_completed_focus = SRC_shumaiqiye
+		}
+	}
+}
+
+# 三条经济路线共用的地区交通与商贸决议
+SRC_transport_trade_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_zhongyangjihuaweiyuanhui
+			has_completed_focus = SRC_guojiajingjiweiyuanhui
+			has_completed_focus = SRC_guojiagaigeweiyuanhui
+		}
+	}
+}
+
+# 三条经济路线共用的地区特色轻工业决议
+SRC_light_industry_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_gongyeguoyouhua
+			has_completed_focus = SRC_guanxizaipingheng
+			has_completed_focus = SRC_shumaiqiye
+		}
+	}
+}
+
+# 三条经济路线共用的地区特色重工业决议
+SRC_regional_heavy_industry_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_gongyeguoyouhua
+			has_completed_focus = SRC_guanxizaipingheng
+			has_completed_focus = SRC_shumaiqiye
+		}
+	}
+}
+
+# 陈独秀线：政治决议
+SRC_chen_political_decisions = {
+	icon = generic_communism
+	allowed = { tag = SRC }
+	visible = { has_completed_focus = SRC_chenduxiuzhuxi }
+}
+
+# 陈独秀线：经济决议
+SRC_chen_economic_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_guojiagaigeweiyuanhui
+			has_completed_focus = SRC_shumaiqiye
+			has_completed_focus = SRC_tieguodundae
+		}
+	}
+}
+
+# 陈独秀线：农业与组织决议
+SRC_chen_agriculture_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_tudigaige
+			has_completed_focus = SRC_tieguodundae
+		}
+	}
+}
+
+SRC_li_political_decisions = {
+	icon = generic_communism
+	allowed = { tag = SRC }
+	visible = { has_completed_focus = SRC_lidazhaozhuxi }
+}
+
+SRC_li_economic_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = {
+		OR = {
+			has_completed_focus = SRC_guojiajingjiweiyuanhui
+			has_completed_focus = SRC_guanxizaipingheng
+			has_completed_focus = SRC_zhaokaijingweidahui
+		}
+	}
+}
+
+SRC_li_agriculture_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = { has_completed_focus = SRC_nongyehezuohua }
+}
+
+# 三条路线共用的组织与人才决议
+SRC_organization_talent_decisions = {
+	icon = generic_industry
+	allowed = { tag = SRC }
+	visible = { has_country_flag = SRC_organization_talent_decisions_unlocked }
 }
