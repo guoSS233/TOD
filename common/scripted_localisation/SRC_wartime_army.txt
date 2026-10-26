@@ -1,0 +1,88 @@
+defined_text = {
+	name = SRC_wartime_army_current_chapter
+	text = { trigger = { has_country_flag = SRC_wartime_army_summary_complete } localization_key = SRC_wartime_army_chapter_completed }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 5 } } localization_key = SRC_wartime_army_chapter_five }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 4 } } localization_key = SRC_wartime_army_chapter_four }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 3 } } localization_key = SRC_wartime_army_chapter_three }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 2 } } localization_key = SRC_wartime_army_chapter_two }
+	text = { localization_key = SRC_wartime_army_chapter_one }
+}
+
+defined_text = {
+	name = SRC_wartime_army_chapter_progress
+	text = { trigger = { has_country_flag = SRC_wartime_army_summary_complete } localization_key = SRC_wartime_army_chapter_progress_completed }
+	text = { trigger = { has_country_flag = SRC_wartime_army_stage_event_pending } localization_key = SRC_wartime_army_chapter_progress_pending }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 5 } } localization_key = SRC_wartime_army_chapter_progress_five }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 4 } } localization_key = SRC_wartime_army_chapter_progress_four }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 3 } } localization_key = SRC_wartime_army_chapter_progress_three }
+	text = { trigger = { check_variable = { SRC_wartime_army_stage = 2 } } localization_key = SRC_wartime_army_chapter_progress_two }
+	text = { localization_key = SRC_wartime_army_chapter_progress_one }
+}
+
+defined_text = {
+	name = SRC_wartime_army_current_status
+	text = { trigger = { has_idea = SRC_revolutionary_regular_army } localization_key = SRC_wartime_army_status_regular_final }
+	text = { trigger = { has_idea = SRC_party_led_army } localization_key = SRC_wartime_army_status_party_final }
+	text = { trigger = { has_idea = SRC_armed_people } localization_key = SRC_wartime_army_status_people_final }
+	text = { trigger = { has_idea = SRC_northeast_red_army } localization_key = SRC_wartime_army_status_northeast_red_army }
+	text = { trigger = { has_idea = SRC_formed_northeast_red_army } localization_key = SRC_wartime_army_status_formed }
+	text = { trigger = { has_idea = SRC_initially_integrated_red_army } localization_key = SRC_wartime_army_status_integrated }
+	text = { trigger = { has_country_flag = SRC_wartime_army_retain_officers_done has_country_flag = SRC_wartime_army_party_cells_done has_country_flag = SRC_wartime_army_soldier_committee_done } localization_key = SRC_wartime_army_status_mixed }
+	text = { trigger = { has_country_flag = SRC_wartime_army_retain_officers_done has_country_flag = SRC_wartime_army_party_cells_done NOT = { has_country_flag = SRC_wartime_army_soldier_committee_done } } localization_key = SRC_wartime_army_status_officer_party }
+	text = { trigger = { has_country_flag = SRC_wartime_army_retain_officers_done has_country_flag = SRC_wartime_army_soldier_committee_done NOT = { has_country_flag = SRC_wartime_army_party_cells_done } } localization_key = SRC_wartime_army_status_officer_council }
+	text = { trigger = { has_country_flag = SRC_wartime_army_party_cells_done has_country_flag = SRC_wartime_army_soldier_committee_done NOT = { has_country_flag = SRC_wartime_army_retain_officers_done } } localization_key = SRC_wartime_army_status_party_council }
+	text = { trigger = { has_country_flag = SRC_wartime_army_retain_officers_done NOT = { has_country_flag = SRC_wartime_army_party_cells_done } NOT = { has_country_flag = SRC_wartime_army_soldier_committee_done } } localization_key = SRC_wartime_army_status_officer }
+	text = { trigger = { has_country_flag = SRC_wartime_army_party_cells_done NOT = { has_country_flag = SRC_wartime_army_retain_officers_done } NOT = { has_country_flag = SRC_wartime_army_soldier_committee_done } } localization_key = SRC_wartime_army_status_party }
+	text = { trigger = { has_country_flag = SRC_wartime_army_soldier_committee_done NOT = { has_country_flag = SRC_wartime_army_retain_officers_done } NOT = { has_country_flag = SRC_wartime_army_party_cells_done } } localization_key = SRC_wartime_army_status_council }
+	text = { localization_key = SRC_wartime_army_status_initial }
+}
+
+defined_text = {
+	name = SRC_wartime_army_current_status_title
+	text = { trigger = { has_idea = SRC_revolutionary_regular_army } localization_key = SRC_wartime_army_title_regular_final }
+	text = { trigger = { has_idea = SRC_party_led_army } localization_key = SRC_wartime_army_title_party_final }
+	text = { trigger = { has_idea = SRC_armed_people } localization_key = SRC_wartime_army_title_people_final }
+	text = { trigger = { has_idea = SRC_northeast_red_army } localization_key = SRC_wartime_army_title_northeast_red_army }
+	text = { trigger = { has_idea = SRC_formed_northeast_red_army } localization_key = SRC_wartime_army_title_formed }
+	text = { trigger = { has_idea = SRC_initially_integrated_red_army } localization_key = SRC_wartime_army_title_integrated }
+	text = { localization_key = SRC_wartime_army_title_initial }
+}
+
+defined_text = {
+	name = SRC_wartime_army_current_status_summary
+	text = { trigger = { has_idea = SRC_revolutionary_regular_army } localization_key = SRC_wartime_army_summary_regular_final }
+	text = { trigger = { has_idea = SRC_party_led_army } localization_key = SRC_wartime_army_summary_party_final }
+	text = { trigger = { has_idea = SRC_armed_people } localization_key = SRC_wartime_army_summary_people_final }
+	text = { trigger = { has_idea = SRC_northeast_red_army } localization_key = SRC_wartime_army_summary_northeast_red_army }
+	text = { trigger = { has_idea = SRC_formed_northeast_red_army } localization_key = SRC_wartime_army_summary_formed }
+	text = { trigger = { has_idea = SRC_initially_integrated_red_army } localization_key = SRC_wartime_army_summary_integrated }
+	text = { localization_key = SRC_wartime_army_summary_initial }
+}
+
+defined_text = {
+	name = SRC_wartime_army_arrangement_commanders_status
+	text = { trigger = { has_country_flag = SRC_command_arrangement_commanders } localization_key = SRC_wartime_army_arrangement_current }
+	text = { trigger = { has_country_flag = SRC_strengthened_military_commanders } localization_key = SRC_wartime_army_arrangement_precedent }
+	text = { localization_key = SRC_wartime_army_arrangement_pending }
+}
+
+defined_text = {
+	name = SRC_wartime_army_arrangement_party_status
+	text = { trigger = { has_country_flag = SRC_command_arrangement_party } localization_key = SRC_wartime_army_arrangement_current }
+	text = { trigger = { has_country_flag = SRC_expanded_party_network_in_units } localization_key = SRC_wartime_army_arrangement_precedent }
+	text = { localization_key = SRC_wartime_army_arrangement_pending }
+}
+
+defined_text = {
+	name = SRC_wartime_army_arrangement_representatives_status
+	text = { trigger = { has_country_flag = SRC_command_arrangement_representatives } localization_key = SRC_wartime_army_arrangement_current }
+	text = { trigger = { has_country_flag = SRC_expanded_soldier_representatives } localization_key = SRC_wartime_army_arrangement_precedent }
+	text = { localization_key = SRC_wartime_army_arrangement_pending }
+}
+
+defined_text = {
+	name = SRC_wartime_army_arrangement_current_status
+	text = { trigger = { has_country_flag = SRC_command_arrangement_cooldown } localization_key = SRC_wartime_army_arrangement_cooldown_active }
+	text = { trigger = { SRC_wartime_army_has_command_arrangement = yes } localization_key = SRC_wartime_army_arrangement_change_ready }
+	text = { localization_key = SRC_wartime_army_arrangement_undecided }
+}

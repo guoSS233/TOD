@@ -1,26 +1,41 @@
 guiTypes = {
     containerWindowType = {
+        name = "dongbei_front_action_help_window"
+        position = { x = 638 y = 60 }
+        moveable = no
+        clipping = no
+        size = { width = 496 height = 496 }
+        background = { name = "dongbei_front_action_help_background" quadTextureSprite = "GFX_tiled_decisions_bg_small" }
+        instantTextBoxType = { name = "dongbei_front_action_help_title" position = { x = 16 y = 10 } font = "hoi_20bs" text = "SRC_la_action_help_title" maxWidth = 420 maxHeight = 26 }
+        buttonType = { name = "dongbei_front_action_help_close" quadTextureSprite = "GFX_closebutton" position = { x = 460 y = 7 } clicksound = click_close pdx_tooltip = "SRC_la_action_help_close_tt" }
+        buttonType = { name = "dongbei_front_action_help_rules_tab" quadTextureSprite = "GFX_button_123x34" position = { x = 16 y = 43 } }
+        instantTextBoxType = { name = "dongbei_front_action_help_rules_tab_label" position = { x = 16 y = 50 } font = "hoi_18" text = "SRC_la_action_help_rules_tab" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+        buttonType = { name = "dongbei_front_action_help_organisation_tab" quadTextureSprite = "GFX_button_123x34" position = { x = 153 y = 43 } }
+        instantTextBoxType = { name = "dongbei_front_action_help_organisation_tab_label" position = { x = 153 y = 50 } font = "hoi_18" text = "SRC_la_action_help_organisation_tab" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
+        instantTextBoxType = { name = "dongbei_front_action_help_rules_body" position = { x = 16 y = 84 } font = "hoi_16mbs" text = "SRC_la_action_help_rules_body" maxWidth = 464 maxHeight = 394 alwaystransparent = yes }
+        instantTextBoxType = { name = "dongbei_front_action_help_organisation_body" position = { x = 16 y = 84 } font = "hoi_16mbs" text = "SRC_la_action_help_organisation_body" maxWidth = 464 maxHeight = 394 alwaystransparent = yes }
+    }
+
+    containerWindowType = {
         name = "SRC_unified_entry_bg"
-        position = { x = 338 y = 66 }
-        size = { width = 150 height = 36 }
+        position = { x = 660 y = 82 }
+        size = { width = 43 height = 38 }
         moveable = no
         clipping = no
 
         buttonType = {
             name = "SRC_unified_entry_button"
-            quadTextureSprite = "GFX_button_123x34"
+            spriteType = "GFX_global_alert_icons"
+            frame = 64
             position = { x = 0 y = 0 }
-            pdx_tooltip = "SRC_zhongyangju_button_tt"
+            oversound = ui_menu_over
+            pdx_tooltip = "SRC_external_entry_tt"
         }
 
-        instantTextBoxType = {
-            name = "SRC_unified_entry_button_text"
-            position = { x = 0 y = 5 }
-            font = "hoi_20bs"
-            text = "SRC_unified_gui_entry"
-            format = center
-            maxWidth = 150
-            maxHeight = 24
+        iconType = {
+            name = "SRC_unified_entry_glow"
+            spriteType = "GFX_yellow_alert_glow"
+            position = { x = 0 y = 0 }
             alwaystransparent = yes
         }
 
@@ -142,6 +157,26 @@ guiTypes = {
             shortcut = "ESCAPE"
             pdx_tooltip = "CLOSE"
         }
+
+        buttonType = {
+            name = "src_unified_help_button"
+            quadTextureSprite = "GFX_tiled_window_transparent"
+            position = { x = 1368 y = 6 }
+            size = { x = 30 y = 30 }
+            pdx_tooltip = "SRC_zhongyangju_help_tt"
+        }
+
+        instantTextBoxType = {
+            name = "src_unified_help_button_text"
+            position = { x = 1368 y = 5 }
+            font = "hoi_24header"
+            text = "SRC_zhongyangju_help_icon"
+            format = center
+            maxWidth = 30
+            maxHeight = 28
+            alwaystransparent = yes
+        }
+
 
         instantTextBoxType = {
             name = "src_unified_title"
@@ -462,6 +497,8 @@ guiTypes = {
             buttonType = { name = "dongbei_subtab_overview_button" quadTextureSprite = "GFX_button_123x34" position = { x = 884 y = 14 } pdx_tooltip = "SRC_dongbei_front_tab_overview_tt" }
             instantTextBoxType = { name = "dongbei_subtab_overview_text" position = { x = 884 y = 20 } font = "hoi_18" text = "SRC_dongbei_front_tab_overview" format = center maxWidth = 123 maxHeight = 18 alwaystransparent = yes }
             buttonType = { name = "dongbei_subtab_front_button" quadTextureSprite = "GFX_button_123x34" position = { x = 1020 y = 14 } pdx_tooltip = "SRC_dongbei_front_tab_front_tt" }
+            buttonType = { name = "dongbei_front_action_help_button" quadTextureSprite = "GFX_button_123x34" position = { x = 1160 y = 14 } pdx_tooltip = "SRC_la_action_help_open_tt" }
+            instantTextBoxType = { name = "dongbei_front_action_help_label" position = { x = 1160 y = 21 } font = "hoi_18" text = "SRC_la_action_help_button" format = center maxWidth = 123 maxHeight = 20 alwaystransparent = yes }
             instantTextBoxType = { name = "dongbei_subtab_front_text" position = { x = 1020 y = 20 } font = "hoi_18" text = "SRC_dongbei_front_tab_front" format = center maxWidth = 123 maxHeight = 18 alwaystransparent = yes }
             containerWindowType = {
                 name = "bureau_map"
@@ -570,7 +607,6 @@ guiTypes = {
                 buttonType = { name = "dongbei_state_561_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 204 y = 0 } size = { x = 165 y = 66 } pdx_tooltip = "SRC_dongbei_front_state_561_tt" }
                 buttonType = { name = "dongbei_state_610_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 137 y = 192 } size = { x = 71 y = 83 } pdx_tooltip = "SRC_dongbei_front_state_610_tt" }
                 buttonType = { name = "dongbei_state_657_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 276 y = 50 } size = { x = 157 y = 102 } pdx_tooltip = "SRC_dongbei_front_state_657_tt" }
-                buttonType = { name = "dongbei_state_714_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 240 y = 130 } size = { x = 46 y = 60 } pdx_tooltip = "SRC_dongbei_front_state_714_tt" }
                 buttonType = { name = "dongbei_state_715_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 182 y = 166 } size = { x = 71 y = 50 } pdx_tooltip = "SRC_dongbei_front_state_715_tt" }
                 buttonType = { name = "dongbei_state_716_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 186 y = 234 } size = { x = 46 y = 45 } pdx_tooltip = "SRC_dongbei_front_state_716_tt" }
                 buttonType = { name = "dongbei_state_717_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 322 y = 138 } size = { x = 81 y = 58 } pdx_tooltip = "SRC_dongbei_front_state_717_tt" }
@@ -578,15 +614,60 @@ guiTypes = {
                 buttonType = { name = "dongbei_state_761_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 179 y = 45 } size = { x = 111 y = 77 } pdx_tooltip = "SRC_dongbei_front_state_761_tt" }
                 buttonType = { name = "dongbei_state_845_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 213 y = 251 } size = { x = 30 y = 23 } pdx_tooltip = "SRC_dongbei_front_state_845_tt" }
                 buttonType = { name = "dongbei_state_846_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 225 y = 223 } size = { x = 48 y = 43 } pdx_tooltip = "SRC_dongbei_front_state_846_tt" }
-                buttonType = { name = "dongbei_state_847_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 270 y = 202 } size = { x = 50 y = 34 } pdx_tooltip = "SRC_dongbei_front_state_847_tt" }
                 buttonType = { name = "dongbei_state_848_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 264 y = 212 } size = { x = 93 y = 53 } pdx_tooltip = "SRC_dongbei_front_state_848_tt" }
                 buttonType = { name = "dongbei_state_849_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 271 y = 177 } size = { x = 86 y = 44 } pdx_tooltip = "SRC_dongbei_front_state_849_tt" }
                 buttonType = { name = "dongbei_state_850_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 257 y = 93 } size = { x = 109 y = 88 } pdx_tooltip = "SRC_dongbei_front_state_850_tt" }
+                # 714 与 657、715、849、850 的透明点击区域重叠，放到全部州按钮之后确保可点击
+                buttonType = { name = "dongbei_state_714_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 240 y = 130 } size = { x = 46 y = 60 } pdx_tooltip = "SRC_dongbei_front_state_714_tt" }
+                # 847 与 848 的透明点击区域有重叠，放到后面确保 847 可优先点击
+                buttonType = { name = "dongbei_state_847_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 270 y = 202 } size = { x = 50 y = 34 } pdx_tooltip = "SRC_dongbei_front_state_847_tt" }
                 buttonType = { name = "dongbei_state_1112_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 378 y = 129 } size = { x = 71 y = 94 } pdx_tooltip = "SRC_dongbei_front_state_1112_tt" }
                 buttonType = { name = "dongbei_state_1123_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 125 y = 110 } size = { x = 83 y = 54 } pdx_tooltip = "SRC_dongbei_front_state_1123_tt" }
                 buttonType = { name = "dongbei_state_1126_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 189 y = 105 } size = { x = 76 y = 69 } pdx_tooltip = "SRC_dongbei_front_state_1126_tt" }
                 buttonType = { name = "dongbei_state_1218_button" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 199 y = 206 } size = { x = 44 y = 35 } pdx_tooltip = "SRC_dongbei_front_state_1218_tt" }
+                iconType = { name = "dongbei_state_328_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_328_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_408_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_408_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_409_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_409_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_560_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_560_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_561_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_561_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_610_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_610_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_657_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_657_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_714_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_714_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_715_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_715_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_716_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_716_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_717_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_717_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_745_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_745_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_761_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_761_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_845_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_845_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_846_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_846_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_847_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_847_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_848_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_848_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_849_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_849_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_850_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_850_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_1112_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_1112_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_1123_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_1123_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_1126_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_1126_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+                iconType = { name = "dongbei_state_1218_selected_marker" spriteType = "GFX_SRC_dongbei_front_state_1218_selected" position = { x = 125 y = 0 } scale = 0.90 alwaystransparent = yes }
+
+
+                # 枢纽点击层：独立于铁路点击层
+
+
+                # City nodes are placed in the existing detailed state map container.
+                iconType = { name = "dongbei_city_changchun" spriteType = "GFX_onmap_victorypoints_strip" frame = 5 position = { x = 262 y = 214 } scale = 0.55 alwaystransparent = yes }
+                iconType = { name = "dongbei_city_zhendong" spriteType = "GFX_onmap_victorypoints_strip" frame = 5 position = { x = 370 y = 211 } scale = 0.55 alwaystransparent = yes }
+                iconType = { name = "dongbei_city_longjiang" spriteType = "GFX_onmap_victorypoints_strip" frame = 5 position = { x = 263 y = 160 } scale = 0.55 alwaystransparent = yes }
+                iconType = { name = "dongbei_city_liaoyang" spriteType = "GFX_onmap_victorypoints_strip" frame = 5 position = { x = 228 y = 263 } scale = 0.55 alwaystransparent = yes }
+                iconType = { name = "dongbei_city_shenyang" spriteType = "GFX_onmap_victorypoints_strip" frame = 5 position = { x = 249 y = 244 } scale = 0.55 alwaystransparent = yes }
+
                 buttonType = { name = "map_locked_blocker" quadTextureSprite = "GFX_tiled_window_transparent" position = { x = 0 y = 0 } size = { x = 620 y = 300 } }
+            }
+            # 东北地图下方的独立详情区：只负责视觉分层，不拦截原有按钮
+            containerWindowType = {
+                name = "bureau_map_detail_frame"
+                position = { x = 18 y = 360 }
+                size = { width = 620 height = 214 }
+                background = { name = "bureau_map_detail_frame_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
             }
             containerWindowType = { name = "bureau_cadre_panel" position = { x = 630 y = 52 } size = { width = 530 height = 156 } background = { name = "bureau_cadre_bg" quadTextureSprite = "GFX_tiled_window_thin_border" } instantTextBoxType = { name = "bureau_cadre_title" position = { x = 0 y = 10 } font = "hoi_20bs" text = "SRC_zhongyangju_cadre_title" format = center maxWidth = 530 maxHeight = 20 alwaystransparent = yes } iconType = { name = "bureau_cadre_portrait" spriteType = "GFX_leader_unknown" position = { x = 20 y = 42 } scale = 0.56 } instantTextBoxType = { name = "bureau_cadre_name" position = { x = 112 y = 44 } font = "hoi_20bs" text = "SRC_zhongyangju_cadre_name" format = left maxWidth = 270 maxHeight = 22 alwaystransparent = yes } instantTextBoxType = { name = "bureau_cadre_route" position = { x = 112 y = 70 } font = "hoi_18" text = "SRC_zhongyangju_cadre_route" format = left maxWidth = 270 maxHeight = 40 alwaystransparent = yes } instantTextBoxType = { name = "bureau_cadre_term" position = { x = 112 y = 114 } font = "hoi_18" text = "SRC_zhongyangju_cadre_term" format = left maxWidth = 270 maxHeight = 18 alwaystransparent = yes } buttonType = { name = "bureau_change_cadre_button" quadTextureSprite = "GFX_button_221x34" position = { x = 304 y = 108 } pdx_tooltip = "SRC_zhongyangju_change_cadre_tt" } instantTextBoxType = { name = "bureau_change_cadre_text" position = { x = 304 y = 114 } font = "hoi_18" text = "SRC_zhongyangju_change_cadre" format = center maxWidth = 221 maxHeight = 18 alwaystransparent = yes } }
             containerWindowType = {
@@ -758,10 +839,19 @@ guiTypes = {
                 name = "dongbei_front_right_panel"
                 position = { x = 630 y = 52 }
                 size = { width = 530 height = 522 }
-                buttonType = { name = "dongbei_front_right_bg" quadTextureSprite = "GFX_tiled_window_thin_border" position = { x = 0 y = 0 } size = { x = 530 y = 522 } }
+                background = { name = "dongbei_front_right_bg" quadTextureSprite = "GFX_tiled_window_thin_border" }
+                containerWindowType = { name = "dongbei_front_balance_frame" position = { x = 14 y = 38 } size = { width = 502 height = 104 } background = { name = "dongbei_front_balance_frame_bg" quadTextureSprite = "GFX_tiled_plain_bg" } }
+                containerWindowType = { name = "dongbei_front_legend_frame" position = { x = 14 y = 146 } size = { width = 502 height = 100 } background = { name = "dongbei_front_legend_frame_bg" quadTextureSprite = "GFX_tiled_plain_bg" } }
+                containerWindowType = { name = "dongbei_front_selected_frame" position = { x = 14 y = 252 } size = { width = 502 height = 66 } background = { name = "dongbei_front_selected_frame_bg" quadTextureSprite = "GFX_tiled_plain_bg" } }
+                containerWindowType = { name = "dongbei_front_action_frame" position = { x = 14 y = 326 } size = { width = 502 height = 184 } background = { name = "dongbei_front_action_frame_bg" quadTextureSprite = "GFX_tiled_plain_bg" } }
                 instantTextBoxType = { name = "dongbei_front_right_title" position = { x = 0 y = 12 } font = "hoi_20bs" text = "SRC_dongbei_front_right_title" format = center maxWidth = 530 maxHeight = 24 alwaystransparent = yes }
                 instantTextBoxType = { name = "dongbei_front_balance_title" position = { x = 24 y = 46 } font = "hoi_18" text = "SRC_dongbei_front_balance_title" format = left maxWidth = 480 maxHeight = 18 alwaystransparent = yes }
                 iconType = { name = "dongbei_front_balance_bar" spriteType = "GFX_warscore_progressbar_small" position = { x = 34 y = 76 } scale = 2.5 }
+                iconType = { name = "dongbei_front_src_flag" quadTextureSprite = "GFX_player_flag" position = { x = 310 y = 80 } scale = 0.38 }
+                iconType = { name = "dongbei_front_balance_pie_gps" quadTextureSprite = "GFX_SRC_dongbei_front_balance_pie_gps" position = { x = 366 y = 48 } pdx_tooltip = "SRC_dongbei_front_balance_pie_tt" }
+                iconType = { name = "dongbei_front_balance_pie_src" quadTextureSprite = "GFX_SRC_dongbei_front_balance_pie_src" position = { x = 366 y = 48 } pdx_tooltip = "SRC_dongbei_front_balance_pie_tt" }
+                iconType = { name = "dongbei_front_balance_pie_overlay" quadTextureSprite = "GFX_SRC_dongbei_front_balance_pie_overlay" position = { x = 366 y = 48 } alwaystransparent = yes }
+                iconType = { name = "dongbei_front_gps_flag" quadTextureSprite = "GFX_player_flag" position = { x = 468 y = 80 } scale = 0.38 }
                 instantTextBoxType = { name = "dongbei_front_balance_numbers" position = { x = 24 y = 108 } font = "hoi_18" text = "SRC_dongbei_front_balance_numbers" format = center maxWidth = 480 maxHeight = 36 alwaystransparent = yes }
                 instantTextBoxType = { name = "dongbei_front_legend_title" position = { x = 24 y = 154 } font = "hoi_18" text = "SRC_dongbei_front_legend_title" format = left maxWidth = 480 maxHeight = 18 alwaystransparent = yes }
                 instantTextBoxType = { name = "dongbei_front_legend_text" position = { x = 36 y = 182 } font = "hoi_18" text = "SRC_dongbei_front_legend_text" format = left maxWidth = 450 maxHeight = 68 alwaystransparent = yes }

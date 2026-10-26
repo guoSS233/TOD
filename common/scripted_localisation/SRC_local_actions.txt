@@ -1,0 +1,78 @@
+# Additional state-policy localisation. Existing bureau localisation keeps its object names.
+defined_text = {
+    name = SRC_la_selected_types
+    text = { localization_key = SRC_la_selected_types_value }
+}
+defined_text = {
+    name = SRC_la_worker_payload_tt
+    text = { trigger = { check_variable = { SRC_local_status = 1 } } localization_key = SRC_dongbei_front_worker_src_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 3 } } localization_key = SRC_dongbei_front_worker_gps_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 2 } } localization_key = SRC_dongbei_front_worker_contested_tt }
+    text = { localization_key = SRC_la_no_target_tt }
+}
+defined_text = {
+    name = SRC_la_underground_payload_tt
+    text = { trigger = { check_variable = { SRC_local_status = 1 } } localization_key = SRC_dongbei_front_underground_src_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 3 } } localization_key = SRC_dongbei_front_underground_gps_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 2 } } localization_key = SRC_dongbei_front_underground_contested_tt }
+    text = { localization_key = SRC_la_no_target_tt }
+}
+defined_text = {
+    name = SRC_la_revgov_payload_tt
+    text = { trigger = { check_variable = { SRC_local_status = 1 } } localization_key = SRC_dongbei_front_revgov_src_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 3 } } localization_key = SRC_dongbei_front_revgov_gps_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 2 } } localization_key = SRC_dongbei_front_revgov_contested_tt }
+    text = { localization_key = SRC_la_no_target_tt }
+}
+defined_text = {
+    name = SRC_la_peasant_payload_tt
+    text = { trigger = { check_variable = { SRC_local_status = 1 } } localization_key = SRC_dongbei_front_peasant_src_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 3 } } localization_key = SRC_dongbei_front_peasant_gps_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 2 } } localization_key = SRC_dongbei_front_peasant_contested_tt }
+    text = { localization_key = SRC_la_no_target_tt }
+}
+defined_text = {
+    name = SRC_la_student_payload_tt
+    text = { trigger = { check_variable = { SRC_local_status = 1 } } localization_key = SRC_dongbei_front_student_src_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 3 } } localization_key = SRC_dongbei_front_student_gps_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 2 } } localization_key = SRC_dongbei_front_student_contested_tt }
+    text = { localization_key = SRC_la_no_target_tt }
+}
+defined_text = {
+    name = SRC_la_business_payload_tt
+    text = { trigger = { check_variable = { SRC_local_status = 1 } } localization_key = SRC_dongbei_front_business_src_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 3 } } localization_key = SRC_dongbei_front_business_gps_tt }
+    text = { trigger = { check_variable = { SRC_local_status = 2 } } localization_key = SRC_dongbei_front_business_contested_tt }
+    text = { localization_key = SRC_la_no_target_tt }
+}
+defined_text = {
+    name = SRC_la_tag_industrial
+    text = { trigger = { check_variable = { SRC_local_type_industrial = 1 } } localization_key = SRC_la_tag_industrial_yes }
+    text = { localization_key = SRC_la_tag_empty }
+}
+defined_text = {
+    name = SRC_la_tag_city
+    text = { trigger = { check_variable = { SRC_local_type_city = 1 } } localization_key = SRC_la_tag_city_yes }
+    text = { localization_key = SRC_la_tag_empty }
+}
+defined_text = {
+    name = SRC_la_tag_border
+    text = { trigger = { check_variable = { SRC_local_type_border = 1 } } localization_key = SRC_la_tag_border_yes }
+    text = { localization_key = SRC_la_tag_empty }
+}
+defined_text = {
+    name = SRC_la_tag_transport
+    text = { trigger = { check_variable = { SRC_local_type_transport = 1 } } localization_key = SRC_la_tag_transport_yes }
+    text = { localization_key = SRC_la_tag_empty }
+}
+defined_text = {
+    name = SRC_la_tag_rural
+    text = { trigger = { check_variable = { SRC_local_type_rural = 1 } } localization_key = SRC_la_tag_rural_yes }
+    text = { localization_key = SRC_la_tag_empty }
+}
+defined_text = {
+    name = SRC_la_admin_level_text
+    text = { trigger = { check_variable = { SRC_local_administration_level = 2 } } localization_key = SRC_la_admin_strong }
+    text = { trigger = { check_variable = { SRC_local_administration_level = 1 } } localization_key = SRC_la_admin_weak }
+    text = { localization_key = SRC_la_admin_none }
+}

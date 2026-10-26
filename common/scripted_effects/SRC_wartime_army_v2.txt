@@ -1,0 +1,421 @@
+# Hidden axes: foundation -100 mass tradition / +100 professional officers.
+# Authority -100 soldier autonomy / +100 party leadership.
+# Visible construction values are independent of both axes.
+SRC_wartime_army_clamp = {
+	clamp_variable = { var = SRC_wartime_army_command_stage min = 0 max = 100 }
+	clamp_variable = { var = SRC_wartime_army_training_stage min = 0 max = 100 }
+	clamp_variable = { var = SRC_wartime_army_political_stage min = 0 max = 100 }
+	clamp_variable = { var = SRC_wartime_army_supply_stage min = 0 max = 100 }
+	clamp_variable = { var = SRC_army_foundation min = -100 max = 100 }
+	clamp_variable = { var = SRC_army_authority min = -100 max = 100 }
+	add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+}
+
+SRC_wartime_army_recalculate = {
+	set_variable = { SRC_wartime_army_average = SRC_wartime_army_command_stage }
+	add_to_variable = { SRC_wartime_army_average = SRC_wartime_army_training_stage }
+	add_to_variable = { SRC_wartime_army_average = SRC_wartime_army_political_stage }
+	add_to_variable = { SRC_wartime_army_average = SRC_wartime_army_supply_stage }
+	divide_variable = { SRC_wartime_army_average = 4 }
+
+	set_variable = { SRC_wartime_army_values_at_60 = 0 }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_command_stage > 60 } check_variable = { SRC_wartime_army_command_stage = 60 } } } add_to_variable = { SRC_wartime_army_values_at_60 = 1 } }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_training_stage > 60 } check_variable = { SRC_wartime_army_training_stage = 60 } } } add_to_variable = { SRC_wartime_army_values_at_60 = 1 } }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_political_stage > 60 } check_variable = { SRC_wartime_army_political_stage = 60 } } } add_to_variable = { SRC_wartime_army_values_at_60 = 1 } }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_supply_stage > 60 } check_variable = { SRC_wartime_army_supply_stage = 60 } } } add_to_variable = { SRC_wartime_army_values_at_60 = 1 } }
+}
+
+SRC_wartime_army_remove_stage_spirits = {
+	if = { limit = { has_idea = SRC_improvised_revolutionary_force } remove_ideas = SRC_improvised_revolutionary_force }
+	if = { limit = { has_idea = SRC_initially_integrated_red_army } remove_ideas = SRC_initially_integrated_red_army }
+	if = { limit = { has_idea = SRC_formed_northeast_red_army } remove_ideas = SRC_formed_northeast_red_army }
+	if = { limit = { has_idea = SRC_northeast_red_army } remove_ideas = SRC_northeast_red_army }
+}
+
+SRC_wartime_army_remove_final_spirits = {
+	if = { limit = { has_idea = SRC_revolutionary_regular_army } remove_ideas = SRC_revolutionary_regular_army }
+	if = { limit = { has_idea = SRC_party_led_army } remove_ideas = SRC_party_led_army }
+	if = { limit = { has_idea = SRC_armed_people } remove_ideas = SRC_armed_people }
+}
+
+SRC_wartime_army_refresh_spirit = {
+	SRC_wartime_army_clamp = yes
+	SRC_wartime_army_recalculate = yes
+	if = {
+		limit = { NOT = { SRC_wartime_army_has_final_spirit = yes } }
+		if = {
+			limit = { SRC_wartime_army_ready_for_northeast_red_army = yes }
+			if = {
+				limit = { NOT = { has_idea = SRC_northeast_red_army } }
+				SRC_wartime_army_remove_stage_spirits = yes
+				add_ideas = SRC_northeast_red_army
+			}
+		}
+		else_if = {
+			limit = { SRC_wartime_army_ready_for_formed_army = yes }
+			if = {
+				limit = { NOT = { has_idea = SRC_formed_northeast_red_army } }
+				SRC_wartime_army_remove_stage_spirits = yes
+				add_ideas = SRC_formed_northeast_red_army
+			}
+		}
+		else_if = {
+			limit = { SRC_wartime_army_ready_for_initial_integration = yes }
+			if = {
+				limit = { NOT = { has_idea = SRC_initially_integrated_red_army } }
+				SRC_wartime_army_remove_stage_spirits = yes
+				add_ideas = SRC_initially_integrated_red_army
+			}
+		}
+		else = {
+			if = {
+				limit = { NOT = { has_idea = SRC_improvised_revolutionary_force } }
+				SRC_wartime_army_remove_stage_spirits = yes
+				add_ideas = SRC_improvised_revolutionary_force
+			}
+		}
+	}
+	add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+}
+
+SRC_wartime_army_gain_retain_officers = {
+	add_to_variable = { SRC_wartime_army_command_stage = 10 }
+	add_to_variable = { SRC_wartime_army_training_stage = 5 }
+	add_to_variable = { SRC_army_foundation = 20 }
+}
+
+SRC_wartime_army_gain_party_cells = {
+	add_to_variable = { SRC_wartime_army_political_stage = 10 }
+	add_to_variable = { SRC_wartime_army_command_stage = 3 }
+	add_to_variable = { SRC_army_authority = 12 }
+}
+
+SRC_wartime_army_gain_soldier_committee = {
+	add_to_variable = { SRC_wartime_army_political_stage = 8 }
+	add_to_variable = { SRC_wartime_army_training_stage = 2 }
+	add_to_variable = { SRC_army_foundation = -5 }
+	add_to_variable = { SRC_army_authority = -20 }
+}
+
+SRC_wartime_army_gain_supply_network = {
+	add_to_variable = { SRC_wartime_army_supply_stage = 12 }
+}
+
+SRC_wartime_army_gain_unify_designations = {
+	add_to_variable = { SRC_wartime_army_command_stage = 8 }
+	add_to_variable = { SRC_wartime_army_training_stage = 2 }
+	army_experience = 5
+}
+
+SRC_wartime_army_gain_crash_training_courses = {
+	add_to_variable = { SRC_wartime_army_training_stage = 10 }
+}
+
+SRC_wartime_army_gain_temporary_discipline = {
+	add_to_variable = { SRC_wartime_army_political_stage = 7 }
+	add_to_variable = { SRC_wartime_army_command_stage = 3 }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_temporary_discipline_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_temporary_discipline_modifier } }
+}
+
+SRC_wartime_army_gain_armament_registry = {
+	add_to_variable = { SRC_wartime_army_supply_stage = 8 }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_armament_registry_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_armament_registry_modifier } }
+}
+
+SRC_wartime_army_gain_grassroots_cadres = {
+	add_to_variable = { SRC_wartime_army_training_stage = 6 }
+	add_to_variable = { SRC_wartime_army_political_stage = 4 }
+	add_to_variable = { SRC_army_foundation = -8 }
+}
+
+SRC_wartime_army_gain_expand_field_command = {
+	add_to_variable = { SRC_wartime_army_command_stage = 10 }
+	add_to_variable = { SRC_army_foundation = 6 }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_field_command_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_field_command_modifier } }
+}
+
+SRC_wartime_army_gain_field_staff_office = {
+	if = { limit = { OR = { check_variable = { SRC_army_foundation > 20 } check_variable = { SRC_army_foundation = 20 } } } add_political_power = 10 }
+	add_to_variable = { SRC_wartime_army_command_stage = 12 }
+	add_to_variable = { SRC_wartime_army_training_stage = 3 }
+	add_to_variable = { SRC_army_foundation = 8 }
+}
+
+SRC_wartime_army_gain_veteran_training_units = {
+	add_to_variable = { SRC_wartime_army_training_stage = 10 }
+	add_to_variable = { SRC_wartime_army_command_stage = 3 }
+	if = {
+		limit = { OR = { check_variable = { SRC_army_foundation > 10 } check_variable = { SRC_army_foundation = 10 } } }
+		add_to_variable = { SRC_army_foundation = 4 }
+	}
+	else = {
+		add_to_variable = { SRC_army_foundation = -4 }
+	}
+}
+
+SRC_wartime_army_gain_field_political_work = {
+	add_to_variable = { SRC_wartime_army_political_stage = 10 }
+	if = { limit = { has_country_flag = SRC_wartime_army_party_cells_done } add_to_variable = { SRC_wartime_army_political_stage = 3 } }
+	add_to_variable = { SRC_army_authority = 8 }
+}
+
+SRC_wartime_army_gain_local_initiative = {
+	add_to_variable = { SRC_wartime_army_command_stage = 4 }
+	add_to_variable = { SRC_wartime_army_training_stage = 4 }
+	add_to_variable = { SRC_army_authority = -8 }
+}
+
+SRC_wartime_army_gain_field_repair_workshops = {
+	add_to_variable = { SRC_wartime_army_supply_stage = 10 }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_field_repair_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_field_repair_modifier } }
+}
+
+SRC_wartime_army_gain_railway_priority = {
+	add_to_variable = { SRC_wartime_army_supply_stage = 8 }
+	add_stability = -0.01
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_railway_priority_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_railway_priority_modifier } }
+}
+
+SRC_wartime_army_gain_strengthen_commanders = {
+	add_to_variable = { SRC_wartime_army_command_stage = 12 }
+	add_to_variable = { SRC_wartime_army_training_stage = 5 }
+	add_to_variable = { SRC_army_foundation = 12 }
+}
+
+SRC_wartime_army_gain_expand_party_network = {
+	add_to_variable = { SRC_wartime_army_political_stage = 12 }
+	add_to_variable = { SRC_wartime_army_command_stage = 5 }
+	add_to_variable = { SRC_army_authority = 12 }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_political_stage > 60 } check_variable = { SRC_wartime_army_political_stage = 60 } } } add_to_variable = { SRC_wartime_army_political_stage = 3 } }
+}
+
+SRC_wartime_army_gain_expand_soldier_representatives = {
+	add_to_variable = { SRC_wartime_army_political_stage = 8 }
+	add_to_variable = { SRC_wartime_army_training_stage = 5 }
+	add_to_variable = { SRC_army_authority = -12 }
+	add_dynamic_modifier = { modifier = SRC_wartime_army_grassroots_mobilisation days = 90 }
+}
+
+SRC_wartime_army_clear_command_arrangement = {
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_commanders_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_commanders_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_party_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_party_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_representatives_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_representatives_modifier } }
+	clr_country_flag = SRC_command_arrangement_commanders
+	clr_country_flag = SRC_command_arrangement_party
+	clr_country_flag = SRC_command_arrangement_representatives
+}
+
+SRC_wartime_army_begin_arrangement_change = {
+	if = {
+		limit = { SRC_wartime_army_has_command_arrangement = yes }
+		set_country_flag = SRC_arrangement_switch_in_progress
+		add_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_transition_modifier days = 30 }
+		country_event = { id = SRC_wartime_army.6 days = 1 }
+	}
+}
+
+SRC_wartime_army_adopt_commanders_arrangement = {
+	if = {
+		limit = {
+			OR = {
+				has_country_flag = SRC_command_arrangement_representatives
+				check_variable = { SRC_army_authority < -15 }
+				check_variable = { SRC_army_authority = -15 }
+			}
+		}
+		set_country_flag = SRC_commanders_arrangement_unrest_pending
+	}
+	SRC_wartime_army_begin_arrangement_change = yes
+	SRC_wartime_army_clear_command_arrangement = yes
+	set_country_flag = SRC_command_arrangement_commanders
+	set_country_flag = { flag = SRC_command_arrangement_cooldown days = 90 value = 1 }
+	add_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_commanders_modifier }
+	if = {
+		limit = { NOT = { has_country_flag = SRC_strengthened_military_commanders } }
+		SRC_wartime_army_gain_strengthen_commanders = yes
+		set_country_flag = SRC_strengthened_military_commanders
+	}
+	if = {
+		limit = { has_country_flag = SRC_arrangement_switch_in_progress }
+		subtract_from_variable = { SRC_wartime_army_political_stage = 3 }
+		clr_country_flag = SRC_arrangement_switch_in_progress
+	}
+	if = {
+		limit = { has_country_flag = SRC_commanders_arrangement_unrest_pending }
+		clr_country_flag = SRC_commanders_arrangement_unrest_pending
+		country_event = { id = SRC_wartime_army.4 days = 1 }
+	}
+	SRC_wartime_army_refresh_spirit = yes
+}
+
+SRC_wartime_army_adopt_party_arrangement = {
+	SRC_wartime_army_begin_arrangement_change = yes
+	SRC_wartime_army_clear_command_arrangement = yes
+	set_country_flag = SRC_command_arrangement_party
+	set_country_flag = { flag = SRC_command_arrangement_cooldown days = 90 value = 1 }
+	add_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_party_modifier }
+	if = {
+		limit = { NOT = { has_country_flag = SRC_expanded_party_network_in_units } }
+		SRC_wartime_army_gain_expand_party_network = yes
+		set_country_flag = SRC_expanded_party_network_in_units
+	}
+	if = {
+		limit = { has_country_flag = SRC_arrangement_switch_in_progress }
+		subtract_from_variable = { SRC_wartime_army_command_stage = 3 }
+		clr_country_flag = SRC_arrangement_switch_in_progress
+	}
+	SRC_wartime_army_refresh_spirit = yes
+}
+
+SRC_wartime_army_adopt_representatives_arrangement = {
+	SRC_wartime_army_begin_arrangement_change = yes
+	SRC_wartime_army_clear_command_arrangement = yes
+	set_country_flag = SRC_command_arrangement_representatives
+	set_country_flag = { flag = SRC_command_arrangement_cooldown days = 90 value = 1 }
+	add_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_representatives_modifier }
+	if = {
+		limit = { NOT = { has_country_flag = SRC_expanded_soldier_representatives } }
+		SRC_wartime_army_gain_expand_soldier_representatives = yes
+		set_country_flag = SRC_expanded_soldier_representatives
+	}
+	if = {
+		limit = { has_country_flag = SRC_arrangement_switch_in_progress }
+		subtract_from_variable = { SRC_wartime_army_command_stage = 2 }
+		subtract_from_variable = { SRC_wartime_army_training_stage = 2 }
+		clr_country_flag = SRC_arrangement_switch_in_progress
+	}
+	SRC_wartime_army_refresh_spirit = yes
+}
+
+SRC_wartime_army_gain_general_headquarters = {
+	add_to_variable = { SRC_wartime_army_command_stage = 10 }
+	if = { limit = { check_variable = { SRC_wartime_army_command_stage < 55 } } set_variable = { SRC_wartime_army_command_stage = 55 } }
+	if = { limit = { OR = { check_variable = { SRC_army_foundation > 15 } check_variable = { SRC_army_foundation = 15 } } } army_experience = 10 }
+	if = { limit = { OR = { check_variable = { SRC_army_authority > 15 } check_variable = { SRC_army_authority = 15 } } } add_to_variable = { SRC_wartime_army_political_stage = 3 } }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_general_headquarters_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_general_headquarters_modifier } }
+}
+
+SRC_wartime_army_gain_permanent_training_system = {
+	add_to_variable = { SRC_wartime_army_training_stage = 10 }
+	if = { limit = { check_variable = { SRC_wartime_army_training_stage < 55 } } set_variable = { SRC_wartime_army_training_stage = 55 } }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_permanent_training_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_permanent_training_modifier } }
+}
+
+SRC_wartime_army_gain_complete_political_reorganisation = {
+	add_to_variable = { SRC_wartime_army_political_stage = 10 }
+	if = { limit = { check_variable = { SRC_wartime_army_political_stage < 55 } } set_variable = { SRC_wartime_army_political_stage = 55 } }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_political_reorganisation_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_political_reorganisation_modifier } }
+}
+
+SRC_wartime_army_gain_unified_supply_department = {
+	add_to_variable = { SRC_wartime_army_supply_stage = 12 }
+	if = { limit = { controls_state = 846 } add_to_variable = { SRC_wartime_army_supply_stage = 2 } add_equipment_to_stockpile = { type = infantry_equipment amount = 300 } }
+	if = { limit = { check_variable = { SRC_wartime_army_supply_stage < 55 } } set_variable = { SRC_wartime_army_supply_stage = 55 } }
+	if = { limit = { NOT = { has_dynamic_modifier = { modifier = SRC_wartime_army_unified_supply_modifier } } } add_dynamic_modifier = { modifier = SRC_wartime_army_unified_supply_modifier } }
+}
+
+SRC_wartime_army_recalculate_traditions = {
+	set_variable = { SRC_wartime_army_professional_score = SRC_army_foundation }
+	set_variable = { SRC_wartime_army_party_score = SRC_army_authority }
+	set_variable = { SRC_wartime_army_people_score = 0 }
+	subtract_from_variable = { SRC_wartime_army_people_score = SRC_army_foundation }
+	subtract_from_variable = { SRC_wartime_army_people_score = SRC_army_authority }
+}
+
+SRC_wartime_army_remove_support_modifiers = {
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_mobilisation } } remove_dynamic_modifier = { modifier = SRC_wartime_army_mobilisation } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_temporary_discipline_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_temporary_discipline_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_armament_registry_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_armament_registry_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_field_command_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_field_command_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_field_repair_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_field_repair_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_railway_priority_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_railway_priority_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_grassroots_mobilisation } } remove_dynamic_modifier = { modifier = SRC_wartime_army_grassroots_mobilisation } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_general_headquarters_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_general_headquarters_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_permanent_training_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_permanent_training_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_political_reorganisation_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_political_reorganisation_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_unified_supply_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_unified_supply_modifier } }
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_transition_modifier } } remove_dynamic_modifier = { modifier = SRC_wartime_army_arrangement_transition_modifier } }
+	SRC_wartime_army_clear_command_arrangement = yes
+	clr_country_flag = SRC_command_arrangement_cooldown
+}
+
+SRC_wartime_army_apply_regular_final = {
+	SRC_wartime_army_remove_stage_spirits = yes
+	SRC_wartime_army_remove_final_spirits = yes
+	SRC_wartime_army_remove_support_modifiers = yes
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_hongjun } } remove_dynamic_modifier = { modifier = SRC_hongjun } }
+	add_ideas = SRC_revolutionary_regular_army
+	set_country_flag = SRC_wartime_army_finalized
+	add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+}
+
+SRC_wartime_army_apply_party_final = {
+	SRC_wartime_army_remove_stage_spirits = yes
+	SRC_wartime_army_remove_final_spirits = yes
+	SRC_wartime_army_remove_support_modifiers = yes
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_hongjun } } remove_dynamic_modifier = { modifier = SRC_hongjun } }
+	add_ideas = SRC_party_led_army
+	set_country_flag = SRC_wartime_army_finalized
+	add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+}
+
+SRC_wartime_army_apply_people_final = {
+	SRC_wartime_army_remove_stage_spirits = yes
+	SRC_wartime_army_remove_final_spirits = yes
+	SRC_wartime_army_remove_support_modifiers = yes
+	if = { limit = { has_dynamic_modifier = { modifier = SRC_hongjun } } remove_dynamic_modifier = { modifier = SRC_hongjun } }
+	add_ideas = SRC_armed_people
+	set_country_flag = SRC_wartime_army_finalized
+	add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+}
+
+SRC_wartime_army_finalize_completed_route = {
+	if = {
+		limit = {
+			SRC_wartime_army_ready_for_final_form = yes
+			NOT = { SRC_wartime_army_has_final_spirit = yes }
+		}
+		if = {
+			limit = { has_completed_focus = SRC_wuzhuangliliangzhengguihua }
+			SRC_wartime_army_apply_regular_final = yes
+		}
+		else_if = {
+			limit = {
+				has_completed_focus = SRC_gemingjunxinzuofeng
+				has_completed_focus = SRC_quelidangweizhi
+			}
+			SRC_wartime_army_apply_party_final = yes
+		}
+		else_if = {
+			limit = {
+				has_completed_focus = SRC_gemingjunxinzuofeng
+				has_completed_focus = SRC_fuquanshibingweiyuanhui
+			}
+			SRC_wartime_army_apply_people_final = yes
+		}
+	}
+}
+
+# One-time migration reconstructs progress from recorded choices, never grants rewards again.
+SRC_wartime_army_ensure_v2 = {
+	if = {
+		limit = { NOT = { has_country_flag = SRC_wartime_army_v2_initialized } }
+		set_variable = { SRC_army_foundation = 0 }
+		set_variable = { SRC_army_authority = 0 }
+		set_variable = { SRC_wartime_army_command_stage = 25 }
+		set_variable = { SRC_wartime_army_training_stage = 25 }
+		set_variable = { SRC_wartime_army_political_stage = 20 }
+		set_variable = { SRC_wartime_army_supply_stage = 20 }
+		if = { limit = { has_country_flag = SRC_wartime_army_retain_officers_done } SRC_wartime_army_gain_retain_officers = yes }
+		if = { limit = { has_country_flag = SRC_wartime_army_party_cells_done } SRC_wartime_army_gain_party_cells = yes }
+		if = { limit = { has_country_flag = SRC_wartime_army_soldier_committee_done } SRC_wartime_army_gain_soldier_committee = yes }
+		if = { limit = { has_country_flag = SRC_wartime_army_supply_network_done } SRC_wartime_army_gain_supply_network = yes }
+		clear_variable = SRC_professional_officer_influence
+		clear_variable = SRC_political_commissar_influence
+		clear_variable = SRC_soldier_council_influence
+		set_country_flag = SRC_wartime_army_stages_initialized
+		set_country_flag = SRC_wartime_army_v2_initialized
+		SRC_wartime_army_clamp = yes
+		SRC_wartime_army_recalculate = yes
+	}
+}

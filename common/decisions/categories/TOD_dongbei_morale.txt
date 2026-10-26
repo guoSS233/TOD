@@ -1,0 +1,35 @@
+TOD_dongbei_morale_category = {
+	icon = ger_military_buildup
+	allowed = { OR = { tag = SRC tag = GPS } }
+	visible = { OR = { tag = SRC tag = GPS } }
+
+	TOD_dongbei_morale_propaganda_decision = {
+		icon = ger_military_buildup
+		visible = { has_country_flag = TOD_dongbei_morale_initialized }
+		available = { check_variable = { TOD_dongbei_morale >= 10 } }
+		cost = 30
+		days_remove = 30
+		complete_effect = { TOD_dongbei_morale_propaganda = yes }
+		remove_effect = { remove_dynamic_modifier = { modifier = TOD_dongbei_morale_propaganda_modifier } }
+	}
+
+	TOD_dongbei_morale_defense_decision = {
+		icon = ger_military_buildup
+		visible = { has_country_flag = TOD_dongbei_morale_initialized }
+		available = { check_variable = { TOD_dongbei_morale >= 20 } }
+		cost = 40
+		days_remove = 45
+		complete_effect = { TOD_dongbei_morale_defense = yes }
+		remove_effect = { remove_dynamic_modifier = { modifier = TOD_dongbei_morale_defense_modifier } }
+	}
+
+	TOD_dongbei_morale_counterattack_decision = {
+		icon = ger_military_buildup
+		visible = { has_country_flag = TOD_dongbei_morale_initialized }
+		available = { check_variable = { TOD_dongbei_morale >= 25 } }
+		cost = 50
+		days_remove = 45
+		complete_effect = { TOD_dongbei_morale_counterattack = yes }
+		remove_effect = { remove_dynamic_modifier = { modifier = TOD_dongbei_morale_counterattack_modifier } }
+	}
+}

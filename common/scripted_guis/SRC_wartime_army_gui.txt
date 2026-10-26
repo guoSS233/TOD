@@ -1,0 +1,25 @@
+scripted_gui = {
+	SRC_wartime_army_decision_gui = {
+		context_type = decision_category
+		window_name = "SRC_wartime_army_decision_gui_window"
+		dirty = SRC_wartime_army_gui_dirty
+		visible = { tag = SRC }
+		triggers = {
+			SRC_wartime_army_officers_check_visible = { has_country_flag = SRC_wartime_army_retain_officers_done }
+			SRC_wartime_army_party_check_visible = { has_country_flag = SRC_wartime_army_party_cells_done }
+			SRC_wartime_army_council_check_visible = { has_country_flag = SRC_wartime_army_soldier_committee_done }
+			SRC_wartime_army_supply_check_visible = { has_country_flag = SRC_wartime_army_supply_network_done }
+			SRC_wartime_army_record_officers_visible = { has_country_flag = SRC_wartime_army_retain_officers_done }
+			SRC_wartime_army_record_party_visible = { has_country_flag = SRC_wartime_army_party_cells_done }
+			SRC_wartime_army_record_council_visible = { has_country_flag = SRC_wartime_army_soldier_committee_done }
+			SRC_wartime_army_record_supply_visible = { has_country_flag = SRC_wartime_army_supply_network_done }
+			SRC_wartime_army_records_empty_visible = { NOT = { OR = { has_country_flag = SRC_wartime_army_retain_officers_done has_country_flag = SRC_wartime_army_party_cells_done has_country_flag = SRC_wartime_army_soldier_committee_done has_country_flag = SRC_wartime_army_supply_network_done } } }
+		}
+		properties = {
+			SRC_wartime_army_command_bar = { frame = SRC_wartime_army_command_stage }
+			SRC_wartime_army_training_bar = { frame = SRC_wartime_army_training_stage }
+			SRC_wartime_army_political_bar = { frame = SRC_wartime_army_political_stage }
+			SRC_wartime_army_supply_bar = { frame = SRC_wartime_army_supply_stage }
+		}
+	}
+}

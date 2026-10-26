@@ -510,6 +510,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		NOT = { has_global_flag = TOD_SRC_start_test_active }
 		date > 1937.9.22
 		tag = GPS
         GPS = { NOT = {has_country_flag = MNG_gongrenyundongbeizhenya} }
@@ -554,6 +555,7 @@ country_event = {
 	fire_only_once = yes
 	
 	trigger = {
+		NOT = { has_global_flag = TOD_SRC_start_test_active }
 		date > 1937.9.22
 		tag = GPS
         GPS = { has_country_flag = MNG_gongrenyundongbeizhenya }

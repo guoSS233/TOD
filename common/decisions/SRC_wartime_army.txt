@@ -1,0 +1,374 @@
+SRC_wartime_army_category = {
+	# 第一轮：起义后的紧急整顿
+	SRC_wartime_army_retain_officers = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 35
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_retain_officers_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_retain_officers = yes set_country_flag = SRC_wartime_army_retain_officers_done SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_party_cells = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_party_cells_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_party_cells = yes set_country_flag = SRC_wartime_army_party_cells_done SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_soldier_committee = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_soldier_committee_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = {
+			hidden_effect = {
+				SRC_wartime_army_gain_soldier_committee = yes
+				set_country_flag = SRC_wartime_army_soldier_committee_done
+				add_dynamic_modifier = { modifier = SRC_wartime_army_mobilisation days = 30 }
+				SRC_wartime_army_refresh_spirit = yes
+				clr_country_flag = SRC_wartime_army_work_busy
+				SRC_check_wartime_army_stage_progress = yes
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_supply_network = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_supply_network_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_supply_network = yes set_country_flag = SRC_wartime_army_supply_network_done SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	# 第二轮：把各路人马捏成一支军队
+	SRC_wartime_army_unify_designations = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_unify_designations_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_unify_designations = yes set_country_flag = SRC_unified_revolutionary_designations SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 3 }
+	}
+
+	SRC_wartime_army_crash_training_courses = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_crash_training_courses_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_crash_training_courses = yes set_country_flag = SRC_crash_military_training_courses country_event = { id = SRC_wartime_army.1 } SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_temporary_discipline = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_temporary_discipline_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_temporary_discipline = yes set_country_flag = SRC_temporary_red_army_discipline SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_armament_registry = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_armament_registry_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_armament_registry = yes set_country_flag = SRC_wartime_armament_registry SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 3 }
+	}
+
+	SRC_wartime_army_select_grassroots_cadres = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_select_grassroots_cadres_requirement_tt OR = { has_country_flag = SRC_wartime_army_soldier_committee_done check_variable = { SRC_wartime_army_political_stage > 35 } check_variable = { SRC_wartime_army_political_stage = 35 } } }
+		}
+		cost = 30
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_select_grassroots_cadres_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_grassroots_cadres = yes set_country_flag = SRC_grassroots_cadres_from_pickets SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_expand_field_command = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_expand_field_command_requirement_tt OR = { has_country_flag = SRC_wartime_army_retain_officers_done check_variable = { SRC_wartime_army_command_stage > 35 } check_variable = { SRC_wartime_army_command_stage = 35 } } }
+		}
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_expand_field_command_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_expand_field_command = yes set_country_flag = SRC_expanded_field_command SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	# 第三轮：从城市起义军转向野战军
+	SRC_wartime_army_field_staff_office = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 40
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_field_staff_office_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_field_staff_office = yes set_country_flag = SRC_field_staff_office SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_veteran_training_units = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_veteran_training_units_requirement_tt OR = { check_variable = { SRC_wartime_army_war_days > 90 } check_variable = { SRC_wartime_army_war_days = 90 } } }
+		}
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_veteran_training_units_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_veteran_training_units = yes set_country_flag = SRC_veteran_training_units SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_field_political_work = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_field_political_work_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_field_political_work = yes set_country_flag = SRC_field_political_work_system SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_local_initiative = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_local_initiative_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_local_initiative = yes set_country_flag = SRC_grassroots_battlefield_initiative SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_field_repair_workshops = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_field_repair_workshops_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_field_repair_workshops = yes set_country_flag = SRC_field_repair_workshops SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_railway_priority = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_railway_priority_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_railway_priority = yes set_country_flag = SRC_railway_priority_for_military_transport SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	# 第四轮：军队里到底谁说了算
+	SRC_wartime_army_strengthen_commanders = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_four_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_already_current_tt NOT = { has_country_flag = SRC_command_arrangement_commanders } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_cooldown_tt SRC_wartime_army_arrangement_change_unlocked = yes }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_switch_cost_available_tt OR = { NOT = { SRC_wartime_army_has_command_arrangement = yes } has_political_power > 64 } }
+		}
+		cost = 45
+		days_remove = 28
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = SRC_strengthened_military_commanders } }
+				custom_effect_tooltip = SRC_wartime_army_strengthen_commanders_tt
+			}
+			else = { custom_effect_tooltip = SRC_wartime_army_reestablish_commanders_tt }
+			if = { limit = { SRC_wartime_army_has_command_arrangement = yes } custom_effect_tooltip = SRC_wartime_army_arrangement_switch_cost_tt hidden_effect = { add_political_power = -20 } }
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_adopt_commanders_arrangement = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = {
+			base = 1
+			modifier = { factor = 0 SRC_wartime_army_has_command_arrangement = yes }
+			modifier = { factor = 5 check_variable = { SRC_army_foundation > 10 } }
+		}
+	}
+
+	SRC_wartime_army_expand_party_network = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_four_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_already_current_tt NOT = { has_country_flag = SRC_command_arrangement_party } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_cooldown_tt SRC_wartime_army_arrangement_change_unlocked = yes }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_switch_cost_available_tt OR = { NOT = { SRC_wartime_army_has_command_arrangement = yes } has_political_power > 64 } }
+		}
+		cost = 45
+		days_remove = 28
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = SRC_expanded_party_network_in_units } }
+				custom_effect_tooltip = SRC_wartime_army_expand_party_network_tt
+			}
+			else = { custom_effect_tooltip = SRC_wartime_army_reestablish_party_tt }
+			if = { limit = { SRC_wartime_army_has_command_arrangement = yes } custom_effect_tooltip = SRC_wartime_army_arrangement_switch_cost_tt hidden_effect = { add_political_power = -20 } }
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_adopt_party_arrangement = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = {
+			base = 1
+			modifier = { factor = 0 SRC_wartime_army_has_command_arrangement = yes }
+			modifier = { factor = 5 check_variable = { SRC_army_authority > 10 } }
+		}
+	}
+
+	SRC_wartime_army_expand_soldier_representatives = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_four_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_already_current_tt NOT = { has_country_flag = SRC_command_arrangement_representatives } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_cooldown_tt SRC_wartime_army_arrangement_change_unlocked = yes }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_switch_cost_available_tt OR = { NOT = { SRC_wartime_army_has_command_arrangement = yes } has_political_power > 59 } }
+		}
+		cost = 40
+		days_remove = 28
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = SRC_expanded_soldier_representatives } }
+				custom_effect_tooltip = SRC_wartime_army_expand_soldier_representatives_tt
+			}
+			else = { custom_effect_tooltip = SRC_wartime_army_reestablish_representatives_tt }
+			if = { limit = { SRC_wartime_army_has_command_arrangement = yes } custom_effect_tooltip = SRC_wartime_army_arrangement_switch_cost_tt hidden_effect = { add_political_power = -20 } }
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_adopt_representatives_arrangement = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = {
+			base = 1
+			modifier = { factor = 0 SRC_wartime_army_has_command_arrangement = yes }
+			modifier = {
+				factor = 5
+				OR = {
+					check_variable = { SRC_army_authority < -10 }
+					check_variable = { SRC_army_foundation < -10 }
+				}
+			}
+		}
+	}
+
+	# 第五轮：把战争经验变成制度
+	SRC_wartime_army_general_headquarters = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 50
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_general_headquarters_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_general_headquarters = yes set_country_flag = SRC_northeast_red_army_general_headquarters SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_permanent_training_system = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 45
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_permanent_training_system_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_permanent_training_system = yes set_country_flag = SRC_permanent_training_system SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_complete_political_reorganisation = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 45
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_complete_political_reorganisation_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_complete_political_reorganisation = yes set_country_flag = SRC_completed_political_reorganisation SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_unified_supply_department = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 45
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_unified_supply_department_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_unified_supply_department = yes set_country_flag = SRC_unified_supply_department SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+}

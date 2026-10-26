@@ -1,0 +1,106 @@
+﻿TOD_SRC_start_test_category = {
+    TOD_SRC_start_test_captured_suppressed = {
+        icon = ger_military_buildup
+        cost = 0
+        fire_only_once = yes
+        visible = {
+            tag = MNG
+            is_ai = no
+            NOT = { has_global_flag = TOD_SRC_start_test_active }
+        }
+        available = {
+            NOT = { country_exists = GPS }
+            NOT = { country_exists = SRC }
+        }
+        ai_will_do = { base = 0 }
+        complete_effect = {
+            custom_effect_tooltip = TOD_SRC_start_test_captured_suppressed_tooltip
+            hidden_effect = {
+                TOD_SRC_start_test_prepare = yes
+                GPS = {
+                    TOD_SRC_start_test_captured = yes
+                    TOD_SRC_start_test_uprising_suppressed = yes
+                }
+                SRC = { change_tag_from = ROOT }
+            }
+        }
+    }
+    TOD_SRC_start_test_blocked_suppressed = {
+        icon = ger_military_buildup
+        cost = 0
+        fire_only_once = yes
+        visible = {
+            tag = MNG
+            is_ai = no
+            NOT = { has_global_flag = TOD_SRC_start_test_active }
+        }
+        available = {
+            NOT = { country_exists = GPS }
+            NOT = { country_exists = SRC }
+        }
+        ai_will_do = { base = 0 }
+        complete_effect = {
+            custom_effect_tooltip = TOD_SRC_start_test_blocked_suppressed_tooltip
+            hidden_effect = {
+                TOD_SRC_start_test_prepare = yes
+                GPS = {
+                    TOD_SRC_start_test_blocked = yes
+                    TOD_SRC_start_test_uprising_suppressed = yes
+                }
+                SRC = { change_tag_from = ROOT }
+            }
+        }
+    }
+    TOD_SRC_start_test_captured_success = {
+        icon = ger_military_buildup
+        cost = 0
+        fire_only_once = yes
+        visible = {
+            tag = MNG
+            is_ai = no
+            NOT = { has_global_flag = TOD_SRC_start_test_active }
+        }
+        available = {
+            NOT = { country_exists = GPS }
+            NOT = { country_exists = SRC }
+        }
+        ai_will_do = { base = 0 }
+        complete_effect = {
+            custom_effect_tooltip = TOD_SRC_start_test_captured_success_tooltip
+            hidden_effect = {
+                TOD_SRC_start_test_prepare = yes
+                GPS = {
+                    TOD_SRC_start_test_captured = yes
+                    TOD_SRC_start_test_uprising_success = yes
+                }
+                SRC = { change_tag_from = ROOT }
+            }
+        }
+    }
+    TOD_SRC_start_test_blocked_success = {
+        icon = ger_military_buildup
+        cost = 0
+        fire_only_once = yes
+        visible = {
+            tag = MNG
+            is_ai = no
+            NOT = { has_global_flag = TOD_SRC_start_test_active }
+        }
+        available = {
+            NOT = { country_exists = GPS }
+            NOT = { country_exists = SRC }
+        }
+        ai_will_do = { base = 0 }
+        complete_effect = {
+            custom_effect_tooltip = TOD_SRC_start_test_blocked_success_tooltip
+            hidden_effect = {
+                TOD_SRC_start_test_prepare = yes
+                GPS = {
+                    TOD_SRC_start_test_blocked = yes
+                    TOD_SRC_start_test_uprising_success = yes
+                }
+                SRC = { change_tag_from = ROOT }
+            }
+        }
+    }
+}

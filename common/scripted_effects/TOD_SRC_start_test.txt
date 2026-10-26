@@ -1,0 +1,235 @@
+﻿# Player-only test presets, reusing current event option effects.
+TOD_SRC_start_test_prepare = {
+    set_global_flag = TOD_SRC_start_test_active
+		MNG_release_GPS = yes
+		MNG_release_SRC = yes
+		complete_national_focus = MNG_qingjiaotongchangonghui
+		MNG = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = tod_ming_tongzhidusi
+			}
+			hidden_effect = {
+				transfer_units_fraction= {
+					target = GPS
+					stockpile_ratio = 0.15
+					keep_unit_leaders = {
+						
+					}
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+				GPS = {
+					transfer_navy = {
+						target = MNG
+					}
+					# load_oob = "GPS_NAVAL"
+				}
+			}
+		}
+		hidden_effect = {
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
+		delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+			GPS = {
+				load_oob = "GPS_1937"
+				load_oob = "GPS_air"
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型华南乙种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型东北乙种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型东北近卫战车师" }
+				set_politics = {
+					ruling_party = authoritarian_oligarchy
+					last_election = "1935.3.14"
+					election_frequency = 48
+					elections_allowed = no
+				}
+				
+				set_popularities = {
+					vanguard_socialism =10
+					council_socialism = 5
+					moderate_socialism = 5
+					agroindustrial_socialism = 5
+					social_democrat = 5
+					liberal_democracy = 0
+					conservative_democracy = 0
+					consociationalism = 0
+					sacred_revivalism = 0
+					authoritarian_oligarchy = 60
+					leader_despotism = 5
+					national_corporatism = 5
+				}
+				inherit_technology = MNG
+			}
+		}
+	
+    GPS = {
+        set_country_flag = GPS_liaoyangqiyi
+        complete_national_focus = GPS_tanyaqiyi
+        mark_focus_tree_layout_dirty = yes
+    }
+}
+
+TOD_SRC_start_test_captured = {
+		SRC = {
+			transfer_state = 1218
+			transfer_state = 716
+			transfer_state = 845
+			transfer_state = 745
+		}
+		GPS = { complete_national_focus = GPS_gongqushenyang}
+		SRC = { complete_national_focus = SRC_no_longer_a_slave}
+		mark_focus_tree_layout_dirty = yes
+		716 = { set_demilitarized_zone = no }
+		846 = { set_demilitarized_zone = no }
+		845 = { set_demilitarized_zone = no }
+		745 = { set_demilitarized_zone = no }
+		hidden_effect = {
+			SRC = {
+				load_oob = SRC_1937
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型辽宁近卫战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型卫戍步兵旅" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌八年实验机动步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型山地步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型海军陆战队师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种战车师" }
+				inherit_technology = GPS
+				set_research_slots = 3
+			}
+			GPS ={
+				hidden_effect = {
+				transfer_units_fraction = {
+					target = SRC
+					size = 1
+					stockpile_ratio = 0.7
+					navy_ratio = 0
+					air_ratio = 0.3
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+			}
+			}
+
+		}
+	
+}
+
+TOD_SRC_start_test_blocked = {
+		GPS = { complete_national_focus = GPS_gongshishoucuo}
+		SRC = { complete_national_focus = SRC_no_longer_a_slave}
+		SRC = {
+			transfer_state = 846
+			transfer_state = 716
+			transfer_state = 845
+			transfer_state = 745
+			inherit_technology = GPS
+			set_research_slots = 3
+		}
+		GPS = {
+			hidden_effect = {
+				transfer_units_fraction = {
+					target = SRC
+					size = 1
+					stockpile_ratio = 0.7
+					navy_ratio = 0
+					air_ratio = 0.5
+					keep_unit_leaders_trigger = {
+						has_trait = MNG_damingjungguan
+					}
+				}
+			}
+		}
+		716 = { set_demilitarized_zone = no }
+		846 = { set_demilitarized_zone = no }
+		845 = { set_demilitarized_zone = no }
+		745 = { set_demilitarized_zone = no }
+		hidden_effect = {
+			SRC = {
+				load_oob = "SRC_1937"
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽西乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型辽宁近卫战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型辽宁近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型近卫步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型省军步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型卫戍步兵旅" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型骑行步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌八年实验机动步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型山地步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌五年型海军陆战队师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种步兵师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型甲种战车师" }
+				delete_unit_template_and_units = { division_template = "昌德卌四年型乙种战车师" }
+			}
+		}
+	
+}
+
+TOD_SRC_start_test_uprising_success = {
+    1218 = { set_demilitarized_zone = no }
+    610 = { set_demilitarized_zone = no }
+    715 = { set_demilitarized_zone = no }
+        SRC = {country_event = { id = SRCevents.1 } } 
+		SRC = {
+			transfer_state = 715
+			add_state_core = 715
+			transfer_state = 1218
+			add_state_core = 1218
+			transfer_state = 610
+			add_state_core = 610
+		}
+	
+}
+
+TOD_SRC_start_test_uprising_suppressed = {
+    1218 = { set_demilitarized_zone = no }
+    610 = { set_demilitarized_zone = no }
+    715 = { set_demilitarized_zone = no }
+    set_country_flag = MNG_gongrenyundongbeizhenya
+        SRC = {country_event = { id = SRCevents.2 } } 
+        add_stability = 0.03
+	
+}
+

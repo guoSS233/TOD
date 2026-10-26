@@ -1,0 +1,54 @@
+TOD_dongbei_morale_init = {
+	if = { limit = { NOT = { check_variable = { TOD_dongbei_morale > 0 } } } set_variable = { TOD_dongbei_morale = 50 } }
+	if = { limit = { NOT = { has_country_flag = TOD_dongbei_morale_initialized } } set_country_flag = TOD_dongbei_morale_initialized }
+}
+
+TOD_dongbei_morale_weekly = {
+	TOD_dongbei_morale_init = yes
+	set_temp_variable = { TOD_morale_src_score = 0 }
+	set_temp_variable = { TOD_morale_gps_score = 0 }
+	# 用东北前线控制州计算本周力量差；争夺州各计半分
+	every_state = {
+		limit = { TOD_dongbei_morale_state = yes }
+		if = {
+			limit = { is_controlled_by = SRC }
+			add_to_temp_variable = { TOD_morale_src_score = 1 }
+		}
+		else_if = {
+			limit = { is_controlled_by = GPS }
+			add_to_temp_variable = { TOD_morale_gps_score = 1 }
+		}
+		else = {
+			add_to_temp_variable = { TOD_morale_src_score = 0.5 }
+			add_to_temp_variable = { TOD_morale_gps_score = 0.5 }
+		}
+	}
+	if = {
+		limit = { tag = SRC }
+		if = { limit = { check_variable = { TOD_morale_src_score > TOD_morale_gps_score } } add_to_variable = { TOD_dongbei_morale = 2 } }
+		else_if = { limit = { check_variable = { TOD_morale_src_score < TOD_morale_gps_score } } add_to_variable = { TOD_dongbei_morale = -1 } }
+	}
+	if = {
+		limit = { tag = GPS }
+		if = { limit = { check_variable = { TOD_morale_gps_score > TOD_morale_src_score } } add_to_variable = { TOD_dongbei_morale = 2 } }
+		else_if = { limit = { check_variable = { TOD_morale_gps_score < TOD_morale_src_score } } add_to_variable = { TOD_dongbei_morale = -1 } }
+	}
+	clamp_variable = { var = TOD_dongbei_morale min = 0 max = 100 }
+}
+
+TOD_dongbei_morale_propaganda = {
+	add_to_variable = { TOD_dongbei_morale = -10 }
+	add_war_support = 0.03
+	add_stability = 0.02
+	add_dynamic_modifier = { modifier = TOD_dongbei_morale_propaganda_modifier }
+}
+
+TOD_dongbei_morale_defense = {
+	add_to_variable = { TOD_dongbei_morale = -20 }
+	add_dynamic_modifier = { modifier = TOD_dongbei_morale_defense_modifier }
+}
+
+TOD_dongbei_morale_counterattack = {
+	add_to_variable = { TOD_dongbei_morale = -25 }
+	add_dynamic_modifier = { modifier = TOD_dongbei_morale_counterattack_modifier }
+}

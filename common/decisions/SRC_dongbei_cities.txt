@@ -1,0 +1,67 @@
+SRC_dongbei_city_operations = {
+	SRC_city_operation_changchun = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 328 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_army_experience = 5 }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_zhendong = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 408 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_command_power = 10 }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_longjiang = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 714 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_manpower = 15000 }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_liaoyang = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 845 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_equipment_to_stockpile = { type = infantry_equipment amount = 200 } }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_shenyang = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 846 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_political_power = 15 }
+		ai_will_do = { factor = 0 }
+	}
+}

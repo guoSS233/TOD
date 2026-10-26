@@ -1,0 +1,33 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			SRC = {
+				if = {
+					limit = { exists = yes }
+					SRC_wartime_army_ensure_v2 = yes
+					SRC_wartime_army_ensure_chapters = yes
+					if = {
+						limit = { has_war_with = GPS }
+						if = {
+							limit = { NOT = { has_country_flag = SRC_wartime_army_war_started } }
+							set_country_flag = SRC_wartime_army_war_started
+							set_variable = { SRC_wartime_army_war_days = 0 }
+						}
+						add_to_variable = { SRC_wartime_army_war_days = 1 }
+					}
+					if = {
+						limit = { SRC_wartime_army_mechanic_available = yes }
+						if = {
+							limit = { has_war_with = GPS NOT = { has_country_flag = SRC_improvised_force_granted } }
+							set_country_flag = SRC_improvised_force_granted
+						}
+						SRC_wartime_army_refresh_spirit = yes
+						SRC_check_wartime_army_stage_progress = yes
+						# Graduation records wartime traditions; final spirits still require postwar focuses.
+						SRC_wartime_army_finalize_completed_route = yes
+					}
+				}
+			}
+		}
+	}
+}

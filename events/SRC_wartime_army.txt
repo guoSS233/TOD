@@ -1,0 +1,258 @@
+add_namespace = SRC_wartime_army
+
+# 谁来教这些新兵？
+country_event = {
+	id = SRC_wartime_army.1
+	title = SRC_wartime_army.1.t
+	desc = SRC_wartime_army.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_wartime_army.1.a
+		custom_effect_tooltip = SRC_wartime_army.1.a.tt
+		hidden_effect = {
+			add_to_variable = { SRC_wartime_army_training_stage = 4 }
+			add_to_variable = { SRC_army_foundation = 10 }
+			set_country_flag = SRC_training_instructors_old_officers
+			SRC_wartime_army_refresh_spirit = yes
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+	option = {
+		name = SRC_wartime_army.1.b
+		custom_effect_tooltip = SRC_wartime_army.1.b.tt
+		hidden_effect = {
+			add_to_variable = { SRC_wartime_army_training_stage = 2 }
+			add_to_variable = { SRC_wartime_army_political_stage = 3 }
+			add_to_variable = { SRC_army_foundation = -8 }
+			set_country_flag = SRC_training_instructors_picket_cadres
+			SRC_wartime_army_refresh_spirit = yes
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+	option = {
+		name = SRC_wartime_army.1.c
+		custom_effect_tooltip = SRC_wartime_army.1.c.tt
+		hidden_effect = {
+			add_to_variable = { SRC_wartime_army_training_stage = 2 }
+			add_to_variable = { SRC_wartime_army_political_stage = 4 }
+			add_to_variable = { SRC_army_authority = 8 }
+			set_country_flag = SRC_training_instructors_party_selected
+			SRC_wartime_army_refresh_spirit = yes
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+}
+
+# 走出工厂与街垒
+country_event = {
+	id = SRC_wartime_army.2
+	title = SRC_wartime_army.2.t
+	desc = SRC_wartime_army.2.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_wartime_army.2.a
+		custom_effect_tooltip = SRC_wartime_army_unlock_stage_three_tt
+		set_country_flag = SRC_wartime_army_field_army_phase
+		set_variable = { SRC_wartime_army_stage = 3 }
+		clr_country_flag = SRC_wartime_army_stage_event_pending
+		add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+		SRC_check_wartime_army_stage_progress = yes
+	}
+}
+
+# 军官和纠察队长
+country_event = {
+	id = SRC_wartime_army.3
+	title = SRC_wartime_army.3.t
+	desc = SRC_wartime_army.3.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_wartime_army.3.a
+		if = { limit = { NOT = { has_country_flag = SRC_wartime_army_command_question_resolved } } custom_effect_tooltip = SRC_wartime_army.3.a.tt }
+		custom_effect_tooltip = SRC_wartime_army_unlock_stage_four_tt
+		hidden_effect = {
+			# Legacy saves may have resolved the dispute already; do not reward it twice.
+			if = {
+				limit = { NOT = { has_country_flag = SRC_wartime_army_command_question_resolved } }
+				add_to_variable = { SRC_wartime_army_command_stage = 7 }
+				add_to_variable = { SRC_army_foundation = 8 }
+				add_to_variable = { SRC_army_authority = 5 }
+				set_country_flag = SRC_field_orders_take_precedence
+			}
+			set_country_flag = SRC_wartime_army_command_question_resolved
+			set_variable = { SRC_wartime_army_stage = 4 }
+			clr_country_flag = SRC_wartime_army_stage_event_pending
+			SRC_wartime_army_refresh_spirit = yes
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+	option = {
+		name = SRC_wartime_army.3.b
+		if = { limit = { NOT = { has_country_flag = SRC_wartime_army_command_question_resolved } } custom_effect_tooltip = SRC_wartime_army.3.b.tt }
+		custom_effect_tooltip = SRC_wartime_army_unlock_stage_four_tt
+		hidden_effect = {
+			# Legacy saves may have resolved the dispute already; do not reward it twice.
+			if = {
+				limit = { NOT = { has_country_flag = SRC_wartime_army_command_question_resolved } }
+				add_to_variable = { SRC_wartime_army_political_stage = 6 }
+				add_to_variable = { SRC_wartime_army_command_stage = 2 }
+				add_to_variable = { SRC_army_authority = -8 }
+				set_country_flag = SRC_soldier_representatives_in_military_affairs
+			}
+			set_country_flag = SRC_wartime_army_command_question_resolved
+			set_variable = { SRC_wartime_army_stage = 4 }
+			clr_country_flag = SRC_wartime_army_stage_event_pending
+			SRC_wartime_army_refresh_spirit = yes
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+	option = {
+		name = SRC_wartime_army.3.c
+		if = { limit = { NOT = { has_country_flag = SRC_wartime_army_command_question_resolved } } custom_effect_tooltip = SRC_wartime_army.3.c.tt }
+		custom_effect_tooltip = SRC_wartime_army_unlock_stage_four_tt
+		hidden_effect = {
+			# Legacy saves may have resolved the dispute already; do not reward it twice.
+			if = {
+				limit = { NOT = { has_country_flag = SRC_wartime_army_command_question_resolved } }
+				add_to_variable = { SRC_wartime_army_political_stage = 6 }
+				add_to_variable = { SRC_wartime_army_command_stage = 4 }
+				add_to_variable = { SRC_army_authority = 8 }
+				set_country_flag = SRC_party_mediates_command_disputes
+			}
+			set_country_flag = SRC_wartime_army_command_question_resolved
+			set_variable = { SRC_wartime_army_stage = 4 }
+			clr_country_flag = SRC_wartime_army_stage_event_pending
+			SRC_wartime_army_refresh_spirit = yes
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+}
+
+# 基层对强化主官权限的不满
+country_event = {
+	id = SRC_wartime_army.4
+	title = SRC_wartime_army.4.t
+	desc = SRC_wartime_army.4.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_wartime_army.4.a
+		add_stability = -0.01
+		add_political_power = -20
+	}
+}
+
+# 我们已经有了一支军队
+country_event = {
+	id = SRC_wartime_army.5
+	title = SRC_wartime_army.5.t
+	desc = {
+		text = SRC_wartime_army.5.d_professional
+		trigger = {
+			OR = { check_variable = { SRC_wartime_army_professional_score > SRC_wartime_army_party_score } check_variable = { SRC_wartime_army_professional_score = SRC_wartime_army_party_score } }
+			OR = { check_variable = { SRC_wartime_army_professional_score > SRC_wartime_army_people_score } check_variable = { SRC_wartime_army_professional_score = SRC_wartime_army_people_score } }
+		}
+	}
+	desc = {
+		text = SRC_wartime_army.5.d_party
+		trigger = {
+			check_variable = { SRC_wartime_army_party_score > SRC_wartime_army_professional_score }
+			OR = { check_variable = { SRC_wartime_army_party_score > SRC_wartime_army_people_score } check_variable = { SRC_wartime_army_party_score = SRC_wartime_army_people_score } }
+		}
+	}
+	desc = {
+		text = SRC_wartime_army.5.d_people
+		trigger = {
+			check_variable = { SRC_wartime_army_people_score > SRC_wartime_army_professional_score }
+			check_variable = { SRC_wartime_army_people_score > SRC_wartime_army_party_score }
+		}
+	}
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_wartime_army.5.a
+		trigger = {
+			OR = { check_variable = { SRC_wartime_army_professional_score > SRC_wartime_army_party_score } check_variable = { SRC_wartime_army_professional_score = SRC_wartime_army_party_score } }
+			OR = { check_variable = { SRC_wartime_army_professional_score > SRC_wartime_army_people_score } check_variable = { SRC_wartime_army_professional_score = SRC_wartime_army_people_score } }
+		}
+		custom_effect_tooltip = SRC_wartime_army.5.a.tt
+		hidden_effect = { set_country_flag = SRC_professional_military_system_formed SRC_wartime_army_complete_chapters = yes }
+	}
+	option = {
+		name = SRC_wartime_army.5.b
+		trigger = {
+			check_variable = { SRC_wartime_army_party_score > SRC_wartime_army_professional_score }
+			OR = { check_variable = { SRC_wartime_army_party_score > SRC_wartime_army_people_score } check_variable = { SRC_wartime_army_party_score = SRC_wartime_army_people_score } }
+		}
+		custom_effect_tooltip = SRC_wartime_army.5.b.tt
+		hidden_effect = { set_country_flag = SRC_party_organization_network_in_army SRC_wartime_army_complete_chapters = yes }
+	}
+	option = {
+		name = SRC_wartime_army.5.c
+		trigger = {
+			check_variable = { SRC_wartime_army_people_score > SRC_wartime_army_professional_score }
+			check_variable = { SRC_wartime_army_people_score > SRC_wartime_army_party_score }
+		}
+		custom_effect_tooltip = SRC_wartime_army.5.c.tt
+		hidden_effect = { set_country_flag = SRC_grassroots_military_democracy_tradition SRC_wartime_army_complete_chapters = yes }
+	}
+}
+
+# 主要军制安排的转换
+country_event = {
+	id = SRC_wartime_army.6
+	title = SRC_wartime_army.6.t
+	desc = SRC_wartime_army.6.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+
+	option = {
+		name = SRC_wartime_army.6.a
+	}
+}
+
+# 总算有了个军队的样子：第一阶段到第二阶段。
+country_event = {
+	id = SRC_wartime_army.7
+	title = SRC_wartime_army.7.t
+	desc = SRC_wartime_army.7.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+	option = {
+		name = SRC_wartime_army.7.a
+		custom_effect_tooltip = SRC_wartime_army_unlock_stage_two_tt
+		hidden_effect = {
+			set_variable = { SRC_wartime_army_stage = 2 }
+			clr_country_flag = SRC_wartime_army_stage_event_pending
+			add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+}
+
+# 临时办法不能永远临时下去：第四阶段到第五阶段。
+country_event = {
+	id = SRC_wartime_army.8
+	title = SRC_wartime_army.8.t
+	desc = SRC_wartime_army.8.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+	option = {
+		name = SRC_wartime_army.8.a
+		custom_effect_tooltip = SRC_wartime_army_unlock_stage_five_tt
+		hidden_effect = {
+			set_variable = { SRC_wartime_army_stage = 5 }
+			clr_country_flag = SRC_wartime_army_stage_event_pending
+			add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+			SRC_check_wartime_army_stage_progress = yes
+		}
+	}
+}

@@ -1,0 +1,97 @@
+# Chapter progression is independent of the four construction values.
+# Recount completed work from durable flags, including pre-chapter saves.
+SRC_wartime_army_recount_stage_work = {
+	set_variable = { SRC_wartime_army_stage_one_completed = 0 }
+	if = { limit = { has_country_flag = SRC_wartime_army_retain_officers_done } add_to_variable = { SRC_wartime_army_stage_one_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_wartime_army_party_cells_done } add_to_variable = { SRC_wartime_army_stage_one_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_wartime_army_soldier_committee_done } add_to_variable = { SRC_wartime_army_stage_one_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_wartime_army_supply_network_done } add_to_variable = { SRC_wartime_army_stage_one_completed = 1 } }
+	set_variable = { SRC_wartime_army_stage_two_completed = 0 }
+	if = { limit = { has_country_flag = SRC_unified_revolutionary_designations } add_to_variable = { SRC_wartime_army_stage_two_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_crash_military_training_courses } add_to_variable = { SRC_wartime_army_stage_two_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_temporary_red_army_discipline } add_to_variable = { SRC_wartime_army_stage_two_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_wartime_armament_registry } add_to_variable = { SRC_wartime_army_stage_two_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_grassroots_cadres_from_pickets } add_to_variable = { SRC_wartime_army_stage_two_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_expanded_field_command } add_to_variable = { SRC_wartime_army_stage_two_completed = 1 } }
+	set_variable = { SRC_wartime_army_stage_three_completed = 0 }
+	if = { limit = { has_country_flag = SRC_field_staff_office } add_to_variable = { SRC_wartime_army_stage_three_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_veteran_training_units } add_to_variable = { SRC_wartime_army_stage_three_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_field_political_work_system } add_to_variable = { SRC_wartime_army_stage_three_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_grassroots_battlefield_initiative } add_to_variable = { SRC_wartime_army_stage_three_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_field_repair_workshops } add_to_variable = { SRC_wartime_army_stage_three_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_railway_priority_for_military_transport } add_to_variable = { SRC_wartime_army_stage_three_completed = 1 } }
+	set_variable = { SRC_wartime_army_stage_five_completed = 0 }
+	if = { limit = { has_country_flag = SRC_northeast_red_army_general_headquarters } add_to_variable = { SRC_wartime_army_stage_five_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_permanent_training_system } add_to_variable = { SRC_wartime_army_stage_five_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_completed_political_reorganisation } add_to_variable = { SRC_wartime_army_stage_five_completed = 1 } }
+	if = { limit = { has_country_flag = SRC_unified_supply_department } add_to_variable = { SRC_wartime_army_stage_five_completed = 1 } }
+	set_variable = { SRC_wartime_army_values_at_30 = 0 }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_command_stage > 30 } check_variable = { SRC_wartime_army_command_stage = 30 } } } add_to_variable = { SRC_wartime_army_values_at_30 = 1 } }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_training_stage > 30 } check_variable = { SRC_wartime_army_training_stage = 30 } } } add_to_variable = { SRC_wartime_army_values_at_30 = 1 } }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_political_stage > 30 } check_variable = { SRC_wartime_army_political_stage = 30 } } } add_to_variable = { SRC_wartime_army_values_at_30 = 1 } }
+	if = { limit = { OR = { check_variable = { SRC_wartime_army_supply_stage > 30 } check_variable = { SRC_wartime_army_supply_stage = 30 } } } add_to_variable = { SRC_wartime_army_values_at_30 = 1 } }
+}
+
+SRC_wartime_army_complete_chapters = {
+	set_country_flag = SRC_wartime_army_summary_complete
+	set_country_flag = SRC_army_reorganization_completed
+	clr_country_flag = SRC_wartime_army_stage_event_pending
+	add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+}
+
+# Old saves replay missing chapters in order without resetting metrics or choices.
+SRC_wartime_army_ensure_chapters = {
+	if = {
+		limit = { NOT = { has_variable = SRC_wartime_army_stage } }
+		set_variable = { SRC_wartime_army_stage = 1 }
+		if = { limit = { has_country_flag = SRC_wartime_army_summary_complete } set_variable = { SRC_wartime_army_stage = 5 } }
+		add_to_variable = { SRC_wartime_army_gui_dirty = 0.01 }
+	}
+}
+
+# Called after completed work and daily; time alone can never unlock a chapter.
+SRC_check_wartime_army_stage_progress = {
+	SRC_wartime_army_ensure_chapters = yes
+	SRC_wartime_army_recount_stage_work = yes
+	SRC_wartime_army_recalculate = yes
+	if = {
+		limit = {
+			SRC_wartime_army_mechanic_available = yes
+			NOT = { has_country_flag = SRC_wartime_army_stage_event_pending }
+			NOT = { has_country_flag = SRC_wartime_army_work_busy }
+			NOT = { has_country_flag = SRC_wartime_army_summary_complete }
+		}
+		if = {
+			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_two = yes NOT = { has_country_flag = SRC_wartime_army_chapter_2_event_fired } }
+			set_country_flag = SRC_wartime_army_chapter_2_event_fired
+			set_country_flag = SRC_wartime_army_stage_event_pending
+			country_event = { id = SRC_wartime_army.7 }
+		}
+		else_if = {
+			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_three = yes NOT = { has_country_flag = SRC_wartime_army_chapter_3_event_fired } }
+			set_country_flag = SRC_wartime_army_chapter_3_event_fired
+			set_country_flag = SRC_wartime_army_stage_event_pending
+			country_event = { id = SRC_wartime_army.2 }
+		}
+		else_if = {
+			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_four = yes NOT = { has_country_flag = SRC_wartime_army_chapter_4_event_fired } }
+			set_country_flag = SRC_wartime_army_chapter_4_event_fired
+			set_country_flag = SRC_wartime_army_stage_event_pending
+			country_event = { id = SRC_wartime_army.3 }
+		}
+		else_if = {
+			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_five = yes NOT = { has_country_flag = SRC_wartime_army_chapter_5_event_fired } }
+			set_country_flag = SRC_wartime_army_chapter_5_event_fired
+			set_country_flag = SRC_wartime_army_stage_event_pending
+			country_event = { id = SRC_wartime_army.8 }
+		}
+		else_if = {
+			limit = { SRC_wartime_army_ready_for_war_summary = yes NOT = { has_country_flag = SRC_wartime_army_chapter_summary_event_fired } }
+			set_country_flag = SRC_wartime_army_chapter_summary_event_fired
+			set_country_flag = SRC_wartime_army_summary_event_fired
+			set_country_flag = SRC_wartime_army_stage_event_pending
+			SRC_wartime_army_recalculate_traditions = yes
+			country_event = { id = SRC_wartime_army.5 }
+		}
+	}
+}

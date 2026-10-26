@@ -1,0 +1,10 @@
+SRC_local_network_operations = {
+    icon = gre_faction_management
+    allowed = { tag = SRC }
+    visible = {
+        tag = SRC
+        has_war_with = GPS
+        any_state = { SRC_la_state_in_region = yes check_variable = { SRC_la_network_level = 2 } }
+    }
+    priority = 95
+}

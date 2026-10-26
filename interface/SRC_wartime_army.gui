@@ -1,0 +1,154 @@
+guiTypes = {
+	containerWindowType = {
+		name = "SRC_wartime_army_decision_gui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 345 }
+		background = { name = "SRC_wartime_army_decision_bg" quadTextureSprite = "GFX_SRC_wartime_army_panel_background_v2" }
+
+		iconType = {
+			name = "SRC_wartime_army_title_header_bg"
+			spriteType = "GFX_header_bg"
+			position = { x = -21 y = 3 }
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "SRC_wartime_army_decision_title"
+			position = { x = 24 y = 7 }
+			font = "hoi_24header"
+			text = "SRC_wartime_army_title"
+			format = center
+			maxWidth = 450
+			maxHeight = 28
+		}
+		buttonType = {
+			name = "SRC_wartime_army_help_button"
+			quadTextureSprite = "GFX_tiled_window_transparent"
+			position = { x = 462 y = 7 }
+			size = { x = 26 y = 26 }
+			pdx_tooltip = "SRC_wartime_army_help_tt"
+		}
+		instantTextBoxType = {
+			name = "SRC_wartime_army_help_text"
+			position = { x = 462 y = 6 }
+			font = "hoi_20bs"
+			text = "?"
+			format = center
+			maxWidth = 26
+			maxHeight = 26
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "SRC_wartime_army_status_title"
+			position = { x = 18 y = 39 }
+			font = "hoi_20bs"
+			text = "SRC_wartime_army_status_title_dynamic"
+			maxWidth = 464
+			maxHeight = 22
+		}
+		instantTextBoxType = {
+			name = "SRC_wartime_army_status_summary"
+			position = { x = 20 y = 63 }
+			font = "hoi_14"
+			text = "SRC_wartime_army_status_summary_dynamic"
+			format = left
+			maxWidth = 410
+			maxHeight = 30
+		}
+		instantTextBoxType = {
+			name = "SRC_wartime_army_current_chapter_label"
+			position = { x = 20 y = 94 }
+			font = "hoi_14"
+			text = "SRC_wartime_army_current_chapter_dynamic"
+			pdx_tooltip = "SRC_wartime_army_chapter_progress_dynamic"
+			maxWidth = 464
+			maxHeight = 17
+		}
+		iconType = {
+			name = "SRC_wartime_army_intro_rifle_art"
+			spriteType = "GFX_SRC_wartime_army_status_initial"
+			position = { x = 438 y = 50 }
+			scale = 0.18
+			alwaystransparent = yes
+		}
+
+		containerWindowType = {
+			name = "SRC_wartime_army_stage_header_bg"
+			position = { x = 12 y = 112 }
+			size = { width = 476 height = 24 }
+			background = { name = "SRC_wartime_army_stage_header_texture" quadTextureSprite = "GFX_tiled_decisions_bg_small" }
+		}
+		instantTextBoxType = {
+			name = "SRC_wartime_army_stage_title"
+			position = { x = 25 y = 115 }
+			font = "hoi_18mbs"
+			text = "SRC_wartime_army_stage_title"
+			maxWidth = 450
+			maxHeight = 21
+		}
+
+		containerWindowType = {
+			name = "SRC_wartime_army_stage_panel"
+			position = { x = 12 y = 141 }
+			size = { width = 476 height = 111 }
+			background = { name = "SRC_wartime_army_stage_bg" quadTextureSprite = "GFX_tiled_decisions_bg_small" }
+
+			iconType = { name = "SRC_wartime_army_command_icon" spriteType = "GFX_SRC_wartime_army_status_officer" position = { x = 11 y = 5 } scale = 0.095 alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_command_title" position = { x = 42 y = 7 } font = "hoi_18" text = "SRC_wartime_army_command_title" maxWidth = 82 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_command_low" position = { x = 124 y = 7 } font = "hoi_18" text = "SRC_wartime_army_command_low" maxWidth = 46 maxHeight = 18 format = right }
+			iconType = { name = "SRC_wartime_army_command_bar" spriteType = "GFX_SRC_wartime_army_command_bar" position = { x = 176 y = 9 } }
+			iconType = { name = "SRC_wartime_army_command_bar_segments" spriteType = "GFX_SRC_wartime_army_progress_segments_overlay" position = { x = 176 y = 9 } alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_command_high" position = { x = 389 y = 7 } font = "hoi_18" text = "SRC_wartime_army_command_high" maxWidth = 46 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_command_value" position = { x = 438 y = 7 } font = "hoi_18" text = "[?SRC_wartime_army_command_stage|0]" maxWidth = 32 maxHeight = 18 format = right }
+
+			iconType = { name = "SRC_wartime_army_training_icon" spriteType = "GFX_SRC_wartime_army_status_initial" position = { x = 11 y = 31 } scale = 0.095 alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_training_title" position = { x = 42 y = 33 } font = "hoi_18" text = "SRC_wartime_army_training_title" maxWidth = 82 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_training_low" position = { x = 124 y = 33 } font = "hoi_18" text = "SRC_wartime_army_training_low" maxWidth = 46 maxHeight = 18 format = right }
+			iconType = { name = "SRC_wartime_army_training_bar" spriteType = "GFX_SRC_wartime_army_training_bar" position = { x = 176 y = 35 } }
+			iconType = { name = "SRC_wartime_army_training_bar_segments" spriteType = "GFX_SRC_wartime_army_progress_segments_overlay" position = { x = 176 y = 35 } alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_training_high" position = { x = 389 y = 33 } font = "hoi_18" text = "SRC_wartime_army_training_high" maxWidth = 46 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_training_value" position = { x = 438 y = 33 } font = "hoi_18" text = "[?SRC_wartime_army_training_stage|0]" maxWidth = 32 maxHeight = 18 format = right }
+
+			iconType = { name = "SRC_wartime_army_political_icon" spriteType = "GFX_SRC_wartime_army_status_commissar" position = { x = 11 y = 57 } scale = 0.095 alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_political_title" position = { x = 42 y = 59 } font = "hoi_18" text = "SRC_wartime_army_political_title" maxWidth = 82 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_political_low" position = { x = 124 y = 59 } font = "hoi_18" text = "SRC_wartime_army_political_low" maxWidth = 46 maxHeight = 18 format = right }
+			iconType = { name = "SRC_wartime_army_political_bar" spriteType = "GFX_SRC_wartime_army_political_bar" position = { x = 176 y = 61 } }
+			iconType = { name = "SRC_wartime_army_political_bar_segments" spriteType = "GFX_SRC_wartime_army_progress_segments_overlay" position = { x = 176 y = 61 } alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_political_high" position = { x = 389 y = 59 } font = "hoi_18" text = "SRC_wartime_army_political_high" maxWidth = 46 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_political_value" position = { x = 438 y = 59 } font = "hoi_18" text = "[?SRC_wartime_army_political_stage|0]" maxWidth = 32 maxHeight = 18 format = right }
+
+			iconType = { name = "SRC_wartime_army_supply_icon" spriteType = "GFX_SRC_wartime_army_status_supply" position = { x = 11 y = 83 } scale = 0.095 alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_supply_title" position = { x = 42 y = 85 } font = "hoi_18" text = "SRC_wartime_army_supply_title" maxWidth = 82 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_supply_low" position = { x = 124 y = 85 } font = "hoi_18" text = "SRC_wartime_army_supply_low" maxWidth = 46 maxHeight = 18 format = right }
+			iconType = { name = "SRC_wartime_army_supply_bar" spriteType = "GFX_SRC_wartime_army_supply_bar" position = { x = 176 y = 87 } }
+			iconType = { name = "SRC_wartime_army_supply_bar_segments" spriteType = "GFX_SRC_wartime_army_progress_segments_overlay" position = { x = 176 y = 87 } alwaystransparent = yes }
+			instantTextBoxType = { name = "SRC_wartime_army_supply_high" position = { x = 389 y = 85 } font = "hoi_18" text = "SRC_wartime_army_supply_high" maxWidth = 46 maxHeight = 18 }
+			instantTextBoxType = { name = "SRC_wartime_army_supply_value" position = { x = 438 y = 85 } font = "hoi_18" text = "[?SRC_wartime_army_supply_stage|0]" maxWidth = 32 maxHeight = 18 format = right }
+		}
+
+		containerWindowType = {
+			name = "SRC_wartime_army_records_header_bg"
+			position = { x = 12 y = 258 }
+			size = { width = 476 height = 24 }
+			background = { name = "SRC_wartime_army_records_header_texture" quadTextureSprite = "GFX_tiled_decisions_bg_small" }
+		}
+		instantTextBoxType = {
+			name = "SRC_wartime_army_records_title"
+			position = { x = 25 y = 261 }
+			font = "hoi_18mbs"
+			text = "SRC_wartime_army_records_title"
+			maxWidth = 450
+			maxHeight = 21
+		}
+		instantTextBoxType = { name = "SRC_wartime_army_records_empty" position = { x = 24 y = 295 } font = "hoi_16mbs" text = "SRC_wartime_army_records_empty" maxWidth = 450 maxHeight = 18 }
+
+		iconType = { name = "SRC_wartime_army_officers_check" spriteType = "GFX_checkbox_small5" frame = 2 position = { x = 20 y = 293 } }
+		instantTextBoxType = { name = "SRC_wartime_army_record_officers" position = { x = 46 y = 295 } font = "hoi_16mbs" text = "SRC_wartime_army_record_officers" maxWidth = 188 maxHeight = 18 pdx_tooltip = "SRC_wartime_army_record_officers_tt" }
+		iconType = { name = "SRC_wartime_army_party_check" spriteType = "GFX_checkbox_small5" frame = 2 position = { x = 250 y = 293 } }
+		instantTextBoxType = { name = "SRC_wartime_army_record_party" position = { x = 276 y = 295 } font = "hoi_16mbs" text = "SRC_wartime_army_record_party" maxWidth = 200 maxHeight = 18 pdx_tooltip = "SRC_wartime_army_record_party_tt" }
+		iconType = { name = "SRC_wartime_army_council_check" spriteType = "GFX_checkbox_small5" frame = 2 position = { x = 20 y = 319 } }
+		instantTextBoxType = { name = "SRC_wartime_army_record_council" position = { x = 46 y = 321 } font = "hoi_16mbs" text = "SRC_wartime_army_record_council" maxWidth = 188 maxHeight = 18 pdx_tooltip = "SRC_wartime_army_record_council_tt" }
+		iconType = { name = "SRC_wartime_army_supply_check" spriteType = "GFX_checkbox_small5" frame = 2 position = { x = 250 y = 319 } }
+		instantTextBoxType = { name = "SRC_wartime_army_record_supply" position = { x = 276 y = 321 } font = "hoi_16mbs" text = "SRC_wartime_army_record_supply" maxWidth = 200 maxHeight = 18 pdx_tooltip = "SRC_wartime_army_record_supply_tt" }
+	}
+}

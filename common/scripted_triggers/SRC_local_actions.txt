@@ -1,0 +1,128 @@
+# State-scoped predicates and country-scoped GUI affordability gates.
+SRC_la_state_in_region = {
+    OR = {
+        state = 328
+        state = 408
+        state = 409
+        state = 560
+        state = 561
+        state = 610
+        state = 657
+        state = 714
+        state = 715
+        state = 716
+        state = 717
+        state = 745
+        state = 761
+        state = 845
+        state = 846
+        state = 847
+        state = 848
+        state = 849
+        state = 850
+        state = 1112
+        state = 1123
+        state = 1126
+        state = 1218
+    }
+}
+SRC_la_state_stable_src = { is_fully_controlled_by = SRC }
+SRC_la_state_stable_gps = { is_fully_controlled_by = GPS }
+SRC_la_state_contested = {
+    NOT = { SRC_la_state_stable_src = yes }
+    NOT = { SRC_la_state_stable_gps = yes }
+    OR = { is_controlled_by = SRC is_controlled_by = GPS }
+}
+SRC_la_state_industrial = {
+    OR = {
+        state = 328
+        state = 745
+        state = 845
+        state = 846
+        state = 847
+        state = 848
+        state = 849
+        state = 850
+    }
+}
+SRC_la_state_city = {
+    OR = {
+        state = 328
+        state = 408
+        state = 714
+        state = 845
+        state = 846
+    }
+}
+SRC_la_state_border = {
+    OR = {
+        state = 409
+        state = 560
+        state = 561
+        state = 657
+        state = 761
+        state = 1112
+        state = 1123
+        state = 1126
+        state = 1218
+    }
+}
+SRC_la_state_transport = {
+    OR = {
+        state = 328
+        state = 408
+        state = 610
+        state = 714
+        state = 715
+        state = 716
+        state = 717
+        state = 745
+        state = 845
+        state = 846
+        state = 847
+        state = 848
+        state = 849
+        state = 850
+        state = 1218
+        SRC_la_state_contested = yes
+    }
+}
+SRC_la_state_rural = { NOT = { SRC_la_state_city = yes } }
+SRC_la_selected_valid = {
+    tag = SRC
+    has_country_flag = SRC_dongbeiju_active
+    has_country_flag = SRC_zhongyangju_tab_dongbei
+    SRC_dongbei_front_selected_any = yes
+    check_variable = { SRC_local_status > 0 }
+}
+SRC_la_can_worker = {
+    SRC_la_selected_valid = yes
+    SRC_selected_bureau_worker_ready = yes
+    check_variable = { var = political_power value = SRC_local_worker_cost compare = greater_than_or_equals }
+}
+SRC_la_can_underground = {
+    SRC_la_selected_valid = yes
+    SRC_selected_bureau_underground_ready = yes
+    check_variable = { var = political_power value = SRC_local_underground_cost compare = greater_than_or_equals }
+    OR = { NOT = { check_variable = { SRC_local_status = 3 } } check_variable = { SRC_local_network_level < 2 } }
+}
+SRC_la_can_revgov = {
+    SRC_la_selected_valid = yes
+    SRC_selected_bureau_revgov_ready = yes
+    check_variable = { var = political_power value = SRC_local_revgov_cost compare = greater_than_or_equals }
+}
+SRC_la_can_peasant = {
+    SRC_la_selected_valid = yes
+    SRC_selected_bureau_peasant_ready = yes
+    check_variable = { var = political_power value = SRC_local_peasant_cost compare = greater_than_or_equals }
+}
+SRC_la_can_student = {
+    SRC_la_selected_valid = yes
+    SRC_selected_bureau_student_ready = yes
+    check_variable = { var = political_power value = SRC_local_student_cost compare = greater_than_or_equals }
+}
+SRC_la_can_business = {
+    SRC_la_selected_valid = yes
+    SRC_selected_bureau_business_ready = yes
+    check_variable = { var = political_power value = SRC_local_business_cost compare = greater_than_or_equals }
+}

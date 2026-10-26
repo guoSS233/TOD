@@ -22,6 +22,14 @@ SRC_junshijianshe_catagories = {
 		}
 	}
 }
+
+SRC_wartime_army_category = {
+	icon = gre_faction_management
+	scripted_gui = SRC_wartime_army_decision_gui
+	allowed = { tag = SRC }
+	visible = { SRC_wartime_army_mechanic_available = yes }
+	priority = 100
+}
 #宣战
 SRC_xuanzhan_catagories = {
 	icon = gre_faction_management
@@ -35,6 +43,7 @@ SRC_xuanzhan_catagories = {
 }
 
 #各地中央局活动
+
 SRC_lianxigeming = {
 	icon = generic_communism
 	

@@ -1,0 +1,49 @@
+on_actions = {
+    on_daily = {
+        effect = {
+            SRC = {
+                if = { limit = { exists = yes }
+                    328 = { SRC_la_update_state_organisation = yes }
+                    408 = { SRC_la_update_state_organisation = yes }
+                    409 = { SRC_la_update_state_organisation = yes }
+                    560 = { SRC_la_update_state_organisation = yes }
+                    561 = { SRC_la_update_state_organisation = yes }
+                    610 = { SRC_la_update_state_organisation = yes }
+                    657 = { SRC_la_update_state_organisation = yes }
+                    714 = { SRC_la_update_state_organisation = yes }
+                    715 = { SRC_la_update_state_organisation = yes }
+                    716 = { SRC_la_update_state_organisation = yes }
+                    717 = { SRC_la_update_state_organisation = yes }
+                    745 = { SRC_la_update_state_organisation = yes }
+                    761 = { SRC_la_update_state_organisation = yes }
+                    845 = { SRC_la_update_state_organisation = yes }
+                    846 = { SRC_la_update_state_organisation = yes }
+                    847 = { SRC_la_update_state_organisation = yes }
+                    848 = { SRC_la_update_state_organisation = yes }
+                    849 = { SRC_la_update_state_organisation = yes }
+                    850 = { SRC_la_update_state_organisation = yes }
+                    1112 = { SRC_la_update_state_organisation = yes }
+                    1123 = { SRC_la_update_state_organisation = yes }
+                    1126 = { SRC_la_update_state_organisation = yes }
+                    1218 = { SRC_la_update_state_organisation = yes }
+                    if = { limit = { has_country_flag = SRC_dongbeiju_active } SRC_dongbei_front_refresh_scores = yes }
+                }
+            }
+        }
+    }
+    on_state_control_changed = {
+        effect = {
+            FROM.FROM = { if = { limit = { SRC_la_state_in_region = yes } SRC_la_update_state_organisation = yes } }
+            SRC = { if = { limit = { exists = yes has_country_flag = SRC_dongbeiju_active } SRC_dongbei_front_refresh_scores = yes } }
+        }
+    }
+    on_monthly = {
+        effect = {
+            SRC = {
+                if = { limit = { exists = yes has_war_with = GPS GPS = { is_ai = yes } }
+                    random_state = { limit = { SRC_la_state_in_region = yes SRC_la_state_stable_src = yes } SRC_la_gps_counteraction = yes }
+                }
+            }
+        }
+    }
+}

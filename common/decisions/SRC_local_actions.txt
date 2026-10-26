@@ -1,0 +1,77 @@
+SRC_local_network_operations = {
+    SRC_local_network_rail = {
+        icon = GFX_decision_generic_decision
+        allowed = { tag = SRC }
+        state_target = yes
+        target_trigger = {
+            FROM = {
+                SRC_la_state_in_region = yes
+                SRC_la_state_stable_gps = yes
+                check_variable = { SRC_la_network_level = 2 }
+                NOT = { has_state_flag = SRC_la_rail_operation_done }
+            }
+        }
+        visible = { tag = SRC has_war_with = GPS }
+        available = { FROM = { SRC_la_state_stable_gps = yes NOT = { has_state_flag = SRC_la_rail_operation_done } } }
+        cost = 0
+        complete_effect = {
+            FROM = {
+                set_state_flag = SRC_la_rail_operation_done
+                if = { limit = { infrastructure > 0 } damage_building = { type = infrastructure damage = 0.50 } }
+                add_dynamic_modifier = { modifier = SRC_la_rail_sabotage_modifier scope = GPS days = 30 }
+            }
+            add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+        }
+        ai_will_do = { factor = 0 }
+    }
+    SRC_local_network_intel = {
+        icon = GFX_decision_generic_decision
+        allowed = { tag = SRC }
+        state_target = yes
+        target_trigger = {
+            FROM = {
+                SRC_la_state_in_region = yes
+                SRC_la_state_stable_gps = yes
+                check_variable = { SRC_la_network_level = 2 }
+                NOT = { has_state_flag = SRC_la_intel_operation_done }
+            }
+        }
+        visible = { tag = SRC has_war_with = GPS }
+        available = { FROM = { SRC_la_state_stable_gps = yes NOT = { has_state_flag = SRC_la_intel_operation_done } } }
+        cost = 0
+        complete_effect = {
+            FROM = {
+                set_state_flag = SRC_la_intel_operation_done
+                SRC = { add_intel = { target = GPS army_intel = 5 } }
+                add_dynamic_modifier = { modifier = SRC_la_garrison_intel_modifier scope = GPS days = 30 }
+            }
+            add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+        }
+        ai_will_do = { factor = 0 }
+    }
+    SRC_local_network_reception = {
+        icon = GFX_decision_generic_decision
+        allowed = { tag = SRC }
+        state_target = yes
+        target_trigger = {
+            FROM = {
+                SRC_la_state_in_region = yes
+                SRC_la_state_stable_gps = yes
+                check_variable = { SRC_la_network_level = 2 }
+                NOT = { has_state_flag = SRC_la_reception_operation_done }
+            }
+        }
+        visible = { tag = SRC has_war_with = GPS }
+        available = { FROM = { SRC_la_state_stable_gps = yes NOT = { has_state_flag = SRC_la_reception_operation_done } } }
+        cost = 0
+        complete_effect = {
+            FROM = {
+                set_state_flag = SRC_la_reception_operation_done
+                
+                add_dynamic_modifier = { modifier = SRC_la_front_reception_modifier scope = SRC days = 30 }
+            }
+            add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+        }
+        ai_will_do = { factor = 0 }
+    }
+}

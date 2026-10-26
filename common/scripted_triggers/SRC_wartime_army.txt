@@ -1,0 +1,131 @@
+SRC_wartime_army_has_final_spirit = {
+	OR = {
+		has_idea = SRC_revolutionary_regular_army
+		has_idea = SRC_party_led_army
+		has_idea = SRC_armed_people
+	}
+}
+
+SRC_wartime_army_mechanic_available = {
+	tag = SRC
+	NOT = { SRC_wartime_army_has_final_spirit = yes }
+	OR = {
+		has_war_with = GPS
+		AND = {
+			has_completed_focus = SRC_zhonghuagongnonghongjun
+			NOT = { country_exists = GPS }
+		}
+	}
+}
+
+SRC_wartime_army_round_one_available = {
+	SRC_wartime_army_mechanic_available = yes
+	has_war_with = GPS
+	check_variable = { SRC_wartime_army_stage = 1 }
+	NOT = { has_country_flag = SRC_wartime_army_stage_event_pending }
+}
+
+SRC_wartime_army_round_two_available = {
+	SRC_wartime_army_mechanic_available = yes
+	has_war_with = GPS
+	check_variable = { SRC_wartime_army_stage = 2 }
+	NOT = { has_country_flag = SRC_wartime_army_stage_event_pending }
+}
+
+SRC_wartime_army_round_three_available = {
+	SRC_wartime_army_mechanic_available = yes
+	has_war_with = GPS
+	check_variable = { SRC_wartime_army_stage = 3 }
+	NOT = { has_country_flag = SRC_wartime_army_stage_event_pending }
+}
+
+SRC_wartime_army_round_four_available = {
+	SRC_wartime_army_mechanic_available = yes
+	has_war_with = GPS
+	check_variable = { SRC_wartime_army_stage = 4 }
+	NOT = { has_country_flag = SRC_wartime_army_stage_event_pending }
+}
+
+SRC_wartime_army_has_command_arrangement = {
+	OR = {
+		has_country_flag = SRC_command_arrangement_commanders
+		has_country_flag = SRC_command_arrangement_party
+		has_country_flag = SRC_command_arrangement_representatives
+	}
+}
+
+SRC_wartime_army_arrangement_change_unlocked = {
+	OR = {
+		NOT = { SRC_wartime_army_has_command_arrangement = yes }
+		NOT = { has_country_flag = SRC_command_arrangement_cooldown }
+	}
+}
+
+SRC_wartime_army_round_five_available = {
+	SRC_wartime_army_mechanic_available = yes
+	check_variable = { SRC_wartime_army_stage = 5 }
+	NOT = { has_country_flag = SRC_wartime_army_stage_event_pending }
+	NOT = { has_country_flag = SRC_wartime_army_summary_complete }
+}
+
+SRC_wartime_army_ready_for_war_summary = {
+	check_variable = { SRC_wartime_army_stage = 5 }
+	OR = { check_variable = { SRC_wartime_army_stage_five_completed > 2 } check_variable = { SRC_wartime_army_stage_five_completed = 2 } }
+	OR = { check_variable = { SRC_wartime_army_average > 60 } check_variable = { SRC_wartime_army_average = 60 } }
+	OR = { check_variable = { SRC_wartime_army_war_days > 150 } check_variable = { SRC_wartime_army_war_days = 150 } }
+	OR = { check_variable = { SRC_wartime_army_command_stage > 55 } check_variable = { SRC_wartime_army_command_stage = 55 } }
+	OR = { check_variable = { SRC_wartime_army_training_stage > 55 } check_variable = { SRC_wartime_army_training_stage = 55 } }
+	OR = { check_variable = { SRC_wartime_army_political_stage > 55 } check_variable = { SRC_wartime_army_political_stage = 55 } }
+	OR = { check_variable = { SRC_wartime_army_supply_stage > 55 } check_variable = { SRC_wartime_army_supply_stage = 55 } }
+}
+
+SRC_wartime_army_ready_for_stage_two = {
+	check_variable = { SRC_wartime_army_stage = 1 }
+	OR = { check_variable = { SRC_wartime_army_stage_one_completed > 3 } check_variable = { SRC_wartime_army_stage_one_completed = 3 } }
+	OR = { check_variable = { SRC_wartime_army_war_days > 30 } check_variable = { SRC_wartime_army_war_days = 30 } }
+}
+
+SRC_wartime_army_ready_for_stage_three = {
+	check_variable = { SRC_wartime_army_stage = 2 }
+	OR = { check_variable = { SRC_wartime_army_stage_two_completed > 3 } check_variable = { SRC_wartime_army_stage_two_completed = 3 } }
+	OR = { check_variable = { SRC_wartime_army_war_days > 70 } check_variable = { SRC_wartime_army_war_days = 70 } }
+	OR = { check_variable = { SRC_wartime_army_values_at_30 > 3 } check_variable = { SRC_wartime_army_values_at_30 = 3 } }
+}
+
+SRC_wartime_army_ready_for_stage_four = {
+	check_variable = { SRC_wartime_army_stage = 3 }
+	OR = { check_variable = { SRC_wartime_army_stage_three_completed > 3 } check_variable = { SRC_wartime_army_stage_three_completed = 3 } }
+	OR = { check_variable = { SRC_wartime_army_war_days > 110 } check_variable = { SRC_wartime_army_war_days = 110 } }
+	OR = { check_variable = { SRC_wartime_army_average > 45 } check_variable = { SRC_wartime_army_average = 45 } }
+}
+
+SRC_wartime_army_ready_for_stage_five = {
+	check_variable = { SRC_wartime_army_stage = 4 }
+	SRC_wartime_army_has_command_arrangement = yes
+	OR = { check_variable = { SRC_wartime_army_war_days > 150 } check_variable = { SRC_wartime_army_war_days = 150 } }
+	OR = { check_variable = { SRC_wartime_army_average > 50 } check_variable = { SRC_wartime_army_average = 50 } }
+}
+
+SRC_wartime_army_ready_for_initial_integration = {
+	OR = { check_variable = { SRC_wartime_army_average > 35 } check_variable = { SRC_wartime_army_average = 35 } }
+	OR = { check_variable = { SRC_wartime_army_command_stage > 25 } check_variable = { SRC_wartime_army_command_stage = 25 } }
+	OR = { check_variable = { SRC_wartime_army_training_stage > 25 } check_variable = { SRC_wartime_army_training_stage = 25 } }
+	OR = { check_variable = { SRC_wartime_army_political_stage > 25 } check_variable = { SRC_wartime_army_political_stage = 25 } }
+	OR = { check_variable = { SRC_wartime_army_supply_stage > 25 } check_variable = { SRC_wartime_army_supply_stage = 25 } }
+}
+
+SRC_wartime_army_ready_for_formed_army = {
+	OR = { check_variable = { SRC_wartime_army_average > 55 } check_variable = { SRC_wartime_army_average = 55 } }
+	OR = { check_variable = { SRC_wartime_army_values_at_60 > 2 } check_variable = { SRC_wartime_army_values_at_60 = 2 } }
+}
+
+SRC_wartime_army_ready_for_northeast_red_army = {
+	OR = { check_variable = { SRC_wartime_army_average > 70 } check_variable = { SRC_wartime_army_average = 70 } }
+}
+
+SRC_wartime_army_ready_for_final_form = {
+	OR = {
+		SRC_wartime_army_ready_for_northeast_red_army = yes
+		has_country_flag = SRC_wartime_army_summary_complete
+	}
+}

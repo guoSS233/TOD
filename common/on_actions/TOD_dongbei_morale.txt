@@ -1,0 +1,24 @@
+on_actions = {
+	on_daily_SRC = {
+		effect = {
+			TOD_dongbei_morale_init = yes
+			if = {
+				limit = { check_variable = { TOD_dongbei_morale_day >= 6 } }
+				set_variable = { TOD_dongbei_morale_day = 0 }
+				TOD_dongbei_morale_weekly = yes
+			}
+			else = { add_to_variable = { TOD_dongbei_morale_day = 1 } }
+		}
+	}
+	on_daily_GPS = {
+		effect = {
+			TOD_dongbei_morale_init = yes
+			if = {
+				limit = { check_variable = { TOD_dongbei_morale_day >= 6 } }
+				set_variable = { TOD_dongbei_morale_day = 0 }
+				TOD_dongbei_morale_weekly = yes
+			}
+			else = { add_to_variable = { TOD_dongbei_morale_day = 1 } }
+		}
+	}
+}
