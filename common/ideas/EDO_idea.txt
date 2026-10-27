@@ -28,15 +28,6 @@ ideas = {
 				consumer_goods_factor = -0.02
 			}
 		}
-		JAP_sino_japanese_defense_treaty = {
-			picture = HUN_treaty_of_triannon
-			modifier = {
-				political_power_gain = -0.5
-				conscription_factor = -0.05
-				stability_factor = -0.05
-				custom_modifier_tooltip = JAP_sino_japanese_defense_treaty_tt
-			}	
-		}
 	 #开局精神	
 		EDO_idea_mdgtz = {
 			picture = WJP_slave_of_dragon
@@ -57,5 +48,144 @@ ideas = {
 
 
 
+	}
+
+	# 工业企业
+	industrial_concern = {
+		EDO_kawasaki_industrial_concern = {
+			picture = EDO_kawasaki
+
+			allowed = {
+				OR = {
+					original_tag = EDO
+					original_tag = WJP
+				}
+			}
+			available = {
+				controls_state = 282 # 东京（江户）
+			}
+
+			# 数值沿用 Kaiserreich 的川崎工业企业。
+			traits = { industrial_manufacturer }
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+			}
+			research_bonus = {
+				industry = 0.15
+			}
+		}
+
+		EDO_mitsui_industrial_concern = {
+			picture = EDO_mitsui
+
+			allowed = {
+				OR = {
+					original_tag = EDO
+					original_tag = WJP
+				}
+			}
+			available = {
+				controls_state = 531 # 大阪（关西）
+			}
+
+			# 数值沿用 Kaiserreich 的三井财阀。
+			traits = { industrial_manufacturer }
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+			}
+			research_bonus = {
+				industry = 0.15
+			}
+		}
+
+		EDO_nichitsu_industrial_concern = {
+			picture = EDO_nichitsu
+
+			allowed = {
+				OR = {
+					original_tag = EDO
+					original_tag = WJP
+				}
+			}
+			available = {
+				controls_state = 1221 # 南九州（伊佐／旧大口）
+			}
+
+			# 数值沿用 Kaiserreich 的日本窒素化学。
+			traits = { chemical_producer }
+			research_bonus = {
+				synth_resources = 0.15
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.1
+			}
+		}
+
+		EDO_nippon_oil_industrial_concern = {
+			picture = EDO_nippon_oil
+
+			allowed = {
+				OR = {
+					original_tag = EDO
+					original_tag = WJP
+				}
+			}
+			available = {
+				controls_state = 534 # 新潟
+			}
+
+			# 数值沿用 Kaiserreich 的日本石油。
+			traits = { oil_concern }
+			research_bonus = {
+				synth_resources = 0.15
+			}
+			modifier = {
+				fuel_gain_factor_from_states = 1
+			}
+		}
+
+		EDO_tokyo_shibaura_denki_industrial_concern = {
+			picture = EDO_tokyo_shibaura_denki
+
+			allowed = {
+				OR = {
+					original_tag = EDO
+					original_tag = WJP
+				}
+			}
+			available = {
+				controls_state = 282 # 东京（江户）
+			}
+
+			# 数值沿用 Kaiserreich 的东京芝浦电气。
+			traits = { electronics_manufacturer }
+			research_bonus = {
+				electronics = 0.15
+			}
+			modifier = {
+				decryption_power = 20
+			}
+		}
+
+		EDO_japan_railway_group_industrial_concern = {
+			picture = EDO_japan_railway_group
+
+			allowed = {
+				OR = {
+					original_tag = EDO
+					original_tag = WJP
+				}
+			}
+			available = {
+				controls_state = 531 # 大阪（关西）
+			}
+
+			# 数值沿用 Kaiserreich 的铁路扩建方案。
+			traits = { railway_company } # 铁路建造速度 +15%
+			modifier = {
+				production_speed_infrastructure_factor = 0.15
+				production_speed_supply_node_factor = 0.1
+			}
+		}
 	}
 }

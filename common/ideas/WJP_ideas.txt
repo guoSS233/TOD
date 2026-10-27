@@ -26,11 +26,36 @@ ideas = {
 				production_speed_buildings_factor = -0.10
 			}
 		}	
+		WJP_difficult_civil_rights_movement = {
+			picture = WJP_rice_unrest
+			modifier = {
+				war_support_factor = -0.05
+				consociationalism_drift = 0.01
+				liberal_democracy_drift = 0.01
+				custom_modifier_tooltip = WJP_difficult_civil_rights_movement_jiyusha_tt
+				custom_modifier_tooltip = WJP_difficult_civil_rights_movement_shinpokai_tt
+			}
+		}
+		WJP_hanbatsu_politics = {
+			picture = WJP_slave_of_dragon
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+		WJP_domain_soldier_system = {
+			picture = HUN_treaty_of_triannon
+			modifier = {
+				land_doctrine_cost_factor = 0.10
+				army_org_factor = -0.10
+				training_time_factor = 0.10
+			}
+		}
 		WJP_overseas_japanese_in_sanchen = {
 			picture = JAP_overseas_japanese_in_sanchen
 			modifier = {
 				research_speed_factor = -0.05
-				consumer_goods_factor = -0.02
+				consumer_goods_factor = -0.10
 			}
 		}
 		WJP_sino_japanese_defense_treaty = {
@@ -49,6 +74,158 @@ ideas = {
 				war_support_factor = -0.05
 				custom_modifier_tooltip = cannot_train_units_tt
 			}	
+		}
+	}
+	TOD_minister_head = { ### 政府首脑 ###
+		WJP_Mori_Motoaki_hog_con = { #毛利元昭
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Mori_Motoaki_hog_con"
+			}
+			traits = {
+				TOD_minister_head
+				conservative_democracy
+				WJP_lord_of_choshu
+			}
+		}
+		WJP_Shimazu_Tadashige_hog_con = { #岛津忠重
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = head_of_gov_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Shimazu_Tadashige_hog_con"
+			}
+			traits = {
+				TOD_minister_head
+				conservative_democracy
+				WJP_lord_of_satsuma
+			}
+		}
+	}
+	TOD_foreign_minister = { ### 外交部长 ###
+		WJP_Shideshara_Kijuro_for_con = { #币原喜重郎
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Shideshara_Kijuro_for_con"
+			}
+			traits = {
+				TOD_foreign_minister
+				conservative_democracy
+				WJP_coordinator_of_china_diplomacy
+			}
+		}
+		WJP_Shiratori_Toshio_for_con = { #白鸟敏夫
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Shiratori_Toshio_for_con"
+			}
+			traits = {
+				TOD_foreign_minister
+				conservative_democracy
+				WJP_diplomatic_reformist
+			}
+		}
+	}
+	TOD_economy_minister = { ### 经济部长 ###
+		WJP_Mitsuchi_Chuzo_eco_con = { #三土忠造
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Mitsuchi_Chuzo_eco_con"
+			}
+			traits = {
+				TOD_economy_minister
+				conservative_democracy
+				WJP_veteran_financial_bureaucrat
+			}
+		}
+		WJP_Wakatsuki_Reijiro_eco_con = { #若槻礼次郎
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Wakatsuki_Reijiro_eco_con"
+			}
+			traits = {
+				TOD_economy_minister
+				conservative_democracy
+				WJP_east_asian_liberal
+			}
+		}
+	}
+	TOD_security_minister = { ### 内政部长 ###
+		WJP_Hitotsugi_Kitokuro_sec_con = { #一木喜德郎
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Hitotsugi_Kitokuro_sec_con"
+			}
+			traits = {
+				TOD_security_minister
+				conservative_democracy
+				WJP_genro_conference_magnate
+			}
+		}
+		WJP_Kido_Koichi_sec_con = { #木户幸一
+			allowed = { original_tag = WJP }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = minister_available
+					always = no
+				}
+			}
+			cancel_if_invalid = no
+			on_add = {
+				log = "[GetDateText]: [Root.GetName]: add idea WJP_Kido_Koichi_sec_con"
+			}
+			traits = {
+				TOD_security_minister
+				conservative_democracy
+				WJP_national_mobilization_ideologue
+			}
 		}
 	}
 }

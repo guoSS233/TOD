@@ -2,6 +2,10 @@ capital = 529
 
 oob = "WJP_1936"
 
+set_research_slots = 2
+set_stability = 0.70
+set_war_support = 0.35
+
 set_politics = {
 	ruling_party = conservative_democracy
 	last_election = "1936.1.1"
@@ -12,28 +16,37 @@ set_politics = {
 set_popularities = {
 	national_corporatism = 5
 	sacred_revivalism = 0
-	leader_despotism = 0
-	authoritarian_oligarchy = 70
-	conservative_democracy = 12
-	liberal_democracy = 0
-	consociationalism = 0
-	social_democrat = 7
+	leader_despotism = 15
+	authoritarian_oligarchy = 21
+	conservative_democracy = 37
+	liberal_democracy = 12
+	consociationalism = 8
+	social_democrat = 1
 	agroindustrial_socialism = 0
 	moderate_socialism = 0
-	council_socialism = 6
-	vanguard_socialism = 0
+	council_socialism = 0
+	vanguard_socialism = 1
 }
 
 add_ideas = {
-	free_trade
+	civilian_economy
+	export_focus
+	limited_conscription
+}
+add_ideas = {
+	WJP_Mori_Motoaki_hog_con
+	WJP_Shideshara_Kijuro_for_con
+	WJP_Mitsuchi_Chuzo_eco_con
+	WJP_Hitotsugi_Kitokuro_sec_con
 }
 add_ideas = {
 	WJP_slave_of_dragon
 	WJP_depression_strike
-	WJP_rice_unrest
+	WJP_difficult_civil_rights_movement
+	WJP_hanbatsu_politics
+	WJP_domain_soldier_system
 	WJP_overseas_japanese_in_sanchen
 	WJP_sino_japanese_defense_treaty
-	WJP_tunhuojuqi
 }
 country_lock_all_division_template = yes
 

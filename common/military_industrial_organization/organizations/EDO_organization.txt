@@ -1,0 +1,230 @@
+# 日立制作所：江户的中型坦克设计商
+EDO_hitachi_organization = {
+	include = generic_medium_tank_organization
+	icon = GFX_idea_hitachi # Kaiserreich：日立制作所
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 日立制作所绑定江户城；失去江户后无法新建。
+	available = {
+		FROM = {
+			controls_state = 282 # 江户（东京）
+		}
+	}
+}
+
+# 日产汽车：江户的快速坦克设计商
+EDO_nissan_organization = {
+	include = generic_mobile_tank_organization
+	icon = GFX_EDO_idea_nissan
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 日产汽车绑定江户城；失去江户后无法新建。
+	available = {
+		FROM = {
+			controls_state = 282 # 江户（东京）
+		}
+	}
+}
+
+# 横须贺海军工厂：江户的护航舰艇设计商
+EDO_yokosuka_naval_arsenal_organization = {
+	include = generic_escort_ship_organization
+	icon = GFX_EDO_idea_yokosuka_naval_arsenal
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 横须贺海军工厂绑定江户城；失去江户后无法新建。
+	available = {
+		FROM = {
+			controls_state = 282 # 江户（东京）
+		}
+	}
+}
+
+# 吴海军工厂：广岛的特遣舰队舰艇设计商
+EDO_kure_naval_arsenal_organization = {
+	include = generic_task_force_ship_organization
+	icon = GFX_EDO_idea_kure_naval_arsenal
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 吴海军工厂绑定广岛；失去广岛后无法新建。
+	available = {
+		FROM = {
+			controls_state = 529 # 广岛
+		}
+	}
+}
+
+# 三菱重工：四国的高机动战斗机设计商
+EDO_mitsubishi_organization = {
+	include = generic_high_agility_fighter_aircraft_organization
+	icon = GFX_EDO_idea_mitsubishi
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 三菱重工绑定四国；失去四国后无法新建。
+	available = {
+		FROM = {
+			controls_state = 530 # 四国
+		}
+	}
+}
+
+# 九州飞行机：九州的轻型飞机设计商
+EDO_kyushu_hikoki_organization = {
+	include = generic_light_aircraft_organization
+	icon = GFX_EDO_idea_kyushu_hikoki
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 九州飞行机位于福冈，绑定九州北部。
+	available = {
+		FROM = {
+			controls_state = 528 # 九州北部
+		}
+	}
+}
+
+# 立川飞机：江户的通用飞机设计商
+EDO_tachikawa_organization = {
+	include = generic_general_aircraft_organization
+	icon = GFX_EDO_idea_tachikawa
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 立川飞机绑定江户城；失去江户后无法新建。
+	available = {
+		FROM = {
+			controls_state = 282 # 江户（东京）
+		}
+	}
+}
+
+# 小仓陆军造兵厂：九州的步兵武器设计商
+EDO_kokura_arsenal_organization = {
+	include = generic_infantry_equipment_organization
+	icon = GFX_EDO_idea_kokura_arsenal
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 小仓陆军造兵厂位于九州北部。
+	available = {
+		FROM = {
+			controls_state = 528 # 九州北部
+		}
+	}
+}
+
+# 名古屋陆军造兵厂：名古屋的支援装备设计商
+EDO_nagoya_arsenal_organization = {
+	include = generic_support_equipment_organization
+	icon = GFX_EDO_idea_nagoya_arsenal
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 名古屋陆军造兵厂绑定东海州。
+	available = {
+		FROM = {
+			controls_state = 532 # 名古屋（东海）
+		}
+	}
+}
+
+# 大阪炮兵工厂：大阪的炮兵设计商
+EDO_osaka_army_arsenal_organization = {
+	include = generic_artillery_organization
+	icon = GFX_EDO_idea_osaka_army_arsenal
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 大阪炮兵工厂绑定关西州。
+	available = {
+		FROM = {
+			controls_state = 531 # 大阪（关西）
+		}
+	}
+}
+
+# 石川岛播磨重工：东京的摩托化装备设计商
+EDO_ishikawajima_organization = {
+	include = generic_motorized_mechanized_organization
+	icon = GFX_EDO_idea_ishikawajima
+
+	# 东日本（江户幕府）与西日本联盟均可建立该组织。
+	allowed = {
+		OR = {
+			tag = EDO
+			tag = WJP
+		}
+	}
+
+	# 石川岛播磨重工绑定东京（江户）。
+	available = {
+		FROM = {
+			controls_state = 282 # 东京（江户）
+		}
+	}
+}

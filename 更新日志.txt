@@ -1,0 +1,310 @@
+2026-07-11
+
+本次实际修改文件共 20 个，更新日志文件另计 1 个。
+
+【事件与本地化】
+1. TOD/events/North_America_Timeline.txt
+   新增北美 1936-1939 年时间线事件，包括美国、路易斯安那、英国、法国、德国、加勒比联邦等相关事件。
+2. TOD/common/on_actions/TOD_North_America_Timeline.txt
+   新增北美时间线事件的日期触发配置。
+3. TOD/localisation/simp_chinese/TOD_North_America_Timeline_l_simp_chinese.yml
+   新增北美时间线事件的简体中文标题、描述和选项文本。
+
+【初始陆军 OOB】
+4. TOD/history/units/USA_1936.txt
+   新增美国初始陆军；后调整为 14 个师，包括步兵、骑兵和轻装甲师。
+5. TOD/history/units/CAN_1936.txt
+   新增加拿大初始陆军，包括步兵师和骑兵师。
+6. TOD/history/units/UTA_1936.txt
+   新增犹他初始陆军，包括步兵师、骑兵师和山地师。
+7. TOD/history/units/SMT_1936.txt
+   新增南方占领区初始陆军，包括步兵师、国民警卫师和骑兵师。
+8. TOD/history/units/CRF_1936.txt
+   新增加勒比联邦初始陆军，包括步兵师和海军陆战师。
+9. TOD/history/units/PUC_1936.txt
+   新增中美洲联合省初始陆军，包括步兵师和民兵师。
+10. TOD/history/units/YZR.txt
+    保留炎州原有军队，追加大明式甲种步兵师、乙种步兵师和骑行步兵师；同时修复原文件末尾 air_wings 区块缺失的括号。
+11. TOD/history/units/QQD_1936.txt
+    新增青丘初始陆军，包括甲种步兵师、乙种步兵师、省军步兵旅和骑行步兵师。
+12. TOD/history/units/EXN_1936.txt
+    新增极北都司初始陆军，包括甲种步兵师、乙种步兵师、省军步兵旅和骑行步兵师。
+
+【国家历史文件】
+13. TOD/history/countries/USA - United State of America.txt
+    接入 USA_1936 OOB，并补充美国基础陆军、摩托化和轻型坦克科技。
+14. TOD/history/countries/CAN - Union Province of Canada.txt
+    接入 CAN_1936 OOB。
+15. TOD/history/countries/UTA - Utah.txt
+    接入 UTA_1936 OOB。
+16. TOD/history/countries/SMT - South United State.txt
+    接入 SMT_1936 OOB。
+17. TOD/history/countries/CRF - Caribbean Federation.txt
+    接入 CRF_1936 OOB。
+18. TOD/history/countries/PUC - zhongmeizhou.txt
+    接入 PUC_1936 OOB。
+19. TOD/history/countries/QQD - QingQiu.txt
+    接入 QQD_1936 OOB，并补充大明式基础陆军科技。
+20. TOD/history/countries/EXN - Ming Jibei.txt
+    接入 EXN_1936 OOB，并补充大明式基础陆军科技。
+
+【军力调整与校验】
+- 对比各国人口、军工厂和初始师数后，将美国从 9 个师调整为 14 个师。
+- 核对所有新增 OOB 的部署省份均属于对应国家。
+- 核对 OOB 引用、师模板、国家科技和文件括号结构。
+
+【本日志文件】
+21. TOD/更新日志.txt
+    记录本次全部修改文件及对应修改内容。
+
+2026-07-15
+
+【北美时间线效果与领导人】
+1. TOD/events/North_America_Timeline.txt
+   将北美时间线事件的 immediate 效果统一包入 hidden_effect，隐藏事件窗口中的效果说明；补充美国马歇尔上台效果，以及路易斯安那转向委员会社会主义时的执政党、支持率和领导人切换。
+2. TOD/common/characters/USA_Marshall.txt
+   新增乔治·卡特利特·马歇尔的政治人物定义。
+3. TOD/localisation/simp_chinese/_TOD_characters_l_simp_chinese.yml
+   新增马歇尔的简体中文名称和描述本地化。
+4. TOD/localisation/english/_TOD_characters_l_english.yml
+   新增马歇尔的英文名称和描述本地化。
+
+【美国领导人加载】
+5. TOD/history/countries/USA - United State of America.txt
+   将 USA_George_Catlett_Marshall 加入 recruit_character，使其可由北美时间线事件任命，但不作为开局领导人。
+
+【北美领导人头像】
+6. TOD/gfx/leaders/FRL/Portrait_Robert_La_Follette.png
+   新增罗伯特·拉福莱特头像。
+7. TOD/gfx/leaders/FRL/Portrait_Alfred_Wagenknecht.png
+   新增阿尔弗雷德·瓦根克内希特头像。
+8. TOD/gfx/leaders/USA/Portrait_USA_George_Catlett_Marshall.png
+   新增乔治·卡特利特·马歇尔头像。
+
+【同步】
+- 将上述三张头像同步至 C 盘 Hearts of Iron IV 的 TOD 模组目录。
+
+2026-07-15—2026-07-18
+
+【SRC 东北红军政治国策综合调整】
+
+一、第一阶段国策
+- GPS 不存在时，除“向红军的未来眺望”“筹备东北革命政府”和“同产工会中央回归”外，图示范围内的第一阶段国策自动跳过。
+- “提拔革命将领”完成时设置独立国家旗帜，避免国策被自动跳过后被误判为真正完成。
+- 若未真正完成“提拔革命将领”，“向红军的未来眺望”将补发该国策的将领招募与国籍调整奖励。
+
+二、任辅臣线
+- 依据《东北红军政治国策》重做三列国策的奖励；国策位置、前置与图标均保持不变。
+- “中央计划委员会”“工厂公有化”“农业集体化”“大生产运动”分别落实计划生产、工业建设、农业集体化与生产效率效果，并解锁共 10 个经济、农业决议空壳。
+- “坚持革命领导权”“整风运动”“落实民主集中制”“从群众中来到群众中去”落实党领导与群众路线的持续效果，并解锁共 5 个政治决议空壳。
+- “东北人民大学”“东北革命格致院”“工协是同产主义学校”“同产主义新文化运动”“红星照耀东方”按文档改名及调整奖励；其中人民大学、格致院、新文化运动保留相应研究槽或研究加成卡。
+- 新增独立的 `SRC_ren_*` 决议文件和任辅臣线专用的显示 idea，不与另两条线复用内容。
+
+三、李大钊线
+- 按《东北红军政治国策》复核名称、位置、前置与奖励；修正“新文化思潮”错误接在“大学自治”之后的问题，改为以前置“东北格致院委员会”为准。
+- 补充学术民主、革命政府、经委会及“赤旗指引未来”的实际持续效果；最终国策会承接革命政府的既有效果。
+- “平衡协会与工会”补入建筑速度与煤炭产出；研究设施在缺少建筑定义时只保留明确说明。
+- 新增政治、经济、农业三类决议分类及 15 个独立的 `SRC_li_*` 空壳决议。
+- 李大钊线的决议和显示 idea 均使用独立 ID，不复用陈独秀线内容。
+
+四、陈独秀线
+- 按文档重新甄别三列国策的位置、前置关系和改名，修正“同产主义接班人”“逐步向大同世界过渡”等名称。
+- 补充革命文化、革命同盟、改革委及“朱门再换新天”的实际持续效果。
+- “构建反帝同盟”使社会民主主义与自由主义加入执政同盟。
+- 修正“赎买企业”“土地改革”“铁锅炖大鹅”“朱门再换新天”等国策奖励。
+- “土地改革”只保留文档列出的“地方供给合作社”“黑土地农业合作社”两项决议，不再混入李大钊线农业决议。
+- 建立独立的陈独秀线政治、经济、农业决议框架，共收录 15 个 `SRC_chen_*` 空壳决议。
+- “政治三三制”使用独立的 `SRC_chen_political_sansanzhi`，不复用军队“三三制”决议。
+
+五、效果实现规范
+- 持续性真实效果统一由 dynamic modifier 承担；国策效果栏使用空壳 idea 和本地化说明进行展示。
+- 显示用 idea 均补充中文名称；移除“真实效果”前缀，效果说明改为逐项换行，并补足工厂、船坞产出的中文 modifier 名称。
+- 将三条政治线的 dynamic modifier 添加与替换效果隐藏，避免国策提示同时显示内部 modifier 与显示用 idea 而重复列出效果。
+- 任辅臣线复核 DOCX 后，移除东北人民大学、东北革命格致院的多余显示用国家精神；“工协是同产主义学校”恢复为稳定度与战争支持度各 +5%、工人民主适役人口 +5%；“同产主义新文化运动”按“改变工人民主”追加稳定度与研究速度，最终由“红星照耀东方”替换该精神。
+- 任辅臣线 15 个空壳决议改为由相应国策设置解锁旗标、决议检查解锁旗标的结构，避免仅依赖国策前置导致决议分类内项目未正确出现。
+- 将 SRC 政治国策中无效的 `add_research_bonus` 统一修正为原版 `add_tech_bonus`；按文档在龙江、沈阳、锦州分别创建陆军、空军、海军研究设施。
+- 研究槽、研究加成卡、执政同盟成员变更和决议解锁等一次性效果使用对应原生效果。
+- 本次未修改国策图标。
+- 文档所述沈阳空军科研设施、金州海军研究机构在当前模组中没有对应建筑定义，因此未写入无效建筑代码；相关位置保留说明，等待后续建筑系统定义。
+
+六、涉及文件
+1. TOD/common/national_focus/dongbeihongjun.txt
+2. TOD/common/dynamic_modifiers/TOD_SRC_modifiers.txt
+3. TOD/common/ideas/SRC_idea.txt
+4. TOD/common/decisions/SRC.txt
+5. TOD/common/decisions/categories/SRC.txt
+6. TOD/common/decisions/SRC_ren_decisions.txt（新增）
+7. TOD/common/decisions/SRC_li_decisions.txt
+8. TOD/common/decisions/SRC_chen_decisions.txt
+9. TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml
+10. TOD/localisation/simp_chinese/TOD_SRC_debug_unified_l_simp_chinese.yml
+11. TOD/更新日志.txt
+
+【C 盘同步】
+- 完成本次修改后，将上述 SRC 国策、modifier、idea、决议、决议分类与本地化统一同步至 C 盘 Hearts of Iron IV 的 TOD 模组目录，并以 SHA-256 哈希校验副本一致性。
+
+2026-07-19
+
+【SRC 陈独秀线效果与设施位置后续修正】
+
+本轮实际修改文件如下：
+
+1. TOD/common/national_focus/dongbeihongjun.txt
+   - “学术、文化革命化”将无效的科学家经验字段改为科研设施补给消耗 -25%。
+   - “改造资产阶级”继续向革命同盟写入可出口资源 -5%、对外民政情报泄露 -15%、工厂能源消耗 -10% 三项变量。
+   - “朱门再换新天”改为追加民用工厂建设速度 +20%、民转军花费 -5%。
+   - “国家改革委员会”的海军工程设施改为辽南州（745）的 province 1150；不再错误放置于辽西。
+
+2. TOD/common/dynamic_modifiers/TOD_SRC_modifiers.txt
+   - 革命文化及其最终替换精神使用 `special_project_facility_supply_consumption_factor` 实现科研设施补给消耗。
+   - 革命同盟将无效的 `resources_to_market`、`industrial_power_consumption_factor` 分别修正为原版有效的 `min_export`、`factory_energy_consumption`。
+   - “朱门再换新天”使用 `production_speed_industrial_complex_factor` 实现民用工厂建设速度，并补入民转军花费修正。
+
+3. TOD/common/ideas/SRC_idea.txt
+   - 对应更新陈独秀线国策的显示用空壳 idea，使国策提示与实际 dynamic modifier 一致。
+   - 修正“改造资产阶级”及“朱门再换新天”此前因无效 modifier 而缺失的效果显示。
+
+4. TOD/更新日志.txt
+   - 追加本次后续修正及涉及文件记录。
+
+【C 盘同步】
+- 已将上述三个脚本文件同步至 C 盘 Hearts of Iron IV 的 TOD 模组目录，并逐文件以 SHA-256 校验一致性。
++
+2026-07-20—2026-07-23
+
+【SRC 政治线、决议与地区建设后续更新】
+
+一、政治国策与路线效果
+1. TOD/common/national_focus/dongbeihongjun.txt
+   - 继续按《东北红军政治国策》校正任辅臣、李大钊、陈独秀三条路线的名称、前置、位置、奖励、国家精神替换与决议解锁。
+   - 修正国策效果提示中的重复解锁文本、空行、英文键名与错误国家精神名称；显示用 idea 与实际 dynamic modifier 的效果保持一致。
+   - 反帝同盟补充政治联盟效果及对应本地化。
+   - 三条政治路线共 42 个国策（含三位主席国策）统一设置为 21 天；不影响军事、陆海空及前期通用国策。
+   - 修复“修复东北铁路镇玄段”：改用原生 build_railway，实际将镇东（408）—林州（849）—龙江（714）—玄冥（1123）三段铁路提升至 3 级。
+
+二、路线专属决议与周期效果
+2. TOD/common/decisions/SRC_ren_decisions.txt
+3. TOD/common/decisions/SRC_li_decisions.txt
+4. TOD/common/decisions/SRC_chen_decisions.txt
+5. TOD/common/on_actions/SRC_chen_decisions_on_actions.txt
+   - 修正三条路线原有政治、工业、农业决议的解锁旗标、前置、重复显示及本地化。
+   - 陈独秀线的制造商生产线经费、制造商升级经费和劳动报酬机制改为在相应原生 on_action 触发时结算；劳动竞赛按当前经济法动态提供指定数量的本地工厂。
+   - “地方供销合作社联网”“确立按劳发酬机制”等重复或一次性效果改为按决议倒计时结束后生效，避免点选时立即获得。
+   - 删除不应保留的限制条件与无效的地图外工厂写法；需要民工的地区决议改为直接在目标地区添加民用工厂。
+
+三、黑土地、工矿、交通与产业地区决议
+6. TOD/common/decisions/categories/SRC.txt
+7. TOD/common/decisions/SRC_black_soil_decisions.txt（新增）
+8. TOD/common/decisions/SRC_industry_energy_decisions.txt（新增）
+9. TOD/common/decisions/SRC_transport_trade_decisions.txt（新增）
+10. TOD/common/decisions/SRC_light_industry_decisions.txt（新增）
+11. TOD/common/decisions/SRC_regional_heavy_industry_decisions.txt（新增）
+12. TOD/common/decisions/SRC_organization_talent_decisions.txt（新增）
+   - 新增黑土地农业、工矿能源、交通商贸、特色轻工业、地区特色重工业五组地图地区决议；均使用地图图标显示，不在普通决议列表重复显示。
+   - 黑土地农业决议由“农业集体化”“农业合作化”“土地改革”任一国策解锁；“查田定产，丈量黑土”限定为核心州且每州一次，其余黑土地地区决议统一为 30 天。
+   - 写入鞍钢、抚顺、玄冥、龙江、必兴、拓木、丰满大坝等资源、建筑槽、工厂与大坝效果；兴凯湖渔业基地目标改为镇东。
+   - 写入镇东—林州—龙江—玄冥铁路、革命号机车、大连盐业、玄冥口岸、镇东港、嫩江航运等交通商贸效果；会宁相关目标统一改为林州。
+   - 写入喜申面粉、长白山伐木、庙街皮革、龙江制糖、秋林公司，以及吉林江北、辽北沈阳、辽南金州、龙江、辽中工业建设效果。
+   - “沈阳工业区”使用最大工业值修正；辽中“铁水流”使用当地工厂数与资源获取效率修正，不再误写为最大工厂数。
+   - 新增普通“组织与人才”决议分类：财经干部学校将旧关东大学替换为生产上限额外 +5% 的版本；技师征召、民工团调拨为可重复的 60 天期间 modifier，不再错误获得国家精神。
+
+四、动态修正、idea 与本地化
+13. TOD/common/dynamic_modifiers/TOD_SRC_modifiers.txt
+14. TOD/common/ideas/SRC_idea.txt
+15. TOD/common/ideas/GPS_idea.txt
+16. TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml
+17. TOD/localisation/simp_chinese/TOD_GPS_l_simp_chinese.yml
+   - 为地区特质、国策替换精神、决议、分类、科技加成卡、制造商与建筑效果补齐简体中文本地化，移除直接显示的内部键名。
+   - 动态 modifier 的真实效果与 effect_tooltip 中的显示用 idea 分离，避免无图标的冗余 idea、白色重复“解锁决议”文本和不必要空行。
+   - 修正革命新人、计划生产、革命文化、朱门再换新天、革命同盟等国策效果及显示名称。
+   - 调整关东大学替换 idea 的可用条件和生产上限效果；修正关东联合机动车辆集团、东北农垦集团的“设计商 / 生产商”中文类型文本。
+   - 地区特色修正统一使用可被游戏识别的原生 modifier；研究加成卡直接使用原生效果，不再人为补写多余本地化。
+
+【校验与同步】
+- 对新增/修改的国策、决议、分类、idea、dynamic modifier 与本地化逐项检查括号、ID、解锁旗标、目标州及效果写法。
+- 所有上述文件及本更新日志均同步至 C 盘 Hearts of Iron IV 的 TOD 模组目录；本轮国策树源目录与 C 盘副本一致。
+
+2026-09-12
+
+【西日本联盟开局内容调整】
+
+一、国家历史与开局状态
+1. TOD/history/countries/WJP - xiribenlianmeng.txt
+   - 设置西日本联盟开局科研槽为 2。
+   - 设置开局战争支持度为 35%、稳定度为 70%。
+   - 开局法案调整为民用经济、重视出口、有限征兵。
+   - 按设定重配十二种意识形态支持率：神圣复兴主义 0%、国家法团主义 5%、领袖意志主义 15%、寡头威权主义 21%、保守民主主义 37%、调和民主主义 8%、自由民主主义 12%、社会民主主义 1%、温和社会主义 0%、农工社会主义 0%、委员会社会主义 0%、先锋社会主义 1%。
+   - 开局移除“米骚动的阴影”“囤货居奇”，新增“难以处理的自由民权运动”“藩阀政治”“藩兵体制”。
+   - 挂载西日本开局内阁：毛利元昭、币原喜重郎、三土忠造、一木喜德郎。
+
+二、国家精神
+2. TOD/common/ideas/WJP_ideas.txt
+   - 新增“难以处理的自由民权运动”：战争支持度 -5%，调和民主主义与自由民主主义每日支持率各 +0.01，并以文本说明众议院机制中自由社、进步会影响力各 +5%。
+   - 新增“藩阀政治”：稳定度 +5%，政治点数 +5%。
+   - 新增“藩兵体制”：陆军学说花费 +10%，陆军组织度 -10%，陆军师训练时间 +10%。
+   - 将西日本内阁按 TOD 独立内阁槽写入政府首脑、外交部长、经济部长、内政部长分类，并预置后续可替换人选。
+
+三、内阁与特质
+3. TOD/common/country_leader/minister_traits.txt
+   - 新增西日本内阁专属特质：长州藩的藩主、对华外交协调者、资深金融官僚、重臣会议巨头、萨摩藩的藩主、外交革新派、举国协力理念家、东亚式自由主义者。
+   - 毛利元昭提供陆军经验每日增长 +0.01、稳定度 +5%，并以文本说明联盟议会自由社影响力 +5%。
+   - 币原喜重郎提供贸易修正 +30%、科研速度 +5%。
+   - 三土忠造提供生产效率上限 +10%、建造速度 +10%。
+   - 一木喜德郎提供政治点数 +5%、资源获取效率 +10%。
+   - 岛津忠重提供海军经验每日增长 +0.01、稳定度 +5%，并以文本说明联盟议会进步会影响力 +5%。
+   - 白鸟敏夫提供贸易修正 -10%、志愿军上限 +1、总司令花费 -15%。
+   - 木户幸一提供稳定度 +10%、战争支持度 +10%。
+   - 若槻礼次郎提供生产效率上限 +15%、科研速度 +10%。
+
+四、本地化
+4. TOD/localisation/simp_chinese/TOD_WJP_West_Japan_l_simp_chinese.yml
+   - 将 `WJP_slave_of_dragon` 显示名改为“东洋诸夏模范政权”，并补充新的国家精神描述。
+   - 补充新增国家精神、内阁人物、众议院机制文本的简体中文本地化。
+   - 更新西日本部分政党名与政治领导人显示名，包括日本社、省部官僚、大正政官内阁、酒井胜军、山道襄一、大杉荣等。
+5. TOD/localisation/simp_chinese/_TOD_Traits_l_simp_chinese.yml
+   - 补充西日本内阁专属特质名称本地化。
+
+【校验与同步】
+- 检查 WJP 历史文件、idea 文件和 minister traits 文件括号数量一致。
+- 将上述修改同步至 C 盘 Hearts of Iron IV 的 TOD 模组目录。
+
+2026-09-29
+
+【东、西日本企业与设计商】
+
+一、新版军事工业组织（MIO）
+1. TOD/common/military_industrial_organization/organizations/EDO_organization.txt（新增）
+   - 新增可由东日本（EDO）与西日本联盟（WJP）使用的 11 个新版军事工业组织，均以对应所在地控制权作为建立条件。
+   - 日立制作所：中型坦克设计商，绑定江户（282）。
+   - 日产汽车：快速坦克设计商，绑定江户（282）。
+   - 横须贺海军工厂：护航舰艇设计商，绑定江户（282）。
+   - 吴海军工厂：特遣舰队舰艇设计商，绑定广岛（529）。
+   - 三菱重工：高机动战斗机设计商，绑定四国（530）。
+   - 九州飞行机：轻型飞机设计商，绑定九州北部（528）。
+   - 立川飞机：通用飞机设计商，绑定江户（282）。
+   - 小仓陆军造兵厂：步兵武器设计商，绑定九州北部（528）。
+   - 名古屋陆军造兵厂：支援装备设计商，绑定东海／名古屋（532）。
+   - 大阪炮兵工厂：炮兵设计商，绑定关西／大阪（531）。
+   - 石川岛播磨重工：摩托化／机械化装备设计商，绑定江户（282）。
+
+二、工业企业
+2. TOD/common/ideas/EDO_idea.txt
+   - 川崎工业企业：绑定东京（282）；沿用 KR 数值，工业科技 +15%、民用工厂建造速度 +10%。
+   - 三井工业企业：绑定大阪（531）；沿用 KR 数值，工业科技 +15%、军用工厂建造速度 +10%。
+   - 日本窒素化学企业：绑定南九州（1221，伊佐／旧大口）；沿用 KR 数值，合成资源研究 +15%、合成炼油厂建造速度 +10%。
+   - 日本石油公司：绑定新潟（534）；沿用 KR 数值，合成资源研究 +15%、州资源燃油产出 +100%。
+   - 东京芝浦电气：绑定东京（282）；沿用 KR 数值，电子学研究 +15%、破译能力 +20。
+   - 日本铁路集团：绑定大阪（531）；采用 KR 铁路扩建数值，基建与铁路建造速度各 +15%、补给中心建造速度 +10%。
+
+三、美术与本地化
+3. TOD/interface/EDO_gfx.gfx
+   - 为以上全部企业与设计商注册 TOD 专用精灵键，避免覆盖原版或 KR 的同名精灵。
+4. TOD/gfx/interface/companies/JAP/（新增 17 个图标资源）
+   - 复制 KR 图标；KR 直接调用原版贴图的项目则复制其调用的同款原版贴图，确保 TOD 可独立加载图标。
+5. TOD/localisation/simp_chinese/TOD_EDO_l_simp_chinese.yml
+6. TOD/localisation/english/TOD_Edo_Shogunate_l_english.yml
+   - 补充上述全部 MIO 与工业企业的中英文显示名称。
+
+【校验】
+- 检查 EDO MIO 定义、工业企业定义的花括号数量一致。
+- 检查每个新增企业均具有定义、本地化、精灵键与对应图标资源。
