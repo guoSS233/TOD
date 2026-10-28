@@ -544,6 +544,11 @@ ideas = {
 					original_tag = SRC
 				}
 			}
+			visible = {
+				hidden_trigger = {
+					NOT = { has_country_flag = SRC_northeast_finance_school_established }
+				}
+			}
             available = {
 				controls_state = 845
 				NOT = { has_country_flag = SRC_northeast_finance_school_established }
@@ -568,6 +573,11 @@ ideas = {
 				OR = {
 					original_tag = GPS
 					original_tag = SRC
+				}
+			}
+			visible = {
+				hidden_trigger = {
+					has_country_flag = SRC_northeast_finance_school_established
 				}
 			}
             available = {
