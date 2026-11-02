@@ -1,5 +1,6 @@
 focus_tree = {#共和军国策
 	id = ROC_gonghe
+	shared_focus = ROC_ma_minister_selection
 	country = {
 		factor = 0
 		# modifier = {
@@ -47,7 +48,7 @@ focus_tree = {#共和军国策
 		id = banbugonghelinshixianfa
 		icon = GFX_ROC_banbugonghelinshixianfa
 		cost = 0
-		x = 14
+		x = 22
 		y = 10
 		ai_will_do = {factor = 10}
 		available = {
@@ -112,11 +113,10 @@ focus_tree = {#共和军国策
 		ai_will_do = {factor = 10}
 		completion_reward = {	
 			custom_effect_tooltip = ROC_custom_tudigaige
-			set_variable = {
-				ROC_VAR_nongcun_days_base = 90
-			}
-			set_variable = {
-				ROC_VAR_nongcun_pp_base = 30
+			hidden_effect = {
+				set_variable = { ROC_VAR_nongcun_days_base = 90 }
+				set_variable = { ROC_VAR_nongcun_pp_base = 30 }
+				ROC_scripted_effects_jianshe = yes
 			}
 			swap_ideas = {
 				add_idea = ROC_idea_meihuazhihai_1
@@ -130,7 +130,6 @@ focus_tree = {#共和军国策
 					instant_build = yes
 				}
 			}
-			ROC_scripted_effects_jianshe = yes
 		}
 	}
 	focus = {#5、商会农场改制
@@ -262,17 +261,13 @@ focus_tree = {#共和军国策
 		ai_will_do = {factor = 10}
 		completion_reward = {	
 			add_offsite_building = { type = arms_factory level = 3 }
-			set_variable = {
-				ROC_VAR_chengshi_days_base = 120
-			}
-			set_variable = {
-				ROC_VAR_chengshi_minsheng_pp_base = 40
-			}
-			set_variable = {
-				ROC_VAR_chengshi_junshi_pp_base = 30
-			}
 			custom_effect_tooltip = ROC_custom_jieguanguanyinggongcheng
-			ROC_scripted_effects_jianshe = yes
+			hidden_effect = {
+				set_variable = { ROC_VAR_chengshi_days_base = 120 }
+				set_variable = { ROC_VAR_chengshi_minsheng_pp_base = 40 }
+				set_variable = { ROC_VAR_chengshi_junshi_pp_base = 30 }
+				ROC_scripted_effects_jianshe = yes
+			}
 		}
 	}
 	focus = {#14、联合商会势力
@@ -322,14 +317,12 @@ focus_tree = {#共和军国策
 		x = 9
 		y = 5
 		ai_will_do = {factor = 10}
-		completion_reward = {	
+		completion_reward = {
+            hidden_effect = { ROC_econ_market_route = yes }
 			add_political_power = 50
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.15
-			}
 			country_event = { id = ROC_focus.32 }
-		}
+		
+			ROC_ma_manual_market_015 = yes}
 	}
 	focus = {#14、践行节制资本
 		id = shijianjiezhiziben
@@ -360,13 +353,11 @@ focus_tree = {#共和军国策
 		x = 11
 		y = 5
 		ai_will_do = {factor = 10}
-		completion_reward = {	
+		completion_reward = {
+            hidden_effect = { ROC_econ_public_route = yes }
 			add_political_power = 50
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.15
-			}
-		}
+		
+			ROC_ma_manual_public_015 = yes}
 	}
 	focus = {#16、落实四时辰工作制度
 		id = luoshisishichengongzuozhi
@@ -384,17 +375,13 @@ focus_tree = {#共和军国策
 				add_idea = ROC_idea_minzhongduidatonglixiangrenkedu_B
 				remove_idea = ROC_idea_minzhongduidatonglixiangrenkedu_A
 			}
-			set_variable = {
-				ROC_VAR_chengshi_days_base = 60
-			}
-			set_variable = {
-				ROC_VAR_chengshi_minsheng_pp_base = 20
-			}
-			set_variable = {
-				ROC_VAR_chengshi_junshi_pp_base = 15
-			}
 			custom_effect_tooltip = ROC_custom_luoshisishichengongzuozhi
-			ROC_scripted_effects_jianshe = yes
+			hidden_effect = {
+				set_variable = { ROC_VAR_chengshi_days_base = 60 }
+				set_variable = { ROC_VAR_chengshi_minsheng_pp_base = 20 }
+				set_variable = { ROC_VAR_chengshi_junshi_pp_base = 15 }
+				ROC_scripted_effects_jianshe = yes
+			}
 		}
 	}
 	focus = {#18、广州革命委员会
@@ -627,7 +614,7 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = banbugonghelinshixianfa
 		}
-		x = 14
+		x = 22
 		y = 11
 		ai_will_do = {factor = 10}
 	}
@@ -641,7 +628,7 @@ focus_tree = {#共和军国策
 		bypass = {
 			NOT = { country_exists = STG }
 		}	
-		x = 18
+		x = 26
 		y = 12
 		ai_will_do = {factor = 10}
 		completion_reward = {
@@ -658,7 +645,7 @@ focus_tree = {#共和军国策
 		bypass = {
 			NOT = { country_exists = XBJ }
 		}	
-		x = 18
+		x = 26
 		y = 14
 		ai_will_do = {factor = 10}
 		completion_reward = {
@@ -917,7 +904,7 @@ focus_tree = {#共和军国策
 			}
 		}
 		completion_reward = {	
-			set_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked
+			hidden_effect = { set_country_flag = FLAG_ROC_decision_gonggubianjie_unlocked }
 			custom_effect_tooltip = ROC_custom_xinjunshiweiyuanhui
 		}
 	}
@@ -1730,11 +1717,8 @@ focus_tree = {#共和军国策
 		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_political_power = 50
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.1
-			}
-		}
+		
+			ROC_ma_manual_market_010 = yes}
 	}
 	focus = {#8、推动农业合作社发展
 		id = tuidongnongyehezuoshefazhan
@@ -1748,11 +1732,8 @@ focus_tree = {#共和军国策
 		ai_will_do = {factor = 10}
 		completion_reward = {
 			add_popularity = { ideology = moderate_socialism popularity = 0.03 }
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.1
-			}
-		}
+		
+			ROC_ma_manual_public_010 = yes}
 	}
 	focus = {#9、推动乡村建设运动
 		id = tuidongxiangcunjiansheyundong
@@ -1767,13 +1748,11 @@ focus_tree = {#共和军国策
 		ai_will_do = {factor = 10}
 		completion_reward = {
 			custom_effect_tooltip = ROC_custom_tuidongxiangcunjiansheyundong
-			set_variable = {
-				ROC_VAR_nongcun_days_base = 80
+			hidden_effect = {
+				set_variable = { ROC_VAR_nongcun_days_base = 80 }
+				set_variable = { ROC_VAR_nongcun_pp_base = 15 }
+				ROC_scripted_effects_jianshe = yes
 			}
-			set_variable = {
-				ROC_VAR_nongcun_pp_base = 15
-			}
-			ROC_scripted_effects_jianshe = yes
 			swap_ideas = {
 				add_idea = ROC_idea_meihuazhihai_2
 				remove_idea = ROC_idea_meihuazhihai_1
@@ -1810,6 +1789,8 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = kuojianguangzhoudaxue
 		}
+		x = 6
+		y = 9
 		available = {
 			591 = {
 				custom_trigger_tooltip = {
@@ -1860,8 +1841,6 @@ focus_tree = {#共和军国策
 				}
 			}
 		}
-		x = 6
-		y = 9
 		ai_will_do = {factor = 50}
 		completion_reward = {
 			every_state = {
@@ -2686,7 +2665,7 @@ focus_tree = {#共和军国策
 		bypass = {
 			NOT = { country_exists = SIC }
 		}
-		x = 10
+		x = 18
 		y = 12
 		ai_will_do = {factor = 10}
 		completion_reward = {
@@ -2701,7 +2680,7 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = bashuzhiguo
 		}
-		x = 10
+		x = 20
 		y = 14
 		ai_will_do = {factor = 10}
 		completion_reward = {
@@ -2732,7 +2711,7 @@ focus_tree = {#共和军国策
 				}
 			}
 		}	
-		x = 14
+		x = 22
 		y = 12
 		ai_will_do = {factor = 10}
 		completion_reward = {
@@ -2757,7 +2736,7 @@ focus_tree = {#共和军国策
 		mutually_exclusive = {
 			focus = yueguoshanhaiguan
 		}
-		x = 13
+		x = 21
 		y = 13
 
 	}
@@ -2785,7 +2764,7 @@ focus_tree = {#共和军国策
 		mutually_exclusive = {
 			focus = gemingdetongzhi
 		}
-		x = 15
+		x = 23
 		y = 13
 		ai_will_do = {factor = 10}
 		completion_reward = {
@@ -2803,7 +2782,7 @@ focus_tree = {#共和军国策
 		bypass = {
 			NOT = { country_exists = BOC }
 		}	
-		x = 14
+		x = 22
 		y = 14
 		ai_will_do = {factor = 10}
 		completion_reward = {
@@ -2823,7 +2802,7 @@ focus_tree = {#共和军国策
 		prerequisite = {
 			focus = xibeigongfa
 		}
-		x = 14
+		x = 22
 		y = 15
 
 	}
@@ -2859,13 +2838,7 @@ focus_tree = {#共和军国策
 			set_variable = {
 				ROC_sanpai_time_minister_you_var = 0
 			}
-			set_variable = {
-				ROC_sanpai_time_bop_zuo_var = 0
-			}
-			set_variable = {
-				ROC_sanpai_time_bop_you_var = 0
-			}
-    		ROC_scripted_effects_sanpai_time = yes
+			ROC_scripted_effects_sanpai_time = yes
 			ROC_scripted_effects_youyi = yes
 			ROC_scripted_effects_zuoyi = yes
 			add_ideas = ROC_idea_jijindu
@@ -3398,6 +3371,7 @@ focus_tree = {#共和军国策
 			focus = jingchenghezuo
 		}
 		completion_reward = {
+            hidden_effect = { ROC_econ_finish_race = yes }
 			country_event = {
 				id = ROC_pingheng.13
 			}
@@ -3507,6 +3481,7 @@ focus_tree = {#共和军国策
 			focus = lunliuzuozhuang
 		}
 		completion_reward = {
+            hidden_effect = { ROC_econ_finish_race = yes }
 			country_event = {
 				id = ROC_pingheng.41
 			}
@@ -3695,6 +3670,7 @@ focus_tree = {#共和军国策
 			focus = jingchenghezuo
 		}
 		completion_reward = {
+            hidden_effect = { ROC_econ_finish_race = yes }
 			country_event = {
 				id = ROC_pingheng.26
 			}

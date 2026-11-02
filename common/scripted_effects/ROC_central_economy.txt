@@ -1,0 +1,385 @@
+# One native 1095-day ministerial mission; construction and review clocks are subordinate.
+ROC_ce_initialize = {
+    # Read the legacy initialized flag before first adoption sets it.
+    ROC_ce_sync_minister_profile = yes
+    if = {
+        limit = { ROC_ce_administration_active = yes NOT = { has_country_flag = ROC_ce_initialized } }
+        set_country_flag = ROC_ce_initialized
+        # A legacy save starts its new performance account today, without invented output.
+        set_variable = { ROC_ce_actual = 0 }
+        set_variable = { ROC_ce_expected = 0 }
+        set_variable = { ROC_ce_pressure = 0 }
+        set_variable = { ROC_ce_reviews_behind = 0 }
+        set_variable = { ROC_ce_review_days = 0 }
+        set_variable = { ROC_ce_term_target = 100 }
+        set_variable = { ROC_ce_preparation_days = 90 }
+        set_variable = { VAR_ROC_jianshe_days_factor = 1 }
+        set_variable = { VAR_ROC_jianshe_pp_factor = 1 }
+        ROC_scripted_effects_jianshe = yes
+    }
+    ROC_ce_retire_bop = yes
+    ROC_ce_refresh = yes
+}
+
+ROC_ce_sync_minister_profile = {
+    hidden_effect = {
+        if = {
+            limit = {
+                OR = { ROC_ce_administration_active = yes has_country_flag = ROC_ma_favors_initialized }
+            }
+            if = {
+                limit = {
+                    NOT = { has_country_flag = ROC_ma_favors_initialized }
+                }
+                if = {
+                    limit = { has_country_flag = ROC_ce_minister_profiles_initialized }
+                    set_variable = { ROC_ma_left_delta = ROC_ce_labor_relation_delta }
+                    add_to_variable = { var = ROC_ma_left_delta value = ROC_ce_socialist_relation_delta }
+                    divide_variable = { var = ROC_ma_left_delta value = 4 }
+                    set_variable = { ROC_ma_center_delta = ROC_ce_datong_relation_delta }
+                    set_variable = { ROC_ma_right_delta = ROC_ce_democratic_relation_delta }
+                }
+                else = {
+                    set_variable = { ROC_ma_left_delta = ROC_ce_labor_attitude }
+                    add_to_variable = { var = ROC_ma_left_delta value = ROC_ce_socialist_attitude }
+                    set_variable = { ROC_ma_center_delta = ROC_ce_datong_attitude }
+                    set_variable = { ROC_ma_right_delta = ROC_ce_democratic_attitude }
+                    if = {
+                        limit = { has_country_flag = ROC_ce_initialized }
+                        subtract_from_variable = { var = ROC_ma_center_delta value = 20 }
+                        subtract_from_variable = { var = ROC_ma_left_delta value = 10 }
+                    }
+                    divide_variable = { var = ROC_ma_left_delta value = 4 }
+                }
+                divide_variable = { var = ROC_ma_center_delta value = 2 }
+                divide_variable = { var = ROC_ma_right_delta value = 2 }
+                set_country_flag = ROC_ma_favors_initialized
+            }
+            else = {
+                clamp_variable = { var = ROC_ma_left_favor min = 0 max = 100 }
+                clamp_variable = { var = ROC_ma_center_favor min = 0 max = 100 }
+                clamp_variable = { var = ROC_ma_right_favor min = 0 max = 100 }
+                # Keep negotiation history through a vacancy, unless that faction actually changes.
+                if = {
+                    limit = { check_variable = { var = ROC_ce_minister_profile_id value = 0 compare = equals } NOT = { check_variable = { var = ROC_ma_left_favor value = ROC_ma_left_published compare = equals } } }
+                    set_variable = { ROC_ma_left_delta = ROC_ma_left_published }
+                    subtract_from_variable = { var = ROC_ma_left_delta value = ROC_ma_left_base }
+                }
+                if = {
+                    limit = { check_variable = { var = ROC_ce_minister_profile_id value = 0 compare = equals } NOT = { check_variable = { var = ROC_ma_center_favor value = ROC_ma_center_published compare = equals } } }
+                    set_variable = { ROC_ma_center_delta = ROC_ma_center_published }
+                    subtract_from_variable = { var = ROC_ma_center_delta value = ROC_ma_center_base }
+                }
+                if = {
+                    limit = { check_variable = { var = ROC_ce_minister_profile_id value = 0 compare = equals } NOT = { check_variable = { var = ROC_ma_right_favor value = ROC_ma_right_published compare = equals } } }
+                    set_variable = { ROC_ma_right_delta = ROC_ma_right_published }
+                    subtract_from_variable = { var = ROC_ma_right_delta value = ROC_ma_right_base }
+                }
+                add_to_variable = { var = ROC_ma_left_delta value = ROC_ma_left_favor }
+                subtract_from_variable = { var = ROC_ma_left_delta value = ROC_ma_left_published }
+                add_to_variable = { var = ROC_ma_center_delta value = ROC_ma_center_favor }
+                subtract_from_variable = { var = ROC_ma_center_delta value = ROC_ma_center_published }
+                add_to_variable = { var = ROC_ma_right_delta value = ROC_ma_right_favor }
+                subtract_from_variable = { var = ROC_ma_right_delta value = ROC_ma_right_published }
+            }
+            set_variable = { ROC_ce_minister_profile_id = 0 }
+            set_variable = { ROC_ma_left_base = 50 }
+            set_variable = { ROC_ma_center_base = 50 }
+            set_variable = { ROC_ma_right_base = 50 }
+            if = {
+                limit = { ROC_ce_administration_active = yes has_idea = ROC_idea_YuShude }
+                set_variable = { ROC_ce_minister_profile_id = 1 }
+                set_variable = { ROC_ma_left_base = 55 }
+                set_variable = { ROC_ma_center_base = 70 }
+                set_variable = { ROC_ma_right_base = 40 }
+            }
+            if = {
+                limit = { ROC_ce_administration_active = yes has_idea = ROC_idea_YanYangchu }
+                set_variable = { ROC_ce_minister_profile_id = 2 }
+                set_variable = { ROC_ma_left_base = 45 }
+                set_variable = { ROC_ma_center_base = 70 }
+                set_variable = { ROC_ma_right_base = 55 }
+            }
+            if = {
+                limit = { ROC_ce_administration_active = yes has_idea = ROC_idea_RuanXiaoxian }
+                set_variable = { ROC_ce_minister_profile_id = 3 }
+                set_variable = { ROC_ma_left_base = 70 }
+                set_variable = { ROC_ma_center_base = 50 }
+                set_variable = { ROC_ma_right_base = 25 }
+            }
+            if = {
+                limit = { ROC_ce_administration_active = yes has_idea = ROC_idea_ChenZanxian }
+                set_variable = { ROC_ce_minister_profile_id = 4 }
+                set_variable = { ROC_ma_left_base = 80 }
+                set_variable = { ROC_ma_center_base = 40 }
+                set_variable = { ROC_ma_right_base = 15 }
+            }
+            if = {
+                limit = { ROC_ce_administration_active = yes has_idea = ROC_idea_XiaoZheng }
+                set_variable = { ROC_ce_minister_profile_id = 5 }
+                set_variable = { ROC_ma_left_base = 20 }
+                set_variable = { ROC_ma_center_base = 50 }
+                set_variable = { ROC_ma_right_base = 80 }
+            }
+            set_variable = { ROC_ma_left_favor = ROC_ma_left_delta }
+            add_to_variable = { var = ROC_ma_left_favor value = ROC_ma_left_base }
+            clamp_variable = { var = ROC_ma_left_favor min = 0 max = 100 }
+            if = { limit = { check_variable = { ROC_ce_minister_profile_id > 0 } } set_variable = { ROC_ma_left_delta = ROC_ma_left_favor } subtract_from_variable = { var = ROC_ma_left_delta value = ROC_ma_left_base } }
+            set_variable = { ROC_ma_left_published = ROC_ma_left_favor }
+            set_variable = { ROC_ma_center_favor = ROC_ma_center_delta }
+            add_to_variable = { var = ROC_ma_center_favor value = ROC_ma_center_base }
+            clamp_variable = { var = ROC_ma_center_favor min = 0 max = 100 }
+            if = { limit = { check_variable = { ROC_ce_minister_profile_id > 0 } } set_variable = { ROC_ma_center_delta = ROC_ma_center_favor } subtract_from_variable = { var = ROC_ma_center_delta value = ROC_ma_center_base } }
+            set_variable = { ROC_ma_center_published = ROC_ma_center_favor }
+            set_variable = { ROC_ma_right_favor = ROC_ma_right_delta }
+            add_to_variable = { var = ROC_ma_right_favor value = ROC_ma_right_base }
+            clamp_variable = { var = ROC_ma_right_favor min = 0 max = 100 }
+            if = { limit = { check_variable = { ROC_ce_minister_profile_id > 0 } } set_variable = { ROC_ma_right_delta = ROC_ma_right_favor } subtract_from_variable = { var = ROC_ma_right_delta value = ROC_ma_right_base } }
+            set_variable = { ROC_ma_right_published = ROC_ma_right_favor }
+        }
+    }
+}
+
+ROC_ce_retire_bop = {
+    ROC_ce_policy_initialize = yes
+    if = {
+        limit = { has_power_balance = { id = ROC_power_balance } }
+        # Removal may execute old range callbacks. Restore exact existing political clocks.
+        if = { limit = { has_active_mission = ROC_decision_zuopai } set_variable = { ROC_ce_saved_left = days_mission_timeout@ROC_decision_zuopai } }
+        if = { limit = { has_active_mission = ROC_decision_zhongpai } set_variable = { ROC_ce_saved_center = days_mission_timeout@ROC_decision_zhongpai } }
+        if = { limit = { has_active_mission = ROC_decision_youpai } set_variable = { ROC_ce_saved_right = days_mission_timeout@ROC_decision_youpai } }
+        remove_power_balance = { id = ROC_power_balance }
+        if = { limit = { has_active_mission = ROC_decision_zuopai } subtract_from_variable = { var = ROC_ce_saved_left value = days_mission_timeout@ROC_decision_zuopai } add_days_mission_timeout = { mission = ROC_decision_zuopai days = ROC_ce_saved_left } }
+        if = { limit = { has_active_mission = ROC_decision_zhongpai } subtract_from_variable = { var = ROC_ce_saved_center value = days_mission_timeout@ROC_decision_zhongpai } add_days_mission_timeout = { mission = ROC_decision_zhongpai days = ROC_ce_saved_center } }
+        if = { limit = { has_active_mission = ROC_decision_youpai } subtract_from_variable = { var = ROC_ce_saved_right value = days_mission_timeout@ROC_decision_youpai } add_days_mission_timeout = { mission = ROC_decision_youpai days = ROC_ce_saved_right } }
+    }
+    clr_country_flag = ROC_flag_bop_zhongli
+    clr_country_flag = ROC_flag_bop_jihua_1
+    clr_country_flag = ROC_flag_bop_jihua_2
+    clr_country_flag = ROC_flag_bop_jihua_3
+    clr_country_flag = ROC_flag_bop_ziyou_1
+    clr_country_flag = ROC_flag_bop_ziyou_2
+    clr_country_flag = ROC_flag_bop_ziyou_3
+    set_variable = { ROC_sanpai_time_bop_zuo_var = 0 }
+    set_variable = { ROC_sanpai_time_bop_you_var = 0 }
+    set_variable = { ROC_econ_head_target = 0 }
+    set_variable = { ROC_econ_head_previous_target = 0 }
+    set_variable = { ROC_econ_head_mismatch_days = 0 }
+    # Reassert ordinary modifiers after any legacy native deactivation callback.
+    ROC_ce_policy_refresh = yes
+}
+
+ROC_ce_begin_term = {
+    ROC_ce_initialize = yes
+    set_variable = { ROC_ce_actual = ROC_ce_unassigned_delivery }
+    set_variable = { ROC_ce_unassigned_delivery = 0 }
+    set_variable = { ROC_ce_expected = 0 }
+    set_variable = { ROC_ce_review_days = 0 }
+    set_variable = { ROC_ce_reviews_behind = 0 }
+    set_variable = { ROC_ce_grace_reviews = 0 }
+    set_variable = { ROC_ce_projects_completed = 0 }
+    set_variable = { ROC_ce_preparation_days = 90 }
+    clr_country_flag = ROC_ce_grace_used
+    clr_country_flag = ROC_ce_accountability_pending
+    # An unfinished state project belongs to the administration, not its minister.
+    ROC_ce_refresh = yes
+}
+
+ROC_ce_refresh = {
+    ROC_ce_sync_minister_profile = yes
+    clamp_variable = { var = ROC_ce_pressure min = 0 max = 100 }
+    set_variable = { ROC_ce_gap = ROC_ce_actual }
+    subtract_from_variable = { var = ROC_ce_gap value = ROC_ce_expected }
+    set_variable = { ROC_ce_opposition_count = 0 }
+    if = { limit = { check_variable = { ROC_ma_left_favor < 35 } } add_to_variable = { var = ROC_ce_opposition_count value = 1 } }
+    if = { limit = { check_variable = { ROC_ma_center_favor < 35 } } add_to_variable = { var = ROC_ce_opposition_count value = 1 } }
+    if = { limit = { check_variable = { ROC_ma_right_favor < 35 } } add_to_variable = { var = ROC_ce_opposition_count value = 1 } }
+    set_variable = { ROC_ce_speed = 0.556 }
+    if = { limit = { check_variable = { ROC_ce_project_id = 3 } } set_variable = { ROC_ce_speed = 0.667 } }
+    set_variable = { ROC_ce_support_speed = ROC_ma_left_favor }
+    add_to_variable = { var = ROC_ce_support_speed value = ROC_ma_center_favor }
+    add_to_variable = { var = ROC_ce_support_speed value = ROC_ma_right_favor }
+    subtract_from_variable = { var = ROC_ce_support_speed value = 150 }
+    divide_variable = { var = ROC_ce_support_speed value = 625 }
+    add_to_variable = { var = ROC_ce_speed value = ROC_ce_support_speed }
+    if = { limit = { check_variable = { ROC_ce_project_id = 1 } OR = { has_idea = ROC_idea_YuShude has_idea = ROC_idea_ChenZanxian } } add_to_variable = { var = ROC_ce_speed value = 0.08 } }
+    if = { limit = { check_variable = { ROC_ce_project_id = 2 } OR = { has_idea = ROC_idea_YanYangchu has_idea = ROC_idea_XiaoZheng } } add_to_variable = { var = ROC_ce_speed value = 0.08 } }
+    if = { limit = { check_variable = { ROC_ce_project_id = 3 } has_idea = ROC_idea_RuanXiaoxian } add_to_variable = { var = ROC_ce_speed value = 0.08 } }
+    if = { limit = { has_country_flag = ROC_ce_funded } add_to_variable = { var = ROC_ce_speed value = 0.2 } }
+    if = { limit = { has_country_flag = ROC_ce_contractor_friction } subtract_from_variable = { var = ROC_ce_speed value = 0.15 } }
+    clamp_variable = { var = ROC_ce_speed min = 0.2 max = 1.1 }
+    ROC_ma_sync = yes
+}
+
+ROC_ce_clear_project_windows = {
+    clr_country_flag = ROC_ce_event_1_pending
+    clr_country_flag = ROC_ce_event_2_pending
+    clr_country_flag = ROC_ce_event_3_pending
+    clr_country_flag = ROC_ce_event_4_pending
+    clr_country_flag = ROC_ce_event_1_seen
+    clr_country_flag = ROC_ce_event_3_seen
+    clr_country_flag = ROC_ce_event_4_seen
+}
+ROC_ce_start_project = {
+    ROC_ce_initialize = yes
+    ROC_ce_clear_project_windows = yes
+    clr_country_flag = ROC_ce_no_delivery_target
+    set_variable = { ROC_ce_project_progress = 0 }
+    set_variable = { ROC_ce_project_expected = 0 }
+    set_variable = { ROC_ce_project_days = 0 }
+    set_variable = { ROC_ce_delay_days = 0 }
+    add_to_variable = { var = ROC_ce_project_serial value = 1 }
+    set_country_flag = { flag = ROC_ce_event_2_pending days = 15 }
+    country_event = { id = ROC_central_economy.2 }
+    ROC_ce_refresh = yes
+}
+ROC_ce_start_industry = { if = { limit = { ROC_ce_can_start = yes has_country_flag = ROC_ce_industry_unlocked any_owned_state = { ROC_ce_industry_target = yes } } set_variable = { ROC_ce_project_id = 1 } ROC_ce_start_project = yes } }
+ROC_ce_start_agriculture = { if = { limit = { has_country_flag = ROC_ce_agriculture_unlocked ROC_ce_can_start = yes any_owned_state = { ROC_ce_infrastructure_target = yes } } set_variable = { ROC_ce_project_id = 2 } ROC_ce_start_project = yes } }
+ROC_ce_start_transport = { if = { limit = { has_country_flag = ROC_ce_transport_unlocked ROC_ce_can_start = yes any_owned_state = { ROC_ce_infrastructure_target = yes } } set_variable = { ROC_ce_project_id = 3 } ROC_ce_start_project = yes } }
+
+ROC_ce_deliver = {
+    if = {
+        limit = { ROC_ce_current_project = yes check_variable = { var = ROC_ce_project_progress value = 100 compare = greater_than_or_equals } }
+
+    clr_country_flag = ROC_ce_delivery_valid
+    if = {
+        limit = { check_variable = { ROC_ce_project_id = 1 } }
+        random_owned_controlled_state = {
+            limit = { ROC_ce_industry_target = yes }
+            add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+            ROOT = { set_country_flag = ROC_ce_delivery_valid }
+        }
+    }
+    else_if = {
+        limit = { OR = { check_variable = { ROC_ce_project_id = 2 } check_variable = { ROC_ce_project_id = 3 } } }
+        random_owned_controlled_state = {
+            limit = { ROC_ce_infrastructure_target = yes }
+            add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+            ROOT = { set_country_flag = ROC_ce_delivery_valid }
+        }
+    }
+    if = {
+        limit = { has_country_flag = ROC_ce_delivery_valid }
+        if = { limit = { check_variable = { ROC_ce_project_id = 2 } } add_stability = 0.01 }
+        add_to_variable = { var = ROC_ce_actual value = 20 }
+        add_to_variable = { var = ROC_ce_projects_completed value = 1 }
+        subtract_from_variable = { var = ROC_ce_pressure value = 8 }
+        add_to_variable = { var = ROC_ma_center_favor value = 5 }
+        set_variable = { ROC_ma_day_credit = 30 }
+        ROC_ma_advance_days = yes
+        set_variable = { ROC_ce_project_id = 0 }
+        set_variable = { ROC_ce_project_progress = 100 }
+        ROC_ce_clear_project_windows = yes
+        clr_country_flag = ROC_ce_no_delivery_target
+    }
+    else = {
+        set_variable = { ROC_ce_project_progress = 99 }
+        set_country_flag = ROC_ce_no_delivery_target
+    }
+    ROC_ce_refresh = yes
+
+    }
+}
+
+ROC_ce_project_daily = {
+    if = {
+        limit = { ROC_ce_current_project = yes has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } }
+        add_to_variable = { var = ROC_ce_project_days value = 1 }
+        if = { limit = { check_variable = { ROC_ce_project_id = 3 } } add_to_variable = { var = ROC_ce_project_expected value = 0.667 } }
+        else = { add_to_variable = { var = ROC_ce_project_expected value = 0.556 } }
+        clamp_variable = { var = ROC_ce_project_expected min = 0 max = 100 }
+        if = { limit = { check_variable = { ROC_ce_delay_days > 0 } } subtract_from_variable = { var = ROC_ce_delay_days value = 1 } }
+        else = { add_to_variable = { var = ROC_ce_project_progress value = ROC_ce_speed } }
+        if = { limit = { check_variable = { var = ROC_ce_project_progress value = 25 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_1_seen } } set_country_flag = ROC_ce_event_1_seen set_country_flag = { flag = ROC_ce_event_1_pending days = 15 } country_event = { id = ROC_central_economy.1 } }
+        if = { limit = { check_variable = { var = ROC_ce_project_progress value = 50 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_4_seen } } set_country_flag = ROC_ce_event_4_seen set_country_flag = { flag = ROC_ce_event_4_pending days = 15 } country_event = { id = ROC_central_economy.4 } }
+        if = { limit = { check_variable = { var = ROC_ce_project_progress value = 75 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_3_seen } } set_country_flag = ROC_ce_event_3_seen set_country_flag = { flag = ROC_ce_event_3_pending days = 15 } country_event = { id = ROC_central_economy.3 } }
+        if = { limit = { check_variable = { var = ROC_ce_project_progress value = 100 compare = greater_than_or_equals } } ROC_ce_deliver = yes }
+    }
+}
+
+ROC_ce_quarterly_review = {
+    if = {
+        limit = { check_variable = { ROC_ce_gap < -8 } }
+        add_to_variable = { var = ROC_ce_reviews_behind value = 1 }
+        add_to_variable = { var = ROC_ce_pressure value = 15 }
+        subtract_from_variable = { var = ROC_ma_center_favor value = 8 }
+        subtract_from_variable = { var = ROC_ma_left_favor value = 8 }
+        subtract_from_variable = { var = ROC_ma_right_favor value = 8 }
+    }
+    else = { set_variable = { ROC_ce_reviews_behind = 0 } subtract_from_variable = { var = ROC_ce_pressure value = 5 } }
+    ROC_ce_refresh = yes
+    if = { limit = { check_variable = { ROC_ce_grace_reviews > 0 } } subtract_from_variable = { var = ROC_ce_grace_reviews value = 1 } }
+    else_if = {
+        limit = { ROC_ce_accountability_ready = yes NOT = { has_country_flag = ROC_ce_report_delay } }
+        set_country_flag = { flag = ROC_ce_accountability_pending days = 15 }
+        country_event = { id = ROC_central_economy.5 }
+    }
+}
+
+ROC_ce_daily = {
+    ROC_ce_initialize = yes
+    ROC_ma_daily = yes
+    if = {
+        limit = { ROC_ce_administration_active = yes }
+        if = {
+            limit = { has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } }
+            if = { limit = { check_variable = { ROC_ce_preparation_days > 0 } } subtract_from_variable = { var = ROC_ce_preparation_days value = 1 } }
+            else = { add_to_variable = { var = ROC_ce_expected value = 0.1 } clamp_variable = { var = ROC_ce_expected min = 0 max = 100 } }
+            add_to_variable = { var = ROC_ce_review_days value = 1 }
+            ROC_ce_refresh = yes
+            if = { limit = { check_variable = { var = ROC_ce_review_days value = 90 compare = greater_than_or_equals } } set_variable = { ROC_ce_review_days = 0 } ROC_ce_quarterly_review = yes }
+        }
+        ROC_ce_project_daily = yes
+        if = { limit = { has_country_flag = ROC_ce_false_report NOT = { has_country_flag = ROC_ce_report_delay } NOT = { has_country_flag = ROC_ce_event_6_pending } } clr_country_flag = ROC_ce_false_report set_country_flag = { flag = ROC_ce_event_6_pending days = 15 } country_event = { id = ROC_central_economy.6 } }
+        # A closed or timed-out appointment window can always recover without a new term.
+        if = { limit = { has_country_flag = ROC_econ_resignation_pending NOT = { has_country_flag = ROC_ce_appointment_open } has_active_mission = ROC_decision_bop_jingjidahui } set_country_flag = { flag = ROC_ce_appointment_open days = 15 } country_event = { id = ROC_central_economy.7 } }
+    }
+    ROC_ce_refresh = yes
+}
+
+ROC_ce_policy_public = {
+    custom_effect_tooltip = ROC_ce_policy_public_tt
+    hidden_effect = {
+        ROC_ce_initialize = yes
+        add_to_variable = { var = ROC_ma_left_favor value = 8 }
+        add_to_variable = { var = ROC_ma_left_favor value = 4 }
+        subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+        ROC_ce_refresh = yes
+    }
+}
+ROC_ce_policy_market = {
+    custom_effect_tooltip = ROC_ce_policy_market_tt
+    hidden_effect = {
+        ROC_ce_initialize = yes
+        add_to_variable = { var = ROC_ma_right_favor value = 8 }
+        subtract_from_variable = { var = ROC_ma_left_favor value = 4 }
+        subtract_from_variable = { var = ROC_ma_left_favor value = 4 }
+        ROC_ce_refresh = yes
+    }
+}
+ROC_ce_focus_contribution = {
+    custom_effect_tooltip = ROC_ce_focus_contribution_tt
+    hidden_effect = {
+        ROC_ce_initialize = yes
+        subtract_from_variable = { var = ROC_ce_pressure value = 3 }
+        ROC_ce_refresh = yes
+    }
+}
+
+ROC_ce_resign = {
+    ROC_econ_remove_ministers = yes
+    clr_country_flag = ROC_ce_accountability_pending
+    set_country_flag = ROC_econ_resignation_pending
+    set_country_flag = { flag = ROC_ce_appointment_open days = 15 }
+    country_event = { id = ROC_central_economy.7 }
+}
+ROC_ce_finish_appointment = {
+    clr_country_flag = ROC_econ_resignation_pending
+    clr_country_flag = ROC_ce_appointment_open
+    clr_country_flag = ROC_ce_accountability_pending
+    set_variable = { ROC_ce_reviews_behind = 0 }
+    subtract_from_variable = { var = ROC_ce_pressure value = 15 }
+    ROC_econ_refresh_minister = yes
+    ROC_econ_refresh = yes
+    ROC_ce_refresh = yes
+}

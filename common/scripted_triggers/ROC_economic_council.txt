@@ -1,0 +1,37 @@
+ROC_econ_race_active = {
+    NOT = { has_country_flag = ROC_postwar_active }
+    ROC_has_gemingweiyuanhui = yes
+    NOT = { OR = { ROC_has_jixugeming = yes ROC_has_lunliuzuozhuang = yes ROC_has_jingchenghezuo = yes } }
+}
+ROC_econ_policy_free = {
+    NOT = { OR = { check_variable = { var = ROC_bill_stage value = 1 compare = equals } check_variable = { var = ROC_bill_stage value = 2 compare = equals } } }
+    NOT = { OR = {
+        has_decision = ROC_decision_bop_left_fcsyqy
+        has_decision = ROC_decision_bop_left_jqmysc
+        has_decision = ROC_decision_bop_left_clgq
+        has_decision = ROC_decision_bop_right_qhgh
+        has_decision = ROC_decision_bop_right_ssjm
+        has_decision = ROC_decision_bop_right_sqgyh
+        has_decision = ROC_econ_yu_pilot
+        has_decision = ROC_econ_yu_expansion
+        has_decision = ROC_econ_yan_pilot
+        has_decision = ROC_econ_yan_expansion
+        has_decision = ROC_econ_ruan_pilot
+        has_decision = ROC_econ_ruan_expansion
+        has_decision = ROC_econ_chen_pilot
+        has_decision = ROC_econ_chen_expansion
+        has_decision = ROC_econ_xiao_pilot
+        has_decision = ROC_econ_xiao_expansion
+        has_decision = ROC_econ_term_review
+    } }
+}
+ROC_econ_allied_free = {
+    NOT = { OR = {
+        has_decision = ROC_allied_worker_coordination
+        has_decision = ROC_allied_rural_cooperation
+        has_decision = ROC_allied_labor_arbitration
+        has_decision = ROC_allied_commercial_credit
+    } }
+}
+ROC_econ_left_allies_present = { ROC_ce_administration_active = yes }
+ROC_econ_right_allies_present = { ROC_ce_administration_active = yes }

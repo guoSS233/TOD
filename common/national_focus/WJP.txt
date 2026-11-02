@@ -1,0 +1,126 @@
+### 西日本联盟国策框架 ###
+focus_tree = {
+	id = WJP_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = WJP
+		}
+	}
+	default = no
+
+	# 新一年，老麻烦
+	focus = {
+		id = WJP_new_year_old_troubles
+		icon = GFX_goal_generic_national_unity
+		cost = 1
+		x = 0
+		y = 0
+		completion_reward = {
+			custom_effect_tooltip = WJP_first_stage_year_reward_tt
+			hidden_effect = {
+				WJP_first_stage_reward_year_effect = yes
+			}
+		}
+	}
+
+	# 藩会的选举
+	focus = {
+		id = WJP_han_assembly_election
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = {
+			focus = WJP_new_year_old_troubles
+		}
+		cost = 5
+		x = -2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = WJP_first_stage_han_reward_tt
+			hidden_effect = {
+				WJP_first_stage_reward_han_effect = yes
+			}
+		}
+	}
+
+	# 平衡官僚派系
+	focus = {
+		id = WJP_balance_bureaucratic_factions
+		icon = GFX_focus_generic_military_academy
+		prerequisite = {
+			focus = WJP_new_year_old_troubles
+		}
+		cost = 4
+		x = 2
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = WJP_first_stage_bureaucrats_reward_tt
+			hidden_effect = {
+				WJP_first_stage_reward_bureaucrats_effect = yes
+			}
+		}
+	}
+
+	# 联络财界
+	focus = {
+		id = WJP_contact_financial_world
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = {
+			focus = WJP_han_assembly_election
+		}
+		prerequisite = {
+			focus = WJP_balance_bureaucratic_factions
+		}
+		cost = 1
+		x = -1
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = WJP_first_stage_finance_reward_tt
+			hidden_effect = {
+				WJP_first_stage_reward_finance_effect = yes
+			}
+		}
+	}
+
+	# 以及最棘手的联盟议会
+	focus = {
+		id = WJP_closest_alliance_council
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = {
+			focus = WJP_han_assembly_election
+		}
+		prerequisite = {
+			focus = WJP_balance_bureaucratic_factions
+		}
+		cost = 1
+		x = 1
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = WJP_first_stage_parties_reward_tt
+			hidden_effect = {
+				WJP_first_stage_reward_parties_effect = yes
+			}
+		}
+	}
+
+	# 扬帆，启航！
+	focus = {
+		id = WJP_set_sail
+		icon = GFX_goal_generic_build_navy
+		prerequisite = {
+			focus = WJP_contact_financial_world
+		}
+		prerequisite = {
+			focus = WJP_closest_alliance_council
+		}
+		cost = 1
+		x = 0
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = WJP_first_stage_set_sail_reward_tt
+			hidden_effect = {
+				WJP_first_stage_reward_set_sail_effect = yes
+			}
+		}
+	}
+}

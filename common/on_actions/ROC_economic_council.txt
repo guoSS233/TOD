@@ -1,0 +1,18 @@
+on_actions = {
+    on_daily_ROC = {
+        effect = {
+            ROC = {
+                ROC_enter_postwar_tree = yes
+                if = { limit = { NOT = { ROC_econ_race_active = yes } OR = { ROC_has_jixugeming = yes ROC_has_lunliuzuozhuang = yes ROC_has_jingchenghezuo = yes } } ROC_econ_finish_race = yes }
+                ROC_ce_initialize = yes
+                ROC_econ_bootstrap = yes
+                ROC_econ_refresh = yes
+                ROC_econ_refresh_minister = yes
+                ROC_ce_daily = yes
+                ROC_bill_daily = yes
+                ROC_committee_daily = yes
+            }
+        }
+    }
+    on_monthly_ROC = { effect = { ROC = { ROC_econ_apply_monthly = yes ROC_econ_refresh = yes } } }
+}

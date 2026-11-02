@@ -1,0 +1,23 @@
+# A story may be read later, but its choices belong to this minister's next stage
+# and this term. A native mission at zero days is already due, even before its callback.
+ROC_ma_story_is_valid = {
+    ROC_ma_can_run = yes
+    has_country_flag = ROC_ma_story_pending
+    check_variable = { var = ROC_ma_clock_owner value = ROC_ma_story_owner compare = equals }
+    check_variable = { var = ROC_ce_minister_profile_id value = ROC_ma_story_owner compare = equals }
+    check_variable = { var = ROC_ma_stage value = ROC_ma_story_next_stage compare = equals }
+    NOT = { has_country_flag = ROC_ma_timeout_pending }
+    check_variable = { days_mission_timeout@ROC_decision_bop_jingjidahui > 0 }
+    OR = {
+        AND = {
+            has_active_mission = ROC_ma_current_action
+            check_variable = { days_mission_timeout@ROC_ma_current_action > 0 }
+        }
+        AND = {
+            NOT = { has_active_mission = ROC_ma_current_action }
+            has_country_flag = ROC_ma_rearm_blocked
+            NOT = { has_country_flag = ROC_ma_clock_armed }
+            check_variable = { ROC_ma_days_remaining > 0 }
+        }
+    }
+}

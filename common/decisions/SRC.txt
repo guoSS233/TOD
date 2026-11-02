@@ -773,8 +773,18 @@ SRC_xuanzhan_catagories = {
         fire_only_once = yes
 		cost = 50
 		remove_effect = {
-			annex_country = {
-				target = SCG
+			if = {
+				limit = { country_exists = SCG }
+				SCG = {
+					every_unit_leader = {
+						include_invisible = yes
+						set_nationality = SRC
+					}
+				}
+				annex_country = {
+					target = SCG
+					transfer_troops = yes
+				}
 			}
             every_state = {
                 limit = {
@@ -782,11 +792,6 @@ SRC_xuanzhan_catagories = {
                 }
                 add_core_of = SRC
                 remove_core_of = SCG
-            }
-            SCG = {
-                every_unit_leader = {
-                    set_nationality = SRC
-                }
             }
 		}
 	}

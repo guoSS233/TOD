@@ -1,0 +1,94 @@
+WJP_han_assembly_initialize_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_han_assembly_initialized } }
+		set_variable = { WJP_han_tosa_choshu = 0 }
+		set_variable = { WJP_han_tosa_satsuma = 0 }
+		set_variable = { WJP_han_hizen_choshu = 1 }
+		set_variable = { WJP_han_hizen_satsuma = 0 }
+		set_variable = { WJP_han_buzen_choshu = 1 }
+		set_variable = { WJP_han_buzen_satsuma = 0 }
+		set_variable = { WJP_han_izumo_choshu = 0 }
+		set_variable = { WJP_han_izumo_satsuma = 1 }
+		set_variable = { WJP_han_harima_choshu = 0 }
+		set_variable = { WJP_han_harima_satsuma = 0 }
+		add_ideas = WJP_han_inclination_choshu
+		set_country_flag = WJP_han_assembly_initialized
+	}
+	WJP_han_assembly_refresh_effect = yes
+	WJP_han_assembly_maintain_mission_effect = yes
+}
+
+WJP_han_assembly_refresh_effect = {
+	set_variable = { WJP_han_choshu_domain_count = 1 }
+	set_variable = { WJP_han_satsuma_domain_count = 1 }
+	if = {
+		limit = { check_variable = { WJP_han_tosa_choshu > WJP_han_tosa_satsuma } }
+		add_to_variable = { WJP_han_choshu_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_hizen_choshu > WJP_han_hizen_satsuma } }
+		add_to_variable = { WJP_han_choshu_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_buzen_choshu > WJP_han_buzen_satsuma } }
+		add_to_variable = { WJP_han_choshu_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_izumo_choshu > WJP_han_izumo_satsuma } }
+		add_to_variable = { WJP_han_choshu_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_harima_choshu > WJP_han_harima_satsuma } }
+		add_to_variable = { WJP_han_choshu_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_tosa_satsuma > WJP_han_tosa_choshu } }
+		add_to_variable = { WJP_han_satsuma_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_hizen_satsuma > WJP_han_hizen_choshu } }
+		add_to_variable = { WJP_han_satsuma_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_buzen_satsuma > WJP_han_buzen_choshu } }
+		add_to_variable = { WJP_han_satsuma_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_izumo_satsuma > WJP_han_izumo_choshu } }
+		add_to_variable = { WJP_han_satsuma_domain_count = 1 }
+	}
+	if = {
+		limit = { check_variable = { WJP_han_harima_satsuma > WJP_han_harima_choshu } }
+		add_to_variable = { WJP_han_satsuma_domain_count = 1 }
+	}
+	set_variable = { WJP_han_neutral_domain_count = 7 }
+	subtract_from_variable = { WJP_han_neutral_domain_count = WJP_han_choshu_domain_count }
+	subtract_from_variable = { WJP_han_neutral_domain_count = WJP_han_satsuma_domain_count }
+}
+
+WJP_han_assembly_resolve_effect = {
+	WJP_han_assembly_refresh_effect = yes
+	if = {
+		limit = { check_variable = { WJP_han_choshu_domain_count > WJP_han_satsuma_domain_count } }
+		remove_ideas = WJP_han_inclination_satsuma
+		add_ideas = WJP_han_inclination_choshu
+	}
+	else_if = {
+		limit = { check_variable = { WJP_han_satsuma_domain_count > WJP_han_choshu_domain_count } }
+		remove_ideas = WJP_han_inclination_choshu
+		add_ideas = WJP_han_inclination_satsuma
+	}
+	WJP_han_assembly_refresh_effect = yes
+}
+
+
+# Repeated timeout activation is explicit; daily/startup repair never resets an active timer.
+WJP_han_assembly_maintain_mission_effect = {
+	if = {
+		limit = {
+			has_country_flag = WJP_han_assembly_initialized
+			NOT = { has_active_mission = WJP_han_assembly_leadership_resolution }
+		}
+		activate_mission = WJP_han_assembly_leadership_resolution
+	}
+}

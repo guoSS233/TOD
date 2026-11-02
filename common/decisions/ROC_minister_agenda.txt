@@ -1,0 +1,520 @@
+ROC_economic_administration = {
+    ROC_ma_current_action = {
+        icon = GFX_decision_generic_political_address
+        activation = {
+            ROC_ma_can_run = yes
+            check_variable = { ROC_ma_clock_owner > 0 }
+            check_variable = { ROC_ma_stage > 0 }
+            check_variable = { ROC_ma_days_remaining > 0 }
+            check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            NOT = { has_country_flag = ROC_ma_rearm_blocked }
+        }
+        visible = {
+            ROC_ma_can_run = yes
+            check_variable = { ROC_ma_clock_owner > 0 }
+            check_variable = { ROC_ma_stage > 0 }
+            check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals }
+            check_variable = { var = ROC_ma_stage value = 7 compare = less_than }
+        }
+        cancel_if_not_visible = no
+        available = {
+            hidden_trigger = { always = no }
+        }
+        days_mission_timeout = ROC_ma_days_remaining
+        fire_only_once = no
+        priority = 10
+        timeout_effect = {
+            custom_effect_tooltip = ROC_ma_current_action_complete_tt
+            hidden_effect = { ROC_ma_timeout = yes }
+        }
+    }
+    ROC_ma_yu_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yu_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yu_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yu_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yu_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yu_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_yu_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yu_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_yu_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yu_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yu_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yu_2_decision_tt
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yu_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_cooperative_procurement_tt
+                hidden_effect = { ROC_ma_policy_adopt_cooperative_procurement = yes }
+            }
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yu_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yu_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_yu_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yu_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_yan_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yan_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yan_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yan_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yan_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_yan_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yan_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_yan_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yan_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yan_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yan_2_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yan_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_yan_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yan_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_ruan_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_ruan_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_ruan_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_ruan_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_ruan_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_ruan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_ruan_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_ruan_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_ruan_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_ruan_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_ruan_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_ruan_2_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_ruan_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_ruan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_ruan_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_ruan_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_chen_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_chen_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_chen_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_chen_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_chen_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_chen_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_chen_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_chen_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_chen_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_chen_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_chen_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_chen_2_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_chen_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_chen_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_chen_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_chen_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_xiao_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_xiao_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_xiao_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_xiao_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_xiao_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_xiao_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_xiao_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_xiao_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_xiao_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_xiao_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_xiao_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_xiao_2_decision_tt
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_xiao_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_market_distribution_tt
+                hidden_effect = { ROC_ma_policy_adopt_market_distribution = yes }
+            }
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_xiao_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_xiao_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_xiao_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_xiao_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_agriculture_collectivized_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_agriculture_collectivized = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_adopt_agriculture_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_collectivized = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_collectivized }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 110
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_collectivized = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_collectivized }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_agriculture_collectivized_tt
+                hidden_effect = { ROC_ma_policy_adopt_agriculture_collectivized = yes }
+            }
+        }
+    }
+    ROC_ma_agriculture_household_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_agriculture_household = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_adopt_agriculture_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_household = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_household }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 110
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_household = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_household }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_agriculture_household_tt
+                hidden_effect = { ROC_ma_policy_adopt_agriculture_household = yes }
+            }
+        }
+    }
+}

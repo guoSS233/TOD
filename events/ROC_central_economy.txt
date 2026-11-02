@@ -1,0 +1,245 @@
+add_namespace = ROC_central_economy
+
+country_event = {
+    id = ROC_central_economy.1
+    title = ROC_central_economy.1.t
+    desc = ROC_central_economy.1.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = { tag = ROC ROC_ce_current_project = yes has_country_flag = ROC_ce_event_1_pending }
+
+    option = {
+        name = ROC_central_economy.1.c
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.1.c_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_1_pending   } clr_country_flag = ROC_ce_event_1_pending  add_to_variable = { var = ROC_ma_center_favor value = 5 } subtract_from_variable = { var = ROC_ma_left_favor value = 10 } subtract_from_variable = { var = ROC_ma_left_favor value = 10 } add_to_variable = { var = ROC_ce_pressure value = 8 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.1.a
+        trigger = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_1_pending NOT = { has_political_power < 30 }  }
+        ai_chance = { factor = 3 }
+        custom_effect_tooltip = ROC_central_economy.1.a_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_1_pending NOT = { has_political_power < 30 }  } clr_country_flag = ROC_ce_event_1_pending add_political_power = -30 add_to_variable = { var = ROC_ma_center_favor value = 10 } add_to_variable = { var = ROC_ma_left_favor value = 8 } subtract_from_variable = { var = ROC_ce_pressure value = 5 } set_country_flag = { flag = ROC_ce_funded days = 90 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.1.b
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.1.b_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_1_pending   } clr_country_flag = ROC_ce_event_1_pending  add_to_variable = { var = ROC_ce_delay_days value = 14 } add_to_variable = { var = ROC_ma_left_favor value = 12 } add_to_variable = { var = ROC_ma_right_favor value = 10 } ROC_ce_refresh = yes } }
+    }
+
+}
+
+country_event = {
+    id = ROC_central_economy.2
+    title = ROC_central_economy.2.t
+    desc = ROC_central_economy.2.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = { tag = ROC ROC_ce_current_project = yes has_country_flag = ROC_ce_event_2_pending }
+
+    option = {
+        name = ROC_central_economy.2.c
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.2.c_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_2_pending   } clr_country_flag = ROC_ce_event_2_pending  add_to_variable = { var = ROC_ma_right_favor value = 10 } subtract_from_variable = { var = ROC_ma_center_favor value = 5 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.2.a
+        trigger = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_2_pending NOT = { has_political_power < 15 }  }
+        ai_chance = { factor = 3 }
+        custom_effect_tooltip = ROC_central_economy.2.a_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_2_pending NOT = { has_political_power < 15 }  } clr_country_flag = ROC_ce_event_2_pending add_political_power = -15 add_to_variable = { var = ROC_ma_left_favor value = 10 } add_to_variable = { var = ROC_ma_left_favor value = 5 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.2.b
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.2.b_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_2_pending   } clr_country_flag = ROC_ce_event_2_pending  add_to_variable = { var = ROC_ce_delay_days value = 7 } add_to_variable = { var = ROC_ma_center_favor value = 15 } subtract_from_variable = { var = ROC_ma_right_favor value = 5 } ROC_ce_refresh = yes } }
+    }
+
+}
+
+country_event = {
+    id = ROC_central_economy.3
+    title = ROC_central_economy.3.t
+    desc = ROC_central_economy.3.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = { tag = ROC ROC_ce_current_project = yes has_country_flag = ROC_ce_event_3_pending }
+
+    option = {
+        name = ROC_central_economy.3.c
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.3.c_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_3_pending   } clr_country_flag = ROC_ce_event_3_pending  add_to_variable = { var = ROC_ma_left_favor value = 8 } subtract_from_variable = { var = ROC_ma_right_favor value = 10 } set_country_flag = { flag = ROC_ce_contractor_friction days = 90 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.3.a
+        ai_chance = { factor = 3 }
+        custom_effect_tooltip = ROC_central_economy.3.a_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_3_pending   } clr_country_flag = ROC_ce_event_3_pending  if = { limit = { NOT = { has_country_flag = ROC_ce_acceptance_reform } } add_to_variable = { var = ROC_ce_delay_days value = 7 } } add_to_variable = { var = ROC_ma_right_favor value = 15 } subtract_from_variable = { var = ROC_ce_pressure value = 8 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.3.b
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.3.b_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_3_pending   } clr_country_flag = ROC_ce_event_3_pending  set_country_flag = ROC_ce_false_report set_country_flag = { flag = ROC_ce_report_delay days = 30 } add_to_variable = { var = ROC_ma_center_favor value = 10 } add_to_variable = { var = ROC_ce_pressure value = 5 } ROC_ce_refresh = yes } }
+    }
+
+}
+
+country_event = {
+    id = ROC_central_economy.4
+    title = ROC_central_economy.4.t
+    desc = ROC_central_economy.4.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = { tag = ROC ROC_ce_current_project = yes has_country_flag = ROC_ce_event_4_pending }
+
+    option = {
+        name = ROC_central_economy.4.c
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.4.c_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_4_pending   } clr_country_flag = ROC_ce_event_4_pending  add_to_variable = { var = ROC_ce_delay_days value = 5 } subtract_from_variable = { var = ROC_ma_center_favor value = 10 } subtract_from_variable = { var = ROC_ma_right_favor value = 10 } add_to_variable = { var = ROC_ce_pressure value = 10 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.4.a
+        trigger = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_4_pending NOT = { has_political_power < 25 }  }
+        ai_chance = { factor = 3 }
+        custom_effect_tooltip = ROC_central_economy.4.a_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_4_pending NOT = { has_political_power < 25 }  } clr_country_flag = ROC_ce_event_4_pending add_political_power = -25 add_to_variable = { var = ROC_ma_right_favor value = 15 } subtract_from_variable = { var = ROC_ma_left_favor value = 5 } subtract_from_variable = { var = ROC_ce_pressure value = 5 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.4.b
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.4.b_tt
+        hidden_effect = { if = { limit = { ROC_ce_current_project = yes has_country_flag = ROC_ce_event_4_pending   } clr_country_flag = ROC_ce_event_4_pending  add_to_variable = { var = ROC_ce_delay_days value = 10 } add_to_variable = { var = ROC_ma_left_favor value = 15 } add_to_variable = { var = ROC_ma_left_favor value = 10 } subtract_from_variable = { var = ROC_ma_right_favor value = 15 } ROC_ce_refresh = yes } }
+    }
+
+}
+
+country_event = {
+    id = ROC_central_economy.5
+    title = ROC_central_economy.5.t
+    desc = ROC_central_economy.5.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = { tag = ROC has_active_mission = ROC_decision_bop_jingjidahui has_country_flag = ROC_ce_accountability_pending NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } }
+
+    option = {
+        name = ROC_central_economy.5.c
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.5.c_tt
+        hidden_effect = { if = { limit = { has_active_mission = ROC_decision_bop_jingjidahui has_country_flag = ROC_ce_accountability_pending NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending }   } clr_country_flag = ROC_ce_accountability_pending  ROC_ce_resign = yes ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.5.a
+        trigger = { has_active_mission = ROC_decision_bop_jingjidahui has_country_flag = ROC_ce_accountability_pending NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } NOT = { has_political_power < 25 }  }
+        ai_chance = { factor = 3 }
+        custom_effect_tooltip = ROC_central_economy.5.a_tt
+        hidden_effect = { if = { limit = { has_active_mission = ROC_decision_bop_jingjidahui has_country_flag = ROC_ce_accountability_pending NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } NOT = { has_political_power < 25 }  } clr_country_flag = ROC_ce_accountability_pending add_political_power = -25 subtract_from_variable = { var = ROC_ce_pressure value = 20 } add_to_variable = { var = ROC_ma_left_favor value = 10 } add_to_variable = { var = ROC_ma_right_favor value = 10 } if = { limit = { ROC_ce_current_project = yes } add_to_variable = { var = ROC_ce_delay_days value = 7 } } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.5.b
+        trigger = { has_active_mission = ROC_decision_bop_jingjidahui has_country_flag = ROC_ce_accountability_pending NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } NOT = { has_political_power < 40 } NOT = { has_country_flag = ROC_ce_grace_used } }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.5.b_tt
+        hidden_effect = { if = { limit = { has_active_mission = ROC_decision_bop_jingjidahui has_country_flag = ROC_ce_accountability_pending NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } NOT = { has_political_power < 40 } NOT = { has_country_flag = ROC_ce_grace_used } } clr_country_flag = ROC_ce_accountability_pending add_political_power = -40 set_country_flag = ROC_ce_grace_used set_variable = { ROC_ce_grace_reviews = 1 } subtract_from_variable = { var = ROC_ce_pressure value = 15 } ROC_ce_refresh = yes } }
+    }
+
+}
+
+country_event = {
+    id = ROC_central_economy.6
+    title = ROC_central_economy.6.t
+    desc = ROC_central_economy.6.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = { tag = ROC ROC_ce_administration_active = yes has_country_flag = ROC_ce_event_6_pending }
+
+    option = {
+        name = ROC_central_economy.6.c
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.6.c_tt
+        hidden_effect = { if = { limit = { ROC_ce_administration_active = yes has_country_flag = ROC_ce_event_6_pending   } clr_country_flag = ROC_ce_event_6_pending  add_to_variable = { var = ROC_ce_pressure value = 15 } subtract_from_variable = { var = ROC_ma_right_favor value = 15 } if = { limit = { ROC_ce_current_project = yes } add_to_variable = { var = ROC_ce_delay_days value = 14 } } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.6.a
+        trigger = { ROC_ce_administration_active = yes has_country_flag = ROC_ce_event_6_pending NOT = { has_political_power < 25 }  }
+        ai_chance = { factor = 3 }
+        custom_effect_tooltip = ROC_central_economy.6.a_tt
+        hidden_effect = { if = { limit = { ROC_ce_administration_active = yes has_country_flag = ROC_ce_event_6_pending NOT = { has_political_power < 25 }  } clr_country_flag = ROC_ce_event_6_pending add_political_power = -25 add_to_variable = { var = ROC_ma_right_favor value = 15 } subtract_from_variable = { var = ROC_ma_center_favor value = 5 } subtract_from_variable = { var = ROC_ce_pressure value = 10 } ROC_ce_refresh = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.6.b
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.6.b_tt
+        hidden_effect = { if = { limit = { ROC_ce_administration_active = yes has_country_flag = ROC_ce_event_6_pending   } clr_country_flag = ROC_ce_event_6_pending  add_stability = -0.02 subtract_from_variable = { var = ROC_ma_left_favor value = 15 } add_to_variable = { var = ROC_ce_pressure value = 10 } ROC_ce_refresh = yes } }
+    }
+
+}
+
+country_event = {
+    id = ROC_central_economy.7
+    title = ROC_central_economy.7.t
+    desc = ROC_central_economy.7.desc
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = { tag = ROC has_country_flag = ROC_econ_resignation_pending has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } }
+
+    option = {
+        name = ROC_central_economy.7.a
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.7.a_tt
+        hidden_effect = { if = { limit = { has_country_flag = ROC_econ_resignation_pending has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } } ROC_econ_remove_ministers = yes add_ideas = ROC_idea_YuShude ROC_ce_finish_appointment = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.7.b
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.7.b_tt
+        hidden_effect = { if = { limit = { has_country_flag = ROC_econ_resignation_pending has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } } ROC_econ_remove_ministers = yes add_ideas = ROC_idea_YanYangchu ROC_ce_finish_appointment = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.7.c
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.7.c_tt
+        hidden_effect = { if = { limit = { has_country_flag = ROC_econ_resignation_pending has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } } ROC_econ_remove_ministers = yes add_ideas = ROC_idea_RuanXiaoxian ROC_ce_finish_appointment = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.7.d
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.7.d_tt
+        hidden_effect = { if = { limit = { has_country_flag = ROC_econ_resignation_pending has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } } ROC_econ_remove_ministers = yes add_ideas = ROC_idea_ChenZanxian ROC_ce_finish_appointment = yes } }
+    }
+
+    option = {
+        name = ROC_central_economy.7.e
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_central_economy.7.e_tt
+        hidden_effect = { if = { limit = { has_country_flag = ROC_econ_resignation_pending has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } } ROC_econ_remove_ministers = yes add_ideas = ROC_idea_XiaoZheng ROC_ce_finish_appointment = yes } }
+    }
+
+}

@@ -638,9 +638,9 @@ focus_tree = {
 	focus = {
 		id = SIC_yonglizhengtong
 		icon = GFX_SIC_yonglizhengtong
+		mutually_exclusive = { focus = SIC_qingzhengxi_sichuan focus = SIC_wubei_xinan_judian }
 		x = 47
 		y = 1
-		mutually_exclusive = { focus = SIC_zanshibaochizhongli}
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -648,9 +648,9 @@ focus_tree = {
 		cost = 1
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_establishment_won }
 		
-		completion_reward = { news_event = chinese_events_sic.2 }
+		completion_reward = { set_country_flag = SIC_zunwangtaojian news_event = chinese_events_sic.2 }
 	}
 	#确保军队忠诚
 	focus = {
@@ -690,7 +690,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_establishment_won }
 		
 		completion_reward = { 
 			add_ideas = SIC_weiguojingzhong
@@ -772,7 +772,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_establishment_won }
 		
 		completion_reward = { 
 			add_stability = 0.1
@@ -806,7 +806,7 @@ focus_tree = {
 				}
 			}
 		}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_establishment_won }
 		
 		completion_reward = { create_wargoal = { target = XIN type = annex_everything } }
 	}
@@ -834,7 +834,7 @@ focus_tree = {
 				}
 			}
 		}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_establishment_won }
 		
 		completion_reward = { 
 			add_war_support = 0.1
@@ -868,6 +868,8 @@ focus_tree = {
 			}
 		}
 		available = {
+			SIC_politics_can_govern_trigger = yes
+			has_country_flag = SIC_politics_establishment_won
 			NOT = {
 				country_exists = XBJ
 			}
@@ -882,7 +884,6 @@ focus_tree = {
 		icon = GFX_SIC_zanshibaochizhongli
 		x = 51
 		y = 1
-		mutually_exclusive = { focus = SIC_yonglizhengtong }
 		cancel_if_invalid = yes
 		continue_if_invalid = no
 		available_if_capitulated = no
@@ -890,9 +891,9 @@ focus_tree = {
 		cost = 1
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { SIC_politics_can_start_trigger = yes NOT = { has_country_flag = SIC_politics_resolved } }
 		
-		completion_reward = { news_event = chinese_events_sic.1 }
+		completion_reward = { SIC_politics_start_neutral_effect = yes news_event = chinese_events_sic.1 }
 	}
 	#四川防务会议
 	focus = {
@@ -972,7 +973,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_wubei_won }
 		
 		completion_reward = {
 			diplomatic_relation = {
@@ -997,7 +998,7 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_wubei_won }
 		
 		completion_reward = { 
 			diplomatic_relation = {
@@ -1062,7 +1063,7 @@ focus_tree = {
 				strength_ratio = { tag = SRC ratio < 1.75 }
 			}
 		}
-		available = {}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_wubei_won }
 		
 		completion_reward = {
 			create_wargoal = { target = GOS type = annex_everything }
@@ -1562,16 +1563,11 @@ focus_tree = {
 	focus = {
 		id = SIC_qingzhengxi_sichuan
 		icon = GFX_SIC_wendingchuanneijushi
-		prerequisite = { focus = SIC_tianfuzhizhi }
-		mutually_exclusive = { focus = SIC_yonglizhengtong focus = SIC_zanshibaochizhongli focus = SIC_wubei_xinan_judian }
+		mutually_exclusive = { focus = SIC_wubei_xinan_judian focus = SIC_yonglizhengtong }
 		x = 20
 		y = 6
 		cost = 5
-		available = {
-			NOT = { country_exists = SCG }
-			check_variable = { SIC.minzhong < 80 }
-			check_variable = { SIC.gongye < 80 }
-		}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_qingzheng_won }
 		ai_will_do = { factor = 10 }
 		completion_reward = {
 			set_country_flag = SIC_qingzhengxi_shiyan_active
@@ -1857,15 +1853,11 @@ focus_tree = {
 	focus = {
 		id = SIC_wubei_xinan_judian
 		icon = GFX_SIC_chuanyuyili
-		prerequisite = { focus = SIC_chuanyuyili }
+		mutually_exclusive = { focus = SIC_qingzhengxi_sichuan focus = SIC_yonglizhengtong }
 		x = 30
 		y = 6
 		cost = 5
-		available = {
-			NOT = { country_exists = SCG }
-			check_variable = { SIC.minzhong < 80 }
-			check_variable = { SIC.gongye < 80 }
-		}
+		available = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_wubei_won }
 		ai_will_do = { factor = 8 }
 		completion_reward = {
 			set_country_flag = SIC_wubei_route_active

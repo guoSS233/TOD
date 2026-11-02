@@ -1,0 +1,68 @@
+scripted_gui = {
+    WJP_alliance_parliament_entry = {
+        context_type = player_context
+        parent_window_token = politics_tab
+        window_name = "WJP_parliament_entry_window"
+        visible = { tag = WJP is_ai = no }
+        effects = {
+            WJP_parliament_entry_button_click = {
+                if = {
+                    limit = { NOT = { has_country_flag = WJP_alliance_parliament_open } }
+                    WJP_parliament_initialize_effect = yes
+                    WJP_parliament_bill_maintenance_effect = yes
+                    set_country_flag = WJP_alliance_parliament_open
+                }
+                else = { clr_country_flag = WJP_alliance_parliament_open }
+            }
+        }
+    }
+    WJP_alliance_parliament_page = {
+        context_type = player_context
+        # Independent main window, matching SRC_unified_shell. The 1144px page
+        # extends outside the 550px politics window and must not inherit its clip.
+        window_name = "WJP_parliament_page_window"
+        visible = {
+            tag = WJP
+            is_ai = no
+            has_country_flag = WJP_alliance_parliament_open
+        }
+        properties = {
+            WJP_parliament_seat_chart = {
+                frame = WJP_parliament_seat_frame
+            }
+        }
+        triggers = {
+            WJP_parliament_submit_button_visible = {
+                WJP_parliament_bill_can_submit = yes
+            }
+            WJP_parliament_submit_label_visible = {
+                WJP_parliament_bill_can_submit = yes
+            }
+            WJP_parliament_action_status_label_visible = {
+                NOT = { WJP_parliament_bill_can_submit = yes }
+            }
+            WJP_parliament_history_empty_visible = {
+                NOT = { has_country_flag = WJP_parliament_budget_archived }
+            }
+            WJP_parliament_history_bill_title_visible = {
+                has_country_flag = WJP_parliament_budget_archived
+            }
+            WJP_parliament_history_year_line_visible = {
+                has_country_flag = WJP_parliament_budget_archived
+            }
+            WJP_parliament_history_plan_line_visible = {
+                has_country_flag = WJP_parliament_budget_archived
+            }
+            WJP_parliament_history_budget_line_visible = {
+                has_country_flag = WJP_parliament_budget_archived
+            }
+            WJP_parliament_submit_button_click_enabled = {
+                WJP_parliament_bill_can_submit = yes
+            }
+        }
+        effects = {
+            WJP_parliament_close_button_click = { clr_country_flag = WJP_alliance_parliament_open }
+            WJP_parliament_submit_button_click = { WJP_economy_submit_bill_effect = yes }
+        }
+    }
+}

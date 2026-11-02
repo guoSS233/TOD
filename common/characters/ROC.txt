@@ -249,6 +249,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_zhangxiaozhun = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = army
@@ -265,6 +266,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_zhangxiaozhun = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = army_chief
             ledger = army
@@ -281,6 +283,7 @@ characters = {
             }
         }
         field_marshal = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
 			desc = ROC_zhangxiaozhun_commander_desc
             traits = {
                 offensive_doctrine
@@ -297,6 +300,7 @@ characters = {
             logistics_skill = 3
         }
         advisor = {
+            visible = { OR = { ROC_zhangxiaozhun = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #人海战术理论家
             slot = theorist
             ledger = army
@@ -325,6 +329,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_zhangshaozeng = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = army_chief
             ledger = army
@@ -341,6 +346,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_zhangshaozeng = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = army
@@ -353,8 +359,8 @@ characters = {
             }
             available = {
                 OR = {
-                    has_completed_focus = jizhidehuoli
-                    has_completed_focus = yuanjulihuoliyazhi
+                    ROC_has_jizhidehuoli = yes
+                    ROC_has_yuanjulihuoliyazhi = yes
                 }
             }
             cost = 150
@@ -363,6 +369,7 @@ characters = {
             }
         }
         field_marshal = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
 			desc = ROC_zhangshaozeng_commander_desc
             traits = {
                 adaptable
@@ -377,6 +384,7 @@ characters = {
             logistics_skill = 4
         }
         advisor = {
+            visible = { OR = { ROC_zhangshaozeng = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #优势火力理论家
             slot = theorist
             ledger = army
@@ -405,6 +413,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_dengkeng = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = army
@@ -417,8 +426,8 @@ characters = {
             }
             available = {
                 OR = {
-                    has_completed_focus = qianghuatezhongzuozhan
-                    has_completed_focus = xiandaihuadesanbingzuozhanlinian
+                    ROC_has_qianghuatezhongzuozhan = yes
+                    ROC_has_xiandaihuadesanbingzuozhanlinian = yes
                 }
             }
             cost = 150
@@ -427,6 +436,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_dengkeng = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = army_chief
             ledger = army
@@ -443,6 +453,7 @@ characters = {
             }
         }
         field_marshal = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
 			desc = ROC_dengkeng_commander_desc
             traits = {
                 war_hero
@@ -469,6 +480,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_lijishen = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = army_chief
             ledger = army
@@ -485,6 +497,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 organizer
                 career_officer
@@ -510,6 +523,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_chenmingshu = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = army_chief
             ledger = army
@@ -526,6 +540,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 trait_cautious
                 commando
@@ -550,6 +565,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_yuzuobai = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = army_chief
             ledger = army
@@ -566,6 +582,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 inflexible_strategist
                 trait_mountaineer
@@ -589,6 +606,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 trait_mountaineer
                 war_hero
@@ -613,6 +631,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 trait_mountaineer
                 war_hero
@@ -637,6 +656,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_limingrui = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = army
@@ -653,6 +673,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 war_hero
                 harsh_leader
@@ -676,6 +697,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_jiangxianyun = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = army
@@ -692,6 +714,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 brilliant_strategist
                 armor_officer
@@ -703,6 +726,7 @@ characters = {
             logistics_skill = 3
         }
         advisor = {
+            visible = { OR = { ROC_jiangxianyun = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #闪电战理论家
             slot = theorist
             ledger = army
@@ -731,6 +755,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 harsh_leader
                 infantry_officer
@@ -755,6 +780,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 infantry_officer
                 urban_assault_specialist
@@ -778,6 +804,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 brilliant_strategist
                 commando
@@ -801,6 +828,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 trait_engineer
                 trait_mountaineer
@@ -824,6 +852,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 cavalry_leader
             }
@@ -846,6 +875,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 brilliant_strategist
             }
@@ -868,6 +898,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 infantry_leader
                 organizer
@@ -891,6 +922,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 infantry_leader
                 harsh_leader
@@ -914,6 +946,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 career_officer
             }
@@ -936,6 +969,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 career_officer
                 trait_cautious
@@ -959,6 +993,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 career_officer
                 trait_mountaineer
@@ -982,6 +1017,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 inflexible_strategist
                 jungle_rat
@@ -1005,6 +1041,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 skilled_staffer
             }
@@ -1027,6 +1064,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 infantry_leader
                 career_officer
@@ -1050,6 +1088,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 cavalry_leader
                 career_officer
@@ -1073,6 +1112,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 infantry_leader
                 jungle_rat
@@ -1096,6 +1136,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 armor_officer
                 inflexible_strategist
@@ -1119,6 +1160,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 cavalry_leader
             }
@@ -1141,6 +1183,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 trait_engineer
                 trait_mountaineer
@@ -1164,6 +1207,7 @@ characters = {
             }
         }
         corps_commander = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 skilled_staffer
                 commando
@@ -1186,6 +1230,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 bold
                 aviation_enthusiast
@@ -1200,6 +1245,7 @@ characters = {
             logistics_skill = 4
         }
         advisor = {
+            visible = { OR = { ROC_linjianzhang = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = navy
@@ -1227,6 +1273,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_chengbiguang = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = navy
@@ -1268,6 +1315,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 big_guns_expert
                 ground_pounder
@@ -1280,6 +1328,7 @@ characters = {
             logistics_skill = 3
         }
         advisor = {
+            visible = { OR = { ROC_yangshuzhuang = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = navy
@@ -1307,6 +1356,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 politically_connected
                 destroyer_leader
@@ -1319,6 +1369,7 @@ characters = {
             logistics_skill = 1
         }
         advisor = {
+            visible = { OR = { ROC_chenshaokuan = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #海军部长
             slot = navy_chief
             ledger = navy
@@ -1368,6 +1419,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 bold
                 ironside
@@ -1380,6 +1432,7 @@ characters = {
             logistics_skill = 2
         }
         advisor = {
+            visible = { OR = { ROC_lizhilong = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #海军部长
             slot = navy_chief
             ledger = navy
@@ -1407,6 +1460,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 chief_engineer
                 superior_tactician
@@ -1429,6 +1483,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 career_officer
                 seawolf
@@ -1451,6 +1506,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 naval_lineage
                 aviation_enthusiast
@@ -1473,6 +1529,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_yangxianyi = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #空军部长
             slot = air_chief
             ledger = air
@@ -1482,7 +1539,7 @@ characters = {
             }
             available = {
                 OR = {
-                    has_completed_focus = hailujiezaiwomentiankongzhixia
+                    ROC_has_hailujiezaiwomentiankongzhixia = yes
                 }
             }
             traits = {
@@ -1505,6 +1562,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_huangguangrui = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #空军部长
             slot = air_chief
             ledger = air
@@ -1521,6 +1579,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_huangguangrui = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = air
@@ -1548,6 +1607,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_wangbi = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #空军部长
             slot = air_chief
             ledger = air
@@ -1564,6 +1624,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_wangbi = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = air
@@ -1591,6 +1652,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_changqiankun = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #空军部长
             slot = air_chief
             ledger = air
@@ -1607,6 +1669,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_changqiankun = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #总司令
             slot = high_command
             ledger = air
@@ -1688,6 +1751,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_liufuji = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #决战计划理论家
             slot = theorist
             ledger = army
@@ -1713,6 +1777,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 gentlemanly
                 naval_lineage
@@ -1727,6 +1792,7 @@ characters = {
             logistics_skill = 1
         }
         advisor = {
+            visible = { OR = { ROC_zhaosheng = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #海军部长
             slot = navy_chief
             ledger = navy
@@ -1752,6 +1818,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 air_controller
                 flight_deck_manager
@@ -1764,6 +1831,7 @@ characters = {
             logistics_skill = 2
         }
         advisor = {
+            visible = { OR = { ROC_tangrongbing = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             #海军部长
             slot = theorist
             ledger = navy
@@ -1789,6 +1857,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 air_controller
                 flight_deck_manager
@@ -1810,6 +1879,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 big_guns_expert
                 battleship_adherent
@@ -1831,6 +1901,7 @@ characters = {
             }
         }
         navy_leader = {
+            visible = { OR = { has_character_flag = ROC_guangzhou_uprising_available ROC = { has_country_flag = guangzhouqiyi_flag } } }
             traits = {
                 search_pattern_expert
                 spotter
@@ -1851,6 +1922,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_caozhongyuan = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             slot = theorist
             ledger = navy
             idea_token = ROC_caozhongyuan
@@ -1875,6 +1947,7 @@ characters = {
             }
         }
         advisor = {
+            visible = { OR = { ROC_anjiaju = { has_character_flag = ROC_guangzhou_uprising_available } ROC = { has_country_flag = guangzhouqiyi_flag } } }
             slot = theorist
             ledger = air
             idea_token = ROC_anjiaju

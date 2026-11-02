@@ -1,0 +1,16 @@
+# Existing winners may continue governing during and after the civil war.
+SIC_politics_can_govern_trigger = {
+	tag = SIC
+	country_exists = SIC
+}
+# New co-governance never restarts after a red uprising, even if SCG later disappears.
+SIC_politics_can_start_trigger = {
+	SIC_politics_can_govern_trigger = yes
+	NOT = { country_exists = SCG }
+	NOT = { has_country_flag = SIC_red_uprising_started }
+}
+SIC_politics_active_trigger = {
+	SIC_politics_can_start_trigger = yes
+	has_country_flag = SIC_politics_started
+	NOT = { has_country_flag = SIC_politics_resolved }
+}

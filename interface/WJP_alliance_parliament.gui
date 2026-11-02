@@ -1,0 +1,465 @@
+guiTypes = {
+	containerWindowType = {
+		name = "WJP_parliament_entry_window"
+		position = { x = 300 y = 9 }
+		size = { width = 150 height = 36 }
+		moveable = no
+		clipping = no
+		buttonType = {
+			name = "WJP_parliament_entry_button"
+			quadTextureSprite = "GFX_button_123x34"
+			position = { x = 0 y = 0 }
+			pdx_tooltip = "WJP_parliament_entry_tt"
+		}
+		instantTextboxType = {
+			name = "WJP_parliament_entry_label"
+			position = { x = 0 y = 6 }
+			font = "hoi_16mbs"
+			text = "WJP_parliament_entry"
+			format = center
+			maxWidth = 123
+			maxHeight = 24
+			alwaystransparent = yes
+		}
+	}
+	containerWindowType = {
+		name = "WJP_parliament_page_window"
+		position = { x = 196 y = 128 }
+		size = { width = 1144 height = 620 }
+		moveable = no
+		clipping = no
+		background = { name = "WJP_parliament_background" quadTextureSprite = "GFX_welcome_bg" }
+		containerWindowType = {
+			name = "WJP_parliament_description_panel"
+			position = { x = 22 y = 46 }
+			size = { width = 1100 height = 124 }
+			background = { name = "WJP_parliament_description_background" quadTextureSprite = "GFX_BusinessHub_view_button_background_2" }
+			instantTextboxType = {
+				name = "WJP_parliament_title"
+				position = { x = 28 y = 28 }
+				font = "hoi_20bs"
+				text = "WJP_parliament_title"
+				format = left
+				maxWidth = 980
+				maxHeight = 24
+			}
+			buttonType = {
+				name = "WJP_parliament_close_button"
+				position = { x = 1040 y = 28 }
+				quadTextureSprite = "GFX_closebutton"
+				clicksound = click_close
+				pdx_tooltip = "WJP_parliament_close_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_description"
+				position = { x = 28 y = 56 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_description"
+				format = left
+				maxWidth = 980
+				maxHeight = 40
+			}
+		}
+		containerWindowType = {
+			name = "WJP_parliament_left_panel"
+			position = { x = 22 y = 178 }
+			size = { width = 228 height = 420 }
+			clipping = no
+			background = { name = "WJP_parliament_left_background" quadTextureSprite = "GFX_BusinessHub_view_button_background_2" }
+			instantTextboxType = {
+				name = "WJP_parliament_list_header"
+				position = { x = 28 y = 28 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_list_header"
+				format = left
+				maxWidth = 172
+				maxHeight = 22
+			}
+			iconType = {
+				name = "WJP_parliament_swatch_free_society"
+				position = { x = 28 y = 60 }
+				spriteType = "GFX_WJP_parliament_free_society_swatch"
+				pdx_tooltip = "WJP_parliament_party_free_society_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_party_free_society"
+				position = { x = 50 y = 60 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_party_free_society"
+				format = left
+				maxWidth = 150
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_party_free_society_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_seats_free_society"
+				position = { x = 28 y = 80 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_seats_free_society"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_free_society_leader"
+				position = { x = 28 y = 100 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_free_society_leader"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_free_society_leader_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_attitude_free_society"
+				position = { x = 28 y = 120 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_attitude_free_society_line"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+			iconType = {
+				name = "WJP_parliament_swatch_progressive_association"
+				position = { x = 28 y = 140 }
+				spriteType = "GFX_WJP_parliament_progressive_association_swatch"
+				pdx_tooltip = "WJP_parliament_party_progressive_association_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_party_progressive_association"
+				position = { x = 50 y = 140 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_party_progressive_association"
+				format = left
+				maxWidth = 150
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_party_progressive_association_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_seats_progressive_association"
+				position = { x = 28 y = 160 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_seats_progressive_association"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_progressive_association_leader"
+				position = { x = 28 y = 180 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_progressive_association_leader"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_progressive_association_leader_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_attitude_progressive_association"
+				position = { x = 28 y = 200 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_attitude_progressive_association_line"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+			iconType = {
+				name = "WJP_parliament_swatch_national_renewal_league"
+				position = { x = 28 y = 220 }
+				spriteType = "GFX_WJP_parliament_national_renewal_league_swatch"
+				pdx_tooltip = "WJP_parliament_party_national_renewal_league_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_party_national_renewal_league"
+				position = { x = 50 y = 220 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_party_national_renewal_league"
+				format = left
+				maxWidth = 150
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_party_national_renewal_league_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_seats_national_renewal_league"
+				position = { x = 28 y = 240 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_seats_national_renewal_league"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_national_renewal_league_leader"
+				position = { x = 28 y = 260 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_national_renewal_league_leader"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_national_renewal_league_leader_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_attitude_national_renewal_league"
+				position = { x = 28 y = 280 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_attitude_national_renewal_league_line"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+			iconType = {
+				name = "WJP_parliament_swatch_daido_association"
+				position = { x = 28 y = 300 }
+				spriteType = "GFX_WJP_parliament_daido_association_swatch"
+				pdx_tooltip = "WJP_parliament_party_daido_association_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_party_daido_association"
+				position = { x = 50 y = 300 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_party_daido_association"
+				format = left
+				maxWidth = 150
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_party_daido_association_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_seats_daido_association"
+				position = { x = 28 y = 320 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_seats_daido_association"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_daido_association_leader"
+				position = { x = 28 y = 340 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_daido_association_leader"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+				pdx_tooltip = "WJP_parliament_daido_association_leader_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_attitude_daido_association"
+				position = { x = 28 y = 360 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_attitude_daido_association_line"
+				format = left
+				maxWidth = 172
+				maxHeight = 20
+			}
+		}
+		containerWindowType = {
+			name = "WJP_parliament_center_panel"
+			position = { x = 258 y = 178 }
+			size = { width = 400 height = 420 }
+			clipping = no
+			background = { name = "WJP_parliament_center_background" quadTextureSprite = "GFX_BusinessHub_view_button_background_2" }
+			instantTextboxType = {
+				name = "WJP_parliament_chart_header"
+				position = { x = 28 y = 28 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_chart_header"
+				format = left
+				maxWidth = 344
+				maxHeight = 22
+			}
+			iconType = {
+				name = "WJP_parliament_seat_chart"
+				position = { x = 30 y = 54 }
+				spriteType = "GFX_WJP_parliament_seat_chart"
+				scale = 0.74
+				pdx_tooltip = "WJP_parliament_chart_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_bill_title"
+				position = { x = 28 y = 272 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_bill_title"
+				format = left
+				maxWidth = 344
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_plan_status"
+				position = { x = 28 y = 296 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_plan_status"
+				format = left
+				maxWidth = 344
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_budget_status"
+				position = { x = 28 y = 320 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_budget_status"
+				format = left
+				maxWidth = 344
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_review_status_line"
+				position = { x = 28 y = 344 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_review_status_line"
+				format = left
+				maxWidth = 344
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_deadline_line"
+				position = { x = 28 y = 368 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_deadline_line"
+				format = left
+				maxWidth = 344
+				maxHeight = 22
+			}
+		}
+		containerWindowType = {
+			name = "WJP_parliament_right_panel"
+			position = { x = 666 y = 178 }
+			size = { width = 210 height = 420 }
+			clipping = no
+			background = { name = "WJP_parliament_right_background" quadTextureSprite = "GFX_BusinessHub_view_button_background_2" }
+			instantTextboxType = {
+				name = "WJP_parliament_speaker_header"
+				position = { x = 28 y = 28 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_speaker_header"
+				format = left
+				maxWidth = 154
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_speaker"
+				position = { x = 28 y = 58 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_speaker"
+				format = left
+				maxWidth = 154
+				maxHeight = 40
+				pdx_tooltip = "WJP_parliament_speaker_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_rule_header"
+				position = { x = 28 y = 112 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_rule_header"
+				format = left
+				maxWidth = 154
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_rule_summary"
+				position = { x = 28 y = 140 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_rule_summary"
+				format = left
+				maxWidth = 154
+				maxHeight = 60
+				pdx_tooltip = "WJP_parliament_pass_rule_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_pass_status_line"
+				position = { x = 28 y = 208 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_pass_status_line"
+				format = left
+				maxWidth = 154
+				maxHeight = 80
+				pdx_tooltip = "WJP_parliament_pass_rule_tt"
+			}
+			buttonType = {
+				name = "WJP_parliament_submit_button"
+				position = { x = 44 y = 348 }
+				quadTextureSprite = "GFX_button_123x34"
+				pdx_tooltip = "WJP_parliament_submit_tt"
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_submit_label"
+				position = { x = 44 y = 354 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_submit_button"
+				format = center
+				maxWidth = 123
+				maxHeight = 22
+				alwaystransparent = yes
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_action_status_label"
+				position = { x = 28 y = 292 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_action_status_line"
+				format = left
+				maxWidth = 154
+				maxHeight = 100
+			}
+		}
+		containerWindowType = {
+			name = "WJP_parliament_history_panel"
+			position = { x = 884 y = 178 }
+			size = { width = 238 height = 420 }
+			clipping = no
+			background = { name = "WJP_parliament_history_background" quadTextureSprite = "GFX_BusinessHub_view_button_background_2" }
+			instantTextboxType = {
+				name = "WJP_parliament_history_header"
+				position = { x = 28 y = 28 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_history_header"
+				format = left
+				maxWidth = 182
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_history_empty"
+				position = { x = 28 y = 68 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_history_empty"
+				format = left
+				maxWidth = 182
+				maxHeight = 44
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_history_bill_title"
+				position = { x = 28 y = 68 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_history_bill_title"
+				format = left
+				maxWidth = 182
+				maxHeight = 44
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_history_year_line"
+				position = { x = 28 y = 116 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_history_year_line"
+				format = left
+				maxWidth = 182
+				maxHeight = 22
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_history_plan_line"
+				position = { x = 28 y = 146 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_history_plan_line"
+				format = left
+				maxWidth = 182
+				maxHeight = 44
+			}
+			instantTextboxType = {
+				name = "WJP_parliament_history_budget_line"
+				position = { x = 28 y = 196 }
+				font = "hoi_16mbs"
+				text = "WJP_parliament_history_budget_line"
+				format = left
+				maxWidth = 182
+				maxHeight = 44
+			}
+		}
+	}
+}

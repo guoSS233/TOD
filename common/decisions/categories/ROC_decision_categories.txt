@@ -12,18 +12,13 @@ ROC_decision_l_0 = { #debug
 	}
 }
 
-ROC_balance_of_power_category = {  #bop相关
-	icon = GFX_decision_category_power_struggle
-	
-	allowed = {
-		original_tag = ROC
-	}
-	
-	priority = 90
-	
-	visible = {
-		
-	}
+ROC_economic_administration = {
+    scripted_gui = ROC_central_economy_window
+    visible_when_empty = yes
+    icon = SOV_merge_designers
+    allowed = { original_tag = ROC }
+    priority = 170
+    visible = { ROC_ce_administration_active = yes }
 }
 
 ROC_focus_gonggubianjie = {
@@ -64,17 +59,6 @@ ROC_focus_quanguogeming = {
 	}
 }
 
-ROC_focus_minshengjingjijianshe = {#民生经济建设
-	priority = 160
-	icon = SOV_merge_designers
-	visible = {
-		has_completed_focus = weidashijiandekaishi
-	}
-	allowed = {
-		original_tag = ROC
-	}
-}
-
 ROC_focus_junshixunlian = {#军事训练
 	priority = 160
 	icon = infiltration
@@ -87,11 +71,11 @@ ROC_focus_junshixunlian = {#军事训练
 }
 
 ROC_focus_sanpai = {#革命委员会
+    visible_when_empty = yes
+	scripted_gui = ROC_economic_council_window
 	priority = 180
 	icon = shequn_tuanjie
-	visible = {
-		has_completed_focus = gemingweiyuanhui
-	}
+	visible = { ROC_has_gemingweiyuanhui = yes }
 	allowed = {
 		original_tag = ROC
 	}

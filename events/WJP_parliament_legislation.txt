@@ -1,0 +1,80 @@
+add_namespace = WJP_parliament
+
+country_event = {
+	id = WJP_parliament.1
+	title = WJP_parliament.1.t
+	desc = WJP_parliament.1.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	timeout_days = 7
+	trigger = {
+		tag = WJP
+		has_country_flag = WJP_parliament_bill_active
+		NOT = { has_country_flag = WJP_parliament_bill_resolved }
+		NOT = { has_country_flag = WJP_parliament_event_1_consumed }
+	}
+	immediate = { set_country_flag = WJP_parliament_event_1_consumed }
+	option = {
+		name = WJP_parliament.1.a
+		custom_effect_tooltip = WJP_parliament.1.a_tt
+		hidden_effect = { WJP_parliament_event_1_publish_answers_effect = yes }
+	}
+	option = {
+		name = WJP_parliament.1.b
+		custom_effect_tooltip = WJP_parliament.1.b_tt
+		hidden_effect = { WJP_parliament_event_1_reassert_prerogatives_effect = yes }
+	}
+}
+
+country_event = {
+	id = WJP_parliament.2
+	title = WJP_parliament.2.t
+	desc = WJP_parliament.2.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes
+	timeout_days = 7
+	trigger = {
+		tag = WJP
+		has_country_flag = WJP_parliament_bill_active
+		NOT = { has_country_flag = WJP_parliament_bill_resolved }
+		NOT = { has_country_flag = WJP_parliament_event_2_consumed }
+	}
+	immediate = { set_country_flag = WJP_parliament_event_2_consumed }
+	option = {
+		name = WJP_parliament.2.a
+		custom_effect_tooltip = WJP_parliament.2.a_tt
+		hidden_effect = { WJP_parliament_event_2_social_safeguards_effect = yes }
+	}
+	option = {
+		name = WJP_parliament.2.b
+		custom_effect_tooltip = WJP_parliament.2.b_tt
+		hidden_effect = { WJP_parliament_event_2_industrial_oversight_effect = yes }
+	}
+	option = {
+		name = WJP_parliament.2.c
+		custom_effect_tooltip = WJP_parliament.2.c_tt
+		hidden_effect = { WJP_parliament_event_2_keep_draft_effect = yes }
+	}
+}
+
+country_event = {
+	id = WJP_parliament.100
+	title = WJP_parliament.100.t
+	desc = WJP_parliament.100.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP has_country_flag = WJP_parliament_bill_passed }
+	option = { name = WJP_parliament.100.a }
+}
+
+country_event = {
+	id = WJP_parliament.101
+	title = WJP_parliament.101.t
+	desc = WJP_parliament.101.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP has_country_flag = WJP_parliament_bill_rejected }
+	option = { name = WJP_parliament.101.a }
+}

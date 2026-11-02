@@ -1,0 +1,43 @@
+defined_text = {
+	name = WJP_parliament_archive_year
+	text = {
+		trigger = { check_variable = { var = WJP_parliament_budget_archive_year value = 0 compare = equals } }
+		localization_key = WJP_parliament_archive_year_unknown
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_parliament_archive_year_value
+	}
+}
+
+defined_text = {
+	name = WJP_parliament_archive_plan
+	text = {
+		trigger = { check_variable = { var = WJP_parliament_budget_archive_plan value = 1 compare = equals } }
+		localization_key = WJP_parliament_archive_plan_minsei
+	}
+	text = {
+		trigger = { check_variable = { var = WJP_parliament_budget_archive_plan value = 2 compare = equals } }
+		localization_key = WJP_parliament_archive_plan_kokumu
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_parliament_archive_unknown
+	}
+}
+
+defined_text = {
+	name = WJP_parliament_archive_budget
+	text = {
+		trigger = { check_variable = { var = WJP_parliament_budget_archive_budget value = 1 compare = equals } }
+		localization_key = WJP_parliament_archive_budget_minsei
+	}
+	text = {
+		trigger = { check_variable = { var = WJP_parliament_budget_archive_budget value = 2 compare = equals } }
+		localization_key = WJP_parliament_archive_budget_kokumu
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_parliament_archive_unknown
+	}
+}

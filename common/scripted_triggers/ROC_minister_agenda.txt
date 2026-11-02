@@ -1,0 +1,113 @@
+ROC_ma_can_run = {
+    original_tag = ROC
+    ROC_ce_administration_active = yes
+    check_variable = { ROC_ce_minister_profile_id > 0 }
+    has_active_mission = ROC_decision_bop_jingjidahui
+    NOT = { has_country_flag = ROC_econ_conference_pending }
+    NOT = { has_country_flag = ROC_econ_resignation_pending }
+}
+
+ROC_ma_objection_can_pay = {
+    OR = {
+        AND = {
+            check_variable = { ROC_committee_objection_target = 1 }
+            check_variable = { var = ROC_ma_left_favor value = 15 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_committee_objection_target = 2 }
+            check_variable = { var = ROC_ma_center_favor value = 15 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_committee_objection_target = 3 }
+            check_variable = { var = ROC_ma_right_favor value = 15 compare = greater_than_or_equals }
+        }
+    }
+}
+
+# A saved focus route only unlocks its own minister while that profile currently holds office.
+ROC_ma_current_yu = {
+    ROC_ce_administration_active = yes
+    check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+}
+ROC_ma_current_yan = {
+    ROC_ce_administration_active = yes
+    check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+}
+ROC_ma_current_ruan = {
+    ROC_ce_administration_active = yes
+    check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+}
+ROC_ma_current_chen = {
+    ROC_ce_administration_active = yes
+    check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+}
+ROC_ma_current_xiao = {
+    ROC_ce_administration_active = yes
+    check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+}
+
+ROC_ma_current_yu_1 = { ROC_ma_current_yu = yes has_completed_focus = ROC_ma_yu_1 }
+ROC_ma_current_yu_step2 = { ROC_ma_current_yu = yes has_completed_focus = ROC_ma_yu_step2 }
+ROC_ma_current_yan_1 = { ROC_ma_current_yan = yes has_completed_focus = ROC_ma_yan_1 }
+ROC_ma_current_yan_step2 = { ROC_ma_current_yan = yes has_completed_focus = ROC_ma_yan_step2 }
+ROC_ma_current_ruan_1 = { ROC_ma_current_ruan = yes has_completed_focus = ROC_ma_ruan_1 }
+ROC_ma_current_ruan_step2 = { ROC_ma_current_ruan = yes has_completed_focus = ROC_ma_ruan_step2 }
+ROC_ma_current_chen_1 = { ROC_ma_current_chen = yes has_completed_focus = ROC_ma_chen_1 }
+ROC_ma_current_chen_step2 = { ROC_ma_current_chen = yes has_completed_focus = ROC_ma_chen_step2 }
+ROC_ma_current_xiao_1 = { ROC_ma_current_xiao = yes has_completed_focus = ROC_ma_xiao_1 }
+ROC_ma_current_xiao_step2 = { ROC_ma_current_xiao = yes has_completed_focus = ROC_ma_xiao_step2 }
+ROC_ma_current_yu_2 = { ROC_ma_current_yu = yes has_completed_focus = ROC_ma_yu_2 }
+ROC_ma_current_yan_2 = { ROC_ma_current_yan = yes has_completed_focus = ROC_ma_yan_2 }
+ROC_ma_current_xiao_2 = { ROC_ma_current_xiao = yes has_completed_focus = ROC_ma_xiao_2 }
+ROC_ma_current_chen_2 = { ROC_ma_current_chen = yes has_completed_focus = ROC_ma_chen_2 }
+ROC_ma_current_ruan_2 = { ROC_ma_current_ruan = yes has_completed_focus = ROC_ma_ruan_2 }
+ROC_ma_current_xiao_step4 = { ROC_ma_current_xiao = yes has_completed_focus = ROC_ma_xiao_step4 }
+ROC_ma_current_chen_step4 = { ROC_ma_current_chen = yes has_completed_focus = ROC_ma_chen_step4 }
+
+ROC_ma_current_agriculture_collectivized = {
+    OR = { ROC_ma_current_ruan_step2 = yes ROC_ma_current_chen_step2 = yes }
+}
+ROC_ma_current_agriculture_household = { ROC_ma_current_xiao_step2 = yes }
+
+ROC_ma_current_left_fcsyqy = {
+    OR = { ROC_ma_current_yu_1 = yes ROC_ma_current_xiao_2 = yes }
+}
+ROC_ma_current_left_jqmysc = {
+    OR = { ROC_ma_current_yan_2 = yes ROC_ma_current_chen_step4 = yes }
+}
+ROC_ma_current_left_clgq = { ROC_ma_current_xiao_step4 = yes }
+ROC_ma_current_right_qhgh = { ROC_ma_current_chen_1 = yes }
+ROC_ma_current_right_ssjm = {
+    OR = { ROC_ma_current_ruan_1 = yes ROC_ma_current_chen_2 = yes }
+}
+ROC_ma_current_right_sqgyh = {
+    OR = { ROC_ma_current_ruan_2 = yes ROC_ma_current_chen_2 = yes }
+}
+
+ROC_ma_current_industry_project = {
+    OR = {
+        ROC_ma_current_yu_1 = yes
+        ROC_ma_current_ruan_1 = yes
+        ROC_ma_current_chen_1 = yes
+        ROC_ma_current_yan_2 = yes
+        ROC_ma_current_xiao_2 = yes
+    }
+}
+ROC_ma_current_agriculture_project = {
+    OR = {
+        ROC_ma_current_yan_1 = yes
+        ROC_ma_current_xiao_1 = yes
+        ROC_ma_current_yu_2 = yes
+        ROC_ma_current_ruan_2 = yes
+        ROC_ma_current_chen_2 = yes
+    }
+}
+ROC_ma_current_transport_project = {
+    OR = {
+        ROC_ma_current_yu_1 = yes
+        ROC_ma_current_yan_1 = yes
+        ROC_ma_current_ruan_1 = yes
+        ROC_ma_current_chen_1 = yes
+        ROC_ma_current_xiao_1 = yes
+    }
+}

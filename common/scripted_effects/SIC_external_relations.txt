@@ -1,0 +1,199 @@
+SIC_external_clear_pending_effect = {
+    clr_country_flag = SIC_external_pending
+    clr_country_flag = SIC_external_response_ready
+    clr_country_flag = SIC_external_response_conditional
+    clr_country_flag = SIC_external_pending_GOS_political
+    GOS = { clr_country_flag = SIC_external_inbox_GOS_political }
+    clr_country_flag = SIC_external_pending_USC_political
+    USC = { clr_country_flag = SIC_external_inbox_USC_political }
+    clr_country_flag = SIC_external_pending_GOS_aid
+    GOS = { clr_country_flag = SIC_external_inbox_GOS_aid }
+    clr_country_flag = SIC_external_pending_USC_aid
+    USC = { clr_country_flag = SIC_external_inbox_USC_aid }
+}
+SIC_external_song_local_effect = {
+    clr_country_flag = SIC_external_song_choice_pending
+    clr_country_flag = SIC_external_song_pending
+    set_country_flag = SIC_external_song_resolved
+    set_country_flag = SIC_external_song_local
+    MNG = { clr_country_flag = SIC_external_song_inbox }
+}
+SIC_external_song_arrive_effect = {
+    if = {
+        limit = { SIC_external_song_pending_trigger = yes }
+        MNG = { MNG_Song_jiaoren = { set_nationality = SIC } }
+        if = {
+            limit = { has_character = MNG_Song_jiaoren }
+            promote_character = MNG_Song_jiaoren
+            clr_country_flag = SIC_external_song_pending
+            clr_country_flag = SIC_external_song_choice_pending
+            set_country_flag = SIC_external_song_resolved
+            set_country_flag = SIC_external_song_arrived
+            MNG = { clr_country_flag = SIC_external_song_inbox }
+            add_political_power = 35
+            add_to_variable = { SIC.xianzheng = 3 }
+            SIC_qingzhengxi_xianzheng_gengxin = yes
+            country_event = { id = SICEXT.3 hours = 1 }
+        }
+        else = { SIC_external_song_local_effect = yes }
+    }
+}
+# Daily validation also protects already-open event windows: every option
+# rechecks the same trigger before applying any result.
+SIC_external_cleanup_effect = {
+    if = {
+        limit = {
+            has_country_flag = SIC_external_pending
+            NOT = {
+                OR = {
+                    SIC_external_GOS_political_valid_trigger = yes
+                    SIC_external_USC_political_valid_trigger = yes
+                    SIC_external_GOS_aid_valid_trigger = yes
+                    SIC_external_USC_aid_valid_trigger = yes
+                }
+            }
+        }
+        SIC_external_clear_pending_effect = yes
+        if = { limit = { tag = SIC } country_event = { id = SICEXT.90 hours = 1 } }
+    }
+    if = {
+        limit = {
+            has_country_flag = SIC_external_song_pending
+            NOT = { SIC_external_song_pending_trigger = yes }
+        }
+        SIC_external_song_local_effect = yes
+    }
+    if = {
+        limit = {
+            has_country_flag = SIC_external_song_choice_pending
+            OR = {
+                NOT = { SIC_external_political_trigger = yes }
+                has_country_flag = { flag = SIC_external_song_choice_pending days > 60 }
+            }
+        }
+        SIC_external_song_local_effect = yes
+    }
+}
+SIC_external_monthly_effect = {
+    if = {
+        limit = {
+            SIC_external_political_trigger = yes
+            NOT = { has_country_flag = SIC_external_song_asked }
+        }
+        set_country_flag = SIC_external_song_asked
+        set_country_flag = SIC_external_song_choice_pending
+        country_event = { id = SICEXT.1 hours = 1 }
+    }
+}
+SIC_external_GOS_political_conclude_effect = {
+    if = {
+        limit = { SIC_external_GOS_political_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        custom_effect_tooltip = SIC_external_GOS_political_terms_tt
+        GOS = { add_political_power = -25 }
+        add_to_variable = { SIC.minzhong = -5 }
+        add_to_variable = { SIC.gongye = -5 }
+        if = {
+            limit = { has_country_flag = SIC_external_response_conditional }
+            add_political_power = -40
+            GOS = { add_political_power = -15 }
+            add_to_variable = { SIC_politics_establishment = 15 }
+            add_to_variable = { SIC_politics_wubei = -5 }
+            add_war_support = -0.02
+            add_to_variable = { SIC.xianzheng = -5 }
+        }
+        else = {
+            add_political_power = 25
+            add_to_variable = { SIC_politics_establishment = 8 }
+        }
+        set_country_flag = SIC_external_partner_GOS
+        GOS = { set_country_flag = SIC_external_agreement_SIC }
+        diplomatic_relation = { country = GOS relation = non_aggression_pact active = yes }
+        SIC_external_clear_pending_effect = yes
+        SIC_qingzhengxi_xianzheng_gengxin = yes
+        SIC_red_refresh_governance_effect = yes
+        SIC_politics_resolve_effect = yes
+    }
+}
+SIC_external_USC_political_conclude_effect = {
+    if = {
+        limit = { SIC_external_USC_political_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        custom_effect_tooltip = SIC_external_USC_political_terms_tt
+        USC = { add_political_power = -25 }
+        add_to_variable = { SIC.minzhong = -5 }
+        add_to_variable = { SIC.gongye = -5 }
+        if = {
+            limit = { has_country_flag = SIC_external_response_conditional }
+            add_political_power = -40
+            USC = { add_political_power = -15 }
+            add_to_variable = { SIC_politics_qingzheng = 15 }
+            add_to_variable = { SIC_politics_wubei = -5 }
+            add_war_support = -0.02
+            add_to_variable = { SIC.xianzheng = -5 }
+        }
+        else = {
+            add_political_power = 25
+            add_to_variable = { SIC_politics_qingzheng = 8 }
+        }
+        set_country_flag = SIC_external_partner_USC
+        USC = { set_country_flag = SIC_external_agreement_SIC }
+        diplomatic_relation = { country = USC relation = non_aggression_pact active = yes }
+        SIC_external_clear_pending_effect = yes
+        SIC_qingzhengxi_xianzheng_gengxin = yes
+        SIC_red_refresh_governance_effect = yes
+        SIC_politics_resolve_effect = yes
+    }
+}
+SIC_external_GOS_aid_conclude_effect = {
+    if = {
+        limit = { SIC_external_GOS_aid_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        custom_effect_tooltip = SIC_external_GOS_aid_terms_tt
+        GOS = { add_political_power = -25 }
+        add_to_variable = { SIC.minzhong = -5 }
+        add_to_variable = { SIC.gongye = -5 }
+        if = {
+            limit = { has_country_flag = SIC_external_response_conditional }
+            add_political_power = -40
+            GOS = { add_political_power = -15 }
+            add_to_variable = { SIC_politics_establishment = 15 }
+            add_to_variable = { SIC_politics_wubei = -5 }
+            add_war_support = -0.02
+        }
+        else = {
+            add_political_power = 25
+            add_to_variable = { SIC_politics_establishment = 8 }
+        }
+        set_country_flag = SIC_external_aid_GOS
+        GOS = { set_country_flag = SIC_external_aid_sent_SIC }
+        SIC_external_clear_pending_effect = yes
+        SIC_qingzhengxi_xianzheng_gengxin = yes
+        SIC_red_refresh_governance_effect = yes
+        SIC_politics_resolve_effect = yes
+    }
+}
+SIC_external_USC_aid_conclude_effect = {
+    if = {
+        limit = { SIC_external_USC_aid_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        custom_effect_tooltip = SIC_external_USC_aid_terms_tt
+        USC = { add_political_power = -25 }
+        add_to_variable = { SIC.minzhong = -5 }
+        add_to_variable = { SIC.gongye = -5 }
+        if = {
+            limit = { has_country_flag = SIC_external_response_conditional }
+            add_political_power = -40
+            USC = { add_political_power = -15 }
+            add_to_variable = { SIC_politics_qingzheng = 15 }
+            add_to_variable = { SIC_politics_wubei = -5 }
+            add_war_support = -0.02
+        }
+        else = {
+            add_political_power = 25
+            add_to_variable = { SIC_politics_qingzheng = 8 }
+        }
+        set_country_flag = SIC_external_aid_USC
+        USC = { set_country_flag = SIC_external_aid_sent_SIC }
+        SIC_external_clear_pending_effect = yes
+        SIC_qingzhengxi_xianzheng_gengxin = yes
+        SIC_red_refresh_governance_effect = yes
+        SIC_politics_resolve_effect = yes
+    }
+}

@@ -81,7 +81,6 @@ focus_tree = {
 	focus = {
 		id = SRC_promote_military_officers
 		icon = GFX_SRC_chenglizhongguogongnonghongjun
-		bypass = { NOT = { country_exists = GPS } }
 		prerequisite = { focus = SRC_workers_pickets }
 
 		x = -1
@@ -2452,10 +2451,19 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			SRC = {
-				GPS_shen_honglie = { set_nationality = SRC }
-				GPS_wen_shude = { set_nationality = SRC }
-				GPS_shan_duowen = { set_nationality = SRC }
+			GPS = {
+				if = {
+					limit = { has_character = GPS_shen_honglie }
+					GPS_shen_honglie = { set_nationality = SRC }
+				}
+				if = {
+					limit = { has_character = GPS_wen_shude }
+					GPS_wen_shude = { set_nationality = SRC }
+				}
+				if = {
+					limit = { has_character = GPS_shan_duowen }
+					GPS_shan_duowen = { set_nationality = SRC }
+				}
 			}
 		}
 	}

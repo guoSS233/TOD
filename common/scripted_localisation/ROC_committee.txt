@@ -1,0 +1,160 @@
+defined_text = {
+    name = ROC_committee_status
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_status_postwar }
+    text = { trigger = { ROC_has_jixugeming = yes } localization_key = ROC_committee_gui_status_left_ending }
+    text = { trigger = { ROC_has_jingchenghezuo = yes } localization_key = ROC_committee_gui_status_center_ending }
+    text = { trigger = { ROC_has_lunliuzuozhuang = yes } localization_key = ROC_committee_gui_status_right_ending }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_status_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_status_initializing }
+    text = { trigger = { OR = { has_active_mission = ROC_decision_zuopai has_active_mission = ROC_decision_zhongpai has_active_mission = ROC_decision_youpai } } localization_key = ROC_committee_gui_status_active }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_status_waiting }
+}
+
+defined_text = {
+    name = ROC_committee_radicalization_text
+    text = { trigger = { has_country_flag = ROC_committee_initialized } localization_key = ROC_committee_gui_radicalization_value }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_radicalization_initializing }
+}
+
+defined_text = {
+    name = ROC_committee_time_effect_summary
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_effect_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_effect_ended }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_RuanXiaoxian } localization_key = ROC_committee_gui_effect_ruan }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_ChenZanxian } localization_key = ROC_committee_gui_effect_chen }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_YuShude } localization_key = ROC_committee_gui_effect_yu }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_YanYangchu } localization_key = ROC_committee_gui_effect_yan }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_XiaoZheng } localization_key = ROC_committee_gui_effect_xiao }
+    text = { trigger = { NOT = { ROC_ma_can_run = yes } } localization_key = ROC_committee_gui_effect_paused }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_effect_unknown }
+}
+
+defined_text = {
+    name = ROC_committee_opposition_target_text
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_target_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_target_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_target_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_target_initializing }
+    text = { trigger = { check_variable = { ROC_committee_leading_side = 1 } } localization_key = ROC_committee_gui_target_left }
+    text = { trigger = { check_variable = { ROC_committee_leading_side = 2 } } localization_key = ROC_committee_gui_target_center }
+    text = { trigger = { check_variable = { ROC_committee_leading_side = 3 } } localization_key = ROC_committee_gui_target_right }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_target_none }
+}
+
+defined_text = {
+    name = ROC_committee_objection_target_name
+    text = { trigger = { check_variable = { ROC_committee_objection_target = 1 } } localization_key = ROC_committee_gui_target_left }
+    text = { trigger = { check_variable = { ROC_committee_objection_target = 2 } } localization_key = ROC_committee_gui_target_center }
+    text = { trigger = { check_variable = { ROC_committee_objection_target = 3 } } localization_key = ROC_committee_gui_target_right }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_target_none }
+}
+
+defined_text = {
+    name = ROC_committee_left_agenda_name
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_agenda_postwar }
+    text = { trigger = { ROC_has_jixugeming = yes } localization_key = ROC_committee_gui_agenda_left_won }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_agenda_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_agenda_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_agenda_initializing }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 1 } } localization_key = zuoyilianmeng }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 2 } } localization_key = lianluogemingyoudang }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 3 } } localization_key = tuijinsuoyouzhigeming }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 4 } } localization_key = tudigaigejijinhua }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 5 } } localization_key = jiakuaigongsiheyingjincheng }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 6 } } localization_key = qianghuagonghuigemingxing }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 7 } } localization_key = queligongyouzhijingjizhutidiwei }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 8 } } localization_key = weichinonghuiwuzhuang }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 9 } } localization_key = kuodanongcunhezuosheguimo }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 10 } } localization_key = gemingjijinhua }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 11 } } localization_key = youxiangongnongquanyi }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 12 } } localization_key = zhengduogeminglingdaoquan }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 13 } } localization_key = xianqililunlunzhan }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 14 } } localization_key = dajixiuzhengfenzi }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 15 } } localization_key = jixugeming }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_agenda_not_started }
+}
+
+defined_text = {
+    name = ROC_committee_left_agenda_meta
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_meta_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_meta_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_meta_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_meta_initializing }
+    text = { trigger = { has_active_mission = ROC_decision_zuopai } localization_key = ROC_committee_gui_meta_left_active }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda > 0 } } localization_key = ROC_committee_gui_meta_left_scheduled }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_meta_left_waiting }
+}
+
+defined_text = {
+    name = ROC_committee_center_agenda_name
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_agenda_postwar }
+    text = { trigger = { ROC_has_jingchenghezuo = yes } localization_key = ROC_committee_gui_agenda_center_won }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_agenda_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_agenda_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_agenda_initializing }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 1 } } localization_key = gemingtongyizhanxian }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 2 } } localization_key = qianghuazhengzhituanjie }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 3 } } localization_key = jijicanzhengyizheng }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 4 } } localization_key = xiezhugongyegaizao }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 5 } } localization_key = xiezhunongyegaizao }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 6 } } localization_key = luoshixinjingjifa }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 7 } } localization_key = zhichisansanzhizhengfu }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 8 } } localization_key = peihekaizhanqunzhongyundong }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 9 } } localization_key = jicengjibuhezuo }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 10 } } localization_key = qianghuahezuoxuanchuan }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 11 } } localization_key = yantaogeminglilun }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 12 } } localization_key = tuijinkuadanghezuo }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 13 } } localization_key = yazhifenliezhuyi }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 14 } } localization_key = yongbaogemingweiyuanhuizhengzhi }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 15 } } localization_key = jingchenghezuo }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_agenda_not_started }
+}
+
+defined_text = {
+    name = ROC_committee_center_agenda_meta
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_meta_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_meta_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_meta_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_meta_initializing }
+    text = { trigger = { has_active_mission = ROC_decision_zhongpai } localization_key = ROC_committee_gui_meta_center_active }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda > 0 } } localization_key = ROC_committee_gui_meta_center_scheduled }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_meta_center_waiting }
+}
+
+defined_text = {
+    name = ROC_committee_right_agenda_name
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_agenda_postwar }
+    text = { trigger = { ROC_has_lunliuzuozhuang = yes } localization_key = ROC_committee_gui_agenda_right_won }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_agenda_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_agenda_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_agenda_initializing }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 1 } } localization_key = youyilianmeng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 2 } } localization_key = ziyoudatongmeng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 3 } } localization_key = jingjihuanjingfanglue }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 4 } } localization_key = yaoqiubaozhangminqiquanyi }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 5 } } localization_key = huanhexiangcundouzheng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 6 } } localization_key = jianadaqiyejiaruhui }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 7 } } localization_key = tiyihuifuguangjiaosuo }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 8 } } localization_key = tuidongnongcunjingjihuazhuanxiang }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 9 } } localization_key = tudiliuzhuanziyouhua }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 10 } } localization_key = gemingziyouhua }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 11 } } localization_key = xuanyangzhengzhiminzhu }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 12 } } localization_key = yaoqiusuxingxianzheng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 13 } } localization_key = fangkuanzudangshenhe }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 14 } } localization_key = zhiyidatonghui }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 15 } } localization_key = lunliuzuozhuang }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_agenda_not_started }
+}
+
+defined_text = {
+    name = ROC_committee_right_agenda_meta
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_meta_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_meta_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_meta_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_meta_initializing }
+    text = { trigger = { has_active_mission = ROC_decision_youpai } localization_key = ROC_committee_gui_meta_right_active }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda > 0 } } localization_key = ROC_committee_gui_meta_right_scheduled }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_meta_right_waiting }
+}
+
+# LOC ROC_committee_gui_meta_right_waiting:0 "尚未启动；已完成 [?ROC_committee_right_progress|0]/15 项"

@@ -1,17 +1,12 @@
 SIC_chuanneijushi_categories = {
 	icon = gre_faction_management
-	
 	scripted_gui = SIC_shengneijushi_ui_window
-
-	allowed = {
-		tag = SIC
-	}
-	visible = {	
-		check_variable = {SIC.minzhong < 99}
+	priority = 140
+	allowed = { tag = SIC }
+	visible = {
 		OR = {
-			check_variable = {SIC.minzhong > 19}
-			check_variable = {SIC.gongye > 39}
+			SIC_provincial_legacy_visible_trigger = yes
+			SIC_red_pre_uprising_trigger = yes
 		}
-		NOT = {has_war_with = SCG}
 	}
 }

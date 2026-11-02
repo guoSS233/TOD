@@ -1,0 +1,191 @@
+# Public initialization is idempotent and never resets governance or completed content.
+SIC_politics_initialize_effect = {
+	if = {
+		limit = { tag = SIC NOT = { has_country_flag = SIC_politics_initialized } }
+		set_country_flag = SIC_politics_initialized
+		if = { limit = { NOT = { has_variable = SIC_politics_wubei } } set_variable = { SIC_politics_wubei = 35 } }
+		if = { limit = { NOT = { has_variable = SIC_politics_qingzheng } } set_variable = { SIC_politics_qingzheng = 35 } }
+		if = { limit = { NOT = { has_variable = SIC_politics_establishment } } set_variable = { SIC_politics_establishment = 20 } }
+		if = { limit = { NOT = { has_variable = SIC_politics_months } } set_variable = { SIC_politics_months = 0 } }
+		if = { limit = { NOT = { has_variable = SIC_politics_issue } } set_variable = { SIC_politics_issue = 0 } }
+		# Contradictory old saves: Qingzheng > Wubei > establishment. No focus is undone.
+		if = {
+			limit = { NOT = { has_country_flag = SIC_politics_resolved } }
+			if = {
+				limit = { has_completed_focus = SIC_qingzhengxi_sichuan }
+				set_country_flag = SIC_politics_qingzheng_won
+				clr_country_flag = SIC_politics_wubei_won
+				clr_country_flag = SIC_politics_establishment_won
+				set_country_flag = SIC_politics_resolved
+				set_country_flag = SIC_politics_started
+				set_country_flag = SIC_politics_legacy_migrated
+			}
+			else_if = {
+				limit = { has_completed_focus = SIC_wubei_xinan_judian }
+				set_country_flag = SIC_politics_wubei_won
+				clr_country_flag = SIC_politics_qingzheng_won
+				clr_country_flag = SIC_politics_establishment_won
+				set_country_flag = SIC_politics_resolved
+				set_country_flag = SIC_politics_started
+				set_country_flag = SIC_politics_legacy_migrated
+			}
+			else_if = {
+				limit = { has_completed_focus = SIC_yonglizhengtong }
+				set_country_flag = SIC_politics_establishment_won
+				clr_country_flag = SIC_politics_wubei_won
+				clr_country_flag = SIC_politics_qingzheng_won
+				set_country_flag = SIC_politics_resolved
+				set_country_flag = SIC_politics_started
+				set_country_flag = SIC_politics_legacy_migrated
+			}
+			else_if = {
+				limit = { has_completed_focus = SIC_zanshibaochizhongli }
+				set_country_flag = SIC_politics_started
+			}
+			else_if = {
+				limit = { has_country_flag = SIC_zunwangtaojian }
+				set_country_flag = SIC_politics_establishment_won
+				clr_country_flag = SIC_politics_wubei_won
+				clr_country_flag = SIC_politics_qingzheng_won
+				set_country_flag = SIC_politics_resolved
+				set_country_flag = SIC_politics_started
+				set_country_flag = SIC_politics_legacy_migrated
+				complete_national_focus = SIC_yonglizhengtong
+			}
+			else_if = {
+				limit = { has_country_flag = SIC_baochizhongli }
+				set_country_flag = SIC_politics_started
+				set_country_flag = SIC_politics_legacy_migrated
+				complete_national_focus = SIC_zanshibaochizhongli
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = SIC_politics_legacy_migrated
+				has_country_flag = SIC_baochizhongli
+				NOT = { has_completed_focus = SIC_zanshibaochizhongli }
+			}
+			complete_national_focus = SIC_zanshibaochizhongli
+		}
+		if = { limit = { has_country_flag = SIC_politics_resolved } clr_country_flag = SIC_baochizhongli }
+	}
+}
+SIC_politics_start_neutral_effect = {
+	SIC_politics_initialize_effect = yes
+	if = {
+		limit = { SIC_politics_can_start_trigger = yes NOT = { has_country_flag = SIC_politics_resolved } }
+		set_country_flag = SIC_politics_started
+		set_country_flag = SIC_baochizhongli
+	}
+}
+# The opening loyalist choice is a new month-zero establishment victory, not migration.
+SIC_politics_start_loyalist_effect = {
+	SIC_politics_initialize_effect = yes
+	if = {
+		limit = { SIC_politics_can_start_trigger = yes NOT = { has_country_flag = SIC_politics_resolved } }
+		set_country_flag = SIC_politics_started
+		set_variable = { SIC_politics_establishment = 70 }
+		set_variable = { SIC_politics_wubei = 35 }
+		set_variable = { SIC_politics_qingzheng = 35 }
+		SIC_politics_resolve_effect = yes
+	}
+}
+SIC_politics_wubei_victory_effect = {
+	set_country_flag = SIC_politics_resolved
+	clr_country_flag = SIC_baochizhongli
+	set_country_flag = SIC_politics_wubei_won
+	clr_country_flag = SIC_politics_qingzheng_won
+	clr_country_flag = SIC_politics_establishment_won
+	clr_country_flag = SIC_politics_meeting_pending
+	# Complete only the old entry and execute its existing rewards once.
+	if = { limit = { NOT = { has_completed_focus = SIC_wubei_xinan_judian } } complete_national_focus = SIC_wubei_xinan_judian }
+	country_event = { id = SICPOL.10 }
+}
+SIC_politics_qingzheng_victory_effect = {
+	set_country_flag = SIC_politics_resolved
+	clr_country_flag = SIC_baochizhongli
+	set_country_flag = SIC_politics_qingzheng_won
+	clr_country_flag = SIC_politics_wubei_won
+	clr_country_flag = SIC_politics_establishment_won
+	clr_country_flag = SIC_politics_meeting_pending
+	# Complete only the old entry and execute its existing rewards once.
+	if = { limit = { NOT = { has_completed_focus = SIC_qingzhengxi_sichuan } } complete_national_focus = SIC_qingzhengxi_sichuan }
+	country_event = { id = SICPOL.11 }
+}
+SIC_politics_establishment_victory_effect = {
+	set_country_flag = SIC_politics_resolved
+	clr_country_flag = SIC_baochizhongli
+	set_country_flag = SIC_politics_establishment_won
+	clr_country_flag = SIC_politics_wubei_won
+	clr_country_flag = SIC_politics_qingzheng_won
+	clr_country_flag = SIC_politics_meeting_pending
+	# Complete only the old entry and execute its existing rewards once.
+	if = { limit = { NOT = { has_completed_focus = SIC_yonglizhengtong } } complete_national_focus = SIC_yonglizhengtong }
+	country_event = { id = SICPOL.12 }
+}
+# Every public caller clamps the influence values before resolving. Use else_if for exclusivity.
+SIC_politics_resolve_effect = {
+	clamp_variable = { var = SIC_politics_wubei min = 0 max = 100 }
+	clamp_variable = { var = SIC_politics_qingzheng min = 0 max = 100 }
+	clamp_variable = { var = SIC_politics_establishment min = 0 max = 100 }
+	if = {
+		limit = { SIC_politics_active_trigger = yes }
+		if = {
+			limit = {
+				NOT = { check_variable = { SIC_politics_wubei < 70 } }
+				NOT = { check_variable = { SIC_politics_qingzheng > 55 } }
+				NOT = { check_variable = { SIC_politics_establishment > 55 } }
+			}
+			SIC_politics_wubei_victory_effect = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { SIC_politics_qingzheng < 70 } }
+				NOT = { check_variable = { SIC_politics_wubei > 55 } }
+				NOT = { check_variable = { SIC_politics_establishment > 55 } }
+			}
+			SIC_politics_qingzheng_victory_effect = yes
+		}
+		else_if = {
+			limit = {
+				NOT = { check_variable = { SIC_politics_establishment < 70 } }
+				NOT = { check_variable = { SIC_politics_wubei > 55 } }
+				NOT = { check_variable = { SIC_politics_qingzheng > 55 } }
+			}
+			SIC_politics_establishment_victory_effect = yes
+		}
+	}
+}
+SIC_politics_monthly_effect = {
+	SIC_politics_initialize_effect = yes
+	if = {
+		limit = { SIC_politics_active_trigger = yes }
+		add_to_variable = { SIC_politics_months = 1 }
+		SIC_politics_resolve_effect = yes
+	}
+}
+SIC_politics_finish_meeting_effect = {
+	clr_country_flag = SIC_politics_meeting_pending
+	if = {
+		limit = { SIC_politics_active_trigger = yes }
+		add_to_variable = { SIC_politics_issue = 1 }
+		if = { limit = { check_variable = { SIC_politics_issue > 2 } } set_variable = { SIC_politics_issue = 0 } }
+		SIC_red_refresh_governance_effect = yes
+		SIC_politics_resolve_effect = yes
+	}
+}
+SIC_politics_early_victory_effect = {
+	if = {
+		limit = {
+			SIC_politics_can_start_trigger = yes
+			has_country_flag = SIC_politics_resolved
+			check_variable = { SIC_politics_months < 4 }
+			NOT = { has_country_flag = SIC_politics_legacy_migrated }
+			NOT = { has_country_flag = SIC_politics_early_victory_sent }
+		}
+		set_country_flag = SIC_politics_early_victory_sent
+		if = { limit = { has_country_flag = SIC_politics_wubei_won } country_event = { id = SICPOL.20 } }
+		else_if = { limit = { has_country_flag = SIC_politics_qingzheng_won } country_event = { id = SICPOL.21 } }
+		else_if = { limit = { has_country_flag = SIC_politics_establishment_won } country_event = { id = SICPOL.22 } }
+	}
+}

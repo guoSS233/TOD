@@ -1,0 +1,200 @@
+add_namespace = WJP_politics
+add_namespace = WJP_economy
+
+# Introductory events for the four political forces and their opening issues.
+country_event = {
+	id = WJP_politics.1
+	title = WJP_politics.1.t
+	desc = WJP_politics.1.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP }
+	option = {
+		name = WJP_politics.1.a
+		custom_effect_tooltip = WJP_politics.1.effect
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = WJP_politics_model_regime_applied } }
+				set_country_flag = WJP_politics_model_regime_applied
+				add_stability = 0.05
+				remove_ideas = WJP_slave_of_dragon
+				add_ideas = WJP_model_regime
+			}
+		}
+	}
+}
+
+country_event = {
+	id = WJP_politics.2
+	title = WJP_politics.2.t
+	desc = WJP_politics.2.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP }
+	option = {
+		name = WJP_politics.2.a
+		custom_effect_tooltip = WJP_politics.2.effect
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = WJP_politics_han_effect_applied } }
+				set_country_flag = WJP_politics_han_effect_applied
+				remove_ideas = WJP_hanbatsu_politics
+				add_ideas = WJP_han_politics
+			}
+		}
+	}
+}
+
+country_event = {
+	id = WJP_politics.3
+	title = WJP_politics.3.t
+	desc = WJP_politics.3.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP }
+	option = { name = WJP_politics.3.a }
+}
+
+country_event = {
+	id = WJP_politics.4
+	title = WJP_politics.4.t
+	desc = WJP_politics.4.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP }
+	option = {
+		name = WJP_politics.4.a
+		custom_effect_tooltip = WJP_politics.4.effect
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = WJP_politics_finance_effect_applied } }
+				set_country_flag = WJP_politics_finance_effect_applied
+				remove_ideas = WJP_depression_strike
+				add_ideas = WJP_depression_recovery
+			}
+		}
+	}
+}
+
+country_event = {
+	id = WJP_politics.5
+	title = WJP_politics.5.t
+	desc = WJP_politics.5.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP }
+	option = {
+		name = WJP_politics.5.a
+		custom_effect_tooltip = WJP_politics.5.effect
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = WJP_politics_parties_effect_applied } }
+				set_country_flag = WJP_politics_parties_effect_applied
+				remove_ideas = WJP_difficult_civil_rights_movement
+				add_ideas = WJP_liberal_movement
+			}
+		}
+	}
+}
+
+# Five-step economic chain. The final event intentionally stops at submission.
+country_event = {
+	id = WJP_economy.1
+	title = WJP_economy.1.t
+	desc = WJP_economy.1.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP has_country_flag = WJP_economic_chain_started }
+	option = {
+		name = WJP_economy.1.a
+		custom_effect_tooltip = WJP_economy.1.effect
+		hidden_effect = { WJP_economy_apply_report_effect = yes }
+	}
+}
+
+country_event = {
+	id = WJP_economy.2
+	title = WJP_economy.2.t
+	desc = WJP_economy.2.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP has_country_flag = WJP_economy_report_advanced }
+	option = {
+		name = WJP_economy.2.minsei
+		trigger = {
+			NOT = { has_country_flag = WJP_economy_plan_selected }
+		}
+		custom_effect_tooltip = WJP_economy.2.tt
+		hidden_effect = { WJP_economy_choose_minsei_plan_effect = yes }
+	}
+	option = {
+		name = WJP_economy.2.kokumu
+		trigger = {
+			NOT = { has_country_flag = WJP_economy_plan_selected }
+		}
+		custom_effect_tooltip = WJP_economy.2.tt
+		hidden_effect = { WJP_economy_choose_kokumu_plan_effect = yes }
+	}
+}
+
+country_event = {
+	id = WJP_economy.3
+	title = WJP_economy.3.t
+	desc = WJP_economy.3.d
+	picture = GFX_report_event_generic_riot
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP has_country_flag = WJP_economy_riot_started }
+	option = {
+		name = WJP_economy.3.a
+		custom_effect_tooltip = WJP_economy.3.effect
+		hidden_effect = {
+			WJP_economy_apply_riot_effect = yes
+			WJP_economy_advance_to_budget_effect = yes
+		}
+	}
+}
+
+country_event = {
+	id = WJP_economy.4
+	title = WJP_economy.4.t
+	desc = WJP_economy.4.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP has_country_flag = WJP_economy_budget_started }
+	option = {
+		name = WJP_economy.4.kokumu
+		trigger = { NOT = { has_country_flag = WJP_economy_budget_selected } }
+		custom_effect_tooltip = WJP_economy.4.kokumu.effect
+		hidden_effect = { WJP_economy_choose_kokumu_budget_effect = yes }
+	}
+	option = {
+		name = WJP_economy.4.minsei
+		trigger = { NOT = { has_country_flag = WJP_economy_budget_selected } }
+		custom_effect_tooltip = WJP_economy.4.minsei.effect
+		hidden_effect = { WJP_economy_choose_minsei_budget_effect = yes }
+	}
+}
+
+country_event = {
+	id = WJP_economy.5
+	title = WJP_economy.5.t
+	desc = WJP_economy.5.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = WJP has_country_flag = WJP_economy_submission_started WJP_parliament_bill_can_submit = yes }
+	option = {
+		name = WJP_economy.5.a
+		custom_effect_tooltip = WJP_economy.5.effect
+		hidden_effect = { WJP_economy_submit_bill_effect = yes }
+	}
+}

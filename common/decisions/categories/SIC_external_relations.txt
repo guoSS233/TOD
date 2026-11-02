@@ -1,0 +1,8 @@
+SIC_external_category = {
+    icon = GFX_decision_generic_political_address
+    allowed = { original_tag = SIC }
+    visible = {
+        SIC_external_active_trigger = yes
+        OR = { SIC_external_political_trigger = yes SIC_external_aid_trigger = yes }
+    }
+}

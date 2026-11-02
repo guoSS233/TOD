@@ -1,0 +1,105 @@
+# Fixed SIC scope: no FROM chain survives a tag switch or an annexation.
+SIC_external_active_trigger = {
+    tag = SIC
+    country_exists = SIC
+    has_capitulated = no
+    is_subject = no
+    has_country_flag = SIC_politics_started
+}
+SIC_external_political_trigger = {
+    SIC_external_active_trigger = yes
+    has_country_flag = SIC_politics_resolved
+    has_country_flag = SIC_politics_qingzheng_won
+}
+SIC_external_aid_trigger = {
+    SIC_external_active_trigger = yes
+    SIC_politics_active_trigger = yes
+    NOT = { check_variable = { SIC_politics_months < 6 } }
+}
+SIC_external_free_trigger = {
+    NOT = { has_country_flag = SIC_external_pending }
+    NOT = { has_country_flag = SIC_external_partner_GOS }
+    NOT = { has_country_flag = SIC_external_partner_USC }
+}
+# has_character excludes retired/unassigned characters. The leader-role check
+# excludes a removed role, and a reigning MNG leader is never poached.
+# Engine docs: effects_documentation.md:set_nationality, promote_character;
+# triggers_documentation.md:has_character, has_country_leader.
+SIC_external_song_available_trigger = {
+    SIC_external_political_trigger = yes
+    date < 1965.1.1
+    country_exists = MNG
+    NOT = { has_war_with = MNG }
+    MNG = {
+        has_capitulated = no
+        has_character = MNG_Song_jiaoren
+        has_country_leader = { character = MNG_Song_jiaoren ruling_only = no }
+        NOT = { has_country_leader = { character = MNG_Song_jiaoren ruling_only = yes } }
+    }
+}
+SIC_external_song_pending_trigger = {
+    SIC_external_song_available_trigger = yes
+    has_country_flag = SIC_external_song_pending
+    NOT = { has_country_flag = { flag = SIC_external_song_pending days > 60 } }
+    MNG = { has_country_flag = SIC_external_song_inbox }
+}
+SIC_external_GOS_political_eligible_trigger = {
+    SIC_external_political_trigger = yes
+    country_exists = GOS
+    NOT = { has_war_with = GOS }
+    NOT = { has_country_flag = SIC_external_partner_USC }
+    NOT = { has_non_aggression_pact_with = USC }
+    NOT = { has_decision = SIC_xianzheng_taofa_GOS }
+    GOS = { has_capitulated = no is_subject = no }
+}
+SIC_external_GOS_political_valid_trigger = {
+    SIC_external_GOS_political_eligible_trigger = yes
+    has_country_flag = SIC_external_pending
+    has_country_flag = SIC_external_pending_GOS_political
+    NOT = { has_country_flag = { flag = SIC_external_pending days > 60 } }
+    GOS = { has_country_flag = SIC_external_inbox_GOS_political }
+}
+SIC_external_USC_political_eligible_trigger = {
+    SIC_external_political_trigger = yes
+    country_exists = USC
+    NOT = { has_war_with = USC }
+    NOT = { has_country_flag = SIC_external_partner_GOS }
+    NOT = { has_non_aggression_pact_with = GOS }
+    USC = { has_capitulated = no is_subject = no }
+}
+SIC_external_USC_political_valid_trigger = {
+    SIC_external_USC_political_eligible_trigger = yes
+    has_country_flag = SIC_external_pending
+    has_country_flag = SIC_external_pending_USC_political
+    NOT = { has_country_flag = { flag = SIC_external_pending days > 60 } }
+    USC = { has_country_flag = SIC_external_inbox_USC_political }
+}
+SIC_external_GOS_aid_eligible_trigger = {
+    SIC_external_aid_trigger = yes
+    country_exists = GOS
+    NOT = { has_war_with = GOS }
+    NOT = { has_country_flag = SIC_external_partner_USC }
+    NOT = { has_decision = SIC_xianzheng_taofa_GOS }
+    GOS = { has_capitulated = no is_subject = no }
+}
+SIC_external_GOS_aid_valid_trigger = {
+    SIC_external_GOS_aid_eligible_trigger = yes
+    has_country_flag = SIC_external_pending
+    has_country_flag = SIC_external_pending_GOS_aid
+    NOT = { has_country_flag = { flag = SIC_external_pending days > 60 } }
+    GOS = { has_country_flag = SIC_external_inbox_GOS_aid }
+}
+SIC_external_USC_aid_eligible_trigger = {
+    SIC_external_aid_trigger = yes
+    country_exists = USC
+    NOT = { has_war_with = USC }
+    NOT = { has_country_flag = SIC_external_partner_GOS }
+    USC = { has_capitulated = no is_subject = no }
+}
+SIC_external_USC_aid_valid_trigger = {
+    SIC_external_USC_aid_eligible_trigger = yes
+    has_country_flag = SIC_external_pending
+    has_country_flag = SIC_external_pending_USC_aid
+    NOT = { has_country_flag = { flag = SIC_external_pending days > 60 } }
+    USC = { has_country_flag = SIC_external_inbox_USC_aid }
+}

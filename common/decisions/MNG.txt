@@ -693,6 +693,7 @@ MNG_chongjiandaming_categories = {
                 limit = { tag = ROC }
                 set_cosmetic_tag = ROC_tongyi
                 country_event = { id = mingcivwar.1005 }
+                ROC_enter_postwar_tree = yes
             }
             if = {
                 limit = { tag = SIC has_country_flag = SIC_daming_junzheng_ready }
@@ -724,6 +725,7 @@ MNG_chongjiandaming_categories = {
                     is_ming_tag = yes
                 }
                 every_unit_leader = {
+                    include_invisible = yes
                     set_nationality = ROOT
                 }
                 ROOT = { annex_country = { target = PREV transfer_troops = yes } }

@@ -1,0 +1,1572 @@
+add_namespace = ROC_legislation
+
+country_event = {
+    id = ROC_legislation.11
+    title = ROC_legislation.11.t
+    desc = ROC_legislation.11.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 1 compare = equals }
+            check_variable = { var = ROC_bill_id value = 2 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.11.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+            NOT = {
+                has_political_power < 10
+            }
+        }
+        ai_chance = { factor = 5 }
+        custom_effect_tooltip = ROC_bill_materials_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 10
+                    }
+                }
+                ROC_bill_prepare_materials = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.11.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+            NOT = {
+                has_political_power < 20
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_signatures_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 20
+                    }
+                }
+                ROC_bill_prepare_signatures = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.11.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 1
+            modifier = { factor = 5 ROC_bill_economic_policy_basis = yes }
+        }
+        custom_effect_tooltip = ROC_bill_party_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                }
+                ROC_bill_prepare_party = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.12
+    title = ROC_legislation.12.t
+    desc = ROC_legislation.12.desc
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 1 compare = equals }
+            check_variable = { var = ROC_bill_id value = 2 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.12.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 5
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_enough_support = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_vote_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                }
+                ROC_bill_vote = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.12.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+            ROC_bill_near_support = yes
+            NOT = {
+                has_political_power < 20
+            }
+            check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 2 }
+        custom_effect_tooltip = ROC_bill_conditional_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                    ROC_bill_near_support = yes
+                    NOT = {
+                        has_political_power < 20
+                    }
+                    check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+                }
+                ROC_bill_conditional = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.12.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+            ROC_bill_force_affordable = yes
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_force_ready = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_force_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                    ROC_bill_force_affordable = yes
+                }
+                ROC_bill_force = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.12.d
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_withdraw_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                }
+                ROC_bill_withdraw = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 2 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.21
+    title = ROC_legislation.21.t
+    desc = ROC_legislation.21.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 3 compare = equals }
+            check_variable = { var = ROC_bill_id value = 4 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.21.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+            NOT = {
+                has_political_power < 10
+            }
+        }
+        ai_chance = { factor = 5 }
+        custom_effect_tooltip = ROC_bill_materials_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 10
+                    }
+                }
+                ROC_bill_prepare_materials = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.21.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+            NOT = {
+                has_political_power < 20
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_signatures_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 20
+                    }
+                }
+                ROC_bill_prepare_signatures = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.21.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 1
+            modifier = { factor = 5 ROC_bill_economic_policy_basis = yes }
+        }
+        custom_effect_tooltip = ROC_bill_party_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                }
+                ROC_bill_prepare_party = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.22
+    title = ROC_legislation.22.t
+    desc = ROC_legislation.22.desc
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 3 compare = equals }
+            check_variable = { var = ROC_bill_id value = 4 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.22.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 5
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_enough_support = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_vote_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                }
+                ROC_bill_vote = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.22.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+            ROC_bill_near_support = yes
+            NOT = {
+                has_political_power < 20
+            }
+            check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 2 }
+        custom_effect_tooltip = ROC_bill_conditional_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                    ROC_bill_near_support = yes
+                    NOT = {
+                        has_political_power < 20
+                    }
+                    check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+                }
+                ROC_bill_conditional = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.22.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+            ROC_bill_force_affordable = yes
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_force_ready = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_force_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                    ROC_bill_force_affordable = yes
+                }
+                ROC_bill_force = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.22.d
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_withdraw_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                }
+                ROC_bill_withdraw = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 4 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.31
+    title = ROC_legislation.31.t
+    desc = ROC_legislation.31.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 5 compare = equals }
+            check_variable = { var = ROC_bill_id value = 6 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.31.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+            NOT = {
+                has_political_power < 10
+            }
+        }
+        ai_chance = { factor = 5 }
+        custom_effect_tooltip = ROC_bill_materials_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 10
+                    }
+                }
+                ROC_bill_prepare_materials = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.31.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+            NOT = {
+                has_political_power < 20
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_signatures_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 20
+                    }
+                }
+                ROC_bill_prepare_signatures = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.31.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 1
+            modifier = { factor = 5 ROC_bill_economic_policy_basis = yes }
+        }
+        custom_effect_tooltip = ROC_bill_party_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                }
+                ROC_bill_prepare_party = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.32
+    title = ROC_legislation.32.t
+    desc = ROC_legislation.32.desc
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 5 compare = equals }
+            check_variable = { var = ROC_bill_id value = 6 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.32.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 5
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_enough_support = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_vote_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                }
+                ROC_bill_vote = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.32.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+            ROC_bill_near_support = yes
+            NOT = {
+                has_political_power < 20
+            }
+            check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 2 }
+        custom_effect_tooltip = ROC_bill_conditional_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                    ROC_bill_near_support = yes
+                    NOT = {
+                        has_political_power < 20
+                    }
+                    check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+                }
+                ROC_bill_conditional = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.32.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+            ROC_bill_force_affordable = yes
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_force_ready = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_force_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                    ROC_bill_force_affordable = yes
+                }
+                ROC_bill_force = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.32.d
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_withdraw_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                }
+                ROC_bill_withdraw = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 6 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.41
+    title = ROC_legislation.41.t
+    desc = ROC_legislation.41.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 7 compare = equals }
+            check_variable = { var = ROC_bill_id value = 8 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.41.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+            NOT = {
+                has_political_power < 10
+            }
+        }
+        ai_chance = { factor = 5 }
+        custom_effect_tooltip = ROC_bill_materials_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 10
+                    }
+                }
+                ROC_bill_prepare_materials = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.41.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+            NOT = {
+                has_political_power < 20
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_signatures_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 20
+                    }
+                }
+                ROC_bill_prepare_signatures = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.41.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 1
+            modifier = { factor = 5 ROC_bill_economic_policy_basis = yes }
+        }
+        custom_effect_tooltip = ROC_bill_party_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                }
+                ROC_bill_prepare_party = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.42
+    title = ROC_legislation.42.t
+    desc = ROC_legislation.42.desc
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 7 compare = equals }
+            check_variable = { var = ROC_bill_id value = 8 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.42.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 5
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_enough_support = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_vote_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                }
+                ROC_bill_vote = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.42.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+            ROC_bill_near_support = yes
+            NOT = {
+                has_political_power < 20
+            }
+            check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 2 }
+        custom_effect_tooltip = ROC_bill_conditional_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                    ROC_bill_near_support = yes
+                    NOT = {
+                        has_political_power < 20
+                    }
+                    check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+                }
+                ROC_bill_conditional = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.42.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+            ROC_bill_force_affordable = yes
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_force_ready = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_force_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                    ROC_bill_force_affordable = yes
+                }
+                ROC_bill_force = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.42.d
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_withdraw_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                }
+                ROC_bill_withdraw = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 8 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.51
+    title = ROC_legislation.51.t
+    desc = ROC_legislation.51.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 9 compare = equals }
+            check_variable = { var = ROC_bill_id value = 10 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.51.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+            NOT = {
+                has_political_power < 10
+            }
+        }
+        ai_chance = { factor = 5 }
+        custom_effect_tooltip = ROC_bill_materials_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 10
+                    }
+                }
+                ROC_bill_prepare_materials = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.51.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+            NOT = {
+                has_political_power < 20
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_signatures_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                    NOT = {
+                        has_political_power < 20
+                    }
+                }
+                ROC_bill_prepare_signatures = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.51.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 1
+            modifier = { factor = 5 ROC_bill_economic_policy_basis = yes }
+        }
+        custom_effect_tooltip = ROC_bill_party_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                }
+                ROC_bill_prepare_party = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 1 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.52
+    title = ROC_legislation.52.t
+    desc = ROC_legislation.52.desc
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = {
+        ROC_bill_valid = yes
+        check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+        OR = {
+            check_variable = { var = ROC_bill_id value = 9 compare = equals }
+            check_variable = { var = ROC_bill_id value = 10 compare = equals }
+        }
+    }
+    immediate = { ROC_econ_refresh = yes ROC_bill_validate = yes ROC_bill_refresh_support = yes }
+    option = {
+        name = ROC_legislation.52.a
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+        }
+        ai_chance = {
+            factor = 5
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_enough_support = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_vote_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                }
+                ROC_bill_vote = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.52.b
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+            ROC_bill_near_support = yes
+            NOT = {
+                has_political_power < 20
+            }
+            check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 2 }
+        custom_effect_tooltip = ROC_bill_conditional_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                    ROC_bill_near_support = yes
+                    NOT = {
+                        has_political_power < 20
+                    }
+                    check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+                }
+                ROC_bill_conditional = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.52.c
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+            ROC_bill_force_affordable = yes
+        }
+        ai_chance = {
+            factor = 1
+            modifier = {
+                factor = 0
+                NOT = { ROC_bill_force_ready = yes }
+            }
+        }
+        custom_effect_tooltip = ROC_bill_force_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                    ROC_bill_force_affordable = yes
+                }
+                ROC_bill_force = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_legislation.52.d
+        trigger = {
+            ROC_bill_valid = yes
+            check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_withdraw_tt
+        hidden_effect = {
+            ROC_econ_refresh = yes
+            ROC_bill_validate = yes
+            if = {
+                limit = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                }
+                ROC_bill_withdraw = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_bill_stale_close
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_bill_valid = yes
+                    check_variable = { var = ROC_bill_stage value = 2 compare = equals }
+                    OR = {
+                        check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                        check_variable = { var = ROC_bill_id value = 10 compare = equals }
+                    }
+                }
+            }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_bill_stale_close_tt
+    }
+}
+
+country_event = {
+    id = ROC_legislation.101
+    title = ROC_legislation.101.t
+    desc = ROC_legislation.101.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    option = { name = ROC_legislation.101.a }
+}
+
+country_event = {
+    id = ROC_legislation.102
+    title = ROC_legislation.102.t
+    desc = ROC_legislation.102.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    option = { name = ROC_legislation.102.a }
+}
+
+country_event = {
+    id = ROC_legislation.103
+    title = ROC_legislation.103.t
+    desc = ROC_legislation.103.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    option = { name = ROC_legislation.103.a }
+}
+
+country_event = {
+    id = ROC_legislation.104
+    title = ROC_legislation.104.t
+    desc = ROC_legislation.104.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    option = { name = ROC_legislation.104.a }
+}
+
+country_event = {
+    id = ROC_legislation.105
+    title = ROC_legislation.105.t
+    desc = ROC_legislation.105.d
+    picture = GFX_report_event_generic_factory
+    is_triggered_only = yes
+    option = { name = ROC_legislation.105.a }
+}
+

@@ -2,61 +2,64 @@ guiTypes = {
 	containerWindowType = {
 		name = "SIC_shengneijushi_ui_window"
 		position = { x = 0 y = 0 }
-		size = {
-			width = 100%
-			height = 280
-		}
+		size = { width = 500 height = 258 }
 		instantTextboxType = {
-			name = "industrial_collapse_v_text"
-			position = { x = 10 y = 0 }
-			font = "hoi_36header"
-			borderSize = {x = 0 y = 0}
-			text = "industrial_collapse_v_text"
-			maxWidth = 470
-			maxHeight = 20
+			name = "SIC_provincial_gui_industry"
+			position = { x = 18 y = 4 }
+			font = "hoi_18mbs"
+			text = "SIC_provincial_gui_industry"
+			maxWidth = 464
+			maxHeight = 24
 			format = left
+			pdx_tooltip = "SIC_red_opportunity_conditions_tt"
 		}
-		icontype = {
+		iconType = {
 			name = "industrial_collapse_progressbar"
+			position = { x = 18 y = 34 }
 			spriteType = "GFX_warscore_progressbar_small"
-			position = { x=10 y=80 }
-			scale = 2
+			scale = 1.75
 		}
 		instantTextboxType = {
-			name = "public_riots_v_text"
-			position = { x = 10 y = 120 }
-			font = "hoi_36header"
-			borderSize = {x = 0 y = 0}
-			text = "public_riots_v_text"
-			maxWidth = 470
-			maxHeight = 20
+			name = "SIC_provincial_gui_unrest"
+			position = { x = 18 y = 74 }
+			font = "hoi_18mbs"
+			text = "SIC_provincial_gui_unrest"
+			maxWidth = 464
+			maxHeight = 24
 			format = left
+			pdx_tooltip = "SIC_red_opportunity_conditions_tt"
 		}
-		icontype = {
+		iconType = {
 			name = "public_riots_progressbar"
+			position = { x = 18 y = 104 }
 			spriteType = "GFX_warscore_progressbar_small"
-			position = { x=10 y=200 }
-			scale = 2
+			scale = 1.75
 		}
 		instantTextboxType = {
-			name = "industrial_collapse_text"
-			position = { x = 300 y = 10 }
+			name = "SIC_provincial_gui_organization"
+			position = { x = 18 y = 144 }
 			font = "hoi_18mbs"
-			borderSize = {x = 0 y = 0}
-			text = "industrial_collapse_text"
-			maxWidth = 190
-			maxHeight = 20
+			text = "SIC_provincial_gui_organization"
+			maxWidth = 464
+			maxHeight = 24
 			format = left
+			pdx_tooltip = "SIC_red_monthly_rules_tt"
+		}
+		iconType = {
+			name = "red_organization_progressbar"
+			position = { x = 18 y = 174 }
+			spriteType = "GFX_warscore_progressbar_small"
+			scale = 1.75
 		}
 		instantTextboxType = {
-			name = "public_riots_text"
-			position = { x = 300 y = 130 }
+			name = "SIC_provincial_gui_status"
+			position = { x = 18 y = 218 }
 			font = "hoi_18mbs"
-			borderSize = {x = 0 y = 0}
-			text = "public_riots_text"
-			maxWidth = 190
-			maxHeight = 20
+			text = "SIC_provincial_gui_status"
+			maxWidth = 464
+			maxHeight = 32
 			format = left
+			pdx_tooltip = "SIC_red_opportunity_conditions_tt"
 		}
 	}
 }

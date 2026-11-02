@@ -1,0 +1,334 @@
+ROC_bill_session_ready = {
+    ROC_ce_administration_active = yes
+    has_active_mission = ROC_decision_bop_jingjidahui
+    NOT = { has_country_flag = ROC_econ_conference_pending }
+    NOT = { has_country_flag = ROC_econ_resignation_pending }
+}
+
+ROC_bill_project_1_ready = {
+    has_idea = ROC_idea_YuShude
+    NOT = { has_country_flag = ROC_econ_yu_pilot_done }
+    check_variable = { var = ROC_econ_term_remaining value = 90 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_1_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 1 compare = equals }
+}
+
+ROC_bill_project_2_ready = {
+    has_idea = ROC_idea_YuShude
+    NOT = { has_country_flag = ROC_econ_yu_expansion_done }
+    check_variable = { var = ROC_econ_term_remaining value = 180 compare = greater_than_or_equals }
+    has_country_flag = ROC_econ_yu_pilot_done
+    ROC_has_tuidongnongyehezuoshefazhan = yes
+    check_variable = { var = ROC_econ_stage value = 2 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_2_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 2 compare = equals }
+}
+
+ROC_bill_project_3_ready = {
+    has_idea = ROC_idea_YanYangchu
+    NOT = { has_country_flag = ROC_econ_yan_pilot_done }
+    check_variable = { var = ROC_econ_term_remaining value = 90 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_3_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 3 compare = equals }
+}
+
+ROC_bill_project_4_ready = {
+    has_idea = ROC_idea_YanYangchu
+    NOT = { has_country_flag = ROC_econ_yan_expansion_done }
+    check_variable = { var = ROC_econ_term_remaining value = 180 compare = greater_than_or_equals }
+    has_country_flag = ROC_econ_yan_pilot_done
+    ROC_has_tuidongxiangcunjiansheyundong = yes
+    check_variable = { var = ROC_econ_stage value = 2 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_4_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 4 compare = equals }
+}
+
+ROC_bill_project_5_ready = {
+    has_idea = ROC_idea_RuanXiaoxian
+    NOT = { has_country_flag = ROC_econ_ruan_pilot_done }
+    check_variable = { var = ROC_econ_term_remaining value = 90 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_5_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 5 compare = equals }
+}
+
+ROC_bill_project_6_ready = {
+    has_idea = ROC_idea_RuanXiaoxian
+    NOT = { has_country_flag = ROC_econ_ruan_expansion_done }
+    check_variable = { var = ROC_econ_term_remaining value = 180 compare = greater_than_or_equals }
+    has_country_flag = ROC_econ_ruan_pilot_done
+    ROC_has_qianghuagonghuiquanli = yes
+    check_variable = { var = ROC_econ_stage value = 2 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_6_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 6 compare = equals }
+}
+
+ROC_bill_project_7_ready = {
+    has_idea = ROC_idea_ChenZanxian
+    NOT = { has_country_flag = ROC_econ_chen_pilot_done }
+    check_variable = { var = ROC_econ_term_remaining value = 90 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_7_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 7 compare = equals }
+}
+
+ROC_bill_project_8_ready = {
+    has_idea = ROC_idea_ChenZanxian
+    NOT = { has_country_flag = ROC_econ_chen_expansion_done }
+    check_variable = { var = ROC_econ_term_remaining value = 180 compare = greater_than_or_equals }
+    has_country_flag = ROC_econ_chen_pilot_done
+    ROC_has_qianghuagonghuiquanli = yes
+    check_variable = { var = ROC_econ_stage value = 2 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_8_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 8 compare = equals }
+}
+
+ROC_bill_project_9_ready = {
+    has_idea = ROC_idea_XiaoZheng
+    NOT = { has_country_flag = ROC_econ_xiao_pilot_done }
+    check_variable = { var = ROC_econ_term_remaining value = 90 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_9_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 9 compare = equals }
+}
+
+ROC_bill_project_10_ready = {
+    has_idea = ROC_idea_XiaoZheng
+    NOT = { has_country_flag = ROC_econ_xiao_expansion_done }
+    check_variable = { var = ROC_econ_term_remaining value = 180 compare = greater_than_or_equals }
+    has_country_flag = ROC_econ_xiao_pilot_done
+    ROC_has_kuodamincuhuifanwei = yes
+    check_variable = { var = ROC_econ_stage value = 2 compare = greater_than_or_equals }
+}
+
+ROC_bill_project_10_approved = {
+    ROC_bill_valid = yes
+    check_variable = { var = ROC_bill_stage value = 3 compare = equals }
+    check_variable = { var = ROC_bill_id value = 10 compare = equals }
+}
+
+ROC_bill_valid = {
+    ROC_bill_session_ready = yes
+    check_variable = { var = ROC_bill_stage value = 0 compare = greater_than }
+    OR = {
+        AND = {
+            check_variable = { var = ROC_bill_id value = 1 compare = equals }
+            ROC_bill_project_1_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            ROC_bill_project_2_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 3 compare = equals }
+            ROC_bill_project_3_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            ROC_bill_project_4_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 5 compare = equals }
+            ROC_bill_project_5_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            ROC_bill_project_6_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 7 compare = equals }
+            ROC_bill_project_7_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            ROC_bill_project_8_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 9 compare = equals }
+            ROC_bill_project_9_ready = yes
+        }
+        AND = {
+            check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            ROC_bill_project_10_ready = yes
+        }
+    }
+}
+
+ROC_bill_cooperation_basis = {
+    ROC_bill_economic_policy_basis = yes
+}
+
+ROC_bill_pressure_high = {
+    has_country_flag = ROC_bill_supervision
+}
+
+ROC_bill_enough_support = {
+    check_variable = { var = ROC_bill_support value = ROC_bill_requirement compare = greater_than_or_equals }
+}
+
+ROC_bill_near_support = {
+    check_variable = { var = ROC_bill_support value = ROC_bill_conditional_requirement compare = greater_than_or_equals }
+}
+
+ROC_bill_force_ready = {
+    ROC_bill_near_support = yes
+    check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+}
+
+ROC_bill_force_affordable = {
+    OR = {
+        AND = {
+            ROC_bill_force_ready = yes
+            NOT = {
+                has_political_power < 20
+            }
+        }
+        AND = {
+            NOT = { ROC_bill_force_ready = yes }
+            NOT = {
+                has_political_power < 30
+            }
+        }
+    }
+}
+
+ROC_bill_submit_ready = {
+    ROC_bill_session_ready = yes
+    ROC_econ_policy_free = yes
+    check_variable = { var = ROC_bill_stage value = 0 compare = equals }
+    check_variable = { var = ROC_bill_candidate value = 0 compare = greater_than }
+    ROC_bill_candidate_ready = yes
+    NOT = { has_country_flag = ROC_bill_submit_cooldown }
+    NOT = {
+        has_political_power < 15
+    }
+}
+
+ROC_bill_candidate_ready = {
+    OR = {
+        AND = {
+            check_variable = { ROC_bill_candidate = 1 }
+            ROC_bill_project_1_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 104 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 2 }
+            ROC_bill_project_2_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 194 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 3 }
+            ROC_bill_project_3_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 104 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 4 }
+            ROC_bill_project_4_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 194 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 5 }
+            ROC_bill_project_5_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 104 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 6 }
+            ROC_bill_project_6_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 194 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 7 }
+            ROC_bill_project_7_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 104 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 8 }
+            ROC_bill_project_8_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 194 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 9 }
+            ROC_bill_project_9_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 104 compare = greater_than_or_equals }
+        }
+        AND = {
+            check_variable = { ROC_bill_candidate = 10 }
+            ROC_bill_project_10_ready = yes
+            check_variable = { var = ROC_econ_term_remaining value = 194 compare = greater_than_or_equals }
+        }
+    }
+}
+
+ROC_bill_economic_policy_basis = {
+    OR = {
+        AND = {
+            OR = {
+                check_variable = { var = ROC_bill_id value = 1 compare = equals }
+                check_variable = { var = ROC_bill_id value = 2 compare = equals }
+            }
+            ROC_has_tuidongnongyehezuoshefazhan = yes
+        }
+        AND = {
+            OR = {
+                check_variable = { var = ROC_bill_id value = 3 compare = equals }
+                check_variable = { var = ROC_bill_id value = 4 compare = equals }
+            }
+            ROC_has_tuidongxiangcunjiansheyundong = yes
+        }
+        AND = {
+            OR = {
+                check_variable = { var = ROC_bill_id value = 5 compare = equals }
+                check_variable = { var = ROC_bill_id value = 6 compare = equals }
+            }
+            ROC_has_qianghuagonghuiquanli = yes
+        }
+        AND = {
+            OR = {
+                check_variable = { var = ROC_bill_id value = 7 compare = equals }
+                check_variable = { var = ROC_bill_id value = 8 compare = equals }
+            }
+            ROC_has_qianghuagonghuiquanli = yes
+        }
+        AND = {
+            OR = {
+                check_variable = { var = ROC_bill_id value = 9 compare = equals }
+                check_variable = { var = ROC_bill_id value = 10 compare = equals }
+            }
+            ROC_has_kuodamincuhuifanwei = yes
+        }
+    }
+}
+

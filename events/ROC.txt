@@ -290,44 +290,12 @@ country_event = {
 	trigger = {tag = ROC}
 	option = {
 		name = ROC_focus.18.a 
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.15
-		}
+		ROC_econ_shift_public_080 = yes
 	}
-	option = {
-		name = ROC_focus.18.b 
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.15
-				}
-			}
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = 0.15
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.15
-				}
-			}
-			add_power_balance_value = {
-				id = ROC_power_balance
-				value = -0.15
-			}
-		}
-	}
+	option = { name = ROC_focus.18.b add_to_variable = { var = ROC_ma_center_favor value = 5 } add_to_variable = { var = ROC_ma_left_favor value = 5 } ROC_ce_refresh = yes }
 	option = {
 		name = ROC_focus.18.c 
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.15
-		}
+		ROC_econ_shift_market_080 = yes
 	}
 }
 #利用名单
@@ -526,17 +494,11 @@ country_event = {
 	option = {
 		name = ROC_focus.23.a 
 		complete_national_focus = gaizaojingjidezhunbei
-		set_power_balance = {
-			id = ROC_power_balance
-			left_side = ROC_left_side
-			right_side = ROC_right_side
-			set_default = yes 
-		}
-		set_variable = {
-			VAR_ROC_jianshe_pp_factor = 1
-		}
-		set_variable = {
-			VAR_ROC_jianshe_days_factor = 1
+		custom_effect_tooltip = ROC_ce_administration_started_tt
+		hidden_effect = {
+			ROC_ce_initialize = yes
+			set_variable = { VAR_ROC_jianshe_pp_factor = 1 }
+			set_variable = { VAR_ROC_jianshe_days_factor = 1 }
 		}
 		country_event = { id = ROC_pingheng.9997 }
 	}
@@ -794,6 +756,7 @@ country_event = {
 			ruling_party = moderate_socialism
 			elections_allowed = no
 		}
+		ROC_econ_remove_ministers = yes
 		add_ideas = {
 			ROC_idea_YangMingzhai
 			ROC_idea_ZhangBoling
@@ -801,18 +764,17 @@ country_event = {
 			ROC_idea_ZhangShenchuan
 		}
 		trigger = {
-			power_balance_value = {
-				id = ROC_power_balance
-				value > 0.33
-			}
+
 		}
-	}
+	    ROC_econ_direct_appointment_refresh = yes
+    }
 	option = {
 		name = ROC_focus.38.b 
 		set_politics = {
 			ruling_party = social_democrat
 			elections_allowed = no
 		}
+		ROC_econ_remove_ministers = yes
 		add_ideas = {
 			# ROC_idea_TanPingshan
 			ROC_idea_ChenYouren
@@ -824,46 +786,29 @@ country_event = {
 			trait = ROC_traits_datongzhuyijianxingzhe
 		}
 		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value >0
-				}
-			}
+			limit = { check_variable = { var = ROC_ma_left_favor value = ROC_ma_right_favor compare = greater_than_or_equals } }
 			add_ideas = {
 				ROC_idea_TanPingshan
 			}
 		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value <0.001
-				}
-			}
-			add_ideas = {
-				ROC_idea_Xuqian
+		else = { add_ideas = { ROC_idea_Xuqian
 			}
 		}
 		trigger = {
 			AND = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value >-0.34
-				}
+
+
 			}
 		}
-	}
+	    ROC_econ_direct_appointment_refresh = yes
+    }
 	option = {
 		name = ROC_focus.38.c 
 		set_politics = {
 			ruling_party = liberal_democracy
 			elections_allowed = no
 		}
+		ROC_econ_remove_ministers = yes
 		add_ideas = {
 			ROC_idea_TaoXingzhi
 			ROC_idea_ChuFucheng
@@ -871,15 +816,11 @@ country_event = {
 			ROC_idea_DaiLi
 		}
 		trigger = {
-			power_balance_value = {
-				id = ROC_power_balance
-				value < -0.33
-			}
+
 		}
-	}
+	    ROC_econ_direct_appointment_refresh = yes
+    }
 }
-
-
 
 #一、黄埔之夜
 country_event = { 
@@ -990,61 +931,61 @@ country_event = {
 				ROC_idea_huanandasoubu_1
 			}
 			ROC = {
-				ROC_zhangxiaozhun = { set_nationality = ROC }
-				ROC_zhangshaozeng = { set_nationality = ROC }
-				ROC_dengkeng = { set_nationality = ROC }
-				ROC_lijishen = { set_nationality = ROC }
-				ROC_chenmingshu = { set_nationality = ROC }
-				ROC_yuzuobai = { set_nationality = ROC }
-				ROC_dengyanda = { set_nationality = ROC }
-				ROC_xueyue = { set_nationality = ROC }
-				ROC_limingrui = { set_nationality = ROC }
-				ROC_jiangxianyun = { set_nationality = ROC }
-				ROC_helong = { set_nationality = ROC }
-				ROC_zhangfakui = { set_nationality = ROC }
-				ROC_chengeng = { set_nationality = ROC }
-				ROC_zhoushidi = { set_nationality = ROC }
-				ROC_ludeming = { set_nationality = ROC }
-				ROC_wangerzhuo = { set_nationality = ROC }
-				ROC_wangyaowu = { set_nationality = ROC }
-				ROC_lizhangda = { set_nationality = ROC }
-				ROC_jinfozhuang = { set_nationality = ROC }
-				ROC_guanlinzheng = { set_nationality = ROC }
-				ROC_xujishen = { set_nationality = ROC }
-				ROC_duyuming = { set_nationality = ROC }
-				ROC_zhuyunqing = { set_nationality = ROC }
-				ROC_huangqixiang = { set_nationality = ROC }
-				ROC_caoyuan = { set_nationality = ROC }
-				ROC_huangzaixin = { set_nationality = ROC }
-				ROC_xuguangda = { set_nationality = ROC }
-				ROC_liuchouxi = { set_nationality = ROC }
-				ROC_duandechang = { set_nationality = ROC }
-				ROC_caishenxi = { set_nationality = ROC }
-				ROC_linjianzhang = { set_nationality = ROC }
-				ROC_chengbiguang = { set_nationality = ROC }
-				ROC_yangshuzhuang = { set_nationality = ROC }
-				ROC_chenshaokuan = { set_nationality = ROC }
+				ROC_zhangxiaozhun = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_zhangshaozeng = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_dengkeng = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_lijishen = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_chenmingshu = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_yuzuobai = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_dengyanda = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_xueyue = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_limingrui = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_jiangxianyun = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_helong = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_zhangfakui = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_chengeng = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_zhoushidi = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_ludeming = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_wangerzhuo = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_wangyaowu = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_lizhangda = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_jinfozhuang = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_guanlinzheng = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_xujishen = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_duyuming = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_zhuyunqing = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_huangqixiang = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_caoyuan = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_huangzaixin = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_xuguangda = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_liuchouxi = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_duandechang = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_caishenxi = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_linjianzhang = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_chengbiguang = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_yangshuzhuang = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_chenshaokuan = { set_character_flag = ROC_guangzhou_uprising_available }
 ### 				ROC_chence = { set_nationality = ROC }
-				ROC_lizhilong = { set_nationality = ROC }
-				ROC_duxigui = { set_nationality = ROC }
-				ROC_chenjiliang = { set_nationality = ROC }
-				ROC_linzun = { set_nationality = ROC }
-				ROC_zhaosheng = { set_nationality = ROC }
-				ROC_tangrongbing = { set_nationality = ROC }
-				ROC_wuzhixin = { set_nationality = ROC }
-				ROC_lishijia = { set_nationality = ROC }
-				ROC_xufengzao = { set_nationality = ROC }
-				ROC_caozhongyuan = { set_nationality = ROC }
-				ROC_anjiaju = { set_nationality = ROC }
+				ROC_lizhilong = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_duxigui = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_chenjiliang = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_linzun = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_zhaosheng = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_tangrongbing = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_wuzhixin = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_lishijia = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_xufengzao = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_caozhongyuan = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_anjiaju = { set_character_flag = ROC_guangzhou_uprising_available }
 				ROC_wangganchang = { set_nationality = ROC }
 				ROC_fengru = { set_nationality = ROC }
 				ROC_wuyouxun = { set_nationality = ROC }
 				#部长，理论家
-				ROC_yangxianyi = { set_nationality = ROC }
-				ROC_huangguangrui = { set_nationality = ROC }
-				ROC_wangbi = { set_nationality = ROC }
-				ROC_changqiankun = { set_nationality = ROC }
-				ROC_liufuji = { set_nationality = ROC }
+				ROC_yangxianyi = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_huangguangrui = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_wangbi = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_changqiankun = { set_character_flag = ROC_guangzhou_uprising_available }
+				ROC_liufuji = { set_character_flag = ROC_guangzhou_uprising_available }
 			}	
 			GOS = {
 				GOS_zzx = { set_nationality = ROC }
@@ -1313,14 +1254,6 @@ country_event = {
 	}
 }
 
-
-
-
-
-
-
-
-
 #大同会本土大区情况
 country_event = { 
 	id = ROC_datong.1
@@ -1471,8 +1404,6 @@ country_event = {
 	}
 }
 
-
-
 #谭平山
 country_event = { 
 	id = ROC_pingheng.1001
@@ -1481,31 +1412,13 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-	trigger = {
-		tag = ROC
-		has_completed_focus = guangzhouqiyi
-		NOT = {has_country_flag = ROC_pingheng_economy_minister}
-		NOT = {has_country_flag = ROC_pingheng_end}
-		power_balance_value = {
-			id = ROC_power_balance
-			value < 0.5
-		}
-		power_balance_value = {
-			id = ROC_power_balance
-			value > 0
-		}
-		NOT = {has_idea = ROC_idea_TanPingshan}
-	}
-	immediate = {
-		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
-	}
+    trigger = { always = no }
 	option = {
 		name = ROC_pingheng.1001.a 
-		add_ideas = ROC_idea_TanPingshan
 	}
 	option = {
 		name = ROC_pingheng.1001.b
-		add_stability = -0.05
+
 	}
 }
 #董必武
@@ -1516,27 +1429,13 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-	trigger = {
-		has_completed_focus = guangzhouqiyi
-		NOT = {has_country_flag = ROC_pingheng_economy_minister}
-		NOT = {has_country_flag = ROC_pingheng_end}
-		tag = ROC
-		power_balance_value = {
-			id = ROC_power_balance
-			value > 0.499
-		}
-		NOT = {has_idea = ROC_idea_DongBiwu}
-	}
-	immediate = {
-		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
-	}
+    trigger = { always = no }
 	option = {
 		name = ROC_pingheng.1002.a 
-		add_ideas = ROC_idea_DongBiwu
 	}
 	option = {
 		name = ROC_pingheng.1002.b
-		add_stability = -0.05
+
 	}
 }
 #徐谦
@@ -1547,31 +1446,13 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-	trigger = {
-		has_completed_focus = guangzhouqiyi
-		NOT = {has_country_flag = ROC_pingheng_economy_minister}
-		NOT = {has_country_flag = ROC_pingheng_end}
-		tag = ROC
-		power_balance_value = {
-			id = ROC_power_balance
-			value < 0
-		}
-		power_balance_value = {
-			id = ROC_power_balance
-			value > -0.5
-		}
-		NOT = {has_idea = ROC_idea_Xuqian}
-	}
-	immediate = {
-		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
-	}
+    trigger = { always = no }
 	option = {
 		name = ROC_pingheng.1003.a 
-		add_ideas = ROC_idea_Xuqian
 	}
 	option = {
 		name = ROC_pingheng.1003.b
-		add_stability = -0.05
+
 	}
 }
 #黄炎培
@@ -1582,27 +1463,13 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-	trigger = {
-		has_completed_focus = guangzhouqiyi
-		NOT = {has_country_flag = ROC_pingheng_economy_minister}
-		NOT = {has_country_flag = ROC_pingheng_end}
-		tag = ROC
-		power_balance_value = {
-			id = ROC_power_balance
-			value < -0.499
-		}
-		NOT = {has_idea = ROC_idea_HuangYanpei}
-	}
-	immediate = {
-		set_country_flag = { flag = ROC_pingheng_economy_minister value = 1 days = 360 }
-	}
+    trigger = { always = no }
 	option = {
 		name = ROC_pingheng.1004.a 
-		add_ideas = ROC_idea_HuangYanpei
 	}
 	option = {
 		name = ROC_pingheng.1004.b
-		add_stability = -0.05
+
 	}
 }
 #经济部长
@@ -1613,193 +1480,62 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
+    timeout_days = 14
 	trigger = {
 		tag = ROC
+        NOT = { has_active_mission = ROC_decision_bop_jingjidahui }
 	}
-	option = {
-		name = ROC_pingheng.9997.a 
-		add_ideas = ROC_idea_YuShude
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.34
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.339
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9997.b 
-		add_ideas = ROC_idea_YanYangchu
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9997.c 
-		add_ideas = ROC_idea_ChenZanxian
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.1
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9997.e
-		add_ideas = ROC_idea_RuanXiaoxian
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.08
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9997.f
-		add_ideas = ROC_idea_XiaoZheng
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.1
-			}
-		}
-	}
+    immediate = { set_country_flag = ROC_econ_conference_pending }
+    option = {
+        name = ROC_pingheng.9997.a
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YuShude
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9997.b
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YanYangchu
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9997.c
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_ChenZanxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9997.e
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_RuanXiaoxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9997.f
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_XiaoZheng
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
 }
 #经济部长
 country_event = { 
@@ -1809,820 +1545,288 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
+    timeout_days = 14
 	trigger = {
 		tag = ROC
+        NOT = { has_active_mission = ROC_decision_bop_jingjidahui }
 	}
-	immediate = {
-		set_country_flag = country_flag_jingjidahui_1
-	}
-	option = {
-		name = ROC_pingheng.9998.a 
-		add_ideas = ROC_idea_YuShude
+
+    immediate = { set_country_flag = ROC_econ_conference_pending set_country_flag = country_flag_jingjidahui_1 }
+    option = {
+        name = ROC_pingheng.9998.a
 		trigger = {
 			NOT ={has_idea = ROC_idea_YuShude}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.34
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.339
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.b 
-		add_ideas = ROC_idea_YanYangchu
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YuShude
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.b
 		trigger = {
 			NOT ={has_idea = ROC_idea_YanYangchu}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.c 
-		add_ideas = ROC_idea_ChenZanxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YanYangchu
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.c
 		trigger = {
 			NOT ={has_idea = ROC_idea_ChenZanxian}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.1
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.k 
-		add_ideas = ROC_idea_RuanXiaoxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_ChenZanxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.k
 		trigger = {
 			NOT ={has_idea = ROC_idea_RuanXiaoxian}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.08
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.e 
-		add_ideas = ROC_idea_XiaoZheng
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_RuanXiaoxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.e
 		trigger = {
 			NOT ={has_idea = ROC_idea_XiaoZheng}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.1
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.f 
-		add_ideas = ROC_idea_YuShude
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_XiaoZheng
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.f
 		trigger = {
 			has_idea = ROC_idea_YuShude
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.34
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.339
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.g 
-		add_ideas = ROC_idea_YanYangchu
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YuShude
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.g
 		trigger = {
 			has_idea = ROC_idea_YanYangchu
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.h 
-		add_ideas = ROC_idea_ChenZanxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YanYangchu
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.h
 		trigger = {
 			has_idea = ROC_idea_ChenZanxian
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.1
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.i 
-		add_ideas = ROC_idea_RuanXiaoxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_ChenZanxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.i
 		trigger = {
 			has_idea = ROC_idea_RuanXiaoxian
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.08
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9998.j 
-		add_ideas = ROC_idea_XiaoZheng
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_RuanXiaoxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9998.j
 		trigger = {
 			has_idea = ROC_idea_XiaoZheng
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.1
-			}
-		}
-	}
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_XiaoZheng
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
 }
 #经济部长
-country_event = { 
+country_event = {
 	id = ROC_pingheng.9999
 	title = ROC_pingheng.9999.t
 	desc = ROC_pingheng.9999.d
 
 	fire_only_once = no
 	is_triggered_only = yes
+    timeout_days = 14
 	trigger = {
 		tag = ROC
+        NOT = { has_active_mission = ROC_decision_bop_jingjidahui }
 	}
-	option = {
-		name = ROC_pingheng.9999.a 
-		add_ideas = ROC_idea_YuShude
+    immediate = { set_country_flag = ROC_econ_conference_pending }
+    option = {
+        name = ROC_pingheng.9999.a
 		trigger = {
 			NOT ={has_idea = ROC_idea_YuShude}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.34
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.339
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.b 
-		add_ideas = ROC_idea_YanYangchu
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YuShude
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.b
 		trigger = {
 			NOT ={has_idea = ROC_idea_YanYangchu}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.c 
-		add_ideas = ROC_idea_ChenZanxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YanYangchu
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.c
 		trigger = {
 			NOT ={has_idea = ROC_idea_ChenZanxian}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.1
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.k 
-		add_ideas = ROC_idea_RuanXiaoxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_ChenZanxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.k
 		trigger = {
 			NOT ={has_idea = ROC_idea_RuanXiaoxian}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.08
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.e 
-		add_ideas = ROC_idea_XiaoZheng
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_RuanXiaoxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.e
 		trigger = {
 			NOT ={has_idea = ROC_idea_XiaoZheng}
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.1
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.f 
-		add_ideas = ROC_idea_YuShude
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_XiaoZheng
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.f
 		trigger = {
 			has_idea = ROC_idea_YuShude
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.34
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.339
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.g 
-		add_ideas = ROC_idea_YanYangchu
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YuShude
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.g
 		trigger = {
 			has_idea = ROC_idea_YanYangchu
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.h 
-		add_ideas = ROC_idea_ChenZanxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_YanYangchu
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.h
 		trigger = {
 			has_idea = ROC_idea_ChenZanxian
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.1
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.i 
-		add_ideas = ROC_idea_RuanXiaoxian
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_ChenZanxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.i
 		trigger = {
 			has_idea = ROC_idea_RuanXiaoxian
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value > 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = 0.08
-			}
-		}
-	}
-	option = {
-		name = ROC_pingheng.9999.j 
-		add_ideas = ROC_idea_XiaoZheng
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_RuanXiaoxian
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
+    option = {
+        name = ROC_pingheng.9999.j
 		trigger = {
 			has_idea = ROC_idea_XiaoZheng
 		}
-		if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value < -0.339
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.02
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.34
-				}
-				power_balance_value = {
-					id = ROC_power_balance
-					value < 0
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.05
-			}
-		}
-		else_if = {
-			limit = {
-				power_balance_value = {
-					id = ROC_power_balance
-					value > -0.001
-				}
-			}
-			add_power_balance_value = {
-			    id = ROC_power_balance
-			    value = -0.1
-			}
-		}
-	}
+        if = {
+            limit = { hidden_trigger = { has_country_flag = ROC_econ_conference_pending NOT = { has_active_mission = ROC_decision_bop_jingjidahui } ROC_ce_administration_active = yes } }
+            custom_effect_tooltip = ROC_ce_conference_start_tt
+            hidden_effect = { ROC_econ_remove_ministers = yes }
+        add_ideas = ROC_idea_XiaoZheng
+        hidden_effect = { ROC_econ_start_term = yes }
+        }
+    }
 }
 #经济缓进方略
 country_event = { 
@@ -2642,10 +1846,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_zuo_1
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.05
-		}
+		ROC_econ_shift_market_050 = yes
 		add_to_variable = {
             var = ROC_VAR_youyi_base
             value = -0.05
@@ -2682,10 +1883,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_zuo_2
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.05
-		}
+		ROC_econ_shift_market_050 = yes
 		add_to_variable = {
             var = ROC_VAR_youyi_base
             value = -0.05
@@ -2722,10 +1920,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_zuo_3
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.05
-		}
+		ROC_econ_shift_market_050 = yes
 		add_to_variable = {
             var = ROC_VAR_youyi_base
             value = -0.05
@@ -2762,10 +1957,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_zuo_4
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.05
-		}
+		ROC_econ_shift_market_050 = yes
 		add_to_variable = {
             var = ROC_VAR_youyi_base
             value = -0.05
@@ -2802,10 +1994,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_zuo_5
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.05
-		}
+		ROC_econ_shift_market_050 = yes
 		add_to_variable = {
             var = ROC_VAR_youyi_base
             value = -0.05
@@ -2842,10 +2031,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_zuo_6
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.05
-		}
+		ROC_econ_shift_market_050 = yes
 		add_to_variable = {
             var = ROC_VAR_youyi_base
             value = -0.05
@@ -2882,10 +2068,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_zuo_7
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = -0.05
-		}
+		ROC_econ_shift_market_050 = yes
 		add_to_variable = {
             var = ROC_VAR_youyi_base
             value = -0.05
@@ -3103,10 +2286,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_you_1
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.05
-		}
+		ROC_econ_shift_public_050 = yes
 		add_to_variable = {
             var = ROC_VAR_zuoyi_base
             value = -0.05
@@ -3143,10 +2323,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_you_2
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.05
-		}
+		ROC_econ_shift_public_050 = yes
 		add_to_variable = {
             var = ROC_VAR_zuoyi_base
             value = -0.05
@@ -3183,10 +2360,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_you_3
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.05
-		}
+		ROC_econ_shift_public_050 = yes
 		add_to_variable = {
             var = ROC_VAR_zuoyi_base
             value = -0.05
@@ -3223,10 +2397,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_you_4
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.05
-		}
+		ROC_econ_shift_public_050 = yes
 		add_to_variable = {
             var = ROC_VAR_zuoyi_base
             value = -0.05
@@ -3263,10 +2434,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_you_5
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.05
-		}
+		ROC_econ_shift_public_050 = yes
 		add_to_variable = {
             var = ROC_VAR_zuoyi_base
             value = -0.05
@@ -3303,10 +2471,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_you_6
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.05
-		}
+		ROC_econ_shift_public_050 = yes
 		add_to_variable = {
             var = ROC_VAR_zuoyi_base
             value = -0.05
@@ -3343,10 +2508,7 @@ country_event = {
 				has_country_flag = ROC_flag_sanpai_you_7
 			}
 		}
-		add_power_balance_value = {
-			id = ROC_power_balance
-			value = 0.05
-		}
+		ROC_econ_shift_public_050 = yes
 		add_to_variable = {
             var = ROC_VAR_zuoyi_base
             value = -0.05
@@ -3918,9 +3080,11 @@ country_event = {
             value = -0.1
 		}
 		add_to_variable = {
-            var = ROC_VAR_youyi_base
+            var = ROC_VAR_zuoyi_base
             value = -0.1
 		}
+        ROC_scripted_effects_zuoyi = yes
+        ROC_scripted_effects_youyi = yes
 	}
 }
 country_event = { 
@@ -4059,7 +3223,7 @@ country_event = {
 country_event = { 
 	id = ROC_pingheng.50
 	title = ROC_pingheng.50.t
-	desc = ROC_pingheng.50.d
+	desc = ROC_allied_parties_meeting_desc
 
 	fire_only_once = yes
 	is_triggered_only = yes
@@ -4067,8 +3231,31 @@ country_event = {
 		tag = ROC
 	}
 	option = {
-		name = ROC_pingheng.50.a
-		add_political_power = 50
+		name = ROC_allied_parties_meeting_workers
+		add_political_power = 20
+		ROC_econ_shift_public_030 = yes
+	}
+	option = {
+		name = ROC_allied_parties_meeting_rural
+		add_political_power = 15
+		add_stability = 0.02
+	}
+	option = {
+		name = ROC_allied_parties_meeting_consultation
+		add_political_power = 25
+		custom_effect_tooltip = ROC_allied_meeting_consultation_tt
+		hidden_effect = {
+			add_to_variable = {
+				var = ROC_VAR_zuoyi_base
+				value = -0.02
+			}
+			add_to_variable = {
+				var = ROC_VAR_youyi_base
+				value = -0.02
+			}
+			ROC_scripted_effects_zuoyi = yes
+			ROC_scripted_effects_youyi = yes
+		}
 	}
 }
 country_event = { 

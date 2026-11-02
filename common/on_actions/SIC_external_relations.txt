@@ -1,0 +1,33 @@
+on_actions = {
+    on_monthly_SIC = {
+        effect = { if = { limit = { tag = SIC } SIC_external_monthly_effect = yes } }
+    }
+    # Only four fixed countries are checked; no global negotiation framework.
+    on_daily = {
+        effect = {
+            if = {
+                limit = { country_exists = SIC }
+                SIC = { SIC_external_cleanup_effect = yes }
+            }
+            else = {
+                # The source state may remain in an annexed country; erase it
+                # so a later liberation cannot resume a stale transaction.
+                SIC = {
+                    SIC_external_clear_pending_effect = yes
+                    clr_country_flag = SIC_external_song_pending
+                    clr_country_flag = SIC_external_song_choice_pending
+                }
+                # Clear receiver inboxes outside the absent SIC scope.
+                GOS = {
+                    clr_country_flag = SIC_external_inbox_GOS_political
+                    clr_country_flag = SIC_external_inbox_GOS_aid
+                }
+                USC = {
+                    clr_country_flag = SIC_external_inbox_USC_political
+                    clr_country_flag = SIC_external_inbox_USC_aid
+                }
+                MNG = { clr_country_flag = SIC_external_song_inbox }
+            }
+        }
+    }
+}

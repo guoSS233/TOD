@@ -1,0 +1,44 @@
+#####################################################################
+#####				bingmo 步兵实体 - 2级升级						#####
+#####			al_..._3_entity (al_..._2_mesh 步枪手2)				#####
+#####			原始重定向动画 + JAP 右手武器挂载					#####
+#####			注：march_move 带根骨骼位移已禁用					#####
+#####################################################################
+
+entity = {
+	name = "al_8916c745_5a9f_400e_886b_52e8fe394b99_3_entity"
+	pdxmesh = "al_8916c745_5a9f_400e_886b_52e8fe394b99_2_mesh"
+
+	default_state = "idle"
+	state = { name = "attack"			animation = "charge_rifle" 				animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 2 }
+	state = { name = "attack"			animation = "charge_rifle_shoot" 		animation_blend_time = 0.0  animation_speed = 1.0 looping = no next_state = "attack" chance = 1 }
+	state = { name = "defend"			animation = "attack" 					animation_blend_time = 0.3  animation_speed = 1.0 }
+	state = { name = "support_attack"	animation = "support_attack" 			animation_blend_time = 0.3 animation_speed = 1.0 }
+	state = { name = "move"				animation = "move" 						animation_blend_time = 1.0 animation_speed = 1.0 chance = 1
+		event = { trigger_once = yes sound = { soundeffect = "infantry_move_animation" } }
+	}
+	state = { name = "retreat"			animation = "retreat" 					animation_blend_time = 0.3 animation_speed = 1.0 }
+	state = { name = "death"			animation = "death" 					animation_blend_time = 0.3 animation_speed = 1.0
+		event = { time = 0 node = "head" particle = "blood_particle" keep_particle = yes }
+	}
+	state = { name = "idle"				animation = "idle"       				animation_blend_time = 0.3 animation_speed = 1.0 chance = 15 looping = no }
+	state = { name = "idle"				animation = "long_idle02" 				animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no }
+	state = { name = "idle"				animation = "long_idle03" 				animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no propagate_state = { lighter = "smoke" }
+		event = { time = 0 node = "head" particle = "cigarette_smoke_particle" keep_particle = yes }
+	}
+	state = { name = "idle"				animation = "long_idle04" 				animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no }
+	state = { name = "idle"				animation = "long_idle05" 				animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no }
+	state = { name = "training"			animation = "training" 					animation_blend_time = 0.3 animation_speed = 1.0 chance = 2 looping = no }
+	state = { name = "training"			animation = "jumping_jacks" 			animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no }
+	state = { name = "training"			animation = "pushup" 					animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no }
+	state = { name = "training"			animation = "guard_rifle" 				animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no }
+	state = { name = "training"			animation = "aim_exercise" 				animation_blend_time = 0.3 animation_speed = 1.0 chance = 1 looping = no }
+
+	attach = { 	name = "rifle1"	Right_Hand_node = "JAP_infantry_weapon_rifle_right_entity" }
+
+	attach = { 	name = "lighter"			Right_Hand_node_4 = "lighter_entity" }
+	attach = { 	name = "cigarette1"			Right_Hand_node_2 = "cigarette_entity" }
+	attach = { 	name = "cigarette_package1"	Right_Hand_node_3 = "cigarette_package_entity" }
+
+	scale = 0.8
+}

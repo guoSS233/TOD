@@ -1,0 +1,10 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = { limit = { country_exists = SIC } SIC = { SIC_politics_initialize_effect = yes } }
+		}
+	}
+	on_monthly_SIC = {
+		effect = { SIC_politics_monthly_effect = yes }
+	}
+}

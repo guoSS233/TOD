@@ -1,0 +1,37 @@
+ROC_ce_administration_active = {
+    original_tag = ROC
+    OR = {
+        ROC_has_gaizaojingjidezhunbei = yes
+        has_country_flag = ROC_ce_survey_done
+    }
+}
+ROC_ce_industry_target = {
+    is_controlled_by = ROOT
+    is_core_of = ROOT
+    free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+}
+ROC_ce_infrastructure_target = {
+    is_controlled_by = ROOT
+    is_core_of = ROOT
+    infrastructure < 5
+}
+ROC_ce_can_start = {
+    ROC_ce_administration_active = yes
+    has_country_flag = ROC_ce_program_done
+    has_active_mission = ROC_decision_bop_jingjidahui
+    NOT = { has_country_flag = ROC_econ_conference_pending }
+    NOT = { has_country_flag = ROC_econ_resignation_pending }
+    check_variable = { var = ROC_ce_project_id value = 0 compare = equals }
+}
+ROC_ce_current_project = {
+    ROC_ce_administration_active = yes
+    check_variable = { var = ROC_ce_project_id value = 0 compare = greater_than }
+}
+ROC_ce_accountability_ready = {
+    has_active_mission = ROC_decision_bop_jingjidahui
+    check_variable = { var = ROC_ce_reviews_behind value = 2 compare = greater_than_or_equals }
+    check_variable = { var = ROC_ce_opposition_count value = 2 compare = greater_than_or_equals }
+    NOT = { has_country_flag = ROC_econ_resignation_pending }
+    NOT = { has_country_flag = ROC_econ_conference_pending }
+    NOT = { has_country_flag = ROC_ce_accountability_pending }
+}

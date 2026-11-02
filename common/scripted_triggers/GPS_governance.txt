@@ -1,0 +1,552 @@
+GPS_gov_tang = {
+	tag = GPS
+	has_capitulated = no
+	any_controlled_state = {
+		always = yes
+	}
+	has_completed_focus = GPS_quelitangdudushiquan
+	NOT = {
+		has_completed_focus = GPS_jianglingjitilingdao
+	}
+}
+GPS_gov_committee = {
+	tag = GPS
+	has_capitulated = no
+	any_controlled_state = {
+		always = yes
+	}
+	has_completed_focus = GPS_jianglingjitilingdao
+}
+GPS_gov_active = {
+	tag = GPS
+	OR = {
+		GPS_gov_tang = yes
+		GPS_gov_committee = yes
+	}
+}
+GPS_gov_postwar = {
+	GPS_gov_active = yes
+	has_completed_focus = GPS_xuangaopingluanshengli
+	has_war = no
+}
+GPS_gov_local_work_possible = {
+	GPS_gov_active = yes
+	any_owned_state = {
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_restart_possible = {
+	GPS_gov_active = yes
+	any_owned_state = {
+		is_controlled_by = ROOT
+		infrastructure > 0
+		OR = {
+			industrial_complex > 0
+			arms_factory > 0
+		}
+	}
+}
+GPS_gov_national_dominance = {
+	GPS_gov_postwar = yes
+	TOD_china_unified_for_ming_civil_war = yes
+	is_subject = no
+	check_variable = { num_owned_states > 19 }
+	608 = { is_owned_by = ROOT is_controlled_by = ROOT }
+	613 = { is_owned_by = ROOT is_controlled_by = ROOT }
+	592 = { is_owned_by = ROOT is_controlled_by = ROOT }
+}
+GPS_gov_national_control_retained = {
+ GPS_gov_active = yes
+ is_subject = no
+ check_variable = { num_owned_states > 19 }
+ 608 = { is_owned_by = ROOT is_controlled_by = ROOT }
+ 613 = { is_owned_by = ROOT is_controlled_by = ROOT }
+ 592 = { is_owned_by = ROOT is_controlled_by = ROOT }
+}
+GPS_gov_orders_target_valid = {
+	GPS_gov_active = yes
+	has_event_target = GPS_gov_orders_target
+	event_target:GPS_gov_orders_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_coal_target_valid = {
+	GPS_gov_active = yes
+	OR = {
+		AND = {
+			has_country_flag = GPS_gov_coal_rail_847_328
+			GPS_gov_coal_rail_847_328_possible = yes
+		}
+		AND = {
+			has_country_flag = GPS_gov_coal_rail_847_408
+			GPS_gov_coal_rail_847_408_possible = yes
+		}
+		AND = {
+			has_country_flag = GPS_gov_coal_road
+			GPS_gov_coal_road_possible = yes
+		}
+	}
+}
+GPS_gov_restart_target_valid = {
+	GPS_gov_active = yes
+	has_event_target = GPS_gov_restart_target
+	event_target:GPS_gov_restart_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+		OR = {
+			industrial_complex > 0
+			arms_factory > 0
+		}
+	}
+}
+GPS_gov_tang_appointment_target_valid = {
+	GPS_gov_active = yes
+	has_event_target = GPS_gov_tang_appointment_target
+	event_target:GPS_gov_tang_appointment_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_repair_target_valid = {
+	GPS_gov_active = yes
+	has_event_target = GPS_gov_repair_target
+	event_target:GPS_gov_repair_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_coal_rail_847_328_possible = {
+	847 = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+	328 = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+	has_railway_connection = {
+		start_state = 847
+		target_state = 328
+		build_only_on_allied = yes
+		controller_priority = {
+			base = -1
+			modifier = {
+				tag = GPS
+				add = 2
+			}
+		}
+	}
+}
+GPS_gov_coal_rail_847_408_possible = {
+	847 = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+	408 = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+	has_railway_connection = {
+		start_state = 847
+		target_state = 408
+		build_only_on_allied = yes
+		controller_priority = {
+			base = -1
+			modifier = {
+				tag = GPS
+				add = 2
+			}
+		}
+	}
+}
+GPS_gov_coal_road_possible = {
+	847 = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+		industrial_complex > 0
+	}
+}
+GPS_gov_coal_transport_possible = {
+	OR = {
+		GPS_gov_coal_rail_847_328_possible = yes
+		GPS_gov_coal_rail_847_408_possible = yes
+		GPS_gov_coal_road_possible = yes
+	}
+}
+
+GPS_gov_joint_appointment_target_valid = {
+	GPS_gov_committee = yes
+	has_completed_focus = GPS_gov_committee_table
+	has_country_flag = GPS_gov_committee_table_done
+	has_event_target = GPS_gov_joint_appointment_target
+	event_target:GPS_gov_joint_appointment_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_joint_pay_target_valid = {
+	GPS_gov_committee = yes
+	has_completed_focus = GPS_gov_committee_table
+	has_country_flag = GPS_gov_committee_table_done
+	has_event_target = GPS_gov_joint_pay_target
+	event_target:GPS_gov_joint_pay_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_defence_roster_target_valid = {
+	GPS_gov_committee = yes
+	has_completed_focus = GPS_gov_committee_table
+	has_country_flag = GPS_gov_committee_table_done
+	has_event_target = GPS_gov_defence_roster_target
+	event_target:GPS_gov_defence_roster_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+
+GPS_gov_receipts_breach = {
+	OR = {
+		has_country_flag = GPS_gov_joint_pay_breach
+		has_country_flag = GPS_gov_defence_roster_breach
+		has_country_flag = GPS_gov_joint_appointment_breach
+	}
+}
+GPS_gov_receipts_all_a = {
+	has_country_flag = GPS_gov_joint_pay_receipt_a
+	has_country_flag = GPS_gov_defence_roster_receipt_a
+	has_country_flag = GPS_gov_joint_appointment_receipt_a
+}
+GPS_gov_receipts_cost_affordable = {
+	OR = {
+		AND = {
+			GPS_gov_receipts_breach = yes
+			has_political_power >= 20
+		}
+		AND = {
+			NOT = {
+				GPS_gov_receipts_breach = yes
+			}
+			GPS_gov_receipts_all_a = yes
+			has_political_power >= 5
+		}
+		AND = {
+			NOT = {
+				GPS_gov_receipts_breach = yes
+			}
+			NOT = {
+				GPS_gov_receipts_all_a = yes
+			}
+			has_political_power >= 10
+		}
+	}
+}
+
+
+GPS_gov_position_ready = {
+	GPS_gov_postwar = yes
+	has_completed_focus = GPS_sheizhuchenfu
+	OR = {
+		AND = {
+			has_completed_focus = GPS_gov_tang_settlement
+			has_country_flag = GPS_gov_tang_settlement_done
+		}
+		AND = {
+			has_completed_focus = GPS_gov_committee_settlement
+			has_country_flag = GPS_gov_committee_settlement_done
+		}
+	}
+}
+GPS_gov_peace_foothold = {
+	GPS_gov_local_work_possible = yes
+	has_war = no
+}
+GPS_gov_entry_possible = {
+	GPS_gov_position_ready = yes
+	num_divisions > 4
+	GPS_gov_local_work_possible = yes
+	OR = {
+		GPS_gov_coal_rail_847_328_possible = yes
+		GPS_gov_coal_rail_847_408_possible = yes
+	}
+	OR = {
+		GPS_gov_contact_STG = yes
+		GPS_gov_contact_MNG = yes
+		GPS_gov_contact_XBJ = yes
+		AND = {
+			country_exists = ROC
+			is_neighbor_of = ROC
+		}
+		AND = {
+			country_exists = SIC
+			is_neighbor_of = SIC
+		}
+		AND = {
+			country_exists = SCG
+			is_neighbor_of = SCG
+		}
+	}
+}
+GPS_gov_contact_STG = {
+	country_exists = STG
+	NOT = {
+		has_war_with = STG
+	}
+	is_neighbor_of = STG
+}
+GPS_gov_contact_MNG = {
+	country_exists = MNG
+	NOT = {
+		has_war_with = MNG
+	}
+	is_neighbor_of = MNG
+}
+GPS_gov_contact_XBJ = {
+	country_exists = XBJ
+	NOT = {
+		has_war_with = XBJ
+	}
+	is_neighbor_of = XBJ
+}
+GPS_gov_contact_KOR = {
+	country_exists = KOR
+	NOT = {
+		has_war_with = KOR
+	}
+	OR = {
+		is_neighbor_of = KOR
+		AND = {
+			any_owned_state = {
+				is_controlled_by = ROOT
+				is_coastal = yes
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					building = naval_base
+					level > 0
+				}
+			}
+			KOR = {
+				any_owned_state = {
+					is_controlled_by = KOR
+					is_coastal = yes
+					any_province_building_level = {
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+						building = naval_base
+						level > 0
+					}
+				}
+			}
+		}
+	}
+}
+GPS_gov_contact_EZO = {
+	country_exists = EZO
+	NOT = {
+		has_war_with = EZO
+	}
+	AND = {
+		any_owned_state = {
+			is_controlled_by = ROOT
+			is_coastal = yes
+			any_province_building_level = {
+				province = {
+					all_provinces = yes
+					limit_to_naval_base = yes
+				}
+				building = naval_base
+				level > 0
+			}
+		}
+		EZO = {
+			any_owned_state = {
+				is_controlled_by = EZO
+				is_coastal = yes
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					building = naval_base
+					level > 0
+				}
+			}
+		}
+	}
+}
+GPS_gov_contact_WJP = {
+	country_exists = WJP
+	NOT = {
+		has_war_with = WJP
+	}
+	AND = {
+		any_owned_state = {
+			is_controlled_by = ROOT
+			is_coastal = yes
+			any_province_building_level = {
+				province = {
+					all_provinces = yes
+					limit_to_naval_base = yes
+				}
+				building = naval_base
+				level > 0
+			}
+		}
+		WJP = {
+			any_owned_state = {
+				is_controlled_by = WJP
+				is_coastal = yes
+				any_province_building_level = {
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					building = naval_base
+					level > 0
+				}
+			}
+		}
+	}
+}
+GPS_gov_demobilization_target_valid = {
+	GPS_gov_peace_foothold = yes
+	has_event_target = GPS_gov_demobilization_target
+	event_target:GPS_gov_demobilization_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_grain_target_valid = {
+	GPS_gov_local_work_possible = yes
+	has_event_target = GPS_gov_grain_target
+	event_target:GPS_gov_grain_target = {
+		is_owned_by = ROOT
+		is_controlled_by = ROOT
+		infrastructure > 0
+	}
+}
+GPS_gov_contact_fee_affordable = {
+	OR = {
+		AND = {
+			OR = {
+				has_country_flag = GPS_gov_tang_register_a
+				has_country_flag = GPS_gov_committee_settlement_a
+			}
+			has_political_power >= 5
+		}
+		AND = {
+			NOT = {
+				OR = {
+					has_country_flag = GPS_gov_tang_register_a
+					has_country_flag = GPS_gov_committee_settlement_a
+				}
+			}
+			OR = {
+				has_country_flag = GPS_gov_tang_register_b
+				has_country_flag = GPS_gov_committee_settlement_b
+			}
+			has_political_power >= 10
+		}
+		AND = {
+			NOT = {
+				OR = {
+					has_country_flag = GPS_gov_tang_register_a
+					has_country_flag = GPS_gov_committee_settlement_a
+				}
+			}
+			NOT = {
+				OR = {
+					has_country_flag = GPS_gov_tang_register_b
+					has_country_flag = GPS_gov_committee_settlement_b
+				}
+			}
+			has_political_power >= 15
+		}
+	}
+}
+GPS_gov_contact_route_valid = {
+	OR = {
+		AND = {
+			has_country_flag = GPS_gov_contact_STG_pending
+			GPS_gov_contact_STG = yes
+		}
+		AND = {
+			has_country_flag = GPS_gov_contact_MNG_pending
+			GPS_gov_contact_MNG = yes
+		}
+		AND = {
+			has_country_flag = GPS_gov_contact_XBJ_pending
+			GPS_gov_contact_XBJ = yes
+		}
+	}
+}
+
+GPS_gov_national_policy_missing = {
+	OR = {
+		AND = {
+			has_country_flag = GPS_gov_national_army_done
+			has_country_flag = GPS_gov_national_army_a
+			NOT = { has_idea = GPS_gov_national_army_a_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_national_army_done
+			has_country_flag = GPS_gov_national_army_b
+			NOT = { has_idea = GPS_gov_national_army_b_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_national_accounts_done
+			has_country_flag = GPS_gov_national_accounts_a
+			NOT = { has_idea = GPS_gov_national_accounts_a_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_national_accounts_done
+			has_country_flag = GPS_gov_national_accounts_b
+			NOT = { has_idea = GPS_gov_national_accounts_b_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_national_accounts_done
+			has_country_flag = GPS_gov_national_accounts_c
+			NOT = { has_idea = GPS_gov_national_accounts_c_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_local_delegation_done
+			has_country_flag = GPS_gov_local_delegation_a
+			NOT = { has_idea = GPS_gov_local_delegation_a_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_local_delegation_done
+			has_country_flag = GPS_gov_local_delegation_b
+			NOT = { has_idea = GPS_gov_local_delegation_b_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_local_delegation_done
+			has_country_flag = GPS_gov_local_delegation_c
+			NOT = { has_idea = GPS_gov_local_delegation_c_policy }
+		}
+		AND = {
+			has_country_flag = GPS_gov_national_army_done
+			has_country_flag = GPS_gov_national_army_c
+			has_idea = GPS_gov_national_army_c_suspended
+		}
+	}
+}

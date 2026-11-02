@@ -1,0 +1,29 @@
+scripted_gui = {
+	ROC_central_economy_window = {
+		window_name = "ROC_central_economy_window"
+		context_type = decision_category
+		visible = { tag = ROC }
+		properties = {
+			ROC_ce_gui_policy_axis_bar = { frame = ROC_ce_policy_frame }
+		}
+		triggers = {
+			ROC_ce_gui_mandate_visible = { always = yes }
+			ROC_ce_gui_minister_visible = { always = yes }
+			ROC_ce_gui_term_visible = { always = yes }
+			ROC_ce_gui_current_action_visible = { always = yes }
+			ROC_ce_gui_current_action_desc_visible = { always = yes }
+			ROC_ce_gui_performance_visible = { always = yes }
+			ROC_ce_gui_project_name_visible = { always = yes }
+			ROC_ce_gui_project_status_visible = { always = yes }
+			ROC_ce_gui_project_progress_visible = { always = yes }
+			ROC_ce_gui_policy_axis_visible = { always = yes }
+			ROC_ce_gui_policy_axis_bar_visible = { has_country_flag = ROC_ce_policy_migrated }
+			ROC_ce_gui_policy_effects_visible = { always = yes }
+			ROC_ce_gui_parties_heading_visible = { always = yes }
+			ROC_ce_gui_left_favor_visible = { always = yes }
+			ROC_ce_gui_center_favor_visible = { always = yes }
+			ROC_ce_gui_right_favor_visible = { always = yes }
+			ROC_ce_gui_committee_heading_visible = { always = yes }
+		}
+	}
+}

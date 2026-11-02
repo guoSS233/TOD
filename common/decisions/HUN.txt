@@ -322,8 +322,7 @@ HUN_jiejueshaominwentijueyi = {
 		modifier = {} 
 		available = { has_equipment = { motorized_equipment > 49 }  }
 		visible = {
-			any_owned_state = { has_dynamic_modifier = {modifier = HUN_shaoshuminzufenzheng} }
-			any_owned_state = { NOT = {is_core_of =HUN} }
+			any_owned_state = { HUN_magyar_migration_target = yes }
 			has_completed_focus = HUN_zengjiamazhaeryimin
 		}
 		complete_effect = {
@@ -336,31 +335,26 @@ HUN_jiejueshaominwentijueyi = {
 		remove_effect = {
 			custom_effect_tooltip = HUN.jueyi.2
 			random_owned_controlled_state = {
-				limit = { 
-					is_core_of = ROM
-					NOT = { has_state_flag = HUN_3jiyimin }
-				}
+				limit = { HUN_magyar_migration_target = yes }
+				# Old saves may retain earlier flags: process the highest stage first.
 				if = {
-					limit = { 
-						NOT = { has_state_flag = HUN_2jiyimin }
-						NOT = { has_state_flag = HUN_3jiyimin }
-					}
-					set_state_flag = HUN_1jiyimin
-				}
-				if = {
-					limit = { 
-						NOT = { has_state_flag = HUN_3jiyimin }
-						has_state_flag = HUN_1jiyimin 
-					}
-					set_state_flag = HUN_2jiyimin
-				}
-				if = {
-					limit = { 
-						has_state_flag = HUN_2jiyimin 
-					}
+					limit = { has_state_flag = HUN_2jiyimin }
 					set_state_flag = HUN_3jiyimin
 					add_core_of = HUN
 					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng }
+					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wanquankongzhi }
+					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }
+					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }
+					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+					remove_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
+				}
+				else_if = {
+					limit = { has_state_flag = HUN_1jiyimin }
+					set_state_flag = HUN_2jiyimin
+				}
+				else = {
+					set_state_flag = HUN_1jiyimin
 				}
 				add_manpower = 3000
 			}

@@ -1,0 +1,959 @@
+add_namespace = ROC_minister_agenda
+
+country_event = {
+    id = ROC_minister_agenda.11
+    title = ROC_minister_agenda.11.t
+    desc = ROC_minister_agenda.11.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+        has_country_flag = ROC_ma_yu_1_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_yu_1_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.11.c
+        custom_effect_tooltip = ROC_ma_yu_1_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+                    has_country_flag = ROC_ma_yu_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yu_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yu_1_pending
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.11.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+            has_country_flag = ROC_ma_yu_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yu_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_yu_1_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+                    has_country_flag = ROC_ma_yu_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yu_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_yu_1_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_yu_project = yes
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.11.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+            has_country_flag = ROC_ma_yu_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yu_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_yu_1_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+                    has_country_flag = ROC_ma_yu_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yu_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yu_1_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                ROC_ma_yu_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.12
+    title = ROC_minister_agenda.12.t
+    desc = ROC_minister_agenda.12.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+        has_country_flag = ROC_ma_yu_2_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_yu_2_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.12.c
+        custom_effect_tooltip = ROC_ma_yu_2_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+                    has_country_flag = ROC_ma_yu_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yu_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yu_2_pending
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.12.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+            has_country_flag = ROC_ma_yu_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yu_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_yu_2_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+                    has_country_flag = ROC_ma_yu_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yu_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_yu_2_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_yu_project = yes
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.12.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+            has_country_flag = ROC_ma_yu_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yu_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_yu_2_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
+                    has_country_flag = ROC_ma_yu_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yu_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yu_2_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                ROC_ma_yu_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.21
+    title = ROC_minister_agenda.21.t
+    desc = ROC_minister_agenda.21.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+        has_country_flag = ROC_ma_yan_1_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_yan_1_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.21.c
+        custom_effect_tooltip = ROC_ma_yan_1_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+                    has_country_flag = ROC_ma_yan_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yan_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yan_1_pending
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.21.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+            has_country_flag = ROC_ma_yan_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yan_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_yan_1_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+                    has_country_flag = ROC_ma_yan_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yan_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_yan_1_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_yan_project = yes
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.21.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+            has_country_flag = ROC_ma_yan_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yan_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_yan_1_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+                    has_country_flag = ROC_ma_yan_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yan_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yan_1_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                ROC_ma_yan_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.22
+    title = ROC_minister_agenda.22.t
+    desc = ROC_minister_agenda.22.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+        has_country_flag = ROC_ma_yan_2_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_yan_2_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.22.c
+        custom_effect_tooltip = ROC_ma_yan_2_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+                    has_country_flag = ROC_ma_yan_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yan_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yan_2_pending
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.22.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+            has_country_flag = ROC_ma_yan_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yan_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_yan_2_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+                    has_country_flag = ROC_ma_yan_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yan_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_yan_2_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_yan_project = yes
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.22.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+            has_country_flag = ROC_ma_yan_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_yan_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_yan_2_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
+                    has_country_flag = ROC_ma_yan_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_yan_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_yan_2_pending
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                ROC_ma_yan_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.31
+    title = ROC_minister_agenda.31.t
+    desc = ROC_minister_agenda.31.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+        has_country_flag = ROC_ma_ruan_1_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_1_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.31.c
+        custom_effect_tooltip = ROC_ma_ruan_1_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+                    has_country_flag = ROC_ma_ruan_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_ruan_1_pending
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.31.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+            has_country_flag = ROC_ma_ruan_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_ruan_1_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+                    has_country_flag = ROC_ma_ruan_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_ruan_1_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_ruan_project = yes
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.31.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+            has_country_flag = ROC_ma_ruan_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_ruan_1_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+                    has_country_flag = ROC_ma_ruan_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_ruan_1_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                ROC_ma_ruan_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.32
+    title = ROC_minister_agenda.32.t
+    desc = ROC_minister_agenda.32.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+        has_country_flag = ROC_ma_ruan_2_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_2_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.32.c
+        custom_effect_tooltip = ROC_ma_ruan_2_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+                    has_country_flag = ROC_ma_ruan_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_ruan_2_pending
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.32.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+            has_country_flag = ROC_ma_ruan_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_ruan_2_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+                    has_country_flag = ROC_ma_ruan_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_ruan_2_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_ruan_project = yes
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.32.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+            has_country_flag = ROC_ma_ruan_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_ruan_2_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
+                    has_country_flag = ROC_ma_ruan_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_ruan_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_ruan_2_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                ROC_ma_ruan_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.41
+    title = ROC_minister_agenda.41.t
+    desc = ROC_minister_agenda.41.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+        has_country_flag = ROC_ma_chen_1_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_chen_1_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.41.c
+        custom_effect_tooltip = ROC_ma_chen_1_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+                    has_country_flag = ROC_ma_chen_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_chen_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_chen_1_pending
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.41.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+            has_country_flag = ROC_ma_chen_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_chen_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_chen_1_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+                    has_country_flag = ROC_ma_chen_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_chen_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_chen_1_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_chen_project = yes
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.41.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+            has_country_flag = ROC_ma_chen_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_chen_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_chen_1_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+                    has_country_flag = ROC_ma_chen_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_chen_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_chen_1_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                ROC_ma_chen_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.42
+    title = ROC_minister_agenda.42.t
+    desc = ROC_minister_agenda.42.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+        has_country_flag = ROC_ma_chen_2_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_chen_2_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.42.c
+        custom_effect_tooltip = ROC_ma_chen_2_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+                    has_country_flag = ROC_ma_chen_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_chen_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_chen_2_pending
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.42.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+            has_country_flag = ROC_ma_chen_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_chen_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_chen_2_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+                    has_country_flag = ROC_ma_chen_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_chen_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_chen_2_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_chen_project = yes
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.42.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+            has_country_flag = ROC_ma_chen_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_chen_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_chen_2_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
+                    has_country_flag = ROC_ma_chen_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_chen_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_chen_2_pending
+                subtract_from_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                ROC_ma_chen_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.51
+    title = ROC_minister_agenda.51.t
+    desc = ROC_minister_agenda.51.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+        has_country_flag = ROC_ma_xiao_1_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_1_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.51.c
+        custom_effect_tooltip = ROC_ma_xiao_1_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+                    has_country_flag = ROC_ma_xiao_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_xiao_1_pending
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.51.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+            has_country_flag = ROC_ma_xiao_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_right_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_xiao_1_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+                    has_country_flag = ROC_ma_xiao_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_right_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_xiao_1_pending
+                subtract_from_variable = { var = ROC_ma_right_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_xiao_project = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 3 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.51.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+            has_country_flag = ROC_ma_xiao_1_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_1_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_xiao_1_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+                    has_country_flag = ROC_ma_xiao_1_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_1_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_xiao_1_pending
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                ROC_ma_xiao_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}
+
+country_event = {
+    id = ROC_minister_agenda.52
+    title = ROC_minister_agenda.52.t
+    desc = ROC_minister_agenda.52.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    trigger = {
+        ROC_ma_can_run = yes
+        check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+        has_country_flag = ROC_ma_xiao_2_pending
+        check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_2_event_stage compare = equals }
+        NOT = { has_country_flag = ROC_ma_timeout_pending }
+    }
+    option = {
+        name = ROC_minister_agenda.52.c
+        custom_effect_tooltip = ROC_ma_xiao_2_c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+                    has_country_flag = ROC_ma_xiao_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_xiao_2_pending
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.52.a
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+            has_country_flag = ROC_ma_xiao_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            check_variable = { var = ROC_ma_right_favor value = 10 compare = greater_than_or_equals }
+        }
+        custom_effect_tooltip = ROC_ma_xiao_2_a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+                    has_country_flag = ROC_ma_xiao_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    check_variable = { var = ROC_ma_right_favor value = 10 compare = greater_than_or_equals }
+                }
+                clr_country_flag = ROC_ma_xiao_2_pending
+                subtract_from_variable = { var = ROC_ma_right_favor value = 10 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_xiao_project = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 3 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_minister_agenda.52.b
+        trigger = {
+            ROC_ma_can_run = yes
+            check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+            has_country_flag = ROC_ma_xiao_2_pending
+            check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_2_event_stage compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+        }
+        custom_effect_tooltip = ROC_ma_xiao_2_b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
+                    has_country_flag = ROC_ma_xiao_2_pending
+                    check_variable = { var = ROC_ma_stage value = ROC_ma_xiao_2_event_stage compare = equals }
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                clr_country_flag = ROC_ma_xiao_2_pending
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                ROC_ma_xiao_direction = yes
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+}

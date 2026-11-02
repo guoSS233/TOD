@@ -1,0 +1,50 @@
+ideas = {
+    country = {
+        ROC_ma_policy_agriculture_collectivized = {
+            picture = generic_production_bonus
+            allowed = { original_tag = ROC }
+            modifier = {
+                production_speed_infrastructure_factor = 0.06
+                consumer_goods_factor = 0.01
+            }
+        }
+        ROC_ma_policy_agriculture_household = {
+            picture = generic_production_bonus
+            allowed = { original_tag = ROC }
+            modifier = {
+                consumer_goods_factor = -0.02
+                production_speed_infrastructure_factor = -0.02
+            }
+        }
+        ROC_ma_policy_cooperative_procurement = {
+            picture = generic_production_bonus
+            allowed = { original_tag = ROC }
+            modifier = {
+                consumer_goods_factor = -0.01
+                trade_opinion_factor = 0.05
+            }
+        }
+        ROC_ma_policy_market_distribution = {
+            picture = generic_production_bonus
+            allowed = { original_tag = ROC }
+            modifier = {
+                production_speed_industrial_complex_factor = 0.03
+                trade_opinion_factor = 0.10
+            }
+        }
+        ROC_ma_policy_private_management = {
+            picture = generic_production_bonus
+            allowed = { original_tag = ROC }
+            modifier = {
+                production_speed_industrial_complex_factor = 0.05
+            }
+        }
+        ROC_ma_policy_public_holding = {
+            picture = generic_production_bonus
+            allowed = { original_tag = ROC }
+            modifier = {
+                industrial_capacity_factory = 0.04
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+SIC_red_initialize_effect = {
+	if = {
+		limit = { NOT = { has_variable = SIC_red_organization } }
+		set_variable = { SIC_red_organization = 0 }
+	}
+}
+
+SIC_red_clamp_organization_effect = {
+	clamp_variable = { var = SIC_red_organization min = 0 max = 100 }
+}
+
+# Reuse the provincial indicators' existing idea mappings after intervention.
+SIC_red_refresh_governance_effect = {
+	SIC_red_initialize_effect = yes
+	SIC_red_clamp_organization_effect = yes
+	clamp_variable = { var = SIC.minzhong min = 0 max = 100 }
+	clamp_variable = { var = SIC.gongye min = 0 max = 100 }
+	SIC_minzhong_seffects = yes
+	SIC_gongye_seffects = yes
+}
+
+SIC_red_try_uprising_effect = {
+	if = {
+		limit = { SIC_red_uprising_eligible_trigger = yes }
+		# Set the guard before transferring the state or loading any divisions.
+		set_country_flag = SIC_red_uprising_started
+		SCG = {
+			transfer_state = 831
+			add_state_core = 831
+			load_oob = "SCG_1937"
+		}
+		add_ideas = SIC_hunluandejundui
+		country_event = { id = TODSIC.1001 }
+	}
+}
+
+SIC_red_monthly_effect = {
+	if = {
+		limit = { SIC_red_pre_uprising_trigger = yes }
+		SIC_red_initialize_effect = yes
+		if = {
+			limit = { NOT = { check_variable = { SIC.minzhong < 80 } } }
+			add_to_variable = { SIC_red_organization = 12 }
+		}
+		else_if = {
+			limit = { NOT = { check_variable = { SIC.minzhong < 60 } } }
+			add_to_variable = { SIC_red_organization = 8 }
+		}
+		else_if = {
+			limit = { check_variable = { SIC.minzhong < 40 } }
+			add_to_variable = { SIC_red_organization = -6 }
+		}
+		SIC_red_clamp_organization_effect = yes
+		if = {
+			limit = {
+				NOT = { check_variable = { SIC_red_organization < 24 } }
+				NOT = { has_country_flag = SIC_red_warning_sent }
+			}
+			set_country_flag = SIC_red_warning_sent
+			country_event = { id = TODSICRED.1 }
+		}
+		SIC_red_try_uprising_effect = yes
+	}
+}

@@ -101,7 +101,7 @@ country_event = {
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	trigger = { tag = GPS }
+	trigger = { tag = GPS NOT = { has_global_flag = TOD_SRC_start_test_active } }
 	
 	immediate = {
 		hidden_effect = {
@@ -140,7 +140,7 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {tag = GPS}
+	trigger = { tag = GPS NOT = { has_global_flag = TOD_SRC_start_test_active } }
 	
 	option = {
 		ai_chance = { base = 10 }
@@ -163,7 +163,7 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {tag = GPS}
+	trigger = { tag = GPS NOT = { has_global_flag = TOD_SRC_start_test_active } }
 	
 	option = {
 		ai_chance = { base = 10 }
@@ -186,7 +186,7 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {tag = GPS}
+	trigger = { tag = GPS NOT = { has_global_flag = TOD_SRC_start_test_active } }
 	
 	option = { 
 		ai_chance = { base = 10 }
@@ -231,7 +231,7 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {tag = GPS}
+	trigger = { tag = GPS NOT = { has_global_flag = TOD_SRC_start_test_active } }
 	
 	option = { 
 		ai_chance = { base = 10 }
@@ -286,10 +286,11 @@ country_event = {
 					target = SRC
 					size = 1
 					stockpile_ratio = 0.7
+					army_ratio = 0
 					navy_ratio = 0
 					air_ratio = 0.3
 					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+						always = yes
 					}
 				}
 			}
@@ -350,10 +351,11 @@ country_event = {
 					target = SRC
 					size = 1
 					stockpile_ratio = 0.7
+					army_ratio = 0
 					navy_ratio = 0
 					air_ratio = 0.3
 					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+						always = yes
 					}
 				}
 				}
@@ -371,7 +373,7 @@ country_event = {
 	fire_only_once = yes
 	is_triggered_only = yes
 	
-	trigger = {tag = GPS}
+	trigger = { tag = GPS NOT = { has_global_flag = TOD_SRC_start_test_active } }
 
 	option = { 
 		ai_chance = { base = 10 }
@@ -392,10 +394,11 @@ country_event = {
 					target = SRC
 					size = 1
 					stockpile_ratio = 0.7
+					army_ratio = 0
 					navy_ratio = 0
 					air_ratio = 0.5
 					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+						always = yes
 					}
 				}
 			}
@@ -452,10 +455,11 @@ country_event = {
 					target = SRC
 					size = 1
 					stockpile_ratio = 0.7
+					army_ratio = 0
 					navy_ratio = 0
 					air_ratio = 0.5
 					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+						always = yes
 					}
 				}
 			}

@@ -1,0 +1,188 @@
+defined_text = {
+	name = ROC_ce_mandate_status
+	text = {
+		trigger = {
+			has_country_flag = ROC_ce_initialized
+			has_country_flag = ROC_ma_favors_initialized
+		}
+		localization_key = ROC_ce_gui_mandate
+	}
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_mandate_legacy }
+}
+
+defined_text = {
+	name = ROC_ce_term_status
+	text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ce_gui_term_waiting_conference }
+	text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ce_gui_term_waiting_successor }
+	text = { trigger = { has_active_mission = ROC_decision_bop_jingjidahui } localization_key = ROC_ce_gui_term_active }
+	text = { trigger = { has_country_flag = ROC_ce_initialized } localization_key = ROC_ce_gui_term_inactive }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_term_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_performance_text
+	text = { trigger = { has_country_flag = ROC_econ_term_active } localization_key = ROC_ce_gui_performance }
+	text = { trigger = { has_country_flag = ROC_ce_initialized } localization_key = ROC_ce_gui_performance_waiting_term }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_performance_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_policy_status
+	text = { trigger = { has_country_flag = ROC_ce_policy_migrated } localization_key = ROC_ce_gui_policy_axis }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_policy_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_policy_effect_summary
+	text = { trigger = { has_country_flag = ROC_ce_policy_migrated } localization_key = ROC_ce_gui_policy_effects }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_policy_effect_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_left_favor_text
+	text = { trigger = { has_country_flag = ROC_ma_favors_initialized } localization_key = ROC_ce_gui_left_favor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_favor_initializing_left }
+}
+
+defined_text = {
+	name = ROC_ce_center_favor_text
+	text = { trigger = { has_country_flag = ROC_ma_favors_initialized } localization_key = ROC_ce_gui_center_favor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_favor_initializing_center }
+}
+
+defined_text = {
+	name = ROC_ce_right_favor_text
+	text = { trigger = { has_country_flag = ROC_ma_favors_initialized } localization_key = ROC_ce_gui_right_favor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_favor_initializing_right }
+}
+
+defined_text = {
+	name = ROC_ce_minister_route
+	text = { trigger = { has_idea = ROC_idea_YuShude } localization_key = ROC_ce_gui_route_cooperative }
+	text = { trigger = { has_idea = ROC_idea_YanYangchu } localization_key = ROC_ce_gui_route_rural }
+	text = { trigger = { has_idea = ROC_idea_RuanXiaoxian } localization_key = ROC_ce_gui_route_audit }
+	text = { trigger = { has_idea = ROC_idea_ChenZanxian } localization_key = ROC_ce_gui_route_labor }
+	text = { trigger = { has_idea = ROC_idea_XiaoZheng } localization_key = ROC_ce_gui_route_farmers }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_route_none }
+}
+
+defined_text = {
+	name = ROC_ce_project_name
+	text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ce_gui_project_initializing }
+	text = { trigger = { check_variable = { var = ROC_ce_project_id value = 1 compare = equals } } localization_key = ROC_ce_gui_project_industry }
+	text = { trigger = { check_variable = { var = ROC_ce_project_id value = 2 compare = equals } } localization_key = ROC_ce_gui_project_agriculture }
+	text = { trigger = { check_variable = { var = ROC_ce_project_id value = 3 compare = equals } } localization_key = ROC_ce_gui_project_transport }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_project_none }
+}
+
+defined_text = {
+	name = ROC_ce_project_status
+	text = { trigger = { has_country_flag = ROC_ce_no_delivery_target } localization_key = ROC_ce_gui_no_delivery_target }
+	text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ce_gui_project_waiting_resignation }
+	text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ce_gui_project_waiting_conference }
+	text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ce_gui_project_initializing }
+	text = { trigger = { check_variable = { var = ROC_ce_delay_days value = 0 compare = greater_than } } localization_key = ROC_ce_gui_project_paused }
+	text = { trigger = { ROC_ce_current_project = yes } localization_key = ROC_ce_gui_project_running }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_project_idle }
+}
+
+defined_text = {
+	name = ROC_ce_project_progress_text
+	text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ce_gui_project_progress_initializing }
+	text = { trigger = { ROC_ce_current_project = yes } localization_key = ROC_ce_gui_project_progress_active }
+	text = { trigger = { has_country_flag = ROC_ce_no_delivery_target } localization_key = ROC_ce_gui_project_progress_no_delivery_target }
+	text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ce_gui_project_progress_waiting_conference }
+	text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ce_gui_project_progress_waiting_successor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_project_progress_idle }
+}
+
+
+
+
+
+
+
+
+
+defined_text = {
+	name = ROC_ce_policy_tier_name
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -3 compare = equals } } localization_key = ROC_ce_gui_structure_market_3_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -2 compare = equals } } localization_key = ROC_ce_gui_structure_market_2_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -1 compare = equals } } localization_key = ROC_ce_gui_structure_market_1_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 1 compare = equals } } localization_key = ROC_ce_gui_structure_public_1_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 2 compare = equals } } localization_key = ROC_ce_gui_structure_public_2_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 3 compare = equals } } localization_key = ROC_ce_gui_structure_public_3_name }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_structure_mixed_name }
+}
+
+defined_text = {
+	name = ROC_ce_policy_effect_text
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -3 compare = equals } } localization_key = ROC_ce_gui_structure_market_3_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -2 compare = equals } } localization_key = ROC_ce_gui_structure_market_2_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -1 compare = equals } } localization_key = ROC_ce_gui_structure_market_1_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 1 compare = equals } } localization_key = ROC_ce_gui_structure_public_1_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 2 compare = equals } } localization_key = ROC_ce_gui_structure_public_2_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 3 compare = equals } } localization_key = ROC_ce_gui_structure_public_3_current }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_structure_mixed_current }
+}
+
+defined_text = {
+    name = ROC_ma_policy_owner_status
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 1 compare = equals } } localization_key = ROC_ce_gui_policy_owner_yu }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 2 compare = equals } } localization_key = ROC_ce_gui_policy_owner_yan }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 3 compare = equals } } localization_key = ROC_ce_gui_policy_owner_ruan }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 4 compare = equals } } localization_key = ROC_ce_gui_policy_owner_chen }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 5 compare = equals } } localization_key = ROC_ce_gui_policy_owner_xiao }
+    text = { trigger = { always = yes } localization_key = ROC_ce_gui_policy_owner_none }
+}
+
+defined_text = {
+    name = ROC_ma_current_action
+    text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ma_gui_action_waiting_conference }
+    text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ma_gui_action_waiting_successor }
+    text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ma_gui_action_initializing }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 0 compare = less_than_or_equals } } localization_key = ROC_ma_gui_action_no_minister }
+    text = { trigger = { check_variable = { var = ROC_ma_clock_owner value = 0 compare = greater_than } check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals } check_variable = { var = ROC_ma_stage value = 7 compare = equals } } localization_key = ROC_ma_gui_action_execution }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_yu_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_yu_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_yu_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_yu_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_yu_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_yu_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_yan_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_yan_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_yan_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_yan_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_yan_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_yan_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_ruan_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_ruan_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_ruan_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_ruan_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_ruan_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_ruan_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_chen_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_chen_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_chen_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_chen_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_chen_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_chen_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_xiao_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_xiao_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_xiao_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_xiao_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_xiao_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_xiao_step6 }
+    text = { trigger = { always = yes } localization_key = ROC_ma_gui_action_rearming }
+}
+
+defined_text = {
+    name = ROC_ma_current_action_desc
+    text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ma_gui_action_waiting_conference_desc }
+    text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ma_gui_action_waiting_successor_desc }
+    text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ma_gui_action_initializing_desc }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 0 compare = less_than_or_equals } } localization_key = ROC_ma_gui_action_no_minister_desc }
+    text = { trigger = { check_variable = { var = ROC_ma_clock_owner value = 0 compare = greater_than } check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals } check_variable = { var = ROC_ma_stage value = 7 compare = equals } } localization_key = ROC_ma_gui_action_execution_desc }
+    text = { trigger = { ROC_ma_can_run = yes check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals } check_variable = { var = ROC_ma_stage value = 0 compare = greater_than } check_variable = { var = ROC_ma_stage value = 7 compare = less_than } } localization_key = ROC_ma_gui_action_active_desc }
+    text = { trigger = { always = yes } localization_key = ROC_ma_gui_action_rearming_desc }
+}

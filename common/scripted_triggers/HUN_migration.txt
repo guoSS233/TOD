@@ -1,0 +1,18 @@
+# State scope: use the same eligible province for visibility and settlement.
+HUN_magyar_migration_target = {
+	is_owned_by = HUN
+	is_controlled_by = HUN
+	is_core_of = ROM
+	NOT = { is_core_of = HUN }
+	NOT = { has_state_flag = HUN_3jiyimin }
+	OR = {
+		# Retain compatibility with saves carrying the old base marker.
+		has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng }
+		has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wanquankongzhi }
+		has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_qingweisaoluan }
+		has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_jibenkekong }
+		has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_mianqiangkekong }
+		has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_yanzhongshikong }
+		has_dynamic_modifier = { modifier = HUN_shaoshuminzufenzheng_wufawutian }
+	}
+}

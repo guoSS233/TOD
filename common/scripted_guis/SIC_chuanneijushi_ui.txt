@@ -1,17 +1,12 @@
 scripted_gui = {
 	SIC_shengneijushi_ui_window = {
-		window_name = "SIC_shengneijushi_ui_window" 
+		window_name = "SIC_shengneijushi_ui_window"
 		context_type = decision_category
-		visible = { 
-			always = yes 
-		}
+		visible = { tag = SIC }
 		properties = {
-			industrial_collapse_progressbar = {
-				frame = SIC.gongye
-			}
-			public_riots_progressbar = {
-				frame = SIC.minzhong
-			}
+			industrial_collapse_progressbar = { frame = SIC.gongye }
+			public_riots_progressbar = { frame = SIC.minzhong }
+			red_organization_progressbar = { frame = SIC_red_organization }
 		}
 	}
 }

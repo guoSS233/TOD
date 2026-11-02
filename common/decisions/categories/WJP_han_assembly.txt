@@ -1,0 +1,21 @@
+WJP_han_assembly_economic_category = {
+	icon = GFX_decision_generic_factory
+	allowed = { tag = WJP }
+	visible = { always = no }
+	priority = 120
+}
+
+WJP_han_assembly_general_category = {
+	icon = GFX_decision_generic_political_address
+	allowed = { tag = WJP }
+	visible = { always = no }
+	priority = 120
+}
+
+WJP_han_assembly_legislative_category = {
+	scripted_gui = WJP_han_assembly_window
+	icon = GFX_decision_generic_political_address
+	allowed = { tag = WJP }
+	visible = { has_country_flag = WJP_han_assembly_initialized }
+	priority = 130
+}

@@ -1,0 +1,66 @@
+defined_text = {
+	name = WJP_parliament_attitude_free_society
+	text = { trigger = { check_variable = { var = WJP_parliament_free_society_attitude value = 2 compare = greater_than_or_equals } } localization_key = WJP_parliament_attitude_strong_support }
+	text = { trigger = { check_variable = { WJP_parliament_free_society_attitude = 1 } } localization_key = WJP_parliament_attitude_support }
+	text = { trigger = { check_variable = { WJP_parliament_free_society_attitude = 0 } } localization_key = WJP_parliament_attitude_neutral }
+	text = { trigger = { check_variable = { WJP_parliament_free_society_attitude = -1 } } localization_key = WJP_parliament_attitude_oppose }
+	text = { trigger = { check_variable = { var = WJP_parliament_free_society_attitude value = -2 compare = less_than_or_equals } } localization_key = WJP_parliament_attitude_strong_oppose }
+}
+
+defined_text = {
+	name = WJP_parliament_attitude_progressive_association
+	text = { trigger = { check_variable = { var = WJP_parliament_progressive_association_attitude value = 2 compare = greater_than_or_equals } } localization_key = WJP_parliament_attitude_strong_support }
+	text = { trigger = { check_variable = { WJP_parliament_progressive_association_attitude = 1 } } localization_key = WJP_parliament_attitude_support }
+	text = { trigger = { check_variable = { WJP_parliament_progressive_association_attitude = 0 } } localization_key = WJP_parliament_attitude_neutral }
+	text = { trigger = { check_variable = { WJP_parliament_progressive_association_attitude = -1 } } localization_key = WJP_parliament_attitude_oppose }
+	text = { trigger = { check_variable = { var = WJP_parliament_progressive_association_attitude value = -2 compare = less_than_or_equals } } localization_key = WJP_parliament_attitude_strong_oppose }
+}
+
+defined_text = {
+	name = WJP_parliament_attitude_national_renewal_league
+	text = { trigger = { check_variable = { var = WJP_parliament_national_renewal_league_attitude value = 2 compare = greater_than_or_equals } } localization_key = WJP_parliament_attitude_strong_support }
+	text = { trigger = { check_variable = { WJP_parliament_national_renewal_league_attitude = 1 } } localization_key = WJP_parliament_attitude_support }
+	text = { trigger = { check_variable = { WJP_parliament_national_renewal_league_attitude = 0 } } localization_key = WJP_parliament_attitude_neutral }
+	text = { trigger = { check_variable = { WJP_parliament_national_renewal_league_attitude = -1 } } localization_key = WJP_parliament_attitude_oppose }
+	text = { trigger = { check_variable = { var = WJP_parliament_national_renewal_league_attitude value = -2 compare = less_than_or_equals } } localization_key = WJP_parliament_attitude_strong_oppose }
+}
+
+defined_text = {
+	name = WJP_parliament_attitude_daido_association
+	text = { trigger = { check_variable = { var = WJP_parliament_daido_association_attitude value = 2 compare = greater_than_or_equals } } localization_key = WJP_parliament_attitude_strong_support }
+	text = { trigger = { check_variable = { WJP_parliament_daido_association_attitude = 1 } } localization_key = WJP_parliament_attitude_support }
+	text = { trigger = { check_variable = { WJP_parliament_daido_association_attitude = 0 } } localization_key = WJP_parliament_attitude_neutral }
+	text = { trigger = { check_variable = { WJP_parliament_daido_association_attitude = -1 } } localization_key = WJP_parliament_attitude_oppose }
+	text = { trigger = { check_variable = { var = WJP_parliament_daido_association_attitude value = -2 compare = less_than_or_equals } } localization_key = WJP_parliament_attitude_strong_oppose }
+}
+
+defined_text = {
+	name = WJP_parliament_review_status
+	text = { trigger = { has_country_flag = WJP_parliament_bill_passed } localization_key = WJP_parliament_review_passed }
+	text = { trigger = { has_country_flag = WJP_parliament_bill_rejected } localization_key = WJP_parliament_review_rejected }
+	text = { trigger = { has_country_flag = WJP_parliament_bill_active } localization_key = WJP_parliament_review_active }
+	text = { trigger = { WJP_parliament_bill_can_submit = yes } localization_key = WJP_parliament_review_ready }
+	text = { trigger = { always = yes } localization_key = WJP_parliament_review_none }
+}
+
+defined_text = {
+	name = WJP_parliament_action_status
+	text = { trigger = { has_country_flag = WJP_parliament_bill_passed } localization_key = WJP_parliament_action_passed }
+	text = { trigger = { has_country_flag = WJP_parliament_bill_rejected } localization_key = WJP_parliament_action_rejected }
+	text = { trigger = { has_country_flag = WJP_parliament_bill_active } localization_key = WJP_parliament_action_active }
+	text = { trigger = { has_country_flag = WJP_parliament_bill_resolved } localization_key = WJP_parliament_action_review_ended }
+	text = { trigger = { has_country_flag = WJP_economic_bill_submitted } localization_key = WJP_parliament_action_pending }
+	text = { trigger = { WJP_parliament_bill_can_submit = yes } localization_key = WJP_parliament_action_ready }
+	text = { trigger = { NOT = { has_country_flag = WJP_economy_plan_selected } NOT = { has_country_flag = WJP_economic_chain_started } } localization_key = WJP_parliament_action_focus_required }
+	text = { trigger = { NOT = { has_country_flag = WJP_economy_plan_selected } NOT = { has_country_flag = WJP_economy_report_advanced } } localization_key = WJP_parliament_action_report_required }
+	text = { trigger = { NOT = { has_country_flag = WJP_economy_plan_selected } } localization_key = WJP_parliament_action_plan_required }
+	text = { trigger = { NOT = { has_country_flag = WJP_economy_budget_selected } NOT = { has_country_flag = WJP_economy_riot_applied } } localization_key = WJP_parliament_action_riot_required }
+	text = { trigger = { NOT = { has_country_flag = WJP_economy_budget_selected } } localization_key = WJP_parliament_action_budget_required }
+	text = { trigger = { always = yes } localization_key = WJP_parliament_action_pending }
+}
+
+defined_text = {
+	name = WJP_parliament_pass_status
+	text = { trigger = { WJP_parliament_bill_can_pass = yes } localization_key = WJP_parliament_pass_conditions_met }
+	text = { trigger = { always = yes } localization_key = WJP_parliament_pass_conditions_not_met }
+}

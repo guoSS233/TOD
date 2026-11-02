@@ -25,7 +25,7 @@ SIC_minzhong_seffects = {
 	remove_ideas = SIC_wufawutian
 	remove_ideas = SIC_jinrukonghuang
 	remove_ideas = SIC_chongmannuqi
-	remove_ideas = SIC_liuyoubuman
+	remove_ideas = SIC_lueyoubuman
 	remove_ideas = SIC_wendingdequnzong
 	if = {
 		limit = {check_variable = {	SIC.minzhong > 79}}
@@ -33,13 +33,13 @@ SIC_minzhong_seffects = {
 	}
 	else_if = {
 		limit = {check_variable = {SIC.minzhong > 59}}
-		add_ideas = SIC_jinrukonghuang
-	}else_if = {
-		limit = {check_variable = {	SIC.minzhong > 39}}
 		add_ideas = SIC_chongmannuqi
 	}else_if = {
+		limit = {check_variable = {	SIC.minzhong > 39}}
+		add_ideas = SIC_jinrukonghuang
+	}else_if = {
 		limit = {check_variable = {SIC.minzhong > 19}}
-		add_ideas = SIC_liuyoubuman
+		add_ideas = SIC_lueyoubuman
 	}
 	else = {
 		add_ideas = SIC_wendingdequnzong

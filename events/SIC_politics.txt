@@ -1,0 +1,432 @@
+add_namespace = SICPOL
+
+country_event = {
+	id = SICPOL.1
+	title = SICPOL.1.t
+	desc = SICPOL.1.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_active_trigger = yes }
+	option = {
+		name = SICPOL.1.a
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.1.a_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = 18 }
+				add_to_variable = { SIC_politics_qingzheng = -6 }
+				add_to_variable = { SIC_politics_establishment = -4 }
+				add_to_variable = { SIC.minzhong = 6 }
+				add_to_variable = { SIC.gongye = 3 }
+				army_experience = 8
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.1.b
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.1.b_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = -6 }
+				add_to_variable = { SIC_politics_qingzheng = 18 }
+				add_to_variable = { SIC_politics_establishment = -4 }
+				add_to_variable = { SIC.minzhong = -4 }
+				add_to_variable = { SIC.gongye = 5 }
+				add_war_support = -0.03
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.1.c
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.1.c_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = -4 }
+				add_to_variable = { SIC_politics_qingzheng = -4 }
+				add_to_variable = { SIC_politics_establishment = 22 }
+				add_to_variable = { SIC.minzhong = 4 }
+				add_to_variable = { SIC.gongye = 4 }
+				add_war_support = 0.03
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.1.d
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 35 }
+		custom_effect_tooltip = SICPOL.1.d_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = 3 }
+				add_to_variable = { SIC_politics_qingzheng = 3 }
+				add_to_variable = { SIC_politics_establishment = 3 }
+				add_to_variable = { SIC.minzhong = -4 }
+				add_to_variable = { SIC.gongye = -3 }
+				add_political_power = -20
+				add_stability = 0.02
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.meeting.closed
+		trigger = { NOT = { SIC_politics_active_trigger = yes } }
+		ai_chance = { factor = 100 }
+		clr_country_flag = SIC_politics_meeting_pending
+	}
+}
+
+country_event = {
+	id = SICPOL.2
+	title = SICPOL.2.t
+	desc = SICPOL.2.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_active_trigger = yes }
+	option = {
+		name = SICPOL.2.a
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.2.a_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = 18 }
+				add_to_variable = { SIC_politics_qingzheng = -6 }
+				add_to_variable = { SIC_politics_establishment = -4 }
+				add_to_variable = { SIC.minzhong = 7 }
+				add_to_variable = { SIC.gongye = -5 }
+				add_political_power = -10
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.2.b
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.2.b_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = -6 }
+				add_to_variable = { SIC_politics_qingzheng = 18 }
+				add_to_variable = { SIC_politics_establishment = -4 }
+				add_to_variable = { SIC.minzhong = 3 }
+				add_to_variable = { SIC.gongye = -7 }
+				add_war_support = -0.02
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.2.c
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.2.c_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = -4 }
+				add_to_variable = { SIC_politics_qingzheng = -4 }
+				add_to_variable = { SIC_politics_establishment = 22 }
+				add_to_variable = { SIC.minzhong = 2 }
+				add_to_variable = { SIC.gongye = 5 }
+				add_political_power = 25
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.2.d
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 35 }
+		custom_effect_tooltip = SICPOL.2.d_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = 3 }
+				add_to_variable = { SIC_politics_qingzheng = 3 }
+				add_to_variable = { SIC_politics_establishment = 3 }
+				add_to_variable = { SIC.minzhong = -3 }
+				add_to_variable = { SIC.gongye = -5 }
+				add_political_power = -25
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.meeting.closed
+		trigger = { NOT = { SIC_politics_active_trigger = yes } }
+		ai_chance = { factor = 100 }
+		clr_country_flag = SIC_politics_meeting_pending
+	}
+}
+
+country_event = {
+	id = SICPOL.3
+	title = SICPOL.3.t
+	desc = SICPOL.3.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_active_trigger = yes }
+	option = {
+		name = SICPOL.3.a
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.3.a_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = 18 }
+				add_to_variable = { SIC_politics_qingzheng = -6 }
+				add_to_variable = { SIC_politics_establishment = -4 }
+				add_to_variable = { SIC.minzhong = 7 }
+				add_to_variable = { SIC.gongye = -4 }
+				army_experience = 5
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.3.b
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.3.b_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = -6 }
+				add_to_variable = { SIC_politics_qingzheng = 18 }
+				add_to_variable = { SIC_politics_establishment = -4 }
+				add_to_variable = { SIC.minzhong = -7 }
+				add_to_variable = { SIC.gongye = 2 }
+				add_war_support = -0.02
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.3.c
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 30 }
+		custom_effect_tooltip = SICPOL.3.c_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = -4 }
+				add_to_variable = { SIC_politics_qingzheng = -4 }
+				add_to_variable = { SIC_politics_establishment = 22 }
+				add_to_variable = { SIC.minzhong = 4 }
+				add_to_variable = { SIC.gongye = 3 }
+				add_political_power = 15
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.3.d
+		trigger = { SIC_politics_active_trigger = yes }
+		ai_chance = { factor = 35 }
+		custom_effect_tooltip = SICPOL.3.d_tt
+		hidden_effect = {
+			# An open event may outlive a victory or uprising; do not apply a stale policy.
+			if = {
+				limit = { SIC_politics_active_trigger = yes }
+				add_to_variable = { SIC_politics_wubei = 3 }
+				add_to_variable = { SIC_politics_qingzheng = 3 }
+				add_to_variable = { SIC_politics_establishment = 3 }
+				add_to_variable = { SIC.minzhong = -5 }
+				add_to_variable = { SIC.gongye = -4 }
+				add_political_power = -25
+			}
+			SIC_politics_finish_meeting_effect = yes
+		}
+	}
+	option = {
+		name = SICPOL.meeting.closed
+		trigger = { NOT = { SIC_politics_active_trigger = yes } }
+		ai_chance = { factor = 100 }
+		clr_country_flag = SIC_politics_meeting_pending
+	}
+}
+
+country_event = {
+	id = SICPOL.10
+	title = SICPOL.10.t
+	desc = SICPOL.10.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_can_start_trigger = yes has_country_flag = SIC_politics_wubei_won }
+	immediate = { SIC_politics_early_victory_effect = yes }
+	option = { name = SICPOL.ack }
+}
+
+country_event = {
+	id = SICPOL.20
+	title = SICPOL.20.t
+	desc = SICPOL.20.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_can_start_trigger = yes has_country_flag = SIC_politics_wubei_won }
+	option = {
+		name = SICPOL.retain
+		ai_chance = { factor = 75 }
+		custom_effect_tooltip = SIC_politics_retain_tt
+		hidden_effect = {
+			if = {
+				limit = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_wubei_won }
+				add_political_power = -50
+				add_to_variable = { SIC.minzhong = -6 }
+				add_to_variable = { SIC.gongye = -6 }
+				remove_ideas = SIC_politics_wubei_capacity_gap
+				add_timed_idea = { idea = SIC_politics_wubei_capacity_gap days = 90 }
+				SIC_red_refresh_governance_effect = yes
+			}
+		}
+	}
+	option = {
+		name = SICPOL.exclude
+		ai_chance = { factor = 25 }
+		custom_effect_tooltip = SIC_politics_exclude_tt
+		hidden_effect = {
+			if = {
+				limit = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_wubei_won }
+				add_political_power = 50
+				add_to_variable = { SIC.minzhong = 10 }
+				add_to_variable = { SIC.gongye = 8 }
+				remove_ideas = SIC_politics_wubei_capacity_gap
+				add_timed_idea = { idea = SIC_politics_wubei_capacity_gap days = 365 }
+				SIC_red_refresh_governance_effect = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = SICPOL.11
+	title = SICPOL.11.t
+	desc = SICPOL.11.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_can_start_trigger = yes has_country_flag = SIC_politics_qingzheng_won }
+	immediate = { SIC_politics_early_victory_effect = yes }
+	option = { name = SICPOL.ack }
+}
+
+country_event = {
+	id = SICPOL.21
+	title = SICPOL.21.t
+	desc = SICPOL.21.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_can_start_trigger = yes has_country_flag = SIC_politics_qingzheng_won }
+	option = {
+		name = SICPOL.retain
+		ai_chance = { factor = 75 }
+		custom_effect_tooltip = SIC_politics_retain_tt
+		hidden_effect = {
+			if = {
+				limit = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_qingzheng_won }
+				add_political_power = -50
+				add_to_variable = { SIC.minzhong = -6 }
+				add_to_variable = { SIC.gongye = -6 }
+				remove_ideas = SIC_politics_qingzheng_capacity_gap
+				add_timed_idea = { idea = SIC_politics_qingzheng_capacity_gap days = 90 }
+				SIC_red_refresh_governance_effect = yes
+			}
+		}
+	}
+	option = {
+		name = SICPOL.exclude
+		ai_chance = { factor = 25 }
+		custom_effect_tooltip = SIC_politics_exclude_tt
+		hidden_effect = {
+			if = {
+				limit = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_qingzheng_won }
+				add_political_power = 50
+				add_to_variable = { SIC.minzhong = 10 }
+				add_to_variable = { SIC.gongye = 8 }
+				remove_ideas = SIC_politics_qingzheng_capacity_gap
+				add_timed_idea = { idea = SIC_politics_qingzheng_capacity_gap days = 365 }
+				SIC_red_refresh_governance_effect = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = SICPOL.12
+	title = SICPOL.12.t
+	desc = SICPOL.12.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_can_start_trigger = yes has_country_flag = SIC_politics_establishment_won }
+	immediate = { SIC_politics_early_victory_effect = yes }
+	option = { name = SICPOL.ack }
+}
+
+country_event = {
+	id = SICPOL.22
+	title = SICPOL.22.t
+	desc = SICPOL.22.d
+	picture = GFX_tao_lun_jun_shi
+	is_triggered_only = yes
+	trigger = { SIC_politics_can_start_trigger = yes has_country_flag = SIC_politics_establishment_won }
+	option = {
+		name = SICPOL.retain
+		ai_chance = { factor = 75 }
+		custom_effect_tooltip = SIC_politics_retain_tt
+		hidden_effect = {
+			if = {
+				limit = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_establishment_won }
+				add_political_power = -50
+				add_to_variable = { SIC.minzhong = -6 }
+				add_to_variable = { SIC.gongye = -6 }
+				remove_ideas = SIC_politics_establishment_capacity_gap
+				add_timed_idea = { idea = SIC_politics_establishment_capacity_gap days = 90 }
+				SIC_red_refresh_governance_effect = yes
+			}
+		}
+	}
+	option = {
+		name = SICPOL.exclude
+		ai_chance = { factor = 25 }
+		custom_effect_tooltip = SIC_politics_exclude_tt
+		hidden_effect = {
+			if = {
+				limit = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_establishment_won }
+				add_political_power = 50
+				add_to_variable = { SIC.minzhong = 10 }
+				add_to_variable = { SIC.gongye = 8 }
+				remove_ideas = SIC_politics_establishment_capacity_gap
+				add_timed_idea = { idea = SIC_politics_establishment_capacity_gap days = 365 }
+				SIC_red_refresh_governance_effect = yes
+			}
+		}
+	}
+}
+

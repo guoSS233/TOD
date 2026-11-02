@@ -34,15 +34,18 @@ country_event = {
 	picture = GFX_tao_lun_jun_shi
 	fire_only_once = yes
 	is_triggered_only = yes
+	trigger = { SIC_politics_can_start_trigger = yes NOT = { has_country_flag = SIC_politics_resolved } }
 	option = {
 		name = TODSIC.3.a
-		set_country_flag = SIC_baochizhongli
-		complete_national_focus = SIC_baochizhongli
+		if = {
+			limit = { SIC_politics_can_start_trigger = yes NOT = { has_country_flag = SIC_politics_resolved } }
+			set_country_flag = SIC_baochizhongli
+			complete_national_focus = SIC_zanshibaochizhongli
+		}
 	}
 	option = {
 		name = TODSIC.3.b
-		set_country_flag = SIC_zunwangtaojian
-		complete_national_focus = SIC_zunwangtaojian
+		SIC_politics_start_loyalist_effect = yes
 	}
 }
 #四川宣布中立
@@ -208,7 +211,22 @@ country_event = {
 	picture = GFX_tao_lun_jun_shi
 	fire_only_once = yes
 	is_triggered_only = yes
-	immediate = { declare_war_on = { target = SCG type = annex_everything } }
+	trigger = {
+		tag = SIC
+		country_exists = SCG
+		has_country_flag = SIC_red_uprising_started
+	}
+	immediate = {
+		if = {
+			limit = {
+				tag = SIC
+				country_exists = SCG
+				has_country_flag = SIC_red_uprising_started
+				NOT = { has_war_with = SCG }
+			}
+			declare_war_on = { target = SCG type = annex_everything }
+		}
+	}
 	option = {
 		name = TODSIC.1001.a
 		SCG = { change_tag_from = ROOT }

@@ -1,0 +1,34 @@
+# All triggers are evaluated in the Sichuan provincial government's country scope.
+SIC_red_pre_uprising_trigger = {
+	tag = SIC
+	NOT = { country_exists = SCG }
+	NOT = { has_country_flag = SIC_red_uprising_started }
+}
+
+SIC_red_window_open_trigger = {
+	OR = {
+		has_war = yes
+		has_stability < 0.35
+		has_idea = SIC_hunluandejundui
+	}
+}
+
+SIC_red_uprising_eligible_trigger = {
+	SIC_red_pre_uprising_trigger = yes
+	NOT = { check_variable = { SIC.minzhong < 60 } }
+	NOT = { check_variable = { SIC_red_organization < 60 } }
+	SIC_red_window_open_trigger = yes
+	owns_state = 831
+	controls_state = 831
+}
+
+# The original provincial category guard, retained for its legacy decisions.
+SIC_provincial_legacy_visible_trigger = {
+	tag = SIC
+	check_variable = { SIC.minzhong < 99 }
+	OR = {
+		check_variable = { SIC.minzhong > 19 }
+		check_variable = { SIC.gongye > 39 }
+	}
+	NOT = { has_war_with = SCG }
+}

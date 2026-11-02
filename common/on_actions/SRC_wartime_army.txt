@@ -7,7 +7,7 @@ on_actions = {
 					SRC_wartime_army_ensure_v2 = yes
 					SRC_wartime_army_ensure_chapters = yes
 					if = {
-						limit = { has_war_with = GPS }
+						limit = { SRC_wartime_army_mechanic_available = yes }
 						if = {
 							limit = { NOT = { has_country_flag = SRC_wartime_army_war_started } }
 							set_country_flag = SRC_wartime_army_war_started

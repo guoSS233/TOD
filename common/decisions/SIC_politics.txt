@@ -1,0 +1,19 @@
+SIC_politics_category = {
+	SIC_politics_coordination_meeting = {
+		icon = GFX_decision_generic_political_address
+		visible = { NOT = { has_country_flag = SIC_politics_resolved } }
+		available = { SIC_politics_active_trigger = yes NOT = { has_country_flag = SIC_politics_meeting_pending } }
+		cost = 25
+		days_re_enable = 30
+		ai_will_do = { base = 10 }
+		complete_effect = {
+			custom_effect_tooltip = SIC_politics_coordination_meeting_tt
+			hidden_effect = {
+				set_country_flag = SIC_politics_meeting_pending
+				if = { limit = { check_variable = { SIC_politics_issue < 1 } } country_event = { id = SICPOL.1 } }
+				else_if = { limit = { check_variable = { SIC_politics_issue < 2 } } country_event = { id = SICPOL.2 } }
+				else = { country_event = { id = SICPOL.3 } }
+			}
+		}
+	}
+}

@@ -1,0 +1,792 @@
+focus_tree = {
+	id = ROC_datong_postwar
+	shared_focus = ROC_ma_minister_selection
+	country = { factor = 0 }
+	default = no
+
+	focus = {
+		id = ROC_pw_assembly
+		icon = GFX_goal_generic_national_unity
+		x = 19
+		y = 0
+		cost = 4
+		completion_reward = {
+			add_political_power = 30
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_royalism
+		icon = GFX_goal_generic_neutrality_focus
+		x = 2
+		y = 2
+		cost = 4
+		completion_reward = {
+			add_political_power = 10
+			add_war_support = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_progressives
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 2
+		cost = 4
+		prerequisite = { focus = ROC_pw_assembly }
+		mutually_exclusive = { focus = ROC_pw_constitutionalists focus = ROC_pw_datong focus = ROC_pw_liberals }
+		completion_reward = {
+			add_political_power = 20
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_constitutionalists
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 14
+		y = 2
+		cost = 4
+		prerequisite = { focus = ROC_pw_assembly }
+		mutually_exclusive = { focus = ROC_pw_datong focus = ROC_pw_liberals focus = ROC_pw_progressives }
+		completion_reward = {
+			add_political_power = 20
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_liberals
+		icon = GFX_goal_generic_production
+		x = 24
+		y = 2
+		cost = 4
+		prerequisite = { focus = ROC_pw_assembly }
+		mutually_exclusive = { focus = ROC_pw_constitutionalists focus = ROC_pw_datong focus = ROC_pw_progressives }
+		completion_reward = {
+			add_political_power = 20
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_datong
+		icon = GFX_goal_generic_national_unity
+		x = 36
+		y = 2
+		cost = 4
+		prerequisite = { focus = ROC_pw_assembly }
+		mutually_exclusive = { focus = ROC_pw_constitutionalists focus = ROC_pw_liberals focus = ROC_pw_progressives }
+		completion_reward = {
+			add_political_power = 20
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_guild_participation
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 42
+		y = 2
+		cost = 4
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_veteran_privileges
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 4
+		cost = 5
+		prerequisite = { focus = ROC_pw_royalism focus = ROC_pw_progressives }
+		completion_reward = {
+			add_political_power = 10
+			add_war_support = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_mixed_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 4
+		cost = 5
+		prerequisite = { focus = ROC_pw_royalism focus = ROC_pw_progressives }
+		completion_reward = {
+			add_political_power = 10
+			add_tech_bonus = {
+				name = ROC_pw_mixed_economy_construction_bonus
+				bonus = 0.10
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+	focus = {
+		id = ROC_pw_crown_responsibility
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 4
+		cost = 5
+		prerequisite = { focus = ROC_pw_progressives focus = ROC_pw_constitutionalists }
+		completion_reward = {
+			add_political_power = 15
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_split_guilds
+		icon = GFX_goal_generic_production
+		x = 14
+		y = 4
+		cost = 5
+		prerequisite = { focus = ROC_pw_constitutionalists }
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+	focus = {
+		id = ROC_pw_provincial_democracy
+		icon = GFX_goal_generic_national_unity
+		x = 20
+		y = 4
+		cost = 5
+		prerequisite = { focus = ROC_pw_constitutionalists focus = ROC_pw_liberals }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_assembly_responsibility
+		icon = GFX_goal_generic_political_pressure
+		x = 29
+		y = 4
+		cost = 5
+		prerequisite = { focus = ROC_pw_liberals focus = ROC_pw_datong }
+		completion_reward = {
+			add_political_power = 15
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_national_guild_federation
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 42
+		y = 4
+		cost = 5
+		prerequisite = { focus = ROC_pw_datong focus = ROC_pw_guild_participation }
+		completion_reward = {
+			add_political_power = 10
+			add_tech_bonus = {
+				name = ROC_pw_national_guild_federation_construction_bonus
+				bonus = 0.10
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+	focus = {
+		id = ROC_pw_limit_provinces
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 5
+		cost = 5
+		prerequisite = { focus = ROC_pw_progressives }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_individual_investment
+		icon = GFX_goal_generic_production
+		x = 24
+		y = 5
+		cost = 5
+		prerequisite = { focus = ROC_pw_liberals }
+		completion_reward = {
+			add_political_power = 10
+			add_timed_idea = { idea = ROC_pw_timed_investment days = 365 }
+		}
+	}
+	focus = {
+		id = ROC_pw_demobilization
+		icon = GFX_goal_generic_small_arms
+		x = 26
+		y = 5
+		cost = 5
+		prerequisite = { focus = ROC_pw_liberals }
+		completion_reward = {
+			add_stability = 0.02
+			add_political_power = 10
+		}
+	}
+	focus = {
+		id = ROC_pw_equality_before_law
+		icon = GFX_goal_generic_national_unity
+		x = 32
+		y = 5
+		cost = 5
+		prerequisite = { focus = ROC_pw_datong }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_farm_associations
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 37
+		y = 5
+		cost = 5
+		prerequisite = { focus = ROC_pw_datong }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+			add_timed_idea = { idea = ROC_pw_timed_rural_recovery days = 270 }
+		}
+	}
+	focus = {
+		id = ROC_pw_veteran_aid
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_veteran_privileges }
+		completion_reward = {
+			add_war_support = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_merit_land
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_veteran_privileges focus = ROC_pw_mixed_economy }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_state_guilds
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_mixed_economy }
+		completion_reward = {
+			add_political_power = 10
+			ROC_ce_policy_public_020 = yes
+		}
+	}
+	focus = {
+		id = ROC_pw_cabinet_governance
+		icon = GFX_goal_generic_political_pressure
+		x = 8
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_limit_provinces focus = ROC_pw_crown_responsibility }
+		completion_reward = {
+			add_political_power = 15
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_formal_appointments
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_crown_responsibility }
+		completion_reward = {
+			add_political_power = 10
+			add_timed_idea = { idea = ROC_pw_timed_administration days = 180 }
+		}
+	}
+	focus = {
+		id = ROC_pw_impeachment_power
+		icon = GFX_goal_generic_national_unity
+		x = 12
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_crown_responsibility }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_privatization
+		icon = GFX_goal_generic_production
+		x = 14
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_split_guilds }
+		completion_reward = {
+			add_political_power = 10
+			ROC_ce_policy_market_030 = yes
+		}
+	}
+	focus = {
+		id = ROC_pw_prudent_enforcement
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_constitutionalists }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_local_policy
+		icon = GFX_goal_generic_national_unity
+		x = 18
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_provincial_democracy }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_local_appointments
+		icon = GFX_goal_generic_political_pressure
+		x = 22
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_provincial_democracy }
+		completion_reward = {
+			add_political_power = 10
+			add_timed_idea = { idea = ROC_pw_timed_administration days = 180 }
+		}
+	}
+	focus = {
+		id = ROC_pw_market_order
+		icon = GFX_goal_generic_trade
+		x = 24
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_individual_investment }
+		completion_reward = {
+			add_political_power = 10
+			add_tech_bonus = {
+				name = ROC_pw_market_order_construction_bonus
+				bonus = 0.10
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+	focus = {
+		id = ROC_pw_universal_suffrage
+		icon = GFX_goal_generic_national_unity
+		x = 29
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_assembly_responsibility }
+		completion_reward = {
+			add_political_power = 15
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_attack_privilege
+		icon = GFX_goal_generic_political_pressure
+		x = 32
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_equality_before_law }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_moderate_line
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 34
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_datong }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_private_investment
+		icon = GFX_goal_generic_production
+		x = 36
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_farm_associations }
+		completion_reward = {
+			add_political_power = 10
+			add_tech_bonus = {
+				name = ROC_pw_private_investment_construction_bonus
+				bonus = 0.10
+				uses = 1
+				category = construction_tech
+			}
+			add_timed_idea = { idea = ROC_pw_timed_investment days = 365 }
+			ROC_ce_policy_market_020 = yes
+		}
+	}
+	focus = {
+		id = ROC_pw_public_foundations
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 38
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_farm_associations }
+		completion_reward = {
+			add_political_power = 10
+			add_tech_bonus = {
+				name = ROC_pw_public_foundations_construction_bonus
+				bonus = 0.10
+				uses = 1
+				category = construction_tech
+			}
+			ROC_ce_policy_public_020 = yes
+		}
+	}
+	focus = {
+		id = ROC_pw_direct_elections
+		icon = GFX_goal_generic_national_unity
+		x = 40
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_national_guild_federation }
+		completion_reward = {
+			add_political_power = 15
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_industrial_democracy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 42
+		y = 7
+		cost = 5
+		prerequisite = { focus = ROC_pw_national_guild_federation }
+		completion_reward = {
+			add_political_power = 10
+			add_tech_bonus = {
+				name = ROC_pw_industrial_democracy_construction_bonus
+				bonus = 0.10
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+	focus = {
+		id = ROC_pw_loyalty
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_merit_land }
+		completion_reward = {
+			add_war_support = 0.03
+		}
+	}
+	focus = {
+		id = ROC_pw_assembly_permits
+		icon = GFX_goal_generic_political_pressure
+		x = 4
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_state_guilds }
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+	focus = {
+		id = ROC_pw_monopoly_control
+		icon = GFX_goal_generic_trade
+		x = 6
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_limit_provinces }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_association_permits
+		icon = GFX_goal_generic_political_pressure
+		x = 8
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_cabinet_governance }
+		completion_reward = {
+			add_political_power = 10
+			add_timed_idea = { idea = ROC_pw_timed_administration days = 180 }
+		}
+	}
+	focus = {
+		id = ROC_pw_association_politics
+		icon = GFX_goal_generic_national_unity
+		x = 12
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_impeachment_power }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_tenancy
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 14
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_privatization }
+		completion_reward = {
+			add_political_power = 10
+			add_timed_idea = { idea = ROC_pw_timed_rural_recovery days = 270 }
+		}
+	}
+	focus = {
+		id = ROC_pw_simplify_administration
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_prudent_enforcement }
+		completion_reward = {
+			add_political_power = 15
+			add_stability = 0.01
+			add_timed_idea = { idea = ROC_pw_timed_administration days = 180 }
+		}
+	}
+	focus = {
+		id = ROC_pw_regional_development
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 18
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_local_policy }
+		completion_reward = {
+			add_political_power = 10
+			custom_effect_tooltip = ROC_pw_regional_build_tt
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = { building = infrastructure size > 0 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						free_building_slots = { building = infrastructure size > 0 }
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = { add_political_power = 15 }
+		}
+	}
+	focus = {
+		id = ROC_pw_school_education
+		icon = GFX_goal_generic_scientific_exchange
+		x = 20
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_local_policy focus = ROC_pw_local_appointments }
+		completion_reward = {
+			add_stability = 0.02
+			add_timed_idea = { idea = ROC_pw_timed_research days = 270 }
+		}
+	}
+	focus = {
+		id = ROC_pw_local_finances
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 22
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_local_appointments }
+		completion_reward = {
+			add_political_power = 15
+		}
+	}
+	focus = {
+		id = ROC_pw_civil_service
+		icon = GFX_goal_generic_political_pressure
+		x = 24
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_local_appointments focus = ROC_pw_market_order }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+			add_timed_idea = { idea = ROC_pw_timed_administration days = 180 }
+		}
+	}
+	focus = {
+		id = ROC_pw_clean_government
+		icon = GFX_goal_generic_national_unity
+		x = 26
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_demobilization }
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_selection_trials
+		icon = GFX_goal_generic_political_pressure
+		x = 28
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_universal_suffrage }
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+	focus = {
+		id = ROC_pw_open_petitions
+		icon = GFX_goal_generic_national_unity
+		x = 30
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_universal_suffrage }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_redistribution
+		icon = GFX_goal_generic_consumer_goods
+		x = 32
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_attack_privilege }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.02
+		}
+	}
+	focus = {
+		id = ROC_pw_civil_rights
+		icon = GFX_goal_generic_national_unity
+		x = 34
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_moderate_line focus = ROC_pw_private_investment focus = ROC_pw_public_foundations focus = ROC_pw_direct_elections focus = ROC_pw_industrial_democracy }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+		}
+	}
+	focus = {
+		id = ROC_pw_employment
+		icon = GFX_goal_generic_production
+		x = 37
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_moderate_line focus = ROC_pw_private_investment focus = ROC_pw_public_foundations focus = ROC_pw_direct_elections focus = ROC_pw_industrial_democracy }
+		completion_reward = {
+			add_political_power = 10
+			custom_effect_tooltip = ROC_pw_employment_build_tt
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = ROOT
+						is_controlled_by = ROOT
+						free_building_slots = { building = industrial_complex size > 0 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_core_of = ROOT
+						free_building_slots = { building = industrial_complex size > 0 }
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = { add_political_power = 15 }
+		}
+	}
+	focus = {
+		id = ROC_pw_student_branches
+		icon = GFX_goal_generic_scientific_exchange
+		x = 42
+		y = 9
+		cost = 5
+		prerequisite = { focus = ROC_pw_moderate_line focus = ROC_pw_private_investment focus = ROC_pw_public_foundations focus = ROC_pw_direct_elections focus = ROC_pw_industrial_democracy }
+		completion_reward = {
+			add_political_power = 10
+			add_stability = 0.01
+			add_timed_idea = { idea = ROC_pw_timed_research days = 270 }
+		}
+	}
+	focus = {
+		id = ROC_pw_heavenly_order
+		icon = GFX_goal_generic_neutrality_focus
+		x = 6
+		y = 12
+		cost = 8
+		prerequisite = { focus = ROC_pw_assembly_permits }
+		prerequisite = { focus = ROC_pw_monopoly_control }
+		prerequisite = { focus = ROC_pw_association_permits }
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = ROC_pw_ending_heavenly_order
+		}
+	}
+	focus = {
+		id = ROC_pw_wise_ruler
+		icon = GFX_goal_generic_political_pressure
+		x = 14
+		y = 12
+		cost = 8
+		prerequisite = { focus = ROC_pw_association_politics }
+		prerequisite = { focus = ROC_pw_tenancy }
+		prerequisite = { focus = ROC_pw_simplify_administration }
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = ROC_pw_ending_wise_ruler
+		}
+	}
+	focus = {
+		id = ROC_pw_gentlemen
+		icon = GFX_goal_generic_political_pressure
+		x = 26
+		y = 12
+		cost = 8
+		prerequisite = { focus = ROC_pw_local_finances }
+		prerequisite = { focus = ROC_pw_civil_service }
+		prerequisite = { focus = ROC_pw_clean_government }
+		prerequisite = { focus = ROC_pw_selection_trials }
+		prerequisite = { focus = ROC_pw_open_petitions }
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = ROC_pw_ending_gentlemen
+		}
+	}
+	focus = {
+		id = ROC_pw_commonwealth
+		icon = GFX_goal_generic_national_unity
+		x = 39
+		y = 12
+		cost = 8
+		prerequisite = { focus = ROC_pw_redistribution }
+		prerequisite = { focus = ROC_pw_civil_rights }
+		prerequisite = { focus = ROC_pw_employment }
+		prerequisite = { focus = ROC_pw_student_branches }
+		completion_reward = {
+			add_political_power = 60
+			add_ideas = ROC_pw_ending_commonwealth
+		}
+	}
+}

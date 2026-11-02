@@ -1,0 +1,49 @@
+# Passage is determined directly from the four saved attitude values.
+WJP_parliament_bill_can_pass = {
+	AND = {
+		OR = {
+			AND = {
+				check_variable = { var = WJP_parliament_free_society_attitude value = 1 compare = greater_than_or_equals }
+				check_variable = { var = WJP_parliament_progressive_association_attitude value = 1 compare = greater_than_or_equals }
+			}
+			AND = {
+				check_variable = { var = WJP_parliament_free_society_attitude value = 1 compare = greater_than_or_equals }
+				check_variable = { var = WJP_parliament_national_renewal_league_attitude value = 1 compare = greater_than_or_equals }
+			}
+			AND = {
+				check_variable = { var = WJP_parliament_free_society_attitude value = 1 compare = greater_than_or_equals }
+				check_variable = { var = WJP_parliament_daido_association_attitude value = 1 compare = greater_than_or_equals }
+			}
+			AND = {
+				check_variable = { var = WJP_parliament_progressive_association_attitude value = 1 compare = greater_than_or_equals }
+				check_variable = { var = WJP_parliament_national_renewal_league_attitude value = 1 compare = greater_than_or_equals }
+			}
+			AND = {
+				check_variable = { var = WJP_parliament_progressive_association_attitude value = 1 compare = greater_than_or_equals }
+				check_variable = { var = WJP_parliament_daido_association_attitude value = 1 compare = greater_than_or_equals }
+			}
+			AND = {
+				check_variable = { var = WJP_parliament_national_renewal_league_attitude value = 1 compare = greater_than_or_equals }
+				check_variable = { var = WJP_parliament_daido_association_attitude value = 1 compare = greater_than_or_equals }
+			}
+		}
+		NOT = {
+			OR = {
+				check_variable = { var = WJP_parliament_free_society_attitude value = -2 compare = less_than_or_equals }
+				check_variable = { var = WJP_parliament_progressive_association_attitude value = -2 compare = less_than_or_equals }
+				check_variable = { var = WJP_parliament_national_renewal_league_attitude value = -2 compare = less_than_or_equals }
+				check_variable = { var = WJP_parliament_daido_association_attitude value = -2 compare = less_than_or_equals }
+			}
+		}
+	}
+}
+
+WJP_parliament_bill_can_submit = {
+	AND = {
+		has_country_flag = WJP_economy_plan_selected
+		has_country_flag = WJP_economy_budget_selected
+		NOT = { has_country_flag = WJP_economic_bill_submitted }
+		NOT = { has_country_flag = WJP_parliament_bill_resolved }
+		NOT = { has_country_flag = WJP_parliament_bill_active }
+	}
+}

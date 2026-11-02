@@ -1,0 +1,168 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					country_exists = GPS
+				}
+				GPS = {
+					if = {
+						limit = {
+							has_idea = GPS_gov_repair_effort
+							NOT = {
+								GPS_gov_repair_target_valid = yes
+							}
+						}
+						remove_ideas = GPS_gov_repair_effort
+						country_event = {
+							id = GPS_governance.11
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								has_idea = GPS_gov_coal_rail_a
+								has_idea = GPS_gov_coal_rail_b
+								has_idea = GPS_gov_coal_rail_c
+								has_idea = GPS_gov_coal_road_a
+								has_idea = GPS_gov_coal_road_b
+								has_idea = GPS_gov_coal_road_c
+							}
+							NOT = {
+								GPS_gov_coal_target_valid = yes
+							}
+						}
+						remove_ideas = GPS_gov_coal_rail_a
+						remove_ideas = GPS_gov_coal_rail_b
+						remove_ideas = GPS_gov_coal_rail_c
+						remove_ideas = GPS_gov_coal_road_a
+						remove_ideas = GPS_gov_coal_road_b
+						remove_ideas = GPS_gov_coal_road_c
+						country_event = {
+							id = GPS_governance.12
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								has_idea = GPS_gov_restart_effort_a
+								has_idea = GPS_gov_restart_effort_c
+							}
+							NOT = {
+								GPS_gov_restart_target_valid = yes
+							}
+						}
+						remove_ideas = GPS_gov_restart_effort_a
+						remove_ideas = GPS_gov_restart_effort_c
+						country_event = {
+							id = GPS_governance.13
+						}
+					}
+					if = {
+						limit = {
+							has_idea = GPS_gov_defence_rotation
+							NOT = {
+								GPS_gov_defence_roster_target_valid = yes
+							}
+						}
+						remove_ideas = GPS_gov_defence_rotation
+						country_event = {
+							id = GPS_governance.30
+						}
+					}
+					if = {
+						limit = {
+							has_idea = GPS_gov_grain_effort
+							NOT = {
+								GPS_gov_grain_target_valid = yes
+							}
+						}
+						remove_ideas = GPS_gov_grain_effort
+						remove_ideas = GPS_gov_grain_a_policy
+						remove_ideas = GPS_gov_grain_b_policy
+						remove_ideas = GPS_gov_grain_c_policy
+						country_event = {
+							id = GPS_governance.53
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								has_idea = GPS_gov_national_army_a_policy
+								has_idea = GPS_gov_national_army_b_policy
+								has_idea = GPS_gov_national_army_c_policy
+								has_idea = GPS_gov_national_accounts_a_policy
+								has_idea = GPS_gov_national_accounts_b_policy
+								has_idea = GPS_gov_national_accounts_c_policy
+								has_idea = GPS_gov_local_delegation_a_policy
+								has_idea = GPS_gov_local_delegation_b_policy
+								has_idea = GPS_gov_local_delegation_c_policy
+							}
+							NOT = {
+								GPS_gov_national_control_retained = yes
+							}
+						}
+						remove_ideas = GPS_gov_national_army_a_policy
+						remove_ideas = GPS_gov_national_army_b_policy
+						if = {
+							limit = { has_idea = GPS_gov_national_army_c_policy }
+							swap_ideas = { remove_idea = GPS_gov_national_army_c_policy add_idea = GPS_gov_national_army_c_suspended }
+						}
+						remove_ideas = GPS_gov_national_accounts_a_policy
+						remove_ideas = GPS_gov_national_accounts_b_policy
+						remove_ideas = GPS_gov_national_accounts_c_policy
+						remove_ideas = GPS_gov_local_delegation_a_policy
+						remove_ideas = GPS_gov_local_delegation_b_policy
+						remove_ideas = GPS_gov_local_delegation_c_policy
+						country_event = {
+							id = GPS_governance.57
+						}
+					}
+					if = {
+						limit = {
+							has_idea = GPS_gov_demobilization_job_policy
+							NOT = {
+								GPS_gov_demobilization_target_valid = yes
+							}
+						}
+						remove_ideas = GPS_gov_demobilization_job_policy
+						country_event = {
+							id = GPS_governance.58
+						}
+					}
+					if = {
+						limit = {
+							OR = {
+								has_idea = GPS_gov_grain_a_policy
+								has_idea = GPS_gov_grain_b_policy
+								has_idea = GPS_gov_grain_c_policy
+							}
+							NOT = {
+								GPS_gov_grain_target_valid = yes
+							}
+						}
+						remove_ideas = GPS_gov_grain_a_policy
+						remove_ideas = GPS_gov_grain_b_policy
+						remove_ideas = GPS_gov_grain_c_policy
+						country_event = {
+							id = GPS_governance.53
+						}
+					}
+					if = {
+						limit = {
+							has_idea = GPS_gov_regional_closure_b_policy
+							NOT = {
+								GPS_gov_peace_foothold = yes
+							}
+						}
+						remove_ideas = GPS_gov_regional_closure_b_policy
+						country_event = {
+							id = GPS_governance.59
+						}
+					}
+
+				}
+			}
+		}
+	}
+}

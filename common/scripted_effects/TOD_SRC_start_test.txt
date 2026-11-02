@@ -1,6 +1,7 @@
 ﻿# Player-only test presets, reusing current event option effects.
 TOD_SRC_start_test_prepare = {
     set_global_flag = TOD_SRC_start_test_active
+		MNG = { TOD_MNG_retire_gps_characters = yes }
 		MNG_release_GPS = yes
 		MNG_release_SRC = yes
 		complete_national_focus = MNG_qingjiaotongchangonghui
@@ -13,11 +14,11 @@ TOD_SRC_start_test_prepare = {
 				transfer_units_fraction= {
 					target = GPS
 					stockpile_ratio = 0.15
-					keep_unit_leaders = {
-						
-					}
+					army_ratio = 0
+					navy_ratio = 0
+					air_ratio = 0
 					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+						always = yes
 					}
 				}
 				GPS = {
@@ -132,10 +133,11 @@ TOD_SRC_start_test_captured = {
 					target = SRC
 					size = 1
 					stockpile_ratio = 0.7
+					army_ratio = 0
 					navy_ratio = 0
 					air_ratio = 0.3
 					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+						always = yes
 					}
 				}
 			}
@@ -162,10 +164,11 @@ TOD_SRC_start_test_blocked = {
 					target = SRC
 					size = 1
 					stockpile_ratio = 0.7
+					army_ratio = 0
 					navy_ratio = 0
 					air_ratio = 0.5
 					keep_unit_leaders_trigger = {
-						has_trait = MNG_damingjungguan
+						always = yes
 					}
 				}
 			}

@@ -1,0 +1,14 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			if = {
+				limit = { country_exists = SIC }
+				SIC = { SIC_red_initialize_effect = yes }
+			}
+		}
+	}
+	# Country-specific monthly hooks are already used by GOS, SRC, MNG and XBJ.
+	on_monthly_SIC = {
+		effect = { SIC_red_monthly_effect = yes }
+	}
+}

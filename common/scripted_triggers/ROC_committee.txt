@@ -1,0 +1,20 @@
+ROC_committee_objection_valid = {
+    ROC_econ_race_active = yes
+    has_country_flag = ROC_committee_objection_pending
+    OR = {
+        AND = { check_variable = { var = ROC_committee_objection_target value = 1 compare = equals } has_active_mission = ROC_decision_zuopai check_variable = { var = ROC_committee_left_agenda value = 0 compare = greater_than } check_variable = { var = ROC_committee_objection_agenda value = ROC_committee_left_agenda compare = equals } }
+        AND = { check_variable = { var = ROC_committee_objection_target value = 2 compare = equals } has_active_mission = ROC_decision_zhongpai check_variable = { var = ROC_committee_center_agenda value = 0 compare = greater_than } check_variable = { var = ROC_committee_objection_agenda value = ROC_committee_center_agenda compare = equals } }
+        AND = { check_variable = { var = ROC_committee_objection_target value = 3 compare = equals } has_active_mission = ROC_decision_youpai check_variable = { var = ROC_committee_right_agenda value = 0 compare = greater_than } check_variable = { var = ROC_committee_objection_agenda value = ROC_committee_right_agenda compare = equals } }
+    }
+}
+
+ROC_committee_objection_can_open = {
+    ROC_econ_race_active = yes
+    NOT = { has_country_flag = ROC_committee_objection_pending }
+    NOT = { has_country_flag = ROC_committee_objection_cooldown }
+    OR = {
+        AND = { check_variable = { var = ROC_committee_leading_side value = 1 compare = equals } has_active_mission = ROC_decision_zuopai check_variable = { var = ROC_committee_left_agenda value = 0 compare = greater_than } }
+        AND = { check_variable = { var = ROC_committee_leading_side value = 2 compare = equals } has_active_mission = ROC_decision_zhongpai check_variable = { var = ROC_committee_center_agenda value = 0 compare = greater_than } }
+        AND = { check_variable = { var = ROC_committee_leading_side value = 3 compare = equals } has_active_mission = ROC_decision_youpai check_variable = { var = ROC_committee_right_agenda value = 0 compare = greater_than } }
+    }
+}

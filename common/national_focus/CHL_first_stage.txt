@@ -1,0 +1,512 @@
+focus_tree = {
+	id = CHL_first_stage_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = CHL
+		}
+	}
+	default = no
+
+	# Politics
+	focus = {
+		id = CHL_overseas_haven
+		icon = GFX_goal_generic_national_unity
+		cost = 1
+		x = 12
+		y = 0
+		completion_reward = { add_political_power = 50 }
+	}
+	focus = {
+		id = CHL_final_term_program
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = CHL_overseas_haven }
+		cost = 5
+		x = 12
+		y = 2
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = CHL_promote_xiaokang
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = CHL_final_term_program }
+		cost = 5
+		x = 12
+		y = 4
+		completion_reward = { add_stability = 0.05 }
+	}
+	focus = {
+		id = CHL_resist_radicalism
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = CHL_promote_xiaokang }
+		cost = 5
+		x = 12
+		y = 6
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = -20
+		}
+	}
+	focus = {
+		id = CHL_coordinate_chambers
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = CHL_resist_radicalism }
+		cost = 5
+		x = 12
+		y = 8
+		completion_reward = {
+			add_stability = -0.10
+			add_political_power = -30
+		}
+	}
+	focus = {
+		id = CHL_balance_party
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = CHL_coordinate_chambers }
+		cost = 5
+		x = 10
+		y = 10
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = -25
+		}
+	}
+	focus = {
+		id = CHL_political_stalwart
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = CHL_coordinate_chambers }
+		cost = 5
+		x = 14
+		y = 10
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = -20
+		}
+	}
+	focus = {
+		id = CHL_centrist_politics
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = CHL_balance_party }
+		prerequisite = { focus = CHL_political_stalwart }
+		cost = 5
+		x = 12
+		y = 12
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 15
+		}
+	}
+	focus = {
+		id = CHL_moderate_reform
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = CHL_centrist_politics }
+		cost = 5
+		x = 12
+		y = 14
+		completion_reward = {
+			add_stability = 0.20
+			add_political_power = 30
+		}
+	}
+	focus = {
+		id = CHL_prepare_next_election
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = CHL_moderate_reform }
+		cost = 5
+		x = 12
+		y = 16
+		completion_reward = { add_political_power = -30 }
+	}
+
+	# Military
+	focus = {
+		id = CHL_military_self_strengthening
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = CHL_final_term_program }
+		cost = 5
+		x = 20
+		y = 4
+		completion_reward = {
+			army_experience = 15
+			navy_experience = 5
+			air_experience = 10
+		}
+	}
+	focus = {
+		id = CHL_attract_ming_veterans
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = CHL_military_self_strengthening }
+		cost = 5
+		x = 20
+		y = 6
+		completion_reward = {
+			army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+		}
+	}
+	focus = {
+		id = CHL_introduce_modern_tactics
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = CHL_attract_ming_veterans }
+		cost = 5
+		x = 20
+		y = 8
+		completion_reward = {
+			army_experience = 15
+			navy_experience = 5
+			air_experience = 10
+		}
+	}
+	focus = {
+		id = CHL_expand_arms_capacity
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CHL_introduce_modern_tactics }
+		cost = 5
+		x = 20
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { capital_scope = { is_owned_by = ROOT is_controlled_by = ROOT } }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = arms_factory level = 2 instant_build = yes }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHL_intensify_exercises
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = CHL_expand_arms_capacity }
+		cost = 5
+		x = 20
+		y = 12
+		completion_reward = {
+			army_experience = 5
+			navy_experience = 5
+			air_experience = 5
+		}
+	}
+	focus = {
+		id = CHL_initial_military_reform
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = CHL_intensify_exercises }
+		cost = 5
+		x = 20
+		y = 14
+		completion_reward = {
+			army_experience = 15
+			navy_experience = 5
+			air_experience = 10
+			add_stability = 0.05
+		}
+	}
+
+	# Economy
+	focus = {
+		id = CHL_expand_fiscal_spending
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = CHL_final_term_program }
+		cost = 5
+		x = 4
+		y = 4
+		completion_reward = {
+			add_stability = 0.20
+			add_political_power = -25
+		}
+	}
+	focus = {
+		id = CHL_daoshan_trade
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CHL_expand_fiscal_spending }
+		mutually_exclusive = { focus = CHL_attract_ming_investment }
+		cost = 5
+		x = 6
+		y = 6
+		completion_reward = {
+			add_opinion_modifier = { target = UPB modifier = CHL_first_stage_daoshan_cooperation }
+			UPB = { add_opinion_modifier = { target = CHL modifier = CHL_first_stage_daoshan_cooperation } }
+			add_opinion_modifier = { target = PAR modifier = CHL_first_stage_daoshan_cooperation }
+			PAR = { add_opinion_modifier = { target = CHL modifier = CHL_first_stage_daoshan_cooperation } }
+			add_political_power = -10
+		}
+	}
+	focus = {
+		id = CHL_expand_production
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CHL_daoshan_trade }
+		cost = 5
+		x = 6
+		y = 8
+		completion_reward = {
+			if = {
+				limit = { capital_scope = { is_owned_by = ROOT is_controlled_by = ROOT } }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 6
+					add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 3 instant_build = yes }
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+					add_extra_state_shared_building_slots = 6
+					add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 3 instant_build = yes }
+				}
+			}
+			add_ideas = CHL_first_stage_expanded_production
+		}
+	}
+	focus = {
+		id = CHL_strengthen_bank_reserves
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CHL_expand_production }
+		cost = 5
+		x = 6
+		y = 10
+		completion_reward = { add_ideas = CHL_first_stage_bank_reserves }
+	}
+	focus = {
+		id = CHL_keep_distance
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CHL_strengthen_bank_reserves }
+		cost = 5
+		x = 6
+		y = 12
+		completion_reward = {
+			add_ideas = CHL_first_stage_economic_distance
+			add_opinion_modifier = { target = MNG modifier = CHL_first_stage_ming_distance }
+			MNG = { add_opinion_modifier = { target = CHL modifier = CHL_first_stage_ming_distance } }
+		}
+	}
+	focus = {
+		id = CHL_attract_ming_investment
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CHL_expand_fiscal_spending }
+		mutually_exclusive = { focus = CHL_daoshan_trade }
+		cost = 5
+		x = 2
+		y = 6
+		completion_reward = {
+			if = {
+				limit = { capital_scope = { is_owned_by = ROOT is_controlled_by = ROOT } }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+			}
+			if = {
+				limit = { capital_scope = { is_owned_by = ROOT is_controlled_by = ROOT is_coastal = yes } }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = dockyard level = 1 instant_build = yes }
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT is_coastal = yes }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = { type = dockyard level = 1 instant_build = yes }
+				}
+			}
+			add_ideas = CHL_first_stage_ming_investment
+		}
+	}
+	focus = {
+		id = CHL_seek_technology_transfer
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = CHL_attract_ming_investment }
+		cost = 5
+		x = 2
+		y = 8
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = CHL_first_stage_technology_cost_tt
+				capital_scope = {
+					is_owned_by = ROOT
+					is_controlled_by = ROOT
+					non_damaged_building_level = { building = industrial_complex level = 2 }
+				}
+			}
+		}
+		cancel_if_invalid = yes
+		completion_reward = {
+			if = {
+				limit = {
+					capital_scope = {
+						is_owned_by = ROOT
+						is_controlled_by = ROOT
+						non_damaged_building_level = { building = industrial_complex level = 2 }
+					}
+				}
+				capital_scope = { remove_building = { type = industrial_complex level = 2 } }
+				add_tech_bonus = {
+					name = CHL_first_stage_industry_transfer_bonus
+					bonus = 1.0
+					uses = 1
+					category = industry
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHL_ming_bank_guarantee
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CHL_seek_technology_transfer }
+		cost = 5
+		x = 2
+		y = 10
+		completion_reward = {
+			if = {
+				limit = { capital_scope = { is_owned_by = ROOT is_controlled_by = ROOT } }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+				}
+			}
+			add_ideas = CHL_first_stage_ming_bank_guarantee
+		}
+	}
+	focus = {
+		id = CHL_deepen_celestial_trade
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CHL_ming_bank_guarantee }
+		cost = 5
+		x = 2
+		y = 12
+		completion_reward = {
+			if = {
+				limit = { capital_scope = { is_owned_by = ROOT is_controlled_by = ROOT } }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
+				}
+			}
+			add_ideas = CHL_first_stage_celestial_trade
+		}
+	}
+	focus = {
+		id = CHL_infrastructure_investment
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = CHL_keep_distance focus = CHL_deepen_celestial_trade }
+		cost = 5
+		x = 4
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = CHL_first_stage_infrastructure_cap_tt
+			279 = {
+				if = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT infrastructure < 4 }
+					add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+				}
+				else_if = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT infrastructure = 4 }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			1251 = {
+				if = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT infrastructure < 4 }
+					add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+				}
+				else_if = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT infrastructure = 4 }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+			508 = {
+				if = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT infrastructure < 4 }
+					add_building_construction = { type = infrastructure level = 2 instant_build = yes }
+				}
+				else_if = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT infrastructure = 4 }
+					add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHL_build_modern_factories
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CHL_infrastructure_investment }
+		cost = 5
+		x = 4
+		y = 16
+		completion_reward = {
+			if = {
+				limit = { capital_scope = { is_owned_by = ROOT is_controlled_by = ROOT } }
+				capital_scope = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = { is_owned_by = ROOT is_controlled_by = ROOT }
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+					add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+				}
+			}
+		}
+	}
+	focus = {
+		id = CHL_secure_employment
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = CHL_build_modern_factories }
+		cost = 5
+		x = 4
+		y = 18
+		completion_reward = {
+			add_stability = 0.10
+			add_political_power = 20
+		}
+	}
+	focus = {
+		id = CHL_end_gengwu_crisis
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CHL_secure_employment }
+		cost = 5
+		x = 4
+		y = 20
+		completion_reward = { add_political_power = -100 }
+	}
+}

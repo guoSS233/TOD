@@ -1,7 +1,21 @@
 on_actions = {
 	on_startup = {
 		effect = {
-			WJP = {country_event = { id = WJPevent.1 days = 31 } }
+			WJP = {
+				WJP_parliament_initialize_effect = yes
+				WJP_first_stage_save_migration_effect = yes
+				WJP_parliament_bill_maintenance_effect = yes
+			}
+		}
+	}
+	on_daily = {
+		effect = {
+			WJP = {
+				WJP_parliament_initialize_effect = yes
+				WJP_first_stage_save_migration_effect = yes
+				WJP_han_assembly_maintain_mission_effect = yes
+				WJP_parliament_bill_maintenance_effect = yes
+			}
 		}
 	}
 	on_daily_EDO = {

@@ -1,0 +1,2880 @@
+add_namespace = ROC_ma_story
+
+country_event = {
+    id = ROC_ma_story.101
+    title = ROC_ma_story.101.t
+    desc = ROC_ma_story.101.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.101.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 101 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.101.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 101 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.101.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 101 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.101.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 101 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.101.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 101 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.101.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 101 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_left_favor value = 4 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 3 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 101 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.102
+    title = ROC_ma_story.102.t
+    desc = ROC_ma_story.102.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.102.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 102 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.102.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 102 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.102.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 102 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.102.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 102 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                add_to_variable = { var = ROC_ce_pressure value = 2 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.102.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 102 compare = equals }
+            check_variable = { var = ROC_ma_left_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.102.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 102 compare = equals }
+                    check_variable = { var = ROC_ma_left_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 102 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.103
+    title = ROC_ma_story.103.t
+    desc = ROC_ma_story.103.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.103.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 103 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.103.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 103 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                subtract_from_variable = { var = ROC_ce_actual value = 2 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.103.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 103 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.103.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 103 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.103.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 103 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.103.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 103 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 3 }
+                add_to_variable = { var = ROC_ce_actual value = 2 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 103 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.104
+    title = ROC_ma_story.104.t
+    desc = ROC_ma_story.104.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.104.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 104 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.104.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 104 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 2 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.104.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 104 compare = equals }
+            NOT = { has_political_power < 20 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.104.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 104 compare = equals }
+                    NOT = { has_political_power < 20 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -20
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.104.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 104 compare = equals }
+            check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.104.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 104 compare = equals }
+                    check_variable = { var = ROC_ma_left_favor value = 10 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_left_favor value = 10 }
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ce_pressure value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 104 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.105
+    title = ROC_ma_story.105.t
+    desc = ROC_ma_story.105.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.105.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 105 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.105.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 105 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.105.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 105 compare = equals }
+            check_variable = { var = ROC_ma_right_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.105.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 105 compare = equals }
+                    check_variable = { var = ROC_ma_right_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_left_favor value = 4 }
+                add_to_variable = { var = ROC_ma_right_favor value = 6 }
+                add_to_variable = { var = ROC_ce_actual value = 2 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.105.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 105 compare = equals }
+            check_variable = { var = ROC_ma_left_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.105.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 105 compare = equals }
+                    check_variable = { var = ROC_ma_left_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                subtract_from_variable = { var = ROC_ce_pressure value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 105 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.106
+    title = ROC_ma_story.106.t
+    desc = ROC_ma_story.106.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.106.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 106 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.106.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 106 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 2 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.106.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 106 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.106.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 106 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.106.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 106 compare = equals }
+            check_variable = { var = ROC_ma_left_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.106.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 106 compare = equals }
+                    check_variable = { var = ROC_ma_left_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_left_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ce_pressure value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 106 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.201
+    title = ROC_ma_story.201.t
+    desc = ROC_ma_story.201.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.201.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 201 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.201.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 201 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.201.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 201 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.201.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 201 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.201.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 201 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.201.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 201 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 3 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 201 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.202
+    title = ROC_ma_story.202.t
+    desc = ROC_ma_story.202.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.202.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 202 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.202.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 202 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                subtract_from_variable = { var = ROC_ce_actual value = 2 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.202.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 202 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.202.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 202 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.202.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 202 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.202.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 202 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 202 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.203
+    title = ROC_ma_story.203.t
+    desc = ROC_ma_story.203.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.203.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 203 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.203.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 203 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 3 }
+                add_to_variable = { var = ROC_ce_pressure value = 4 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.203.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 203 compare = equals }
+            check_variable = { var = ROC_ma_right_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.203.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 203 compare = equals }
+                    check_variable = { var = ROC_ma_right_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ma_right_favor value = 6 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.203.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 203 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.203.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 203 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 203 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.204
+    title = ROC_ma_story.204.t
+    desc = ROC_ma_story.204.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.204.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 204 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.204.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 204 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.204.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 204 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.204.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 204 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.204.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 204 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.204.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 204 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 204 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.205
+    title = ROC_ma_story.205.t
+    desc = ROC_ma_story.205.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.205.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 205 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.205.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 205 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 2 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.205.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 205 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.205.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 205 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_center_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.205.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 205 compare = equals }
+            check_variable = { var = ROC_ma_right_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.205.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 205 compare = equals }
+                    check_variable = { var = ROC_ma_right_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                add_to_variable = { var = ROC_ma_right_favor value = 6 }
+                subtract_from_variable = { var = ROC_ce_actual value = 3 }
+                set_variable = { ROC_ma_day_credit = 7 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 205 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.206
+    title = ROC_ma_story.206.t
+    desc = ROC_ma_story.206.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.206.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 206 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.206.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 206 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                subtract_from_variable = { var = ROC_ce_actual value = 2 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.206.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 206 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.206.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 206 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.206.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 206 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.206.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 206 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 3 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 206 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.301
+    title = ROC_ma_story.301.t
+    desc = ROC_ma_story.301.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.301.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 301 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.301.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 301 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.301.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 301 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.301.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 301 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                subtract_from_variable = { var = ROC_ma_center_favor value = 3 }
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.301.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 301 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.301.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 301 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 301 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.302
+    title = ROC_ma_story.302.t
+    desc = ROC_ma_story.302.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.302.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 302 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.302.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 302 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.302.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 302 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.302.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 302 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.302.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 302 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.302.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 302 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 4 }
+                add_to_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 302 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.303
+    title = ROC_ma_story.303.t
+    desc = ROC_ma_story.303.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.303.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 303 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.303.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 303 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.303.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 303 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.303.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 303 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.303.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 303 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.303.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 303 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 303 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.304
+    title = ROC_ma_story.304.t
+    desc = ROC_ma_story.304.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.304.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 304 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.304.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 304 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.304.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 304 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.304.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 304 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_center_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.304.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 304 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.304.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 304 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 304 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.305
+    title = ROC_ma_story.305.t
+    desc = ROC_ma_story.305.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.305.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 305 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.305.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 305 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.305.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 305 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.305.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 305 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 10 }
+                subtract_from_variable = { var = ROC_ma_left_favor value = 4 }
+                add_to_variable = { var = ROC_ma_center_favor value = 6 }
+                add_to_variable = { var = ROC_ce_pressure value = 2 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.305.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 305 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.305.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 305 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 305 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.306
+    title = ROC_ma_story.306.t
+    desc = ROC_ma_story.306.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.306.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 306 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.306.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 306 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.306.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 306 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.306.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 306 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_center_favor value = 3 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.306.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 306 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.306.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 306 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                set_variable = { ROC_ma_day_credit = 7 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 306 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.401
+    title = ROC_ma_story.401.t
+    desc = ROC_ma_story.401.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.401.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 401 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.401.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 401 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.401.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 401 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.401.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 401 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.401.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 401 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.401.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 401 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 401 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.402
+    title = ROC_ma_story.402.t
+    desc = ROC_ma_story.402.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.402.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 402 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.402.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 402 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.402.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 402 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.402.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 402 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.402.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 402 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.402.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 402 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 402 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.403
+    title = ROC_ma_story.403.t
+    desc = ROC_ma_story.403.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.403.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 403 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.403.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 403 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.403.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 403 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.403.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 403 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.403.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 403 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.403.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 403 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ma_right_favor value = 3 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 403 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.404
+    title = ROC_ma_story.404.t
+    desc = ROC_ma_story.404.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.404.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 404 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.404.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 404 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.404.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 404 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.404.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 404 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.404.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 404 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.404.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 404 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 404 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.405
+    title = ROC_ma_story.405.t
+    desc = ROC_ma_story.405.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.405.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 405 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.405.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 405 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                subtract_from_variable = { var = ROC_ce_actual value = 2 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.405.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 405 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.405.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 405 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.405.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 405 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.405.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 405 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 4 }
+                add_to_variable = { var = ROC_ma_center_favor value = 3 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 405 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.406
+    title = ROC_ma_story.406.t
+    desc = ROC_ma_story.406.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.406.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 406 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.406.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 406 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.406.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 406 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.406.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 406 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_center_favor value = 3 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.406.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 406 compare = equals }
+            NOT = { has_political_power < 20 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.406.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 406 compare = equals }
+                    NOT = { has_political_power < 20 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -20
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_right_favor value = 3 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 406 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.501
+    title = ROC_ma_story.501.t
+    desc = ROC_ma_story.501.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.501.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 501 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.501.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 501 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.501.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 501 compare = equals }
+            NOT = { has_political_power < 10 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.501.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 501 compare = equals }
+                    NOT = { has_political_power < 10 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -10
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.501.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 501 compare = equals }
+            NOT = { has_political_power < 20 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.501.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 501 compare = equals }
+                    NOT = { has_political_power < 20 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -20
+                add_to_variable = { var = ROC_ma_left_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 501 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.502
+    title = ROC_ma_story.502.t
+    desc = ROC_ma_story.502.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.502.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 502 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.502.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 502 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 2 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.502.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 502 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.502.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 502 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.502.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 502 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.502.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 502 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 502 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.503
+    title = ROC_ma_story.503.t
+    desc = ROC_ma_story.503.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.503.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 503 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.503.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 503 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.503.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 503 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.503.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 503 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 2 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.503.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 503 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.503.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 503 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 10 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 10 }
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 503 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.504
+    title = ROC_ma_story.504.t
+    desc = ROC_ma_story.504.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.504.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 504 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.504.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 504 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 4 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.504.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 504 compare = equals }
+            NOT = { has_political_power < 20 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.504.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 504 compare = equals }
+                    NOT = { has_political_power < 20 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -20
+                add_to_variable = { var = ROC_ma_left_favor value = 6 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 5 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.504.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 504 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.504.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 504 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 3 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 504 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.505
+    title = ROC_ma_story.505.t
+    desc = ROC_ma_story.505.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.505.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 505 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.505.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 505 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 2 }
+                set_variable = { ROC_ma_day_delay = 14 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.505.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 505 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.505.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 505 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 4 }
+                set_variable = { ROC_ma_day_credit = 14 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.505.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 505 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.505.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 505 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                set_variable = { ROC_ma_day_delay = 7 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 505 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}
+
+country_event = {
+    id = ROC_ma_story.506
+    title = ROC_ma_story.506.t
+    desc = ROC_ma_story.506.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 14
+    option = {
+        name = ROC_ma_story.506.a
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 506 compare = equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.506.a_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 506 compare = equals }
+                }
+                ROC_ma_story_clear = yes
+                add_to_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ce_pressure value = 3 }
+                set_variable = { ROC_ma_day_delay = 21 }
+                ROC_ma_delay_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.506.b
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 506 compare = equals }
+            NOT = { has_political_power < 15 }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.506.b_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 506 compare = equals }
+                    NOT = { has_political_power < 15 }
+                }
+                ROC_ma_story_clear = yes
+                add_political_power = -15
+                add_to_variable = { var = ROC_ma_left_favor value = 5 }
+                subtract_from_variable = { var = ROC_ma_right_favor value = 3 }
+                set_variable = { ROC_ma_day_credit = 21 }
+                ROC_ma_advance_days = yes
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story.506.c
+        trigger = {
+            ROC_ma_story_is_valid = yes
+            check_variable = { var = ROC_ma_story_active_id value = 506 compare = equals }
+            check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+        }
+        ai_chance = { factor = 1 }
+        custom_effect_tooltip = ROC_ma_story.506.c_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 506 compare = equals }
+                    check_variable = { var = ROC_ma_center_favor value = 5 compare = greater_than_or_equals }
+                }
+                ROC_ma_story_clear = yes
+                subtract_from_variable = { var = ROC_ma_center_favor value = 5 }
+                add_to_variable = { var = ROC_ma_left_favor value = 3 }
+                add_to_variable = { var = ROC_ma_center_favor value = 4 }
+                add_to_variable = { var = ROC_ce_actual value = 4 }
+                ROC_ce_refresh = yes
+            }
+        }
+    }
+    option = {
+        name = ROC_ma_story_archive
+        trigger = {
+            NOT = {
+                AND = {
+                    ROC_ma_story_is_valid = yes
+                    check_variable = { var = ROC_ma_story_active_id value = 506 compare = equals }
+                }
+            }
+        }
+        ai_chance = { factor = 100 }
+        custom_effect_tooltip = ROC_ma_story_archive_tt
+    }
+}

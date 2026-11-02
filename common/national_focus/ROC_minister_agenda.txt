@@ -1,0 +1,688 @@
+shared_focus = {
+	id = ROC_ma_minister_selection
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 13
+	cost = 1
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_appointment_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = { }
+}
+shared_focus = {
+	id = ROC_ma_yu_appointed
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 15
+	cost = 1
+	prerequisite = { focus = ROC_ma_minister_selection }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_appointment_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = { }
+}
+shared_focus = {
+	id = ROC_ma_yan_appointed
+	icon = GFX_goal_generic_production
+	x = 4
+	y = 15
+	cost = 1
+	prerequisite = { focus = ROC_ma_minister_selection }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_appointment_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = { }
+}
+shared_focus = {
+	id = ROC_ma_ruan_appointed
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 15
+	cost = 1
+	prerequisite = { focus = ROC_ma_minister_selection }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_appointment_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = { }
+}
+shared_focus = {
+	id = ROC_ma_chen_appointed
+	icon = GFX_goal_generic_production
+	x = 8
+	y = 15
+	cost = 1
+	prerequisite = { focus = ROC_ma_minister_selection }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_appointment_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = { }
+}
+shared_focus = {
+	id = ROC_ma_xiao_appointed
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 15
+	cost = 1
+	prerequisite = { focus = ROC_ma_minister_selection }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_appointment_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = { }
+}
+
+# Shared minister agenda focuses. Completion is driven by ROC_ma_current_action.
+shared_focus = {
+	id = ROC_ma_yu_1
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 17
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yu_appointed }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_yu_1_unlocks_tt
+		ROC_ma_reward_yu_1 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yu_step2
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 19
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yu_1 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_yu_step2_unlocks_tt
+		ROC_ma_reward_yu_step2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yu_2
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 21
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yu_step2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_yu_2_unlocks_tt
+		ROC_ma_reward_yu_2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yu_step4
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 23
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yu_2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_yu_step4 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yu_3
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 25
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yu_step4 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_yu_3 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yan_1
+	icon = GFX_goal_generic_production
+	x = 4
+	y = 17
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yan_appointed }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_yan_1_unlocks_tt
+		ROC_ma_reward_yan_1 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yan_step2
+	icon = GFX_goal_generic_production
+	x = 4
+	y = 19
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yan_1 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_yan_step2_unlocks_tt
+		ROC_ma_reward_yan_step2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yan_2
+	icon = GFX_goal_generic_production
+	x = 4
+	y = 21
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yan_step2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_yan_2_unlocks_tt
+		ROC_ma_reward_yan_2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yan_step4
+	icon = GFX_goal_generic_production
+	x = 4
+	y = 23
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yan_2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_yan_step4 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yan_3
+	icon = GFX_goal_generic_production
+	x = 4
+	y = 25
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yan_step4 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_yan_3 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_ruan_1
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 17
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_ruan_appointed }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_ruan_1_unlocks_tt
+		ROC_ma_reward_ruan_1 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_ruan_step2
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 19
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_ruan_1 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_ruan_step2_unlocks_tt
+		ROC_ma_reward_ruan_step2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_ruan_2
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 21
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_ruan_step2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_ruan_2_unlocks_tt
+		ROC_ma_reward_ruan_2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_ruan_step4
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 23
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_ruan_2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_ruan_step4 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_ruan_3
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 25
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_ruan_step4 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_ruan_3 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_chen_1
+	icon = GFX_goal_generic_production
+	x = 8
+	y = 17
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_chen_appointed }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_chen_1_unlocks_tt
+		ROC_ma_reward_chen_1 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_chen_step2
+	icon = GFX_goal_generic_production
+	x = 8
+	y = 19
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_chen_1 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_chen_step2_unlocks_tt
+		ROC_ma_reward_chen_step2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_chen_2
+	icon = GFX_goal_generic_production
+	x = 8
+	y = 21
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_chen_step2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_chen_2_unlocks_tt
+		ROC_ma_reward_chen_2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_chen_step4
+	icon = GFX_goal_generic_production
+	x = 8
+	y = 23
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_chen_2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_chen_step4_unlocks_tt
+		ROC_ma_reward_chen_step4 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_chen_3
+	icon = GFX_goal_generic_production
+	x = 8
+	y = 25
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_chen_step4 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_chen_3 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_xiao_1
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 17
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_xiao_appointed }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_xiao_1_unlocks_tt
+		ROC_ma_reward_xiao_1 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_xiao_step2
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 19
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_xiao_1 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_xiao_step2_unlocks_tt
+		ROC_ma_reward_xiao_step2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_xiao_2
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 21
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_xiao_step2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_xiao_2_unlocks_tt
+		ROC_ma_reward_xiao_2 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_xiao_step4
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 23
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_xiao_2 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		custom_effect_tooltip = ROC_ma_xiao_step4_unlocks_tt
+		ROC_ma_reward_xiao_step4 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_xiao_3
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 25
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_xiao_step4 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_xiao_3 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+shared_focus = {
+	id = ROC_ma_yu_step6
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 27
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yu_3 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_yu_step6 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+
+shared_focus = {
+	id = ROC_ma_yan_step6
+	icon = GFX_goal_generic_production
+	x = 4
+	y = 27
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_yan_3 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_yan_step6 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+
+shared_focus = {
+	id = ROC_ma_ruan_step6
+	icon = GFX_goal_generic_production
+	x = 6
+	y = 27
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_ruan_3 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_ruan_step6 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+
+shared_focus = {
+	id = ROC_ma_chen_step6
+	icon = GFX_goal_generic_production
+	x = 8
+	y = 27
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_chen_3 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_chen_step6 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}
+
+shared_focus = {
+	id = ROC_ma_xiao_step6
+	icon = GFX_goal_generic_production
+	x = 10
+	y = 27
+	cost = 25.715
+	prerequisite = { focus = ROC_ma_xiao_3 }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = ROC_ma_automatic_completion_tt
+			hidden_trigger = { always = no }
+		}
+	}
+	ai_will_do = { factor = 0 }
+	completion_reward = {
+		ROC_ma_reward_xiao_step6 = yes
+		custom_effect_tooltip = ROC_ma_story_completion_tt
+	}
+}

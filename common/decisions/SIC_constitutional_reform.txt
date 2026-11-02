@@ -317,11 +317,27 @@ SIC_xianzhengtongyi_categories = {
 	SIC_xianzheng_taofa_GOS = {
 		icon = GFX_decision_generic_political_address
 		visible = { country_exists = GOS }
-		available = { NOT = { has_war_with = GOS } }
+		available = {
+			NOT = { has_war_with = GOS }
+			NOT = { has_country_flag = SIC_external_partner_GOS }
+			NOT = { has_non_aggression_pact_with = GOS }
+			NOT = { has_country_flag = SIC_external_pending_GOS_political }
+			NOT = { has_country_flag = SIC_external_pending_GOS_aid }
+		}
 		cost = 35
 		days_remove = 21
 		fire_only_once = yes
-		remove_effect = { declare_war_on = { target = GOS type = annex_everything } }
+		remove_effect = {
+			if = {
+				limit = {
+					country_exists = GOS
+					NOT = { has_war_with = GOS }
+					NOT = { has_country_flag = SIC_external_partner_GOS }
+					NOT = { has_non_aggression_pact_with = GOS }
+				}
+				declare_war_on = { target = GOS type = annex_everything }
+			}
+		}
 	}
 	SIC_xianzheng_taofa_XBJ = {
 		icon = GFX_decision_generic_political_address

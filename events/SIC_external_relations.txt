@@ -1,0 +1,341 @@
+add_namespace = SICEXT
+country_event = {
+    id = SICEXT.1
+    title = SICEXT.1.t
+    desc = SICEXT.1.d
+    is_triggered_only = yes
+    trigger = { tag = SIC SIC_external_political_trigger = yes has_country_flag = SIC_external_song_choice_pending }
+    option = {
+        name = SICEXT.1.a
+        trigger = { SIC_external_song_available_trigger = yes }
+        ai_chance = { factor = 90 }
+        if = {
+            limit = { SIC_external_song_available_trigger = yes has_country_flag = SIC_external_song_choice_pending }
+            clr_country_flag = SIC_external_song_choice_pending
+            set_country_flag = SIC_external_song_pending
+            MNG = { set_country_flag = SIC_external_song_inbox country_event = { id = SICEXT.2 hours = 1 } }
+        }
+    }
+    option = {
+        name = SICEXT.1.b
+        ai_chance = { factor = 10 }
+        if = { limit = { tag = SIC has_country_flag = SIC_external_song_choice_pending } SIC_external_song_local_effect = yes }
+    }
+}
+country_event = {
+    id = SICEXT.2
+    title = SICEXT.2.t
+    desc = SICEXT.2.d
+    is_triggered_only = yes
+    trigger = { tag = MNG country_exists = SIC SIC = { SIC_external_song_pending_trigger = yes } }
+    option = {
+        name = SICEXT.2.a
+        trigger = { country_exists = SIC SIC = { SIC_external_song_pending_trigger = yes } }
+        ai_chance = { factor = 90 }
+        if = { limit = { tag = MNG country_exists = SIC SIC = { SIC_external_song_pending_trigger = yes } } SIC = { SIC_external_song_arrive_effect = yes } }
+    }
+    option = {
+        name = SICEXT.2.b
+        ai_chance = { factor = 10 }
+        if = {
+            limit = { tag = MNG country_exists = SIC SIC = { has_country_flag = SIC_external_song_pending } }
+            SIC = { SIC_external_song_local_effect = yes country_event = { id = SICEXT.4 hours = 1 } }
+        }
+    }
+}
+country_event = {
+    id = SICEXT.3
+    title = SICEXT.3.t
+    desc = SICEXT.3.d
+    is_triggered_only = yes
+    trigger = { tag = SIC SIC_external_political_trigger = yes has_country_flag = SIC_external_song_arrived has_character = MNG_Song_jiaoren }
+    option = { name = SICEXT.3.a }
+}
+country_event = {
+    id = SICEXT.4
+    title = SICEXT.4.t
+    desc = SICEXT.4.d
+    is_triggered_only = yes
+    trigger = { tag = SIC has_country_flag = SIC_external_song_local }
+    option = { name = SICEXT.4.a }
+}
+# GOS: political; receiver and final sender options both validate fixed tags.
+country_event = {
+    id = SICEXT.10
+    title = SICEXT.10.t
+    desc = SICEXT.10.d
+    is_triggered_only = yes
+    trigger = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+    option = {
+        name = SICEXT.10.a
+        trigger = { country_exists = SIC SIC = { SIC_external_GOS_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 50 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                country_event = { id = SICEXT.11 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.10.b
+        trigger = { country_exists = SIC SIC = { SIC_external_GOS_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 30 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                set_country_flag = SIC_external_response_conditional
+                country_event = { id = SICEXT.11 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.10.c
+        ai_chance = { factor = 20 modifier = { factor = 2 has_war = yes } }
+        if = {
+            limit = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = { SIC_external_clear_pending_effect = yes country_event = { id = SICEXT.12 hours = 1 } }
+        }
+    }
+}
+country_event = {
+    id = SICEXT.11
+    title = SICEXT.11.t
+    desc = { trigger = { NOT = { has_country_flag = SIC_external_response_conditional } } text = SICEXT.11.d }
+    desc = { trigger = { has_country_flag = SIC_external_response_conditional } text = SICEXT.11.conditional }
+    is_triggered_only = yes
+    trigger = { tag = SIC SIC_external_GOS_political_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+    option = {
+        name = SICEXT.11.a
+        trigger = { SIC_external_GOS_political_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        ai_chance = { factor = 75 modifier = { factor = 0.5 has_country_flag = SIC_external_response_conditional } }
+        SIC_external_GOS_political_conclude_effect = yes
+    }
+    option = {
+        name = SICEXT.11.b
+        ai_chance = { factor = 25 }
+        if = { limit = { tag = SIC has_country_flag = SIC_external_pending_GOS_political } SIC_external_clear_pending_effect = yes }
+    }
+}
+country_event = {
+    id = SICEXT.12
+    title = SICEXT.12.t
+    desc = SICEXT.12.d
+    is_triggered_only = yes
+    trigger = { tag = SIC country_exists = SIC }
+    option = { name = SICEXT.12.a }
+}
+# USC: political; receiver and final sender options both validate fixed tags.
+country_event = {
+    id = SICEXT.20
+    title = SICEXT.20.t
+    desc = SICEXT.20.d
+    is_triggered_only = yes
+    trigger = { tag = USC country_exists = SIC SIC = { SIC_external_USC_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+    option = {
+        name = SICEXT.20.a
+        trigger = { country_exists = SIC SIC = { SIC_external_USC_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 50 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = USC country_exists = SIC SIC = { SIC_external_USC_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                country_event = { id = SICEXT.21 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.20.b
+        trigger = { country_exists = SIC SIC = { SIC_external_USC_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 30 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = USC country_exists = SIC SIC = { SIC_external_USC_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                set_country_flag = SIC_external_response_conditional
+                country_event = { id = SICEXT.21 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.20.c
+        ai_chance = { factor = 20 modifier = { factor = 2 has_war = yes } }
+        if = {
+            limit = { tag = USC country_exists = SIC SIC = { SIC_external_USC_political_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = { SIC_external_clear_pending_effect = yes country_event = { id = SICEXT.22 hours = 1 } }
+        }
+    }
+}
+country_event = {
+    id = SICEXT.21
+    title = SICEXT.21.t
+    desc = { trigger = { NOT = { has_country_flag = SIC_external_response_conditional } } text = SICEXT.21.d }
+    desc = { trigger = { has_country_flag = SIC_external_response_conditional } text = SICEXT.21.conditional }
+    is_triggered_only = yes
+    trigger = { tag = SIC SIC_external_USC_political_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+    option = {
+        name = SICEXT.21.a
+        trigger = { SIC_external_USC_political_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        ai_chance = { factor = 75 modifier = { factor = 0.5 has_country_flag = SIC_external_response_conditional } }
+        SIC_external_USC_political_conclude_effect = yes
+    }
+    option = {
+        name = SICEXT.21.b
+        ai_chance = { factor = 25 }
+        if = { limit = { tag = SIC has_country_flag = SIC_external_pending_USC_political } SIC_external_clear_pending_effect = yes }
+    }
+}
+country_event = {
+    id = SICEXT.22
+    title = SICEXT.22.t
+    desc = SICEXT.22.d
+    is_triggered_only = yes
+    trigger = { tag = SIC country_exists = SIC }
+    option = { name = SICEXT.22.a }
+}
+# GOS: aid; receiver and final sender options both validate fixed tags.
+country_event = {
+    id = SICEXT.30
+    title = SICEXT.30.t
+    desc = SICEXT.30.d
+    is_triggered_only = yes
+    trigger = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+    option = {
+        name = SICEXT.30.a
+        trigger = { country_exists = SIC SIC = { SIC_external_GOS_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 50 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                country_event = { id = SICEXT.31 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.30.b
+        trigger = { country_exists = SIC SIC = { SIC_external_GOS_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 30 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                set_country_flag = SIC_external_response_conditional
+                country_event = { id = SICEXT.31 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.30.c
+        ai_chance = { factor = 20 modifier = { factor = 2 has_war = yes } }
+        if = {
+            limit = { tag = GOS country_exists = SIC SIC = { SIC_external_GOS_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = { SIC_external_clear_pending_effect = yes country_event = { id = SICEXT.32 hours = 1 } }
+        }
+    }
+}
+country_event = {
+    id = SICEXT.31
+    title = SICEXT.31.t
+    desc = { trigger = { NOT = { has_country_flag = SIC_external_response_conditional } } text = SICEXT.31.d }
+    desc = { trigger = { has_country_flag = SIC_external_response_conditional } text = SICEXT.31.conditional }
+    is_triggered_only = yes
+    trigger = { tag = SIC SIC_external_GOS_aid_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+    option = {
+        name = SICEXT.31.a
+        trigger = { SIC_external_GOS_aid_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        ai_chance = { factor = 75 modifier = { factor = 0.5 has_country_flag = SIC_external_response_conditional } }
+        SIC_external_GOS_aid_conclude_effect = yes
+    }
+    option = {
+        name = SICEXT.31.b
+        ai_chance = { factor = 25 }
+        if = { limit = { tag = SIC has_country_flag = SIC_external_pending_GOS_aid } SIC_external_clear_pending_effect = yes }
+    }
+}
+country_event = {
+    id = SICEXT.32
+    title = SICEXT.32.t
+    desc = SICEXT.32.d
+    is_triggered_only = yes
+    trigger = { tag = SIC country_exists = SIC }
+    option = { name = SICEXT.32.a }
+}
+# USC: aid; receiver and final sender options both validate fixed tags.
+country_event = {
+    id = SICEXT.40
+    title = SICEXT.40.t
+    desc = SICEXT.40.d
+    is_triggered_only = yes
+    trigger = { tag = USC country_exists = SIC SIC = { SIC_external_USC_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+    option = {
+        name = SICEXT.40.a
+        trigger = { country_exists = SIC SIC = { SIC_external_USC_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 50 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = USC country_exists = SIC SIC = { SIC_external_USC_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                country_event = { id = SICEXT.41 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.40.b
+        trigger = { country_exists = SIC SIC = { SIC_external_USC_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+        ai_chance = { factor = 30 modifier = { factor = 0.5 has_war = yes } }
+        if = {
+            limit = { tag = USC country_exists = SIC SIC = { SIC_external_USC_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = {
+                set_country_flag = SIC_external_response_ready
+                set_country_flag = SIC_external_response_conditional
+                country_event = { id = SICEXT.41 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = SICEXT.40.c
+        ai_chance = { factor = 20 modifier = { factor = 2 has_war = yes } }
+        if = {
+            limit = { tag = USC country_exists = SIC SIC = { SIC_external_USC_aid_valid_trigger = yes NOT = { has_country_flag = SIC_external_response_ready } } }
+            SIC = { SIC_external_clear_pending_effect = yes country_event = { id = SICEXT.42 hours = 1 } }
+        }
+    }
+}
+country_event = {
+    id = SICEXT.41
+    title = SICEXT.41.t
+    desc = { trigger = { NOT = { has_country_flag = SIC_external_response_conditional } } text = SICEXT.41.d }
+    desc = { trigger = { has_country_flag = SIC_external_response_conditional } text = SICEXT.41.conditional }
+    is_triggered_only = yes
+    trigger = { tag = SIC SIC_external_USC_aid_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+    option = {
+        name = SICEXT.41.a
+        trigger = { SIC_external_USC_aid_valid_trigger = yes has_country_flag = SIC_external_response_ready }
+        ai_chance = { factor = 75 modifier = { factor = 0.5 has_country_flag = SIC_external_response_conditional } }
+        SIC_external_USC_aid_conclude_effect = yes
+    }
+    option = {
+        name = SICEXT.41.b
+        ai_chance = { factor = 25 }
+        if = { limit = { tag = SIC has_country_flag = SIC_external_pending_USC_aid } SIC_external_clear_pending_effect = yes }
+    }
+}
+country_event = {
+    id = SICEXT.42
+    title = SICEXT.42.t
+    desc = SICEXT.42.d
+    is_triggered_only = yes
+    trigger = { tag = SIC country_exists = SIC }
+    option = { name = SICEXT.42.a }
+}
+country_event = {
+    id = SICEXT.90
+    title = SICEXT.90.t
+    desc = SICEXT.90.d
+    is_triggered_only = yes
+    trigger = { tag = SIC country_exists = SIC }
+    option = { name = SICEXT.90.a }
+}

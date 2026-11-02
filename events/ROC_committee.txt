@@ -1,0 +1,89 @@
+add_namespace = ROC_committee
+
+country_event = {
+    id = ROC_committee.1
+    title = ROC_committee.1.t
+    desc = ROC_committee.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = { original_tag = ROC ROC_committee_objection_valid = yes }
+    option = {
+        name = ROC_committee.1.a
+        trigger = { ROC_committee_objection_valid = yes }
+        ai_chance = { factor = 60 }
+        custom_effect_tooltip = ROC_committee_delay_21_tt
+        hidden_effect = { ROC_committee_delay_21 = yes }
+    }
+    option = {
+        name = ROC_committee.1.b
+        trigger = { ROC_committee_objection_valid = yes ROC_ma_objection_can_pay = yes }
+        ai_chance = { factor = 40 }
+        custom_effect_tooltip = ROC_committee_delay_7_tt
+        hidden_effect = { ROC_committee_delay_7 = yes }
+    }
+    option = {
+        name = ROC_committee_stale_close
+        trigger = { NOT = { ROC_committee_objection_valid = yes } }
+        custom_effect_tooltip = ROC_committee_stale_tt
+    }
+}
+
+country_event = {
+    id = ROC_committee.2
+    title = ROC_committee.2.t
+    desc = ROC_committee.2.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = { original_tag = ROC ROC_committee_objection_valid = yes }
+    option = {
+        name = ROC_committee.2.a
+        trigger = { ROC_committee_objection_valid = yes }
+        ai_chance = { factor = 60 }
+        custom_effect_tooltip = ROC_committee_delay_21_tt
+        hidden_effect = { ROC_committee_delay_21 = yes }
+    }
+    option = {
+        name = ROC_committee.2.b
+        trigger = { ROC_committee_objection_valid = yes ROC_ma_objection_can_pay = yes }
+        ai_chance = { factor = 40 }
+        custom_effect_tooltip = ROC_committee_delay_7_tt
+        hidden_effect = { ROC_committee_delay_7 = yes }
+    }
+    option = {
+        name = ROC_committee_stale_close
+        trigger = { NOT = { ROC_committee_objection_valid = yes } }
+        custom_effect_tooltip = ROC_committee_stale_tt
+    }
+}
+
+country_event = {
+    id = ROC_committee.3
+    title = ROC_committee.3.t
+    desc = ROC_committee.3.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    timeout_days = 7
+    trigger = { original_tag = ROC ROC_committee_objection_valid = yes }
+    option = {
+        name = ROC_committee.3.a
+        trigger = { ROC_committee_objection_valid = yes }
+        ai_chance = { factor = 60 }
+        custom_effect_tooltip = ROC_committee_delay_21_tt
+        hidden_effect = { ROC_committee_delay_21 = yes }
+    }
+    option = {
+        name = ROC_committee.3.b
+        trigger = { ROC_committee_objection_valid = yes ROC_ma_objection_can_pay = yes }
+        ai_chance = { factor = 40 }
+        custom_effect_tooltip = ROC_committee_delay_7_tt
+        hidden_effect = { ROC_committee_delay_7 = yes }
+    }
+    option = {
+        name = ROC_committee_stale_close
+        trigger = { NOT = { ROC_committee_objection_valid = yes } }
+        custom_effect_tooltip = ROC_committee_stale_tt
+    }
+}
+

@@ -62,25 +62,25 @@ SRC_check_wartime_army_stage_progress = {
 			NOT = { has_country_flag = SRC_wartime_army_summary_complete }
 		}
 		if = {
-			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_two = yes NOT = { has_country_flag = SRC_wartime_army_chapter_2_event_fired } }
+			limit = { SRC_wartime_army_ready_for_stage_two = yes NOT = { has_country_flag = SRC_wartime_army_chapter_2_event_fired } }
 			set_country_flag = SRC_wartime_army_chapter_2_event_fired
 			set_country_flag = SRC_wartime_army_stage_event_pending
 			country_event = { id = SRC_wartime_army.7 }
 		}
 		else_if = {
-			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_three = yes NOT = { has_country_flag = SRC_wartime_army_chapter_3_event_fired } }
+			limit = { SRC_wartime_army_ready_for_stage_three = yes NOT = { has_country_flag = SRC_wartime_army_chapter_3_event_fired } }
 			set_country_flag = SRC_wartime_army_chapter_3_event_fired
 			set_country_flag = SRC_wartime_army_stage_event_pending
 			country_event = { id = SRC_wartime_army.2 }
 		}
 		else_if = {
-			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_four = yes NOT = { has_country_flag = SRC_wartime_army_chapter_4_event_fired } }
+			limit = { SRC_wartime_army_ready_for_stage_four = yes NOT = { has_country_flag = SRC_wartime_army_chapter_4_event_fired } }
 			set_country_flag = SRC_wartime_army_chapter_4_event_fired
 			set_country_flag = SRC_wartime_army_stage_event_pending
 			country_event = { id = SRC_wartime_army.3 }
 		}
 		else_if = {
-			limit = { has_war_with = GPS SRC_wartime_army_ready_for_stage_five = yes NOT = { has_country_flag = SRC_wartime_army_chapter_5_event_fired } }
+			limit = { SRC_wartime_army_ready_for_stage_five = yes NOT = { has_country_flag = SRC_wartime_army_chapter_5_event_fired } }
 			set_country_flag = SRC_wartime_army_chapter_5_event_fired
 			set_country_flag = SRC_wartime_army_stage_event_pending
 			country_event = { id = SRC_wartime_army.8 }

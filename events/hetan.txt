@@ -2793,11 +2793,29 @@ country_event = {
             }
             ROC = {
                 complete_national_focus = gemingdetongzhi
-                annex_country = {
-                    target = SRC
+            }
+            if = {
+                limit = { country_exists = SRC country_exists = ROC }
+                SRC = {
+                    every_unit_leader = {
+                        include_invisible = yes
+                        set_nationality = ROC
+                    }
                 }
-                annex_country = {
-                    target = SCG
+                ROC = {
+                    annex_country = { target = SRC transfer_troops = yes }
+                }
+            }
+            if = {
+                limit = { country_exists = SCG country_exists = ROC }
+                SCG = {
+                    every_unit_leader = {
+                        include_invisible = yes
+                        set_nationality = ROC
+                    }
+                }
+                ROC = {
+                    annex_country = { target = SCG transfer_troops = yes }
                 }
             }
             every_state = {
@@ -2814,16 +2832,6 @@ country_event = {
                 add_core_of = ROC
                 remove_core_of = SCG
             }
-            SRC = {
-                every_unit_leader = {
-                    set_nationality = ROC
-                }
-            }
-            SCG = {
-                every_unit_leader = {
-                    set_nationality = ROC
-                }
-            }
         }
         else_if = {
             limit = { 
@@ -2832,12 +2840,28 @@ country_event = {
                     check_variable = { ROC.ROC_SRC_hetan_var = SRC.ROC_SRC_hetan_var }
                 }
             }
-            SRC = {
-                annex_country = {
-                    target = ROC
+            if = {
+                limit = { country_exists = ROC country_exists = SRC }
+                ROC = {
+                    every_unit_leader = {
+                        include_invisible = yes
+                        set_nationality = SRC
+                    }
                 }
-                annex_country = {
-                    target = SCG
+                SRC = {
+                    annex_country = { target = ROC transfer_troops = yes }
+                }
+            }
+            if = {
+                limit = { country_exists = SCG country_exists = SRC }
+                SCG = {
+                    every_unit_leader = {
+                        include_invisible = yes
+                        set_nationality = SRC
+                    }
+                }
+                SRC = {
+                    annex_country = { target = SCG transfer_troops = yes }
                 }
             }
             every_state = {
@@ -2853,16 +2877,6 @@ country_event = {
                 }
                 add_core_of = SRC
                 remove_core_of = SCG
-            }
-            ROC = {
-                every_unit_leader = {
-                    set_nationality = SRC
-                }
-            }
-            SCG = {
-                every_unit_leader = {
-                    set_nationality = SRC
-                }
             }
         }
     }
@@ -3198,9 +3212,16 @@ country_event = {
     
     option = {
         name = GOS_XBJ_hetan_event.8.a
-        GOS = {
-            annex_country = {
-                target = XBJ
+        if = {
+            limit = { country_exists = XBJ country_exists = GOS }
+            XBJ = {
+                every_unit_leader = {
+                    include_invisible = yes
+                    set_nationality = GOS
+                }
+            }
+            GOS = {
+                annex_country = { target = XBJ transfer_troops = yes }
             }
         }
         every_state = {
@@ -3209,11 +3230,6 @@ country_event = {
             }
             add_core_of = GOS
             remove_core_of = XBJ
-        }
-        XBJ = {
-            every_unit_leader = {
-                set_nationality = GOS
-            }
         }
     }
 }

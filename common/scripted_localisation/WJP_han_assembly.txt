@@ -1,0 +1,112 @@
+defined_text = {
+	name = WJP_Han_tosa_alignment
+	text = {
+		trigger = { check_variable = { WJP_han_tosa_choshu > WJP_han_tosa_satsuma } }
+		localization_key = WJP_han_gui_alignment_choshu
+	}
+	text = {
+		trigger = { check_variable = { WJP_han_tosa_satsuma > WJP_han_tosa_choshu } }
+		localization_key = WJP_han_gui_alignment_satsuma
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_han_gui_alignment_neutral
+	}
+}
+
+defined_text = {
+	name = WJP_Han_hizen_alignment
+	text = {
+		trigger = { check_variable = { WJP_han_hizen_choshu > WJP_han_hizen_satsuma } }
+		localization_key = WJP_han_gui_alignment_choshu
+	}
+	text = {
+		trigger = { check_variable = { WJP_han_hizen_satsuma > WJP_han_hizen_choshu } }
+		localization_key = WJP_han_gui_alignment_satsuma
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_han_gui_alignment_neutral
+	}
+}
+
+defined_text = {
+	name = WJP_Han_buzen_alignment
+	text = {
+		trigger = { check_variable = { WJP_han_buzen_choshu > WJP_han_buzen_satsuma } }
+		localization_key = WJP_han_gui_alignment_choshu
+	}
+	text = {
+		trigger = { check_variable = { WJP_han_buzen_satsuma > WJP_han_buzen_choshu } }
+		localization_key = WJP_han_gui_alignment_satsuma
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_han_gui_alignment_neutral
+	}
+}
+
+defined_text = {
+	name = WJP_Han_izumo_alignment
+	text = {
+		trigger = { check_variable = { WJP_han_izumo_choshu > WJP_han_izumo_satsuma } }
+		localization_key = WJP_han_gui_alignment_choshu
+	}
+	text = {
+		trigger = { check_variable = { WJP_han_izumo_satsuma > WJP_han_izumo_choshu } }
+		localization_key = WJP_han_gui_alignment_satsuma
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_han_gui_alignment_neutral
+	}
+}
+
+defined_text = {
+	name = WJP_Han_harima_alignment
+	text = {
+		trigger = { check_variable = { WJP_han_harima_choshu > WJP_han_harima_satsuma } }
+		localization_key = WJP_han_gui_alignment_choshu
+	}
+	text = {
+		trigger = { check_variable = { WJP_han_harima_satsuma > WJP_han_harima_choshu } }
+		localization_key = WJP_han_gui_alignment_satsuma
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_han_gui_alignment_neutral
+	}
+}
+
+defined_text = {
+	name = WJP_Han_incumbent
+	text = {
+		trigger = { has_idea = WJP_han_inclination_choshu }
+		localization_key = WJP_han_gui_alignment_choshu
+	}
+	text = {
+		trigger = { has_idea = WJP_han_inclination_satsuma }
+		localization_key = WJP_han_gui_alignment_satsuma
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_han_gui_alignment_neutral
+	}
+}
+
+defined_text = {
+	name = WJP_Han_prediction
+	text = {
+		trigger = { check_variable = { WJP_han_choshu_domain_count > WJP_han_satsuma_domain_count } }
+		localization_key = WJP_han_gui_prediction_choshu
+	}
+	text = {
+		trigger = { check_variable = { WJP_han_satsuma_domain_count > WJP_han_choshu_domain_count } }
+		localization_key = WJP_han_gui_prediction_satsuma
+	}
+	text = {
+		trigger = { always = yes }
+		localization_key = WJP_han_gui_prediction_tie
+	}
+}
+
