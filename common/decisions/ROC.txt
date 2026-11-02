@@ -1,0 +1,2774 @@
+
+#============================================================
+### merged from ROC_allied_parties.txt
+#============================================================
+ROC_economic_administration = {
+	ROC_allied_worker_coordination = {
+		icon = GFX_decision_generic_factory
+		allowed = {
+			original_tag = ROC
+		}
+		visible = {
+			ROC_has_lianluogemingyoudang = yes
+            ROC_econ_left_allies_present = yes
+		}
+		available = { custom_trigger_tooltip = { tooltip = ROC_econ_allied_available_tt hidden_trigger = { ROC_has_lianluogemingyoudang = yes ROC_ce_administration_active = yes ROC_econ_left_allies_present = yes ROC_econ_allied_free = yes } } }
+		cost = 35
+		days_remove = 45
+		days_re_enable = 120
+		fire_only_once = no
+		modifier = {
+			industrial_capacity_factory = 0.05
+			production_factory_efficiency_gain_factor = 0.03
+		}
+		ai_will_do = { factor = 0.25 }
+		cancel_trigger = {
+			OR = { NOT = { ROC_ce_administration_active = yes } NOT = { ROC_econ_left_allies_present = yes } }
+		}
+		cancel_effect = { }
+		remove_effect = {
+			if = {
+				limit = {
+					ROC_has_lianluogemingyoudang = yes
+            ROC_econ_left_allies_present = yes
+					ROC_ce_administration_active = yes
+				}
+				ROC_econ_shift_public_030 = yes
+				custom_effect_tooltip = ROC_allied_worker_coordination_end_tt
+				hidden_effect = {
+					add_to_variable = { var = ROC_ma_left_favor value = 5 }
+					add_to_variable = { var = ROC_ma_right_favor value = 5 }
+
+
+                    ROC_econ_help_center = yes
+                    set_country_flag = { flag = ROC_bill_worker_record days = 180 }
+				}
+			}
+		}
+	}
+	ROC_allied_rural_cooperation = {
+		icon = GFX_decision_generic_construction
+		allowed = {
+			original_tag = ROC
+		}
+		visible = {
+			ROC_has_lianluogemingyoudang = yes
+            ROC_econ_left_allies_present = yes
+		}
+		available = { custom_trigger_tooltip = { tooltip = ROC_econ_allied_available_tt hidden_trigger = { ROC_has_lianluogemingyoudang = yes ROC_ce_administration_active = yes ROC_econ_left_allies_present = yes ROC_econ_allied_free = yes } } }
+		cost = 45
+		days_remove = 60
+		days_re_enable = 150
+		fire_only_once = no
+		modifier = {
+			production_speed_infrastructure_factor = 0.10
+			consumer_goods_factor = -0.03
+		}
+		ai_will_do = { factor = 0.30 }
+		cancel_trigger = {
+			OR = { NOT = { ROC_ce_administration_active = yes } NOT = { ROC_econ_left_allies_present = yes } }
+		}
+		cancel_effect = { }
+		remove_effect = {
+			if = {
+				limit = {
+					ROC_has_lianluogemingyoudang = yes
+            ROC_econ_left_allies_present = yes
+					ROC_ce_administration_active = yes
+				}
+				ROC_econ_shift_public_020 = yes
+				custom_effect_tooltip = ROC_allied_rural_cooperation_end_tt
+				hidden_effect = {
+					add_to_variable = { var = ROC_ma_left_favor value = 5 }
+					add_to_variable = { var = ROC_ma_right_favor value = 5 }
+
+
+                    ROC_econ_help_center = yes
+                    set_country_flag = { flag = ROC_bill_rural_record days = 180 }
+				}
+			}
+		}
+	}
+	ROC_allied_labor_arbitration = {
+		icon = GFX_decision_generic_political_discourse
+		allowed = {
+			original_tag = ROC
+		}
+		visible = {
+			ROC_has_lianluogemingyoudang = yes
+            ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes
+		}
+		available = { custom_trigger_tooltip = { tooltip = ROC_econ_allied_available_tt hidden_trigger = { ROC_has_lianluogemingyoudang = yes ROC_ce_administration_active = yes ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes ROC_econ_allied_free = yes } } }
+		cost = 40
+		days_remove = 45
+		days_re_enable = 150
+		fire_only_once = no
+		modifier = {
+			stability_factor = 0.03
+			industrial_capacity_factory = -0.02
+		}
+		ai_will_do = { factor = 0.20 }
+		cancel_trigger = {
+			OR = { NOT = { ROC_ce_administration_active = yes } NOT = { ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes } }
+		}
+		cancel_effect = { }
+		remove_effect = {
+			if = {
+				limit = {
+					ROC_has_lianluogemingyoudang = yes
+            ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes
+					ROC_ce_administration_active = yes
+				}
+				custom_effect_tooltip = ROC_allied_labor_arbitration_end_tt
+				hidden_effect = {
+					add_to_variable = { var = ROC_ma_left_favor value = 5 }
+					add_to_variable = { var = ROC_ma_right_favor value = 5 }
+
+
+                    ROC_econ_help_center = yes
+                    set_country_flag = { flag = ROC_bill_arbitration_record days = 180 }
+				}
+			}
+		}
+	}
+    ROC_allied_commercial_credit = {
+        icon = GFX_decision_generic_factory
+        allowed = { original_tag = ROC }
+        visible = { ROC_has_lianluogemingyoudang = yes ROC_econ_right_allies_present = yes }
+        available = { custom_trigger_tooltip = { tooltip = ROC_econ_allied_available_tt hidden_trigger = { ROC_has_lianluogemingyoudang = yes ROC_ce_administration_active = yes ROC_econ_right_allies_present = yes ROC_econ_allied_free = yes } } }
+        cost = 40
+        days_remove = 60
+        days_re_enable = 150
+        fire_only_once = no
+        modifier = { production_speed_industrial_complex_factor = 0.05 political_power_cost = 0.1 }
+        ai_will_do = { factor = 0.25 }
+        cancel_trigger = { OR = { NOT = { ROC_ce_administration_active = yes } NOT = { ROC_econ_right_allies_present = yes } } }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_has_lianluogemingyoudang = yes ROC_ce_administration_active = yes ROC_econ_right_allies_present = yes }
+                ROC_econ_shift_market_020 = yes
+                custom_effect_tooltip = ROC_allied_commercial_credit_end_tt
+                hidden_effect = {
+                    add_to_variable = { var = ROC_ma_right_favor value = 5 }
+                    add_to_variable = { var = ROC_ma_left_favor value = 5 }
+
+
+                    ROC_econ_help_center = yes
+                    set_country_flag = { flag = ROC_bill_credit_record days = 180 }
+                }
+            }
+        }
+    }
+}
+
+
+#============================================================
+### merged from ROC_central_economy.txt
+#============================================================
+ROC_economic_administration = {
+    ROC_ce_industry_project = {
+        icon = GFX_decision_generic_factory
+        allowed = { original_tag = ROC }
+        visible = { has_country_flag = ROC_ce_industry_unlocked ROC_ma_current_industry_project = yes }
+        priority = 80
+        available = {
+            custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_industry_project = yes } }
+            custom_trigger_tooltip = { tooltip = ROC_ce_project_available_tt hidden_trigger = { ROC_ma_current_industry_project = yes has_country_flag = ROC_ce_industry_unlocked ROC_ce_can_start = yes any_owned_state = { ROC_ce_industry_target = yes } } }
+        }
+        cost = 40
+        fire_only_once = no
+        ai_will_do = { factor = 5 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ce_industry_project_started_tt
+            hidden_effect = {
+                if = {
+                    limit = { has_country_flag = ROC_ce_industry_unlocked ROC_ma_current_industry_project = yes }
+                    ROC_ce_start_industry = yes
+                }
+            }
+        }
+    }
+    ROC_ce_agriculture_project = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = { has_country_flag = ROC_ce_agriculture_unlocked ROC_ma_current_agriculture_project = yes }
+        priority = 80
+        available = {
+            custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_agriculture_project = yes } }
+            custom_trigger_tooltip = { tooltip = ROC_ce_project_available_tt hidden_trigger = { ROC_ma_current_agriculture_project = yes has_country_flag = ROC_ce_agriculture_unlocked ROC_ce_can_start = yes any_owned_state = { ROC_ce_infrastructure_target = yes } } }
+        }
+        cost = 30
+        fire_only_once = no
+        ai_will_do = { factor = 4 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ce_agriculture_project_started_tt
+            hidden_effect = {
+                if = {
+                    limit = { has_country_flag = ROC_ce_agriculture_unlocked ROC_ma_current_agriculture_project = yes }
+                    ROC_ce_start_agriculture = yes
+                }
+            }
+        }
+    }
+    ROC_ce_transport_project = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = { has_country_flag = ROC_ce_transport_unlocked ROC_ma_current_transport_project = yes }
+        priority = 80
+        available = {
+            custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_transport_project = yes } }
+            custom_trigger_tooltip = { tooltip = ROC_ce_project_available_tt hidden_trigger = { ROC_ma_current_transport_project = yes has_country_flag = ROC_ce_transport_unlocked ROC_ce_can_start = yes any_owned_state = { ROC_ce_infrastructure_target = yes } } }
+        }
+        cost = 35
+        fire_only_once = no
+        ai_will_do = { factor = 4 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ce_transport_project_started_tt
+            hidden_effect = {
+                if = {
+                    limit = { has_country_flag = ROC_ce_transport_unlocked ROC_ma_current_transport_project = yes }
+                    ROC_ce_start_transport = yes
+                }
+            }
+        }
+    }
+    ROC_ce_budget_negotiation = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        priority = 50
+        visible = { ROC_ce_administration_active = yes }
+        available = { custom_trigger_tooltip = { tooltip = ROC_ce_negotiation_available_tt hidden_trigger = { has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } } } }
+        cost = 25
+        days_re_enable = 90
+        ai_will_do = { factor = 1 }
+        complete_effect = { custom_effect_tooltip = ROC_ce_budget_negotiation_tt hidden_effect = { ROC_ce_initialize = yes add_to_variable = { var = ROC_ma_center_favor value = 10 } add_to_variable = { var = ROC_ma_left_favor value = 10 } subtract_from_variable = { var = ROC_ce_pressure value = 5 } ROC_ce_refresh = yes } }
+    }
+    ROC_ce_personnel_negotiation = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        priority = 50
+        visible = { ROC_ce_administration_active = yes }
+        available = { custom_trigger_tooltip = { tooltip = ROC_ce_negotiation_available_tt hidden_trigger = { has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } } } }
+        cost = 20
+        days_re_enable = 90
+        ai_will_do = { factor = 1 }
+        complete_effect = { custom_effect_tooltip = ROC_ce_personnel_negotiation_tt hidden_effect = { ROC_ce_initialize = yes add_to_variable = { var = ROC_ma_left_favor value = 15 } subtract_from_variable = { var = ROC_ma_center_favor value = 5 } if = { limit = { ROC_ce_current_project = yes } add_to_variable = { var = ROC_ce_delay_days value = 5 } } ROC_ce_refresh = yes } }
+    }
+    ROC_ce_policy_negotiation = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        priority = 50
+        visible = { ROC_ce_administration_active = yes }
+        available = { custom_trigger_tooltip = { tooltip = ROC_ce_negotiation_available_tt hidden_trigger = { has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } } } }
+        cost = 20
+        days_re_enable = 90
+        ai_will_do = { factor = 1 }
+        complete_effect = { custom_effect_tooltip = ROC_ce_policy_negotiation_tt hidden_effect = { ROC_ce_initialize = yes add_to_variable = { var = ROC_ma_right_favor value = 15 } add_to_variable = { var = ROC_ma_left_favor value = 5 } subtract_from_variable = { var = ROC_ma_left_favor value = 5 } ROC_ce_refresh = yes } }
+    }
+}
+
+
+#============================================================
+### merged from ROC_decisions.txt
+#============================================================
+ROC_decision_l_0 = {
+	
+
+}
+
+ROC_economic_administration = {  #中央经济办理
+	#debug	
+
+	#决议	
+        ROC_decision_bop_jingjidahui = {
+            icon = GFX_decision_generic_political_address
+            activation = { tag = ROC ROC_ce_administration_active = yes has_country_flag = ROC_econ_term_active NOT = { has_country_flag = ROC_econ_conference_pending } }
+            available = { hidden_trigger = { always = no } }
+            days_mission_timeout = 1095
+            fire_only_once = no
+            timeout_effect = {
+                custom_effect_tooltip = ROC_ma_term_complete_tt
+                hidden_effect = { ROC_econ_term_expired = yes }
+            }
+        }
+		ROC_decision_bop_left_fcsyqy = {	#扶持私营企业
+			icon = GFX_decision_generic_decision
+			cost = 40
+			fire_only_once = no
+			days_remove = 60
+			days_re_enable = 120
+			ai_will_do = { factor = 0.25 }
+			visible = { ROC_ma_current_left_fcsyqy = yes }
+			priority = 90
+			cancel_if_not_visible = no
+			available = {
+				custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_left_fcsyqy = yes } }
+				custom_trigger_tooltip = { tooltip = ROC_ce_administration_active_tt hidden_trigger = { ROC_ce_administration_active = yes } }
+
+				custom_trigger_tooltip = { tooltip = ROC_econ_policy_busy_tt hidden_trigger = { ROC_econ_policy_free = yes } }
+			}
+			cancel_trigger = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_ce_administration_inactive_tt
+					hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+				}
+			}
+			cancel_effect = { }
+			modifier = {
+				production_speed_industrial_complex_factor = 0.10
+				consumer_goods_factor = 0.03
+			}
+			remove_effect = {
+				if = {
+					limit = { ROC_ce_administration_active = yes }
+					custom_effect_tooltip = ROC_tooltip_bop_economic_left_fcsyqy_end
+					hidden_effect = {
+						ROC_econ_shift_market_030 = yes
+					}
+				}
+			}
+		}
+		ROC_decision_bop_left_jqmysc = {	#加强民生产业促进会技术分享
+			icon = GFX_decision_generic_decision
+			cost = 35
+			fire_only_once = no
+			days_remove = 60
+			days_re_enable = 150
+			ai_will_do = { factor = 0.20 }
+			visible = { ROC_ma_current_left_jqmysc = yes }
+			priority = 90
+			cancel_if_not_visible = no
+			available = {
+				custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_left_jqmysc = yes } }
+				custom_trigger_tooltip = { tooltip = ROC_ce_administration_active_tt hidden_trigger = { ROC_ce_administration_active = yes } }
+
+				custom_trigger_tooltip = { tooltip = ROC_econ_policy_busy_tt hidden_trigger = { ROC_econ_policy_free = yes } }
+			}
+			cancel_trigger = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_ce_administration_inactive_tt
+					hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+				}
+			}
+			cancel_effect = { }
+			modifier = {
+				research_speed_factor = 0.03
+				production_factory_max_efficiency_factor = 0.03
+				political_power_cost = 0.15
+			}
+			remove_effect = {
+				if = {
+					limit = { ROC_ce_administration_active = yes }
+					custom_effect_tooltip = ROC_tooltip_bop_economic_left_jqmysc_end
+					hidden_effect = {
+						ROC_econ_shift_market_020 = yes
+					}
+				}
+			}
+		}
+		ROC_decision_bop_left_clgq = {	#推动处理冗余国企
+			icon = GFX_decision_generic_decision
+			cost = 65
+			fire_only_once = no
+			days_remove = 90
+			days_re_enable = 180
+			ai_will_do = { factor = 0.15 }
+			visible = { ROC_ma_current_left_clgq = yes }
+			priority = 90
+			cancel_if_not_visible = no
+			available = {
+				custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_left_clgq = yes } }
+				custom_trigger_tooltip = { tooltip = ROC_ce_administration_active_tt hidden_trigger = { ROC_ce_administration_active = yes } }
+
+
+				custom_trigger_tooltip = { tooltip = ROC_econ_policy_busy_tt hidden_trigger = { ROC_econ_policy_free = yes } }
+			}
+			cancel_trigger = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_ce_administration_inactive_tt
+					hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+				}
+			}
+			cancel_effect = { }
+			complete_effect = {
+				custom_effect_tooltip = ROC_ma_adopt_private_management_tt
+				hidden_effect = {
+					if = {
+						limit = { ROC_ma_current_left_clgq = yes }
+						ROC_ma_policy_adopt_private_management = yes
+					}
+				}
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				industrial_capacity_factory = -0.05
+				stability_factor = -0.03
+			}
+			remove_effect = {
+				if = {
+					limit = { ROC_ce_administration_active = yes }
+					custom_effect_tooltip = ROC_tooltip_bop_economic_left_clgq_end
+					hidden_effect = {
+						ROC_econ_shift_market_060 = yes
+					}
+				}
+			}
+		}
+		ROC_decision_bop_right_qhgh = {	#强化国企工会权力
+			icon = GFX_decision_generic_decision
+			cost = 40
+			fire_only_once = no
+			days_remove = 60
+			days_re_enable = 120
+			ai_will_do = { factor = 0.25 }
+			visible = { ROC_ma_current_right_qhgh = yes }
+			priority = 90
+			cancel_if_not_visible = no
+			available = {
+				custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_right_qhgh = yes } }
+				custom_trigger_tooltip = { tooltip = ROC_ce_administration_active_tt hidden_trigger = { ROC_ce_administration_active = yes } }
+
+				custom_trigger_tooltip = { tooltip = ROC_econ_policy_busy_tt hidden_trigger = { ROC_econ_policy_free = yes } }
+			}
+			cancel_trigger = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_ce_administration_inactive_tt
+					hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+				}
+			}
+			cancel_effect = { }
+			modifier = {
+				stability_factor = 0.03
+				industrial_capacity_factory = -0.03
+				production_factory_efficiency_gain_factor = 0.05
+			}
+			remove_effect = {
+				if = {
+					limit = { ROC_ce_administration_active = yes }
+					custom_effect_tooltip = ROC_tooltip_bop_economic_right_qhgh_end
+					hidden_effect = {
+						ROC_econ_shift_public_030 = yes
+					}
+				}
+			}
+		}
+		ROC_decision_bop_right_ssjm = {	#国企税收减免
+			icon = GFX_decision_generic_decision
+			cost = 45
+			fire_only_once = no
+			days_remove = 60
+			days_re_enable = 150
+			ai_will_do = { factor = 0.20 }
+			visible = { ROC_ma_current_right_ssjm = yes }
+			priority = 90
+			cancel_if_not_visible = no
+			available = {
+				custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_right_ssjm = yes } }
+				custom_trigger_tooltip = { tooltip = ROC_ce_administration_active_tt hidden_trigger = { ROC_ce_administration_active = yes } }
+
+				custom_trigger_tooltip = { tooltip = ROC_econ_policy_busy_tt hidden_trigger = { ROC_econ_policy_free = yes } }
+			}
+			cancel_trigger = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_ce_administration_inactive_tt
+					hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+				}
+			}
+			cancel_effect = { }
+			modifier = {
+				industrial_capacity_factory = 0.08
+				production_factory_efficiency_gain_factor = 0.05
+				consumer_goods_factor = 0.04
+			}
+			remove_effect = {
+				if = {
+					limit = { ROC_ce_administration_active = yes }
+					custom_effect_tooltip = ROC_tooltip_bop_economic_right_ssjm_end
+					hidden_effect = {
+						ROC_econ_shift_public_020 = yes
+					}
+				}
+			}
+		}
+		ROC_decision_bop_right_sqgyh = {	#推动私企国有化改造
+			icon = GFX_decision_generic_decision
+			cost = 70
+			fire_only_once = no
+			days_remove = 90
+			days_re_enable = 180
+			ai_will_do = { factor = 0.15 }
+			visible = { ROC_ma_current_right_sqgyh = yes }
+			priority = 90
+			cancel_if_not_visible = no
+			available = {
+				custom_trigger_tooltip = { tooltip = ROC_ma_focus_unlocked_tt hidden_trigger = { ROC_ma_current_right_sqgyh = yes } }
+				custom_trigger_tooltip = { tooltip = ROC_ce_administration_active_tt hidden_trigger = { ROC_ce_administration_active = yes } }
+
+
+				custom_trigger_tooltip = { tooltip = ROC_econ_policy_busy_tt hidden_trigger = { ROC_econ_policy_free = yes } }
+			}
+			cancel_trigger = {
+				custom_trigger_tooltip = {
+					tooltip = ROC_ce_administration_inactive_tt
+					hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+				}
+			}
+			cancel_effect = { }
+			complete_effect = {
+				custom_effect_tooltip = ROC_ma_adopt_public_holding_tt
+				hidden_effect = {
+					if = {
+						limit = { ROC_ma_current_right_sqgyh = yes }
+						ROC_ma_policy_adopt_public_holding = yes
+					}
+				}
+		}
+			modifier = {
+				industrial_capacity_factory = -0.05
+				production_factory_max_efficiency_factor = 0.05
+				stability_factor = -0.03
+			}
+			remove_effect = {
+				if = {
+					limit = { ROC_ce_administration_active = yes }
+					custom_effect_tooltip = ROC_tooltip_bop_economic_right_sqgyh_end
+					hidden_effect = {
+						ROC_econ_shift_public_060 = yes
+					}
+				}
+			}
+		}
+}
+
+ROC_focus_gonggubianjie = {#巩固边界
+	ROC_decision_chubugoujianfangxian = {#初步构建防线	
+		icon = border_war		
+		cost = 50		
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		complete_effect = {  	
+
+		}	
+		modifier = {
+			civilian_factory_use = 2
+		}
+		cancel_if_not_visible = yes
+		remove_effect = {
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4177
+				}
+			}
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 12407
+				}
+			}
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1023
+				}
+			}
+			599 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 11983
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9997
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 13237
+				}
+			}
+			817 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9970
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1120
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1162
+				}
+			}
+			593 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1078
+				}
+			}
+			1114 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4165
+				}
+			}
+			1114 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 7141
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4053
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10084
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1138
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4113
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10012
+				}
+			}
+			595 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4070
+				}
+			}
+			813 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10069
+				}
+			}
+		}
+	}	
+	ROC_decision_paiqianzhenggongganbudaonongcun = {#派遣政工干部到农村	
+		icon = border_war		
+		cost = 50		
+		days_remove = 60
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			NOT = {
+				has_country_flag = ROC_decision_bubing_10
+			}
+		}
+		complete_effect = {  	
+
+		}	
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_1
+				}
+				clr_country_flag = ROC_decision_bubing_1
+				set_country_flag = ROC_decision_bubing_2
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_2
+				}
+				clr_country_flag = ROC_decision_bubing_2
+				set_country_flag = ROC_decision_bubing_3
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_3
+				}
+				clr_country_flag = ROC_decision_bubing_3
+				set_country_flag = ROC_decision_bubing_4
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_4
+				}
+				clr_country_flag = ROC_decision_bubing_4
+				set_country_flag = ROC_decision_bubing_5
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_5
+				}
+				clr_country_flag = ROC_decision_bubing_5
+				set_country_flag = ROC_decision_bubing_6
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_6
+				}
+				clr_country_flag = ROC_decision_bubing_6
+				set_country_flag = ROC_decision_bubing_7
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_7
+				}
+				clr_country_flag = ROC_decision_bubing_7
+				set_country_flag = ROC_decision_bubing_8
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_8
+				}
+				clr_country_flag = ROC_decision_bubing_8
+				set_country_flag = ROC_decision_bubing_9
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_9
+				}
+				clr_country_flag = ROC_decision_bubing_9
+				set_country_flag = ROC_decision_bubing_10
+			}
+			else_if ={
+				limit = {
+					has_country_flag = ROC_decision_bubing_10
+				}
+				clr_country_flag = ROC_decision_bubing_10
+			}
+			else = {
+				division_template = {
+					name = "步兵师"   
+					is_locked = yes
+					division_names_group = ROC_INT_01
+					regiments = {
+						infantry = { x = 0 y = 0 } 
+						infantry = { x = 0 y = 1 } 
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+					}
+				}
+				set_country_flag = ROC_decision_bubing_1
+			}
+			592 = {
+				create_unit = {
+					division = "name = \"步兵师第%1师\" division_template = \"步兵师\" start_experience_factor = 0.2"
+					prioritize_location = 1047
+					owner = ROC
+				}
+			}
+			custom_effect_tooltip = ROC_decision_paiqianzhenggongganbudaonongcun_tt
+		}
+	}	
+	ROC_decision_zaiguanjiandiqubufang = {#在关键地区重点布防
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = zhenduixingzhanshuyantao
+			check_variable = { 
+				ROC_VAR_nanguo_defence_factor = 0
+			}
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zaiguanjiandiqubufang_tt
+			add_to_variable = { #防御修正
+				ROC_VAR_nanguo_defence_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_zengjinduidirendeliaojie = {#增进对敌人的了解
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = zhenduixingzhanshuyantao
+			check_variable = { 
+				ROC_VAR_nanguo_attack_factor = 0
+			}
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zengjinduidirendeliaojie_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_attack_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_caiqujidongzuozhan = {#采取机动作战
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = zhenduixingzhanshuyantao
+			check_variable = { 
+				ROC_VAR_nanguo_speed_factor = 0
+			}
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_caiqujidongzuozhan_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_speed_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_tuijinqishengbianjie = {#推进边界
+		icon = border_war		
+		cost = 50
+		days_remove = 90
+		days_re_enable = 30
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+			country_exists = GOS
+		}
+		available = {
+		}
+		modifier = {
+		}
+		targeted_modifier = {
+			tag = GOS
+			#战斗修正种类
+			attack_bonus_against = 0.1
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+
+		}
+	}	
+	ROC_decision_shusifangyu = {#殊死防御
+		icon = border_war		
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+			add_stability = -0.02
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_shusifangyu_tt
+			set_country_flag = ROC_decision_fangyu
+		}
+	}
+	ROC_decision_kuaisujianlidangzuzhi = {#快速建立党组织
+		icon = border_war		
+		cost = 75
+		days_remove = 120
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+		}
+		available = {
+		}
+		modifier = {
+			resistance_target = -0.02
+			compliance_growth = 0.1
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	ROC_decision_fadongdihoudangzuzhinonghui = {#发动敌后党组织、农会
+		icon = border_war		
+		cost = 30
+		days_remove = 60
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 50			
+	    }
+		visible = {
+			has_completed_focus = fadondihoujijindatongdangren
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			ROC = {
+				add_intel = {
+					target = GOS
+					army_intel = 10
+				}
+			}
+		}
+	}
+}
+
+ROC_focus_beifa = {#北伐
+	ROC_decision_zaiguanjiandiqubufang_1 = {#在关键地区重点布防
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zaiguanjiandiqubufang_tt
+			add_to_variable = { #防御修正
+				ROC_VAR_nanguo_defence_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_zengjinduidirendeliaojie_1 = {#增进对敌人的了解
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25 
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_zengjinduidirendeliaojie_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_attack_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_caiqujidongzuozhan_1 = {#采取机动作战
+		icon = border_war		
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+			has_army_experience > 24.99
+		}
+		complete_effect = {
+			army_experience = -25
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_caiqujidongzuozhan_tt
+			add_to_variable = { #速度修正
+				ROC_VAR_nanguo_speed_factor = 1
+			}
+			ROC_scripted_effects_gonggubianjie = yes
+		}
+	}	
+	ROC_decision_tuijinqishengbianjie_1 = {#推进边界
+		icon = border_war		
+		cost = 50
+		days_remove = 90
+		days_re_enable = 30
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+			OR = {
+				country_exists = STG
+				country_exists = XBJ
+			}
+		}
+		available = {
+		}
+		modifier = {
+		}
+		targeted_modifier = {
+			tag = STG
+			#战斗修正种类
+			attack_bonus_against = 0.1
+		}
+		targeted_modifier = {
+			tag = XBJ
+			#战斗修正种类
+			attack_bonus_against = 0.1
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+
+		}
+	}	
+	ROC_decision_shusifangyu_1 = {#殊死防御
+		icon = border_war		
+		cost = 50
+		days_remove = 120
+		fire_only_once = yes				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+			add_stability = -0.02
+		}
+		remove_effect = {
+			custom_effect_tooltip = ROC_decision_shusifangyu_tt
+			set_country_flag = ROC_decision_fangyu
+		}
+	}
+	ROC_decision_kuaisujianlidangzuzhi_1 = {#快速建立党组织
+		icon = border_war		
+		cost = 75
+		days_remove = 120
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 100			
+	    }
+		visible = {
+
+		}
+		available = {
+		}
+		modifier = {
+			resistance_target = -0.02
+			compliance_growth = 0.1
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+		}
+	}
+	ROC_decision_fadongdihoudangzuzhinonghui_1 = {#发动敌后党组织、农会
+		icon = border_war		
+		cost = 30
+		days_remove = 60
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 50			
+	    }
+		visible = {
+
+		}
+		available = {
+		}
+		modifier = {
+		}
+		complete_effect = {
+		}
+		remove_effect = {
+			ROC = {
+				add_intel = {
+					target = XBJ
+					army_intel = 10
+				}
+			}
+			ROC = {
+				add_intel = {
+					target = STG
+					army_intel = 10
+				}
+			}
+		}
+	}
+}
+
+ROC_focus_quanguogeming = {#全国革命
+	ROC_decision_geming_qisheng = {#对七省宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}		
+	    }
+		visible = {
+			has_completed_focus = gemingzhihuoranbiandongnan
+			country_exists = GOS 
+			NOT = { has_war_with = GOS}
+		}
+		remove_effect = {
+			declare_war_on = { target = GOS type = annex_everything }
+		}
+	}
+	ROC_decision_geming_xibei = {#对西北宣战
+		icon = generic_civil_support		
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}			
+	    }
+		visible = {
+			has_completed_focus = xibeigongfa
+			country_exists = XBJ 
+			NOT = { has_war_with = XBJ}
+		}
+		remove_effect = {
+			declare_war_on = { target = XBJ type = annex_everything }
+		}
+	}
+	ROC_decision_geming_shuntian = {#对顺天宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}			
+	    }
+		visible = {
+			has_completed_focus = jisuiyuxi
+			country_exists = STG 
+			NOT = { has_war_with = STG }
+		}
+		remove_effect = {
+			declare_war_on = { target = STG type = annex_everything }
+		}
+	}
+	ROC_decision_geming_dongbei = {#对东北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}			
+	    }
+		visible = {
+			has_completed_focus = yueguoshanhaiguan
+			OR = {
+				country_exists = GPS 
+				GPS = {
+					NOT = { has_war_with = ROC }
+				}
+			}
+		}
+		remove_effect = {
+			declare_war_on = { target = GPS type = annex_everything }
+		}
+	}
+	ROC_decision_geming_hongjun = {#对东北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}			
+	    }
+		visible = {
+			has_completed_focus = yueguoshanhaiguan
+			OR = {
+				country_exists = SRC 
+				SRC = {
+					NOT = { has_war_with = SRC }
+				}
+			}
+			OR = {
+				has_global_flag = global_flag_hetan_ROC_SRC_fail
+				has_global_flag = global_flag_ROC_SRC_hetan_lose
+			}
+		}
+		remove_effect = {
+			declare_war_on = { target = SCG type = annex_everything }
+			declare_war_on = { target = SRC type = annex_everything }
+		}
+	}
+	ROC_decision_geming_xinan = {#对西南宣战
+		icon = generic_civil_support		
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}				
+	    }
+		visible = {
+			has_completed_focus = hengsaoxinan
+			country_exists = XIN 
+			NOT = { has_war_with = XIN }
+		}
+		remove_effect = {
+			declare_war_on = { target = XIN type = annex_everything }
+		}
+	}
+	ROC_decision_geming_bashu = {#对川藏宣战
+		icon = generic_civil_support		
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}				
+	    }
+		visible = {
+			has_completed_focus = bashuzhiguo
+			country_exists = SIC 
+			NOT = { has_war_with = SIC }
+		}
+		remove_effect = {
+			declare_war_on = { target = SIC type = annex_everything }
+		}
+	}
+	ROC_decision_geming_menggu = {#对漠北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}				
+	    }
+		visible = {
+			has_completed_focus = jiefangmobei
+			country_exists = MOB 
+			NOT = { has_war_with = MOB }
+		}
+		remove_effect = {
+			declare_war_on = { target = MOB type = annex_everything }
+		}
+	}
+	ROC_decision_geming_SCG = {#对漠北宣战
+		icon = generic_civil_support	
+		cost = 10
+		days_remove = 10
+		fire_only_once = no				
+		ai_will_do = {
+			factor = 500	
+			modifier = {
+				factor = 0
+				has_war = yes
+			}				
+	    }
+		visible = {
+			has_completed_focus = bashuzhiguo
+			country_exists = SCG 
+			NOT = {
+				country_exists = SRC
+			}
+			is_neighbor_of = SCG
+			NOT = { has_war_with = SCG }
+		}
+		remove_effect = {
+			if = {
+				limit = { country_exists = SCG }
+				SCG = {
+					every_unit_leader = {
+						include_invisible = yes
+						set_nationality = ROC
+					}
+				}
+				annex_country = {
+					target = SCG
+					transfer_troops = yes
+				}
+			}
+            every_state = {
+                limit = {
+                    is_core_of = SCG
+                }
+                add_core_of = ROC
+                remove_core_of = SCG
+            }
+		}
+	}
+}
+
+ROC_focus_junshixunlian = {
+	ROC_decision_zhuangjiayanxi = {#装甲演习
+		icon = ger_military_buildup
+		fire_only_once = yes		
+		days_remove = 90
+		visible = {
+			has_completed_focus = jiangxianyundezhuangjialilun
+		}	
+		available = {
+			has_army_experience > 49.99
+		}
+		ai_will_do = {
+			factor = 50			
+	    }
+		remove_effect = {
+			army_experience = -50
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	ROC_decision_zhengdunkongjun = {#整顿空军
+		icon = generic_air
+		fire_only_once = yes		
+		days_remove = 90
+		cost = 50
+		visible = {
+			has_completed_focus = qingnianfeixingyuanweiyuanhui
+		}	
+		ai_will_do = {
+			factor = 50			
+	    }
+		remove_effect = {
+			air_experience = 100
+		}
+	}
+	ROC_decision_haihangyanxi = {#海航演习
+		icon = generic_air
+		fire_only_once = yes		
+		days_remove = 90
+		cost = 50
+		visible = {
+			has_completed_focus = haijunhangkonmgdafazhan
+		}	
+		available = {
+			has_equipment = {
+				cv_small_plane_naval_bomber_airframe > 4
+			}
+			has_equipment = {
+				cv_small_plane_airframe > 4
+			}
+		}
+		ai_will_do = {
+			factor = 50			
+	    }
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = cv_small_plane_naval_bomber_airframe
+				amount = -5
+			}
+			add_equipment_to_stockpile = {
+				type = cv_small_plane_airframe
+				amount = -5
+			}
+			add_ace = {
+				name = "关"
+				surname = "荣"
+				type = support_genius
+				is_female = yes
+			}
+		}
+	}
+}
+
+
+#============================================================
+### merged from ROC_economic_council.txt
+#============================================================
+ROC_economic_administration = {
+    ROC_econ_yu_pilot = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_yu_pilot
+            ROC_ma_current_yu = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 1 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 35
+        days_remove = 90
+        modifier = { consumer_goods_factor = -0.02 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_public_020 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_yu_pilot_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_yu_expansion = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_yu_expansion
+            ROC_ma_current_yu = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 2 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 50
+        days_remove = 180
+        modifier = { consumer_goods_factor = -0.02 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_public_030 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_yu_expansion_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_yan_pilot = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_yan_pilot
+            ROC_ma_current_yan = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 3 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 35
+        days_remove = 90
+        modifier = { production_speed_infrastructure_factor = 0.08 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_yan_pilot_settlement = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_yan_pilot_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_yan_expansion = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_yan_expansion
+            ROC_ma_current_yan = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 4 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 50
+        days_remove = 180
+        modifier = { production_speed_infrastructure_factor = 0.08 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_yan_expansion_settlement = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_yan_expansion_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_ruan_pilot = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_ruan_pilot
+            ROC_ma_current_ruan = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 5 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 35
+        days_remove = 90
+        modifier = { political_power_gain = 0.10 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_public_020 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_ruan_pilot_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_ruan_expansion = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_ruan_expansion
+            ROC_ma_current_ruan = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 6 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 60
+        days_remove = 180
+        modifier = { political_power_gain = 0.10 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_public_040 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_ruan_expansion_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_chen_pilot = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_chen_pilot
+            ROC_ma_current_chen = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 7 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 35
+        days_remove = 90
+        modifier = { industrial_capacity_factory = 0.04 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_public_020 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_chen_pilot_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_chen_expansion = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_chen_expansion
+            ROC_ma_current_chen = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 8 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 60
+        days_remove = 180
+        modifier = { industrial_capacity_factory = 0.04 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_public_040 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_chen_expansion_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_xiao_pilot = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_xiao_pilot
+            ROC_ma_current_xiao = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 9 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 35
+        days_remove = 90
+        modifier = { production_speed_industrial_complex_factor = 0.06 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_market_020 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_xiao_pilot_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_xiao_expansion = {
+        icon = GFX_decision_generic_construction
+        allowed = { original_tag = ROC }
+        visible = {
+            has_decision = ROC_econ_xiao_expansion
+            ROC_ma_current_xiao = yes
+        }
+        available = {
+            hidden_trigger = { always = no }
+        }
+        complete_effect = {
+            hidden_effect = {
+                if = {
+                    limit = { check_variable = { var = ROC_bill_stage value = 3 compare = equals } check_variable = { var = ROC_bill_id value = 10 compare = equals } }
+                    ROC_bill_clear = yes
+                }
+            }
+        }
+        cost = 50
+        days_remove = 180
+        modifier = { production_speed_industrial_complex_factor = 0.06 }
+        ai_will_do = { factor = 0.5 }
+        priority = 10
+        cancel_if_not_visible = no
+        cancel_trigger = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ce_administration_inactive_tt
+                hidden_trigger = { NOT = { ROC_ce_administration_active = yes } }
+            }
+        }
+        cancel_effect = { }
+        remove_effect = {
+            if = {
+                limit = { ROC_ce_administration_active = yes }
+                ROC_econ_shift_market_030 = yes
+                custom_effect_tooltip = ROC_econ_reconcile_tt
+                hidden_effect = { set_country_flag = ROC_econ_xiao_expansion_done ROC_econ_reconcile = yes }
+            }
+        }
+    }
+    ROC_econ_term_review = {
+            icon = GFX_decision_generic_political_discourse
+            allowed = { original_tag = ROC }
+            priority = 30
+            visible = {
+                ROC_ce_administration_active = yes
+                has_active_mission = ROC_decision_bop_jingjidahui
+                check_variable = { var = ROC_econ_stage value = 3 compare = equals }
+                NOT = { has_country_flag = ROC_econ_term_review_done }
+            }
+            available = {
+                custom_trigger_tooltip = {
+                    tooltip = ROC_econ_review_available_tt
+                    hidden_trigger = {
+                        ROC_ce_administration_active = yes
+                        has_active_mission = ROC_decision_bop_jingjidahui
+                        check_variable = { var = ROC_econ_stage value = 3 compare = equals }
+                        NOT = { has_country_flag = ROC_econ_term_review_done }
+                        ROC_econ_policy_free = yes
+                    }
+                }
+            }
+            cost = 30
+            ai_will_do = { factor = 1 }
+            complete_effect = { custom_effect_tooltip = ROC_econ_review_result_tt hidden_effect = { set_country_flag = ROC_econ_term_review_done add_to_variable = { var = ROC_ma_center_favor value = 10 } add_to_variable = { var = ROC_ma_right_favor value = 5 } subtract_from_variable = { var = ROC_ce_pressure value = 10 } ROC_ce_refresh = yes } }
+        }
+
+	ROC_decision_nongcunjianshe = { #农村建设
+		icon = SOV_place_hq
+		fire_only_once = yes		
+		days_remove = ROC_VAR_nongcun_days
+		cost = ROC_VAR_nongcun_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			ROC_has_tudigaige = yes
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = pastoral #牧区	初始 1 建筑槽
+					has_state_category = small_island #小岛 初始 1 建筑槽
+					has_state_category = rural #乡村地区 初始 2 建筑槽
+					has_state_category = town #发达乡村地区 初始 4 建筑槽
+					has_state_category = large_town #稀疏城镇地区 初始 5 建筑槽
+
+					has_state_category = one
+					has_state_category = two
+					has_state_category = three
+					has_state_category = four
+					has_state_category = five
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 3
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 3
+	   	}
+		remove_effect = { if = { limit = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = ROOT infrastructure < 5 } }
+
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = ROC_nongcunjianshe
+			}
+		 custom_effect_tooltip = ROC_econ_building_contribution_tt hidden_effect = { ROOT = { ROC_econ_building_contribution = yes } } } }
+	}
+	ROC_decision_minshengjianshe = { #民生建设
+		icon = GFX_decision_generic_construction
+		fire_only_once = yes		
+		days_remove = ROC_VAR_chengshi_days
+		cost = ROC_VAR_chengshi_minsheng_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			ROC_has_jieguanguanyinggongcheng = yes
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = megalopolis #大都市 初始 12 建筑槽
+					has_state_category = metropolis #大城市 初始 10 建筑槽
+
+					has_state_category = ten
+					has_state_category = eleven
+					has_state_category = twelve
+				}
+			}
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 4
+	   	}
+		remove_effect = { if = { limit = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = ROOT  } }
+
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = ROC_minshengjianshe
+			}
+		 custom_effect_tooltip = ROC_econ_building_contribution_tt hidden_effect = { ROOT = { ROC_econ_building_contribution = yes } } } }
+	}
+	ROC_decision_junshijianshe = { #军事建设
+		icon = CHL_carabineros
+		fire_only_once = yes		
+		days_remove = ROC_VAR_chengshi_days
+		cost = ROC_VAR_chengshi_junshi_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			ROC_has_jieguanguanyinggongcheng = yes
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					has_state_category = megalopolis #大都市 初始 12 建筑槽
+					has_state_category = metropolis #大城市 初始 10 建筑槽
+
+					has_state_category = ten
+					has_state_category = eleven
+					has_state_category = twelve
+				}
+			}
+		}
+		available = {
+			FROM = {
+				industrial_complex > 0				
+			}
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 4
+	   	}
+		remove_effect = { if = { limit = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = ROOT industrial_complex > 0 } }
+
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				remove_building = {
+					type = industrial_complex
+					level = 1
+					### instant_build = yes # remove_building does not accept construction options
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		 custom_effect_tooltip = ROC_econ_building_contribution_tt hidden_effect = { ROOT = { ROC_econ_building_contribution = yes } } } }
+	}
+	ROC_decision_kuojiangangkou = { #扩建港口
+		icon = SWE_set_navy_budget
+		fire_only_once = yes		
+		days_remove = ROC_VAR_chengshi_days
+		cost = ROC_VAR_chengshi_junshi_pp
+		on_map_mode = map_only
+		state_target = yes
+		visible = {
+			ROC_has_kuojianhaijunjidi = yes
+		}	
+		ai_will_do = {
+			factor = 20
+		}
+		target_trigger = {
+			FROM = {
+				is_controlled_by = ROOT
+				is_core_of = ROOT
+				OR = {
+					state = 813
+					state = 524
+					state = 811
+					state = 808
+					state = 743
+					state = 609
+					state = 745
+				}
+			}
+		}
+		available = {
+			FROM = {
+				industrial_complex > 0				
+			}
+			num_of_civilian_factories_available_for_projects > 4
+		}
+		complete_effect = {  
+		}	
+		modifier = {
+			civilian_factory_use = 4
+	   	}
+		remove_effect = { if = { limit = { FROM = { is_owned_by = ROOT is_controlled_by = ROOT is_core_of = ROOT dockyard < 10 } }
+
+			FROM = {								
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		 custom_effect_tooltip = ROC_econ_building_contribution_tt hidden_effect = { ROOT = { ROC_econ_building_contribution = yes } } } }
+	}
+
+
+}
+
+#革命委员会
+ROC_focus_sanpai = {
+	ROC_decision_zuopai = {#左派激进化
+		icon = GFX_decision_hol_radio_oranje
+		activation = {
+            original_tag = ROC
+            ROC_econ_race_active = yes
+            check_variable = { var = ROC_committee_left_agenda value = 0 compare = greater_than }
+}
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = no
+		days_mission_timeout = ROC_zuopai_time_var
+        timeout_effect = { ROC_committee_complete_left = yes }
+	}
+
+	ROC_decision_youpai = {#右派激进化
+		icon = GFX_decision_hol_radio_oranje
+		activation = {
+            original_tag = ROC
+            ROC_econ_race_active = yes
+            check_variable = { var = ROC_committee_right_agenda value = 0 compare = greater_than }
+}
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = no
+		days_mission_timeout = ROC_youpai_time_var
+        timeout_effect = { ROC_committee_complete_right = yes }
+	}
+
+	ROC_decision_zhongpai = {#中道大联合
+		icon = GFX_decision_hol_radio_oranje
+		activation = {
+            original_tag = ROC
+            ROC_econ_race_active = yes
+            check_variable = { var = ROC_committee_center_agenda value = 0 compare = greater_than }
+}
+		available = { hidden_trigger = { always = no } }
+		fire_only_once = no
+		days_mission_timeout = ROC_zhongpai_time_var
+        timeout_effect = { ROC_committee_complete_center = yes }
+	}
+
+	ROC_decision_zuoxiantuoxie = {
+        icon = generic_civil_support
+        cost = 0
+        days_re_enable = 60
+        fire_only_once = no
+        visible = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zuopai }
+        available = { custom_trigger_tooltip = { tooltip = ROC_econ_compromise_available_tt hidden_trigger = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zuopai check_variable = { var = ROC_ma_left_favor value = 15 compare = greater_than_or_equals } } } }
+        complete_effect = { custom_effect_tooltip = ROC_ma_committee_delay_left_tt hidden_effect = { ROC_ma_delay_committee_left = yes } }
+    }
+
+    ROC_decision_youxiantuoxie = {
+        icon = generic_civil_support
+        cost = 0
+        days_re_enable = 60
+        fire_only_once = no
+        visible = { ROC_econ_race_active = yes has_active_mission = ROC_decision_youpai }
+        available = { custom_trigger_tooltip = { tooltip = ROC_econ_compromise_available_tt hidden_trigger = { ROC_econ_race_active = yes has_active_mission = ROC_decision_youpai check_variable = { var = ROC_ma_right_favor value = 15 compare = greater_than_or_equals } } } }
+        complete_effect = { custom_effect_tooltip = ROC_ma_committee_delay_right_tt hidden_effect = { ROC_ma_delay_committee_right = yes } }
+    }
+}
+
+
+#============================================================
+### merged from ROC_legislation.txt
+#============================================================
+ROC_economic_administration = {
+    ROC_bill_submit = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = { always = no ROC_ce_administration_active = yes }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_bill_submit_available_tt
+                hidden_trigger = { ROC_bill_submit_ready = yes }
+            }
+        }
+        cost = 15
+        days_re_enable = 90
+        fire_only_once = no
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_bill_submit_tt
+            hidden_effect = { ROC_bill_submit_effect = yes }
+        }
+    }
+}
+
+
+
+#============================================================
+### merged from ROC_minister_agenda.txt
+#============================================================
+ROC_economic_administration = {
+    ROC_ma_current_action = {
+        icon = GFX_decision_generic_political_address
+        activation = {
+            ROC_ma_can_run = yes
+            check_variable = { ROC_ma_clock_owner > 0 }
+            check_variable = { ROC_ma_stage > 0 }
+            check_variable = { ROC_ma_days_remaining > 0 }
+            check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals }
+            NOT = { has_country_flag = ROC_ma_timeout_pending }
+            NOT = { has_country_flag = ROC_ma_rearm_blocked }
+        }
+        visible = {
+            ROC_ma_can_run = yes
+            check_variable = { ROC_ma_clock_owner > 0 }
+            check_variable = { ROC_ma_stage > 0 }
+            check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals }
+            check_variable = { var = ROC_ma_stage value = 7 compare = less_than }
+        }
+        cancel_if_not_visible = no
+        available = {
+            hidden_trigger = { always = no }
+        }
+        days_mission_timeout = ROC_ma_days_remaining
+        fire_only_once = no
+        priority = 10
+        timeout_effect = {
+            custom_effect_tooltip = ROC_ma_current_action_complete_tt
+            hidden_effect = { ROC_ma_timeout = yes }
+        }
+    }
+    ROC_ma_yu_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yu_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yu_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yu_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yu_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yu_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_yu_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yu_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_yu_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yu_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yu_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yu_2_decision_tt
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yu_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_cooperative_procurement_tt
+                hidden_effect = { ROC_ma_policy_adopt_cooperative_procurement = yes }
+            }
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yu_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yu_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_yu_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yu_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_yan_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yan_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yan_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yan_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yan_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_yan_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yan_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_yan_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_yan_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_yan_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_yan_2_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_yan_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_yan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_yan_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_yan_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_ruan_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_ruan_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_ruan_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_ruan_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_ruan_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_ruan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_ruan_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_ruan_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_ruan_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_ruan_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_ruan_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_ruan_2_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_ruan_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_ruan_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_ruan_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_ruan_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_chen_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_chen_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_chen_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_chen_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_chen_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_chen_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_chen_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_chen_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_chen_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_chen_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_chen_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_chen_2_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_chen_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_chen_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_chen_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_chen_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_xiao_1_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_xiao_1 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_xiao_1 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 25
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_xiao_1_decision_tt
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_xiao_1 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_xiao_policy = yes
+                    set_variable = { ROC_ma_day_credit = 14 }
+                    ROC_ma_xiao_project = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_xiao_1 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_xiao_2_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_xiao_step2 = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_decision_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_xiao_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 120
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            custom_effect_tooltip = ROC_ma_xiao_2_decision_tt
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_xiao_step2 = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_market_distribution_tt
+                hidden_effect = { ROC_ma_policy_adopt_market_distribution = yes }
+            }
+            hidden_effect = {
+                if = {
+                    limit = {
+                        ROC_ma_can_run = yes
+                        ROC_ma_current_xiao_step2 = yes
+                        NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    }
+                    ROC_ma_select_xiao_policy = yes
+                    set_variable = { ROC_ma_day_credit = 21 }
+                    ROC_ma_xiao_direction = yes
+                    ROC_ma_advance_days = yes
+                    ROC_ma_open_xiao_2 = yes
+                    ROC_ce_refresh = yes
+                }
+            }
+        }
+    }
+    ROC_ma_agriculture_collectivized_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_agriculture_collectivized = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_adopt_agriculture_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_collectivized = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_collectivized }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 110
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_collectivized = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_collectivized }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_agriculture_collectivized_tt
+                hidden_effect = { ROC_ma_policy_adopt_agriculture_collectivized = yes }
+            }
+        }
+    }
+    ROC_ma_agriculture_household_decision = {
+        icon = GFX_decision_generic_political_discourse
+        allowed = { original_tag = ROC }
+        visible = {
+            ROC_ma_current_agriculture_household = yes
+        }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = ROC_ma_adopt_agriculture_available_tt
+                hidden_trigger = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_household = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_household }
+                }
+            }
+        }
+        cost = 35
+        days_re_enable = 90
+        fire_only_once = no
+        priority = 110
+        ai_will_do = { factor = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    ROC_ma_can_run = yes
+                    ROC_ma_current_agriculture_household = yes
+                    NOT = { has_country_flag = ROC_ma_timeout_pending }
+                    NOT = { has_idea = ROC_ma_policy_agriculture_household }
+                }
+                custom_effect_tooltip = ROC_ma_adopt_agriculture_household_tt
+                hidden_effect = { ROC_ma_policy_adopt_agriculture_household = yes }
+            }
+        }
+    }
+}
+

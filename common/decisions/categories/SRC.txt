@@ -1,21 +1,21 @@
 SRC_baoweigongrenzhengquan_categories = {
 	icon = gre_faction_management
-	
+
 	allowed = {
 		tag = SRC
 	}
-	visible = {	
+	visible = {
 		has_completed_focus = SRC_workers_pickets
 	}
 }
 #军事建设
 SRC_junshijianshe_catagories = {
 	icon = gre_faction_management
-	
+
 	allowed = {
 		tag = SRC
 	}
-	visible = {	
+	visible = {
 		OR = {
 			has_completed_focus = SRC_xiandaigemingjundui
 			has_completed_focus = SRC_gemingtongyizhanxian
@@ -33,11 +33,11 @@ SRC_wartime_army_category = {
 #宣战
 SRC_xuanzhan_catagories = {
 	icon = gre_faction_management
-	
+
 	allowed = {
 		tag = SRC
 	}
-	visible = {	
+	visible = {
 		has_completed_focus = SRC_huishiruguan
 	}
 }
@@ -46,7 +46,7 @@ SRC_xuanzhan_catagories = {
 
 SRC_lianxigeming = {
 	icon = generic_communism
-	
+
 	allowed = {
 		tag = SRC
 	}
@@ -54,7 +54,7 @@ SRC_lianxigeming = {
 		has_completed_focus = SRC_lianluoguanneigemingzhe
 	}
 	priority = 100
-	
+
 	# 关联GUI窗口（稳定测试）
 }
 
@@ -209,4 +209,18 @@ SRC_organization_talent_decisions = {
 	icon = generic_industry
 	allowed = { tag = SRC }
 	visible = { has_country_flag = SRC_organization_talent_decisions_unlocked }
+}
+
+#============================================================
+### merged from SRC_local_actions.txt
+#============================================================
+SRC_local_network_operations = {
+    icon = gre_faction_management
+    allowed = { tag = SRC }
+    visible = {
+        tag = SRC
+        has_war_with = GPS
+        any_state = { SRC_la_state_in_region = yes check_variable = { SRC_la_network_level = 2 } }
+    }
+    priority = 95
 }

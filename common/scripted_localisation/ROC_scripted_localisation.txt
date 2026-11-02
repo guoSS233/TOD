@@ -68,6 +68,106 @@ defined_text = {
 	}
 }
 
+#============================================================
+### merged from ROC_central_economy.txt
+#============================================================
+defined_text = {
+	name = ROC_ce_mandate_status
+	text = {
+		trigger = {
+			has_country_flag = ROC_ce_initialized
+			has_country_flag = ROC_ma_favors_initialized
+		}
+		localization_key = ROC_ce_gui_mandate
+	}
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_mandate_legacy }
+}
+
+defined_text = {
+	name = ROC_ce_term_status
+	text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ce_gui_term_waiting_conference }
+	text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ce_gui_term_waiting_successor }
+	text = { trigger = { has_active_mission = ROC_decision_bop_jingjidahui } localization_key = ROC_ce_gui_term_active }
+	text = { trigger = { has_country_flag = ROC_ce_initialized } localization_key = ROC_ce_gui_term_inactive }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_term_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_performance_text
+	text = { trigger = { has_country_flag = ROC_econ_term_active } localization_key = ROC_ce_gui_performance }
+	text = { trigger = { has_country_flag = ROC_ce_initialized } localization_key = ROC_ce_gui_performance_waiting_term }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_performance_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_policy_status
+	text = { trigger = { has_country_flag = ROC_ce_policy_migrated } localization_key = ROC_ce_gui_policy_axis }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_policy_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_policy_effect_summary
+	text = { trigger = { has_country_flag = ROC_ce_policy_migrated } localization_key = ROC_ce_gui_policy_effects }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_policy_effect_initializing }
+}
+
+defined_text = {
+	name = ROC_ce_left_favor_text
+	text = { trigger = { has_country_flag = ROC_ma_favors_initialized } localization_key = ROC_ce_gui_left_favor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_favor_initializing_left }
+}
+
+defined_text = {
+	name = ROC_ce_center_favor_text
+	text = { trigger = { has_country_flag = ROC_ma_favors_initialized } localization_key = ROC_ce_gui_center_favor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_favor_initializing_center }
+}
+
+defined_text = {
+	name = ROC_ce_right_favor_text
+	text = { trigger = { has_country_flag = ROC_ma_favors_initialized } localization_key = ROC_ce_gui_right_favor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_favor_initializing_right }
+}
+
+defined_text = {
+	name = ROC_ce_minister_route
+	text = { trigger = { has_idea = ROC_idea_YuShude } localization_key = ROC_ce_gui_route_cooperative }
+	text = { trigger = { has_idea = ROC_idea_YanYangchu } localization_key = ROC_ce_gui_route_rural }
+	text = { trigger = { has_idea = ROC_idea_RuanXiaoxian } localization_key = ROC_ce_gui_route_audit }
+	text = { trigger = { has_idea = ROC_idea_ChenZanxian } localization_key = ROC_ce_gui_route_labor }
+	text = { trigger = { has_idea = ROC_idea_XiaoZheng } localization_key = ROC_ce_gui_route_farmers }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_route_none }
+}
+
+defined_text = {
+	name = ROC_ce_project_name
+	text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ce_gui_project_initializing }
+	text = { trigger = { check_variable = { var = ROC_ce_project_id value = 1 compare = equals } } localization_key = ROC_ce_gui_project_industry }
+	text = { trigger = { check_variable = { var = ROC_ce_project_id value = 2 compare = equals } } localization_key = ROC_ce_gui_project_agriculture }
+	text = { trigger = { check_variable = { var = ROC_ce_project_id value = 3 compare = equals } } localization_key = ROC_ce_gui_project_transport }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_project_none }
+}
+
+defined_text = {
+	name = ROC_ce_project_status
+	text = { trigger = { has_country_flag = ROC_ce_no_delivery_target } localization_key = ROC_ce_gui_no_delivery_target }
+	text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ce_gui_project_waiting_resignation }
+	text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ce_gui_project_waiting_conference }
+	text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ce_gui_project_initializing }
+	text = { trigger = { check_variable = { var = ROC_ce_delay_days value = 0 compare = greater_than } } localization_key = ROC_ce_gui_project_paused }
+	text = { trigger = { ROC_ce_current_project = yes } localization_key = ROC_ce_gui_project_running }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_project_idle }
+}
+
+defined_text = {
+	name = ROC_ce_project_progress_text
+	text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ce_gui_project_progress_initializing }
+	text = { trigger = { ROC_ce_current_project = yes } localization_key = ROC_ce_gui_project_progress_active }
+	text = { trigger = { has_country_flag = ROC_ce_no_delivery_target } localization_key = ROC_ce_gui_project_progress_no_delivery_target }
+	text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ce_gui_project_progress_waiting_conference }
+	text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ce_gui_project_progress_waiting_successor }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_project_progress_idle }
+}
 
 
 
@@ -75,5 +175,760 @@ defined_text = {
 
 
 
+
+
+defined_text = {
+	name = ROC_ce_policy_tier_name
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -3 compare = equals } } localization_key = ROC_ce_gui_structure_market_3_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -2 compare = equals } } localization_key = ROC_ce_gui_structure_market_2_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -1 compare = equals } } localization_key = ROC_ce_gui_structure_market_1_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 1 compare = equals } } localization_key = ROC_ce_gui_structure_public_1_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 2 compare = equals } } localization_key = ROC_ce_gui_structure_public_2_name }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 3 compare = equals } } localization_key = ROC_ce_gui_structure_public_3_name }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_structure_mixed_name }
+}
+
+defined_text = {
+	name = ROC_ce_policy_effect_text
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -3 compare = equals } } localization_key = ROC_ce_gui_structure_market_3_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -2 compare = equals } } localization_key = ROC_ce_gui_structure_market_2_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = -1 compare = equals } } localization_key = ROC_ce_gui_structure_market_1_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 1 compare = equals } } localization_key = ROC_ce_gui_structure_public_1_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 2 compare = equals } } localization_key = ROC_ce_gui_structure_public_2_current }
+	text = { trigger = { check_variable = { var = ROC_ce_policy_tier value = 3 compare = equals } } localization_key = ROC_ce_gui_structure_public_3_current }
+	text = { trigger = { always = yes } localization_key = ROC_ce_gui_structure_mixed_current }
+}
+
+defined_text = {
+    name = ROC_ma_policy_owner_status
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 1 compare = equals } } localization_key = ROC_ce_gui_policy_owner_yu }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 2 compare = equals } } localization_key = ROC_ce_gui_policy_owner_yan }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 3 compare = equals } } localization_key = ROC_ce_gui_policy_owner_ruan }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 4 compare = equals } } localization_key = ROC_ce_gui_policy_owner_chen }
+    text = { trigger = { check_variable = { var = ROC_ma_policy_owner value = 5 compare = equals } } localization_key = ROC_ce_gui_policy_owner_xiao }
+    text = { trigger = { always = yes } localization_key = ROC_ce_gui_policy_owner_none }
+}
+
+defined_text = {
+    name = ROC_ma_current_action
+    text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ma_gui_action_waiting_conference }
+    text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ma_gui_action_waiting_successor }
+    text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ma_gui_action_initializing }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 0 compare = less_than_or_equals } } localization_key = ROC_ma_gui_action_no_minister }
+    text = { trigger = { check_variable = { var = ROC_ma_clock_owner value = 0 compare = greater_than } check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals } check_variable = { var = ROC_ma_stage value = 7 compare = equals } } localization_key = ROC_ma_gui_action_execution }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_yu_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_yu_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_yu_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_yu_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_yu_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 1 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_yu_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_yan_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_yan_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_yan_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_yan_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_yan_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 2 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_yan_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_ruan_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_ruan_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_ruan_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_ruan_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_ruan_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 3 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_ruan_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_chen_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_chen_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_chen_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_chen_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_chen_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 4 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_chen_step6 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 1 compare = equals } } localization_key = ROC_ma_xiao_1 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 2 compare = equals } } localization_key = ROC_ma_xiao_step2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 3 compare = equals } } localization_key = ROC_ma_xiao_2 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 4 compare = equals } } localization_key = ROC_ma_xiao_step4 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 5 compare = equals } } localization_key = ROC_ma_xiao_3 }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals } check_variable = { var = ROC_ma_clock_owner value = 5 compare = equals } check_variable = { var = ROC_ma_stage value = 6 compare = equals } } localization_key = ROC_ma_xiao_step6 }
+    text = { trigger = { always = yes } localization_key = ROC_ma_gui_action_rearming }
+}
+
+defined_text = {
+    name = ROC_ma_current_action_desc
+    text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_ma_gui_action_waiting_conference_desc }
+    text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_ma_gui_action_waiting_successor_desc }
+    text = { trigger = { NOT = { has_country_flag = ROC_ce_initialized } } localization_key = ROC_ma_gui_action_initializing_desc }
+    text = { trigger = { check_variable = { var = ROC_ce_minister_profile_id value = 0 compare = less_than_or_equals } } localization_key = ROC_ma_gui_action_no_minister_desc }
+    text = { trigger = { check_variable = { var = ROC_ma_clock_owner value = 0 compare = greater_than } check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals } check_variable = { var = ROC_ma_stage value = 7 compare = equals } } localization_key = ROC_ma_gui_action_execution_desc }
+    text = { trigger = { ROC_ma_can_run = yes check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals } check_variable = { var = ROC_ma_stage value = 0 compare = greater_than } check_variable = { var = ROC_ma_stage value = 7 compare = less_than } } localization_key = ROC_ma_gui_action_active_desc }
+    text = { trigger = { always = yes } localization_key = ROC_ma_gui_action_rearming_desc }
+}
+
+
+#============================================================
+### merged from ROC_committee.txt
+#============================================================
+defined_text = {
+    name = ROC_committee_status
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_status_postwar }
+    text = { trigger = { ROC_has_jixugeming = yes } localization_key = ROC_committee_gui_status_left_ending }
+    text = { trigger = { ROC_has_jingchenghezuo = yes } localization_key = ROC_committee_gui_status_center_ending }
+    text = { trigger = { ROC_has_lunliuzuozhuang = yes } localization_key = ROC_committee_gui_status_right_ending }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_status_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_status_initializing }
+    text = { trigger = { OR = { has_active_mission = ROC_decision_zuopai has_active_mission = ROC_decision_zhongpai has_active_mission = ROC_decision_youpai } } localization_key = ROC_committee_gui_status_active }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_status_waiting }
+}
+
+defined_text = {
+    name = ROC_committee_radicalization_text
+    text = { trigger = { has_country_flag = ROC_committee_initialized } localization_key = ROC_committee_gui_radicalization_value }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_radicalization_initializing }
+}
+
+defined_text = {
+    name = ROC_committee_time_effect_summary
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_effect_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_effect_ended }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_RuanXiaoxian } localization_key = ROC_committee_gui_effect_ruan }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_ChenZanxian } localization_key = ROC_committee_gui_effect_chen }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_YuShude } localization_key = ROC_committee_gui_effect_yu }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_YanYangchu } localization_key = ROC_committee_gui_effect_yan }
+    text = { trigger = { ROC_ma_can_run = yes has_idea = ROC_idea_XiaoZheng } localization_key = ROC_committee_gui_effect_xiao }
+    text = { trigger = { NOT = { ROC_ma_can_run = yes } } localization_key = ROC_committee_gui_effect_paused }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_effect_unknown }
+}
+
+defined_text = {
+    name = ROC_committee_opposition_target_text
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_target_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_target_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_target_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_target_initializing }
+    text = { trigger = { check_variable = { ROC_committee_leading_side = 1 } } localization_key = ROC_committee_gui_target_left }
+    text = { trigger = { check_variable = { ROC_committee_leading_side = 2 } } localization_key = ROC_committee_gui_target_center }
+    text = { trigger = { check_variable = { ROC_committee_leading_side = 3 } } localization_key = ROC_committee_gui_target_right }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_target_none }
+}
+
+defined_text = {
+    name = ROC_committee_objection_target_name
+    text = { trigger = { check_variable = { ROC_committee_objection_target = 1 } } localization_key = ROC_committee_gui_target_left }
+    text = { trigger = { check_variable = { ROC_committee_objection_target = 2 } } localization_key = ROC_committee_gui_target_center }
+    text = { trigger = { check_variable = { ROC_committee_objection_target = 3 } } localization_key = ROC_committee_gui_target_right }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_target_none }
+}
+
+defined_text = {
+    name = ROC_committee_left_agenda_name
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_agenda_postwar }
+    text = { trigger = { ROC_has_jixugeming = yes } localization_key = ROC_committee_gui_agenda_left_won }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_agenda_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_agenda_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_agenda_initializing }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 1 } } localization_key = zuoyilianmeng }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 2 } } localization_key = lianluogemingyoudang }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 3 } } localization_key = tuijinsuoyouzhigeming }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 4 } } localization_key = tudigaigejijinhua }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 5 } } localization_key = jiakuaigongsiheyingjincheng }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 6 } } localization_key = qianghuagonghuigemingxing }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 7 } } localization_key = queligongyouzhijingjizhutidiwei }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 8 } } localization_key = weichinonghuiwuzhuang }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 9 } } localization_key = kuodanongcunhezuosheguimo }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 10 } } localization_key = gemingjijinhua }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 11 } } localization_key = youxiangongnongquanyi }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 12 } } localization_key = zhengduogeminglingdaoquan }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 13 } } localization_key = xianqililunlunzhan }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 14 } } localization_key = dajixiuzhengfenzi }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda = 15 } } localization_key = jixugeming }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_agenda_not_started }
+}
+
+defined_text = {
+    name = ROC_committee_left_agenda_meta
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_meta_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_meta_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_meta_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_meta_initializing }
+    text = { trigger = { has_active_mission = ROC_decision_zuopai } localization_key = ROC_committee_gui_meta_left_active }
+    text = { trigger = { check_variable = { ROC_committee_left_agenda > 0 } } localization_key = ROC_committee_gui_meta_left_scheduled }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_meta_left_waiting }
+}
+
+defined_text = {
+    name = ROC_committee_center_agenda_name
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_agenda_postwar }
+    text = { trigger = { ROC_has_jingchenghezuo = yes } localization_key = ROC_committee_gui_agenda_center_won }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_agenda_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_agenda_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_agenda_initializing }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 1 } } localization_key = gemingtongyizhanxian }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 2 } } localization_key = qianghuazhengzhituanjie }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 3 } } localization_key = jijicanzhengyizheng }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 4 } } localization_key = xiezhugongyegaizao }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 5 } } localization_key = xiezhunongyegaizao }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 6 } } localization_key = luoshixinjingjifa }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 7 } } localization_key = zhichisansanzhizhengfu }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 8 } } localization_key = peihekaizhanqunzhongyundong }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 9 } } localization_key = jicengjibuhezuo }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 10 } } localization_key = qianghuahezuoxuanchuan }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 11 } } localization_key = yantaogeminglilun }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 12 } } localization_key = tuijinkuadanghezuo }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 13 } } localization_key = yazhifenliezhuyi }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 14 } } localization_key = yongbaogemingweiyuanhuizhengzhi }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda = 15 } } localization_key = jingchenghezuo }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_agenda_not_started }
+}
+
+defined_text = {
+    name = ROC_committee_center_agenda_meta
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_meta_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_meta_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_meta_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_meta_initializing }
+    text = { trigger = { has_active_mission = ROC_decision_zhongpai } localization_key = ROC_committee_gui_meta_center_active }
+    text = { trigger = { check_variable = { ROC_committee_center_agenda > 0 } } localization_key = ROC_committee_gui_meta_center_scheduled }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_meta_center_waiting }
+}
+
+defined_text = {
+    name = ROC_committee_right_agenda_name
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_agenda_postwar }
+    text = { trigger = { ROC_has_lunliuzuozhuang = yes } localization_key = ROC_committee_gui_agenda_right_won }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_agenda_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_agenda_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_agenda_initializing }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 1 } } localization_key = youyilianmeng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 2 } } localization_key = ziyoudatongmeng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 3 } } localization_key = jingjihuanjingfanglue }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 4 } } localization_key = yaoqiubaozhangminqiquanyi }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 5 } } localization_key = huanhexiangcundouzheng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 6 } } localization_key = jianadaqiyejiaruhui }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 7 } } localization_key = tiyihuifuguangjiaosuo }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 8 } } localization_key = tuidongnongcunjingjihuazhuanxiang }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 9 } } localization_key = tudiliuzhuanziyouhua }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 10 } } localization_key = gemingziyouhua }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 11 } } localization_key = xuanyangzhengzhiminzhu }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 12 } } localization_key = yaoqiusuxingxianzheng }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 13 } } localization_key = fangkuanzudangshenhe }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 14 } } localization_key = zhiyidatonghui }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda = 15 } } localization_key = lunliuzuozhuang }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_agenda_not_started }
+}
+
+defined_text = {
+    name = ROC_committee_right_agenda_meta
+    text = { trigger = { has_country_flag = ROC_postwar_active } localization_key = ROC_committee_gui_meta_postwar }
+    text = { trigger = { OR = { ROC_has_jixugeming = yes ROC_has_jingchenghezuo = yes ROC_has_lunliuzuozhuang = yes } } localization_key = ROC_committee_gui_meta_ended }
+    text = { trigger = { NOT = { ROC_has_gemingweiyuanhui = yes } } localization_key = ROC_committee_gui_meta_not_established }
+    text = { trigger = { NOT = { has_country_flag = ROC_committee_initialized } } localization_key = ROC_committee_gui_meta_initializing }
+    text = { trigger = { has_active_mission = ROC_decision_youpai } localization_key = ROC_committee_gui_meta_right_active }
+    text = { trigger = { check_variable = { ROC_committee_right_agenda > 0 } } localization_key = ROC_committee_gui_meta_right_scheduled }
+    text = { trigger = { always = yes } localization_key = ROC_committee_gui_meta_right_waiting }
+}
+
+# LOC ROC_committee_gui_meta_right_waiting:0 "尚未启动；已完成 [?ROC_committee_right_progress|0]/15 项"
+
+
+#============================================================
+### merged from ROC_economic_council.txt
+#============================================================
+defined_text = {
+	name = ROC_econ_gui_minister
+	text = { trigger = { tag = ROC has_idea = ROC_idea_YuShude } localization_key = loc_ROC_idea_YuShude }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_YanYangchu } localization_key = loc_ROC_idea_YanYangchu }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_RuanXiaoxian } localization_key = loc_ROC_idea_RuanXiaoxian }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_ChenZanxian } localization_key = loc_ROC_idea_ChenZanxian }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_XiaoZheng } localization_key = loc_ROC_idea_XiaoZheng }
+	text = { trigger = { always = yes } localization_key = ROC_econ_gui_minister_none }
+}
+
+defined_text = {
+	name = ROC_econ_gui_route
+	text = { trigger = { tag = ROC has_idea = ROC_idea_YuShude } localization_key = ROC_econ_gui_route_cooperative }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_YanYangchu } localization_key = ROC_econ_gui_route_rural }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_RuanXiaoxian } localization_key = ROC_econ_gui_route_audit }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_ChenZanxian } localization_key = ROC_econ_gui_route_labor }
+	text = { trigger = { tag = ROC has_idea = ROC_idea_XiaoZheng } localization_key = ROC_econ_gui_route_farmers }
+	text = { trigger = { always = yes } localization_key = ROC_econ_gui_route_none }
+}
+
+defined_text = {
+	name = ROC_econ_gui_term_status
+	text = { trigger = { has_country_flag = ROC_econ_conference_pending } localization_key = ROC_econ_gui_term_waiting_conference }
+	text = { trigger = { has_country_flag = ROC_econ_resignation_pending } localization_key = ROC_econ_gui_term_waiting_resignation }
+	text = { trigger = { check_variable = { ROC_econ_stage = 1 } } localization_key = ROC_econ_gui_term_pilot }
+	text = { trigger = { check_variable = { ROC_econ_stage = 2 } } localization_key = ROC_econ_gui_term_expansion }
+	text = { trigger = { check_variable = { ROC_econ_stage = 3 } } localization_key = ROC_econ_gui_term_review }
+	text = { trigger = { always = yes } localization_key = ROC_econ_gui_term_inactive }
+}
+
+defined_text = {
+	name = ROC_econ_gui_head_status
+	text = { trigger = { check_variable = { var = ROC_econ_head_mismatch_days value = 90 compare = greater_than_or_equals } } localization_key = ROC_econ_gui_head_crisis }
+	text = {
+		trigger = {
+			check_variable = { ROC_econ_head_mismatch_days > 0 }
+			check_variable = { ROC_econ_head_mismatch_days < 90 }
+		}
+		localization_key = ROC_econ_gui_head_mismatch
+	}
+	text = {
+		trigger = {
+			OR = {
+				has_country_flag = ROC_pingheng_head_cooldown
+				has_country_flag = ROC_pingheng_economy_minister
+			}
+		}
+		localization_key = ROC_econ_gui_head_cooldown
+	}
+	text = { trigger = { always = yes } localization_key = ROC_econ_gui_head_no_pending }
+}
+
+
+#============================================================
+### merged from ROC_legislation.txt
+#============================================================
+defined_text = {
+    name = ROC_bill_name
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 1 }
+        }
+        localization_key = ROC_econ_yu_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 2 }
+        }
+        localization_key = ROC_econ_yu_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 3 }
+        }
+        localization_key = ROC_econ_yan_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 4 }
+        }
+        localization_key = ROC_econ_yan_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 5 }
+        }
+        localization_key = ROC_econ_ruan_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 6 }
+        }
+        localization_key = ROC_econ_ruan_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 7 }
+        }
+        localization_key = ROC_econ_chen_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 8 }
+        }
+        localization_key = ROC_econ_chen_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 9 }
+        }
+        localization_key = ROC_econ_xiao_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_id = 10 }
+        }
+        localization_key = ROC_econ_xiao_expansion
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_no_current_bill
+    }
+}
+
+defined_text = {
+    name = ROC_bill_next_name
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 1 }
+        }
+        localization_key = ROC_econ_yu_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 2 }
+        }
+        localization_key = ROC_econ_yu_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 3 }
+        }
+        localization_key = ROC_econ_yan_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 4 }
+        }
+        localization_key = ROC_econ_yan_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 5 }
+        }
+        localization_key = ROC_econ_ruan_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 6 }
+        }
+        localization_key = ROC_econ_ruan_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 7 }
+        }
+        localization_key = ROC_econ_chen_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 8 }
+        }
+        localization_key = ROC_econ_chen_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 9 }
+        }
+        localization_key = ROC_econ_xiao_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_candidate = 10 }
+        }
+        localization_key = ROC_econ_xiao_expansion
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_no_candidate
+    }
+}
+
+defined_text = {
+    name = ROC_bill_last_name
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 1 }
+        }
+        localization_key = ROC_econ_yu_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 2 }
+        }
+        localization_key = ROC_econ_yu_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 3 }
+        }
+        localization_key = ROC_econ_yan_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 4 }
+        }
+        localization_key = ROC_econ_yan_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 5 }
+        }
+        localization_key = ROC_econ_ruan_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 6 }
+        }
+        localization_key = ROC_econ_ruan_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 7 }
+        }
+        localization_key = ROC_econ_chen_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 8 }
+        }
+        localization_key = ROC_econ_chen_expansion
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 9 }
+        }
+        localization_key = ROC_econ_xiao_pilot
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_last_id = 10 }
+        }
+        localization_key = ROC_econ_xiao_expansion
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_no_last_bill
+    }
+}
+
+defined_text = {
+    name = ROC_bill_stage_text
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_stage = 1 }
+        }
+        localization_key = ROC_legislation_stage_consultation
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_stage = 2 }
+        }
+        localization_key = ROC_legislation_stage_hearing
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_stage = 3 }
+        }
+        localization_key = ROC_legislation_stage_approved
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_stage_idle
+    }
+}
+
+defined_text = {
+    name = ROC_bill_readiness_text
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_stage = 1 }
+        }
+        localization_key = ROC_legislation_readiness_sector
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_stage = 0 }
+        }
+        localization_key = ROC_legislation_readiness_idle
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_stage = 3 }
+        }
+        localization_key = ROC_legislation_readiness_approved
+    }
+    text = {
+        trigger = {
+            OR = {
+                AND = {
+                    check_variable = { ROC_bill_requirement = 1 }
+                    check_variable = { var = ROC_bill_support value = 1 compare = greater_than_or_equals }
+                }
+                AND = {
+                    check_variable = { ROC_bill_requirement = 2 }
+                    check_variable = { var = ROC_bill_support value = 2 compare = greater_than_or_equals }
+                }
+                AND = {
+                    check_variable = { ROC_bill_requirement = 3 }
+                    check_variable = { var = ROC_bill_support value = 3 compare = greater_than_or_equals }
+                }
+                AND = {
+                    check_variable = { ROC_bill_requirement = 4 }
+                    check_variable = { var = ROC_bill_support value = 4 compare = greater_than_or_equals }
+                }
+            }
+        }
+        localization_key = ROC_legislation_readiness_vote
+    }
+    text = {
+        trigger = {
+            ROC_bill_near_support = yes
+            check_variable = {
+                ROC_bill_economic_support < 2
+            }
+        }
+        localization_key = ROC_legislation_readiness_guarantee
+    }
+    text = {
+        trigger = {
+            OR = {
+                AND = {
+                    check_variable = { ROC_bill_requirement = 1 }
+                    check_variable = { ROC_bill_support = 0 }
+                }
+                AND = {
+                    check_variable = { ROC_bill_requirement = 2 }
+                    check_variable = { ROC_bill_support = 1 }
+                }
+                AND = {
+                    check_variable = { ROC_bill_requirement = 3 }
+                    check_variable = { ROC_bill_support = 2 }
+                }
+                AND = {
+                    check_variable = { ROC_bill_requirement = 4 }
+                    check_variable = { ROC_bill_support = 3 }
+                }
+            }
+            check_variable = { var = ROC_bill_economic_support value = 2 compare = greater_than_or_equals }
+        }
+        localization_key = ROC_legislation_readiness_condition
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_readiness_short
+    }
+}
+
+defined_text = {
+    name = ROC_bill_outcome_text
+    text = {
+        trigger = { has_country_flag = ROC_bill_sector_tabled }
+        localization_key = ROC_legislation_outcome_sector_tabled
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_outcome = 1 }
+        }
+        localization_key = ROC_legislation_outcome_passed
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_outcome = 2 }
+        }
+        localization_key = ROC_legislation_outcome_conditional
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_outcome = 3 }
+        }
+        localization_key = ROC_legislation_outcome_tabled
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_outcome = 4 }
+        }
+        localization_key = ROC_legislation_outcome_backlash
+    }
+    text = {
+        trigger = {
+            check_variable = { ROC_bill_outcome = 5 }
+        }
+        localization_key = ROC_legislation_outcome_withdrawn
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_outcome_none
+    }
+}
+
+defined_text = {
+    name = ROC_bill_days_text
+    text = {
+        trigger = {
+            OR = {
+                check_variable = { ROC_bill_stage = 1 }
+                check_variable = { ROC_bill_stage = 2 }
+            }
+        }
+        localization_key = ROC_legislation_days_active
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_days_inactive
+    }
+}
+
+defined_text = {
+    name = ROC_legislation_yu_partner
+    text = {
+        trigger = {
+            ROC_has_lianluogemingyoudang = yes
+            OR = { ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes }
+        }
+        localization_key = ROC_legislation_yu_partner_alliance
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_yu_partner_industry
+    }
+}
+
+defined_text = {
+    name = ROC_legislation_yan_partner
+    text = {
+        trigger = {
+            ROC_has_lianluogemingyoudang = yes
+            OR = { ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes }
+        }
+        localization_key = ROC_legislation_yan_partner_alliance
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_yan_partner_industry
+    }
+}
+
+defined_text = {
+    name = ROC_legislation_ruan_partner
+    text = {
+        trigger = {
+            ROC_has_lianluogemingyoudang = yes
+            OR = { ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes }
+        }
+        localization_key = ROC_legislation_ruan_partner_alliance
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_ruan_partner_industry
+    }
+}
+
+defined_text = {
+    name = ROC_legislation_chen_partner
+    text = {
+        trigger = {
+            ROC_has_lianluogemingyoudang = yes
+            OR = { ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes }
+        }
+        localization_key = ROC_legislation_chen_partner_alliance
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_chen_partner_industry
+    }
+}
+
+defined_text = {
+    name = ROC_legislation_xiao_partner
+    text = {
+        trigger = {
+            ROC_has_lianluogemingyoudang = yes
+            OR = { ROC_econ_left_allies_present = yes ROC_econ_right_allies_present = yes }
+        }
+        localization_key = ROC_legislation_xiao_partner_alliance
+    }
+    text = {
+        trigger = { always = yes }
+        localization_key = ROC_legislation_xiao_partner_industry
+    }
+}
 
 

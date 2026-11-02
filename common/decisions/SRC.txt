@@ -1,8 +1,8 @@
 SRC_baoweigongrenzhengquan_categories = {
-	
+
 	SRC_baoweigongrenzhengquan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { NOT = { country_exists = GPS } }
 		activation = {
 			has_completed_focus = SRC_workers_pickets
@@ -12,7 +12,7 @@ SRC_baoweigongrenzhengquan_categories = {
 		is_good = yes
 		days_mission_timeout = 30
 		days_re_enable = 0
-		
+
 		timeout_effect = {
 			add_equipment_to_stockpile = {
 		        type = infantry_equipment
@@ -30,12 +30,12 @@ SRC_lianxigeming = {
 	#建立华北局（晋冀鲁豫）
 	SRC_jianlihuabeizhongyangju = {
 		icon = generic_communism
-		
+
 		visible = {
 			tag = SRC
 			NOT = { has_country_flag = SRC_huabeizhongyangju_established }
 		}
-		
+
 		available = {
 			country_exists = STG
 			OR = {
@@ -65,7 +65,7 @@ SRC_lianxigeming = {
 				833 = { is_controlled_by = STG }
 			}
 		}
-		
+
 		highlight_states = {
 			highlight_state_targets = {
 				# 河北+顺天府
@@ -94,11 +94,11 @@ SRC_lianxigeming = {
 				state = 833
 			}
 		}
-		
+
 		cost = 100
 		days_remove = 60
 		fire_only_once = yes
-		
+
 		complete_effect = {
 			hidden_effect = {
 				set_country_flag = SRC_huabeizhongyangju_established
@@ -139,13 +139,13 @@ SRC_lianxigeming = {
 			add_stability = 0.05
 			custom_effect_tooltip = SRC_jianlihuabeizhongyangju_tt
 		}
-		
+
 		remove_effect = {
 			set_country_flag = SRC_huabeizhongyangju_active
 			add_ideas = SRC_huabeizhongyangju_idea
 			country_event = { id = SRC_zhongyangju.1 }
 		}
-		
+
 		ai_will_do = { factor = 100 }
 	}
 #建立东北局（黑、吉、镇、辽、宁）
@@ -489,7 +489,7 @@ SRC_junshijianshe_catagories = {
 	#人民战争
 	SRC_renminzhanzheng = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { has_idea = extensive_conscription }
 		days_remove = 30
 		custom_cost_trigger = {
@@ -499,7 +499,7 @@ SRC_junshijianshe_catagories = {
 		ai_will_do = { base = 10 }
         fire_only_once = yes
 		custom_cost_text = SRC_renminzhanzheng_huafei
-        complete_effect = { 
+        complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				army_experience = -25
@@ -514,7 +514,7 @@ SRC_junshijianshe_catagories = {
 	#运动战
 	SRC_yundongzhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { has_tech = tech_recon3 }
 		days_remove = 30
 		custom_cost_trigger = {
@@ -524,7 +524,7 @@ SRC_junshijianshe_catagories = {
 		ai_will_do = { base = 10 }
         fire_only_once = yes
 		custom_cost_text = SRC_renminzhanzheng_huafei
-        complete_effect = { 
+        complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				army_experience = -25
@@ -539,7 +539,7 @@ SRC_junshijianshe_catagories = {
 	#步坦协同
 	SRC_butanxietong = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = {
 			OR = {
 				has_tech = improved_medium_tank_chassis
@@ -555,7 +555,7 @@ SRC_junshijianshe_catagories = {
 		ai_will_do = { base = 10 }
         fire_only_once = yes
 		custom_cost_text = SRC_renminzhanzheng_huafei
-        complete_effect = { 
+        complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				army_experience = -25
@@ -570,7 +570,7 @@ SRC_junshijianshe_catagories = {
 	#三三制
 	SRC_sansanzhi = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = {
 			OR = {
 				has_completed_focus = SRC_zhonghuagongnonghongjun
@@ -584,7 +584,7 @@ SRC_junshijianshe_catagories = {
 		}
         fire_only_once = yes
 		custom_cost_text = SRC_renminzhanzheng_huafei
-        complete_effect = { 
+        complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				army_experience = -25
@@ -599,7 +599,7 @@ SRC_junshijianshe_catagories = {
 	#大纵深作战理论
 	SRC_dazongshen = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = {
 			OR = {
 				has_completed_focus = SRC_zhonghuagongnonghongjun
@@ -613,7 +613,7 @@ SRC_junshijianshe_catagories = {
 		}
         fire_only_once = yes
 		custom_cost_text = SRC_renminzhanzheng_huafei
-        complete_effect = { 
+        complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				army_experience = -25
@@ -628,8 +628,8 @@ SRC_junshijianshe_catagories = {
 	#中华革命军事理论
 	SRC_zhonghuagemingjunshililun = {
 
-		allowed = { tag = SRC } 
-		available = { 
+		allowed = { tag = SRC }
+		available = {
 			has_country_flag = SRC_renminzhanzheng_wancheng
 			has_country_flag = SRC_yundongzhan_wancheng
 			has_country_flag = SRC_butanxietong_wancheng
@@ -644,7 +644,7 @@ SRC_junshijianshe_catagories = {
 		}
         fire_only_once = yes
 		custom_cost_text = SRC_renminzhanzheng_huafei
-        complete_effect = { 
+        complete_effect = {
 			hidden_effect = {
 				add_political_power = -50
 				army_experience = -25
@@ -661,7 +661,7 @@ SRC_xuanzhan_catagories = {
 	#向顺天宣战
 	SRC_shuntiankaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { is_neighbor_of = STG }
 		visible = { has_completed_focus = SRC_huishiruguan }
 		ai_will_do = { base = 10 }
@@ -675,7 +675,7 @@ SRC_xuanzhan_catagories = {
 	#向西北军宣战
 	SRC_xiebikaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { is_neighbor_of = XBJ }
 		visible = { has_completed_focus = SRC_huishiruguan }
 		ai_will_do = { base = 10 }
@@ -689,7 +689,7 @@ SRC_xuanzhan_catagories = {
 	#向七省联合宣战
 	SRC_qishenkaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { is_neighbor_of = GOS }
 		visible = { has_completed_focus = SRC_huishiruguan }
 		ai_will_do = { base = 10 }
@@ -703,7 +703,7 @@ SRC_xuanzhan_catagories = {
 	#广州共和军
 	SRC_guangzhoukaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = {
 			is_neighbor_of = ROC
 			OR = {
@@ -723,7 +723,7 @@ SRC_xuanzhan_catagories = {
 	#向西南都督府宣战
 	SRC_xinankaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { is_neighbor_of = XIN }
 		visible = { has_completed_focus = SRC_gemingjinxindaodi }
 		ai_will_do = { base = 10 }
@@ -737,7 +737,7 @@ SRC_xuanzhan_catagories = {
 	#四川宣战
 	SRC_sichuankaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { is_neighbor_of = SIC }
 		visible = { has_completed_focus = SRC_gemingjinxindaodi }
 		ai_will_do = { base = 10 }
@@ -751,7 +751,7 @@ SRC_xuanzhan_catagories = {
 	#岭北宣战
 	SRC_lingbeikaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { is_neighbor_of = MOB }
 		visible = { has_completed_focus = SRC_gemingjinxindaodi }
 		ai_will_do = { base = 10 }
@@ -765,7 +765,7 @@ SRC_xuanzhan_catagories = {
 	#合并四川红军
 	SRC_SCGkaizhan = {
 
-		allowed = { tag = SRC } 
+		allowed = { tag = SRC }
 		available = { is_neighbor_of = SCG }
 		visible = { country_exists = SCG }
 		ai_will_do = { base = 100 }
@@ -794,6 +794,1422 @@ SRC_xuanzhan_catagories = {
                 remove_core_of = SCG
             }
 		}
+	}
+}
+
+#============================================================
+### merged from SRC_black_soil_decisions.txt
+#============================================================
+SRC_black_soil_agriculture_decisions = {
+	SRC_ren_survey_black_soil = {
+		icon = binoculars
+		state_target = yes
+		on_map_mode = map_only
+		target_array = core_states
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_black_soil_surveyed } OR = { has_state_category = wasteland has_state_category = enclave has_state_category = tiny_island has_state_category = pastoral has_state_category = rural has_state_category = town has_state_category = zero has_state_category = one has_state_category = two has_state_category = three has_state_category = four } } }
+		cost = 25
+		days_remove = 1
+		remove_effect = {
+			FROM = {
+				if = { limit = { has_state_category = wasteland } set_state_category = pastoral }
+				else_if = { limit = { has_state_category = enclave } set_state_category = pastoral }
+				else_if = { limit = { has_state_category = tiny_island } set_state_category = small_island }
+				else_if = { limit = { has_state_category = pastoral } set_state_category = rural }
+				else_if = { limit = { has_state_category = rural } set_state_category = town }
+				else_if = { limit = { has_state_category = town } set_state_category = large_town }
+				else_if = { limit = { has_state_category = zero } set_state_category = one }
+				else_if = { limit = { has_state_category = one } set_state_category = two }
+				else_if = { limit = { has_state_category = two } set_state_category = three }
+				else_if = { limit = { has_state_category = three } set_state_category = four }
+				else_if = { limit = { has_state_category = four } set_state_category = five }
+				hidden_effect = { set_state_flag = SRC_ren_black_soil_surveyed }
+			}
+		}
+	}
+	SRC_ren_songnen_irrigation = {
+		icon = road
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 state = 328 state = 849 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_songnen_irrigation_built } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_songnen_irrigation_built } } }
+	}
+	SRC_ren_full_granary_soybeans = {
+		icon = generic_motorized
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 850 state = 1126 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_full_granary_soybeans_promoted } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_full_granary_soybeans_promoted } } }
+	}
+	SRC_ren_xingan_livestock_cooperative = {
+		icon = generic_agriculture
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 761 state = 1123 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_xingan_livestock_cooperative_formed } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_xingan_livestock_cooperative_formed } } }
+	}
+	SRC_ren_xingkai_fishery_base = {
+		icon = generic_naval
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 408 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_ren_xingkai_fishery_base_established } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { FROM = { add_extra_state_shared_building_slots = 1 hidden_effect = { set_state_flag = SRC_ren_xingkai_fishery_base_established } } }
+	}
+}
+
+
+#============================================================
+### merged from SRC_chen_decisions.txt
+#============================================================
+# 陈独秀线空壳决议：必须嵌套在决议分类内。
+SRC_chen_political_decisions = {
+
+SRC_chen_political_sansanzhi = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gemingtongyizhanxian }
+	visible = { has_completed_focus = SRC_gemingtongyizhanxian }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_antimperial_democratic_law = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_goujianfanditongmeng }
+	visible = { has_completed_focus = SRC_goujianfanditongmeng }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_revolutionary_technicians = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gaizaozichanjieji }
+	visible = { has_completed_focus = SRC_gaizaozichanjieji }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_local_participation = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_datongshijieguodu }
+	visible = { has_completed_focus = SRC_datongshijieguodu }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_local_supply_cooperatives = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_tudigaige }
+	visible = { has_completed_focus = SRC_tudigaige }
+	cost = 100
+	days_remove = 90
+	fire_only_once = yes
+	remove_effect = {
+		add_tech_bonus = {
+			name = SRC_chen_local_supply_cooperatives_industry
+			ahead_reduction = 2
+			uses = 1
+			category = industry
+		}
+	}
+}
+
+SRC_chen_new_tax_system = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui NOT = { has_country_flag = SRC_chen_new_tax_system_enacted } }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	cost = 100
+	days_remove = 75
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_chen_new_tax_system_effect_tt
+		hidden_effect = {
+			set_country_flag = SRC_chen_new_tax_system_enacted
+		}
+	}
+}
+
+SRC_chen_labor_remuneration = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui NOT = { has_country_flag = SRC_chen_labor_remuneration_enacted } }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	cost = 100
+	days_remove = 75
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_chen_labor_remuneration_effect_tt
+		hidden_effect = { set_country_flag = SRC_chen_labor_remuneration_enacted }
+	}
+}
+
+SRC_chen_industry_energy = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_transport_trade = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiagaigeweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_five_horses = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye NOT = { has_country_flag = SRC_chen_five_horses_established } }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		add_tech_bonus = { name = SRC_chen_five_horses_industry ahead_reduction = 2 uses = 1 category = industry }
+	}
+}
+
+SRC_chen_processing_orders = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye NOT = { has_country_flag = SRC_chen_processing_orders_held } }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_chen_processing_orders_held
+		add_tech_bonus = { name = SRC_chen_processing_orders_industry bonus = 1 uses = 1 category = industry }
+	}
+}
+
+SRC_chen_light_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_regional_heavy_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_shumaiqiye }
+	visible = { has_completed_focus = SRC_shumaiqiye }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_chen_organization_talent = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_tieguodundae }
+	visible = { has_completed_focus = SRC_tieguodundae }
+	days_remove = 1
+	complete_effect = { }
+}
+}
+
+
+#============================================================
+### merged from SRC_dongbei_cities.txt
+#============================================================
+SRC_dongbei_city_operations = {
+	SRC_city_operation_changchun = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 328 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_army_experience = 5 }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_zhendong = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 408 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_command_power = 10 }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_longjiang = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 714 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_manpower = 15000 }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_liaoyang = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 845 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_equipment_to_stockpile = { type = infantry_equipment amount = 200 } }
+		ai_will_do = { factor = 0 }
+	}
+	SRC_city_operation_shenyang = {
+		icon = GFX_decision_generic_decision
+		allowed = { tag = SRC }
+		visible = { tag = SRC }
+		target_trigger = { FROM = { state = 846 is_controlled_by = GPS } }
+		state_target = yes
+		on_map_mode = map_and_decisions_view
+		cost = 50
+		days_remove = 30
+		complete_effect = { add_political_power = -50 }
+		remove_effect = { FROM = { damage_building = { type = infrastructure damage = 1 } } add_political_power = 15 }
+		ai_will_do = { factor = 0 }
+	}
+}
+
+
+#============================================================
+### merged from SRC_industry_energy_decisions.txt
+#============================================================
+SRC_industry_energy_decisions = {
+	SRC_relight_anshan_blast_furnace = {
+		icon = steel
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 845 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_anshan_blast_furnace_relit } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = steel amount = 8 state = 845 } hidden_effect = { 845 = { set_state_flag = SRC_anshan_blast_furnace_relit } } }
+	}
+
+	SRC_fushun_deep_mining = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 846 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_fushun_deep_mining_reopened } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = coal amount = 11 state = 846 } hidden_effect = { 846 = { set_state_flag = SRC_fushun_deep_mining_reopened } } }
+	}
+
+	SRC_xuanming_lignite_development = {
+		icon = generic_construction
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1123 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xuanming_lignite_developed } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = coal amount = 9 state = 1123 } hidden_effect = { 1123 = { set_state_flag = SRC_xuanming_lignite_developed } } }
+	}
+
+	SRC_complete_fengman_dam = {
+		icon = generic_construction
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 847 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_fengman_dam_completed } } }
+		cost = 60
+		days_remove = 30
+		remove_effect = { 847 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = dam level = 1 instant_build = yes province = { id = 1567 } } add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 847 = { set_state_flag = SRC_fengman_dam_completed } } }
+	}
+
+	SRC_songnen_oil_exploration = {
+		icon = oil
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_songnen_oil_explored } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = oil amount = 12 state = 714 } hidden_effect = { 714 = { set_state_flag = SRC_songnen_oil_explored } } }
+	}
+
+	SRC_xihe_colored_metals_development = {
+		icon = tungsten
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1112 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xihe_colored_metals_developed } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { add_resource = { type = tungsten amount = 12 state = 1112 } hidden_effect = { 1112 = { set_state_flag = SRC_xihe_colored_metals_developed } } }
+	}
+
+	SRC_tuomu_zeya_gold_mining = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 657 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_tuomu_zeya_gold_mine_developed } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 657 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 657 = { set_state_flag = SRC_tuomu_zeya_gold_mine_developed } } }
+	}
+}
+
+
+#============================================================
+### merged from SRC_li_decisions.txt
+#============================================================
+# 李大钊线空壳决议：必须嵌套在决议分类内。
+SRC_li_political_decisions = {
+SRC_li_destroy_feudal_clans = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gemingweiyuanhui }
+	visible = { has_completed_focus = SRC_gemingweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_bureaucratic_reform = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_renmindaibiaodahui }
+	visible = { has_completed_focus = SRC_renmindaibiaodahui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_three_level_committees = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhengzhidaminzhu }
+	visible = { has_completed_focus = SRC_zhengzhidaminzhu }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_impeachment = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_qunzhongzhijiejiandu }
+	visible = { has_completed_focus = SRC_qunzhongzhijiejiandu }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_public_private_cooperation = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiajingjiweiyuanhui hidden_trigger = { NOT = { has_country_flag = SRC_li_public_private_cooperation_enacted } } }
+	visible = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	cost = 100
+	days_remove = 90
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_li_public_private_cooperation_effect_tt
+		hidden_effect = {
+			set_country_flag = SRC_li_public_private_cooperation_enacted
+			if = { limit = { has_idea = GPS_guotie } add_stability = 0.1 set_country_flag = SRC_li_public_private_guotie_stability }
+			if = { limit = { has_idea = GPS_dongbeigongyejituan } add_stability = 0.1 set_country_flag = SRC_li_public_private_dongbei_industry_stability }
+			if = { limit = { has_idea = GPS_damingdianlidianqijituan } add_stability = 0.1 set_country_flag = SRC_li_public_private_electric_stability }
+			if = {
+				limit = { has_idea = GPS_changbaikuangwuju NOT = { has_country_flag = SRC_li_public_private_changbai_resources } }
+				add_resource = { type = steel amount = 9 state = 845 }
+				add_resource = { type = coal amount = 8 state = 845 }
+				set_country_flag = SRC_li_public_private_changbai_resources
+			}
+			if = {
+				limit = { has_idea = GPS_xingyekuangwujituan NOT = { has_country_flag = SRC_li_public_private_xingye_resources } }
+				add_resource = { type = steel amount = 9 state = 845 }
+				add_resource = { type = coal amount = 8 state = 845 }
+				set_country_flag = SRC_li_public_private_xingye_resources
+			}
+		}
+	}
+}
+SRC_li_industry_energy = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_transport_trade = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	visible = { has_completed_focus = SRC_guojiajingjiweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_worker_council = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guanxizaipingheng hidden_trigger = { NOT = { has_country_flag = SRC_li_worker_council_enacted } } }
+	visible = { has_completed_focus = SRC_guanxizaipingheng }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_li_worker_council_enacted
+		add_tech_bonus = { name = SRC_li_worker_council_industry ahead_reduction = 2 uses = 1 category = industry }
+	}
+}
+SRC_li_light_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guanxizaipingheng }
+	visible = { has_completed_focus = SRC_guanxizaipingheng }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_heavy_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_guanxizaipingheng }
+	visible = { has_completed_focus = SRC_guanxizaipingheng }
+	days_remove = 1
+	complete_effect = { }
+}
+SRC_li_land_cooperatives = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_nongyehezuohua hidden_trigger = { NOT = { has_country_flag = SRC_li_land_cooperatives_enacted } } }
+	visible = { has_completed_focus = SRC_nongyehezuohua }
+	cost = 100
+	days_remove = 30
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_li_land_cooperatives_effect_tt
+		hidden_effect = { set_country_flag = SRC_li_land_cooperatives_enacted }
+	}
+}
+SRC_li_mechanized_farms = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_nongyehezuohua hidden_trigger = { NOT = { has_country_flag = SRC_li_mechanized_farms_enacted } } }
+	visible = { has_completed_focus = SRC_nongyehezuohua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_li_mechanized_farms_enacted
+		add_tech_bonus = { name = SRC_li_mechanized_farms_industry bonus = 1 uses = 1 category = industry }
+	}
+}
+SRC_li_village_mutual_aid = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_nongyehezuohua hidden_trigger = { NOT = { has_country_flag = SRC_li_village_mutual_aid_enacted } } }
+	visible = { has_completed_focus = SRC_nongyehezuohua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		set_country_flag = SRC_li_village_mutual_aid_enacted
+		add_tech_bonus = { name = SRC_li_village_mutual_aid_construction bonus = 1 uses = 1 category = construction_tech }
+	}
+}
+SRC_li_organization_talent = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhaokaijingweidahui }
+	visible = { has_completed_focus = SRC_zhaokaijingweidahui }
+	days_remove = 1
+	complete_effect = { }
+}
+}
+
+
+#============================================================
+### merged from SRC_light_industry_decisions.txt
+#============================================================
+SRC_light_industry_decisions = {
+	SRC_restore_xishen_flour_processing = {
+		icon = generic_agriculture
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1112 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xishen_flour_processing_restored } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 1112 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 1112 = { set_state_flag = SRC_xishen_flour_processing_restored } } }
+	}
+
+	SRC_changbai_logging_administration = {
+		icon = generic_construction
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 848 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_changbai_logging_administration_established } } }
+		cost = 20
+		days_remove = 30
+		remove_effect = { 848 = { add_extra_state_shared_building_slots = 1 } hidden_effect = { 848 = { set_state_flag = SRC_changbai_logging_administration_established } } }
+	}
+
+	SRC_henggu_leather_industry = {
+		icon = generic_motorized
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 560 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_henggu_leather_industry_developed } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 560 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 560 = { set_state_flag = SRC_henggu_leather_industry_developed } } }
+	}
+
+	SRC_longjiang_beet_sugar_factory = {
+		icon = generic_agriculture
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_longjiang_beet_sugar_factory_established } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 714 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 714 = { set_state_flag = SRC_longjiang_beet_sugar_factory_established } } }
+	}
+
+	SRC_huning_qiulin_company = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 849 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_huning_qiulin_company_restored } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 849 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 849 = { set_state_flag = SRC_huning_qiulin_company_restored } } }
+	}
+}
+
+
+#============================================================
+### merged from SRC_local_actions.txt
+#============================================================
+SRC_local_network_operations = {
+    SRC_local_network_rail = {
+        icon = GFX_decision_generic_decision
+        allowed = { tag = SRC }
+        state_target = yes
+        target_trigger = {
+            FROM = {
+                SRC_la_state_in_region = yes
+                SRC_la_state_stable_gps = yes
+                check_variable = { SRC_la_network_level = 2 }
+                NOT = { has_state_flag = SRC_la_rail_operation_done }
+            }
+        }
+        visible = { tag = SRC has_war_with = GPS }
+        available = { FROM = { SRC_la_state_stable_gps = yes NOT = { has_state_flag = SRC_la_rail_operation_done } } }
+        cost = 0
+        complete_effect = {
+            FROM = {
+                set_state_flag = SRC_la_rail_operation_done
+                if = { limit = { infrastructure > 0 } damage_building = { type = infrastructure damage = 0.50 } }
+                add_dynamic_modifier = { modifier = SRC_la_rail_sabotage_modifier scope = GPS days = 30 }
+            }
+            add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+        }
+        ai_will_do = { factor = 0 }
+    }
+    SRC_local_network_intel = {
+        icon = GFX_decision_generic_decision
+        allowed = { tag = SRC }
+        state_target = yes
+        target_trigger = {
+            FROM = {
+                SRC_la_state_in_region = yes
+                SRC_la_state_stable_gps = yes
+                check_variable = { SRC_la_network_level = 2 }
+                NOT = { has_state_flag = SRC_la_intel_operation_done }
+            }
+        }
+        visible = { tag = SRC has_war_with = GPS }
+        available = { FROM = { SRC_la_state_stable_gps = yes NOT = { has_state_flag = SRC_la_intel_operation_done } } }
+        cost = 0
+        complete_effect = {
+            FROM = {
+                set_state_flag = SRC_la_intel_operation_done
+                SRC = { add_intel = { target = GPS army_intel = 5 } }
+                add_dynamic_modifier = { modifier = SRC_la_garrison_intel_modifier scope = GPS days = 30 }
+            }
+            add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+        }
+        ai_will_do = { factor = 0 }
+    }
+    SRC_local_network_reception = {
+        icon = GFX_decision_generic_decision
+        allowed = { tag = SRC }
+        state_target = yes
+        target_trigger = {
+            FROM = {
+                SRC_la_state_in_region = yes
+                SRC_la_state_stable_gps = yes
+                check_variable = { SRC_la_network_level = 2 }
+                NOT = { has_state_flag = SRC_la_reception_operation_done }
+            }
+        }
+        visible = { tag = SRC has_war_with = GPS }
+        available = { FROM = { SRC_la_state_stable_gps = yes NOT = { has_state_flag = SRC_la_reception_operation_done } } }
+        cost = 0
+        complete_effect = {
+            FROM = {
+                set_state_flag = SRC_la_reception_operation_done
+                
+                add_dynamic_modifier = { modifier = SRC_la_front_reception_modifier scope = SRC days = 30 }
+            }
+            add_to_variable = { SRC_unified_gui_dirty = 0.01 }
+        }
+        ai_will_do = { factor = 0 }
+    }
+}
+
+
+#============================================================
+### merged from SRC_organization_talent_decisions.txt
+#============================================================
+SRC_organization_talent_decisions = {
+	SRC_establish_northeast_finance_cadre_school = {
+		icon = generic_industry
+		allowed = { tag = SRC }
+		available = {
+			has_country_flag = SRC_organization_talent_decisions_unlocked
+			NOT = { has_country_flag = SRC_northeast_finance_school_established }
+		}
+		cost = 75
+		days_remove = 30
+		fire_only_once = yes
+		remove_effect = {
+			set_country_flag = SRC_northeast_finance_school_established
+			swap_ideas = {
+				remove_idea = GPS_guandongligongdaxue
+				add_idea = SRC_guandongligongdaxue_finance_school
+			}
+		}
+	}
+
+	SRC_recruit_ming_state_enterprise_technicians = {
+		icon = generic_industry
+		allowed = { tag = SRC }
+		available = {
+			has_country_flag = SRC_organization_talent_decisions_unlocked
+		}
+		cost = 50
+		days_remove = 60
+		fire_only_once = no
+		modifier = {
+			industrial_capacity_factory = 0.10
+			industrial_capacity_dockyard = 0.10
+		}
+	}
+
+	SRC_emergency_dispatch_labor_corps = {
+		icon = generic_industry
+		allowed = { tag = SRC }
+		available = {
+			has_country_flag = SRC_organization_talent_decisions_unlocked
+		}
+		cost = 50
+		days_remove = 60
+		fire_only_once = no
+		modifier = {
+			production_speed_buildings_factor = 0.20
+			conscription = -0.005
+		}
+	}
+}
+
+
+#============================================================
+### merged from SRC_regional_heavy_industry_decisions.txt
+#============================================================
+SRC_regional_heavy_industry_decisions = {
+	SRC_expand_jilin_jiangbei_industrial_zone = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 847 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_jilin_jiangbei_industrial_zone_expanded } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 847 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } hidden_effect = { 847 = { set_state_flag = SRC_jilin_jiangbei_industrial_zone_expanded } } }
+	}
+
+	SRC_reorganize_shenyang_industrial_zone = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 846 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_shenyang_industrial_zone_reorganized } } }
+		cost = 80
+		days_remove = 30
+		remove_effect = { 846 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } add_dynamic_modifier = { modifier = SRC_shenyang_industrial_zone } } hidden_effect = { 846 = { set_state_flag = SRC_shenyang_industrial_zone_reorganized } } }
+	}
+
+	SRC_restore_jinzhou_shipyard = {
+		icon = generic_naval
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 745 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_jinzhou_shipyard_restored } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 745 = { add_dynamic_modifier = { modifier = SRC_jinzhou_shipyard } } mio:GPS_jinzhouzaochuanchang = { add_mio_funds = 1000 } hidden_effect = { 745 = { set_state_flag = SRC_jinzhou_shipyard_restored } } }
+	}
+
+	SRC_expand_longjiang_machine_factory = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_longjiang_machine_factory_expanded } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 714 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } hidden_effect = { 714 = { set_state_flag = SRC_longjiang_machine_factory_expanded } } }
+	}
+
+	SRC_coordinate_liaoyang_industry = {
+		icon = steel
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 845 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_liaoyang_industry_coordinated } } }
+		cost = 80
+		days_remove = 30
+		remove_effect = { 845 = { add_dynamic_modifier = { modifier = SRC_molten_iron_flows } } hidden_effect = { 845 = { set_state_flag = SRC_liaoyang_industry_coordinated } } }
+	}
+}
+
+
+#============================================================
+### merged from SRC_ren_decisions.txt
+#============================================================
+# 任辅臣线空壳决议：必须嵌套在决议分类内。
+SRC_ren_political_decisions = {
+
+SRC_ren_single_director_management = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_zhongyangjihuaweiyuanhui
+		NOT = { has_country_flag = SRC_ren_single_director_management_enacted }
+	}
+	visible = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_ren_single_director_management_effect_tt
+		hidden_effect = { set_country_flag = SRC_ren_single_director_management_enacted }
+	}
+}
+
+SRC_ren_industry_energy = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	visible = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_transport_trade = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	visible = { has_completed_focus = SRC_zhongyangjihuaweiyuanhui }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_heavy_industry_priority = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_gongyeguoyouhua
+		NOT = { has_country_flag = SRC_ren_heavy_industry_priority_enacted }
+	}
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		hidden_effect = { set_country_flag = SRC_ren_heavy_industry_priority_enacted }
+		add_tech_bonus = { name = SRC_ren_heavy_industry_priority_industry bonus = 1 uses = 1 category = industry }
+	}
+}
+
+SRC_ren_labor_competition = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_gongyeguoyouhua
+		NOT = { has_country_flag = SRC_ren_labor_competition_enacted }
+	}
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	cost = 100
+	days_remove = 30
+	fire_only_once = yes
+	remove_effect = {
+		custom_effect_tooltip = SRC_ren_labor_competition_effect_tt
+		hidden_effect = {
+			set_country_flag = SRC_ren_labor_competition_enacted
+			if = {
+				limit = { has_idea = civilian_economy }
+				add_offsite_building = { type = industrial_complex level = 3 }
+			}
+			else_if = {
+				limit = { has_idea = low_economic_mobilisation }
+				add_offsite_building = { type = industrial_complex level = 2 }
+				add_offsite_building = { type = arms_factory level = 1 }
+			}
+			else_if = {
+				limit = { has_idea = partial_economic_mobilisation }
+				add_offsite_building = { type = industrial_complex level = 1 }
+				add_offsite_building = { type = arms_factory level = 2 }
+			}
+			else_if = {
+				limit = { OR = { has_idea = war_economy has_idea = tot_economic_mobilisation } }
+				add_offsite_building = { type = arms_factory level = 3 }
+			}
+		}
+	}
+}
+
+SRC_ren_light_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gongyeguoyouhua }
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_regional_heavy_industry = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gongyeguoyouhua }
+	visible = { has_completed_focus = SRC_gongyeguoyouhua }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_abolish_private_land = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_nongyejitihua
+		NOT = { has_country_flag = SRC_ren_abolish_private_land_enacted }
+	}
+	visible = { has_completed_focus = SRC_nongyejitihua }
+	cost = 100
+	days_remove = 90
+	fire_only_once = yes
+	remove_effect = {
+		hidden_effect = { set_country_flag = SRC_ren_abolish_private_land_enacted }
+		add_tech_bonus = { name = SRC_ren_abolish_private_land_construction ahead_reduction = 2 uses = 1 category = construction_tech }
+	}
+}
+
+SRC_ren_machine_tractor_stations = {
+	allowed = { tag = SRC }
+	available = {
+		has_completed_focus = SRC_nongyejitihua
+		NOT = { has_country_flag = SRC_ren_machine_tractor_stations_enacted }
+	}
+	visible = { has_completed_focus = SRC_nongyejitihua }
+	cost = 100
+	days_remove = 60
+	fire_only_once = yes
+	remove_effect = {
+		hidden_effect = { set_country_flag = SRC_ren_machine_tractor_stations_enacted }
+		add_tech_bonus = { name = SRC_ren_machine_tractor_stations_industry ahead_reduction = 2 uses = 1 category = industry }
+	}
+}
+
+SRC_ren_organization_talent = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_yiwujihua }
+	visible = { has_completed_focus = SRC_yiwujihua }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_centralized_party_leadership = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_jianchilingdaoquan }
+	visible = { has_completed_focus = SRC_jianchilingdaoquan }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_anti_decentralization = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_zhengfengyundong }
+	visible = { has_completed_focus = SRC_zhengfengyundong }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_strict_party_life = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_gongxieshidaxue }
+	visible = { has_completed_focus = SRC_gongxieshidaxue }
+	days_remove = 1
+	complete_effect = { }
+}
+
+SRC_ren_supervisory_commission = {
+	allowed = { tag = SRC }
+	available = { has_completed_focus = SRC_qunzhong }
+	visible = { has_completed_focus = SRC_qunzhong }
+	days_remove = 1
+	complete_effect = { }
+}
+}
+
+
+#============================================================
+### merged from SRC_transport_trade_decisions.txt
+#============================================================
+SRC_transport_trade_decisions = {
+	SRC_repair_zhendong_xuanming_railway = {
+		icon = road
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 408 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_zhendong_xuanming_railway_repaired } } }
+		available = { 849 = { is_owned_by = ROOT } 714 = { is_owned_by = ROOT } 1123 = { is_owned_by = ROOT } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { build_railway = { level = 3 start_state = 408 target_state = 849 } build_railway = { level = 3 start_state = 849 target_state = 714 } build_railway = { level = 3 start_state = 714 target_state = 1123 } hidden_effect = { 408 = { set_state_flag = SRC_zhendong_xuanming_railway_repaired } } }
+	}
+
+	SRC_build_revolution_locomotive = {
+		icon = generic_motorized
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 745 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_revolution_locomotive_built } } }
+		cost = 45
+		days_remove = 30
+		remove_effect = { add_tech_bonus = { bonus = 1.0 uses = 1 category = train_tech } 745 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = arms_factory level = 1 instant_build = yes } } hidden_effect = { 745 = { set_state_flag = SRC_revolution_locomotive_built } } }
+	}
+
+	SRC_dalian_salt_monopoly = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 745 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_dalian_salt_monopoly_established } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 745 = { add_extra_state_shared_building_slots = 1 add_building_construction = { type = industrial_complex level = 1 instant_build = yes } } hidden_effect = { 745 = { set_state_flag = SRC_dalian_salt_monopoly_established } } }
+	}
+
+	SRC_xuanming_russian_trade_port = {
+		icon = generic_industry
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 1123 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_xuanming_trade_port_established } } }
+		cost = 25
+		days_remove = 30
+		remove_effect = { 1123 = { add_dynamic_modifier = { modifier = SRC_xuanming_foreign_trade_port } } hidden_effect = { 1123 = { set_state_flag = SRC_xuanming_trade_port_established } } }
+	}
+
+	SRC_expand_zhendong_dual_use_port = {
+		icon = generic_naval
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 408 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_zhendong_dual_use_port_expanded } } }
+		cost = 40
+		days_remove = 30
+		remove_effect = { 408 = { add_extra_state_shared_building_slots = 2 add_building_construction = { type = dockyard level = 2 instant_build = yes } } hidden_effect = { 408 = { set_state_flag = SRC_zhendong_dual_use_port_expanded } } }
+	}
+
+	SRC_develop_nenjiang_shipping = {
+		icon = road
+		state_target = yes
+		on_map_mode = map_only
+		targets = { state = 714 }
+		target_trigger = { FROM = { is_owned_by = ROOT NOT = { has_state_flag = SRC_nenjiang_shipping_developed } } }
+		available = { 850 = { is_owned_by = ROOT } 1126 = { is_owned_by = ROOT } }
+		cost = 60
+		days_remove = 30
+		remove_effect = { 714 = { add_extra_state_shared_building_slots = 1 add_dynamic_modifier = { modifier = SRC_nenjiang_shipping } } 850 = { add_extra_state_shared_building_slots = 1 add_dynamic_modifier = { modifier = SRC_nenjiang_shipping } } 1126 = { add_extra_state_shared_building_slots = 1 add_dynamic_modifier = { modifier = SRC_nenjiang_shipping } } hidden_effect = { 714 = { set_state_flag = SRC_nenjiang_shipping_developed } } }
+	}
+}
+
+
+#============================================================
+### merged from SRC_wartime_army.txt
+#============================================================
+SRC_wartime_army_category = {
+	# 第一轮：起义后的紧急整顿
+	SRC_wartime_army_retain_officers = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 35
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_retain_officers_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_retain_officers = yes set_country_flag = SRC_wartime_army_retain_officers_done SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_party_cells = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_party_cells_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_party_cells = yes set_country_flag = SRC_wartime_army_party_cells_done SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_soldier_committee = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_soldier_committee_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = {
+			hidden_effect = {
+				SRC_wartime_army_gain_soldier_committee = yes
+				set_country_flag = SRC_wartime_army_soldier_committee_done
+				add_dynamic_modifier = { modifier = SRC_wartime_army_mobilisation days = 30 }
+				SRC_wartime_army_refresh_spirit = yes
+				clr_country_flag = SRC_wartime_army_work_busy
+				SRC_check_wartime_army_stage_progress = yes
+			}
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_supply_network = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_one_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = {
+			custom_effect_tooltip = SRC_wartime_army_gain_supply_network_tt
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_supply_network = yes set_country_flag = SRC_wartime_army_supply_network_done SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	# 第二轮：把各路人马捏成一支军队
+	SRC_wartime_army_unify_designations = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_unify_designations_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_unify_designations = yes set_country_flag = SRC_unified_revolutionary_designations SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 3 }
+	}
+
+	SRC_wartime_army_crash_training_courses = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_crash_training_courses_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_crash_training_courses = yes set_country_flag = SRC_crash_military_training_courses country_event = { id = SRC_wartime_army.1 } SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_temporary_discipline = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_temporary_discipline_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_temporary_discipline = yes set_country_flag = SRC_temporary_red_army_discipline SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_armament_registry = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_armament_registry_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_armament_registry = yes set_country_flag = SRC_wartime_armament_registry SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 3 }
+	}
+
+	SRC_wartime_army_select_grassroots_cadres = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_select_grassroots_cadres_requirement_tt OR = { has_country_flag = SRC_wartime_army_soldier_committee_done check_variable = { SRC_wartime_army_political_stage > 35 } check_variable = { SRC_wartime_army_political_stage = 35 } } }
+		}
+		cost = 30
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_select_grassroots_cadres_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_grassroots_cadres = yes set_country_flag = SRC_grassroots_cadres_from_pickets SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_expand_field_command = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_two_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_expand_field_command_requirement_tt OR = { has_country_flag = SRC_wartime_army_retain_officers_done check_variable = { SRC_wartime_army_command_stage > 35 } check_variable = { SRC_wartime_army_command_stage = 35 } } }
+		}
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_expand_field_command_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_expand_field_command = yes set_country_flag = SRC_expanded_field_command SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	# 第三轮：从城市起义军转向野战军
+	SRC_wartime_army_field_staff_office = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 40
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_field_staff_office_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_field_staff_office = yes set_country_flag = SRC_field_staff_office SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_veteran_training_units = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_veteran_training_units_requirement_tt OR = { check_variable = { SRC_wartime_army_war_days > 90 } check_variable = { SRC_wartime_army_war_days = 90 } } }
+		}
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_veteran_training_units_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_veteran_training_units = yes set_country_flag = SRC_veteran_training_units SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_field_political_work = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 35
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_field_political_work_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_field_political_work = yes set_country_flag = SRC_field_political_work_system SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_local_initiative = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_local_initiative_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_local_initiative = yes set_country_flag = SRC_grassroots_battlefield_initiative SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 1 }
+	}
+
+	SRC_wartime_army_field_repair_workshops = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 30
+		days_remove = 21
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_field_repair_workshops_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 21 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_field_repair_workshops = yes set_country_flag = SRC_field_repair_workshops SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_railway_priority = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_three_available = yes }
+		available = { custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } } }
+		cost = 25
+		days_remove = 14
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_railway_priority_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 14 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_railway_priority = yes set_country_flag = SRC_railway_priority_for_military_transport SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	# 第四轮：军队里到底谁说了算
+	SRC_wartime_army_strengthen_commanders = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_four_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_already_current_tt NOT = { has_country_flag = SRC_command_arrangement_commanders } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_cooldown_tt SRC_wartime_army_arrangement_change_unlocked = yes }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_switch_cost_available_tt OR = { NOT = { SRC_wartime_army_has_command_arrangement = yes } has_political_power > 64 } }
+		}
+		cost = 45
+		days_remove = 28
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = SRC_strengthened_military_commanders } }
+				custom_effect_tooltip = SRC_wartime_army_strengthen_commanders_tt
+			}
+			else = { custom_effect_tooltip = SRC_wartime_army_reestablish_commanders_tt }
+			if = { limit = { SRC_wartime_army_has_command_arrangement = yes } custom_effect_tooltip = SRC_wartime_army_arrangement_switch_cost_tt hidden_effect = { add_political_power = -20 } }
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_adopt_commanders_arrangement = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = {
+			base = 1
+			modifier = { factor = 0 SRC_wartime_army_has_command_arrangement = yes }
+			modifier = { factor = 5 check_variable = { SRC_army_foundation > 10 } }
+		}
+	}
+
+	SRC_wartime_army_expand_party_network = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_four_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_already_current_tt NOT = { has_country_flag = SRC_command_arrangement_party } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_cooldown_tt SRC_wartime_army_arrangement_change_unlocked = yes }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_switch_cost_available_tt OR = { NOT = { SRC_wartime_army_has_command_arrangement = yes } has_political_power > 64 } }
+		}
+		cost = 45
+		days_remove = 28
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = SRC_expanded_party_network_in_units } }
+				custom_effect_tooltip = SRC_wartime_army_expand_party_network_tt
+			}
+			else = { custom_effect_tooltip = SRC_wartime_army_reestablish_party_tt }
+			if = { limit = { SRC_wartime_army_has_command_arrangement = yes } custom_effect_tooltip = SRC_wartime_army_arrangement_switch_cost_tt hidden_effect = { add_political_power = -20 } }
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_adopt_party_arrangement = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = {
+			base = 1
+			modifier = { factor = 0 SRC_wartime_army_has_command_arrangement = yes }
+			modifier = { factor = 5 check_variable = { SRC_army_authority > 10 } }
+		}
+	}
+
+	SRC_wartime_army_expand_soldier_representatives = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_four_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_already_current_tt NOT = { has_country_flag = SRC_command_arrangement_representatives } }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_cooldown_tt SRC_wartime_army_arrangement_change_unlocked = yes }
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_arrangement_switch_cost_available_tt OR = { NOT = { SRC_wartime_army_has_command_arrangement = yes } has_political_power > 59 } }
+		}
+		cost = 40
+		days_remove = 28
+		complete_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = SRC_expanded_soldier_representatives } }
+				custom_effect_tooltip = SRC_wartime_army_expand_soldier_representatives_tt
+			}
+			else = { custom_effect_tooltip = SRC_wartime_army_reestablish_representatives_tt }
+			if = { limit = { SRC_wartime_army_has_command_arrangement = yes } custom_effect_tooltip = SRC_wartime_army_arrangement_switch_cost_tt hidden_effect = { add_political_power = -20 } }
+			hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } }
+		}
+		remove_effect = { hidden_effect = { SRC_wartime_army_adopt_representatives_arrangement = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = {
+			base = 1
+			modifier = { factor = 0 SRC_wartime_army_has_command_arrangement = yes }
+			modifier = {
+				factor = 5
+				OR = {
+					check_variable = { SRC_army_authority < -10 }
+					check_variable = { SRC_army_foundation < -10 }
+				}
+			}
+		}
+	}
+
+	# 第五轮：把战争经验变成制度
+	SRC_wartime_army_general_headquarters = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 50
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_general_headquarters_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_general_headquarters = yes set_country_flag = SRC_northeast_red_army_general_headquarters SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_permanent_training_system = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 45
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_permanent_training_system_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_permanent_training_system = yes set_country_flag = SRC_permanent_training_system SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_complete_political_reorganisation = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 45
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_complete_political_reorganisation_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_complete_political_reorganisation = yes set_country_flag = SRC_completed_political_reorganisation SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
+	}
+
+	SRC_wartime_army_unified_supply_department = {
+		allowed = { tag = SRC }
+		visible = { SRC_wartime_army_round_five_available = yes }
+		available = {
+			custom_trigger_tooltip = { tooltip = SRC_wartime_army_work_available_tt NOT = { has_country_flag = SRC_wartime_army_work_busy } }
+		}
+		cost = 45
+		days_remove = 28
+		fire_only_once = yes
+		complete_effect = { custom_effect_tooltip = SRC_wartime_army_unified_supply_department_tt hidden_effect = { set_country_flag = { flag = SRC_wartime_army_work_busy days = 28 value = 1 } } }
+		remove_effect = { hidden_effect = { SRC_wartime_army_gain_unified_supply_department = yes set_country_flag = SRC_unified_supply_department SRC_wartime_army_refresh_spirit = yes clr_country_flag = SRC_wartime_army_work_busy SRC_check_wartime_army_stage_progress = yes } }
+		ai_will_do = { factor = 2 }
 	}
 }
 

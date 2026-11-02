@@ -10,3 +10,62 @@ SIC_chuanneijushi_categories = {
 		}
 	}
 }
+
+#============================================================
+### merged from SIC_constitutional_reform.txt
+#============================================================
+SIC_qingzhengxi_gaige_categories = {
+	priority = 105
+	icon = generic_political_discourse
+	allowed = { original_tag = SIC }
+	visible = { has_completed_focus = SIC_qingzhengxi_sichuan }
+}
+
+SIC_xianzhengtongyi_categories = {
+	priority = 135
+	icon = generic_political_discourse
+	allowed = { original_tag = SIC }
+	visible = { has_completed_focus = SIC_quanguo_zhixianpai_dahui }
+}
+
+#============================================================
+### merged from SIC_external_relations.txt
+#============================================================
+SIC_external_category = {
+    icon = GFX_decision_generic_political_address
+    allowed = { original_tag = SIC }
+    visible = {
+        SIC_external_active_trigger = yes
+        OR = { SIC_external_political_trigger = yes SIC_external_aid_trigger = yes }
+    }
+}
+
+#============================================================
+### merged from SIC_politics.txt
+#============================================================
+SIC_politics_category = {
+	icon = generic_political_discourse
+	priority = 145
+	allowed = { tag = SIC }
+	visible = { SIC_politics_can_govern_trigger = yes has_country_flag = SIC_politics_started }
+}
+
+#============================================================
+### merged from SIC_red_opportunity.txt
+#============================================================
+# Compatibility ID retained; governance now belongs to the provincial overview.
+SIC_red_opportunity_category = {
+	icon = generic_political_discourse
+	allowed = { tag = SIC }
+	visible = { always = no }
+}
+
+#============================================================
+### merged from SIC_wubei.txt
+#============================================================
+SIC_wubei_categories = {
+	priority = 135
+	icon = generic_political_discourse
+	allowed = { original_tag = SIC }
+	visible = { has_completed_focus = SIC_chongjian_xinan_wubei_zonghui }
+}

@@ -1,0 +1,343 @@
+
+#============================================================
+### merged from WJP_han_assembly.txt
+#============================================================
+WJP_han_assembly_legislative_category = {
+	WJP_han_assembly_domain_budget = {
+		icon = GFX_decision_generic_factory
+		cost = 15
+		days_remove = 0
+		days_re_enable = 25
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			hidden_effect = {
+				add_to_variable = { WJP_han_tosa_satsuma = 5 }
+				add_to_variable = { WJP_han_hizen_satsuma = 5 }
+				add_to_variable = { WJP_han_buzen_satsuma = 5 }
+				add_to_variable = { WJP_han_izumo_satsuma = 5 }
+				add_to_variable = { WJP_han_harima_satsuma = 5 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_central_reserve = {
+		icon = GFX_decision_generic_factory
+		cost = 15
+		days_remove = 0
+		days_re_enable = 25
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			hidden_effect = {
+				add_to_variable = { WJP_han_tosa_choshu = 5 }
+				add_to_variable = { WJP_han_hizen_choshu = 5 }
+				add_to_variable = { WJP_han_buzen_choshu = 5 }
+				add_to_variable = { WJP_han_izumo_choshu = 5 }
+				add_to_variable = { WJP_han_harima_choshu = 5 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_ship_plan = {
+		icon = GFX_decision_generic_factory
+		cost = 10
+		days_remove = 0
+		days_re_enable = 20
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			hidden_effect = {
+				add_to_variable = { WJP_han_tosa_satsuma = 3 }
+				add_to_variable = { WJP_han_hizen_satsuma = 3 }
+				add_to_variable = { WJP_han_buzen_satsuma = 3 }
+				add_to_variable = { WJP_han_izumo_satsuma = 3 }
+				add_to_variable = { WJP_han_harima_satsuma = 3 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_railway = {
+		icon = GFX_decision_generic_factory
+		cost = 10
+		days_remove = 0
+		days_re_enable = 20
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			hidden_effect = {
+				add_to_variable = { WJP_han_tosa_choshu = 3 }
+				add_to_variable = { WJP_han_hizen_choshu = 3 }
+				add_to_variable = { WJP_han_buzen_choshu = 3 }
+				add_to_variable = { WJP_han_izumo_choshu = 3 }
+				add_to_variable = { WJP_han_harima_choshu = 3 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_mori_army_meeting = {
+		icon = GFX_decision_generic_political_address
+		cost = 0
+		custom_cost_text = WJP_han_assembly_cost_5_command_power
+		custom_cost_trigger = { NOT = { command_power < 5 } }
+		days_remove = 0
+		days_re_enable = 25
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			add_command_power = -5
+			hidden_effect = {
+				add_to_variable = { WJP_han_tosa_choshu = 5 }
+				add_to_variable = { WJP_han_izumo_choshu = 5 }
+				add_to_variable = { WJP_han_harima_choshu = 5 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_shimazu_navy_inspection = {
+		icon = GFX_decision_generic_political_address
+		cost = 0
+		custom_cost_text = WJP_han_assembly_cost_5_command_power
+		custom_cost_trigger = { NOT = { command_power < 5 } }
+		days_remove = 0
+		days_re_enable = 25
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			add_command_power = -5
+			hidden_effect = {
+				add_to_variable = { WJP_han_hizen_satsuma = 5 }
+				add_to_variable = { WJP_han_buzen_satsuma = 5 }
+				add_to_variable = { WJP_han_harima_satsuma = 5 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_audience_east_taikun = {
+		icon = GFX_decision_generic_political_address
+		cost = 15
+		days_remove = 0
+		days_re_enable = 15
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			hidden_effect = {
+				add_to_variable = { WJP_han_tosa_satsuma = 3 }
+				add_to_variable = { WJP_han_izumo_satsuma = 3 }
+				add_to_variable = { WJP_han_harima_satsuma = 3 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_audience_ming_envoy = {
+		icon = GFX_decision_generic_political_address
+		cost = 15
+		days_remove = 0
+		days_re_enable = 15
+		fire_only_once = no
+		complete_effect = {
+			custom_effect_tooltip = WJP_han_assembly_current_support_tt
+			hidden_effect = {
+				add_to_variable = { WJP_han_hizen_choshu = 3 }
+				add_to_variable = { WJP_han_buzen_choshu = 3 }
+				add_to_variable = { WJP_han_izumo_choshu = 3 }
+				WJP_han_assembly_refresh_effect = yes
+			}
+		}
+	}
+
+	WJP_han_assembly_leadership_resolution = {
+		icon = GFX_decision_generic_political_address
+		visible = { has_country_flag = WJP_han_assembly_initialized }
+		activation = { always = no }
+		available = { always = no }
+		selectable_mission = no
+		days_mission_timeout = 60
+		fire_only_once = no
+		is_good = yes
+		timeout_effect = {
+			custom_effect_tooltip = WJP_han_assembly_resolution_result_tt
+			hidden_effect = {
+				WJP_han_assembly_resolve_effect = yes
+				activate_mission = WJP_han_assembly_leadership_resolution
+			}
+		}
+	}
+}
+
+
+#============================================================
+### merged from WJP_parliament_legislation.txt
+#============================================================
+WJP_parliament_legislation_category = {
+	WJP_parliament_bill_deliberation = {
+		icon = GFX_decision_generic_political_address
+		visible = { has_country_flag = WJP_parliament_bill_active }
+		activation = { always = no }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WJP_parliament_bill_deliberation_unavailable_tt
+				hidden_trigger = { always = no }
+			}
+		}
+		selectable_mission = no
+		days_mission_timeout = 50
+		fire_only_once = no
+		timeout_effect = {
+			custom_effect_tooltip = WJP_parliament_bill_deliberation_result_tt
+			hidden_effect = { WJP_parliament_bill_resolve_timeout_effect = yes }
+		}
+	}
+
+	WJP_parliament_improve_free_society = {
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = WJP_parliament_attitudes_initialized
+			has_country_flag = WJP_economic_chain_started
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WJP_parliament_improve_free_society_available_tt
+				hidden_trigger = {
+					has_country_flag = WJP_parliament_attitudes_initialized
+					has_country_flag = WJP_economic_chain_started
+					check_variable = { var = WJP_parliament_free_society_attitude value = 2 compare = less_than }
+				}
+			}
+		}
+		cost = 25
+		days_re_enable = 15
+		fire_only_once = no
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			custom_effect_tooltip = WJP_parliament_improve_free_society_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = WJP_parliament_attitudes_initialized
+						has_country_flag = WJP_economic_chain_started
+						check_variable = { var = WJP_parliament_free_society_attitude value = 2 compare = less_than }
+					}
+					add_to_variable = { var = WJP_parliament_free_society_attitude value = 1 }
+					WJP_parliament_attitudes_refresh_effect = yes
+				}
+			}
+		}
+	}
+
+	WJP_parliament_improve_progressive_association = {
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = WJP_parliament_attitudes_initialized
+			has_country_flag = WJP_economic_chain_started
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WJP_parliament_improve_progressive_association_available_tt
+				hidden_trigger = {
+					has_country_flag = WJP_parliament_attitudes_initialized
+					has_country_flag = WJP_economic_chain_started
+					check_variable = { var = WJP_parliament_progressive_association_attitude value = 2 compare = less_than }
+				}
+			}
+		}
+		cost = 25
+		days_re_enable = 15
+		fire_only_once = no
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			custom_effect_tooltip = WJP_parliament_improve_progressive_association_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = WJP_parliament_attitudes_initialized
+						has_country_flag = WJP_economic_chain_started
+						check_variable = { var = WJP_parliament_progressive_association_attitude value = 2 compare = less_than }
+					}
+					add_to_variable = { var = WJP_parliament_progressive_association_attitude value = 1 }
+					WJP_parliament_attitudes_refresh_effect = yes
+				}
+			}
+		}
+	}
+
+	WJP_parliament_improve_national_renewal_league = {
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = WJP_parliament_attitudes_initialized
+			has_country_flag = WJP_economic_chain_started
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WJP_parliament_improve_national_renewal_league_available_tt
+				hidden_trigger = {
+					has_country_flag = WJP_parliament_attitudes_initialized
+					has_country_flag = WJP_economic_chain_started
+					check_variable = { var = WJP_parliament_national_renewal_league_attitude value = 2 compare = less_than }
+				}
+			}
+		}
+		cost = 25
+		days_re_enable = 15
+		fire_only_once = no
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			custom_effect_tooltip = WJP_parliament_improve_national_renewal_league_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = WJP_parliament_attitudes_initialized
+						has_country_flag = WJP_economic_chain_started
+						check_variable = { var = WJP_parliament_national_renewal_league_attitude value = 2 compare = less_than }
+					}
+					add_to_variable = { var = WJP_parliament_national_renewal_league_attitude value = 1 }
+					WJP_parliament_attitudes_refresh_effect = yes
+				}
+			}
+		}
+	}
+
+	WJP_parliament_improve_daido_association = {
+		icon = GFX_decision_generic_political_address
+		visible = {
+			has_country_flag = WJP_parliament_attitudes_initialized
+			has_country_flag = WJP_economic_chain_started
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WJP_parliament_improve_daido_association_available_tt
+				hidden_trigger = {
+					has_country_flag = WJP_parliament_attitudes_initialized
+					has_country_flag = WJP_economic_chain_started
+					check_variable = { var = WJP_parliament_daido_association_attitude value = 2 compare = less_than }
+				}
+			}
+		}
+		cost = 25
+		days_re_enable = 15
+		fire_only_once = no
+		ai_will_do = { factor = 0 }
+		complete_effect = {
+			custom_effect_tooltip = WJP_parliament_improve_daido_association_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = WJP_parliament_attitudes_initialized
+						has_country_flag = WJP_economic_chain_started
+						check_variable = { var = WJP_parliament_daido_association_attitude value = 2 compare = less_than }
+					}
+					add_to_variable = { var = WJP_parliament_daido_association_attitude value = 1 }
+					WJP_parliament_attitudes_refresh_effect = yes
+				}
+			}
+		}
+	}
+}
+

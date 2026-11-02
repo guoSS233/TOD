@@ -1,12 +1,12 @@
 GPS_balance_of_power_category = {
         #默许劫掠
         GPS_moxujielue = {
-		    icon = GFX_decision_generic_decision		
-		    cost = 50	
+		    icon = GFX_decision_generic_decision
+		    cost = 50
 		    fire_only_once = yes
 		    days_remove = 90
 		    ai_will_do = {
-			   factor = 10			
+			   factor = 10
 		    }
 		    available = {  }
 		    modifier = {
@@ -24,12 +24,12 @@ GPS_balance_of_power_category = {
 	    }
         #启用少壮派军官
         GPS_qiyongshaozhuangpaijunguan = {
-		    icon = GFX_decision_generic_decision		
-		    cost = 50	
+		    icon = GFX_decision_generic_decision
+		    cost = 50
 		    days_remove = 0
             days_re_enable = 120
 		    ai_will_do = {
-			    factor = 10	
+			    factor = 10
 		    }
 		    available = {  }
 		    modifier = { }
@@ -44,8 +44,8 @@ GPS_balance_of_power_category = {
 	   }
         #强调对大帅的忠诚
         ### GPS_qiyongshaozhuangpaijunguan = { # 重复决策 ID，原“强调忠诚”版本保留
-		### 	icon = GFX_decision_generic_decision		
-		### 	cost = 50	
+		### 	icon = GFX_decision_generic_decision
+		### 	cost = 50
 	### 	custom_cost_trigger = {
                 ### has_army_experience > GPS_lujunjingyan
 		### 	}
@@ -53,20 +53,20 @@ GPS_balance_of_power_category = {
 		### 	days_remove = 0
             ### days_re_enable = 120
 		### 	ai_will_do = {
-			### 	factor = 10			
+			### 	factor = 10
 		### 	}
 		### 	available = { }
             ### visible = { check_variable = { GPS_lujunjingyan < 150 }  }
 		### 	complete_effect = {
 			### 	hidden_effect = {army_experience = GPS_lujunjingyanhuafei}
-			### 	
+			###
                 ### add_power_balance_modifier = {
 				### 	id = GPS_power_balance
  				### 	modifier = GPS_duidashuaidezhongcheng
 			### 	}
 		### 	}
 		### 	remove_effect = {
-			### 	
+			###
                 ### remove_power_balance_modifier = {
 				### 	id = GPS_power_balance
  				### 	modifier = GPS_duidashuaidezhongcheng
@@ -80,11 +80,11 @@ GPS_xuanzhan = {
 	#西北开战
 	GPS_xibeijunkaizhan= {
 		icon = ger_military_buildup
-		
+
 		visible = {country_exists = XBJ}
-		allowed = { tag = GPS } 
+		allowed = { tag = GPS }
 		available = {is_neighbor_of = XBJ}
-		cost = 15 
+		cost = 15
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -95,7 +95,7 @@ GPS_xuanzhan = {
 			}
 		}
 		on_map_mode = map_and_decisions_view
-		
+
 		state_target = yes
 		targets = { state = 744 }
 		days_remove = 30
@@ -107,11 +107,11 @@ GPS_xuanzhan = {
 	#顺天开战
 	GPS_shuntiankaizhan= {
 		icon = ger_military_buildup
-		
+
 		visible = {country_exists = STG}
-		allowed = { tag = GPS } 
+		allowed = { tag = GPS }
 		available = {is_neighbor_of = STG}
-		cost = 15 
+		cost = 15
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -122,7 +122,7 @@ GPS_xuanzhan = {
 			}
 		}
 		on_map_mode = map_and_decisions_view
-		
+
 		state_target = yes
 		targets = { state = 608 }
 		days_remove = 30
@@ -131,15 +131,15 @@ GPS_xuanzhan = {
             declare_war_on = { target = STG type = annex_everything }
 		}
 	}
-    
+
 	#共和军开战
 	GPS_gonghejunkaizhan= {
 		icon = ger_military_buildup
-		
+
 		visible = {country_exists = ROC}
-		allowed = { tag = GPS } 
+		allowed = { tag = GPS }
 		available = {is_neighbor_of = ROC}
-		cost = 15 
+		cost = 15
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -150,7 +150,7 @@ GPS_xuanzhan = {
 			}
 		}
 		on_map_mode = map_and_decisions_view
-		
+
 		state_target = yes
 		targets = { state = 592 }
 		days_remove = 30
@@ -162,11 +162,11 @@ GPS_xuanzhan = {
 	#四川开战
 	GPS_sichuankaizhan= {
 		icon = ger_military_buildup
-		
+
 		visible = {country_exists = SIC}
-		allowed = { tag = GPS } 
+		allowed = { tag = GPS }
 		available = {is_neighbor_of = SIC}
-		cost = 15 
+		cost = 15
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -177,23 +177,23 @@ GPS_xuanzhan = {
 			}
 		}
 		on_map_mode = map_and_decisions_view
-		
+
 		state_target = yes
 		targets = { state = 831 }
 		days_remove = 30
 		fire_only_once = yes
-		remove_effect = { 
+		remove_effect = {
             declare_war_on = { target = SIC type = annex_everything }
 		}
 	}
 	#四川红军开战
 	GPS_sichuanhongjunkaizhan= {
 		icon = ger_military_buildup
-		
+
 		visible = {country_exists = SCG}
-		allowed = { tag = GPS } 
+		allowed = { tag = GPS }
 		available = {is_neighbor_of = SCG}
-		cost = 15 
+		cost = 15
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -204,23 +204,23 @@ GPS_xuanzhan = {
 			}
 		}
 		on_map_mode = map_and_decisions_view
-		
+
 		state_target = yes
 		targets = { state = 831 }
 		days_remove = 30
 		fire_only_once = yes
-		remove_effect = { 
+		remove_effect = {
             declare_war_on = { target = SCG type = annex_everything }
 		}
 	}
 	#西南开战
 	GPS_xinankaizhan= {
 		icon = ger_military_buildup
-		
+
 		visible = {country_exists = XIN}
-		allowed = { tag = GPS } 
+		allowed = { tag = GPS }
 		available = {is_neighbor_of = XIN}
-		cost = 15 
+		cost = 15
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -231,23 +231,23 @@ GPS_xuanzhan = {
 			}
 		}
 		on_map_mode = map_and_decisions_view
-		
+
 		state_target = yes
 		targets = { state = 325 }
 		days_remove = 30
 		fire_only_once = yes
-		remove_effect = { 
+		remove_effect = {
             declare_war_on = { target = XIN type = annex_everything }
 		}
 	}
 	#向七省宣战
 	GPS_qishenkaizhan= {
 		icon = ger_military_buildup
-		
+
 		visible = {country_exists = GOS}
-		allowed = { tag = GPS } 
+		allowed = { tag = GPS }
 		available = {is_neighbor_of = GOS}
-		cost = 15 
+		cost = 15
 		ai_will_do = {
 			base = 0
 			modifier = {
@@ -258,13 +258,796 @@ GPS_xuanzhan = {
 			}
 		}
 		on_map_mode = map_and_decisions_view
-		
+
 		state_target = yes
 		targets = { state = 613 }
 		days_remove = 30
 		fire_only_once = yes
-		remove_effect = { 
+		remove_effect = {
             declare_war_on = { target = GOS type = annex_everything }
 		}
 	}
 }
+
+#============================================================
+### merged from GPS_governance.txt
+#============================================================
+GPS_gov_category = {
+	GPS_gov_restore_national_policies = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = { GPS_gov_national_policy_missing = yes }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GPS_gov_restore_national_requirements_tt
+				hidden_trigger = { GPS_gov_national_control_retained = yes GPS_gov_national_policy_missing = yes }
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = GPS_gov_restore_national_effect_tt
+			hidden_effect = { GPS_gov_restore_national_policies = yes }
+		}
+	}
+
+	GPS_gov_open_orders = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_tang_orders
+			NOT = {
+				has_country_flag = GPS_gov_orders_done
+			}
+		}
+		available = {
+			GPS_gov_tang = yes
+			GPS_gov_local_work_possible = yes
+			NOT = {
+				has_country_flag = GPS_gov_military_busy
+			}
+			has_completed_focus = GPS_weichijunguan
+		}
+		complete_effect = {
+			GPS_gov_start_orders = yes
+		}
+	}
+	GPS_gov_open_coal = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_recovery_desk
+			NOT = {
+				has_country_flag = GPS_gov_coal_done
+			}
+		}
+		available = {
+			GPS_gov_active = yes
+			GPS_gov_local_work_possible = yes
+			NOT = {
+				has_country_flag = GPS_gov_economic_busy
+			}
+			GPS_gov_coal_transport_possible = yes
+		}
+		complete_effect = {
+			GPS_gov_start_coal = yes
+		}
+	}
+	GPS_gov_open_restart = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_recovery_desk
+			NOT = {
+				has_country_flag = GPS_gov_restart_done
+			}
+		}
+		available = {
+			GPS_gov_active = yes
+			GPS_gov_restart_possible = yes
+			NOT = {
+				has_country_flag = GPS_gov_economic_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_restart = yes
+		}
+	}
+	GPS_gov_open_appointment = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_tang_appointments
+			NOT = {
+				has_country_flag = GPS_gov_tang_appointment_done
+			}
+		}
+		available = {
+			GPS_gov_tang = yes
+			GPS_gov_local_work_possible = yes
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+			has_completed_focus = GPS_gov_tang_orders
+			has_country_flag = GPS_gov_orders_done
+			NOT = {
+				has_country_flag = GPS_gov_orders_failed
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_tang_appointment = yes
+		}
+	}
+	GPS_gov_open_tang_register = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		visible = {
+			has_completed_focus = GPS_gov_tang_register
+			NOT = {
+				has_country_flag = GPS_gov_tang_register_done
+			}
+		}
+		available = {
+			GPS_gov_tang = yes
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+			has_completed_focus = GPS_gov_tang_appointments
+			has_country_flag = GPS_gov_tang_appointment_done
+			NOT = {
+				has_country_flag = GPS_gov_tang_appointment_failed
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_tang_register = yes
+		}
+	}
+	GPS_gov_open_tang_settlement = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		visible = {
+			has_completed_focus = GPS_gov_tang_settlement
+			NOT = {
+				has_country_flag = GPS_gov_tang_settlement_done
+			}
+		}
+		available = {
+			GPS_gov_postwar = yes
+			GPS_gov_tang = yes
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+			has_completed_focus = GPS_gov_tang_register
+			has_country_flag = GPS_gov_tang_register_done
+		}
+		complete_effect = {
+			GPS_gov_start_tang_settlement = yes
+		}
+	}
+	GPS_gov_open_committee_table = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		visible = {
+			has_completed_focus = GPS_gov_committee_table
+			NOT = {
+				has_country_flag = GPS_gov_committee_table_done
+			}
+		}
+		available = {
+			GPS_gov_committee = yes
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_committee_table = yes
+		}
+	}
+	GPS_gov_open_joint_appointment = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_joint_appointments
+			NOT = {
+				has_country_flag = GPS_gov_joint_appointment_done
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GPS_gov_committee_decision_requirements_tt
+				hidden_trigger = {
+					GPS_gov_committee = yes
+					GPS_gov_local_work_possible = yes
+					NOT = {
+						has_country_flag = GPS_gov_joint_appointment_done
+					}
+					NOT = {
+						has_country_flag = GPS_gov_signature_busy
+					}
+					has_completed_focus = GPS_gov_committee_table
+					has_country_flag = GPS_gov_committee_table_done
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = GPS_gov_focus_joint_appointments_tt
+			hidden_effect = {
+				GPS_gov_start_joint_appointment = yes
+			}
+		}
+	}
+	GPS_gov_open_joint_pay = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_joint_pay
+			NOT = {
+				has_country_flag = GPS_gov_joint_pay_done
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GPS_gov_committee_decision_requirements_tt
+				hidden_trigger = {
+					GPS_gov_committee = yes
+					GPS_gov_local_work_possible = yes
+					NOT = {
+						has_country_flag = GPS_gov_joint_pay_done
+					}
+					NOT = {
+						has_country_flag = GPS_gov_economic_busy
+					}
+					has_completed_focus = GPS_gov_committee_table
+					has_country_flag = GPS_gov_committee_table_done
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = GPS_gov_focus_joint_pay_tt
+			hidden_effect = {
+				GPS_gov_start_joint_pay = yes
+			}
+		}
+	}
+	GPS_gov_open_defence_roster = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_defence_roster
+			NOT = {
+				has_country_flag = GPS_gov_defence_roster_done
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GPS_gov_committee_decision_requirements_tt
+				hidden_trigger = {
+					GPS_gov_committee = yes
+					GPS_gov_local_work_possible = yes
+					NOT = {
+						has_country_flag = GPS_gov_defence_roster_done
+					}
+					NOT = {
+						has_country_flag = GPS_gov_military_busy
+					}
+					has_completed_focus = GPS_gov_committee_table
+					has_country_flag = GPS_gov_committee_table_done
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = GPS_gov_focus_defence_roster_tt
+			hidden_effect = {
+				GPS_gov_start_defence_roster = yes
+			}
+		}
+	}
+	GPS_gov_open_old_uniforms = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_old_uniforms
+			NOT = {
+				has_country_flag = GPS_gov_old_uniforms_done
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GPS_gov_committee_decision_requirements_tt
+				hidden_trigger = {
+					GPS_gov_committee = yes
+					NOT = {
+						has_country_flag = GPS_gov_old_uniforms_done
+					}
+					NOT = {
+						has_country_flag = GPS_gov_signature_busy
+					}
+					has_completed_focus = GPS_gov_joint_appointments
+					has_country_flag = GPS_gov_joint_appointment_done
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = GPS_gov_focus_old_uniforms_tt
+			hidden_effect = {
+				GPS_gov_start_old_uniforms = yes
+			}
+		}
+	}
+	GPS_gov_open_execution_receipts = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_execution_receipts
+			NOT = {
+				has_country_flag = GPS_gov_execution_receipts_done
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GPS_gov_committee_decision_requirements_tt
+				hidden_trigger = {
+					GPS_gov_committee = yes
+					NOT = {
+						has_country_flag = GPS_gov_execution_receipts_done
+					}
+					NOT = {
+						has_country_flag = GPS_gov_signature_busy
+					}
+					has_completed_focus = GPS_gov_joint_pay
+					has_completed_focus = GPS_gov_defence_roster
+					has_completed_focus = GPS_gov_joint_appointments
+					has_country_flag = GPS_gov_joint_pay_done
+					has_country_flag = GPS_gov_defence_roster_done
+					has_country_flag = GPS_gov_joint_appointment_done
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = GPS_gov_focus_execution_receipts_tt
+			hidden_effect = {
+				GPS_gov_start_execution_receipts = yes
+			}
+		}
+	}
+	GPS_gov_open_committee_settlement = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_committee_settlement
+			NOT = {
+				has_country_flag = GPS_gov_committee_settlement_done
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GPS_gov_committee_decision_requirements_tt
+				hidden_trigger = {
+					GPS_gov_committee = yes
+					NOT = {
+						has_country_flag = GPS_gov_committee_settlement_done
+					}
+					NOT = {
+						has_country_flag = GPS_gov_signature_busy
+					}
+					has_completed_focus = GPS_gov_execution_receipts
+					has_completed_focus = GPS_gov_old_uniforms
+					has_country_flag = GPS_gov_execution_receipts_done
+					has_country_flag = GPS_gov_old_uniforms_done
+					GPS_gov_postwar = yes
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = GPS_gov_focus_committee_settlement_tt
+			hidden_effect = {
+				GPS_gov_start_committee_settlement = yes
+			}
+		}
+	}
+	GPS_gov_open_national_position = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_national_position
+			NOT = {
+				has_country_flag = GPS_gov_national_position_done
+			}
+		}
+		available = {
+			GPS_gov_position_ready = yes
+			has_completed_focus = GPS_gov_national_position
+			NOT = {
+				has_country_flag = GPS_gov_national_position_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_national_position = yes
+		}
+	}
+	GPS_gov_open_regional_closure = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			GPS_gov_active = yes
+			NOT = {
+				has_country_flag = GPS_gov_regional_closure_done
+			}
+		}
+		available = {
+			GPS_gov_peace_foothold = yes
+			NOT = {
+				has_country_flag = GPS_gov_regional_closure_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_regional_closure = yes
+		}
+	}
+	GPS_gov_open_demobilization = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			GPS_gov_active = yes
+			NOT = {
+				has_country_flag = GPS_gov_demobilization_done
+			}
+		}
+		available = {
+			GPS_gov_peace_foothold = yes
+			NOT = {
+				has_country_flag = GPS_gov_demobilization_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_economic_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_demobilization = yes
+		}
+	}
+	GPS_gov_open_national_army = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_national_army
+			NOT = {
+				has_country_flag = GPS_gov_national_army_done
+			}
+		}
+		available = {
+			GPS_gov_national_dominance = yes
+			has_country_flag = GPS_gov_national_position_done
+			has_completed_focus = GPS_gov_national_position
+			has_completed_focus = GPS_gov_national_army
+			NOT = {
+				has_country_flag = GPS_gov_national_army_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_military_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_national_army = yes
+		}
+	}
+	GPS_gov_open_national_accounts = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_national_accounts
+			NOT = {
+				has_country_flag = GPS_gov_national_accounts_done
+			}
+		}
+		available = {
+			GPS_gov_national_dominance = yes
+			has_country_flag = GPS_gov_national_position_done
+			has_completed_focus = GPS_gov_national_position
+			has_completed_focus = GPS_gov_national_accounts
+			NOT = {
+				has_country_flag = GPS_gov_national_accounts_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_economic_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_national_accounts = yes
+		}
+	}
+	GPS_gov_open_local_delegation = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_local_delegation
+			NOT = {
+				has_country_flag = GPS_gov_local_delegation_done
+			}
+		}
+		available = {
+			GPS_gov_national_dominance = yes
+			has_country_flag = GPS_gov_national_position_done
+			has_completed_focus = GPS_gov_national_position
+			has_completed_focus = GPS_gov_local_delegation
+			NOT = {
+				has_country_flag = GPS_gov_local_delegation_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_local_delegation = yes
+		}
+	}
+	GPS_gov_open_homeward_station = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_homeward_station
+			NOT = {
+				has_country_flag = GPS_gov_homeward_station_done
+			}
+		}
+		available = {
+			GPS_gov_national_dominance = yes
+			has_country_flag = GPS_gov_national_army_done
+			has_country_flag = GPS_gov_national_accounts_done
+			has_country_flag = GPS_gov_local_delegation_done
+			has_country_flag = GPS_gov_demobilization_done
+			has_completed_focus = GPS_gov_national_army
+			has_completed_focus = GPS_gov_national_accounts
+			has_completed_focus = GPS_gov_local_delegation
+			has_completed_focus = GPS_gov_homeward_station
+			NOT = {
+				has_country_flag = GPS_gov_homeward_station_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_homeward_station = yes
+		}
+	}
+	GPS_gov_open_grain = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_completed_focus = GPS_gov_rural_supply
+			NOT = {
+				has_country_flag = GPS_gov_grain_done
+			}
+		}
+		available = {
+			GPS_gov_local_work_possible = yes
+			has_completed_focus = GPS_gov_rural_supply
+			NOT = {
+				has_country_flag = GPS_gov_grain_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_economic_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_grain = yes
+		}
+	}
+	GPS_gov_open_policy_KOR = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			GPS_gov_active = yes
+			NOT = {
+				has_country_flag = GPS_gov_policy_KOR_done
+			}
+		}
+		available = {
+			GPS_gov_position_ready = yes
+			GPS_gov_contact_KOR = yes
+			has_country_flag = GPS_gov_national_position_done
+			NOT = {
+				has_country_flag = GPS_gov_policy_KOR_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_policy_KOR = yes
+		}
+	}
+	GPS_gov_open_policy_EZO = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			GPS_gov_active = yes
+			NOT = {
+				has_country_flag = GPS_gov_policy_EZO_done
+			}
+		}
+		available = {
+			GPS_gov_position_ready = yes
+			GPS_gov_contact_EZO = yes
+			has_country_flag = GPS_gov_national_position_done
+			NOT = {
+				has_country_flag = GPS_gov_policy_EZO_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_policy_EZO = yes
+		}
+	}
+	GPS_gov_open_policy_WJP = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			GPS_gov_active = yes
+			NOT = {
+				has_country_flag = GPS_gov_policy_WJP_done
+			}
+		}
+		available = {
+			GPS_gov_position_ready = yes
+			GPS_gov_contact_WJP = yes
+			has_country_flag = GPS_gov_national_position_done
+			NOT = {
+				has_country_flag = GPS_gov_policy_WJP_done
+			}
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+		}
+		complete_effect = {
+			GPS_gov_start_policy_WJP = yes
+		}
+	}
+	GPS_gov_open_contact_STG = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_country_flag = GPS_gov_national_position_done
+			NOT = {
+				has_country_flag = GPS_gov_contact_STG_done
+			}
+		}
+		available = {
+			GPS_gov_position_ready = yes
+			has_country_flag = GPS_gov_national_position_done
+			GPS_gov_contact_STG = yes
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+			NOT = {
+				has_country_flag = GPS_gov_contact_STG_done
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					GPS_gov_position_ready = yes
+					has_country_flag = GPS_gov_national_position_done
+					GPS_gov_contact_STG = yes
+					NOT = {
+						has_country_flag = GPS_gov_signature_busy
+					}
+					NOT = {
+						has_country_flag = GPS_gov_contact_STG_done
+					}
+				}
+				set_country_flag = GPS_gov_contact_STG_pending
+				GPS_gov_start_contact = yes
+			}
+		}
+	}
+	GPS_gov_open_contact_MNG = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_country_flag = GPS_gov_national_position_done
+			NOT = {
+				has_country_flag = GPS_gov_contact_MNG_done
+			}
+		}
+		available = {
+			GPS_gov_position_ready = yes
+			has_country_flag = GPS_gov_national_position_done
+			GPS_gov_contact_MNG = yes
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+			NOT = {
+				has_country_flag = GPS_gov_contact_MNG_done
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					GPS_gov_position_ready = yes
+					has_country_flag = GPS_gov_national_position_done
+					GPS_gov_contact_MNG = yes
+					NOT = {
+						has_country_flag = GPS_gov_signature_busy
+					}
+					NOT = {
+						has_country_flag = GPS_gov_contact_MNG_done
+					}
+				}
+				set_country_flag = GPS_gov_contact_MNG_pending
+				GPS_gov_start_contact = yes
+			}
+		}
+	}
+	GPS_gov_open_contact_XBJ = {
+		icon = GFX_decision_generic_decision
+		cost = 0
+		fire_only_once = no
+		visible = {
+			has_country_flag = GPS_gov_national_position_done
+			NOT = {
+				has_country_flag = GPS_gov_contact_XBJ_done
+			}
+		}
+		available = {
+			GPS_gov_position_ready = yes
+			has_country_flag = GPS_gov_national_position_done
+			GPS_gov_contact_XBJ = yes
+			NOT = {
+				has_country_flag = GPS_gov_signature_busy
+			}
+			NOT = {
+				has_country_flag = GPS_gov_contact_XBJ_done
+			}
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					GPS_gov_position_ready = yes
+					has_country_flag = GPS_gov_national_position_done
+					GPS_gov_contact_XBJ = yes
+					NOT = {
+						has_country_flag = GPS_gov_signature_busy
+					}
+					NOT = {
+						has_country_flag = GPS_gov_contact_XBJ_done
+					}
+				}
+				set_country_flag = GPS_gov_contact_XBJ_pending
+				GPS_gov_start_contact = yes
+			}
+		}
+	}
+}
+
