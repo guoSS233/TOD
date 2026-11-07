@@ -1,4 +1,4 @@
-ideas = {    
+﻿ideas = {    
 	country = {
 		#军政团结
 		GPS_junzhengtuanjie = {
@@ -302,6 +302,340 @@ ideas = {
 				naval_speed_factor = 0.1
 			}
     	}			
+
+		#======================================================
+		### merged from GPS_governance.txt
+		#======================================================
+		GPS_gov_personal_guarantee = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.05
+				stability_factor = 0.02
+			}
+		}
+		GPS_gov_written_handover = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.03
+				war_support_factor = -0.02
+			}
+		}
+		GPS_gov_repair_effort = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				repair_speed_factor = 0.05
+			}
+		}
+		GPS_gov_coal_rail_a = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.03
+				repair_speed_factor = -0.03
+			}
+		}
+		GPS_gov_coal_rail_b = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				repair_speed_factor = 0.05
+				war_support_factor = -0.01
+			}
+		}
+		GPS_gov_coal_rail_c = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				repair_speed_factor = 0.025
+				supply_consumption_factor = -0.015
+			}
+		}
+		GPS_gov_coal_road_a = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.015
+				repair_speed_factor = -0.015
+			}
+		}
+		GPS_gov_coal_road_b = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				repair_speed_factor = 0.025
+				war_support_factor = -0.005
+			}
+		}
+		GPS_gov_coal_road_c = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				repair_speed_factor = 0.0125
+				supply_consumption_factor = -0.0075
+			}
+		}
+		GPS_gov_restart_effort_a = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				industrial_capacity_factory = 0.03
+			}
+		}
+		GPS_gov_restart_effort_c = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				repair_speed_factor = 0.03
+			}
+		}
+		GPS_gov_committee_settlement_a = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.05
+				army_org_factor = 0.02
+			}
+		}
+		GPS_gov_committee_settlement_b = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.03
+				war_support_factor = -0.02
+			}
+		}
+		GPS_gov_committee_settlement_c = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.04
+				stability_factor = 0.01
+			}
+		}
+		GPS_gov_defence_rotation = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_regain = 0.03
+			}
+		}
+		GPS_gov_grain_effort = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+			}
+		}
+		GPS_gov_national_army_a_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_factor = 0.03
+				political_power_gain = -0.03
+			}
+		}
+		GPS_gov_national_army_b_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_regain = 0.03
+				supply_consumption_factor = 0.03
+			}
+		}
+		GPS_gov_national_army_c_suspended = {
+			picture = GPS_junzhengtuanjie
+			allowed = { original_tag = GPS }
+			removal_cost = -1
+		}
+		GPS_gov_national_army_c_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				training_time_army_factor = -0.04
+				political_power_gain = -0.02
+			}
+		}
+		GPS_gov_national_accounts_a_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.04
+				stability_factor = 0.02
+			}
+		}
+		GPS_gov_national_accounts_b_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.03
+				political_power_gain = -0.02
+			}
+		}
+		GPS_gov_national_accounts_c_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.04
+				political_power_gain = -0.02
+			}
+		}
+		GPS_gov_local_delegation_a_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				political_power_gain = -0.03
+				stability_factor = 0.015
+			}
+		}
+		GPS_gov_local_delegation_b_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+				political_power_gain = -0.02
+			}
+		}
+		GPS_gov_local_delegation_c_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.04
+				stability_factor = -0.01
+			}
+		}
+		GPS_gov_regional_closure_b_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				army_org_regain = 0.03
+				stability_factor = -0.01
+			}
+		}
+		GPS_gov_demobilization_job_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				production_speed_infrastructure_factor = 0.04
+			}
+		}
+		GPS_gov_grain_a_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				supply_consumption_factor = -0.03
+				stability_factor = -0.02
+			}
+		}
+		GPS_gov_grain_b_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.02
+				supply_consumption_factor = 0.02
+			}
+		}
+		GPS_gov_grain_c_policy = {
+			picture = GPS_junzhengtuanjie
+			allowed = {
+				original_tag = GPS
+			}
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.01
+				political_power_gain = -0.02
+			}
+		}
+
 	}
 
 	###内阁	

@@ -9,13 +9,14 @@ focus_tree = {
 		}
 	}
 	default = no
+	initial_show_position = { focus = WJP_new_year_old_troubles }
 
 	# 新一年，老麻烦
 	focus = {
 		id = WJP_new_year_old_troubles
 		icon = GFX_goal_generic_national_unity
 		cost = 1
-		x = 0
+		x = 8
 		y = 0
 		completion_reward = {
 			custom_effect_tooltip = WJP_first_stage_year_reward_tt
@@ -33,7 +34,7 @@ focus_tree = {
 			focus = WJP_new_year_old_troubles
 		}
 		cost = 5
-		x = -2
+		x = 6
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = WJP_first_stage_han_reward_tt
@@ -43,7 +44,7 @@ focus_tree = {
 		}
 	}
 
-	# 平衡官僚派系
+	# 平衡官僚派阀
 	focus = {
 		id = WJP_balance_bureaucratic_factions
 		icon = GFX_focus_generic_military_academy
@@ -51,7 +52,7 @@ focus_tree = {
 			focus = WJP_new_year_old_troubles
 		}
 		cost = 4
-		x = 2
+		x = 10
 		y = 1
 		completion_reward = {
 			custom_effect_tooltip = WJP_first_stage_bureaucrats_reward_tt
@@ -72,7 +73,7 @@ focus_tree = {
 			focus = WJP_balance_bureaucratic_factions
 		}
 		cost = 1
-		x = -1
+		x = 7
 		y = 2
 		completion_reward = {
 			custom_effect_tooltip = WJP_first_stage_finance_reward_tt
@@ -93,7 +94,7 @@ focus_tree = {
 			focus = WJP_balance_bureaucratic_factions
 		}
 		cost = 1
-		x = 1
+		x = 9
 		y = 2
 		completion_reward = {
 			custom_effect_tooltip = WJP_first_stage_parties_reward_tt
@@ -114,13 +115,122 @@ focus_tree = {
 			focus = WJP_closest_alliance_council
 		}
 		cost = 1
-		x = 0
+		x = 8
 		y = 3
 		completion_reward = {
 			custom_effect_tooltip = WJP_first_stage_set_sail_reward_tt
 			hidden_effect = {
 				WJP_first_stage_reward_set_sail_effect = yes
 			}
+		}
+	}
+
+	focus = {
+		id = WJP_waiting_for_godot
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_set_sail }
+		available = { custom_trigger_tooltip = { tooltip = WJP_waiting_for_godot_available_tt hidden_trigger = { always = no } } }
+		cost = 1
+		x = 8
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = WJP_waiting_for_godot_reward_tt
+			hidden_effect = {}
+		}
+	}
+
+	focus = {
+		id = WJP_art_of_politics
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_waiting_for_godot }
+		cost = 1
+		x = 4
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = WJP_art_of_politics_reward_tt
+			hidden_effect = { WJP_art_of_politics_reward_effect = yes }
+		}
+	}
+
+	focus = {
+		id = WJP_broad_support
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_art_of_politics }
+		mutually_exclusive = { focus = WJP_free_society_strategy }
+		cost = 1
+		x = 2
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = WJP_broad_support_reward_tt
+			hidden_effect = { WJP_broad_support_reward_effect = yes }
+		}
+	}
+
+	focus = {
+		id = WJP_free_society_strategy
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_art_of_politics }
+		mutually_exclusive = { focus = WJP_broad_support }
+		cost = 1
+		x = 6
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = WJP_free_society_strategy_reward_tt
+			hidden_effect = { WJP_free_society_strategy_reward_effect = yes }
+		}
+	}
+
+	focus = {
+		id = WJP_hiroshima_aftermath
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_waiting_for_godot }
+		available = { custom_trigger_tooltip = { tooltip = WJP_hiroshima_aftermath_available_tt hidden_trigger = { has_country_flag = WJP_economy_riot_applied } } }
+		cost = 1
+		x = 12
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = WJP_hiroshima_aftermath_reward_tt
+			hidden_effect = { WJP_hiroshima_aftermath_reward_effect = yes }
+		}
+	}
+
+	focus = {
+		id = WJP_support_domain_troops
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_hiroshima_aftermath }
+		cost = 1
+		x = 10
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = WJP_support_domain_troops_reward_tt
+			hidden_effect = { WJP_support_domain_troops_reward_effect = yes }
+		}
+	}
+
+	focus = {
+		id = WJP_central_relief_grain
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_hiroshima_aftermath }
+		cost = 2
+		x = 14
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = WJP_central_relief_grain_reward_tt
+			hidden_effect = { WJP_central_relief_grain_reward_effect = yes }
+		}
+	}
+
+	focus = {
+		id = WJP_steady_improvement
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = WJP_support_domain_troops }
+		prerequisite = { focus = WJP_central_relief_grain }
+		cost = 1
+		x = 12
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = WJP_steady_improvement_reward_tt
+			hidden_effect = { WJP_steady_improvement_reward_effect = yes }
 		}
 	}
 }

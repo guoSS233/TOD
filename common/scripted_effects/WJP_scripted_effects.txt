@@ -121,6 +121,18 @@ WJP_first_stage_reward_set_sail_effect = {
 }
 
 # Both startup and daily migration use the same idempotent reward handlers.
+WJP_complete_waiting_for_godot_effect = {
+	if = {
+		limit = {
+			tag = WJP
+			has_completed_focus = WJP_set_sail
+			has_country_flag = WJP_parliament_deliberation_started
+			NOT = { has_completed_focus = WJP_waiting_for_godot }
+		}
+		complete_national_focus = WJP_waiting_for_godot
+	}
+}
+
 WJP_first_stage_save_migration_effect = {
 	if = { limit = { has_completed_focus = WJP_new_year_old_troubles } WJP_first_stage_reward_year_effect = yes }
 	if = { limit = { has_completed_focus = WJP_han_assembly_election } WJP_first_stage_reward_han_effect = yes }
@@ -128,6 +140,7 @@ WJP_first_stage_save_migration_effect = {
 	if = { limit = { has_completed_focus = WJP_contact_financial_world } WJP_first_stage_reward_finance_effect = yes }
 	if = { limit = { has_completed_focus = WJP_closest_alliance_council } WJP_first_stage_reward_parties_effect = yes }
 	if = { limit = { has_completed_focus = WJP_set_sail } WJP_first_stage_reward_set_sail_effect = yes }
+	WJP_complete_waiting_for_godot_effect = yes
 }
 
 WJP_economic_chain_start_effect = {
@@ -380,6 +393,7 @@ WJP_parliament_budget_archive_passed_effect = {
 		set_variable = { var = WJP_parliament_budget_archive_year value = global.year }
 		WJP_parliament_budget_archive_snapshot_effect = yes
 	}
+	WJP_parliament_social_archive_snapshot_effect = yes
 }
 
 # Older saves may already have a passed result but no archive. The original year
@@ -393,6 +407,7 @@ WJP_parliament_budget_archive_migrate_effect = {
 		set_variable = { WJP_parliament_budget_archive_year = 0 }
 		WJP_parliament_budget_archive_snapshot_effect = yes
 	}
+	WJP_parliament_social_archive_snapshot_effect = yes
 }
 
 WJP_parliament_budget_archive_snapshot_effect = {
@@ -520,6 +535,7 @@ WJP_parliament_begin_deliberation_effect = {
 		WJP_parliament_attitudes_initialize_effect = yes
 		WJP_parliament_attitudes_refresh_effect = yes
 		set_country_flag = WJP_parliament_deliberation_started
+		WJP_complete_waiting_for_godot_effect = yes
 		set_country_flag = WJP_parliament_bill_active
 	}
 	if = {
@@ -674,3 +690,113 @@ WJP_parliament_event_2_keep_draft_effect = {
 	}
 }
 
+
+WJP_art_of_politics_reward_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_art_of_politics_rewarded } }
+		set_country_flag = WJP_art_of_politics_rewarded
+		add_political_power = 100
+	}
+}
+WJP_broad_support_reward_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_broad_support_rewarded } NOT = { has_country_flag = WJP_free_society_strategy_rewarded } }
+		set_country_flag = WJP_broad_support_rewarded
+		WJP_parliament_attitudes_initialize_effect = yes
+		add_to_variable = { WJP_parliament_daido_association_attitude = 1 }
+		add_to_variable = { WJP_parliament_national_renewal_league_attitude = 1 }
+		set_variable = { WJP_parliament_free_society_attitude = 0 }
+		add_to_variable = { WJP_parliament_progressive_association_attitude = 1 }
+		WJP_parliament_attitudes_refresh_effect = yes
+	}
+}
+WJP_free_society_strategy_reward_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_free_society_strategy_rewarded } NOT = { has_country_flag = WJP_broad_support_rewarded } }
+		set_country_flag = WJP_free_society_strategy_rewarded
+		WJP_parliament_attitudes_initialize_effect = yes
+		set_variable = { WJP_parliament_daido_association_attitude = -2 }
+		subtract_from_variable = { WJP_parliament_national_renewal_league_attitude = 1 }
+		subtract_from_variable = { WJP_parliament_progressive_association_attitude = 1 }
+		add_to_variable = { WJP_parliament_free_society_attitude = 1 }
+		WJP_parliament_attitudes_refresh_effect = yes
+	}
+}
+WJP_hiroshima_aftermath_reward_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_hiroshima_aftermath_rewarded } }
+		set_country_flag = WJP_hiroshima_aftermath_rewarded
+		add_stability = 0.05
+		WJP_parliament_attitudes_initialize_effect = yes
+		add_to_variable = { WJP_parliament_daido_association_attitude = 1 }
+		add_to_variable = { WJP_parliament_progressive_association_attitude = 1 }
+		WJP_parliament_attitudes_refresh_effect = yes
+	}
+}
+WJP_support_domain_troops_reward_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_support_domain_troops_rewarded } }
+		set_country_flag = WJP_support_domain_troops_rewarded
+		WJP_parliament_attitudes_initialize_effect = yes
+		subtract_from_variable = { WJP_parliament_free_society_attitude = 1 }
+		subtract_from_variable = { WJP_parliament_progressive_association_attitude = 1 }
+		WJP_parliament_attitudes_refresh_effect = yes
+		if = { limit = { has_idea = WJP_depression_strike } swap_ideas = { remove_idea = WJP_depression_strike add_idea = WJP_depression_stable } }
+		else_if = { limit = { has_idea = WJP_depression_recovery } swap_ideas = { remove_idea = WJP_depression_recovery add_idea = WJP_depression_stable_recovery } }
+	}
+}
+WJP_central_relief_grain_reward_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_central_relief_grain_rewarded } }
+		set_country_flag = WJP_central_relief_grain_rewarded
+		WJP_parliament_attitudes_initialize_effect = yes
+		add_to_variable = { WJP_parliament_daido_association_attitude = 1 }
+		add_to_variable = { WJP_parliament_national_renewal_league_attitude = 1 }
+		WJP_parliament_attitudes_refresh_effect = yes
+		if = { limit = { has_idea = WJP_depression_strike } swap_ideas = { remove_idea = WJP_depression_strike add_idea = WJP_depression_recovery } }
+		else_if = { limit = { has_idea = WJP_depression_stable } swap_ideas = { remove_idea = WJP_depression_stable add_idea = WJP_depression_stable_recovery } }
+	}
+}
+WJP_steady_improvement_reward_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = WJP_steady_improvement_rewarded } }
+		set_country_flag = WJP_steady_improvement_rewarded
+		WJP_parliament_attitudes_initialize_effect = yes
+		add_to_variable = { WJP_parliament_daido_association_attitude = 1 }
+		add_to_variable = { WJP_parliament_national_renewal_league_attitude = 1 }
+		subtract_from_variable = { WJP_parliament_free_society_attitude = 1 }
+		subtract_from_variable = { WJP_parliament_progressive_association_attitude = 1 }
+		WJP_parliament_attitudes_refresh_effect = yes
+	}
+}
+
+WJP_record_simple_insurance_act_passed_effect = {
+	if = {
+		limit = { tag = WJP }
+		set_country_flag = WJP_simple_insurance_act_passed
+	}
+}
+
+WJP_record_national_social_health_act_passed_effect = {
+	if = {
+		limit = { tag = WJP }
+		set_country_flag = WJP_national_social_health_act_passed
+	}
+}
+
+WJP_record_workplace_safety_act_passed_effect = {
+	if = {
+		limit = { tag = WJP }
+		set_country_flag = WJP_workplace_safety_act_passed
+	}
+}
+
+WJP_parliament_social_archive_snapshot_effect = {
+	if = {
+		limit = { tag = WJP has_country_flag = WJP_parliament_bill_passed NOT = { has_country_flag = WJP_parliament_social_archived } }
+		if = { limit = { has_country_flag = WJP_simple_insurance_act_passed } set_country_flag = WJP_simple_insurance_act_archived }
+		if = { limit = { has_country_flag = WJP_national_social_health_act_passed } set_country_flag = WJP_national_social_health_act_archived }
+		if = { limit = { has_country_flag = WJP_workplace_safety_act_passed } set_country_flag = WJP_workplace_safety_act_archived }
+		set_country_flag = WJP_parliament_social_archived
+	}
+}

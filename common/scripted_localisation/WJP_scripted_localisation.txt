@@ -392,3 +392,29 @@ defined_text = {
 	text = { trigger = { always = yes } localization_key = WJP_parliament_pass_conditions_not_met }
 }
 
+
+defined_text = {
+	name = WJP_settlement_budget
+	text = { trigger = { check_variable = { var = WJP_parliament_budget_archive_budget value = 1 compare = equals } } localization_key = WJP_settlement_budget_1 }
+	text = { trigger = { check_variable = { var = WJP_parliament_budget_archive_budget value = 2 compare = equals } } localization_key = WJP_settlement_budget_2 }
+	text = { trigger = { always = yes } localization_key = WJP_settlement_unknown }
+}
+
+defined_text = {
+	name = WJP_settlement_plan
+	text = { trigger = { check_variable = { var = WJP_parliament_budget_archive_plan value = 1 compare = equals } } localization_key = WJP_settlement_plan_1 }
+	text = { trigger = { check_variable = { var = WJP_parliament_budget_archive_plan value = 2 compare = equals } } localization_key = WJP_settlement_plan_2 }
+	text = { trigger = { always = yes } localization_key = WJP_settlement_unknown }
+}
+
+defined_text = {
+	name = WJP_settlement_social
+	text = { trigger = { has_country_flag = WJP_simple_insurance_act_archived has_country_flag = WJP_national_social_health_act_archived has_country_flag = WJP_workplace_safety_act_archived } localization_key = WJP_settlement_social_7 }
+	text = { trigger = { NOT = { has_country_flag = WJP_simple_insurance_act_archived } has_country_flag = WJP_national_social_health_act_archived has_country_flag = WJP_workplace_safety_act_archived } localization_key = WJP_settlement_social_6 }
+	text = { trigger = { has_country_flag = WJP_simple_insurance_act_archived NOT = { has_country_flag = WJP_national_social_health_act_archived } has_country_flag = WJP_workplace_safety_act_archived } localization_key = WJP_settlement_social_5 }
+	text = { trigger = { NOT = { has_country_flag = WJP_simple_insurance_act_archived } NOT = { has_country_flag = WJP_national_social_health_act_archived } has_country_flag = WJP_workplace_safety_act_archived } localization_key = WJP_settlement_social_4 }
+	text = { trigger = { has_country_flag = WJP_simple_insurance_act_archived has_country_flag = WJP_national_social_health_act_archived NOT = { has_country_flag = WJP_workplace_safety_act_archived } } localization_key = WJP_settlement_social_3 }
+	text = { trigger = { NOT = { has_country_flag = WJP_simple_insurance_act_archived } has_country_flag = WJP_national_social_health_act_archived NOT = { has_country_flag = WJP_workplace_safety_act_archived } } localization_key = WJP_settlement_social_2 }
+	text = { trigger = { has_country_flag = WJP_simple_insurance_act_archived NOT = { has_country_flag = WJP_national_social_health_act_archived } NOT = { has_country_flag = WJP_workplace_safety_act_archived } } localization_key = WJP_settlement_social_1 }
+	text = { trigger = { NOT = { has_country_flag = WJP_simple_insurance_act_archived } NOT = { has_country_flag = WJP_national_social_health_act_archived } NOT = { has_country_flag = WJP_workplace_safety_act_archived } } localization_key = WJP_settlement_social_0 }
+}

@@ -2,124 +2,132 @@ guiTypes = {
 	containerWindowType = {
 		name = "ROC_economic_council_window"
 		position = { x = 0 y = 0 }
-		size = { width = 500 height = 316 }
+		size = { width = 500 height = 450 }
+		background = { name = "ROC_decor_background" quadTextureSprite = "GFX_welcome_bg" alwaystransparent = yes }
+		containerWindowType = {
+			name = "ROC_decor_panel"
+			position = { x = 20 y = 42 }
+			size = { width = 460 height = 398 }
+			alwaystransparent = yes
+			background = { name = "ROC_decor_frame" quadTextureSprite = "GFX_BusinessHub_view_button_background_2" alwaystransparent = yes }
+		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_title"
-			position = { x = 18 y = 6 }
+			position = { x = 50 y = 70 }
 			font = "hoi_18mbs"
 			text = "ROC_econ_gui_title"
-			maxWidth = 464
-			maxHeight = 24
+			maxWidth = 400
+			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_mandate"
-			position = { x = 18 y = 34 }
+			position = { x = 50 y = 90 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_mandate"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_minister_line"
-			position = { x = 18 y = 58 }
+			position = { x = 50 y = 110 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_minister_line"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 			pdx_tooltip = "ROC_ma_committee_link_tt"
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_effect_values"
-			position = { x = 18 y = 80 }
+			position = { x = 50 y = 130 }
 			font = "hoi_16mbs"
-			text = "[ROOT.ROC_committee_time_effect_values]"
-			maxWidth = 464
-			maxHeight = 20
+			text = "ROC_econ_gui_effect_values"
+			maxWidth = 400
+			maxHeight = 40
 			format = left
 			pdx_tooltip = "ROC_ma_committee_link_tt"
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_council_line"
-			position = { x = 18 y = 104 }
+			position = { x = 50 y = 170 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_council_line"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_radicalization_line"
-			position = { x = 18 y = 128 }
+			position = { x = 50 y = 190 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_radicalization_line"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_opposition_line"
-			position = { x = 18 y = 152 }
+			position = { x = 50 y = 210 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_opposition_line"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_left_line"
-			position = { x = 18 y = 176 }
+			position = { x = 50 y = 230 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_left_line"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_left_meta"
-			position = { x = 18 y = 198 }
+			position = { x = 50 y = 250 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_left_meta"
-			maxWidth = 464
-			maxHeight = 20
+			maxWidth = 400
+			maxHeight = 40
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_center_line"
-			position = { x = 18 y = 222 }
+			position = { x = 50 y = 290 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_center_line"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_center_meta"
-			position = { x = 18 y = 244 }
+			position = { x = 50 y = 310 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_center_meta"
-			maxWidth = 464
-			maxHeight = 20
+			maxWidth = 400
+			maxHeight = 40
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_right_line"
-			position = { x = 18 y = 268 }
+			position = { x = 50 y = 350 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_right_line"
-			maxWidth = 464
+			maxWidth = 400
 			maxHeight = 20
 			format = left
 		}
 		instantTextboxType = {
 			name = "ROC_econ_gui_right_meta"
-			position = { x = 18 y = 290 }
+			position = { x = 50 y = 370 }
 			font = "hoi_16mbs"
 			text = "ROC_econ_gui_right_meta"
-			maxWidth = 464
-			maxHeight = 20
+			maxWidth = 400
+			maxHeight = 40
 			format = left
 		}
 	}
