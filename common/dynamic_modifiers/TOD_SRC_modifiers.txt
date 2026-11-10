@@ -1,3 +1,41 @@
+# 同产工会的会内团结
+SRC_party_cooperation = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_party_unity
+	political_power_gain = SRC_party_cooperation_pp_gain
+}
+
+# 整顿官僚作风后，按合众派大会权重获得群众路线加成。
+SRC_close_ties_with_masses = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_party_unity
+	political_power_gain = SRC_party_cooperation_pp_gain
+	research_speed_factor = SRC_close_ties_research_speed
+	production_factory_efficiency_gain_factor = SRC_close_ties_efficiency_growth
+	industry_air_damage_factor = SRC_close_ties_bombing_vulnerability
+}
+
+# 统一集中领导：继承会内团结效果，并按先锋社党派支持率追加加成。
+SRC_centralized_leadership = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_party_unity
+	political_power_gain = SRC_party_cooperation_pp_gain
+	party_popularity_stability_factor = 0.25
+	stability_factor = SRC_centralized_leadership_stability
+	consumer_goods_factor = SRC_centralized_leadership_consumer_goods
+	production_speed_buildings_factor = SRC_centralized_leadership_construction_speed
+}
+
+# 三三制政府：继承会内团结，并按各类党派支持率追加加成。
+SRC_three_thirds_government = {
+	enable = { always = yes }
+	icon = GFX_idea_SRC_party_unity
+	political_power_gain = SRC_party_cooperation_pp_gain
+	research_speed_factor = SRC_three_thirds_research_speed
+	industrial_capacity_factory = SRC_three_thirds_factory_output
+	conscription_factor = SRC_three_thirds_recruitable_population
+}
+
 #撕裂的社会
 SRC_siliedeshehui = {
 	enable = { always = yes }
@@ -65,7 +103,6 @@ SRC_dangdelingdao = {
 	army_morale_factor = SRC_dangdelingdao_zuzhihuifu
 	party_popularity_stability_factor = SRC_dangdelingdao_dangpaiwending
 	production_factory_max_efficiency_factor = SRC_dangdelingdao_shengchanxiaolv
-	stability_factor = SRC_dangdelingdao_wendingdu
 	war_support_factor = SRC_dangdelingdao_zhanzhengzhichi
 }
 
@@ -75,7 +112,6 @@ SRC_gongrenminzhu = {
 	icon = GFX_idea_SRC_wuchanjiejiminzhu
 	conscription_factor = SRC_gongrenminzhu_shiyirenkou
 	war_support_factor = SRC_gongrenminzhu_zhanzhengzhichi
-	stability_factor = SRC_gongrenminzhu_wendingdu
 	research_speed_factor = SRC_gongrenminzhu_yanjiu
 }
 
@@ -85,7 +121,6 @@ SRC_hongxingzhaoyaodongfang = {
 	icon = GFX_idea_SRC_hongxingzhaoyaodongfang
 	conscription_factor = SRC_gongrenminzhu_shiyirenkou
 	war_support_factor = SRC_gongrenminzhu_zhanzhengzhichi
-	stability_factor = SRC_gongrenminzhu_wendingdu
 	research_speed_factor = SRC_gongrenminzhu_yanjiu
 	army_attack_factor = 0.1
 }

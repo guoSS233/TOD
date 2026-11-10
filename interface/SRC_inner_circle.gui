@@ -1,0 +1,115 @@
+guiTypes = {
+    containerWindowType = {
+        name = "SRC_inner_circle_ui_window"
+        orientation = lower_left
+        position = { x = 0 y = 0 }
+        size = { width = 660 height = 550 }
+        clipping = no
+        background = { name = "SRC_inner_circle_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+
+        instantTextBoxType = { name = "SRC_inner_circle_title" position = { x = 20 y = 14 } font = "hoi_36header" text = "SRC_inner_circle_title" maxWidth = 620 maxHeight = 44 format = center alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_chairman_label" position = { x = 20 y = 65 } font = "hoi_20bs" text = "SRC_inner_circle_chairman_label" maxWidth = 130 maxHeight = 24 format = center alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_chairman_portrait" spriteType = "GFX_SRC_inner_circle_empty" position = { x = 28 y = 95 } scale = 0.75 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_chairman_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 22 y = 85 } scale = 0.75 alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_chairman_name" position = { x = 11 y = 282 } font = "hoi_20bs" context_aware_text = "SRC_inner_circle_chairman_name_text" maxWidth = 150 maxHeight = 24 format = center alwaystransparent = yes }
+
+        instantTextBoxType = { name = "SRC_inner_circle_army_label" position = { x = 162 y = 65 } font = "hoi_20bs" text = "SRC_inner_circle_army_label" maxWidth = 226 maxHeight = 24 format = center alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_navy_label" position = { x = 398 y = 65 } font = "hoi_20bs" text = "SRC_inner_circle_navy_label" maxWidth = 108 maxHeight = 24 format = center alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_air_label" position = { x = 516 y = 65 } font = "hoi_20bs" text = "SRC_inner_circle_air_label" maxWidth = 108 maxHeight = 24 format = center alwaystransparent = yes }
+
+        # Focus inlays render root-level children reliably; card backgrounds stay separate.
+        containerWindowType = {
+            name = "SRC_inner_circle_slot_1_card"
+            position = { x = 162 y = 95 }
+            size = { width = 108 height = 165 }
+            clipping = no
+            background = { name = "slot_1_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+        }
+        iconType = { name = "SRC_inner_circle_slot_1_portrait" spriteType = "GFX_SRC_inner_circle_empty" position = { x = 181 y = 111 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_1_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 177 y = 105 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_1_highlight" spriteType = "GFX_SRC_inner_circle_slot_click" position = { x = 162 y = 95 } alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_slot_1_name" position = { x = 165 y = 227 } font = "hoi_18" context_aware_text = "SRC_inner_circle_slot_1_name_text" maxWidth = 102 maxHeight = 22 format = center alwaystransparent = yes }
+        containerWindowType = {
+            name = "SRC_inner_circle_slot_2_card"
+            position = { x = 280 y = 95 }
+            size = { width = 108 height = 165 }
+            clipping = no
+            background = { name = "slot_2_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+        }
+        iconType = { name = "SRC_inner_circle_slot_2_portrait" spriteType = "GFX_SRC_inner_circle_empty" position = { x = 299 y = 111 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_2_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 295 y = 105 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_2_highlight" spriteType = "GFX_SRC_inner_circle_slot_click" position = { x = 280 y = 95 } alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_slot_2_name" position = { x = 283 y = 227 } font = "hoi_18" context_aware_text = "SRC_inner_circle_slot_2_name_text" maxWidth = 102 maxHeight = 22 format = center alwaystransparent = yes }
+        containerWindowType = {
+            name = "SRC_inner_circle_slot_3_card"
+            position = { x = 398 y = 95 }
+            size = { width = 108 height = 165 }
+            clipping = no
+            background = { name = "slot_3_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+        }
+        iconType = { name = "SRC_inner_circle_slot_3_portrait" spriteType = "GFX_SRC_inner_circle_empty" position = { x = 417 y = 111 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_3_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 413 y = 105 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_3_highlight" spriteType = "GFX_SRC_inner_circle_slot_click" position = { x = 398 y = 95 } alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_slot_3_name" position = { x = 401 y = 227 } font = "hoi_18" context_aware_text = "SRC_inner_circle_slot_3_name_text" maxWidth = 102 maxHeight = 22 format = center alwaystransparent = yes }
+        containerWindowType = {
+            name = "SRC_inner_circle_slot_4_card"
+            position = { x = 516 y = 95 }
+            size = { width = 108 height = 165 }
+            clipping = no
+            background = { name = "slot_4_bg" quadTextureSprite = "GFX_tiled_plain_bg" }
+        }
+        iconType = { name = "SRC_inner_circle_slot_4_portrait" spriteType = "GFX_SRC_inner_circle_empty" position = { x = 535 y = 111 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_4_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 531 y = 105 } scale = 0.45 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_slot_4_highlight" spriteType = "GFX_SRC_inner_circle_slot_click" position = { x = 516 y = 95 } alwaystransparent = yes }
+        instantTextBoxType = { name = "SRC_inner_circle_slot_4_name" position = { x = 519 y = 227 } font = "hoi_18" context_aware_text = "SRC_inner_circle_slot_4_name_text" maxWidth = 102 maxHeight = 22 format = center alwaystransparent = yes }
+
+        # Four new candidates above the six existing army candidates.
+        iconType = { name = "xu_fanting_portrait" spriteType = "GFX_SRC_inner_circle_xu_fanting" position = { x = 105 y = 335 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_xu_fanting_portrait_tt" }
+        iconType = { name = "xu_fanting_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 102 y = 330 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_xu_fanting_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 102 y = 330 } alwaystransparent = yes }
+        iconType = { name = "he_changgong_portrait" spriteType = "GFX_SRC_inner_circle_he_changgong" position = { x = 237 y = 335 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_he_changgong_portrait_tt" }
+        iconType = { name = "he_changgong_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 234 y = 330 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_he_changgong_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 234 y = 330 } alwaystransparent = yes }
+        iconType = { name = "zeng_yiding_portrait" spriteType = "GFX_SRC_inner_circle_zeng_yiding" position = { x = 369 y = 335 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_zeng_yiding_portrait_tt" }
+        iconType = { name = "zeng_yiding_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 366 y = 330 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_zeng_yiding_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 366 y = 330 } alwaystransparent = yes }
+        iconType = { name = "liu_yun_portrait" spriteType = "GFX_SRC_inner_circle_liu_yun" position = { x = 501 y = 335 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_liu_yun_portrait_tt" }
+        iconType = { name = "liu_yun_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 498 y = 330 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_liu_yun_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 498 y = 330 } alwaystransparent = yes }
+
+        iconType = { name = "xu_portrait" spriteType = "GFX_SRC_inner_circle_xu" position = { x = 53 y = 435 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_xu_portrait_tt" }
+        iconType = { name = "xu_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 50 y = 430 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_xu_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 50 y = 430 } alwaystransparent = yes }
+        iconType = { name = "dong_portrait" spriteType = "GFX_SRC_inner_circle_dong" position = { x = 153 y = 435 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_dong_portrait_tt" }
+        iconType = { name = "dong_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 150 y = 430 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_dong_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 150 y = 430 } alwaystransparent = yes }
+        iconType = { name = "lan_portrait" spriteType = "GFX_SRC_inner_circle_lan" position = { x = 253 y = 435 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_lan_portrait_tt" }
+        iconType = { name = "lan_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 250 y = 430 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_lan_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 250 y = 430 } alwaystransparent = yes }
+        iconType = { name = "zhao_portrait" spriteType = "GFX_SRC_inner_circle_zhao" position = { x = 353 y = 435 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_zhao_portrait_tt" }
+        iconType = { name = "zhao_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 350 y = 430 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_zhao_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 350 y = 430 } alwaystransparent = yes }
+        iconType = { name = "guan_portrait" spriteType = "GFX_SRC_inner_circle_guan" position = { x = 453 y = 435 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_guan_portrait_tt" }
+        iconType = { name = "guan_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 450 y = 430 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_guan_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 450 y = 430 } alwaystransparent = yes }
+        iconType = { name = "yang_portrait" spriteType = "GFX_SRC_inner_circle_yang" position = { x = 553 y = 435 } scale = 0.34 pdx_tooltip = "SRC_inner_circle_yang_portrait_tt" }
+        iconType = { name = "yang_frame" spriteType = "GFX_SRC_inner_circle_portrait_frame" position = { x = 550 y = 430 } scale = 0.34 alwaystransparent = yes }
+        iconType = { name = "SRC_inner_circle_yang_highlight" spriteType = "GFX_SRC_inner_circle_candidate_click" position = { x = 550 y = 430 } alwaystransparent = yes }
+
+        # Buttons are last so they receive clicks across the portrait and frame.
+        buttonType = { name = "SRC_inner_circle_slot_1_click" quadTextureSprite = "GFX_SRC_inner_circle_slot_click" position = { x = 162 y = 95 } buttonText = "" pdx_tooltip = "SRC_inner_circle_slot_click_tt" }
+        buttonType = { name = "SRC_inner_circle_slot_2_click" quadTextureSprite = "GFX_SRC_inner_circle_slot_click" position = { x = 280 y = 95 } buttonText = "" pdx_tooltip = "SRC_inner_circle_slot_click_tt" }
+        buttonType = { name = "SRC_inner_circle_slot_3_click" quadTextureSprite = "GFX_SRC_inner_circle_slot_click" position = { x = 398 y = 95 } buttonText = "" pdx_tooltip = "SRC_inner_circle_navy_slot_click_tt" }
+        buttonType = { name = "SRC_inner_circle_slot_4_click" quadTextureSprite = "GFX_SRC_inner_circle_slot_click" position = { x = 516 y = 95 } buttonText = "" pdx_tooltip = "SRC_inner_circle_air_slot_click_tt" }
+        buttonType = { name = "SRC_inner_circle_xu_fanting_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 102 y = 330 } buttonText = "" pdx_tooltip = "SRC_inner_circle_xu_fanting_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_he_changgong_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 234 y = 330 } buttonText = "" pdx_tooltip = "SRC_inner_circle_he_changgong_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_zeng_yiding_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 366 y = 330 } buttonText = "" pdx_tooltip = "SRC_inner_circle_zeng_yiding_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_liu_yun_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 498 y = 330 } buttonText = "" pdx_tooltip = "SRC_inner_circle_liu_yun_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_xu_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 50 y = 430 } buttonText = "" pdx_tooltip = "SRC_inner_circle_xu_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_dong_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 150 y = 430 } buttonText = "" pdx_tooltip = "SRC_inner_circle_dong_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_lan_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 250 y = 430 } buttonText = "" pdx_tooltip = "SRC_inner_circle_lan_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_zhao_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 350 y = 430 } buttonText = "" pdx_tooltip = "SRC_inner_circle_zhao_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_guan_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 450 y = 430 } buttonText = "" pdx_tooltip = "SRC_inner_circle_guan_portrait_tt" }
+        buttonType = { name = "SRC_inner_circle_yang_click" quadTextureSprite = "GFX_SRC_inner_circle_candidate_click" position = { x = 550 y = 430 } buttonText = "" pdx_tooltip = "SRC_inner_circle_yang_portrait_tt" }
+    }
+}

@@ -258,11 +258,15 @@ country_event = {
 		}
 		retire_country_leader = yes
 		set_politics = { ruling_party = moderate_socialism }
+		set_temp_variable = { coalition_partner_var = token:vanguard_socialism }
+		add_to_coalition = yes
 		complete_national_focus = SRC_dongbeigemingdahuizhaokai
-		complete_national_focus = SRC_chenduxiuzhuxi
 		SRC_chen_duxiu = {
 			promote_character = { ideology = moderate_socialism_subtype }
 		}
+		custom_effect_tooltip = SRCevents_8_pp_reset_tt
+		hidden_effect = { set_political_power = 0 }
+		complete_national_focus = SRC_chenduxiuzhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 	option = { 
@@ -280,10 +284,12 @@ country_event = {
 		}
 		retire_country_leader = yes
 		complete_national_focus = SRC_dongbeigemingdahuizhaokai
-		complete_national_focus = SRC_renfuchenzhuxi
 		SRC_ren_fuchen = {
 			promote_character = { ideology = vanguard_socialism_subtype }
 		}
+		custom_effect_tooltip = SRCevents_8_pp_reset_tt
+		hidden_effect = { set_political_power = 0 }
+		complete_national_focus = SRC_renfuchenzhuxi
 		SRC = {country_event = { id = SRCevents.16 } } 
 		mark_focus_tree_layout_dirty = yes
 	}
@@ -302,11 +308,15 @@ country_event = {
 		name = SRCevents.8.c
 		retire_country_leader = yes
 		set_politics = { ruling_party = council_socialism }
+		set_temp_variable = { coalition_partner_var = token:vanguard_socialism }
+		add_to_coalition = yes
 		complete_national_focus = SRC_dongbeigemingdahuizhaokai
-		complete_national_focus = SRC_lidazhaozhuxi
 		SRC_li_dazhao = {
 			promote_character = { ideology = council_socialism_subtype }
 		}
+		custom_effect_tooltip = SRCevents_8_pp_reset_tt
+		hidden_effect = { set_political_power = 0 }
+		complete_national_focus = SRC_lidazhaozhuxi
 		mark_focus_tree_layout_dirty = yes
 	}
 }
@@ -465,6 +475,48 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.17.a
+		custom_effect_tooltip = SRCevents_17_a_desc_tt
+		custom_effect_tooltip = SRCevents_17_a_effect_tt
+		add_political_power = 50
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_chen = 7 }
+			subtract_from_variable = { SRC_central_support_ren = 8 }
+			add_to_variable = { SRC_wenhe = 6 }
+			add_to_variable = { SRC_central_support_li = 1 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.17.b
+		custom_effect_tooltip = SRCevents_17_b_desc_tt
+		custom_effect_tooltip = SRCevents_17_b_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_4_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 4 }
+			add_to_variable = { SRC_central_support_ren = 5 }
+			add_to_variable = { SRC_xianfeng = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 8 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.17.c
+		custom_effect_tooltip = SRCevents_17_c_desc_tt
+		custom_effect_tooltip = SRCevents_17_c_effect_tt
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_ren = 1 }
+			add_to_variable = { SRC_central_support_li = 5 }
+			add_to_variable = { SRC_weiyuan = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
 	}
 }
 #老熟人
@@ -675,6 +727,12 @@ country_event = {
 	option = { 
 		name = SRCevents.30.a
 	}
+	option = {
+		name = SRCevents.30.b
+	}
+	option = {
+		name = SRCevents.30.c
+	}
 }
 #一个手艺人的独白
 country_event = {
@@ -770,6 +828,45 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.36.a
+		custom_effect_tooltip = SRCevents_36_a_effect_tt
+		hidden_effect = {
+			subtract_from_variable = { SRC_xianfeng = 1 }
+			add_to_variable = { SRC_weiyuan = 2 }
+			subtract_from_variable = { SRC_wenhe = 1 }
+			add_to_variable = { SRC_central_support_li = 3 }
+			subtract_from_variable = { SRC_central_support_chen = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.36.b
+		custom_effect_tooltip = SRCevents_36_b_effect_tt
+		hidden_effect = {
+			add_to_variable = { SRC_xianfeng = 4 }
+			subtract_from_variable = { SRC_wenhe = 4 }
+			add_to_variable = { SRC_central_support_ren = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 3 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.36.c
+		custom_effect_tooltip = SRCevents_36_c_effect_tt
+		hidden_effect = {
+			add_to_variable = { SRC_wenhe = 4 }
+			subtract_from_variable = { SRC_xianfeng = 4 }
+			add_to_variable = { SRC_central_support_chen = 6 }
+			subtract_from_variable = { SRC_central_support_ren = 3 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
 	}
 }
 #我才不要和他结婚嘞！
@@ -834,6 +931,41 @@ country_event = {
 	
 	option = { 
 		name = SRCevents.40.a
+		custom_effect_tooltip = SRCevents_40_a_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_5_tt
+		custom_effect_tooltip = SRCevents_40_a_faction_gain_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 5 }
+			SRC_power_struggle_add_li_support = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.40.b
+		custom_effect_tooltip = SRCevents_40_b_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_8_tt
+		custom_effect_tooltip = SRCevents_40_b_faction_gain_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 8 }
+			SRC_power_struggle_add_ren_support = yes
+			# 在基础惩罚 -3 之外，额外降低致公派满意度 2 点。
+			subtract_from_variable = { SRC_central_support_chen = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.40.c
+		custom_effect_tooltip = SRCevents_40_c_effect_tt
+		custom_effect_tooltip = SRCevents_40_c_faction_gain_tt
+		add_political_power = 100
+		hidden_effect = {
+			SRC_power_struggle_add_chen_support = yes
+			# 在基础惩罚 -3 之外，额外降低会纪派满意度 2 点。
+			subtract_from_variable = { SRC_central_support_ren = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_party_cooperation_recalculate = yes
+		}
 	}
 }
 #头版头条
@@ -885,6 +1017,162 @@ country_event = {
 	}
 }
 
+
+# 革命成果检验结果
+country_event = {
+	id = SRCevents.45
+	title = SRCevents.45.t
+	desc = SRCevents.45.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+	option = {
+		name = SRCevents.45.a
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_settled_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_success_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_continue_tt
+	}
+}
+
+country_event = {
+	id = SRCevents.46
+	title = SRCevents.46.t
+	desc = SRCevents.46.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+	option = {
+		name = SRCevents.46.a
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_settled_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_failure_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_continue_tt
+	}
+}
+
+country_event = {
+	id = SRCevents.47
+	title = SRCevents.47.t
+	desc = SRCevents.47.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+	option = {
+		name = SRCevents.47.a
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_settled_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_success_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_final_tt
+	}
+}
+
+country_event = {
+	id = SRCevents.48
+	title = SRCevents.48.t
+	desc = SRCevents.48.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+	option = {
+		name = SRCevents.48.a
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_settled_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_failure_tt
+		custom_effect_tooltip = SRC_revolutionary_achievement_review_result_final_tt
+	}
+}
+
+# 革命的权力属于谁？
+country_event = {
+	id = SRCevents.51
+	title = SRCevents.51.t
+	desc = SRCevents.51.d
+	picture = GFX_report_event_generic_factory
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+	option = {
+		name = SRCevents.51.a
+		custom_effect_tooltip = SRCevents_51_a_desc_tt
+		custom_effect_tooltip = SRCevents_51_a_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_2_tt
+		hidden_effect = {
+			add_to_variable = { SRC_weiyuan = 2 }
+			subtract_from_variable = { SRC_xianfeng = 1 }
+			subtract_from_variable = { SRC_wenhe = 1 }
+			add_to_variable = { SRC_central_support_li = 3 }
+			add_to_variable = { SRC_construction_achievements = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.51.b
+		custom_effect_tooltip = SRCevents_51_b_desc_tt
+		custom_effect_tooltip = SRCevents_51_b_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_4_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 4 }
+			add_to_variable = { SRC_xianfeng = 4 }
+			subtract_from_variable = { SRC_wenhe = 4 }
+			add_to_variable = { SRC_central_support_ren = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 5 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.51.c
+		custom_effect_tooltip = SRCevents_51_c_desc_tt
+		custom_effect_tooltip = SRCevents_51_c_effect_tt
+		add_political_power = 75
+		hidden_effect = {
+			add_to_variable = { SRC_wenhe = 4 }
+			subtract_from_variable = { SRC_xianfeng = 4 }
+			add_to_variable = { SRC_central_support_chen = 6 }
+			subtract_from_variable = { SRC_central_support_ren = 3 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+}
+
+# 摧毁地方封建宗族与流氓帮会：每60天增加建筑槽，共6次。
+country_event = {
+	id = SRCevents.49
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { has_country_flag = SRC_li_feudal_clans_reconstruction_active }
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_to_variable = { SRC_li_feudal_clans_slot_rounds = 1 }
+			if = {
+				limit = { check_variable = { var = SRC_li_feudal_clans_slot_rounds value = 6 compare = less_than } }
+				country_event = { id = SRCevents.49 days = 60 }
+			}
+		}
+	}
+}
+
+# 基层政权重塑满一年后结算稳定度，终止后续效果。
+country_event = {
+	id = SRCevents.50
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { has_country_flag = SRC_li_feudal_clans_reconstruction_active }
+			add_stability = 0.15
+			clr_country_flag = SRC_li_feudal_clans_reconstruction_active
+			clear_variable = SRC_li_feudal_clans_slot_rounds
+		}
+	}
+}
 
 # Hidden events for focus character recruitment
 country_event = {
@@ -979,5 +1267,233 @@ country_event = {
 		activate_advisor = SRC_yang_jingyu
 		activate_advisor = SRC_xu_xiangqian
 		activate_advisor = SRC_zhu_rui
+	}
+}
+
+# 革命领导权：完成“坚持革命领导权”后1天触发。
+country_event = {
+	id = SRCevents.52
+	title = SRCevents.52.t
+	desc = SRCevents.52.d
+	picture = GFX_report_event_generic_factory
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+
+	option = {
+		name = SRCevents.52.a
+		custom_effect_tooltip = SRCevents_52_a_desc_tt
+		custom_effect_tooltip = SRCevents_52_a_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_4_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 4 }
+			add_to_variable = { SRC_central_support_ren = 5 }
+			add_to_variable = { SRC_xianfeng = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 8 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.52.b
+		custom_effect_tooltip = SRCevents_52_b_desc_tt
+		custom_effect_tooltip = SRCevents_52_b_effect_tt
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_ren = 1 }
+			add_to_variable = { SRC_central_support_li = 5 }
+			add_to_variable = { SRC_weiyuan = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.52.c
+		custom_effect_tooltip = SRCevents_52_c_desc_tt
+		custom_effect_tooltip = SRCevents_52_c_effect_tt
+		add_political_power = 50
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_chen = 7 }
+			subtract_from_variable = { SRC_central_support_ren = 8 }
+			add_to_variable = { SRC_wenhe = 6 }
+			add_to_variable = { SRC_central_support_li = 1 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+}
+
+# 人民大学：完成“东北人民大学”后1天触发。
+country_event = {
+	id = SRCevents.53
+	title = SRCevents.53.t
+	desc = SRCevents.53.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+
+	option = {
+		name = SRCevents.53.a
+		custom_effect_tooltip = SRCevents_53_a_desc_tt
+		custom_effect_tooltip = SRCevents_53_a_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_4_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 4 }
+			add_to_variable = { SRC_central_support_ren = 5 }
+			add_to_variable = { SRC_xianfeng = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 8 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.53.b
+		custom_effect_tooltip = SRCevents_53_b_desc_tt
+		custom_effect_tooltip = SRCevents_53_b_effect_tt
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_ren = 1 }
+			add_to_variable = { SRC_central_support_li = 5 }
+			add_to_variable = { SRC_weiyuan = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.53.c
+		custom_effect_tooltip = SRCevents_53_c_desc_tt
+		custom_effect_tooltip = SRCevents_53_c_effect_tt
+		add_political_power = 50
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_chen = 7 }
+			subtract_from_variable = { SRC_central_support_ren = 8 }
+			add_to_variable = { SRC_wenhe = 6 }
+			add_to_variable = { SRC_central_support_li = 1 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+}
+
+# 统一战线：完成“革命统一战线”时触发。
+country_event = {
+	id = SRCevents.54
+	title = SRCevents.54.t
+	desc = SRCevents.54.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+
+	option = {
+		name = SRCevents.54.a
+		custom_effect_tooltip = SRCevents_54_a_desc_tt
+		custom_effect_tooltip = SRCevents_54_a_effect_tt
+		add_political_power = 50
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_chen = 7 }
+			subtract_from_variable = { SRC_central_support_ren = 8 }
+			add_to_variable = { SRC_wenhe = 6 }
+			add_to_variable = { SRC_central_support_li = 1 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.54.b
+		custom_effect_tooltip = SRCevents_54_b_desc_tt
+		custom_effect_tooltip = SRCevents_54_b_effect_tt
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_ren = 1 }
+			add_to_variable = { SRC_central_support_li = 5 }
+			add_to_variable = { SRC_weiyuan = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.54.c
+		custom_effect_tooltip = SRCevents_54_c_desc_tt
+		custom_effect_tooltip = SRCevents_54_c_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_4_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 4 }
+			add_to_variable = { SRC_central_support_ren = 5 }
+			add_to_variable = { SRC_xianfeng = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 8 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+}
+
+# 改革不是请客吃饭：完成“国家改革委员会”后1天触发。
+country_event = {
+	id = SRCevents.55
+	title = SRCevents.55.t
+	desc = SRCevents.55.d
+	picture = GFX_report_event_generic_factory
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = { tag = SRC }
+
+	option = {
+		name = SRCevents.55.a
+		custom_effect_tooltip = SRCevents_55_a_desc_tt
+		custom_effect_tooltip = SRCevents_55_a_effect_tt
+		add_political_power = 50
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_chen = 7 }
+			subtract_from_variable = { SRC_central_support_ren = 8 }
+			add_to_variable = { SRC_wenhe = 6 }
+			add_to_variable = { SRC_central_support_li = 1 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.55.b
+		custom_effect_tooltip = SRCevents_55_b_desc_tt
+		custom_effect_tooltip = SRCevents_55_b_effect_tt
+		hidden_effect = {
+			add_to_variable = { SRC_central_support_ren = 1 }
+			add_to_variable = { SRC_central_support_li = 5 }
+			add_to_variable = { SRC_weiyuan = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 2 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
+	}
+	option = {
+		name = SRCevents.55.c
+		custom_effect_tooltip = SRCevents_55_c_desc_tt
+		custom_effect_tooltip = SRCevents_55_c_effect_tt
+		custom_effect_tooltip = SRC_construction_gain_4_tt
+		hidden_effect = {
+			add_to_variable = { SRC_construction_achievements = 4 }
+			add_to_variable = { SRC_central_support_ren = 5 }
+			add_to_variable = { SRC_xianfeng = 6 }
+			subtract_from_variable = { SRC_central_support_chen = 8 }
+			subtract_from_variable = { SRC_central_support_li = 3 }
+			SRC_power_struggle_normalize_central_satisfaction = yes
+			SRC_power_struggle_normalize_balance = yes
+			SRC_party_cooperation_recalculate = yes
+		}
 	}
 }

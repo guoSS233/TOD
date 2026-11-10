@@ -1,6 +1,10 @@
 
 focus_tree = {
 	id = SRC_focus
+	inlay_window = {
+		id = SRC_inner_circle_inlay_window
+		position = { x = 3370 y = 1400 }
+	}
 	
 	country = {
 		factor = 0
@@ -23,7 +27,7 @@ focus_tree = {
 
 		available = { }
 
-		completion_reward = { SRC = {country_event = { id = SRCevents.10 days = 1 } } }
+		completion_reward = { SRC = {country_event = { id = SRCevents.10 days = 1 } }  SRC_supervisory_focus_completion_reward = yes }
 	}
 	#占领关键点
 	focus = {
@@ -41,6 +45,7 @@ focus_tree = {
 		completion_reward = {
 			add_offsite_building = { type = industrial_complex level = 1 }
 			add_offsite_building = { type = arms_factory level = 1 }
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#成立辽东特委
@@ -58,6 +63,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_political_power = 100
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#动员工人纠察队
@@ -75,6 +81,7 @@ focus_tree = {
 
 		completion_reward = {
 			unlock_decision_category_tooltip = SRC_baoweigongrenzhengquan_categories
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#提拔革命将领
@@ -110,6 +117,7 @@ focus_tree = {
 				}
 
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#交流战斗经验
@@ -128,6 +136,7 @@ focus_tree = {
 		completion_reward = {
 			army_experience = 50
 			SRC = {country_event = { id = SRCevents.12 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#敌后宣传成果
@@ -144,7 +153,7 @@ focus_tree = {
 		cost = 5
 		available = { }
 
-		completion_reward = { load_oob = "SRC_toucheng" }
+		completion_reward = { load_oob = "SRC_toucheng"  SRC_supervisory_focus_completion_reward = yes }
 	}
 	#向红军的未来眺望
 	focus = {
@@ -163,6 +172,7 @@ focus_tree = {
 			air_experience = 15
 			navy_experience = 15
 			SRC = {country_event = { id = SRCevents.13 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#巩固临时行政体系
@@ -181,6 +191,7 @@ focus_tree = {
 		completion_reward = {
 			add_stability = 0.1
 			SRC = {country_event = { id = SRCevents.10 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#建立军管委员会
@@ -198,6 +209,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.1
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#优先加强军备生产
@@ -216,6 +228,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_siliedeshehui_gongchangchanchu = 0.1 } 
 			custom_effect_tooltip = SRC_weapons_first_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#建立工厂委员会
@@ -235,6 +248,7 @@ focus_tree = {
 			add_to_variable = { SRC_siliedeshehui_gongchangxiaolv = 0.05 }
 			add_to_variable = { SRC_siliedeshehui_gongchangzengzhang = 0.05 }
 			custom_effect_tooltip = SRC_work_committee_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#新秩序
@@ -253,6 +267,7 @@ focus_tree = {
 		completion_reward = {
 			add_to_variable = { SRC_siliedeshehui_wendingdu = 0.15 } 
 			custom_effect_tooltip = SRC_tno_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#筹备东北革命政府
@@ -272,6 +287,7 @@ focus_tree = {
 			remove_dynamic_modifier = { modifier = SRC_siliedeshehui }
 			add_research_slot = 1
 			SRC = {country_event = { id = SRCevents.14 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#同产工会中央回归
@@ -300,6 +316,7 @@ focus_tree = {
 			remove_ideas = SRC_qiyireqing
 			#promote_character = SRC_zhongyangzhixingweiyuanhui
 			mark_focus_tree_layout_dirty = yes
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 
@@ -325,6 +342,7 @@ focus_tree = {
 			remove_ideas = SRC_buwangkulaojichou
 			remove_ideas = SRC_qiyireqing
 			mark_focus_tree_layout_dirty = yes
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#任辅臣主席
@@ -349,7 +367,20 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {}
+		completion_reward = {
+			add_political_power = 100
+			hidden_effect = {
+				set_variable = { SRC_construction_achievements = 0 }
+				set_variable = { SRC_construction_target = 30 }
+				set_variable = { SRC_construction_review_rounds_completed = 0 }
+				set_country_flag = SRC_construction_review_active
+				activate_mission = SRC_revolutionary_achievement_review
+				SRC_party_cooperation_recalculate = yes
+			}
+			custom_effect_tooltip = SRC_revolutionary_achievement_review_start_tt
+			custom_effect_tooltip = SRC_party_cooperation_start_tt
+			SRC_supervisory_focus_completion_reward = yes
+		}
 	}
 	#中央计划委员会
 	focus = {
@@ -368,6 +399,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_4_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 4 } }
 			remove_ideas = SRC_gongrenhuchangreqing
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_jihuashengchan } }
 			add_to_variable = { SRC_jihuashengchan_gongchangchanchu = 0.05 }
@@ -378,8 +411,6 @@ focus_tree = {
 			}
 			set_country_flag = SRC_ren_plan_decisions_unlocked
 			unlock_decision_tooltip = SRC_ren_single_director_management
-			unlock_decision_tooltip = SRC_ren_industry_energy
-			unlock_decision_tooltip = SRC_ren_transport_trade
 			set_country_flag = SRC_transport_trade_decisions_unlocked
 			unlock_decision_tooltip = SRC_repair_zhendong_xuanming_railway
 			unlock_decision_tooltip = SRC_build_revolution_locomotive
@@ -388,6 +419,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_expand_zhendong_dual_use_port
 			unlock_decision_tooltip = SRC_develop_nenjiang_shipping
 			SRC = {country_event = { id = SRCevents.17 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#工厂公有化
@@ -406,7 +438,9 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_jihuashengchan_jianzaosudu = 0.1 }
 			add_to_variable = { SRC_jihuashengchan_minzhuanjun = -0.1 }
 			effect_tooltip = {
@@ -426,14 +460,12 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_tuomu_zeya_gold_mining
 			unlock_decision_tooltip = SRC_ren_heavy_industry_priority
 			unlock_decision_tooltip = SRC_ren_labor_competition
-			unlock_decision_tooltip = SRC_ren_light_industry
 			set_country_flag = SRC_light_industry_decisions_unlocked
 			unlock_decision_tooltip = SRC_restore_xishen_flour_processing
 			unlock_decision_tooltip = SRC_changbai_logging_administration
 			unlock_decision_tooltip = SRC_henggu_leather_industry
 			unlock_decision_tooltip = SRC_longjiang_beet_sugar_factory
 			unlock_decision_tooltip = SRC_huning_qiulin_company
-			unlock_decision_tooltip = SRC_ren_regional_heavy_industry
 			set_country_flag = SRC_regional_heavy_industry_decisions_unlocked
 			unlock_decision_tooltip = SRC_expand_jilin_jiangbei_industrial_zone
 			unlock_decision_tooltip = SRC_reorganize_shenyang_industrial_zone
@@ -441,6 +473,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_expand_longjiang_machine_factory
 			unlock_decision_tooltip = SRC_coordinate_liaoyang_industry
 			SRC = {country_event = { id = SRCevents.18 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#农业集体化
@@ -459,7 +492,9 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_jihuashengchan_diqugongye = 0.15 }
 			add_to_variable = { SRC_jihuashengchan_xiaofeiping = -0.1 }
 			effect_tooltip = {
@@ -478,6 +513,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_ren_xingan_livestock_cooperative
 			unlock_decision_tooltip = SRC_ren_xingkai_fishery_base
 			SRC = {country_event = { id = SRCevents.19 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#大生产运动
@@ -497,6 +533,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_jihuashengchan_gongchangxiaolv = 0.05 }
 			add_to_variable = { SRC_jihuashengchan_gongchangchanchu = 0.05 }
 			effect_tooltip = {
@@ -506,11 +544,11 @@ focus_tree = {
 				}
 			}
 			set_country_flag = SRC_ren_production_campaign_decisions_unlocked
-			unlock_decision_tooltip = SRC_ren_organization_talent
 			set_country_flag = SRC_organization_talent_decisions_unlocked
 			unlock_decision_tooltip = SRC_establish_northeast_finance_cadre_school
 			unlock_decision_tooltip = SRC_recruit_ming_state_enterprise_technicians
 			unlock_decision_tooltip = SRC_emergency_dispatch_labor_corps
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#坚持革命领导权
@@ -530,6 +568,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			add_stability = 0.1
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_dangdelingdao } }
 			add_to_variable = { SRC_dangdelingdao_zuzhihuifu = 0.05 }
@@ -538,6 +578,8 @@ focus_tree = {
 			}
 			set_country_flag = SRC_ren_party_leadership_decisions_unlocked
 			unlock_decision_tooltip = SRC_ren_centralized_party_leadership
+			country_event = { id = SRCevents.52 days = 1 }
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#整风运动
@@ -556,7 +598,9 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } } 
 			add_to_variable = { SRC_dangdelingdao_dangpaiwending = 0.2 }
 			effect_tooltip = {
 				swap_ideas = {
@@ -567,6 +611,7 @@ focus_tree = {
 			set_country_flag = SRC_ren_zhengfeng_decisions_unlocked
 			unlock_decision_tooltip = SRC_ren_anti_decentralization
 			SRC = {country_event = { id = SRCevents.21 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#落实民主集中制
@@ -586,8 +631,9 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			add_to_variable = { SRC_dangdelingdao_shengchanxiaolv = 0.05 }
-			add_to_variable = { SRC_dangdelingdao_wendingdu = 0.1 }
 			effect_tooltip = {
 				swap_ideas = {
 					remove_idea = SRC_ren_dangdelingdao_display_blank
@@ -596,6 +642,7 @@ focus_tree = {
 			}
 			set_country_flag = SRC_ren_democratic_centralism_decisions_unlocked
 			unlock_decision_tooltip = SRC_ren_strict_party_life
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#从群众中来到群众中去
@@ -615,6 +662,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			add_to_variable = { SRC_dangdelingdao_zhanzhengzhichi = 0.1 }
 			effect_tooltip = {
 				swap_ideas = {
@@ -624,6 +673,7 @@ focus_tree = {
 			}
 			set_country_flag = SRC_ren_mass_line_decisions_unlocked
 			unlock_decision_tooltip = SRC_ren_supervisory_commission
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#东北人民大学
@@ -643,8 +693,12 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_research_slot = 1
 			add_tech_bonus = { name = SRC_dongbeirenmindaxue_construction bonus = 1.0 uses = 1 category = construction_tech }
+			country_event = { id = SRCevents.53 days = 1 }
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#东北革命格致院
@@ -664,6 +718,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_tech_bonus = {
 				name = SRC_dongbeigeminggezhiyuan
 				bonus = 1.0
@@ -678,6 +734,7 @@ focus_tree = {
 					province = 4876
 				}
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#工协是同产主义学校
@@ -697,13 +754,16 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			add_stability = 0.05
-			add_war_support = 0.05
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
+			add_war_support = 0.10
+			set_country_flag = SRC_ren_anti_cult_rewards_updated
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_gongrenminzhu } }
 			add_to_variable = { SRC_gongrenminzhu_shiyirenkou = 0.05 }
 			effect_tooltip = {
 				add_ideas = SRC_ren_jianjuefanduigerenchongbai_display
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#同产主义新文化运动
@@ -723,8 +783,9 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
-			add_to_variable = { SRC_gongrenminzhu_wendingdu = 0.1 }
-			add_to_variable = { SRC_gongrenminzhu_yanjiu = 0.05 }
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
+			add_to_variable = { SRC_gongrenminzhu_yanjiu = 0.10 }
 			add_tech_bonus = { name = SRC_xinwenhuayundong_electronics bonus = 1.0 uses = 1 category = electronics }
 			effect_tooltip = {
 				swap_ideas = {
@@ -733,6 +794,7 @@ focus_tree = {
 				}
 			}
 			SRC = {country_event = { id = SRCevents.25 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#红星照耀东方
@@ -751,7 +813,12 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_revolutionary_achievement_four_rounds_required_tt
+				check_variable = { var = SRC_construction_review_rounds_completed value = 4 compare = greater_than_or_equals }
+			}
+		}
 		
 		completion_reward = {
 			hidden_effect = {
@@ -765,6 +832,7 @@ focus_tree = {
 				}
 			}
 			SRC = {country_event = { id = SRCevents.26 } } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#李大钊主席
@@ -789,7 +857,21 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {SRC = {country_event = { id = SRCevents.35}}}
+		completion_reward = {
+			add_political_power = 100
+			hidden_effect = {
+				set_variable = { SRC_construction_achievements = 0 }
+				set_variable = { SRC_construction_target = 30 }
+				set_variable = { SRC_construction_review_rounds_completed = 0 }
+				set_country_flag = SRC_construction_review_active
+				activate_mission = SRC_revolutionary_achievement_review
+				SRC_party_cooperation_recalculate = yes
+			}
+			custom_effect_tooltip = SRC_revolutionary_achievement_review_start_tt
+			custom_effect_tooltip = SRC_party_cooperation_start_tt
+			SRC = { country_event = { id = SRCevents.35 } }
+			SRC_supervisory_focus_completion_reward = yes
+		}
 	}
 	#东北高校自治
 	focus = {
@@ -808,6 +890,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_xueshuminzhu } }
 			add_to_variable = { SRC_xueshuminzhu_keyan = 0.1 }
 			add_tech_bonus = { name = SRC_dongbeigaoxiaozizhihui_industry bonus = 1.0 uses = 1 category = industry }
@@ -815,6 +899,7 @@ focus_tree = {
 				add_ideas = SRC_li_dongbeigaoxiaozizhihui_display
 			}
 			SRC = {country_event = { id = SRCevents.36}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#东北格致院委员会
@@ -834,6 +919,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_research_slot = 1
 			846 = {
 				add_building_construction = {
@@ -843,6 +930,7 @@ focus_tree = {
 					province = 11771
 				}
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#新文化思潮
@@ -862,6 +950,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_to_variable = { SRC_xueshuminzhu_wendingdu = 0.1 }
 			add_to_variable = { SRC_xueshuminzhu_teshu = 0.1 }
 			add_to_variable = { SRC_xueshuminzhu_kexuejia = 0.15 }
@@ -872,6 +962,7 @@ focus_tree = {
 				}
 			}
 			SRC = {country_event = { id = SRCevents.37}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#建立基层工农民主机制
@@ -891,6 +982,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_to_variable = { SRC_xueshuminzhu_gongchangchanchu = 0.05 }
 			add_to_variable = { SRC_xueshuminzhu_wuchangchanchu = 0.1 }
 			effect_tooltip = {
@@ -899,6 +992,7 @@ focus_tree = {
 					add_idea = SRC_li_jicengminzhu_display
 				}
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#革命委员会
@@ -918,12 +1012,16 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_gemingzhengfu } }
 			add_to_variable = { SRC_gemingzhengfu_zhanzhengzhichi = 0.1 }
 			effect_tooltip = {
 				add_ideas = SRC_li_gemingweiyuanhui_display
 			}
 			unlock_decision_tooltip = SRC_li_destroy_feudal_clans
+			country_event = { id = SRCevents.51 }
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#赋权人民代表大会
@@ -943,10 +1041,13 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			add_stability = 0.1
 			add_war_support = 0.05
 			unlock_decision_tooltip = SRC_li_bureaucratic_reform
 			SRC = {country_event = { id = SRCevents.38}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#政治大民主
@@ -965,7 +1066,9 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } } 
 			add_to_variable = { SRC_gemingzhengfu_shiyirenkou = 0.1 }
 			add_to_variable = { SRC_gemingzhengfu_dongyuan = 0.15 }
 			effect_tooltip = {
@@ -975,6 +1078,7 @@ focus_tree = {
 				}
 			}
 			unlock_decision_tooltip = SRC_li_three_level_committees
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#群众直接监督
@@ -994,6 +1098,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			add_to_variable = { SRC_gemingzhengfu_zhanzhengzhichi = 0.1 }
 			add_to_variable = { SRC_gemingzhengfu_zhizaoshangjingfei = 0.05 }
 			effect_tooltip = {
@@ -1004,6 +1110,7 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = SRC_li_impeachment
 			SRC = {country_event = { id = SRCevents.39}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#国家经济委员会
@@ -1022,7 +1129,9 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = { 
+		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_4_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 4 } }
 			remove_ideas = SRC_gongrenhuchangreqing
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_jingweihui } }
 			add_to_variable = { SRC_jingweihui_jianzaosudu = 0.1 }
@@ -1039,8 +1148,6 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_songnen_oil_exploration
 			unlock_decision_tooltip = SRC_xihe_colored_metals_development
 			unlock_decision_tooltip = SRC_tuomu_zeya_gold_mining
-			unlock_decision_tooltip = SRC_li_industry_energy
-			unlock_decision_tooltip = SRC_li_transport_trade
 			set_country_flag = SRC_transport_trade_decisions_unlocked
 			unlock_decision_tooltip = SRC_repair_zhendong_xuanming_railway
 			unlock_decision_tooltip = SRC_build_revolution_locomotive
@@ -1049,6 +1156,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_expand_zhendong_dual_use_port
 			unlock_decision_tooltip = SRC_develop_nenjiang_shipping
 			SRC = {country_event = { id = SRCevents.40}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#关系再平衡
@@ -1068,6 +1176,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_jingweihui_jianzaosudu = 0.05 }
 			add_to_variable = { SRC_jingweihui_meitan = 0.05 }
 			effect_tooltip = {
@@ -1077,20 +1187,19 @@ focus_tree = {
 				}
 			}
 			unlock_decision_tooltip = SRC_li_worker_council
-			unlock_decision_tooltip = SRC_li_light_industry
 			set_country_flag = SRC_light_industry_decisions_unlocked
 			unlock_decision_tooltip = SRC_restore_xishen_flour_processing
 			unlock_decision_tooltip = SRC_changbai_logging_administration
 			unlock_decision_tooltip = SRC_henggu_leather_industry
 			unlock_decision_tooltip = SRC_longjiang_beet_sugar_factory
 			unlock_decision_tooltip = SRC_huning_qiulin_company
-			unlock_decision_tooltip = SRC_li_heavy_industry
 			set_country_flag = SRC_regional_heavy_industry_decisions_unlocked
 			unlock_decision_tooltip = SRC_expand_jilin_jiangbei_industrial_zone
 			unlock_decision_tooltip = SRC_reorganize_shenyang_industrial_zone
 			unlock_decision_tooltip = SRC_restore_jinzhou_shipyard
 			unlock_decision_tooltip = SRC_expand_longjiang_machine_factory
 			unlock_decision_tooltip = SRC_coordinate_liaoyang_industry
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#农业合作化
@@ -1110,6 +1219,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_jingweihui_diqugongye = 0.25 }
 			effect_tooltip = {
 				swap_ideas = {
@@ -1126,6 +1237,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_ren_full_granary_soybeans
 			unlock_decision_tooltip = SRC_ren_xingan_livestock_cooperative
 			unlock_decision_tooltip = SRC_ren_xingkai_fishery_base
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#协产运动
@@ -1145,6 +1257,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_jingweihui_minchangongchang = 0.05 }
 			add_to_variable = { SRC_jingweihui_wuchangchanchu = 0.05 }
 			add_to_variable = { SRC_jingweihui_ziyuan = 0.1 }
@@ -1154,12 +1268,12 @@ focus_tree = {
 					add_idea = SRC_li_xiechan_display
 				}
 			}
-			unlock_decision_tooltip = SRC_li_organization_talent
 			set_country_flag = SRC_organization_talent_decisions_unlocked
 			unlock_decision_tooltip = SRC_establish_northeast_finance_cadre_school
 			unlock_decision_tooltip = SRC_recruit_ming_state_enterprise_technicians
 			unlock_decision_tooltip = SRC_emergency_dispatch_labor_corps
 			SRC = {country_event = { id = SRCevents.41}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#赤旗指引未来
@@ -1178,7 +1292,12 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_revolutionary_achievement_four_rounds_required_tt
+				check_variable = { var = SRC_construction_review_rounds_completed value = 4 compare = greater_than_or_equals }
+			}
+		}
 		
 		completion_reward = {
 			hidden_effect = {
@@ -1192,6 +1311,7 @@ focus_tree = {
 				}
 			}
 			SRC = {country_event = { id = SRCevents.42}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#陈独秀主席
@@ -1216,7 +1336,21 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {}
 		
-		completion_reward = {SRC = {country_event = { id = SRCevents.27}}}
+		completion_reward = {
+			add_political_power = 100
+			hidden_effect = {
+				set_variable = { SRC_construction_achievements = 0 }
+				set_variable = { SRC_construction_target = 30 }
+				set_variable = { SRC_construction_review_rounds_completed = 0 }
+				set_country_flag = SRC_construction_review_active
+				activate_mission = SRC_revolutionary_achievement_review
+				SRC_party_cooperation_recalculate = yes
+			}
+			custom_effect_tooltip = SRC_revolutionary_achievement_review_start_tt
+			custom_effect_tooltip = SRC_party_cooperation_start_tt
+			SRC = { country_event = { id = SRCevents.27 } }
+			SRC_supervisory_focus_completion_reward = yes
+		}
 	}
 	#学术、文化革命化
 	focus = {
@@ -1235,6 +1369,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_gemingwenhua } }
 			add_to_variable = { SRC_gemingwenhua_keyan = 0.1 }
 			add_to_variable = { SRC_gemingwenhua_sheshi_buji = -0.25 }
@@ -1242,6 +1378,8 @@ focus_tree = {
 			effect_tooltip = {
 				add_ideas = SRC_chen_xueshuwenhuageminghua_display
 			}
+			SRC = {country_event = { id = SRCevents.30}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#东北劳动大学
@@ -1261,6 +1399,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_research_slot = 1
 			add_to_variable = { SRC_gemingwenhua_gongye = 0.1 }
 			add_to_variable = { SRC_gemingwenhua_wendingdu = 0.05 }
@@ -1271,6 +1411,7 @@ focus_tree = {
 					add_idea = SRC_chen_dongbeilaodongdaxue_display
 				}
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#强化青年工作
@@ -1290,6 +1431,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_to_variable = { SRC_gemingwenhua_wendingdu = 0.1 }
 			add_to_variable = { SRC_gemingwenhua_zhanzhengzhichi = 0.1 }
 			effect_tooltip = {
@@ -1299,6 +1442,7 @@ focus_tree = {
 				}
 			}
 			SRC = {country_event = { id = SRCevents.28}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#同产主义接班人
@@ -1318,6 +1462,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_8_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 8 } }
 			add_to_variable = { SRC_gemingwenhua_shengchan_xiaolv = 0.05 }
 			add_to_variable = { SRC_gemingwenhua_shengchan_baochi = 0.1 }
 			effect_tooltip = {
@@ -1327,6 +1473,7 @@ focus_tree = {
 				}
 			}
 			SRC = {country_event = { id = SRCevents.29}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#革命统一战线
@@ -1346,13 +1493,16 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			hidden_effect = { add_dynamic_modifier = { modifier = SRC_gemingtongmeng} }
 			add_to_variable = { SRC_gemingtongmeng_wendingdu = 0.1 }
 			effect_tooltip = {
 				add_ideas = SRC_chen_gemingtongyizhanxian_display
 			}
 			unlock_decision_tooltip = SRC_chen_political_sansanzhi
-			SRC = {country_event = { id = SRCevents.30}}
+			country_event = { id = SRCevents.54 }
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#构建反帝同盟
@@ -1372,6 +1522,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			unlock_decision_tooltip = SRC_chen_antimperial_democratic_law
 			effect_tooltip = { custom_effect_tooltip = SRC_chen_antimperial_coalition_tt }
 			hidden_effect = {
@@ -1380,6 +1532,7 @@ focus_tree = {
 				set_temp_variable = { coalition_partner_var = token:liberal_democracy }
 				add_to_coalition = yes
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#改造资产阶级
@@ -1399,6 +1552,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			add_to_variable = { SRC_gemingtongmeng_ziyuan = -0.05 }
 			add_to_variable = { SRC_gemingtongmeng_minzhengqingbao = -15 }
 			add_to_variable = { SRC_gemingtongmeng_nengyuan = -0.1 }
@@ -1410,6 +1565,7 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = SRC_chen_revolutionary_technicians
 			SRC = {country_event = { id = SRCevents.31}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#逐步向大同世界过渡
@@ -1429,6 +1585,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_5_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 5 } }
 			add_to_variable = { SRC_gemingtongmeng_wendingdu = 0.1 }
 			add_to_variable = { SRC_gemingtongmeng_weixiu = 0.2 }
 			effect_tooltip = {
@@ -1438,6 +1596,7 @@ focus_tree = {
 				}
 			}
 			unlock_decision_tooltip = SRC_chen_local_participation
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#国家改革委员会
@@ -1457,6 +1616,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_4_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 4 } }
 			remove_ideas = SRC_gongrenhuchangreqing
 			745 = {
 				add_building_construction = {
@@ -1473,8 +1634,6 @@ focus_tree = {
 			}
 			unlock_decision_tooltip = SRC_chen_new_tax_system
 			unlock_decision_tooltip = SRC_chen_labor_remuneration
-			unlock_decision_tooltip = SRC_chen_industry_energy
-			unlock_decision_tooltip = SRC_chen_transport_trade
 			set_country_flag = SRC_transport_trade_decisions_unlocked
 			unlock_decision_tooltip = SRC_repair_zhendong_xuanming_railway
 			unlock_decision_tooltip = SRC_build_revolution_locomotive
@@ -1482,6 +1641,8 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_xuanming_russian_trade_port
 			unlock_decision_tooltip = SRC_expand_zhendong_dual_use_port
 			unlock_decision_tooltip = SRC_develop_nenjiang_shipping
+			country_event = { id = SRCevents.55 days = 1 }
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#赎买企业
@@ -1501,6 +1662,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_gaigewei_jichusheshi = 0.1 }
 			add_to_variable = { SRC_gaigewei_tielu = 0.1 }
 			add_to_variable = { SRC_gaigewei_diqugongye = 0.1 }
@@ -1520,14 +1683,12 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_xihe_colored_metals_development
 			unlock_decision_tooltip = SRC_tuomu_zeya_gold_mining
 			unlock_decision_tooltip = SRC_chen_processing_orders
-			unlock_decision_tooltip = SRC_chen_light_industry
 			set_country_flag = SRC_light_industry_decisions_unlocked
 			unlock_decision_tooltip = SRC_restore_xishen_flour_processing
 			unlock_decision_tooltip = SRC_changbai_logging_administration
 			unlock_decision_tooltip = SRC_henggu_leather_industry
 			unlock_decision_tooltip = SRC_longjiang_beet_sugar_factory
 			unlock_decision_tooltip = SRC_huning_qiulin_company
-			unlock_decision_tooltip = SRC_chen_regional_heavy_industry
 			set_country_flag = SRC_regional_heavy_industry_decisions_unlocked
 			unlock_decision_tooltip = SRC_expand_jilin_jiangbei_industrial_zone
 			unlock_decision_tooltip = SRC_reorganize_shenyang_industrial_zone
@@ -1535,6 +1696,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_expand_longjiang_machine_factory
 			unlock_decision_tooltip = SRC_coordinate_liaoyang_industry
 			SRC = {country_event = { id = SRCevents.32}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#土地改革
@@ -1554,6 +1716,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_gaigewei_diqugongye = 0.15}
 			add_to_variable = { SRC_gaigewei_yue_renkou = 0.15 }
 			effect_tooltip = {
@@ -1569,6 +1733,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_ren_full_granary_soybeans
 			unlock_decision_tooltip = SRC_ren_xingan_livestock_cooperative
 			unlock_decision_tooltip = SRC_ren_xingkai_fishery_base
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#铁锅炖大鹅
@@ -1588,6 +1753,8 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {
+			custom_effect_tooltip = SRC_construction_gain_2_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 2 } }
 			add_to_variable = { SRC_gaigewei_minchangongchang = 0.15 }
 			add_to_variable = { SRC_gaigewei_minzhuanjun = -0.05 }
 			effect_tooltip = {
@@ -1596,12 +1763,12 @@ focus_tree = {
 					add_idea = SRC_chen_tieguodundae_display
 				}
 			}
-			unlock_decision_tooltip = SRC_chen_organization_talent
 			set_country_flag = SRC_organization_talent_decisions_unlocked
 			unlock_decision_tooltip = SRC_establish_northeast_finance_cadre_school
 			unlock_decision_tooltip = SRC_recruit_ming_state_enterprise_technicians
 			unlock_decision_tooltip = SRC_emergency_dispatch_labor_corps
 			SRC = {country_event = { id = SRCevents.33}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#朱门换新天
@@ -1620,7 +1787,12 @@ focus_tree = {
 		cost = 5
 		
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_revolutionary_achievement_four_rounds_required_tt
+				check_variable = { var = SRC_construction_review_rounds_completed value = 4 compare = greater_than_or_equals }
+			}
+		}
 		
 		completion_reward = {
 			hidden_effect = {
@@ -1636,6 +1808,7 @@ focus_tree = {
 				}
 			}
 			SRC = {country_event = { id = SRCevents.34}}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#中华工农红军
@@ -1656,6 +1829,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_political_power = 15
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#强化军队思想建设
@@ -1671,7 +1845,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			remove_ideas = SRC_gemingchiweidui
@@ -1681,6 +1860,7 @@ focus_tree = {
 			add_to_variable = { SRC_hongjun_qianhaosudu = 0.4 }
 			add_to_variable = { SRC_hongjun_qianhao = 0.2 }
 			custom_effect_tooltip = SRC_qianghuajunduisixiangjianshe_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#立足工人纠察队
@@ -1697,11 +1877,17 @@ focus_tree = {
 		prerequisite = {focus = SRC_qianghuajunduisixiangjianshe}
 		mutually_exclusive = {focus = SRC_yilaizhiyejunguan}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_huifu = 0.1 }
 			custom_effect_tooltip = SRC_lizugongrenjiuchadui_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#设立政委
@@ -1717,11 +1903,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_lizugongrenjiuchadui}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_zuzhidu = 0.1 }
 			custom_effect_tooltip = SRC_shelizhengwei_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#赋权士兵委员会
@@ -1738,11 +1930,17 @@ focus_tree = {
 		prerequisite = {focus = SRC_shelizhengwei}
 		mutually_exclusive = { focus = SRC_quelidangweizhi }
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_gaigewei_sunhao = -0.1 }
 			custom_effect_tooltip = SRC_fuquanshibingweiyuanhui_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#强化军事民主
@@ -1758,7 +1956,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_fuquanshibingweiyuanhui}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_zhudong = 0.02 }
@@ -1770,6 +1973,7 @@ focus_tree = {
 				category = cat_mass_assault
 				category = cat_mobile_warfare
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#确立党委制
@@ -1786,11 +1990,17 @@ focus_tree = {
 		prerequisite = {focus = SRC_shelizhengwei}
 		mutually_exclusive = { focus = SRC_fuquanshibingweiyuanhui }
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_fangyu = 0.1 }
 			custom_effect_tooltip = SRC_quelidangweizhi_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#支部建在连上
@@ -1806,11 +2016,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_quelidangweizhi}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_xietongxie = 0.1 }
 			custom_effect_tooltip = SRC_zhibujianzailianshang_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#官兵一律平等
@@ -1826,11 +2042,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_qianghuajunshiminzhu focus = SRC_zhibujianzailianshang}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_HP = 0.1 }
 			custom_effect_tooltip = SRC_guanbingyilvpingdeng_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#革命军，新作风
@@ -1848,22 +2070,14 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SRC_wartime_army_final_form_requirement_tt
-				SRC_wartime_army_ready_for_final_form = yes
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
 			}
 		}
 		
 		completion_reward = {
-			if = {
-				limit = { has_completed_focus = SRC_quelidangweizhi }
-				custom_effect_tooltip = SRC_party_led_army_effect_tt
-				SRC_wartime_army_apply_party_final = yes
-			}
-			else_if = {
-				limit = { has_completed_focus = SRC_fuquanshibingweiyuanhui }
-				custom_effect_tooltip = SRC_armed_people_effect_tt
-				SRC_wartime_army_apply_people_final = yes
-			}
+			add_to_variable = { SRC_hongjun_dixingchengfa = 0.1 }
+			custom_effect_tooltip = SRC_gemingjunxinzuofeng_xiaoguo
 		}
 	}
 	#依赖职业军官
@@ -1880,11 +2094,17 @@ focus_tree = {
 		prerequisite = {focus = SRC_qianghuajunduisixiangjianshe}
 		mutually_exclusive = {focus = SRC_lizugongrenjiuchadui}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_jihuashangxianjiacheng = 0.2 }
 			custom_effect_tooltip = SRC_yilaizhiyejunguan_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#军事一长制
@@ -1900,13 +2120,19 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_yilaizhiyejunguan}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			every_army_leader = {
 				add_attack = 1
 				add_defense = 1
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#革命军官入会
@@ -1922,11 +2148,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_junshiyizhangzhi}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_jihuasudu = 0.2 }
 			custom_effect_tooltip = SRC_gemingjunguanruhui_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#强化军委领导
@@ -1942,11 +2174,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_gemingjunguanruhui}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_jihuashangxian = 0.2 }
 			custom_effect_tooltip = SRC_qianghuajunweilingdao_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#确立军衔制
@@ -1962,11 +2200,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_qianghuajunweilingdao}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongjun_tupo = 0.1 }
 			custom_effect_tooltip = SRC_quelijunxianzhi_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#武装力量正规化
@@ -1984,27 +2228,19 @@ focus_tree = {
 		ai_will_do = {factor = 10}
 		available = {
 			custom_trigger_tooltip = {
-				tooltip = SRC_wartime_army_final_form_requirement_tt
-				SRC_wartime_army_ready_for_final_form = yes
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
 			}
 		}
 		
 		completion_reward = {
-
 			add_to_variable = { SRC_gaigewei_minzhuanjun = -0.2 }
-
-			custom_effect_tooltip = SRC_revolutionary_regular_army_effect_tt
-
+			custom_effect_tooltip = SRC_wuzhuangliliangzhengguihua_xiaoguo
+			add_to_variable = { SRC_hongjun_yezhan = 0.1 }
 			hidden_effect = { set_sub_doctrine = armored_infantry_support }
-
 			custom_effect_tooltip = SRC_wuzhuangliliangzhengguihua_blitz_xiaoguo
 
-			SRC_wartime_army_apply_regular_final = yes
-
-
-
 		}
-
 	}
 	#建立革命军事学院
 	focus = {
@@ -2019,7 +2255,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_doctrine_cost_reduction = {	
@@ -2030,6 +2271,7 @@ focus_tree = {
 			}
 			remove_ideas = SRC_gemingjunshiweiyuanhui_1
 			add_ideas = SRC_gemingjunshiweiyuanhui_2
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#军事理论革新
@@ -2045,11 +2287,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_jianligemingjunshixueyuan}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			remove_ideas = SRC_gemingjunshiweiyuanhui_2
 			add_dynamic_modifier = {modifier = SRC_gemingjunshiweiyuanhui_3 } 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#红军后勤部
@@ -2065,7 +2313,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_junshililungexin}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2074,6 +2327,7 @@ focus_tree = {
 				uses = 1
 				category = logistics_tech
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#构建补给网络
@@ -2089,11 +2343,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_hongjunhouqinbu}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_gemingjunshiweiyuanhui_bujifanwei = 0.2 }
 			custom_effect_tooltip = SRC_goujianbujiwangluo_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#完善生产体系
@@ -2109,11 +2369,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_goujianbujiwangluo}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_ideas = SRC_gemingjunshiweiyuanhui_buqianghuafei
 			custom_effect_tooltip = SRC_wanshanshengchantixi_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#生产研究革新
@@ -2129,11 +2395,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_hongjunhouqinbu}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_gemingjunshiweiyuanhui_yanjiu = 0.05 }
 			custom_effect_tooltip = SRC_shengchanyanjiugexin_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#实验新式编制
@@ -2149,11 +2421,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_shengchanyanjiugexin}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_gemingjunshiweiyuanhui_danweihuafei = -0.5 }
 			custom_effect_tooltip = SRC_shiyanxinshibianzhi_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#扩大火炮产业
@@ -2169,7 +2447,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_hongjunhouqinbu}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2178,6 +2461,7 @@ focus_tree = {
 				uses = 2
 				category = artillery
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#强化装甲研究
@@ -2193,7 +2477,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_kuodahuopaochanye}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2202,6 +2491,7 @@ focus_tree = {
 				uses = 2
 				category = armor
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#现代革命军队
@@ -2219,12 +2509,18 @@ focus_tree = {
 		prerequisite = {focus = SRC_shiyanxinshibianzhi}
 		prerequisite = {focus = SRC_qianghuazhuangjiayanjiu}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			remove_dynamic_modifier = {modifier = SRC_gemingjunshiweiyuanhui_3 }
 			add_dynamic_modifier = {modifier = SRC_gemingjunshiweiyuanhui_4 }
 			unlock_decision_category_tooltip = SRC_junshijianshe_catagories
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#成立革命空军
@@ -2240,7 +2536,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_dynamic_modifier = {modifier = SRC_hongkongjun}
@@ -2250,6 +2551,7 @@ focus_tree = {
 				uses = 1
 				category = air_doctrine
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#接收机场与飞机
@@ -2265,7 +2567,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_chengligemingkongjun}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_equipment_to_stockpile = {
@@ -2273,6 +2580,7 @@ focus_tree = {
 				amount = 200
 				variant_name =  "西安造 昌德卌二年式 关陇航空动力 “精卫” 双翼陆战改甲"
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#吸纳革命航空队
@@ -2288,12 +2596,18 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_jieshoujichangyufeiji}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			air_experience = 20
 			add_to_variable = { SRC_hongkongjun_duoquzhikong = 0.1 }
 			custom_effect_tooltip = SRC_xinageminghangkongdui_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#捍卫天空
@@ -2309,11 +2623,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_xinageminghangkongdui}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongkongjun_jiejizhence = 0.1 }
 			custom_effect_tooltip = SRC_hanweitiankong_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#建立辽阳航校
@@ -2329,7 +2649,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_hanweitiankong}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_doctrine_cost_reduction = {	
@@ -2338,6 +2663,7 @@ focus_tree = {
 				uses = 1
 				category = air_doctrine
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#成立东北空天大学
@@ -2353,7 +2679,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_jianliliaoyanghangxiao}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_doctrine_cost_reduction = {	
@@ -2362,6 +2693,7 @@ focus_tree = {
 				uses = 1
 				category = air_doctrine
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#长空翱翔
@@ -2377,11 +2709,17 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_chenglidongbeikongtiandaxue}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_hongkongjun_kongyou = 0.1 }
 			custom_effect_tooltip = SRC_changkongaoxiang_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#成立红海军
@@ -2397,7 +2735,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_zhonghuagongnonghongjun}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			navy_experience = 20
@@ -2415,6 +2758,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#接收舰艇
@@ -2430,9 +2774,15 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_chenglihonghaijun}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#改编北洋舰队士官
@@ -2448,7 +2798,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_jieshoujianting}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			GPS = {
@@ -2465,6 +2820,7 @@ focus_tree = {
 					GPS_shan_duowen = { set_nationality = SRC }
 				}
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#引入大同会海军人才
@@ -2480,7 +2836,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_jieshoujianting}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 
@@ -2500,6 +2861,7 @@ focus_tree = {
 
 			
 
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#保证国际补给线
@@ -2516,11 +2878,17 @@ focus_tree = {
 		prerequisite = {focus = SRC_gaibianbeiyangjianduishiguan}
 		prerequisite = {focus = SRC_yinrudatonghuihaijunrencai}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_honghaijun_huhangxiaolv = 0.1 }
 			custom_effect_tooltip = SRC_baozhengguojibujixian_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#成立海军学校
@@ -2536,7 +2904,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_baozhengguojibujixian}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_doctrine_cost_reduction = {	
@@ -2545,6 +2918,7 @@ focus_tree = {
 				uses = 1
 				category = naval_doctrine
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#设立海军研究所
@@ -2560,7 +2934,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_chenglihaijunxuexiao}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2575,6 +2954,7 @@ focus_tree = {
 				uses = 1
 				category = ss_tech
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#强化舰船研究
@@ -2590,7 +2970,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_shelihaijunyanjiusuo}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_tech_bonus = {
@@ -2605,6 +2990,7 @@ focus_tree = {
 				uses = 1
 				category = cv_tech
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#扩建大连港口
@@ -2620,7 +3006,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_qianghuajianchuanyanjiu}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			745 = {
@@ -2630,6 +3021,7 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#海军理论革新
@@ -2645,7 +3037,12 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_shelihaijunyanjiusuo}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_doctrine_cost_reduction = {	
@@ -2654,6 +3051,7 @@ focus_tree = {
 				uses = 2
 				category = naval_doctrine
 			}
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#发展海军人才
@@ -2669,9 +3067,15 @@ focus_tree = {
 		cost = 5
 		prerequisite = {focus = SRC_haijunlilungexin}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#掀起赤色浪潮
@@ -2688,11 +3092,17 @@ focus_tree = {
 		prerequisite = {focus = SRC_kuojiandaliangangkou}
 		prerequisite = {focus = SRC_fazhanhaijunrencai}
 		ai_will_do = {factor = 10}
-		available = {}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SRC_inner_circle_auto_only_tt
+				always = no
+			}
+		}
 		
 		completion_reward = {
 			add_to_variable = { SRC_honghaijun_xietong = 0.1 }
 			custom_effect_tooltip = SRC_xianqichiselangchao_xiaoguo
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#放眼天下
@@ -2712,6 +3122,7 @@ focus_tree = {
 		
 		completion_reward = {
 			add_political_power = 50
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#与第三国际加强合作
@@ -2731,6 +3142,7 @@ focus_tree = {
 		
 		completion_reward = {
 			
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#联络关内革命者
@@ -2750,6 +3162,7 @@ focus_tree = {
 		
 		completion_reward = {
 			unlock_decision_category_tooltip = SRC_lianxigeming
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#支援东洋革命
@@ -2768,6 +3181,7 @@ focus_tree = {
 		available = {}
 		
 		completion_reward = {	
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#挥师入关
@@ -2787,6 +3201,7 @@ focus_tree = {
 		
 		completion_reward = {
 			unlock_decision_category_tooltip = SRC_xuanzhan_catagories
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#召开统一大会
@@ -2814,6 +3229,7 @@ focus_tree = {
 		
 		completion_reward = {
 			unlock_decision_tooltip = ROC_SRC_decision_hetan_start
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 	#革命进行到底
@@ -2834,6 +3250,7 @@ focus_tree = {
 			unlock_decision_tooltip = SRC_guangzhoukaizhan
 			unlock_decision_tooltip = SRC_xinankaizhan
 			unlock_decision_tooltip = SRC_sichuankaizhan
+			SRC_supervisory_focus_completion_reward = yes
 		}
 	}
 

@@ -5684,6 +5684,10 @@ SRC_power_struggle_normalize_balance = {
     multiply_variable = { SRC_wenhe = 100 }
 
     SRC_power_struggle_calc_tangle_xy = yes
+    if = {
+        limit = { has_country_flag = SRC_li_bureaucratic_reform_enacted }
+        SRC_party_cooperation_recalculate = yes
+    }
 }
 
 SRC_power_struggle_calc_tangle_xy = {

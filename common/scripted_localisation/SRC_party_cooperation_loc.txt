@@ -1,0 +1,30 @@
+defined_text = {
+	name = SRC_party_cooperation_current_name
+	text = {
+		trigger = { has_country_flag = SRC_ren_centralized_party_leadership_enacted }
+		localization_key = SRC_centralized_leadership
+	}
+	text = {
+		trigger = {
+			has_country_flag = SRC_li_bureaucratic_reform_enacted
+			NOT = { has_country_flag = SRC_ren_centralized_party_leadership_enacted }
+		}
+		localization_key = SRC_close_ties_with_masses
+	}
+	text = {
+		trigger = {
+			has_country_flag = SRC_chen_political_sansanzhi_enacted
+			NOT = { has_country_flag = SRC_ren_centralized_party_leadership_enacted }
+			NOT = { has_country_flag = SRC_li_bureaucratic_reform_enacted }
+		}
+		localization_key = SRC_three_thirds_government
+	}
+	text = {
+		trigger = {
+			NOT = { has_country_flag = SRC_li_bureaucratic_reform_enacted }
+			NOT = { has_country_flag = SRC_ren_centralized_party_leadership_enacted }
+			NOT = { has_country_flag = SRC_chen_political_sansanzhi_enacted }
+		}
+		localization_key = SRC_party_cooperation
+	}
+}

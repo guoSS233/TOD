@@ -1,0 +1,51 @@
+guiTypes = {
+	containerWindowType = {
+		name = "SRC_economic_construction_decision_gui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 500 height = 104 }
+		background = { name = "SRC_economic_construction_bg" quadTextureSprite = "GFX_tiled_decisions_bg_small" }
+
+		instantTextBoxType = {
+			name = "SRC_economic_construction_title"
+			position = { x = 18 y = 9 }
+			font = "hoi_20bs"
+			text = "SRC_economic_construction_title"
+			maxWidth = 464
+			maxHeight = 25
+		}
+		instantTextBoxType = {
+			name = "SRC_construction_achievements_label"
+			position = { x = 20 y = 39 }
+			font = "hoi_18"
+			text = "SRC_construction_achievements_label"
+			maxWidth = 340
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name = "SRC_construction_achievements_value"
+			position = { x = 365 y = 39 }
+			font = "hoi_20bs"
+			text = "[?SRC_construction_achievements|0]"
+			format = right
+			maxWidth = 105
+			maxHeight = 25
+		}
+		instantTextBoxType = {
+			name = "SRC_construction_target_label"
+			position = { x = 20 y = 68 }
+			font = "hoi_18"
+			text = "SRC_construction_target_label"
+			maxWidth = 340
+			maxHeight = 24
+		}
+		instantTextBoxType = {
+			name = "SRC_construction_target_value"
+			position = { x = 365 y = 68 }
+			font = "hoi_20bs"
+			text = "[?SRC_construction_target|0]"
+			format = right
+			maxWidth = 105
+			maxHeight = 25
+		}
+	}
+}

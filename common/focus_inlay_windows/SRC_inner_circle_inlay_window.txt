@@ -1,0 +1,163 @@
+SRC_inner_circle_inlay_window = {
+    window_name = SRC_inner_circle_ui_window
+    internal = yes
+    visible = { SRC_inner_circle_unlocked = yes }
+    scripted_images = {
+        SRC_inner_circle_chairman_portrait = {
+            GFX_SRC_inner_circle_chairman_ren = {
+                has_country_leader = { ruling_only = yes character = SRC_ren_fuchen }
+            }
+            GFX_SRC_inner_circle_chairman_li = {
+                has_country_leader = { ruling_only = yes character = SRC_li_dazhao }
+            }
+            GFX_SRC_inner_circle_chairman_chen = {
+                has_country_leader = { ruling_only = yes character = SRC_chen_duxiu }
+            }
+            GFX_SRC_inner_circle_empty = yes
+        }
+        SRC_inner_circle_slot_1_portrait = {
+            GFX_SRC_inner_circle_xu = { check_variable = { SRC_inner_circle_slot_1 = 1 } }
+            GFX_SRC_inner_circle_lan = { check_variable = { SRC_inner_circle_slot_1 = 2 } }
+            GFX_SRC_inner_circle_guan = { check_variable = { SRC_inner_circle_slot_1 = 3 } }
+            GFX_SRC_inner_circle_dong = { check_variable = { SRC_inner_circle_slot_1 = 4 } }
+            GFX_SRC_inner_circle_zhao = { check_variable = { SRC_inner_circle_slot_1 = 5 } }
+            GFX_SRC_inner_circle_yang = { check_variable = { SRC_inner_circle_slot_1 = 6 } }
+            GFX_SRC_inner_circle_xu_fanting = { check_variable = { SRC_inner_circle_slot_1 = 7 } }
+            GFX_SRC_inner_circle_he_changgong = { check_variable = { SRC_inner_circle_slot_1 = 8 } }
+            GFX_SRC_inner_circle_empty = yes
+        }
+        SRC_inner_circle_slot_2_portrait = {
+            GFX_SRC_inner_circle_xu = { check_variable = { SRC_inner_circle_slot_2 = 1 } }
+            GFX_SRC_inner_circle_lan = { check_variable = { SRC_inner_circle_slot_2 = 2 } }
+            GFX_SRC_inner_circle_guan = { check_variable = { SRC_inner_circle_slot_2 = 3 } }
+            GFX_SRC_inner_circle_dong = { check_variable = { SRC_inner_circle_slot_2 = 4 } }
+            GFX_SRC_inner_circle_zhao = { check_variable = { SRC_inner_circle_slot_2 = 5 } }
+            GFX_SRC_inner_circle_yang = { check_variable = { SRC_inner_circle_slot_2 = 6 } }
+            GFX_SRC_inner_circle_xu_fanting = { check_variable = { SRC_inner_circle_slot_2 = 7 } }
+            GFX_SRC_inner_circle_he_changgong = { check_variable = { SRC_inner_circle_slot_2 = 8 } }
+            GFX_SRC_inner_circle_empty = yes
+        }
+        SRC_inner_circle_slot_3_portrait = {
+            GFX_SRC_inner_circle_zeng_yiding = { check_variable = { SRC_inner_circle_slot_3 = 9 } }
+            GFX_SRC_inner_circle_empty = yes
+        }
+        SRC_inner_circle_slot_4_portrait = {
+            GFX_SRC_inner_circle_liu_yun = { check_variable = { SRC_inner_circle_slot_4 = 10 } }
+            GFX_SRC_inner_circle_empty = yes
+        }
+        SRC_inner_circle_slot_1_highlight = {
+            GFX_SRC_inner_circle_slot_highlight = { check_variable = { SRC_inner_circle_selected_slot = 1 } }
+            GFX_SRC_inner_circle_slot_click = yes
+        }
+        SRC_inner_circle_slot_2_highlight = {
+            GFX_SRC_inner_circle_slot_highlight = { check_variable = { SRC_inner_circle_selected_slot = 2 } }
+            GFX_SRC_inner_circle_slot_click = yes
+        }
+        SRC_inner_circle_slot_3_highlight = {
+            GFX_SRC_inner_circle_slot_highlight = { check_variable = { SRC_inner_circle_selected_slot = 3 } }
+            GFX_SRC_inner_circle_slot_click = yes
+        }
+        SRC_inner_circle_slot_4_highlight = {
+            GFX_SRC_inner_circle_slot_highlight = { check_variable = { SRC_inner_circle_selected_slot = 4 } }
+            GFX_SRC_inner_circle_slot_click = yes
+        }
+        SRC_inner_circle_xu_fanting_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_xu_fanting_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_he_changgong_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_he_changgong_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_zeng_yiding_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_zeng_yiding_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_liu_yun_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_liu_yun_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_xu_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_xu_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_dong_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_dong_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_lan_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_lan_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_zhao_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_zhao_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_guan_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_guan_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+        SRC_inner_circle_yang_highlight = {
+            GFX_SRC_inner_circle_candidate_highlight = { SRC_inner_circle_yang_can_appoint = yes }
+            GFX_SRC_inner_circle_candidate_click = yes
+        }
+    }
+    scripted_buttons = {
+        SRC_inner_circle_slot_1_click = {
+            available = { SRC_inner_circle_unlocked = yes }
+            click_effect = { SRC_inner_circle_select_slot_1 = yes }
+        }
+        SRC_inner_circle_slot_2_click = {
+            available = { SRC_inner_circle_unlocked = yes }
+            click_effect = { SRC_inner_circle_select_slot_2 = yes }
+        }
+        SRC_inner_circle_slot_3_click = {
+            available = { SRC_inner_circle_unlocked = yes }
+            click_effect = { SRC_inner_circle_select_slot_3 = yes }
+        }
+        SRC_inner_circle_slot_4_click = {
+            available = { SRC_inner_circle_unlocked = yes }
+            click_effect = { SRC_inner_circle_select_slot_4 = yes }
+        }
+        SRC_inner_circle_xu_fanting_click = {
+            available = { SRC_inner_circle_xu_fanting_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 7 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_he_changgong_click = {
+            available = { SRC_inner_circle_he_changgong_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 8 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_zeng_yiding_click = {
+            available = { SRC_inner_circle_zeng_yiding_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 9 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_liu_yun_click = {
+            available = { SRC_inner_circle_liu_yun_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 10 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_xu_click = {
+            available = { SRC_inner_circle_xu_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 1 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_dong_click = {
+            available = { SRC_inner_circle_dong_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 4 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_lan_click = {
+            available = { SRC_inner_circle_lan_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 2 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_zhao_click = {
+            available = { SRC_inner_circle_zhao_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 5 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_guan_click = {
+            available = { SRC_inner_circle_guan_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 3 } SRC_inner_circle_assign_selected = yes }
+        }
+        SRC_inner_circle_yang_click = {
+            available = { SRC_inner_circle_yang_can_appoint = yes }
+            click_effect = { set_variable = { SRC_inner_circle_pending = 6 } SRC_inner_circle_assign_selected = yes }
+        }
+    }
+}

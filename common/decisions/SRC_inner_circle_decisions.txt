@@ -1,0 +1,131 @@
+SRC_inner_circle_category = {
+    SRC_inner_circle_appoint_xu = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_xu_active } }
+        available = {
+            SRC_inner_circle_appointment_available = yes
+            has_completed_focus = SRC_promote_military_officers
+        }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 1 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_lan = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_lan_active } }
+        available = {
+            SRC_inner_circle_appointment_available = yes
+        }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 2 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_guan = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_guan_active } }
+        available = {
+            SRC_inner_circle_appointment_available = yes
+        }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 3 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_dong = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_dong_active } }
+        available = { SRC_inner_circle_appointment_available = yes }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 4 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_zhao = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_zhao_active } }
+        available = { SRC_inner_circle_appointment_available = yes }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 5 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_yang = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_yang_active } }
+        available = {
+            SRC_inner_circle_appointment_available = yes
+            has_completed_focus = SRC_promote_military_officers
+        }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 6 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_xu_fanting = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_xu_fanting_active } }
+        available = { SRC_inner_circle_appointment_available = yes }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 7 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_he_changgong = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_he_changgong_active } }
+        available = { SRC_inner_circle_appointment_available = yes }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 8 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_zeng_yiding = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_zeng_yiding_active } }
+        available = { SRC_inner_circle_appointment_available = yes }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 9 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+
+    SRC_inner_circle_appoint_liu_yun = {
+        icon = generic_communism
+        visible = { NOT = { has_country_flag = SRC_inner_circle_liu_yun_active } }
+        available = { SRC_inner_circle_appointment_available = yes }
+        cost = 50
+        complete_effect = {
+            set_variable = { SRC_inner_circle_pending = 10 }
+            SRC_inner_circle_assign_pending = yes
+        }
+        ai_will_do = { base = 1 }
+    }
+}

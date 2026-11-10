@@ -1,0 +1,98 @@
+SRC_revolutionary_achievement_review_success = {
+    if = {
+        limit = { has_completed_focus = SRC_renfuchenzhuxi }
+        add_to_variable = { SRC_xianfeng = 4 }
+        subtract_from_variable = { SRC_weiyuan = 2 }
+        subtract_from_variable = { SRC_wenhe = 2 }
+        add_to_variable = { SRC_central_support_ren = 5 }
+        add_to_variable = { SRC_central_support_li = 2 }
+        add_to_variable = { SRC_central_support_chen = 2 }
+    }
+    else_if = {
+        limit = { has_completed_focus = SRC_lidazhaozhuxi }
+        subtract_from_variable = { SRC_xianfeng = 2 }
+        add_to_variable = { SRC_weiyuan = 4 }
+        subtract_from_variable = { SRC_wenhe = 2 }
+        add_to_variable = { SRC_central_support_ren = 2 }
+        add_to_variable = { SRC_central_support_li = 5 }
+        add_to_variable = { SRC_central_support_chen = 2 }
+    }
+    else_if = {
+        limit = { has_completed_focus = SRC_chenduxiuzhuxi }
+        subtract_from_variable = { SRC_xianfeng = 2 }
+        subtract_from_variable = { SRC_weiyuan = 2 }
+        add_to_variable = { SRC_wenhe = 4 }
+        add_to_variable = { SRC_central_support_ren = 2 }
+        add_to_variable = { SRC_central_support_li = 2 }
+        add_to_variable = { SRC_central_support_chen = 5 }
+    }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+    SRC_party_cooperation_recalculate = yes
+}
+
+SRC_revolutionary_achievement_review_failure = {
+    if = {
+        limit = { has_completed_focus = SRC_renfuchenzhuxi }
+        subtract_from_variable = { SRC_xianfeng = 4 }
+        add_to_variable = { SRC_weiyuan = 2 }
+        add_to_variable = { SRC_wenhe = 2 }
+        subtract_from_variable = { SRC_central_support_ren = 2 }
+        subtract_from_variable = { SRC_central_support_li = 3 }
+        subtract_from_variable = { SRC_central_support_chen = 3 }
+    }
+    else_if = {
+        limit = { has_completed_focus = SRC_lidazhaozhuxi }
+        add_to_variable = { SRC_xianfeng = 2 }
+        subtract_from_variable = { SRC_weiyuan = 4 }
+        add_to_variable = { SRC_wenhe = 2 }
+        subtract_from_variable = { SRC_central_support_li = 2 }
+        subtract_from_variable = { SRC_central_support_ren = 3 }
+        subtract_from_variable = { SRC_central_support_chen = 3 }
+    }
+    else_if = {
+        limit = { has_completed_focus = SRC_chenduxiuzhuxi }
+        add_to_variable = { SRC_xianfeng = 2 }
+        add_to_variable = { SRC_weiyuan = 2 }
+        subtract_from_variable = { SRC_wenhe = 4 }
+        subtract_from_variable = { SRC_central_support_chen = 2 }
+        subtract_from_variable = { SRC_central_support_ren = 3 }
+        subtract_from_variable = { SRC_central_support_li = 3 }
+    }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+    SRC_party_cooperation_recalculate = yes
+}
+
+SRC_revolutionary_achievement_review_extension_penalty = {
+    if = {
+        limit = { has_completed_focus = SRC_renfuchenzhuxi }
+        subtract_from_variable = { SRC_xianfeng = 2 }
+        add_to_variable = { SRC_weiyuan = 1 }
+        add_to_variable = { SRC_wenhe = 1 }
+        subtract_from_variable = { SRC_central_support_ren = 1 }
+        subtract_from_variable = { SRC_central_support_li = 1.5 }
+        subtract_from_variable = { SRC_central_support_chen = 1.5 }
+    }
+    else_if = {
+        limit = { has_completed_focus = SRC_lidazhaozhuxi }
+        add_to_variable = { SRC_xianfeng = 1 }
+        subtract_from_variable = { SRC_weiyuan = 2 }
+        add_to_variable = { SRC_wenhe = 1 }
+        subtract_from_variable = { SRC_central_support_li = 1 }
+        subtract_from_variable = { SRC_central_support_ren = 1.5 }
+        subtract_from_variable = { SRC_central_support_chen = 1.5 }
+    }
+    else_if = {
+        limit = { has_completed_focus = SRC_chenduxiuzhuxi }
+        add_to_variable = { SRC_xianfeng = 1 }
+        add_to_variable = { SRC_weiyuan = 1 }
+        subtract_from_variable = { SRC_wenhe = 2 }
+        subtract_from_variable = { SRC_central_support_chen = 1 }
+        subtract_from_variable = { SRC_central_support_ren = 1.5 }
+        subtract_from_variable = { SRC_central_support_li = 1.5 }
+    }
+    SRC_power_struggle_normalize_central_satisfaction = yes
+    SRC_power_struggle_normalize_balance = yes
+    SRC_party_cooperation_recalculate = yes
+}

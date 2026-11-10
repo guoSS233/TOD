@@ -1,0 +1,140 @@
+SRC_inner_circle_unlocked = {
+    tag = SRC
+    SRC_has_any_chairman_route = yes
+}
+
+SRC_inner_circle_appointment_available = {
+    SRC_inner_circle_unlocked = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_political_power_ready_tt
+        has_political_power > 49
+    }
+}
+
+SRC_inner_circle_slot_selected = {
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_slot_selected_tt
+        OR = {
+            check_variable = { SRC_inner_circle_selected_slot = 1 }
+            check_variable = { SRC_inner_circle_selected_slot = 2 }
+            check_variable = { SRC_inner_circle_selected_slot = 3 }
+            check_variable = { SRC_inner_circle_selected_slot = 4 }
+        }
+    }
+}
+
+SRC_inner_circle_army_slot_selected = {
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_army_slot_selected_tt
+        OR = {
+            check_variable = { SRC_inner_circle_selected_slot = 1 }
+            check_variable = { SRC_inner_circle_selected_slot = 2 }
+        }
+    }
+}
+
+SRC_inner_circle_navy_slot_selected = {
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_navy_slot_selected_tt
+        check_variable = { SRC_inner_circle_selected_slot = 3 }
+    }
+}
+
+SRC_inner_circle_air_slot_selected = {
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_air_slot_selected_tt
+        check_variable = { SRC_inner_circle_selected_slot = 4 }
+    }
+}
+
+SRC_inner_circle_xu_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    has_completed_focus = SRC_promote_military_officers
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_xu_active }
+    }
+}
+
+SRC_inner_circle_lan_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_lan_active }
+    }
+}
+
+SRC_inner_circle_guan_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_guan_active }
+    }
+}
+
+SRC_inner_circle_dong_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_dong_active }
+    }
+}
+
+SRC_inner_circle_zhao_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_zhao_active }
+    }
+}
+
+SRC_inner_circle_yang_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    has_completed_focus = SRC_promote_military_officers
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_yang_active }
+    }
+}
+
+SRC_inner_circle_xu_fanting_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_xu_fanting_active }
+    }
+}
+
+SRC_inner_circle_he_changgong_can_appoint = {
+    SRC_inner_circle_army_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_he_changgong_active }
+    }
+}
+
+SRC_inner_circle_zeng_yiding_can_appoint = {
+    SRC_inner_circle_navy_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_zeng_yiding_active }
+    }
+}
+
+SRC_inner_circle_liu_yun_can_appoint = {
+    SRC_inner_circle_air_slot_selected = yes
+    SRC_inner_circle_appointment_available = yes
+    custom_trigger_tooltip = {
+        tooltip = SRC_inner_circle_candidate_not_seated_tt
+        NOT = { has_country_flag = SRC_inner_circle_liu_yun_active }
+    }
+}

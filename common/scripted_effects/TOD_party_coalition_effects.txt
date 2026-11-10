@@ -1,4 +1,6 @@
 ### TOD Party Coalition Effects
+### Coalition partner popularity is converted into a stability bonus.
+### Formula: partner popularity * ruling-party popularity stability factor * coalition efficiency.
 ### Usage:
 ### set_temp_variable = { coalition_partner_var = token:liberal_democracy }
 ### add_to_coalition = yes
@@ -24,135 +26,264 @@ TOD_cleanup_invalid_coalition_partners = {
 	if = { limit = { has_government = national_corporatism } clr_country_flag = TOD_coalition_partner_national_corporatism }
 }
 
-TOD_recalculate_coalition_pp_gain = {
+TOD_update_coalition_gui_frames = {
 	hidden_effect = {
-		TOD_cleanup_invalid_coalition_partners = yes
-		set_variable = { TOD_coalition_pp_gain = 0 }
+		set_variable = { TOD_coalition_frame_vanguard_socialism = 1 }
+		set_variable = { TOD_coalition_frame_council_socialism = 1 }
+		set_variable = { TOD_coalition_frame_moderate_socialism = 1 }
+		set_variable = { TOD_coalition_frame_agroindustrial_socialism = 1 }
+		set_variable = { TOD_coalition_frame_social_democrat = 1 }
+		set_variable = { TOD_coalition_frame_liberal_democracy = 1 }
+		set_variable = { TOD_coalition_frame_consociationalism = 1 }
+		set_variable = { TOD_coalition_frame_conservative_democracy = 1 }
+		set_variable = { TOD_coalition_frame_authoritarian_oligarchy = 1 }
+		set_variable = { TOD_coalition_frame_leader_despotism = 1 }
+		set_variable = { TOD_coalition_frame_sacred_revivalism = 1 }
+		set_variable = { TOD_coalition_frame_national_corporatism = 1 }
 
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_vanguard_socialism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@vanguard_socialism
-					if = { limit = { value = TOD_coalition_stability_vanguard_socialism greater_than = 0 } multiply = TOD_coalition_stability_vanguard_socialism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_vanguard_socialism = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_council_socialism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@council_socialism
-					if = { limit = { value = TOD_coalition_stability_council_socialism greater_than = 0 } multiply = TOD_coalition_stability_council_socialism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_council_socialism = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_moderate_socialism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@moderate_socialism
-					if = { limit = { value = TOD_coalition_stability_moderate_socialism greater_than = 0 } multiply = TOD_coalition_stability_moderate_socialism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_moderate_socialism = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_agroindustrial_socialism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@agroindustrial_socialism
-					if = { limit = { value = TOD_coalition_stability_agroindustrial_socialism greater_than = 0 } multiply = TOD_coalition_stability_agroindustrial_socialism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_agroindustrial_socialism = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_social_democrat }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@social_democrat
-					if = { limit = { value = TOD_coalition_stability_social_democrat greater_than = 0 } multiply = TOD_coalition_stability_social_democrat }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_social_democrat = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_liberal_democracy }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@liberal_democracy
-					if = { limit = { value = TOD_coalition_stability_liberal_democracy greater_than = 0 } multiply = TOD_coalition_stability_liberal_democracy }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_liberal_democracy = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_consociationalism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@consociationalism
-					if = { limit = { value = TOD_coalition_stability_consociationalism greater_than = 0 } multiply = TOD_coalition_stability_consociationalism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_consociationalism = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_conservative_democracy }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@conservative_democracy
-					if = { limit = { value = TOD_coalition_stability_conservative_democracy greater_than = 0 } multiply = TOD_coalition_stability_conservative_democracy }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_conservative_democracy = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_authoritarian_oligarchy }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@authoritarian_oligarchy
-					if = { limit = { value = TOD_coalition_stability_authoritarian_oligarchy greater_than = 0 } multiply = TOD_coalition_stability_authoritarian_oligarchy }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_authoritarian_oligarchy = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_leader_despotism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@leader_despotism
-					if = { limit = { value = TOD_coalition_stability_leader_despotism greater_than = 0 } multiply = TOD_coalition_stability_leader_despotism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_leader_despotism = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_sacred_revivalism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@sacred_revivalism
-					if = { limit = { value = TOD_coalition_stability_sacred_revivalism greater_than = 0 } multiply = TOD_coalition_stability_sacred_revivalism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_sacred_revivalism = 2 }
 		}
 		if = {
 			limit = { has_country_flag = TOD_coalition_partner_national_corporatism }
-			add_to_variable = {
-				TOD_coalition_pp_gain = {
-					value = party_popularity@national_corporatism
-					if = { limit = { value = TOD_coalition_stability_national_corporatism greater_than = 0 } multiply = TOD_coalition_stability_national_corporatism }
-					else = { multiply = TOD_coalition_default_stability?0.5 }
-				}
-			}
+			set_variable = { TOD_coalition_frame_national_corporatism = 2 }
+		}
+
+
+
+		if = { limit = { has_government = vanguard_socialism } set_variable = { TOD_coalition_frame_vanguard_socialism = 3 } }
+		if = { limit = { has_government = council_socialism } set_variable = { TOD_coalition_frame_council_socialism = 3 } }
+		if = { limit = { has_government = moderate_socialism } set_variable = { TOD_coalition_frame_moderate_socialism = 3 } }
+		if = { limit = { has_government = agroindustrial_socialism } set_variable = { TOD_coalition_frame_agroindustrial_socialism = 3 } }
+		if = { limit = { has_government = social_democrat } set_variable = { TOD_coalition_frame_social_democrat = 3 } }
+		if = { limit = { has_government = liberal_democracy } set_variable = { TOD_coalition_frame_liberal_democracy = 3 } }
+		if = { limit = { has_government = consociationalism } set_variable = { TOD_coalition_frame_consociationalism = 3 } }
+		if = { limit = { has_government = conservative_democracy } set_variable = { TOD_coalition_frame_conservative_democracy = 3 } }
+		if = { limit = { has_government = authoritarian_oligarchy } set_variable = { TOD_coalition_frame_authoritarian_oligarchy = 3 } }
+		if = { limit = { has_government = leader_despotism } set_variable = { TOD_coalition_frame_leader_despotism = 3 } }
+		if = { limit = { has_government = sacred_revivalism } set_variable = { TOD_coalition_frame_sacred_revivalism = 3 } }
+		if = { limit = { has_government = national_corporatism } set_variable = { TOD_coalition_frame_national_corporatism = 3 } }
+	}
+}
+
+TOD_recalculate_coalition_stability_bonus = {
+	hidden_effect = {
+		TOD_cleanup_invalid_coalition_partners = yes
+		TOD_update_coalition_gui_frames = yes
+		set_variable = { TOD_coalition_stability_bonus = 0 }
+		clear_variable = TOD_coalition_pp_gain
+		if = {
+			limit = { NOT = { has_variable = TOD_coalition_base_party_popularity_stability_factor } }
+			set_variable = { TOD_coalition_base_party_popularity_stability_factor = 0.15 }
+		}
+		if = {
+			limit = { NOT = { has_variable = TOD_coalition_default_efficiency } }
+			set_variable = { TOD_coalition_default_efficiency = 0.5 }
 		}
 
 		if = {
+			limit = { has_country_flag = TOD_coalition_partner_vanguard_socialism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@vanguard_socialism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_vanguard_socialism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_vanguard_socialism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_council_socialism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@council_socialism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_council_socialism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_council_socialism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_moderate_socialism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@moderate_socialism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_moderate_socialism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_moderate_socialism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_agroindustrial_socialism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@agroindustrial_socialism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_agroindustrial_socialism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_agroindustrial_socialism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_social_democrat }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@social_democrat }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_social_democrat value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_social_democrat }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_liberal_democracy }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@liberal_democracy }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_liberal_democracy value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_liberal_democracy }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_consociationalism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@consociationalism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_consociationalism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_consociationalism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_conservative_democracy }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@conservative_democracy }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_conservative_democracy value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_conservative_democracy }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_authoritarian_oligarchy }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@authoritarian_oligarchy }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_authoritarian_oligarchy value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_authoritarian_oligarchy }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_leader_despotism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@leader_despotism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_leader_despotism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_leader_despotism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_sacred_revivalism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@sacred_revivalism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_sacred_revivalism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_sacred_revivalism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+		if = {
+			limit = { has_country_flag = TOD_coalition_partner_national_corporatism }
+			set_temp_variable = { TOD_coalition_temp_bonus = party_popularity@national_corporatism }
+			multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_base_party_popularity_stability_factor }
+			if = {
+				limit = { check_variable = { var = TOD_coalition_stability_national_corporatism value = 0 compare = greater_than } }
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_stability_national_corporatism }
+			}
+			else = {
+				multiply_temp_variable = { TOD_coalition_temp_bonus = TOD_coalition_default_efficiency }
+			}
+			add_to_variable = { TOD_coalition_stability_bonus = TOD_coalition_temp_bonus }
+		}
+
+		clamp_variable = { var = TOD_coalition_stability_bonus min = 0 max = 1 }
+		clear_variable = TOD_coalition_temp_bonus
+		if = {
 			limit = { NOT = { TOD_has_any_coalition_partner = yes } }
-			clear_variable = TOD_coalition_pp_gain
+			clear_variable = TOD_coalition_stability_bonus
 			if = {
 				limit = { has_dynamic_modifier = { modifier = TOD_party_coalition_dynamic_modifier } }
 				remove_dynamic_modifier = { modifier = TOD_party_coalition_dynamic_modifier }
@@ -168,6 +299,8 @@ TOD_recalculate_coalition_pp_gain = {
 	}
 }
 
+TOD_recalculate_coalition_pp_gain = { TOD_recalculate_coalition_stability_bonus = yes }
+
 TOD_add_to_coalition = {
 	if = {
 		limit = { NOT = { has_variable = coalition_partner_var } }
@@ -176,37 +309,37 @@ TOD_add_to_coalition = {
 	else_if = {
 		limit = {
 			OR = {
-				AND = { check_variable = { coalition_partner_var = token:vanguard_socialism } has_government = vanguard_socialism }
-				AND = { check_variable = { coalition_partner_var = token:council_socialism } has_government = council_socialism }
-				AND = { check_variable = { coalition_partner_var = token:moderate_socialism } has_government = moderate_socialism }
-				AND = { check_variable = { coalition_partner_var = token:agroindustrial_socialism } has_government = agroindustrial_socialism }
-				AND = { check_variable = { coalition_partner_var = token:social_democrat } has_government = social_democrat }
-				AND = { check_variable = { coalition_partner_var = token:liberal_democracy } has_government = liberal_democracy }
-				AND = { check_variable = { coalition_partner_var = token:consociationalism } has_government = consociationalism }
-				AND = { check_variable = { coalition_partner_var = token:conservative_democracy } has_government = conservative_democracy }
-				AND = { check_variable = { coalition_partner_var = token:authoritarian_oligarchy } has_government = authoritarian_oligarchy }
-				AND = { check_variable = { coalition_partner_var = token:leader_despotism } has_government = leader_despotism }
-				AND = { check_variable = { coalition_partner_var = token:sacred_revivalism } has_government = sacred_revivalism }
-				AND = { check_variable = { coalition_partner_var = token:national_corporatism } has_government = national_corporatism }
+				AND = { check_variable = { var = coalition_partner_var value = token:vanguard_socialism compare = equals } has_government = vanguard_socialism }
+				AND = { check_variable = { var = coalition_partner_var value = token:council_socialism compare = equals } has_government = council_socialism }
+				AND = { check_variable = { var = coalition_partner_var value = token:moderate_socialism compare = equals } has_government = moderate_socialism }
+				AND = { check_variable = { var = coalition_partner_var value = token:agroindustrial_socialism compare = equals } has_government = agroindustrial_socialism }
+				AND = { check_variable = { var = coalition_partner_var value = token:social_democrat compare = equals } has_government = social_democrat }
+				AND = { check_variable = { var = coalition_partner_var value = token:liberal_democracy compare = equals } has_government = liberal_democracy }
+				AND = { check_variable = { var = coalition_partner_var value = token:consociationalism compare = equals } has_government = consociationalism }
+				AND = { check_variable = { var = coalition_partner_var value = token:conservative_democracy compare = equals } has_government = conservative_democracy }
+				AND = { check_variable = { var = coalition_partner_var value = token:authoritarian_oligarchy compare = equals } has_government = authoritarian_oligarchy }
+				AND = { check_variable = { var = coalition_partner_var value = token:leader_despotism compare = equals } has_government = leader_despotism }
+				AND = { check_variable = { var = coalition_partner_var value = token:sacred_revivalism compare = equals } has_government = sacred_revivalism }
+				AND = { check_variable = { var = coalition_partner_var value = token:national_corporatism compare = equals } has_government = national_corporatism }
 			}
 		}
 		log = "ERROR: TOD_add_to_coalition - ruling party cannot be a coalition partner"
 	}
 	else = {
 		custom_effect_tooltip = TOD_add_to_coalition_tt
-		if = { limit = { check_variable = { coalition_partner_var = token:vanguard_socialism } } set_country_flag = TOD_coalition_partner_vanguard_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:council_socialism } } set_country_flag = TOD_coalition_partner_council_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:moderate_socialism } } set_country_flag = TOD_coalition_partner_moderate_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:agroindustrial_socialism } } set_country_flag = TOD_coalition_partner_agroindustrial_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:social_democrat } } set_country_flag = TOD_coalition_partner_social_democrat }
-		if = { limit = { check_variable = { coalition_partner_var = token:liberal_democracy } } set_country_flag = TOD_coalition_partner_liberal_democracy }
-		if = { limit = { check_variable = { coalition_partner_var = token:consociationalism } } set_country_flag = TOD_coalition_partner_consociationalism }
-		if = { limit = { check_variable = { coalition_partner_var = token:conservative_democracy } } set_country_flag = TOD_coalition_partner_conservative_democracy }
-		if = { limit = { check_variable = { coalition_partner_var = token:authoritarian_oligarchy } } set_country_flag = TOD_coalition_partner_authoritarian_oligarchy }
-		if = { limit = { check_variable = { coalition_partner_var = token:leader_despotism } } set_country_flag = TOD_coalition_partner_leader_despotism }
-		if = { limit = { check_variable = { coalition_partner_var = token:sacred_revivalism } } set_country_flag = TOD_coalition_partner_sacred_revivalism }
-		if = { limit = { check_variable = { coalition_partner_var = token:national_corporatism } } set_country_flag = TOD_coalition_partner_national_corporatism }
-		hidden_effect = { TOD_recalculate_coalition_pp_gain = yes }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:vanguard_socialism compare = equals } } set_country_flag = TOD_coalition_partner_vanguard_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:council_socialism compare = equals } } set_country_flag = TOD_coalition_partner_council_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:moderate_socialism compare = equals } } set_country_flag = TOD_coalition_partner_moderate_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:agroindustrial_socialism compare = equals } } set_country_flag = TOD_coalition_partner_agroindustrial_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:social_democrat compare = equals } } set_country_flag = TOD_coalition_partner_social_democrat }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:liberal_democracy compare = equals } } set_country_flag = TOD_coalition_partner_liberal_democracy }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:consociationalism compare = equals } } set_country_flag = TOD_coalition_partner_consociationalism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:conservative_democracy compare = equals } } set_country_flag = TOD_coalition_partner_conservative_democracy }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:authoritarian_oligarchy compare = equals } } set_country_flag = TOD_coalition_partner_authoritarian_oligarchy }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:leader_despotism compare = equals } } set_country_flag = TOD_coalition_partner_leader_despotism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:sacred_revivalism compare = equals } } set_country_flag = TOD_coalition_partner_sacred_revivalism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:national_corporatism compare = equals } } set_country_flag = TOD_coalition_partner_national_corporatism }
+		hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes }
 	}
 }
 
@@ -217,19 +350,19 @@ TOD_remove_from_coalition = {
 	}
 	else = {
 		custom_effect_tooltip = TOD_remove_from_coalition_tt
-		if = { limit = { check_variable = { coalition_partner_var = token:vanguard_socialism } } clr_country_flag = TOD_coalition_partner_vanguard_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:council_socialism } } clr_country_flag = TOD_coalition_partner_council_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:moderate_socialism } } clr_country_flag = TOD_coalition_partner_moderate_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:agroindustrial_socialism } } clr_country_flag = TOD_coalition_partner_agroindustrial_socialism }
-		if = { limit = { check_variable = { coalition_partner_var = token:social_democrat } } clr_country_flag = TOD_coalition_partner_social_democrat }
-		if = { limit = { check_variable = { coalition_partner_var = token:liberal_democracy } } clr_country_flag = TOD_coalition_partner_liberal_democracy }
-		if = { limit = { check_variable = { coalition_partner_var = token:consociationalism } } clr_country_flag = TOD_coalition_partner_consociationalism }
-		if = { limit = { check_variable = { coalition_partner_var = token:conservative_democracy } } clr_country_flag = TOD_coalition_partner_conservative_democracy }
-		if = { limit = { check_variable = { coalition_partner_var = token:authoritarian_oligarchy } } clr_country_flag = TOD_coalition_partner_authoritarian_oligarchy }
-		if = { limit = { check_variable = { coalition_partner_var = token:leader_despotism } } clr_country_flag = TOD_coalition_partner_leader_despotism }
-		if = { limit = { check_variable = { coalition_partner_var = token:sacred_revivalism } } clr_country_flag = TOD_coalition_partner_sacred_revivalism }
-		if = { limit = { check_variable = { coalition_partner_var = token:national_corporatism } } clr_country_flag = TOD_coalition_partner_national_corporatism }
-		hidden_effect = { TOD_recalculate_coalition_pp_gain = yes }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:vanguard_socialism compare = equals } } clr_country_flag = TOD_coalition_partner_vanguard_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:council_socialism compare = equals } } clr_country_flag = TOD_coalition_partner_council_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:moderate_socialism compare = equals } } clr_country_flag = TOD_coalition_partner_moderate_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:agroindustrial_socialism compare = equals } } clr_country_flag = TOD_coalition_partner_agroindustrial_socialism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:social_democrat compare = equals } } clr_country_flag = TOD_coalition_partner_social_democrat }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:liberal_democracy compare = equals } } clr_country_flag = TOD_coalition_partner_liberal_democracy }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:consociationalism compare = equals } } clr_country_flag = TOD_coalition_partner_consociationalism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:conservative_democracy compare = equals } } clr_country_flag = TOD_coalition_partner_conservative_democracy }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:authoritarian_oligarchy compare = equals } } clr_country_flag = TOD_coalition_partner_authoritarian_oligarchy }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:leader_despotism compare = equals } } clr_country_flag = TOD_coalition_partner_leader_despotism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:sacred_revivalism compare = equals } } clr_country_flag = TOD_coalition_partner_sacred_revivalism }
+		if = { limit = { check_variable = { var = coalition_partner_var value = token:national_corporatism compare = equals } } clr_country_flag = TOD_coalition_partner_national_corporatism }
+		hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes }
 	}
 }
 
@@ -248,6 +381,7 @@ TOD_end_coalition = {
 		clr_country_flag = TOD_coalition_partner_leader_despotism
 		clr_country_flag = TOD_coalition_partner_sacred_revivalism
 		clr_country_flag = TOD_coalition_partner_national_corporatism
+		clear_variable = TOD_coalition_stability_bonus
 		clear_variable = TOD_coalition_pp_gain
 		clear_variable = TOD_coalition_stability_vanguard_socialism
 		clear_variable = TOD_coalition_stability_council_socialism
@@ -261,6 +395,19 @@ TOD_end_coalition = {
 		clear_variable = TOD_coalition_stability_leader_despotism
 		clear_variable = TOD_coalition_stability_sacred_revivalism
 		clear_variable = TOD_coalition_stability_national_corporatism
+		set_variable = { TOD_coalition_frame_vanguard_socialism = 1 }
+		set_variable = { TOD_coalition_frame_council_socialism = 1 }
+		set_variable = { TOD_coalition_frame_moderate_socialism = 1 }
+		set_variable = { TOD_coalition_frame_agroindustrial_socialism = 1 }
+		set_variable = { TOD_coalition_frame_social_democrat = 1 }
+		set_variable = { TOD_coalition_frame_liberal_democracy = 1 }
+		set_variable = { TOD_coalition_frame_consociationalism = 1 }
+		set_variable = { TOD_coalition_frame_conservative_democracy = 1 }
+		set_variable = { TOD_coalition_frame_authoritarian_oligarchy = 1 }
+		set_variable = { TOD_coalition_frame_leader_despotism = 1 }
+		set_variable = { TOD_coalition_frame_sacred_revivalism = 1 }
+		set_variable = { TOD_coalition_frame_national_corporatism = 1 }
+		TOD_update_coalition_gui_frames = yes
 		if = {
 			limit = { has_dynamic_modifier = { modifier = TOD_party_coalition_dynamic_modifier } }
 			remove_dynamic_modifier = { modifier = TOD_party_coalition_dynamic_modifier }
@@ -269,18 +416,18 @@ TOD_end_coalition = {
 	}
 }
 
-TOD_set_coalition_stability_vanguard_socialism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_vanguard_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_council_socialism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_council_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_moderate_socialism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_moderate_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_agroindustrial_socialism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_agroindustrial_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_social_democrat = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_social_democrat = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_liberal_democracy = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_liberal_democracy = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_consociationalism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_consociationalism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_conservative_democracy = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_conservative_democracy = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_authoritarian_oligarchy = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_authoritarian_oligarchy = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_leader_despotism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_leader_despotism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_sacred_revivalism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_sacred_revivalism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
-TOD_set_coalition_stability_national_corporatism = { custom_effect_tooltip = TOD_coalition_stability_pp_change set_variable = { TOD_coalition_stability_national_corporatism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_pp_gain = yes } }
+TOD_set_coalition_stability_vanguard_socialism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_vanguard_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_council_socialism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_council_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_moderate_socialism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_moderate_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_agroindustrial_socialism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_agroindustrial_socialism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_social_democrat = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_social_democrat = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_liberal_democracy = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_liberal_democracy = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_consociationalism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_consociationalism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_conservative_democracy = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_conservative_democracy = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_authoritarian_oligarchy = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_authoritarian_oligarchy = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_leader_despotism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_leader_despotism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_sacred_revivalism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_sacred_revivalism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
+TOD_set_coalition_stability_national_corporatism = { custom_effect_tooltip = TOD_coalition_stability_change set_variable = { TOD_coalition_stability_national_corporatism = coalition_stability_var } hidden_effect = { TOD_recalculate_coalition_stability_bonus = yes } }
 
 add_to_coalition = { TOD_add_to_coalition = yes }
 remove_from_coalition = { TOD_remove_from_coalition = yes }

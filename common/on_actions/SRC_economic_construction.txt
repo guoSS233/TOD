@@ -1,0 +1,157 @@
+on_actions = {
+	on_daily = {
+		effect = {
+			SRC = {
+				if = {
+					limit = {
+						exists = yes
+						has_completed_focus = SRC_jianjuefanduigerenchongbai
+						NOT = { has_country_flag = SRC_ren_anti_cult_rewards_updated }
+					}
+					add_stability = -0.05
+					add_war_support = 0.05
+					set_country_flag = SRC_ren_anti_cult_rewards_updated
+				}
+				if = {
+					limit = {
+						exists = yes
+						has_completed_focus = SRC_xinwenhuayundong
+						NOT = { has_country_flag = SRC_xinwenhuayundong_research_bonus_updated }
+					}
+					set_variable = { SRC_gongrenminzhu_yanjiu = 0.10 }
+					set_country_flag = SRC_xinwenhuayundong_research_bonus_updated
+					force_update_dynamic_modifier = yes
+				}
+				if = {
+					limit = {
+						exists = yes
+						has_completed_focus = SRC_dongbeigemingdahuizhaokai
+						NOT = { has_completed_focus = SRC_renfuchenzhuxi }
+						NOT = { has_completed_focus = SRC_lidazhaozhuxi }
+						NOT = { has_completed_focus = SRC_chenduxiuzhuxi }
+					}
+					if = {
+						limit = { has_country_leader = { character = SRC_ren_fuchen ruling_only = yes } }
+						complete_national_focus = SRC_renfuchenzhuxi
+						mark_focus_tree_layout_dirty = yes
+					}
+					else_if = {
+						limit = { has_country_leader = { character = SRC_li_dazhao ruling_only = yes } }
+						complete_national_focus = SRC_lidazhaozhuxi
+						mark_focus_tree_layout_dirty = yes
+					}
+					else_if = {
+						limit = { has_country_leader = { character = SRC_chen_duxiu ruling_only = yes } }
+						complete_national_focus = SRC_chenduxiuzhuxi
+						mark_focus_tree_layout_dirty = yes
+					}
+				}
+				if = {
+					limit = {
+						exists = yes
+						NOT = { has_variable = SRC_construction_achievements }
+						OR = {
+							has_completed_focus = SRC_renfuchenzhuxi
+							has_completed_focus = SRC_lidazhaozhuxi
+							has_completed_focus = SRC_chenduxiuzhuxi
+						}
+					}
+					set_variable = { SRC_construction_achievements = 0 }
+				}
+				if = {
+					limit = {
+						exists = yes
+						NOT = { has_variable = SRC_construction_target }
+						OR = {
+							has_completed_focus = SRC_renfuchenzhuxi
+							has_completed_focus = SRC_lidazhaozhuxi
+							has_completed_focus = SRC_chenduxiuzhuxi
+						}
+					}
+					set_variable = { SRC_construction_target = 30 }
+				}
+				if = {
+					limit = {
+						exists = yes
+						NOT = { has_variable = SRC_construction_review_rounds_completed }
+						OR = {
+							has_completed_focus = SRC_renfuchenzhuxi
+							has_completed_focus = SRC_lidazhaozhuxi
+							has_completed_focus = SRC_chenduxiuzhuxi
+						}
+					}
+					set_variable = { SRC_construction_review_rounds_completed = 0 }
+				}
+				if = {
+					limit = {
+						exists = yes
+						NOT = { has_country_flag = SRC_construction_review_active }
+						check_variable = { var = SRC_construction_review_rounds_completed value = 4 compare = less_than }
+						OR = {
+							has_completed_focus = SRC_renfuchenzhuxi
+							has_completed_focus = SRC_lidazhaozhuxi
+							has_completed_focus = SRC_chenduxiuzhuxi
+						}
+					}
+					set_country_flag = SRC_construction_review_active
+					activate_mission = SRC_revolutionary_achievement_review
+				}
+				if = {
+					limit = {
+						exists = yes
+						OR = {
+							has_completed_focus = SRC_renfuchenzhuxi
+							has_completed_focus = SRC_lidazhaozhuxi
+							has_completed_focus = SRC_chenduxiuzhuxi
+						}
+					}
+					SRC_party_cooperation_recalculate = yes
+				}
+			}
+		}
+	}
+	on_monthly = {
+		effect = {
+			SRC = {
+				if = {
+					limit = {
+						exists = yes
+						check_variable = { var = SRC_li_committees_pp_months_remaining value = 0 compare = greater_than }
+					}
+					add_political_power = 30
+					subtract_from_variable = { SRC_li_committees_pp_months_remaining = 1 }
+					if = {
+						limit = { check_variable = { var = SRC_li_committees_pp_months_remaining value = 0 compare = less_than_or_equals } }
+						clear_variable = SRC_li_committees_pp_months_remaining
+					}
+				}
+				if = {
+					limit = { exists = yes has_country_flag = SRC_li_land_cooperatives_enacted }
+					random_owned_controlled_state = {
+						limit = { infrastructure < 3 }
+						add_building_construction = { type = infrastructure level = 1 instant_build = yes }
+						SRC = { add_to_variable = { SRC_construction_achievements = 2 } }
+					}
+				}
+				if = {
+					limit = {
+						exists = yes
+						has_country_flag = SRC_chen_new_tax_system_enacted
+						OR = {
+							has_idea = civilian_economy
+							has_idea = low_economic_mobilisation
+						}
+					}
+					random_owned_controlled_state = {
+						limit = {
+							infrastructure > 2
+							free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+						}
+						add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+						SRC = { add_to_variable = { SRC_construction_achievements = 2 } }
+					}
+				}
+			}
+		}
+	}
+}

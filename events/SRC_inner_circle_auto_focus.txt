@@ -1,0 +1,55 @@
+add_namespace = SRC_inner_circle_auto
+
+# Branch choice after the existing Red Army Logistics Department focus.
+country_event = {
+    id = SRC_inner_circle_auto.1
+    title = SRC_inner_circle_auto.1.t
+    desc = SRC_inner_circle_auto.1.d
+    picture = GFX_report_event_chinese_soldiers_fighting
+    is_triggered_only = yes
+    trigger = {
+        tag = SRC
+        has_country_flag = SRC_inner_circle_auto_reform_choice_pending
+        has_completed_focus = SRC_hongjunhouqinbu
+        check_variable = { SRC_inner_circle_auto_reform_branch = 0 }
+        OR = {
+            has_country_flag = SRC_inner_circle_xu_fanting_active
+            has_country_flag = SRC_inner_circle_he_changgong_active
+        }
+        OR = {
+            AND = {
+                NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+            }
+            AND = {
+                NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+            }
+            AND = {
+                NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+            }
+        }
+    }
+    option = {
+        name = SRC_inner_circle_auto.1.supply
+        trigger = { NOT = { has_completed_focus = SRC_wanshanshengchantixi } }
+        ai_chance = { base = 10 }
+        set_variable = { SRC_inner_circle_auto_reform_branch = 1 }
+        clr_country_flag = SRC_inner_circle_auto_reform_choice_pending
+    }
+    option = {
+        name = SRC_inner_circle_auto.1.research
+        trigger = { NOT = { has_completed_focus = SRC_shiyanxinshibianzhi } }
+        ai_chance = { base = 10 }
+        set_variable = { SRC_inner_circle_auto_reform_branch = 2 }
+        clr_country_flag = SRC_inner_circle_auto_reform_choice_pending
+    }
+    option = {
+        name = SRC_inner_circle_auto.1.artillery
+        trigger = { NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu } }
+        ai_chance = { base = 10 }
+        set_variable = { SRC_inner_circle_auto_reform_branch = 3 }
+        clr_country_flag = SRC_inner_circle_auto_reform_choice_pending
+    }
+}

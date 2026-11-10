@@ -1,0 +1,128 @@
+SRC_party_cooperation_recalculate = {
+	hidden_effect = {
+		# 大会权重与派别满意度均为 0-100；换算成比例后乘以 3。
+		if = { limit = { NOT = { has_variable = SRC_xianfeng } } set_variable = { SRC_xianfeng = 33.333 } }
+		if = { limit = { NOT = { has_variable = SRC_weiyuan } } set_variable = { SRC_weiyuan = 33.333 } }
+		if = { limit = { NOT = { has_variable = SRC_wenhe } } set_variable = { SRC_wenhe = 33.334 } }
+		if = { limit = { NOT = { has_variable = SRC_central_support_ren } } set_variable = { SRC_central_support_ren = 50 } }
+		if = { limit = { NOT = { has_variable = SRC_central_support_li } } set_variable = { SRC_central_support_li = 50 } }
+		if = { limit = { NOT = { has_variable = SRC_central_support_chen } } set_variable = { SRC_central_support_chen = 50 } }
+
+		set_variable = { SRC_party_cooperation_pp_gain = SRC_xianfeng }
+		multiply_variable = { SRC_party_cooperation_pp_gain = SRC_central_support_ren }
+		set_temp_variable = { SRC_party_cooperation_term = SRC_weiyuan }
+		multiply_temp_variable = { SRC_party_cooperation_term = SRC_central_support_li }
+		add_to_variable = { SRC_party_cooperation_pp_gain = SRC_party_cooperation_term }
+		set_temp_variable = { SRC_party_cooperation_term = SRC_wenhe }
+		multiply_temp_variable = { SRC_party_cooperation_term = SRC_central_support_chen }
+		add_to_variable = { SRC_party_cooperation_pp_gain = SRC_party_cooperation_term }
+		divide_variable = { SRC_party_cooperation_pp_gain = 10000 }
+		multiply_variable = { SRC_party_cooperation_pp_gain = 3 }
+
+		if = {
+			limit = { check_variable = { var = SRC_construction_review_rounds_completed value = 4 compare = greater_than_or_equals } }
+			set_variable = { SRC_party_cooperation_pp_gain = 0 }
+		}
+		if = {
+			limit = { has_country_flag = SRC_ren_centralized_party_leadership_enacted }
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_three_thirds_government } }
+				remove_dynamic_modifier = { modifier = SRC_three_thirds_government }
+			}
+			# 党派支持率取值0—1；追加加成每次重新赋值，避免重复叠加。
+			set_variable = { SRC_centralized_leadership_support = party_popularity@vanguard_socialism }
+			set_variable = { SRC_centralized_leadership_stability = SRC_centralized_leadership_support }
+			multiply_variable = { SRC_centralized_leadership_stability = 0.2 }
+			set_variable = { SRC_centralized_leadership_consumer_goods = SRC_centralized_leadership_support }
+			multiply_variable = { SRC_centralized_leadership_consumer_goods = -0.2 }
+			set_variable = { SRC_centralized_leadership_construction_speed = SRC_centralized_leadership_support }
+			multiply_variable = { SRC_centralized_leadership_construction_speed = 0.1 }
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_party_cooperation } }
+				remove_dynamic_modifier = { modifier = SRC_party_cooperation }
+			}
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_close_ties_with_masses } }
+				remove_dynamic_modifier = { modifier = SRC_close_ties_with_masses }
+			}
+			if = {
+				limit = { NOT = { has_dynamic_modifier = { modifier = SRC_centralized_leadership } } }
+				add_dynamic_modifier = { modifier = SRC_centralized_leadership }
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SRC_li_bureaucratic_reform_enacted }
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_three_thirds_government } }
+				remove_dynamic_modifier = { modifier = SRC_three_thirds_government }
+			}
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_centralized_leadership } }
+				remove_dynamic_modifier = { modifier = SRC_centralized_leadership }
+			}
+			# SRC_weiyuan 为合众派大会权重，取值0—100；每次重新赋值，避免重复叠加。
+			set_variable = { SRC_close_ties_research_speed = SRC_weiyuan }
+			multiply_variable = { SRC_close_ties_research_speed = 0.001 }
+			set_variable = { SRC_close_ties_efficiency_growth = SRC_weiyuan }
+			multiply_variable = { SRC_close_ties_efficiency_growth = 0.0015 }
+			set_variable = { SRC_close_ties_bombing_vulnerability = SRC_weiyuan }
+			multiply_variable = { SRC_close_ties_bombing_vulnerability = -0.001 }
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_party_cooperation } }
+				remove_dynamic_modifier = { modifier = SRC_party_cooperation }
+			}
+			if = {
+				limit = { NOT = { has_dynamic_modifier = { modifier = SRC_close_ties_with_masses } } }
+				add_dynamic_modifier = { modifier = SRC_close_ties_with_masses }
+			}
+		}
+		else_if = {
+			limit = { has_country_flag = SRC_chen_political_sansanzhi_enacted }
+			# 党派支持率取值0—1，按组求和后计算，每次重新赋值。
+			set_variable = { SRC_three_thirds_research_speed = party_popularity@liberal_democracy }
+			add_to_variable = { SRC_three_thirds_research_speed = party_popularity@social_democrat }
+			multiply_variable = { SRC_three_thirds_research_speed = 0.3 }
+			set_variable = { SRC_three_thirds_factory_output = party_popularity@agroindustrial_socialism }
+			add_to_variable = { SRC_three_thirds_factory_output = party_popularity@vanguard_socialism }
+			add_to_variable = { SRC_three_thirds_factory_output = party_popularity@council_socialism }
+			multiply_variable = { SRC_three_thirds_factory_output = 0.2 }
+			set_variable = { SRC_three_thirds_recruitable_population = party_popularity@moderate_socialism }
+			multiply_variable = { SRC_three_thirds_recruitable_population = 0.4 }
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_party_cooperation } }
+				remove_dynamic_modifier = { modifier = SRC_party_cooperation }
+			}
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_centralized_leadership } }
+				remove_dynamic_modifier = { modifier = SRC_centralized_leadership }
+			}
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_close_ties_with_masses } }
+				remove_dynamic_modifier = { modifier = SRC_close_ties_with_masses }
+			}
+			if = {
+				limit = { NOT = { has_dynamic_modifier = { modifier = SRC_three_thirds_government } } }
+				add_dynamic_modifier = { modifier = SRC_three_thirds_government }
+			}
+		}
+		else = {
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_three_thirds_government } }
+				remove_dynamic_modifier = { modifier = SRC_three_thirds_government }
+			}
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_centralized_leadership } }
+				remove_dynamic_modifier = { modifier = SRC_centralized_leadership }
+			}
+			if = {
+				limit = { has_dynamic_modifier = { modifier = SRC_close_ties_with_masses } }
+				remove_dynamic_modifier = { modifier = SRC_close_ties_with_masses }
+			}
+			if = {
+				limit = { NOT = { has_dynamic_modifier = { modifier = SRC_party_cooperation } } }
+				add_dynamic_modifier = { modifier = SRC_party_cooperation }
+			}
+		}
+		force_update_dynamic_modifier = yes
+	}
+}

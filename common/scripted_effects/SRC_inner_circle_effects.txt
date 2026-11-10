@@ -1,0 +1,369 @@
+SRC_inner_circle_initialize = {
+    if = {
+        limit = { NOT = { has_country_flag = SRC_inner_circle_initialized } }
+        set_variable = { SRC_inner_circle_slot_1 = 0 }
+        set_variable = { SRC_inner_circle_slot_2 = 0 }
+        set_variable = { SRC_inner_circle_slot_3 = 0 }
+        set_variable = { SRC_inner_circle_slot_4 = 0 }
+        set_variable = { SRC_inner_circle_selected_slot = 0 }
+        set_country_flag = SRC_inner_circle_initialized
+        set_country_flag = SRC_inner_circle_layout_v2
+    }
+}
+
+SRC_inner_circle_select_slot_1 = {
+    SRC_inner_circle_initialize = yes
+    SRC_inner_circle_migrate_layout_v2 = yes
+    if = {
+        limit = { check_variable = { SRC_inner_circle_selected_slot = 1 } }
+        set_variable = { SRC_inner_circle_selected_slot = 0 }
+    }
+    else = { set_variable = { SRC_inner_circle_selected_slot = 1 } }
+}
+
+SRC_inner_circle_select_slot_2 = {
+    SRC_inner_circle_initialize = yes
+    SRC_inner_circle_migrate_layout_v2 = yes
+    if = {
+        limit = { check_variable = { SRC_inner_circle_selected_slot = 2 } }
+        set_variable = { SRC_inner_circle_selected_slot = 0 }
+    }
+    else = { set_variable = { SRC_inner_circle_selected_slot = 2 } }
+}
+
+SRC_inner_circle_select_slot_3 = {
+    SRC_inner_circle_initialize = yes
+    SRC_inner_circle_migrate_layout_v2 = yes
+    if = {
+        limit = { check_variable = { SRC_inner_circle_selected_slot = 3 } }
+        set_variable = { SRC_inner_circle_selected_slot = 0 }
+    }
+    else = { set_variable = { SRC_inner_circle_selected_slot = 3 } }
+}
+
+SRC_inner_circle_select_slot_4 = {
+    SRC_inner_circle_initialize = yes
+    SRC_inner_circle_migrate_layout_v2 = yes
+    if = {
+        limit = { check_variable = { SRC_inner_circle_selected_slot = 4 } }
+        set_variable = { SRC_inner_circle_selected_slot = 0 }
+    }
+    else = { set_variable = { SRC_inner_circle_selected_slot = 4 } }
+}
+
+# The portrait buttons guard eligibility before setting pending. Recheck the shared
+# appointment conditions here so a stale UI click cannot charge or replace a seat.
+SRC_inner_circle_assign_selected = {
+    if = {
+        limit = {
+            SRC_inner_circle_slot_selected = yes
+            SRC_inner_circle_appointment_available = yes
+            check_variable = { SRC_inner_circle_pending > 0 }
+        }
+        SRC_inner_circle_initialize = yes
+        SRC_inner_circle_migrate_layout_v2 = yes
+        add_political_power = -50
+        if = {
+            limit = { check_variable = { SRC_inner_circle_selected_slot = 1 } }
+            SRC_inner_circle_remove_slot_1 = yes
+            set_variable = { SRC_inner_circle_slot_1 = SRC_inner_circle_pending }
+        }
+        else_if = {
+            limit = { check_variable = { SRC_inner_circle_selected_slot = 2 } }
+            SRC_inner_circle_remove_slot_2 = yes
+            set_variable = { SRC_inner_circle_slot_2 = SRC_inner_circle_pending }
+        }
+        else_if = {
+            limit = { check_variable = { SRC_inner_circle_selected_slot = 3 } }
+            SRC_inner_circle_remove_slot_3 = yes
+            set_variable = { SRC_inner_circle_slot_3 = SRC_inner_circle_pending }
+        }
+        else = {
+            SRC_inner_circle_remove_slot_4 = yes
+            set_variable = { SRC_inner_circle_slot_4 = SRC_inner_circle_pending }
+        }
+        SRC_inner_circle_add_pending = yes
+        set_variable = { SRC_inner_circle_selected_slot = 0 }
+    }
+    set_variable = { SRC_inner_circle_pending = 0 }
+}
+
+# Army slots 1/2: 1 Xu, 2 Lan, 3 Guan, 4 Dong, 5 Zhao, 6 Yang,
+# 7 Xu Fanting, 8 He Changgong. Navy slot 3: 9 Zeng Yiding.
+# Air slot 4: 10 Liu Yun. Zero means vacant.
+SRC_inner_circle_add_pending = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 1 } }
+        set_country_flag = SRC_inner_circle_xu_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_xu }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 2 } }
+        set_country_flag = SRC_inner_circle_lan_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_lan }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 3 } }
+        set_country_flag = SRC_inner_circle_guan_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_guan }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 4 } }
+        set_country_flag = SRC_inner_circle_dong_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_dong }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 5 } }
+        set_country_flag = SRC_inner_circle_zhao_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_zhao }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 6 } }
+        set_country_flag = SRC_inner_circle_yang_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_yang }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 7 } }
+        set_country_flag = SRC_inner_circle_xu_fanting_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_xu_fanting }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 8 } }
+        set_country_flag = SRC_inner_circle_he_changgong_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_he_changgong }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 9 } }
+        set_country_flag = SRC_inner_circle_zeng_yiding_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_zeng_yiding }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 10 } }
+        set_country_flag = SRC_inner_circle_liu_yun_active
+        add_dynamic_modifier = { modifier = SRC_inner_circle_liu_yun }
+    }
+}
+
+SRC_inner_circle_assign_pending = {
+    SRC_inner_circle_initialize = yes
+    SRC_inner_circle_migrate_layout_v2 = yes
+    if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 9 } }
+        SRC_inner_circle_remove_slot_3 = yes
+        set_variable = { SRC_inner_circle_slot_3 = SRC_inner_circle_pending }
+        SRC_inner_circle_add_pending = yes
+        set_variable = { SRC_inner_circle_pending = 0 }
+    }
+    else_if = {
+        limit = { check_variable = { SRC_inner_circle_pending = 10 } }
+        SRC_inner_circle_remove_slot_4 = yes
+        set_variable = { SRC_inner_circle_slot_4 = SRC_inner_circle_pending }
+        SRC_inner_circle_add_pending = yes
+        set_variable = { SRC_inner_circle_pending = 0 }
+    }
+    else_if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 0 } }
+        set_variable = { SRC_inner_circle_slot_1 = SRC_inner_circle_pending }
+        SRC_inner_circle_add_pending = yes
+        set_variable = { SRC_inner_circle_pending = 0 }
+    }
+    else_if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 0 } }
+        set_variable = { SRC_inner_circle_slot_2 = SRC_inner_circle_pending }
+        SRC_inner_circle_add_pending = yes
+        set_variable = { SRC_inner_circle_pending = 0 }
+    }
+    else = { country_event = SRC_inner_circle.1 }
+}
+
+SRC_inner_circle_remove_slot_1 = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 1 } }
+        clr_country_flag = SRC_inner_circle_xu_active
+        clr_country_flag = SRC_inner_circle_xu_project_a
+        clr_country_flag = SRC_inner_circle_xu_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_xu }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 2 } }
+        clr_country_flag = SRC_inner_circle_lan_active
+        clr_country_flag = SRC_inner_circle_lan_project_a
+        clr_country_flag = SRC_inner_circle_lan_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_lan }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 3 } }
+        clr_country_flag = SRC_inner_circle_guan_active
+        clr_country_flag = SRC_inner_circle_guan_project_a
+        clr_country_flag = SRC_inner_circle_guan_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_guan }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 4 } }
+        clr_country_flag = SRC_inner_circle_dong_active
+        clr_country_flag = SRC_inner_circle_dong_project_a
+        clr_country_flag = SRC_inner_circle_dong_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_dong }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 5 } }
+        clr_country_flag = SRC_inner_circle_zhao_active
+        clr_country_flag = SRC_inner_circle_zhao_project_a
+        clr_country_flag = SRC_inner_circle_zhao_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_zhao }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 6 } }
+        clr_country_flag = SRC_inner_circle_yang_active
+        clr_country_flag = SRC_inner_circle_yang_project_a
+        clr_country_flag = SRC_inner_circle_yang_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_yang }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 7 } }
+        clr_country_flag = SRC_inner_circle_xu_fanting_active
+        clr_country_flag = SRC_inner_circle_xu_fanting_project_a
+        clr_country_flag = SRC_inner_circle_xu_fanting_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_xu_fanting }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_1 = 8 } }
+        clr_country_flag = SRC_inner_circle_he_changgong_active
+        clr_country_flag = SRC_inner_circle_he_changgong_project_a
+        clr_country_flag = SRC_inner_circle_he_changgong_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_he_changgong }
+    }
+    set_variable = { SRC_inner_circle_slot_1 = 0 }
+}
+
+SRC_inner_circle_remove_slot_2 = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 1 } }
+        clr_country_flag = SRC_inner_circle_xu_active
+        clr_country_flag = SRC_inner_circle_xu_project_a
+        clr_country_flag = SRC_inner_circle_xu_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_xu }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 2 } }
+        clr_country_flag = SRC_inner_circle_lan_active
+        clr_country_flag = SRC_inner_circle_lan_project_a
+        clr_country_flag = SRC_inner_circle_lan_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_lan }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 3 } }
+        clr_country_flag = SRC_inner_circle_guan_active
+        clr_country_flag = SRC_inner_circle_guan_project_a
+        clr_country_flag = SRC_inner_circle_guan_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_guan }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 4 } }
+        clr_country_flag = SRC_inner_circle_dong_active
+        clr_country_flag = SRC_inner_circle_dong_project_a
+        clr_country_flag = SRC_inner_circle_dong_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_dong }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 5 } }
+        clr_country_flag = SRC_inner_circle_zhao_active
+        clr_country_flag = SRC_inner_circle_zhao_project_a
+        clr_country_flag = SRC_inner_circle_zhao_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_zhao }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 6 } }
+        clr_country_flag = SRC_inner_circle_yang_active
+        clr_country_flag = SRC_inner_circle_yang_project_a
+        clr_country_flag = SRC_inner_circle_yang_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_yang }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 7 } }
+        clr_country_flag = SRC_inner_circle_xu_fanting_active
+        clr_country_flag = SRC_inner_circle_xu_fanting_project_a
+        clr_country_flag = SRC_inner_circle_xu_fanting_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_xu_fanting }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_2 = 8 } }
+        clr_country_flag = SRC_inner_circle_he_changgong_active
+        clr_country_flag = SRC_inner_circle_he_changgong_project_a
+        clr_country_flag = SRC_inner_circle_he_changgong_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_he_changgong }
+    }
+    set_variable = { SRC_inner_circle_slot_2 = 0 }
+}
+
+SRC_inner_circle_remove_slot_3 = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_3 = 9 } }
+        clr_country_flag = SRC_inner_circle_zeng_yiding_active
+        clr_country_flag = SRC_inner_circle_zeng_yiding_project_a
+        clr_country_flag = SRC_inner_circle_zeng_yiding_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_zeng_yiding }
+    }
+    set_variable = { SRC_inner_circle_slot_3 = 0 }
+}
+
+SRC_inner_circle_remove_slot_4 = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_4 = 10 } }
+        clr_country_flag = SRC_inner_circle_liu_yun_active
+        clr_country_flag = SRC_inner_circle_liu_yun_project_a
+        clr_country_flag = SRC_inner_circle_liu_yun_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_liu_yun }
+    }
+    set_variable = { SRC_inner_circle_slot_4 = 0 }
+}
+
+# Legacy cleanup for saves made with the three-army-seat layout.
+SRC_inner_circle_remove_legacy_slot_3 = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_3 = 1 } }
+        clr_country_flag = SRC_inner_circle_xu_active
+        clr_country_flag = SRC_inner_circle_xu_project_a
+        clr_country_flag = SRC_inner_circle_xu_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_xu }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_3 = 2 } }
+        clr_country_flag = SRC_inner_circle_lan_active
+        clr_country_flag = SRC_inner_circle_lan_project_a
+        clr_country_flag = SRC_inner_circle_lan_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_lan }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_slot_3 = 3 } }
+        clr_country_flag = SRC_inner_circle_guan_active
+        clr_country_flag = SRC_inner_circle_guan_project_a
+        clr_country_flag = SRC_inner_circle_guan_project_b
+        remove_dynamic_modifier = { modifier = SRC_inner_circle_guan }
+    }
+    set_variable = { SRC_inner_circle_slot_3 = 0 }
+}
+
+SRC_inner_circle_migrate_layout_v2 = {
+    if = {
+        limit = { NOT = { has_country_flag = SRC_inner_circle_layout_v2 } }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_slot_3 > 0 } }
+            if = {
+                limit = { check_variable = { SRC_inner_circle_slot_1 = 0 } }
+                set_variable = { SRC_inner_circle_slot_1 = SRC_inner_circle_slot_3 }
+            }
+            else_if = {
+                limit = { check_variable = { SRC_inner_circle_slot_2 = 0 } }
+                set_variable = { SRC_inner_circle_slot_2 = SRC_inner_circle_slot_3 }
+            }
+            else = {
+                SRC_inner_circle_remove_legacy_slot_3 = yes
+                add_political_power = 50
+            }
+        }
+        set_variable = { SRC_inner_circle_slot_3 = 0 }
+        set_variable = { SRC_inner_circle_slot_4 = 0 }
+        set_country_flag = SRC_inner_circle_layout_v2
+    }
+}

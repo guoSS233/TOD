@@ -1,4 +1,4 @@
-﻿capital = 845 #辽阳
+capital = 845 #辽阳
 oob = "SRC_1937"
 
 
@@ -47,6 +47,14 @@ set_popularities = {
 	council_socialism = 28
 	vanguard_socialism = 29
 }
+# 执政联盟：执政党之外的三个社会主义党派以 50% 效率参与。
+set_country_flag = TOD_coalition_partner_council_socialism
+set_country_flag = TOD_coalition_partner_moderate_socialism
+set_country_flag = TOD_coalition_partner_agroindustrial_socialism
+set_variable = { TOD_coalition_stability_council_socialism = 0.5 }
+set_variable = { TOD_coalition_stability_moderate_socialism = 0.5 }
+set_variable = { TOD_coalition_stability_agroindustrial_socialism = 0.5 }
+TOD_recalculate_coalition_stability_bonus = yes
 add_to_variable = { SRC_siliedeshehui_gongchangxiaolv = -0.05 }
 add_to_variable = { SRC_siliedeshehui_gongchangzengzhang = -0.05 }
 add_to_variable = { SRC_siliedeshehui_gongchangchanchu = -0.25 }
@@ -68,6 +76,8 @@ recruit_character = SRC_du_jizeng
 recruit_character = SRC_li_dazhao
 recruit_character = SRC_ren_fuchen
 #将领#
+recruit_character = SRC_dong_zhentang
+recruit_character = SRC_zhao_shangzhi
 recruit_character = SRC_guan_xiangying
 recruit_character = SRC_lu_zhengcao
 recruit_character = SRC_wan_yi

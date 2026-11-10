@@ -1,0 +1,21 @@
+on_actions = {
+    on_daily_SRC = {
+        effect = {
+            if = {
+                limit = {
+                    exists = yes
+                    has_country_flag = SRC_inner_circle_initialized
+                    NOT = { has_country_flag = SRC_inner_circle_layout_v2 }
+                }
+                SRC_inner_circle_migrate_layout_v2 = yes
+            }
+            if = {
+                limit = {
+                    exists = yes
+                    has_country_flag = SRC_inner_circle_initialized
+                }
+                SRC_inner_circle_auto_focus_daily = yes
+            }
+        }
+    }
+}

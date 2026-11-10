@@ -1,0 +1,32 @@
+add_namespace = SRC_inner_circle
+
+# Two army seats can be reassigned when another army candidate is appointed.
+country_event = {
+    id = SRC_inner_circle.1
+    title = SRC_inner_circle.1.t
+    desc = SRC_inner_circle.1.d
+    picture = GFX_report_event_chinese_soldiers_fighting
+    is_triggered_only = yes
+    trigger = {
+        tag = SRC
+        check_variable = { SRC_inner_circle_pending > 0 }
+        check_variable = { SRC_inner_circle_slot_1 > 0 }
+        check_variable = { SRC_inner_circle_slot_2 > 0 }
+    }
+    option = {
+        name = SRC_inner_circle.1.a
+        ai_chance = { base = 10 }
+        SRC_inner_circle_remove_slot_1 = yes
+        set_variable = { SRC_inner_circle_slot_1 = SRC_inner_circle_pending }
+        SRC_inner_circle_add_pending = yes
+        set_variable = { SRC_inner_circle_pending = 0 }
+    }
+    option = {
+        name = SRC_inner_circle.1.b
+        ai_chance = { base = 10 }
+        SRC_inner_circle_remove_slot_2 = yes
+        set_variable = { SRC_inner_circle_slot_2 = SRC_inner_circle_pending }
+        SRC_inner_circle_add_pending = yes
+        set_variable = { SRC_inner_circle_pending = 0 }
+    }
+}

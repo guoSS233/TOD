@@ -1,0 +1,17 @@
+# 接入红军国策的completion_reward，仅在监察委员会决议完成后发放额外奖励。
+SRC_supervisory_focus_completion_reward = {
+	if = {
+		limit = {
+			tag = SRC
+			has_country_flag = SRC_ren_supervisory_commission_enacted
+		}
+		if = {
+			limit = { check_variable = { var = SRC_construction_review_rounds_completed value = 4 compare = less_than } }
+			custom_effect_tooltip = SRC_construction_gain_1_tt
+			hidden_effect = { add_to_variable = { SRC_construction_achievements = 1 } }
+		}
+		else = {
+			add_political_power = 20
+		}
+	}
+}

@@ -308,3 +308,1039 @@
 【校验】
 - 检查 EDO MIO 定义、工业企业定义的花括号数量一致。
 - 检查每个新增企业均具有定义、本地化、精灵键与对应图标资源。
+
+C 盘开发日志（2026-10-28 至 2026-11-09）
+
+2026-10-28
+
+【SRC 经济建设决议整合】
+
+一、统一决议组
+1. TOD/common/decisions/categories/SRC.txt
+   - 新增“经济建设”决议组，合并原有的路线经济、农业、地区产业及组织人才等 12 个决议分类。
+   - 决议组的显示条件覆盖三条路线相关国策及组织人才解锁旗帜。
+2. TOD/common/decisions/SRC_economic_construction_decisions.txt（新增）
+   - 集中放置 46 项决议：三条政治路线的经济、农业措施 15 项，地区农业、工矿、交通商贸及特色产业措施 28 项，组织与人才措施 3 项。
+   - 将原分类的显示条件下放到相应决议，保留各项国策、旗帜、目标州及执行条件。
+   - 28 项地区决议由仅在地图显示改为同时在地图和决议组显示。
+
+二、原决议文件与本地化
+3. TOD/common/decisions/SRC_ren_decisions.txt、SRC_chen_decisions.txt、SRC_li_decisions.txt
+   - 各迁出 5 项经济、农业决议；政治决议仍保留在原政治决议组。
+4. TOD/common/decisions/SRC_black_soil_decisions.txt、SRC_industry_energy_decisions.txt、SRC_transport_trade_decisions.txt、SRC_light_industry_decisions.txt、SRC_regional_heavy_industry_decisions.txt、SRC_organization_talent_decisions.txt
+   - 原有决议全部迁入统一文件，旧文件保留迁移说明，避免重复加载。
+5. TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml
+   - 新增“经济建设”决议组的简体中文名称。
+
+【校验】
+- 检查 46 个决议 ID 均唯一，脚本花括号配对，旧经济类决议组定义已移除。
+- 核对决议组显示条件覆盖已迁入决议的国策条件；本次未进行游戏内显示验证。
+
+2026-10-28
+
+【SRC 经济建设后续调整】
+
+一、建设成果变量与界面
+- 在任辅臣、李大钊、陈独秀三条路线的主席国策完成时，将国家变量 `SRC_construction_achievements` 初始化为 0；每日触发补齐旧存档中缺失的变量。
+- 为“经济建设”决议组接入专用 GUI，在决议列表上方显示“建设成果”及当前数值，并补齐标题、标签和成果提示的简体中文本地化。
+- 经济建设决议完成时按项目增加 1—5 点建设成果，效果写入变量并在决议提示中显示；最终“示范性土地合作社”改为月度产出，不再完成时一次性增加 5 点。
+
+二、决议时长与提示修正
+- “查田定产，丈量黑土”的执行时间调整为 30 天，保留按符合条件的核心州分别执行一次的机制。
+- 三条路线各 5 项专属经济、农业决议，共 15 项，执行时间统一为 75 天，政治点数花费保持每项 100 点。
+- 隐藏组织与人才决议的内部解锁旗帜检查，避免在决议提示中直接显示 `SRC_organization_talent_decisions_unlocked` 英文键名。
+
+三、示范性土地合作社
+- 移除未接入后续决议的“每完成黑土地决议获得政治点数和稳定度”提示及其无效设计；撤回中途试设的一次性工厂、稳定度奖励。
+- 决议完成后设置启用旗帜。此后每月从当前拥有且控制、基建低于 3 级的地区随机选取一个，立即增加 1 级基建，并增加 1 点建设成果；无符合条件的地区时，两项奖励均不触发。
+- 更新决议提示，明确月度触发条件和无可选地区时的结果。
+
+四、政治点数测算（设计记录）
+- 以“查田定产，丈量黑土”可在 13 个核心州分别执行，其他可点决议各执行一次为口径，完成单条主席路线可用的经济建设决议预计需 2080 政治点数。
+- 若分 4、5、6 个季度完成，平均每季度分别需 520、416、约 347 政治点数；季度检测机制尚未写入脚本。
+
+五、地图地区决议显示
+- 将经济建设组内 28 项已在地图显示的地区决议统一改为 `on_map_mode = map_only`，不再同时占用决议栏；国策解锁、目标州、政治点数花费、执行时间及建设成果奖励保持原有设置。
+
+【涉及文件】
+1. TOD/common/national_focus/dongbeihongjun.txt
+2. TOD/common/decisions/SRC_economic_construction_decisions.txt
+3. TOD/common/decisions/categories/SRC.txt
+4. TOD/common/on_actions/SRC_economic_construction.txt
+5. TOD/common/scripted_guis/SRC_economic_construction_gui.txt
+6. TOD/interface/SRC_economic_construction.gui
+7. TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml
+8. TOD/更新日志.txt
+
+【校验】
+- 核对统一文件中仍为 46 项决议，其中 45 项显示一次性建设成果奖励，另 1 项合作社按月结算；15 项专属决议均为 75 天、100 政治点数。
+- 核对 28 项地区决议全部使用 `map_only`，且统一文件中不再有 `map_and_decisions_view`。
+- 核对月度效果只在成功选中基建低于 3 级的己方受控地区后增加建设成果；未进行游戏内实测。
+
+2026-10-28
+
+【吉林军需总局特质汉化补漏】
+- 在 `TOD/localisation/simp_chinese/TOD_GPS_l_simp_chinese.yml` 补充 `GPS_mio_trait_jilin_kehuan_danjia` 的简体中文名称“可换弹匣”，修复吉林军需总局特质树直接显示内部键名的问题。
+
+2026-10-28
+
+【一长制管理大纲奖励补充】
+- 在 `TOD/common/on_actions/SRC_chen_decisions_on_actions.txt` 的制造商规模提升效果中，为已完成“一长制管理大纲”的 SRC 增加每次 1 点建设成果；原有每次 150 经费保持不变。
+- 更新 `TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml` 的决议提示，显示制造商升级时的新增建设成果奖励。
+
+2026-10-28
+
+【SRC 国策解锁提示空白修复】
+- `TOD/common/national_focus/dongbeihongjun.txt` 中三条主席路线仍引用 15 个已迁移、没有实际决议定义的经济建设分类占位 ID，导致“国家改革委员会”“赎买企业”等国策提示出现无名称的“解锁决议：”行。
+- 移除这 15 条失效的 `unlock_decision_tooltip`；真实经济建设决议的解锁提示、解锁旗帜与完成效果保留。
+- 校验剩余 62 个唯一解锁提示 ID 均能找到决议定义，国策文件花括号配对；未进行游戏内显示验证。
+
+2026-10-28
+
+【全面推行新税制效果调整】
+- 决议完成后仅设置启用旗帜，不再一次性增加 5 点建设成果；移除生产线制造商每月获得 20 经费的旧效果及其任命标记。
+- 在民用经济或前期动员期间，每月从 SRC 当前拥有且控制、基建至少 3 级且有未锁定空余建筑槽的地区随机选择一个，立即增加 1 座民用工厂，同时增加 2 点建设成果。没有符合条件的地区时，两项奖励均不触发。
+- 更新决议提示；保留 100 政治点数花费与 75 天执行时间，并保留其他决议使用的制造商升级触发效果。
+- 涉及 `TOD/common/decisions/SRC_economic_construction_decisions.txt`、`TOD/common/on_actions/SRC_economic_construction.txt`、`TOD/common/on_actions/SRC_chen_decisions_on_actions.txt` 和 `TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml`；已检查脚本括号和本地化编码，尚未进游戏实测。
+
+2026-10-28
+
+【确立按劳发酬机制奖励调整】
+- 将 `TOD/common/on_actions/SRC_chen_decisions_on_actions.txt` 中制造商规模提升时的 1% 稳定度奖励改为每次 30 政治点数。
+- 同步修改 `TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml` 的决议提示；完成决议时原有的 5 点建设成果保持不变。
+
+2026-10-28
+
+【经济建设目标显示】
+- 在经济建设决议组的 GUI 中，于“建设成果”下方增加“建设目标”一行，当前目标显示为 30，并加高界面以容纳新行。
+- 新增国家变量 `SRC_construction_target`；任辅臣、李大钊、陈独秀三条路线的主席国策完成时设为 30，旧存档缺失变量时由每日触发补齐。
+- 补充“建设目标”的简体中文标签。本次仅显示目标值，后续目标变化和检测规则待另行接入。
+- 涉及 `TOD/interface/SRC_economic_construction.gui`、`TOD/common/national_focus/dongbeihongjun.txt`、`TOD/common/on_actions/SRC_economic_construction.txt`、`TOD/localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml`；已检查脚本括号和本地化编码，尚未进游戏实测。
+
+2026-10-28
+
+【SRC 革命战争学说汉化加载修复】
+- 在 D 盘项目副本和 C 盘游戏模组中均找到 `TOD_SRC_doctrines_l_simp_chinese.yml` 的完整中文译文；文件缺少 UTF-8 BOM，与游戏界面显示学说内部键名的现象吻合。
+- 为两处文件补齐 UTF-8 BOM，保留全部 30 条本地化及原有译文；核对主学说名称、描述和脚本引用均有对应条目，两处文件 SHA-256 一致。
+
+2026-10-28
+
+【建设决议组更名】
+- 将 SRC 决议组显示名由“经济建设”改为“建设”，其信息框标题由“经济建设成果”改为“建设成果”；保留原有脚本 ID 与效果。
+
+2026-10-28
+
+【经济建设国策增加建设成果】
+- 任辅臣、李大钊、陈独秀三条路线各 4 项经济建设国策，完成时均增加 4 点 `SRC_construction_achievements`，并在国策效果中显示“建设成果 +4”。
+- 每条路线完成这 4 项国策共获得 16 点建设成果；原有国策效果、决议解锁和 30 点初始建设目标保持不变。
+- 修改 `TOD/common/national_focus/dongbeihongjun.txt`，复用既有 `SRC_construction_gain_4_tt` 本地化；已核对 12 个国策均有提示和实际变量效果，文件花括号配对。
+
+2026-10-28
+
+【革命建设决议组名称修正】
+- 将 SRC 决议组显示名修正为“革命建设”，信息框标题修正为“革命建设成果”；保留脚本 ID、建设成果变量及效果不变。
+- 将模组内部 `descriptor.mod` 中失效的 D 盘路径改为当前 C 盘游戏模组目录，与启动器的外部描述文件保持一致。
+
+2026-10-28
+
+【三条路线政治决议归入革命建设】
+- 将任辅臣、陈独秀、李大钊三条路线各 4 个政治决议，共 12 个，移入“革命建设”决议组；移除原先三个独立政治决议组。
+- 保留每项决议原有的国策可见及可用条件、执行时间和效果；未调整建设成果数值。
+
+2026-10-28
+
+【革命建设成果奖励扩展与总量调整】
+- 三条主席路线各 4 项经济国策的建设成果奖励由每项 4 点调整为 1 点；各 4 项文化国策完成时直接获得每项 8 点，不新增文化决议。
+- 三条路线各 4 项政治决议完成时获得每项 10 点建设成果，并设为一次性；同步补充政治决议的中文描述及 8 点、10 点成果提示。
+- 按黑土地丈量 13 次、其余地图建设项目全完成计算，地图建设决议最多提供 65 点；只计各路线可获得的一次性奖励、不计条件性月度奖励与制造商升级，任辅臣线理论总量 172 点，陈独秀和李大钊线各 167 点。地图项目需要拥有并控制对应地区，实际可得值取决于游戏局势。
+- 按所有目标地区可用且不计月度奖励的理想条件，三条路线以最低政治点数凑到 120 点均约需 875 政治点；实际花费和完成时间取决于国策解锁顺序、地区控制及决议并行情况。
+- 当前建设目标变量仍从 30 起步；本次调整的是可获得的建设成果总量，后续季度目标规则尚未接入。
+
+2026-10-28
+
+【陈独秀和李大钊专属决议补齐一次性成果】
+- “全面推行新税制”和“示范性土地合作社”各在决议结束时增加 5 点建设成果；原有按条件触发的月度奖励继续生效。
+- 三条路线的 5 项专属经济决议现在均提供一次性合计 25 点；在此前黑土地丈量 13 次、其余地图项目全完成且不计月度奖励的口径下，每条路线理论总量统一为 172 点。
+
+2026-10-28
+
+【三条路线政治国策增加建设成果】
+- 任辅臣、陈独秀、李大钊三条路线各 4 项政治国策，完成时每项增加 5 点建设成果并显示提示；每条路线共增加 20 点。
+- 政治国策与其解锁的政治决议合计提供每条路线 60 点；在此前全部一次性项目可完成、黑土地丈量 13 次且不计月度奖励的口径下，三条路线理论总量均为 192 点，比 120 点多 72 点。
+
+2026-10-28
+
+【政治决议成果奖励下调】
+- 三条路线各 4 项政治决议的单项建设成果奖励由 10 点下调为 5 点；政治国策仍为每项 5 点，文化国策仍为每项 8 点，经济国策仍为每项 1 点。
+- 每条路线政治国策与政治决议合计提供 40 点；按此前不计月度奖励、黑土地丈量 13 次且地图项目全完成的口径，三条路线理论总量均为 172 点，比 120 点多 52 点。
+
+2026-10-28
+
+【政治决议统一为 100 天】
+- 任辅臣、陈独秀、李大钊三条路线各 4 项政治决议，共 12 项，执行时间统一调整为 100 天。
+- 每项决议仍为一次性，结束时获得 5 点建设成果；原有国策解锁条件保持不变。
+
+2026-10-29
+
+【革命成果检验倒计时】
+- 完成任辅臣、李大钊或陈独秀任一主席国策后，自动启动显示在“革命建设”决议组内的“革命成果检验”90 天任务。
+- 每轮倒计时结束时将建设成果变量重置为 0，并立即启动下一轮 90 天检验；建设目标变量维持 30，不附加达标判定或奖惩。
+- 为已有主席国策完成的旧存档补充每日一次性启动逻辑，并增加任务名称、说明和主席国策效果提示。
+
+2026-10-29
+
+【政治决议增加政治点费用】
+- 任辅臣、陈独秀、李大钊三条路线各 4 项政治决议，共 12 项，统一增加 100 政治点花费。
+- 100 天执行时间、一次性限制、国策解锁条件及结束时获得 5 点建设成果保持不变。
+
+2026-10-29
+
+【国家经济委员会事件选项调整】
+- 将李大钊线“《关于成立国家经济委员会的决议》节选”事件的单一按钮，改为地方授权、强化国经委计划领导、逐步扩大计划覆盖范围三个选项。
+- 三项选项使用玩家提供的原文；当前仅调整选项文本和数量，暂未设置分支效果。
+
+2026-10-29
+
+【国家经济委员会事件选项提示优化】
+- 将三个按钮名称缩短为“授权地方经委”“强化计划部门”“循序渐进扩大计划经济”。
+- 原三段完整表述分别移至对应选项的鼠标悬停效果提示；暂不增加实际数值或分支效果。
+
+2026-10-29
+
+【同产工会的会内团结】
+- 任辅臣、李大钊、陈独秀三位主席的国策完成后获得动态国家修正“同产工会的会内团结”，增加每日政治点数。
+- 加成为（任辅臣大会权重×会纪派满意度＋李大钊大会权重×合众派满意度＋陈独秀大会权重×致公派满意度）÷10000×1.5；六项变量均以 0–100 表示百分比。
+- 每日按当前三派数值重新计算并刷新修正，旧存档完成主席国策后也会自动获得；补充国策提示和汉化。
+
+2026-10-29
+
+【移植执政联盟系统】
+- 从同级 111 模组移植执政联盟的稳定度计算、每日刷新和政治界面党派高亮；联盟伙伴按支持率×0.15×联盟效率提供稳定度，默认效率为 50%。
+- 保留 add_to_coalition 等调用接口，并为东北红军设置委员会、温和、农工社会主义三个开局联盟伙伴；三者效率均为 50%。
+- 补充 GUI、贴图与汉化，将旧的联盟政治点加成改为稳定度加成；TOD 其他政治内容保留。
+
+2026-10-29
+
+【国家经济委员会事件提示调整】
+- SRCevents.40 三个选项的鼠标悬停文字按新表述更新，分别标明合众派、先锋派与致公派观点；按钮名称和事件脚本不变。
+
+2026-10-29
+
+【主席国策追加政治点数】
+- 任辅臣、李大钊、陈独秀三位主席的国策完成奖励各增加 100 政治点数；原有建设成果检验、会内团结修正与事件效果保留。
+
+2026-10-29
+
+【移除东北红军开局测试决议】
+- 删除开局测试决议组及四个测试决议，同时清理专用脚本效果、汉化和 GPS 事件中的测试标记条件；正常起义事件流程保留。
+
+2026-10-29
+
+【主席选举后更新执政联盟】
+- SRCevents.8 的陈独秀、李大钊两项选择在执政意识形态切换后，将原执政的先锋社会主义加入政治联盟；联盟系统同时清理新执政党原有的联盟伙伴标记。
+
+2026-10-29
+
+【经济建设决议占用民用工厂】
+- 46 项经济建设决议执行期间占用民用工厂：政治点花费不超过 25 的项目占用 1 座，其余占用 2 座；完成或移除后自动释放。
+- 原有两项临时生产修正保留；革命成果检验倒计时及政治决议不受影响。
+
+2026-10-29
+
+【会内团结政治点乘数调整】
+- 同产工会的会内团结每日政治点计算乘数由 1.5 提高至 3，并同步更新修正说明。
+
+2026-10-29
+
+【经济国策建设成果调整】
+- 任辅臣、李大钊、陈独秀三条路线各 4 项经济国策，共 12 项，完成奖励由每项 1 点建设成果提高至 2 点；同步更新国策效果提示。
+
+2026-10-29
+
+【三条路线首项经济国策成果提高】
+- 任辅臣、李大钊、陈独秀线各自的首项经济国策完成时获得的建设成果由 2 点提高至 4 点，其他经济国策仍为 2 点；国策提示同步调整。
+
+2026-10-29
+
+【屏蔽国家城镇化项目决议组】
+- 将通用国家城镇化项目决议组的显示条件设为始终不可见，保留原有决议脚本以便后续恢复。
+
+2026-10-30
+
+【国经委事件合众派选项补充效果】
+- SRCevents.40 的第一个选项新增 5 点革命成果，并沿用合众派权重与满意度的适度提升效果；同步增加悬停提示。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【革命成果检验派系结算】
+- 每90天按建设成果与建设目标比较后结算：达标时主席所属派系权重+4、中央满意度+5，其他两派满意度各+2；未达标时本派系权重-4，其他两派满意度各-3。权重变化由其他两派对向分担并在结算后归一化；随后清零成果、重启检验。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/scripted_effects/SRC_revolutionary_achievement_review_effects.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【革命成果检验同时显示两种结算结果】
+- 修正任务悬停提示只显示当前未达标分支的问题；现在始终显示达标与未达标两种结果，实际结算仍按到期成果判定。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、更新日志.txt。
+
+2026-10-30
+
+【革命成果检验结果事件】
+- 每轮检验到期结算后，根据是否达到建设目标弹出不同事件，通知玩家成功或失败及对应的派系变化；事件选项不重复结算效果。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【革命成果检验限定四轮并解锁路线终章】
+- 三位主席国策启动检验时初始化轮次；每次90天结算后累计一轮，前三轮继续检验，第四轮结束后停止计时并关闭检验决议。每日自动补开机制也在四轮完成后停止。
+- 红星照耀东方、赤旗指引未来、朱门再换新天须完成四轮检验方可选择；达标与未达标均计入轮次。第四轮使用专门的结果事件，提示检验结束。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/national_focus/dongbeihongjun.txt、common/on_actions/SRC_economic_construction.txt、events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【革命建设改为主席国策完成后开启】
+- 主席选举事件不再直接完成任辅臣、李大钊、陈独秀的主席国策；选举后的主席上任和大会国策完成流程保留。玩家完成对应主席国策后，才启动革命成果检验和会内团结效果。
+- 革命建设决议组仅在三位主席国策之一完成后显示，移除其他国策与旗标的提前显示条件。
+- 修改文件：events/SRC.txt、common/decisions/categories/SRC.txt、更新日志.txt。
+
+2026-10-30
+
+【革命成果检验延期决议】
+- 新增“延长革命成果检验”决议，花费50政治点后立即将当前轮倒计时延长30天；每轮仅可执行一次，下一轮开始时恢复使用资格。第四轮结束后决议随检验关闭。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【革命成果检验延期代价调整】
+- “延长革命成果检验”不再消耗政治点数；使用时立即承受一次未达标结算的一半效果：主席所属派系大会权重-2、其他两派各+1，其他两派中央满意度各-1.5。结算后归一化权重并重算会内团结政治点收益；倒计时仍延长30天，每轮限用一次。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/scripted_effects/SRC_revolutionary_achievement_review_effects.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【修复轮次条件导致国策树解析中断】
+- 游戏错误日志显示“完成四轮”条件使用的简写变量比较无法解析，导致红星照耀东方之后的国策与多个经济建设决议未加载。将所有新增轮次比较改为显式的 var/value/compare 语法，保留主席国策手动完成及革命建设随后开启的时序。
+- 修改文件：common/national_focus/dongbeihongjun.txt、common/decisions/SRC_economic_construction_decisions.txt、common/on_actions/SRC_economic_construction.txt、更新日志.txt。
+
+2026-10-30
+
+【大会闭幕选项清零政治点数】
+- SRCevents.8 的陈独秀、任辅臣、李大钊三个胜选选项均在执行末尾将政治点数设为0；事件正文和选项悬停提示以红字提醒玩家选择前花掉政治点。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+2026-10-30
+
+【恢复主席国策自动完成】
+- SRCevents.8 的三个胜选选项在新主席上任后自动完成对应主席国策，照常触发革命建设、成果检验及国策奖励；政治点数清零仍在选项末尾执行。
+- 对已触发选举事件的旧存档，若大会国策已完成且现任主席的对应国策尚未完成，每日脚本自动补全该国策。
+- 修改文件：events/SRC.txt、common/on_actions/SRC_economic_construction.txt、更新日志.txt。
+
+2026-10-30
+
+【大会选举政治点结算顺序调整】
+- SRCevents.8 三个主席胜选选项均先将原有政治点数设为0，再自动完成对应主席国策，使国策奖励的100政治点数保留下来。
+- 修改文件：events/SRC.txt、更新日志.txt。
+
+2026-10-30
+
+【强化计划部门选项效果】
+- SRCevents.40 的“强化计划部门”选项增加8点建设成果；会纪派大会权重+4、中央满意度+6，合众派与致公派大会权重各-2、中央满意度各-3，结算后归一化派系权重并重算会内团结政治点收益。
+- 悬停说明将“先锋派”更名为“会纪派”，并列出建设成果及派系数值变化。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【循序渐进扩大计划经济选项效果】
+- SRCevents.40 的“循序渐进扩大计划经济”选项获得100政治点；致公派大会权重+4、中央满意度+6，合众派与会纪派大会权重各-2、中央满意度各-3，结算后归一化派系权重并重算会内团结政治点收益。
+- 悬停说明统一使用“致公派”，并列出派系数值变化；100政治点奖励由游戏原生提示显示。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-10-30
+
+【统一致公派名称】
+- 将模组内相关派系名称统一为致公派，涵盖 SRC、GPS 及其他国家政党名称、事件悬停、派系界面、中英文目录文本、接口文档和旧更新日志；共替换 24 处。
+- 修改文件：更新日志.txt、SRC_中央与地方机制接口文档.md、localisation/simp_chinese/TOD_WJP_West_Japan_l_simp_chinese.yml、localisation/english/TOD_Arab's_Liberation_Army_l_english.yml、localisation/english/TOD_German_l_english.yml、localisation/english/TOD_Croatia_l_english.yml、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、localisation/simp_chinese/TOD_GPS_l_simp_chinese.yml、localisation/simp_chinese/TOD_German_l_simp_chinese.yml、localisation/simp_chinese/TOD_Arab's_Liberation_Army_l_simp_chinese.yml、localisation/simp_chinese/TOD_Croatia_l_simp_chinese.yml。
+
+2026-10-31
+
+【强化计划部门满意度惩罚调整】
+- SRCevents.40 的“强化计划部门”选项对致公派中央满意度的惩罚由-3增加到-5，悬停提示同步更新。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【会内团结名称统一】
+- 国家修正名称统一为“同产工会的会内团结”，同步更新国策奖励提示、脚本注释及旧日志中的称呼。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、common/dynamic_modifiers/TOD_SRC_modifiers.txt、更新日志.txt。
+
+2026-11-02
+
+【授权地方经委效果数值明确】
+- 将 SRCevents.40“授权地方经委”的模糊派系提示改为实际数值：合众派大会权重+4、中央满意度+6，会纪派与致公派大会权重各-2、中央满意度各-3。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【国家经济委员会事件正文排版】
+- SRCevents.40 正文的三个自然段均增加两个全角空格，使每段首行缩进两字。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【循序渐进扩大计划经济满意度惩罚调整】
+- SRCevents.40 的“循序渐进扩大计划经济”选项对会纪派（先锋派）中央满意度的惩罚由-3增加到-5，悬停提示同步更新。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【革命成果检验通知正文与选项提示调整】
+- SRCevents.45—48 的正文改为建设汇报、党内评价及后续工作的叙事文本，四篇正文均按自然段首行缩进两字。
+- 成功、失败的具体派系数值变化移入选项悬停，注明本轮已结算，并分别显示建设成果清零、下一轮90天检验或四轮结束后的最终国策轮次条件。
+- 通知选项仅展示结算说明，派系影响继续由检验倒计时结束时执行。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【可重复经济决议建设成果提高】
+- “征召明廷国营企业技师”和“紧急调拨民工团”每次完成后的建设成果奖励由1点提高到3点，实际加值与悬停提示同步调整。
+- 两项各完成一次共提供6点建设成果，对应合计100政治点；同时执行时占用4座民用工厂，持续60天。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、更新日志.txt。
+
+2026-11-02
+
+【示范性土地合作社每月成果提高】
+- “示范性土地合作社”完成后的每月效果调整为：随机为一个当前拥有并控制、基建低于3级的地区增加1级基建，并获得2点建设成果。
+- 实际每月成果由1点提高到2点，悬停说明同步更新。
+- 修改文件：common/on_actions/SRC_economic_construction.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【红军事件正文首行缩进统一】
+- 逐条核对红军主线、中央局、战时建军、地方行动及红军与共和军和谈的103条非空中文正文；调整98条，已有正确缩进的5条保留。
+- 普通叙述、独立对话、引文、公告及报告的自然段首行统一为两个全角空格；清除原先混用的半角空格。
+- 大会议题 SRCevents.4—6 的编号小标题保留顶格，说明段落缩进；SRCevents.8 的独立红字警告保留顶格。SRCevents.25 的诗行保留分行并齐头排列，SRCevents.32 的转场及 SRCevents.39 的信件与评论分隔保留空行。
+- 战时军队 SRC_wartime_army.5 的三个动态版本由共用正文提供首段缩进，后续段落单独缩进，避免重复；和谈动态正文在事件描述入口统一缩进。
+- 已逐项校验正文文字、原有分段、格式代码、动态引用及文件换行保持完整，重复执行格式化不会叠加缩进。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、localisation/simp_chinese/TOD_SRC_wartime_army_l_simp_chinese.yml、localisation/simp_chinese/TOD_SRC_local_actions_l_simp_chinese.yml、localisation/simp_chinese/TOD_ROC_SRC_hetan_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【吉林大学特质调整】
+- 吉林大学（GPS_jilindaxue）的特质由 industrial_concern 改为 university，使用现有“高校”特质名称。
+- 修改文件：common/ideas/GPS_idea.txt、更新日志.txt。
+
+2026-11-02
+
+【践行委员会代表随时弹劾权新增效果】
+- 更新决议内容说明：贯彻一切权力属于人民，赋予基层工农群众对各级代表的监督与即时弹劾权。
+- 决议完成时增加委员会社会主义党派支持率5个百分点，新增悬停提示说明政治联盟稳定度加成效率由50%提高到75%。
+- 将联盟系统原先写死的50%默认效率改为各国独立的效率变量；该决议将本国效率设为75%并立即重算，后续新加入的联盟伙伴同样适用，解散并重组联盟后仍保留。其他国家的默认效率为50%，各党派单独设置的效率仍优先使用。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/scripted_effects/TOD_party_coalition_effects.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【摧毁地方封建宗族与流氓帮会新增效果】
+- 更新决议内容说明，加入依靠贫农会与工人纠察队重塑基层政权的叙述。
+- 决议完成时稳定度-10%，启动365天后续效果：第60、120、180、240、300、360天随机为一个当前拥有并控制的地区增加1个建筑槽，共6次。
+- 第365天获得15%稳定度，清除后续效果标记与计数。使用 SRCevents.49 和 SRCevents.50 隐藏事件处理周期与结束结算；悬停说明同步写明期限、次数及稳定度奖励。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【第四轮后会内团结政治点加成归零】
+- 完成第四轮革命成果检验后，保留“同产工会的会内团结”国家修正，将其每日政治点数加成明确设为0。
+- 每次派系变化或每日重算均检查已完成轮次，达到4轮后持续保持加成为0；旧存档中已被移除的该修正会在重算时恢复为零加成状态。
+- 同步更新国家修正说明、主席国策奖励提示、检验倒计时与第四轮结果通知的悬停说明。
+- 修改文件：common/scripted_effects/SRC_party_cooperation_effects.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-02
+
+【整顿官僚命令主义恶劣作风新增效果】
+- 按新说明更新决议正文；完成后将“同产工会的会内团结”替换为“密切联系群众”。
+- 新精神按合众派大会权重同比例获得研究速度、生产效率增长和工厂受轰炸易损性加成；权重100%时分别为+10%、+15%、-10%，50%时分别为+5%、+7.5%、-5%。
+- 决议完成、权重归一化及每日刷新时重算三项数值，赋值后计算以避免重复叠加；新旧精神互斥。
+- 新精神沿用原有每日政治点计算，第四轮成果检验结束后该项加成保持为0，三项按权重提供的加成继续生效。检验及结果通知通过动态名称显示当前精神。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/dynamic_modifiers/TOD_SRC_modifiers.txt、common/scripted_effects/SRC_party_cooperation_effects.txt、common/scripted_effects/SRC_power_struggle_effects.txt、common/scripted_localisation/SRC_party_cooperation_loc.txt（新增）、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-03
+
+【建立基层三级人民委员会新增效果】
+- 按新说明更新决议正文，明确村、镇、县三级人民委员会的地方权力机关地位。
+- 决议完成时增加委员会社会主义党派支持率5个百分点，增加10000人力，并立即重算政治联盟稳定度。
+- 自完成后的下一个月起，每月获得30政治点，连续发放4次，共120政治点；第四次发放后清除月份计数，自动停止。
+- 悬停提示同步列明每月收益、持续月份及总额。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/on_actions/SRC_economic_construction.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-03
+
+【自由的辩论事件选项调整】
+- SRCevents.36 原有单一选项改为三个选项，按提供的顺序分别讨论民主原则、肯定王金洋观点及欢迎不同意见。
+- 新增 SRCevents.36.b、SRCevents.36.c 选项及汉化，三个选项均使用提供的完整文案。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-03
+
+【自由的辩论首项派系效果】
+- SRCevents.36 第一项增加合众派大会权重2点、中央满意度3点，降低致公派中央满意度2点；大会权重从会纪派与致公派各转移1点。
+- 悬停提示列明全部具体数值。结算后限制满意度范围、归一化大会权重，并重算国家修正效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-03
+
+【自由的辩论第二项派系效果】
+- SRCevents.36 第二项增加会纪派大会权重4点、中央满意度6点，降低致公派大会权重4点、中央满意度3点，降低合众派中央满意度3点。
+- 悬停提示列明全部具体数值，结算后限制满意度范围、归一化大会权重并重算国家修正效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-03
+
+【自由的辩论第三项派系效果】
+- SRCevents.36 第三项增加致公派大会权重4点、中央满意度6点，降低会纪派大会权重4点、中央满意度3点，降低合众派中央满意度3点。
+- 悬停提示列明全部具体数值，结算后限制满意度范围、归一化大会权重并重算国家修正效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【新增“革命的权力属于谁？”事件】
+- 新增 SRCevents.51，由李大钊政治线首个国策“革命委员会”（SRC_gemingweiyuanhui）完成时触发，仅触发一次。
+- 采用提供的老周参加中央革命委员会筹备会议的正文，按12个自然段首行缩进两字排版，清理结尾重复句号。
+- 三个选项依次为“让一切权力真正归于劳动群众！”、“革命的民主，也需要革命的纪律！”、“让革命的制度比革命的热情更加持久！”。
+- 使用现有工厂题材事件插图，补齐标题、正文和三个选项汉化。
+- 修改文件：common/national_focus/dongbeihongjun.txt、events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【革命的权力属于谁首项效果】
+- SRCevents.51 第一项增加合众派大会权重2点、中央满意度3点及革命建设成果2点；大会权重从会纪派与致公派各转移1点。
+- 悬停提示列明具体数值，结算后限制满意度范围、归一化大会权重并重算国家修正效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【革命的权力属于谁第二项效果】
+- SRCevents.51 第二项增加会纪派大会权重4点、中央满意度6点；降低致公派大会权重4点、中央满意度5点，降低合众派中央满意度3点，致公派满意度降幅更大。
+- 悬停提示列明具体数值，结算后限制满意度范围、归一化大会权重并重算国家修正效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【革命的权力属于谁第三项效果】
+- SRCevents.51 第三项增加致公派大会权重4点、中央满意度6点；降低会纪派大会权重4点、中央满意度3点，降低合众派中央满意度3点，并获得75政治点。
+- 派系数值由悬停提示明确展示，政治点使用原生效果显示；结算后限制满意度范围、归一化大会权重并重算国家修正效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【革命的权力属于谁第二项追加成果】
+- SRCevents.51 第二项“革命的民主，也需要革命的纪律！”新增4点革命建设成果，悬停使用现有数值提示。
+- 修改文件：events/SRC.txt、更新日志.txt。
+
+2026-11-04
+
+【革命成果检验延期追加本派系满意度代价】
+- 延长革命成果检验时，主席所属派系中央满意度额外降低1点；任辅臣、李大钊、陈独秀三条路线分别扣除对应派系变量。
+- 延期悬停提示补充本派系满意度-1，决议描述调整为派系权重与满意度代价说明。
+- 修改文件：common/scripted_effects/SRC_revolutionary_achievement_review_effects.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【革命成果检验失败追加本派系满意度惩罚】
+- 革命成果检验失败时，主席所属派系中央满意度降低2点；任辅臣、李大钊、陈独秀三条路线均已加入对应扣减。
+- 失败悬停提示明确显示本派系-2、其他两派各-3，检验描述同步说明失败会降低各派系满意度；普通轮次及第四轮失败均使用同一结算效果。
+- 修改文件：common/scripted_effects/SRC_revolutionary_achievement_review_effects.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【会内团结精神图标替换】
+- 使用提供的握手、齿轮、金星与红旗图案，经内置 imagegen 去除外部背景，保留透明Alpha通道。
+- 新图标画布为64×64像素，与现有SRC精神图标一致；图案等比缩放并居中，边缘保留透明余量。
+- “同产工会的会内团结”与更名后的“密切联系群众”使用专属新图标 GFX_idea_SRC_party_unity。
+- 已检查图片尺寸、透明Alpha、边缘预览及贴图引用。
+- 修改文件：gfx/interface/ideas/SRC/SRC_party_unity.png（新增）、interface/ideas_asia.gfx、common/dynamic_modifiers/TOD_SRC_modifiers.txt、更新日志.txt。
+
+2026-11-04
+
+【会内团结名称统一】
+- 国家修正名称统一为“同产工会的会内团结”，同步更新主席国策奖励提示、整顿官僚作风决议提示、脚本注释及旧日志中的称呼。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、common/dynamic_modifiers/TOD_SRC_modifiers.txt、更新日志.txt。
+
+2026-11-04
+
+【四轮检验后限制可重复建设决议】
+- “征召明廷国营企业技师”和“紧急调拨民工团”新增启动条件：已完成的革命成果检验少于4轮，第四轮结束后不能再次启动。
+- 条件仅加入 available，保持原有显示、倒计时与结束结算；四轮结束时正在执行的决议继续到期并正常发放3点建设成果。
+- 悬停条件明确显示“四轮检验尚未全部完成”。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【SRC政治面板党派名称调整】
+- 按面板从上到下的顺序，将先锋社会主义、委员会社会主义、温和社会主义、农工社会主义对应党派分别改为“同产工会会纪派”、“同产主义合众派”、“同产主义致公派”、“同产主义农工派”。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【撤销本次统一集中领导调整】
+- 撤销刚才对“坚持党的统一集中领导”的未完成修改，恢复决议原有内容与效果。
+- 恢复会内团结、密切联系群众的原有计算及动态名称，撤销本次新增的党的领导合并修正与汉化。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/dynamic_modifiers/TOD_SRC_modifiers.txt、common/scripted_effects/SRC_party_cooperation_effects.txt、common/scripted_localisation/SRC_party_cooperation_loc.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【坚持党的统一集中领导：追加集中领导效果】
+- 按新说明更新决议正文，花费100政治点；完成时增加先锋社（先锋社会主义）党派支持率5个百分点，将本国政治联盟默认稳定度加成效率从50%降至25%并立即重算。
+- “同产工会的会内团结”更名为“集中领导”，继承原有每日政治点效果与第四轮后政治点加成归零规则，在原有效果上追加政党支持度带来的稳定度系数+25%。
+- 以先锋社党派支持率（0—1）计算追加加成：稳定度×0.2、生活消费品系数×-0.2、建设速度×0.1；支持率100%时分别为+20%、-20%、+10%，50%时分别为+10%、-10%、+5%。
+- 决议完成及每日刷新时重新赋值并计算追加数值，避免重复叠加；精神与检验提示使用对应动态名称。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/dynamic_modifiers/TOD_SRC_modifiers.txt、common/scripted_effects/SRC_party_cooperation_effects.txt、common/scripted_localisation/SRC_party_cooperation_loc.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【保障监察委员会权利新增效果】
+- 按新说明更新决议正文，花费100政治点；完成时增加先锋社（先锋社会主义）党派支持率5个百分点，启用监察委员会持续奖励。
+- 启用后每完成一个国策额外获得1点革命建设成果；第四轮检验结束后，该项额外奖励改为20政治点。
+- 新增独立脚本效果，并在现有110个红军国策的 completion_reward 中各接入一次，使奖励在完成当下结算，悬停随当前轮次显示对应额外奖励。
+- 原有国策内容完整保留，额外奖励仅在本决议完成后触发，不补发此前已完成的国策。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/national_focus/dongbeihongjun.txt、common/scripted_effects/SRC_supervisory_commission_effects.txt（新增）、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【严密党的组织生活新增效果】
+- 按提供的说明更新决议正文，花费100政治点。
+- 决议完成时先增加先锋社（先锋社会主义）党派支持率10个百分点，再以增加后的实际支持率×0.2一次性增加稳定度；例如支持率为50%时获得10%稳定度。
+- 结算后立即重算会内团结及其后续精神、政治联盟的相关效果，悬停提示写明计算顺序、比例与示例。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【开展全党反分散主义斗争改为可重复】
+- 更新决议内容说明，改为0政治点花费、持续50天、可重复执行；每次完成获得50政治点，合众派与致公派中央满意度各-3。
+- 按累计完成次数计数，前两次不额外惩罚本派系；第三次及以后每次完成时，会纪派中央满意度额外-2、稳定度-3%。计数仅在到期完成时递增，悬停显示累计次数和额外惩罚。
+- 沿用原有每次完成5点建设成果，并按既定可重复决议规则加入四轮检验启动限制；第四轮后不能新启动，已在倒计时的继续正常结算。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【反分散主义斗争成果奖励下调】
+- “开展全党反分散主义斗争”每次完成获得的革命建设成果由5点降低到1点，实际奖励及悬停提示同步调整。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、更新日志.txt。
+
+2026-11-04
+
+【确立地方参政议政大纲新增效果】
+- 按提供的说明更新决议正文，政治点花费由100改为0。
+- 决议完成时增加温和社会主义党派支持率5个百分点，再按增加后的实际支持率×400一次性获得政治点；例如支持率为50%时获得200政治点。
+- 结算后立即重算相关国家修正与政治联盟效果，悬停提示列明计算顺序、比例与示例。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【地方参政议政大纲成果奖励下调】
+- “确立地方参政议政大纲”完成时获得的革命建设成果由5点降低到1点，实际奖励及悬停提示同步调整。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、更新日志.txt。
+
+2026-11-04
+
+【颁行人民民主法治大纲新增效果】
+- 按提供的说明更新决议正文，花费100政治点；完成时增加温和社会主义党派支持率5个百分点。
+- 将本国政治联盟默认稳定度加成效率从50%提高到75%，立即重算，后续加入的联盟党派同样适用。
+- 悬停提示明确显示50%至75%的效率变化。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【吸纳非党派革命技术知识分子效果调整】
+- 按提供的说明更新决议正文，改为0政治点花费、可重复执行，持续100天。
+- 决议执行期间科研速度+10%；到期后会纪派中央满意度-3，获得的革命建设成果由5点降低到1点。
+- 沿用可重复决议的四轮检验启动限制：第四轮结束后不能新启动，已有倒计时继续正常执行并结算。
+- 实际效果及悬停提示同步调整，完成后重算相关国家修正。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【全面落实三三制政权架构新增效果】
+- 将原“政治三三制”决议更名为“全面落实‘三三制’政权架构”，按提供的说明更新正文，花费100政治点。
+- 完成后将“同产工会的会内团结”更名为“三三制政府”，在原有效果上追加：科研速度＝（自由民主主义＋社会民主主义）党派支持率×0.3；工厂产出＝（农工社会主义＋先锋社会主义＋委员会社会主义）党派支持率×0.2；适役人口系数＝温和社会主义党派支持率×0.4。
+- 三组支持率以0—1参与计算，完成决议及每日刷新时重新赋值计算。三三制政府与其他会内团结后续形态互斥，继承原有每日政治点效果及第四轮后政治点加成归零规则。
+- 国家精神与检验通知动态名称、决议悬停公式同步更新。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、common/dynamic_modifiers/TOD_SRC_modifiers.txt、common/scripted_effects/SRC_party_cooperation_effects.txt、common/scripted_localisation/SRC_party_cooperation_loc.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【移除工协是大学稳定度加成】
+- 删除“工协是大学”（SRC_gongxieshidaxue）完成时增加的10%稳定度，国策原生效果展示与汉化提示同步移除该项。
+- 动态修正“党的领导”移除对该国策专用稳定度变量的引用，使已完成该国策的存档刷新后也不再获得旧加成。
+- 修改文件：common/national_focus/dongbeihongjun.txt、common/ideas/SRC_idea.txt、common/dynamic_modifiers/TOD_SRC_modifiers.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【同产主义新文化运动奖励调整】
+- “同产主义新文化运动”（SRC_xinwenhuayundong）移除10%稳定度，科研速度由5%提高到10%，国策原生效果展示及汉化提示同步调整。
+- “革命新人”及其后续“红星照耀东方”不再读取该国策专用稳定度变量。
+- 已完成该国策的旧存档在下一次每日刷新时，一次性将科研加成更新为10%并强制刷新动态修正。
+- 修改文件：common/national_focus/dongbeihongjun.txt、common/ideas/SRC_idea.txt、common/dynamic_modifiers/TOD_SRC_modifiers.txt、common/on_actions/SRC_economic_construction.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-04
+
+【坚决反对个人崇拜奖励调整】
+- 删除“坚决反对个人崇拜”（SRC_jianjuefanduigerenchongbai）完成时的5%基础稳定度奖励，基础战争支持度奖励由5%提高到10%，国策原生提示随实际效果更新。
+- 对已完成国策且尚未更新的旧存档，在每日刷新时一次性扣除5%基础稳定度、补加5%基础战争支持度；新完成国策时直接标记已更新，避免重复结算。
+- 修改文件：common/national_focus/dongbeihongjun.txt、common/on_actions/SRC_economic_construction.txt、更新日志.txt。
+
+2026-11-04
+
+【人民民主法治大纲补充联盟伙伴】
+- “颁行人民民主法治大纲”完成时加入自由民主主义、社会民主主义两个执政联盟伙伴，并按75%默认联盟效率立即重算稳定度。
+- 使用现有联盟接口，已加入的伙伴不会重复计入联盟加成；悬停提示同步列明两派加入。
+- 修改文件：common/decisions/SRC_economic_construction_decisions.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt。
+
+2026-11-05
+
+【SRC 红军核心圈】
+- 移植独立的 SRC 核心圈机制，在东北革命大会后于国策树显示；设置主席、两席陆军、海军和空军共五个上方位置，海空军暂用占位符。
+- 陆军核心圈支持任命、满员替换、50 政治点数费用、90 天调整冷却、常驻动态修正及周期性专属工作；旧版三席陆军存档可迁移到两席布局。
+- 调整界面显示：上方席位显示成员头像与姓名，下方仅显示候选人的小头像；将候选扩为六人，并按职责成对排列。
+- 候选及职责：徐向前、董振堂为政委制；蓝天蔚为一长制、赵尚志为军事一长制；关向应、杨靖宇为士兵委员会。
+- 新增董振堂、赵尚志、杨靖宇的任命决议、席位映射、常驻加成、专属工作事件和简体中文文本。徐向前与杨靖宇须先完成“提拔革命将领”。董振堂与赵尚志使用用户提供的原始头像。
+- “军事委员会”国家精神第一级图标换为红星、齿轮与对称麦穗徽章的 68×60 透明 PNG；保留高分辨率源图供后续调整。
+- 主要修改文件：common/decisions/SRC_inner_circle_decisions.txt、common/scripted_effects/SRC_inner_circle_effects.txt、common/scripted_triggers/SRC_inner_circle_triggers.txt、common/scripted_localisation/SRC_inner_circle_loc.txt、common/dynamic_modifiers/SRC_inner_circle_modifiers.txt、common/focus_inlay_windows/SRC_inner_circle_inlay_window.txt、common/on_actions/SRC_inner_circle.txt、events/SRC_inner_circle.txt、interface/SRC_inner_circle.gui、interface/SRC_inner_circle.gfx、interface/ideas_asia.gfx、localisation/simp_chinese/SRC_inner_circle_l_simp_chinese.yml、gfx/leaders/SRC/SRC_dong_zhentang.png、gfx/interface/ideas/SRC/SRC_military_committee_wheat.png、SRC_inner_circle_design.md。
+- 新增 AGENTS.md，约定今后每次改动都记录更新日志，并分别维护两份 TOD 的日志历史。
+- 校验：检查新候选的决议、席位、事件、头像和本地化引用，脚本括号数量及两份模组文件同步；本次尚未进游戏验证界面。
+
+2026-11-05
+
+【董振堂加入 SRC 将领】
+- 在 common/characters/SRC.txt 新增董振堂陆军将领定义，使用现有 156×210 头像；将领等级为 3，攻击/防御/计划/后勤面板为 3/2/3/2，特质为“不灵活的战略家”（inflexible_strategist）。
+- 在 history/countries/SRC - hongjun.txt 将董振堂加入开局招募名单。两份 TOD 分别增量修改，保留各自原有内容。
+- 校验：两份文件中角色和招募记录各一处，头像存在，角色文件花括号配对；尚未进游戏验证。
+2026-11-05
+
+【修复赵尚志未被 SRC 招募】
+- 在 history/countries/SRC - hongjun.txt 的开局将领名单加入 recruit_character = SRC_zhao_shangzhi，使已定义的赵尚志将领由 SRC 获得。
+- 两份 TOD 分别修改；检查角色定义、头像存在，且招募记录各仅一处。现有存档不会重新执行开局历史文件，需新开局验证。
+2026-11-05
+
+【徐向前与杨靖宇顾问互换】
+- common/characters/SRC.txt：徐向前改为 army_chief，使用杨靖宇原有的 army_chief_offensive_2 特质；杨靖宇改为 high_command，使用徐向前原有的 army_entrenchment_3 特质。两人各自的 idea_token、费用和头像保持对应本人。
+- C 盘实际加载的角色文件原先缺少徐向前的将领定义，补入与 D 盘一致的 field_marshal 定义（等级 4，攻击/防御/计划/后勤 5/4/1/3，armor_officer、brilliant_strategist）。D 盘原已有该元帅定义。
+- 校验：两份角色文件中的职位、顾问特质与元帅定义均符合要求，花括号配对；尚未进游戏验证。
+2026-11-05
+
+【杨靖宇顾问特质调整】
+- common/characters/SRC.txt：杨靖宇的 high_command 顾问特质由 army_entrenchment_3 改为 army_armored_2（装甲部队·大师档）；顾问职位、姓名和费用不变。
+- 两份 TOD 均已修改；确认 army_armored_2 特质定义存在，杨靖宇顾问引用正确，角色文件花括号配对。尚未进游戏验证。
+2026-11-05
+
+【蓝天蔚核心圈职责名称统一】
+- localisation/simp_chinese/SRC_inner_circle_l_simp_chinese.yml：将蓝天蔚头像悬停说明中的“一长制”改为与赵尚志一致的“军事一长制”，并同步统一任命说明、核心圈名称和工作事件文本。
+- SRC_inner_circle_design.md 同步更新职责名称。两份 TOD 已同步；检查蓝天蔚相关文本无旧称残留。尚未进游戏验证。
+2026-11-05
+
+【修复核心圈国家精神图标】
+- 此前的军事委员会徽章只接入 SRC_gemingjunshiweiyuanhui_1，未用于“核心圈：政委制”等成员动态修正，因此游戏中仍显示人物头像。
+- common/dynamic_modifiers/SRC_inner_circle_modifiers.txt：六名成员的核心圈国家精神统一使用 GFX_SRC_inner_circle_military_committee。
+- interface/SRC_inner_circle.gfx：新增对应精灵，指向 gfx/interface/ideas/SRC/SRC_military_committee_wheat.png；国策树面板的候选与席位仍显示个人头像。SRC_inner_circle_design.md 同步说明。
+- 两份 TOD 已同步；检查六处动态修正引用、徽章贴图和人物头像映射，尚未重启游戏验证显示。
+2026-11-05
+
+【恢复误接的国家精神图标】
+- interface/ideas_asia.gfx：将 GFX_idea_SRC_gemingjunshiweiyuanhui_1 恢复指向原图 gfx/interface/ideas/SRC/SRC_gemingjunshiweiyuanhui.png，撤销此前误接到该精神的军事委员会徽章。
+- 红军核心圈六名成员的国家精神仍通过 GFX_SRC_inner_circle_military_committee 使用新徽章。两份 TOD 均已更新；原贴图存在且引用检查通过，尚未重启游戏验证。
+2026-11-05
+
+【红军核心圈面板移位】
+- common/national_focus/dongbeihongjun.txt：将 SRC_inner_circle_inlay_window 的锚点从 { x = 4300 y = 180 } 移到 { x = 3370 y = 1400 }，使 660×450 的核心圈面板居中位于军事国策分支（第 33–41 列、最下方第 9 行）下方。
+- SRC_inner_circle_design.md 同步更新面板位置说明。D 盘与 C 盘分别修改各自的国策文件，未覆盖其原有差异；检查两份锚点一致、括号配对。尚未重启游戏做画面验证。
+2026-11-05
+
+【徐向前与杨靖宇顾问再次互换】
+- common/characters/SRC.txt：徐向前改回 high_command 顾问，装甲顾问特质由大师档提升为 army_armored_3（装甲部队·奇才）；保留其 field_marshal 元帅定义。
+- 杨靖宇改回 army_chief 顾问，使用 army_chief_offensive_2。两人的 idea_token、头像和顾问费用仍对应本人。
+- D、C 两份 TOD 均已修改；确认职位、特质键、元帅定义和花括号配对。尚未进游戏验证。
+2026-11-06
+
+【替换 SRC 五名将领头像】
+- 使用新提供的 156×210 PNG，分别替换 gfx/leaders/SRC/SRC_xiefang.png（解方）、SRC_gao_tiqian.png（高体乾）、SRC_wan_yi.png（万毅）、SRC_yu_quanshen.png（于权伸）、SRC_yang_jingyu.png（杨靖宇）。
+- D 盘与 C 盘的五张将领大头像均已同步；原版文件备份在 D:\TOD_mod\tools\portrait_backups\2026-11-06。顾问专用小图标不属于本次将领大头像替换。
+- 校验：五张新图均为 156×210，C 盘角色定义均指向对应路径，源图与两份模组中的文件哈希一致。尚未进游戏验证显示。
+2026-11-06
+
+【红军核心圈人物头像边框】
+- interface/SRC_inner_circle.gfx：注册独立的 GFX_SRC_inner_circle_portrait_frame，复用 gfx/interface/pol_leader_frame.dds。
+- interface/SRC_inner_circle.gui：为主席、两席陆军、海军和空军占位、六名下方候选共 11 个头像位置叠加同款边框；沿用原政治界面的头像内边距，保持候选等距排列与悬停提示。
+- SRC_inner_circle_design.md 同步记录边框方案。D、C 两份 TOD 已同步；检查边框贴图存在、11 处引用及 GUI 括号配对，尚未进游戏验证排版。
+2026-11-06
+
+【同产工会会内团结图标居中】
+- 将 gfx/interface/ideas/SRC/SRC_party_unity.png 的可见图案在 64×64 透明画布内整体右移 1 像素，修正左右视觉中心；逐像素核对后可见像素与透明度未改变。
+- D 盘原缺少该贴图及 GFX_idea_SRC_party_unity 注册，现已补齐；C 盘替换为居中版本，两份贴图和 interface/ideas_asia.gfx 均一致。
+- 原图备份在 D:\TOD_mod\tools\icon_backups\2026-11-06\SRC_party_unity.png。已检查图标尺寸、精灵引用与括号配对，尚未进游戏验证显示。
+2026-11-06
+
+【修正红军核心圈头像边框与文字排版】
+- interface/SRC_inner_circle.gui：主席姓名与四个上方席位姓名下移到边框之外，避免文字压在边框底缘；六名下方候选头像整体下移 35 像素，为主席姓名留出间距。
+- 删除两席陆军卡片下方的“第一席／第二席”文本，并移除 localisation/simp_chinese/SRC_inner_circle_l_simp_chinese.yml 中不再使用的对应键。SRC_inner_circle_design.md 同步说明。
+- D、C 两份 TOD 已同步；按边框尺寸核对姓名与边框的间距、底排未超出面板，GUI 花括号配对。尚未进游戏验证实际字体渲染。
+2026-11-06
+
+【红军核心圈改为点击席位和头像任命】
+- 在国策树核心圈面板中加入两席陆军点击按钮及六名候选头像按钮；选中席位后，符合任命条件的候选显示金色边框，点击即任命或替换，并可再次点击席位取消选择。海空军占位符保持不可任命。
+- 新增独立的按钮与高亮贴图；玩家决议入口隐藏，AI 保留旧决议。任命继续消耗 50 政治点数、触发 90 天冷却，徐向前和杨靖宇仍受国策条件限制，原有成员修正与项目事件继续生效。
+- 更新 common/focus_inlay_windows/SRC_inner_circle_inlay_window.txt、common/scripted_triggers/SRC_inner_circle_triggers.txt、common/scripted_effects/SRC_inner_circle_effects.txt、common/decisions/categories/SRC_inner_circle_categories.txt、interface/SRC_inner_circle.gui、interface/SRC_inner_circle.gfx、gfx/interface/SRC_inner_circle/、本地化和 SRC_inner_circle_design.md。
+- D、C 两份 TOD 已同步；检查 GUI/脚本花括号、按钮和贴图引用、PNG 尺寸及 12 个同步文件的 SHA-256 一致。尚未进游戏验证点击与高亮显示。
+
+2026-11-06
+
+【红军核心圈任命条件提示改为文字】
+- common/scripted_triggers/SRC_inner_circle_triggers.txt：将席位选择、90天任命冷却、50政治点数及候选人已入圈状态改用 custom_trigger_tooltip 显示，避免头像悬停提示露出变量名和 country flag 名称。
+- localisation/simp_chinese/SRC_inner_circle_l_simp_chinese.yml：新增对应中文条件说明；任命条件和效果不变。
+- D、C 两份 TOD 已同步；检查触发器花括号配对及两份修改文件的 SHA-256 一致。尚未进游戏验证实际悬停显示。
+
+2026-11-06
+
+【红军核心圈新增四名候选并改为双排头像】
+- 续范亭、何长工加入陆军候选（军事改革）；曾以鼎进入海军候选，刘云进入空军候选。使用 D:\TOD_mod 根目录的四张 156×210 头像，接入对应席位头像、任命按钮、候选高亮、常驻修正与定期工作事件；玩家仍通过先点席位再点头像任命，AI 决议同步扩充。
+- interface/SRC_inner_circle.gui 面板由 660×450 扩展至 660×550；新四人排在第一排，原六人排在第二排。扩充 common/focus_inlay_windows、scripted_triggers、scripted_effects、scripted_localisation、dynamic_modifiers、decisions、events、gfx 及中文本地化；旧第三陆军席迁移逻辑继续保留。SRC_inner_circle_design.md 同步说明。
+- D、C 两份 TOD 已同步；检查 15 个文件 SHA-256 一致、脚本与 GUI 花括号、14 个按钮及贴图引用、事件编号无重复、头像尺寸和本地化键。第二排底部 y=518，低于面板下沿 y=550；尚未进游戏验证实际渲染和点击。
+
+2026-11-06
+
+【红军核心圈更名为中央军事委员会】
+- localisation/simp_chinese/SRC_inner_circle_l_simp_chinese.yml：将面板标题、任命提示、席位提示、国家精神标题与相关事件文本中的旧称统一改为中央军事委员会，并调整军种席位语序；保留 SRC_inner_circle 脚本键以兼容存档。
+- SRC_inner_circle_design.md 同步更名。D、C 两份 TOD 已同步并校验两份文件哈希；本地化保留 UTF-8 BOM，163 个键无重复，已无旧称。尚未进游戏验证字体显示。
+2026-11-06
+
+【从 D 盘恢复两项红军军事国策】
+- 仅修改 C 盘 common/national_focus/dongbeihongjun.txt 中 SRC_gemingjunxinzuofeng（革命军，新作风）和 SRC_wuzhuangliliangzhengguihua（武装力量正规化）两个完整国策块，逐字恢复为 D:\TOD_mod\TOD 对应版本。D 盘原文件未改动。
+- 原 C 盘整份国策文件备份于 D:\TOD_mod\tools\focus_backups\2026-11-06\dongbeihongjun_before_two_focus_restore.txt。验证两块与 D 盘完全一致，其他国策文本未变，花括号配对、ID 唯一、效果提示本地化键存在。尚未进游戏验证。
+2026-11-06
+
+【移除中央军事委员会任命的90天冷却】
+- common/scripted_triggers/SRC_inner_circle_triggers.txt：任命条件不再检查 SRC_inner_circle_appointment_cd；旧存档已有该 flag 也不再阻止任命。
+- common/scripted_effects/SRC_inner_circle_effects.txt 与 common/decisions/SRC_inner_circle_decisions.txt：删除设置90天冷却的效果及全部调用；保留每次任命消耗50政治点数。
+- localisation/simp_chinese/SRC_inner_circle_l_simp_chinese.yml 和 SRC_inner_circle_design.md：移除头像、决议说明及设计文档中的90天冷却文字。
+- D、C 两份 TOD 已同步；验证5个修改文件 SHA-256 一致、脚本花括号配对、已无冷却相关引用，本地化 UTF-8 BOM 保留。尚未进游戏验证。
+2026-11-06
+
+【调整老学究的宣言触发国策】
+- 将 SRCevents.30“老学究的宣言”从“革命统一战线”（SRC_gemingtongyizhanxian）的完成效果移至“学术、文化革命化”（SRC_xueshuwenhuageminghua）的完成效果。
+- 修改文件：common/national_focus/dongbeihongjun.txt、更新日志.txt（C盘启用模组）。
+- 验证：事件触发调用仅保留一处，位于目标国策完成效果中；移除该调用后，国策文件与修改前逐字一致。尚未进游戏实测。
+
+2026-11-06
+
+【中央军事委员会自动推进现有军事国策】
+- 先新增 SRC_inner_circle_auto_focus_design.md，记录三类陆军路线、军事改革、海空军路线、单人140天／同类双人70天、手动国策冲突处理和红军后勤部支线事件；SRC_inner_circle_design.md 增加文档入口。
+- common/scripted_effects/SRC_inner_circle_auto_focus_effects.txt 与 common/on_actions/SRC_inner_circle.txt：每日推进六类现有军事国策；同类双人共享目标并加速，换人时保留剩余同类成员的进度，无人时取消；国策树显示发光，完成时调用原国策奖励；已完成或玩家手动推进时取消自动目标。
+- events/SRC_inner_circle_auto_focus.txt 与 localisation/simp_chinese/SRC_inner_circle_auto_focus_l_simp_chinese.yml：红军后勤部完成后，让玩家选择补给、生产研究或火炮装甲支线；完成一条后再次选择，最后剩余一条自动推进。旧存档已完成后勤部时可补触发。
+- D、C 两份 TOD 同步六个文件并校验 SHA-256；核对 43 个目标国策 ID、47 处完成调用、三个事件选项、脚本括号和本地化 UTF-8 BOM。尚未进游戏验证计时、国策发光和事件显示。
+
+2026-11-06
+
+【移除中央军事委员会成员定期工作事件】
+- common/scripted_effects/SRC_inner_circle_effects.txt：十名成员任命后不再排期“提出工作计划”事件；常驻修正与自动推进军事国策保留。
+- events/SRC_inner_circle.txt：删除成员工作提案及70天完成、循环事件（原 .11–.30）；保留两席陆军满员时供 AI 使用的席位替换事件 .1。localisation/simp_chinese/SRC_inner_circle_l_simp_chinese.yml 删除对应文本并调整替换说明。
+- common/scripted_effects/SRC_inner_circle_auto_focus_effects.txt：旧存档首次运行时清理已废弃的20个工作选择 flag；军事改革在“红军后勤部”后的支线选择事件仍保留。同步更新两份 SRC_inner_circle 说明文档。
+- D、C 两份 TOD 同步6个文件并校验 SHA-256；核对旧事件及本地化引用清零、保留任命与改革事件、脚本括号和本地化 UTF-8 BOM。尚未进游戏验证旧存档载入和界面表现。
+
+2026-11-06
+
+【修正中央军事委员会自动国策推进过快】
+- common/on_actions/SRC_inner_circle.txt：将全局 on_daily 切到按 SRC 执行的 on_daily_SRC。原写法会在每个国家的每日触发中再次切到 SRC，使工作量一天累计多次；现在 SRC 每个游戏日只执行一次自动国策推进。
+- common/scripted_effects/SRC_inner_circle_auto_focus_effects.txt：旧存档首次使用修正后脚本时，将六类未完成目标的工作量清零一次；当前目标保留并重新按真实天数累计。已完成的国策不回退。
+- SRC_inner_circle_auto_focus_design.md：记录实际计时规则与旧存档处理。D、C 两份 TOD 同步3个文件并校验 SHA-256；检查 SRC 专用每日钩子、唯一调用、六类进度重置与脚本括号。尚未进游戏验证计时。
+
+2026-11-06
+
+【将“强化军队思想建设”纳入中央军事委员会自动国策】
+- common/scripted_effects/SRC_inner_circle_auto_focus_effects.txt：士兵委员会、政委制和军事一长制三条路线都从 SRC_qianghuajunduisixiangjianshe 开始，先完成该共同国策再推进原有左右分支；单人140点、同类双人每日2点的规则不变，仍检查前置、手动进度、完成状态并显示国策发光。
+- 旧存档中三类陆军正在推进的目标编号在首次每日运行时各上移一位，保留对应国策及已累计工作量，避免把旧目标误认成新增共同起点。
+- SRC_inner_circle_auto_focus_design.md 更新三条路线与旧存档迁移说明。D、C 两份 TOD 同步2个文件并校验 SHA-256；验证三类各7项国策在取消、完成、选取、失效检查中的编号一致，脚本括号配对、50处国策完成调用及 D/C 国策 ID 存在。尚未进游戏验证显示和计时。
+
+2026-11-06
+
+【中央军事委员会自动国策禁止手动选择】
+- 分别修改 D、C 两份 common/national_focus/dongbeihongjun.txt：给中央军事委员会自动推进的44个不同国策加上永远不满足的 available 中文条件，玩家不能手动点；“中华工农红军”不在自动范围，继续供玩家手动开启军事树。保留两份国策各自原有的奖励和其他差异。
+- localisation/simp_chinese/SRC_inner_circle_auto_focus_l_simp_chinese.yml：新增“该国策只能由中央军事委员会成员推进”的提示；SRC_inner_circle_auto_focus_design.md 同步说明旧存档手动国策与自动完成规则。
+- 验证 D、C 各44个目标的阻止条件、共同入口仍可手动选择、国策脚本括号、本地化 UTF-8 BOM；本地化和文档同步哈希一致，D/C 国策文件保持各自版本。尚未进游戏验证提示及脚本自动完成。
+
+2026-11-06
+
+【顺天政府人物头像更新与赵尚志旧存档补招募】
+- 按简体中文人物名和职位映射，导入“顺天政府人物.zip”的61张 PNG：26张内阁/顾问小头像、35张陆海军将领头像；同步至 D 盘源模组与 C 盘游戏模组。锦王将领图缩放至156×210，人物引用改为新 PNG；原先以 DDS 指向这些小头像的顺天人物引用改为 PNG。导入脚本保存在 D:\TOD_mod\import_stg_portraits.ps1。
+- common/on_actions/SRC_inner_circle.txt：在 SRC 每日回调中仅运行一次旧存档检查。若赵尚志尚未被 SRC 招募，则补执行 recruit_character；新档仍使用原有开局招募记录。该补招募不要求中央军事委员会已解锁。
+- 验证压缩包61张图片均完成映射、图片尺寸和人物引用；两份模组的61张目标图及修改文件 SHA-256 一致，回调括号配对。尚未在游戏内验证旧存档将领列表。
+2026-11-07
+
+【移除赵尚志旧存档补招募检查】
+- 从 common/on_actions/SRC_inner_circle.txt 删除每日一次的赵尚志旧存档补招募及标记逻辑；保留 history/countries/SRC - hongjun.txt 中原有的开局 recruit_character。
+- 验证两份回调文件一致、括号配对，且已无赵尚志补招募检查。
+
+2026-11-07
+
+【调整赵尚志顾问特质】
+- common/characters/SRC.txt：将赵尚志的 high_command 顾问特质由 army_chief_offensive_2 改为 army_regrouping_2；将领特质和数值未改。
+- 验证原版存在 army_regrouping_2，D、C 两份角色定义均已更新且其他顾问特质未受影响。
+
+2026-11-07
+
+【调整老学究的宣言开场正文】
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：将 SRCevents.30.d 的第一段替换为革命宣传投稿增多、红星杂志社编辑向潘文郁递交文稿的三段开场，使用用户提供的原文，每段首行缩进两个中文全角空格；保留后续宣言正文。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：事件正文键唯一、写入内容一致、后续宣言逐字未变，保留原有UTF-8 BOM及物理换行格式。尚未进游戏实测。
+
+2026-11-07
+
+【老学究的宣言改为三个选项】
+- events/SRC.txt：SRCevents.30 由原单选项改为三个选项，按白话改写、彻底重写、表彰前辈的顺序排列。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：按用户原文替换第一项并新增第二、第三项汉化；本次未新增数值效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：三个事件选项与汉化键一一对应且无重复，其他事件及正文未变，保留原编码和换行格式。尚未进游戏实测。
+
+2026-11-07
+
+【重写中央计划委员会的大学生当官事件】
+- events/SRC.txt：将“大学生当官”（SRCevents.17）由单选项改为统一指挥、下沉厂矿、建章立制并启用部分明廷经济官僚三个选项；本次未添加数值效果。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：用用户提供的王有为到计委工作的三段故事替换正文，逐段首行缩进两个全角空格，统一引用文字为中文引号，并写入三个完整选项。
+- 保留 common/national_focus/dongbeihongjun.txt 中“中央计划委员会”（SRC_zhongyangjihuaweiyuanhui）完成后触发 SRCevents.17 的现有调用，国策文件无需改动。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：三选项与汉化键一一对应、事件括号配对、写入前后差异仅限目标事件及本地化；触发调用保留一处。尚未进游戏实测。
+
+2026-11-08
+
+【新增革命领导权事件】
+- events/SRC.txt：新增 SRCevents.52“革命领导权”，仅触发型且只发生一次，限定SRC，使用工厂事件图。设置集中领导、工人委员会协助、广泛社会主义合作三个选项，选项说明以悬停提示显示；本次未添加数值效果。
+- common/national_focus/dongbeihongjun.txt：在“坚持革命领导权”（SRC_jianchilingdaoquan）完成效果中加入延迟1天触发 SRCevents.52，保留原有奖励及监察委员会国策完成奖励调用。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：写入用户提供的19段完整正文、标题、三个选项及对应悬停说明，每段首行缩进两个全角空格。
+- 修改文件：events/SRC.txt、common/national_focus/dongbeihongjun.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：事件编号未占用，新增本地化键唯一且引用齐全，脚本花括号配对，延迟明确为1天，其他原有脚本与文本未变。尚未进游戏实测。
+
+2026-11-08
+
+【新增人民大学事件】
+- events/SRC.txt：新增 SRCevents.53“人民大学”，限定SRC、仅触发型且只发生一次；设置培养先锋队、工人参与办学、团结专业知识分子三个选项，详细说明显示在选项悬停提示中，本次未添加数值效果。
+- common/national_focus/dongbeihongjun.txt：在“东北人民大学”（SRC_dongbeirenmindaxue）完成效果中追加延迟1天触发 SRCevents.53，保留科研槽、建设科技加成、建设成果和监察委员会奖励。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：写入用户提供的完整正文、标题、三个选项及悬停说明，17段正文逐段首行缩进两个全角空格。
+- 修改文件：events/SRC.txt、common/national_focus/dongbeihongjun.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：事件编号无冲突，新增本地化键唯一且选项引用齐全，脚本花括号配对，触发延迟为1天，其他原有内容未变。尚未进游戏实测。
+
+2026-11-08
+
+【新增统一战线事件】
+- events/SRC.txt：新增 SRCevents.54“统一战线”，限定SRC、仅触发型且只发生一次；按用户顺序设置民主合作、劳动群众直接参与、坚强组织核心三个选项，详细说明置于悬停提示；第一项同时显示“完全坚持温和社会主义”的倾向说明。本次未添加数值效果。
+- common/national_focus/dongbeihongjun.txt：在“革命统一战线”（SRC_gemingtongyizhanxian）完成效果中追加触发 SRCevents.54；原有奖励、决议解锁提示及监察委员会奖励均保留。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：写入完整标题、19段正文、三个选项与悬停说明，正文每段首行缩进两个全角空格。
+- 修改文件：events/SRC.txt、common/national_focus/dongbeihongjun.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：事件编号无冲突，新本地化键唯一且引用齐全，脚本括号配对；国策完成时直接触发，其他原有内容保留。尚未进游戏实测。
+
+2026-11-09
+
+【革命领导权事件追加三选项效果】
+- events/SRC.txt：SRCevents.52选项一建设成果+4、会纪派中央满意度+5及大会权重+6、致公派中央满意度-8、合众派中央满意度-3。
+- 选项二会纪派中央满意度+1、合众派中央满意度+5及大会权重+6、致公派中央满意度-2。
+- 选项三政治点数+50、致公派中央满意度+7及大会权重+6、会纪派中央满意度-8、合众派中央满意度+1。
+- 三项均按现有机制限制中央满意度至0—100，增加权重后统一归一化，并立即重算会内团结及其衍生修正。用户所述派系支持度按派系中央满意度处理。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：新增三项具体数值提示，保留原选项说明；建设成果和政治点数另行显示对应效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：逐项核对全部数值与派系变量，选项外原脚本未变，新增本地化键唯一，花括号配对且落盘校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【大学生当官事件追加三选项效果】
+- 根据截图定位“大学生当官”（SRCevents.17），在该事件三个选项加入指定效果；此前“革命领导权”（SRCevents.52）的设置保留。
+- events/SRC.txt：选项一建设成果+4、会纪派中央满意度+5及大会权重+6、致公派中央满意度-8、合众派中央满意度-3；选项二会纪派中央满意度+1、合众派中央满意度+5及大会权重+6、致公派中央满意度-2；选项三政治点数+50、致公派中央满意度+7及大会权重+6、会纪派中央满意度-8、合众派中央满意度+1。
+- 派系支持度按中央满意度处理，执行0—100限制与大会权重归一化，并立即重算会内团结及其衍生修正。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：新增SRCevents.17三个选项的具体数值悬停提示。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：三个选项实际效果与指定数值一致，提示引用齐全且无重复，脚本括号配对，其他事件及正文、选项文字未变。尚未进游戏实测。
+
+2026-11-09
+
+【删除统一战线选项倾向说明】
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：删除 SRCevents_54_a_desc_tt 末尾的“倾向：完全坚持温和社会主义。”及其前面的空行，保留第一个选项的其余悬停说明。
+- 修改文件：localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：仅删除指定提示行，原编码及换行格式保留，写入校验通过。
+
+2026-11-09
+
+【精简大学生当官选项并迁移长文本】
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：SRCevents.17三个选项从上到下改为“按专业分配工作岗位”“先入厂进行劳动学习”“利用旧人指导，边干边学”；原有三段长选项文字完整移入对应悬停说明。
+- events/SRC.txt：在三个选项的数值提示前加入原长文本的悬停说明；原事件正文、政治点数、革命成果、派系满意度和权重效果均保留。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：选项顺序和短文本符合要求，三个新说明键唯一且引用齐全，移除新增提示调用后事件脚本与修改前逐字一致，写入校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【调整大学生当官前两项效果顺序】
+- events/SRC.txt：SRCevents.17第一项改为会纪派中央满意度+1、合众派中央满意度+5及大会权重+6、致公派中央满意度-2；第二项改为建设成果+4、会纪派中央满意度+5及大会权重+6、致公派中央满意度-8、合众派中央满意度-3。
+- 第三项保留政治点数+50、致公派中央满意度+7及大会权重+6、会纪派中央满意度-8、合众派中央满意度+1；三个选项名称和原长文本说明保留。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：同步交换第一、第二项的数值提示，建设成果+4的提示移至第二项。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：前两项效果块与数值提示对应，第三项逐字未变，脚本括号配对，写入校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【再次调整大学生当官选项效果顺序】
+- events/SRC.txt：SRCevents.17第一项改为政治点数+50、致公派中央满意度+7及大会权重+6、会纪派中央满意度-8、合众派中央满意度+1。
+- 第二项保留建设成果+4、会纪派中央满意度+5及大会权重+6、致公派中央满意度-8、合众派中央满意度-3。
+- 第三项改为会纪派中央满意度+1、合众派中央满意度+5及大会权重+6、致公派中央满意度-2。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：同步交换第一、第三项数值提示；选项名称和说明保留。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：第一、第三项实际效果和提示对应，第二项逐字未变，事件其他内容未变，写入校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【人民大学事件追加三选项效果】
+- events/SRC.txt：按截图为“人民大学”（SRCevents.53）加入效果。第一项建设成果+4、会纪派中央满意度+5及大会权重+6、致公派中央满意度-8、合众派中央满意度-3。
+- 第二项会纪派中央满意度+1、合众派中央满意度+5及大会权重+6、致公派中央满意度-2。
+- 第三项政治点数+50、致公派中央满意度+7及大会权重+6、会纪派中央满意度-8、合众派中央满意度+1。
+- 派系支持度按中央满意度处理，执行0—100限制、大会权重归一化，并立即重算会内团结及衍生修正。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：新增三个选项的具体数值提示，保留原长说明；建设成果及政治点数另行显示对应效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：核对三个选项效果与指定数值、提示键唯一且引用齐全、脚本括号配对，目标选项外内容未变，写入校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【补充革命的权力属于谁选项悬停说明】
+- events/SRC.txt：为“革命的权力属于谁？”（SRCevents.51）三个选项分别加入独立的立场说明悬停提示，位于已有数值提示之前。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：按用户原文依次写入基层委员会自治、强化委员会协调执行机制、制度化治理与循序渐进改造三段说明。
+- 原事件正文、选项名称、建设成果、政治点数、派系满意度及权重效果均保留。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：三个说明键唯一且引用对应，移除新增提示调用后事件脚本与修改前逐字一致，写入校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【新增改革不是请客吃饭事件】
+- events/SRC.txt：新增 SRCevents.55“改革不是请客吃饭”，限定SRC、仅触发型且只发生一次，使用工厂事件图；按用户顺序设置稳健改革、劳动者共同决策、优先建设工业基础三个选项，详细说明放入悬停提示，暂未添加数值效果。
+- common/national_focus/dongbeihongjun.txt：在“国家改革委员会”（SRC_guojiagaigeweiyuanhui）完成效果中追加延迟1天触发 SRCevents.55；原有成果、设施建设、修正、决议解锁和监察委员会奖励保留。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：完整写入用户提供的标题、29段正文、三个选项及对应长说明，正文每段首行缩进两个全角空格。
+- 修改文件：events/SRC.txt、common/national_focus/dongbeihongjun.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：事件编号未占用，本地化键唯一且引用齐全，脚本括号配对，国策触发延迟为1天；其他原有内容未变，写入校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【统一战线事件追加三选项效果】
+- events/SRC.txt：按截图为“统一战线”（SRCevents.54）加入指定效果。第一项政治点数+50、致公派中央满意度+7及大会权重+6、会纪派中央满意度-8、合众派中央满意度+1。
+- 第二项会纪派中央满意度+1、合众派中央满意度+5及大会权重+6、致公派中央满意度-2。
+- 第三项建设成果+4、会纪派中央满意度+5及大会权重+6、致公派中央满意度-8、合众派中央满意度-3。
+- 派系支持度按中央满意度处理，执行0—100限制、大会权重归一化，并立即重算会内团结及其衍生修正。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：新增三个选项的具体数值提示，保留原选项说明；政治点数及建设成果另行显示对应效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：逐项核对指定数值及顺序，提示键唯一且引用齐全，脚本括号配对，目标选项外内容未变，写入校验通过。尚未进游戏实测。
+
+2026-11-09
+
+【改革不是请客吃饭事件追加三选项效果】
+- events/SRC.txt：按截图为“改革不是请客吃饭”（SRCevents.55）加入指定效果。第一项政治点数+50、致公派中央满意度+7及大会权重+6、会纪派中央满意度-8、合众派中央满意度+1。
+- 第二项会纪派中央满意度+1、合众派中央满意度+5及大会权重+6、致公派中央满意度-2。
+- 第三项建设成果+4、会纪派中央满意度+5及大会权重+6、致公派中央满意度-8、合众派中央满意度-3。
+- 派系支持度按中央满意度处理，执行0—100限制、大会权重归一化，并立即重算会内团结及其衍生修正。
+- localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml：新增三个选项的具体数值提示，保留原选项说明；政治点数及建设成果另行显示对应效果。
+- 修改文件：events/SRC.txt、localisation/simp_chinese/TOD_SRC_l_simp_chinese.yml、更新日志.txt（C盘启用模组）。
+- 验证：逐项核对指定数值及顺序，提示键唯一且引用齐全，脚本括号配对，目标选项外内容未变，写入校验通过。尚未进游戏实测。
+
+2026-11-10
+
+【对照 C 盘开发日志同步 10 月 28 日至 11 月 9 日改动】
+- 以 GitHub TOD-guoSS 分支的 d31116c 为基线，逐文件核对 C 盘模组；同步模组脚本、汉化、界面、头像和设计文档，保留 GitHub 已有的新内容。
+- 将革命建设决议合入 GitHub 已归并的 SRC 决议结构，移除 58 个重复旧决议；保留 GitHub 独有决议及其分类。对国策、GPS 事件和本地化采用三方比对，仅合入 C 盘新增或修改的条目。
+- 删除未在 GitHub 后续修改的开局测试决议及分类；GitHub 后续修改过的同名测试脚本效果文件仍予保留，待其内容可读取后单独核查。
+- 验证：123 个未被 GitHub 后续修改的文件与 C 盘逐字节一致；61 张顺天头像目标文件逐字节一致；脚本花括号配对，革命建设决议无重复 ID，新增 SRC 本地化与主文件无重复键。尚未进入游戏实测。

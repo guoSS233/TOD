@@ -1,0 +1,1956 @@
+# Existing SRC military focuses only. Each role group owns one focus and one work counter.
+# 140 work points per focus: one member adds 1/day; two matching army members add 2/day.
+SRC_inner_circle_auto_focus_daily = {
+    if = {
+        limit = { NOT = { has_country_flag = SRC_inner_circle_auto_initialized } }
+        set_variable = { SRC_inner_circle_auto_soldiers_target = 0 }
+        set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+        set_variable = { SRC_inner_circle_auto_commissars_target = 0 }
+        set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+        set_variable = { SRC_inner_circle_auto_commanders_target = 0 }
+        set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+        set_variable = { SRC_inner_circle_auto_reform_target = 0 }
+        set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+        set_variable = { SRC_inner_circle_auto_navy_target = 0 }
+        set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+        set_variable = { SRC_inner_circle_auto_air_target = 0 }
+        set_variable = { SRC_inner_circle_auto_air_work = 0 }
+        set_variable = { SRC_inner_circle_auto_reform_branch = 0 }
+        set_country_flag = SRC_inner_circle_auto_initialized
+    }
+    if = {
+        limit = { NOT = { has_country_flag = SRC_inner_circle_auto_daily_fix_v1 } }
+        # The old global on_daily hook advanced SRC once per country each day.
+        # Reset unfinished work once so existing saves use real elapsed days.
+        set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+        set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+        set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+        set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+        set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+        set_variable = { SRC_inner_circle_auto_air_work = 0 }
+        set_country_flag = SRC_inner_circle_auto_daily_fix_v1
+    }
+    if = {
+        limit = { NOT = { has_country_flag = SRC_inner_circle_auto_thought_focus_v1 } }
+        # Existing saves used target indexes 1-6 before the shared thought focus.
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_soldiers_target > 0 } }
+            add_to_variable = { SRC_inner_circle_auto_soldiers_target = 1 }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_commissars_target > 0 } }
+            add_to_variable = { SRC_inner_circle_auto_commissars_target = 1 }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_commanders_target > 0 } }
+            add_to_variable = { SRC_inner_circle_auto_commanders_target = 1 }
+        }
+        set_country_flag = SRC_inner_circle_auto_thought_focus_v1
+    }
+    if = {
+        limit = { NOT = { has_country_flag = SRC_inner_circle_project_events_retired } }
+        # Clear project choices left by saves from before the events were removed.
+        clr_country_flag = SRC_inner_circle_xu_project_a
+        clr_country_flag = SRC_inner_circle_xu_project_b
+        clr_country_flag = SRC_inner_circle_lan_project_a
+        clr_country_flag = SRC_inner_circle_lan_project_b
+        clr_country_flag = SRC_inner_circle_guan_project_a
+        clr_country_flag = SRC_inner_circle_guan_project_b
+        clr_country_flag = SRC_inner_circle_dong_project_a
+        clr_country_flag = SRC_inner_circle_dong_project_b
+        clr_country_flag = SRC_inner_circle_zhao_project_a
+        clr_country_flag = SRC_inner_circle_zhao_project_b
+        clr_country_flag = SRC_inner_circle_yang_project_a
+        clr_country_flag = SRC_inner_circle_yang_project_b
+        clr_country_flag = SRC_inner_circle_xu_fanting_project_a
+        clr_country_flag = SRC_inner_circle_xu_fanting_project_b
+        clr_country_flag = SRC_inner_circle_he_changgong_project_a
+        clr_country_flag = SRC_inner_circle_he_changgong_project_b
+        clr_country_flag = SRC_inner_circle_zeng_yiding_project_a
+        clr_country_flag = SRC_inner_circle_zeng_yiding_project_b
+        clr_country_flag = SRC_inner_circle_liu_yun_project_a
+        clr_country_flag = SRC_inner_circle_liu_yun_project_b
+        set_country_flag = SRC_inner_circle_project_events_retired
+    }
+    SRC_inner_circle_auto_reform_branch_update = yes
+    SRC_inner_circle_auto_soldiers_update = yes
+    SRC_inner_circle_auto_commissars_update = yes
+    SRC_inner_circle_auto_commanders_update = yes
+    SRC_inner_circle_auto_reform_update = yes
+    SRC_inner_circle_auto_navy_update = yes
+    SRC_inner_circle_auto_air_update = yes
+}
+
+# Reform pauses after logistics until the player chooses an unfinished branch.
+SRC_inner_circle_auto_reform_branch_update = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_branch = 1 } has_completed_focus = SRC_wanshanshengchantixi }
+        set_variable = { SRC_inner_circle_auto_reform_branch = 0 }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_branch = 2 } has_completed_focus = SRC_shiyanxinshibianzhi }
+        set_variable = { SRC_inner_circle_auto_reform_branch = 0 }
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_branch = 3 } has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+        set_variable = { SRC_inner_circle_auto_reform_branch = 0 }
+    }
+    if = {
+        limit = {
+            has_country_flag = SRC_inner_circle_auto_reform_choice_pending
+            OR = {
+                NOT = { has_completed_focus = SRC_hongjunhouqinbu }
+                NOT = {
+                    OR = {
+                        has_country_flag = SRC_inner_circle_xu_fanting_active
+                        has_country_flag = SRC_inner_circle_he_changgong_active
+                    }
+                }
+                NOT = { check_variable = { SRC_inner_circle_auto_reform_branch = 0 } }
+                NOT = {
+                    OR = {
+                        AND = {
+                            NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                            NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                        }
+                        AND = {
+                            NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                            NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+                        }
+                        AND = {
+                            NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                            NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+                        }
+                    }
+                }
+            }
+        }
+        clr_country_flag = SRC_inner_circle_auto_reform_choice_pending
+    }
+    if = {
+        limit = {
+            has_completed_focus = SRC_hongjunhouqinbu
+            check_variable = { SRC_inner_circle_auto_reform_branch = 0 }
+            NOT = { has_country_flag = SRC_inner_circle_auto_reform_choice_pending }
+            OR = {
+                has_country_flag = SRC_inner_circle_xu_fanting_active
+                has_country_flag = SRC_inner_circle_he_changgong_active
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                        NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                    }
+                    AND = {
+                        NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                        NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+                    }
+                    AND = {
+                        NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                        NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+                    }
+                }
+            }
+            set_country_flag = SRC_inner_circle_auto_reform_choice_pending
+            country_event = { id = SRC_inner_circle_auto.1 days = 1 }
+        }
+        else_if = {
+            limit = {
+                NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                has_completed_focus = SRC_shiyanxinshibianzhi
+                has_completed_focus = SRC_qianghuazhuangjiayanjiu
+            }
+            set_variable = { SRC_inner_circle_auto_reform_branch = 1 }
+        }
+        else_if = {
+            limit = {
+                NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                has_completed_focus = SRC_wanshanshengchantixi
+                has_completed_focus = SRC_qianghuazhuangjiayanjiu
+            }
+            set_variable = { SRC_inner_circle_auto_reform_branch = 2 }
+        }
+        else_if = {
+            limit = {
+                NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+                has_completed_focus = SRC_wanshanshengchantixi
+                has_completed_focus = SRC_shiyanxinshibianzhi
+            }
+            set_variable = { SRC_inner_circle_auto_reform_branch = 3 }
+        }
+    }
+}
+
+SRC_inner_circle_auto_soldiers_clear = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 1 } }
+        deactivate_shine_on_focus = SRC_qianghuajunduisixiangjianshe
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 2 } }
+        deactivate_shine_on_focus = SRC_lizugongrenjiuchadui
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 3 } }
+        deactivate_shine_on_focus = SRC_shelizhengwei
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 4 } }
+        deactivate_shine_on_focus = SRC_fuquanshibingweiyuanhui
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 5 } }
+        deactivate_shine_on_focus = SRC_qianghuajunshiminzhu
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 6 } }
+        deactivate_shine_on_focus = SRC_guanbingyilvpingdeng
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 7 } }
+        deactivate_shine_on_focus = SRC_gemingjunxinzuofeng
+    }
+    set_variable = { SRC_inner_circle_auto_soldiers_target = 0 }
+    set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+}
+
+SRC_inner_circle_auto_soldiers_update = {
+    if = {
+        limit = {
+            OR = {
+                has_capitulated = yes
+                NOT = {
+                    OR = {
+                        has_country_flag = SRC_inner_circle_guan_active
+                        has_country_flag = SRC_inner_circle_yang_active
+                    }
+                }
+            }
+        }
+        SRC_inner_circle_auto_soldiers_clear = yes
+    }
+    else = {
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_soldiers_target = 1 }
+                OR = {
+                    has_completed_focus = SRC_qianghuajunduisixiangjianshe
+                    focus_progress = { focus = SRC_qianghuajunduisixiangjianshe progress > 0 }
+                    NOT = { has_completed_focus = SRC_zhonghuagongnonghongjun }
+                }
+            }
+            SRC_inner_circle_auto_soldiers_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_soldiers_target = 2 }
+                OR = {
+                    has_completed_focus = SRC_lizugongrenjiuchadui
+                    focus_progress = { focus = SRC_lizugongrenjiuchadui progress > 0 }
+                    NOT = { has_completed_focus = SRC_qianghuajunduisixiangjianshe }
+                    has_completed_focus = SRC_yilaizhiyejunguan
+                }
+            }
+            SRC_inner_circle_auto_soldiers_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_soldiers_target = 3 }
+                OR = {
+                    has_completed_focus = SRC_shelizhengwei
+                    focus_progress = { focus = SRC_shelizhengwei progress > 0 }
+                    NOT = { has_completed_focus = SRC_lizugongrenjiuchadui }
+                }
+            }
+            SRC_inner_circle_auto_soldiers_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_soldiers_target = 4 }
+                OR = {
+                    has_completed_focus = SRC_fuquanshibingweiyuanhui
+                    focus_progress = { focus = SRC_fuquanshibingweiyuanhui progress > 0 }
+                    NOT = { has_completed_focus = SRC_shelizhengwei }
+                    has_completed_focus = SRC_quelidangweizhi
+                }
+            }
+            SRC_inner_circle_auto_soldiers_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_soldiers_target = 5 }
+                OR = {
+                    has_completed_focus = SRC_qianghuajunshiminzhu
+                    focus_progress = { focus = SRC_qianghuajunshiminzhu progress > 0 }
+                    NOT = { has_completed_focus = SRC_fuquanshibingweiyuanhui }
+                }
+            }
+            SRC_inner_circle_auto_soldiers_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_soldiers_target = 6 }
+                OR = {
+                    has_completed_focus = SRC_guanbingyilvpingdeng
+                    focus_progress = { focus = SRC_guanbingyilvpingdeng progress > 0 }
+                    NOT = { has_completed_focus = SRC_qianghuajunshiminzhu }
+                }
+            }
+            SRC_inner_circle_auto_soldiers_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_soldiers_target = 7 }
+                OR = {
+                    has_completed_focus = SRC_gemingjunxinzuofeng
+                    focus_progress = { focus = SRC_gemingjunxinzuofeng progress > 0 }
+                    NOT = { has_completed_focus = SRC_guanbingyilvpingdeng }
+                }
+            }
+            SRC_inner_circle_auto_soldiers_clear = yes
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_soldiers_target > 0 } }
+            if = {
+                limit = {
+                    AND = {
+                        has_country_flag = SRC_inner_circle_guan_active
+                        has_country_flag = SRC_inner_circle_yang_active
+                    }
+                }
+                add_to_variable = { SRC_inner_circle_auto_soldiers_work = 2 }
+            }
+            else = { add_to_variable = { SRC_inner_circle_auto_soldiers_work = 1 } }
+            if = {
+                limit = { check_variable = { SRC_inner_circle_auto_soldiers_work > 139 } }
+                if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 1 } }
+                    complete_national_focus = SRC_qianghuajunduisixiangjianshe
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 2 } }
+                    complete_national_focus = SRC_lizugongrenjiuchadui
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 3 } }
+                    complete_national_focus = SRC_shelizhengwei
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 4 } }
+                    complete_national_focus = SRC_fuquanshibingweiyuanhui
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 5 } }
+                    complete_national_focus = SRC_qianghuajunshiminzhu
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 6 } }
+                    complete_national_focus = SRC_guanbingyilvpingdeng
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 7 } }
+                    complete_national_focus = SRC_gemingjunxinzuofeng
+                }
+                SRC_inner_circle_auto_soldiers_clear = yes
+            }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_soldiers_target = 0 } }
+            if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_qianghuajunduisixiangjianshe }
+                    NOT = { focus_progress = { focus = SRC_qianghuajunduisixiangjianshe progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_qianghuajunduisixiangjianshe }
+                    has_completed_focus = SRC_zhonghuagongnonghongjun
+                }
+                set_variable = { SRC_inner_circle_auto_soldiers_target = 1 }
+                set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+                activate_shine_on_focus = SRC_qianghuajunduisixiangjianshe
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_lizugongrenjiuchadui }
+                    NOT = { focus_progress = { focus = SRC_lizugongrenjiuchadui progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_lizugongrenjiuchadui }
+                    has_completed_focus = SRC_qianghuajunduisixiangjianshe
+                    NOT = { has_completed_focus = SRC_yilaizhiyejunguan }
+                }
+                set_variable = { SRC_inner_circle_auto_soldiers_target = 2 }
+                set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+                activate_shine_on_focus = SRC_lizugongrenjiuchadui
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_shelizhengwei }
+                    NOT = { focus_progress = { focus = SRC_shelizhengwei progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_shelizhengwei }
+                    has_completed_focus = SRC_lizugongrenjiuchadui
+                }
+                set_variable = { SRC_inner_circle_auto_soldiers_target = 3 }
+                set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+                activate_shine_on_focus = SRC_shelizhengwei
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_fuquanshibingweiyuanhui }
+                    NOT = { focus_progress = { focus = SRC_fuquanshibingweiyuanhui progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_fuquanshibingweiyuanhui }
+                    has_completed_focus = SRC_shelizhengwei
+                    NOT = { has_completed_focus = SRC_quelidangweizhi }
+                }
+                set_variable = { SRC_inner_circle_auto_soldiers_target = 4 }
+                set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+                activate_shine_on_focus = SRC_fuquanshibingweiyuanhui
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_qianghuajunshiminzhu }
+                    NOT = { focus_progress = { focus = SRC_qianghuajunshiminzhu progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_qianghuajunshiminzhu }
+                    has_completed_focus = SRC_fuquanshibingweiyuanhui
+                }
+                set_variable = { SRC_inner_circle_auto_soldiers_target = 5 }
+                set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+                activate_shine_on_focus = SRC_qianghuajunshiminzhu
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_guanbingyilvpingdeng }
+                    NOT = { focus_progress = { focus = SRC_guanbingyilvpingdeng progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_guanbingyilvpingdeng }
+                    has_completed_focus = SRC_qianghuajunshiminzhu
+                }
+                set_variable = { SRC_inner_circle_auto_soldiers_target = 6 }
+                set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+                activate_shine_on_focus = SRC_guanbingyilvpingdeng
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_gemingjunxinzuofeng }
+                    NOT = { focus_progress = { focus = SRC_gemingjunxinzuofeng progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_gemingjunxinzuofeng }
+                    has_completed_focus = SRC_guanbingyilvpingdeng
+                }
+                set_variable = { SRC_inner_circle_auto_soldiers_target = 7 }
+                set_variable = { SRC_inner_circle_auto_soldiers_work = 0 }
+                activate_shine_on_focus = SRC_gemingjunxinzuofeng
+            }
+        }
+    }
+}
+
+SRC_inner_circle_auto_commissars_clear = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 1 } }
+        deactivate_shine_on_focus = SRC_qianghuajunduisixiangjianshe
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 2 } }
+        deactivate_shine_on_focus = SRC_lizugongrenjiuchadui
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 3 } }
+        deactivate_shine_on_focus = SRC_shelizhengwei
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 4 } }
+        deactivate_shine_on_focus = SRC_quelidangweizhi
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 5 } }
+        deactivate_shine_on_focus = SRC_zhibujianzailianshang
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 6 } }
+        deactivate_shine_on_focus = SRC_guanbingyilvpingdeng
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 7 } }
+        deactivate_shine_on_focus = SRC_gemingjunxinzuofeng
+    }
+    set_variable = { SRC_inner_circle_auto_commissars_target = 0 }
+    set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+}
+
+SRC_inner_circle_auto_commissars_update = {
+    if = {
+        limit = {
+            OR = {
+                has_capitulated = yes
+                NOT = {
+                    OR = {
+                        has_country_flag = SRC_inner_circle_xu_active
+                        has_country_flag = SRC_inner_circle_dong_active
+                    }
+                }
+            }
+        }
+        SRC_inner_circle_auto_commissars_clear = yes
+    }
+    else = {
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commissars_target = 1 }
+                OR = {
+                    has_completed_focus = SRC_qianghuajunduisixiangjianshe
+                    focus_progress = { focus = SRC_qianghuajunduisixiangjianshe progress > 0 }
+                    NOT = { has_completed_focus = SRC_zhonghuagongnonghongjun }
+                }
+            }
+            SRC_inner_circle_auto_commissars_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commissars_target = 2 }
+                OR = {
+                    has_completed_focus = SRC_lizugongrenjiuchadui
+                    focus_progress = { focus = SRC_lizugongrenjiuchadui progress > 0 }
+                    NOT = { has_completed_focus = SRC_qianghuajunduisixiangjianshe }
+                    has_completed_focus = SRC_yilaizhiyejunguan
+                }
+            }
+            SRC_inner_circle_auto_commissars_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commissars_target = 3 }
+                OR = {
+                    has_completed_focus = SRC_shelizhengwei
+                    focus_progress = { focus = SRC_shelizhengwei progress > 0 }
+                    NOT = { has_completed_focus = SRC_lizugongrenjiuchadui }
+                }
+            }
+            SRC_inner_circle_auto_commissars_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commissars_target = 4 }
+                OR = {
+                    has_completed_focus = SRC_quelidangweizhi
+                    focus_progress = { focus = SRC_quelidangweizhi progress > 0 }
+                    NOT = { has_completed_focus = SRC_shelizhengwei }
+                    has_completed_focus = SRC_fuquanshibingweiyuanhui
+                }
+            }
+            SRC_inner_circle_auto_commissars_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commissars_target = 5 }
+                OR = {
+                    has_completed_focus = SRC_zhibujianzailianshang
+                    focus_progress = { focus = SRC_zhibujianzailianshang progress > 0 }
+                    NOT = { has_completed_focus = SRC_quelidangweizhi }
+                }
+            }
+            SRC_inner_circle_auto_commissars_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commissars_target = 6 }
+                OR = {
+                    has_completed_focus = SRC_guanbingyilvpingdeng
+                    focus_progress = { focus = SRC_guanbingyilvpingdeng progress > 0 }
+                    NOT = { has_completed_focus = SRC_zhibujianzailianshang }
+                }
+            }
+            SRC_inner_circle_auto_commissars_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commissars_target = 7 }
+                OR = {
+                    has_completed_focus = SRC_gemingjunxinzuofeng
+                    focus_progress = { focus = SRC_gemingjunxinzuofeng progress > 0 }
+                    NOT = { has_completed_focus = SRC_guanbingyilvpingdeng }
+                }
+            }
+            SRC_inner_circle_auto_commissars_clear = yes
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_commissars_target > 0 } }
+            if = {
+                limit = {
+                    AND = {
+                        has_country_flag = SRC_inner_circle_xu_active
+                        has_country_flag = SRC_inner_circle_dong_active
+                    }
+                }
+                add_to_variable = { SRC_inner_circle_auto_commissars_work = 2 }
+            }
+            else = { add_to_variable = { SRC_inner_circle_auto_commissars_work = 1 } }
+            if = {
+                limit = { check_variable = { SRC_inner_circle_auto_commissars_work > 139 } }
+                if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 1 } }
+                    complete_national_focus = SRC_qianghuajunduisixiangjianshe
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 2 } }
+                    complete_national_focus = SRC_lizugongrenjiuchadui
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 3 } }
+                    complete_national_focus = SRC_shelizhengwei
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 4 } }
+                    complete_national_focus = SRC_quelidangweizhi
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 5 } }
+                    complete_national_focus = SRC_zhibujianzailianshang
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 6 } }
+                    complete_national_focus = SRC_guanbingyilvpingdeng
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 7 } }
+                    complete_national_focus = SRC_gemingjunxinzuofeng
+                }
+                SRC_inner_circle_auto_commissars_clear = yes
+            }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_commissars_target = 0 } }
+            if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_qianghuajunduisixiangjianshe }
+                    NOT = { focus_progress = { focus = SRC_qianghuajunduisixiangjianshe progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_qianghuajunduisixiangjianshe }
+                    has_completed_focus = SRC_zhonghuagongnonghongjun
+                }
+                set_variable = { SRC_inner_circle_auto_commissars_target = 1 }
+                set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+                activate_shine_on_focus = SRC_qianghuajunduisixiangjianshe
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_lizugongrenjiuchadui }
+                    NOT = { focus_progress = { focus = SRC_lizugongrenjiuchadui progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_lizugongrenjiuchadui }
+                    has_completed_focus = SRC_qianghuajunduisixiangjianshe
+                    NOT = { has_completed_focus = SRC_yilaizhiyejunguan }
+                }
+                set_variable = { SRC_inner_circle_auto_commissars_target = 2 }
+                set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+                activate_shine_on_focus = SRC_lizugongrenjiuchadui
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_shelizhengwei }
+                    NOT = { focus_progress = { focus = SRC_shelizhengwei progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_shelizhengwei }
+                    has_completed_focus = SRC_lizugongrenjiuchadui
+                }
+                set_variable = { SRC_inner_circle_auto_commissars_target = 3 }
+                set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+                activate_shine_on_focus = SRC_shelizhengwei
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_quelidangweizhi }
+                    NOT = { focus_progress = { focus = SRC_quelidangweizhi progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_quelidangweizhi }
+                    has_completed_focus = SRC_shelizhengwei
+                    NOT = { has_completed_focus = SRC_fuquanshibingweiyuanhui }
+                }
+                set_variable = { SRC_inner_circle_auto_commissars_target = 4 }
+                set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+                activate_shine_on_focus = SRC_quelidangweizhi
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_zhibujianzailianshang }
+                    NOT = { focus_progress = { focus = SRC_zhibujianzailianshang progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_zhibujianzailianshang }
+                    has_completed_focus = SRC_quelidangweizhi
+                }
+                set_variable = { SRC_inner_circle_auto_commissars_target = 5 }
+                set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+                activate_shine_on_focus = SRC_zhibujianzailianshang
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_guanbingyilvpingdeng }
+                    NOT = { focus_progress = { focus = SRC_guanbingyilvpingdeng progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_guanbingyilvpingdeng }
+                    has_completed_focus = SRC_zhibujianzailianshang
+                }
+                set_variable = { SRC_inner_circle_auto_commissars_target = 6 }
+                set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+                activate_shine_on_focus = SRC_guanbingyilvpingdeng
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_gemingjunxinzuofeng }
+                    NOT = { focus_progress = { focus = SRC_gemingjunxinzuofeng progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_gemingjunxinzuofeng }
+                    has_completed_focus = SRC_guanbingyilvpingdeng
+                }
+                set_variable = { SRC_inner_circle_auto_commissars_target = 7 }
+                set_variable = { SRC_inner_circle_auto_commissars_work = 0 }
+                activate_shine_on_focus = SRC_gemingjunxinzuofeng
+            }
+        }
+    }
+}
+
+SRC_inner_circle_auto_commanders_clear = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 1 } }
+        deactivate_shine_on_focus = SRC_qianghuajunduisixiangjianshe
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 2 } }
+        deactivate_shine_on_focus = SRC_yilaizhiyejunguan
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 3 } }
+        deactivate_shine_on_focus = SRC_junshiyizhangzhi
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 4 } }
+        deactivate_shine_on_focus = SRC_gemingjunguanruhui
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 5 } }
+        deactivate_shine_on_focus = SRC_qianghuajunweilingdao
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 6 } }
+        deactivate_shine_on_focus = SRC_quelijunxianzhi
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 7 } }
+        deactivate_shine_on_focus = SRC_wuzhuangliliangzhengguihua
+    }
+    set_variable = { SRC_inner_circle_auto_commanders_target = 0 }
+    set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+}
+
+SRC_inner_circle_auto_commanders_update = {
+    if = {
+        limit = {
+            OR = {
+                has_capitulated = yes
+                NOT = {
+                    OR = {
+                        has_country_flag = SRC_inner_circle_lan_active
+                        has_country_flag = SRC_inner_circle_zhao_active
+                    }
+                }
+            }
+        }
+        SRC_inner_circle_auto_commanders_clear = yes
+    }
+    else = {
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commanders_target = 1 }
+                OR = {
+                    has_completed_focus = SRC_qianghuajunduisixiangjianshe
+                    focus_progress = { focus = SRC_qianghuajunduisixiangjianshe progress > 0 }
+                    NOT = { has_completed_focus = SRC_zhonghuagongnonghongjun }
+                }
+            }
+            SRC_inner_circle_auto_commanders_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commanders_target = 2 }
+                OR = {
+                    has_completed_focus = SRC_yilaizhiyejunguan
+                    focus_progress = { focus = SRC_yilaizhiyejunguan progress > 0 }
+                    NOT = { has_completed_focus = SRC_qianghuajunduisixiangjianshe }
+                    has_completed_focus = SRC_lizugongrenjiuchadui
+                }
+            }
+            SRC_inner_circle_auto_commanders_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commanders_target = 3 }
+                OR = {
+                    has_completed_focus = SRC_junshiyizhangzhi
+                    focus_progress = { focus = SRC_junshiyizhangzhi progress > 0 }
+                    NOT = { has_completed_focus = SRC_yilaizhiyejunguan }
+                }
+            }
+            SRC_inner_circle_auto_commanders_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commanders_target = 4 }
+                OR = {
+                    has_completed_focus = SRC_gemingjunguanruhui
+                    focus_progress = { focus = SRC_gemingjunguanruhui progress > 0 }
+                    NOT = { has_completed_focus = SRC_junshiyizhangzhi }
+                }
+            }
+            SRC_inner_circle_auto_commanders_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commanders_target = 5 }
+                OR = {
+                    has_completed_focus = SRC_qianghuajunweilingdao
+                    focus_progress = { focus = SRC_qianghuajunweilingdao progress > 0 }
+                    NOT = { has_completed_focus = SRC_gemingjunguanruhui }
+                }
+            }
+            SRC_inner_circle_auto_commanders_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commanders_target = 6 }
+                OR = {
+                    has_completed_focus = SRC_quelijunxianzhi
+                    focus_progress = { focus = SRC_quelijunxianzhi progress > 0 }
+                    NOT = { has_completed_focus = SRC_qianghuajunweilingdao }
+                }
+            }
+            SRC_inner_circle_auto_commanders_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_commanders_target = 7 }
+                OR = {
+                    has_completed_focus = SRC_wuzhuangliliangzhengguihua
+                    focus_progress = { focus = SRC_wuzhuangliliangzhengguihua progress > 0 }
+                    NOT = { has_completed_focus = SRC_quelijunxianzhi }
+                }
+            }
+            SRC_inner_circle_auto_commanders_clear = yes
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_commanders_target > 0 } }
+            if = {
+                limit = {
+                    AND = {
+                        has_country_flag = SRC_inner_circle_lan_active
+                        has_country_flag = SRC_inner_circle_zhao_active
+                    }
+                }
+                add_to_variable = { SRC_inner_circle_auto_commanders_work = 2 }
+            }
+            else = { add_to_variable = { SRC_inner_circle_auto_commanders_work = 1 } }
+            if = {
+                limit = { check_variable = { SRC_inner_circle_auto_commanders_work > 139 } }
+                if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 1 } }
+                    complete_national_focus = SRC_qianghuajunduisixiangjianshe
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 2 } }
+                    complete_national_focus = SRC_yilaizhiyejunguan
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 3 } }
+                    complete_national_focus = SRC_junshiyizhangzhi
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 4 } }
+                    complete_national_focus = SRC_gemingjunguanruhui
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 5 } }
+                    complete_national_focus = SRC_qianghuajunweilingdao
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 6 } }
+                    complete_national_focus = SRC_quelijunxianzhi
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 7 } }
+                    complete_national_focus = SRC_wuzhuangliliangzhengguihua
+                }
+                SRC_inner_circle_auto_commanders_clear = yes
+            }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_commanders_target = 0 } }
+            if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_qianghuajunduisixiangjianshe }
+                    NOT = { focus_progress = { focus = SRC_qianghuajunduisixiangjianshe progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_qianghuajunduisixiangjianshe }
+                    has_completed_focus = SRC_zhonghuagongnonghongjun
+                }
+                set_variable = { SRC_inner_circle_auto_commanders_target = 1 }
+                set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+                activate_shine_on_focus = SRC_qianghuajunduisixiangjianshe
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_yilaizhiyejunguan }
+                    NOT = { focus_progress = { focus = SRC_yilaizhiyejunguan progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_yilaizhiyejunguan }
+                    has_completed_focus = SRC_qianghuajunduisixiangjianshe
+                    NOT = { has_completed_focus = SRC_lizugongrenjiuchadui }
+                }
+                set_variable = { SRC_inner_circle_auto_commanders_target = 2 }
+                set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+                activate_shine_on_focus = SRC_yilaizhiyejunguan
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_junshiyizhangzhi }
+                    NOT = { focus_progress = { focus = SRC_junshiyizhangzhi progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_junshiyizhangzhi }
+                    has_completed_focus = SRC_yilaizhiyejunguan
+                }
+                set_variable = { SRC_inner_circle_auto_commanders_target = 3 }
+                set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+                activate_shine_on_focus = SRC_junshiyizhangzhi
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_gemingjunguanruhui }
+                    NOT = { focus_progress = { focus = SRC_gemingjunguanruhui progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_gemingjunguanruhui }
+                    has_completed_focus = SRC_junshiyizhangzhi
+                }
+                set_variable = { SRC_inner_circle_auto_commanders_target = 4 }
+                set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+                activate_shine_on_focus = SRC_gemingjunguanruhui
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_qianghuajunweilingdao }
+                    NOT = { focus_progress = { focus = SRC_qianghuajunweilingdao progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_qianghuajunweilingdao }
+                    has_completed_focus = SRC_gemingjunguanruhui
+                }
+                set_variable = { SRC_inner_circle_auto_commanders_target = 5 }
+                set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+                activate_shine_on_focus = SRC_qianghuajunweilingdao
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_quelijunxianzhi }
+                    NOT = { focus_progress = { focus = SRC_quelijunxianzhi progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_quelijunxianzhi }
+                    has_completed_focus = SRC_qianghuajunweilingdao
+                }
+                set_variable = { SRC_inner_circle_auto_commanders_target = 6 }
+                set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+                activate_shine_on_focus = SRC_quelijunxianzhi
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_wuzhuangliliangzhengguihua }
+                    NOT = { focus_progress = { focus = SRC_wuzhuangliliangzhengguihua progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_wuzhuangliliangzhengguihua }
+                    has_completed_focus = SRC_quelijunxianzhi
+                }
+                set_variable = { SRC_inner_circle_auto_commanders_target = 7 }
+                set_variable = { SRC_inner_circle_auto_commanders_work = 0 }
+                activate_shine_on_focus = SRC_wuzhuangliliangzhengguihua
+            }
+        }
+    }
+}
+
+SRC_inner_circle_auto_reform_clear = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 1 } }
+        deactivate_shine_on_focus = SRC_jianligemingjunshixueyuan
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 2 } }
+        deactivate_shine_on_focus = SRC_junshililungexin
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 3 } }
+        deactivate_shine_on_focus = SRC_hongjunhouqinbu
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 4 } }
+        deactivate_shine_on_focus = SRC_goujianbujiwangluo
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 5 } }
+        deactivate_shine_on_focus = SRC_wanshanshengchantixi
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 6 } }
+        deactivate_shine_on_focus = SRC_shengchanyanjiugexin
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 7 } }
+        deactivate_shine_on_focus = SRC_shiyanxinshibianzhi
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 8 } }
+        deactivate_shine_on_focus = SRC_kuodahuopaochanye
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 9 } }
+        deactivate_shine_on_focus = SRC_qianghuazhuangjiayanjiu
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_reform_target = 10 } }
+        deactivate_shine_on_focus = SRC_xiandaigemingjundui
+    }
+    set_variable = { SRC_inner_circle_auto_reform_target = 0 }
+    set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+}
+
+SRC_inner_circle_auto_reform_update = {
+    if = {
+        limit = {
+            OR = {
+                has_capitulated = yes
+                NOT = {
+                    OR = {
+                        has_country_flag = SRC_inner_circle_xu_fanting_active
+                        has_country_flag = SRC_inner_circle_he_changgong_active
+                    }
+                }
+            }
+        }
+        SRC_inner_circle_auto_reform_clear = yes
+    }
+    else = {
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 1 }
+                OR = {
+                    has_completed_focus = SRC_jianligemingjunshixueyuan
+                    focus_progress = { focus = SRC_jianligemingjunshixueyuan progress > 0 }
+                    NOT = { has_completed_focus = SRC_zhonghuagongnonghongjun }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 2 }
+                OR = {
+                    has_completed_focus = SRC_junshililungexin
+                    focus_progress = { focus = SRC_junshililungexin progress > 0 }
+                    NOT = { has_completed_focus = SRC_jianligemingjunshixueyuan }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 3 }
+                OR = {
+                    has_completed_focus = SRC_hongjunhouqinbu
+                    focus_progress = { focus = SRC_hongjunhouqinbu progress > 0 }
+                    NOT = { has_completed_focus = SRC_junshililungexin }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 4 }
+                OR = {
+                    has_completed_focus = SRC_goujianbujiwangluo
+                    focus_progress = { focus = SRC_goujianbujiwangluo progress > 0 }
+                    NOT = { has_completed_focus = SRC_hongjunhouqinbu }
+                    NOT = { check_variable = { SRC_inner_circle_auto_reform_branch = 1 } }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 5 }
+                OR = {
+                    has_completed_focus = SRC_wanshanshengchantixi
+                    focus_progress = { focus = SRC_wanshanshengchantixi progress > 0 }
+                    NOT = { has_completed_focus = SRC_goujianbujiwangluo }
+                    NOT = { check_variable = { SRC_inner_circle_auto_reform_branch = 1 } }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 6 }
+                OR = {
+                    has_completed_focus = SRC_shengchanyanjiugexin
+                    focus_progress = { focus = SRC_shengchanyanjiugexin progress > 0 }
+                    NOT = { has_completed_focus = SRC_hongjunhouqinbu }
+                    NOT = { check_variable = { SRC_inner_circle_auto_reform_branch = 2 } }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 7 }
+                OR = {
+                    has_completed_focus = SRC_shiyanxinshibianzhi
+                    focus_progress = { focus = SRC_shiyanxinshibianzhi progress > 0 }
+                    NOT = { has_completed_focus = SRC_shengchanyanjiugexin }
+                    NOT = { check_variable = { SRC_inner_circle_auto_reform_branch = 2 } }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 8 }
+                OR = {
+                    has_completed_focus = SRC_kuodahuopaochanye
+                    focus_progress = { focus = SRC_kuodahuopaochanye progress > 0 }
+                    NOT = { has_completed_focus = SRC_hongjunhouqinbu }
+                    NOT = { check_variable = { SRC_inner_circle_auto_reform_branch = 3 } }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 9 }
+                OR = {
+                    has_completed_focus = SRC_qianghuazhuangjiayanjiu
+                    focus_progress = { focus = SRC_qianghuazhuangjiayanjiu progress > 0 }
+                    NOT = { has_completed_focus = SRC_kuodahuopaochanye }
+                    NOT = { check_variable = { SRC_inner_circle_auto_reform_branch = 3 } }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_reform_target = 10 }
+                OR = {
+                    has_completed_focus = SRC_xiandaigemingjundui
+                    focus_progress = { focus = SRC_xiandaigemingjundui progress > 0 }
+                    NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                    NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                    NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+                }
+            }
+            SRC_inner_circle_auto_reform_clear = yes
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_reform_target > 0 } }
+            if = {
+                limit = {
+                    AND = {
+                        has_country_flag = SRC_inner_circle_xu_fanting_active
+                        has_country_flag = SRC_inner_circle_he_changgong_active
+                    }
+                }
+                add_to_variable = { SRC_inner_circle_auto_reform_work = 2 }
+            }
+            else = { add_to_variable = { SRC_inner_circle_auto_reform_work = 1 } }
+            if = {
+                limit = { check_variable = { SRC_inner_circle_auto_reform_work > 139 } }
+                if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 1 } }
+                    complete_national_focus = SRC_jianligemingjunshixueyuan
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 2 } }
+                    complete_national_focus = SRC_junshililungexin
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 3 } }
+                    complete_national_focus = SRC_hongjunhouqinbu
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 4 } }
+                    complete_national_focus = SRC_goujianbujiwangluo
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 5 } }
+                    complete_national_focus = SRC_wanshanshengchantixi
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 6 } }
+                    complete_national_focus = SRC_shengchanyanjiugexin
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 7 } }
+                    complete_national_focus = SRC_shiyanxinshibianzhi
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 8 } }
+                    complete_national_focus = SRC_kuodahuopaochanye
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 9 } }
+                    complete_national_focus = SRC_qianghuazhuangjiayanjiu
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_reform_target = 10 } }
+                    complete_national_focus = SRC_xiandaigemingjundui
+                }
+                SRC_inner_circle_auto_reform_clear = yes
+            }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_reform_target = 0 } }
+            if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_jianligemingjunshixueyuan }
+                    NOT = { focus_progress = { focus = SRC_jianligemingjunshixueyuan progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_jianligemingjunshixueyuan }
+                    has_completed_focus = SRC_zhonghuagongnonghongjun
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 1 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_jianligemingjunshixueyuan
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_junshililungexin }
+                    NOT = { focus_progress = { focus = SRC_junshililungexin progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_junshililungexin }
+                    has_completed_focus = SRC_jianligemingjunshixueyuan
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 2 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_junshililungexin
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_hongjunhouqinbu }
+                    NOT = { focus_progress = { focus = SRC_hongjunhouqinbu progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_hongjunhouqinbu }
+                    has_completed_focus = SRC_junshililungexin
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 3 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_hongjunhouqinbu
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_goujianbujiwangluo }
+                    NOT = { focus_progress = { focus = SRC_goujianbujiwangluo progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_goujianbujiwangluo }
+                    has_completed_focus = SRC_hongjunhouqinbu
+                    check_variable = { SRC_inner_circle_auto_reform_branch = 1 }
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 4 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_goujianbujiwangluo
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_wanshanshengchantixi }
+                    NOT = { focus_progress = { focus = SRC_wanshanshengchantixi progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_wanshanshengchantixi }
+                    has_completed_focus = SRC_goujianbujiwangluo
+                    check_variable = { SRC_inner_circle_auto_reform_branch = 1 }
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 5 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_wanshanshengchantixi
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_shengchanyanjiugexin }
+                    NOT = { focus_progress = { focus = SRC_shengchanyanjiugexin progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_shengchanyanjiugexin }
+                    has_completed_focus = SRC_hongjunhouqinbu
+                    check_variable = { SRC_inner_circle_auto_reform_branch = 2 }
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 6 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_shengchanyanjiugexin
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_shiyanxinshibianzhi }
+                    NOT = { focus_progress = { focus = SRC_shiyanxinshibianzhi progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_shiyanxinshibianzhi }
+                    has_completed_focus = SRC_shengchanyanjiugexin
+                    check_variable = { SRC_inner_circle_auto_reform_branch = 2 }
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 7 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_shiyanxinshibianzhi
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_kuodahuopaochanye }
+                    NOT = { focus_progress = { focus = SRC_kuodahuopaochanye progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_kuodahuopaochanye }
+                    has_completed_focus = SRC_hongjunhouqinbu
+                    check_variable = { SRC_inner_circle_auto_reform_branch = 3 }
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 8 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_kuodahuopaochanye
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_qianghuazhuangjiayanjiu }
+                    NOT = { focus_progress = { focus = SRC_qianghuazhuangjiayanjiu progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_qianghuazhuangjiayanjiu }
+                    has_completed_focus = SRC_kuodahuopaochanye
+                    check_variable = { SRC_inner_circle_auto_reform_branch = 3 }
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 9 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_qianghuazhuangjiayanjiu
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_xiandaigemingjundui }
+                    NOT = { focus_progress = { focus = SRC_xiandaigemingjundui progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_xiandaigemingjundui }
+                    has_completed_focus = SRC_wanshanshengchantixi
+                    has_completed_focus = SRC_shiyanxinshibianzhi
+                    has_completed_focus = SRC_qianghuazhuangjiayanjiu
+                }
+                set_variable = { SRC_inner_circle_auto_reform_target = 10 }
+                set_variable = { SRC_inner_circle_auto_reform_work = 0 }
+                activate_shine_on_focus = SRC_xiandaigemingjundui
+            }
+        }
+    }
+}
+
+SRC_inner_circle_auto_navy_clear = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 1 } }
+        deactivate_shine_on_focus = SRC_chenglihonghaijun
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 2 } }
+        deactivate_shine_on_focus = SRC_jieshoujianting
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 3 } }
+        deactivate_shine_on_focus = SRC_gaibianbeiyangjianduishiguan
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 4 } }
+        deactivate_shine_on_focus = SRC_yinrudatonghuihaijunrencai
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 5 } }
+        deactivate_shine_on_focus = SRC_baozhengguojibujixian
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 6 } }
+        deactivate_shine_on_focus = SRC_chenglihaijunxuexiao
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 7 } }
+        deactivate_shine_on_focus = SRC_shelihaijunyanjiusuo
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 8 } }
+        deactivate_shine_on_focus = SRC_qianghuajianchuanyanjiu
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 9 } }
+        deactivate_shine_on_focus = SRC_kuojiandaliangangkou
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 10 } }
+        deactivate_shine_on_focus = SRC_haijunlilungexin
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 11 } }
+        deactivate_shine_on_focus = SRC_fazhanhaijunrencai
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_navy_target = 12 } }
+        deactivate_shine_on_focus = SRC_xianqichiselangchao
+    }
+    set_variable = { SRC_inner_circle_auto_navy_target = 0 }
+    set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+}
+
+SRC_inner_circle_auto_navy_update = {
+    if = {
+        limit = {
+            OR = {
+                has_capitulated = yes
+                NOT = {
+                    has_country_flag = SRC_inner_circle_zeng_yiding_active
+                }
+            }
+        }
+        SRC_inner_circle_auto_navy_clear = yes
+    }
+    else = {
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 1 }
+                OR = {
+                    has_completed_focus = SRC_chenglihonghaijun
+                    focus_progress = { focus = SRC_chenglihonghaijun progress > 0 }
+                    NOT = { has_completed_focus = SRC_zhonghuagongnonghongjun }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 2 }
+                OR = {
+                    has_completed_focus = SRC_jieshoujianting
+                    focus_progress = { focus = SRC_jieshoujianting progress > 0 }
+                    NOT = { has_completed_focus = SRC_chenglihonghaijun }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 3 }
+                OR = {
+                    has_completed_focus = SRC_gaibianbeiyangjianduishiguan
+                    focus_progress = { focus = SRC_gaibianbeiyangjianduishiguan progress > 0 }
+                    NOT = { has_completed_focus = SRC_jieshoujianting }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 4 }
+                OR = {
+                    has_completed_focus = SRC_yinrudatonghuihaijunrencai
+                    focus_progress = { focus = SRC_yinrudatonghuihaijunrencai progress > 0 }
+                    NOT = { has_completed_focus = SRC_jieshoujianting }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 5 }
+                OR = {
+                    has_completed_focus = SRC_baozhengguojibujixian
+                    focus_progress = { focus = SRC_baozhengguojibujixian progress > 0 }
+                    NOT = { has_completed_focus = SRC_gaibianbeiyangjianduishiguan }
+                    NOT = { has_completed_focus = SRC_yinrudatonghuihaijunrencai }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 6 }
+                OR = {
+                    has_completed_focus = SRC_chenglihaijunxuexiao
+                    focus_progress = { focus = SRC_chenglihaijunxuexiao progress > 0 }
+                    NOT = { has_completed_focus = SRC_baozhengguojibujixian }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 7 }
+                OR = {
+                    has_completed_focus = SRC_shelihaijunyanjiusuo
+                    focus_progress = { focus = SRC_shelihaijunyanjiusuo progress > 0 }
+                    NOT = { has_completed_focus = SRC_chenglihaijunxuexiao }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 8 }
+                OR = {
+                    has_completed_focus = SRC_qianghuajianchuanyanjiu
+                    focus_progress = { focus = SRC_qianghuajianchuanyanjiu progress > 0 }
+                    NOT = { has_completed_focus = SRC_shelihaijunyanjiusuo }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 9 }
+                OR = {
+                    has_completed_focus = SRC_kuojiandaliangangkou
+                    focus_progress = { focus = SRC_kuojiandaliangangkou progress > 0 }
+                    NOT = { has_completed_focus = SRC_qianghuajianchuanyanjiu }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 10 }
+                OR = {
+                    has_completed_focus = SRC_haijunlilungexin
+                    focus_progress = { focus = SRC_haijunlilungexin progress > 0 }
+                    NOT = { has_completed_focus = SRC_shelihaijunyanjiusuo }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 11 }
+                OR = {
+                    has_completed_focus = SRC_fazhanhaijunrencai
+                    focus_progress = { focus = SRC_fazhanhaijunrencai progress > 0 }
+                    NOT = { has_completed_focus = SRC_haijunlilungexin }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_navy_target = 12 }
+                OR = {
+                    has_completed_focus = SRC_xianqichiselangchao
+                    focus_progress = { focus = SRC_xianqichiselangchao progress > 0 }
+                    NOT = { has_completed_focus = SRC_kuojiandaliangangkou }
+                    NOT = { has_completed_focus = SRC_fazhanhaijunrencai }
+                }
+            }
+            SRC_inner_circle_auto_navy_clear = yes
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_navy_target > 0 } }
+            add_to_variable = { SRC_inner_circle_auto_navy_work = 1 }
+            if = {
+                limit = { check_variable = { SRC_inner_circle_auto_navy_work > 139 } }
+                if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 1 } }
+                    complete_national_focus = SRC_chenglihonghaijun
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 2 } }
+                    complete_national_focus = SRC_jieshoujianting
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 3 } }
+                    complete_national_focus = SRC_gaibianbeiyangjianduishiguan
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 4 } }
+                    complete_national_focus = SRC_yinrudatonghuihaijunrencai
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 5 } }
+                    complete_national_focus = SRC_baozhengguojibujixian
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 6 } }
+                    complete_national_focus = SRC_chenglihaijunxuexiao
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 7 } }
+                    complete_national_focus = SRC_shelihaijunyanjiusuo
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 8 } }
+                    complete_national_focus = SRC_qianghuajianchuanyanjiu
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 9 } }
+                    complete_national_focus = SRC_kuojiandaliangangkou
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 10 } }
+                    complete_national_focus = SRC_haijunlilungexin
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 11 } }
+                    complete_national_focus = SRC_fazhanhaijunrencai
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_navy_target = 12 } }
+                    complete_national_focus = SRC_xianqichiselangchao
+                }
+                SRC_inner_circle_auto_navy_clear = yes
+            }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_navy_target = 0 } }
+            if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_chenglihonghaijun }
+                    NOT = { focus_progress = { focus = SRC_chenglihonghaijun progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_chenglihonghaijun }
+                    has_completed_focus = SRC_zhonghuagongnonghongjun
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 1 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_chenglihonghaijun
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_jieshoujianting }
+                    NOT = { focus_progress = { focus = SRC_jieshoujianting progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_jieshoujianting }
+                    has_completed_focus = SRC_chenglihonghaijun
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 2 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_jieshoujianting
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_gaibianbeiyangjianduishiguan }
+                    NOT = { focus_progress = { focus = SRC_gaibianbeiyangjianduishiguan progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_gaibianbeiyangjianduishiguan }
+                    has_completed_focus = SRC_jieshoujianting
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 3 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_gaibianbeiyangjianduishiguan
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_yinrudatonghuihaijunrencai }
+                    NOT = { focus_progress = { focus = SRC_yinrudatonghuihaijunrencai progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_yinrudatonghuihaijunrencai }
+                    has_completed_focus = SRC_jieshoujianting
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 4 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_yinrudatonghuihaijunrencai
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_baozhengguojibujixian }
+                    NOT = { focus_progress = { focus = SRC_baozhengguojibujixian progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_baozhengguojibujixian }
+                    has_completed_focus = SRC_gaibianbeiyangjianduishiguan
+                    has_completed_focus = SRC_yinrudatonghuihaijunrencai
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 5 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_baozhengguojibujixian
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_chenglihaijunxuexiao }
+                    NOT = { focus_progress = { focus = SRC_chenglihaijunxuexiao progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_chenglihaijunxuexiao }
+                    has_completed_focus = SRC_baozhengguojibujixian
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 6 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_chenglihaijunxuexiao
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_shelihaijunyanjiusuo }
+                    NOT = { focus_progress = { focus = SRC_shelihaijunyanjiusuo progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_shelihaijunyanjiusuo }
+                    has_completed_focus = SRC_chenglihaijunxuexiao
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 7 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_shelihaijunyanjiusuo
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_qianghuajianchuanyanjiu }
+                    NOT = { focus_progress = { focus = SRC_qianghuajianchuanyanjiu progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_qianghuajianchuanyanjiu }
+                    has_completed_focus = SRC_shelihaijunyanjiusuo
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 8 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_qianghuajianchuanyanjiu
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_kuojiandaliangangkou }
+                    NOT = { focus_progress = { focus = SRC_kuojiandaliangangkou progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_kuojiandaliangangkou }
+                    has_completed_focus = SRC_qianghuajianchuanyanjiu
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 9 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_kuojiandaliangangkou
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_haijunlilungexin }
+                    NOT = { focus_progress = { focus = SRC_haijunlilungexin progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_haijunlilungexin }
+                    has_completed_focus = SRC_shelihaijunyanjiusuo
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 10 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_haijunlilungexin
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_fazhanhaijunrencai }
+                    NOT = { focus_progress = { focus = SRC_fazhanhaijunrencai progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_fazhanhaijunrencai }
+                    has_completed_focus = SRC_haijunlilungexin
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 11 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_fazhanhaijunrencai
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_xianqichiselangchao }
+                    NOT = { focus_progress = { focus = SRC_xianqichiselangchao progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_xianqichiselangchao }
+                    has_completed_focus = SRC_kuojiandaliangangkou
+                    has_completed_focus = SRC_fazhanhaijunrencai
+                }
+                set_variable = { SRC_inner_circle_auto_navy_target = 12 }
+                set_variable = { SRC_inner_circle_auto_navy_work = 0 }
+                activate_shine_on_focus = SRC_xianqichiselangchao
+            }
+        }
+    }
+}
+
+SRC_inner_circle_auto_air_clear = {
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_air_target = 1 } }
+        deactivate_shine_on_focus = SRC_chengligemingkongjun
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_air_target = 2 } }
+        deactivate_shine_on_focus = SRC_jieshoujichangyufeiji
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_air_target = 3 } }
+        deactivate_shine_on_focus = SRC_xinageminghangkongdui
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_air_target = 4 } }
+        deactivate_shine_on_focus = SRC_hanweitiankong
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_air_target = 5 } }
+        deactivate_shine_on_focus = SRC_jianliliaoyanghangxiao
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_air_target = 6 } }
+        deactivate_shine_on_focus = SRC_chenglidongbeikongtiandaxue
+    }
+    if = {
+        limit = { check_variable = { SRC_inner_circle_auto_air_target = 7 } }
+        deactivate_shine_on_focus = SRC_changkongaoxiang
+    }
+    set_variable = { SRC_inner_circle_auto_air_target = 0 }
+    set_variable = { SRC_inner_circle_auto_air_work = 0 }
+}
+
+SRC_inner_circle_auto_air_update = {
+    if = {
+        limit = {
+            OR = {
+                has_capitulated = yes
+                NOT = {
+                    has_country_flag = SRC_inner_circle_liu_yun_active
+                }
+            }
+        }
+        SRC_inner_circle_auto_air_clear = yes
+    }
+    else = {
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_air_target = 1 }
+                OR = {
+                    has_completed_focus = SRC_chengligemingkongjun
+                    focus_progress = { focus = SRC_chengligemingkongjun progress > 0 }
+                    NOT = { has_completed_focus = SRC_zhonghuagongnonghongjun }
+                }
+            }
+            SRC_inner_circle_auto_air_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_air_target = 2 }
+                OR = {
+                    has_completed_focus = SRC_jieshoujichangyufeiji
+                    focus_progress = { focus = SRC_jieshoujichangyufeiji progress > 0 }
+                    NOT = { has_completed_focus = SRC_chengligemingkongjun }
+                }
+            }
+            SRC_inner_circle_auto_air_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_air_target = 3 }
+                OR = {
+                    has_completed_focus = SRC_xinageminghangkongdui
+                    focus_progress = { focus = SRC_xinageminghangkongdui progress > 0 }
+                    NOT = { has_completed_focus = SRC_jieshoujichangyufeiji }
+                }
+            }
+            SRC_inner_circle_auto_air_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_air_target = 4 }
+                OR = {
+                    has_completed_focus = SRC_hanweitiankong
+                    focus_progress = { focus = SRC_hanweitiankong progress > 0 }
+                    NOT = { has_completed_focus = SRC_xinageminghangkongdui }
+                }
+            }
+            SRC_inner_circle_auto_air_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_air_target = 5 }
+                OR = {
+                    has_completed_focus = SRC_jianliliaoyanghangxiao
+                    focus_progress = { focus = SRC_jianliliaoyanghangxiao progress > 0 }
+                    NOT = { has_completed_focus = SRC_hanweitiankong }
+                }
+            }
+            SRC_inner_circle_auto_air_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_air_target = 6 }
+                OR = {
+                    has_completed_focus = SRC_chenglidongbeikongtiandaxue
+                    focus_progress = { focus = SRC_chenglidongbeikongtiandaxue progress > 0 }
+                    NOT = { has_completed_focus = SRC_jianliliaoyanghangxiao }
+                }
+            }
+            SRC_inner_circle_auto_air_clear = yes
+        }
+        if = {
+            limit = {
+                check_variable = { SRC_inner_circle_auto_air_target = 7 }
+                OR = {
+                    has_completed_focus = SRC_changkongaoxiang
+                    focus_progress = { focus = SRC_changkongaoxiang progress > 0 }
+                    NOT = { has_completed_focus = SRC_chenglidongbeikongtiandaxue }
+                }
+            }
+            SRC_inner_circle_auto_air_clear = yes
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_air_target > 0 } }
+            add_to_variable = { SRC_inner_circle_auto_air_work = 1 }
+            if = {
+                limit = { check_variable = { SRC_inner_circle_auto_air_work > 139 } }
+                if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_air_target = 1 } }
+                    complete_national_focus = SRC_chengligemingkongjun
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_air_target = 2 } }
+                    complete_national_focus = SRC_jieshoujichangyufeiji
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_air_target = 3 } }
+                    complete_national_focus = SRC_xinageminghangkongdui
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_air_target = 4 } }
+                    complete_national_focus = SRC_hanweitiankong
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_air_target = 5 } }
+                    complete_national_focus = SRC_jianliliaoyanghangxiao
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_air_target = 6 } }
+                    complete_national_focus = SRC_chenglidongbeikongtiandaxue
+                }
+                else_if = {
+                    limit = { check_variable = { SRC_inner_circle_auto_air_target = 7 } }
+                    complete_national_focus = SRC_changkongaoxiang
+                }
+                SRC_inner_circle_auto_air_clear = yes
+            }
+        }
+        if = {
+            limit = { check_variable = { SRC_inner_circle_auto_air_target = 0 } }
+            if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_chengligemingkongjun }
+                    NOT = { focus_progress = { focus = SRC_chengligemingkongjun progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_chengligemingkongjun }
+                    has_completed_focus = SRC_zhonghuagongnonghongjun
+                }
+                set_variable = { SRC_inner_circle_auto_air_target = 1 }
+                set_variable = { SRC_inner_circle_auto_air_work = 0 }
+                activate_shine_on_focus = SRC_chengligemingkongjun
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_jieshoujichangyufeiji }
+                    NOT = { focus_progress = { focus = SRC_jieshoujichangyufeiji progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_jieshoujichangyufeiji }
+                    has_completed_focus = SRC_chengligemingkongjun
+                }
+                set_variable = { SRC_inner_circle_auto_air_target = 2 }
+                set_variable = { SRC_inner_circle_auto_air_work = 0 }
+                activate_shine_on_focus = SRC_jieshoujichangyufeiji
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_xinageminghangkongdui }
+                    NOT = { focus_progress = { focus = SRC_xinageminghangkongdui progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_xinageminghangkongdui }
+                    has_completed_focus = SRC_jieshoujichangyufeiji
+                }
+                set_variable = { SRC_inner_circle_auto_air_target = 3 }
+                set_variable = { SRC_inner_circle_auto_air_work = 0 }
+                activate_shine_on_focus = SRC_xinageminghangkongdui
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_hanweitiankong }
+                    NOT = { focus_progress = { focus = SRC_hanweitiankong progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_hanweitiankong }
+                    has_completed_focus = SRC_xinageminghangkongdui
+                }
+                set_variable = { SRC_inner_circle_auto_air_target = 4 }
+                set_variable = { SRC_inner_circle_auto_air_work = 0 }
+                activate_shine_on_focus = SRC_hanweitiankong
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_jianliliaoyanghangxiao }
+                    NOT = { focus_progress = { focus = SRC_jianliliaoyanghangxiao progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_jianliliaoyanghangxiao }
+                    has_completed_focus = SRC_hanweitiankong
+                }
+                set_variable = { SRC_inner_circle_auto_air_target = 5 }
+                set_variable = { SRC_inner_circle_auto_air_work = 0 }
+                activate_shine_on_focus = SRC_jianliliaoyanghangxiao
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_chenglidongbeikongtiandaxue }
+                    NOT = { focus_progress = { focus = SRC_chenglidongbeikongtiandaxue progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_chenglidongbeikongtiandaxue }
+                    has_completed_focus = SRC_jianliliaoyanghangxiao
+                }
+                set_variable = { SRC_inner_circle_auto_air_target = 6 }
+                set_variable = { SRC_inner_circle_auto_air_work = 0 }
+                activate_shine_on_focus = SRC_chenglidongbeikongtiandaxue
+            }
+            else_if = {
+                limit = {
+                    NOT = { has_completed_focus = SRC_changkongaoxiang }
+                    NOT = { focus_progress = { focus = SRC_changkongaoxiang progress > 0 } }
+                    NOT = { has_shine_effect_on_focus = SRC_changkongaoxiang }
+                    has_completed_focus = SRC_chenglidongbeikongtiandaxue
+                }
+                set_variable = { SRC_inner_circle_auto_air_target = 7 }
+                set_variable = { SRC_inner_circle_auto_air_work = 0 }
+                activate_shine_on_focus = SRC_changkongaoxiang
+            }
+        }
+    }
+}
+
