@@ -6,6 +6,27 @@ on_actions = {
 					country_exists = GPS
 				}
 				GPS = {
+					# Deliver the old focus's unused rifle-cost reward once.
+					if = {
+						limit = {
+							has_completed_focus = GPS_shengchanjunshihua
+							check_variable = { GPS_kaifuyitongsansi_buqiang < 0 }
+						}
+						if = {
+							limit = { NOT = { has_idea = GPS_shengchanjunshihua_policy } }
+							add_ideas = GPS_shengchanjunshihua_policy
+						}
+						set_variable = { GPS_kaifuyitongsansi_buqiang = 0 }
+					}
+					# Migrate the unused reserve reward from old saves once.
+					if = {
+						limit = {
+							has_completed_focus = GPS_dongyuanyubeiyi
+							check_variable = { conscription_factor > 0 }
+						}
+						add_to_variable = { GPS_fengzhaojiaofei = conscription_factor }
+						set_variable = { conscription_factor = 0 }
+					}
 					if = {
 						limit = {
 							has_idea = GPS_gov_repair_effort

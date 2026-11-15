@@ -963,6 +963,39 @@ country_event = {
 	}
 }
 
+#民营工厂军用化
+country_event = {
+	id = GPSevents.45
+	title = GPSevents.45.t
+	desc =GPSevents.45.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.45.a
+	}
+}
+#预备役
+country_event = {
+	id = GPSevents.46
+	title = GPSevents.46.t
+	desc =GPSevents.46.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.46.a
+	}
+}
+
 #==========================================================
 ### merged from GPS_governance.txt
 #==========================================================
@@ -1094,7 +1127,7 @@ country_event = {
 			}
 			GPS_gov_tang = yes
 			GPS_gov_orders_target_valid = yes
-			has_political_power >= 25
+			NOT = { has_political_power < 25 }
 		}
 		hidden_effect = {
 			if = {
@@ -1105,7 +1138,7 @@ country_event = {
 					}
 					GPS_gov_tang = yes
 					GPS_gov_orders_target_valid = yes
-					has_political_power >= 25
+					NOT = { has_political_power < 25 }
 				}
 				add_political_power = -25
 				set_country_flag = GPS_gov_orders_c
@@ -1472,7 +1505,7 @@ country_event = {
 			}
 			GPS_gov_active = yes
 			GPS_gov_coal_target_valid = yes
-			has_political_power >= 25
+			NOT = { has_political_power < 25 }
 		}
 		hidden_effect = {
 			if = {
@@ -1483,7 +1516,7 @@ country_event = {
 					}
 					GPS_gov_active = yes
 					GPS_gov_coal_target_valid = yes
-					has_political_power >= 25
+					NOT = { has_political_power < 25 }
 				}
 				add_political_power = -25
 				set_country_flag = GPS_gov_coal_c
@@ -1760,7 +1793,7 @@ country_event = {
 			}
 			GPS_gov_active = yes
 			GPS_gov_restart_target_valid = yes
-			has_political_power >= 25
+			NOT = { has_political_power < 25 }
 		}
 		hidden_effect = {
 			if = {
@@ -1771,7 +1804,7 @@ country_event = {
 					}
 					GPS_gov_active = yes
 					GPS_gov_restart_target_valid = yes
-					has_political_power >= 25
+					NOT = { has_political_power < 25 }
 				}
 				add_political_power = -25
 				set_country_flag = GPS_gov_restart_b
@@ -1807,7 +1840,7 @@ country_event = {
 			}
 			GPS_gov_active = yes
 			GPS_gov_restart_target_valid = yes
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 		hidden_effect = {
 			if = {
@@ -1818,7 +1851,7 @@ country_event = {
 					}
 					GPS_gov_active = yes
 					GPS_gov_restart_target_valid = yes
-					has_political_power >= 10
+					NOT = { has_political_power < 10 }
 				}
 				add_political_power = -10
 				set_country_flag = GPS_gov_restart_c
@@ -2178,7 +2211,7 @@ country_event = {
 			}
 			GPS_gov_tang = yes
 			GPS_gov_tang_appointment_target_valid = yes
-			has_political_power >= 25
+			NOT = { has_political_power < 25 }
 		}
 		hidden_effect = {
 			if = {
@@ -2189,7 +2222,7 @@ country_event = {
 					}
 					GPS_gov_tang = yes
 					GPS_gov_tang_appointment_target_valid = yes
-					has_political_power >= 25
+					NOT = { has_political_power < 25 }
 				}
 				add_political_power = -25
 				set_country_flag = GPS_gov_appointment_c
@@ -2796,13 +2829,13 @@ country_event = {
 				OR = {
 					AND = {
 						has_country_flag = GPS_gov_committee_table_c
-						has_political_power >= 10
+						NOT = { has_political_power < 10 }
 					}
 					AND = {
 						NOT = {
 							has_country_flag = GPS_gov_committee_table_c
 						}
-						has_political_power >= 20
+						NOT = { has_political_power < 20 }
 					}
 				}
 			}
@@ -2818,13 +2851,13 @@ country_event = {
 					OR = {
 						AND = {
 							has_country_flag = GPS_gov_committee_table_c
-							has_political_power >= 10
+							NOT = { has_political_power < 10 }
 						}
 						AND = {
 							NOT = {
 								has_country_flag = GPS_gov_committee_table_c
 							}
-							has_political_power >= 20
+							NOT = { has_political_power < 20 }
 						}
 					}
 				}
@@ -2925,7 +2958,7 @@ country_event = {
 					has_country_flag = GPS_gov_joint_appointment_chosen
 				}
 				GPS_gov_joint_appointment_target_valid = yes
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 		}
 		hidden_effect = {
@@ -2936,7 +2969,7 @@ country_event = {
 						has_country_flag = GPS_gov_joint_appointment_chosen
 					}
 					GPS_gov_joint_appointment_target_valid = yes
-					has_political_power >= 10
+					NOT = { has_political_power < 10 }
 				}
 				add_political_power = -10
 				set_country_flag = GPS_gov_joint_appointment_c
@@ -3146,13 +3179,13 @@ country_event = {
 				OR = {
 					AND = {
 						has_country_flag = GPS_gov_committee_table_a
-						has_political_power >= 10
+						NOT = { has_political_power < 10 }
 					}
 					AND = {
 						NOT = {
 							has_country_flag = GPS_gov_committee_table_a
 						}
-						has_political_power >= 20
+						NOT = { has_political_power < 20 }
 					}
 				}
 			}
@@ -3168,13 +3201,13 @@ country_event = {
 					OR = {
 						AND = {
 							has_country_flag = GPS_gov_committee_table_a
-							has_political_power >= 10
+							NOT = { has_political_power < 10 }
 						}
 						AND = {
 							NOT = {
 								has_country_flag = GPS_gov_committee_table_a
 							}
-							has_political_power >= 20
+							NOT = { has_political_power < 20 }
 						}
 					}
 				}
@@ -3275,7 +3308,7 @@ country_event = {
 					has_country_flag = GPS_gov_joint_pay_chosen
 				}
 				GPS_gov_joint_pay_target_valid = yes
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 		}
 		hidden_effect = {
@@ -3286,7 +3319,7 @@ country_event = {
 						has_country_flag = GPS_gov_joint_pay_chosen
 					}
 					GPS_gov_joint_pay_target_valid = yes
-					has_political_power >= 10
+					NOT = { has_political_power < 10 }
 				}
 				add_political_power = -10
 				set_country_flag = GPS_gov_joint_pay_c
@@ -3497,13 +3530,13 @@ country_event = {
 				OR = {
 					AND = {
 						has_country_flag = GPS_gov_committee_table_b
-						has_political_power >= 10
+						NOT = { has_political_power < 10 }
 					}
 					AND = {
 						NOT = {
 							has_country_flag = GPS_gov_committee_table_b
 						}
-						has_political_power >= 20
+						NOT = { has_political_power < 20 }
 					}
 				}
 			}
@@ -3519,13 +3552,13 @@ country_event = {
 					OR = {
 						AND = {
 							has_country_flag = GPS_gov_committee_table_b
-							has_political_power >= 10
+							NOT = { has_political_power < 10 }
 						}
 						AND = {
 							NOT = {
 								has_country_flag = GPS_gov_committee_table_b
 							}
-							has_political_power >= 20
+							NOT = { has_political_power < 20 }
 						}
 					}
 				}
@@ -3629,7 +3662,7 @@ country_event = {
 					has_country_flag = GPS_gov_defence_roster_chosen
 				}
 				GPS_gov_defence_roster_target_valid = yes
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 		}
 		hidden_effect = {
@@ -3640,7 +3673,7 @@ country_event = {
 						has_country_flag = GPS_gov_defence_roster_chosen
 					}
 					GPS_gov_defence_roster_target_valid = yes
-					has_political_power >= 10
+					NOT = { has_political_power < 10 }
 				}
 				add_political_power = -10
 				add_stability = -0.01
@@ -3847,7 +3880,7 @@ country_event = {
 				GPS_gov_committee = yes
 				has_completed_focus = GPS_gov_joint_appointments
 				has_country_flag = GPS_gov_joint_appointment_done
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 		}
 		hidden_effect = {
@@ -3857,7 +3890,7 @@ country_event = {
 					GPS_gov_committee = yes
 					has_completed_focus = GPS_gov_joint_appointments
 					has_country_flag = GPS_gov_joint_appointment_done
-					has_political_power >= 20
+					NOT = { has_political_power < 20 }
 				}
 				add_political_power = -20
 				set_country_flag = GPS_gov_old_uniforms_a
@@ -3885,7 +3918,7 @@ country_event = {
 				GPS_gov_committee = yes
 				has_completed_focus = GPS_gov_joint_appointments
 				has_country_flag = GPS_gov_joint_appointment_done
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 		}
 		hidden_effect = {
@@ -3895,7 +3928,7 @@ country_event = {
 					GPS_gov_committee = yes
 					has_completed_focus = GPS_gov_joint_appointments
 					has_country_flag = GPS_gov_joint_appointment_done
-					has_political_power >= 10
+					NOT = { has_political_power < 10 }
 				}
 				add_political_power = -10
 				add_stability = -0.01
@@ -4182,7 +4215,7 @@ country_event = {
 				has_country_flag = GPS_gov_execution_receipts_done
 				has_country_flag = GPS_gov_old_uniforms_done
 				GPS_gov_postwar = yes
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 		}
 		hidden_effect = {
@@ -4195,7 +4228,7 @@ country_event = {
 					has_country_flag = GPS_gov_execution_receipts_done
 					has_country_flag = GPS_gov_old_uniforms_done
 					GPS_gov_postwar = yes
-					has_political_power >= 20
+					NOT = { has_political_power < 20 }
 				}
 				add_political_power = -20
 				set_country_flag = GPS_gov_committee_settlement_a
@@ -4270,7 +4303,7 @@ country_event = {
 				has_country_flag = GPS_gov_execution_receipts_done
 				has_country_flag = GPS_gov_old_uniforms_done
 				GPS_gov_postwar = yes
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 		}
 		hidden_effect = {
@@ -4283,7 +4316,7 @@ country_event = {
 					has_country_flag = GPS_gov_execution_receipts_done
 					has_country_flag = GPS_gov_old_uniforms_done
 					GPS_gov_postwar = yes
-					has_political_power >= 10
+					NOT = { has_political_power < 10 }
 				}
 				add_political_power = -10
 				set_country_flag = GPS_gov_committee_settlement_c
@@ -4360,7 +4393,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_position_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -4370,7 +4403,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_position_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_national_position_a
@@ -4402,7 +4435,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_position_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -4412,7 +4445,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_position_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_national_position_b
@@ -4445,7 +4478,7 @@ country_event = {
 				has_country_flag = GPS_gov_national_position_done
 			}
 			GPS_gov_entry_possible = yes
-			has_political_power >= 30
+			NOT = { has_political_power < 30 }
 		}
 		if = {
 			limit = {
@@ -4456,7 +4489,7 @@ country_event = {
 					has_country_flag = GPS_gov_national_position_done
 				}
 				GPS_gov_entry_possible = yes
-				has_political_power >= 30
+				NOT = { has_political_power < 30 }
 			}
 			add_political_power = -30
 			set_country_flag = GPS_gov_national_position_c
@@ -4536,7 +4569,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_regional_closure_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -4545,7 +4578,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_regional_closure_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_regional_closure_a
@@ -4587,7 +4620,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_regional_closure_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -4596,7 +4629,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_regional_closure_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_regional_closure_b
@@ -4630,7 +4663,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_regional_closure_done
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 		if = {
 			limit = {
@@ -4639,7 +4672,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_regional_closure_done
 				}
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 			add_political_power = -10
 			set_country_flag = GPS_gov_regional_closure_c
@@ -4732,7 +4765,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_demobilization_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 			GPS_gov_demobilization_target_valid = yes
 		}
 		if = {
@@ -4745,7 +4778,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_demobilization_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 				GPS_gov_demobilization_target_valid = yes
 			}
 			add_political_power = -20
@@ -4782,7 +4815,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_demobilization_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 			GPS_gov_demobilization_target_valid = yes
 		}
 		if = {
@@ -4795,7 +4828,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_demobilization_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 				GPS_gov_demobilization_target_valid = yes
 			}
 			add_political_power = -15
@@ -4835,7 +4868,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_demobilization_done
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 			GPS_gov_demobilization_target_valid = yes
 		}
 		if = {
@@ -4848,7 +4881,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_demobilization_done
 				}
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 				GPS_gov_demobilization_target_valid = yes
 			}
 			add_political_power = -10
@@ -5050,7 +5083,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_army_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -5062,7 +5095,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_army_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_national_army_a
@@ -5096,7 +5129,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_army_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -5108,7 +5141,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_army_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_national_army_b
@@ -5142,7 +5175,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_army_done
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 		if = {
 			limit = {
@@ -5154,7 +5187,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_army_done
 				}
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 			add_political_power = -10
 			set_country_flag = GPS_gov_national_army_c
@@ -5243,7 +5276,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_accounts_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -5255,7 +5288,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_accounts_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_national_accounts_a
@@ -5289,7 +5322,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_accounts_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -5301,7 +5334,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_accounts_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_national_accounts_b
@@ -5335,7 +5368,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_national_accounts_done
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 		if = {
 			limit = {
@@ -5347,7 +5380,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_national_accounts_done
 				}
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 			add_political_power = -10
 			set_country_flag = GPS_gov_national_accounts_c
@@ -5433,7 +5466,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_local_delegation_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -5445,7 +5478,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_local_delegation_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_local_delegation_a
@@ -5479,7 +5512,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_local_delegation_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -5491,7 +5524,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_local_delegation_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_local_delegation_b
@@ -5525,7 +5558,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_local_delegation_done
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 		if = {
 			limit = {
@@ -5537,7 +5570,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_local_delegation_done
 				}
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 			add_political_power = -10
 			set_country_flag = GPS_gov_local_delegation_c
@@ -5628,7 +5661,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_homeward_station_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -5645,7 +5678,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_homeward_station_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_homeward_station_a
@@ -5690,7 +5723,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_homeward_station_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -5707,7 +5740,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_homeward_station_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_homeward_station_b
@@ -5753,7 +5786,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_homeward_station_done
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 		if = {
 			limit = {
@@ -5770,7 +5803,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_homeward_station_done
 				}
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 			}
 			add_political_power = -10
 			set_country_flag = GPS_gov_homeward_station_c
@@ -5871,7 +5904,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_grain_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 			GPS_gov_grain_target_valid = yes
 		}
 		if = {
@@ -5885,7 +5918,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_grain_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 				GPS_gov_grain_target_valid = yes
 			}
 			add_political_power = -20
@@ -5926,7 +5959,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_grain_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 			GPS_gov_grain_target_valid = yes
 		}
 		if = {
@@ -5940,7 +5973,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_grain_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 				GPS_gov_grain_target_valid = yes
 			}
 			add_political_power = -15
@@ -5981,7 +6014,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_grain_done
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 			GPS_gov_grain_target_valid = yes
 		}
 		if = {
@@ -5995,7 +6028,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_grain_done
 				}
-				has_political_power >= 10
+				NOT = { has_political_power < 10 }
 				GPS_gov_grain_target_valid = yes
 			}
 			add_political_power = -10
@@ -6196,7 +6229,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_policy_KOR_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -6207,7 +6240,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_policy_KOR_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_policy_KOR_a
@@ -6240,7 +6273,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_policy_KOR_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -6251,7 +6284,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_policy_KOR_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_policy_KOR_b
@@ -6378,7 +6411,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_policy_EZO_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -6389,7 +6422,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_policy_EZO_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_policy_EZO_a
@@ -6422,7 +6455,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_policy_EZO_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -6433,7 +6466,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_policy_EZO_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_policy_EZO_b
@@ -6560,7 +6593,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_policy_WJP_done
 			}
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		if = {
 			limit = {
@@ -6571,7 +6604,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_policy_WJP_done
 				}
-				has_political_power >= 20
+				NOT = { has_political_power < 20 }
 			}
 			add_political_power = -20
 			set_country_flag = GPS_gov_policy_WJP_a
@@ -6604,7 +6637,7 @@ country_event = {
 			NOT = {
 				has_country_flag = GPS_gov_policy_WJP_done
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 		if = {
 			limit = {
@@ -6615,7 +6648,7 @@ country_event = {
 				NOT = {
 					has_country_flag = GPS_gov_policy_WJP_done
 				}
-				has_political_power >= 15
+				NOT = { has_political_power < 15 }
 			}
 			add_political_power = -15
 			set_country_flag = GPS_gov_policy_WJP_b
@@ -7247,4 +7280,280 @@ country_event = {
     picture = GFX_report_event_chinese_soldiers_fighting
     is_triggered_only = yes
     option = { name = GPS_governance.59.a }
+}
+
+country_event = {
+	id = GPSevents.42
+	title = GPSevents.42.t
+	desc =GPSevents.42.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.42.a
+			country_event = {id = GPSevents.43}
+	}
+}
+
+country_event = {
+	id = GPSevents.43
+	title = GPSevents.43.t
+	desc =GPSevents.43.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.43.a
+		country_event = {id = GPSevents.44 days = 40}
+	}
+}
+
+country_event = {
+	id = GPSevents.44
+	title = GPSevents.44.t
+	desc =GPSevents.44.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.44.a
+	}
+}
+
+country_event = {
+	id = GPSevents.47
+	title = GPSevents.47.t
+	desc =GPSevents.47.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.47.a
+	}
+}
+
+country_event = {
+	id = GPSevents.49
+	title = GPSevents.49.t
+	desc =GPSevents.49.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.49.a
+	}
+}
+
+country_event = {
+	id = GPSevents.50
+	title = GPSevents.50.t
+	desc =GPSevents.50.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.50.a
+	}
+}
+
+country_event = {
+	id = GPSevents.51
+	title = GPSevents.51.t
+	desc =GPSevents.51.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.51.a
+	}
+}
+
+country_event = {
+	id = GPSevents.52
+	title = GPSevents.52.t
+	desc =GPSevents.52.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.52.a
+	}
+}
+
+country_event = {
+	id = GPSevents.53
+	title = GPSevents.53.t
+	desc =GPSevents.53.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.53.a
+	}
+}
+
+country_event = {
+	id = GPSevents.54
+	title = GPSevents.54.t
+	desc =GPSevents.54.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.54.a
+	}
+}
+
+country_event = {
+	id = GPSevents.55
+	title = GPSevents.55.t
+	desc =GPSevents.55.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.55.a
+	}
+}
+
+country_event = {
+	id = GPSevents.56
+	title = GPSevents.56.t
+	desc =GPSevents.56.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.56.a
+	}
+}
+
+country_event = {
+	id = GPSevents.57
+	title = GPSevents.57.t
+	desc =GPSevents.57.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.57.a
+		set_country_flag = GPS_huijianwubeixi
+	}
+}
+
+country_event = {
+	id = GPSevents.58
+	title = GPSevents.58.t
+	desc =GPSevents.58.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		name = GPSevents.58.a
+		set_country_flag = GPS_huijianjiaotongxi
+	}
+}
+
+country_event = {
+	id = GPSevents.59
+	title = GPSevents.59.t
+	desc =GPSevents.59.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	trigger = { tag = GPS }
+
+	option = {
+		trigger = {
+			has_country_flag = GPS_huijianjiaotongxi
+			country_exists = XBJ
+			NOT = {country_exists = STG}
+		}
+		name = GPSevents.59.a
+		XBJ = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = autonomy_integrated_puppet
+			}
+			change_tag_from = ROOT
+		}
+	}
+	option = {
+		trigger = {
+			has_country_flag = GPS_huijianwubeixi
+			country_exists = STG
+			NOT = {country_exists = XBJ}
+		}
+		name = GPSevents.59.a
+		STG = {
+			set_autonomy = {
+				target = GPS
+				autonomy_state = autonomy_integrated_puppet
+			}
+			change_tag_from = ROOT
+		}
+	}
+	option = {
+		name = GPSevents.59.b
+		unlock_decision_category_tooltip = GPS_xuanzhan
+		set_country_flag = GPS_xuanzhan
+	}
 }

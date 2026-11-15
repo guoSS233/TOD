@@ -331,7 +331,10 @@ GPS_gov_category = {
 			GPS_gov_coal_transport_possible = yes
 		}
 		complete_effect = {
-			GPS_gov_start_coal = yes
+			custom_effect_tooltip = GPS_gov_open_coal_effect_tt
+			hidden_effect = {
+				GPS_gov_start_coal = yes
+			}
 		}
 	}
 	GPS_gov_open_restart = {
@@ -352,7 +355,10 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			GPS_gov_start_restart = yes
+			custom_effect_tooltip = GPS_gov_open_restart_effect_tt
+			hidden_effect = {
+				GPS_gov_start_restart = yes
+			}
 		}
 	}
 	GPS_gov_open_appointment = {
@@ -721,7 +727,10 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			GPS_gov_start_demobilization = yes
+			custom_effect_tooltip = GPS_gov_open_demobilization_effect_tt
+			hidden_effect = {
+				GPS_gov_start_demobilization = yes
+			}
 		}
 	}
 	GPS_gov_open_national_army = {
@@ -854,7 +863,10 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			GPS_gov_start_grain = yes
+			custom_effect_tooltip = GPS_gov_open_grain_effect_tt
+			hidden_effect = {
+				GPS_gov_start_grain = yes
+			}
 		}
 	}
 	GPS_gov_open_policy_KOR = {
@@ -879,7 +891,10 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			GPS_gov_start_policy_KOR = yes
+			custom_effect_tooltip = GPS_gov_open_policy_KOR_effect_tt
+			hidden_effect = {
+				GPS_gov_start_policy_KOR = yes
+			}
 		}
 	}
 	GPS_gov_open_policy_EZO = {
@@ -904,7 +919,10 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			GPS_gov_start_policy_EZO = yes
+			custom_effect_tooltip = GPS_gov_open_policy_sea_effect_tt
+			hidden_effect = {
+				GPS_gov_start_policy_EZO = yes
+			}
 		}
 	}
 	GPS_gov_open_policy_WJP = {
@@ -929,7 +947,10 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			GPS_gov_start_policy_WJP = yes
+			custom_effect_tooltip = GPS_gov_open_policy_sea_effect_tt
+			hidden_effect = {
+				GPS_gov_start_policy_WJP = yes
+			}
 		}
 	}
 	GPS_gov_open_contact_STG = {
@@ -954,20 +975,23 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			if = {
-				limit = {
-					GPS_gov_position_ready = yes
-					has_country_flag = GPS_gov_national_position_done
-					GPS_gov_contact_STG = yes
-					NOT = {
-						has_country_flag = GPS_gov_signature_busy
+			custom_effect_tooltip = GPS_gov_open_contact_effect_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						GPS_gov_position_ready = yes
+						has_country_flag = GPS_gov_national_position_done
+						GPS_gov_contact_STG = yes
+						NOT = {
+							has_country_flag = GPS_gov_signature_busy
+						}
+						NOT = {
+							has_country_flag = GPS_gov_contact_STG_done
+						}
 					}
-					NOT = {
-						has_country_flag = GPS_gov_contact_STG_done
-					}
+					set_country_flag = GPS_gov_contact_STG_pending
+					GPS_gov_start_contact = yes
 				}
-				set_country_flag = GPS_gov_contact_STG_pending
-				GPS_gov_start_contact = yes
 			}
 		}
 	}
@@ -993,20 +1017,23 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			if = {
-				limit = {
-					GPS_gov_position_ready = yes
-					has_country_flag = GPS_gov_national_position_done
-					GPS_gov_contact_MNG = yes
-					NOT = {
-						has_country_flag = GPS_gov_signature_busy
+			custom_effect_tooltip = GPS_gov_open_contact_effect_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						GPS_gov_position_ready = yes
+						has_country_flag = GPS_gov_national_position_done
+						GPS_gov_contact_MNG = yes
+						NOT = {
+							has_country_flag = GPS_gov_signature_busy
+						}
+						NOT = {
+							has_country_flag = GPS_gov_contact_MNG_done
+						}
 					}
-					NOT = {
-						has_country_flag = GPS_gov_contact_MNG_done
-					}
+					set_country_flag = GPS_gov_contact_MNG_pending
+					GPS_gov_start_contact = yes
 				}
-				set_country_flag = GPS_gov_contact_MNG_pending
-				GPS_gov_start_contact = yes
 			}
 		}
 	}
@@ -1032,20 +1059,23 @@ GPS_gov_category = {
 			}
 		}
 		complete_effect = {
-			if = {
-				limit = {
-					GPS_gov_position_ready = yes
-					has_country_flag = GPS_gov_national_position_done
-					GPS_gov_contact_XBJ = yes
-					NOT = {
-						has_country_flag = GPS_gov_signature_busy
+			custom_effect_tooltip = GPS_gov_open_contact_effect_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						GPS_gov_position_ready = yes
+						has_country_flag = GPS_gov_national_position_done
+						GPS_gov_contact_XBJ = yes
+						NOT = {
+							has_country_flag = GPS_gov_signature_busy
+						}
+						NOT = {
+							has_country_flag = GPS_gov_contact_XBJ_done
+						}
 					}
-					NOT = {
-						has_country_flag = GPS_gov_contact_XBJ_done
-					}
+					set_country_flag = GPS_gov_contact_XBJ_pending
+					GPS_gov_start_contact = yes
 				}
-				set_country_flag = GPS_gov_contact_XBJ_pending
-				GPS_gov_start_contact = yes
 			}
 		}
 	}

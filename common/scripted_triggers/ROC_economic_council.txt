@@ -35,3 +35,23 @@ ROC_econ_allied_free = {
 }
 ROC_econ_left_allies_present = { ROC_ce_administration_active = yes }
 ROC_econ_right_allies_present = { ROC_ce_administration_active = yes }
+
+# Never replace terminal / story-appointed cabinets through an old economic challenge.
+ROC_econ_head_observation_active = {
+    country_exists = ROC
+    tag = ROC
+    has_completed_focus = guangzhouqiyi
+    NOT = { has_country_flag = ROC_postwar_active }
+    NOT = { has_country_flag = ROC_pingheng_end }
+    NOT = { OR = { ROC_has_jixugeming = yes ROC_has_lunliuzuozhuang = yes ROC_has_jingchenghezuo = yes } }
+    NOT = { OR = { has_idea = ROC_idea_YangMingzhai has_idea = ROC_idea_TaoXingzhi } }
+    check_variable = { ROC_econ_head_current > 0 }
+    check_variable = { ROC_econ_head_target > 0 }
+    NOT = { check_variable = { var = ROC_econ_head_target value = ROC_econ_head_current compare = equals } }
+}
+ROC_econ_head_question_valid = {
+    ROC_econ_head_observation_active = yes
+    has_country_flag = ROC_econ_head_pending
+    check_variable = { var = ROC_econ_head_pending_target value = ROC_econ_head_target compare = equals }
+    check_variable = { var = ROC_econ_head_pending_current value = ROC_econ_head_current compare = equals }
+}

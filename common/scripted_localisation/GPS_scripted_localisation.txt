@@ -186,3 +186,45 @@ defined_text = {
  text = { trigger = { has_country_flag = GPS_gov_workers_record_done has_country_flag = GPS_gov_grievance_recorded } localization_key = GPS_gov_demob_record_grievance }
  text = { localization_key = GPS_gov_demob_record_none }
 }
+
+defined_text = {
+ name = GetGPSGovArchiveLineSTG
+ text = { trigger = { OR = { has_country_flag = GPS_gov_contact_STG_pending has_country_flag = GPS_gov_contact_STG_done has_country_flag = GPS_gov_contact_STG_a has_country_flag = GPS_gov_contact_STG_b has_country_flag = GPS_gov_contact_STG_c } } localization_key = GPS_gov_archive_line_STG }
+ text = { localization_key = GPS_gov_archive_line_none }
+}
+
+defined_text = {
+ name = GetGPSGovArchiveLineMNG
+ text = { trigger = { OR = { has_country_flag = GPS_gov_contact_MNG_pending has_country_flag = GPS_gov_contact_MNG_done has_country_flag = GPS_gov_contact_MNG_a has_country_flag = GPS_gov_contact_MNG_b has_country_flag = GPS_gov_contact_MNG_c } } localization_key = GPS_gov_archive_line_MNG }
+ text = { localization_key = GPS_gov_archive_line_none }
+}
+
+defined_text = {
+ name = GetGPSGovArchiveLineXBJ
+ text = { trigger = { OR = { has_country_flag = GPS_gov_contact_XBJ_pending has_country_flag = GPS_gov_contact_XBJ_done has_country_flag = GPS_gov_contact_XBJ_a has_country_flag = GPS_gov_contact_XBJ_b has_country_flag = GPS_gov_contact_XBJ_c } } localization_key = GPS_gov_archive_line_XBJ }
+ text = { localization_key = GPS_gov_archive_line_none }
+}
+
+defined_text = {
+ name = GetGPSGovArchiveLineKOR
+ text = { trigger = { OR = { has_country_flag = GPS_gov_policy_KOR_pending has_country_flag = GPS_gov_policy_KOR_done } } localization_key = GPS_gov_archive_line_KOR }
+ text = { localization_key = GPS_gov_archive_line_none }
+}
+
+defined_text = {
+ name = GetGPSGovArchiveLineEZO
+ text = { trigger = { OR = { has_country_flag = GPS_gov_policy_EZO_pending has_country_flag = GPS_gov_policy_EZO_done } } localization_key = GPS_gov_archive_line_EZO }
+ text = { localization_key = GPS_gov_archive_line_none }
+}
+
+defined_text = {
+ name = GetGPSGovArchiveLineWJP
+ text = { trigger = { OR = { has_country_flag = GPS_gov_policy_WJP_pending has_country_flag = GPS_gov_policy_WJP_done } } localization_key = GPS_gov_archive_line_WJP }
+ text = { localization_key = GPS_gov_archive_line_none }
+}
+
+defined_text = {
+ name = GetGPSGovRecordsHeader
+ text = { trigger = { OR = { has_country_flag = GPS_gov_coal_a has_country_flag = GPS_gov_coal_b has_country_flag = GPS_gov_coal_c has_country_flag = GPS_gov_coal_failed has_country_flag = GPS_gov_committee_table_a has_country_flag = GPS_gov_committee_table_b has_country_flag = GPS_gov_committee_table_c has_country_flag = GPS_gov_contact_MNG_a has_country_flag = GPS_gov_contact_MNG_b has_country_flag = GPS_gov_contact_MNG_c has_country_flag = GPS_gov_contact_MNG_done has_country_flag = GPS_gov_contact_MNG_pending has_country_flag = GPS_gov_contact_STG_a has_country_flag = GPS_gov_contact_STG_b has_country_flag = GPS_gov_contact_STG_c has_country_flag = GPS_gov_contact_STG_done has_country_flag = GPS_gov_contact_STG_pending has_country_flag = GPS_gov_contact_XBJ_a has_country_flag = GPS_gov_contact_XBJ_b has_country_flag = GPS_gov_contact_XBJ_c has_country_flag = GPS_gov_contact_XBJ_done has_country_flag = GPS_gov_contact_XBJ_pending has_country_flag = GPS_gov_demobilization_a has_country_flag = GPS_gov_demobilization_b has_country_flag = GPS_gov_demobilization_c has_country_flag = GPS_gov_demobilization_failed has_country_flag = GPS_gov_grain_a has_country_flag = GPS_gov_grain_b has_country_flag = GPS_gov_grain_c has_country_flag = GPS_gov_grain_failed has_country_flag = GPS_gov_orders_a has_country_flag = GPS_gov_orders_b has_country_flag = GPS_gov_orders_c has_country_flag = GPS_gov_orders_failed has_country_flag = GPS_gov_policy_EZO_done has_country_flag = GPS_gov_policy_EZO_pending has_country_flag = GPS_gov_policy_KOR_done has_country_flag = GPS_gov_policy_KOR_pending has_country_flag = GPS_gov_policy_WJP_done has_country_flag = GPS_gov_policy_WJP_pending has_country_flag = GPS_gov_restart_a has_country_flag = GPS_gov_restart_b has_country_flag = GPS_gov_restart_c has_country_flag = GPS_gov_restart_failed has_country_flag = GPS_gov_tang_register_a has_country_flag = GPS_gov_tang_register_b has_country_flag = GPS_gov_tang_register_c } } localization_key = GPS_gov_records_header }
+ text = { localization_key = GPS_gov_archive_line_none }
+}

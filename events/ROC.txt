@@ -292,7 +292,7 @@ country_event = {
 		name = ROC_focus.18.a 
 		ROC_econ_shift_public_080 = yes
 	}
-	option = { name = ROC_focus.18.b add_to_variable = { var = ROC_ma_center_favor value = 5 } add_to_variable = { var = ROC_ma_left_favor value = 5 } ROC_ce_refresh = yes }
+	option = { name = ROC_focus.18.b ROC_ce_policy_reconcile_150 = yes add_to_variable = { var = ROC_ma_center_favor value = 5 } add_to_variable = { var = ROC_ma_left_favor value = 5 } ROC_ce_refresh = yes }
 	option = {
 		name = ROC_focus.18.c 
 		ROC_econ_shift_market_080 = yes
@@ -1412,12 +1412,20 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-    trigger = { always = no }
+    timeout_days = 15
+    trigger = {
+        ROC_econ_head_question_valid = yes
+        check_variable = { ROC_econ_head_pending_target = 1 }
+    }
 	option = {
-		name = ROC_pingheng.1001.a 
+		name = ROC_pingheng.1001.a
+        custom_effect_tooltip = ROC_econ_head_accept_TanPingshan_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 1 } } ROC_econ_head_accept = yes } }
 	}
 	option = {
 		name = ROC_pingheng.1001.b
+        custom_effect_tooltip = ROC_econ_head_reject_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 1 } } ROC_econ_head_reject = yes } }
 
 	}
 }
@@ -1429,12 +1437,20 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-    trigger = { always = no }
+    timeout_days = 15
+    trigger = {
+        ROC_econ_head_question_valid = yes
+        check_variable = { ROC_econ_head_pending_target = 2 }
+    }
 	option = {
-		name = ROC_pingheng.1002.a 
+		name = ROC_pingheng.1002.a
+        custom_effect_tooltip = ROC_econ_head_accept_DongBiwu_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 2 } } ROC_econ_head_accept = yes } }
 	}
 	option = {
 		name = ROC_pingheng.1002.b
+        custom_effect_tooltip = ROC_econ_head_reject_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 2 } } ROC_econ_head_reject = yes } }
 
 	}
 }
@@ -1446,12 +1462,20 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-    trigger = { always = no }
+    timeout_days = 15
+    trigger = {
+        ROC_econ_head_question_valid = yes
+        check_variable = { ROC_econ_head_pending_target = 3 }
+    }
 	option = {
-		name = ROC_pingheng.1003.a 
+		name = ROC_pingheng.1003.a
+        custom_effect_tooltip = ROC_econ_head_accept_Xuqian_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 3 } } ROC_econ_head_accept = yes } }
 	}
 	option = {
 		name = ROC_pingheng.1003.b
+        custom_effect_tooltip = ROC_econ_head_reject_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 3 } } ROC_econ_head_reject = yes } }
 
 	}
 }
@@ -1463,12 +1487,20 @@ country_event = {
 
 	fire_only_once = no
 	is_triggered_only = yes
-    trigger = { always = no }
+    timeout_days = 15
+    trigger = {
+        ROC_econ_head_question_valid = yes
+        check_variable = { ROC_econ_head_pending_target = 4 }
+    }
 	option = {
-		name = ROC_pingheng.1004.a 
+		name = ROC_pingheng.1004.a
+        custom_effect_tooltip = ROC_econ_head_accept_HuangYanpei_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 4 } } ROC_econ_head_accept = yes } }
 	}
 	option = {
 		name = ROC_pingheng.1004.b
+        custom_effect_tooltip = ROC_econ_head_reject_tt
+        hidden_effect = { ROC_econ_head_refresh = yes if = { limit = { check_variable = { ROC_econ_head_pending_target = 4 } } ROC_econ_head_reject = yes } }
 
 	}
 }
@@ -2761,6 +2793,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #强化政治团结
@@ -2784,6 +2817,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #积极参政议政
@@ -2807,6 +2841,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #协助工业改造
@@ -2830,6 +2865,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #协助农业改造
@@ -2853,6 +2889,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #落实新经济法
@@ -2876,6 +2913,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #支持三三制政府
@@ -2899,6 +2937,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #基层支部合作
@@ -2922,6 +2961,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #推进跨党工作
@@ -2945,6 +2985,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #压制分裂主义
@@ -2968,6 +3009,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #配合开展群众运动
@@ -2991,6 +3033,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #强化合作宣传
@@ -3014,6 +3057,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #研讨革命理论
@@ -3037,6 +3081,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #研讨革命理论
@@ -3060,6 +3105,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = -0.02
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 #研讨革命理论
@@ -3169,6 +3215,7 @@ country_event = {
             var = ROC_VAR_youyi_base
             value = 1
 		}
+        hidden_effect = { ROC_scripted_effects_youyi = yes ROC_scripted_effects_zuoyi = yes }
 	}
 }
 country_event = { 

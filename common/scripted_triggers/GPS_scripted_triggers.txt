@@ -235,14 +235,14 @@ GPS_gov_receipts_cost_affordable = {
 	OR = {
 		AND = {
 			GPS_gov_receipts_breach = yes
-			has_political_power >= 20
+			NOT = { has_political_power < 20 }
 		}
 		AND = {
 			NOT = {
 				GPS_gov_receipts_breach = yes
 			}
 			GPS_gov_receipts_all_a = yes
-			has_political_power >= 5
+			NOT = { has_political_power < 5 }
 		}
 		AND = {
 			NOT = {
@@ -251,7 +251,7 @@ GPS_gov_receipts_cost_affordable = {
 			NOT = {
 				GPS_gov_receipts_all_a = yes
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 	}
 }
@@ -452,7 +452,7 @@ GPS_gov_contact_fee_affordable = {
 				has_country_flag = GPS_gov_tang_register_a
 				has_country_flag = GPS_gov_committee_settlement_a
 			}
-			has_political_power >= 5
+			NOT = { has_political_power < 5 }
 		}
 		AND = {
 			NOT = {
@@ -465,7 +465,7 @@ GPS_gov_contact_fee_affordable = {
 				has_country_flag = GPS_gov_tang_register_b
 				has_country_flag = GPS_gov_committee_settlement_b
 			}
-			has_political_power >= 10
+			NOT = { has_political_power < 10 }
 		}
 		AND = {
 			NOT = {
@@ -480,7 +480,7 @@ GPS_gov_contact_fee_affordable = {
 					has_country_flag = GPS_gov_committee_settlement_b
 				}
 			}
-			has_political_power >= 15
+			NOT = { has_political_power < 15 }
 		}
 	}
 }

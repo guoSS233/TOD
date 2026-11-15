@@ -28,6 +28,9 @@ defined_text = {
 		}
 		localization_key = loc_ROC_idea_HuangYanpei
 	}
+    text = { trigger = { has_idea = ROC_idea_YangMingzhai } localization_key = ROC_idea_YangMingzhai }
+    text = { trigger = { has_idea = ROC_idea_TaoXingzhi } localization_key = ROC_idea_TaoXingzhi }
+    text = { trigger = { always = yes } localization_key = ROC_econ_head_unknown }
 }
 defined_text = {
 	name = ROC_economy_minister_loc
@@ -461,6 +464,7 @@ defined_text = {
 
 defined_text = {
 	name = ROC_econ_gui_head_status
+    text = { trigger = { has_country_flag = ROC_econ_head_pending } localization_key = ROC_econ_gui_head_pending }
 	text = { trigger = { check_variable = { var = ROC_econ_head_mismatch_days value = 90 compare = greater_than_or_equals } } localization_key = ROC_econ_gui_head_crisis }
 	text = {
 		trigger = {

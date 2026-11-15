@@ -983,9 +983,7 @@
 		available = {
 		}
 		completion_reward = {
-			add_to_variable = {
-				GPS_kaifuyitongsansi_buqiang = -0.15
-			}
+			add_ideas = GPS_shengchanjunshihua_policy
 			add_stability = -0.05
 			custom_effect_tooltip = GPS_shengchanjunshihua_xiaoguo
 		}
@@ -1319,7 +1317,7 @@
 		completion_reward = {
 			add_war_support = -0.1
 			add_to_variable = {
-				conscription_factor = 0.2
+				GPS_fengzhaojiaofei = 0.2
 			}
 			custom_effect_tooltip = GPS_dongyuanyubeiyi_xiaoguo
 			country_event = {
@@ -1687,7 +1685,7 @@
 				GPS_junshiguanli_zhengzhi = -0.1
 			}
 			country_event = {
-				id = GPSevents.33
+				id = GPSevents.34
 			}
 			custom_effect_tooltip = GPS_zhongquanchuji_xiaoguo
 		}
@@ -1969,9 +1967,6 @@
 				GPS_diguogongyexinzang_gongye = 0.1
 			}
 			custom_effect_tooltip = GPS_baozhangguoqiliyi_xiaoguo
-			country_event = {
-				id = GPSevents.58
-			}
 		}
 	}
 	#密会交通系
@@ -1997,6 +1992,9 @@
 		}
 		completion_reward = {
 			add_war_support = 0.1
+			country_event = {
+				id = GPSevents.58
+			}
 		}
 	}
 	#赋予国铁特权
@@ -2157,7 +2155,10 @@
 		available_if_capitulated = no
 		cost = 6
 		available = {
-			has_country_flag = GPS_chaoxianzhichi
+			custom_trigger_tooltip = {
+				tooltip = GPS_chaoxianzhichi
+				hidden_trigger = { has_country_flag = GPS_chaoxianzhichi }
+			}
 		}
 		completion_reward = {
 			country_event = {
@@ -2182,7 +2183,10 @@
 		available_if_capitulated = no
 		cost = 6
 		available = {
-			has_country_flag = GPS_xiayizhichi
+			custom_trigger_tooltip = {
+				tooltip = GPS_xiayizhichi
+				hidden_trigger = { has_country_flag = GPS_xiayizhichi }
+			}
 		}
 		completion_reward = {
 			country_event = {

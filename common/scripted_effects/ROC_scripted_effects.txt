@@ -230,6 +230,8 @@ ROC_scripted_effects_sanpai_time = {
         value = ROC_sanpai_time_minister_zuo_var
     }
 
+    add_to_variable = { var = ROC_zuopai_time_var value = ROC_sanpai_time_bop_zuo_var }
+
     set_variable = {
         ROC_youpai_time_var = ROC_sanpai_time_base_var
     }
@@ -241,6 +243,8 @@ ROC_scripted_effects_sanpai_time = {
         var = ROC_youpai_time_var
         value = ROC_sanpai_time_minister_you_var
     }
+
+    add_to_variable = { var = ROC_youpai_time_var value = ROC_sanpai_time_bop_you_var }
 
     set_variable = {
         ROC_zhongpai_time_var = ROC_sanpai_time_base_var
@@ -459,11 +463,6 @@ ROC_ce_retire_bop = {
     clr_country_flag = ROC_flag_bop_ziyou_1
     clr_country_flag = ROC_flag_bop_ziyou_2
     clr_country_flag = ROC_flag_bop_ziyou_3
-    set_variable = { ROC_sanpai_time_bop_zuo_var = 0 }
-    set_variable = { ROC_sanpai_time_bop_you_var = 0 }
-    set_variable = { ROC_econ_head_target = 0 }
-    set_variable = { ROC_econ_head_previous_target = 0 }
-    set_variable = { ROC_econ_head_mismatch_days = 0 }
     # Reassert ordinary modifiers after any legacy native deactivation callback.
     ROC_ce_policy_refresh = yes
 }
@@ -1699,6 +1698,7 @@ ROC_committee_clear = {
 }
 
 ROC_committee_daily = {
+    ROC_committee_refresh_timing = yes
     ROC_committee_refresh_progress = yes
     clamp_variable = { var = ROC_committee_radicalization min = 0 max = 100 }
     if = {
@@ -1940,7 +1940,137 @@ ROC_econ_refresh = {
     clamp_variable = { var = ROC_econ_axis_frame min = 0 max = 100 }
 }
 
-ROC_econ_head_daily = { set_variable = { ROC_econ_head_target = 0 } set_variable = { ROC_econ_head_mismatch_days = 0 } }
+ROC_committee_refresh_timing = {
+    hidden_effect = {
+        set_variable = { ROC_ce_timing_war = 0 }
+        set_variable = { ROC_ce_timing_left = 0 }
+        set_variable = { ROC_ce_timing_center = 0 }
+        set_variable = { ROC_ce_timing_right = 0 }
+        set_variable = { ROC_ce_timing_axis_left = 0 }
+        set_variable = { ROC_ce_timing_axis_right = 0 }
+        if = {
+            limit = { ROC_econ_race_active = yes }
+            if = { limit = { has_war = yes } set_variable = { ROC_ce_timing_war = 50 } }
+            if = { limit = { has_idea = ROC_idea_DongBiwu } set_variable = { ROC_ce_timing_left = 25 } }
+            else_if = { limit = { has_idea = ROC_idea_TanPingshan } set_variable = { ROC_ce_timing_left = 5 } set_variable = { ROC_ce_timing_center = -15 } }
+            else_if = { limit = { has_idea = ROC_idea_Xuqian } set_variable = { ROC_ce_timing_center = -15 } set_variable = { ROC_ce_timing_right = 5 } }
+            else_if = { limit = { has_idea = ROC_idea_HuangYanpei } set_variable = { ROC_ce_timing_right = 25 } }
+            set_variable = { ROC_ce_timing_axis_left = ROC_ce_policy_tier }
+            multiply_variable = { var = ROC_ce_timing_axis_left value = 5 }
+            set_variable = { ROC_ce_timing_axis_right = ROC_ce_timing_axis_left }
+            multiply_variable = { var = ROC_ce_timing_axis_right value = -1 }
+        }
+        set_variable = { ROC_ce_timing_delta = ROC_ce_timing_left }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_minister_zuo_var }
+        add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_war }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_war_var }
+        add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_axis_left }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_bop_zuo_var }
+        if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zuopai } add_days_mission_timeout = { mission = ROC_decision_zuopai days = ROC_ce_timing_delta } }
+        set_variable = { ROC_sanpai_time_minister_zuo_var = ROC_ce_timing_left }
+        set_variable = { ROC_ce_timing_delta = ROC_ce_timing_center }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_minister_zhong_var }
+        add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_war }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_war_var }
+        if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zhongpai } add_days_mission_timeout = { mission = ROC_decision_zhongpai days = ROC_ce_timing_delta } }
+        set_variable = { ROC_sanpai_time_minister_zhong_var = ROC_ce_timing_center }
+        set_variable = { ROC_ce_timing_delta = ROC_ce_timing_right }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_minister_you_var }
+        add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_war }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_war_var }
+        add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_axis_right }
+        subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_bop_you_var }
+        if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_youpai } add_days_mission_timeout = { mission = ROC_decision_youpai days = ROC_ce_timing_delta } }
+        set_variable = { ROC_sanpai_time_minister_you_var = ROC_ce_timing_right }
+        set_variable = { ROC_sanpai_time_war_var = ROC_ce_timing_war }
+        set_variable = { ROC_sanpai_time_bop_zuo_var = ROC_ce_timing_axis_left }
+        set_variable = { ROC_sanpai_time_bop_you_var = ROC_ce_timing_axis_right }
+        ROC_scripted_effects_sanpai_time = yes
+    }
+}
+
+# Government head observation is independent of economic minister / term ownership.
+ROC_econ_head_refresh = {
+    set_variable = { ROC_econ_head_target = 0 }
+    if = { limit = { check_variable = { var = ROC_ce_policy_axis value = 50 compare = greater_than_or_equals } } set_variable = { ROC_econ_head_target = 2 } }
+    else_if = { limit = { check_variable = { ROC_ce_policy_axis > 0 } } set_variable = { ROC_econ_head_target = 1 } }
+    else_if = { limit = { check_variable = { var = ROC_ce_policy_axis value = -50 compare = less_than_or_equals } } set_variable = { ROC_econ_head_target = 4 } }
+    else_if = { limit = { check_variable = { ROC_ce_policy_axis < 0 } } set_variable = { ROC_econ_head_target = 3 } }
+    set_variable = { ROC_econ_head_current = 0 }
+    if = { limit = { has_idea = ROC_idea_TanPingshan } set_variable = { ROC_econ_head_current = 1 } }
+    else_if = { limit = { has_idea = ROC_idea_DongBiwu } set_variable = { ROC_econ_head_current = 2 } }
+    else_if = { limit = { has_idea = ROC_idea_Xuqian } set_variable = { ROC_econ_head_current = 3 } }
+    else_if = { limit = { has_idea = ROC_idea_HuangYanpei } set_variable = { ROC_econ_head_current = 4 } }
+}
+
+ROC_econ_head_daily = {
+    hidden_effect = {
+        ROC_econ_head_refresh = yes
+        if = {
+            limit = {
+                ROC_econ_head_observation_active = yes
+                NOT = { has_country_flag = ROC_pingheng_head_cooldown }
+                NOT = { has_country_flag = ROC_pingheng_economy_minister }
+                NOT = { has_country_flag = ROC_econ_head_pending }
+            }
+            if = {
+                limit = {
+                    OR = {
+                        NOT = { check_variable = { var = ROC_econ_head_target value = ROC_econ_head_previous_target compare = equals } }
+                        NOT = { check_variable = { var = ROC_econ_head_current value = ROC_econ_head_previous_current compare = equals } }
+                    }
+                }
+                set_variable = { ROC_econ_head_mismatch_days = 0 }
+            }
+            add_to_variable = { var = ROC_econ_head_mismatch_days value = 1 }
+            if = {
+                limit = { check_variable = { var = ROC_econ_head_mismatch_days value = 90 compare = greater_than_or_equals } }
+                set_variable = { ROC_econ_head_mismatch_days = 90 }
+                set_variable = { ROC_econ_head_pending_target = ROC_econ_head_target }
+                set_variable = { ROC_econ_head_pending_current = ROC_econ_head_current }
+                set_country_flag = { flag = ROC_econ_head_pending days = 14 }
+                set_country_flag = { flag = ROC_pingheng_head_cooldown days = 360 }
+                if = { limit = { check_variable = { ROC_econ_head_target = 1 } } country_event = { id = ROC_pingheng.1001 } }
+                else_if = { limit = { check_variable = { ROC_econ_head_target = 2 } } country_event = { id = ROC_pingheng.1002 } }
+                else_if = { limit = { check_variable = { ROC_econ_head_target = 3 } } country_event = { id = ROC_pingheng.1003 } }
+                else_if = { limit = { check_variable = { ROC_econ_head_target = 4 } } country_event = { id = ROC_pingheng.1004 } }
+            }
+        }
+        else = {
+            set_variable = { ROC_econ_head_mismatch_days = 0 }
+            if = { limit = { NOT = { ROC_econ_head_question_valid = yes } } clr_country_flag = ROC_econ_head_pending }
+        }
+        set_variable = { ROC_econ_head_previous_target = ROC_econ_head_target }
+        set_variable = { ROC_econ_head_previous_current = ROC_econ_head_current }
+    }
+}
+
+ROC_econ_head_accept = {
+    hidden_effect = {
+        ROC_econ_head_refresh = yes
+        if = {
+            limit = { ROC_econ_head_question_valid = yes }
+            remove_ideas = ROC_idea_TanPingshan
+            remove_ideas = ROC_idea_DongBiwu
+            remove_ideas = ROC_idea_Xuqian
+            remove_ideas = ROC_idea_HuangYanpei
+            if = { limit = { check_variable = { ROC_econ_head_target = 1 } } add_ideas = ROC_idea_TanPingshan }
+            else_if = { limit = { check_variable = { ROC_econ_head_target = 2 } } add_ideas = ROC_idea_DongBiwu }
+            else_if = { limit = { check_variable = { ROC_econ_head_target = 3 } } add_ideas = ROC_idea_Xuqian }
+            else_if = { limit = { check_variable = { ROC_econ_head_target = 4 } } add_ideas = ROC_idea_HuangYanpei }
+            clr_country_flag = ROC_econ_head_pending
+            set_variable = { ROC_econ_head_mismatch_days = 0 }
+            ROC_committee_refresh_timing = yes
+        }
+    }
+}
+
+ROC_econ_head_reject = {
+    hidden_effect = {
+        ROC_econ_head_refresh = yes
+        if = { limit = { ROC_econ_head_question_valid = yes } add_stability = -0.05 clr_country_flag = ROC_econ_head_pending set_variable = { ROC_econ_head_mismatch_days = 0 } }
+    }
+}
 
 ROC_econ_building_contribution = {
     if = {
@@ -2063,7 +2193,8 @@ ROC_ce_policy_initialize = {
         limit = { country_exists = ROC original_tag = ROC }
         if = {
             limit = { NOT = { has_country_flag = ROC_ce_policy_migrated } }
-            set_variable = { ROC_ce_policy_axis = 0 }
+            # An already migrated ordinary axis survives even when the old marker is absent.
+            add_to_variable = { var = ROC_ce_policy_axis value = 0 }
             if = {
                 limit = { has_power_balance = { id = ROC_power_balance } }
                 # Capture before ROC_ce_retire_bop removes the saved native value.
@@ -2150,6 +2281,7 @@ ROC_ce_policy_refresh = {
         if = { limit = { check_variable = { ROC_ce_policy_tier = -3 } } set_variable = { VAR_ROC_jianshe_days_factor = 1.5 } }
         if = { limit = { check_variable = { ROC_ce_policy_tier = 3 } } set_variable = { VAR_ROC_jianshe_pp_factor = 1.5 } }
         ROC_scripted_effects_jianshe = yes
+        if = { limit = { NOT = { has_power_balance = { id = ROC_power_balance } } } ROC_committee_refresh_timing = yes }
     }
     else = {
         ROC_ce_policy_remove_ideas = yes
@@ -2339,6 +2471,23 @@ ROC_ce_policy_reconcile_020 = {
         clamp_variable = { var = ROC_ce_policy_reconcile_delta min = -2 max = 2 }
         add_to_variable = { var = ROC_ce_policy_pending value = ROC_ce_policy_reconcile_delta }
         clamp_variable = { var = ROC_ce_policy_pending min = -30 max = 30 }
+    }
+}
+
+ROC_ce_policy_reconcile_150 = {
+    custom_effect_tooltip = ROC_ce_policy_reconcile_150_tt
+    hidden_effect = {
+        ROC_ce_policy_initialize = yes
+        if = {
+            limit = { country_exists = ROC ROC_ce_administration_active = yes OR = { check_variable = { ROC_ce_policy_axis > 15 } check_variable = { ROC_ce_policy_axis < -15 } } }
+            set_variable = { ROC_ce_policy_reconcile_delta = ROC_ce_policy_axis }
+            add_to_variable = { var = ROC_ce_policy_reconcile_delta value = ROC_ce_policy_pending }
+            add_to_variable = { var = ROC_ce_policy_reconcile_delta value = ROC_ma_policy_pending }
+            multiply_variable = { var = ROC_ce_policy_reconcile_delta value = -1 }
+            clamp_variable = { var = ROC_ce_policy_reconcile_delta min = -15 max = 15 }
+            add_to_variable = { var = ROC_ce_policy_pending value = ROC_ce_policy_reconcile_delta }
+            clamp_variable = { var = ROC_ce_policy_pending min = -30 max = 30 }
+        }
     }
 }
 
@@ -3933,6 +4082,7 @@ ROC_ma_daily = {
 
 # Both native focus callbacks and explicit fallback use the same one-time reward guards.
 ROC_ma_finish_action = {
+    set_country_flag = ROC_ma_rewarding_current
     ROC_ma_clear_event_windows = yes
     ROC_ma_story_clear = yes
     if = {
@@ -4445,6 +4595,7 @@ ROC_ma_finish_action = {
         set_variable = { ROC_ma_xiao_days = ROC_ma_days_remaining }
         if = { limit = { check_variable = { ROC_ma_stage = 4 } } ROC_ma_open_xiao_2 = yes }
     }
+    clr_country_flag = ROC_ma_rewarding_current
 }
 
 # Exact excess credit crosses stages and subsequent 90-day execution cycles.
@@ -4624,7 +4775,7 @@ ROC_ma_reward_yu_1 = {
             }
             set_country_flag = ROC_ma_rewarded_yu_1
             add_to_variable = { var = ROC_ce_actual value = 20 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 1 } } } ROC_ma_yu_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 1 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 1 } check_variable = { ROC_ce_minister_profile_id = 1 } has_idea = ROC_idea_YuShude } } } ROC_ma_yu_direction = yes }
             ROC_ma_yu_project = yes
             set_country_flag = ROC_ce_transport_unlocked
         }
@@ -4640,7 +4791,7 @@ ROC_ma_reward_yu_2 = {
             }
             set_country_flag = ROC_ma_rewarded_yu_2
             add_to_variable = { var = ROC_ce_actual value = 35 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 1 } } } ROC_ma_yu_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 1 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 1 } check_variable = { ROC_ce_minister_profile_id = 1 } has_idea = ROC_idea_YuShude } } } ROC_ma_yu_direction = yes }
             ROC_ma_yu_project = yes
             set_country_flag = ROC_ce_industry_unlocked
             set_country_flag = ROC_ce_agriculture_unlocked
@@ -4657,7 +4808,7 @@ ROC_ma_reward_yu_3 = {
             }
             set_country_flag = ROC_ma_rewarded_yu_3
             add_to_variable = { var = ROC_ce_actual value = 45 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 1 } } } ROC_ma_yu_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 1 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 1 } check_variable = { ROC_ce_minister_profile_id = 1 } has_idea = ROC_idea_YuShude } } } ROC_ma_yu_direction = yes }
             ROC_ma_yu_project = yes
         }
     }
@@ -4672,7 +4823,7 @@ ROC_ma_reward_yan_1 = {
             }
             set_country_flag = ROC_ma_rewarded_yan_1
             add_to_variable = { var = ROC_ce_actual value = 20 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 2 } } } ROC_ma_yan_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 2 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 2 } check_variable = { ROC_ce_minister_profile_id = 2 } has_idea = ROC_idea_YanYangchu } } } ROC_ma_yan_direction = yes }
             ROC_ma_yan_project = yes
             set_country_flag = ROC_ce_transport_unlocked
         }
@@ -4688,7 +4839,7 @@ ROC_ma_reward_yan_2 = {
             }
             set_country_flag = ROC_ma_rewarded_yan_2
             add_to_variable = { var = ROC_ce_actual value = 35 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 2 } } } ROC_ma_yan_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 2 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 2 } check_variable = { ROC_ce_minister_profile_id = 2 } has_idea = ROC_idea_YanYangchu } } } ROC_ma_yan_direction = yes }
             ROC_ma_yan_project = yes
             set_country_flag = ROC_ce_industry_unlocked
             set_country_flag = ROC_ce_agriculture_unlocked
@@ -4705,7 +4856,7 @@ ROC_ma_reward_yan_3 = {
             }
             set_country_flag = ROC_ma_rewarded_yan_3
             add_to_variable = { var = ROC_ce_actual value = 45 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 2 } } } ROC_ma_yan_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 2 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 2 } check_variable = { ROC_ce_minister_profile_id = 2 } has_idea = ROC_idea_YanYangchu } } } ROC_ma_yan_direction = yes }
             ROC_ma_yan_project = yes
         }
     }
@@ -4720,7 +4871,7 @@ ROC_ma_reward_ruan_1 = {
             }
             set_country_flag = ROC_ma_rewarded_ruan_1
             add_to_variable = { var = ROC_ce_actual value = 20 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 3 } } } ROC_ma_ruan_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 3 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 3 } check_variable = { ROC_ce_minister_profile_id = 3 } has_idea = ROC_idea_RuanXiaoxian } } } ROC_ma_ruan_direction = yes }
             ROC_ma_ruan_project = yes
             set_country_flag = ROC_ce_transport_unlocked
         }
@@ -4736,7 +4887,7 @@ ROC_ma_reward_ruan_2 = {
             }
             set_country_flag = ROC_ma_rewarded_ruan_2
             add_to_variable = { var = ROC_ce_actual value = 35 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 3 } } } ROC_ma_ruan_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 3 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 3 } check_variable = { ROC_ce_minister_profile_id = 3 } has_idea = ROC_idea_RuanXiaoxian } } } ROC_ma_ruan_direction = yes }
             ROC_ma_ruan_project = yes
             set_country_flag = ROC_ce_industry_unlocked
             set_country_flag = ROC_ce_agriculture_unlocked
@@ -4753,7 +4904,7 @@ ROC_ma_reward_ruan_3 = {
             }
             set_country_flag = ROC_ma_rewarded_ruan_3
             add_to_variable = { var = ROC_ce_actual value = 45 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 3 } } } ROC_ma_ruan_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 3 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 3 } check_variable = { ROC_ce_minister_profile_id = 3 } has_idea = ROC_idea_RuanXiaoxian } } } ROC_ma_ruan_direction = yes }
             ROC_ma_ruan_project = yes
         }
     }
@@ -4768,7 +4919,7 @@ ROC_ma_reward_chen_1 = {
             }
             set_country_flag = ROC_ma_rewarded_chen_1
             add_to_variable = { var = ROC_ce_actual value = 20 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 4 } } } ROC_ma_chen_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 4 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 4 } check_variable = { ROC_ce_minister_profile_id = 4 } has_idea = ROC_idea_ChenZanxian } } } ROC_ma_chen_direction = yes }
             ROC_ma_chen_project = yes
             set_country_flag = ROC_ce_transport_unlocked
         }
@@ -4784,7 +4935,7 @@ ROC_ma_reward_chen_2 = {
             }
             set_country_flag = ROC_ma_rewarded_chen_2
             add_to_variable = { var = ROC_ce_actual value = 35 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 4 } } } ROC_ma_chen_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 4 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 4 } check_variable = { ROC_ce_minister_profile_id = 4 } has_idea = ROC_idea_ChenZanxian } } } ROC_ma_chen_direction = yes }
             ROC_ma_chen_project = yes
             set_country_flag = ROC_ce_industry_unlocked
             set_country_flag = ROC_ce_agriculture_unlocked
@@ -4801,7 +4952,7 @@ ROC_ma_reward_chen_3 = {
             }
             set_country_flag = ROC_ma_rewarded_chen_3
             add_to_variable = { var = ROC_ce_actual value = 45 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 4 } } } ROC_ma_chen_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 4 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 4 } check_variable = { ROC_ce_minister_profile_id = 4 } has_idea = ROC_idea_ChenZanxian } } } ROC_ma_chen_direction = yes }
             ROC_ma_chen_project = yes
         }
     }
@@ -4816,7 +4967,7 @@ ROC_ma_reward_xiao_1 = {
             }
             set_country_flag = ROC_ma_rewarded_xiao_1
             add_to_variable = { var = ROC_ce_actual value = 20 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 5 } } } ROC_ma_xiao_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 5 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 5 } check_variable = { ROC_ce_minister_profile_id = 5 } has_idea = ROC_idea_XiaoZheng } } } ROC_ma_xiao_direction = yes }
             ROC_ma_xiao_project = yes
             set_country_flag = ROC_ce_transport_unlocked
         }
@@ -4832,7 +4983,7 @@ ROC_ma_reward_xiao_2 = {
             }
             set_country_flag = ROC_ma_rewarded_xiao_2
             add_to_variable = { var = ROC_ce_actual value = 35 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 5 } } } ROC_ma_xiao_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 5 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 5 } check_variable = { ROC_ce_minister_profile_id = 5 } has_idea = ROC_idea_XiaoZheng } } } ROC_ma_xiao_direction = yes }
             ROC_ma_xiao_project = yes
             set_country_flag = ROC_ce_industry_unlocked
             set_country_flag = ROC_ce_agriculture_unlocked
@@ -4849,7 +5000,7 @@ ROC_ma_reward_xiao_3 = {
             }
             set_country_flag = ROC_ma_rewarded_xiao_3
             add_to_variable = { var = ROC_ce_actual value = 45 }
-            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 5 } } } ROC_ma_xiao_direction = yes }
+            if = { limit = { OR = { check_variable = { ROC_ma_policy_owner = 0 } check_variable = { ROC_ma_policy_owner = 5 } AND = { has_country_flag = ROC_ma_rewarding_current check_variable = { ROC_ma_clock_owner = 5 } check_variable = { ROC_ce_minister_profile_id = 5 } has_idea = ROC_idea_XiaoZheng } } } ROC_ma_xiao_direction = yes }
             ROC_ma_xiao_project = yes
         }
     }
