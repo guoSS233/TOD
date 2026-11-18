@@ -40,7 +40,7 @@ class EconomicStructure(unittest.TestCase):
             s.flags.add('ROC_ce_policy_migrated');s.ideas.update(IDEAS)
             s.effect('ROC_ce_policy_refresh')
             self.assertEqual(s.vars['ROC_ce_policy_tier'],tier,axis)
-            self.assertAlmostEqual(s.vars['ROC_ce_policy_frame'],(axis+100)/2)
+            self.assertEqual(s.vars['ROC_ce_policy_needle_x'],round(245 + axis * 1.75))
             expected='ROC_ce_structure_mixed' if tier==0 else f"ROC_ce_structure_{'market' if tier<0 else 'public'}_{abs(tier)}"
             self.assertEqual(s.ideas & IDEAS,{expected})
 

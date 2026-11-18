@@ -75,6 +75,8 @@ class ScriptState:
             elif key == 'has_power_balance':
                 assert value == [('id', 'ROC_power_balance')]
                 ok = self.bop
+            elif key == 'has_variable':
+                ok = value in self.vars
             elif key == 'check_variable':
                 d = dict(value)
                 if 'var' in d:

@@ -2,13 +2,12 @@ guiTypes = {
 	containerWindowType = {
 		name = "ROC_central_economy_window"
 		position = { x = 0 y = 0 }
-		size = { width = 500 height = 570 }
+		size = { width = 500 height = 630 }
 		background = { name = "ROC_decor_background" quadTextureSprite = "GFX_welcome_bg" alwaystransparent = yes }
 		containerWindowType = {
 			name = "ROC_decor_panel"
 			position = { x = 20 y = 42 }
-			size = { width = 460 height = 518 }
-			alwaystransparent = yes
+			size = { width = 460 height = 578 }
 			background = { name = "ROC_decor_frame" quadTextureSprite = "GFX_BusinessHub_view_button_background_2" alwaystransparent = yes }
 		}
 		instantTextBoxType = {
@@ -67,9 +66,25 @@ guiTypes = {
 			maxHeight = 40
 			format = left
 		}
+		iconType = {
+			name = "ROC_ce_gui_current_action_bar"
+			position = { x = 50 y = 224 }
+			spriteType = "GFX_ROC_econ_action_progress"
+			scale = 4
+			alwaystransparent = yes
+		}
+		instantTextBoxType = {
+			name = "ROC_ce_gui_current_action_percent"
+			position = { x = 374 y = 220 }
+			font = "hoi_16mbs"
+			text = "ROC_ce_gui_current_action_percent"
+			maxWidth = 76
+			maxHeight = 20
+			format = right
+		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_performance"
-			position = { x = 50 y = 222 }
+			position = { x = 50 y = 240 }
 			font = "hoi_16mbs"
 			text = "[ROOT.ROC_ce_performance_text]"
 			maxWidth = 400
@@ -79,7 +94,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_project_name"
-			position = { x = 50 y = 244 }
+			position = { x = 50 y = 262 }
 			font = "hoi_16mbs"
 			text = "ROC_ce_gui_project_name"
 			maxWidth = 400
@@ -89,7 +104,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_project_status"
-			position = { x = 50 y = 266 }
+			position = { x = 50 y = 284 }
 			font = "hoi_16mbs"
 			text = "ROC_ce_gui_project_status"
 			maxWidth = 400
@@ -98,7 +113,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_project_progress"
-			position = { x = 50 y = 306 }
+			position = { x = 50 y = 324 }
 			font = "hoi_16mbs"
 			text = "[ROOT.ROC_ce_project_progress_text]"
 			maxWidth = 400
@@ -107,7 +122,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_policy_axis"
-			position = { x = 50 y = 328 }
+			position = { x = 50 y = 346 }
 			font = "hoi_16mbs"
 			text = "[ROOT.ROC_ce_policy_status]"
 			maxWidth = 400
@@ -115,9 +130,29 @@ guiTypes = {
 			format = left
 			pdx_tooltip = "ROC_ce_structure_tiers_tt"
 		}
+		iconType = {
+			name = "ROC_ce_gui_policy_axis_track"
+			position = { x = 70 y = 368 }
+			spriteType = "GFX_bop_bar_bg"
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "ROC_ce_gui_policy_axis_midpoint"
+			position = { x = 248 y = 369 }
+			spriteType = "GFX_bop_splitter"
+			scale = 0.5
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "ROC_ce_gui_policy_axis_needle"
+			position = { x = 0 y = 368 }
+			spriteType = "GFX_bop_needle"
+			scale = 0.5
+			alwaystransparent = yes
+		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_policy_route"
-			position = { x = 50 y = 350 }
+			position = { x = 50 y = 386 }
 			font = "hoi_16mbs"
 			text = "ROC_ce_gui_policy_route"
 			maxWidth = 400
@@ -125,14 +160,9 @@ guiTypes = {
 			format = left
 			pdx_tooltip = "ROC_ce_policy_queues_tt"
 		}
-		iconType = {
-			name = "ROC_ce_gui_policy_axis_bar"
-			position = { x = 50 y = 372 }
-			spriteType = "GFX_ROC_econ_progressbar"
-		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_policy_effects"
-			position = { x = 50 y = 384 }
+			position = { x = 50 y = 408 }
 			font = "hoi_16mbs"
 			text = "[ROOT.ROC_ce_policy_effect_summary]"
 			maxWidth = 400
@@ -142,7 +172,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_parties_heading"
-			position = { x = 50 y = 426 }
+			position = { x = 50 y = 450 }
 			font = "hoi_16mbs"
 			text = "ROC_ce_gui_parties_heading"
 			maxWidth = 400
@@ -151,7 +181,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_left_favor"
-			position = { x = 50 y = 446 }
+			position = { x = 50 y = 470 }
 			font = "hoi_16mbs"
 			text = "[ROOT.ROC_ce_left_favor_text]"
 			maxWidth = 400
@@ -160,7 +190,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_center_favor"
-			position = { x = 50 y = 466 }
+			position = { x = 50 y = 490 }
 			font = "hoi_16mbs"
 			text = "[ROOT.ROC_ce_center_favor_text]"
 			maxWidth = 400
@@ -169,7 +199,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_right_favor"
-			position = { x = 50 y = 486 }
+			position = { x = 50 y = 510 }
 			font = "hoi_16mbs"
 			text = "[ROOT.ROC_ce_right_favor_text]"
 			maxWidth = 400
@@ -178,7 +208,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "ROC_ce_gui_committee_heading"
-			position = { x = 50 y = 510 }
+			position = { x = 50 y = 534 }
 			font = "hoi_16mbs"
 			text = "ROC_ce_gui_committee_heading"
 			maxWidth = 400
@@ -186,15 +216,15 @@ guiTypes = {
 			format = left
 			pdx_tooltip = "ROC_ma_committee_link_tt"
 		}
-        instantTextBoxType = {
-            name = "ROC_ce_gui_head"
-            position = { x = 50 y = 534 }
-            font = "hoi_16mbs"
-            text = "ROC_ce_gui_head"
-            maxWidth = 400
-            maxHeight = 20
-            format = left
-            pdx_tooltip = "ROC_econ_head_rules_tt"
-        }
+		instantTextBoxType = {
+			name = "ROC_ce_gui_head"
+			position = { x = 50 y = 558 }
+			font = "hoi_16mbs"
+			text = "ROC_ce_gui_head"
+			maxWidth = 400
+			maxHeight = 40
+			format = left
+			pdx_tooltip = "ROC_econ_head_rules_tt"
+		}
 	}
 }

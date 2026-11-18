@@ -9,7 +9,7 @@ class MinisterStoriesRuntime(unittest.TestCase):
     def setUp(self):
         self.agenda = agenda_runtime.MinisterAgendaRuntime()
 
-    def story_options(self, event_id):
+    def story_event(self, event_id):
         path = ROOT / 'events/ROC_ma_story.txt'
         self.assertTrue(path.exists(), 'story events are not defined')
         if not hasattr(type(self), '_story_events'):
@@ -17,8 +17,11 @@ class MinisterStoriesRuntime(unittest.TestCase):
                 one(event, 'id'): event for key, event in read_script(str(path))
                 if key == 'country_event'
             }
-        event = type(self)._story_events[f'ROC_ma_story.{event_id}']
-        return {one(option, 'name'): option for key, option in event if key == 'option'}
+        return type(self)._story_events[f'ROC_ma_story.{event_id}']
+
+    def story_options(self, event_id):
+        return {one(option, 'name'): option for key, option in self.story_event(event_id)
+                if key == 'option'}
 
     def story_state(self, event_id):
         ministers = ('YuShude', 'YanYangchu', 'RuanXiaoxian', 'ChenZanxian', 'XiaoZheng')
@@ -126,7 +129,15 @@ class MinisterStoriesRuntime(unittest.TestCase):
                                'ROC_minister_agenda.12')
         self.assertTrue(state.passes(one(existing, 'trigger')))
 
-    def test_simultaneous_term_expiry_queues_old_ministers_story_once(self):
+    def test_skip_over_stage_four_does_not_open_its_intervention_window(self):
+        state = self.agenda.state()
+        self.agenda.credit(state, 4 * 180)
+        self.assertEqual(state.vars['ROC_ma_stage'], 5)
+        self.assertIn('ROC_ma_story.104', state.events)
+        self.assertNotIn('ROC_minister_agenda.12', state.events)
+        self.assertNotIn('ROC_ma_yu_2_pending', state.flags)
+
+    def test_simultaneous_term_expiry_settles_without_queuing_old_story(self):
         for first in ('ROC_ma_timeout', 'ROC_econ_term_expired'):
             for remove_first in (False, True):
                 with self.subTest(first=first, remove_first=remove_first):
@@ -142,7 +153,9 @@ class MinisterStoriesRuntime(unittest.TestCase):
                     state.effect(first)
                     state.effect(second)
                     state.effect('ROC_ma_timeout')
-                    self.assertEqual(state.events.count('ROC_ma_story.106'), 1)
+                    self.assertNotIn('ROC_ma_story.106', state.events)
+                    self.assertIn('ROC_ma_yu_step6', state.focuses)
+                    self.assertEqual(state.vars['ROC_ce_actual'], 5)
                     self.assertNotIn('ROC_ma_story_pending', state.flags)
 
     def test_crossing_multiple_stages_leaves_only_the_latest_window(self):
@@ -150,10 +163,23 @@ class MinisterStoriesRuntime(unittest.TestCase):
         self.agenda.credit(state, 370)
         self.assertEqual([event for event in state.events
                           if event.startswith('ROC_ma_story.')],
-                         ['ROC_ma_story.101', 'ROC_ma_story.102'])
+                         ['ROC_ma_story.102'])
+        self.assertEqual(state.vars['ROC_ce_actual'], 25)
         self.assertEqual(state.vars['ROC_ma_story_active_id'], 102)
         self.assertEqual(state.vars['ROC_ma_story_next_stage'], 3)
         self.assertIn('ROC_ma_story_pending', state.flags)
+        self.assertFalse(state.passes(one(self.story_event(101), 'trigger')))
+        self.assertTrue(state.passes(one(self.story_event(102), 'trigger')))
+
+    def test_last_day_story_has_a_live_window_until_the_native_clock_hits_zero(self):
+        state = self.agenda.state()
+        state.missions['ROC_decision_bop_jingjidahui'] = 1
+        self.agenda.credit(state, 180)
+        trigger = one(self.story_event(101), 'trigger')
+        self.assertIn('ROC_ma_story.101', state.events)
+        self.assertTrue(state.passes(trigger))
+        state.missions['ROC_decision_bop_jingjidahui'] = 0
+        self.assertFalse(state.passes(trigger))
 
     def test_story_window_is_cleared_by_resignation_or_term_expiry(self):
         for end in ('ROC_econ_remove_ministers', 'ROC_econ_term_expired'):
@@ -245,6 +271,7 @@ class MinisterStoriesRuntime(unittest.TestCase):
                 event_id = minister * 100 + stage
                 with self.subTest(event=event_id):
                     state = self.story_state(event_id)
+                    self.assertTrue(state.passes(one(self.story_event(event_id), 'trigger')))
                     options = self.story_options(event_id)
                     self.assertEqual(set(options), {
                         f'ROC_ma_story.{event_id}.a', f'ROC_ma_story.{event_id}.b',
@@ -333,6 +360,7 @@ class MinisterStoriesRuntime(unittest.TestCase):
                             state.effect('ROC_econ_remove_ministers')
                             state.ideas.add('ROC_idea_' + ministers[minister % 5])
                             state.effect('ROC_econ_refresh_minister')
+                        self.assertFalse(state.passes(one(self.story_event(event_id), 'trigger')))
                         self.assertTrue(state.passes(one(options['ROC_ma_story_archive'], 'trigger')))
                         for name in ('a', 'b', 'c'):
                             option = options[f'ROC_ma_story.{event_id}.{name}']

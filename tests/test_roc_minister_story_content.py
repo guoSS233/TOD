@@ -169,22 +169,33 @@ class MinisterStoryContent(unittest.TestCase):
                 self.assertEqual(len(set(choices)), 3)
                 self.assertTrue(all(0 < len(choice) <= 22 for choice in choices))
 
-    def test_each_focus_queues_its_own_unique_story(self):
+    def test_each_focus_prepares_its_own_unique_story(self):
         script = read_script('common/scripted_effects/ROC_scripted_effects.txt')
         found = []
-        for block in walk_blocks(script):
+        for block in walk_blocks(one(script, 'ROC_ma_finish_action')):
             focus = [value for key, value in block if key == 'complete_national_focus']
-            events = [one(value, 'id') for key, value in block
-                      if key == 'country_event' and one(value, 'id').startswith('ROC_ma_story.')]
-            if focus and events:
+            stories = [one(value, 'ROC_ma_story_active_id') for key, value in block
+                       if key == 'set_variable' and 'ROC_ma_story_active_id' in dict(value)]
+            if focus and stories:
                 self.assertEqual(len(focus), 1)
-                self.assertEqual(len(events), 1)
-                found.append((focus[0], events[0]))
-        expected = {(f'ROC_ma_{slug}_{suffix}', f'ROC_ma_story.{group * 100 + stage}')
+                self.assertEqual(len(stories), 1)
+                self.assertIn(('ROC_ma_story_open', 'yes'), block)
+                found.append((focus[0], stories[0]))
+        expected = {(f'ROC_ma_{slug}_{suffix}', str(group * 100 + stage))
                     for group, slug in enumerate(SLUGS, 1)
                     for stage, suffix in enumerate(STAGES, 1)}
         self.assertEqual(len(found), 30)
         self.assertEqual(set(found), expected)
+
+        dispatched = []
+        for block in walk_blocks(one(script, 'ROC_ma_story_dispatch')):
+            for key, value in block:
+                if key != 'country_event':
+                    continue
+                selected = one(one(one(block, 'limit'), 'check_variable'), 'ROC_ma_story_active_id')
+                self.assertEqual(one(value, 'id'), f'ROC_ma_story.{selected}')
+                dispatched.append(selected)
+        self.assertCountEqual(dispatched, [event_id for _, event_id in expected])
 
     def test_tooltips_distinguish_costs_and_faction_reactions(self):
         loc, _ = read_localization()

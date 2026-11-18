@@ -581,17 +581,19 @@ ROC_ce_deliver = {
 
 ROC_ce_project_daily = {
     if = {
-        limit = { ROC_ce_current_project = yes has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } NOT = { has_country_flag = ROC_econ_resignation_pending } }
+        limit = { ROC_ce_project_running = yes }
         add_to_variable = { var = ROC_ce_project_days value = 1 }
         if = { limit = { check_variable = { ROC_ce_project_id = 3 } } add_to_variable = { var = ROC_ce_project_expected value = 0.667 } }
         else = { add_to_variable = { var = ROC_ce_project_expected value = 0.556 } }
         clamp_variable = { var = ROC_ce_project_expected min = 0 max = 100 }
         if = { limit = { check_variable = { ROC_ce_delay_days > 0 } } subtract_from_variable = { var = ROC_ce_delay_days value = 1 } }
         else = { add_to_variable = { var = ROC_ce_project_progress value = ROC_ce_speed } }
-        if = { limit = { check_variable = { var = ROC_ce_project_progress value = 25 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_1_seen } } set_country_flag = ROC_ce_event_1_seen set_country_flag = { flag = ROC_ce_event_1_pending days = 15 } country_event = { id = ROC_central_economy.1 } }
-        if = { limit = { check_variable = { var = ROC_ce_project_progress value = 50 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_4_seen } } set_country_flag = ROC_ce_event_4_seen set_country_flag = { flag = ROC_ce_event_4_pending days = 15 } country_event = { id = ROC_central_economy.4 } }
-        if = { limit = { check_variable = { var = ROC_ce_project_progress value = 75 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_3_seen } } set_country_flag = ROC_ce_event_3_seen set_country_flag = { flag = ROC_ce_event_3_pending days = 15 } country_event = { id = ROC_central_economy.3 } }
         if = { limit = { check_variable = { var = ROC_ce_project_progress value = 100 compare = greater_than_or_equals } } ROC_ce_deliver = yes }
+        else = {
+            if = { limit = { check_variable = { var = ROC_ce_project_progress value = 25 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_1_seen } } set_country_flag = ROC_ce_event_1_seen set_country_flag = { flag = ROC_ce_event_1_pending days = 15 } country_event = { id = ROC_central_economy.1 } }
+            if = { limit = { check_variable = { var = ROC_ce_project_progress value = 50 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_4_seen } } set_country_flag = ROC_ce_event_4_seen set_country_flag = { flag = ROC_ce_event_4_pending days = 15 } country_event = { id = ROC_central_economy.4 } }
+            if = { limit = { check_variable = { var = ROC_ce_project_progress value = 75 compare = greater_than_or_equals } NOT = { has_country_flag = ROC_ce_event_3_seen } } set_country_flag = ROC_ce_event_3_seen set_country_flag = { flag = ROC_ce_event_3_pending days = 15 } country_event = { id = ROC_central_economy.3 } }
+        }
     }
 }
 
@@ -620,7 +622,7 @@ ROC_ce_daily = {
     if = {
         limit = { ROC_ce_administration_active = yes }
         if = {
-            limit = { has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_conference_pending } }
+            limit = { ROC_ce_term_running = yes }
             if = { limit = { check_variable = { ROC_ce_preparation_days > 0 } } subtract_from_variable = { var = ROC_ce_preparation_days value = 1 } }
             else = { add_to_variable = { var = ROC_ce_expected value = 0.1 } clamp_variable = { var = ROC_ce_expected min = 0 max = 100 } }
             add_to_variable = { var = ROC_ce_review_days value = 1 }
@@ -630,7 +632,7 @@ ROC_ce_daily = {
         ROC_ce_project_daily = yes
         if = { limit = { has_country_flag = ROC_ce_false_report NOT = { has_country_flag = ROC_ce_report_delay } NOT = { has_country_flag = ROC_ce_event_6_pending } } clr_country_flag = ROC_ce_false_report set_country_flag = { flag = ROC_ce_event_6_pending days = 15 } country_event = { id = ROC_central_economy.6 } }
         # A closed or timed-out appointment window can always recover without a new term.
-        if = { limit = { has_country_flag = ROC_econ_resignation_pending NOT = { has_country_flag = ROC_ce_appointment_open } has_active_mission = ROC_decision_bop_jingjidahui } set_country_flag = { flag = ROC_ce_appointment_open days = 15 } country_event = { id = ROC_central_economy.7 } }
+        if = { limit = { ROC_ce_term_running = yes has_country_flag = ROC_econ_resignation_pending NOT = { has_country_flag = ROC_ce_appointment_open } } set_country_flag = { flag = ROC_ce_appointment_open days = 15 } country_event = { id = ROC_central_economy.7 } }
     }
     ROC_ce_refresh = yes
 }
@@ -1835,11 +1837,11 @@ ROC_committee_discard_completed_agendas = {
     if = { limit = { check_variable = { ROC_committee_right_agenda = 15 } has_completed_focus = lunliuzuozhuang } set_variable = { ROC_committee_right_agenda = 0 } }
 }
 ROC_ma_delay_committee_left = {
-if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zuopai check_variable = { var = ROC_ma_left_favor value = 15 compare = greater_than_or_equals } } subtract_from_variable = { var = ROC_ma_left_favor value = 15 } add_days_mission_timeout = { mission = ROC_decision_zuopai days = 21 } ROC_ce_refresh = yes ROC_econ_refresh = yes }
+if = { limit = { ROC_econ_race_active = yes ROC_committee_left_clock_running = yes check_variable = { var = ROC_ma_left_favor value = 15 compare = greater_than_or_equals } } subtract_from_variable = { var = ROC_ma_left_favor value = 15 } add_days_mission_timeout = { mission = ROC_decision_zuopai days = 21 } ROC_ce_refresh = yes ROC_econ_refresh = yes }
 }
 
 ROC_ma_delay_committee_right = {
-if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_youpai check_variable = { var = ROC_ma_right_favor value = 15 compare = greater_than_or_equals } } subtract_from_variable = { var = ROC_ma_right_favor value = 15 } add_days_mission_timeout = { mission = ROC_decision_youpai days = 21 } ROC_ce_refresh = yes ROC_econ_refresh = yes }
+if = { limit = { ROC_econ_race_active = yes ROC_committee_right_clock_running = yes check_variable = { var = ROC_ma_right_favor value = 15 compare = greater_than_or_equals } } subtract_from_variable = { var = ROC_ma_right_favor value = 15 } add_days_mission_timeout = { mission = ROC_decision_youpai days = 21 } ROC_ce_refresh = yes ROC_econ_refresh = yes }
 }
 
 
@@ -1966,13 +1968,13 @@ ROC_committee_refresh_timing = {
         subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_war_var }
         add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_axis_left }
         subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_bop_zuo_var }
-        if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zuopai } add_days_mission_timeout = { mission = ROC_decision_zuopai days = ROC_ce_timing_delta } }
+        if = { limit = { ROC_econ_race_active = yes ROC_committee_left_clock_running = yes } add_days_mission_timeout = { mission = ROC_decision_zuopai days = ROC_ce_timing_delta } }
         set_variable = { ROC_sanpai_time_minister_zuo_var = ROC_ce_timing_left }
         set_variable = { ROC_ce_timing_delta = ROC_ce_timing_center }
         subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_minister_zhong_var }
         add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_war }
         subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_war_var }
-        if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zhongpai } add_days_mission_timeout = { mission = ROC_decision_zhongpai days = ROC_ce_timing_delta } }
+        if = { limit = { ROC_econ_race_active = yes ROC_committee_center_clock_running = yes } add_days_mission_timeout = { mission = ROC_decision_zhongpai days = ROC_ce_timing_delta } }
         set_variable = { ROC_sanpai_time_minister_zhong_var = ROC_ce_timing_center }
         set_variable = { ROC_ce_timing_delta = ROC_ce_timing_right }
         subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_minister_you_var }
@@ -1980,7 +1982,7 @@ ROC_committee_refresh_timing = {
         subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_war_var }
         add_to_variable = { var = ROC_ce_timing_delta value = ROC_ce_timing_axis_right }
         subtract_from_variable = { var = ROC_ce_timing_delta value = ROC_sanpai_time_bop_you_var }
-        if = { limit = { ROC_econ_race_active = yes has_active_mission = ROC_decision_youpai } add_days_mission_timeout = { mission = ROC_decision_youpai days = ROC_ce_timing_delta } }
+        if = { limit = { ROC_econ_race_active = yes ROC_committee_right_clock_running = yes } add_days_mission_timeout = { mission = ROC_decision_youpai days = ROC_ce_timing_delta } }
         set_variable = { ROC_sanpai_time_minister_you_var = ROC_ce_timing_right }
         set_variable = { ROC_sanpai_time_war_var = ROC_ce_timing_war }
         set_variable = { ROC_sanpai_time_bop_zuo_var = ROC_ce_timing_axis_left }
@@ -2081,8 +2083,8 @@ ROC_econ_building_contribution = {
     }
 }
 
-ROC_econ_public_route = { if = { limit = { has_idea = ROC_idea_XiaoZheng has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_resignation_pending } NOT = { has_country_flag = ROC_econ_conference_pending } } ROC_ce_resign = yes } }
-ROC_econ_market_route = { if = { limit = { OR = { has_idea = ROC_idea_ChenZanxian has_idea = ROC_idea_RuanXiaoxian } has_active_mission = ROC_decision_bop_jingjidahui NOT = { has_country_flag = ROC_econ_resignation_pending } NOT = { has_country_flag = ROC_econ_conference_pending } } ROC_ce_resign = yes } }
+ROC_econ_public_route = { if = { limit = { ROC_ce_term_running = yes has_idea = ROC_idea_XiaoZheng NOT = { has_country_flag = ROC_econ_resignation_pending } } ROC_ce_resign = yes } }
+ROC_econ_market_route = { if = { limit = { ROC_ce_term_running = yes OR = { has_idea = ROC_idea_ChenZanxian has_idea = ROC_idea_RuanXiaoxian } NOT = { has_country_flag = ROC_econ_resignation_pending } } ROC_ce_resign = yes } }
 
 ROC_econ_clear_term_projects = {
     ROC_bill_invalidate = yes
@@ -2229,9 +2231,11 @@ ROC_ce_policy_refresh = {
     if = {
         limit = { country_exists = ROC ROC_ce_administration_active = yes }
         clamp_variable = { var = ROC_ce_policy_axis min = -100 max = 100 }
-        set_variable = { ROC_ce_policy_frame = ROC_ce_policy_axis }
-        add_to_variable = { var = ROC_ce_policy_frame value = 100 }
-        divide_variable = { var = ROC_ce_policy_frame value = 2 }
+        # The 10px needle stays inside the 360px track at both axis limits.
+        set_variable = { ROC_ce_policy_needle_x = ROC_ce_policy_axis }
+        multiply_variable = { var = ROC_ce_policy_needle_x value = 1.75 }
+        add_to_variable = { var = ROC_ce_policy_needle_x value = 245 }
+        round_variable = ROC_ce_policy_needle_x
         clamp_variable = { var = ROC_ce_policy_pending min = -30 max = 30 }
         clamp_variable = { var = ROC_ma_policy_pending min = -30 max = 30 }
         set_variable = { ROC_ce_policy_tier = 0 }
@@ -3194,10 +3198,54 @@ ROC_ma_story_open = {
     set_variable = { ROC_ma_story_next_stage = ROC_ma_stage }
     add_to_variable = { var = ROC_ma_story_next_stage value = 1 }
     set_country_flag = { flag = ROC_ma_story_pending days = 15 }
+    set_country_flag = ROC_ma_story_unannounced
 }
 
 ROC_ma_story_clear = {
     clr_country_flag = ROC_ma_story_pending
+    clr_country_flag = ROC_ma_story_unannounced
+}
+
+# Dispatch only after the stage and clock have settled, including credit that crosses multiple stages.
+ROC_ma_story_dispatch = {
+    if = {
+        limit = { has_country_flag = ROC_ma_story_unannounced }
+        clr_country_flag = ROC_ma_story_unannounced
+        if = {
+            limit = { ROC_ma_story_is_valid = yes }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 101 } } country_event = { id = ROC_ma_story.101 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 102 } } country_event = { id = ROC_ma_story.102 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 103 } } country_event = { id = ROC_ma_story.103 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 104 } } country_event = { id = ROC_ma_story.104 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 105 } } country_event = { id = ROC_ma_story.105 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 106 } } country_event = { id = ROC_ma_story.106 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 201 } } country_event = { id = ROC_ma_story.201 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 202 } } country_event = { id = ROC_ma_story.202 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 203 } } country_event = { id = ROC_ma_story.203 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 204 } } country_event = { id = ROC_ma_story.204 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 205 } } country_event = { id = ROC_ma_story.205 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 206 } } country_event = { id = ROC_ma_story.206 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 301 } } country_event = { id = ROC_ma_story.301 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 302 } } country_event = { id = ROC_ma_story.302 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 303 } } country_event = { id = ROC_ma_story.303 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 304 } } country_event = { id = ROC_ma_story.304 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 305 } } country_event = { id = ROC_ma_story.305 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 306 } } country_event = { id = ROC_ma_story.306 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 401 } } country_event = { id = ROC_ma_story.401 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 402 } } country_event = { id = ROC_ma_story.402 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 403 } } country_event = { id = ROC_ma_story.403 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 404 } } country_event = { id = ROC_ma_story.404 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 405 } } country_event = { id = ROC_ma_story.405 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 406 } } country_event = { id = ROC_ma_story.406 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 501 } } country_event = { id = ROC_ma_story.501 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 502 } } country_event = { id = ROC_ma_story.502 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 503 } } country_event = { id = ROC_ma_story.503 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 504 } } country_event = { id = ROC_ma_story.504 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 505 } } country_event = { id = ROC_ma_story.505 hours = 1 } }
+            if = { limit = { check_variable = { ROC_ma_story_active_id = 506 } } country_event = { id = ROC_ma_story.506 hours = 1 } }
+        }
+        else = { ROC_ma_story_clear = yes }
+    }
 }
 
 
@@ -3750,6 +3798,7 @@ ROC_ma_settle_due = {
             clr_country_flag = ROC_ma_clock_armed
             remove_mission = ROC_ma_current_action
             ROC_ma_finish_action = yes
+            ROC_ma_story_dispatch = yes
         }
     }
 }
@@ -3880,7 +3929,27 @@ ROC_ma_sync = {
             }
         }
     }
+    ROC_ma_refresh_gui_progress = yes
     ROC_ma_sync_focus_entries = yes
+}
+
+ROC_ma_refresh_gui_progress = {
+    # The ordinary sprite has 101 frames, from empty (1) to complete (101).
+    # Stage timers are 180 days; after stage six the recurring cycle is 90 days.
+    set_variable = { ROC_ma_gui_progress_percent = ROC_ma_days_remaining }
+    multiply_variable = { var = ROC_ma_gui_progress_percent value = -100 }
+    if = {
+        limit = { check_variable = { ROC_ma_stage = 7 } }
+        divide_variable = { var = ROC_ma_gui_progress_percent value = 90 }
+    }
+    else = {
+        divide_variable = { var = ROC_ma_gui_progress_percent value = 180 }
+    }
+    add_to_variable = { var = ROC_ma_gui_progress_percent value = 100 }
+    round_variable = ROC_ma_gui_progress_percent
+    clamp_variable = { var = ROC_ma_gui_progress_percent min = 0 max = 100 }
+    set_variable = { ROC_ma_gui_progress_frame = ROC_ma_gui_progress_percent }
+    add_to_variable = { var = ROC_ma_gui_progress_frame value = 1 }
 }
 
 # Restore only appointment entries backed by an active term or saved route progress.
@@ -4097,7 +4166,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yu_1
                     set_variable = { ROC_ma_story_active_id = 101 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.101 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yu_1 }
             }
@@ -4112,7 +4180,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yu_step2
                     set_variable = { ROC_ma_story_active_id = 102 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.102 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yu_step2 }
             }
@@ -4127,7 +4194,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yu_2
                     set_variable = { ROC_ma_story_active_id = 103 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.103 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yu_2 }
             }
@@ -4142,7 +4208,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yu_step4
                     set_variable = { ROC_ma_story_active_id = 104 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.104 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yu_step4 }
             }
@@ -4157,7 +4222,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yu_3
                     set_variable = { ROC_ma_story_active_id = 105 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.105 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yu_3 }
             }
@@ -4172,7 +4236,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yu_step6
                     set_variable = { ROC_ma_story_active_id = 106 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.106 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yu_step6 }
             }
@@ -4185,7 +4248,7 @@ ROC_ma_finish_action = {
         if = { limit = { check_variable = { ROC_ma_stage = 7 } } set_variable = { ROC_ma_days_remaining = 90 } }
         set_variable = { ROC_ma_yu_stage = ROC_ma_stage }
         set_variable = { ROC_ma_yu_days = ROC_ma_days_remaining }
-        if = { limit = { check_variable = { ROC_ma_stage = 4 } } ROC_ma_open_yu_2 = yes }
+        if = { limit = { ROC_ma_stage_four_intervention_due = yes } ROC_ma_open_yu_2 = yes }
     }
     if = {
         limit = { check_variable = { ROC_ma_clock_owner = 2 } }
@@ -4199,7 +4262,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yan_1
                     set_variable = { ROC_ma_story_active_id = 201 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.201 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yan_1 }
             }
@@ -4214,7 +4276,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yan_step2
                     set_variable = { ROC_ma_story_active_id = 202 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.202 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yan_step2 }
             }
@@ -4229,7 +4290,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yan_2
                     set_variable = { ROC_ma_story_active_id = 203 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.203 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yan_2 }
             }
@@ -4244,7 +4304,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yan_step4
                     set_variable = { ROC_ma_story_active_id = 204 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.204 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yan_step4 }
             }
@@ -4259,7 +4318,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yan_3
                     set_variable = { ROC_ma_story_active_id = 205 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.205 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yan_3 }
             }
@@ -4274,7 +4332,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_yan_step6
                     set_variable = { ROC_ma_story_active_id = 206 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.206 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_yan_step6 }
             }
@@ -4287,7 +4344,7 @@ ROC_ma_finish_action = {
         if = { limit = { check_variable = { ROC_ma_stage = 7 } } set_variable = { ROC_ma_days_remaining = 90 } }
         set_variable = { ROC_ma_yan_stage = ROC_ma_stage }
         set_variable = { ROC_ma_yan_days = ROC_ma_days_remaining }
-        if = { limit = { check_variable = { ROC_ma_stage = 4 } } ROC_ma_open_yan_2 = yes }
+        if = { limit = { ROC_ma_stage_four_intervention_due = yes } ROC_ma_open_yan_2 = yes }
     }
     if = {
         limit = { check_variable = { ROC_ma_clock_owner = 3 } }
@@ -4301,7 +4358,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_ruan_1
                     set_variable = { ROC_ma_story_active_id = 301 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.301 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_ruan_1 }
             }
@@ -4316,7 +4372,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_ruan_step2
                     set_variable = { ROC_ma_story_active_id = 302 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.302 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_ruan_step2 }
             }
@@ -4331,7 +4386,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_ruan_2
                     set_variable = { ROC_ma_story_active_id = 303 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.303 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_ruan_2 }
             }
@@ -4346,7 +4400,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_ruan_step4
                     set_variable = { ROC_ma_story_active_id = 304 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.304 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_ruan_step4 }
             }
@@ -4361,7 +4414,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_ruan_3
                     set_variable = { ROC_ma_story_active_id = 305 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.305 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_ruan_3 }
             }
@@ -4376,7 +4428,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_ruan_step6
                     set_variable = { ROC_ma_story_active_id = 306 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.306 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_ruan_step6 }
             }
@@ -4389,7 +4440,7 @@ ROC_ma_finish_action = {
         if = { limit = { check_variable = { ROC_ma_stage = 7 } } set_variable = { ROC_ma_days_remaining = 90 } }
         set_variable = { ROC_ma_ruan_stage = ROC_ma_stage }
         set_variable = { ROC_ma_ruan_days = ROC_ma_days_remaining }
-        if = { limit = { check_variable = { ROC_ma_stage = 4 } } ROC_ma_open_ruan_2 = yes }
+        if = { limit = { ROC_ma_stage_four_intervention_due = yes } ROC_ma_open_ruan_2 = yes }
     }
     if = {
         limit = { check_variable = { ROC_ma_clock_owner = 4 } }
@@ -4403,7 +4454,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_chen_1
                     set_variable = { ROC_ma_story_active_id = 401 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.401 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_chen_1 }
             }
@@ -4418,7 +4468,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_chen_step2
                     set_variable = { ROC_ma_story_active_id = 402 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.402 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_chen_step2 }
             }
@@ -4433,7 +4482,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_chen_2
                     set_variable = { ROC_ma_story_active_id = 403 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.403 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_chen_2 }
             }
@@ -4448,7 +4496,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_chen_step4
                     set_variable = { ROC_ma_story_active_id = 404 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.404 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_chen_step4 }
             }
@@ -4463,7 +4510,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_chen_3
                     set_variable = { ROC_ma_story_active_id = 405 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.405 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_chen_3 }
             }
@@ -4478,7 +4524,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_chen_step6
                     set_variable = { ROC_ma_story_active_id = 406 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.406 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_chen_step6 }
             }
@@ -4491,7 +4536,7 @@ ROC_ma_finish_action = {
         if = { limit = { check_variable = { ROC_ma_stage = 7 } } set_variable = { ROC_ma_days_remaining = 90 } }
         set_variable = { ROC_ma_chen_stage = ROC_ma_stage }
         set_variable = { ROC_ma_chen_days = ROC_ma_days_remaining }
-        if = { limit = { check_variable = { ROC_ma_stage = 4 } } ROC_ma_open_chen_2 = yes }
+        if = { limit = { ROC_ma_stage_four_intervention_due = yes } ROC_ma_open_chen_2 = yes }
     }
     if = {
         limit = { check_variable = { ROC_ma_clock_owner = 5 } }
@@ -4505,7 +4550,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_xiao_1
                     set_variable = { ROC_ma_story_active_id = 501 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.501 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_xiao_1 }
             }
@@ -4520,7 +4564,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_xiao_step2
                     set_variable = { ROC_ma_story_active_id = 502 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.502 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_xiao_step2 }
             }
@@ -4535,7 +4578,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_xiao_2
                     set_variable = { ROC_ma_story_active_id = 503 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.503 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_xiao_2 }
             }
@@ -4550,7 +4592,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_xiao_step4
                     set_variable = { ROC_ma_story_active_id = 504 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.504 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_xiao_step4 }
             }
@@ -4565,7 +4606,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_xiao_3
                     set_variable = { ROC_ma_story_active_id = 505 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.505 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_xiao_3 }
             }
@@ -4580,7 +4620,6 @@ ROC_ma_finish_action = {
                     complete_national_focus = ROC_ma_xiao_step6
                     set_variable = { ROC_ma_story_active_id = 506 }
                     ROC_ma_story_open = yes
-                    country_event = { id = ROC_ma_story.506 hours = 1 }
                 }
                 else = { complete_national_focus = ROC_ma_xiao_step6 }
             }
@@ -4593,7 +4632,7 @@ ROC_ma_finish_action = {
         if = { limit = { check_variable = { ROC_ma_stage = 7 } } set_variable = { ROC_ma_days_remaining = 90 } }
         set_variable = { ROC_ma_xiao_stage = ROC_ma_stage }
         set_variable = { ROC_ma_xiao_days = ROC_ma_days_remaining }
-        if = { limit = { check_variable = { ROC_ma_stage = 4 } } ROC_ma_open_xiao_2 = yes }
+        if = { limit = { ROC_ma_stage_four_intervention_due = yes } ROC_ma_open_xiao_2 = yes }
     }
     clr_country_flag = ROC_ma_rewarding_current
 }
@@ -4620,6 +4659,7 @@ ROC_ma_advance_days = {
         set_variable = { ROC_ma_day_credit = 0 }
         ROC_ma_save_owner = yes
         ROC_ma_sync = yes
+        ROC_ma_story_dispatch = yes
     }
     set_variable = { ROC_ma_day_credit = 0 }
 }
@@ -4638,6 +4678,7 @@ ROC_ma_delay_days = {
             add_days_mission_timeout = { mission = ROC_ma_current_action days = ROC_ma_day_delay }
         }
         ROC_ma_save_owner = yes
+        ROC_ma_refresh_gui_progress = yes
     }
     set_variable = { ROC_ma_day_delay = 0 }
 }
@@ -5100,7 +5141,7 @@ ROC_ma_committee_right = {
 ROC_ma_open_yu_1 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
             NOT = { has_country_flag = ROC_ma_yu_1_seen }
         }
@@ -5114,7 +5155,7 @@ ROC_ma_open_yu_1 = {
 ROC_ma_open_yu_2 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 1 compare = equals }
             NOT = { has_country_flag = ROC_ma_yu_2_seen }
         }
@@ -5128,7 +5169,7 @@ ROC_ma_open_yu_2 = {
 ROC_ma_open_yan_1 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
             NOT = { has_country_flag = ROC_ma_yan_1_seen }
         }
@@ -5142,7 +5183,7 @@ ROC_ma_open_yan_1 = {
 ROC_ma_open_yan_2 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 2 compare = equals }
             NOT = { has_country_flag = ROC_ma_yan_2_seen }
         }
@@ -5156,7 +5197,7 @@ ROC_ma_open_yan_2 = {
 ROC_ma_open_ruan_1 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
             NOT = { has_country_flag = ROC_ma_ruan_1_seen }
         }
@@ -5170,7 +5211,7 @@ ROC_ma_open_ruan_1 = {
 ROC_ma_open_ruan_2 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 3 compare = equals }
             NOT = { has_country_flag = ROC_ma_ruan_2_seen }
         }
@@ -5184,7 +5225,7 @@ ROC_ma_open_ruan_2 = {
 ROC_ma_open_chen_1 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
             NOT = { has_country_flag = ROC_ma_chen_1_seen }
         }
@@ -5198,7 +5239,7 @@ ROC_ma_open_chen_1 = {
 ROC_ma_open_chen_2 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 4 compare = equals }
             NOT = { has_country_flag = ROC_ma_chen_2_seen }
         }
@@ -5212,7 +5253,7 @@ ROC_ma_open_chen_2 = {
 ROC_ma_open_xiao_1 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
             NOT = { has_country_flag = ROC_ma_xiao_1_seen }
         }
@@ -5226,7 +5267,7 @@ ROC_ma_open_xiao_1 = {
 ROC_ma_open_xiao_2 = {
     if = {
         limit = {
-            ROC_ma_can_run = yes
+            ROC_ma_intervention_live = yes
             check_variable = { var = ROC_ce_minister_profile_id value = 5 compare = equals }
             NOT = { has_country_flag = ROC_ma_xiao_2_seen }
         }

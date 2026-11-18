@@ -11,6 +11,8 @@ class CommitteeState(ScriptState):
         self.random_calls = 0
         self.random_choice = 0
         self.focuses.add('gemingweiyuanhui')
+        # The founding focus initializes the base before activating the three agenda timers.
+        self.vars.setdefault('ROC_sanpai_time_base_var', 50)
 
 ORIGINAL_BRANCHES = {'left': [([], ['zuoyilianmeng']),
           (['zuoyilianmeng'], ['lianluogemingyoudang']),
@@ -761,6 +763,39 @@ class CommitteeSeparation(unittest.TestCase):
             self.run_effect(s, 'ROC_committee_daily')
             self.assertEqual(s.vars['ROC_committee_left_agenda'], 0)
             self.assertNotIn('ROC_committee_objection_pending', s.flags)
+
+    def test_due_agenda_cannot_receive_an_objection_or_be_revived_by_an_open_event(self):
+        events = read_script('events/ROC_committee.txt')
+        for side, mission in enumerate(('ROC_decision_zuopai', 'ROC_decision_zhongpai',
+                                        'ROC_decision_youpai'), 1):
+            with self.subTest(side=side):
+                state = CommitteeState(self.effects)
+                self.run_effect(state, 'ROC_committee_daily')
+                state.vars.update(ROC_committee_leading_side=side, ROC_ma_left_favor=50,
+                                  ROC_ma_center_favor=50, ROC_ma_right_favor=50)
+                state.missions[mission] = 0
+                self.run_effect(state, 'ROC_committee_open_objection')
+                self.assertFalse(state.events)
+                self.assertNotIn('ROC_committee_objection_cooldown', state.flags)
+
+                state.missions[mission] = 1
+                self.run_effect(state, 'ROC_committee_open_objection')
+                self.assertEqual(len(state.events), 1)
+                state.missions[mission] = 0
+                for ident in range(1, 4):
+                    event = named_event(events, f'ROC_committee.{ident}')
+                    self.assertFalse(state.passes(one(event, 'trigger')))
+                before = (dict(state.missions), dict(state.vars), set(state.flags))
+                self.run_effect(state, 'ROC_committee_delay_7')
+                self.run_effect(state, 'ROC_committee_delay_21')
+                self.assertEqual((state.missions, state.vars, state.flags), before)
+                if side != 2:
+                    faction = 'left' if side == 1 else 'right'
+                    self.run_effect(state, 'ROC_ma_delay_committee_' + faction)
+                    self.assertEqual((state.missions, state.vars, state.flags), before)
+                state.at_war = True
+                self.run_effect(state, 'ROC_committee_refresh_timing')
+                self.assertEqual(state.missions[mission], 0)
 
     def test_leaving_committee_cancels_old_native_missions(self):
         s = CommitteeState(self.effects)

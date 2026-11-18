@@ -266,6 +266,36 @@ class CentralEconomy(unittest.TestCase):
         s.effect('ROC_ce_deliver')
         self.assertEqual(s.vars['ROC_ce_actual'],20)
 
+    def test_ready_project_delivers_without_replaying_its_old_milestones(self):
+        s = self.state()
+        s.vars.update(ROC_ce_project_id=1, ROC_ce_project_progress=100)
+        s.effect('ROC_ce_project_daily')
+        self.assertEqual(s.vars['ROC_ce_actual'], 20)
+        self.assertEqual(s.vars['ROC_ce_projects_completed'], 1)
+        self.assertEqual(s.vars['ROC_ce_project_id'], 0)
+        self.assertEqual(s.events, [])
+
+    def test_expired_term_blocks_project_and_appointment_windows(self):
+        entry = read_script('events/ROC_central_economy.txt')
+        for event_id, pending in ((2, 'ROC_ce_event_2_pending'),
+                                  (5, 'ROC_ce_accountability_pending'),
+                                  (7, 'ROC_econ_resignation_pending')):
+            with self.subTest(event_id=event_id):
+                s = self.state()
+                s.vars.update(ROC_ce_project_id=1, ROC_ce_project_progress=100)
+                s.flags.add(pending)
+                ev = named_event(entry, f'ROC_central_economy.{event_id}')
+                trigger = one(ev, 'trigger')
+                self.assertTrue(s.passes(trigger))
+                s.missions['ROC_decision_bop_jingjidahui'] = 0
+                self.assertFalse(s.passes(trigger))
+                before = (dict(s.vars), set(s.flags), set(s.ideas), s.pp)
+                s.choose(event_id, 'a')
+                self.assertEqual(before, (s.vars, s.flags, s.ideas, s.pp))
+                s.effect('ROC_ce_daily')
+                self.assertEqual(s.vars['ROC_ce_project_id'], 1)
+                self.assertNotIn('ROC_central_economy.7', s.events)
+
     def test_missing_cabinet_recovers_with_one_initial_conference(self):
         s=self.state();s.missions.clear();s.ideas.clear()
         s.effect('ROC_econ_bootstrap')

@@ -7,6 +7,39 @@ ROC_ma_can_run = {
     NOT = { has_country_flag = ROC_econ_resignation_pending }
 }
 
+ROC_ma_show_stage_progress = {
+    ROC_ma_can_run = yes
+    has_active_mission = ROC_ma_current_action
+    check_variable = { var = ROC_ma_clock_owner value = ROC_ce_minister_profile_id compare = equals }
+    check_variable = { ROC_ma_stage > 0 }
+    check_variable = { ROC_ma_stage < 8 }
+    has_variable = ROC_ma_gui_progress_percent
+    check_variable = { ROC_ma_gui_progress_frame > 0 }
+}
+
+# Do not accept a decision while either native clock is waiting for its timeout callback.
+ROC_ma_intervention_live = {
+    ROC_ma_can_run = yes
+    check_variable = { days_mission_timeout@ROC_decision_bop_jingjidahui > 0 }
+    OR = {
+        AND = {
+            has_active_mission = ROC_ma_current_action
+            check_variable = { days_mission_timeout@ROC_ma_current_action > 0 }
+        }
+        AND = {
+            NOT = { has_active_mission = ROC_ma_current_action }
+            NOT = { has_country_flag = ROC_ma_clock_armed }
+            check_variable = { ROC_ma_days_remaining > 0 }
+        }
+    }
+}
+
+# A credit that runs through stage four leaves no opportunity for its intervention.
+ROC_ma_stage_four_intervention_due = {
+    check_variable = { ROC_ma_stage = 4 }
+    check_variable = { var = ROC_ma_day_credit value = ROC_ma_days_remaining compare = less_than }
+}
+
 ROC_ma_objection_can_pay = {
     OR = {
         AND = {

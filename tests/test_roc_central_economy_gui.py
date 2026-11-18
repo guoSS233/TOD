@@ -5,6 +5,8 @@ import re
 import sys
 import unittest
 
+from PIL import Image
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tests"))
 from test_sichuan_red_opportunity import parse_clausewitz
@@ -147,7 +149,12 @@ class RocCentralEconomyGuiContract(unittest.TestCase):
         size = one(window, "size")
         self.assertEqual("500", scalar(size, "width"))
         height = int(scalar(size, "height"))
-        self.assertEqual(height, 570)
+        panel = one(window, "containerWindowType")
+        panel_top = int(scalar(one(panel, "position"), "y"))
+        panel_bottom = panel_top + int(scalar(one(panel, "size"), "height"))
+        self.assertLessEqual(panel_bottom, height)
+        self.assertFalse(any(key == "alwaystransparent" for key, _ in panel))
+        self.assertEqual("yes", scalar(one(panel, "background"), "alwaystransparent"))
         widgets = {
             scalar(block, "name"): block
             for key, block in window
@@ -155,23 +162,33 @@ class RocCentralEconomyGuiContract(unittest.TestCase):
         }
         required_widgets = {
             "ROC_ce_gui_title", "ROC_ce_gui_mandate", "ROC_ce_gui_minister", "ROC_ce_gui_term",
-            "ROC_ce_gui_current_action", "ROC_ce_gui_current_action_desc", "ROC_ce_gui_performance",
+            "ROC_ce_gui_current_action", "ROC_ce_gui_current_action_desc", "ROC_ce_gui_current_action_percent",
+            "ROC_ce_gui_performance",
             "ROC_ce_gui_project_name", "ROC_ce_gui_project_status", "ROC_ce_gui_project_progress",
-            "ROC_ce_gui_policy_axis", "ROC_ce_gui_policy_route", "ROC_ce_gui_policy_axis_bar", "ROC_ce_gui_policy_effects",
+            "ROC_ce_gui_policy_axis", "ROC_ce_gui_policy_route", "ROC_ce_gui_policy_effects",
             "ROC_ce_gui_parties_heading", "ROC_ce_gui_left_favor", "ROC_ce_gui_center_favor",
             "ROC_ce_gui_right_favor", "ROC_ce_gui_committee_heading", "ROC_ce_gui_head",
         }
-        self.assertEqual(required_widgets, set(widgets))
+        expected_icons = {
+            "ROC_ce_gui_current_action_bar": "GFX_ROC_econ_action_progress",
+            "ROC_ce_gui_policy_axis_track": "GFX_bop_bar_bg",
+            "ROC_ce_gui_policy_axis_midpoint": "GFX_bop_splitter",
+            "ROC_ce_gui_policy_axis_needle": "GFX_bop_needle",
+        }
+        self.assertEqual(required_widgets | set(expected_icons), set(widgets))
+        for name, sprite in expected_icons.items():
+            self.assertEqual(sprite, scalar(widgets[name], "spriteType"))
+            self.assertEqual("yes", scalar(widgets[name], "alwaystransparent"))
         self.assertEqual("ROC_econ_head_rules_tt", scalar(widgets["ROC_ce_gui_head"], "pdx_tooltip"))
 
-        for name in required_widgets - {"ROC_ce_gui_policy_axis_bar"}:
+        for name in required_widgets:
             widget = widgets[name]
             expected_font = "hoi_18mbs" if name == "ROC_ce_gui_title" else "hoi_16mbs"
             self.assertEqual(expected_font, scalar(widget, "font"))
-            expected_height = "40" if name in {"ROC_ce_gui_current_action_desc", "ROC_ce_gui_project_status", "ROC_ce_gui_policy_effects"} else "20"
+            expected_height = "40" if name in {"ROC_ce_gui_current_action_desc", "ROC_ce_gui_project_status", "ROC_ce_gui_policy_effects", "ROC_ce_gui_head"} else "20"
             self.assertEqual(expected_height, scalar(widget, "maxHeight"))
         self.assertEqual("ROC_ce_performance_tt", scalar(widgets["ROC_ce_gui_performance"], "pdx_tooltip"))
-        texts = {name: scalar(widget, "text") for name, widget in widgets.items() if name != "ROC_ce_gui_policy_axis_bar"}
+        texts = {name: scalar(widgets[name], "text") for name in required_widgets}
         expected_dynamic = {
             "ROC_ce_gui_mandate": "[ROOT.ROC_ce_mandate_status]",
             "ROC_ce_gui_term": "[ROOT.ROC_ce_term_status]",
@@ -199,30 +216,51 @@ class RocCentralEconomyGuiContract(unittest.TestCase):
         root_functions.update(re.findall(r"\[ROOT\.([\w.]+)\]", self.loc["ROC_ce_gui_policy_route"]))
         self.assertTrue(root_functions)
         self.assertTrue(root_functions <= set(self.scripts), root_functions - set(self.scripts))
-        self.assertEqual("GFX_ROC_econ_progressbar", scalar(widgets["ROC_ce_gui_policy_axis_bar"], "spriteType"))
-        self.assertIn('name = "GFX_ROC_econ_progressbar"', GUI_GFX.read_text(encoding="utf-8-sig"))
         scripted_gui = parse_script(SCRIPTED_GUI)
         registration = one(one(scripted_gui, "scripted_gui"), "ROC_central_economy_window")
         properties = one(registration, "properties")
-        self.assertEqual("ROC_ce_policy_frame", scalar(one(properties, "ROC_ce_gui_policy_axis_bar"), "frame"))
+        self.assertEqual("ROC_ma_gui_progress_frame", scalar(one(properties, "ROC_ce_gui_current_action_bar"), "frame"))
+        self.assertEqual("ROC_ce_policy_needle_x", scalar(one(properties, "ROC_ce_gui_policy_axis_needle"), "x"))
+        triggers = one(registration, "triggers")
+        for name in ("ROC_ce_gui_current_action_bar_visible", "ROC_ce_gui_current_action_percent_visible"):
+            self.assertEqual([("ROC_ma_show_stage_progress", "yes")], one(triggers, name))
+        self.assertIn("[?ROC_ma_gui_progress_percent|0]%", self.loc[texts["ROC_ce_gui_current_action_percent"]])
 
+        self.assertEqual("248", scalar(one(widgets["ROC_ce_gui_policy_axis_midpoint"], "position"), "x"))
+        self.assertEqual("0", scalar(one(widgets["ROC_ce_gui_policy_axis_needle"], "position"), "x"))
         rectangles = []
-        for name, widget in widgets.items():
+        bar_scale = int(scalar(widgets["ROC_ce_gui_current_action_bar"], "scale"))
+        row_icons = {"ROC_ce_gui_policy_axis_track": (360, 16), "ROC_ce_gui_current_action_bar": (80 * bar_scale, 3 * bar_scale)}
+        for name in required_widgets | set(row_icons):
+            widget = widgets[name]
             pos = one(widget, "position")
             x, y = int(scalar(pos, "x")), int(scalar(pos, "y"))
-            if name == "ROC_ce_gui_policy_axis_bar":
-                width, widget_height = 400, 12
+            if name in row_icons:
+                width, widget_height = row_icons[name]
             else:
                 width, widget_height = int(scalar(widget, "maxWidth")), int(scalar(widget, "maxHeight"))
             self.assertGreaterEqual(x, 50, name)
             self.assertLessEqual(x + width, 450, name)
-            self.assertGreaterEqual(y, 0, name)
-            self.assertLessEqual(y + widget_height, height, name)
+            self.assertGreaterEqual(y, panel_top, name)
+            self.assertLessEqual(y + widget_height, panel_bottom - 12, name)
             rectangles.append((name, x, y, x + width, y + widget_height))
         for index, earlier in enumerate(rectangles):
             for later in rectangles[index + 1:]:
                 intersects = earlier[1] < later[3] and later[1] < earlier[3] and earlier[2] < later[4] and later[2] < earlier[4]
                 self.assertFalse(intersects, f"overlap: {earlier[0]} and {later[0]}")
+
+    def test_agenda_progress_sprite_frames_fill_in_elapsed_order(self):
+        sprite = one(one(parse_script(GUI_GFX), "spriteTypes"), "spriteType")
+        self.assertEqual("GFX_ROC_econ_action_progress", scalar(sprite, "name"))
+        self.assertEqual("101", scalar(sprite, "noOfFrames"))
+        with Image.open(ROOT / scalar(sprite, "texturefile")) as atlas:
+            self.assertEqual((101 * 80, 3), atlas.size)
+            fills = [
+                sum(atlas.getpixel((frame * 80 + x, 1)) == (206, 164, 83) for x in range(80))
+                for frame in range(101)
+            ]
+        self.assertEqual((0, 42, 78), (fills[0], fills[54], fills[100]))
+        self.assertEqual(sorted(fills), fills)
 
     def test_current_action_distinguishes_pause_vacancy_active_stages_and_execution(self):
         action = self.scripts["ROC_ma_current_action"]
@@ -370,7 +408,7 @@ class RocCentralEconomyGuiContract(unittest.TestCase):
             for tier in tiers:
                 self.assertIn(f"ROC_ce_gui_structure_{tier}_{suffix}", self.loc)
         self.assertIn("ROC_ce_structure_tiers_tt", self.loc)
-        for label in ("经济结构", "部长待落实", "[?ROC_ce_policy_axis|+0]", "[?ROC_ma_policy_pending|+0]"):
+        for label in ("经济结构", "待落实", "[?ROC_ce_policy_axis|+0]", "通用[?ROC_ce_policy_pending|+0]", "部长[?ROC_ma_policy_pending|+0]"):
             self.assertIn(label, self.loc["ROC_ce_gui_policy_axis"])
         queues = self.loc["ROC_ce_policy_queues_tt"]
         for phrase in ("通用政策", "部长办法", "撤下", "优先", "保留", "每月最多落实一点"):
@@ -407,8 +445,11 @@ class RocCentralEconomyGuiContract(unittest.TestCase):
             "ROC_ce_gui_minister": ["经济部长：萧铮（小生产者）", "经济部长：未任命（路线未定）"],
             "ROC_ce_gui_term": [self.loc["ROC_ce_gui_term_active"], self.loc["ROC_ce_gui_term_waiting_successor"]],
             "ROC_ce_gui_current_action": [longest_focus_name, self.agenda_loc["ROC_ma_gui_action_execution"]],
+            "ROC_ce_gui_current_action_percent": [re.sub(r"§[Y!]", "", self.loc["ROC_ce_gui_current_action_percent"])],
             "ROC_ce_gui_current_action_desc": [
-                "自动推进 · 余 123 日", self.agenda_loc["ROC_ma_gui_action_waiting_successor_desc"],
+                self.agenda_loc["ROC_ma_gui_action_active_desc"].replace("[?ROC_ma_stage|0]", "6"),
+                self.agenda_loc["ROC_ma_gui_action_execution_desc"],
+                self.agenda_loc["ROC_ma_gui_action_waiting_successor_desc"],
             ],
             "ROC_ce_gui_performance": [
                 self.loc["ROC_ce_gui_performance"].replace("[?ROC_ce_actual|0]", "100")
@@ -423,7 +464,12 @@ class RocCentralEconomyGuiContract(unittest.TestCase):
             "ROC_ce_gui_project_progress": [
                 "实物进度 100%；目标 100%", self.loc["ROC_ce_gui_project_progress_idle"],
             ],
-            "ROC_ce_gui_policy_axis": ["经济结构：公有化三档 轴+100 · 部长待落实 +30", self.loc["ROC_ce_gui_policy_initializing"]],
+            "ROC_ce_gui_policy_axis": [
+                self.loc["ROC_ce_gui_policy_axis"].replace("[ROOT.ROC_ce_policy_tier_name]", "公有化三档")
+                .replace("[?ROC_ce_policy_axis|+0]", "+100").replace("[?ROC_ce_policy_pending|+0]", "+30")
+                .replace("[?ROC_ma_policy_pending|+0]", "−30"),
+                self.loc["ROC_ce_gui_policy_initializing"],
+            ],
             "ROC_ce_gui_policy_route": ["现行办法：阮啸仙·公有审计", "现行办法：尚未选择部长办法"],
             "ROC_ce_gui_policy_effects": ["当前档效果：" + longest_structure_effect, self.loc["ROC_ce_gui_policy_effect_initializing"]],
             "ROC_ce_gui_parties_heading": [self.loc["ROC_ce_gui_parties_heading"]],
@@ -431,17 +477,30 @@ class RocCentralEconomyGuiContract(unittest.TestCase):
             "ROC_ce_gui_center_favor": ["大同党中派 100/100", self.loc["ROC_ce_gui_favor_initializing_center"]],
             "ROC_ce_gui_right_favor": ["大同党右派 100/100", self.loc["ROC_ce_gui_favor_initializing_right"]],
             "ROC_ce_gui_committee_heading": [self.loc["ROC_ce_gui_committee_heading"]],
+            "ROC_ce_gui_head": [
+                f"首脑：{minister} · {status}"
+                for minister in ("谭平山", "黄炎培", self.loc["ROC_econ_head_unknown"])
+                for status in (self.loc["ROC_econ_gui_head_crisis"], self.loc["ROC_econ_gui_head_mismatch"])
+            ],
         }
         for name, samples in lines.items():
             widget = widgets[name]
             width = int(scalar(widget, "maxWidth"))
+            max_lines = int(scalar(widget, "maxHeight")) // 20
             font_name = scalar(widget, "font")
             font = title_font if font_name == "hoi_18mbs" else small_font if font_name == "Arial_14s" else game_font
             for text in samples:
                 text = re.sub(r"\[\?[^\]]+\]", "100", text)
                 text = re.sub(r"\[ROOT\.[^\]]+\]", "公有三档", text)
-                pixels = sum(font.get(ord(character), game_font.get(ord(character), 0)) for character in text)
-                self.assertLessEqual(pixels, width, f"{name} exceeds width with {text!r}: {pixels}px > {width}px")
+                used_lines = 1
+                pixels = 0
+                for character in text:
+                    advance = font.get(ord(character), small_font.get(ord(character), 14))
+                    if pixels + advance > width:
+                        used_lines += 1
+                        pixels = 0
+                    pixels += advance
+                self.assertLessEqual(used_lines, max_lines, f"{name} exceeds {max_lines} lines with {text!r}")
 
 
 if __name__ == "__main__":

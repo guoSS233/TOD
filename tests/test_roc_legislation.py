@@ -447,4 +447,18 @@ class Legislation(unittest.TestCase):
             elif failure == 'stage': self.run_effect(s, 'ROC_bill_prepare_party')
             self.assertTrue(s.passes(one(close, 'trigger')), failure)
 
+    def test_pending_bill_closes_when_native_term_reaches_zero(self):
+        s = self.state()
+        self.submit(s)
+        event = named_event(read_script('events/ROC_legislation.txt'), 'ROC_legislation.11')
+        self.assertTrue(s.passes(one(event, 'trigger')))
+        s.missions['ROC_decision_bop_jingjidahui'] = 0
+        self.assertFalse(s.passes(one(event, 'trigger')))
+        option = next(value for key, value in event if key == 'option')
+        before = (s.pp, list(s.events))
+        s.run(one(option, 'hidden_effect'))
+        self.assertEqual((s.pp, s.events), before)
+        self.assertEqual(s.vars['ROC_bill_stage'], 0)
+        self.assertEqual(s.vars['ROC_bill_outcome'], 5)
+
 if __name__ == '__main__': unittest.main()

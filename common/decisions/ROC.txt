@@ -2205,7 +2205,7 @@ ROC_focus_sanpai = {
         days_re_enable = 60
         fire_only_once = no
         visible = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zuopai }
-        available = { custom_trigger_tooltip = { tooltip = ROC_econ_compromise_available_tt hidden_trigger = { ROC_econ_race_active = yes has_active_mission = ROC_decision_zuopai check_variable = { var = ROC_ma_left_favor value = 15 compare = greater_than_or_equals } } } }
+        available = { custom_trigger_tooltip = { tooltip = ROC_econ_compromise_available_tt hidden_trigger = { ROC_econ_race_active = yes ROC_committee_left_clock_running = yes check_variable = { var = ROC_ma_left_favor value = 15 compare = greater_than_or_equals } } } }
         complete_effect = { custom_effect_tooltip = ROC_ma_committee_delay_left_tt hidden_effect = { ROC_ma_delay_committee_left = yes } }
     }
 
@@ -2215,7 +2215,7 @@ ROC_focus_sanpai = {
         days_re_enable = 60
         fire_only_once = no
         visible = { ROC_econ_race_active = yes has_active_mission = ROC_decision_youpai }
-        available = { custom_trigger_tooltip = { tooltip = ROC_econ_compromise_available_tt hidden_trigger = { ROC_econ_race_active = yes has_active_mission = ROC_decision_youpai check_variable = { var = ROC_ma_right_favor value = 15 compare = greater_than_or_equals } } } }
+        available = { custom_trigger_tooltip = { tooltip = ROC_econ_compromise_available_tt hidden_trigger = { ROC_econ_race_active = yes ROC_committee_right_clock_running = yes check_variable = { var = ROC_ma_right_favor value = 15 compare = greater_than_or_equals } } } }
         complete_effect = { custom_effect_tooltip = ROC_ma_committee_delay_right_tt hidden_effect = { ROC_ma_delay_committee_right = yes } }
     }
 }

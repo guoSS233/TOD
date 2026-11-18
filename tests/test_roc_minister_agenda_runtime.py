@@ -371,6 +371,59 @@ class MinisterAgendaRuntime(unittest.TestCase):
         self.assertEqual(s.vars['ROC_ce_actual'], 25)
         self.assertTrue({'ROC_ma_yu_1', 'ROC_ma_yu_step2'} <= s.focuses)
 
+    def test_progress_renders_the_saved_stage_clock_independently_of_axis_and_term(self):
+        s = self.state()
+        registration = one(one(read_script('common/scripted_guis/ROC_central_economy.txt'),
+                              'scripted_gui'), 'ROC_central_economy_window')
+        visible = one(one(registration, 'triggers'), 'ROC_ce_gui_current_action_bar_visible')
+        # A save from the previous UI can have a frame but no numerical readout.
+        s.vars.pop('ROC_ma_gui_progress_percent')
+        s.vars.pop('ROC_ce_policy_needle_x')
+        s.missions.update(ROC_ma_current_action=83, ROC_decision_bop_jingjidahui=1012)
+
+        self.assertFalse(s.passes(visible))
+        s.effect('ROC_ce_daily')
+        self.assertTrue(s.passes(visible))
+        self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], 55)  # 97/180 days, 54%.
+        self.assertEqual(s.vars['ROC_ma_gui_progress_percent'], 54)
+        self.assertEqual(s.vars['ROC_ce_policy_needle_x'], 245)
+        self.assertEqual(s.missions['ROC_decision_bop_jingjidahui'], 1012)
+
+        self.native_days(s, 2)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], 56)
+        s.vars['ROC_ma_day_delay'] = 18
+        s.effect('ROC_ma_delay_days')
+        self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], 46)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_percent'], 45)
+        self.credit(s, 9)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], 51)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_percent'], 50)
+        s.flags.add('ROC_econ_conference_pending')
+        self.assertFalse(s.passes(visible))
+
+    def test_execution_progress_uses_its_own_ninety_day_cycle(self):
+        s = self.state()
+        self.credit(s, 1080)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], 1)
+        self.credit(s, 45)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], 51)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_percent'], 50)
+        s.vars['ROC_ma_day_delay'] = 100
+        s.effect('ROC_ma_delay_days')
+        self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], 1)
+        self.assertEqual(s.vars['ROC_ma_gui_progress_percent'], 0)
+
+    def test_stage_percentage_and_sprite_match_for_every_remaining_day(self):
+        s = self.state()
+        for stage, duration in ((1, 180), (7, 90)):
+            s.vars['ROC_ma_stage'] = stage
+            for remaining in range(duration + 2):
+                s.vars['ROC_ma_days_remaining'] = remaining
+                s.effect('ROC_ma_refresh_gui_progress')
+                percent = round(100 * max(0, duration - remaining) / duration)
+                self.assertEqual(s.vars['ROC_ma_gui_progress_percent'], percent)
+                self.assertEqual(s.vars['ROC_ma_gui_progress_frame'], percent + 1)
+
     def test_completed_route_repeats_execution_without_repeating_focus_rewards(self):
         s = self.state()
         self.credit(s, 1080)
@@ -454,6 +507,21 @@ class MinisterAgendaRuntime(unittest.TestCase):
         before = (dict(s.vars), dict(s.missions), s.pp)
         s.run(one(option,'hidden_effect'))
         self.assertEqual((s.vars,s.missions,s.pp), before)
+
+    def test_minister_intervention_stops_when_either_native_clock_reaches_zero(self):
+        event = named_event(read_script('events/ROC_minister_agenda.txt'), 'ROC_minister_agenda.11')
+        option = next(value for key, value in event if key == 'option'
+                      and one(value, 'name').endswith('.a'))
+        for mission in ('ROC_ma_current_action', 'ROC_decision_bop_jingjidahui'):
+            with self.subTest(mission=mission):
+                s = self.state()
+                s.effect('ROC_ma_open_yu_1')
+                self.assertTrue(s.passes(one(event, 'trigger')))
+                s.missions[mission] = 0
+                self.assertFalse(s.passes(one(event, 'trigger')))
+                before = (dict(s.vars), dict(s.missions), set(s.flags), s.pp)
+                s.run(one(option, 'hidden_effect'))
+                self.assertEqual(before, (s.vars, s.missions, s.flags, s.pp))
 
     def test_refined_five_milestones_and_routine_preserve_original_rewards(self):
         s=self.state()
